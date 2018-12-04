@@ -1,0 +1,160 @@
+Pure1 Quick Start
+=================
+
+The Pure1 client can be used independently from FlashArray and FlashBlade and requires its own authentication setup.
+
+
+Authentication
+--------------
+
+Using the Pure1 client requires authorization to use the Pure1 Manage public API, if not already configured. Instructions for getting access to and using the Pure1 Manage public API can be found at the `API reference page <https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference>`_.
+
+Environment variables are recommended to be used for the Pure1 client.
+
+.. code-block:: bash
+
+    $ export PURE1_PRIVATE_KEY_FILE=[...]
+    $ export PURE1_PRIVATE_KEY_PASSWORD=[...]
+    $ export PURE1_APP_ID=[...]
+
+Alternatively, the authentication information can be passed directly into the client.
+
+.. code-block:: python
+
+    client = pure1.Client(private_key_file=[...], private_key_password=[...], app_id=[...])
+
+If directly using a pre-generated ID token is preferred, it can be used in the same way. Note that using a pre-generated ID token will cause the client to fail when it expires.
+
+.. code-block:: bash
+
+    $ export PURE1_ID_TOKEN=[...]
+
+.. code-block:: python
+
+    client = pure1.Client(id_token=[...])
+
+
+Client Examples
+---------------
+
+These examples assume environment variables have been set, so a client can easily be instantiated.
+
+.. code-block:: python
+
+    from pypureclient import pure1
+    
+    client = pure1.Client()
+
+The client has functions that model each endpoint of the API which accept the same query parameters as the respective endpoint.
+
+.. code-block:: python
+
+    response = client.get_volumes(limit=10, sort=pure1.Volume.name.ascending())
+
+A response is ValidResponse or ErrorResponse object that models the API call response and includes the data.
+
+.. code-block:: python
+
+    print response.headers
+    print response.status_code
+    volumes = list(response.items)
+    volume1 = volumes[0]
+
+One enhancement over the plain API is that the client accepts models in the request body. Otherwise, strings and lists of strings are accepted as parameters.
+
+.. code-block:: python
+
+    response = client.get_arrays(volume1.arrays)
+    response = client.get_arrays(ids=[array.id for array in volume1.arrays])
+    # both result in the same request
+
+
+Filter Creation
+----------------
+
+Filters are defined by the public API specifications and are interpreted as a query parameter in an API call. The client allows for easier composition of filters, especially when taking advantage of intellisense or editor auto-completion. Filters are not required to be used if strings are preferred.
+
+Filters can be created by calling static Filter functions with Property objects, by using overridden operators on Property objects, or by calling certain Propery functions.
+
+.. code-block:: python
+
+    pure1.Filter.eq(pure1.Array.name, 'array')
+    pure1.Array.name == 'array'
+    # both resolve to "name='array'"
+
+    pure1.Filter.ne(pure1.Array.name, 'notarray')
+    pure1.Array.name != 'notarray'
+    # both resolve to "name!='notarray'"
+
+    pure1.Filter.gt(pure1.Array.as_of, 154000000000)
+    pure1.Array.as_of > 154000000000
+    # both resolve to "_as_of>154000000000"
+
+    pure1.Filter.ge(pure1.Array.as_of, 154000000000)
+    pure1.Array.as_of >= 154000000000
+    # both resolve to "_as_of>=154000000000"
+
+    pure1.Filter.lt(pure1.Array.as_of, 154000000000)
+    pure1.Array.as_of < 154000000000
+    # both resolve to "_as_of<154000000000"
+
+    pure1.Filter.le(pure1.Array.as_of, 154000000000)
+    pure1.Array.as_of <= 154000000000
+    # both resolve to "_as_of<=154000000000"
+
+    pure1.Filter.exists(pure1.Volume.source)
+    pure1.Volume.source.exists()
+    # both resolve to "source"
+
+    pure1.Filter.contains(pure1.Volume.name, "vol")
+    # resolves to "contains(name, 'vol')"
+
+    pure1.Filter.in_(pure1.Volume.name, ['vol1', 'vol2', 'vol3'])
+    # resolves to "name=('vol1','vol2','vol3')"
+
+    pure1.Filter.tags('key', 'value')
+    # resolves to "tags('key', 'value')"
+
+A model's Property may be a list of items (e.g. a Volume's "arrays" is a list), and another Property may be created on a specific index of that list: "all", or "any". A list index Property can be created by calling specific functions on a Property or by using overridden operators. These Properties can then be used in Filters.
+
+.. code-block:: python
+
+    pure1.Volume.arrays.any()
+    pure1.Volume.arrays['any']
+    # both resolve to "arrays[any]"
+
+    pure1.Volume.arrays.all()
+    pure1.Volume.arrays['all']
+    # both resolve to "arrays[all]"
+
+A nested Property is that of an item that is another model's property (e.g. Array.id where an Array is a Pod's "source"). A nested Property can be created by calling a specific function on a property or by using overridden operators.
+
+.. code-block:: python
+
+    pure1.Pod.source.subproperty(pure1.Array.id)
+    pure1.Pod.source + pure1.Array.id
+    # both resolve to "source.id"
+
+    pure1.Pod.arrays.any().subproperty(pure1.PodArrayStatus.mediator_status)
+    pure1.Pod.arrays.any() + pure1.PodArrayStatus.mediator_status
+    # both resolve to "arrays[any].mediator_status"
+
+Filters can also be compounded. When compounding multiple operators, parentheses are required by Python to denote order of operations. Compound Filters can be created by using overridden operators or by calling specific Filter functions.
+
+.. code-block:: python
+
+    pure1.Filter.and_(pure1.Array.name == 'array', pure1.Array.os.exists())
+    (pure1.Array.name == 'array') & pure1.Array.os.exists()
+    # both resolve to "name=='array' and os"
+
+    pure1.Filter.or_(pure1.Array.name == 'array', pure1.Array.os.exists())
+    (pure1.Array.name == 'array') | pure1.Array.os.exists()
+    # both resolve to "name=='array' or os"
+
+    pure1.Filter.not_(pure1.Filter.tags('key', 'value'))
+    ~ pure1.Filter.tags('key', 'value')
+    # both resolve to "not(tags('key', 'value'))"
+
+    pure1.Filter.and_(pure1.Filter.or_(pure1.Array.name == 'array', pure1.Array.os.exists()), pure1.Filter.not_(pure1.Filter.tags('key', 'value')))
+    ((pure1.Array.name == 'array') | pure1.Array.os.exists()) & (~ pure1.Filter.tags('key', 'value'))
+    # both resolve to "name='array' or os and not(tags('key', 'value'))"
