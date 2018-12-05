@@ -17,7 +17,7 @@ py-pure-client Documentation
 Overview
 --------
 
-The Python client supports Pure1, FlashArray, and FlashBlade APIs. Currently, only Pure1 is supported; FlashArray and FlashBlade will be added in the future.
+The Python package has clients that use the Pure1, FlashArray, and FlashBlade APIs. Currently, only Pure1 is supported; FlashArray and FlashBlade will be added in the future.
 
 The Pure1 client gives a simple interface to the Pure1 Manage public API.
 
@@ -28,7 +28,7 @@ The Pure1 client gives a simple interface to the Pure1 Manage public API.
   A quick start guide for the Pure1 client.
 
 :doc:`pure1_reference`
-  A glossary of all interfaces and classes used by Pure1.
+  A glossary of all interfaces and models used by Pure1.
 
 
 Requirements
@@ -47,7 +47,7 @@ visit the `Pure Storage Community <http://community.purestorage.com/>`_.
 Changes
 -------
 
-See the :doc:`changelog` for a list of changes to the REST Client.
+See the :doc:`changelog` for a list of changes to py-pure-client.
 
 
 License

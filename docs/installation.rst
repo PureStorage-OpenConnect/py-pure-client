@@ -3,7 +3,7 @@ Installation
 
 py-pure-client is available through the Python Package Index.
 
-The code is also available on GitHub and can optionally be built and installed manually.
+The source code is also available on GitHub and can optionally be built and installed manually.
 
 
 pip Installation

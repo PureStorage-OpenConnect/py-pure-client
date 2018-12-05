@@ -1,13 +1,13 @@
 Pure1 Quick Start
 =================
 
-The Pure1 client can be used independently from FlashArray and FlashBlade and requires its own authentication setup.
+The Pure1 client can be used independently from the FlashArray and FlashBlade clients. It requires its own authentication setup.
 
 
 Authentication
 --------------
 
-Using the Pure1 client requires authorization to use the Pure1 Manage public API, if not already configured. Instructions for getting access to and using the Pure1 Manage public API can be found at the `API reference page <https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference>`_.
+Using the Pure1 client requires authentication to use the Pure1 Manage public API. If not already configured, instructions for getting access to and using the Pure1 Manage public API can be found at the `API reference page <https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference>`_.
 
 Environment variables are recommended to be used for the Pure1 client.
 
@@ -45,7 +45,7 @@ These examples assume environment variables have been set, so a client can easil
     
     client = pure1.Client()
 
-The client has functions that model each endpoint of the API which accept the same query parameters as the respective endpoint.
+The client has functions that model the endpoints of the API and accept the query parameters as arguments.
 
 .. code-block:: python
 
@@ -57,10 +57,11 @@ A response is ValidResponse or ErrorResponse object that models the API call res
 
     print response.headers
     print response.status_code
+    print response.total_item_count
     volumes = list(response.items)
     volume1 = volumes[0]
 
-One enhancement over the plain API is that the client accepts models in the request body. Otherwise, strings and lists of strings are accepted as parameters.
+One enhancement over the plain API is that the client also accepts models as function arguments, as well as Python native types.
 
 .. code-block:: python
 
@@ -139,7 +140,7 @@ A nested Property is that of an item that is another model's property (e.g. Arra
     pure1.Pod.arrays.any() + pure1.PodArrayStatus.mediator_status
     # both resolve to "arrays[any].mediator_status"
 
-Filters can also be compounded. When compounding multiple operators, parentheses are required by Python to denote order of operations. Compound Filters can be created by using overridden operators or by calling specific Filter functions.
+Filters can also be compounded. When compounding multiple operators, parentheses are required by Python to denote order of operations. Compound Filters can be created by calling specific Filter functions or by using overridden operators.
 
 .. code-block:: python
 
