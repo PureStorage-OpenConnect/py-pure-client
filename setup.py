@@ -8,29 +8,28 @@ Pure Storage Python clients for FlashArray, FlashBlade, and Pure1 APIs
 
 from setuptools import setup, find_packages  # noqa: H301
 
-NAME = 'pypureclient'
-VERSION = '1.0'
-# To install the library, run the following
-#
-# python setup.py install
-#
-# prerequisite: setuptools
-# http://pypi.python.org/pypi/setuptools
+NAME = 'py-pure-client'
+VERSION = '1.0.0'
 
-REQUIRES = ['urllib3 >= 1.15', 'six >= 1.10', 'certifi', 'python-dateutil']
+REQUIRES = ['urllib3 >= 1.15', 'six >= 1.10', 'certifi', 'python-dateutil', 'paramiko', 'PyJWT', 'requests']
+
+readme = open('README.md', 'r')
+README_TEXT = readme.read()
+readme.close()
 
 setup(
     name=NAME,
     version=VERSION,
-    description='Pure Storage Python clients',
-    author_email='',
-    url='',
-    keywords=['Swagger', 'Pure Storage Python Clients REST API SDK'],
+    description='Pure Storage Python clients for FlashArray, FlashBlade, and Pure1 APIs',
+    author='Pure Storage',
+    author_email='tvilcu@purestorage.com',
+    url='https://github.com/PureStorage-OpenConnect/py-pure-client',
+    download_url='https://github.com/PureStorage-OpenConnect/py-pure-client/archive/1.0.0.tar.gz',
+    keywords=['Swagger', 'Pure Storage', 'Python', 'clients', 'REST', 'API', 'FlashArray', 'FlashBlade', 'Pure1'],
+    license='BSD 2-Clause',
     install_requires=REQUIRES,
-    packages=['pypureclient'],
+    packages=find_packages(),
     include_package_data=True,
-    long_description='''\
-    Pure Storage Python clients, developed by
-    [Pure Storage, Inc.](http://www.purestorage.com/)
-    '''
+    long_description=README_TEXT,
+    long_description_content_type='text/markdown'
 )

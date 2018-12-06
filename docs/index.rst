@@ -34,7 +34,7 @@ The Pure1 client gives a simple interface to the Pure1 Manage public API.
 Requirements
 ------------
 
-The library requires Python 2.7 or higher, and supports Python 3. Third-party libraries are also required.
+The library requires Python 2.7 and higher or Python 3.3 and higher. Third-party libraries are also required.
 
 Community
 ---------
