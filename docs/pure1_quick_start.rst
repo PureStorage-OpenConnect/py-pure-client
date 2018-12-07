@@ -7,9 +7,9 @@ The Pure1 client can be used independently from the FlashArray and FlashBlade cl
 Authentication
 --------------
 
-Using the Pure1 client requires authentication to use the Pure1 Manage public API. If not already configured, instructions for getting access to and using the Pure1 Manage public API can be found at the `API reference page <https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference>`_.
+The Pure1 client requires authentication to use the Pure1 Manage public API. If not already configured, instructions for getting access to and using the Pure1 Manage public API can be found at the `API reference page <https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference>`_.
 
-Environment variables are recommended to be used for the Pure1 client.
+It is recommended to use environment variables for the Pure1 client.
 
 .. code-block:: bash
 
@@ -23,7 +23,7 @@ Alternatively, the authentication information can be passed directly into the cl
 
     client = pure1.Client(private_key_file=[...], private_key_password=[...], app_id=[...])
 
-If directly using a pre-generated ID token is preferred, it can be used in the same way. Note that using a pre-generated ID token will cause the client to fail when it expires.
+If directly using a pre-generated ID token is preferred, it can be used in the same way. Note that using a pre-generated ID token will cause the client to fail when the ID token expires.
 
 .. code-block:: bash
 
@@ -49,31 +49,88 @@ The client has functions that model the endpoints of the API and accept the quer
 
 .. code-block:: python
 
-    response = client.get_volumes(limit=10, sort=pure1.Volume.name.ascending())
-
-A response is ValidResponse or ErrorResponse object that models the API call response and includes the data.
+    response = client.get_volumes(sort=pure1.Volume.name.ascending(), limit=10)
 
 .. code-block:: python
 
-    print response.headers
+    response = client.get_volumes(names='volume1')
+
+.. code-block:: python
+
+    response = client.get_volumes(names=['volume1', 'volume2'])
+
+.. code-block:: python
+
+    response = client.get_volumes(ids='f0510daa-cec8-4544-8015-206d819b3')
+
+A response is either a ValidResponse or ErrorResponse object that models the API call response and includes the data.
+
+.. code-block:: python
+
+    response = client.get_volumes()
     print response.status_code
+    print response.headers
     print response.total_item_count
+    print response.continuation_token
     volumes = list(response.items)
     volume1 = volumes[0]
 
-One enhancement over the plain API is that the client also accepts models as function arguments, as well as Python native types.
+.. code-block:: python
+
+    response = client.get_volumes(sort='invalid')
+    print response.status_code
+    print response.headers
+    print response.errors
+
+One enhancement over the plain REST API is that the client also accepts models as function arguments.
 
 .. code-block:: python
 
+    response = client.get_volumes()
+    volume1 = list(response.items)[0]
+
     response = client.get_arrays(volume1.arrays)
     response = client.get_arrays(ids=[array.id for array in volume1.arrays])
-    # both result in the same request
+    # both make the same request
+
+The response items are stored in an iterator. The iterator will exhaust the list of items in the collection, up to the limit specified in the request. If there was no limit specified, it will return all items. Note that the server returns a maximum of 1000 items per call; the iterator may make subsequent API calls to get more items if there are more than 1000 items in the collection.
+
+.. code-block:: python
+
+    response = client.get_volumes()
+    print response.total_item_count
+    num_volumes = 0
+    for volume in response.items:
+        num_volumes += 1
+        print volume
+    print num_volumes
+
+It is also possible to get all of the items in a list without explicitly iterating. It will exhaust the iterator and put the items in a list.
+
+.. code-block:: python
+
+    response = client.get_volumes()
+    all_volumes = list(response.items)
+
+A custom X-Request-ID header can also be provided to any request.
+
+.. code-block:: python
+
+    response = client.get_pods(x_request_id='readthedocs-test')
+    print response.headers.x_request_id
 
 
-Filter Creation
-----------------
+Filtering
+---------
 
-Filters are defined by the public API specifications and are interpreted as a query parameter in an API call. The client allows for easier composition of filters, especially when taking advantage of intellisense or editor auto-completion. Filters are not required to be used if strings are preferred.
+Filters are defined by the public API specifications and are interpreted as a query parameter in an API call. Filters can also be combined with other parameters as well. The client allows for easier composition of filters, especially when taking advantage of intellisense or editor auto-completion. Filter objects are not required to be used if strings are preferred.
+
+.. code-block:: python
+
+    response = client.get_arrays(filter='os=\'Purity//FB\'', sort=pure1.Array.as_of.descending(), limit=5)
+    response = client.get_arrays(filter=pure1.Filter.eq(pure1.Array.os, 'Purity//FB'), sort=pure1.Array.as_of.descending(), limit=5)
+    response = client.get_arrays(filter=pure1.Array.os == 'Purity//FB', sort=pure1.Array.as_of.descending(), limit=5)
+    # all three get five arrays where their operating system is Purity//FB (FlashBlades), sorted by _as_of
 
 Filters can be created by calling static Filter functions with Property objects, by using overridden operators on Property objects, or by calling certain Propery functions.
 

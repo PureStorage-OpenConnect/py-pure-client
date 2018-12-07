@@ -3,6 +3,7 @@
 
 
 from __future__ import absolute_import
+import os
 
 from pypureclient.pure1.client import Client
 from pypureclient.pure1.exceptions import PureError
@@ -35,5 +36,6 @@ CLASSES_TO_ADD_PROPS = [Array, FileSystem, FileSystemSnapshot, Http, Metric,
                         MetricAvailability, MetricHistory, NetworkInterface, Nfs,
                         Pod, PodArrayStatus, Smb, Tag, Volume, VolumeSnapshot]
 
-for model in CLASSES_TO_ADD_PROPS:
-    addProperties(model)
+if os.environ.get('DOCS_GENERATION') is None:
+    for model in CLASSES_TO_ADD_PROPS:
+        addProperties(model)
