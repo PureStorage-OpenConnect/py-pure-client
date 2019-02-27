@@ -15,12 +15,18 @@
 from __future__ import absolute_import
 
 # import models into model package
+from pypureclient.pure1.models.alert import Alert
+from pypureclient.pure1.models.alerts import Alerts
+from pypureclient.pure1.models.alerts_get import AlertsGet
 from pypureclient.pure1.models.array import Array
 from pypureclient.pure1.models.array_get_response import ArrayGetResponse
 from pypureclient.pure1.models.array_response import ArrayResponse
 from pypureclient.pure1.models.arrays import Arrays
 from pypureclient.pure1.models.arrays_built_in import ArraysBuiltIn
 from pypureclient.pure1.models.arrays_resource import ArraysResource
+from pypureclient.pure1.models.audit import Audit
+from pypureclient.pure1.models.audits import Audits
+from pypureclient.pure1.models.audits_get import AuditsGet
 from pypureclient.pure1.models.built_in_as_of import BuiltInAsOf
 from pypureclient.pure1.models.file_system import FileSystem
 from pypureclient.pure1.models.file_system_snapshot import FileSystemSnapshot

@@ -4,6 +4,30 @@ pypureclient.pure1.models package
 Submodules
 ----------
 
+pypureclient.pure1.models.alert module
+--------------------------------------
+
+.. automodule:: pypureclient.pure1.models.alert
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.models.alerts module
+---------------------------------------
+
+.. automodule:: pypureclient.pure1.models.alerts
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.models.alerts\_get module
+--------------------------------------------
+
+.. automodule:: pypureclient.pure1.models.alerts_get
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 pypureclient.pure1.models.array module
 --------------------------------------
 
@@ -48,6 +72,30 @@ pypureclient.pure1.models.arrays\_resource module
 -------------------------------------------------
 
 .. automodule:: pypureclient.pure1.models.arrays_resource
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.models.audit module
+--------------------------------------
+
+.. automodule:: pypureclient.pure1.models.audit
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.models.audits module
+---------------------------------------
+
+.. automodule:: pypureclient.pure1.models.audits
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.models.audits\_get module
+--------------------------------------------
+
+.. automodule:: pypureclient.pure1.models.audits_get
     :members:
     :undoc-members:
     :show-inheritance:

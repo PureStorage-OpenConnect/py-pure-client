@@ -4,10 +4,26 @@ pypureclient.pure1.api package
 Submodules
 ----------
 
+pypureclient.pure1.api.alerts\_api module
+-----------------------------------------
+
+.. automodule:: pypureclient.pure1.api.alerts_api
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 pypureclient.pure1.api.arrays\_api module
 -----------------------------------------
 
 .. automodule:: pypureclient.pure1.api.arrays_api
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.api.audits\_api module
+-----------------------------------------
+
+.. automodule:: pypureclient.pure1.api.audits_api
     :members:
     :undoc-members:
     :show-inheritance:

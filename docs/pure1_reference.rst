@@ -57,10 +57,22 @@ ErrorResponse
 Models
 ------
 
+Alert
+~~~~~
+
+.. autoclass:: pypureclient.pure1.models.Alert
+    :members:
+
 Array
 ~~~~~
 
 .. autoclass:: pypureclient.pure1.models.Array
+    :members:
+
+Audit
+~~~~~
+
+.. autoclass:: pypureclient.pure1.models.Audit
     :members:
 
 FileSystem

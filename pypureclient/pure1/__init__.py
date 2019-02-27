@@ -10,7 +10,9 @@ from pypureclient.pure1.exceptions import PureError
 from pypureclient.pure1.properties import Property, Filter
 from pypureclient.pure1.responses import ValidResponse, ErrorResponse, ApiError, Pure1Headers
 
+from pypureclient.pure1.models.alert import Alert
 from pypureclient.pure1.models.array import Array
+from pypureclient.pure1.models.audit import Audit
 from pypureclient.pure1.models.file_system import FileSystem
 from pypureclient.pure1.models.file_system_snapshot import FileSystemSnapshot
 from pypureclient.pure1.models.fixed_reference import FixedReference
@@ -32,9 +34,10 @@ def addProperties(model):
     for name, value in model.attribute_map.items():
         setattr(model, name, Property(value))
 
-CLASSES_TO_ADD_PROPS = [Array, FileSystem, FileSystemSnapshot, Http, Metric,
-                        MetricAvailability, MetricHistory, NetworkInterface, Nfs,
-                        Pod, PodArrayStatus, Smb, Tag, Volume, VolumeSnapshot]
+CLASSES_TO_ADD_PROPS = [Alert, Array, Audit, FileSystem, FileSystemSnapshot,
+                        Http, Metric, MetricAvailability, MetricHistory,
+                        NetworkInterface, Nfs, Pod, PodArrayStatus, Smb, Tag,
+                        Volume, VolumeSnapshot]
 
 if os.environ.get('DOCS_GENERATION') is None:
     for model in CLASSES_TO_ADD_PROPS:

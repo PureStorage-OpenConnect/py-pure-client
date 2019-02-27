@@ -3,7 +3,9 @@ from __future__ import absolute_import
 # flake8: noqa
 
 # import apis into api package
+from pypureclient.pure1.api.alerts_api import AlertsApi
 from pypureclient.pure1.api.arrays_api import ArraysApi
+from pypureclient.pure1.api.audits_api import AuditsApi
 from pypureclient.pure1.api.authorization_api import AuthorizationApi
 from pypureclient.pure1.api.file_system_snapshots_api import FileSystemSnapshotsApi
 from pypureclient.pure1.api.file_systems_api import FileSystemsApi
