@@ -10,25 +10,27 @@ py-pure-client Documentation
    :hidden:
 
    installation
-   pure1_quick_start
+   quick_start
+   fa_reference
    pure1_reference
    changelog
 
 Overview
 --------
 
-The Python package has clients that use the Pure1, FlashArray, and FlashBlade APIs. Currently, only Pure1 is supported; FlashArray and FlashBlade will be added in the future.
-
-The Pure1 client gives a simple interface to the Pure1 Manage public API.
+This Python package provides clients that use the Pure1 and FlashArray REST APIs.
 
 :doc:`installation`
   Steps for installing the Python package.
 
-:doc:`pure1_quick_start`
-  A quick start guide for the Pure1 client.
+:doc:`quick_start`
+  A quick start guide for the Python clients.
+
+:doc:`fa_reference`
+  A glossary of all interfaces and models used by the FlashArray client.
 
 :doc:`pure1_reference`
-  A glossary of all interfaces and models used by Pure1.
+  A glossary of all interfaces and models used by the Pure1 client.
 
 
 Requirements

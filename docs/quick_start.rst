@@ -1,15 +1,67 @@
-Pure1 Quick Start
-=================
-
-The Pure1 client can be used independently from the FlashArray and FlashBlade clients. It requires its own authentication setup.
-
+Quick Start
+===========
 
 Authentication
 --------------
 
-The Pure1 client requires authentication to use the Pure1 Manage public API. If not already configured, instructions for getting access to and using the Pure1 Manage public API can be found at the `API reference page <https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference>`_.
+This section documents the instantiation of valid, working Pure1 and FlashArray
+clients required to subsequently call other client methods.
 
-It is recommended to use environment variables for the Pure1 client.
+FlashArray Client
+~~~~~~~~~~~~~~~~~
+
+Start by importing the ``flasharray`` submodule in ``pypureclient``:
+
+.. code-block:: python
+
+   from pypureclient import flasharray
+
+Instantiation of a FlashArray client requires authentication. More information
+is available in the `REST API 2.0 Authentication Guide
+<https://support.purestorage.com/FlashArray/PurityFA/Purity_FA_REST_API/Reference/REST_API_2.0_Authentication_Guide>`__
+
+After creating a client using ``pureapiclient`` on the FlashArray array you wish
+to target, you can pass the various parameters into the ``Client`` constructor:
+
+.. code-block:: python
+
+   from pypureclient import flasharray
+   client = flasharray.Client('flasharray.example.com',
+                              private_key_file=[...],
+                              private_key_password=[...],
+                              username=[...],
+                              client_id=[...],
+                              key_id=[...],
+                              issuer=[...])
+
+If directly using a pre-generated ID token is preferred, it can be used in the
+same way. Note that using a pre-generated ID token will cause the client to fail
+when the ID token expires.
+
+.. code-block:: python
+
+   from pypureclient import flasharray
+   client = flasharray.Client('flasharray.example.com',
+                              id_token=[...])
+
+
+Pure1 client
+~~~~~~~~~~~~
+
+Start by importing the ``pure1`` submodule in ``pypureclient``:
+
+.. code-block:: python
+
+   from pypureclient import pure1
+
+
+Instantiation of a Pure1 client requires authentication to use the Pure1 Manage
+public API. If not already configured, instructions for getting access to and
+using the Pure1 Manage public API can be found at the `API reference page
+<https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference>`_.
+
+For Pure1 client instantiation you can use environment variables. It is
+recommended to use environment variables for the Pure1 client.
 
 .. code-block:: bash
 
@@ -20,10 +72,14 @@ It is recommended to use environment variables for the Pure1 client.
 Alternatively, the authentication information can be passed directly into the client.
 
 .. code-block:: python
+    from pypureclient import pure1
+    client = pure1.Client(private_key_file=[...],
+                          private_key_password=[...],
+                          app_id=[...])
 
-    client = pure1.Client(private_key_file=[...], private_key_password=[...], app_id=[...])
-
-If directly using a pre-generated ID token is preferred, it can be used in the same way. Note that using a pre-generated ID token will cause the client to fail when the ID token expires.
+If directly using a pre-generated ID token is preferred, it can be used in the
+same way. Note that using a pre-generated ID token will cause the client to fail
+when the ID token expires.
 
 .. code-block:: bash
 
@@ -37,63 +93,71 @@ If directly using a pre-generated ID token is preferred, it can be used in the s
 Client Examples
 ---------------
 
-These examples assume environment variables have been set, so a client can easily be instantiated.
+These examples assume the client has already been set up using the instructions
+in the Authentication section above.
 
-.. code-block:: python
-
-    from pypureclient import pure1
-    
-    client = pure1.Client()
-
-The client has functions that model the endpoints of the API and accept the query parameters as arguments.
+The client has functions that model the endpoints of the API you are accessing
+(FlashArray or Pure1) and accept the query parameters as arguments.
 
 .. code-block:: python
 
     response = client.get_volumes(sort=pure1.Volume.name.ascending(), limit=10)
+    volumes = list(response.items)
 
 .. code-block:: python
 
     response = client.get_volumes(names='volume1')
+    volume = list(response.items)[0]
 
 .. code-block:: python
 
     response = client.get_volumes(names=['volume1', 'volume2'])
+    volumes = list(response.items)
 
 .. code-block:: python
 
     response = client.get_volumes(ids='f0510daa-cec8-4544-8015-206d819b3')
+    volume = list(response.items)[0]
 
-A response is either a ValidResponse or ErrorResponse object that models the API call response and includes the data.
+A response is either a ``ValidResponse`` or ``ErrorResponse`` object that models
+the API call response and includes the data.
 
 .. code-block:: python
 
     response = client.get_volumes()
-    print response.status_code
-    print response.headers
-    print response.total_item_count
-    print response.continuation_token
+    print(response.status_code)
+    print(response.headers)
+    print(response.total_item_count)
+    print(response.continuation_token)
     volumes = list(response.items)
     volume1 = volumes[0]
 
 .. code-block:: python
 
     response = client.get_volumes(sort='invalid')
-    print response.status_code
-    print response.headers
-    print response.errors
+    print(response.status_code)
+    print(response.headers)
+    print(response.errors)
 
-One enhancement over the plain REST API is that the client also accepts models as function arguments.
+One enhancement over the plain REST API is that the client also accepts models
+as function arguments.
 
 .. code-block:: python
 
     response = client.get_volumes()
     volume1 = list(response.items)[0]
 
+    # This works on the Pure1 client only
     response = client.get_arrays(volume1.arrays)
     response = client.get_arrays(ids=[array.id for array in volume1.arrays])
     # both make the same request
 
-The response items are stored in an iterator. The iterator will exhaust the list of items in the collection, up to the limit specified in the request. If there was no limit specified, it will return all items. Note that the server returns a maximum of 1000 items per call; the iterator may make subsequent API calls to get more items if there are more than 1000 items in the collection.
+The response items are stored in an iterator. The iterator will exhaust the list
+of items in the collection, up to the limit specified in the request. If there
+is no limit specified, the iterator will return all items. Note that for Pure1,
+the server returns a maximum of 1000 items per call; the iterator may make
+subsequent API calls to get more items if there are more than 1000 items in the
+collection.
 
 .. code-block:: python
 
@@ -105,7 +169,8 @@ The response items are stored in an iterator. The iterator will exhaust the list
         print volume
     print num_volumes
 
-It is also possible to get all of the items in a list without explicitly iterating. It will exhaust the iterator and put the items in a list.
+It is also possible to get all of the items in a list without explicitly
+iterating. It will exhaust the iterator and put the items in a list.
 
 .. code-block:: python
 
@@ -123,7 +188,15 @@ A custom X-Request-ID header can also be provided to any request.
 Filtering
 ---------
 
-Filters are defined by the public API specifications and are interpreted as a query parameter in an API call. Filters can also be combined with other parameters as well. The client allows for easier composition of filters, especially when taking advantage of intellisense or editor auto-completion. Filter objects are not required to be used if strings are preferred.
+Filters are defined by the public API specifications and are interpreted as a
+query parameter in an API call. Filters can also be combined with other
+parameters as well. The client allows for easier composition of filters,
+especially when taking advantage of intellisense or editor auto-completion.
+Filter objects are not required to be used if strings are preferred.
+
+These examples are for the ``pure1`` client, but are applicable to all of the
+clients (for example, the same ``Filter`` module is exposed inside the
+``flasharray`` module).
 
 .. code-block:: python
 

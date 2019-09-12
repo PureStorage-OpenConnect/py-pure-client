@@ -1,6 +1,6 @@
-# coding: utf-8
-# flake8: noqa
+from . import pure1
+from . import flasharray
 
-from __future__ import absolute_import
-
-from pypureclient import pure1
+from .exceptions import PureError
+from .properties import Property, Filter
+from .responses import ValidResponse, ErrorResponse, ApiError, ResponseHeaders
