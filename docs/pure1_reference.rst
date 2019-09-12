@@ -16,41 +16,41 @@ Properties
 Property
 ~~~~~~~~
 
-.. autoclass:: pypureclient.pure1.Property
+.. autoclass:: pypureclient.pure1.properties.Property
     :members:
 
 
 Filter
 ~~~~~~
 
-.. autoclass:: pypureclient.pure1.Filter
+.. autoclass:: pypureclient.pure1.properties.Filter
     :members:
 
 Responses
 ---------
 
-ResponseHeaders
+Pure1Headers
 ~~~~~~~~~~~~
 
-.. autoclass:: pypureclient.pure1.ResponseHeaders
+.. autoclass:: pypureclient.pure1.responses.Pure1Headers
     :members:
 
 ValidResponse
 ~~~~~~~~~~~~~
 
-.. autoclass:: pypureclient.pure1.ValidResponse
+.. autoclass:: pypureclient.pure1.responses.ValidResponse
     :members:
 
 ApiError
 ~~~~~~~~
 
-.. autoclass:: pypureclient.pure1.ApiError
+.. autoclass:: pypureclient.pure1.responses.ApiError
     :members:
 
 ErrorResponse
 ~~~~~~~~~~~~~
 
-.. autoclass:: pypureclient.pure1.ErrorResponse
+.. autoclass:: pypureclient.pure1.responses.ErrorResponse
     :members:
 
 
