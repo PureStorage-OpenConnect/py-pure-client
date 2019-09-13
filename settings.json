@@ -1,0 +1,8 @@
+{
+    "id": "py-pure-client",
+    "name": "Python Unified SDK",
+    "filter": "devops",
+    "image": "http://code.purestorage.com/images/8_python%20script.png",
+    "featured": 1,
+    "priority": 3
+}
