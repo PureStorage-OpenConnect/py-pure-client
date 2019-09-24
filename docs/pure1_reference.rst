@@ -16,41 +16,41 @@ Properties
 Property
 ~~~~~~~~
 
-.. autoclass:: pypureclient.pure1.properties.Property
+.. autoclass:: pypureclient.pure1.Property
     :members:
 
 
 Filter
 ~~~~~~
 
-.. autoclass:: pypureclient.pure1.properties.Filter
+.. autoclass:: pypureclient.pure1.Filter
     :members:
 
 Responses
 ---------
 
-Pure1Headers
+ResponseHeaders
 ~~~~~~~~~~~~
 
-.. autoclass:: pypureclient.pure1.responses.Pure1Headers
+.. autoclass:: pypureclient.pure1.ResponseHeaders
     :members:
 
 ValidResponse
 ~~~~~~~~~~~~~
 
-.. autoclass:: pypureclient.pure1.responses.ValidResponse
+.. autoclass:: pypureclient.pure1.ValidResponse
     :members:
 
 ApiError
 ~~~~~~~~
 
-.. autoclass:: pypureclient.pure1.responses.ApiError
+.. autoclass:: pypureclient.pure1.ApiError
     :members:
 
 ErrorResponse
 ~~~~~~~~~~~~~
 
-.. autoclass:: pypureclient.pure1.responses.ErrorResponse
+.. autoclass:: pypureclient.pure1.ErrorResponse
     :members:
 
 
@@ -133,6 +133,24 @@ PodArrayStatus
 ~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.pure1.models.PodArrayStatus
+    :members:
+
+Policy
+~~~~~~
+
+.. autoclass:: pypureclient.pure1.models.Policy
+    :members:
+
+PolicyMember
+~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.pure1.models.PolicyMember
+    :members:
+
+PolicyRule
+~~~~~~~~~~
+
+.. autoclass:: pypureclient.pure1.models.PolicyRule
     :members:
 
 Smb

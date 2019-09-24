@@ -1,44 +1,71 @@
-# coding: utf-8
-# flake8: noqa
-
-
 from __future__ import absolute_import
 import os
 
-from pypureclient.pure1.client import Client
-from pypureclient.pure1.exceptions import PureError
-from pypureclient.pure1.properties import Property, Filter
-from pypureclient.pure1.responses import ValidResponse, ErrorResponse, ApiError, Pure1Headers
+from .client import Client
+from ..exceptions import PureError
+from ..properties import Property, Filter
+from ..responses import ValidResponse, ErrorResponse, ApiError, ResponseHeaders
 
-from pypureclient.pure1.models.alert import Alert
-from pypureclient.pure1.models.array import Array
-from pypureclient.pure1.models.audit import Audit
-from pypureclient.pure1.models.file_system import FileSystem
-from pypureclient.pure1.models.file_system_snapshot import FileSystemSnapshot
-from pypureclient.pure1.models.fixed_reference import FixedReference
-from pypureclient.pure1.models.http import Http
-from pypureclient.pure1.models.metric import Metric
-from pypureclient.pure1.models.metric_availability import MetricAvailability
-from pypureclient.pure1.models.metric_history import MetricHistory
-from pypureclient.pure1.models.network_interface import NetworkInterface
-from pypureclient.pure1.models.nfs import Nfs
-from pypureclient.pure1.models.pod import Pod
-from pypureclient.pure1.models.pod_array_status import PodArrayStatus
-from pypureclient.pure1.models.smb import Smb
-from pypureclient.pure1.models.tag import Tag
-from pypureclient.pure1.models.volume import Volume
-from pypureclient.pure1.models.volume_snapshot import VolumeSnapshot
+from .models.alert import Alert
+from .models.array import Array
+from .models.audit import Audit
+from .models.error import Error
+from .models.error_errors import ErrorErrors
+from .models.error_no_context import ErrorNoContext
+from .models.file_system import FileSystem
+from .models.file_system_snapshot import FileSystemSnapshot
+from .models.fixed_reference import FixedReference
+from .models.http import Http
+from .models.metric import Metric
+from .models.metric_availability import MetricAvailability
+from .models.metric_history import MetricHistory
+from .models.network_interface import NetworkInterface
+from .models.nfs import Nfs
+from .models.pod import Pod
+from .models.pod_array_status import PodArrayStatus
+from .models.policy import Policy
+from .models.policy_member import PolicyMember
+from .models.policy_rule import PolicyRule
+from .models.smb import Smb
+from .models.tag import Tag
+from .models.tag_put import TagPut
+from .models.volume import Volume
+from .models.volume_snapshot import VolumeSnapshot
 
 
-def addProperties(model):
+def add_properties(model):
     for name, value in model.attribute_map.items():
         setattr(model, name, Property(value))
 
-CLASSES_TO_ADD_PROPS = [Alert, Array, Audit, FileSystem, FileSystemSnapshot,
-                        Http, Metric, MetricAvailability, MetricHistory,
-                        NetworkInterface, Nfs, Pod, PodArrayStatus, Smb, Tag,
-                        Volume, VolumeSnapshot]
+
+CLASSES_TO_ADD_PROPS = [
+    Alert,
+    Array,
+    Audit,
+    Error,
+    ErrorErrors,
+    ErrorNoContext,
+    FileSystem,
+    FileSystemSnapshot,
+    FixedReference,
+    Http,
+    Metric,
+    MetricAvailability,
+    MetricHistory,
+    NetworkInterface,
+    Nfs,
+    Pod,
+    PodArrayStatus,
+    Policy,
+    PolicyMember,
+    PolicyRule,
+    Smb,
+    Tag,
+    TagPut,
+    Volume,
+    VolumeSnapshot
+]
 
 if os.environ.get('DOCS_GENERATION') is None:
     for model in CLASSES_TO_ADD_PROPS:
-        addProperties(model)
+        add_properties(model)

@@ -1,16 +1,16 @@
 from __future__ import absolute_import
 
-# flake8: noqa
-
 # import apis into api package
-from pypureclient.pure1.api.alerts_api import AlertsApi
-from pypureclient.pure1.api.arrays_api import ArraysApi
-from pypureclient.pure1.api.audits_api import AuditsApi
-from pypureclient.pure1.api.authorization_api import AuthorizationApi
-from pypureclient.pure1.api.file_system_snapshots_api import FileSystemSnapshotsApi
-from pypureclient.pure1.api.file_systems_api import FileSystemsApi
-from pypureclient.pure1.api.metrics_api import MetricsApi
-from pypureclient.pure1.api.network_interfaces_api import NetworkInterfacesApi
-from pypureclient.pure1.api.pods_api import PodsApi
-from pypureclient.pure1.api.volume_snapshots_api import VolumeSnapshotsApi
-from pypureclient.pure1.api.volumes_api import VolumesApi
+from .alerts_api import AlertsApi
+from .arrays_api import ArraysApi
+from .audits_api import AuditsApi
+from .authorization_api import AuthorizationApi
+from .file_system_snapshots_api import FileSystemSnapshotsApi
+from .file_systems_api import FileSystemsApi
+from .metrics_api import MetricsApi
+from .network_interfaces_api import NetworkInterfacesApi
+from .pods_api import PodsApi
+from .policies_api import PoliciesApi
+from .volume_snapshots_api import VolumeSnapshotsApi
+from .volumes_api import VolumesApi
+
