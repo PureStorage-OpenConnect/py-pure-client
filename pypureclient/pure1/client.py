@@ -31,7 +31,7 @@ class Client(object):
     TIMEOUT_KEY = 'timeout'
     TIMEOUT_DEFAULT = 15.0
     # Format: client/client_version/endpoint/endpoint_version/system/release
-    USER_AGENT = ('pypureclient/1.1.1/Pure1/1.0/{sys}/{rel}'
+    USER_AGENT = ('pypureclient/1.1.2/Pure1/1.0/{sys}/{rel}'
                   .format(sys=platform.system(), rel=platform.release()))
 
     def __init__(self, **kwargs):
@@ -792,7 +792,7 @@ class Client(object):
 
     def get_policies_file_system_snapshots(self, members=None, policies=None, **kwargs):
         """
-        Retrieves pairs of policy references and their file-system-snapshot members.
+        Retrieves pairs of policy references and their file system snapshot members.
 
         Args:
             members (list[FixedReference], optional):
@@ -847,7 +847,7 @@ class Client(object):
 
     def get_policies_file_systems(self, members=None, policies=None, **kwargs):
         """
-        Retrieves pairs of policy references and their file-system members.
+        Retrieves pairs of policy references and their file system members.
 
         Args:
             members (list[FixedReference], optional):

@@ -18,7 +18,7 @@ class Client(object):
     DEFAULT_TIMEOUT = 15.0
     DEFAULT_RETRIES = 5
     # Format: client/client_version/endpoint/endpoint_version/system/release
-    USER_AGENT = ('pypureclient/1.1.1/FA/2.0/{sys}/{rel}'
+    USER_AGENT = ('pypureclient/1.1.2/FA/2.0/{sys}/{rel}'
                   .format(sys=platform.system(), rel=platform.release()))
 
     def __init__(self, target, id_token=None, private_key_file=None, private_key_password=None,
@@ -884,7 +884,7 @@ class Client(object):
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
                 resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be set together.
+                be provided together.
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
@@ -925,7 +925,7 @@ class Client(object):
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
                 resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be set together.
+                be provided together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -987,7 +987,7 @@ class Client(object):
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
                 resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be set together.
+                be provided together.
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
@@ -1065,7 +1065,7 @@ class Client(object):
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
                 resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be set together.
+                be provided together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -1126,7 +1126,7 @@ class Client(object):
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
                 resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be set together.
+                be provided together.
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
@@ -1165,7 +1165,7 @@ class Client(object):
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
                 resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be set together.
+                be provided together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -1223,7 +1223,7 @@ class Client(object):
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
                 resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be set together.
+                be provided together.
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
@@ -1316,7 +1316,7 @@ class Client(object):
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
                 resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be set together.
+                be provided together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -1416,7 +1416,7 @@ class Client(object):
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
                 resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be set together.
+                be provided together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -1553,7 +1553,7 @@ class Client(object):
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
                 resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be set together.
+                be provided together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -1688,7 +1688,7 @@ class Client(object):
                                       continuation_token, total_item_count,
                                       body.items,
                                       headers.get(Headers.x_request_id, None),
-                                      more_items_remaining or False))
+                                      more_items_remaining or False, None))
         return ValidResponse(status, continuation_token, total_item_count,
                              items, headers, total, more_items_remaining)
 

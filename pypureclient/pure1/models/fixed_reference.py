@@ -48,7 +48,7 @@ class FixedReference(object):
         Keyword args:
             id (str): The opaque and unique id of this resource.
             name (str): The name of this resource.
-            resource_type (str): The type of this resource represented by the name of its REST endpoint. For example, \"arrays\", \"network-interfaces\", and \"metrics\".
+            resource_type (str): The type of this resource represented by the name of its REST endpoint. For example, \"arrays\", \"network-interfaces\", and \"metrics\". The value may be `null` if the resource is not represented.
         """
         for arg in kwargs:
             setattr(self, arg, kwargs[arg])

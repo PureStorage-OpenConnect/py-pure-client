@@ -71,8 +71,6 @@ class VolumePatch(object):
         if key == "provisioned" and value is not None:
             if value > 4503599627370496:
                 raise ValueError("Invalid value for `provisioned`, value must be less than or equal to `4503599627370496`")
-            if value < 1048576:
-                raise ValueError("Invalid value for `provisioned`, must be a value greater than or equal to `1048576`")
         self.__dict__[key] = value
 
     def __getattribute__(self, item):
