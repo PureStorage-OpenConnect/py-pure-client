@@ -31,7 +31,7 @@ class PoliciesApi(object):
     def api10_policies_file_system_snapshots_get(self, **kwargs):
         """Get policy / file system snapshot pairs
 
-        Retrieves pairs of policy references and their file-system-snapshot members. 
+        Retrieves pairs of policy references and their file system snapshot members. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api10_policies_file_system_snapshots_get(async_req=True)
@@ -63,7 +63,7 @@ class PoliciesApi(object):
     def api10_policies_file_system_snapshots_get_with_http_info(self, **kwargs):
         """Get policy / file system snapshot pairs
 
-        Retrieves pairs of policy references and their file-system-snapshot members. 
+        Retrieves pairs of policy references and their file system snapshot members. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api10_policies_file_system_snapshots_get_with_http_info(async_req=True)
@@ -173,7 +173,7 @@ class PoliciesApi(object):
     def api10_policies_file_systems_get(self, **kwargs):
         """Get policy / file system pairs
 
-        Retrieves pairs of policy references and their file-system members. 
+        Retrieves pairs of policy references and their file system members. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api10_policies_file_systems_get(async_req=True)
@@ -205,7 +205,7 @@ class PoliciesApi(object):
     def api10_policies_file_systems_get_with_http_info(self, **kwargs):
         """Get policy / file system pairs
 
-        Retrieves pairs of policy references and their file-system members. 
+        Retrieves pairs of policy references and their file system members. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api10_policies_file_systems_get_with_http_info(async_req=True)

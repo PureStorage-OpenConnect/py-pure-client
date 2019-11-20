@@ -222,7 +222,8 @@ class ItemIterator(object):
     """
 
     def __init__(self, client, api_endpoint, kwargs,  continuation_token,
-                 total_item_count, items, x_request_id, more_items_remaining=None):
+                 total_item_count, items, x_request_id, more_items_remaining=None,
+                 response_size_limit=1000):
         """
         Initialize an ItemIterator.
 
@@ -238,7 +239,7 @@ class ItemIterator(object):
             items (list[object]): The items returned from the initial response.
             x_request_id (str): The X-Request-ID to use for all subsequent calls.
         """
-        self._RESPONSE_SIZE_LIMIT = 1000
+        self._response_size_limit = response_size_limit
         self._client = client
         self._api_endpoint = api_endpoint
         self._kwargs = kwargs
@@ -276,14 +277,18 @@ class ItemIterator(object):
         # If we've reached the end of all possible items, stop
         if self._total_item_count is not None and self._total_item_count <= self._index:
             raise StopIteration
+        if self._response_size_limit is None:
+            item_index = self._index
+        else:
+            item_index = self._index % self._response_size_limit
         # If we've reached the end of the current collection, get more data
-        if self._index % self._RESPONSE_SIZE_LIMIT == len(self._items):
+        if item_index == len(self._items):
             if self._more_items_remaining is False:
                 raise StopIteration
             self._refresh_data()
         # Return the next item in the current list if possible
-        if self._index % self._RESPONSE_SIZE_LIMIT < len(self._items):
-            to_return = self._items[self._index % self._RESPONSE_SIZE_LIMIT]
+        if item_index < len(self._items):
+            to_return = self._items[item_index]
             self._index += 1
             return to_return
         # If no new data was given, just stop
