@@ -31,7 +31,7 @@ class VolumeSnapshotsApi(object):
     def api20_volume_snapshots_delete(self, **kwargs):
         """Eradicate a volume snapshot
 
-        Eradicate a volume snapshot that has been destroyed and is pending eradication. Eradicated volumes snapshots cannot be recovered. Volume snapshots are destroyed through the `PATCH` method. The `ids` or `names` parameter is required, but they cannot be set together.
+        Eradicate a volume snapshot that has been destroyed and is pending eradication. Eradicated volumes snapshots cannot be recovered. Volume snapshots are destroyed through the `PATCH` method. The `ids` or `names` parameter is required, but cannot be set together.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api20_volume_snapshots_delete(async_req=True)
@@ -54,7 +54,7 @@ class VolumeSnapshotsApi(object):
     def api20_volume_snapshots_delete_with_http_info(self, **kwargs):
         """Eradicate a volume snapshot
 
-        Eradicate a volume snapshot that has been destroyed and is pending eradication. Eradicated volumes snapshots cannot be recovered. Volume snapshots are destroyed through the `PATCH` method. The `ids` or `names` parameter is required, but they cannot be set together.
+        Eradicate a volume snapshot that has been destroyed and is pending eradication. Eradicated volumes snapshots cannot be recovered. Volume snapshots are destroyed through the `PATCH` method. The `ids` or `names` parameter is required, but cannot be set together.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api20_volume_snapshots_delete_with_http_info(async_req=True)
@@ -276,7 +276,7 @@ class VolumeSnapshotsApi(object):
     def api20_volume_snapshots_patch(self, volume_snapshot, **kwargs):
         """Manage a volume snapshot
 
-        Rename, destroy, or recover a volume snapshot. To rename the suffix of a volume snapshot, set `name` to the new suffix name. To recover a volume snapshot that has been destroyed and is pending eradication, set `destroyed=true`. The `ids` or `names` parameter is required, but they cannot be set together.
+        Rename, destroy, or recover a volume snapshot. To rename the suffix of a volume snapshot, set `name` to the new suffix name. To recover a volume snapshot that has been destroyed and is pending eradication, set `destroyed=true`. The `ids` or `names` parameter is required, but cannot be set together.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api20_volume_snapshots_patch(volume_snapshot, async_req=True)
@@ -300,7 +300,7 @@ class VolumeSnapshotsApi(object):
     def api20_volume_snapshots_patch_with_http_info(self, volume_snapshot, **kwargs):
         """Manage a volume snapshot
 
-        Rename, destroy, or recover a volume snapshot. To rename the suffix of a volume snapshot, set `name` to the new suffix name. To recover a volume snapshot that has been destroyed and is pending eradication, set `destroyed=true`. The `ids` or `names` parameter is required, but they cannot be set together.
+        Rename, destroy, or recover a volume snapshot. To rename the suffix of a volume snapshot, set `name` to the new suffix name. To recover a volume snapshot that has been destroyed and is pending eradication, set `destroyed=true`. The `ids` or `names` parameter is required, but cannot be set together.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api20_volume_snapshots_patch_with_http_info(volume_snapshot, async_req=True)
@@ -385,7 +385,7 @@ class VolumeSnapshotsApi(object):
     def api20_volume_snapshots_post(self, volume_snapshot, **kwargs):
         """Generate a volume snapshot
 
-        Create a point-in-time snapshot of the contents of a volume. The `source_ids` or `source_names` parameter is required, but they cannot be set together.
+        Create a point-in-time snapshot of the contents of a volume. The `source_ids` or `source_names` parameter is required, but cannot be set together.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api20_volume_snapshots_post(volume_snapshot, async_req=True)
@@ -393,7 +393,7 @@ class VolumeSnapshotsApi(object):
 
         :param async_req bool
         :param VolumeSnapshotPost volume_snapshot: (required)
-        :param str on: Performs the operation on the unique target name specified. For example, `targetName01`.
+        :param str on: Performs the operation on the target name specified. For example, `targetName01`.
         :param list[str] source_ids: Performs the operation on the source ID specified. Enter multiple source IDs in comma-separated format.
         :param list[str] source_names: Performs the operation on the source name specified. Enter multiple source names in comma-separated format. For example, `name01,name02`.
         :return: VolumeSnapshotResponse
@@ -410,7 +410,7 @@ class VolumeSnapshotsApi(object):
     def api20_volume_snapshots_post_with_http_info(self, volume_snapshot, **kwargs):
         """Generate a volume snapshot
 
-        Create a point-in-time snapshot of the contents of a volume. The `source_ids` or `source_names` parameter is required, but they cannot be set together.
+        Create a point-in-time snapshot of the contents of a volume. The `source_ids` or `source_names` parameter is required, but cannot be set together.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api20_volume_snapshots_post_with_http_info(volume_snapshot, async_req=True)
@@ -418,7 +418,7 @@ class VolumeSnapshotsApi(object):
 
         :param async_req bool
         :param VolumeSnapshotPost volume_snapshot: (required)
-        :param str on: Performs the operation on the unique target name specified. For example, `targetName01`.
+        :param str on: Performs the operation on the target name specified. For example, `targetName01`.
         :param list[str] source_ids: Performs the operation on the source ID specified. Enter multiple source IDs in comma-separated format.
         :param list[str] source_names: Performs the operation on the source name specified. Enter multiple source names in comma-separated format. For example, `name01,name02`.
         :return: VolumeSnapshotResponse
@@ -498,7 +498,7 @@ class VolumeSnapshotsApi(object):
     def api20_volume_snapshots_transfer_get(self, **kwargs):
         """List volume snapshots with transfer statistics
 
-        Return a list of volume snapshots with transfer statistics.
+        Returns a list of volume snapshots and their transfer statistics.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api20_volume_snapshots_transfer_get(async_req=True)
@@ -530,7 +530,7 @@ class VolumeSnapshotsApi(object):
     def api20_volume_snapshots_transfer_get_with_http_info(self, **kwargs):
         """List volume snapshots with transfer statistics
 
-        Return a list of volume snapshots with transfer statistics.
+        Returns a list of volume snapshots and their transfer statistics.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api20_volume_snapshots_transfer_get_with_http_info(async_req=True)

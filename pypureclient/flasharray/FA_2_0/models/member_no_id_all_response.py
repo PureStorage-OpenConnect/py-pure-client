@@ -42,7 +42,7 @@ class MemberNoIdAllResponse(object):
     def __init__(self, **kwargs):
         """
         Keyword args:
-            items (list[MemberNoIdAll]): Returns a list of all items after filtering. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.
+            items (list[MemberNoIdAll]): Returns a list of all items after filtering. The values are displayed for each name where meaningful.
         """
         for arg in kwargs:
             setattr(self, arg, kwargs[arg])

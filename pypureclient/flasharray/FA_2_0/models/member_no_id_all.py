@@ -44,8 +44,8 @@ class MemberNoIdAll(object):
     def __init__(self, **kwargs):
         """
         Keyword args:
-            group (ReferenceNoId): The host group in which the host is a member.
-            member (ReferenceNoId): The member host of the host group.
+            group (ReferenceNoId): The resource in which the host, volume, or other item in the environment is a member.
+            member (ReferenceNoId): The member of the resource.
         """
         for arg in kwargs:
             setattr(self, arg, kwargs[arg])

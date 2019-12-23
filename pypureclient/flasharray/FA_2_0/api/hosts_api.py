@@ -31,7 +31,7 @@ class HostsApi(object):
     def api20_hosts_delete(self, **kwargs):
         """Delete a host
 
-        Delete an existing host. All volumes that are connected to the host, either through private or shared connections, must be disconnected from the host before the host can be deleted. The `names` query parameter is required.
+        Deletes an existing host. All volumes that are connected to the host, either through private or shared connections, must be disconnected from the host before the host can be deleted. The `names` query parameter is required.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api20_hosts_delete(async_req=True)
@@ -53,7 +53,7 @@ class HostsApi(object):
     def api20_hosts_delete_with_http_info(self, **kwargs):
         """Delete a host
 
-        Delete an existing host. All volumes that are connected to the host, either through private or shared connections, must be disconnected from the host before the host can be deleted. The `names` query parameter is required.
+        Deletes an existing host. All volumes that are connected to the host, either through private or shared connections, must be disconnected from the host before the host can be deleted. The `names` query parameter is required.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api20_hosts_delete_with_http_info(async_req=True)
@@ -127,7 +127,7 @@ class HostsApi(object):
     def api20_hosts_get(self, **kwargs):
         """List hosts
 
-        Return a list of hosts.
+        Returns a list of hosts.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api20_hosts_get(async_req=True)
@@ -154,7 +154,7 @@ class HostsApi(object):
     def api20_hosts_get_with_http_info(self, **kwargs):
         """List hosts
 
-        Return a list of hosts.
+        Returns a list of hosts.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api20_hosts_get_with_http_info(async_req=True)
@@ -246,9 +246,9 @@ class HostsApi(object):
             collection_formats=collection_formats)
 
     def api20_hosts_host_groups_get(self, **kwargs):
-        """List host groups and their host members
+        """List hosts associated with host groups
 
-        Return a list of host groups and their associated host members.
+        Returns a list of hosts that are associated with host groups.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api20_hosts_host_groups_get(async_req=True)
@@ -256,9 +256,9 @@ class HostsApi(object):
 
         :param async_req bool
         :param str filter: Narrows down the results to only the response objects that satisfy the filter criteria.
-        :param list[str] group_names: Displays all member hosts associated with the specified host groups (`group_names`). Enter multiple names in comma-separated format.   For example, `hgroup01,hgroup02`.
+        :param list[str] group_names: Performs the operation on the unique group name specified. Examples of groups include host groups, pods, protection groups, and volume groups. Enter multiple names in comma-separated format. For example, `hgroup01,hgroup02`.
         :param int limit: Limits the size of the response to the specified number of objects on each page. To return the total number of resources, set `limit=0`. The total number of resources will be returned as a `total_item_count` value. If the page size requested is larger than the system maximum limit, the server returns the maximum limit, disregarding the requested page size.
-        :param list[str] member_names: Displays all host groups associated with the specified member hosts (`member_names`). Enter multiple names in comma-separated format. For example, `host01,host02`.
+        :param list[str] member_names: Performs the operation on the unique member name specified. Examples of members include volumes, hosts, and host groups. Enter multiple names in comma-separated format. For example, `vol01,vol02`.
         :param int offset: The starting position based on the results of the query in relation to the full set of response objects returned.
         :param list[str] sort: Returns the response objects in the order specified. Set `sort` to the name in the response by which to sort. Sorting can be performed on any of the names in the response, and the objects can be sorted in ascending or descending order. By default, the response objects are sorted in ascending order. To sort in descending order, append the minus sign (`-`) to the name. A single request can be sorted on multiple objects. For example, you can sort all volumes from largest to smallest volume size, and then sort volumes of the same size in ascending order by volume name. To sort on multiple names, list the names as comma-separated values.
         :param bool total_item_count: If set to `true`, the `total_item_count` matching the specified query parameters will be calculated and returned in the response. If set to `false`, the `total_item_count` will be `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.
@@ -274,9 +274,9 @@ class HostsApi(object):
             return data
 
     def api20_hosts_host_groups_get_with_http_info(self, **kwargs):
-        """List host groups and their host members
+        """List hosts associated with host groups
 
-        Return a list of host groups and their associated host members.
+        Returns a list of hosts that are associated with host groups.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api20_hosts_host_groups_get_with_http_info(async_req=True)
@@ -284,9 +284,9 @@ class HostsApi(object):
 
         :param async_req bool
         :param str filter: Narrows down the results to only the response objects that satisfy the filter criteria.
-        :param list[str] group_names: Displays all member hosts associated with the specified host groups (`group_names`). Enter multiple names in comma-separated format.   For example, `hgroup01,hgroup02`.
+        :param list[str] group_names: Performs the operation on the unique group name specified. Examples of groups include host groups, pods, protection groups, and volume groups. Enter multiple names in comma-separated format. For example, `hgroup01,hgroup02`.
         :param int limit: Limits the size of the response to the specified number of objects on each page. To return the total number of resources, set `limit=0`. The total number of resources will be returned as a `total_item_count` value. If the page size requested is larger than the system maximum limit, the server returns the maximum limit, disregarding the requested page size.
-        :param list[str] member_names: Displays all host groups associated with the specified member hosts (`member_names`). Enter multiple names in comma-separated format. For example, `host01,host02`.
+        :param list[str] member_names: Performs the operation on the unique member name specified. Examples of members include volumes, hosts, and host groups. Enter multiple names in comma-separated format. For example, `vol01,vol02`.
         :param int offset: The starting position based on the results of the query in relation to the full set of response objects returned.
         :param list[str] sort: Returns the response objects in the order specified. Set `sort` to the name in the response by which to sort. Sorting can be performed on any of the names in the response, and the objects can be sorted in ascending or descending order. By default, the response objects are sorted in ascending order. To sort in descending order, append the minus sign (`-`) to the name. A single request can be sorted on multiple objects. For example, you can sort all volumes from largest to smallest volume size, and then sort volumes of the same size in ascending order by volume name. To sort on multiple names, list the names as comma-separated values.
         :param bool total_item_count: If set to `true`, the `total_item_count` matching the specified query parameters will be calculated and returned in the response. If set to `false`, the `total_item_count` will be `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.
@@ -374,7 +374,7 @@ class HostsApi(object):
     def api20_hosts_patch(self, host, **kwargs):
         """Manage a host
 
-        Manage an existing host, including its storage network addresses, CHAP, host personality, and preferred arrays, or associate a host to a host group. The `names` query parameter is required.
+        Manages an existing host, including its storage network addresses, CHAP, host personality, and preferred arrays, or associate a host to a host group. The `names` query parameter is required.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api20_hosts_patch(host, async_req=True)
@@ -397,7 +397,7 @@ class HostsApi(object):
     def api20_hosts_patch_with_http_info(self, host, **kwargs):
         """Manage a host
 
-        Manage an existing host, including its storage network addresses, CHAP, host personality, and preferred arrays, or associate a host to a host group. The `names` query parameter is required.
+        Manages an existing host, including its storage network addresses, CHAP, host personality, and preferred arrays, or associate a host to a host group. The `names` query parameter is required.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api20_hosts_patch_with_http_info(host, async_req=True)
@@ -728,7 +728,7 @@ class HostsApi(object):
     def api20_hosts_post(self, host, **kwargs):
         """Create a host
 
-        Create a host. The `names` query parameter is required.
+        Creates a host. The `names` query parameter is required.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api20_hosts_post(host, async_req=True)
@@ -751,7 +751,7 @@ class HostsApi(object):
     def api20_hosts_post_with_http_info(self, host, **kwargs):
         """Create a host
 
-        Create a host. The `names` query parameter is required.
+        Creates a host. The `names` query parameter is required.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api20_hosts_post_with_http_info(host, async_req=True)

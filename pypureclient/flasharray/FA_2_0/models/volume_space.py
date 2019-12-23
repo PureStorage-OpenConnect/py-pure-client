@@ -51,7 +51,7 @@ class VolumeSpace(object):
             id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
             name (str): A locally unique, system-generated name. The name cannot be modified.
             space (Space): Displays size and space consumption information.
-            time (int): The timestamp of when the data was taken. Measured in milliseconds since epoch (January 1, 1970).
+            time (int): The timestamp of when the data was taken. Measured in milliseconds since the UNIX epoch.
         """
         for arg in kwargs:
             setattr(self, arg, kwargs[arg])

@@ -18,7 +18,7 @@ class Client(object):
     DEFAULT_TIMEOUT = 15.0
     DEFAULT_RETRIES = 5
     # Format: client/client_version/endpoint/endpoint_version/system/release
-    USER_AGENT = ('pypureclient/1.1.2/FA/2.0/{sys}/{rel}'
+    USER_AGENT = ('pypureclient/1.2.0/FA/2.0/{sys}/{rel}'
                   .format(sys=platform.system(), rel=platform.release()))
 
     def __init__(self, target, id_token=None, private_key_file=None, private_key_password=None,
@@ -362,7 +362,7 @@ class Client(object):
 
     def get_host_groups_hosts(self, groups=None, members=None, **kwargs):
         """
-        Return a list of host groups and their associated host members.
+        Returns a list of host groups that are associated with hosts.
 
         Args:
             groups (list[FixedReference], optional):
@@ -374,16 +374,16 @@ class Client(object):
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             group_names (list[str], optional):
-                Displays all member hosts associated with the specified host groups
-                (`group_names`). Enter multiple names in comma-separated format.   For example,
-                `hgroup01,hgroup02`.
+                Performs the operation on the unique group name specified. Examples of groups
+                include host groups, pods, protection groups, and volume groups. Enter multiple
+                names in comma-separated format. For example, `hgroup01,hgroup02`.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
             member_names (list[str], optional):
-                Displays all host groups associated with the specified member hosts
-                (`member_names`). Enter multiple names in comma-separated format. For example,
-                `host01,host02`.
+                Performs the operation on the unique member name specified. Examples of members
+                include volumes, hosts, and host groups. Enter multiple names in comma-separated
+                format. For example, `vol01,vol02`.
             offset (int, optional):
                 The starting position based on the results of the query in relation to the full
                 set of response objects returned.
@@ -578,7 +578,7 @@ class Client(object):
 
     def delete_hosts(self, references=None, **kwargs):
         """
-        Delete an existing host. All volumes that are connected to the host, either
+        Deletes an existing host. All volumes that are connected to the host, either
         through private or shared connections, must be disconnected from the host before
         the host can be deleted. The `names` query parameter is required.
 
@@ -609,7 +609,7 @@ class Client(object):
 
     def get_hosts(self, references=None, **kwargs):
         """
-        Return a list of hosts.
+        Returns a list of hosts.
 
         Args:
             references (list[FixedReference], optional):
@@ -653,7 +653,7 @@ class Client(object):
 
     def get_hosts_host_groups(self, groups=None, members=None, **kwargs):
         """
-        Return a list of host groups and their associated host members.
+        Returns a list of hosts that are associated with host groups.
 
         Args:
             groups (list[FixedReference], optional):
@@ -665,16 +665,16 @@ class Client(object):
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             group_names (list[str], optional):
-                Displays all member hosts associated with the specified host groups
-                (`group_names`). Enter multiple names in comma-separated format.   For example,
-                `hgroup01,hgroup02`.
+                Performs the operation on the unique group name specified. Examples of groups
+                include host groups, pods, protection groups, and volume groups. Enter multiple
+                names in comma-separated format. For example, `hgroup01,hgroup02`.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
             member_names (list[str], optional):
-                Displays all host groups associated with the specified member hosts
-                (`member_names`). Enter multiple names in comma-separated format. For example,
-                `host01,host02`.
+                Performs the operation on the unique member name specified. Examples of members
+                include volumes, hosts, and host groups. Enter multiple names in comma-separated
+                format. For example, `vol01,vol02`.
             offset (int, optional):
                 The starting position based on the results of the query in relation to the full
                 set of response objects returned.
@@ -705,7 +705,7 @@ class Client(object):
 
     def patch_hosts(self, references=None, **kwargs):
         """
-        Manage an existing host, including its storage network addresses, CHAP, host
+        Manages an existing host, including its storage network addresses, CHAP, host
         personality, and preferred arrays, or associate a host to a host group. The
         `names` query parameter is required.
 
@@ -841,7 +841,7 @@ class Client(object):
 
     def post_hosts(self, references=None, **kwargs):
         """
-        Create a host. The `names` query parameter is required.
+        Creates a host. The `names` query parameter is required.
 
         Args:
             references (list[FixedReference], optional):
@@ -873,7 +873,7 @@ class Client(object):
         """
         Eradicate a volume snapshot that has been destroyed and is pending eradication.
         Eradicated volumes snapshots cannot be recovered. Volume snapshots are destroyed
-        through the `PATCH` method. The `ids` or `names` parameter is required, but they
+        through the `PATCH` method. The `ids` or `names` parameter is required, but
         cannot be set together.
 
         Args:
@@ -976,7 +976,7 @@ class Client(object):
         Rename, destroy, or recover a volume snapshot. To rename the suffix of a volume
         snapshot, set `name` to the new suffix name. To recover a volume snapshot that
         has been destroyed and is pending eradication, set `destroyed=true`. The `ids`
-        or `names` parameter is required, but they cannot be set together.
+        or `names` parameter is required, but cannot be set together.
 
         Args:
             references (list[FixedReference], optional):
@@ -1011,7 +1011,7 @@ class Client(object):
     def post_volume_snapshots(self, sources=None, **kwargs):
         """
         Create a point-in-time snapshot of the contents of a volume. The `source_ids` or
-        `source_names` parameter is required, but they cannot be set together.
+        `source_names` parameter is required, but cannot be set together.
 
         Args:
             sources (list[FixedReference], optional):
@@ -1020,7 +1020,7 @@ class Client(object):
         Keyword args:
             volume_snapshot (VolumeSnapshotPost, required):
             on (str, optional):
-                Performs the operation on the unique target name specified. For example,
+                Performs the operation on the target name specified. For example,
                 `targetName01`.
             source_ids (list[str], optional):
                 Performs the operation on the source ID specified. Enter multiple source IDs in
@@ -1047,7 +1047,7 @@ class Client(object):
 
     def get_volume_snapshots_transfer(self, references=None, sources=None, **kwargs):
         """
-        Return a list of volume snapshots with transfer statistics.
+        Returns a list of volume snapshots and their transfer statistics.
 
         Args:
             references (list[FixedReference], optional):
@@ -1115,8 +1115,8 @@ class Client(object):
         """
         Eradicate a volume that has been destroyed and is pending eradication.
         Eradicated volumes cannot be recovered. Volumes are destroyed through the
-        `PATCH` method. The `ids` or `names` parameter is required, but they cannot be
-        set together.
+        `PATCH` method. The `ids` or `names` parameter is required, but cannot be set
+        together.
 
         Args:
             references (list[FixedReference], optional):
@@ -1206,13 +1206,12 @@ class Client(object):
 
     def patch_volumes(self, references=None, **kwargs):
         """
-        Rename, destroy, resize a volume. To rename a volume, set `name` to the new
-        name. To destroy a volume, set `destroyed=true`. To recover a volume that has
-        been destroyed and is pending eradication, set `destroyed=false`. Set the
-        bandwidth and IOPs limits of a volume through the respective `bandwidth_limit`
-        and `iops_limit` parameter. Move the volume into a pod or volume group through
-        the respective `pod` or `volume_group` parameter. The `ids` or `names` parameter
-        is required, but they cannot be set together.
+        Renames or destroys a volume. To rename a volume, set `name` to the new name. To
+        move a volume, set the `pod` or `volume group` parameters. To destroy a volume,
+        set `destroyed=true`. To recover a volume that has been destroyed and is pending
+        eradication, set `destroyed=false`. Sets the bandwidth and IOPs limits of a
+        volume group. The `ids` or `names` parameter is required, but cannot be set
+        together.
 
         Args:
             references (list[FixedReference], optional):
@@ -1255,7 +1254,7 @@ class Client(object):
 
     def get_volumes_performance_by_array(self, references=None, **kwargs):
         """
-        Return real-time and historical performance data, real-time latency data, and
+        Returns real-time and historical performance data, real-time latency data, and
         average I/O size data. The data returned is for each volume on the current array
         and for each volume on any remote arrays that are visible to the current array.
         The data is grouped by individual volumes and as a total across all volumes on
@@ -1276,10 +1275,10 @@ class Client(object):
                 Displays historical performance data for the specified time window, where
                 `start_time` is the beginning of the time window, and `end_time` is the end of
                 the time window. The `start_time` and `end_time` parameters are specified in
-                milliseconds since epoch (January 1, 1970). If `start_time` is not specified,
-                the start time will default to one resolution before the end time, meaning that
-                the most recent sample of performance data will be displayed. If `end_time`is
-                not specified, the end time will default to the current time. Include the
+                milliseconds since the UNIX epoch. If `start_time` is not specified, the start
+                time will default to one resolution before the end time, meaning that the most
+                recent sample of performance data will be displayed. If `end_time`is not
+                specified, the end time will default to the current time. Include the
                 `resolution` parameter to display the performance data at the specified
                 resolution. If not specified, `resolution` defaults to the lowest valid
                 resolution.
@@ -1306,10 +1305,10 @@ class Client(object):
                 Displays historical performance data for the specified time window, where
                 `start_time` is the beginning of the time window, and `end_time` is the end of
                 the time window. The `start_time` and `end_time` parameters are specified in
-                milliseconds since epoch (January 1, 1970). If `start_time` is not specified,
-                the start time will default to one resolution before the end time, meaning that
-                the most recent sample of performance data will be displayed. If `end_time`is
-                not specified, the end time will default to the current time. Include the
+                milliseconds since the UNIX epoch. If `start_time` is not specified, the start
+                time will default to one resolution before the end time, meaning that the most
+                recent sample of performance data will be displayed. If `end_time`is not
+                specified, the end time will default to the current time. Include the
                 `resolution` parameter to display the performance data at the specified
                 resolution. If not specified, `resolution` defaults to the lowest valid
                 resolution.
@@ -1357,7 +1356,7 @@ class Client(object):
 
     def get_volumes_performance(self, references=None, **kwargs):
         """
-        Return real-time and historical performance data, real-time latency data, and
+        Returns real-time and historical performance data, real-time latency data, and
         average I/O sizes for each volume and and as a total of all volumes across the
         entire array.
 
@@ -1376,10 +1375,10 @@ class Client(object):
                 Displays historical performance data for the specified time window, where
                 `start_time` is the beginning of the time window, and `end_time` is the end of
                 the time window. The `start_time` and `end_time` parameters are specified in
-                milliseconds since epoch (January 1, 1970). If `start_time` is not specified,
-                the start time will default to one resolution before the end time, meaning that
-                the most recent sample of performance data will be displayed. If `end_time`is
-                not specified, the end time will default to the current time. Include the
+                milliseconds since the UNIX epoch. If `start_time` is not specified, the start
+                time will default to one resolution before the end time, meaning that the most
+                recent sample of performance data will be displayed. If `end_time`is not
+                specified, the end time will default to the current time. Include the
                 `resolution` parameter to display the performance data at the specified
                 resolution. If not specified, `resolution` defaults to the lowest valid
                 resolution.
@@ -1406,10 +1405,10 @@ class Client(object):
                 Displays historical performance data for the specified time window, where
                 `start_time` is the beginning of the time window, and `end_time` is the end of
                 the time window. The `start_time` and `end_time` parameters are specified in
-                milliseconds since epoch (January 1, 1970). If `start_time` is not specified,
-                the start time will default to one resolution before the end time, meaning that
-                the most recent sample of performance data will be displayed. If `end_time`is
-                not specified, the end time will default to the current time. Include the
+                milliseconds since the UNIX epoch. If `start_time` is not specified, the start
+                time will default to one resolution before the end time, meaning that the most
+                recent sample of performance data will be displayed. If `end_time`is not
+                specified, the end time will default to the current time. Include the
                 `resolution` parameter to display the performance data at the specified
                 resolution. If not specified, `resolution` defaults to the lowest valid
                 resolution.
@@ -1513,10 +1512,10 @@ class Client(object):
                 Displays historical performance data for the specified time window, where
                 `start_time` is the beginning of the time window, and `end_time` is the end of
                 the time window. The `start_time` and `end_time` parameters are specified in
-                milliseconds since epoch (January 1, 1970). If `start_time` is not specified,
-                the start time will default to one resolution before the end time, meaning that
-                the most recent sample of performance data will be displayed. If `end_time`is
-                not specified, the end time will default to the current time. Include the
+                milliseconds since the UNIX epoch. If `start_time` is not specified, the start
+                time will default to one resolution before the end time, meaning that the most
+                recent sample of performance data will be displayed. If `end_time`is not
+                specified, the end time will default to the current time. Include the
                 `resolution` parameter to display the performance data at the specified
                 resolution. If not specified, `resolution` defaults to the lowest valid
                 resolution.
@@ -1543,10 +1542,10 @@ class Client(object):
                 Displays historical performance data for the specified time window, where
                 `start_time` is the beginning of the time window, and `end_time` is the end of
                 the time window. The `start_time` and `end_time` parameters are specified in
-                milliseconds since epoch (January 1, 1970). If `start_time` is not specified,
-                the start time will default to one resolution before the end time, meaning that
-                the most recent sample of performance data will be displayed. If `end_time`is
-                not specified, the end time will default to the current time. Include the
+                milliseconds since the UNIX epoch. If `start_time` is not specified, the start
+                time will default to one resolution before the end time, meaning that the most
+                recent sample of performance data will be displayed. If `end_time`is not
+                specified, the end time will default to the current time. Include the
                 `resolution` parameter to display the performance data at the specified
                 resolution. If not specified, `resolution` defaults to the lowest valid
                 resolution.

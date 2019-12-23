@@ -56,9 +56,9 @@ class VolumeSnapshotTransfer(object):
         Keyword args:
             id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
             name (str): A user-specified name. The name must be locally unique and can be changed.
-            started (int): The timestamp of when the snapshot replication process started. Measured in milliseconds since epoch (January 1, 1970).
-            progress (float): The percentage progress of the snapshot transfer from the source array to the target array. Displayed in decimal format.
-            completed (int): The timestamp of when the snapshot replication process completed. Measured in milliseconds since epoch (January 1, 1970).
+            started (int): The timestamp of when the snapshot replication process started. Measured in milliseconds since the UNIX epoch.
+            progress (float): The percentage progress of the snapshot transfer from the source array to the target. Displayed in decimal format.
+            completed (int): The timestamp of when the snapshot replication process completed. Measured in milliseconds since since the UNIX epoch.
             data_transferred (int): The number of bytes transferred from the source array to the target as part of the replication process. The data transferred amount is calculated as the size difference between the current and previous snapshots after data reduction. Measured in bytes.
             physical_bytes_written (int): The amount of data persisted on the target due to replication. Measured in bytes.
         """

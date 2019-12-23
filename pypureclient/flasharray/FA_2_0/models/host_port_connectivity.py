@@ -44,8 +44,8 @@ class HostPortConnectivity(object):
     def __init__(self, **kwargs):
         """
         Keyword args:
-            details (str): The host connection status. Possible values include `Redundant`, `N/A`, `Redundant-Failover`, `Uneven`, `Unused Port`, `Single Controller`, `Single Controller-Failover`, and `None`.
-            status (str): The host connection health status. Possible values include `healthy`, `unhealthy`, and `critical`.
+            details (str): The host connection status. Values include `Redundant`, `N/A`, `Redundant-Failover`, `Uneven`, `Unused Port`, `Single Controller`, `Single Controller-Failover`, and `None`.
+            status (str): The host connection health status. Values include `healthy`, `unhealthy`, and `critical`.
         """
         for arg in kwargs:
             setattr(self, arg, kwargs[arg])

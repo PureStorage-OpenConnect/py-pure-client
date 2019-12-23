@@ -68,20 +68,20 @@ class HostPatch(object):
     def __init__(self, **kwargs):
         """
         Keyword args:
-            name (str): New name for the resource.
+            name (str): The new name for the resource.
             add_iqns (list[str]): Adds the specified iSCSI Qualified Names (IQNs) to those already associated with the specified host.
             add_nqns (list[str]): Adds the specified NVMe Qualified Names (NQNs) to those already associated with the specified host.
             add_wwns (list[str]): Adds the specified Fibre Channel World Wide Names (WWNs) to those already associated with the specified host.
             chap (Chap)
             host_group (ReferenceNoId): The host group to which the host should be associated.
-            iqns (list[str])
-            nqns (list[str])
+            iqns (list[str]): The iSCSI qualified name (IQN) associated with the host.
+            nqns (list[str]): The NVMe Qualified Name (NQN) associated with the host.
             personality (str): Determines how the system tunes the array to ensure that it works optimally with the host. Set `personality` to the name of the host operating system or virtual memory system. Valid values are `aix`, `esxi`, `hitachi-vsp`, `hpux`, `oracle-vm-server`, `solaris`, and `vms`. If your system is not listed as one of the valid host personalities, do not set the option. By default, the personality is not set.
             preferred_arrays (list[Reference]): For synchronous replication configurations, sets a host's preferred array to specify which array exposes active/optimized paths to that host. Enter multiple preferred arrays in comma-separated format. If a preferred array is set for a host, then the other arrays in the same pod will expose active/non-optimized paths to that host. If the host is in a host group, `preferred_arrays` cannot be set because host groups have their own preferred arrays. On a preferred array of a certain host, all the paths on all the ports (for both the primary and secondary controllers) are set up as A/O (active/optimized) paths, while on a non-preferred array, all the paths are A/N (Active/Non-optimized) paths.
             remove_iqns (list[str]): Disassociates the specified iSCSI Qualified Names (IQNs) from the specified host.
             remove_nqns (list[str]): Disassociates the specified NVMe Qualified Names (NQNs) from the specified host.
             remove_wwns (list[str]): Disassociates the specified Fibre Channel World Wide Names (WWNs) from the specified host.
-            wwns (list[str])
+            wwns (list[str]): The Fibre Channel World Wide Name (WWN) associated with the host.
         """
         for arg in kwargs:
             setattr(self, arg, kwargs[arg])

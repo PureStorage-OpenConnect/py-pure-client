@@ -54,11 +54,11 @@ class Snapshot(object):
     def __init__(self, **kwargs):
         """
         Keyword args:
-            created (int): The snapshot creation time. Measured in milliseconds since epoch (January 1, 1970).
+            created (int): The snapshot creation time. Measured in milliseconds since the UNIX epoch.
             destroyed (bool): Returns a value of `true` if the snapshot has been destroyed and is pending eradication. The `time_remaining` value displays the amount of time left until the destroyed volume snapshot is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed volume snapshot can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the volume snapshot is permanently eradicated and can no longer be recovered.
             pod (FixedReference): A reference to the pod.
             provisioned (int): The provisioned space of the snapshot. Measured in bytes.
-            source (FixedReference): The volume from which this snapshot is taken.
+            source (FixedReference): The volume from which this snapshot was taken.
             suffix (str): The suffix that is appended to the `source_name` value to generate the full volume snapshot name in the form `VOL.SUFFIX`. If the suffix is not specified, the system constructs the snapshot name in the form `VOL.NNN`, where `VOL` is the volume name, and `NNN` is a monotonically increasing number.
             time_remaining (int): The amount of time left until the destroyed snapshot is permanently eradicated. Measured in milliseconds. Before the `time_remaining` period has elapsed, the destroyed snapshot can be recovered by setting `destroyed=false`.
         """

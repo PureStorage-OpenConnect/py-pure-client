@@ -48,10 +48,10 @@ class InlineResponse200(object):
     def __init__(self, **kwargs):
         """
         Keyword args:
-            access_token (str): A serialized OAuth 2.0 access token required as a Bearer token in the Authorization header of further API calls.
-            issued_token_type (str): Representation of the issued security token. Currently only access tokens are supported.
-            token_type (str): Specifies the method of using the `access_token` issued. Currently only returns `Bearer` as a supported value.
-            expires_in (int): The epoch timestamp at which the token expires.
+            access_token (str): The serialized OAuth 2.0 Bearer token used to perform authenticated requests. The access token must be added to the Authorization header of all API calls.
+            issued_token_type (str): The type of token that is issued. The Pure Storage REST API supports OAuth 2.0 access tokens.
+            token_type (str): Indicates how the API client can use the access token issued. The Pure Storage REST API supports the `Bearer` token.
+            expires_in (int): The timestamp of when the access token expires. Measured in milliseconds since the UNIX epoch.
         """
         for arg in kwargs:
             setattr(self, arg, kwargs[arg])

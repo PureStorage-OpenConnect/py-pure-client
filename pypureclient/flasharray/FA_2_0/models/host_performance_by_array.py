@@ -120,13 +120,13 @@ class HostPerformanceByArray(object):
             service_usec_per_mirrored_write_op (int): The average time required for the array to service a mirrored write request. Measured in microseconds.
             service_usec_per_read_op (int): The average time required for the array to service a read request. Measured in microseconds.
             service_usec_per_write_op (int): The average time required for the array to service a write request. Measured in microseconds.
-            time (int): The time when the sample performance data was taken. Measured in milliseconds since epoch (January 1, 1970).
+            time (int): The time when the sample performance data was taken. Measured in milliseconds since the UNIX epoch.
             usec_per_mirrored_write_op (int): The average time it takes the array to process a mirrored I/O write request. Measured in microseconds. The average time does not include SAN time, queue time, or QoS rate limit time.
             usec_per_read_op (int): The average time it takes the array to process an I/O read request. Measured in microseconds. The average time does not include SAN time, queue time, or QoS rate limit time.
             usec_per_write_op (int): The average time it takes the array to process an I/O write request. Measured in microseconds. The average time does not include SAN time, queue time, or QoS rate limit time.
             write_bytes_per_sec (int): The number of bytes written per second.
             writes_per_sec (int): The number of write requests processed per second.
-            array (Resource): Array on which the performance metrics were recorded.
+            array (Resource): The array on which the performance metrics were recorded.
         """
         for arg in kwargs:
             setattr(self, arg, kwargs[arg])

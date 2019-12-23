@@ -1,7 +1,9 @@
 from . import FA_2_0
+from . import FA_2_1
 
 fa_modules = {
     '2.0': FA_2_0,
+    '2.1': FA_2_1,
 }
 
 
@@ -9,7 +11,7 @@ DEFAULT_TIMEOUT = 15.0
 DEFAULT_RETRIES = 5
 
 
-def Client(target, version="2.0", id_token=None, private_key_file=None, private_key_password=None,
+def Client(target, version="2.1", id_token=None, private_key_file=None, private_key_password=None,
            username=None, client_id=None, key_id=None, issuer=None,
            retries=DEFAULT_RETRIES, timeout=DEFAULT_TIMEOUT, ssl_cert=None):
     """

@@ -53,11 +53,11 @@ class VolumePatch(object):
         """
         Keyword args:
             destroyed (bool): If set to `true`, destroys a resource. Once set to `true`, the `time_remaining` value will display the amount of time left until the destroyed resource is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed resource can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the resource is permanently eradicated and can no longer be recovered.
-            name (str): New name for the resource.
-            pod (Reference): Moves this volume into the specified pod.
+            name (str): The new name for the resource.
+            pod (Reference): Moves the volume into the specified pod.
             provisioned (int): Updates the virtual size of the volume. Measured in bytes.
             qos (Qos): Sets QoS limits.
-            volume_group (Reference): Adds this volume to the specified volume group.
+            volume_group (Reference): Adds the volume to the specified volume group.
         """
         for arg in kwargs:
             setattr(self, arg, kwargs[arg])

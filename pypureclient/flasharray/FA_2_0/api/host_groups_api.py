@@ -246,9 +246,9 @@ class HostGroupsApi(object):
             collection_formats=collection_formats)
 
     def api20_host_groups_hosts_get(self, **kwargs):
-        """List host groups and their host members
+        """List host groups associated with hosts
 
-        Return a list of host groups and their associated host members.
+        Returns a list of host groups that are associated with hosts.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api20_host_groups_hosts_get(async_req=True)
@@ -256,9 +256,9 @@ class HostGroupsApi(object):
 
         :param async_req bool
         :param str filter: Narrows down the results to only the response objects that satisfy the filter criteria.
-        :param list[str] group_names: Displays all member hosts associated with the specified host groups (`group_names`). Enter multiple names in comma-separated format.   For example, `hgroup01,hgroup02`.
+        :param list[str] group_names: Performs the operation on the unique group name specified. Examples of groups include host groups, pods, protection groups, and volume groups. Enter multiple names in comma-separated format. For example, `hgroup01,hgroup02`.
         :param int limit: Limits the size of the response to the specified number of objects on each page. To return the total number of resources, set `limit=0`. The total number of resources will be returned as a `total_item_count` value. If the page size requested is larger than the system maximum limit, the server returns the maximum limit, disregarding the requested page size.
-        :param list[str] member_names: Displays all host groups associated with the specified member hosts (`member_names`). Enter multiple names in comma-separated format. For example, `host01,host02`.
+        :param list[str] member_names: Performs the operation on the unique member name specified. Examples of members include volumes, hosts, and host groups. Enter multiple names in comma-separated format. For example, `vol01,vol02`.
         :param int offset: The starting position based on the results of the query in relation to the full set of response objects returned.
         :param list[str] sort: Returns the response objects in the order specified. Set `sort` to the name in the response by which to sort. Sorting can be performed on any of the names in the response, and the objects can be sorted in ascending or descending order. By default, the response objects are sorted in ascending order. To sort in descending order, append the minus sign (`-`) to the name. A single request can be sorted on multiple objects. For example, you can sort all volumes from largest to smallest volume size, and then sort volumes of the same size in ascending order by volume name. To sort on multiple names, list the names as comma-separated values.
         :param bool total_item_count: If set to `true`, the `total_item_count` matching the specified query parameters will be calculated and returned in the response. If set to `false`, the `total_item_count` will be `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.
@@ -274,9 +274,9 @@ class HostGroupsApi(object):
             return data
 
     def api20_host_groups_hosts_get_with_http_info(self, **kwargs):
-        """List host groups and their host members
+        """List host groups associated with hosts
 
-        Return a list of host groups and their associated host members.
+        Returns a list of host groups that are associated with hosts.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api20_host_groups_hosts_get_with_http_info(async_req=True)
@@ -284,9 +284,9 @@ class HostGroupsApi(object):
 
         :param async_req bool
         :param str filter: Narrows down the results to only the response objects that satisfy the filter criteria.
-        :param list[str] group_names: Displays all member hosts associated with the specified host groups (`group_names`). Enter multiple names in comma-separated format.   For example, `hgroup01,hgroup02`.
+        :param list[str] group_names: Performs the operation on the unique group name specified. Examples of groups include host groups, pods, protection groups, and volume groups. Enter multiple names in comma-separated format. For example, `hgroup01,hgroup02`.
         :param int limit: Limits the size of the response to the specified number of objects on each page. To return the total number of resources, set `limit=0`. The total number of resources will be returned as a `total_item_count` value. If the page size requested is larger than the system maximum limit, the server returns the maximum limit, disregarding the requested page size.
-        :param list[str] member_names: Displays all host groups associated with the specified member hosts (`member_names`). Enter multiple names in comma-separated format. For example, `host01,host02`.
+        :param list[str] member_names: Performs the operation on the unique member name specified. Examples of members include volumes, hosts, and host groups. Enter multiple names in comma-separated format. For example, `vol01,vol02`.
         :param int offset: The starting position based on the results of the query in relation to the full set of response objects returned.
         :param list[str] sort: Returns the response objects in the order specified. Set `sort` to the name in the response by which to sort. Sorting can be performed on any of the names in the response, and the objects can be sorted in ascending or descending order. By default, the response objects are sorted in ascending order. To sort in descending order, append the minus sign (`-`) to the name. A single request can be sorted on multiple objects. For example, you can sort all volumes from largest to smallest volume size, and then sort volumes of the same size in ascending order by volume name. To sort on multiple names, list the names as comma-separated values.
         :param bool total_item_count: If set to `true`, the `total_item_count` matching the specified query parameters will be calculated and returned in the response. If set to `false`, the `total_item_count` will be `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.

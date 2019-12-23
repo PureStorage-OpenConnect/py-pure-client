@@ -42,7 +42,7 @@ class HostGroupPatch(object):
     def __init__(self, **kwargs):
         """
         Keyword args:
-            name (str): New name for the resource.
+            name (str): The new name for the resource.
         """
         for arg in kwargs:
             setattr(self, arg, kwargs[arg])

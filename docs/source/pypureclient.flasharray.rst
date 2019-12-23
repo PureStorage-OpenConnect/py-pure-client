@@ -7,6 +7,7 @@ Subpackages
 .. toctree::
 
    pypureclient.flasharray.FA_2_0
+   pypureclient.flasharray.FA_2_1
 
 Submodules
 ----------
