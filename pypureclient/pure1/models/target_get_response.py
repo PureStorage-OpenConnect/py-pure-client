@@ -18,7 +18,7 @@ import re
 import six
 
 
-class PolicyMember(object):
+class TargetGetResponse(object):
 
 
     """
@@ -29,15 +29,15 @@ class PolicyMember(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'as_of': 'int',
-        'policy': 'FixedReference',
-        'member': 'FixedReference'
+        'continuation_token': 'str',
+        'total_item_count': 'int',
+        'items': 'list[Target]'
     }
 
     attribute_map = {
-        'as_of': '_as_of',
-        'policy': 'policy',
-        'member': 'member'
+        'continuation_token': 'continuation_token',
+        'total_item_count': 'total_item_count',
+        'items': 'items'
     }
 
     required_args = {
@@ -46,9 +46,9 @@ class PolicyMember(object):
     def __init__(self, **kwargs):
         """
         Keyword args:
-            as_of (int): The freshness of the data (timestamp in millis since epoch).
-            policy (FixedReference)
-            member (FixedReference)
+            continuation_token (str): Continuation token that can be provided in the continuation_token query param to get the next page of data. If you use the continuation token to page through data you are guaranteed to get all items exactly once regardless of how items are modified. If an item is added or deleted during the pagination then it may or may not be returned. The continuation token is generated if the limit is less than the remaining number of items, and the default sort is used (no sort is specified).
+            total_item_count (int): Total number of items after applying filter params.
+            items (list[Target])
         """
         for arg in kwargs:
             setattr(self, arg, kwargs[arg])
@@ -58,7 +58,7 @@ class PolicyMember(object):
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
-            raise KeyError("Invalid key `{}` for `PolicyMember`".format(key))
+            raise KeyError("Invalid key `{}` for `TargetGetResponse`".format(key))
         self.__dict__[key] = value
 
     def __getattribute__(self, item):
@@ -90,7 +90,7 @@ class PolicyMember(object):
                     ))
                 else:
                     result[attr] = value
-        if issubclass(PolicyMember, dict):
+        if issubclass(TargetGetResponse, dict):
             for key, value in self.items():
                 result[key] = value
 
@@ -106,7 +106,7 @@ class PolicyMember(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, PolicyMember):
+        if not isinstance(other, TargetGetResponse):
             return False
 
         return self.__dict__ == other.__dict__

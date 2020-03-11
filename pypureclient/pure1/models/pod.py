@@ -47,13 +47,12 @@ class Pod(object):
     }
 
     required_args = {
-        'as_of',
     }
 
     def __init__(self, **kwargs):
         """
         Keyword args:
-            as_of (int, required): The freshness of the data (timestamp in millis since epoch).
+            as_of (int): The freshness of the data (timestamp in millis since epoch).
             id (str): A non-modifiable, globally unique ID chosen by the system.
             name (str): A modifiable, locally unique name chosen by the user.
             arrays (list[PodArrayStatus]): A list of arrays that share this pod. If two or more arrays are specified, all data in the pod is synchronously mirrored between them.
@@ -69,8 +68,6 @@ class Pod(object):
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
             raise KeyError("Invalid key `{}` for `Pod`".format(key))
-        if key == "as_of" and value is None:
-            raise ValueError("Invalid value for `as_of`, must not be `None`")
         self.__dict__[key] = value
 
     def __getattribute__(self, item):

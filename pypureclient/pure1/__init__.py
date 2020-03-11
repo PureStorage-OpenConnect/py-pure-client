@@ -9,10 +9,13 @@ from ..responses import ValidResponse, ErrorResponse, ApiError, ResponseHeaders
 from .models.alert import Alert
 from .models.array import Array
 from .models.audit import Audit
+from .models.bucket import Bucket
+from .models.bucket_replica_link import BucketReplicaLink
 from .models.error import Error
 from .models.error_errors import ErrorErrors
 from .models.error_no_context import ErrorNoContext
 from .models.file_system import FileSystem
+from .models.file_system_replica_link import FileSystemReplicaLink
 from .models.file_system_snapshot import FileSystemSnapshot
 from .models.fixed_reference import FixedReference
 from .models.http import Http
@@ -21,14 +24,17 @@ from .models.metric_availability import MetricAvailability
 from .models.metric_history import MetricHistory
 from .models.network_interface import NetworkInterface
 from .models.nfs import Nfs
+from .models.object_store_account import ObjectStoreAccount
 from .models.pod import Pod
 from .models.pod_array_status import PodArrayStatus
 from .models.policy import Policy
 from .models.policy_member import PolicyMember
 from .models.policy_rule import PolicyRule
+from .models.replica_link import ReplicaLink
 from .models.smb import Smb
 from .models.tag import Tag
 from .models.tag_put import TagPut
+from .models.target import Target
 from .models.volume import Volume
 from .models.volume_snapshot import VolumeSnapshot
 
@@ -42,10 +48,13 @@ CLASSES_TO_ADD_PROPS = [
     Alert,
     Array,
     Audit,
+    Bucket,
+    BucketReplicaLink,
     Error,
     ErrorErrors,
     ErrorNoContext,
     FileSystem,
+    FileSystemReplicaLink,
     FileSystemSnapshot,
     FixedReference,
     Http,
@@ -54,14 +63,17 @@ CLASSES_TO_ADD_PROPS = [
     MetricHistory,
     NetworkInterface,
     Nfs,
+    ObjectStoreAccount,
     Pod,
     PodArrayStatus,
     Policy,
     PolicyMember,
     PolicyRule,
+    ReplicaLink,
     Smb,
     Tag,
     TagPut,
+    Target,
     Volume,
     VolumeSnapshot
 ]

@@ -18,7 +18,7 @@ import re
 import six
 
 
-class PolicyMember(object):
+class ResourceWithLocation(object):
 
 
     """
@@ -29,15 +29,17 @@ class PolicyMember(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'as_of': 'int',
-        'policy': 'FixedReference',
-        'member': 'FixedReference'
+        'id': 'str',
+        'name': 'str',
+        'resource_type': 'str',
+        'location': 'FixedReference'
     }
 
     attribute_map = {
-        'as_of': '_as_of',
-        'policy': 'policy',
-        'member': 'member'
+        'id': 'id',
+        'name': 'name',
+        'resource_type': 'resource_type',
+        'location': 'location'
     }
 
     required_args = {
@@ -46,9 +48,10 @@ class PolicyMember(object):
     def __init__(self, **kwargs):
         """
         Keyword args:
-            as_of (int): The freshness of the data (timestamp in millis since epoch).
-            policy (FixedReference)
-            member (FixedReference)
+            id (str): The opaque and unique id of this resource.
+            name (str): The name of this resource.
+            resource_type (str): The type of this resource represented by the name of its REST endpoint. For example, \"arrays\", \"network-interfaces\", and \"metrics\". The value may be `null` if the resource is not represented.
+            location (FixedReference)
         """
         for arg in kwargs:
             setattr(self, arg, kwargs[arg])
@@ -58,7 +61,7 @@ class PolicyMember(object):
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
-            raise KeyError("Invalid key `{}` for `PolicyMember`".format(key))
+            raise KeyError("Invalid key `{}` for `ResourceWithLocation`".format(key))
         self.__dict__[key] = value
 
     def __getattribute__(self, item):
@@ -90,7 +93,7 @@ class PolicyMember(object):
                     ))
                 else:
                     result[attr] = value
-        if issubclass(PolicyMember, dict):
+        if issubclass(ResourceWithLocation, dict):
             for key, value in self.items():
                 result[key] = value
 
@@ -106,7 +109,7 @@ class PolicyMember(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, PolicyMember):
+        if not isinstance(other, ResourceWithLocation):
             return False
 
         return self.__dict__ == other.__dict__

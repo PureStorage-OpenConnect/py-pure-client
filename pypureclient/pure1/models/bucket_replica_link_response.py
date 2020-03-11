@@ -18,7 +18,7 @@ import re
 import six
 
 
-class PolicyMember(object):
+class BucketReplicaLinkResponse(object):
 
 
     """
@@ -29,15 +29,11 @@ class PolicyMember(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'as_of': 'int',
-        'policy': 'FixedReference',
-        'member': 'FixedReference'
+        'items': 'list[BucketReplicaLink]'
     }
 
     attribute_map = {
-        'as_of': '_as_of',
-        'policy': 'policy',
-        'member': 'member'
+        'items': 'items'
     }
 
     required_args = {
@@ -46,9 +42,7 @@ class PolicyMember(object):
     def __init__(self, **kwargs):
         """
         Keyword args:
-            as_of (int): The freshness of the data (timestamp in millis since epoch).
-            policy (FixedReference)
-            member (FixedReference)
+            items (list[BucketReplicaLink])
         """
         for arg in kwargs:
             setattr(self, arg, kwargs[arg])
@@ -58,7 +52,7 @@ class PolicyMember(object):
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
-            raise KeyError("Invalid key `{}` for `PolicyMember`".format(key))
+            raise KeyError("Invalid key `{}` for `BucketReplicaLinkResponse`".format(key))
         self.__dict__[key] = value
 
     def __getattribute__(self, item):
@@ -90,7 +84,7 @@ class PolicyMember(object):
                     ))
                 else:
                     result[attr] = value
-        if issubclass(PolicyMember, dict):
+        if issubclass(BucketReplicaLinkResponse, dict):
             for key, value in self.items():
                 result[key] = value
 
@@ -106,7 +100,7 @@ class PolicyMember(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, PolicyMember):
+        if not isinstance(other, BucketReplicaLinkResponse):
             return False
 
         return self.__dict__ == other.__dict__

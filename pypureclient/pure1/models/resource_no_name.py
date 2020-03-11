@@ -18,7 +18,7 @@ import re
 import six
 
 
-class PolicyMember(object):
+class ResourceNoName(object):
 
 
     """
@@ -30,14 +30,12 @@ class PolicyMember(object):
     """
     swagger_types = {
         'as_of': 'int',
-        'policy': 'FixedReference',
-        'member': 'FixedReference'
+        'id': 'str'
     }
 
     attribute_map = {
         'as_of': '_as_of',
-        'policy': 'policy',
-        'member': 'member'
+        'id': 'id'
     }
 
     required_args = {
@@ -47,8 +45,7 @@ class PolicyMember(object):
         """
         Keyword args:
             as_of (int): The freshness of the data (timestamp in millis since epoch).
-            policy (FixedReference)
-            member (FixedReference)
+            id (str): A non-modifiable, globally unique ID chosen by the system.
         """
         for arg in kwargs:
             setattr(self, arg, kwargs[arg])
@@ -58,7 +55,7 @@ class PolicyMember(object):
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
-            raise KeyError("Invalid key `{}` for `PolicyMember`".format(key))
+            raise KeyError("Invalid key `{}` for `ResourceNoName`".format(key))
         self.__dict__[key] = value
 
     def __getattribute__(self, item):
@@ -90,7 +87,7 @@ class PolicyMember(object):
                     ))
                 else:
                     result[attr] = value
-        if issubclass(PolicyMember, dict):
+        if issubclass(ResourceNoName, dict):
             for key, value in self.items():
                 result[key] = value
 
@@ -106,7 +103,7 @@ class PolicyMember(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, PolicyMember):
+        if not isinstance(other, ResourceNoName):
             return False
 
         return self.__dict__ == other.__dict__

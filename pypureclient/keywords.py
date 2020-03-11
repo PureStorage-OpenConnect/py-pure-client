@@ -14,7 +14,9 @@ class Headers(object):
     """
     A class for static header names.
     """
+    api_token = 'api-token'
     authorization = 'Authorization'
+    x_auth_token = 'x-auth-token'
     x_request_id = 'X-Request-ID'
     x_ratelimit_sec = 'X-RateLimit-Limit-second'
     x_ratelimit_min = 'X-RateLimit-Limit-minute'

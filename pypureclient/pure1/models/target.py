@@ -18,7 +18,7 @@ import re
 import six
 
 
-class PolicyMember(object):
+class Target(object):
 
 
     """
@@ -30,14 +30,20 @@ class PolicyMember(object):
     """
     swagger_types = {
         'as_of': 'int',
-        'policy': 'FixedReference',
-        'member': 'FixedReference'
+        'id': 'str',
+        'name': 'str',
+        'address': 'str',
+        'status': 'str',
+        'status_details': 'str'
     }
 
     attribute_map = {
         'as_of': '_as_of',
-        'policy': 'policy',
-        'member': 'member'
+        'id': 'id',
+        'name': 'name',
+        'address': 'address',
+        'status': 'status',
+        'status_details': 'status_details'
     }
 
     required_args = {
@@ -47,8 +53,11 @@ class PolicyMember(object):
         """
         Keyword args:
             as_of (int): The freshness of the data (timestamp in millis since epoch).
-            policy (FixedReference)
-            member (FixedReference)
+            id (str): A non-modifiable, globally unique ID chosen by the system.
+            name (str): A modifiable, locally unique name chosen by the user.
+            address (str): IP address or FQDN of the target system.
+            status (str): Status of the connection. Values include `connected` and `connecting`.
+            status_details (str): Additional information describing any issues encountered when connecting, or `null` if the `status` is `connected`.
         """
         for arg in kwargs:
             setattr(self, arg, kwargs[arg])
@@ -58,7 +67,7 @@ class PolicyMember(object):
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
-            raise KeyError("Invalid key `{}` for `PolicyMember`".format(key))
+            raise KeyError("Invalid key `{}` for `Target`".format(key))
         self.__dict__[key] = value
 
     def __getattribute__(self, item):
@@ -90,7 +99,7 @@ class PolicyMember(object):
                     ))
                 else:
                     result[attr] = value
-        if issubclass(PolicyMember, dict):
+        if issubclass(Target, dict):
             for key, value in self.items():
                 result[key] = value
 
@@ -106,7 +115,7 @@ class PolicyMember(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, PolicyMember):
+        if not isinstance(other, Target):
             return False
 
         return self.__dict__ == other.__dict__

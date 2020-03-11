@@ -404,7 +404,7 @@ class ArraysApi(object):
     def api10_arrays_tags_get(self, **kwargs):
         """Get array tags
 
-        Retrieves the tags associated to specified arrays. 
+        Retrieves the tags associated with specified arrays. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api10_arrays_tags_get(async_req=True)
@@ -435,7 +435,7 @@ class ArraysApi(object):
     def api10_arrays_tags_get_with_http_info(self, **kwargs):
         """Get array tags
 
-        Retrieves the tags associated to specified arrays. 
+        Retrieves the tags associated with specified arrays. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api10_arrays_tags_get_with_http_info(async_req=True)

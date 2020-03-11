@@ -18,7 +18,7 @@ import re
 import six
 
 
-class PolicyMember(object):
+class FileSystemReplicaLink(object):
 
 
     """
@@ -30,14 +30,28 @@ class PolicyMember(object):
     """
     swagger_types = {
         'as_of': 'int',
-        'policy': 'FixedReference',
-        'member': 'FixedReference'
+        'id': 'str',
+        'lag': 'int',
+        'members': 'list[ResourceWithLocation]',
+        'paused': 'bool',
+        'recovery_point': 'int',
+        'status_details': 'str',
+        'sources': 'list[ResourceWithLocation]',
+        'targets': 'list[ResourceWithLocation]',
+        'status': 'str'
     }
 
     attribute_map = {
         'as_of': '_as_of',
-        'policy': 'policy',
-        'member': 'member'
+        'id': 'id',
+        'lag': 'lag',
+        'members': 'members',
+        'paused': 'paused',
+        'recovery_point': 'recovery_point',
+        'status_details': 'status_details',
+        'sources': 'sources',
+        'targets': 'targets',
+        'status': 'status'
     }
 
     required_args = {
@@ -47,8 +61,15 @@ class PolicyMember(object):
         """
         Keyword args:
             as_of (int): The freshness of the data (timestamp in millis since epoch).
-            policy (FixedReference)
-            member (FixedReference)
+            id (str): A non-modifiable, globally unique ID chosen by the system.
+            lag (int): Duration, in milliseconds, which represents how far behind the replication `target` is from the `source`.
+            members (list[ResourceWithLocation]): The union of source and target resources in the replica link.
+            paused (bool): Returns `true` if the replica link is paused.
+            recovery_point (int): Time when the last replicated snapshot was created, in milliseconds since UNIX epoch. I.e. the recovery point if the file system is promoted.
+            status_details (str): Detailed information about the status of the replica link when it is `unhealthy`.
+            sources (list[ResourceWithLocation]): The source resources in the replica link.
+            targets (list[ResourceWithLocation]): The target resources in the replica link.
+            status (str): Status of the replica link. Values include `replicating`, `idle`, and `unhealthy`.
         """
         for arg in kwargs:
             setattr(self, arg, kwargs[arg])
@@ -58,7 +79,7 @@ class PolicyMember(object):
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
-            raise KeyError("Invalid key `{}` for `PolicyMember`".format(key))
+            raise KeyError("Invalid key `{}` for `FileSystemReplicaLink`".format(key))
         self.__dict__[key] = value
 
     def __getattribute__(self, item):
@@ -90,7 +111,7 @@ class PolicyMember(object):
                     ))
                 else:
                     result[attr] = value
-        if issubclass(PolicyMember, dict):
+        if issubclass(FileSystemReplicaLink, dict):
             for key, value in self.items():
                 result[key] = value
 
@@ -106,7 +127,7 @@ class PolicyMember(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, PolicyMember):
+        if not isinstance(other, FileSystemReplicaLink):
             return False
 
         return self.__dict__ == other.__dict__

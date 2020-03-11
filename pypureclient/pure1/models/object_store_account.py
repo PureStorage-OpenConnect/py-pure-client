@@ -18,7 +18,7 @@ import re
 import six
 
 
-class PolicyMember(object):
+class ObjectStoreAccount(object):
 
 
     """
@@ -30,14 +30,20 @@ class PolicyMember(object):
     """
     swagger_types = {
         'as_of': 'int',
-        'policy': 'FixedReference',
-        'member': 'FixedReference'
+        'id': 'str',
+        'name': 'str',
+        'arrays': 'list[FixedReference]',
+        'created': 'int',
+        'object_count': 'int'
     }
 
     attribute_map = {
         'as_of': '_as_of',
-        'policy': 'policy',
-        'member': 'member'
+        'id': 'id',
+        'name': 'name',
+        'arrays': 'arrays',
+        'created': 'created',
+        'object_count': 'object_count'
     }
 
     required_args = {
@@ -47,8 +53,11 @@ class PolicyMember(object):
         """
         Keyword args:
             as_of (int): The freshness of the data (timestamp in millis since epoch).
-            policy (FixedReference)
-            member (FixedReference)
+            id (str): A non-modifiable, globally unique ID chosen by the system.
+            name (str): A modifiable, locally unique name chosen by the user.
+            arrays (list[FixedReference]): The list of arrays where this resource exists. Many resources are on a single array, but some resources, such as pods, can be shared across multiple arrays.
+            created (int): Creation timestamp of the object, in milliseconds since Unix epoch.
+            object_count (int): The number of objects within the account.
         """
         for arg in kwargs:
             setattr(self, arg, kwargs[arg])
@@ -58,7 +67,7 @@ class PolicyMember(object):
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
-            raise KeyError("Invalid key `{}` for `PolicyMember`".format(key))
+            raise KeyError("Invalid key `{}` for `ObjectStoreAccount`".format(key))
         self.__dict__[key] = value
 
     def __getattribute__(self, item):
@@ -90,7 +99,7 @@ class PolicyMember(object):
                     ))
                 else:
                     result[attr] = value
-        if issubclass(PolicyMember, dict):
+        if issubclass(ObjectStoreAccount, dict):
             for key, value in self.items():
                 result[key] = value
 
@@ -106,7 +115,7 @@ class PolicyMember(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, PolicyMember):
+        if not isinstance(other, ObjectStoreAccount):
             return False
 
         return self.__dict__ == other.__dict__

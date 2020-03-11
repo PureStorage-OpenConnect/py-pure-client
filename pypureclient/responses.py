@@ -116,7 +116,7 @@ class ValidResponse(Response):
         Returns:
             dict
         """
-        new_dict = self.__dict__
+        new_dict = dict(self.__dict__)
         if isinstance(self.items, ItemIterator):
             new_dict['items'] = [item.to_dict() for item in list(self.items)]
 
@@ -132,7 +132,7 @@ class ValidResponse(Response):
         Returns:
             str
         """
-        new_dict = self.__dict__
+        new_dict = dict(self.__dict__)
         if self.headers:
             new_dict['headers'] = self.headers.to_dict()
         return pprint.pformat(new_dict)
@@ -165,7 +165,7 @@ class ErrorResponse(Response):
         Returns:
             dict
         """
-        new_dict = self.__dict__
+        new_dict = dict(self.__dict__)
         new_dict['errors'] = [err.to_dict() for err in new_dict['errors']]
         new_dict['headers'] = (self.headers.to_dict
                                if self.headers is not None else None)

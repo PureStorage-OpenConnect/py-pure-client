@@ -47,13 +47,12 @@ class Array(object):
     }
 
     required_args = {
-        'as_of',
     }
 
     def __init__(self, **kwargs):
         """
         Keyword args:
-            as_of (int, required): The freshness of the data (timestamp in millis since epoch).
+            as_of (int): The freshness of the data (timestamp in millis since epoch).
             id (str): A non-modifiable, globally unique ID chosen by the system.
             name (str): A non-modifiable, locally unique name chosen by the system.
             model (str): Model of the array.
@@ -69,8 +68,6 @@ class Array(object):
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
             raise KeyError("Invalid key `{}` for `Array`".format(key))
-        if key == "as_of" and value is None:
-            raise ValueError("Invalid value for `as_of`, must not be `None`")
         self.__dict__[key] = value
 
     def __getattribute__(self, item):
