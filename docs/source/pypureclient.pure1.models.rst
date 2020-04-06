@@ -380,6 +380,14 @@ pypureclient.pure1.models.nfs module
     :undoc-members:
     :show-inheritance:
 
+pypureclient.pure1.models.oauth\_token\_response module
+-------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.models.oauth_token_response
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 pypureclient.pure1.models.object\_store\_account module
 -------------------------------------------------------
 
@@ -536,6 +544,30 @@ pypureclient.pure1.models.smb module
 ------------------------------------
 
 .. automodule:: pypureclient.pure1.models.smb
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.models.support\_contract module
+--------------------------------------------------
+
+.. automodule:: pypureclient.pure1.models.support_contract
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.models.support\_contract\_get\_response module
+-----------------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.models.support_contract_get_response
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.models.support\_contract\_response module
+------------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.models.support_contract_response
     :members:
     :undoc-members:
     :show-inheritance:

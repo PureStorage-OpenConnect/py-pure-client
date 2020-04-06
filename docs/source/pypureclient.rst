@@ -12,6 +12,14 @@ Subpackages
 Submodules
 ----------
 
+pypureclient.api\_token\_manager module
+---------------------------------------
+
+.. automodule:: pypureclient.api_token_manager
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 pypureclient.exceptions module
 ------------------------------
 

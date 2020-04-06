@@ -50,6 +50,7 @@ from .network_interface import NetworkInterface
 from .network_interface_get_response import NetworkInterfaceGetResponse
 from .network_interface_response import NetworkInterfaceResponse
 from .nfs import Nfs
+from .oauth_token_response import OauthTokenResponse
 from .object_store_account import ObjectStoreAccount
 from .object_store_account_get_response import ObjectStoreAccountGetResponse
 from .object_store_account_response import ObjectStoreAccountResponse
@@ -70,6 +71,9 @@ from .resource import Resource
 from .resource_no_name import ResourceNoName
 from .resource_with_location import ResourceWithLocation
 from .smb import Smb
+from .support_contract import SupportContract
+from .support_contract_get_response import SupportContractGetResponse
+from .support_contract_response import SupportContractResponse
 from .tag import Tag
 from .tag_get_response import TagGetResponse
 from .tag_put import TagPut

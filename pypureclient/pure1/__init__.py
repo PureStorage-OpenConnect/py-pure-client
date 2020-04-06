@@ -32,6 +32,7 @@ from .models.policy_member import PolicyMember
 from .models.policy_rule import PolicyRule
 from .models.replica_link import ReplicaLink
 from .models.smb import Smb
+from .models.support_contract import SupportContract
 from .models.tag import Tag
 from .models.tag_put import TagPut
 from .models.target import Target
@@ -71,6 +72,7 @@ CLASSES_TO_ADD_PROPS = [
     PolicyRule,
     ReplicaLink,
     Smb,
+    SupportContract,
     Tag,
     TagPut,
     Target,
