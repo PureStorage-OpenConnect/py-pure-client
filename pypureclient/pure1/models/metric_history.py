@@ -11,16 +11,17 @@
 """
 
 
-from ...properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ...properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.pure1 import models
 
 class MetricHistory(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -53,7 +54,17 @@ class MetricHistory(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        as_of=None,  # type: int
+        id=None,  # type: str
+        name=None,  # type: str
+        aggregation=None,  # type: str
+        data=None,  # type: List[List[float]]
+        resolution=None,  # type: int
+        resources=None,  # type: List[models.FixedReference]
+        unit=None,  # type: str
+    ):
         """
         Keyword args:
             as_of (int): The freshness of the data (timestamp in millis since epoch).
@@ -65,11 +76,22 @@ class MetricHistory(object):
             resources (list[FixedReference]): The references to the resources that the metric data is for. For example, write-iops metric for an array will have one element in this list referencing the array entity. the write-iops from an array to a pod will contain two elements in this list - first element pointing to the array, and second element pointing to the pod.
             unit (str): The unit of the metric data.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if as_of is not None:
+            self.as_of = as_of
+        if id is not None:
+            self.id = id
+        if name is not None:
+            self.name = name
+        if aggregation is not None:
+            self.aggregation = aggregation
+        if data is not None:
+            self.data = data
+        if resolution is not None:
+            self.resolution = resolution
+        if resources is not None:
+            self.resources = resources
+        if unit is not None:
+            self.unit = unit
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

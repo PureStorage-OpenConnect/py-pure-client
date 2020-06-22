@@ -11,16 +11,17 @@
 """
 
 
-from ...properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ...properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.pure1 import models
 
 class Arrays(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -39,16 +40,16 @@ class Arrays(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        arrays=None,  # type: List[models.FixedReference]
+    ):
         """
         Keyword args:
             arrays (list[FixedReference]): The list of arrays where this resource exists. Many resources are on a single array, but some resources, such as pods, can be shared across multiple arrays.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if arrays is not None:
+            self.arrays = arrays
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

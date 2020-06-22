@@ -87,6 +87,18 @@ BucketReplicaLink
 .. autoclass:: pypureclient.pure1.models.BucketReplicaLink
     :members:
 
+Blade
+~~~~~
+
+.. autoclass:: pypureclient.pure1.models.Blade
+    :members:
+
+Controller
+~~~~~
+
+.. autoclass:: pypureclient.pure1.models.Controller
+    :members:
+
 FileSystem
 ~~~~~~~~~~
 
@@ -159,6 +171,12 @@ PodArrayStatus
 .. autoclass:: pypureclient.pure1.models.PodArrayStatus
     :members:
 
+PodReplicaLink
+~~~~~
+
+.. autoclass:: pypureclient.pure1.models.PodReplicaLink
+    :members:
+    
 Policy
 ~~~~~~
 

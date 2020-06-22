@@ -2,6 +2,18 @@
 
 from __future__ import absolute_import
 
+class ReferenceType(object):
+    """Class just for type annotations.
+
+    It's used for reference arg on api function. This allows user to pass collections of Model objects
+    to the method without transforming them to ids or names.
+
+    Should be Protocol type when the typing module will get support of it.
+    """
+    def __init__(self):
+        self.id = ''
+        self.name = ''
+
 # import models into model package
 from .alert import Alert
 from .alerts_get_response import AlertsGetResponse
@@ -15,6 +27,10 @@ from .arrays_resource import ArraysResource
 from .audit import Audit
 from .audits_get_response import AuditsGetResponse
 from .audits_response import AuditsResponse
+from .blade import Blade
+from .blade_array_status import BladeArrayStatus
+from .blade_get_response import BladeGetResponse
+from .blade_response import BladeResponse
 from .bucket import Bucket
 from .bucket_get_response import BucketGetResponse
 from .bucket_replica_link import BucketReplicaLink
@@ -22,6 +38,9 @@ from .bucket_replica_link_get_response import BucketReplicaLinkGetResponse
 from .bucket_replica_link_response import BucketReplicaLinkResponse
 from .bucket_response import BucketResponse
 from .built_in_as_of import BuiltInAsOf
+from .controller import Controller
+from .controller_get_response import ControllerGetResponse
+from .controller_response import ControllerResponse
 from .error import Error
 from .error_errors import ErrorErrors
 from .error_no_context import ErrorNoContext
@@ -36,7 +55,6 @@ from .file_system_snapshot_get_response import FileSystemSnapshotGetResponse
 from .file_system_snapshot_response import FileSystemSnapshotResponse
 from .fixed_reference import FixedReference
 from .http import Http
-from .inline_response200 import InlineResponse200
 from .inline_response400 import InlineResponse400
 from .inline_response401 import InlineResponse401
 from .metric import Metric
@@ -58,6 +76,9 @@ from .page_info import PageInfo
 from .pod import Pod
 from .pod_array_status import PodArrayStatus
 from .pod_get_response import PodGetResponse
+from .pod_replica_link import PodReplicaLink
+from .pod_replica_link_get_response import PodReplicaLinkGetResponse
+from .pod_replica_link_response import PodReplicaLinkResponse
 from .pod_response import PodResponse
 from .policy import Policy
 from .policy_get_response import PolicyGetResponse
@@ -70,6 +91,7 @@ from .replica_link import ReplicaLink
 from .resource import Resource
 from .resource_no_name import ResourceNoName
 from .resource_with_location import ResourceWithLocation
+from .resource_with_locations import ResourceWithLocations
 from .smb import Smb
 from .support_contract import SupportContract
 from .support_contract_get_response import SupportContractGetResponse

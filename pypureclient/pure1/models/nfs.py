@@ -11,16 +11,17 @@
 """
 
 
-from ...properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ...properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.pure1 import models
 
 class Nfs(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -41,17 +42,20 @@ class Nfs(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        enabled=None,  # type: bool
+        rules=None,  # type: str
+    ):
         """
         Keyword args:
             enabled (bool): Is the protocol enabled?
             rules (str): NFS rules.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if enabled is not None:
+            self.enabled = enabled
+        if rules is not None:
+            self.rules = rules
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

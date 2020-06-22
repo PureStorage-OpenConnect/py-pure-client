@@ -11,16 +11,17 @@
 """
 
 
-from ...properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ...properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.pure1 import models
 
 class Alert(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -77,7 +78,29 @@ class Alert(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        as_of=None,  # type: int
+        id=None,  # type: str
+        name=None,  # type: str
+        arrays=None,  # type: List[models.FixedReference]
+        actual=None,  # type: str
+        category=None,  # type: str
+        closed=None,  # type: int
+        code=None,  # type: int
+        component_name=None,  # type: str
+        component_type=None,  # type: str
+        created=None,  # type: int
+        description=None,  # type: str
+        expected=None,  # type: str
+        knowledge_base_url=None,  # type: str
+        notified=None,  # type: int
+        origin=None,  # type: str
+        severity=None,  # type: str
+        state=None,  # type: str
+        summary=None,  # type: str
+        updated=None,  # type: int
+    ):
         """
         Keyword args:
             as_of (int): The freshness of the data (timestamp in millis since epoch).
@@ -101,11 +124,46 @@ class Alert(object):
             summary (str): Summary of the alert.
             updated (int): Time when the alert was last updated, in milliseconds since UNIX epoch.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if as_of is not None:
+            self.as_of = as_of
+        if id is not None:
+            self.id = id
+        if name is not None:
+            self.name = name
+        if arrays is not None:
+            self.arrays = arrays
+        if actual is not None:
+            self.actual = actual
+        if category is not None:
+            self.category = category
+        if closed is not None:
+            self.closed = closed
+        if code is not None:
+            self.code = code
+        if component_name is not None:
+            self.component_name = component_name
+        if component_type is not None:
+            self.component_type = component_type
+        if created is not None:
+            self.created = created
+        if description is not None:
+            self.description = description
+        if expected is not None:
+            self.expected = expected
+        if knowledge_base_url is not None:
+            self.knowledge_base_url = knowledge_base_url
+        if notified is not None:
+            self.notified = notified
+        if origin is not None:
+            self.origin = origin
+        if severity is not None:
+            self.severity = severity
+        if state is not None:
+            self.state = state
+        if summary is not None:
+            self.summary = summary
+        if updated is not None:
+            self.updated = updated
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

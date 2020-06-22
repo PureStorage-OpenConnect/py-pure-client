@@ -11,16 +11,17 @@
 """
 
 
-from ...properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ...properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.pure1 import models
 
 class Audit(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -57,7 +58,19 @@ class Audit(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        as_of=None,  # type: int
+        id=None,  # type: str
+        name=None,  # type: str
+        arrays=None,  # type: List[models.FixedReference]
+        arguments=None,  # type: str
+        command=None,  # type: str
+        origin=None,  # type: str
+        subcommand=None,  # type: str
+        time=None,  # type: int
+        user=None,  # type: str
+    ):
         """
         Keyword args:
             as_of (int): The freshness of the data (timestamp in millis since epoch).
@@ -71,11 +84,26 @@ class Audit(object):
             time (int): Time at which the command was run in milliseconds since UNIX epoch.
             user (str): The user who ran the command.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if as_of is not None:
+            self.as_of = as_of
+        if id is not None:
+            self.id = id
+        if name is not None:
+            self.name = name
+        if arrays is not None:
+            self.arrays = arrays
+        if arguments is not None:
+            self.arguments = arguments
+        if command is not None:
+            self.command = command
+        if origin is not None:
+            self.origin = origin
+        if subcommand is not None:
+            self.subcommand = subcommand
+        if time is not None:
+            self.time = time
+        if user is not None:
+            self.user = user
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

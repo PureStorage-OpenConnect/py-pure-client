@@ -11,16 +11,17 @@
 """
 
 
-from ...properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ...properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.pure1 import models
 
 class MetricAvailability(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -43,18 +44,24 @@ class MetricAvailability(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        aggregations=None,  # type: List[str]
+        resolution=None,  # type: int
+        retention=None,  # type: int
+    ):
         """
         Keyword args:
             aggregations (list[str]): Available aggregations for this metric at the given resolution, e.g. 'avg', 'max'.
             resolution (int): An available resolution of this metric in milliseconds.
             retention (int): The retention at this given resolution in milliseconds.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if aggregations is not None:
+            self.aggregations = aggregations
+        if resolution is not None:
+            self.resolution = resolution
+        if retention is not None:
+            self.retention = retention
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

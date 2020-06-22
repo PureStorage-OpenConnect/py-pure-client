@@ -11,16 +11,17 @@
 """
 
 
-from ...properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ...properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.pure1 import models
 
 class Target(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -49,7 +50,15 @@ class Target(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        as_of=None,  # type: int
+        id=None,  # type: str
+        name=None,  # type: str
+        address=None,  # type: str
+        status=None,  # type: str
+        status_details=None,  # type: str
+    ):
         """
         Keyword args:
             as_of (int): The freshness of the data (timestamp in millis since epoch).
@@ -59,11 +68,18 @@ class Target(object):
             status (str): Status of the connection. Values include `connected` and `connecting`.
             status_details (str): Additional information describing any issues encountered when connecting, or `null` if the `status` is `connected`.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if as_of is not None:
+            self.as_of = as_of
+        if id is not None:
+            self.id = id
+        if name is not None:
+            self.name = name
+        if address is not None:
+            self.address = address
+        if status is not None:
+            self.status = status
+        if status_details is not None:
+            self.status_details = status_details
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -11,16 +11,17 @@
 """
 
 
-from ...properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ...properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.pure1 import models
 
 class BucketReplicaLink(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -32,50 +33,77 @@ class BucketReplicaLink(object):
         'as_of': 'int',
         'id': 'str',
         'lag': 'int',
-        'members': 'list[ResourceWithLocation]',
         'paused': 'bool',
         'recovery_point': 'int',
+        'status': 'str',
         'status_details': 'str',
+        'members': 'list[ResourceWithLocation]',
         'sources': 'list[ResourceWithLocation]',
-        'targets': 'list[ResourceWithLocation]',
-        'status': 'str'
+        'targets': 'list[ResourceWithLocation]'
     }
 
     attribute_map = {
         'as_of': '_as_of',
         'id': 'id',
         'lag': 'lag',
-        'members': 'members',
         'paused': 'paused',
         'recovery_point': 'recovery_point',
+        'status': 'status',
         'status_details': 'status_details',
+        'members': 'members',
         'sources': 'sources',
-        'targets': 'targets',
-        'status': 'status'
+        'targets': 'targets'
     }
 
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        as_of=None,  # type: int
+        id=None,  # type: str
+        lag=None,  # type: int
+        paused=None,  # type: bool
+        recovery_point=None,  # type: int
+        status=None,  # type: str
+        status_details=None,  # type: str
+        members=None,  # type: List[models.ResourceWithLocation]
+        sources=None,  # type: List[models.ResourceWithLocation]
+        targets=None,  # type: List[models.ResourceWithLocation]
+    ):
         """
         Keyword args:
             as_of (int): The freshness of the data (timestamp in millis since epoch).
             id (str): A non-modifiable, globally unique ID chosen by the system.
             lag (int): Duration, in milliseconds, which represents how far behind the replication `target` is from the `source`.
-            members (list[ResourceWithLocation]): The union of source and target resources in the replica link.
             paused (bool): Returns `true` if the replica link is paused.
-            recovery_point (int): Time when the last piece of data was replicated, in milliseconds since UNIX epoch, and the recovery point of the bucket.
+            recovery_point (int): Time when the last piece of data was replicated, in milliseconds since the UNIX epoch, and the recovery point of the bucket.
+            status (str): Status of the replica link. Values include `replicating`, `idle`, and `unhealthy`.
             status_details (str): Detailed information about the status of the replica link when it is `unhealthy`.
-            sources (list[ResourceWithLocation]): The source resources in the replica link.
-            targets (list[ResourceWithLocation]): The target resources in the replica link.
-            status (str): Status of the replica link. Values include `replicating`, `paused`, and `unhealthy`.
+            members (list[ResourceWithLocation]): The union of source and target buckets in the replica link.
+            sources (list[ResourceWithLocation]): The source buckets in the replica link.
+            targets (list[ResourceWithLocation]): The target buckets in the replica link.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if as_of is not None:
+            self.as_of = as_of
+        if id is not None:
+            self.id = id
+        if lag is not None:
+            self.lag = lag
+        if paused is not None:
+            self.paused = paused
+        if recovery_point is not None:
+            self.recovery_point = recovery_point
+        if status is not None:
+            self.status = status
+        if status_details is not None:
+            self.status_details = status_details
+        if members is not None:
+            self.members = members
+        if sources is not None:
+            self.sources = sources
+        if targets is not None:
+            self.targets = targets
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

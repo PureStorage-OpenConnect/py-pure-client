@@ -11,16 +11,17 @@
 """
 
 
-from ...properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ...properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.pure1 import models
 
 class PodArrayStatus(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -49,7 +50,15 @@ class PodArrayStatus(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        id=None,  # type: str
+        name=None,  # type: str
+        resource_type=None,  # type: str
+        frozen_at=None,  # type: int
+        mediator_status=None,  # type: str
+        status=None,  # type: str
+    ):
         """
         Keyword args:
             id (str): The opaque and unique id of this resource.
@@ -59,11 +68,18 @@ class PodArrayStatus(object):
             mediator_status (str): The status of the mediator as assessed by this array. Valid values are `flummoxed`, `online`, `unknown`, and `unreachable`. `flummoxed` - The array has the wrong UUID for the mediator. This means that the array can reach a mediator, but is talking to the wrong one. Typically, this would be due to a misconfiguration in the customer environment (e.g. DNS misconfiguration). UUIDs also have a TTL. If a pod goes offline on one array, and stays like that for weeks (such that the TTL expires), it may also show this status until the peer array is reachable again. `online` - The array is successfully communicating with the mediator. `unreachable` - The array cannot reach the mediator. This could be due to a network issue or the mediator is down.
             status (str): Status of an array in the pod. Valid values are `offline`, `online`, `resyncing`, and `unknown`. `offline` - There is a problem. This array cannot confirm it has the latest data for this pod. This array can not handle IO to the pod nor could it take over during an HA event. `online` - Everything is fine. This array has the latest data for this pod. This array can handle IO to the pod and can take over during an HA event. `resyncing` - There was a problem. This array is actively catching up to get the latest data for this pod. This array can handle IO to this pod's volumes, however it could not take over during an HA event. `unknown` - The state of the pod on this array cannot be determined. This state is only seen on disconnected arrays. The disconnected array cannot determine if the pod on another array is online or offline.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if id is not None:
+            self.id = id
+        if name is not None:
+            self.name = name
+        if resource_type is not None:
+            self.resource_type = resource_type
+        if frozen_at is not None:
+            self.frozen_at = frozen_at
+        if mediator_status is not None:
+            self.mediator_status = mediator_status
+        if status is not None:
+            self.status = status
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

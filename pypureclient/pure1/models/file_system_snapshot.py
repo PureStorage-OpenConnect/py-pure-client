@@ -11,16 +11,17 @@
 """
 
 
-from ...properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ...properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.pure1 import models
 
 class FileSystemSnapshot(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -55,7 +56,18 @@ class FileSystemSnapshot(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        as_of=None,  # type: int
+        id=None,  # type: str
+        name=None,  # type: str
+        arrays=None,  # type: List[models.FixedReference]
+        created=None,  # type: int
+        destroyed=None,  # type: bool
+        on=None,  # type: models.FixedReference
+        source=None,  # type: models.FixedReference
+        suffix=None,  # type: str
+    ):
         """
         Keyword args:
             as_of (int): The freshness of the data (timestamp in millis since epoch).
@@ -68,11 +80,24 @@ class FileSystemSnapshot(object):
             source (FixedReference): A reference to the file system that the snapshot was taken from.
             suffix (str): Indicates the suffix of the snapshot.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if as_of is not None:
+            self.as_of = as_of
+        if id is not None:
+            self.id = id
+        if name is not None:
+            self.name = name
+        if arrays is not None:
+            self.arrays = arrays
+        if created is not None:
+            self.created = created
+        if destroyed is not None:
+            self.destroyed = destroyed
+        if on is not None:
+            self.on = on
+        if source is not None:
+            self.source = source
+        if suffix is not None:
+            self.suffix = suffix
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -11,16 +11,17 @@
 """
 
 
-from ...properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ...properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.pure1 import models
 
 class NetworkInterface(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -63,7 +64,22 @@ class NetworkInterface(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        as_of=None,  # type: int
+        id=None,  # type: str
+        name=None,  # type: str
+        arrays=None,  # type: List[models.FixedReference]
+        address=None,  # type: str
+        enabled=None,  # type: bool
+        gateway=None,  # type: str
+        hwaddr=None,  # type: str
+        mtu=None,  # type: int
+        netmask=None,  # type: str
+        services=None,  # type: List[str]
+        speed=None,  # type: int
+        subinterfaces=None,  # type: List[str]
+    ):
         """
         Keyword args:
             as_of (int): The freshness of the data (timestamp in millis since epoch).
@@ -80,11 +96,32 @@ class NetworkInterface(object):
             speed (int): Speed in bytes per second.
             subinterfaces (list[str])
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if as_of is not None:
+            self.as_of = as_of
+        if id is not None:
+            self.id = id
+        if name is not None:
+            self.name = name
+        if arrays is not None:
+            self.arrays = arrays
+        if address is not None:
+            self.address = address
+        if enabled is not None:
+            self.enabled = enabled
+        if gateway is not None:
+            self.gateway = gateway
+        if hwaddr is not None:
+            self.hwaddr = hwaddr
+        if mtu is not None:
+            self.mtu = mtu
+        if netmask is not None:
+            self.netmask = netmask
+        if services is not None:
+            self.services = services
+        if speed is not None:
+            self.speed = speed
+        if subinterfaces is not None:
+            self.subinterfaces = subinterfaces
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

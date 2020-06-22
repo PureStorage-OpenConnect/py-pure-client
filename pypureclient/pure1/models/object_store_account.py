@@ -11,16 +11,17 @@
 """
 
 
-from ...properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ...properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.pure1 import models
 
 class ObjectStoreAccount(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -49,7 +50,15 @@ class ObjectStoreAccount(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        as_of=None,  # type: int
+        id=None,  # type: str
+        name=None,  # type: str
+        arrays=None,  # type: List[models.FixedReference]
+        created=None,  # type: int
+        object_count=None,  # type: int
+    ):
         """
         Keyword args:
             as_of (int): The freshness of the data (timestamp in millis since epoch).
@@ -59,11 +68,18 @@ class ObjectStoreAccount(object):
             created (int): Creation timestamp of the object, in milliseconds since Unix epoch.
             object_count (int): The number of objects within the account.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if as_of is not None:
+            self.as_of = as_of
+        if id is not None:
+            self.id = id
+        if name is not None:
+            self.name = name
+        if arrays is not None:
+            self.arrays = arrays
+        if created is not None:
+            self.created = created
+        if object_count is not None:
+            self.object_count = object_count
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

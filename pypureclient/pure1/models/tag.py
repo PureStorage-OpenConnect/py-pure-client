@@ -11,16 +11,17 @@
 """
 
 
-from ...properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ...properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.pure1 import models
 
 class Tag(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -47,7 +48,14 @@ class Tag(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        key=None,  # type: str
+        namespace=None,  # type: str
+        resource=None,  # type: models.FixedReference
+        tag_organization_id=None,  # type: int
+        value=None,  # type: str
+    ):
         """
         Keyword args:
             key (str): Key of the tag.
@@ -56,11 +64,16 @@ class Tag(object):
             tag_organization_id (int): Org id of the tag.
             value (str): Value of the tag.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if key is not None:
+            self.key = key
+        if namespace is not None:
+            self.namespace = namespace
+        if resource is not None:
+            self.resource = resource
+        if tag_organization_id is not None:
+            self.tag_organization_id = tag_organization_id
+        if value is not None:
+            self.value = value
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

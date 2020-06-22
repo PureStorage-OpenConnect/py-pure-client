@@ -36,6 +36,14 @@ pypureclient.pure1.api.authorization\_api module
     :undoc-members:
     :show-inheritance:
 
+pypureclient.pure1.api.blades\_api module
+-----------------------------------------
+
+.. automodule:: pypureclient.pure1.api.blades_api
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 pypureclient.pure1.api.bucket\_replica\_links\_api module
 ---------------------------------------------------------
 
@@ -48,6 +56,14 @@ pypureclient.pure1.api.buckets\_api module
 ------------------------------------------
 
 .. automodule:: pypureclient.pure1.api.buckets_api
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.api.controllers\_api module
+----------------------------------------------
+
+.. automodule:: pypureclient.pure1.api.controllers_api
     :members:
     :undoc-members:
     :show-inheritance:
@@ -96,6 +112,14 @@ pypureclient.pure1.api.object\_store\_accounts\_api module
 ----------------------------------------------------------
 
 .. automodule:: pypureclient.pure1.api.object_store_accounts_api
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.api.pod\_replica\_links\_api module
+------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.api.pod_replica_links_api
     :members:
     :undoc-members:
     :show-inheritance:

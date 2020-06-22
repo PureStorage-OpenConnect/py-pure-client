@@ -11,16 +11,17 @@
 """
 
 
-from ...properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ...properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.pure1 import models
 
 class SupportContract(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -43,18 +44,24 @@ class SupportContract(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        start_date=None,  # type: int
+        end_date=None,  # type: int
+        resource=None,  # type: models.FixedReference
+    ):
         """
         Keyword args:
             start_date (int): Date when the support contract started. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch.
             end_date (int): Date when the support contract ended. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch.
             resource (FixedReference)
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if start_date is not None:
+            self.start_date = start_date
+        if end_date is not None:
+            self.end_date = end_date
+        if resource is not None:
+            self.resource = resource
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

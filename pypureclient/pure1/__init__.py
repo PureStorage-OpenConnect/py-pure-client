@@ -9,8 +9,11 @@ from ..responses import ValidResponse, ErrorResponse, ApiError, ResponseHeaders
 from .models.alert import Alert
 from .models.array import Array
 from .models.audit import Audit
+from .models.blade import Blade
+from .models.blade_array_status import BladeArrayStatus
 from .models.bucket import Bucket
 from .models.bucket_replica_link import BucketReplicaLink
+from .models.controller import Controller
 from .models.error import Error
 from .models.error_errors import ErrorErrors
 from .models.error_no_context import ErrorNoContext
@@ -27,6 +30,7 @@ from .models.nfs import Nfs
 from .models.object_store_account import ObjectStoreAccount
 from .models.pod import Pod
 from .models.pod_array_status import PodArrayStatus
+from .models.pod_replica_link import PodReplicaLink
 from .models.policy import Policy
 from .models.policy_member import PolicyMember
 from .models.policy_rule import PolicyRule
@@ -49,8 +53,11 @@ CLASSES_TO_ADD_PROPS = [
     Alert,
     Array,
     Audit,
+    Blade,
+    BladeArrayStatus,
     Bucket,
     BucketReplicaLink,
+    Controller,
     Error,
     ErrorErrors,
     ErrorNoContext,
@@ -67,6 +74,7 @@ CLASSES_TO_ADD_PROPS = [
     ObjectStoreAccount,
     Pod,
     PodArrayStatus,
+    PodReplicaLink,
     Policy,
     PolicyMember,
     PolicyRule,

@@ -11,16 +11,17 @@
 """
 
 
-from ...properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ...properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.pure1 import models
 
 class OauthTokenResponse(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -45,7 +46,13 @@ class OauthTokenResponse(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        access_token=None,  # type: str
+        issued_token_type=None,  # type: str
+        token_type=None,  # type: str
+        expires_in=None,  # type: int
+    ):
         """
         Keyword args:
             access_token (str): The serialized OAuth 2.0 Bearer token used to perform authenticated requests. The access token must be added to the Authorization header of all API calls.
@@ -53,11 +60,14 @@ class OauthTokenResponse(object):
             token_type (str): Indicates how the API client can use the access token issued. The Pure Storage REST API supports the `Bearer` token.
             expires_in (int): The duration after which the access token will expire. Measured in seconds. This differs from other duration fields that are expressed in milliseconds.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if access_token is not None:
+            self.access_token = access_token
+        if issued_token_type is not None:
+            self.issued_token_type = issued_token_type
+        if token_type is not None:
+            self.token_type = token_type
+        if expires_in is not None:
+            self.expires_in = expires_in
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

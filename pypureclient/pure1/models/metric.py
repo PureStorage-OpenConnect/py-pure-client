@@ -11,16 +11,17 @@
 """
 
 
-from ...properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ...properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.pure1 import models
 
 class Metric(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -51,7 +52,16 @@ class Metric(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        as_of=None,  # type: int
+        id=None,  # type: str
+        name=None,  # type: str
+        availabilities=None,  # type: List[models.MetricAvailability]
+        description=None,  # type: str
+        resource_types=None,  # type: List[str]
+        unit=None,  # type: str
+    ):
         """
         Keyword args:
             as_of (int): The freshness of the data (timestamp in millis since epoch).
@@ -62,11 +72,20 @@ class Metric(object):
             resource_types (list[str]): The type of resource (as described by their endpoints) that this metric is available at. NOTE that a metric could be available for a combination of resource types, e.g. mirrored writes from \"arrays\" to \"pods\".
             unit (str): The unit of the metric.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if as_of is not None:
+            self.as_of = as_of
+        if id is not None:
+            self.id = id
+        if name is not None:
+            self.name = name
+        if availabilities is not None:
+            self.availabilities = availabilities
+        if description is not None:
+            self.description = description
+        if resource_types is not None:
+            self.resource_types = resource_types
+        if unit is not None:
+            self.unit = unit
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

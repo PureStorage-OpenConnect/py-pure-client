@@ -11,16 +11,17 @@
 """
 
 
-from ...properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ...properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.pure1 import models
 
 class PolicyRule(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -45,7 +46,13 @@ class PolicyRule(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        at=None,  # type: int
+        every=None,  # type: int
+        keep_for=None,  # type: int
+        time_zone=None,  # type: str
+    ):
         """
         Keyword args:
             at (int): Time of day to take the snapshot, in milliseconds since 00:00 in the specified `time_zone`. Only valid if `every` is set as whole days.
@@ -53,11 +60,14 @@ class PolicyRule(object):
             keep_for (int): How long to keep snapshots, in milliseconds.
             time_zone (str): The time zone in which the `at` rule is applied.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if at is not None:
+            self.at = at
+        if every is not None:
+            self.every = every
+        if keep_for is not None:
+            self.keep_for = keep_for
+        if time_zone is not None:
+            self.time_zone = time_zone
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

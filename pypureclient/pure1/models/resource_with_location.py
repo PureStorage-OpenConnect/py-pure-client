@@ -11,16 +11,17 @@
 """
 
 
-from ...properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ...properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.pure1 import models
 
 class ResourceWithLocation(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -45,7 +46,13 @@ class ResourceWithLocation(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        id=None,  # type: str
+        name=None,  # type: str
+        resource_type=None,  # type: str
+        location=None,  # type: models.FixedReference
+    ):
         """
         Keyword args:
             id (str): The opaque and unique id of this resource.
@@ -53,11 +60,14 @@ class ResourceWithLocation(object):
             resource_type (str): The type of this resource represented by the name of its REST endpoint. For example, \"arrays\", \"network-interfaces\", and \"metrics\". The value may be `null` if the resource is not represented.
             location (FixedReference)
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if id is not None:
+            self.id = id
+        if name is not None:
+            self.name = name
+        if resource_type is not None:
+            self.resource_type = resource_type
+        if location is not None:
+            self.location = location
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
