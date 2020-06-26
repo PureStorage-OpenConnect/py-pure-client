@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_1 import models
 
 class ProtectionGroupSnapshotPatch(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -53,7 +54,17 @@ class ProtectionGroupSnapshotPatch(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        name=None,  # type: str
+        created=None,  # type: int
+        destroyed=None,  # type: bool
+        pod=None,  # type: models.FixedReference
+        source=None,  # type: models.FixedReference
+        space=None,  # type: models.Space
+        suffix=None,  # type: str
+        time_remaining=None,  # type: int
+    ):
         """
         Keyword args:
             name (str): A user-specified name. The name must be locally unique and can be changed.
@@ -65,11 +76,22 @@ class ProtectionGroupSnapshotPatch(object):
             suffix (str)
             time_remaining (int): The amount of time left until the destroyed snapshot is permanently eradicated. Measured in milliseconds. Before the `time_remaining` period has elapsed, the destroyed snapshot can be recovered by setting `destroyed=false`.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if name is not None:
+            self.name = name
+        if created is not None:
+            self.created = created
+        if destroyed is not None:
+            self.destroyed = destroyed
+        if pod is not None:
+            self.pod = pod
+        if source is not None:
+            self.source = source
+        if space is not None:
+            self.space = space
+        if suffix is not None:
+            self.suffix = suffix
+        if time_remaining is not None:
+            self.time_remaining = time_remaining
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

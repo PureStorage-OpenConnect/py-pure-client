@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_1 import models
 
 class ProtectionGroupTargetGetResponse(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -45,7 +46,13 @@ class ProtectionGroupTargetGetResponse(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        more_items_remaining=None,  # type: bool
+        total_item_count=None,  # type: int
+        continuation_token=None,  # type: str
+        items=None,  # type: List[models.TargetProtectionGroup]
+    ):
         """
         Keyword args:
             more_items_remaining (bool): Returns a value of `true` if subsequent items can be retrieved.
@@ -53,11 +60,14 @@ class ProtectionGroupTargetGetResponse(object):
             continuation_token (str): Continuation token that can be provided in the `continuation_token` query param to get the next page of data. If you use the continuation token to page through data you are guaranteed to get all items exactly once regardless of how items are modified. If an item is added or deleted during the pagination then it may or may not be returned. The continuation token is generated if the limit is less than the remaining number of items, and the default sort is used (no sort is specified).
             items (list[TargetProtectionGroup]): Returns a list of all items after filtering. The values are displayed for each name where meaningful.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if more_items_remaining is not None:
+            self.more_items_remaining = more_items_remaining
+        if total_item_count is not None:
+            self.total_item_count = total_item_count
+        if continuation_token is not None:
+            self.continuation_token = continuation_token
+        if items is not None:
+            self.items = items
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_1 import models
 
 class TimeWindow(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -41,17 +42,20 @@ class TimeWindow(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        start=None,  # type: int
+        end=None,  # type: int
+    ):
         """
         Keyword args:
             start (int): The window start time. Measured in milliseconds since midnight. The time must be set on the hour. (e.g., `18000000`, which is equal to 5:00 AM).
             end (int): The window end time. Measured in milliseconds since midnight. The time must be set on the hour. (e.g., `28800000`, which is equal to 8:00 AM).
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if start is not None:
+            self.start = start
+        if end is not None:
+            self.end = end
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

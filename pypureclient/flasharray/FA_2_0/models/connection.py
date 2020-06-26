@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_0 import models
 
 class Connection(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -47,7 +48,14 @@ class Connection(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        host=None,  # type: models.FixedReferenceNoId
+        host_group=None,  # type: models.FixedReferenceNoId
+        lun=None,  # type: int
+        protocol_endpoint=None,  # type: models.Reference
+        volume=None,  # type: models.FixedReference
+    ):
         """
         Keyword args:
             host (FixedReferenceNoId): The host computer that sends and receives I/O requests to and from volumes on the FlashArray array.
@@ -56,11 +64,16 @@ class Connection(object):
             protocol_endpoint (Reference): A protocol endpoint (also known as a conglomerate volume) which acts as a proxy through which virtual volumes are created and then connected to VMware ESXi hosts or host groups. The protocol endpoint itself does not serve I/Os; instead, its job is to form connections between FlashArray volumes and ESXi hosts and host groups.
             volume (FixedReference): A container that manages the storage space on the array.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if host is not None:
+            self.host = host
+        if host_group is not None:
+            self.host_group = host_group
+        if lun is not None:
+            self.lun = lun
+        if protocol_endpoint is not None:
+            self.protocol_endpoint = protocol_endpoint
+        if volume is not None:
+            self.volume = volume
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

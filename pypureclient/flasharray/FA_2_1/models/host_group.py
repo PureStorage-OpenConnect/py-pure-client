@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_1 import models
 
 class HostGroup(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -47,7 +48,14 @@ class HostGroup(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        name=None,  # type: str
+        connection_count=None,  # type: int
+        host_count=None,  # type: int
+        is_local=None,  # type: bool
+        space=None,  # type: models.Space
+    ):
         """
         Keyword args:
             name (str): A user-specified name. The name must be locally unique and can be changed.
@@ -56,11 +64,16 @@ class HostGroup(object):
             is_local (bool): Returns a value of `true` if the host or host group belongs to the current array. Returns a value of `false` if the host or host group belongs to a remote array.
             space (Space): Displays size and space consumption information.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if name is not None:
+            self.name = name
+        if connection_count is not None:
+            self.connection_count = connection_count
+        if host_count is not None:
+            self.host_count = host_count
+        if is_local is not None:
+            self.is_local = is_local
+        if space is not None:
+            self.space = space
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

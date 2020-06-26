@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_1 import models
 
 class RemoteProtectionGroupSnapshot(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -53,7 +54,17 @@ class RemoteProtectionGroupSnapshot(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        name=None,  # type: str
+        created=None,  # type: int
+        destroyed=None,  # type: bool
+        is_local=None,  # type: bool
+        remote=None,  # type: models.FixedReference
+        source=None,  # type: models.FixedReferenceNoId
+        suffix=None,  # type: str
+        time_remaining=None,  # type: int
+    ):
         """
         Keyword args:
             name (str): A locally unique, system-generated name. The name cannot be modified.
@@ -65,11 +76,22 @@ class RemoteProtectionGroupSnapshot(object):
             suffix (str): The suffix that is appended to the `source_name` value to generate the full remote protection group snapshot name in the form `PGROUP.SUFFIX`. If the suffix is not specified, the system constructs the snapshot name in the form `PGROUP.NNN`, where `PGROUP` is the protection group name, and `NNN` is a monotonically increasing number.
             time_remaining (int): Milliseconds remaining until eradication, if the snapshot has been destroyed.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if name is not None:
+            self.name = name
+        if created is not None:
+            self.created = created
+        if destroyed is not None:
+            self.destroyed = destroyed
+        if is_local is not None:
+            self.is_local = is_local
+        if remote is not None:
+            self.remote = remote
+        if source is not None:
+            self.source = source
+        if suffix is not None:
+            self.suffix = suffix
+        if time_remaining is not None:
+            self.time_remaining = time_remaining
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

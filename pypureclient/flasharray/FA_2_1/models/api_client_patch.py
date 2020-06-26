@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_1 import models
 
 class ApiClientPatch(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -39,16 +40,16 @@ class ApiClientPatch(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        enabled=None,  # type: bool
+    ):
         """
         Keyword args:
             enabled (bool): Returns a value of `true` if the API client is permitted to exchange ID tokens for access tokens. API clients are disabled by default.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if enabled is not None:
+            self.enabled = enabled
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

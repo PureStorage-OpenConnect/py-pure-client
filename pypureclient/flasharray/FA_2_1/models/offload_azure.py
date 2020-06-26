@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_1 import models
 
 class OffloadAzure(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -43,18 +44,24 @@ class OffloadAzure(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        container_name=None,  # type: str
+        account_name=None,  # type: str
+        secret_access_key=None,  # type: str
+    ):
         """
         Keyword args:
             container_name (str): The name of the container in the Azure Blob storage account to where the data will be offloaded. The name must be a valid DNS name. If not specified, defaults to `offload`.
             account_name (str): The name of the existing Azure Blob storage account.
             secret_access_key (str): The secret access key that goes with the account name (`account_name`) of the Azure Blob storage account. The secret access key is only accepted when creating the connection between the array and the Azure Blob storage account. The `account_name` and `container_name`, and `secret_access_key` parameters must be set together.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if container_name is not None:
+            self.container_name = container_name
+        if account_name is not None:
+            self.account_name = account_name
+        if secret_access_key is not None:
+            self.secret_access_key = secret_access_key
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

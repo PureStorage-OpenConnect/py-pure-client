@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_1 import models
 
 class RemoteProtectionGroup(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -53,7 +54,17 @@ class RemoteProtectionGroup(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        id=None,  # type: str
+        name=None,  # type: str
+        destroyed=None,  # type: bool
+        is_local=None,  # type: bool
+        remote=None,  # type: models.FixedReference
+        source=None,  # type: models.FixedReference
+        target_retention=None,  # type: models.RetentionPolicy
+        time_remaining=None,  # type: int
+    ):
         """
         Keyword args:
             id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
@@ -65,11 +76,22 @@ class RemoteProtectionGroup(object):
             target_retention (RetentionPolicy): The retention policy for the remote protection group.
             time_remaining (int): Milliseconds remaining until eradication, if remote protection group has been destroyed.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if id is not None:
+            self.id = id
+        if name is not None:
+            self.name = name
+        if destroyed is not None:
+            self.destroyed = destroyed
+        if is_local is not None:
+            self.is_local = is_local
+        if remote is not None:
+            self.remote = remote
+        if source is not None:
+            self.source = source
+        if target_retention is not None:
+            self.target_retention = target_retention
+        if time_remaining is not None:
+            self.time_remaining = time_remaining
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

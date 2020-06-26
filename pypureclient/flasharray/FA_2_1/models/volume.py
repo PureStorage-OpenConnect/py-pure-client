@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_1 import models
 
 class Volume(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -67,7 +68,24 @@ class Volume(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        id=None,  # type: str
+        name=None,  # type: str
+        connection_count=None,  # type: int
+        created=None,  # type: int
+        destroyed=None,  # type: bool
+        host_encryption_key_status=None,  # type: str
+        provisioned=None,  # type: int
+        qos=None,  # type: models.Qos
+        serial=None,  # type: str
+        space=None,  # type: models.Space
+        time_remaining=None,  # type: int
+        pod=None,  # type: models.Reference
+        source=None,  # type: models.FixedReference
+        subtype=None,  # type: str
+        volume_group=None,  # type: models.Reference
+    ):
         """
         Keyword args:
             id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
@@ -86,11 +104,36 @@ class Volume(object):
             subtype (str): The type of volume. Valid values are `protocol_endpoint` and `regular`.
             volume_group (Reference): A reference to the volume group.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if id is not None:
+            self.id = id
+        if name is not None:
+            self.name = name
+        if connection_count is not None:
+            self.connection_count = connection_count
+        if created is not None:
+            self.created = created
+        if destroyed is not None:
+            self.destroyed = destroyed
+        if host_encryption_key_status is not None:
+            self.host_encryption_key_status = host_encryption_key_status
+        if provisioned is not None:
+            self.provisioned = provisioned
+        if qos is not None:
+            self.qos = qos
+        if serial is not None:
+            self.serial = serial
+        if space is not None:
+            self.space = space
+        if time_remaining is not None:
+            self.time_remaining = time_remaining
+        if pod is not None:
+            self.pod = pod
+        if source is not None:
+            self.source = source
+        if subtype is not None:
+            self.subtype = subtype
+        if volume_group is not None:
+            self.volume_group = volume_group
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

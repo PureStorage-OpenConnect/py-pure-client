@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_1 import models
 
 class AggregateReplicationPerformance(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -39,16 +40,16 @@ class AggregateReplicationPerformance(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        bytes_per_sec=None,  # type: int
+    ):
         """
         Keyword args:
             bytes_per_sec (int): The total number of bytes of replication data transmitted and received per second.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if bytes_per_sec is not None:
+            self.bytes_per_sec = bytes_per_sec
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

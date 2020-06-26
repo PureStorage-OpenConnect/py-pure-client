@@ -41,6 +41,7 @@ from .models.resource_space import ResourceSpace
 from .models.snapshot import Snapshot
 from .models.space import Space
 from .models.transfer import Transfer
+from .models.username import Username
 from .models.volume import Volume
 from .models.volume_common import VolumeCommon
 from .models.volume_patch import VolumePatch
@@ -95,6 +96,7 @@ CLASSES_TO_ADD_PROPS = [
     Snapshot,
     Space,
     Transfer,
+    Username,
     Volume,
     VolumeCommon,
     VolumePatch,

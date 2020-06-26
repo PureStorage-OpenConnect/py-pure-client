@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_0 import models
 
 class FixedReferenceNoId(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -39,16 +40,16 @@ class FixedReferenceNoId(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        name=None,  # type: str
+    ):
         """
         Keyword args:
             name (str): The resource name, such as volume name, pod name, snapshot name, and so on.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if name is not None:
+            self.name = name
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

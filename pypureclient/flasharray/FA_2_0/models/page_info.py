@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_0 import models
 
 class PageInfo(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -41,17 +42,20 @@ class PageInfo(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        more_items_remaining=None,  # type: bool
+        total_item_count=None,  # type: int
+    ):
         """
         Keyword args:
             more_items_remaining (bool): Returns a value of `true` if subsequent items can be retrieved.
             total_item_count (int): The total number of records after applying all filter query parameters. The `total_item_count` will be calculated if and only if the corresponding query parameter `total_item_count` is set to `true`. If this query parameter is not set or set to `false`, a value of `null` will be returned.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if more_items_remaining is not None:
+            self.more_items_remaining = more_items_remaining
+        if total_item_count is not None:
+            self.total_item_count = total_item_count
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

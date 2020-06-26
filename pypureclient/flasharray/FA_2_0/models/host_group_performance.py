@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_0 import models
 
 class HostGroupPerformance(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -93,7 +94,37 @@ class HostGroupPerformance(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        id=None,  # type: str
+        name=None,  # type: str
+        bytes_per_mirrored_write=None,  # type: int
+        bytes_per_op=None,  # type: int
+        bytes_per_read=None,  # type: int
+        bytes_per_write=None,  # type: int
+        mirrored_write_bytes_per_sec=None,  # type: int
+        mirrored_writes_per_sec=None,  # type: int
+        qos_rate_limit_usec_per_mirrored_write_op=None,  # type: int
+        qos_rate_limit_usec_per_read_op=None,  # type: int
+        qos_rate_limit_usec_per_write_op=None,  # type: int
+        queue_usec_per_mirrored_write_op=None,  # type: int
+        queue_usec_per_read_op=None,  # type: int
+        queue_usec_per_write_op=None,  # type: int
+        read_bytes_per_sec=None,  # type: int
+        reads_per_sec=None,  # type: int
+        san_usec_per_mirrored_write_op=None,  # type: int
+        san_usec_per_read_op=None,  # type: int
+        san_usec_per_write_op=None,  # type: int
+        service_usec_per_mirrored_write_op=None,  # type: int
+        service_usec_per_read_op=None,  # type: int
+        service_usec_per_write_op=None,  # type: int
+        time=None,  # type: int
+        usec_per_mirrored_write_op=None,  # type: int
+        usec_per_read_op=None,  # type: int
+        usec_per_write_op=None,  # type: int
+        write_bytes_per_sec=None,  # type: int
+        writes_per_sec=None,  # type: int
+    ):
         """
         Keyword args:
             id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
@@ -125,11 +156,62 @@ class HostGroupPerformance(object):
             write_bytes_per_sec (int): The number of bytes written per second.
             writes_per_sec (int): The number of write requests processed per second.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if id is not None:
+            self.id = id
+        if name is not None:
+            self.name = name
+        if bytes_per_mirrored_write is not None:
+            self.bytes_per_mirrored_write = bytes_per_mirrored_write
+        if bytes_per_op is not None:
+            self.bytes_per_op = bytes_per_op
+        if bytes_per_read is not None:
+            self.bytes_per_read = bytes_per_read
+        if bytes_per_write is not None:
+            self.bytes_per_write = bytes_per_write
+        if mirrored_write_bytes_per_sec is not None:
+            self.mirrored_write_bytes_per_sec = mirrored_write_bytes_per_sec
+        if mirrored_writes_per_sec is not None:
+            self.mirrored_writes_per_sec = mirrored_writes_per_sec
+        if qos_rate_limit_usec_per_mirrored_write_op is not None:
+            self.qos_rate_limit_usec_per_mirrored_write_op = qos_rate_limit_usec_per_mirrored_write_op
+        if qos_rate_limit_usec_per_read_op is not None:
+            self.qos_rate_limit_usec_per_read_op = qos_rate_limit_usec_per_read_op
+        if qos_rate_limit_usec_per_write_op is not None:
+            self.qos_rate_limit_usec_per_write_op = qos_rate_limit_usec_per_write_op
+        if queue_usec_per_mirrored_write_op is not None:
+            self.queue_usec_per_mirrored_write_op = queue_usec_per_mirrored_write_op
+        if queue_usec_per_read_op is not None:
+            self.queue_usec_per_read_op = queue_usec_per_read_op
+        if queue_usec_per_write_op is not None:
+            self.queue_usec_per_write_op = queue_usec_per_write_op
+        if read_bytes_per_sec is not None:
+            self.read_bytes_per_sec = read_bytes_per_sec
+        if reads_per_sec is not None:
+            self.reads_per_sec = reads_per_sec
+        if san_usec_per_mirrored_write_op is not None:
+            self.san_usec_per_mirrored_write_op = san_usec_per_mirrored_write_op
+        if san_usec_per_read_op is not None:
+            self.san_usec_per_read_op = san_usec_per_read_op
+        if san_usec_per_write_op is not None:
+            self.san_usec_per_write_op = san_usec_per_write_op
+        if service_usec_per_mirrored_write_op is not None:
+            self.service_usec_per_mirrored_write_op = service_usec_per_mirrored_write_op
+        if service_usec_per_read_op is not None:
+            self.service_usec_per_read_op = service_usec_per_read_op
+        if service_usec_per_write_op is not None:
+            self.service_usec_per_write_op = service_usec_per_write_op
+        if time is not None:
+            self.time = time
+        if usec_per_mirrored_write_op is not None:
+            self.usec_per_mirrored_write_op = usec_per_mirrored_write_op
+        if usec_per_read_op is not None:
+            self.usec_per_read_op = usec_per_read_op
+        if usec_per_write_op is not None:
+            self.usec_per_write_op = usec_per_write_op
+        if write_bytes_per_sec is not None:
+            self.write_bytes_per_sec = write_bytes_per_sec
+        if writes_per_sec is not None:
+            self.writes_per_sec = writes_per_sec
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

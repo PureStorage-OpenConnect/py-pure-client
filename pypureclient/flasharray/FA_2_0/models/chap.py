@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_0 import models
 
 class Chap(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -45,7 +46,13 @@ class Chap(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        host_password=None,  # type: str
+        host_user=None,  # type: str
+        target_password=None,  # type: str
+        target_user=None,  # type: str
+    ):
         """
         Keyword args:
             host_password (str): The host password for CHAP authentication. The password must be between 12 and 255 characters (inclusive) and cannot be the same as the target password.
@@ -53,11 +60,14 @@ class Chap(object):
             target_password (str): The target password for CHAP authentication. The password must be between 12 and 255 characters (inclusive) and cannot be the same as the host password.
             target_user (str): The target username for CHAP authentication.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if host_password is not None:
+            self.host_password = host_password
+        if host_user is not None:
+            self.host_user = host_user
+        if target_password is not None:
+            self.target_password = target_password
+        if target_user is not None:
+            self.target_user = target_user
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

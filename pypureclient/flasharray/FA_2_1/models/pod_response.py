@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_1 import models
 
 class PodResponse(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -39,16 +40,16 @@ class PodResponse(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        items=None,  # type: List[models.Pod]
+    ):
         """
         Keyword args:
             items (list[Pod]): Returns a list of all items after filtering. The values are displayed for each name where meaningful.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if items is not None:
+            self.items = items
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

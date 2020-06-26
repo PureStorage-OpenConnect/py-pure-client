@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_1 import models
 
 class ProtectionGroupTarget(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -43,18 +44,24 @@ class ProtectionGroupTarget(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        protection_group=None,  # type: models.ReferenceNoId
+        target=None,  # type: models.ReferenceNoId
+        allowed=None,  # type: bool
+    ):
         """
         Keyword args:
             protection_group (ReferenceNoId)
             target (ReferenceNoId)
             allowed (bool): If set to `true`, the target array has allowed the source array to replicate protection group data to the target array. If set to `false`, the target array has not allowed the source array to replicate protection group data to the target.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if protection_group is not None:
+            self.protection_group = protection_group
+        if target is not None:
+            self.target = target
+        if allowed is not None:
+            self.allowed = allowed
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

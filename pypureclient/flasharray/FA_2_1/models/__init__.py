@@ -2,6 +2,18 @@
 
 from __future__ import absolute_import
 
+class ReferenceType(object):
+    """Class just for type annotations.
+
+    It's used for reference arg on api function. This allows user to pass collections of Model objects
+    to the method without transforming them to ids or names.
+
+    Should be Protocol type when the typing module will get support of it.
+    """
+    def __init__(self):
+        self.id = ''
+        self.name = ''
+
 # import models into model package
 from .aggregate_replication_performance import AggregateReplicationPerformance
 from .api_client import ApiClient
@@ -14,6 +26,7 @@ from .built_in import BuiltIn
 from .built_in_resource_no_id import BuiltInResourceNoId
 from .chap import Chap
 from .connection import Connection
+from .connection2 import Connection2
 from .connection_get_response import ConnectionGetResponse
 from .connection_post import ConnectionPost
 from .connection_response import ConnectionResponse
@@ -21,6 +34,7 @@ from .destroyed_patch_post import DestroyedPatchPost
 from .fixed_reference import FixedReference
 from .fixed_reference_no_id import FixedReferenceNoId
 from .host import Host
+from .host2 import Host2
 from .host_get_response import HostGetResponse
 from .host_group import HostGroup
 from .host_group_get_response import HostGroupGetResponse
@@ -36,7 +50,6 @@ from .host_port_connectivity import HostPortConnectivity
 from .host_post import HostPost
 from .host_response import HostResponse
 from .host_space import HostSpace
-from .inline_response200 import InlineResponse200
 from .inline_response400 import InlineResponse400
 from .inline_response401 import InlineResponse401
 from .member import Member
@@ -47,6 +60,7 @@ from .member_no_id_all_response import MemberNoIdAllResponse
 from .member_no_id_group import MemberNoIdGroup
 from .member_response import MemberResponse
 from .new_name import NewName
+from .oauth_token_response import OauthTokenResponse
 from .offload import Offload
 from .offload_azure import OffloadAzure
 from .offload_get_response import OffloadGetResponse
@@ -55,6 +69,7 @@ from .offload_post import OffloadPost
 from .offload_response import OffloadResponse
 from .offload_s3 import OffloadS3
 from .page_info import PageInfo
+from .page_info2 import PageInfo2
 from .performance import Performance
 from .pod import Pod
 from .pod_array_status import PodArrayStatus
@@ -128,6 +143,8 @@ from .target_protection_group import TargetProtectionGroup
 from .target_protection_group_post_patch import TargetProtectionGroupPostPatch
 from .time_window import TimeWindow
 from .transfer import Transfer
+from .username import Username
+from .username_response import UsernameResponse
 from .volume import Volume
 from .volume_common import VolumeCommon
 from .volume_get_response import VolumeGetResponse

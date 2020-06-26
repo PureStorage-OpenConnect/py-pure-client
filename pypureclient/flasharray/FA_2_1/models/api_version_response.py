@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_1 import models
 
 class ApiVersionResponse(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -39,16 +40,16 @@ class ApiVersionResponse(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        version=None,  # type: List[str]
+    ):
         """
         Keyword args:
             version (list[str]): A list of supported API versions.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if version is not None:
+            self.version = version
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

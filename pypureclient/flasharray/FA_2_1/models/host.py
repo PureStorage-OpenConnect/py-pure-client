@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_1 import models
 
 class Host(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -61,7 +62,21 @@ class Host(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        name=None,  # type: str
+        chap=None,  # type: models.Chap
+        connection_count=None,  # type: int
+        host_group=None,  # type: models.ReferenceNoId
+        iqns=None,  # type: List[str]
+        nqns=None,  # type: List[str]
+        personality=None,  # type: str
+        port_connectivity=None,  # type: models.HostPortConnectivity
+        preferred_arrays=None,  # type: List[models.Reference]
+        space=None,  # type: models.Space
+        wwns=None,  # type: List[str]
+        is_local=None,  # type: bool
+    ):
         """
         Keyword args:
             name (str): A user-specified name. The name must be locally unique and can be changed.
@@ -77,11 +92,30 @@ class Host(object):
             wwns (list[str]): The Fibre Channel World Wide Name (WWN) associated with the host.
             is_local (bool): -> If set to `true`, the location reference is to the local array. If set to `false`, the location reference is to a remote location, such as a remote array or offload target.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if name is not None:
+            self.name = name
+        if chap is not None:
+            self.chap = chap
+        if connection_count is not None:
+            self.connection_count = connection_count
+        if host_group is not None:
+            self.host_group = host_group
+        if iqns is not None:
+            self.iqns = iqns
+        if nqns is not None:
+            self.nqns = nqns
+        if personality is not None:
+            self.personality = personality
+        if port_connectivity is not None:
+            self.port_connectivity = port_connectivity
+        if preferred_arrays is not None:
+            self.preferred_arrays = preferred_arrays
+        if space is not None:
+            self.space = space
+        if wwns is not None:
+            self.wwns = wwns
+        if is_local is not None:
+            self.is_local = is_local
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

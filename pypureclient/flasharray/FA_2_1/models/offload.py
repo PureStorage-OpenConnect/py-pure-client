@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_1 import models
 
 class Offload(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -53,7 +54,17 @@ class Offload(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        azure=None,  # type: models.OffloadAzure
+        nfs=None,  # type: models.OffloadNfs
+        s3=None,  # type: models.OffloadS3
+        name=None,  # type: str
+        protocol=None,  # type: str
+        space=None,  # type: models.Space
+        status=None,  # type: str
+        target_id=None,  # type: str
+    ):
         """
         Keyword args:
             azure (OffloadAzure): The Microsoft Azure Blob storage settings.
@@ -65,11 +76,22 @@ class Offload(object):
             status (str): The connection status of the offload target. Valid values are `connecting`, `connected`, `disconnecting`, `not connected`, and `scanning`.  If set to `connected`, the array is connected to the offload target  and is functioning properly.  If set to `connecting`, the connection between the array and offload target is unhealthy,  possibly due to network issues. Check the network connectivity between the interfaces,  disconnect the array from the offload target, and then reconnect. If the issue persists,  contact Pure Storage Support.  If set to `not connected`, the offload app is not running and data  cannot be replicated to the offload targets. Contact Pure Storage Support.  If set to `scanning`,  a connection has been established between the array and offload target,  and the system is determining the state of the offload target.  Once the scan successfully completes, the status will change to `connected`.
             target_id (str): The unique ID for the offload target. When multiple connections to one offload target are created, they will each have distinct IDs but share the same target ID.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if azure is not None:
+            self.azure = azure
+        if nfs is not None:
+            self.nfs = nfs
+        if s3 is not None:
+            self.s3 = s3
+        if name is not None:
+            self.name = name
+        if protocol is not None:
+            self.protocol = protocol
+        if space is not None:
+            self.space = space
+        if status is not None:
+            self.status = status
+        if target_id is not None:
+            self.target_id = target_id
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

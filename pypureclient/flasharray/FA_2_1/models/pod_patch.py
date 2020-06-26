@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_1 import models
 
 class PodPatch(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -47,7 +48,14 @@ class PodPatch(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        id=None,  # type: str
+        name=None,  # type: str
+        destroyed=None,  # type: bool
+        failover_preferences=None,  # type: List[models.Reference]
+        mediator=None,  # type: str
+    ):
         """
         Keyword args:
             id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
@@ -56,11 +64,16 @@ class PodPatch(object):
             failover_preferences (list[Reference]): Determines which array within a stretched pod should be given priority to stay online should the arrays ever lose contact with each other. The current array and any peer arrays that are connected to the current array for synchronous replication can be added to a pod for failover preference. By default, `failover_preferences=null`, meaning no arrays have been configured for failover preference. Enter multiple arrays in comma-separated format.
             mediator (str): Sets the URL of the mediator for this pod, replacing the URL of the current mediator. By default, the Pure1 Cloud Mediator (`purestorage`) serves as the mediator.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if id is not None:
+            self.id = id
+        if name is not None:
+            self.name = name
+        if destroyed is not None:
+            self.destroyed = destroyed
+        if failover_preferences is not None:
+            self.failover_preferences = failover_preferences
+        if mediator is not None:
+            self.mediator = mediator
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

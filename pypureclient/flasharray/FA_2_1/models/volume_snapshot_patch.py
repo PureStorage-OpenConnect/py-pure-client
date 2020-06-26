@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_1 import models
 
 class VolumeSnapshotPatch(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -41,17 +42,20 @@ class VolumeSnapshotPatch(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        destroyed=None,  # type: bool
+        name=None,  # type: str
+    ):
         """
         Keyword args:
             destroyed (bool): If set to `true`, destroys a resource. Once set to `true`, the `time_remaining` value will display the amount of time left until the destroyed resource is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed resource can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the resource is permanently eradicated and can no longer be recovered.
             name (str): The new name for the resource.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if destroyed is not None:
+            self.destroyed = destroyed
+        if name is not None:
+            self.name = name
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

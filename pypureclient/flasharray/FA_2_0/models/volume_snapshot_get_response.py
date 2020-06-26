@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_0 import models
 
 class VolumeSnapshotGetResponse(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -45,7 +46,13 @@ class VolumeSnapshotGetResponse(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        more_items_remaining=None,  # type: bool
+        total_item_count=None,  # type: int
+        items=None,  # type: List[models.VolumeSnapshot]
+        total=None,  # type: List[models.VolumeSnapshot]
+    ):
         """
         Keyword args:
             more_items_remaining (bool): Returns a value of `true` if subsequent items can be retrieved.
@@ -53,11 +60,14 @@ class VolumeSnapshotGetResponse(object):
             items (list[VolumeSnapshot]): Returns a list of all items after filtering. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.
             total (list[VolumeSnapshot]): The aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each field where meaningful.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if more_items_remaining is not None:
+            self.more_items_remaining = more_items_remaining
+        if total_item_count is not None:
+            self.total_item_count = total_item_count
+        if items is not None:
+            self.items = items
+        if total is not None:
+            self.total = total
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

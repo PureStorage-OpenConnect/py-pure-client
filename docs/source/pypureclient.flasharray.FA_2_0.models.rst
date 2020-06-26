@@ -196,14 +196,6 @@ pypureclient.flasharray.FA\_2\_0.models.host\_response module
    :undoc-members:
    :show-inheritance:
 
-pypureclient.flasharray.FA\_2\_0.models.inline\_response200 module
-------------------------------------------------------------------
-
-.. automodule:: pypureclient.flasharray.FA_2_0.models.inline_response200
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 pypureclient.flasharray.FA\_2\_0.models.inline\_response400 module
 ------------------------------------------------------------------
 
@@ -256,6 +248,14 @@ pypureclient.flasharray.FA\_2\_0.models.new\_name module
 --------------------------------------------------------
 
 .. automodule:: pypureclient.flasharray.FA_2_0.models.new_name
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.flasharray.FA\_2\_0.models.oauth\_token\_response module
+---------------------------------------------------------------------
+
+.. automodule:: pypureclient.flasharray.FA_2_0.models.oauth_token_response
    :members:
    :undoc-members:
    :show-inheritance:
@@ -416,6 +416,22 @@ pypureclient.flasharray.FA\_2\_0.models.transfer module
 -------------------------------------------------------
 
 .. automodule:: pypureclient.flasharray.FA_2_0.models.transfer
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.flasharray.FA\_2\_0.models.username module
+-------------------------------------------------------
+
+.. automodule:: pypureclient.flasharray.FA_2_0.models.username
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.flasharray.FA\_2\_0.models.username\_response module
+-----------------------------------------------------------------
+
+.. automodule:: pypureclient.flasharray.FA_2_0.models.username_response
    :members:
    :undoc-members:
    :show-inheritance:

@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_1 import models
 
 class Resource(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -41,17 +42,20 @@ class Resource(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        id=None,  # type: str
+        name=None,  # type: str
+    ):
         """
         Keyword args:
             id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
             name (str): A user-specified name. The name must be locally unique and can be changed.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if id is not None:
+            self.id = id
+        if name is not None:
+            self.name = name
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

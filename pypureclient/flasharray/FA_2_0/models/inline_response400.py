@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_0 import models
 
 class InlineResponse400(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -41,17 +42,20 @@ class InlineResponse400(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        error=None,  # type: str
+        error_description=None,  # type: str
+    ):
         """
         Keyword args:
             error (str)
             error_description (str)
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if error is not None:
+            self.error = error
+        if error_description is not None:
+            self.error_description = error_description
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

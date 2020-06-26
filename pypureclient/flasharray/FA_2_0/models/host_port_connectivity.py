@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_0 import models
 
 class HostPortConnectivity(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -41,17 +42,20 @@ class HostPortConnectivity(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        details=None,  # type: str
+        status=None,  # type: str
+    ):
         """
         Keyword args:
             details (str): The host connection status. Values include `Redundant`, `N/A`, `Redundant-Failover`, `Uneven`, `Unused Port`, `Single Controller`, `Single Controller-Failover`, and `None`.
             status (str): The host connection health status. Values include `healthy`, `unhealthy`, and `critical`.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if details is not None:
+            self.details = details
+        if status is not None:
+            self.status = status
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_1 import models
 
 class ProtectionGroupPerformanceArray(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -47,7 +48,14 @@ class ProtectionGroupPerformanceArray(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        name=None,  # type: str
+        bytes_per_sec=None,  # type: int
+        source=None,  # type: str
+        target=None,  # type: str
+        time=None,  # type: int
+    ):
         """
         Keyword args:
             name (str): A locally unique, system-generated name. The name cannot be modified.
@@ -56,11 +64,16 @@ class ProtectionGroupPerformanceArray(object):
             target (str): The target to where the data is replicated.
             time (int): The time when the sample performance data was taken. Measured in milliseconds since the UNIX epoch.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if name is not None:
+            self.name = name
+        if bytes_per_sec is not None:
+            self.bytes_per_sec = bytes_per_sec
+        if source is not None:
+            self.source = source
+        if target is not None:
+            self.target = target
+        if time is not None:
+            self.time = time
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

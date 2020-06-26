@@ -1,7 +1,9 @@
+from . import FA_2_2
 from . import FA_2_0
 from . import FA_2_1
 
 fa_modules = {
+    '2.2': FA_2_2,
     '2.0': FA_2_0,
     '2.1': FA_2_1,
 }
@@ -11,9 +13,9 @@ DEFAULT_TIMEOUT = 15.0
 DEFAULT_RETRIES = 5
 
 
-def Client(target, version="2.1", id_token=None, private_key_file=None, private_key_password=None,
-           username=None, client_id=None, key_id=None, issuer=None,
-           retries=DEFAULT_RETRIES, timeout=DEFAULT_TIMEOUT, ssl_cert=None):
+def Client(target, version="2.2", id_token=None, private_key_file=None, private_key_password=None,
+           username=None, client_id=None, key_id=None, issuer=None, api_token=None,
+           retries=DEFAULT_RETRIES, timeout=DEFAULT_TIMEOUT, ssl_cert=None, user_agent=None):
     """
     Initialize a FlashArray Client.
 
@@ -39,6 +41,8 @@ def Client(target, version="2.1", id_token=None, private_key_file=None, private_
             Key ID of API client that issued the identity token.
         issuer (str, optional):
             API client's trusted identity issuer on the array.
+        api_token (str, optional):
+                API token for the user.
         retries (int, optional):
             The number of times to retry an API call if it fails for a
             non-blocking reason. Defaults to 5.
@@ -47,6 +51,8 @@ def Client(target, version="2.1", id_token=None, private_key_file=None, private_
             (connect and read) times. Defaults to 15.0 total.
         ssl_cert (str, optional):
             SSL certificate to use. Defaults to None.
+        user_agent (str, optional):
+            User-Agent request header to use.
 
     Raises:
         PureError: If it could not create an ID or access token
@@ -54,7 +60,8 @@ def Client(target, version="2.1", id_token=None, private_key_file=None, private_
     fa_module = version_to_module(version)
     client = fa_module.Client(target=target, id_token=id_token, private_key_file=private_key_file,
                               private_key_password=private_key_password, username=username, client_id=client_id,
-                              key_id=key_id, issuer=issuer, retries=retries, timeout=timeout, ssl_cert=ssl_cert)
+                              key_id=key_id, issuer=issuer, api_token=api_token, retries=retries, timeout=timeout,
+                              ssl_cert=ssl_cert, user_agent=user_agent)
     return client
 
 

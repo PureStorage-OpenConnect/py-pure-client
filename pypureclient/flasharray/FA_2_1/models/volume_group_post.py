@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_1 import models
 
 class VolumeGroupPost(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -30,28 +31,61 @@ class VolumeGroupPost(object):
     """
     swagger_types = {
         'id': 'str',
-        'name': 'str'
+        'name': 'str',
+        'destroyed': 'bool',
+        'qos': 'Qos',
+        'space': 'Space',
+        'time_remaining': 'int',
+        'volume_count': 'int'
     }
 
     attribute_map = {
         'id': 'id',
-        'name': 'name'
+        'name': 'name',
+        'destroyed': 'destroyed',
+        'qos': 'qos',
+        'space': 'space',
+        'time_remaining': 'time_remaining',
+        'volume_count': 'volume_count'
     }
 
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        id=None,  # type: str
+        name=None,  # type: str
+        destroyed=None,  # type: bool
+        qos=None,  # type: models.Qos
+        space=None,  # type: models.Space
+        time_remaining=None,  # type: int
+        volume_count=None,  # type: int
+    ):
         """
         Keyword args:
             id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            name (str): A locally unique, system-generated name. The name cannot be modified.
+            name (str): A user-specified name. The name must be locally unique and can be changed.
+            destroyed (bool): Has this volume group been destroyed? To destroy a volume group, patch to `true`. To recover a destroyed volume group, patch to `false`. If not specified, defaults to `false`.
+            qos (Qos)
+            space (Space)
+            time_remaining (int): The amount of time left until the destroyed volume group is permanently eradicated. Measured in milliseconds. Before the `time_remaining` period has elapsed, the destroyed volume group can be recovered by setting `destroyed=false`.
+            volume_count (int): The number of volumes in the volume group.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if id is not None:
+            self.id = id
+        if name is not None:
+            self.name = name
+        if destroyed is not None:
+            self.destroyed = destroyed
+        if qos is not None:
+            self.qos = qos
+        if space is not None:
+            self.space = space
+        if time_remaining is not None:
+            self.time_remaining = time_remaining
+        if volume_count is not None:
+            self.volume_count = volume_count
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

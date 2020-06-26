@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_1 import models
 
 class PodArrayStatus(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -51,7 +52,16 @@ class PodArrayStatus(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        id=None,  # type: str
+        name=None,  # type: str
+        frozen_at=None,  # type: int
+        mediator_status=None,  # type: str
+        pre_elected=None,  # type: bool
+        progress=None,  # type: float
+        status=None,  # type: str
+    ):
         """
         Keyword args:
             id (str): A globally unique, system-generated ID. The ID cannot be modified.
@@ -62,11 +72,20 @@ class PodArrayStatus(object):
             progress (float): The percentage progress of the pod resyncing process for this array. The percentage is displayed as a decimal value, starting at 0.00 and ending at 1.00.
             status (str): The status of the array within the stretched pod. Valid values are `offline`, `online`, `resyncing`, and `unknown`. If set to `offline`, the array is experiencing problems and may not have the latest pod data. The array cannot handle I/O to the pod and cannot take over during a high availability event. If set to `online`, the array is online and has the latest pod data. The array can handle I/O to the pod and take over during a high availability event. If set to `resyncing`, the array is actively getting the latest pod data so that it becomes fully synchronized with its peer array. During the resyncing process, the array cannot handle I/O to the pod. Once the arrays are fully synchronized, the array changes to `online` status. If set to `unknown`, the status of the peer array is unknown because this array is offline and cannot determine the state of the pod on the peer array. Only the peer array can ever be in unknown status; this unknown status is unique to the local array and will differ when viewed from its peer array.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if id is not None:
+            self.id = id
+        if name is not None:
+            self.name = name
+        if frozen_at is not None:
+            self.frozen_at = frozen_at
+        if mediator_status is not None:
+            self.mediator_status = mediator_status
+        if pre_elected is not None:
+            self.pre_elected = pre_elected
+        if progress is not None:
+            self.progress = progress
+        if status is not None:
+            self.status = status
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

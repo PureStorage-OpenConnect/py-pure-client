@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_0 import models
 
 class HostPatch(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -65,7 +66,23 @@ class HostPatch(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        name=None,  # type: str
+        add_iqns=None,  # type: List[str]
+        add_nqns=None,  # type: List[str]
+        add_wwns=None,  # type: List[str]
+        chap=None,  # type: models.Chap
+        host_group=None,  # type: models.ReferenceNoId
+        iqns=None,  # type: List[str]
+        nqns=None,  # type: List[str]
+        personality=None,  # type: str
+        preferred_arrays=None,  # type: List[models.Reference]
+        remove_iqns=None,  # type: List[str]
+        remove_nqns=None,  # type: List[str]
+        remove_wwns=None,  # type: List[str]
+        wwns=None,  # type: List[str]
+    ):
         """
         Keyword args:
             name (str): The new name for the resource.
@@ -83,11 +100,34 @@ class HostPatch(object):
             remove_wwns (list[str]): Disassociates the specified Fibre Channel World Wide Names (WWNs) from the specified host.
             wwns (list[str]): The Fibre Channel World Wide Name (WWN) associated with the host.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if name is not None:
+            self.name = name
+        if add_iqns is not None:
+            self.add_iqns = add_iqns
+        if add_nqns is not None:
+            self.add_nqns = add_nqns
+        if add_wwns is not None:
+            self.add_wwns = add_wwns
+        if chap is not None:
+            self.chap = chap
+        if host_group is not None:
+            self.host_group = host_group
+        if iqns is not None:
+            self.iqns = iqns
+        if nqns is not None:
+            self.nqns = nqns
+        if personality is not None:
+            self.personality = personality
+        if preferred_arrays is not None:
+            self.preferred_arrays = preferred_arrays
+        if remove_iqns is not None:
+            self.remove_iqns = remove_iqns
+        if remove_nqns is not None:
+            self.remove_nqns = remove_nqns
+        if remove_wwns is not None:
+            self.remove_wwns = remove_wwns
+        if wwns is not None:
+            self.wwns = wwns
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

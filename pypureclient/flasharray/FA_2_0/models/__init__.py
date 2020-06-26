@@ -2,6 +2,18 @@
 
 from __future__ import absolute_import
 
+class ReferenceType(object):
+    """Class just for type annotations.
+
+    It's used for reference arg on api function. This allows user to pass collections of Model objects
+    to the method without transforming them to ids or names.
+
+    Should be Protocol type when the typing module will get support of it.
+    """
+    def __init__(self):
+        self.id = ''
+        self.name = ''
+
 # import models into model package
 from .api_version_response import ApiVersionResponse
 from .built_in import BuiltIn
@@ -27,7 +39,6 @@ from .host_performance_by_array import HostPerformanceByArray
 from .host_port_connectivity import HostPortConnectivity
 from .host_post import HostPost
 from .host_response import HostResponse
-from .inline_response200 import InlineResponse200
 from .inline_response400 import InlineResponse400
 from .inline_response401 import InlineResponse401
 from .member import Member
@@ -35,6 +46,7 @@ from .member_no_id_all import MemberNoIdAll
 from .member_no_id_all_get_response import MemberNoIdAllGetResponse
 from .member_no_id_all_response import MemberNoIdAllResponse
 from .new_name import NewName
+from .oauth_token_response import OauthTokenResponse
 from .page_info import PageInfo
 from .performance import Performance
 from .qos import Qos
@@ -55,6 +67,8 @@ from .resource_space_get_response import ResourceSpaceGetResponse
 from .snapshot import Snapshot
 from .space import Space
 from .transfer import Transfer
+from .username import Username
+from .username_response import UsernameResponse
 from .volume import Volume
 from .volume_common import VolumeCommon
 from .volume_get_response import VolumeGetResponse

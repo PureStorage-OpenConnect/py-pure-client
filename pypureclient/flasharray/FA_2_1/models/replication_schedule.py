@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_1 import models
 
 class ReplicationSchedule(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -45,7 +46,13 @@ class ReplicationSchedule(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        at=None,  # type: int
+        enabled=None,  # type: bool
+        frequency=None,  # type: int
+        blackout=None,  # type: models.TimeWindow
+    ):
         """
         Keyword args:
             at (int): The time of day the snapshot is scheduled to be taken and retained on the local array or immediately replicated to the target(s). Measured in milliseconds since midnight. The `at` value is only used if the `frequency` parameter is in days (e.g., `259200000`, which is equal to 3 days).
@@ -53,11 +60,14 @@ class ReplicationSchedule(object):
             frequency (int): The frequency of the scheduled action. Measured in milliseconds.
             blackout (TimeWindow): The range of time when to suspend replication. To clear the blackout period, set to an empty string (\"\").
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if at is not None:
+            self.at = at
+        if enabled is not None:
+            self.enabled = enabled
+        if frequency is not None:
+            self.frequency = frequency
+        if blackout is not None:
+            self.blackout = blackout
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

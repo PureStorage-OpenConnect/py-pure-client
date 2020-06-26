@@ -17,44 +17,31 @@ import re
 
 # python 2 and python 3 compatibility library
 import six
+from typing import List, Optional
 
-from ..api_client import ApiClient
+from .. import models
 
 
 class PodsApi(object):
 
-    def __init__(self, api_client=None):
-        if api_client is None:
-            api_client = ApiClient()
+    def __init__(self, api_client):
         self.api_client = api_client
 
-    def api21_pods_arrays_delete(self, **kwargs):
-        """Unstretch a pod from an array
-
-        Unstretches a pod from an array, collapsing the pod to a single array. Unstretch a pod from an array when the volumes within the stretched pod no longer need to be synchronously replicated between the two arrays. After a pod has been unstretched, synchronous replication stops. A destroyed version of the pod with \"restretch\" appended to the pod name is created on the array that no longer has the pod. The restretch pod represents a point-in-time snapshot of the pod, just before it was unstretched. The restretch pod enters an eradication pending period starting from the time that the pod was unstretched. A restretch can pod can be cloned or destroyed, but it cannot be explicitly recovered. The `group_names` parameter represents the name of the pod to be unstretched. The `member_names` parameter represents the name of the array from which the pod is to be unstretched. The `group_names` and `member_names` parameters are required and must be set together.
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api21_pods_arrays_delete(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param list[str] group_names: Performs the operation on the unique group name specified. Examples of groups include host groups, pods, protection groups, and volume groups. Enter multiple names in comma-separated format. For example, `hgroup01,hgroup02`.
-        :param list[str] group_ids: A comma-separated list of group IDs.
-        :param list[str] member_names: Performs the operation on the unique member name specified. Examples of members include volumes, hosts, and host groups. Enter multiple names in comma-separated format. For example, `vol01,vol02`.
-        :param list[str] member_ids: A comma-separated list of member IDs.
-        :param bool with_unknown: If set to `true`, unstretches the specified pod from the specified array by force. Use the `with_unknown` parameter in the following rare event&#58; the local array goes offline while the pod is still stretched across two arrays, the status of the remote array becomes unknown, and there is no guarantee that the pod is online elsewhere.
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.api21_pods_arrays_delete_with_http_info(**kwargs)
-        else:
-            (data) = self.api21_pods_arrays_delete_with_http_info(**kwargs)
-            return data
-
-    def api21_pods_arrays_delete_with_http_info(self, **kwargs):
+    def api21_pods_arrays_delete_with_http_info(
+        self,
+        authorization=None,  # type: str
+        x_request_id=None,  # type: str
+        group_names=None,  # type: List[str]
+        group_ids=None,  # type: List[str]
+        member_names=None,  # type: List[str]
+        member_ids=None,  # type: List[str]
+        with_unknown=None,  # type: bool
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> None
         """Unstretch a pod from an array
 
         Unstretches a pod from an array, collapsing the pod to a single array. Unstretch a pod from an array when the volumes within the stretched pod no longer need to be synchronously replicated between the two arrays. After a pod has been unstretched, synchronous replication stops. A destroyed version of the pod with \"restretch\" appended to the pod name is created on the array that no longer has the pod. The restretch pod represents a point-in-time snapshot of the pod, just before it was unstretched. The restretch pod enters an eradication pending period starting from the time that the pod was unstretched. A restretch can pod can be cloned or destroyed, but it cannot be explicitly recovered. The `group_names` parameter represents the name of the pod to be unstretched. The `member_names` parameter represents the name of the array from which the pod is to be unstretched. The `group_names` and `member_names` parameters are required and must be set together.
@@ -63,35 +50,26 @@ class PodsApi(object):
         >>> thread = api.api21_pods_arrays_delete_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param str authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
+        :param str x_request_id: Supplied by client during request or generated by server.
         :param list[str] group_names: Performs the operation on the unique group name specified. Examples of groups include host groups, pods, protection groups, and volume groups. Enter multiple names in comma-separated format. For example, `hgroup01,hgroup02`.
         :param list[str] group_ids: A comma-separated list of group IDs.
         :param list[str] member_names: Performs the operation on the unique member name specified. Examples of members include volumes, hosts, and host groups. Enter multiple names in comma-separated format. For example, `vol01,vol02`.
         :param list[str] member_ids: A comma-separated list of member IDs.
         :param bool with_unknown: If set to `true`, unstretches the specified pod from the specified array by force. Use the `with_unknown` parameter in the following rare event&#58; the local array goes offline while the pod is still stretched across two arrays, the status of the remote array becomes unknown, and there is no guarantee that the pod is online elsewhere.
+        :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
+        :param bool _return_http_data_only: Returns only data field.
+        :param bool _preload_content: Response is converted into objects.
+        :param int _request_timeout: Total request timeout in seconds.
+                 It can also be a tuple of (connection time, read time) timeouts.
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_names', 'group_ids', 'member_names', 'member_ids', 'with_unknown']
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method api21_pods_arrays_delete" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        params = {k: v for k, v in six.iteritems(locals()) if v is not None}
 
         collection_formats = {}
-
         path_params = {}
 
         query_params = []
@@ -111,6 +89,10 @@ class PodsApi(object):
             query_params.append(('with_unknown', params['with_unknown']))
 
         header_params = {}
+        if 'authorization' in params:
+            header_params['Authorization'] = params['authorization']
+        if 'x_request_id' in params:
+            header_params['X-Request-ID'] = params['x_request_id']
 
         form_params = []
         local_var_files = {}
@@ -137,43 +119,32 @@ class PodsApi(object):
             files=local_var_files,
             response_type=None,
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+            collection_formats=collection_formats,
+        )
 
-    def api21_pods_arrays_get(self, **kwargs):
-        """List pods and their the array members
-
-        Returns a list of pods and the local and remote arrays over which the pods are stretched. The optional `group_names` parameter represents the name of the pod. The optional `member_names` parameter represents the name of the array over which the pod is stretched.
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api21_pods_arrays_get(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str filter: Narrows down the results to only the response objects that satisfy the filter criteria.
-        :param list[str] group_names: Performs the operation on the unique group name specified. Examples of groups include host groups, pods, protection groups, and volume groups. Enter multiple names in comma-separated format. For example, `hgroup01,hgroup02`.
-        :param list[str] group_ids: A comma-separated list of group IDs.
-        :param int limit: Limits the size of the response to the specified number of objects on each page. To return the total number of resources, set `limit=0`. The total number of resources will be returned as a `total_item_count` value. If the page size requested is larger than the system maximum limit, the server returns the maximum limit, disregarding the requested page size.
-        :param list[str] member_names: Performs the operation on the unique member name specified. Examples of members include volumes, hosts, and host groups. Enter multiple names in comma-separated format. For example, `vol01,vol02`.
-        :param list[str] member_ids: A comma-separated list of member IDs.
-        :param int offset: The starting position based on the results of the query in relation to the full set of response objects returned.
-        :param list[str] sort: Returns the response objects in the order specified. Set `sort` to the name in the response by which to sort. Sorting can be performed on any of the names in the response, and the objects can be sorted in ascending or descending order. By default, the response objects are sorted in ascending order. To sort in descending order, append the minus sign (`-`) to the name. A single request can be sorted on multiple objects. For example, you can sort all volumes from largest to smallest volume size, and then sort volumes of the same size in ascending order by volume name. To sort on multiple names, list the names as comma-separated values.
-        :param bool total_item_count: If set to `true`, the `total_item_count` matching the specified query parameters will be calculated and returned in the response. If set to `false`, the `total_item_count` will be `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.
-        :return: MemberGetResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.api21_pods_arrays_get_with_http_info(**kwargs)
-        else:
-            (data) = self.api21_pods_arrays_get_with_http_info(**kwargs)
-            return data
-
-    def api21_pods_arrays_get_with_http_info(self, **kwargs):
+    def api21_pods_arrays_get_with_http_info(
+        self,
+        authorization=None,  # type: str
+        x_request_id=None,  # type: str
+        filter=None,  # type: str
+        group_names=None,  # type: List[str]
+        group_ids=None,  # type: List[str]
+        limit=None,  # type: int
+        member_names=None,  # type: List[str]
+        member_ids=None,  # type: List[str]
+        offset=None,  # type: int
+        sort=None,  # type: List[str]
+        total_item_count=None,  # type: bool
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> models.MemberGetResponse
         """List pods and their the array members
 
         Returns a list of pods and the local and remote arrays over which the pods are stretched. The optional `group_names` parameter represents the name of the pod. The optional `member_names` parameter represents the name of the array over which the pod is stretched.
@@ -182,43 +153,34 @@ class PodsApi(object):
         >>> thread = api.api21_pods_arrays_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param str authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
+        :param str x_request_id: Supplied by client during request or generated by server.
         :param str filter: Narrows down the results to only the response objects that satisfy the filter criteria.
         :param list[str] group_names: Performs the operation on the unique group name specified. Examples of groups include host groups, pods, protection groups, and volume groups. Enter multiple names in comma-separated format. For example, `hgroup01,hgroup02`.
         :param list[str] group_ids: A comma-separated list of group IDs.
-        :param int limit: Limits the size of the response to the specified number of objects on each page. To return the total number of resources, set `limit=0`. The total number of resources will be returned as a `total_item_count` value. If the page size requested is larger than the system maximum limit, the server returns the maximum limit, disregarding the requested page size.
+        :param int limit: Limits the size of the response to the specified number of objects on each page. To return the total number of resources, set `limit=0`. The total number of resources is returned as a `total_item_count` value. If the page size requested is larger than the system maximum limit, the server returns the maximum limit, disregarding the requested page size.
         :param list[str] member_names: Performs the operation on the unique member name specified. Examples of members include volumes, hosts, and host groups. Enter multiple names in comma-separated format. For example, `vol01,vol02`.
         :param list[str] member_ids: A comma-separated list of member IDs.
         :param int offset: The starting position based on the results of the query in relation to the full set of response objects returned.
         :param list[str] sort: Returns the response objects in the order specified. Set `sort` to the name in the response by which to sort. Sorting can be performed on any of the names in the response, and the objects can be sorted in ascending or descending order. By default, the response objects are sorted in ascending order. To sort in descending order, append the minus sign (`-`) to the name. A single request can be sorted on multiple objects. For example, you can sort all volumes from largest to smallest volume size, and then sort volumes of the same size in ascending order by volume name. To sort on multiple names, list the names as comma-separated values.
-        :param bool total_item_count: If set to `true`, the `total_item_count` matching the specified query parameters will be calculated and returned in the response. If set to `false`, the `total_item_count` will be `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.
+        :param bool total_item_count: If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.
+        :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
+        :param bool _return_http_data_only: Returns only data field.
+        :param bool _preload_content: Response is converted into objects.
+        :param int _request_timeout: Total request timeout in seconds.
+                 It can also be a tuple of (connection time, read time) timeouts.
         :return: MemberGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['filter', 'group_names', 'group_ids', 'limit', 'member_names', 'member_ids', 'offset', 'sort', 'total_item_count']
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method api21_pods_arrays_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        params = {k: v for k, v in six.iteritems(locals()) if v is not None}
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api21_pods_arrays_get`, must be a value greater than or equal to `1`")
         if 'offset' in params and params['offset'] < 0:
             raise ValueError("Invalid value for parameter `offset` when calling `api21_pods_arrays_get`, must be a value greater than or equal to `0`")
         collection_formats = {}
-
         path_params = {}
 
         query_params = []
@@ -247,6 +209,10 @@ class PodsApi(object):
             query_params.append(('total_item_count', params['total_item_count']))
 
         header_params = {}
+        if 'authorization' in params:
+            header_params['Authorization'] = params['authorization']
+        if 'x_request_id' in params:
+            header_params['X-Request-ID'] = params['x_request_id']
 
         form_params = []
         local_var_files = {}
@@ -273,38 +239,27 @@ class PodsApi(object):
             files=local_var_files,
             response_type='MemberGetResponse',
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+            collection_formats=collection_formats,
+        )
 
-    def api21_pods_arrays_post(self, **kwargs):
-        """Stretch a pod to an array
-
-        Stretches a pod to an array. When a pod is stretched to an array, the data in the arrays over which the pod is stretched is synchronously replicated. The `group_names` parameter represents the name of the pod to be stretched. The `member_names` parameter represents the name of the array over which the pod is to be stretched. The `group_names` and `member_names` parameters are required and must be set together.
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api21_pods_arrays_post(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param list[str] group_names: Performs the operation on the unique group name specified. Examples of groups include host groups, pods, protection groups, and volume groups. Enter multiple names in comma-separated format. For example, `hgroup01,hgroup02`.
-        :param list[str] group_ids: A comma-separated list of group IDs.
-        :param list[str] member_names: Performs the operation on the unique member name specified. Examples of members include volumes, hosts, and host groups. Enter multiple names in comma-separated format. For example, `vol01,vol02`.
-        :param list[str] member_ids: A comma-separated list of member IDs.
-        :return: MemberResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.api21_pods_arrays_post_with_http_info(**kwargs)
-        else:
-            (data) = self.api21_pods_arrays_post_with_http_info(**kwargs)
-            return data
-
-    def api21_pods_arrays_post_with_http_info(self, **kwargs):
+    def api21_pods_arrays_post_with_http_info(
+        self,
+        authorization=None,  # type: str
+        x_request_id=None,  # type: str
+        group_names=None,  # type: List[str]
+        group_ids=None,  # type: List[str]
+        member_names=None,  # type: List[str]
+        member_ids=None,  # type: List[str]
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> models.MemberResponse
         """Stretch a pod to an array
 
         Stretches a pod to an array. When a pod is stretched to an array, the data in the arrays over which the pod is stretched is synchronously replicated. The `group_names` parameter represents the name of the pod to be stretched. The `member_names` parameter represents the name of the array over which the pod is to be stretched. The `group_names` and `member_names` parameters are required and must be set together.
@@ -313,34 +268,25 @@ class PodsApi(object):
         >>> thread = api.api21_pods_arrays_post_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param str authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
+        :param str x_request_id: Supplied by client during request or generated by server.
         :param list[str] group_names: Performs the operation on the unique group name specified. Examples of groups include host groups, pods, protection groups, and volume groups. Enter multiple names in comma-separated format. For example, `hgroup01,hgroup02`.
         :param list[str] group_ids: A comma-separated list of group IDs.
         :param list[str] member_names: Performs the operation on the unique member name specified. Examples of members include volumes, hosts, and host groups. Enter multiple names in comma-separated format. For example, `vol01,vol02`.
         :param list[str] member_ids: A comma-separated list of member IDs.
+        :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
+        :param bool _return_http_data_only: Returns only data field.
+        :param bool _preload_content: Response is converted into objects.
+        :param int _request_timeout: Total request timeout in seconds.
+                 It can also be a tuple of (connection time, read time) timeouts.
         :return: MemberResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['group_names', 'group_ids', 'member_names', 'member_ids']
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method api21_pods_arrays_post" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        params = {k: v for k, v in six.iteritems(locals()) if v is not None}
 
         collection_formats = {}
-
         path_params = {}
 
         query_params = []
@@ -358,6 +304,10 @@ class PodsApi(object):
             collection_formats['member_ids'] = 'csv'
 
         header_params = {}
+        if 'authorization' in params:
+            header_params['Authorization'] = params['authorization']
+        if 'x_request_id' in params:
+            header_params['X-Request-ID'] = params['x_request_id']
 
         form_params = []
         local_var_files = {}
@@ -384,36 +334,25 @@ class PodsApi(object):
             files=local_var_files,
             response_type='MemberResponse',
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+            collection_formats=collection_formats,
+        )
 
-    def api21_pods_delete(self, **kwargs):
-        """Eradicate a pod
-
-        Eradicates a pod that has been destroyed and is pending eradication. Eradicated pods cannot be recovered. Pods are destroyed through the PATCH method. The `ids` or `names` parameter is required, but cannot be set together.
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api21_pods_delete(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param list[str] ids: Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` and `names` parameters cannot be provided together.
-        :param list[str] names: Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.
-        :return: None
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.api21_pods_delete_with_http_info(**kwargs)
-        else:
-            (data) = self.api21_pods_delete_with_http_info(**kwargs)
-            return data
-
-    def api21_pods_delete_with_http_info(self, **kwargs):
+    def api21_pods_delete_with_http_info(
+        self,
+        authorization=None,  # type: str
+        x_request_id=None,  # type: str
+        ids=None,  # type: List[str]
+        names=None,  # type: List[str]
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> None
         """Eradicate a pod
 
         Eradicates a pod that has been destroyed and is pending eradication. Eradicated pods cannot be recovered. Pods are destroyed through the PATCH method. The `ids` or `names` parameter is required, but cannot be set together.
@@ -422,32 +361,23 @@ class PodsApi(object):
         >>> thread = api.api21_pods_delete_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param str authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
+        :param str x_request_id: Supplied by client during request or generated by server.
         :param list[str] ids: Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` and `names` parameters cannot be provided together.
         :param list[str] names: Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.
+        :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
+        :param bool _return_http_data_only: Returns only data field.
+        :param bool _preload_content: Response is converted into objects.
+        :param int _request_timeout: Total request timeout in seconds.
+                 It can also be a tuple of (connection time, read time) timeouts.
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['ids', 'names']
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method api21_pods_delete" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        params = {k: v for k, v in six.iteritems(locals()) if v is not None}
 
         collection_formats = {}
-
         path_params = {}
 
         query_params = []
@@ -459,6 +389,10 @@ class PodsApi(object):
             collection_formats['names'] = 'csv'
 
         header_params = {}
+        if 'authorization' in params:
+            header_params['Authorization'] = params['authorization']
+        if 'x_request_id' in params:
+            header_params['X-Request-ID'] = params['x_request_id']
 
         form_params = []
         local_var_files = {}
@@ -485,44 +419,33 @@ class PodsApi(object):
             files=local_var_files,
             response_type=None,
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+            collection_formats=collection_formats,
+        )
 
-    def api21_pods_get(self, **kwargs):
-        """List pods
-
-        Returns a list of pods that are stretched to this array.
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api21_pods_get(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str continuation_token: A token used to retrieve the next page of data with some consistency guaranteed. The token is a Base64 encoded value. Set `continuation_token` to the system-generated token taken from the `x-next-token` header field of the response. A query has reached its last page when the response does not include a token. Pagination requires the `limit` and `continuation_token` query parameters.
-        :param bool destroyed: If set to `true`, lists only destroyed objects that are in the eradication pending state. If set to `false`, lists only objects that are not destroyed. For destroyed objects, the time remaining is displayed in seconds.
-        :param str filter: Narrows down the results to only the response objects that satisfy the filter criteria.
-        :param list[str] ids: Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` and `names` parameters cannot be provided together.
-        :param int limit: Limits the size of the response to the specified number of objects on each page. To return the total number of resources, set `limit=0`. The total number of resources will be returned as a `total_item_count` value. If the page size requested is larger than the system maximum limit, the server returns the maximum limit, disregarding the requested page size.
-        :param list[str] names: Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.
-        :param int offset: The starting position based on the results of the query in relation to the full set of response objects returned.
-        :param list[str] sort: Returns the response objects in the order specified. Set `sort` to the name in the response by which to sort. Sorting can be performed on any of the names in the response, and the objects can be sorted in ascending or descending order. By default, the response objects are sorted in ascending order. To sort in descending order, append the minus sign (`-`) to the name. A single request can be sorted on multiple objects. For example, you can sort all volumes from largest to smallest volume size, and then sort volumes of the same size in ascending order by volume name. To sort on multiple names, list the names as comma-separated values.
-        :param bool total_item_count: If set to `true`, the `total_item_count` matching the specified query parameters will be calculated and returned in the response. If set to `false`, the `total_item_count` will be `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.
-        :param bool total_only: If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.
-        :return: PodGetResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.api21_pods_get_with_http_info(**kwargs)
-        else:
-            (data) = self.api21_pods_get_with_http_info(**kwargs)
-            return data
-
-    def api21_pods_get_with_http_info(self, **kwargs):
+    def api21_pods_get_with_http_info(
+        self,
+        authorization=None,  # type: str
+        x_request_id=None,  # type: str
+        continuation_token=None,  # type: str
+        destroyed=None,  # type: bool
+        filter=None,  # type: str
+        ids=None,  # type: List[str]
+        limit=None,  # type: int
+        names=None,  # type: List[str]
+        offset=None,  # type: int
+        sort=None,  # type: List[str]
+        total_item_count=None,  # type: bool
+        total_only=None,  # type: bool
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> models.PodGetResponse
         """List pods
 
         Returns a list of pods that are stretched to this array.
@@ -531,44 +454,35 @@ class PodsApi(object):
         >>> thread = api.api21_pods_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param str authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
+        :param str x_request_id: Supplied by client during request or generated by server.
         :param str continuation_token: A token used to retrieve the next page of data with some consistency guaranteed. The token is a Base64 encoded value. Set `continuation_token` to the system-generated token taken from the `x-next-token` header field of the response. A query has reached its last page when the response does not include a token. Pagination requires the `limit` and `continuation_token` query parameters.
         :param bool destroyed: If set to `true`, lists only destroyed objects that are in the eradication pending state. If set to `false`, lists only objects that are not destroyed. For destroyed objects, the time remaining is displayed in seconds.
         :param str filter: Narrows down the results to only the response objects that satisfy the filter criteria.
         :param list[str] ids: Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` and `names` parameters cannot be provided together.
-        :param int limit: Limits the size of the response to the specified number of objects on each page. To return the total number of resources, set `limit=0`. The total number of resources will be returned as a `total_item_count` value. If the page size requested is larger than the system maximum limit, the server returns the maximum limit, disregarding the requested page size.
+        :param int limit: Limits the size of the response to the specified number of objects on each page. To return the total number of resources, set `limit=0`. The total number of resources is returned as a `total_item_count` value. If the page size requested is larger than the system maximum limit, the server returns the maximum limit, disregarding the requested page size.
         :param list[str] names: Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.
         :param int offset: The starting position based on the results of the query in relation to the full set of response objects returned.
         :param list[str] sort: Returns the response objects in the order specified. Set `sort` to the name in the response by which to sort. Sorting can be performed on any of the names in the response, and the objects can be sorted in ascending or descending order. By default, the response objects are sorted in ascending order. To sort in descending order, append the minus sign (`-`) to the name. A single request can be sorted on multiple objects. For example, you can sort all volumes from largest to smallest volume size, and then sort volumes of the same size in ascending order by volume name. To sort on multiple names, list the names as comma-separated values.
-        :param bool total_item_count: If set to `true`, the `total_item_count` matching the specified query parameters will be calculated and returned in the response. If set to `false`, the `total_item_count` will be `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.
+        :param bool total_item_count: If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.
         :param bool total_only: If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.
+        :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
+        :param bool _return_http_data_only: Returns only data field.
+        :param bool _preload_content: Response is converted into objects.
+        :param int _request_timeout: Total request timeout in seconds.
+                 It can also be a tuple of (connection time, read time) timeouts.
         :return: PodGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['continuation_token', 'destroyed', 'filter', 'ids', 'limit', 'names', 'offset', 'sort', 'total_item_count', 'total_only']
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method api21_pods_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        params = {k: v for k, v in six.iteritems(locals()) if v is not None}
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api21_pods_get`, must be a value greater than or equal to `1`")
         if 'offset' in params and params['offset'] < 0:
             raise ValueError("Invalid value for parameter `offset` when calling `api21_pods_get`, must be a value greater than or equal to `0`")
         collection_formats = {}
-
         path_params = {}
 
         query_params = []
@@ -597,6 +511,10 @@ class PodsApi(object):
             query_params.append(('total_only', params['total_only']))
 
         header_params = {}
+        if 'authorization' in params:
+            header_params['Authorization'] = params['authorization']
+        if 'x_request_id' in params:
+            header_params['X-Request-ID'] = params['x_request_id']
 
         form_params = []
         local_var_files = {}
@@ -623,37 +541,26 @@ class PodsApi(object):
             files=local_var_files,
             response_type='PodGetResponse',
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+            collection_formats=collection_formats,
+        )
 
-    def api21_pods_patch(self, pod, **kwargs):
-        """Manage a pod
-
-        Manages the details of a pod.
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api21_pods_patch(pod, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param PodPatch pod: (required)
-        :param list[str] ids: Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` and `names` parameters cannot be provided together.
-        :param list[str] names: Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.
-        :return: PodResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.api21_pods_patch_with_http_info(pod, **kwargs)
-        else:
-            (data) = self.api21_pods_patch_with_http_info(pod, **kwargs)
-            return data
-
-    def api21_pods_patch_with_http_info(self, pod, **kwargs):
+    def api21_pods_patch_with_http_info(
+        self,
+        pod=None,  # type: models.PodPatch
+        authorization=None,  # type: str
+        x_request_id=None,  # type: str
+        ids=None,  # type: List[str]
+        names=None,  # type: List[str]
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> models.PodResponse
         """Manage a pod
 
         Manages the details of a pod.
@@ -662,37 +569,27 @@ class PodsApi(object):
         >>> thread = api.api21_pods_patch_with_http_info(pod, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
         :param PodPatch pod: (required)
+        :param str authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
+        :param str x_request_id: Supplied by client during request or generated by server.
         :param list[str] ids: Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` and `names` parameters cannot be provided together.
         :param list[str] names: Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.
+        :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
+        :param bool _return_http_data_only: Returns only data field.
+        :param bool _preload_content: Response is converted into objects.
+        :param int _request_timeout: Total request timeout in seconds.
+                 It can also be a tuple of (connection time, read time) timeouts.
         :return: PodResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['pod', 'ids', 'names']
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method api21_pods_patch" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        params = {k: v for k, v in six.iteritems(locals()) if v is not None}
         # verify the required parameter 'pod' is set
-        if ('pod' not in params or
-                params['pod'] is None):
-            raise ValueError("Missing the required parameter `pod` when calling `api21_pods_patch`")
+        if pod is None:
+            raise TypeError("Missing the required parameter `pod` when calling `api21_pods_patch`")
 
         collection_formats = {}
-
         path_params = {}
 
         query_params = []
@@ -704,6 +601,10 @@ class PodsApi(object):
             collection_formats['names'] = 'csv'
 
         header_params = {}
+        if 'authorization' in params:
+            header_params['Authorization'] = params['authorization']
+        if 'x_request_id' in params:
+            header_params['X-Request-ID'] = params['x_request_id']
 
         form_params = []
         local_var_files = {}
@@ -732,46 +633,35 @@ class PodsApi(object):
             files=local_var_files,
             response_type='PodResponse',
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+            collection_formats=collection_formats,
+        )
 
-    def api21_pods_performance_by_array_get(self, **kwargs):
-        """List pod performance data by array
-
-        Returns real-time and historical performance data, real-time latency data, and average I/O size data. The data is displayed as a total across all pods on the local array and by individual pod.
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api21_pods_performance_by_array_get(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param bool destroyed: If set to `true`, lists only destroyed objects that are in the eradication pending state. If set to `false`, lists only objects that are not destroyed. For destroyed objects, the time remaining is displayed in seconds.
-        :param str filter: Narrows down the results to only the response objects that satisfy the filter criteria.
-        :param int end_time: Displays historical performance data for the specified time window, where `start_time` is the beginning of the time window, and `end_time` is the end of the time window. The `start_time` and `end_time` parameters are specified in milliseconds since the UNIX epoch. If `start_time` is not specified, the start time will default to one resolution before the end time, meaning that the most recent sample of performance data will be displayed. If `end_time`is not specified, the end time will default to the current time. Include the `resolution` parameter to display the performance data at the specified resolution. If not specified, `resolution` defaults to the lowest valid resolution.
-        :param int resolution: The number of milliseconds between samples of historical data. For array-wide performance metrics (`/arrays/performance` endpoint), valid values are `1000` (1 second), `30000` (30 seconds), `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and `86400000` (24 hours). For performance metrics on storage objects (`<object name>/performance` endpoint), such as volumes, valid values are `30000` (30 seconds), `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and `86400000` (24 hours). For space metrics, (`<object name>/space` endpoint), valid values are `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and `86400000` (24 hours). Include the `start_time` parameter to display the performance data starting at the specified start time. If `start_time` is not specified, the start time will default to one resolution before the end time, meaning that the most recent sample of performance data will be displayed. Include the `end_time` parameter to display the performance data until the specified end time. If `end_time`is not specified, the end time will default to the current time. If the `resolution` parameter is not specified but either the `start_time` or `end_time` parameter is, then `resolution` will default to the lowest valid resolution.
-        :param int start_time: Displays historical performance data for the specified time window, where `start_time` is the beginning of the time window, and `end_time` is the end of the time window. The `start_time` and `end_time` parameters are specified in milliseconds since the UNIX epoch. If `start_time` is not specified, the start time will default to one resolution before the end time, meaning that the most recent sample of performance data will be displayed. If `end_time`is not specified, the end time will default to the current time. Include the `resolution` parameter to display the performance data at the specified resolution. If not specified, `resolution` defaults to the lowest valid resolution.
-        :param list[str] ids: Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` and `names` parameters cannot be provided together.
-        :param int limit: Limits the size of the response to the specified number of objects on each page. To return the total number of resources, set `limit=0`. The total number of resources will be returned as a `total_item_count` value. If the page size requested is larger than the system maximum limit, the server returns the maximum limit, disregarding the requested page size.
-        :param list[str] names: Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.
-        :param int offset: The starting position based on the results of the query in relation to the full set of response objects returned.
-        :param list[str] sort: Returns the response objects in the order specified. Set `sort` to the name in the response by which to sort. Sorting can be performed on any of the names in the response, and the objects can be sorted in ascending or descending order. By default, the response objects are sorted in ascending order. To sort in descending order, append the minus sign (`-`) to the name. A single request can be sorted on multiple objects. For example, you can sort all volumes from largest to smallest volume size, and then sort volumes of the same size in ascending order by volume name. To sort on multiple names, list the names as comma-separated values.
-        :param bool total_item_count: If set to `true`, the `total_item_count` matching the specified query parameters will be calculated and returned in the response. If set to `false`, the `total_item_count` will be `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.
-        :param bool total_only: If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.
-        :return: ResourcePerformanceByArrayGetResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.api21_pods_performance_by_array_get_with_http_info(**kwargs)
-        else:
-            (data) = self.api21_pods_performance_by_array_get_with_http_info(**kwargs)
-            return data
-
-    def api21_pods_performance_by_array_get_with_http_info(self, **kwargs):
+    def api21_pods_performance_by_array_get_with_http_info(
+        self,
+        authorization=None,  # type: str
+        x_request_id=None,  # type: str
+        destroyed=None,  # type: bool
+        filter=None,  # type: str
+        end_time=None,  # type: int
+        resolution=None,  # type: int
+        start_time=None,  # type: int
+        ids=None,  # type: List[str]
+        limit=None,  # type: int
+        names=None,  # type: List[str]
+        offset=None,  # type: int
+        sort=None,  # type: List[str]
+        total_item_count=None,  # type: bool
+        total_only=None,  # type: bool
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> models.ResourcePerformanceByArrayGetResponse
         """List pod performance data by array
 
         Returns real-time and historical performance data, real-time latency data, and average I/O size data. The data is displayed as a total across all pods on the local array and by individual pod.
@@ -780,39 +670,31 @@ class PodsApi(object):
         >>> thread = api.api21_pods_performance_by_array_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param str authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
+        :param str x_request_id: Supplied by client during request or generated by server.
         :param bool destroyed: If set to `true`, lists only destroyed objects that are in the eradication pending state. If set to `false`, lists only objects that are not destroyed. For destroyed objects, the time remaining is displayed in seconds.
         :param str filter: Narrows down the results to only the response objects that satisfy the filter criteria.
         :param int end_time: Displays historical performance data for the specified time window, where `start_time` is the beginning of the time window, and `end_time` is the end of the time window. The `start_time` and `end_time` parameters are specified in milliseconds since the UNIX epoch. If `start_time` is not specified, the start time will default to one resolution before the end time, meaning that the most recent sample of performance data will be displayed. If `end_time`is not specified, the end time will default to the current time. Include the `resolution` parameter to display the performance data at the specified resolution. If not specified, `resolution` defaults to the lowest valid resolution.
         :param int resolution: The number of milliseconds between samples of historical data. For array-wide performance metrics (`/arrays/performance` endpoint), valid values are `1000` (1 second), `30000` (30 seconds), `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and `86400000` (24 hours). For performance metrics on storage objects (`<object name>/performance` endpoint), such as volumes, valid values are `30000` (30 seconds), `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and `86400000` (24 hours). For space metrics, (`<object name>/space` endpoint), valid values are `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and `86400000` (24 hours). Include the `start_time` parameter to display the performance data starting at the specified start time. If `start_time` is not specified, the start time will default to one resolution before the end time, meaning that the most recent sample of performance data will be displayed. Include the `end_time` parameter to display the performance data until the specified end time. If `end_time`is not specified, the end time will default to the current time. If the `resolution` parameter is not specified but either the `start_time` or `end_time` parameter is, then `resolution` will default to the lowest valid resolution.
         :param int start_time: Displays historical performance data for the specified time window, where `start_time` is the beginning of the time window, and `end_time` is the end of the time window. The `start_time` and `end_time` parameters are specified in milliseconds since the UNIX epoch. If `start_time` is not specified, the start time will default to one resolution before the end time, meaning that the most recent sample of performance data will be displayed. If `end_time`is not specified, the end time will default to the current time. Include the `resolution` parameter to display the performance data at the specified resolution. If not specified, `resolution` defaults to the lowest valid resolution.
         :param list[str] ids: Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` and `names` parameters cannot be provided together.
-        :param int limit: Limits the size of the response to the specified number of objects on each page. To return the total number of resources, set `limit=0`. The total number of resources will be returned as a `total_item_count` value. If the page size requested is larger than the system maximum limit, the server returns the maximum limit, disregarding the requested page size.
+        :param int limit: Limits the size of the response to the specified number of objects on each page. To return the total number of resources, set `limit=0`. The total number of resources is returned as a `total_item_count` value. If the page size requested is larger than the system maximum limit, the server returns the maximum limit, disregarding the requested page size.
         :param list[str] names: Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.
         :param int offset: The starting position based on the results of the query in relation to the full set of response objects returned.
         :param list[str] sort: Returns the response objects in the order specified. Set `sort` to the name in the response by which to sort. Sorting can be performed on any of the names in the response, and the objects can be sorted in ascending or descending order. By default, the response objects are sorted in ascending order. To sort in descending order, append the minus sign (`-`) to the name. A single request can be sorted on multiple objects. For example, you can sort all volumes from largest to smallest volume size, and then sort volumes of the same size in ascending order by volume name. To sort on multiple names, list the names as comma-separated values.
-        :param bool total_item_count: If set to `true`, the `total_item_count` matching the specified query parameters will be calculated and returned in the response. If set to `false`, the `total_item_count` will be `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.
+        :param bool total_item_count: If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.
         :param bool total_only: If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.
+        :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
+        :param bool _return_http_data_only: Returns only data field.
+        :param bool _preload_content: Response is converted into objects.
+        :param int _request_timeout: Total request timeout in seconds.
+                 It can also be a tuple of (connection time, read time) timeouts.
         :return: ResourcePerformanceByArrayGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['destroyed', 'filter', 'end_time', 'resolution', 'start_time', 'ids', 'limit', 'names', 'offset', 'sort', 'total_item_count', 'total_only']
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method api21_pods_performance_by_array_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        params = {k: v for k, v in six.iteritems(locals()) if v is not None}
 
         if 'resolution' in params and params['resolution'] < 0:
             raise ValueError("Invalid value for parameter `resolution` when calling `api21_pods_performance_by_array_get`, must be a value greater than or equal to `0`")
@@ -821,7 +703,6 @@ class PodsApi(object):
         if 'offset' in params and params['offset'] < 0:
             raise ValueError("Invalid value for parameter `offset` when calling `api21_pods_performance_by_array_get`, must be a value greater than or equal to `0`")
         collection_formats = {}
-
         path_params = {}
 
         query_params = []
@@ -854,6 +735,10 @@ class PodsApi(object):
             query_params.append(('total_only', params['total_only']))
 
         header_params = {}
+        if 'authorization' in params:
+            header_params['Authorization'] = params['authorization']
+        if 'x_request_id' in params:
+            header_params['X-Request-ID'] = params['x_request_id']
 
         form_params = []
         local_var_files = {}
@@ -880,46 +765,35 @@ class PodsApi(object):
             files=local_var_files,
             response_type='ResourcePerformanceByArrayGetResponse',
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+            collection_formats=collection_formats,
+        )
 
-    def api21_pods_performance_get(self, **kwargs):
-        """List pod performance data
-
-        Returns real-time and historical performance data, real-time latency data, and average I/O sizes across all pods, displayed both by pod and as a total across all pods.
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api21_pods_performance_get(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param bool destroyed: If set to `true`, lists only destroyed objects that are in the eradication pending state. If set to `false`, lists only objects that are not destroyed. For destroyed objects, the time remaining is displayed in seconds.
-        :param str filter: Narrows down the results to only the response objects that satisfy the filter criteria.
-        :param int end_time: Displays historical performance data for the specified time window, where `start_time` is the beginning of the time window, and `end_time` is the end of the time window. The `start_time` and `end_time` parameters are specified in milliseconds since the UNIX epoch. If `start_time` is not specified, the start time will default to one resolution before the end time, meaning that the most recent sample of performance data will be displayed. If `end_time`is not specified, the end time will default to the current time. Include the `resolution` parameter to display the performance data at the specified resolution. If not specified, `resolution` defaults to the lowest valid resolution.
-        :param int resolution: The number of milliseconds between samples of historical data. For array-wide performance metrics (`/arrays/performance` endpoint), valid values are `1000` (1 second), `30000` (30 seconds), `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and `86400000` (24 hours). For performance metrics on storage objects (`<object name>/performance` endpoint), such as volumes, valid values are `30000` (30 seconds), `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and `86400000` (24 hours). For space metrics, (`<object name>/space` endpoint), valid values are `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and `86400000` (24 hours). Include the `start_time` parameter to display the performance data starting at the specified start time. If `start_time` is not specified, the start time will default to one resolution before the end time, meaning that the most recent sample of performance data will be displayed. Include the `end_time` parameter to display the performance data until the specified end time. If `end_time`is not specified, the end time will default to the current time. If the `resolution` parameter is not specified but either the `start_time` or `end_time` parameter is, then `resolution` will default to the lowest valid resolution.
-        :param int start_time: Displays historical performance data for the specified time window, where `start_time` is the beginning of the time window, and `end_time` is the end of the time window. The `start_time` and `end_time` parameters are specified in milliseconds since the UNIX epoch. If `start_time` is not specified, the start time will default to one resolution before the end time, meaning that the most recent sample of performance data will be displayed. If `end_time`is not specified, the end time will default to the current time. Include the `resolution` parameter to display the performance data at the specified resolution. If not specified, `resolution` defaults to the lowest valid resolution.
-        :param list[str] ids: Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` and `names` parameters cannot be provided together.
-        :param int limit: Limits the size of the response to the specified number of objects on each page. To return the total number of resources, set `limit=0`. The total number of resources will be returned as a `total_item_count` value. If the page size requested is larger than the system maximum limit, the server returns the maximum limit, disregarding the requested page size.
-        :param list[str] names: Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.
-        :param int offset: The starting position based on the results of the query in relation to the full set of response objects returned.
-        :param list[str] sort: Returns the response objects in the order specified. Set `sort` to the name in the response by which to sort. Sorting can be performed on any of the names in the response, and the objects can be sorted in ascending or descending order. By default, the response objects are sorted in ascending order. To sort in descending order, append the minus sign (`-`) to the name. A single request can be sorted on multiple objects. For example, you can sort all volumes from largest to smallest volume size, and then sort volumes of the same size in ascending order by volume name. To sort on multiple names, list the names as comma-separated values.
-        :param bool total_item_count: If set to `true`, the `total_item_count` matching the specified query parameters will be calculated and returned in the response. If set to `false`, the `total_item_count` will be `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.
-        :param bool total_only: If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.
-        :return: ResourcePerformanceGetResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.api21_pods_performance_get_with_http_info(**kwargs)
-        else:
-            (data) = self.api21_pods_performance_get_with_http_info(**kwargs)
-            return data
-
-    def api21_pods_performance_get_with_http_info(self, **kwargs):
+    def api21_pods_performance_get_with_http_info(
+        self,
+        authorization=None,  # type: str
+        x_request_id=None,  # type: str
+        destroyed=None,  # type: bool
+        filter=None,  # type: str
+        end_time=None,  # type: int
+        resolution=None,  # type: int
+        start_time=None,  # type: int
+        ids=None,  # type: List[str]
+        limit=None,  # type: int
+        names=None,  # type: List[str]
+        offset=None,  # type: int
+        sort=None,  # type: List[str]
+        total_item_count=None,  # type: bool
+        total_only=None,  # type: bool
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> models.ResourcePerformanceGetResponse
         """List pod performance data
 
         Returns real-time and historical performance data, real-time latency data, and average I/O sizes across all pods, displayed both by pod and as a total across all pods.
@@ -928,39 +802,31 @@ class PodsApi(object):
         >>> thread = api.api21_pods_performance_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param str authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
+        :param str x_request_id: Supplied by client during request or generated by server.
         :param bool destroyed: If set to `true`, lists only destroyed objects that are in the eradication pending state. If set to `false`, lists only objects that are not destroyed. For destroyed objects, the time remaining is displayed in seconds.
         :param str filter: Narrows down the results to only the response objects that satisfy the filter criteria.
         :param int end_time: Displays historical performance data for the specified time window, where `start_time` is the beginning of the time window, and `end_time` is the end of the time window. The `start_time` and `end_time` parameters are specified in milliseconds since the UNIX epoch. If `start_time` is not specified, the start time will default to one resolution before the end time, meaning that the most recent sample of performance data will be displayed. If `end_time`is not specified, the end time will default to the current time. Include the `resolution` parameter to display the performance data at the specified resolution. If not specified, `resolution` defaults to the lowest valid resolution.
         :param int resolution: The number of milliseconds between samples of historical data. For array-wide performance metrics (`/arrays/performance` endpoint), valid values are `1000` (1 second), `30000` (30 seconds), `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and `86400000` (24 hours). For performance metrics on storage objects (`<object name>/performance` endpoint), such as volumes, valid values are `30000` (30 seconds), `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and `86400000` (24 hours). For space metrics, (`<object name>/space` endpoint), valid values are `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and `86400000` (24 hours). Include the `start_time` parameter to display the performance data starting at the specified start time. If `start_time` is not specified, the start time will default to one resolution before the end time, meaning that the most recent sample of performance data will be displayed. Include the `end_time` parameter to display the performance data until the specified end time. If `end_time`is not specified, the end time will default to the current time. If the `resolution` parameter is not specified but either the `start_time` or `end_time` parameter is, then `resolution` will default to the lowest valid resolution.
         :param int start_time: Displays historical performance data for the specified time window, where `start_time` is the beginning of the time window, and `end_time` is the end of the time window. The `start_time` and `end_time` parameters are specified in milliseconds since the UNIX epoch. If `start_time` is not specified, the start time will default to one resolution before the end time, meaning that the most recent sample of performance data will be displayed. If `end_time`is not specified, the end time will default to the current time. Include the `resolution` parameter to display the performance data at the specified resolution. If not specified, `resolution` defaults to the lowest valid resolution.
         :param list[str] ids: Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` and `names` parameters cannot be provided together.
-        :param int limit: Limits the size of the response to the specified number of objects on each page. To return the total number of resources, set `limit=0`. The total number of resources will be returned as a `total_item_count` value. If the page size requested is larger than the system maximum limit, the server returns the maximum limit, disregarding the requested page size.
+        :param int limit: Limits the size of the response to the specified number of objects on each page. To return the total number of resources, set `limit=0`. The total number of resources is returned as a `total_item_count` value. If the page size requested is larger than the system maximum limit, the server returns the maximum limit, disregarding the requested page size.
         :param list[str] names: Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.
         :param int offset: The starting position based on the results of the query in relation to the full set of response objects returned.
         :param list[str] sort: Returns the response objects in the order specified. Set `sort` to the name in the response by which to sort. Sorting can be performed on any of the names in the response, and the objects can be sorted in ascending or descending order. By default, the response objects are sorted in ascending order. To sort in descending order, append the minus sign (`-`) to the name. A single request can be sorted on multiple objects. For example, you can sort all volumes from largest to smallest volume size, and then sort volumes of the same size in ascending order by volume name. To sort on multiple names, list the names as comma-separated values.
-        :param bool total_item_count: If set to `true`, the `total_item_count` matching the specified query parameters will be calculated and returned in the response. If set to `false`, the `total_item_count` will be `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.
+        :param bool total_item_count: If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.
         :param bool total_only: If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.
+        :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
+        :param bool _return_http_data_only: Returns only data field.
+        :param bool _preload_content: Response is converted into objects.
+        :param int _request_timeout: Total request timeout in seconds.
+                 It can also be a tuple of (connection time, read time) timeouts.
         :return: ResourcePerformanceGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['destroyed', 'filter', 'end_time', 'resolution', 'start_time', 'ids', 'limit', 'names', 'offset', 'sort', 'total_item_count', 'total_only']
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method api21_pods_performance_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        params = {k: v for k, v in six.iteritems(locals()) if v is not None}
 
         if 'resolution' in params and params['resolution'] < 0:
             raise ValueError("Invalid value for parameter `resolution` when calling `api21_pods_performance_get`, must be a value greater than or equal to `0`")
@@ -969,7 +835,6 @@ class PodsApi(object):
         if 'offset' in params and params['offset'] < 0:
             raise ValueError("Invalid value for parameter `offset` when calling `api21_pods_performance_get`, must be a value greater than or equal to `0`")
         collection_formats = {}
-
         path_params = {}
 
         query_params = []
@@ -1002,6 +867,10 @@ class PodsApi(object):
             query_params.append(('total_only', params['total_only']))
 
         header_params = {}
+        if 'authorization' in params:
+            header_params['Authorization'] = params['authorization']
+        if 'x_request_id' in params:
+            header_params['X-Request-ID'] = params['x_request_id']
 
         form_params = []
         local_var_files = {}
@@ -1028,36 +897,25 @@ class PodsApi(object):
             files=local_var_files,
             response_type='ResourcePerformanceGetResponse',
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+            collection_formats=collection_formats,
+        )
 
-    def api21_pods_post(self, pod, **kwargs):
-        """Create a pod
-
-        Creates a pod on the local array. Each pod must be given a name that is unique across the arrays to which they are stretched, so a pod cannot be stretched to an array that already contains a pod with the same name. After a pod has been created, add volumes and protection groups to the pod, and then stretch the pod to another (connected) array.
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api21_pods_post(pod, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param PodPost pod: (required)
-        :param list[str] names: Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.
-        :return: PodResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.api21_pods_post_with_http_info(pod, **kwargs)
-        else:
-            (data) = self.api21_pods_post_with_http_info(pod, **kwargs)
-            return data
-
-    def api21_pods_post_with_http_info(self, pod, **kwargs):
+    def api21_pods_post_with_http_info(
+        self,
+        pod=None,  # type: models.PodPost
+        authorization=None,  # type: str
+        x_request_id=None,  # type: str
+        names=None,  # type: List[str]
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> models.PodResponse
         """Create a pod
 
         Creates a pod on the local array. Each pod must be given a name that is unique across the arrays to which they are stretched, so a pod cannot be stretched to an array that already contains a pod with the same name. After a pod has been created, add volumes and protection groups to the pod, and then stretch the pod to another (connected) array.
@@ -1066,36 +924,26 @@ class PodsApi(object):
         >>> thread = api.api21_pods_post_with_http_info(pod, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
         :param PodPost pod: (required)
+        :param str authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
+        :param str x_request_id: Supplied by client during request or generated by server.
         :param list[str] names: Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.
+        :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
+        :param bool _return_http_data_only: Returns only data field.
+        :param bool _preload_content: Response is converted into objects.
+        :param int _request_timeout: Total request timeout in seconds.
+                 It can also be a tuple of (connection time, read time) timeouts.
         :return: PodResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['pod', 'names']
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method api21_pods_post" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        params = {k: v for k, v in six.iteritems(locals()) if v is not None}
         # verify the required parameter 'pod' is set
-        if ('pod' not in params or
-                params['pod'] is None):
-            raise ValueError("Missing the required parameter `pod` when calling `api21_pods_post`")
+        if pod is None:
+            raise TypeError("Missing the required parameter `pod` when calling `api21_pods_post`")
 
         collection_formats = {}
-
         path_params = {}
 
         query_params = []
@@ -1104,6 +952,10 @@ class PodsApi(object):
             collection_formats['names'] = 'csv'
 
         header_params = {}
+        if 'authorization' in params:
+            header_params['Authorization'] = params['authorization']
+        if 'x_request_id' in params:
+            header_params['X-Request-ID'] = params['x_request_id']
 
         form_params = []
         local_var_files = {}
@@ -1132,46 +984,35 @@ class PodsApi(object):
             files=local_var_files,
             response_type='PodResponse',
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+            collection_formats=collection_formats,
+        )
 
-    def api21_pods_space_get(self, **kwargs):
-        """List pod space information
-
-        Returns provisioned (virtual) size and physical storage consumption data for each pod on the local array.
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api21_pods_space_get(async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param bool destroyed: If set to `true`, lists only destroyed objects that are in the eradication pending state. If set to `false`, lists only objects that are not destroyed. For destroyed objects, the time remaining is displayed in seconds.
-        :param str filter: Narrows down the results to only the response objects that satisfy the filter criteria.
-        :param int end_time: Displays historical performance data for the specified time window, where `start_time` is the beginning of the time window, and `end_time` is the end of the time window. The `start_time` and `end_time` parameters are specified in milliseconds since the UNIX epoch. If `start_time` is not specified, the start time will default to one resolution before the end time, meaning that the most recent sample of performance data will be displayed. If `end_time`is not specified, the end time will default to the current time. Include the `resolution` parameter to display the performance data at the specified resolution. If not specified, `resolution` defaults to the lowest valid resolution.
-        :param int resolution: The number of milliseconds between samples of historical data. For array-wide performance metrics (`/arrays/performance` endpoint), valid values are `1000` (1 second), `30000` (30 seconds), `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and `86400000` (24 hours). For performance metrics on storage objects (`<object name>/performance` endpoint), such as volumes, valid values are `30000` (30 seconds), `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and `86400000` (24 hours). For space metrics, (`<object name>/space` endpoint), valid values are `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and `86400000` (24 hours). Include the `start_time` parameter to display the performance data starting at the specified start time. If `start_time` is not specified, the start time will default to one resolution before the end time, meaning that the most recent sample of performance data will be displayed. Include the `end_time` parameter to display the performance data until the specified end time. If `end_time`is not specified, the end time will default to the current time. If the `resolution` parameter is not specified but either the `start_time` or `end_time` parameter is, then `resolution` will default to the lowest valid resolution.
-        :param int start_time: Displays historical performance data for the specified time window, where `start_time` is the beginning of the time window, and `end_time` is the end of the time window. The `start_time` and `end_time` parameters are specified in milliseconds since the UNIX epoch. If `start_time` is not specified, the start time will default to one resolution before the end time, meaning that the most recent sample of performance data will be displayed. If `end_time`is not specified, the end time will default to the current time. Include the `resolution` parameter to display the performance data at the specified resolution. If not specified, `resolution` defaults to the lowest valid resolution.
-        :param list[str] ids: Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` and `names` parameters cannot be provided together.
-        :param int limit: Limits the size of the response to the specified number of objects on each page. To return the total number of resources, set `limit=0`. The total number of resources will be returned as a `total_item_count` value. If the page size requested is larger than the system maximum limit, the server returns the maximum limit, disregarding the requested page size.
-        :param int offset: The starting position based on the results of the query in relation to the full set of response objects returned.
-        :param list[str] sort: Returns the response objects in the order specified. Set `sort` to the name in the response by which to sort. Sorting can be performed on any of the names in the response, and the objects can be sorted in ascending or descending order. By default, the response objects are sorted in ascending order. To sort in descending order, append the minus sign (`-`) to the name. A single request can be sorted on multiple objects. For example, you can sort all volumes from largest to smallest volume size, and then sort volumes of the same size in ascending order by volume name. To sort on multiple names, list the names as comma-separated values.
-        :param bool total_item_count: If set to `true`, the `total_item_count` matching the specified query parameters will be calculated and returned in the response. If set to `false`, the `total_item_count` will be `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.
-        :param bool total_only: If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.
-        :param list[str] names: Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.
-        :return: ResourceSpaceGetResponse
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.api21_pods_space_get_with_http_info(**kwargs)
-        else:
-            (data) = self.api21_pods_space_get_with_http_info(**kwargs)
-            return data
-
-    def api21_pods_space_get_with_http_info(self, **kwargs):
+    def api21_pods_space_get_with_http_info(
+        self,
+        authorization=None,  # type: str
+        x_request_id=None,  # type: str
+        destroyed=None,  # type: bool
+        filter=None,  # type: str
+        end_time=None,  # type: int
+        resolution=None,  # type: int
+        start_time=None,  # type: int
+        ids=None,  # type: List[str]
+        limit=None,  # type: int
+        offset=None,  # type: int
+        sort=None,  # type: List[str]
+        total_item_count=None,  # type: bool
+        total_only=None,  # type: bool
+        names=None,  # type: List[str]
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> models.ResourceSpaceGetResponse
         """List pod space information
 
         Returns provisioned (virtual) size and physical storage consumption data for each pod on the local array.
@@ -1180,39 +1021,31 @@ class PodsApi(object):
         >>> thread = api.api21_pods_space_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param str authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
+        :param str x_request_id: Supplied by client during request or generated by server.
         :param bool destroyed: If set to `true`, lists only destroyed objects that are in the eradication pending state. If set to `false`, lists only objects that are not destroyed. For destroyed objects, the time remaining is displayed in seconds.
         :param str filter: Narrows down the results to only the response objects that satisfy the filter criteria.
         :param int end_time: Displays historical performance data for the specified time window, where `start_time` is the beginning of the time window, and `end_time` is the end of the time window. The `start_time` and `end_time` parameters are specified in milliseconds since the UNIX epoch. If `start_time` is not specified, the start time will default to one resolution before the end time, meaning that the most recent sample of performance data will be displayed. If `end_time`is not specified, the end time will default to the current time. Include the `resolution` parameter to display the performance data at the specified resolution. If not specified, `resolution` defaults to the lowest valid resolution.
         :param int resolution: The number of milliseconds between samples of historical data. For array-wide performance metrics (`/arrays/performance` endpoint), valid values are `1000` (1 second), `30000` (30 seconds), `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and `86400000` (24 hours). For performance metrics on storage objects (`<object name>/performance` endpoint), such as volumes, valid values are `30000` (30 seconds), `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and `86400000` (24 hours). For space metrics, (`<object name>/space` endpoint), valid values are `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and `86400000` (24 hours). Include the `start_time` parameter to display the performance data starting at the specified start time. If `start_time` is not specified, the start time will default to one resolution before the end time, meaning that the most recent sample of performance data will be displayed. Include the `end_time` parameter to display the performance data until the specified end time. If `end_time`is not specified, the end time will default to the current time. If the `resolution` parameter is not specified but either the `start_time` or `end_time` parameter is, then `resolution` will default to the lowest valid resolution.
         :param int start_time: Displays historical performance data for the specified time window, where `start_time` is the beginning of the time window, and `end_time` is the end of the time window. The `start_time` and `end_time` parameters are specified in milliseconds since the UNIX epoch. If `start_time` is not specified, the start time will default to one resolution before the end time, meaning that the most recent sample of performance data will be displayed. If `end_time`is not specified, the end time will default to the current time. Include the `resolution` parameter to display the performance data at the specified resolution. If not specified, `resolution` defaults to the lowest valid resolution.
         :param list[str] ids: Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` and `names` parameters cannot be provided together.
-        :param int limit: Limits the size of the response to the specified number of objects on each page. To return the total number of resources, set `limit=0`. The total number of resources will be returned as a `total_item_count` value. If the page size requested is larger than the system maximum limit, the server returns the maximum limit, disregarding the requested page size.
+        :param int limit: Limits the size of the response to the specified number of objects on each page. To return the total number of resources, set `limit=0`. The total number of resources is returned as a `total_item_count` value. If the page size requested is larger than the system maximum limit, the server returns the maximum limit, disregarding the requested page size.
         :param int offset: The starting position based on the results of the query in relation to the full set of response objects returned.
         :param list[str] sort: Returns the response objects in the order specified. Set `sort` to the name in the response by which to sort. Sorting can be performed on any of the names in the response, and the objects can be sorted in ascending or descending order. By default, the response objects are sorted in ascending order. To sort in descending order, append the minus sign (`-`) to the name. A single request can be sorted on multiple objects. For example, you can sort all volumes from largest to smallest volume size, and then sort volumes of the same size in ascending order by volume name. To sort on multiple names, list the names as comma-separated values.
-        :param bool total_item_count: If set to `true`, the `total_item_count` matching the specified query parameters will be calculated and returned in the response. If set to `false`, the `total_item_count` will be `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.
+        :param bool total_item_count: If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.
         :param bool total_only: If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.
         :param list[str] names: Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.
+        :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
+        :param bool _return_http_data_only: Returns only data field.
+        :param bool _preload_content: Response is converted into objects.
+        :param int _request_timeout: Total request timeout in seconds.
+                 It can also be a tuple of (connection time, read time) timeouts.
         :return: ResourceSpaceGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['destroyed', 'filter', 'end_time', 'resolution', 'start_time', 'ids', 'limit', 'offset', 'sort', 'total_item_count', 'total_only', 'names']
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method api21_pods_space_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        params = {k: v for k, v in six.iteritems(locals()) if v is not None}
 
         if 'resolution' in params and params['resolution'] < 0:
             raise ValueError("Invalid value for parameter `resolution` when calling `api21_pods_space_get`, must be a value greater than or equal to `0`")
@@ -1221,7 +1054,6 @@ class PodsApi(object):
         if 'offset' in params and params['offset'] < 0:
             raise ValueError("Invalid value for parameter `offset` when calling `api21_pods_space_get`, must be a value greater than or equal to `0`")
         collection_formats = {}
-
         path_params = {}
 
         query_params = []
@@ -1254,6 +1086,10 @@ class PodsApi(object):
             collection_formats['names'] = 'csv'
 
         header_params = {}
+        if 'authorization' in params:
+            header_params['Authorization'] = params['authorization']
+        if 'x_request_id' in params:
+            header_params['X-Request-ID'] = params['x_request_id']
 
         form_params = []
         local_var_files = {}
@@ -1280,8 +1116,9 @@ class PodsApi(object):
             files=local_var_files,
             response_type='ResourceSpaceGetResponse',
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+            collection_formats=collection_formats,
+        )

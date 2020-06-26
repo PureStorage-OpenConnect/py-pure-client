@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_1 import models
 
 class OffloadPost(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -43,18 +44,24 @@ class OffloadPost(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        azure=None,  # type: models.OffloadAzure
+        nfs=None,  # type: models.OffloadNfs
+        s3=None,  # type: models.OffloadS3
+    ):
         """
         Keyword args:
             azure (OffloadAzure): The Microsoft Azure Blob storage settings.
             nfs (OffloadNfs): The NFS storage settings.
             s3 (OffloadS3): The Amazon S3 storage settings.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if azure is not None:
+            self.azure = azure
+        if nfs is not None:
+            self.nfs = nfs
+        if s3 is not None:
+            self.s3 = s3
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_1 import models
 
 class OffloadNfs(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -43,18 +44,24 @@ class OffloadNfs(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        address=None,  # type: str
+        mount_options=None,  # type: str
+        mount_point=None,  # type: str
+    ):
         """
         Keyword args:
             address (str): The hostname or IP address of the NFS server to where the data will be offloaded. An array can be connected to one offload target at a time, while multiple arrays can be connected to the same offload target. If the protection group is in a stretched pod, for high availability, connect both arrays in the stretched pod to the offload target.
             mount_options (str): The custom mount options on the NFS server. Enter multiple mount options in comma-separated format. Valid values include `port`, `rsize`, `wsize`, `nfsvers`, and `tcp` or `udp`. These mount options are common to all NFS file systems.
             mount_point (str): The mount point of the NFS export on the NFS server. For example, `/mnt`. The `access_key_id`, `secret_access_key`, and `bucket` parameters must be set together.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if address is not None:
+            self.address = address
+        if mount_options is not None:
+            self.mount_options = mount_options
+        if mount_point is not None:
+            self.mount_point = mount_point
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

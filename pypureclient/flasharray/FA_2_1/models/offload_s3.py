@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_1 import models
 
 class OffloadS3(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -47,7 +48,14 @@ class OffloadS3(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        access_key_id=None,  # type: str
+        bucket=None,  # type: str
+        placement_strategy=None,  # type: str
+        secret_access_key=None,  # type: str
+        uri=None,  # type: str
+    ):
         """
         Keyword args:
             access_key_id (str): The access key ID of the AWS account used to create a connection between the array and an Amazon S3 offload target. The access key ID is 20 characters in length and is only accepted when creating the connection between the array and the S3 offload target. The `access_key_id`, `secret_access_key`, and `bucket` parameters must be set together.
@@ -56,11 +64,16 @@ class OffloadS3(object):
             secret_access_key (str): The secret access key that goes with the access key ID (`access_key_id`) of the AWS account. The secret access key is 40 characters in length is only accepted when creating the connection between the array and the S3 offload target. The `access_key_id`, `secret_access_key`, and `bucket` parameters must be set together.
             uri (str): The URI used to create a connection between the array and a non-S3 offload target. Storage placement strategies are not supported for non-S3 offload targets. Both the HTTP and HTTPS protocols are allowed.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if access_key_id is not None:
+            self.access_key_id = access_key_id
+        if bucket is not None:
+            self.bucket = bucket
+        if placement_strategy is not None:
+            self.placement_strategy = placement_strategy
+        if secret_access_key is not None:
+            self.secret_access_key = secret_access_key
+        if uri is not None:
+            self.uri = uri
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

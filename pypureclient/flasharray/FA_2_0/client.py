@@ -2,11 +2,13 @@ import json
 import platform
 import time
 import urllib3
+from typing import List, Optional
 
 from ...exceptions import PureError
 from ...keywords import Parameters, Headers, Responses
 from ...responses import ValidResponse, ErrorResponse, ApiError, ItemIterator
 from ...token_manager import TokenManager
+from ...api_token_manager import APITokenManager
 from .api_client import ApiClient
 from .rest import ApiException
 from .configuration import Configuration
@@ -18,14 +20,16 @@ class Client(object):
     DEFAULT_TIMEOUT = 15.0
     DEFAULT_RETRIES = 5
     # Format: client/client_version/endpoint/endpoint_version/system/release
-    USER_AGENT = ('pypureclient/1.3.0/FA/2.0/{sys}/{rel}'
+    USER_AGENT = ('pypureclient/1.6.0/FA/2.0/{sys}/{rel}'
                   .format(sys=platform.system(), rel=platform.release()))
 
     def __init__(self, target, id_token=None, private_key_file=None, private_key_password=None,
-                 username=None, client_id=None, key_id=None, issuer=None,
-                 retries=DEFAULT_RETRIES, timeout=DEFAULT_TIMEOUT, ssl_cert=None):
+                 username=None, client_id=None, key_id=None, issuer=None, api_token=None,
+                 retries=DEFAULT_RETRIES, timeout=DEFAULT_TIMEOUT, ssl_cert=None, user_agent=None):
         """
-        Initialize a FlashArray Client.
+        Initialize a FlashArray Client. id_token is generated based on app ID and private 
+        key info. Either id_token or api_token could be used for authentication. Only one 
+        authentication option is allowed.
 
         Keyword args:
             target (str, required):
@@ -47,6 +51,8 @@ class Client(object):
                 Key ID of API client that issued the identity token.
             issuer (str, optional):
                 API client's trusted identity issuer on the array.
+            api_token (str, optional):
+                API token for the user.
             retries (int, optional):
                 The number of times to retry an API call if it fails for a
                 non-blocking reason. Defaults to 5.
@@ -55,6 +61,8 @@ class Client(object):
                 (connect and read) times. Defaults to 15.0 total.
             ssl_cert (str, optional):
                 SSL certificate to use. Defaults to None.
+            user_agent (str, optional):
+                User-Agent request header to use.
 
         Raises:
             PureError: If it could not create an ID or access token
@@ -64,21 +72,32 @@ class Client(object):
         config.verify_ssl = ssl_cert is not None
         config.ssl_ca_cert = ssl_cert
         config.host = 'https://{}'.format(target)
-
-        auth_endpoint = 'https://{}/oauth2/1.0/token'.format(target)
-        headers = {
-            'kid': key_id
-        }
-        payload = {
-            'iss': issuer,
-            'aud': client_id,
-            'sub': username,
-        }
-        self._token_man = TokenManager(auth_endpoint, id_token, private_key_file, private_key_password,
-                                       payload=payload, headers=headers, verify_ssl=False)
+        
+        if id_token and api_token:
+            raise PureError("Only one authentication option is allowed. Please use either id_token or api_token and try again!")
+        elif private_key_file and private_key_password and username and \
+                key_id and client_id and issuer and api_token:
+            raise PureError("id_token is generated based on app ID and private key info. Please use either id_token or api_token and try again!")
+        elif api_token:
+            api_token_auth_endpoint = 'https://{}/api/2.0/login'.format(target)
+            self._token_man = APITokenManager(api_token_auth_endpoint, api_token, verify_ssl=False)
+        else:
+            auth_endpoint = 'https://{}/oauth2/1.0/token'.format(target)
+            headers = {
+                'kid': key_id
+            }
+            payload = {
+                'iss': issuer,
+                'aud': client_id,
+                'sub': username,
+            }
+            self._token_man = TokenManager(auth_endpoint, id_token, private_key_file, private_key_password,
+                                           payload=payload, headers=headers, verify_ssl=False)
+        
         self._api_client = ApiClient(configuration=config)
+        self._api_client.user_agent = user_agent or self.USER_AGENT
+        self._set_agent_header()
         self._set_auth_header()
-        self._api_client.user_agent = self.USER_AGENT
 
         # Read timeout and retries
         self._retries = retries
@@ -107,7 +126,22 @@ class Client(object):
         """
         return self._token_man.get_access_token(refresh)
 
-    def delete_connections(self, host_groups=None, hosts=None, volumes=None, **kwargs):
+    def delete_connections(
+        self,
+        host_groups=None,  # type: List[models.ReferenceType]
+        hosts=None,  # type: List[models.ReferenceType]
+        volumes=None,  # type: List[models.ReferenceType]
+        authorization=None,  # type: str
+        x_request_id=None,  # type: str
+        host_group_names=None,  # type: List[str]
+        host_names=None,  # type: List[str]
+        volume_names=None,  # type: List[str]
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> None
         """
         Break the connection between a volume and its associated host or host group. The
         `volume_names` and `host_names` or `host_group_names` query parameters are
@@ -121,7 +155,9 @@ class Client(object):
             volumes (list[FixedReference], optional):
                 A list of volumes to query for. Overrides volume_names keyword arguments.
 
-        Keyword args:
+            x_request_id (str, optional):
+                A header to provide to track the API call. Generated by the server if not
+                provided.
             host_group_names (list[str], optional):
                 Performs the operation on the host group specified. Enter multiple names in
                 comma-separated format. A request cannot include a mix of multiple objects with
@@ -140,6 +176,15 @@ class Client(object):
                 multiple objects with multiple names. For example, a request cannot include a
                 mix of multiple volume names and host names; instead, at least one of the
                 objects (e.g., `volume_names`) must be set to only one name (e.g., `vol01`).
+            async_req (bool, optional):
+                Request runs in separate thread and method returns
+                multiprocessing.pool.ApplyResult.
+            _return_http_data_only (bool, optional):
+                Returns only data field.
+            _preload_content (bool, optional):
+                Response is converted into objects.
+            _request_timeout (int, optional):
+                Total request timeout in seconds.
 
         Returns:
             ValidResponse: If the call was successful.
@@ -150,6 +195,18 @@ class Client(object):
             ValueError: If a parameter is of an invalid type.
             TypeError: If invalid or missing parameters are used.
         """
+        kwargs = dict(
+            authorization=authorization,
+            x_request_id=x_request_id,
+            host_group_names=host_group_names,
+            host_names=host_names,
+            volume_names=volume_names,
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+        )
+        kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._connections_api.api20_connections_delete_with_http_info
         _process_references(host_groups, ['host_group_names'], kwargs)
         _process_references(hosts, ['host_names'], kwargs)
@@ -159,7 +216,29 @@ class Client(object):
         _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
-    def get_connections(self, host_groups=None, hosts=None, protocol_endpoints=None, volumes=None, **kwargs):
+    def get_connections(
+        self,
+        host_groups=None,  # type: List[models.ReferenceType]
+        hosts=None,  # type: List[models.ReferenceType]
+        protocol_endpoints=None,  # type: List[models.ReferenceType]
+        volumes=None,  # type: List[models.ReferenceType]
+        authorization=None,  # type: str
+        x_request_id=None,  # type: str
+        filter=None,  # type: str
+        host_group_names=None,  # type: List[str]
+        host_names=None,  # type: List[str]
+        limit=None,  # type: int
+        offset=None,  # type: int
+        protocol_endpoint_names=None,  # type: List[str]
+        sort=None,  # type: List[str]
+        total_item_count=None,  # type: bool
+        volume_names=None,  # type: List[str]
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> models.ConnectionGetResponse
         """
         Return a list of connections between a volume and its hosts and host groups, and
         the LUNs used by the associated hosts to address these volumes.
@@ -174,7 +253,9 @@ class Client(object):
             volumes (list[FixedReference], optional):
                 A list of volumes to query for. Overrides volume_names keyword arguments.
 
-        Keyword args:
+            x_request_id (str, optional):
+                A header to provide to track the API call. Generated by the server if not
+                provided.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             host_group_names (list[str], optional):
@@ -206,15 +287,24 @@ class Client(object):
                 Sort the response by the specified Properties. Can also be a single element.
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
-                will be calculated and returned in the response. If set to `false`, the
-                `total_item_count` will be `null` in the response. This may speed up queries
-                where the `total_item_count` is large. If not specified, defaults to `false`.
+                is calculated and returned in the response. If set to `false`, the
+                `total_item_count` is `null` in the response. This may speed up queries where
+                the `total_item_count` is large. If not specified, defaults to `false`.
             volume_names (list[str], optional):
                 Performs the operation on the volume specified. Enter multiple names in comma-
                 separated format. For example, `vol01,vol02`. A request cannot include a mix of
                 multiple objects with multiple names. For example, a request cannot include a
                 mix of multiple volume names and host names; instead, at least one of the
                 objects (e.g., `volume_names`) must be set to only one name (e.g., `vol01`).
+            async_req (bool, optional):
+                Request runs in separate thread and method returns
+                multiprocessing.pool.ApplyResult.
+            _return_http_data_only (bool, optional):
+                Returns only data field.
+            _preload_content (bool, optional):
+                Response is converted into objects.
+            _request_timeout (int, optional):
+                Total request timeout in seconds.
 
         Returns:
             ValidResponse: If the call was successful.
@@ -225,6 +315,24 @@ class Client(object):
             ValueError: If a parameter is of an invalid type.
             TypeError: If invalid or missing parameters are used.
         """
+        kwargs = dict(
+            authorization=authorization,
+            x_request_id=x_request_id,
+            filter=filter,
+            host_group_names=host_group_names,
+            host_names=host_names,
+            limit=limit,
+            offset=offset,
+            protocol_endpoint_names=protocol_endpoint_names,
+            sort=sort,
+            total_item_count=total_item_count,
+            volume_names=volume_names,
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+        )
+        kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._connections_api.api20_connections_get_with_http_info
         _process_references(host_groups, ['host_group_names'], kwargs)
         _process_references(hosts, ['host_names'], kwargs)
@@ -235,7 +343,23 @@ class Client(object):
         _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
-    def post_connections(self, host_groups=None, hosts=None, volumes=None, **kwargs):
+    def post_connections(
+        self,
+        host_groups=None,  # type: List[models.ReferenceType]
+        hosts=None,  # type: List[models.ReferenceType]
+        volumes=None,  # type: List[models.ReferenceType]
+        authorization=None,  # type: str
+        x_request_id=None,  # type: str
+        host_group_names=None,  # type: List[str]
+        host_names=None,  # type: List[str]
+        volume_names=None,  # type: List[str]
+        connection=None,  # type: models.ConnectionPost
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> models.ConnectionResponse
         """
         Create a connection between a volume and a host or host group. The
         `volume_names` and `host_names` or `host_group_names` query parameters are
@@ -249,7 +373,9 @@ class Client(object):
             volumes (list[FixedReference], optional):
                 A list of volumes to query for. Overrides volume_names keyword arguments.
 
-        Keyword args:
+            x_request_id (str, optional):
+                A header to provide to track the API call. Generated by the server if not
+                provided.
             host_group_names (list[str], optional):
                 Performs the operation on the host group specified. Enter multiple names in
                 comma-separated format. A request cannot include a mix of multiple objects with
@@ -268,6 +394,15 @@ class Client(object):
                 multiple objects with multiple names. For example, a request cannot include a
                 mix of multiple volume names and host names; instead, at least one of the
                 objects (e.g., `volume_names`) must be set to only one name (e.g., `vol01`).
+            async_req (bool, optional):
+                Request runs in separate thread and method returns
+                multiprocessing.pool.ApplyResult.
+            _return_http_data_only (bool, optional):
+                Returns only data field.
+            _preload_content (bool, optional):
+                Response is converted into objects.
+            _request_timeout (int, optional):
+                Total request timeout in seconds.
 
         Returns:
             ValidResponse: If the call was successful.
@@ -278,6 +413,19 @@ class Client(object):
             ValueError: If a parameter is of an invalid type.
             TypeError: If invalid or missing parameters are used.
         """
+        kwargs = dict(
+            authorization=authorization,
+            x_request_id=x_request_id,
+            host_group_names=host_group_names,
+            host_names=host_names,
+            volume_names=volume_names,
+            connection=connection,
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+        )
+        kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._connections_api.api20_connections_post_with_http_info
         _process_references(host_groups, ['host_group_names'], kwargs)
         _process_references(hosts, ['host_names'], kwargs)
@@ -287,7 +435,18 @@ class Client(object):
         _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
-    def delete_host_groups(self, references=None, **kwargs):
+    def delete_host_groups(
+        self,
+        references=None,  # type: List[models.ReferenceType]
+        authorization=None,  # type: str
+        x_request_id=None,  # type: str
+        names=None,  # type: List[str]
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> None
         """
         Delete a host group. The `names` query parameter is required.
 
@@ -295,10 +454,21 @@ class Client(object):
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides names keyword arguments.
 
-        Keyword args:
+            x_request_id (str, optional):
+                A header to provide to track the API call. Generated by the server if not
+                provided.
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
+            async_req (bool, optional):
+                Request runs in separate thread and method returns
+                multiprocessing.pool.ApplyResult.
+            _return_http_data_only (bool, optional):
+                Returns only data field.
+            _preload_content (bool, optional):
+                Response is converted into objects.
+            _request_timeout (int, optional):
+                Total request timeout in seconds.
 
         Returns:
             ValidResponse: If the call was successful.
@@ -309,6 +479,16 @@ class Client(object):
             ValueError: If a parameter is of an invalid type.
             TypeError: If invalid or missing parameters are used.
         """
+        kwargs = dict(
+            authorization=authorization,
+            x_request_id=x_request_id,
+            names=names,
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+        )
+        kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._host_groups_api.api20_host_groups_delete_with_http_info
         _process_references(references, ['names'], kwargs)
         list_params = ['names']
@@ -316,7 +496,23 @@ class Client(object):
         _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
-    def get_host_groups(self, references=None, **kwargs):
+    def get_host_groups(
+        self,
+        references=None,  # type: List[models.ReferenceType]
+        authorization=None,  # type: str
+        x_request_id=None,  # type: str
+        filter=None,  # type: str
+        limit=None,  # type: int
+        names=None,  # type: List[str]
+        offset=None,  # type: int
+        sort=None,  # type: List[str]
+        total_item_count=None,  # type: bool
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> models.HostGroupGetResponse
         """
         Return a list of host groups.
 
@@ -324,7 +520,9 @@ class Client(object):
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides names keyword arguments.
 
-        Keyword args:
+            x_request_id (str, optional):
+                A header to provide to track the API call. Generated by the server if not
+                provided.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             limit (int, optional):
@@ -340,9 +538,18 @@ class Client(object):
                 Sort the response by the specified Properties. Can also be a single element.
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
-                will be calculated and returned in the response. If set to `false`, the
-                `total_item_count` will be `null` in the response. This may speed up queries
-                where the `total_item_count` is large. If not specified, defaults to `false`.
+                is calculated and returned in the response. If set to `false`, the
+                `total_item_count` is `null` in the response. This may speed up queries where
+                the `total_item_count` is large. If not specified, defaults to `false`.
+            async_req (bool, optional):
+                Request runs in separate thread and method returns
+                multiprocessing.pool.ApplyResult.
+            _return_http_data_only (bool, optional):
+                Returns only data field.
+            _preload_content (bool, optional):
+                Response is converted into objects.
+            _request_timeout (int, optional):
+                Total request timeout in seconds.
 
         Returns:
             ValidResponse: If the call was successful.
@@ -353,6 +560,21 @@ class Client(object):
             ValueError: If a parameter is of an invalid type.
             TypeError: If invalid or missing parameters are used.
         """
+        kwargs = dict(
+            authorization=authorization,
+            x_request_id=x_request_id,
+            filter=filter,
+            limit=limit,
+            names=names,
+            offset=offset,
+            sort=sort,
+            total_item_count=total_item_count,
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+        )
+        kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._host_groups_api.api20_host_groups_get_with_http_info
         _process_references(references, ['names'], kwargs)
         list_params = ['names', 'sort']
@@ -360,7 +582,25 @@ class Client(object):
         _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
-    def get_host_groups_hosts(self, groups=None, members=None, **kwargs):
+    def get_host_groups_hosts(
+        self,
+        groups=None,  # type: List[models.ReferenceType]
+        members=None,  # type: List[models.ReferenceType]
+        authorization=None,  # type: str
+        x_request_id=None,  # type: str
+        filter=None,  # type: str
+        group_names=None,  # type: List[str]
+        limit=None,  # type: int
+        member_names=None,  # type: List[str]
+        offset=None,  # type: int
+        sort=None,  # type: List[str]
+        total_item_count=None,  # type: bool
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> models.MemberNoIdAllGetResponse
         """
         Returns a list of host groups that are associated with hosts.
 
@@ -370,7 +610,9 @@ class Client(object):
             members (list[FixedReference], optional):
                 A list of members to query for. Overrides member_names keyword arguments.
 
-        Keyword args:
+            x_request_id (str, optional):
+                A header to provide to track the API call. Generated by the server if not
+                provided.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             group_names (list[str], optional):
@@ -391,9 +633,18 @@ class Client(object):
                 Sort the response by the specified Properties. Can also be a single element.
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
-                will be calculated and returned in the response. If set to `false`, the
-                `total_item_count` will be `null` in the response. This may speed up queries
-                where the `total_item_count` is large. If not specified, defaults to `false`.
+                is calculated and returned in the response. If set to `false`, the
+                `total_item_count` is `null` in the response. This may speed up queries where
+                the `total_item_count` is large. If not specified, defaults to `false`.
+            async_req (bool, optional):
+                Request runs in separate thread and method returns
+                multiprocessing.pool.ApplyResult.
+            _return_http_data_only (bool, optional):
+                Returns only data field.
+            _preload_content (bool, optional):
+                Response is converted into objects.
+            _request_timeout (int, optional):
+                Total request timeout in seconds.
 
         Returns:
             ValidResponse: If the call was successful.
@@ -404,6 +655,22 @@ class Client(object):
             ValueError: If a parameter is of an invalid type.
             TypeError: If invalid or missing parameters are used.
         """
+        kwargs = dict(
+            authorization=authorization,
+            x_request_id=x_request_id,
+            filter=filter,
+            group_names=group_names,
+            limit=limit,
+            member_names=member_names,
+            offset=offset,
+            sort=sort,
+            total_item_count=total_item_count,
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+        )
+        kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._host_groups_api.api20_host_groups_hosts_get_with_http_info
         _process_references(groups, ['group_names'], kwargs)
         _process_references(members, ['member_names'], kwargs)
@@ -412,7 +679,19 @@ class Client(object):
         _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
-    def patch_host_groups(self, references=None, **kwargs):
+    def patch_host_groups(
+        self,
+        references=None,  # type: List[models.ReferenceType]
+        host_group=None,  # type: models.HostGroupPatch
+        authorization=None,  # type: str
+        x_request_id=None,  # type: str
+        names=None,  # type: List[str]
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> models.HostGroupResponse
         """
         Manage a host group. The `names` query parameter is required.
 
@@ -420,11 +699,22 @@ class Client(object):
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides names keyword arguments.
 
-        Keyword args:
             host_group (HostGroupPatch, required):
+            x_request_id (str, optional):
+                A header to provide to track the API call. Generated by the server if not
+                provided.
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
+            async_req (bool, optional):
+                Request runs in separate thread and method returns
+                multiprocessing.pool.ApplyResult.
+            _return_http_data_only (bool, optional):
+                Returns only data field.
+            _preload_content (bool, optional):
+                Response is converted into objects.
+            _request_timeout (int, optional):
+                Total request timeout in seconds.
 
         Returns:
             ValidResponse: If the call was successful.
@@ -435,6 +725,17 @@ class Client(object):
             ValueError: If a parameter is of an invalid type.
             TypeError: If invalid or missing parameters are used.
         """
+        kwargs = dict(
+            host_group=host_group,
+            authorization=authorization,
+            x_request_id=x_request_id,
+            names=names,
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+        )
+        kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._host_groups_api.api20_host_groups_patch_with_http_info
         _process_references(references, ['names'], kwargs)
         list_params = ['names']
@@ -442,7 +743,24 @@ class Client(object):
         _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
-    def get_host_groups_performance_by_array(self, references=None, **kwargs):
+    def get_host_groups_performance_by_array(
+        self,
+        references=None,  # type: List[models.ReferenceType]
+        authorization=None,  # type: str
+        x_request_id=None,  # type: str
+        filter=None,  # type: str
+        limit=None,  # type: int
+        names=None,  # type: List[str]
+        offset=None,  # type: int
+        sort=None,  # type: List[str]
+        total_item_count=None,  # type: bool
+        total_only=None,  # type: bool
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> models.ResourcePerformanceNoIdByArrayGetResponse
         """
         Return real-time and historical performance data, real-time latency data, and
         average I/O size data. The data returned is for each volume that is connected to
@@ -455,7 +773,9 @@ class Client(object):
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides names keyword arguments.
 
-        Keyword args:
+            x_request_id (str, optional):
+                A header to provide to track the API call. Generated by the server if not
+                provided.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             limit (int, optional):
@@ -471,14 +791,23 @@ class Client(object):
                 Sort the response by the specified Properties. Can also be a single element.
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
-                will be calculated and returned in the response. If set to `false`, the
-                `total_item_count` will be `null` in the response. This may speed up queries
-                where the `total_item_count` is large. If not specified, defaults to `false`.
+                is calculated and returned in the response. If set to `false`, the
+                `total_item_count` is `null` in the response. This may speed up queries where
+                the `total_item_count` is large. If not specified, defaults to `false`.
             total_only (bool, optional):
                 If set to `true`, returns the aggregate value of all items after filtering.
                 Where it makes more sense, the average value is displayed instead. The values
                 are displayed for each name where meaningful. If `total_only=true`, the `items`
                 list will be empty.
+            async_req (bool, optional):
+                Request runs in separate thread and method returns
+                multiprocessing.pool.ApplyResult.
+            _return_http_data_only (bool, optional):
+                Returns only data field.
+            _preload_content (bool, optional):
+                Response is converted into objects.
+            _request_timeout (int, optional):
+                Total request timeout in seconds.
 
         Returns:
             ValidResponse: If the call was successful.
@@ -489,6 +818,22 @@ class Client(object):
             ValueError: If a parameter is of an invalid type.
             TypeError: If invalid or missing parameters are used.
         """
+        kwargs = dict(
+            authorization=authorization,
+            x_request_id=x_request_id,
+            filter=filter,
+            limit=limit,
+            names=names,
+            offset=offset,
+            sort=sort,
+            total_item_count=total_item_count,
+            total_only=total_only,
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+        )
+        kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._host_groups_api.api20_host_groups_performance_by_array_get_with_http_info
         _process_references(references, ['names'], kwargs)
         list_params = ['names', 'sort']
@@ -496,7 +841,24 @@ class Client(object):
         _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
-    def get_host_groups_performance(self, references=None, **kwargs):
+    def get_host_groups_performance(
+        self,
+        references=None,  # type: List[models.ReferenceType]
+        authorization=None,  # type: str
+        x_request_id=None,  # type: str
+        filter=None,  # type: str
+        limit=None,  # type: int
+        names=None,  # type: List[str]
+        offset=None,  # type: int
+        sort=None,  # type: List[str]
+        total_item_count=None,  # type: bool
+        total_only=None,  # type: bool
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> models.ResourcePerformanceNoIdGetResponse
         """
         Return real-time and historical performance data, real-time latency data, and
         average I/O sizes across all volumes, displayed both by host group and as a
@@ -506,7 +868,9 @@ class Client(object):
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides names keyword arguments.
 
-        Keyword args:
+            x_request_id (str, optional):
+                A header to provide to track the API call. Generated by the server if not
+                provided.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             limit (int, optional):
@@ -522,14 +886,23 @@ class Client(object):
                 Sort the response by the specified Properties. Can also be a single element.
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
-                will be calculated and returned in the response. If set to `false`, the
-                `total_item_count` will be `null` in the response. This may speed up queries
-                where the `total_item_count` is large. If not specified, defaults to `false`.
+                is calculated and returned in the response. If set to `false`, the
+                `total_item_count` is `null` in the response. This may speed up queries where
+                the `total_item_count` is large. If not specified, defaults to `false`.
             total_only (bool, optional):
                 If set to `true`, returns the aggregate value of all items after filtering.
                 Where it makes more sense, the average value is displayed instead. The values
                 are displayed for each name where meaningful. If `total_only=true`, the `items`
                 list will be empty.
+            async_req (bool, optional):
+                Request runs in separate thread and method returns
+                multiprocessing.pool.ApplyResult.
+            _return_http_data_only (bool, optional):
+                Returns only data field.
+            _preload_content (bool, optional):
+                Response is converted into objects.
+            _request_timeout (int, optional):
+                Total request timeout in seconds.
 
         Returns:
             ValidResponse: If the call was successful.
@@ -540,6 +913,22 @@ class Client(object):
             ValueError: If a parameter is of an invalid type.
             TypeError: If invalid or missing parameters are used.
         """
+        kwargs = dict(
+            authorization=authorization,
+            x_request_id=x_request_id,
+            filter=filter,
+            limit=limit,
+            names=names,
+            offset=offset,
+            sort=sort,
+            total_item_count=total_item_count,
+            total_only=total_only,
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+        )
+        kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._host_groups_api.api20_host_groups_performance_get_with_http_info
         _process_references(references, ['names'], kwargs)
         list_params = ['names', 'sort']
@@ -547,7 +936,18 @@ class Client(object):
         _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
-    def post_host_groups(self, references=None, **kwargs):
+    def post_host_groups(
+        self,
+        references=None,  # type: List[models.ReferenceType]
+        authorization=None,  # type: str
+        x_request_id=None,  # type: str
+        names=None,  # type: List[str]
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> models.HostGroupResponse
         """
         Create a host group. The `names` query parameter is required.
 
@@ -555,10 +955,21 @@ class Client(object):
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides names keyword arguments.
 
-        Keyword args:
+            x_request_id (str, optional):
+                A header to provide to track the API call. Generated by the server if not
+                provided.
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
+            async_req (bool, optional):
+                Request runs in separate thread and method returns
+                multiprocessing.pool.ApplyResult.
+            _return_http_data_only (bool, optional):
+                Returns only data field.
+            _preload_content (bool, optional):
+                Response is converted into objects.
+            _request_timeout (int, optional):
+                Total request timeout in seconds.
 
         Returns:
             ValidResponse: If the call was successful.
@@ -569,6 +980,16 @@ class Client(object):
             ValueError: If a parameter is of an invalid type.
             TypeError: If invalid or missing parameters are used.
         """
+        kwargs = dict(
+            authorization=authorization,
+            x_request_id=x_request_id,
+            names=names,
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+        )
+        kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._host_groups_api.api20_host_groups_post_with_http_info
         _process_references(references, ['names'], kwargs)
         list_params = ['names']
@@ -576,7 +997,18 @@ class Client(object):
         _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
-    def delete_hosts(self, references=None, **kwargs):
+    def delete_hosts(
+        self,
+        references=None,  # type: List[models.ReferenceType]
+        authorization=None,  # type: str
+        x_request_id=None,  # type: str
+        names=None,  # type: List[str]
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> None
         """
         Deletes an existing host. All volumes that are connected to the host, either
         through private or shared connections, must be disconnected from the host before
@@ -586,10 +1018,21 @@ class Client(object):
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides names keyword arguments.
 
-        Keyword args:
+            x_request_id (str, optional):
+                A header to provide to track the API call. Generated by the server if not
+                provided.
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
+            async_req (bool, optional):
+                Request runs in separate thread and method returns
+                multiprocessing.pool.ApplyResult.
+            _return_http_data_only (bool, optional):
+                Returns only data field.
+            _preload_content (bool, optional):
+                Response is converted into objects.
+            _request_timeout (int, optional):
+                Total request timeout in seconds.
 
         Returns:
             ValidResponse: If the call was successful.
@@ -600,6 +1043,16 @@ class Client(object):
             ValueError: If a parameter is of an invalid type.
             TypeError: If invalid or missing parameters are used.
         """
+        kwargs = dict(
+            authorization=authorization,
+            x_request_id=x_request_id,
+            names=names,
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+        )
+        kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._hosts_api.api20_hosts_delete_with_http_info
         _process_references(references, ['names'], kwargs)
         list_params = ['names']
@@ -607,7 +1060,23 @@ class Client(object):
         _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
-    def get_hosts(self, references=None, **kwargs):
+    def get_hosts(
+        self,
+        references=None,  # type: List[models.ReferenceType]
+        authorization=None,  # type: str
+        x_request_id=None,  # type: str
+        filter=None,  # type: str
+        limit=None,  # type: int
+        names=None,  # type: List[str]
+        offset=None,  # type: int
+        sort=None,  # type: List[str]
+        total_item_count=None,  # type: bool
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> models.HostGetResponse
         """
         Returns a list of hosts.
 
@@ -615,7 +1084,9 @@ class Client(object):
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides names keyword arguments.
 
-        Keyword args:
+            x_request_id (str, optional):
+                A header to provide to track the API call. Generated by the server if not
+                provided.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             limit (int, optional):
@@ -631,9 +1102,18 @@ class Client(object):
                 Sort the response by the specified Properties. Can also be a single element.
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
-                will be calculated and returned in the response. If set to `false`, the
-                `total_item_count` will be `null` in the response. This may speed up queries
-                where the `total_item_count` is large. If not specified, defaults to `false`.
+                is calculated and returned in the response. If set to `false`, the
+                `total_item_count` is `null` in the response. This may speed up queries where
+                the `total_item_count` is large. If not specified, defaults to `false`.
+            async_req (bool, optional):
+                Request runs in separate thread and method returns
+                multiprocessing.pool.ApplyResult.
+            _return_http_data_only (bool, optional):
+                Returns only data field.
+            _preload_content (bool, optional):
+                Response is converted into objects.
+            _request_timeout (int, optional):
+                Total request timeout in seconds.
 
         Returns:
             ValidResponse: If the call was successful.
@@ -644,6 +1124,21 @@ class Client(object):
             ValueError: If a parameter is of an invalid type.
             TypeError: If invalid or missing parameters are used.
         """
+        kwargs = dict(
+            authorization=authorization,
+            x_request_id=x_request_id,
+            filter=filter,
+            limit=limit,
+            names=names,
+            offset=offset,
+            sort=sort,
+            total_item_count=total_item_count,
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+        )
+        kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._hosts_api.api20_hosts_get_with_http_info
         _process_references(references, ['names'], kwargs)
         list_params = ['names', 'sort']
@@ -651,7 +1146,25 @@ class Client(object):
         _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
-    def get_hosts_host_groups(self, groups=None, members=None, **kwargs):
+    def get_hosts_host_groups(
+        self,
+        groups=None,  # type: List[models.ReferenceType]
+        members=None,  # type: List[models.ReferenceType]
+        authorization=None,  # type: str
+        x_request_id=None,  # type: str
+        filter=None,  # type: str
+        group_names=None,  # type: List[str]
+        limit=None,  # type: int
+        member_names=None,  # type: List[str]
+        offset=None,  # type: int
+        sort=None,  # type: List[str]
+        total_item_count=None,  # type: bool
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> models.MemberNoIdAllGetResponse
         """
         Returns a list of hosts that are associated with host groups.
 
@@ -661,7 +1174,9 @@ class Client(object):
             members (list[FixedReference], optional):
                 A list of members to query for. Overrides member_names keyword arguments.
 
-        Keyword args:
+            x_request_id (str, optional):
+                A header to provide to track the API call. Generated by the server if not
+                provided.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             group_names (list[str], optional):
@@ -682,9 +1197,18 @@ class Client(object):
                 Sort the response by the specified Properties. Can also be a single element.
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
-                will be calculated and returned in the response. If set to `false`, the
-                `total_item_count` will be `null` in the response. This may speed up queries
-                where the `total_item_count` is large. If not specified, defaults to `false`.
+                is calculated and returned in the response. If set to `false`, the
+                `total_item_count` is `null` in the response. This may speed up queries where
+                the `total_item_count` is large. If not specified, defaults to `false`.
+            async_req (bool, optional):
+                Request runs in separate thread and method returns
+                multiprocessing.pool.ApplyResult.
+            _return_http_data_only (bool, optional):
+                Returns only data field.
+            _preload_content (bool, optional):
+                Response is converted into objects.
+            _request_timeout (int, optional):
+                Total request timeout in seconds.
 
         Returns:
             ValidResponse: If the call was successful.
@@ -695,6 +1219,22 @@ class Client(object):
             ValueError: If a parameter is of an invalid type.
             TypeError: If invalid or missing parameters are used.
         """
+        kwargs = dict(
+            authorization=authorization,
+            x_request_id=x_request_id,
+            filter=filter,
+            group_names=group_names,
+            limit=limit,
+            member_names=member_names,
+            offset=offset,
+            sort=sort,
+            total_item_count=total_item_count,
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+        )
+        kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._hosts_api.api20_hosts_host_groups_get_with_http_info
         _process_references(groups, ['group_names'], kwargs)
         _process_references(members, ['member_names'], kwargs)
@@ -703,7 +1243,19 @@ class Client(object):
         _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
-    def patch_hosts(self, references=None, **kwargs):
+    def patch_hosts(
+        self,
+        references=None,  # type: List[models.ReferenceType]
+        host=None,  # type: models.HostPatch
+        authorization=None,  # type: str
+        x_request_id=None,  # type: str
+        names=None,  # type: List[str]
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> models.HostResponse
         """
         Manages an existing host, including its storage network addresses, CHAP, host
         personality, and preferred arrays, or associate a host to a host group. The
@@ -713,11 +1265,22 @@ class Client(object):
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides names keyword arguments.
 
-        Keyword args:
             host (HostPatch, required):
+            x_request_id (str, optional):
+                A header to provide to track the API call. Generated by the server if not
+                provided.
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
+            async_req (bool, optional):
+                Request runs in separate thread and method returns
+                multiprocessing.pool.ApplyResult.
+            _return_http_data_only (bool, optional):
+                Returns only data field.
+            _preload_content (bool, optional):
+                Response is converted into objects.
+            _request_timeout (int, optional):
+                Total request timeout in seconds.
 
         Returns:
             ValidResponse: If the call was successful.
@@ -728,6 +1291,17 @@ class Client(object):
             ValueError: If a parameter is of an invalid type.
             TypeError: If invalid or missing parameters are used.
         """
+        kwargs = dict(
+            host=host,
+            authorization=authorization,
+            x_request_id=x_request_id,
+            names=names,
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+        )
+        kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._hosts_api.api20_hosts_patch_with_http_info
         _process_references(references, ['names'], kwargs)
         list_params = ['names']
@@ -735,7 +1309,24 @@ class Client(object):
         _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
-    def get_hosts_performance_by_array(self, references=None, **kwargs):
+    def get_hosts_performance_by_array(
+        self,
+        references=None,  # type: List[models.ReferenceType]
+        authorization=None,  # type: str
+        x_request_id=None,  # type: str
+        filter=None,  # type: str
+        limit=None,  # type: int
+        names=None,  # type: List[str]
+        offset=None,  # type: int
+        sort=None,  # type: List[str]
+        total_item_count=None,  # type: bool
+        total_only=None,  # type: bool
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> models.ResourcePerformanceNoIdByArrayGetResponse
         """
         Return real-time and historical performance data, real-time latency data, and
         average I/O size data. The data returned is for each volume that is connected to
@@ -747,7 +1338,9 @@ class Client(object):
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides names keyword arguments.
 
-        Keyword args:
+            x_request_id (str, optional):
+                A header to provide to track the API call. Generated by the server if not
+                provided.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             limit (int, optional):
@@ -763,14 +1356,23 @@ class Client(object):
                 Sort the response by the specified Properties. Can also be a single element.
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
-                will be calculated and returned in the response. If set to `false`, the
-                `total_item_count` will be `null` in the response. This may speed up queries
-                where the `total_item_count` is large. If not specified, defaults to `false`.
+                is calculated and returned in the response. If set to `false`, the
+                `total_item_count` is `null` in the response. This may speed up queries where
+                the `total_item_count` is large. If not specified, defaults to `false`.
             total_only (bool, optional):
                 If set to `true`, returns the aggregate value of all items after filtering.
                 Where it makes more sense, the average value is displayed instead. The values
                 are displayed for each name where meaningful. If `total_only=true`, the `items`
                 list will be empty.
+            async_req (bool, optional):
+                Request runs in separate thread and method returns
+                multiprocessing.pool.ApplyResult.
+            _return_http_data_only (bool, optional):
+                Returns only data field.
+            _preload_content (bool, optional):
+                Response is converted into objects.
+            _request_timeout (int, optional):
+                Total request timeout in seconds.
 
         Returns:
             ValidResponse: If the call was successful.
@@ -781,6 +1383,22 @@ class Client(object):
             ValueError: If a parameter is of an invalid type.
             TypeError: If invalid or missing parameters are used.
         """
+        kwargs = dict(
+            authorization=authorization,
+            x_request_id=x_request_id,
+            filter=filter,
+            limit=limit,
+            names=names,
+            offset=offset,
+            sort=sort,
+            total_item_count=total_item_count,
+            total_only=total_only,
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+        )
+        kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._hosts_api.api20_hosts_performance_by_array_get_with_http_info
         _process_references(references, ['names'], kwargs)
         list_params = ['names', 'sort']
@@ -788,7 +1406,24 @@ class Client(object):
         _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
-    def get_hosts_performance(self, references=None, **kwargs):
+    def get_hosts_performance(
+        self,
+        references=None,  # type: List[models.ReferenceType]
+        authorization=None,  # type: str
+        x_request_id=None,  # type: str
+        filter=None,  # type: str
+        limit=None,  # type: int
+        names=None,  # type: List[str]
+        offset=None,  # type: int
+        sort=None,  # type: List[str]
+        total_item_count=None,  # type: bool
+        total_only=None,  # type: bool
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> models.ResourcePerformanceNoIdGetResponse
         """
         Return real-time and historical performance data, real-time latency data, and
         average I/O sizes across all volumes, displayed both by host and as a total
@@ -798,7 +1433,9 @@ class Client(object):
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides names keyword arguments.
 
-        Keyword args:
+            x_request_id (str, optional):
+                A header to provide to track the API call. Generated by the server if not
+                provided.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             limit (int, optional):
@@ -814,14 +1451,23 @@ class Client(object):
                 Sort the response by the specified Properties. Can also be a single element.
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
-                will be calculated and returned in the response. If set to `false`, the
-                `total_item_count` will be `null` in the response. This may speed up queries
-                where the `total_item_count` is large. If not specified, defaults to `false`.
+                is calculated and returned in the response. If set to `false`, the
+                `total_item_count` is `null` in the response. This may speed up queries where
+                the `total_item_count` is large. If not specified, defaults to `false`.
             total_only (bool, optional):
                 If set to `true`, returns the aggregate value of all items after filtering.
                 Where it makes more sense, the average value is displayed instead. The values
                 are displayed for each name where meaningful. If `total_only=true`, the `items`
                 list will be empty.
+            async_req (bool, optional):
+                Request runs in separate thread and method returns
+                multiprocessing.pool.ApplyResult.
+            _return_http_data_only (bool, optional):
+                Returns only data field.
+            _preload_content (bool, optional):
+                Response is converted into objects.
+            _request_timeout (int, optional):
+                Total request timeout in seconds.
 
         Returns:
             ValidResponse: If the call was successful.
@@ -832,6 +1478,22 @@ class Client(object):
             ValueError: If a parameter is of an invalid type.
             TypeError: If invalid or missing parameters are used.
         """
+        kwargs = dict(
+            authorization=authorization,
+            x_request_id=x_request_id,
+            filter=filter,
+            limit=limit,
+            names=names,
+            offset=offset,
+            sort=sort,
+            total_item_count=total_item_count,
+            total_only=total_only,
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+        )
+        kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._hosts_api.api20_hosts_performance_get_with_http_info
         _process_references(references, ['names'], kwargs)
         list_params = ['names', 'sort']
@@ -839,7 +1501,19 @@ class Client(object):
         _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
-    def post_hosts(self, references=None, **kwargs):
+    def post_hosts(
+        self,
+        references=None,  # type: List[models.ReferenceType]
+        host=None,  # type: models.HostPost
+        authorization=None,  # type: str
+        x_request_id=None,  # type: str
+        names=None,  # type: List[str]
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> models.HostResponse
         """
         Creates a host. The `names` query parameter is required.
 
@@ -847,11 +1521,22 @@ class Client(object):
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides names keyword arguments.
 
-        Keyword args:
             host (HostPost, required):
+            x_request_id (str, optional):
+                A header to provide to track the API call. Generated by the server if not
+                provided.
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
+            async_req (bool, optional):
+                Request runs in separate thread and method returns
+                multiprocessing.pool.ApplyResult.
+            _return_http_data_only (bool, optional):
+                Returns only data field.
+            _preload_content (bool, optional):
+                Response is converted into objects.
+            _request_timeout (int, optional):
+                Total request timeout in seconds.
 
         Returns:
             ValidResponse: If the call was successful.
@@ -862,6 +1547,17 @@ class Client(object):
             ValueError: If a parameter is of an invalid type.
             TypeError: If invalid or missing parameters are used.
         """
+        kwargs = dict(
+            host=host,
+            authorization=authorization,
+            x_request_id=x_request_id,
+            names=names,
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+        )
+        kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._hosts_api.api20_hosts_post_with_http_info
         _process_references(references, ['names'], kwargs)
         list_params = ['names']
@@ -869,7 +1565,19 @@ class Client(object):
         _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
-    def delete_volume_snapshots(self, references=None, **kwargs):
+    def delete_volume_snapshots(
+        self,
+        references=None,  # type: List[models.ReferenceType]
+        authorization=None,  # type: str
+        x_request_id=None,  # type: str
+        ids=None,  # type: List[str]
+        names=None,  # type: List[str]
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> None
         """
         Eradicate a volume snapshot that has been destroyed and is pending eradication.
         Eradicated volumes snapshots cannot be recovered. Volume snapshots are destroyed
@@ -880,7 +1588,9 @@ class Client(object):
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides ids and names keyword arguments.
 
-        Keyword args:
+            x_request_id (str, optional):
+                A header to provide to track the API call. Generated by the server if not
+                provided.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
                 resource IDs in comma-separated format. The `ids` and `names` parameters cannot
@@ -888,6 +1598,15 @@ class Client(object):
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
+            async_req (bool, optional):
+                Request runs in separate thread and method returns
+                multiprocessing.pool.ApplyResult.
+            _return_http_data_only (bool, optional):
+                Returns only data field.
+            _preload_content (bool, optional):
+                Response is converted into objects.
+            _request_timeout (int, optional):
+                Total request timeout in seconds.
 
         Returns:
             ValidResponse: If the call was successful.
@@ -898,6 +1617,17 @@ class Client(object):
             ValueError: If a parameter is of an invalid type.
             TypeError: If invalid or missing parameters are used.
         """
+        kwargs = dict(
+            authorization=authorization,
+            x_request_id=x_request_id,
+            ids=ids,
+            names=names,
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+        )
+        kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._volume_snapshots_api.api20_volume_snapshots_delete_with_http_info
         _process_references(references, ['ids', 'names'], kwargs)
         list_params = ['ids', 'names']
@@ -905,7 +1635,29 @@ class Client(object):
         _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
-    def get_volume_snapshots(self, references=None, sources=None, **kwargs):
+    def get_volume_snapshots(
+        self,
+        references=None,  # type: List[models.ReferenceType]
+        sources=None,  # type: List[models.ReferenceType]
+        authorization=None,  # type: str
+        x_request_id=None,  # type: str
+        destroyed=None,  # type: bool
+        filter=None,  # type: str
+        ids=None,  # type: List[str]
+        limit=None,  # type: int
+        names=None,  # type: List[str]
+        offset=None,  # type: int
+        sort=None,  # type: List[str]
+        source_ids=None,  # type: List[str]
+        source_names=None,  # type: List[str]
+        total_item_count=None,  # type: bool
+        total_only=None,  # type: bool
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> models.VolumeSnapshotGetResponse
         """
         Return a list of volume snapshots, including those pending eradication.
 
@@ -915,7 +1667,9 @@ class Client(object):
             sources (list[FixedReference], optional):
                 A list of sources to query for. Overrides source_ids and source_names keyword arguments.
 
-        Keyword args:
+            x_request_id (str, optional):
+                A header to provide to track the API call. Generated by the server if not
+                provided.
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
@@ -945,14 +1699,23 @@ class Client(object):
                 in comma-separated format. For example, `name01,name02`.
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
-                will be calculated and returned in the response. If set to `false`, the
-                `total_item_count` will be `null` in the response. This may speed up queries
-                where the `total_item_count` is large. If not specified, defaults to `false`.
+                is calculated and returned in the response. If set to `false`, the
+                `total_item_count` is `null` in the response. This may speed up queries where
+                the `total_item_count` is large. If not specified, defaults to `false`.
             total_only (bool, optional):
                 If set to `true`, returns the aggregate value of all items after filtering.
                 Where it makes more sense, the average value is displayed instead. The values
                 are displayed for each name where meaningful. If `total_only=true`, the `items`
                 list will be empty.
+            async_req (bool, optional):
+                Request runs in separate thread and method returns
+                multiprocessing.pool.ApplyResult.
+            _return_http_data_only (bool, optional):
+                Returns only data field.
+            _preload_content (bool, optional):
+                Response is converted into objects.
+            _request_timeout (int, optional):
+                Total request timeout in seconds.
 
         Returns:
             ValidResponse: If the call was successful.
@@ -963,6 +1726,26 @@ class Client(object):
             ValueError: If a parameter is of an invalid type.
             TypeError: If invalid or missing parameters are used.
         """
+        kwargs = dict(
+            authorization=authorization,
+            x_request_id=x_request_id,
+            destroyed=destroyed,
+            filter=filter,
+            ids=ids,
+            limit=limit,
+            names=names,
+            offset=offset,
+            sort=sort,
+            source_ids=source_ids,
+            source_names=source_names,
+            total_item_count=total_item_count,
+            total_only=total_only,
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+        )
+        kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._volume_snapshots_api.api20_volume_snapshots_get_with_http_info
         _process_references(references, ['ids', 'names'], kwargs)
         _process_references(sources, ['source_ids', 'source_names'], kwargs)
@@ -971,7 +1754,20 @@ class Client(object):
         _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
-    def patch_volume_snapshots(self, references=None, **kwargs):
+    def patch_volume_snapshots(
+        self,
+        references=None,  # type: List[models.ReferenceType]
+        volume_snapshot=None,  # type: models.VolumeSnapshotPatch
+        authorization=None,  # type: str
+        x_request_id=None,  # type: str
+        ids=None,  # type: List[str]
+        names=None,  # type: List[str]
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> models.VolumeSnapshotResponse
         """
         Rename, destroy, or recover a volume snapshot. To rename the suffix of a volume
         snapshot, set `name` to the new suffix name. To recover a volume snapshot that
@@ -982,8 +1778,10 @@ class Client(object):
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides ids and names keyword arguments.
 
-        Keyword args:
             volume_snapshot (VolumeSnapshotPatch, required):
+            x_request_id (str, optional):
+                A header to provide to track the API call. Generated by the server if not
+                provided.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
                 resource IDs in comma-separated format. The `ids` and `names` parameters cannot
@@ -991,6 +1789,15 @@ class Client(object):
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
+            async_req (bool, optional):
+                Request runs in separate thread and method returns
+                multiprocessing.pool.ApplyResult.
+            _return_http_data_only (bool, optional):
+                Returns only data field.
+            _preload_content (bool, optional):
+                Response is converted into objects.
+            _request_timeout (int, optional):
+                Total request timeout in seconds.
 
         Returns:
             ValidResponse: If the call was successful.
@@ -1001,6 +1808,18 @@ class Client(object):
             ValueError: If a parameter is of an invalid type.
             TypeError: If invalid or missing parameters are used.
         """
+        kwargs = dict(
+            volume_snapshot=volume_snapshot,
+            authorization=authorization,
+            x_request_id=x_request_id,
+            ids=ids,
+            names=names,
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+        )
+        kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._volume_snapshots_api.api20_volume_snapshots_patch_with_http_info
         _process_references(references, ['ids', 'names'], kwargs)
         list_params = ['ids', 'names']
@@ -1008,7 +1827,21 @@ class Client(object):
         _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
-    def post_volume_snapshots(self, sources=None, **kwargs):
+    def post_volume_snapshots(
+        self,
+        sources=None,  # type: List[models.ReferenceType]
+        volume_snapshot=None,  # type: models.VolumeSnapshotPost
+        authorization=None,  # type: str
+        x_request_id=None,  # type: str
+        on=None,  # type: str
+        source_ids=None,  # type: List[str]
+        source_names=None,  # type: List[str]
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> models.VolumeSnapshotResponse
         """
         Create a point-in-time snapshot of the contents of a volume. The `source_ids` or
         `source_names` parameter is required, but cannot be set together.
@@ -1017,8 +1850,10 @@ class Client(object):
             sources (list[FixedReference], optional):
                 A list of sources to query for. Overrides source_ids and source_names keyword arguments.
 
-        Keyword args:
             volume_snapshot (VolumeSnapshotPost, required):
+            x_request_id (str, optional):
+                A header to provide to track the API call. Generated by the server if not
+                provided.
             on (str, optional):
                 Performs the operation on the target name specified. For example,
                 `targetName01`.
@@ -1028,6 +1863,15 @@ class Client(object):
             source_names (list[str], optional):
                 Performs the operation on the source name specified. Enter multiple source names
                 in comma-separated format. For example, `name01,name02`.
+            async_req (bool, optional):
+                Request runs in separate thread and method returns
+                multiprocessing.pool.ApplyResult.
+            _return_http_data_only (bool, optional):
+                Returns only data field.
+            _preload_content (bool, optional):
+                Response is converted into objects.
+            _request_timeout (int, optional):
+                Total request timeout in seconds.
 
         Returns:
             ValidResponse: If the call was successful.
@@ -1038,6 +1882,19 @@ class Client(object):
             ValueError: If a parameter is of an invalid type.
             TypeError: If invalid or missing parameters are used.
         """
+        kwargs = dict(
+            volume_snapshot=volume_snapshot,
+            authorization=authorization,
+            x_request_id=x_request_id,
+            on=on,
+            source_ids=source_ids,
+            source_names=source_names,
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+        )
+        kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._volume_snapshots_api.api20_volume_snapshots_post_with_http_info
         _process_references(sources, ['source_ids', 'source_names'], kwargs)
         list_params = ['source_ids', 'source_names']
@@ -1045,7 +1902,29 @@ class Client(object):
         _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
-    def get_volume_snapshots_transfer(self, references=None, sources=None, **kwargs):
+    def get_volume_snapshots_transfer(
+        self,
+        references=None,  # type: List[models.ReferenceType]
+        sources=None,  # type: List[models.ReferenceType]
+        authorization=None,  # type: str
+        x_request_id=None,  # type: str
+        destroyed=None,  # type: bool
+        filter=None,  # type: str
+        ids=None,  # type: List[str]
+        limit=None,  # type: int
+        offset=None,  # type: int
+        sort=None,  # type: List[str]
+        source_ids=None,  # type: List[str]
+        source_names=None,  # type: List[str]
+        total_item_count=None,  # type: bool
+        total_only=None,  # type: bool
+        names=None,  # type: List[str]
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> models.VolumeSnapshotTransferGetResponse
         """
         Returns a list of volume snapshots and their transfer statistics.
 
@@ -1055,7 +1934,9 @@ class Client(object):
             sources (list[FixedReference], optional):
                 A list of sources to query for. Overrides source_ids and source_names keyword arguments.
 
-        Keyword args:
+            x_request_id (str, optional):
+                A header to provide to track the API call. Generated by the server if not
+                provided.
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
@@ -1082,9 +1963,9 @@ class Client(object):
                 in comma-separated format. For example, `name01,name02`.
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
-                will be calculated and returned in the response. If set to `false`, the
-                `total_item_count` will be `null` in the response. This may speed up queries
-                where the `total_item_count` is large. If not specified, defaults to `false`.
+                is calculated and returned in the response. If set to `false`, the
+                `total_item_count` is `null` in the response. This may speed up queries where
+                the `total_item_count` is large. If not specified, defaults to `false`.
             total_only (bool, optional):
                 If set to `true`, returns the aggregate value of all items after filtering.
                 Where it makes more sense, the average value is displayed instead. The values
@@ -1093,6 +1974,15 @@ class Client(object):
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
+            async_req (bool, optional):
+                Request runs in separate thread and method returns
+                multiprocessing.pool.ApplyResult.
+            _return_http_data_only (bool, optional):
+                Returns only data field.
+            _preload_content (bool, optional):
+                Response is converted into objects.
+            _request_timeout (int, optional):
+                Total request timeout in seconds.
 
         Returns:
             ValidResponse: If the call was successful.
@@ -1103,6 +1993,26 @@ class Client(object):
             ValueError: If a parameter is of an invalid type.
             TypeError: If invalid or missing parameters are used.
         """
+        kwargs = dict(
+            authorization=authorization,
+            x_request_id=x_request_id,
+            destroyed=destroyed,
+            filter=filter,
+            ids=ids,
+            limit=limit,
+            offset=offset,
+            sort=sort,
+            source_ids=source_ids,
+            source_names=source_names,
+            total_item_count=total_item_count,
+            total_only=total_only,
+            names=names,
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+        )
+        kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._volume_snapshots_api.api20_volume_snapshots_transfer_get_with_http_info
         _process_references(references, ['ids', 'names'], kwargs)
         _process_references(sources, ['source_ids', 'source_names'], kwargs)
@@ -1111,7 +2021,19 @@ class Client(object):
         _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
-    def delete_volumes(self, references=None, **kwargs):
+    def delete_volumes(
+        self,
+        references=None,  # type: List[models.ReferenceType]
+        authorization=None,  # type: str
+        x_request_id=None,  # type: str
+        ids=None,  # type: List[str]
+        names=None,  # type: List[str]
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> None
         """
         Eradicate a volume that has been destroyed and is pending eradication.
         Eradicated volumes cannot be recovered. Volumes are destroyed through the
@@ -1122,7 +2044,9 @@ class Client(object):
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides ids and names keyword arguments.
 
-        Keyword args:
+            x_request_id (str, optional):
+                A header to provide to track the API call. Generated by the server if not
+                provided.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
                 resource IDs in comma-separated format. The `ids` and `names` parameters cannot
@@ -1130,6 +2054,15 @@ class Client(object):
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
+            async_req (bool, optional):
+                Request runs in separate thread and method returns
+                multiprocessing.pool.ApplyResult.
+            _return_http_data_only (bool, optional):
+                Returns only data field.
+            _preload_content (bool, optional):
+                Response is converted into objects.
+            _request_timeout (int, optional):
+                Total request timeout in seconds.
 
         Returns:
             ValidResponse: If the call was successful.
@@ -1140,6 +2073,17 @@ class Client(object):
             ValueError: If a parameter is of an invalid type.
             TypeError: If invalid or missing parameters are used.
         """
+        kwargs = dict(
+            authorization=authorization,
+            x_request_id=x_request_id,
+            ids=ids,
+            names=names,
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+        )
+        kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._volumes_api.api20_volumes_delete_with_http_info
         _process_references(references, ['ids', 'names'], kwargs)
         list_params = ['ids', 'names']
@@ -1147,7 +2091,26 @@ class Client(object):
         _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
-    def get_volumes(self, references=None, **kwargs):
+    def get_volumes(
+        self,
+        references=None,  # type: List[models.ReferenceType]
+        authorization=None,  # type: str
+        x_request_id=None,  # type: str
+        destroyed=None,  # type: bool
+        filter=None,  # type: str
+        ids=None,  # type: List[str]
+        limit=None,  # type: int
+        names=None,  # type: List[str]
+        offset=None,  # type: int
+        sort=None,  # type: List[str]
+        total_item_count=None,  # type: bool
+        total_only=None,  # type: bool
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> models.VolumeGetResponse
         """
         Return a list of volumes, including those pending eradication.
 
@@ -1155,7 +2118,9 @@ class Client(object):
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides ids and names keyword arguments.
 
-        Keyword args:
+            x_request_id (str, optional):
+                A header to provide to track the API call. Generated by the server if not
+                provided.
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
@@ -1179,14 +2144,23 @@ class Client(object):
                 Sort the response by the specified Properties. Can also be a single element.
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
-                will be calculated and returned in the response. If set to `false`, the
-                `total_item_count` will be `null` in the response. This may speed up queries
-                where the `total_item_count` is large. If not specified, defaults to `false`.
+                is calculated and returned in the response. If set to `false`, the
+                `total_item_count` is `null` in the response. This may speed up queries where
+                the `total_item_count` is large. If not specified, defaults to `false`.
             total_only (bool, optional):
                 If set to `true`, returns the aggregate value of all items after filtering.
                 Where it makes more sense, the average value is displayed instead. The values
                 are displayed for each name where meaningful. If `total_only=true`, the `items`
                 list will be empty.
+            async_req (bool, optional):
+                Request runs in separate thread and method returns
+                multiprocessing.pool.ApplyResult.
+            _return_http_data_only (bool, optional):
+                Returns only data field.
+            _preload_content (bool, optional):
+                Response is converted into objects.
+            _request_timeout (int, optional):
+                Total request timeout in seconds.
 
         Returns:
             ValidResponse: If the call was successful.
@@ -1197,6 +2171,24 @@ class Client(object):
             ValueError: If a parameter is of an invalid type.
             TypeError: If invalid or missing parameters are used.
         """
+        kwargs = dict(
+            authorization=authorization,
+            x_request_id=x_request_id,
+            destroyed=destroyed,
+            filter=filter,
+            ids=ids,
+            limit=limit,
+            names=names,
+            offset=offset,
+            sort=sort,
+            total_item_count=total_item_count,
+            total_only=total_only,
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+        )
+        kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._volumes_api.api20_volumes_get_with_http_info
         _process_references(references, ['ids', 'names'], kwargs)
         list_params = ['ids', 'names', 'sort']
@@ -1204,7 +2196,21 @@ class Client(object):
         _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
-    def patch_volumes(self, references=None, **kwargs):
+    def patch_volumes(
+        self,
+        references=None,  # type: List[models.ReferenceType]
+        volume=None,  # type: models.VolumePatch
+        authorization=None,  # type: str
+        x_request_id=None,  # type: str
+        ids=None,  # type: List[str]
+        names=None,  # type: List[str]
+        truncate=None,  # type: bool
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> models.VolumeResponse
         """
         Renames or destroys a volume. To rename a volume, set `name` to the new name. To
         move a volume, set the `pod` or `volume group` parameters. To destroy a volume,
@@ -1217,8 +2223,10 @@ class Client(object):
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides ids and names keyword arguments.
 
-        Keyword args:
             volume (VolumePatch, required):
+            x_request_id (str, optional):
+                A header to provide to track the API call. Generated by the server if not
+                provided.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
                 resource IDs in comma-separated format. The `ids` and `names` parameters cannot
@@ -1235,6 +2243,15 @@ class Client(object):
                 set at all and the volume is being reduced in size, the volume copy operation
                 fails. Required if the `provisioned` parameter is set to a volume size that is
                 smaller than the original size.
+            async_req (bool, optional):
+                Request runs in separate thread and method returns
+                multiprocessing.pool.ApplyResult.
+            _return_http_data_only (bool, optional):
+                Returns only data field.
+            _preload_content (bool, optional):
+                Response is converted into objects.
+            _request_timeout (int, optional):
+                Total request timeout in seconds.
 
         Returns:
             ValidResponse: If the call was successful.
@@ -1245,6 +2262,19 @@ class Client(object):
             ValueError: If a parameter is of an invalid type.
             TypeError: If invalid or missing parameters are used.
         """
+        kwargs = dict(
+            volume=volume,
+            authorization=authorization,
+            x_request_id=x_request_id,
+            ids=ids,
+            names=names,
+            truncate=truncate,
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+        )
+        kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._volumes_api.api20_volumes_patch_with_http_info
         _process_references(references, ['ids', 'names'], kwargs)
         list_params = ['ids', 'names']
@@ -1252,7 +2282,29 @@ class Client(object):
         _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
-    def get_volumes_performance_by_array(self, references=None, **kwargs):
+    def get_volumes_performance_by_array(
+        self,
+        references=None,  # type: List[models.ReferenceType]
+        authorization=None,  # type: str
+        x_request_id=None,  # type: str
+        destroyed=None,  # type: bool
+        filter=None,  # type: str
+        end_time=None,  # type: int
+        resolution=None,  # type: int
+        start_time=None,  # type: int
+        ids=None,  # type: List[str]
+        limit=None,  # type: int
+        names=None,  # type: List[str]
+        offset=None,  # type: int
+        sort=None,  # type: List[str]
+        total_item_count=None,  # type: bool
+        total_only=None,  # type: bool
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> models.ResourcePerformanceByArrayGetResponse
         """
         Returns real-time and historical performance data, real-time latency data, and
         average I/O size data. The data returned is for each volume on the current array
@@ -1264,7 +2316,9 @@ class Client(object):
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides ids and names keyword arguments.
 
-        Keyword args:
+            x_request_id (str, optional):
+                A header to provide to track the API call. Generated by the server if not
+                provided.
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
@@ -1329,14 +2383,23 @@ class Client(object):
                 Sort the response by the specified Properties. Can also be a single element.
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
-                will be calculated and returned in the response. If set to `false`, the
-                `total_item_count` will be `null` in the response. This may speed up queries
-                where the `total_item_count` is large. If not specified, defaults to `false`.
+                is calculated and returned in the response. If set to `false`, the
+                `total_item_count` is `null` in the response. This may speed up queries where
+                the `total_item_count` is large. If not specified, defaults to `false`.
             total_only (bool, optional):
                 If set to `true`, returns the aggregate value of all items after filtering.
                 Where it makes more sense, the average value is displayed instead. The values
                 are displayed for each name where meaningful. If `total_only=true`, the `items`
                 list will be empty.
+            async_req (bool, optional):
+                Request runs in separate thread and method returns
+                multiprocessing.pool.ApplyResult.
+            _return_http_data_only (bool, optional):
+                Returns only data field.
+            _preload_content (bool, optional):
+                Response is converted into objects.
+            _request_timeout (int, optional):
+                Total request timeout in seconds.
 
         Returns:
             ValidResponse: If the call was successful.
@@ -1347,6 +2410,27 @@ class Client(object):
             ValueError: If a parameter is of an invalid type.
             TypeError: If invalid or missing parameters are used.
         """
+        kwargs = dict(
+            authorization=authorization,
+            x_request_id=x_request_id,
+            destroyed=destroyed,
+            filter=filter,
+            end_time=end_time,
+            resolution=resolution,
+            start_time=start_time,
+            ids=ids,
+            limit=limit,
+            names=names,
+            offset=offset,
+            sort=sort,
+            total_item_count=total_item_count,
+            total_only=total_only,
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+        )
+        kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._volumes_api.api20_volumes_performance_by_array_get_with_http_info
         _process_references(references, ['ids', 'names'], kwargs)
         list_params = ['ids', 'names', 'sort']
@@ -1354,7 +2438,29 @@ class Client(object):
         _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
-    def get_volumes_performance(self, references=None, **kwargs):
+    def get_volumes_performance(
+        self,
+        references=None,  # type: List[models.ReferenceType]
+        authorization=None,  # type: str
+        x_request_id=None,  # type: str
+        destroyed=None,  # type: bool
+        filter=None,  # type: str
+        end_time=None,  # type: int
+        resolution=None,  # type: int
+        start_time=None,  # type: int
+        ids=None,  # type: List[str]
+        limit=None,  # type: int
+        names=None,  # type: List[str]
+        offset=None,  # type: int
+        sort=None,  # type: List[str]
+        total_item_count=None,  # type: bool
+        total_only=None,  # type: bool
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> models.ResourcePerformanceGetResponse
         """
         Returns real-time and historical performance data, real-time latency data, and
         average I/O sizes for each volume and and as a total of all volumes across the
@@ -1364,7 +2470,9 @@ class Client(object):
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides ids and names keyword arguments.
 
-        Keyword args:
+            x_request_id (str, optional):
+                A header to provide to track the API call. Generated by the server if not
+                provided.
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
@@ -1429,14 +2537,23 @@ class Client(object):
                 Sort the response by the specified Properties. Can also be a single element.
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
-                will be calculated and returned in the response. If set to `false`, the
-                `total_item_count` will be `null` in the response. This may speed up queries
-                where the `total_item_count` is large. If not specified, defaults to `false`.
+                is calculated and returned in the response. If set to `false`, the
+                `total_item_count` is `null` in the response. This may speed up queries where
+                the `total_item_count` is large. If not specified, defaults to `false`.
             total_only (bool, optional):
                 If set to `true`, returns the aggregate value of all items after filtering.
                 Where it makes more sense, the average value is displayed instead. The values
                 are displayed for each name where meaningful. If `total_only=true`, the `items`
                 list will be empty.
+            async_req (bool, optional):
+                Request runs in separate thread and method returns
+                multiprocessing.pool.ApplyResult.
+            _return_http_data_only (bool, optional):
+                Returns only data field.
+            _preload_content (bool, optional):
+                Response is converted into objects.
+            _request_timeout (int, optional):
+                Total request timeout in seconds.
 
         Returns:
             ValidResponse: If the call was successful.
@@ -1447,6 +2564,27 @@ class Client(object):
             ValueError: If a parameter is of an invalid type.
             TypeError: If invalid or missing parameters are used.
         """
+        kwargs = dict(
+            authorization=authorization,
+            x_request_id=x_request_id,
+            destroyed=destroyed,
+            filter=filter,
+            end_time=end_time,
+            resolution=resolution,
+            start_time=start_time,
+            ids=ids,
+            limit=limit,
+            names=names,
+            offset=offset,
+            sort=sort,
+            total_item_count=total_item_count,
+            total_only=total_only,
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+        )
+        kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._volumes_api.api20_volumes_performance_get_with_http_info
         _process_references(references, ['ids', 'names'], kwargs)
         list_params = ['ids', 'names', 'sort']
@@ -1454,7 +2592,20 @@ class Client(object):
         _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
-    def post_volumes(self, references=None, **kwargs):
+    def post_volumes(
+        self,
+        references=None,  # type: List[models.ReferenceType]
+        volume=None,  # type: models.VolumePost
+        authorization=None,  # type: str
+        x_request_id=None,  # type: str
+        names=None,  # type: List[str]
+        overwrite=None,  # type: bool
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> models.VolumeResponse
         """
         Create one or more virtual storage volumes of the specified size. If
         `provisioned` is not specified, the size of the new volume defaults to 1 MB in
@@ -1464,8 +2615,10 @@ class Client(object):
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides names keyword arguments.
 
-        Keyword args:
             volume (VolumePost, required):
+            x_request_id (str, optional):
+                A header to provide to track the API call. Generated by the server if not
+                provided.
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
@@ -1475,6 +2628,15 @@ class Client(object):
                 the volume copy operation fails. Required if the `source: id` or `source: name`
                 body parameter is set and the source overwrites an existing volume during the
                 volume copy operation.
+            async_req (bool, optional):
+                Request runs in separate thread and method returns
+                multiprocessing.pool.ApplyResult.
+            _return_http_data_only (bool, optional):
+                Returns only data field.
+            _preload_content (bool, optional):
+                Response is converted into objects.
+            _request_timeout (int, optional):
+                Total request timeout in seconds.
 
         Returns:
             ValidResponse: If the call was successful.
@@ -1485,6 +2647,18 @@ class Client(object):
             ValueError: If a parameter is of an invalid type.
             TypeError: If invalid or missing parameters are used.
         """
+        kwargs = dict(
+            volume=volume,
+            authorization=authorization,
+            x_request_id=x_request_id,
+            names=names,
+            overwrite=overwrite,
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+        )
+        kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._volumes_api.api20_volumes_post_with_http_info
         _process_references(references, ['names'], kwargs)
         list_params = ['names']
@@ -1492,7 +2666,29 @@ class Client(object):
         _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
-    def get_volumes_space(self, references=None, **kwargs):
+    def get_volumes_space(
+        self,
+        references=None,  # type: List[models.ReferenceType]
+        authorization=None,  # type: str
+        x_request_id=None,  # type: str
+        destroyed=None,  # type: bool
+        filter=None,  # type: str
+        end_time=None,  # type: int
+        resolution=None,  # type: int
+        start_time=None,  # type: int
+        ids=None,  # type: List[str]
+        limit=None,  # type: int
+        offset=None,  # type: int
+        sort=None,  # type: List[str]
+        total_item_count=None,  # type: bool
+        total_only=None,  # type: bool
+        names=None,  # type: List[str]
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> models.ResourceSpaceGetResponse
         """
         Return provisioned (virtual) size and physical storage consumption data for each
         volume.
@@ -1501,7 +2697,9 @@ class Client(object):
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides ids and names keyword arguments.
 
-        Keyword args:
+            x_request_id (str, optional):
+                A header to provide to track the API call. Generated by the server if not
+                provided.
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
@@ -1563,9 +2761,9 @@ class Client(object):
                 Sort the response by the specified Properties. Can also be a single element.
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
-                will be calculated and returned in the response. If set to `false`, the
-                `total_item_count` will be `null` in the response. This may speed up queries
-                where the `total_item_count` is large. If not specified, defaults to `false`.
+                is calculated and returned in the response. If set to `false`, the
+                `total_item_count` is `null` in the response. This may speed up queries where
+                the `total_item_count` is large. If not specified, defaults to `false`.
             total_only (bool, optional):
                 If set to `true`, returns the aggregate value of all items after filtering.
                 Where it makes more sense, the average value is displayed instead. The values
@@ -1574,6 +2772,15 @@ class Client(object):
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
+            async_req (bool, optional):
+                Request runs in separate thread and method returns
+                multiprocessing.pool.ApplyResult.
+            _return_http_data_only (bool, optional):
+                Returns only data field.
+            _preload_content (bool, optional):
+                Response is converted into objects.
+            _request_timeout (int, optional):
+                Total request timeout in seconds.
 
         Returns:
             ValidResponse: If the call was successful.
@@ -1584,6 +2791,27 @@ class Client(object):
             ValueError: If a parameter is of an invalid type.
             TypeError: If invalid or missing parameters are used.
         """
+        kwargs = dict(
+            authorization=authorization,
+            x_request_id=x_request_id,
+            destroyed=destroyed,
+            filter=filter,
+            end_time=end_time,
+            resolution=resolution,
+            start_time=start_time,
+            ids=ids,
+            limit=limit,
+            offset=offset,
+            sort=sort,
+            total_item_count=total_item_count,
+            total_only=total_only,
+            names=names,
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+        )
+        kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._volumes_api.api20_volumes_space_get_with_http_info
         _process_references(references, ['ids', 'names'], kwargs)
         list_params = ['ids', 'sort', 'names']
@@ -1591,9 +2819,15 @@ class Client(object):
         _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
+    def _set_agent_header(self):
+        """
+        Set the user-agent header of the internal client.
+        """
+        self._api_client.set_default_header('User-Agent', self._api_client.user_agent)
+
     def _set_auth_header(self, refresh=False):
         """
-        Set the authorization header of the internal client with the access
+        Set the authorization or x-auth-token header of the internal client with the access
         token.
 
         Args:
@@ -1603,8 +2837,12 @@ class Client(object):
         Raises:
             PureError: If there was an error retrieving the access token.
         """
-        self._api_client.set_default_header('Authorization',
-                                            self._token_man.get_header(refresh=refresh))
+        if isinstance(self._token_man, TokenManager):
+            self._api_client.set_default_header(Headers.authorization,
+                                                self._token_man.get_header(refresh=refresh))
+        else:
+            self._api_client.set_default_header(Headers.x_auth_token,
+                                                self._token_man.get_session_token(refresh=refresh))
 
     def _call_api(self, api_function, kwargs):
         """

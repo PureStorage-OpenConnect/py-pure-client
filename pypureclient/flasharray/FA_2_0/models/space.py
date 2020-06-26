@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_0 import models
 
 class Space(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -57,7 +58,19 @@ class Space(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        data_reduction=None,  # type: float
+        shared=None,  # type: int
+        snapshots=None,  # type: int
+        system=None,  # type: int
+        thin_provisioning=None,  # type: float
+        total_physical=None,  # type: int
+        total_provisioned=None,  # type: int
+        total_reduction=None,  # type: float
+        unique=None,  # type: int
+        virtual=None,  # type: int
+    ):
         """
         Keyword args:
             data_reduction (float): The ratio of mapped sectors within a volume versus the amount of physical space the data occupies after data compression and deduplication. The data reduction ratio does not include thin provisioning savings. For example, a data reduction ratio of 5&#58;1 means that for every 5 MB the host writes to the array, 1 MB is stored on the array's flash modules.
@@ -71,11 +84,26 @@ class Space(object):
             unique (int): The unique physical space occupied by customer data. Unique physical space does not include shared space, snapshots, and internal array metadata. Measured in bytes.
             virtual (int): The amount of logically written data that a volume or a snapshot references. Measured in bytes.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if data_reduction is not None:
+            self.data_reduction = data_reduction
+        if shared is not None:
+            self.shared = shared
+        if snapshots is not None:
+            self.snapshots = snapshots
+        if system is not None:
+            self.system = system
+        if thin_provisioning is not None:
+            self.thin_provisioning = thin_provisioning
+        if total_physical is not None:
+            self.total_physical = total_physical
+        if total_provisioned is not None:
+            self.total_provisioned = total_provisioned
+        if total_reduction is not None:
+            self.total_reduction = total_reduction
+        if unique is not None:
+            self.unique = unique
+        if virtual is not None:
+            self.virtual = virtual
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

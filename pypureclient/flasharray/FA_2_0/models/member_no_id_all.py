@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_0 import models
 
 class MemberNoIdAll(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -41,17 +42,20 @@ class MemberNoIdAll(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        group=None,  # type: models.ReferenceNoId
+        member=None,  # type: models.ReferenceNoId
+    ):
         """
         Keyword args:
             group (ReferenceNoId): The resource in which the host, volume, or other item in the environment is a member.
             member (ReferenceNoId): The member of the resource.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if group is not None:
+            self.group = group
+        if member is not None:
+            self.member = member
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

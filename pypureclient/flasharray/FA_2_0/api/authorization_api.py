@@ -17,39 +17,166 @@ import re
 
 # python 2 and python 3 compatibility library
 import six
+from typing import List, Optional
 
-from ..api_client import ApiClient
+from .. import models
 
 
 class AuthorizationApi(object):
 
-    def __init__(self, api_client=None):
-        if api_client is None:
-            api_client = ApiClient()
+    def __init__(self, api_client):
         self.api_client = api_client
 
-    def api_api_version_get(self, **kwargs):
-        """List available API versions
+    def api20_login_post_with_http_info(
+        self,
+        api_token=None,  # type: str
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> models.UsernameResponse
+        """POST login (placeholder)
 
-        Returns a list of available API versions. No authentication is required to access this endpoint. 
+        Exchange an API token for a session token. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api_api_version_get(async_req=True)
+        >>> thread = api.api20_login_post_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
-        :return: ApiVersionResponse
+        :param str api_token: API token for a user.
+        :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
+        :param bool _return_http_data_only: Returns only data field.
+        :param bool _preload_content: Response is converted into objects.
+        :param int _request_timeout: Total request timeout in seconds.
+                 It can also be a tuple of (connection time, read time) timeouts.
+        :return: UsernameResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.api_api_version_get_with_http_info(**kwargs)
-        else:
-            (data) = self.api_api_version_get_with_http_info(**kwargs)
-            return data
 
-    def api_api_version_get_with_http_info(self, **kwargs):
+        params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        collection_formats = {}
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'api_token' in params:
+            header_params['api-token'] = params['api_token']
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
+
+        # Authentication setting
+        auth_settings = []
+
+        return self.api_client.call_api(
+            '/api/2.0/login', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='UsernameResponse',
+            auth_settings=auth_settings,
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+            collection_formats=collection_formats,
+        )
+
+    def api20_logout_post_with_http_info(
+        self,
+        x_auth_token=None,  # type: str
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> None
+        """POST logout (placeholder)
+
+        Invalidate a session token. 
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.api20_logout_post_with_http_info(async_req=True)
+        >>> result = thread.get()
+
+        :param str x_auth_token: Session token for a user.
+        :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
+        :param bool _return_http_data_only: Returns only data field.
+        :param bool _preload_content: Response is converted into objects.
+        :param int _request_timeout: Total request timeout in seconds.
+                 It can also be a tuple of (connection time, read time) timeouts.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        collection_formats = {}
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'x_auth_token' in params:
+            header_params['x-auth-token'] = params['x_auth_token']
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(
+            ['application/json'])
+
+        # Authentication setting
+        auth_settings = []
+
+        return self.api_client.call_api(
+            '/api/2.0/logout', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,
+            auth_settings=auth_settings,
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+            collection_formats=collection_formats,
+        )
+
+    def api_api_version_get_with_http_info(
+        self,
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> models.ApiVersionResponse
         """List available API versions
 
         Returns a list of available API versions. No authentication is required to access this endpoint. 
@@ -58,30 +185,19 @@ class AuthorizationApi(object):
         >>> thread = api.api_api_version_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
+        :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
+        :param bool _return_http_data_only: Returns only data field.
+        :param bool _preload_content: Response is converted into objects.
+        :param int _request_timeout: Total request timeout in seconds.
+                 It can also be a tuple of (connection time, read time) timeouts.
         :return: ApiVersionResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = []
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method api_api_version_get" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        params = {k: v for k, v in six.iteritems(locals()) if v is not None}
 
         collection_formats = {}
-
         path_params = {}
 
         query_params = []
@@ -113,84 +229,57 @@ class AuthorizationApi(object):
             files=local_var_files,
             response_type='ApiVersionResponse',
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+            collection_formats=collection_formats,
+        )
 
-    def oauth210_token_post(self, grant_type, subject_token, subject_token_type, **kwargs):
+    def oauth210_token_post_with_http_info(
+        self,
+        grant_type=None,  # type: str
+        subject_token=None,  # type: str
+        subject_token_type=None,  # type: str
+        async_req=False,  # type: bool
+        _return_http_data_only=False,  # type: bool
+        _preload_content=True,  # type: bool
+        _request_timeout=None,  # type: Optional[int]
+    ):
+        # type: (...) -> models.OauthTokenResponse
         """Get access token
 
-        Exchanges an ID token for an OAuth 2.0 access token. 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.oauth210_token_post(grant_type, subject_token, subject_token_type, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str grant_type: The method by which the access token will be obtained. The Pure Storage REST API supports the OAuth 2.0 \"token exchange\" grant type, which indicates that a token exchange is being performed. Set `grant_type` to `urn:ietf:params:oauth:grant-type:token-exchange`. (required)
-        :param str subject_token: An encoded security ID token representing the identity of the party on behalf of whom the request is being made. The token must be issued by a trusted identity provider which must be either a registered application in Pure1 or an enabled API client on the array. The token must be a JSON Web Token and must contain the following claims: > | JWT claim | Location | API Client Field | Description | Required By | > |-|-|-|-|-| > | kid | Header | key_id | Key ID of the API client that issues the identity token. | FlashArray and FlashBlade only. | > | aud | Payload | id | Client ID of the API client that issues the identity token. | FlashArray and FlashBlade only. | > | sub | Payload | | Login name of the array user for whom the token should be issued. This must be a valid user in the system. | FlashArray and FlashBlade only. | > | iss | Payload | issuer | Application ID for the Pure1 or API client's trusted identity issuer on the array. | All products. | > | iat | Payload | | Timestamp of when the identity token was issued. Measured in milliseconds since the UNIX epoch. | All products. | > | exp | Payload | | Timestamp of when the identity token will expire. Measured in milliseconds since the UNIX epoch. | All products. |  Each token must also be signed with the private key that is paired with the API client's public key. (required)
-        :param str subject_token_type: An identifier that indicates the type of security token specifed in the `subject_token` parameter. The Pure Storage REST API supports the JSON Web Token (JWT) as the means for requesting the access token. Set `subject_token_type` to `urn:ietf:params:oauth:token-type:jwt`. (required)
-        :return: InlineResponse200
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.oauth210_token_post_with_http_info(grant_type, subject_token, subject_token_type, **kwargs)
-        else:
-            (data) = self.oauth210_token_post_with_http_info(grant_type, subject_token, subject_token_type, **kwargs)
-            return data
-
-    def oauth210_token_post_with_http_info(self, grant_type, subject_token, subject_token_type, **kwargs):
-        """Get access token
-
-        Exchanges an ID token for an OAuth 2.0 access token. 
+        Exchanges an ID Token for an OAuth 2.0 access token. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.oauth210_token_post_with_http_info(grant_type, subject_token, subject_token_type, async_req=True)
         >>> result = thread.get()
 
-        :param async_req bool
         :param str grant_type: The method by which the access token will be obtained. The Pure Storage REST API supports the OAuth 2.0 \"token exchange\" grant type, which indicates that a token exchange is being performed. Set `grant_type` to `urn:ietf:params:oauth:grant-type:token-exchange`. (required)
-        :param str subject_token: An encoded security ID token representing the identity of the party on behalf of whom the request is being made. The token must be issued by a trusted identity provider which must be either a registered application in Pure1 or an enabled API client on the array. The token must be a JSON Web Token and must contain the following claims: > | JWT claim | Location | API Client Field | Description | Required By | > |-|-|-|-|-| > | kid | Header | key_id | Key ID of the API client that issues the identity token. | FlashArray and FlashBlade only. | > | aud | Payload | id | Client ID of the API client that issues the identity token. | FlashArray and FlashBlade only. | > | sub | Payload | | Login name of the array user for whom the token should be issued. This must be a valid user in the system. | FlashArray and FlashBlade only. | > | iss | Payload | issuer | Application ID for the Pure1 or API client's trusted identity issuer on the array. | All products. | > | iat | Payload | | Timestamp of when the identity token was issued. Measured in milliseconds since the UNIX epoch. | All products. | > | exp | Payload | | Timestamp of when the identity token will expire. Measured in milliseconds since the UNIX epoch. | All products. |  Each token must also be signed with the private key that is paired with the API client's public key. (required)
+        :param str subject_token: An encoded security ID Token representing the identity of the party on behalf of whom the request is being made. The token must be issued by a trusted identity provider which must be either a registered application in Pure1 or an enabled API client on the array. The token must be a JSON Web Token and must contain the following claims: > | JWT claim | Location | API Client Field | Description | Required By | > |-|-|-|-|-| > | kid | Header | key_id | Key ID of the API client that issues the identity token. | FlashArray and FlashBlade only. | > | aud | Payload | id | Client ID of the API client that issues the identity token. | FlashArray and FlashBlade only. | > | sub | Payload | | Login name of the array user for whom the token should be issued. This must be a valid user in the system. | FlashArray and FlashBlade only. | > | iss | Payload | issuer | Application ID for the Pure1 or API client's trusted identity issuer on the array. | All products. | > | iat | Payload | | Timestamp of when the identity token was issued. Measured in milliseconds since the UNIX epoch. | All products. | > | exp | Payload | | Timestamp of when the identity token will expire. Measured in milliseconds since the UNIX epoch. | All products. |  Each token must also be signed with the private key that is paired with the API client's public key. (required)
         :param str subject_token_type: An identifier that indicates the type of security token specifed in the `subject_token` parameter. The Pure Storage REST API supports the JSON Web Token (JWT) as the means for requesting the access token. Set `subject_token_type` to `urn:ietf:params:oauth:token-type:jwt`. (required)
-        :return: InlineResponse200
+        :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
+        :param bool _return_http_data_only: Returns only data field.
+        :param bool _preload_content: Response is converted into objects.
+        :param int _request_timeout: Total request timeout in seconds.
+                 It can also be a tuple of (connection time, read time) timeouts.
+        :return: OauthTokenResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['grant_type', 'subject_token', 'subject_token_type']
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method oauth210_token_post" % key
-                )
-            params[key] = val
-        del params['kwargs']
+        params = {k: v for k, v in six.iteritems(locals()) if v is not None}
         # verify the required parameter 'grant_type' is set
-        if ('grant_type' not in params or
-                params['grant_type'] is None):
-            raise ValueError("Missing the required parameter `grant_type` when calling `oauth210_token_post`")
+        if grant_type is None:
+            raise TypeError("Missing the required parameter `grant_type` when calling `oauth210_token_post`")
         # verify the required parameter 'subject_token' is set
-        if ('subject_token' not in params or
-                params['subject_token'] is None):
-            raise ValueError("Missing the required parameter `subject_token` when calling `oauth210_token_post`")
+        if subject_token is None:
+            raise TypeError("Missing the required parameter `subject_token` when calling `oauth210_token_post`")
         # verify the required parameter 'subject_token_type' is set
-        if ('subject_token_type' not in params or
-                params['subject_token_type'] is None):
-            raise ValueError("Missing the required parameter `subject_token_type` when calling `oauth210_token_post`")
+        if subject_token_type is None:
+            raise TypeError("Missing the required parameter `subject_token_type` when calling `oauth210_token_post`")
 
         collection_formats = {}
-
         path_params = {}
 
         query_params = []
@@ -226,10 +315,11 @@ class AuthorizationApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='InlineResponse200',
+            response_type='OauthTokenResponse',
             auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
+            async_req=async_req,
+            _return_http_data_only=_return_http_data_only,
+            _preload_content=_preload_content,
+            _request_timeout=_request_timeout,
+            collection_formats=collection_formats,
+        )

@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_1 import models
 
 class Qos(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -41,26 +42,34 @@ class Qos(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        bandwidth_limit=None,  # type: int
+        iops_limit=None,  # type: int
+    ):
         """
         Keyword args:
-            bandwidth_limit (int): The maximum QoS bandwidth limit for the volume. Whenever throughput exceeds the bandwidth limit, throttling occurs. Measured in bytes.
+            bandwidth_limit (int): The maximum QoS bandwidth limit for the volume. Whenever throughput exceeds the bandwidth limit, throttling occurs. Measured in bytes per second. Maximum limit is 512 GB/s.
             iops_limit (int): The QoS IOPs limit for the volume.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if bandwidth_limit is not None:
+            self.bandwidth_limit = bandwidth_limit
+        if iops_limit is not None:
+            self.iops_limit = iops_limit
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
             raise KeyError("Invalid key `{}` for `Qos`".format(key))
         if key == "bandwidth_limit" and value is not None:
-            if value > 536870912000:
-                raise ValueError("Invalid value for `bandwidth_limit`, value must be less than or equal to `536870912000`")
+            if value > 549755813888:
+                raise ValueError("Invalid value for `bandwidth_limit`, value must be less than or equal to `549755813888`")
             if value < 1048576:
                 raise ValueError("Invalid value for `bandwidth_limit`, must be a value greater than or equal to `1048576`")
+        if key == "iops_limit" and value is not None:
+            if value > 104857600:
+                raise ValueError("Invalid value for `iops_limit`, value must be less than or equal to `104857600`")
+            if value < 100:
+                raise ValueError("Invalid value for `iops_limit`, must be a value greater than or equal to `100`")
         self.__dict__[key] = value
 
     def __getattribute__(self, item):

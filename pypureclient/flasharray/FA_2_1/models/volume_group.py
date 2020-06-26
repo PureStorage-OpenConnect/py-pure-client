@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_1 import models
 
 class VolumeGroup(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -51,7 +52,16 @@ class VolumeGroup(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        id=None,  # type: str
+        name=None,  # type: str
+        destroyed=None,  # type: bool
+        qos=None,  # type: models.Qos
+        space=None,  # type: models.Space
+        time_remaining=None,  # type: int
+        volume_count=None,  # type: int
+    ):
         """
         Keyword args:
             id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
@@ -62,11 +72,20 @@ class VolumeGroup(object):
             time_remaining (int): The amount of time left until the destroyed volume group is permanently eradicated. Measured in milliseconds. Before the `time_remaining` period has elapsed, the destroyed volume group can be recovered by setting `destroyed=false`.
             volume_count (int): The number of volumes in the volume group.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if id is not None:
+            self.id = id
+        if name is not None:
+            self.name = name
+        if destroyed is not None:
+            self.destroyed = destroyed
+        if qos is not None:
+            self.qos = qos
+        if space is not None:
+            self.space = space
+        if time_remaining is not None:
+            self.time_remaining = time_remaining
+        if volume_count is not None:
+            self.volume_count = volume_count
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

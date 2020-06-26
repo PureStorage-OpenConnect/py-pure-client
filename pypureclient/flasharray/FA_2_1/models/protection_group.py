@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_1 import models
 
 class ProtectionGroup(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -67,7 +68,24 @@ class ProtectionGroup(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        name=None,  # type: str
+        destroyed=None,  # type: bool
+        host_count=None,  # type: int
+        host_group_count=None,  # type: int
+        is_local=None,  # type: bool
+        pod=None,  # type: models.FixedReference
+        replication_schedule=None,  # type: models.ReplicationSchedule
+        snapshot_schedule=None,  # type: models.SnapshotSchedule
+        source=None,  # type: models.FixedReference
+        source_retention=None,  # type: models.RetentionPolicy
+        space=None,  # type: models.Space
+        target_count=None,  # type: int
+        target_retention=None,  # type: models.RetentionPolicy
+        time_remaining=None,  # type: int
+        volume_count=None,  # type: int
+    ):
         """
         Keyword args:
             name (str): A user-specified name. The name must be locally unique and can be changed.
@@ -86,11 +104,36 @@ class ProtectionGroup(object):
             time_remaining (int): The amount of time left until the destroyed protection group is permanently eradicated. Measured in milliseconds. Before the `time_remaining` period has elapsed, the destroyed protection group can be recovered by setting `destroyed=false`.
             volume_count (int): The number of volumes in the protection group.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if name is not None:
+            self.name = name
+        if destroyed is not None:
+            self.destroyed = destroyed
+        if host_count is not None:
+            self.host_count = host_count
+        if host_group_count is not None:
+            self.host_group_count = host_group_count
+        if is_local is not None:
+            self.is_local = is_local
+        if pod is not None:
+            self.pod = pod
+        if replication_schedule is not None:
+            self.replication_schedule = replication_schedule
+        if snapshot_schedule is not None:
+            self.snapshot_schedule = snapshot_schedule
+        if source is not None:
+            self.source = source
+        if source_retention is not None:
+            self.source_retention = source_retention
+        if space is not None:
+            self.space = space
+        if target_count is not None:
+            self.target_count = target_count
+        if target_retention is not None:
+            self.target_retention = target_retention
+        if time_remaining is not None:
+            self.time_remaining = time_remaining
+        if volume_count is not None:
+            self.volume_count = volume_count
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

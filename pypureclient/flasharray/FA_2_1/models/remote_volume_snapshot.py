@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_1 import models
 
 class RemoteVolumeSnapshot(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -55,7 +56,18 @@ class RemoteVolumeSnapshot(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        id=None,  # type: str
+        name=None,  # type: str
+        created=None,  # type: int
+        destroyed=None,  # type: bool
+        pod=None,  # type: models.FixedReference
+        provisioned=None,  # type: int
+        source=None,  # type: models.FixedReference
+        suffix=None,  # type: str
+        time_remaining=None,  # type: int
+    ):
         """
         Keyword args:
             id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
@@ -68,11 +80,24 @@ class RemoteVolumeSnapshot(object):
             suffix (str): The suffix that is appended to the `source_name` value to generate the full volume snapshot name in the form `VOL.SUFFIX`. If the suffix is not specified, the system constructs the snapshot name in the form `VOL.NNN`, where `VOL` is the volume name, and `NNN` is a monotonically increasing number.
             time_remaining (int): The amount of time left until the destroyed snapshot is permanently eradicated. Measured in milliseconds. Before the `time_remaining` period has elapsed, the destroyed snapshot can be recovered by setting `destroyed=false`.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if id is not None:
+            self.id = id
+        if name is not None:
+            self.name = name
+        if created is not None:
+            self.created = created
+        if destroyed is not None:
+            self.destroyed = destroyed
+        if pod is not None:
+            self.pod = pod
+        if provisioned is not None:
+            self.provisioned = provisioned
+        if source is not None:
+            self.source = source
+        if suffix is not None:
+            self.suffix = suffix
+        if time_remaining is not None:
+            self.time_remaining = time_remaining
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

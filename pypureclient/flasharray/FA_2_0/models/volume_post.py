@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_0 import models
 
 class VolumePost(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -47,7 +48,14 @@ class VolumePost(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        destroyed=None,  # type: bool
+        provisioned=None,  # type: int
+        qos=None,  # type: models.Qos
+        source=None,  # type: models.Reference
+        subtype=None,  # type: str
+    ):
         """
         Keyword args:
             destroyed (bool): If set to `true`, destroys a resource. Once set to `true`, the `time_remaining` value will display the amount of time left until the destroyed resource is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed resource can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the resource is permanently eradicated and can no longer be recovered.
@@ -56,11 +64,16 @@ class VolumePost(object):
             source (Reference): The source volume of a volume copy.
             subtype (str): The type of volume. Valid values are `protocol_endpoint` and `regular`.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if destroyed is not None:
+            self.destroyed = destroyed
+        if provisioned is not None:
+            self.provisioned = provisioned
+        if qos is not None:
+            self.qos = qos
+        if source is not None:
+            self.source = source
+        if subtype is not None:
+            self.subtype = subtype
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

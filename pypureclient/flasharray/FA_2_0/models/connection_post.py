@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_0 import models
 
 class ConnectionPost(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -41,17 +42,20 @@ class ConnectionPost(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        lun=None,  # type: int
+        protocol_endpoint=None,  # type: models.Reference
+    ):
         """
         Keyword args:
             lun (int): The logical unit number (LUN) by which the specified hosts are to address the specified volume. If the LUN is not specified, the system automatically assigns a LUN to the connection. To automatically assign a LUN to a private connection, the system starts at LUN `1` and counts up to the maximum LUN `4095`, assigning the first available LUN to the connection. For shared connections, the system starts at LUN `254` and counts down to the minimum LUN `1`, assigning the first available LUN to the connection. If all LUNs in the `[1...254]` range are taken, the system starts at LUN `255` and counts up to the maximum LUN `4095`, assigning the first available LUN to the connection.
             protocol_endpoint (Reference): A protocol endpoint (also known as a conglomerate volume) which acts as a proxy through which virtual volumes are created and then connected to VMware ESXi hosts or host groups. The protocol endpoint itself does not serve I/Os; instead, its job is to form connections between FlashArray volumes and ESXi hosts and host groups.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if lun is not None:
+            self.lun = lun
+        if protocol_endpoint is not None:
+            self.protocol_endpoint = protocol_endpoint
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

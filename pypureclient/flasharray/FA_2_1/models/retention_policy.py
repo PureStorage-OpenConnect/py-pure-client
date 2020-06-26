@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_1 import models
 
 class RetentionPolicy(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -43,18 +44,24 @@ class RetentionPolicy(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        all_for_sec=None,  # type: int
+        days=None,  # type: int
+        per_day=None,  # type: int
+    ):
         """
         Keyword args:
             all_for_sec (int): The length of time to keep the specified snapshots. Measured in seconds.
             days (int): The number of days to keep the snapshots after the `all_for_sec` period has passed.
             per_day (int): The number of snapshots to keep per day after the `all_for_sec` period has passed.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if all_for_sec is not None:
+            self.all_for_sec = all_for_sec
+        if days is not None:
+            self.days = days
+        if per_day is not None:
+            self.per_day = per_day
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -92,6 +92,14 @@ pypureclient.flasharray.FA\_2\_1.models.connection module
    :undoc-members:
    :show-inheritance:
 
+pypureclient.flasharray.FA\_2\_1.models.connection2 module
+----------------------------------------------------------
+
+.. automodule:: pypureclient.flasharray.FA_2_1.models.connection2
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 pypureclient.flasharray.FA\_2\_1.models.connection\_get\_response module
 ------------------------------------------------------------------------
 
@@ -144,6 +152,14 @@ pypureclient.flasharray.FA\_2\_1.models.host module
 ---------------------------------------------------
 
 .. automodule:: pypureclient.flasharray.FA_2_1.models.host
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.flasharray.FA\_2\_1.models.host2 module
+----------------------------------------------------
+
+.. automodule:: pypureclient.flasharray.FA_2_1.models.host2
    :members:
    :undoc-members:
    :show-inheritance:
@@ -268,14 +284,6 @@ pypureclient.flasharray.FA\_2\_1.models.host\_space module
    :undoc-members:
    :show-inheritance:
 
-pypureclient.flasharray.FA\_2\_1.models.inline\_response200 module
-------------------------------------------------------------------
-
-.. automodule:: pypureclient.flasharray.FA_2_1.models.inline_response200
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 pypureclient.flasharray.FA\_2\_1.models.inline\_response400 module
 ------------------------------------------------------------------
 
@@ -356,6 +364,14 @@ pypureclient.flasharray.FA\_2\_1.models.new\_name module
    :undoc-members:
    :show-inheritance:
 
+pypureclient.flasharray.FA\_2\_1.models.oauth\_token\_response module
+---------------------------------------------------------------------
+
+.. automodule:: pypureclient.flasharray.FA_2_1.models.oauth_token_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 pypureclient.flasharray.FA\_2\_1.models.offload module
 ------------------------------------------------------
 
@@ -416,6 +432,14 @@ pypureclient.flasharray.FA\_2\_1.models.page\_info module
 ---------------------------------------------------------
 
 .. automodule:: pypureclient.flasharray.FA_2_1.models.page_info
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.flasharray.FA\_2\_1.models.page\_info2 module
+----------------------------------------------------------
+
+.. automodule:: pypureclient.flasharray.FA_2_1.models.page_info2
    :members:
    :undoc-members:
    :show-inheritance:
@@ -1000,6 +1024,22 @@ pypureclient.flasharray.FA\_2\_1.models.transfer module
 -------------------------------------------------------
 
 .. automodule:: pypureclient.flasharray.FA_2_1.models.transfer
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.flasharray.FA\_2\_1.models.username module
+-------------------------------------------------------
+
+.. automodule:: pypureclient.flasharray.FA_2_1.models.username
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.flasharray.FA\_2\_1.models.username\_response module
+-----------------------------------------------------------------
+
+.. automodule:: pypureclient.flasharray.FA_2_1.models.username_response
    :members:
    :undoc-members:
    :show-inheritance:

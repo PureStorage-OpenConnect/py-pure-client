@@ -11,16 +11,17 @@
 """
 
 
-from ....properties import Property
 import pprint
 import re
 
 import six
+import typing
 
+from ....properties import Property
+if typing.TYPE_CHECKING:
+    from pypureclient.flasharray.FA_2_0 import models
 
 class VolumeSnapshotTransfer(object):
-
-
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -51,7 +52,16 @@ class VolumeSnapshotTransfer(object):
     required_args = {
     }
 
-    def __init__(self, **kwargs):
+    def __init__(
+        self,
+        id=None,  # type: str
+        name=None,  # type: str
+        started=None,  # type: int
+        progress=None,  # type: float
+        completed=None,  # type: int
+        data_transferred=None,  # type: int
+        physical_bytes_written=None,  # type: int
+    ):
         """
         Keyword args:
             id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
@@ -62,11 +72,20 @@ class VolumeSnapshotTransfer(object):
             data_transferred (int): The number of bytes transferred from the source array to the target as part of the replication process. The data transferred amount is calculated as the size difference between the current and previous snapshots after data reduction. Measured in bytes.
             physical_bytes_written (int): The amount of data persisted on the target due to replication. Measured in bytes.
         """
-        for arg in kwargs:
-            setattr(self, arg, kwargs[arg])
-        for arg in self.required_args:
-            if arg not in kwargs:
-                raise Exception("Required argument {} is missing".format(arg))
+        if id is not None:
+            self.id = id
+        if name is not None:
+            self.name = name
+        if started is not None:
+            self.started = started
+        if progress is not None:
+            self.progress = progress
+        if completed is not None:
+            self.completed = completed
+        if data_transferred is not None:
+            self.data_transferred = data_transferred
+        if physical_bytes_written is not None:
+            self.physical_bytes_written = physical_bytes_written
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
