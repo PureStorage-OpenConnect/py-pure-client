@@ -6,6 +6,7 @@ A log of changes by version and date.
 ======= ========== =====
 Version Date       Notes
 ======= ========== =====
+1.7.0   07/30/2020 Added Pure1 1.1 client and support for Pure1 drives, hardware, ports, and hardware-connectors endpoints
 1.6.0   06/26/2020 Added FlashArray 2.2 client
 1.5.0   06/19/2020 Added support for Pure1 blades, controllers, and pod-replica-links endpoints
 1.4.0   03/23/2020 Added support for Pure1 arrays/support-contracts endpoint

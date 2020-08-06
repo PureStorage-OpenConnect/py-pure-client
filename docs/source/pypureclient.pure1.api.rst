@@ -68,6 +68,14 @@ pypureclient.pure1.api.controllers\_api module
     :undoc-members:
     :show-inheritance:
 
+pypureclient.pure1.api.drives\_api module
+-----------------------------------------
+
+.. automodule:: pypureclient.pure1.api.drives_api
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 pypureclient.pure1.api.file\_system\_replica\_links\_api module
 ---------------------------------------------------------------
 
@@ -88,6 +96,22 @@ pypureclient.pure1.api.file\_systems\_api module
 ------------------------------------------------
 
 .. automodule:: pypureclient.pure1.api.file_systems_api
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.api.hardware\_api module
+-------------------------------------------
+
+.. automodule:: pypureclient.pure1.api.hardware_api
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.api.hardware\_connectors\_api module
+-------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.api.hardware_connectors_api
     :members:
     :undoc-members:
     :show-inheritance:
@@ -136,6 +160,14 @@ pypureclient.pure1.api.policies\_api module
 -------------------------------------------
 
 .. automodule:: pypureclient.pure1.api.policies_api
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.api.ports\_api module
+----------------------------------------
+
+.. automodule:: pypureclient.pure1.api.ports_api
     :members:
     :undoc-members:
     :show-inheritance:

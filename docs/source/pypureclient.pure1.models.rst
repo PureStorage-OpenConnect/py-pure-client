@@ -12,6 +12,14 @@ pypureclient.pure1.models.alert module
     :undoc-members:
     :show-inheritance:
 
+pypureclient.pure1.models.alert2 module
+---------------------------------------
+
+.. automodule:: pypureclient.pure1.models.alert2
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 pypureclient.pure1.models.alerts\_get\_response module
 ------------------------------------------------------
 
@@ -32,6 +40,14 @@ pypureclient.pure1.models.array module
 --------------------------------------
 
 .. automodule:: pypureclient.pure1.models.array
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.models.array2 module
+---------------------------------------
+
+.. automodule:: pypureclient.pure1.models.array2
     :members:
     :undoc-members:
     :show-inheritance:
@@ -60,6 +76,14 @@ pypureclient.pure1.models.arrays module
     :undoc-members:
     :show-inheritance:
 
+pypureclient.pure1.models.arrays2 module
+----------------------------------------
+
+.. automodule:: pypureclient.pure1.models.arrays2
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 pypureclient.pure1.models.arrays\_built\_in module
 --------------------------------------------------
 
@@ -76,10 +100,26 @@ pypureclient.pure1.models.arrays\_resource module
     :undoc-members:
     :show-inheritance:
 
+pypureclient.pure1.models.arrays\_resource2 module
+--------------------------------------------------
+
+.. automodule:: pypureclient.pure1.models.arrays_resource2
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 pypureclient.pure1.models.audit module
 --------------------------------------
 
 .. automodule:: pypureclient.pure1.models.audit
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.models.audit2 module
+---------------------------------------
+
+.. automodule:: pypureclient.pure1.models.audit2
     :members:
     :undoc-members:
     :show-inheritance:
@@ -104,6 +144,14 @@ pypureclient.pure1.models.blade module
 --------------------------------------
 
 .. automodule:: pypureclient.pure1.models.blade
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.models.blade2 module
+---------------------------------------
+
+.. automodule:: pypureclient.pure1.models.blade2
     :members:
     :undoc-members:
     :show-inheritance:
@@ -140,6 +188,14 @@ pypureclient.pure1.models.bucket module
     :undoc-members:
     :show-inheritance:
 
+pypureclient.pure1.models.bucket2 module
+----------------------------------------
+
+.. automodule:: pypureclient.pure1.models.bucket2
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 pypureclient.pure1.models.bucket\_get\_response module
 ------------------------------------------------------
 
@@ -152,6 +208,14 @@ pypureclient.pure1.models.bucket\_replica\_link module
 ------------------------------------------------------
 
 .. automodule:: pypureclient.pure1.models.bucket_replica_link
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.models.bucket\_replica\_link2 module
+-------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.models.bucket_replica_link2
     :members:
     :undoc-members:
     :show-inheritance:
@@ -196,6 +260,14 @@ pypureclient.pure1.models.controller module
     :undoc-members:
     :show-inheritance:
 
+pypureclient.pure1.models.controller2 module
+--------------------------------------------
+
+.. automodule:: pypureclient.pure1.models.controller2
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 pypureclient.pure1.models.controller\_get\_response module
 ----------------------------------------------------------
 
@@ -208,6 +280,46 @@ pypureclient.pure1.models.controller\_response module
 -----------------------------------------------------
 
 .. automodule:: pypureclient.pure1.models.controller_response
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.models.drive module
+--------------------------------------
+
+.. automodule:: pypureclient.pure1.models.drive
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.models.drive2 module
+---------------------------------------
+
+.. automodule:: pypureclient.pure1.models.drive2
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.models.drive\_array\_status module
+-----------------------------------------------------
+
+.. automodule:: pypureclient.pure1.models.drive_array_status
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.models.drive\_get\_response module
+-----------------------------------------------------
+
+.. automodule:: pypureclient.pure1.models.drive_get_response
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.models.drive\_response module
+------------------------------------------------
+
+.. automodule:: pypureclient.pure1.models.drive_response
     :members:
     :undoc-members:
     :show-inheritance:
@@ -244,6 +356,14 @@ pypureclient.pure1.models.file\_system module
     :undoc-members:
     :show-inheritance:
 
+pypureclient.pure1.models.file\_system2 module
+----------------------------------------------
+
+.. automodule:: pypureclient.pure1.models.file_system2
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 pypureclient.pure1.models.file\_system\_get\_response module
 ------------------------------------------------------------
 
@@ -256,6 +376,14 @@ pypureclient.pure1.models.file\_system\_replica\_link module
 ------------------------------------------------------------
 
 .. automodule:: pypureclient.pure1.models.file_system_replica_link
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.models.file\_system\_replica\_link2 module
+-------------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.models.file_system_replica_link2
     :members:
     :undoc-members:
     :show-inheritance:
@@ -292,6 +420,14 @@ pypureclient.pure1.models.file\_system\_snapshot module
     :undoc-members:
     :show-inheritance:
 
+pypureclient.pure1.models.file\_system\_snapshot2 module
+--------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.models.file_system_snapshot2
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 pypureclient.pure1.models.file\_system\_snapshot\_get\_response module
 ----------------------------------------------------------------------
 
@@ -312,6 +448,78 @@ pypureclient.pure1.models.fixed\_reference module
 -------------------------------------------------
 
 .. automodule:: pypureclient.pure1.models.fixed_reference
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.models.fixed\_reference\_fqdn module
+-------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.models.fixed_reference_fqdn
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.models.hardware module
+-----------------------------------------
+
+.. automodule:: pypureclient.pure1.models.hardware
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.models.hardware2 module
+------------------------------------------
+
+.. automodule:: pypureclient.pure1.models.hardware2
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.models.hardware\_connector module
+----------------------------------------------------
+
+.. automodule:: pypureclient.pure1.models.hardware_connector
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.models.hardware\_connector2 module
+-----------------------------------------------------
+
+.. automodule:: pypureclient.pure1.models.hardware_connector2
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.models.hardware\_connector\_get\_response module
+-------------------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.models.hardware_connector_get_response
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.models.hardware\_connector\_response module
+--------------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.models.hardware_connector_response
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.models.hardware\_get\_response module
+--------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.models.hardware_get_response
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.models.hardware\_response module
+---------------------------------------------------
+
+.. automodule:: pypureclient.pure1.models.hardware_response
     :members:
     :undoc-members:
     :show-inheritance:
@@ -372,6 +580,14 @@ pypureclient.pure1.models.metric\_history module
     :undoc-members:
     :show-inheritance:
 
+pypureclient.pure1.models.metric\_history2 module
+-------------------------------------------------
+
+.. automodule:: pypureclient.pure1.models.metric_history2
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 pypureclient.pure1.models.metric\_history\_get\_response module
 ---------------------------------------------------------------
 
@@ -400,6 +616,14 @@ pypureclient.pure1.models.network\_interface module
 ---------------------------------------------------
 
 .. automodule:: pypureclient.pure1.models.network_interface
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.models.network\_interface2 module
+----------------------------------------------------
+
+.. automodule:: pypureclient.pure1.models.network_interface2
     :members:
     :undoc-members:
     :show-inheritance:
@@ -444,6 +668,14 @@ pypureclient.pure1.models.object\_store\_account module
     :undoc-members:
     :show-inheritance:
 
+pypureclient.pure1.models.object\_store\_account2 module
+--------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.models.object_store_account2
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 pypureclient.pure1.models.object\_store\_account\_get\_response module
 ----------------------------------------------------------------------
 
@@ -476,6 +708,14 @@ pypureclient.pure1.models.pod module
     :undoc-members:
     :show-inheritance:
 
+pypureclient.pure1.models.pod2 module
+-------------------------------------
+
+.. automodule:: pypureclient.pure1.models.pod2
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 pypureclient.pure1.models.pod\_array\_status module
 ---------------------------------------------------
 
@@ -496,6 +736,14 @@ pypureclient.pure1.models.pod\_replica\_link module
 ---------------------------------------------------
 
 .. automodule:: pypureclient.pure1.models.pod_replica_link
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.models.pod\_replica\_link2 module
+----------------------------------------------------
+
+.. automodule:: pypureclient.pure1.models.pod_replica_link2
     :members:
     :undoc-members:
     :show-inheritance:
@@ -528,6 +776,14 @@ pypureclient.pure1.models.policy module
 ---------------------------------------
 
 .. automodule:: pypureclient.pure1.models.policy
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.models.policy2 module
+----------------------------------------
+
+.. automodule:: pypureclient.pure1.models.policy2
     :members:
     :undoc-members:
     :show-inheritance:
@@ -580,6 +836,38 @@ pypureclient.pure1.models.policy\_rule module
     :undoc-members:
     :show-inheritance:
 
+pypureclient.pure1.models.port module
+-------------------------------------
+
+.. automodule:: pypureclient.pure1.models.port
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.models.port2 module
+--------------------------------------
+
+.. automodule:: pypureclient.pure1.models.port2
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.models.port\_get\_response module
+----------------------------------------------------
+
+.. automodule:: pypureclient.pure1.models.port_get_response
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.models.port\_response module
+-----------------------------------------------
+
+.. automodule:: pypureclient.pure1.models.port_response
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 pypureclient.pure1.models.replica\_link module
 ----------------------------------------------
 
@@ -612,10 +900,26 @@ pypureclient.pure1.models.resource\_with\_location module
     :undoc-members:
     :show-inheritance:
 
+pypureclient.pure1.models.resource\_with\_location2 module
+----------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.models.resource_with_location2
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 pypureclient.pure1.models.resource\_with\_locations module
 ----------------------------------------------------------
 
 .. automodule:: pypureclient.pure1.models.resource_with_locations
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.models.resource\_with\_locations2 module
+-----------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.models.resource_with_locations2
     :members:
     :undoc-members:
     :show-inheritance:
@@ -632,6 +936,14 @@ pypureclient.pure1.models.support\_contract module
 --------------------------------------------------
 
 .. automodule:: pypureclient.pure1.models.support_contract
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.models.support\_contract2 module
+---------------------------------------------------
+
+.. automodule:: pypureclient.pure1.models.support_contract2
     :members:
     :undoc-members:
     :show-inheritance:
@@ -692,6 +1004,14 @@ pypureclient.pure1.models.target module
     :undoc-members:
     :show-inheritance:
 
+pypureclient.pure1.models.target2 module
+----------------------------------------
+
+.. automodule:: pypureclient.pure1.models.target2
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 pypureclient.pure1.models.target\_get\_response module
 ------------------------------------------------------
 
@@ -724,6 +1044,14 @@ pypureclient.pure1.models.volume module
     :undoc-members:
     :show-inheritance:
 
+pypureclient.pure1.models.volume2 module
+----------------------------------------
+
+.. automodule:: pypureclient.pure1.models.volume2
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 pypureclient.pure1.models.volume\_get\_response module
 ------------------------------------------------------
 
@@ -744,6 +1072,14 @@ pypureclient.pure1.models.volume\_snapshot module
 -------------------------------------------------
 
 .. automodule:: pypureclient.pure1.models.volume_snapshot
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.models.volume\_snapshot2 module
+--------------------------------------------------
+
+.. automodule:: pypureclient.pure1.models.volume_snapshot2
     :members:
     :undoc-members:
     :show-inheritance:

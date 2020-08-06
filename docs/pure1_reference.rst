@@ -75,18 +75,6 @@ Audit
 .. autoclass:: pypureclient.pure1.models.Audit
     :members:
 
-Bucket
-~~~~~~
-
-.. autoclass:: pypureclient.pure1.models.Bucket
-    :members:
-
-BucketReplicaLink
-~~~~~~~~~~~~~~~~~
-
-.. autoclass:: pypureclient.pure1.models.BucketReplicaLink
-    :members:
-
 Blade
 ~~~~~
 
@@ -99,22 +87,34 @@ Controller
 .. autoclass:: pypureclient.pure1.models.Controller
     :members:
 
+Drive
+~~~~~
+
+.. autoclass:: pypureclient.pure1.models.Drive
+    :members:
+
 FileSystem
 ~~~~~~~~~~
 
 .. autoclass:: pypureclient.pure1.models.FileSystem
     :members:
 
-FileSystemReplicaLink
-~~~~~~~~~~~~~~~~~~~~~
-
-.. autoclass:: pypureclient.pure1.models.FileSystemReplicaLink
-    :members:
-
 FileSystemSnapshot
 ~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.pure1.models.FileSystemSnapshot
+    :members:
+
+Hardware
+~~~~~
+
+.. autoclass:: pypureclient.pure1.models.Hardware
+    :members:
+
+HardwareConnector
+~~~~~
+
+.. autoclass:: pypureclient.pure1.models.HardwareConnector
     :members:
 
 Http
@@ -153,12 +153,6 @@ Nfs
 .. autoclass:: pypureclient.pure1.models.Nfs
     :members:
 
-ObjectStoreAccount
-~~~~~~~~~~~~~~~~~~
-
-.. autoclass:: pypureclient.pure1.models.ObjectStoreAccount
-    :members:
-
 Pod
 ~~~
 
@@ -195,10 +189,10 @@ PolicyRule
 .. autoclass:: pypureclient.pure1.models.PolicyRule
     :members:
 
-ResourceWithLocation
-~~~~~~~~~~~~~~~~~~~~
+Port
+~~~~~
 
-.. autoclass:: pypureclient.pure1.models.ResourceWithLocation
+.. autoclass:: pypureclient.pure1.models.Port
     :members:
 
 Smb
@@ -211,12 +205,6 @@ Tag
 ~~~
 
 .. autoclass:: pypureclient.pure1.models.Tag
-    :members:
-
-Target
-~~~~~~
-
-.. autoclass:: pypureclient.pure1.models.Target
     :members:
 
 Volume
