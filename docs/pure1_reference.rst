@@ -99,6 +99,12 @@ Controller
 .. autoclass:: pypureclient.pure1.models.Controller
     :members:
 
+Drive
+~~~~~
+
+.. autoclass:: pypureclient.pure1.models.Drive
+    :members:
+
 FileSystem
 ~~~~~~~~~~
 
@@ -115,6 +121,18 @@ FileSystemSnapshot
 ~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.pure1.models.FileSystemSnapshot
+    :members:
+
+Hardware
+~~~~~
+
+.. autoclass:: pypureclient.pure1.models.Hardware
+    :members:
+
+HardwareConnector
+~~~~~
+
+.. autoclass:: pypureclient.pure1.models.HardwareConnector
     :members:
 
 Http
@@ -199,6 +217,12 @@ ResourceWithLocation
 ~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.pure1.models.ResourceWithLocation
+    :members:
+
+Port
+~~~~~
+
+.. autoclass:: pypureclient.pure1.models.Port
     :members:
 
 Smb
