@@ -30,7 +30,7 @@ Responses
 ---------
 
 ResponseHeaders
-~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.pure1.ResponseHeaders
     :members:
@@ -94,7 +94,7 @@ Blade
     :members:
 
 Controller
-~~~~~
+~~~~~~~~~~
 
 .. autoclass:: pypureclient.pure1.models.Controller
     :members:
@@ -124,13 +124,13 @@ FileSystemSnapshot
     :members:
 
 Hardware
-~~~~~
+~~~~~~~~
 
 .. autoclass:: pypureclient.pure1.models.Hardware
     :members:
 
 HardwareConnector
-~~~~~
+~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.pure1.models.HardwareConnector
     :members:
@@ -190,7 +190,7 @@ PodArrayStatus
     :members:
 
 PodReplicaLink
-~~~~~
+~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.pure1.models.PodReplicaLink
     :members:
@@ -220,7 +220,7 @@ ResourceWithLocation
     :members:
 
 Port
-~~~~~
+~~~~
 
 .. autoclass:: pypureclient.pure1.models.Port
     :members:
