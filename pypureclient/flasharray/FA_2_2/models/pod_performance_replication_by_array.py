@@ -65,8 +65,8 @@ class PodPerformanceReplicationByArray(object):
         """
         Keyword args:
             continuous_bytes_per_sec (ReplicationPerformanceWithTotal): Total bytes transmitted or received per second for continuous replication. The continuous replication feature is used for disaster recovery on FlashArray and provides a recovery point objective (RPO) of significantly less than 30s.
-            pod (FixedReference): Reference to a pod.
-            resync_bytes_per_sec (ReplicationPerformanceWithTotal): Total bytes transmitted or received per second during resyncing. Resync is the mechanism to bring two arrays into sync. This may occur during an initial pod stretch or when two arrays are connected after they have raced to the mediator.
+            pod (FixedReference): Reference to the pod that the performance data is associated with.
+            resync_bytes_per_sec (ReplicationPerformanceWithTotal): Total bytes transmitted or received per second during resync replication. Resync replication is the mechanism to bring two arrays into sync. This may occur during an initial pod stretch, or, in case of outage, when two arrays reestablish connection. After the connection is restored, the array that was online starts replicating pod data to its peer array until the pod is once again in sync.
             sync_bytes_per_sec (ReplicationPerformanceWithTotal): Total bytes transmitted or received per second for synchronous replication.
             time (int): Sample time in milliseconds since the UNIX epoch.
             total_bytes_per_sec (int): Total bytes transmitted and received per second for all types of replication.

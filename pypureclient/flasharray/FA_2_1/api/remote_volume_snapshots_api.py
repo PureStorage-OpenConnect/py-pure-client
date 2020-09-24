@@ -21,7 +21,6 @@ from typing import List, Optional
 
 from .. import models
 
-
 class RemoteVolumeSnapshotsApi(object):
 
     def __init__(self, api_client):
@@ -78,8 +77,31 @@ class RemoteVolumeSnapshotsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if ids is not None:
+            if not isinstance(ids, list):
+                ids = [ids]
+        if names is not None:
+            if not isinstance(names, list):
+                names = [names]
+        if on is not None:
+            if not isinstance(on, list):
+                on = [on]
+        if sort is not None:
+            if not isinstance(sort, list):
+                sort = [sort]
+        if source_ids is not None:
+            if not isinstance(source_ids, list):
+                source_ids = [source_ids]
+        if source_names is not None:
+            if not isinstance(source_names, list):
+                source_names = [source_names]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api21_remote_volume_snapshots_get`, must be a value greater than or equal to `1`")
@@ -209,8 +231,31 @@ class RemoteVolumeSnapshotsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if ids is not None:
+            if not isinstance(ids, list):
+                ids = [ids]
+        if on is not None:
+            if not isinstance(on, list):
+                on = [on]
+        if sort is not None:
+            if not isinstance(sort, list):
+                sort = [sort]
+        if source_ids is not None:
+            if not isinstance(source_ids, list):
+                source_ids = [source_ids]
+        if source_names is not None:
+            if not isinstance(source_names, list):
+                source_names = [source_names]
+        if names is not None:
+            if not isinstance(names, list):
+                names = [names]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api21_remote_volume_snapshots_transfer_get`, must be a value greater than or equal to `1`")

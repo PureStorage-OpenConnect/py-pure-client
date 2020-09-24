@@ -2,6 +2,7 @@
 
 from __future__ import absolute_import
 
+
 class ReferenceType(object):
     """Class just for type annotations.
 
@@ -13,6 +14,34 @@ class ReferenceType(object):
     def __init__(self):
         self.id = ''
         self.name = ''
+
+
+def quoteString(s):
+    r"""Quote string according to
+    https://wiki.purestorage.com/display/UXReviewers/Filtering
+
+    >>> quote("a")
+    "'a'"
+    >>> quote("a\\b")
+    "'a\\\\b'"
+    >>> quote("a\\b")
+    "'a\\\\b'"
+    >>> quote("a'b")
+    "'a\\'b'"
+    >>> quote(None)
+    None
+    """
+    if s is None:
+        return None
+    quoted = str(s).replace("\\", "\\\\").replace("'", "\\'")
+    return "'{}'".format(quoted)
+
+
+def quoteStrings(s):
+    if s is None:
+        return None
+    return [quoteString(x) for x in s]
+
 
 # import models into model package
 from .aggregate_replication_performance import AggregateReplicationPerformance
@@ -26,7 +55,6 @@ from .built_in import BuiltIn
 from .built_in_resource_no_id import BuiltInResourceNoId
 from .chap import Chap
 from .connection import Connection
-from .connection2 import Connection2
 from .connection_get_response import ConnectionGetResponse
 from .connection_post import ConnectionPost
 from .connection_response import ConnectionResponse
@@ -34,7 +62,6 @@ from .destroyed_patch_post import DestroyedPatchPost
 from .fixed_reference import FixedReference
 from .fixed_reference_no_id import FixedReferenceNoId
 from .host import Host
-from .host2 import Host2
 from .host_get_response import HostGetResponse
 from .host_group import HostGroup
 from .host_group_get_response import HostGroupGetResponse
@@ -69,7 +96,6 @@ from .offload_post import OffloadPost
 from .offload_response import OffloadResponse
 from .offload_s3 import OffloadS3
 from .page_info import PageInfo
-from .page_info2 import PageInfo2
 from .performance import Performance
 from .pod import Pod
 from .pod_array_status import PodArrayStatus

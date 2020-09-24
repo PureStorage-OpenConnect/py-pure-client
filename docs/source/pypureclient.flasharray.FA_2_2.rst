@@ -5,6 +5,7 @@ Subpackages
 -----------
 
 .. toctree::
+   :maxdepth: 4
 
    pypureclient.flasharray.FA_2_2.api
    pypureclient.flasharray.FA_2_2.models
@@ -43,7 +44,6 @@ pypureclient.flasharray.FA\_2\_2.rest module
    :members:
    :undoc-members:
    :show-inheritance:
-
 
 Module contents
 ---------------

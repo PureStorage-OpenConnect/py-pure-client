@@ -32,7 +32,12 @@ FlashArray REST 2.2 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.FA_2_2.client.Client
-   :members:
+
+FlashArray REST 2.3 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.FA_2_3.client.Client
+    :members:
 
 Properties
 ----------
@@ -80,6 +85,17 @@ ErrorResponse
 
 Models
 ------
+ActiveDirectory
+~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.ActiveDirectory
+   :members:
+
+ActiveDirectoryPost
+~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.ActiveDirectoryPost
+   :members:
 
 Admin
 ~~~~~
@@ -261,6 +277,54 @@ DestroyedPatchPost
 .. autoclass:: pypureclient.flasharray.DestroyedPatchPost
    :members:
 
+Directory
+~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.Directory
+   :members:
+
+DirectoryExport
+~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.DirectoryExport
+   :members:
+
+DirectoryExportPost
+~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.DirectoryExportPost
+   :members:
+
+DirectoryPatch
+~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.DirectoryPatch
+   :members:
+
+DirectoryPerformance
+~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.DirectoryPerformance
+   :members:
+
+DirectoryPolicyExportPost
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.DirectoryPolicyExportPost
+   :members:
+
+DirectoryPolicyPost
+~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.DirectoryPolicyPost
+   :members:
+
+DirectoryPost
+~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.DirectoryPost
+   :members:
+
 DirectoryService
 ~~~~~~~~~~~~~~~~
 
@@ -277,6 +341,42 @@ DirectoryServiceRole
 ~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.DirectoryServiceRole
+   :members:
+
+DirectorySnapshot
+~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.DirectorySnapshot
+   :members:
+
+DirectorySnapshotPatch
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.DirectorySnapshotPatch
+   :members:
+
+DirectorySnapshotPost
+~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.DirectorySnapshotPost
+   :members:
+
+DirectorySpace
+~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.DirectorySpace
+   :members:
+
+DirectorypolicyexportpostPolicies
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.DirectorypolicyexportpostPolicies
+   :members:
+
+DirectorypolicypostPolicies
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.DirectorypolicypostPolicies
    :members:
 
 Dns
@@ -303,6 +403,18 @@ EulaSignature
 .. autoclass:: pypureclient.flasharray.EulaSignature
    :members:
 
+FileSystem
+~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.FileSystem
+   :members:
+
+FileSystemPatch
+~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.FileSystemPatch
+   :members:
+
 FixedNameResourceNoId
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -319,6 +431,12 @@ FixedReferenceNoId
 ~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.FixedReferenceNoId
+   :members:
+
+FixedReferenceWithType
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.FixedReferenceWithType
    :members:
 
 Hardware
@@ -603,6 +721,114 @@ PodSpace
 .. autoclass:: pypureclient.flasharray.PodSpace
    :members:
 
+Policy
+~~~~~~
+
+.. autoclass:: pypureclient.flasharray.Policy
+   :members:
+
+PolicyMember
+~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyMember
+   :members:
+
+PolicyMemberExport
+~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyMemberExport
+   :members:
+
+PolicyMemberExportPost
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyMemberExportPost
+   :members:
+
+PolicyMemberPost
+~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyMemberPost
+   :members:
+
+PolicyPatch
+~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyPatch
+   :members:
+
+PolicyPost
+~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyPost
+   :members:
+
+PolicyRuleNfsClient
+~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyRuleNfsClient
+   :members:
+
+PolicyRuleNfsClientPost
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyRuleNfsClientPost
+   :members:
+
+PolicyRuleSmbClient
+~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyRuleSmbClient
+   :members:
+
+PolicyRuleSmbClientPost
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyRuleSmbClientPost
+   :members:
+
+PolicyRuleSnapshot
+~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyRuleSnapshot
+   :members:
+
+PolicyRuleSnapshotPost
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyRuleSnapshotPost
+   :members:
+
+PolicymemberexportpostMembers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicymemberexportpostMembers
+   :members:
+
+PolicymemberpostMembers
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicymemberpostMembers
+   :members:
+
+PolicyrulenfsclientpostRules
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyrulenfsclientpostRules
+   :members:
+
+PolicyrulesmbclientpostRules
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyrulesmbclientpostRules
+   :members:
+
+PolicyrulesnapshotpostRules
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyrulesnapshotpostRules
+   :members:
+
 Port
 ~~~~
 
@@ -697,6 +923,12 @@ ReferenceNoId
 ~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.ReferenceNoId
+   :members:
+
+ReferenceWithType
+~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.ReferenceWithType
    :members:
 
 RemotePod

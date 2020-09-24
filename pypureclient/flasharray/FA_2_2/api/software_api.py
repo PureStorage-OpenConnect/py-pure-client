@@ -21,7 +21,6 @@ from typing import List, Optional
 
 from .. import models
 
-
 class SoftwareApi(object):
 
     def __init__(self, api_client):
@@ -72,8 +71,25 @@ class SoftwareApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if ids is not None:
+            if not isinstance(ids, list):
+                ids = [ids]
+        if names is not None:
+            if not isinstance(names, list):
+                names = [names]
+        if sort is not None:
+            if not isinstance(sort, list):
+                sort = [sort]
+        if versions is not None:
+            if not isinstance(versions, list):
+                versions = [versions]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api22_software_get`, must be a value greater than or equal to `1`")
@@ -187,8 +203,25 @@ class SoftwareApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if ids is not None:
+            if not isinstance(ids, list):
+                ids = [ids]
+        if names is not None:
+            if not isinstance(names, list):
+                names = [names]
+        if software_installation_ids is not None:
+            if not isinstance(software_installation_ids, list):
+                software_installation_ids = [software_installation_ids]
+        if sort is not None:
+            if not isinstance(sort, list):
+                sort = [sort]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api22_software_installation_steps_get`, must be a value greater than or equal to `1`")
@@ -304,8 +337,28 @@ class SoftwareApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if ids is not None:
+            if not isinstance(ids, list):
+                ids = [ids]
+        if names is not None:
+            if not isinstance(names, list):
+                names = [names]
+        if software_ids is not None:
+            if not isinstance(software_ids, list):
+                software_ids = [software_ids]
+        if software_names is not None:
+            if not isinstance(software_names, list):
+                software_names = [software_names]
+        if sort is not None:
+            if not isinstance(sort, list):
+                sort = [sort]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api22_software_installations_get`, must be a value greater than or equal to `1`")
@@ -412,8 +465,13 @@ class SoftwareApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
         # verify the required parameter 'command' is set
         if command is None:
             raise TypeError("Missing the required parameter `command` when calling `api22_software_installations_patch`")
@@ -503,8 +561,16 @@ class SoftwareApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if software_ids is not None:
+            if not isinstance(software_ids, list):
+                software_ids = [software_ids]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
         # verify the required parameter 'software_ids' is set
         if software_ids is None:
             raise TypeError("Missing the required parameter `software_ids` when calling `api22_software_installations_post`")

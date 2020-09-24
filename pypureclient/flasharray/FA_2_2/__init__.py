@@ -32,7 +32,6 @@ from .models.built_in_relationship import BuiltInRelationship
 from .models.built_in_resource_no_id import BuiltInResourceNoId
 from .models.chap import Chap
 from .models.connection import Connection
-from .models.connection2 import Connection2
 from .models.connection_post import ConnectionPost
 from .models.controller import Controller
 from .models.controllers import Controllers
@@ -50,7 +49,6 @@ from .models.fixed_reference_no_id import FixedReferenceNoId
 from .models.hardware import Hardware
 from .models.hardware_patch import HardwarePatch
 from .models.host import Host
-from .models.host2 import Host2
 from .models.host_group import HostGroup
 from .models.host_group_patch import HostGroupPatch
 from .models.host_group_performance import HostGroupPerformance
@@ -80,13 +78,10 @@ from .models.offload_post import OffloadPost
 from .models.offload_s3 import OffloadS3
 from .models.override_check import OverrideCheck
 from .models.page_info import PageInfo
-from .models.page_info2 import PageInfo2
 from .models.performance import Performance
 from .models.pod import Pod
-from .models.pod2 import Pod2
 from .models.pod_array_status import PodArrayStatus
 from .models.pod_patch import PodPatch
-from .models.pod_patch2 import PodPatch2
 from .models.pod_performance import PodPerformance
 from .models.pod_performance_by_array import PodPerformanceByArray
 from .models.pod_performance_replication import PodPerformanceReplication
@@ -163,14 +158,12 @@ from .models.time_window import TimeWindow
 from .models.transfer import Transfer
 from .models.username import Username
 from .models.volume import Volume
-from .models.volume2 import Volume2
 from .models.volume_common import VolumeCommon
 from .models.volume_group import VolumeGroup
 from .models.volume_group_performance import VolumeGroupPerformance
 from .models.volume_group_post import VolumeGroupPost
 from .models.volume_group_space import VolumeGroupSpace
 from .models.volume_patch import VolumePatch
-from .models.volume_patch2 import VolumePatch2
 from .models.volume_performance import VolumePerformance
 from .models.volume_performance_by_array import VolumePerformanceByArray
 from .models.volume_post import VolumePost
@@ -213,7 +206,6 @@ CLASSES_TO_ADD_PROPS = [
     BuiltInResourceNoId,
     Chap,
     Connection,
-    Connection2,
     ConnectionPost,
     Controller,
     Controllers,
@@ -231,7 +223,6 @@ CLASSES_TO_ADD_PROPS = [
     Hardware,
     HardwarePatch,
     Host,
-    Host2,
     HostGroup,
     HostGroupPatch,
     HostGroupPerformance,
@@ -261,13 +252,10 @@ CLASSES_TO_ADD_PROPS = [
     OffloadS3,
     OverrideCheck,
     PageInfo,
-    PageInfo2,
     Performance,
     Pod,
-    Pod2,
     PodArrayStatus,
     PodPatch,
-    PodPatch2,
     PodPerformance,
     PodPerformanceByArray,
     PodPerformanceReplication,
@@ -344,14 +332,12 @@ CLASSES_TO_ADD_PROPS = [
     Transfer,
     Username,
     Volume,
-    Volume2,
     VolumeCommon,
     VolumeGroup,
     VolumeGroupPerformance,
     VolumeGroupPost,
     VolumeGroupSpace,
     VolumePatch,
-    VolumePatch2,
     VolumePerformance,
     VolumePerformanceByArray,
     VolumePost,

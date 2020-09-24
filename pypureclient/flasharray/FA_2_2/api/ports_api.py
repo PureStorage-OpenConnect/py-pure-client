@@ -21,7 +21,6 @@ from typing import List, Optional
 
 from .. import models
 
-
 class PortsApi(object):
 
     def __init__(self, api_client):
@@ -68,8 +67,19 @@ class PortsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if names is not None:
+            if not isinstance(names, list):
+                names = [names]
+        if sort is not None:
+            if not isinstance(sort, list):
+                sort = [sort]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api22_ports_get`, must be a value greater than or equal to `1`")
@@ -173,8 +183,19 @@ class PortsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if names is not None:
+            if not isinstance(names, list):
+                names = [names]
+        if sort is not None:
+            if not isinstance(sort, list):
+                sort = [sort]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api22_ports_initiators_get`, must be a value greater than or equal to `1`")

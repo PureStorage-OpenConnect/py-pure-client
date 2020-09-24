@@ -21,7 +21,6 @@ from typing import List, Optional
 
 from .. import models
 
-
 class SubnetsApi(object):
 
     def __init__(self, api_client):
@@ -58,8 +57,16 @@ class SubnetsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if names is not None:
+            if not isinstance(names, list):
+                names = [names]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
 
         collection_formats = {}
         path_params = {}
@@ -150,8 +157,19 @@ class SubnetsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if names is not None:
+            if not isinstance(names, list):
+                names = [names]
+        if sort is not None:
+            if not isinstance(sort, list):
+                sort = [sort]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api22_subnets_get`, must be a value greater than or equal to `1`")
@@ -249,8 +267,16 @@ class SubnetsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if names is not None:
+            if not isinstance(names, list):
+                names = [names]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
         # verify the required parameter 'subnet' is set
         if subnet is None:
             raise TypeError("Missing the required parameter `subnet` when calling `api22_subnets_patch`")
@@ -336,8 +362,16 @@ class SubnetsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if names is not None:
+            if not isinstance(names, list):
+                names = [names]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
         # verify the required parameter 'names' is set
         if names is None:
             raise TypeError("Missing the required parameter `names` when calling `api22_subnets_post`")

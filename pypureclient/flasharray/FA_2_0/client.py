@@ -5,7 +5,7 @@ import urllib3
 from typing import List, Optional
 
 from ...exceptions import PureError
-from ...keywords import Parameters, Headers, Responses
+from ...keywords import Headers, Responses
 from ...responses import ValidResponse, ErrorResponse, ApiError, ItemIterator
 from ...token_manager import TokenManager
 from ...api_token_manager import APITokenManager
@@ -20,15 +20,15 @@ class Client(object):
     DEFAULT_TIMEOUT = 15.0
     DEFAULT_RETRIES = 5
     # Format: client/client_version/endpoint/endpoint_version/system/release
-    USER_AGENT = ('pypureclient/1.6.0/FA/2.0/{sys}/{rel}'
+    USER_AGENT = ('pypureclient/1.8.0/FA/2.0/{sys}/{rel}'
                   .format(sys=platform.system(), rel=platform.release()))
 
     def __init__(self, target, id_token=None, private_key_file=None, private_key_password=None,
                  username=None, client_id=None, key_id=None, issuer=None, api_token=None,
                  retries=DEFAULT_RETRIES, timeout=DEFAULT_TIMEOUT, ssl_cert=None, user_agent=None):
         """
-        Initialize a FlashArray Client. id_token is generated based on app ID and private 
-        key info. Either id_token or api_token could be used for authentication. Only one 
+        Initialize a FlashArray Client. id_token is generated based on app ID and private
+        key info. Either id_token or api_token could be used for authentication. Only one
         authentication option is allowed.
 
         Keyword args:
@@ -71,15 +71,15 @@ class Client(object):
         config = Configuration()
         config.verify_ssl = ssl_cert is not None
         config.ssl_ca_cert = ssl_cert
-        config.host = 'https://{}'.format(target)
-        
+        config.host = self._get_base_url(target)
+
         if id_token and api_token:
             raise PureError("Only one authentication option is allowed. Please use either id_token or api_token and try again!")
         elif private_key_file and private_key_password and username and \
                 key_id and client_id and issuer and api_token:
             raise PureError("id_token is generated based on app ID and private key info. Please use either id_token or api_token and try again!")
         elif api_token:
-            api_token_auth_endpoint = 'https://{}/api/2.0/login'.format(target)
+            api_token_auth_endpoint = self._get_api_token_endpoint(target)
             self._token_man = APITokenManager(api_token_auth_endpoint, api_token, verify_ssl=False)
         else:
             auth_endpoint = 'https://{}/oauth2/1.0/token'.format(target)
@@ -93,7 +93,7 @@ class Client(object):
             }
             self._token_man = TokenManager(auth_endpoint, id_token, private_key_file, private_key_password,
                                            payload=payload, headers=headers, verify_ssl=False)
-        
+
         self._api_client = ApiClient(configuration=config)
         self._api_client.user_agent = user_agent or self.USER_AGENT
         self._set_agent_header()
@@ -211,9 +211,6 @@ class Client(object):
         _process_references(host_groups, ['host_group_names'], kwargs)
         _process_references(hosts, ['host_names'], kwargs)
         _process_references(volumes, ['volume_names'], kwargs)
-        list_params = ['host_group_names', 'host_names', 'volume_names']
-        quoted_params = []
-        _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
     def get_connections(
@@ -338,9 +335,6 @@ class Client(object):
         _process_references(hosts, ['host_names'], kwargs)
         _process_references(protocol_endpoints, ['protocol_endpoint_names'], kwargs)
         _process_references(volumes, ['volume_names'], kwargs)
-        list_params = ['host_group_names', 'host_names', 'protocol_endpoint_names', 'sort', 'volume_names']
-        quoted_params = []
-        _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
     def post_connections(
@@ -430,9 +424,6 @@ class Client(object):
         _process_references(host_groups, ['host_group_names'], kwargs)
         _process_references(hosts, ['host_names'], kwargs)
         _process_references(volumes, ['volume_names'], kwargs)
-        list_params = ['host_group_names', 'host_names', 'volume_names']
-        quoted_params = []
-        _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
     def delete_host_groups(
@@ -491,9 +482,6 @@ class Client(object):
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._host_groups_api.api20_host_groups_delete_with_http_info
         _process_references(references, ['names'], kwargs)
-        list_params = ['names']
-        quoted_params = []
-        _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
     def get_host_groups(
@@ -577,9 +565,6 @@ class Client(object):
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._host_groups_api.api20_host_groups_get_with_http_info
         _process_references(references, ['names'], kwargs)
-        list_params = ['names', 'sort']
-        quoted_params = []
-        _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
     def get_host_groups_hosts(
@@ -624,8 +609,8 @@ class Client(object):
                 1000.
             member_names (list[str], optional):
                 Performs the operation on the unique member name specified. Examples of members
-                include volumes, hosts, and host groups. Enter multiple names in comma-separated
-                format. For example, `vol01,vol02`.
+                include volumes, hosts, host groups, and directories. Enter multiple names in
+                comma-separated format. For example, `vol01,vol02`.
             offset (int, optional):
                 The starting position based on the results of the query in relation to the full
                 set of response objects returned.
@@ -674,9 +659,6 @@ class Client(object):
         endpoint = self._host_groups_api.api20_host_groups_hosts_get_with_http_info
         _process_references(groups, ['group_names'], kwargs)
         _process_references(members, ['member_names'], kwargs)
-        list_params = ['group_names', 'member_names', 'sort']
-        quoted_params = []
-        _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
     def patch_host_groups(
@@ -738,9 +720,6 @@ class Client(object):
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._host_groups_api.api20_host_groups_patch_with_http_info
         _process_references(references, ['names'], kwargs)
-        list_params = ['names']
-        quoted_params = []
-        _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
     def get_host_groups_performance_by_array(
@@ -836,9 +815,6 @@ class Client(object):
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._host_groups_api.api20_host_groups_performance_by_array_get_with_http_info
         _process_references(references, ['names'], kwargs)
-        list_params = ['names', 'sort']
-        quoted_params = []
-        _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
     def get_host_groups_performance(
@@ -931,9 +907,6 @@ class Client(object):
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._host_groups_api.api20_host_groups_performance_get_with_http_info
         _process_references(references, ['names'], kwargs)
-        list_params = ['names', 'sort']
-        quoted_params = []
-        _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
     def post_host_groups(
@@ -992,9 +965,6 @@ class Client(object):
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._host_groups_api.api20_host_groups_post_with_http_info
         _process_references(references, ['names'], kwargs)
-        list_params = ['names']
-        quoted_params = []
-        _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
     def delete_hosts(
@@ -1055,9 +1025,6 @@ class Client(object):
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._hosts_api.api20_hosts_delete_with_http_info
         _process_references(references, ['names'], kwargs)
-        list_params = ['names']
-        quoted_params = []
-        _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
     def get_hosts(
@@ -1141,9 +1108,6 @@ class Client(object):
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._hosts_api.api20_hosts_get_with_http_info
         _process_references(references, ['names'], kwargs)
-        list_params = ['names', 'sort']
-        quoted_params = []
-        _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
     def get_hosts_host_groups(
@@ -1188,8 +1152,8 @@ class Client(object):
                 1000.
             member_names (list[str], optional):
                 Performs the operation on the unique member name specified. Examples of members
-                include volumes, hosts, and host groups. Enter multiple names in comma-separated
-                format. For example, `vol01,vol02`.
+                include volumes, hosts, host groups, and directories. Enter multiple names in
+                comma-separated format. For example, `vol01,vol02`.
             offset (int, optional):
                 The starting position based on the results of the query in relation to the full
                 set of response objects returned.
@@ -1238,9 +1202,6 @@ class Client(object):
         endpoint = self._hosts_api.api20_hosts_host_groups_get_with_http_info
         _process_references(groups, ['group_names'], kwargs)
         _process_references(members, ['member_names'], kwargs)
-        list_params = ['group_names', 'member_names', 'sort']
-        quoted_params = []
-        _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
     def patch_hosts(
@@ -1304,9 +1265,6 @@ class Client(object):
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._hosts_api.api20_hosts_patch_with_http_info
         _process_references(references, ['names'], kwargs)
-        list_params = ['names']
-        quoted_params = []
-        _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
     def get_hosts_performance_by_array(
@@ -1401,9 +1359,6 @@ class Client(object):
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._hosts_api.api20_hosts_performance_by_array_get_with_http_info
         _process_references(references, ['names'], kwargs)
-        list_params = ['names', 'sort']
-        quoted_params = []
-        _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
     def get_hosts_performance(
@@ -1496,9 +1451,6 @@ class Client(object):
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._hosts_api.api20_hosts_performance_get_with_http_info
         _process_references(references, ['names'], kwargs)
-        list_params = ['names', 'sort']
-        quoted_params = []
-        _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
     def post_hosts(
@@ -1560,9 +1512,6 @@ class Client(object):
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._hosts_api.api20_hosts_post_with_http_info
         _process_references(references, ['names'], kwargs)
-        list_params = ['names']
-        quoted_params = []
-        _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
     def delete_volume_snapshots(
@@ -1630,9 +1579,6 @@ class Client(object):
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._volume_snapshots_api.api20_volume_snapshots_delete_with_http_info
         _process_references(references, ['ids', 'names'], kwargs)
-        list_params = ['ids', 'names']
-        quoted_params = []
-        _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
     def get_volume_snapshots(
@@ -1749,9 +1695,6 @@ class Client(object):
         endpoint = self._volume_snapshots_api.api20_volume_snapshots_get_with_http_info
         _process_references(references, ['ids', 'names'], kwargs)
         _process_references(sources, ['source_ids', 'source_names'], kwargs)
-        list_params = ['ids', 'names', 'sort', 'source_ids', 'source_names']
-        quoted_params = []
-        _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
     def patch_volume_snapshots(
@@ -1822,9 +1765,6 @@ class Client(object):
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._volume_snapshots_api.api20_volume_snapshots_patch_with_http_info
         _process_references(references, ['ids', 'names'], kwargs)
-        list_params = ['ids', 'names']
-        quoted_params = []
-        _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
     def post_volume_snapshots(
@@ -1897,9 +1837,6 @@ class Client(object):
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._volume_snapshots_api.api20_volume_snapshots_post_with_http_info
         _process_references(sources, ['source_ids', 'source_names'], kwargs)
-        list_params = ['source_ids', 'source_names']
-        quoted_params = []
-        _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
     def get_volume_snapshots_transfer(
@@ -2016,9 +1953,6 @@ class Client(object):
         endpoint = self._volume_snapshots_api.api20_volume_snapshots_transfer_get_with_http_info
         _process_references(references, ['ids', 'names'], kwargs)
         _process_references(sources, ['source_ids', 'source_names'], kwargs)
-        list_params = ['ids', 'sort', 'source_ids', 'source_names', 'names']
-        quoted_params = []
-        _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
     def delete_volumes(
@@ -2086,9 +2020,6 @@ class Client(object):
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._volumes_api.api20_volumes_delete_with_http_info
         _process_references(references, ['ids', 'names'], kwargs)
-        list_params = ['ids', 'names']
-        quoted_params = []
-        _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
     def get_volumes(
@@ -2191,9 +2122,6 @@ class Client(object):
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._volumes_api.api20_volumes_get_with_http_info
         _process_references(references, ['ids', 'names'], kwargs)
-        list_params = ['ids', 'names', 'sort']
-        quoted_params = []
-        _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
     def patch_volumes(
@@ -2277,9 +2205,6 @@ class Client(object):
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._volumes_api.api20_volumes_patch_with_http_info
         _process_references(references, ['ids', 'names'], kwargs)
-        list_params = ['ids', 'names']
-        quoted_params = []
-        _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
     def get_volumes_performance_by_array(
@@ -2433,9 +2358,6 @@ class Client(object):
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._volumes_api.api20_volumes_performance_by_array_get_with_http_info
         _process_references(references, ['ids', 'names'], kwargs)
-        list_params = ['ids', 'names', 'sort']
-        quoted_params = []
-        _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
     def get_volumes_performance(
@@ -2587,9 +2509,6 @@ class Client(object):
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._volumes_api.api20_volumes_performance_get_with_http_info
         _process_references(references, ['ids', 'names'], kwargs)
-        list_params = ['ids', 'names', 'sort']
-        quoted_params = []
-        _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
     def post_volumes(
@@ -2661,9 +2580,6 @@ class Client(object):
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._volumes_api.api20_volumes_post_with_http_info
         _process_references(references, ['names'], kwargs)
-        list_params = ['names']
-        quoted_params = []
-        _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
 
     def get_volumes_space(
@@ -2814,10 +2730,13 @@ class Client(object):
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._volumes_api.api20_volumes_space_get_with_http_info
         _process_references(references, ['ids', 'names'], kwargs)
-        list_params = ['ids', 'sort', 'names']
-        quoted_params = []
-        _process_kwargs(kwargs, list_params, quoted_params)
         return self._call_api(endpoint, kwargs)
+
+    def _get_base_url(self, target):
+        return 'https://{}'.format(target)
+
+    def _get_api_token_endpoint(self, target):
+        return self._get_base_url(target) + '/api/2.0/login'
 
     def _set_agent_header(self):
         """
@@ -2986,34 +2905,3 @@ def _process_references(references, params, kwargs):
             kwargs[name_param[0]] = [getattr(ref, 'name') for ref in references]
         else:
             raise PureError('Invalid reference for {}'.format(", ".join(params)))
-
-
-def _process_kwargs(kwargs, list_params=[], quoted_params=[]):
-    """
-    Process the client-defined kwargs into the format expected by swagger.
-
-    Args:
-        kwargs (dict):
-            The kwargs to process.
-        list_params (list[str]):
-            List of parameters that should be list.
-        quoted_params (list[str]):
-            List of parameters that should be quoted.
-    """
-    # Convert list parameters to lists
-    for param in list_params:
-        if param in kwargs:
-            if not isinstance(kwargs.get(param), list):
-                kwargs[param] = [kwargs[param]]
-    # Add quotes for quoted params
-    for param in quoted_params:
-        if param in kwargs:
-            if param in list_params:
-                kwargs[param] = ["'{}'".format(x) for x in kwargs[param]]
-            else:
-                kwargs[param] = "'{}'".format(kwargs[param])
-    # Convert the filter into a string
-    if Parameters.filter in kwargs:
-        kwargs[Parameters.filter] = str(kwargs.get(Parameters.filter))
-    if Parameters.sort in kwargs:
-        kwargs[Parameters.sort] = [str(x) for x in kwargs[Parameters.sort]]

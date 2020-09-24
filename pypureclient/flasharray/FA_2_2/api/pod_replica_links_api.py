@@ -21,7 +21,6 @@ from typing import List, Optional
 
 from .. import models
 
-
 class PodReplicaLinksApi(object):
 
     def __init__(self, api_client):
@@ -66,8 +65,28 @@ class PodReplicaLinksApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if ids is not None:
+            if not isinstance(ids, list):
+                ids = [ids]
+        if local_pod_ids is not None:
+            if not isinstance(local_pod_ids, list):
+                local_pod_ids = [local_pod_ids]
+        if local_pod_names is not None:
+            if not isinstance(local_pod_names, list):
+                local_pod_names = [local_pod_names]
+        if remote_pod_ids is not None:
+            if not isinstance(remote_pod_ids, list):
+                remote_pod_ids = [remote_pod_ids]
+        if remote_pod_names is not None:
+            if not isinstance(remote_pod_names, list):
+                remote_pod_names = [remote_pod_names]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
 
         collection_formats = {}
         path_params = {}
@@ -180,8 +199,37 @@ class PodReplicaLinksApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if ids is not None:
+            if not isinstance(ids, list):
+                ids = [ids]
+        if local_pod_ids is not None:
+            if not isinstance(local_pod_ids, list):
+                local_pod_ids = [local_pod_ids]
+        if local_pod_names is not None:
+            if not isinstance(local_pod_names, list):
+                local_pod_names = [local_pod_names]
+        if remote_ids is not None:
+            if not isinstance(remote_ids, list):
+                remote_ids = [remote_ids]
+        if remote_names is not None:
+            if not isinstance(remote_names, list):
+                remote_names = [remote_names]
+        if remote_pod_ids is not None:
+            if not isinstance(remote_pod_ids, list):
+                remote_pod_ids = [remote_pod_ids]
+        if remote_pod_names is not None:
+            if not isinstance(remote_pod_names, list):
+                remote_pod_names = [remote_pod_names]
+        if sort is not None:
+            if not isinstance(sort, list):
+                sort = [sort]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api22_pod_replica_links_get`, must be a value greater than or equal to `1`")
@@ -320,8 +368,37 @@ class PodReplicaLinksApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if ids is not None:
+            if not isinstance(ids, list):
+                ids = [ids]
+        if local_pod_ids is not None:
+            if not isinstance(local_pod_ids, list):
+                local_pod_ids = [local_pod_ids]
+        if local_pod_names is not None:
+            if not isinstance(local_pod_names, list):
+                local_pod_names = [local_pod_names]
+        if remote_ids is not None:
+            if not isinstance(remote_ids, list):
+                remote_ids = [remote_ids]
+        if remote_names is not None:
+            if not isinstance(remote_names, list):
+                remote_names = [remote_names]
+        if remote_pod_ids is not None:
+            if not isinstance(remote_pod_ids, list):
+                remote_pod_ids = [remote_pod_ids]
+        if remote_pod_names is not None:
+            if not isinstance(remote_pod_names, list):
+                remote_pod_names = [remote_pod_names]
+        if sort is not None:
+            if not isinstance(sort, list):
+                sort = [sort]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
 
         if 'resolution' in params and params['resolution'] < 0:
             raise ValueError("Invalid value for parameter `resolution` when calling `api22_pod_replica_links_lag_get`, must be a value greater than or equal to `0`")
@@ -455,8 +532,34 @@ class PodReplicaLinksApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if ids is not None:
+            if not isinstance(ids, list):
+                ids = [ids]
+        if local_pod_ids is not None:
+            if not isinstance(local_pod_ids, list):
+                local_pod_ids = [local_pod_ids]
+        if local_pod_names is not None:
+            if not isinstance(local_pod_names, list):
+                local_pod_names = [local_pod_names]
+        if remote_ids is not None:
+            if not isinstance(remote_ids, list):
+                remote_ids = [remote_ids]
+        if remote_names is not None:
+            if not isinstance(remote_names, list):
+                remote_names = [remote_names]
+        if remote_pod_ids is not None:
+            if not isinstance(remote_pod_ids, list):
+                remote_pod_ids = [remote_pod_ids]
+        if remote_pod_names is not None:
+            if not isinstance(remote_pod_names, list):
+                remote_pod_names = [remote_pod_names]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
         # verify the required parameter 'pod_replica_link' is set
         if pod_replica_link is None:
             raise TypeError("Missing the required parameter `pod_replica_link` when calling `api22_pod_replica_links_patch`")
@@ -587,8 +690,37 @@ class PodReplicaLinksApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if ids is not None:
+            if not isinstance(ids, list):
+                ids = [ids]
+        if local_pod_ids is not None:
+            if not isinstance(local_pod_ids, list):
+                local_pod_ids = [local_pod_ids]
+        if local_pod_names is not None:
+            if not isinstance(local_pod_names, list):
+                local_pod_names = [local_pod_names]
+        if remote_ids is not None:
+            if not isinstance(remote_ids, list):
+                remote_ids = [remote_ids]
+        if remote_names is not None:
+            if not isinstance(remote_names, list):
+                remote_names = [remote_names]
+        if remote_pod_ids is not None:
+            if not isinstance(remote_pod_ids, list):
+                remote_pod_ids = [remote_pod_ids]
+        if remote_pod_names is not None:
+            if not isinstance(remote_pod_names, list):
+                remote_pod_names = [remote_pod_names]
+        if sort is not None:
+            if not isinstance(sort, list):
+                sort = [sort]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
 
         if 'resolution' in params and params['resolution'] < 0:
             raise ValueError("Invalid value for parameter `resolution` when calling `api22_pod_replica_links_performance_replication_get`, must be a value greater than or equal to `0`")
@@ -720,8 +852,31 @@ class PodReplicaLinksApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if local_pod_ids is not None:
+            if not isinstance(local_pod_ids, list):
+                local_pod_ids = [local_pod_ids]
+        if local_pod_names is not None:
+            if not isinstance(local_pod_names, list):
+                local_pod_names = [local_pod_names]
+        if remote_ids is not None:
+            if not isinstance(remote_ids, list):
+                remote_ids = [remote_ids]
+        if remote_names is not None:
+            if not isinstance(remote_names, list):
+                remote_names = [remote_names]
+        if remote_pod_ids is not None:
+            if not isinstance(remote_pod_ids, list):
+                remote_pod_ids = [remote_pod_ids]
+        if remote_pod_names is not None:
+            if not isinstance(remote_pod_names, list):
+                remote_pod_names = [remote_pod_names]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
 
         collection_formats = {}
         path_params = {}

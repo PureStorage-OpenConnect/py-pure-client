@@ -21,7 +21,6 @@ from typing import List, Optional
 
 from .. import models
 
-
 class VolumeGroupsApi(object):
 
     def __init__(self, api_client):
@@ -60,8 +59,19 @@ class VolumeGroupsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if ids is not None:
+            if not isinstance(ids, list):
+                ids = [ids]
+        if names is not None:
+            if not isinstance(names, list):
+                names = [names]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
 
         collection_formats = {}
         path_params = {}
@@ -161,8 +171,22 @@ class VolumeGroupsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if ids is not None:
+            if not isinstance(ids, list):
+                ids = [ids]
+        if names is not None:
+            if not isinstance(names, list):
+                names = [names]
+        if sort is not None:
+            if not isinstance(sort, list):
+                sort = [sort]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api22_volume_groups_get`, must be a value greater than or equal to `1`")
@@ -269,8 +293,19 @@ class VolumeGroupsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if ids is not None:
+            if not isinstance(ids, list):
+                ids = [ids]
+        if names is not None:
+            if not isinstance(names, list):
+                names = [names]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
         # verify the required parameter 'volume_group' is set
         if volume_group is None:
             raise TypeError("Missing the required parameter `volume_group` when calling `api22_volume_groups_patch`")
@@ -379,8 +414,22 @@ class VolumeGroupsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if ids is not None:
+            if not isinstance(ids, list):
+                ids = [ids]
+        if names is not None:
+            if not isinstance(names, list):
+                names = [names]
+        if sort is not None:
+            if not isinstance(sort, list):
+                sort = [sort]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
 
         if 'resolution' in params and params['resolution'] < 0:
             raise ValueError("Invalid value for parameter `resolution` when calling `api22_volume_groups_performance_get`, must be a value greater than or equal to `0`")
@@ -491,8 +540,16 @@ class VolumeGroupsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if names is not None:
+            if not isinstance(names, list):
+                names = [names]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
         # verify the required parameter 'volume_group' is set
         if volume_group is None:
             raise TypeError("Missing the required parameter `volume_group` when calling `api22_volume_groups_post`")
@@ -598,8 +655,22 @@ class VolumeGroupsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if ids is not None:
+            if not isinstance(ids, list):
+                ids = [ids]
+        if sort is not None:
+            if not isinstance(sort, list):
+                sort = [sort]
+        if names is not None:
+            if not isinstance(names, list):
+                names = [names]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
 
         if 'resolution' in params and params['resolution'] < 0:
             raise ValueError("Invalid value for parameter `resolution` when calling `api22_volume_groups_space_get`, must be a value greater than or equal to `0`")
@@ -711,12 +782,12 @@ class VolumeGroupsApi(object):
         :param str filter: Narrows down the results to only the response objects that satisfy the filter criteria.
         :param list[str] group_ids: A comma-separated list of group IDs.
         :param int limit: Limits the size of the response to the specified number of objects on each page. To return the total number of resources, set `limit=0`. The total number of resources is returned as a `total_item_count` value. If the page size requested is larger than the system maximum limit, the server returns the maximum limit, disregarding the requested page size.
-        :param list[str] member_ids: A comma-separated list of member IDs.
+        :param list[str] member_ids: Performs the operation on the unique member IDs specified. Enter multiple member IDs in comma-separated format. The `member_ids` and `member_names` parameters cannot be provided together.
         :param int offset: The starting position based on the results of the query in relation to the full set of response objects returned.
         :param list[str] sort: Returns the response objects in the order specified. Set `sort` to the name in the response by which to sort. Sorting can be performed on any of the names in the response, and the objects can be sorted in ascending or descending order. By default, the response objects are sorted in ascending order. To sort in descending order, append the minus sign (`-`) to the name. A single request can be sorted on multiple objects. For example, you can sort all volumes from largest to smallest volume size, and then sort volumes of the same size in ascending order by volume name. To sort on multiple names, list the names as comma-separated values.
         :param bool total_item_count: If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.
         :param list[str] group_names: Performs the operation on the unique group name specified. Examples of groups include host groups, pods, protection groups, and volume groups. Enter multiple names in comma-separated format. For example, `hgroup01,hgroup02`.
-        :param list[str] member_names: Performs the operation on the unique member name specified. Examples of members include volumes, hosts, and host groups. Enter multiple names in comma-separated format. For example, `vol01,vol02`.
+        :param list[str] member_names: Performs the operation on the unique member name specified. Examples of members include volumes, hosts, host groups, and directories. Enter multiple names in comma-separated format. For example, `vol01,vol02`.
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -726,8 +797,28 @@ class VolumeGroupsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if group_ids is not None:
+            if not isinstance(group_ids, list):
+                group_ids = [group_ids]
+        if member_ids is not None:
+            if not isinstance(member_ids, list):
+                member_ids = [member_ids]
+        if sort is not None:
+            if not isinstance(sort, list):
+                sort = [sort]
+        if group_names is not None:
+            if not isinstance(group_names, list):
+                group_names = [group_names]
+        if member_names is not None:
+            if not isinstance(member_names, list):
+                member_names = [member_names]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api22_volume_groups_volumes_get`, must be a value greater than or equal to `1`")

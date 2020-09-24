@@ -21,7 +21,6 @@ from typing import List, Optional
 
 from .. import models
 
-
 class ArraysApi(object):
 
     def __init__(self, api_client):
@@ -66,8 +65,16 @@ class ArraysApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if sort is not None:
+            if not isinstance(sort, list):
+                sort = [sort]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api22_arrays_eula_get`, must be a value greater than or equal to `1`")
@@ -158,8 +165,13 @@ class ArraysApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
         # verify the required parameter 'eula' is set
         if eula is None:
             raise TypeError("Missing the required parameter `eula` when calling `api22_arrays_eula_patch`")
@@ -248,8 +260,16 @@ class ArraysApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if sort is not None:
+            if not isinstance(sort, list):
+                sort = [sort]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api22_arrays_get`, must be a value greater than or equal to `1`")
@@ -338,8 +358,13 @@ class ArraysApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
 
         collection_formats = {}
         path_params = {}
@@ -415,8 +440,13 @@ class ArraysApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
         # verify the required parameter 'array' is set
         if array is None:
             raise TypeError("Missing the required parameter `array` when calling `api22_arrays_patch`")
@@ -515,8 +545,16 @@ class ArraysApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if sort is not None:
+            if not isinstance(sort, list):
+                sort = [sort]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
 
         if 'resolution' in params and params['resolution'] < 0:
             raise ValueError("Invalid value for parameter `resolution` when calling `api22_arrays_performance_get`, must be a value greater than or equal to `0`")
@@ -633,8 +671,16 @@ class ArraysApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if sort is not None:
+            if not isinstance(sort, list):
+                sort = [sort]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
 
         if 'resolution' in params and params['resolution'] < 0:
             raise ValueError("Invalid value for parameter `resolution` when calling `api22_arrays_space_get`, must be a value greater than or equal to `0`")

@@ -21,7 +21,6 @@ from typing import List, Optional
 
 from .. import models
 
-
 class VolumeSnapshotsApi(object):
 
     def __init__(self, api_client):
@@ -60,8 +59,19 @@ class VolumeSnapshotsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if ids is not None:
+            if not isinstance(ids, list):
+                ids = [ids]
+        if names is not None:
+            if not isinstance(names, list):
+                names = [names]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
 
         collection_formats = {}
         path_params = {}
@@ -165,8 +175,28 @@ class VolumeSnapshotsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if ids is not None:
+            if not isinstance(ids, list):
+                ids = [ids]
+        if names is not None:
+            if not isinstance(names, list):
+                names = [names]
+        if sort is not None:
+            if not isinstance(sort, list):
+                sort = [sort]
+        if source_ids is not None:
+            if not isinstance(source_ids, list):
+                source_ids = [source_ids]
+        if source_names is not None:
+            if not isinstance(source_names, list):
+                source_names = [source_names]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api22_volume_snapshots_get`, must be a value greater than or equal to `1`")
@@ -279,8 +309,19 @@ class VolumeSnapshotsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if ids is not None:
+            if not isinstance(ids, list):
+                ids = [ids]
+        if names is not None:
+            if not isinstance(names, list):
+                names = [names]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
         # verify the required parameter 'volume_snapshot' is set
         if volume_snapshot is None:
             raise TypeError("Missing the required parameter `volume_snapshot` when calling `api22_volume_snapshots_patch`")
@@ -373,8 +414,19 @@ class VolumeSnapshotsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if source_ids is not None:
+            if not isinstance(source_ids, list):
+                source_ids = [source_ids]
+        if source_names is not None:
+            if not isinstance(source_names, list):
+                source_names = [source_names]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
         # verify the required parameter 'volume_snapshot' is set
         if volume_snapshot is None:
             raise TypeError("Missing the required parameter `volume_snapshot` when calling `api22_volume_snapshots_post`")
@@ -467,8 +519,22 @@ class VolumeSnapshotsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if tag is not None:
+            if not isinstance(tag, list):
+                tag = [tag]
+        if resource_ids is not None:
+            if not isinstance(resource_ids, list):
+                resource_ids = [resource_ids]
+        if resource_names is not None:
+            if not isinstance(resource_names, list):
+                resource_names = [resource_names]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
         # verify the required parameter 'tag' is set
         if tag is None:
             raise TypeError("Missing the required parameter `tag` when calling `api22_volume_snapshots_tags_batch_put`")
@@ -561,8 +627,25 @@ class VolumeSnapshotsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if keys is not None:
+            if not isinstance(keys, list):
+                keys = [keys]
+        if namespaces is not None:
+            if not isinstance(namespaces, list):
+                namespaces = [namespaces]
+        if resource_ids is not None:
+            if not isinstance(resource_ids, list):
+                resource_ids = [resource_ids]
+        if resource_names is not None:
+            if not isinstance(resource_names, list):
+                resource_names = [resource_names]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
 
         collection_formats = {}
         path_params = {}
@@ -664,8 +747,22 @@ class VolumeSnapshotsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if resource_ids is not None:
+            if not isinstance(resource_ids, list):
+                resource_ids = [resource_ids]
+        if resource_names is not None:
+            if not isinstance(resource_names, list):
+                resource_names = [resource_names]
+        if sort is not None:
+            if not isinstance(sort, list):
+                sort = [sort]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api22_volume_snapshots_tags_get`, must be a value greater than or equal to `1`")
@@ -784,8 +881,28 @@ class VolumeSnapshotsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if ids is not None:
+            if not isinstance(ids, list):
+                ids = [ids]
+        if sort is not None:
+            if not isinstance(sort, list):
+                sort = [sort]
+        if source_ids is not None:
+            if not isinstance(source_ids, list):
+                source_ids = [source_ids]
+        if source_names is not None:
+            if not isinstance(source_names, list):
+                source_names = [source_names]
+        if names is not None:
+            if not isinstance(names, list):
+                names = [names]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api22_volume_snapshots_transfer_get`, must be a value greater than or equal to `1`")

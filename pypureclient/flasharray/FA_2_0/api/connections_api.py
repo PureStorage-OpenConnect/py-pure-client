@@ -21,7 +21,6 @@ from typing import List, Optional
 
 from .. import models
 
-
 class ConnectionsApi(object):
 
     def __init__(self, api_client):
@@ -62,8 +61,22 @@ class ConnectionsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if host_group_names is not None:
+            if not isinstance(host_group_names, list):
+                host_group_names = [host_group_names]
+        if host_names is not None:
+            if not isinstance(host_names, list):
+                host_names = [host_names]
+        if volume_names is not None:
+            if not isinstance(volume_names, list):
+                volume_names = [volume_names]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
 
         collection_formats = {}
         path_params = {}
@@ -164,8 +177,28 @@ class ConnectionsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if host_group_names is not None:
+            if not isinstance(host_group_names, list):
+                host_group_names = [host_group_names]
+        if host_names is not None:
+            if not isinstance(host_names, list):
+                host_names = [host_names]
+        if protocol_endpoint_names is not None:
+            if not isinstance(protocol_endpoint_names, list):
+                protocol_endpoint_names = [protocol_endpoint_names]
+        if sort is not None:
+            if not isinstance(sort, list):
+                sort = [sort]
+        if volume_names is not None:
+            if not isinstance(volume_names, list):
+                volume_names = [volume_names]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api20_connections_get`, must be a value greater than or equal to `1`")
@@ -274,8 +307,22 @@ class ConnectionsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if host_group_names is not None:
+            if not isinstance(host_group_names, list):
+                host_group_names = [host_group_names]
+        if host_names is not None:
+            if not isinstance(host_names, list):
+                host_names = [host_names]
+        if volume_names is not None:
+            if not isinstance(volume_names, list):
+                volume_names = [volume_names]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
 
         collection_formats = {}
         path_params = {}

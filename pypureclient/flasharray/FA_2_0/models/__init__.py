@@ -2,6 +2,7 @@
 
 from __future__ import absolute_import
 
+
 class ReferenceType(object):
     """Class just for type annotations.
 
@@ -13,6 +14,34 @@ class ReferenceType(object):
     def __init__(self):
         self.id = ''
         self.name = ''
+
+
+def quoteString(s):
+    r"""Quote string according to
+    https://wiki.purestorage.com/display/UXReviewers/Filtering
+
+    >>> quote("a")
+    "'a'"
+    >>> quote("a\\b")
+    "'a\\\\b'"
+    >>> quote("a\\b")
+    "'a\\\\b'"
+    >>> quote("a'b")
+    "'a\\'b'"
+    >>> quote(None)
+    None
+    """
+    if s is None:
+        return None
+    quoted = str(s).replace("\\", "\\\\").replace("'", "\\'")
+    return "'{}'".format(quoted)
+
+
+def quoteStrings(s):
+    if s is None:
+        return None
+    return [quoteString(x) for x in s]
+
 
 # import models into model package
 from .api_version_response import ApiVersionResponse

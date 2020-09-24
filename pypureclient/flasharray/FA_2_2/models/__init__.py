@@ -2,6 +2,7 @@
 
 from __future__ import absolute_import
 
+
 class ReferenceType(object):
     """Class just for type annotations.
 
@@ -13,6 +14,34 @@ class ReferenceType(object):
     def __init__(self):
         self.id = ''
         self.name = ''
+
+
+def quoteString(s):
+    r"""Quote string according to
+    https://wiki.purestorage.com/display/UXReviewers/Filtering
+
+    >>> quote("a")
+    "'a'"
+    >>> quote("a\\b")
+    "'a\\\\b'"
+    >>> quote("a\\b")
+    "'a\\\\b'"
+    >>> quote("a'b")
+    "'a\\'b'"
+    >>> quote(None)
+    None
+    """
+    if s is None:
+        return None
+    quoted = str(s).replace("\\", "\\\\").replace("'", "\\'")
+    return "'{}'".format(quoted)
+
+
+def quoteStrings(s):
+    if s is None:
+        return None
+    return [quoteString(x) for x in s]
+
 
 # import models into model package
 from .admin import Admin
@@ -65,7 +94,6 @@ from .built_in_relationship import BuiltInRelationship
 from .built_in_resource_no_id import BuiltInResourceNoId
 from .chap import Chap
 from .connection import Connection
-from .connection2 import Connection2
 from .connection_get_response import ConnectionGetResponse
 from .connection_post import ConnectionPost
 from .connection_response import ConnectionResponse
@@ -96,7 +124,6 @@ from .hardware_get_response import HardwareGetResponse
 from .hardware_patch import HardwarePatch
 from .hardware_response import HardwareResponse
 from .host import Host
-from .host2 import Host2
 from .host_get_response import HostGetResponse
 from .host_group import HostGroup
 from .host_group_get_response import HostGroupGetResponse
@@ -144,14 +171,11 @@ from .offload_response import OffloadResponse
 from .offload_s3 import OffloadS3
 from .override_check import OverrideCheck
 from .page_info import PageInfo
-from .page_info2 import PageInfo2
 from .performance import Performance
 from .pod import Pod
-from .pod2 import Pod2
 from .pod_array_status import PodArrayStatus
 from .pod_get_response import PodGetResponse
 from .pod_patch import PodPatch
-from .pod_patch2 import PodPatch2
 from .pod_performance import PodPerformance
 from .pod_performance_by_array import PodPerformanceByArray
 from .pod_performance_replication import PodPerformanceReplication
@@ -287,7 +311,6 @@ from .transfer import Transfer
 from .username import Username
 from .username_response import UsernameResponse
 from .volume import Volume
-from .volume2 import Volume2
 from .volume_common import VolumeCommon
 from .volume_get_response import VolumeGetResponse
 from .volume_group import VolumeGroup
@@ -297,7 +320,6 @@ from .volume_group_post import VolumeGroupPost
 from .volume_group_response import VolumeGroupResponse
 from .volume_group_space import VolumeGroupSpace
 from .volume_patch import VolumePatch
-from .volume_patch2 import VolumePatch2
 from .volume_performance import VolumePerformance
 from .volume_performance_by_array import VolumePerformanceByArray
 from .volume_post import VolumePost

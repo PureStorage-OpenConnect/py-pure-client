@@ -14,13 +14,11 @@ from .models.built_in import BuiltIn
 from .models.built_in_resource_no_id import BuiltInResourceNoId
 from .models.chap import Chap
 from .models.connection import Connection
-from .models.connection2 import Connection2
 from .models.connection_post import ConnectionPost
 from .models.destroyed_patch_post import DestroyedPatchPost
 from .models.fixed_reference import FixedReference
 from .models.fixed_reference_no_id import FixedReferenceNoId
 from .models.host import Host
-from .models.host2 import Host2
 from .models.host_group import HostGroup
 from .models.host_group_patch import HostGroupPatch
 from .models.host_group_performance import HostGroupPerformance
@@ -42,7 +40,6 @@ from .models.offload_nfs import OffloadNfs
 from .models.offload_post import OffloadPost
 from .models.offload_s3 import OffloadS3
 from .models.page_info import PageInfo
-from .models.page_info2 import PageInfo2
 from .models.performance import Performance
 from .models.pod import Pod
 from .models.pod_array_status import PodArrayStatus
@@ -119,13 +116,11 @@ CLASSES_TO_ADD_PROPS = [
     BuiltInResourceNoId,
     Chap,
     Connection,
-    Connection2,
     ConnectionPost,
     DestroyedPatchPost,
     FixedReference,
     FixedReferenceNoId,
     Host,
-    Host2,
     HostGroup,
     HostGroupPatch,
     HostGroupPerformance,
@@ -147,7 +142,6 @@ CLASSES_TO_ADD_PROPS = [
     OffloadPost,
     OffloadS3,
     PageInfo,
-    PageInfo2,
     Performance,
     Pod,
     PodArrayStatus,

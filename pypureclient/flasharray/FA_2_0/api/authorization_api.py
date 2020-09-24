@@ -21,7 +21,6 @@ from typing import List, Optional
 
 from .. import models
 
-
 class AuthorizationApi(object):
 
     def __init__(self, api_client):
@@ -54,8 +53,13 @@ class AuthorizationApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
 
         collection_formats = {}
         path_params = {}
@@ -125,8 +129,13 @@ class AuthorizationApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
 
         collection_formats = {}
         path_params = {}
@@ -194,8 +203,13 @@ class AuthorizationApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
 
         collection_formats = {}
         path_params = {}
@@ -267,8 +281,13 @@ class AuthorizationApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
         # verify the required parameter 'grant_type' is set
         if grant_type is None:
             raise TypeError("Missing the required parameter `grant_type` when calling `oauth210_token_post`")

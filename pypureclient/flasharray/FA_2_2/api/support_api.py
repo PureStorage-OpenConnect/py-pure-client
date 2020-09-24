@@ -21,7 +21,6 @@ from typing import List, Optional
 
 from .. import models
 
-
 class SupportApi(object):
 
     def __init__(self, api_client):
@@ -68,8 +67,16 @@ class SupportApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if sort is not None:
+            if not isinstance(sort, list):
+                sort = [sort]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api22_support_get`, must be a value greater than or equal to `1`")
@@ -162,8 +169,13 @@ class SupportApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
         # verify the required parameter 'support' is set
         if support is None:
             raise TypeError("Missing the required parameter `support` when calling `api22_support_patch`")
@@ -231,7 +243,7 @@ class SupportApi(object):
         # type: (...) -> models.TestResultGetResponse
         """List Pure Storage Support connection data
 
-        Dislays information about whether the array can connect to Pure Storage Support by establishing a secure shell or secure HTTP connection and verifies that messages can be exchanged.
+        Displays information about whether the array can connect to Pure Storage Support by establishing a secure shell or secure HTTP connection and verifies that messages can be exchanged.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api22_support_test_get_with_http_info(async_req=True)
@@ -254,8 +266,16 @@ class SupportApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-
+        if sort is not None:
+            if not isinstance(sort, list):
+                sort = [sort]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
+
+        # Convert the filter into a string
+        if params.get('filter'):
+            params['filter'] = str(params['filter'])
+        if params.get('sort'):
+            params['sort'] = [str(_x) for _x in params['sort']]
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api22_support_test_get`, must be a value greater than or equal to `1`")

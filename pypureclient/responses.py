@@ -122,6 +122,9 @@ class ValidResponse(Response):
 
         new_dict['headers'] = (self.headers.to_dict
                                if self.headers is not None else None)
+
+        if hasattr(self, 'total') and isinstance(self.total, list):
+            new_dict['total'] = [item.to_dict() for item in self.total]
         return new_dict
 
     def __repr__(self):

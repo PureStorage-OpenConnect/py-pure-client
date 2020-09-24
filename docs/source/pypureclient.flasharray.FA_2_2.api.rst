@@ -268,7 +268,6 @@ pypureclient.flasharray.FA\_2\_2.api.volumes\_api module
    :undoc-members:
    :show-inheritance:
 
-
 Module contents
 ---------------
 

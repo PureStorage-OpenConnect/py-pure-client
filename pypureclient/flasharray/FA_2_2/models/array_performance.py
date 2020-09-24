@@ -167,7 +167,7 @@ class ArrayPerformance(object):
             usec_per_write_op (int): The average time it takes the array to process an I/O write request. Measured in microseconds. The average time does not include SAN time, queue time, or QoS rate limit time.
             write_bytes_per_sec (int): The number of bytes written per second.
             writes_per_sec (int): The number of write requests processed per second.
-            queue_depth (int): Average number of queued I/O requests.
+            queue_depth (int): Deprecated. The number reported here may not be accurate and in later versions of the product this field will always report `null`. Instead, use `queue_usec_per_mirrored_write_op`, `queue_usec_per_read_op`, and `queue_usec_per_write_op` fields to measure IO queuing.
             local_queue_usec_per_op (int): Average local queue time for both read and write operations. Measured in microseconds.
             usec_per_other_op (int): The average time it takes the array to process an I/O other request. Measured in microseconds. The average time does not include SAN time, queue time, or QoS rate limit time.
             others_per_sec (int): The number of other requests processed per second.
