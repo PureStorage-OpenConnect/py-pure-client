@@ -3,7 +3,7 @@ six >= 1.10
 python_dateutil >= 2.5.3
 setuptools >= 21.0.0
 urllib3 >= 1.15.1
-paramiko >= 2.7.1
+paramiko == 2.7.1
 pyjwt >= 1.7.1
 requests >= 2.20.1
 typing>=3.7.4.1
