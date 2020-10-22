@@ -21,7 +21,7 @@ from ....properties import Property
 if typing.TYPE_CHECKING:
     from pypureclient.pure1.Pure1_1_0 import models
 
-class FileSystem(object):
+class Directory(object):
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -36,13 +36,9 @@ class FileSystem(object):
         'arrays': 'list[FixedReference]',
         'created': 'int',
         'destroyed': 'bool',
-        'fast_remove_directory_enabled': 'bool',
-        'hard_limit_enabled': 'bool',
-        'http': 'Http',
-        'nfs': 'Nfs',
-        'provisioned': 'int',
-        'smb': 'Smb',
-        'snapshot_directory_enabled': 'bool'
+        'directory_name': 'str',
+        'file_system': 'FixedReference',
+        'path': 'str'
     }
 
     attribute_map = {
@@ -52,13 +48,9 @@ class FileSystem(object):
         'arrays': 'arrays',
         'created': 'created',
         'destroyed': 'destroyed',
-        'fast_remove_directory_enabled': 'fast_remove_directory_enabled',
-        'hard_limit_enabled': 'hard_limit_enabled',
-        'http': 'http',
-        'nfs': 'nfs',
-        'provisioned': 'provisioned',
-        'smb': 'smb',
-        'snapshot_directory_enabled': 'snapshot_directory_enabled'
+        'directory_name': 'directory_name',
+        'file_system': 'file_system',
+        'path': 'path'
     }
 
     required_args = {
@@ -72,13 +64,9 @@ class FileSystem(object):
         arrays=None,  # type: List[models.FixedReference]
         created=None,  # type: int
         destroyed=None,  # type: bool
-        fast_remove_directory_enabled=None,  # type: bool
-        hard_limit_enabled=None,  # type: bool
-        http=None,  # type: models.Http
-        nfs=None,  # type: models.Nfs
-        provisioned=None,  # type: int
-        smb=None,  # type: models.Smb
-        snapshot_directory_enabled=None,  # type: bool
+        directory_name=None,  # type: str
+        file_system=None,  # type: models.FixedReference
+        path=None,  # type: str
     ):
         """
         Keyword args:
@@ -87,14 +75,10 @@ class FileSystem(object):
             name (str): A non-modifiable, locally unique name chosen by the system.
             arrays (list[FixedReference]): The list of arrays where this resource exists. Many resources are on a single array, but some resources, such as pods, can be shared across multiple arrays.
             created (int): Creation time in milliseconds since UNIX epoch.
-            destroyed (bool): Is the file system destroyed?
-            fast_remove_directory_enabled (bool): On a FlashBlade file system, returns the value of `true` if fast remove directory is enabled and `false` if it is not. On a FlashArray file system, the value is always `null`.
-            hard_limit_enabled (bool): On a FlashBlade file system, returns the value of `true` if the file system's size is a hard limit quota and `false` if it is not. On a FlashArray file system, the value is always `null`.
-            http (Http): HTTP configuration. On a FlashArray file system, the value is always `null`.
-            nfs (Nfs): NFS configuration. On a FlashArray file system, the value is always `null`.
-            provisioned (int): The provisioned size of the file system in bytes. A value of 0 means unlimited. On a FlashArray file system, the value is always `null`.
-            smb (Smb): SMB configuration. On a FlashArray file system, the value is always `null`.
-            snapshot_directory_enabled (bool): On a FlashBlade file system, returns the value of `true` if snapshot directory is enabled and `false` if it is not. On a FlashArray file system, the value is always `null`.
+            destroyed (bool): Is the managed directory destroyed?
+            directory_name (str): The managed directory name without the file system name prefix. A managed directory full name is constructed in the form of `FILE_SYSTEM:DIR` where `FILE_SYSTEM` is the file system name and `DIR` is the value of this field. On FlashArray versions below `6.0.2`, the value is always `null`.
+            file_system (FixedReference): The file system that this managed directory is in.
+            path (str): Absolute path of the managed directory in the file system.
         """
         if as_of is not None:
             self.as_of = as_of
@@ -108,24 +92,16 @@ class FileSystem(object):
             self.created = created
         if destroyed is not None:
             self.destroyed = destroyed
-        if fast_remove_directory_enabled is not None:
-            self.fast_remove_directory_enabled = fast_remove_directory_enabled
-        if hard_limit_enabled is not None:
-            self.hard_limit_enabled = hard_limit_enabled
-        if http is not None:
-            self.http = http
-        if nfs is not None:
-            self.nfs = nfs
-        if provisioned is not None:
-            self.provisioned = provisioned
-        if smb is not None:
-            self.smb = smb
-        if snapshot_directory_enabled is not None:
-            self.snapshot_directory_enabled = snapshot_directory_enabled
+        if directory_name is not None:
+            self.directory_name = directory_name
+        if file_system is not None:
+            self.file_system = file_system
+        if path is not None:
+            self.path = path
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
-            raise KeyError("Invalid key `{}` for `FileSystem`".format(key))
+            raise KeyError("Invalid key `{}` for `Directory`".format(key))
         self.__dict__[key] = value
 
     def __getattribute__(self, item):
@@ -157,7 +133,7 @@ class FileSystem(object):
                     ))
                 else:
                     result[attr] = value
-        if issubclass(FileSystem, dict):
+        if issubclass(Directory, dict):
             for key, value in self.items():
                 result[key] = value
 
@@ -173,7 +149,7 @@ class FileSystem(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, FileSystem):
+        if not isinstance(other, Directory):
             return False
 
         return self.__dict__ == other.__dict__

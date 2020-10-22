@@ -60,22 +60,6 @@ pypureclient.pure1.Pure1\_1\_1.models.arrays module
     :undoc-members:
     :show-inheritance:
 
-pypureclient.pure1.Pure1\_1\_1.models.arrays2 module
-----------------------------------------------------
-
-.. automodule:: pypureclient.pure1.Pure1_1_1.models.arrays2
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-pypureclient.pure1.Pure1\_1\_1.models.arrays\_built\_in module
---------------------------------------------------------------
-
-.. automodule:: pypureclient.pure1.Pure1_1_1.models.arrays_built_in
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
 pypureclient.pure1.Pure1\_1\_1.models.arrays\_resource module
 -------------------------------------------------------------
 
@@ -220,6 +204,30 @@ pypureclient.pure1.Pure1\_1\_1.models.controller\_response module
     :undoc-members:
     :show-inheritance:
 
+pypureclient.pure1.Pure1\_1\_1.models.directory module
+------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_1.models.directory
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.Pure1\_1\_1.models.directory\_get\_response module
+---------------------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_1.models.directory_get_response
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.Pure1\_1\_1.models.directory\_response module
+----------------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_1.models.directory_response
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 pypureclient.pure1.Pure1\_1\_1.models.drive module
 --------------------------------------------------
 
@@ -352,14 +360,6 @@ pypureclient.pure1.Pure1\_1\_1.models.fixed\_reference module
 -------------------------------------------------------------
 
 .. automodule:: pypureclient.pure1.Pure1_1_1.models.fixed_reference
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-pypureclient.pure1.Pure1\_1\_1.models.fixed\_reference2 module
---------------------------------------------------------------
-
-.. automodule:: pypureclient.pure1.Pure1_1_1.models.fixed_reference2
     :members:
     :undoc-members:
     :show-inheritance:

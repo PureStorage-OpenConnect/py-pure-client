@@ -14,6 +14,7 @@ from .models.blade_array_status import BladeArrayStatus
 from .models.bucket import Bucket
 from .models.bucket_replica_link import BucketReplicaLink
 from .models.controller import Controller
+from .models.directory import Directory
 from .models.drive import Drive
 from .models.drive_array_status import DriveArrayStatus
 from .models.error import Error
@@ -67,6 +68,7 @@ CLASSES_TO_ADD_PROPS = [
     Bucket,
     BucketReplicaLink,
     Controller,
+    Directory,
     Drive,
     DriveArrayStatus,
     Error,

@@ -68,6 +68,14 @@ pypureclient.pure1.Pure1\_1\_0.api.controllers\_api module
     :undoc-members:
     :show-inheritance:
 
+pypureclient.pure1.Pure1\_1\_0.api.directories\_api module
+----------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_0.api.directories_api
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 pypureclient.pure1.Pure1\_1\_0.api.drives\_api module
 -----------------------------------------------------
 

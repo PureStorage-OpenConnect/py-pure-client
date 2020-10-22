@@ -48,7 +48,7 @@ class FileSystemReplicaLinksApi(object):
         _request_timeout=None,  # type: Optional[int]
     ):
         # type: (...) -> models.FileSystemReplicaLinkGetResponse
-        """Get file system replica links
+        """Get FlashBlade file system replica links
 
         Retrieves information about FlashBlade file system replica links. 
         This method makes a synchronous HTTP request by default. To make an
@@ -215,9 +215,9 @@ class FileSystemReplicaLinksApi(object):
         _request_timeout=None,  # type: Optional[int]
     ):
         # type: (...) -> models.PolicyMembersGetResponse
-        """Get file system replica link / policy pairs
+        """Get FlashBlade file system replica link / policy pairs
 
-        Retrieves pairs of file system replica link members and their policies. 
+        Retrieves pairs of FlashBlade file system replica link members and their policies. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api11_file_system_replica_links_policies_get_with_http_info(async_req=True)

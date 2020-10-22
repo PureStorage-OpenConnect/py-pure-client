@@ -66,6 +66,9 @@ from .bucket_response import BucketResponse
 from .controller import Controller
 from .controller_get_response import ControllerGetResponse
 from .controller_response import ControllerResponse
+from .directory import Directory
+from .directory_get_response import DirectoryGetResponse
+from .directory_response import DirectoryResponse
 from .drive import Drive
 from .drive_array_status import DriveArrayStatus
 from .drive_get_response import DriveGetResponse

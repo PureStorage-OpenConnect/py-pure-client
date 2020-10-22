@@ -43,9 +43,9 @@ class FileSystemsApi(object):
         _request_timeout=None,  # type: Optional[int]
     ):
         # type: (...) -> models.FileSystemGetResponse
-        """Get file systems
+        """Get FlashArray and FlashBlade file systems
 
-        Retrieves information about file system objects. 
+        Retrieves information about FlashArray and FlashBlade file system objects. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api10_file_systems_get_with_http_info(async_req=True)
@@ -170,9 +170,9 @@ class FileSystemsApi(object):
         _request_timeout=None,  # type: Optional[int]
     ):
         # type: (...) -> models.PolicyMembersGetResponse
-        """Get file system / policy pairs
+        """Get FlashBlade file system / policy pairs
 
-        Retrieves pairs of file system members and their policies. 
+        Retrieves pairs of FlashBlade file system members and their policies. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api10_file_systems_policies_get_with_http_info(async_req=True)

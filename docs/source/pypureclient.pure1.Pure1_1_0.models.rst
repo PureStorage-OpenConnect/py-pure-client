@@ -212,6 +212,30 @@ pypureclient.pure1.Pure1\_1\_0.models.controller\_response module
     :undoc-members:
     :show-inheritance:
 
+pypureclient.pure1.Pure1\_1\_0.models.directory module
+------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_0.models.directory
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.Pure1\_1\_0.models.directory\_get\_response module
+---------------------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_0.models.directory_get_response
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.Pure1\_1\_0.models.directory\_response module
+----------------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_0.models.directory_response
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 pypureclient.pure1.Pure1\_1\_0.models.drive module
 --------------------------------------------------
 

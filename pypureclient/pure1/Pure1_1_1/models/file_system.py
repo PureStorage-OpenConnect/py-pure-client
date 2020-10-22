@@ -88,13 +88,13 @@ class FileSystem(object):
             arrays (list[FixedReferenceFqdn]): The list of arrays where this resource exists. Many resources are on a single array, but some resources, such as pods, can be shared across multiple arrays.
             created (int): Creation time in milliseconds since UNIX epoch.
             destroyed (bool): Is the file system destroyed?
-            fast_remove_directory_enabled (bool): Is fast remove directory enabled?
-            hard_limit_enabled (bool): Is the file system's size a hard limit quota?
-            http (Http): HTTP configuration.
-            nfs (Nfs): NFS configuration.
-            provisioned (int): The provisioned size of the file system in bytes. A value of 0 means unlimited.
-            smb (Smb): SMB configuration.
-            snapshot_directory_enabled (bool): Is snapshot directory enabled?
+            fast_remove_directory_enabled (bool): On a FlashBlade file system, returns the value of `true` if fast remove directory is enabled and `false` if it is not. On a FlashArray file system, the value is always `null`.
+            hard_limit_enabled (bool): On a FlashBlade file system, returns the value of `true` if the file system's size is a hard limit quota and `false` if it is not. On a FlashArray file system, the value is always `null`.
+            http (Http): HTTP configuration. On a FlashArray file system, the value is always `null`.
+            nfs (Nfs): NFS configuration. On a FlashArray file system, the value is always `null`.
+            provisioned (int): The provisioned size of the file system in bytes. A value of 0 means unlimited. On a FlashArray file system, the value is always `null`.
+            smb (Smb): SMB configuration. On a FlashArray file system, the value is always `null`.
+            snapshot_directory_enabled (bool): On a FlashBlade file system, returns the value of `true` if snapshot directory is enabled and `false` if it is not. On a FlashArray file system, the value is always `null`.
         """
         if as_of is not None:
             self.as_of = as_of

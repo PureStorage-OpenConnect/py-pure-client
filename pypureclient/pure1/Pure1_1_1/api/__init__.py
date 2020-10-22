@@ -9,6 +9,7 @@ from .blades_api import BladesApi
 from .bucket_replica_links_api import BucketReplicaLinksApi
 from .buckets_api import BucketsApi
 from .controllers_api import ControllersApi
+from .directories_api import DirectoriesApi
 from .drives_api import DrivesApi
 from .file_system_replica_links_api import FileSystemReplicaLinksApi
 from .file_system_snapshots_api import FileSystemSnapshotsApi

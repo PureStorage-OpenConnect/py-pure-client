@@ -45,9 +45,9 @@ class FileSystemSnapshotsApi(object):
         _request_timeout=None,  # type: Optional[int]
     ):
         # type: (...) -> models.FileSystemSnapshotGetResponse
-        """Get file system snapshots
+        """Get FlashBlade file system snapshots
 
-        Retrieves snapshots of file systems. 
+        Retrieves snapshots of FlashBlade file systems. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api11_file_system_snapshots_get_with_http_info(async_req=True)
@@ -188,9 +188,9 @@ class FileSystemSnapshotsApi(object):
         _request_timeout=None,  # type: Optional[int]
     ):
         # type: (...) -> models.PolicyMembersGetResponse
-        """Get file system snapshot / policy pairs
+        """Get FlashBlade file system snapshot / policy pairs
 
-        Retrieves pairs of file system snapshot members and their policies. 
+        Retrieves pairs of FlashBlade file system snapshot members and their policies. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api11_file_system_snapshots_policies_get_with_http_info(async_req=True)

@@ -7,6 +7,7 @@ Subpackages
 .. toctree::
 
     pypureclient.flasharray
+    pypureclient.mordac
     pypureclient.pure1
 
 Submodules

@@ -21,7 +21,7 @@ from ....properties import Property
 if typing.TYPE_CHECKING:
     from pypureclient.pure1.Pure1_1_1 import models
 
-class Arrays2(object):
+class Directory(object):
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -30,7 +30,7 @@ class Arrays2(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'arrays': 'list[FixedReference2]'
+        'arrays': 'list[FixedReferenceFqdn]'
     }
 
     attribute_map = {
@@ -42,18 +42,18 @@ class Arrays2(object):
 
     def __init__(
         self,
-        arrays=None,  # type: List[models.FixedReference2]
+        arrays=None,  # type: List[models.FixedReferenceFqdn]
     ):
         """
         Keyword args:
-            arrays (list[FixedReference2]): The list of arrays where this resource exists. Many resources are on a single array, but some resources, such as pods, can be shared across multiple arrays.
+            arrays (list[FixedReferenceFqdn]): The list of arrays where this resource exists. Many resources are on a single array, but some resources, such as pods, can be shared across multiple arrays.
         """
         if arrays is not None:
             self.arrays = arrays
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
-            raise KeyError("Invalid key `{}` for `Arrays2`".format(key))
+            raise KeyError("Invalid key `{}` for `Directory`".format(key))
         self.__dict__[key] = value
 
     def __getattribute__(self, item):
@@ -85,7 +85,7 @@ class Arrays2(object):
                     ))
                 else:
                     result[attr] = value
-        if issubclass(Arrays2, dict):
+        if issubclass(Directory, dict):
             for key, value in self.items():
                 result[key] = value
 
@@ -101,7 +101,7 @@ class Arrays2(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, Arrays2):
+        if not isinstance(other, Directory):
             return False
 
         return self.__dict__ == other.__dict__
