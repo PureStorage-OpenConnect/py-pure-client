@@ -37,6 +37,11 @@ FlashArray REST 2.3 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.FA_2_3.client.Client
+
+FlashArray REST 2.4 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.FA_2_4.client.Client
     :members:
 
 Properties
@@ -157,6 +162,24 @@ AlertEvent
 .. autoclass:: pypureclient.flasharray.AlertEvent
    :members:
 
+AlertWatcher
+~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.AlertWatcher
+   :members:
+
+AlertWatcherPatch
+~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.AlertWatcherPatch
+   :members:
+
+AlertWatcherPost
+~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.AlertWatcherPost
+   :members:
+
 ApiClient
 ~~~~~~~~~
 
@@ -199,6 +222,36 @@ Array
 .. autoclass:: pypureclient.flasharray.Array
    :members:
 
+ArrayConnection
+~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.ArrayConnection
+   :members:
+
+ArrayConnectionKey
+~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.ArrayConnectionKey
+   :members:
+
+ArrayConnectionPath
+~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.ArrayConnectionPath
+   :members:
+
+ArrayConnectionPost
+~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.ArrayConnectionPost
+   :members:
+
+ArrayFactoryResetToken
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.ArrayFactoryResetToken
+   :members:
+
 ArrayPerformance
 ~~~~~~~~~~~~~~~~
 
@@ -239,6 +292,30 @@ BuiltInResourceNoId
 ~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.BuiltInResourceNoId
+   :members:
+
+Certificate
+~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.Certificate
+   :members:
+
+CertificatePost
+~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.CertificatePost
+   :members:
+
+CertificateSigningRequest
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.CertificateSigningRequest
+   :members:
+
+CertificateSigningRequestPost
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.CertificateSigningRequestPost
    :members:
 
 Chap
@@ -391,6 +468,12 @@ DnsPatch
 .. autoclass:: pypureclient.flasharray.DnsPatch
    :members:
 
+Drive
+~~~~~
+
+.. autoclass:: pypureclient.flasharray.Drive
+   :members:
+
 Eula
 ~~~~
 
@@ -499,6 +582,12 @@ HostPerformance
 .. autoclass:: pypureclient.flasharray.HostPerformance
    :members:
 
+HostPerformanceBalance
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.HostPerformanceBalance
+   :members:
+
 HostPerformanceByArray
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -575,6 +664,66 @@ MemberNoIdGroup
 ~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.MemberNoIdGroup
+   :members:
+
+NetworkInterface
+~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.NetworkInterface
+   :members:
+
+NetworkInterfaceEth
+~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.NetworkInterfaceEth
+   :members:
+
+NetworkInterfaceFc
+~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.NetworkInterfaceFc
+   :members:
+
+NetworkInterfacePatch
+~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.NetworkInterfacePatch
+   :members:
+
+NetworkInterfacePerformance
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.NetworkInterfacePerformance
+   :members:
+
+NetworkInterfacePerformanceEth
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.NetworkInterfacePerformanceEth
+   :members:
+
+NetworkInterfacePerformanceFc
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.NetworkInterfacePerformanceFc
+   :members:
+
+NetworkInterfacePost
+~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.NetworkInterfacePost
+   :members:
+
+NetworkinterfacepatchEth
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.NetworkinterfacepatchEth
+   :members:
+
+NetworkinterfacepostEth
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.NetworkinterfacepostEth
    :members:
 
 NewName
@@ -799,6 +948,24 @@ PolicyRuleSnapshotPost
 .. autoclass:: pypureclient.flasharray.PolicyRuleSnapshotPost
    :members:
 
+PolicySmb
+~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicySmb
+   :members:
+
+PolicySmbPatch
+~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicySmbPatch
+   :members:
+
+PolicySmbPost
+~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicySmbPost
+   :members:
+
 PolicymemberexportpostMembers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -949,6 +1116,12 @@ RemoteProtectionGroupSnapshot
 .. autoclass:: pypureclient.flasharray.RemoteProtectionGroupSnapshot
    :members:
 
+RemoteProtectionGroupSnapshotPost
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.RemoteProtectionGroupSnapshotPost
+   :members:
+
 RemoteProtectionGroupSnapshotTransfer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1057,10 +1230,22 @@ RetentionPolicy
 .. autoclass:: pypureclient.flasharray.RetentionPolicy
    :members:
 
+Session
+~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.Session
+   :members:
+
 Smis
 ~~~~
 
 .. autoclass:: pypureclient.flasharray.Smis
+   :members:
+
+SmtpServer
+~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.SmtpServer
    :members:
 
 Snapshot
@@ -1073,6 +1258,42 @@ SnapshotSchedule
 ~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.SnapshotSchedule
+   :members:
+
+SnmpAgent
+~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.SnmpAgent
+   :members:
+
+SnmpAgentMib
+~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.SnmpAgentMib
+   :members:
+
+SnmpManager
+~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.SnmpManager
+   :members:
+
+SnmpManagerPost
+~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.SnmpManagerPost
+   :members:
+
+SnmpV2c
+~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.SnmpV2c
+   :members:
+
+SnmpV3
+~~~~~~
+
+.. autoclass:: pypureclient.flasharray.SnmpV3
    :members:
 
 Software
@@ -1123,6 +1344,12 @@ SoftwareInstallations
 .. autoclass:: pypureclient.flasharray.SoftwareInstallations
    :members:
 
+SoftwareUpgradePlan
+~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.SoftwareUpgradePlan
+   :members:
+
 Space
 ~~~~~
 
@@ -1171,6 +1398,18 @@ SupportRemoteAssistPaths
 .. autoclass:: pypureclient.flasharray.SupportRemoteAssistPaths
    :members:
 
+SyslogServer
+~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.SyslogServer
+   :members:
+
+SyslogServerSettings
+~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.SyslogServerSettings
+   :members:
+
 Tag
 ~~~
 
@@ -1199,6 +1438,12 @@ TestResultWithResource
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.TestResultWithResource
+   :members:
+
+Throttle
+~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.Throttle
    :members:
 
 TimeWindow

@@ -20,7 +20,7 @@ class Client(object):
     DEFAULT_TIMEOUT = 15.0
     DEFAULT_RETRIES = 5
     # Format: client/client_version/endpoint/endpoint_version/system/release
-    USER_AGENT = ('pypureclient/1.8.0/FA/2.3/{sys}/{rel}'
+    USER_AGENT = ('pypureclient/1.10.0/FA/2.3/{sys}/{rel}'
                   .format(sys=platform.system(), rel=platform.release()))
 
     def __init__(self, target, id_token=None, private_key_file=None, private_key_password=None,
@@ -142,6 +142,15 @@ class Client(object):
         self._volume_groups_api = api.VolumeGroupsApi(self._api_client)
         self._volume_snapshots_api = api.VolumeSnapshotsApi(self._api_client)
         self._volumes_api = api.VolumesApi(self._api_client)
+
+    def get_rest_version(self):
+        """Get the REST API version being used by this client.
+
+        Returns:
+            str
+
+        """
+        return '2.3'
 
     def get_access_token(self, refresh=False):
         """
@@ -3111,7 +3120,7 @@ class Client(object):
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in seconds.
+                destroyed objects, the time remaining is displayed in milliseconds.
             file_system_ids (list[str], optional):
                 Performs the operation on the file system ID specified. Enter multiple file
                 system IDs in comma-separated format. The `file_system_ids` and
@@ -3301,7 +3310,7 @@ class Client(object):
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in seconds.
+                destroyed objects, the time remaining is displayed in milliseconds.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             end_time (int, optional):
@@ -3460,7 +3469,7 @@ class Client(object):
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in seconds.
+                destroyed objects, the time remaining is displayed in milliseconds.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             limit (int, optional):
@@ -3658,7 +3667,7 @@ class Client(object):
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in seconds.
+                destroyed objects, the time remaining is displayed in milliseconds.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             limit (int, optional):
@@ -3925,7 +3934,7 @@ class Client(object):
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in seconds.
+                destroyed objects, the time remaining is displayed in milliseconds.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             limit (int, optional):
@@ -4193,7 +4202,7 @@ class Client(object):
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in seconds.
+                destroyed objects, the time remaining is displayed in milliseconds.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             limit (int, optional):
@@ -4459,7 +4468,7 @@ class Client(object):
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in seconds.
+                destroyed objects, the time remaining is displayed in milliseconds.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             end_time (int, optional):
@@ -4691,7 +4700,7 @@ class Client(object):
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in seconds.
+                destroyed objects, the time remaining is displayed in milliseconds.
             directory_ids (list[str], optional):
                 Performs the operation on the unique managed directory IDs specified. Enter
                 multiple managed directory IDs in comma-separated format. The `directory_ids`
@@ -5354,7 +5363,7 @@ class Client(object):
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in seconds.
+                destroyed objects, the time remaining is displayed in milliseconds.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
@@ -5800,7 +5809,7 @@ class Client(object):
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in seconds.
+                destroyed objects, the time remaining is displayed in milliseconds.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
@@ -10175,7 +10184,7 @@ class Client(object):
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in seconds.
+                destroyed objects, the time remaining is displayed in milliseconds.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
@@ -10372,7 +10381,7 @@ class Client(object):
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in seconds.
+                destroyed objects, the time remaining is displayed in milliseconds.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             end_time (int, optional):
@@ -10523,7 +10532,7 @@ class Client(object):
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in seconds.
+                destroyed objects, the time remaining is displayed in milliseconds.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             end_time (int, optional):
@@ -10674,7 +10683,7 @@ class Client(object):
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in seconds.
+                destroyed objects, the time remaining is displayed in milliseconds.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             end_time (int, optional):
@@ -10825,7 +10834,7 @@ class Client(object):
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in seconds.
+                destroyed objects, the time remaining is displayed in milliseconds.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             end_time (int, optional):
@@ -11033,7 +11042,7 @@ class Client(object):
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in seconds.
+                destroyed objects, the time remaining is displayed in milliseconds.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             end_time (int, optional):
@@ -11280,7 +11289,7 @@ class Client(object):
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in seconds.
+                destroyed objects, the time remaining is displayed in milliseconds.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             limit (int, optional):
@@ -11892,7 +11901,7 @@ class Client(object):
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in seconds.
+                destroyed objects, the time remaining is displayed in milliseconds.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             limit (int, optional):
@@ -12703,7 +12712,7 @@ class Client(object):
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in seconds.
+                destroyed objects, the time remaining is displayed in milliseconds.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             limit (int, optional):
@@ -13270,7 +13279,7 @@ class Client(object):
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in seconds.
+                destroyed objects, the time remaining is displayed in milliseconds.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             limit (int, optional):
@@ -14068,7 +14077,7 @@ class Client(object):
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in seconds.
+                destroyed objects, the time remaining is displayed in milliseconds.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             limit (int, optional):
@@ -14302,7 +14311,7 @@ class Client(object):
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in seconds.
+                destroyed objects, the time remaining is displayed in milliseconds.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             limit (int, optional):
@@ -14472,7 +14481,7 @@ class Client(object):
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in seconds.
+                destroyed objects, the time remaining is displayed in milliseconds.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             limit (int, optional):
@@ -15133,7 +15142,7 @@ class Client(object):
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in seconds.
+                destroyed objects, the time remaining is displayed in milliseconds.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             end_time (int, optional):
@@ -15270,7 +15279,7 @@ class Client(object):
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in seconds.
+                destroyed objects, the time remaining is displayed in milliseconds.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             end_time (int, optional):
@@ -15485,7 +15494,7 @@ class Client(object):
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in seconds.
+                destroyed objects, the time remaining is displayed in milliseconds.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             limit (int, optional):
@@ -16311,7 +16320,7 @@ class Client(object):
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in seconds.
+                destroyed objects, the time remaining is displayed in milliseconds.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             limit (int, optional):
@@ -16483,7 +16492,7 @@ class Client(object):
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in seconds.
+                destroyed objects, the time remaining is displayed in milliseconds.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             limit (int, optional):
@@ -16662,7 +16671,7 @@ class Client(object):
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in seconds.
+                destroyed objects, the time remaining is displayed in milliseconds.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
@@ -16844,7 +16853,7 @@ class Client(object):
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in seconds.
+                destroyed objects, the time remaining is displayed in milliseconds.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
@@ -16959,7 +16968,7 @@ class Client(object):
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in seconds.
+                destroyed objects, the time remaining is displayed in milliseconds.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
@@ -18174,7 +18183,7 @@ class Client(object):
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in seconds.
+                destroyed objects, the time remaining is displayed in milliseconds.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
@@ -18361,7 +18370,7 @@ class Client(object):
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in seconds.
+                destroyed objects, the time remaining is displayed in milliseconds.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             end_time (int, optional):
@@ -18575,7 +18584,7 @@ class Client(object):
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in seconds.
+                destroyed objects, the time remaining is displayed in milliseconds.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             end_time (int, optional):
@@ -18904,7 +18913,7 @@ class Client(object):
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in seconds.
+                destroyed objects, the time remaining is displayed in milliseconds.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
@@ -19405,7 +19414,7 @@ class Client(object):
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in seconds.
+                destroyed objects, the time remaining is displayed in milliseconds.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
@@ -19585,7 +19594,7 @@ class Client(object):
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in seconds.
+                destroyed objects, the time remaining is displayed in milliseconds.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
@@ -19779,7 +19788,7 @@ class Client(object):
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in seconds.
+                destroyed objects, the time remaining is displayed in milliseconds.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             end_time (int, optional):
@@ -19930,7 +19939,7 @@ class Client(object):
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in seconds.
+                destroyed objects, the time remaining is displayed in milliseconds.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             end_time (int, optional):
@@ -20399,7 +20408,7 @@ class Client(object):
             destroyed (bool, optional):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in seconds.
+                destroyed objects, the time remaining is displayed in milliseconds.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             end_time (int, optional):
@@ -20927,7 +20936,7 @@ class Client(object):
                 elif error.status in [400, 404]:
                     return self._create_error_response(error)
                 # If authentication error, reset access token and retry
-                elif error.status == 403:
+                elif error.status in [401, 403]:
                     self._set_auth_header(refresh=True)
                 # If rate limit error, wait the proper time and try again
                 elif error.status == 429:

@@ -9,11 +9,11 @@ Pure Storage Python clients for FlashArray, FlashBlade, and Pure1 APIs
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = 'py-pure-client'
-VERSION = '1.9.0'
+VERSION = '1.10.0'
 
 REQUIRES = ['urllib3 >= 1.15', 'six >= 1.10', 'certifi >= 14.05.14',
             'python-dateutil >= 2.5.3', 'paramiko == 2.7.1',
-            'PyJWT >= 1.7.1', 'requests >= 2.20.1']
+            'PyJWT >= 1.7.1', 'requests >= 2.20.1', 'typing>=3.7.4.1']
 
 readme = open('README.md', 'r')
 README_TEXT = readme.read()
@@ -26,7 +26,7 @@ setup(
     author='Pure Storage',
     author_email='tvilcu@purestorage.com',
     url='https://github.com/PureStorage-OpenConnect/py-pure-client',
-    download_url='https://github.com/PureStorage-OpenConnect/py-pure-client/archive/1.9.0.tar.gz',
+    download_url='https://github.com/PureStorage-OpenConnect/py-pure-client/archive/1.10.0.tar.gz',
     keywords=['Swagger', 'Pure Storage', 'Python', 'clients', 'REST', 'API', 'FlashArray', 'FlashBlade', 'Pure1'],
     license='BSD 2-Clause',
     install_requires=REQUIRES,
