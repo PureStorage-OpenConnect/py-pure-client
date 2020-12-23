@@ -6,7 +6,6 @@ from . import FA_2_4
 from . import FA_2_1
 from . import FA_2_3
 from . import FA_2_0
-from . import __pycache__
 from . import FA_2_2
 
 fa_modules = {
