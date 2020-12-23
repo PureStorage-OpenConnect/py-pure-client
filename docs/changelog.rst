@@ -6,6 +6,7 @@ A log of changes by version and date.
 ======= ========== =====
 Version Date       Notes
 ======= ========== =====
+1.10.0  12/21/2020 Added FlashArray 2.4 client
 1.9.0   10/22/2020 Added support for Pure1 directories endpoint
 1.8.0   09/22/2020 Added FlashArray 2.3 client
 1.7.0   08/06/2020 Added Pure1 1.1 client and support for Pure1 drives, hardware, ports, and hardware-connectors endpoints
