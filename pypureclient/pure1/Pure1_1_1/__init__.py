@@ -14,6 +14,7 @@ from .models.blade_array_status import BladeArrayStatus
 from .models.bucket import Bucket
 from .models.bucket_replica_link import BucketReplicaLink
 from .models.controller import Controller
+from .models.current_metric import CurrentMetric
 from .models.directory import Directory
 from .models.drive import Drive
 from .models.drive_array_status import DriveArrayStatus
@@ -47,6 +48,8 @@ from .models.resource_no_name import ResourceNoName
 from .models.resource_with_location import ResourceWithLocation
 from .models.resource_with_locations import ResourceWithLocations
 from .models.smb import Smb
+from .models.subscription import Subscription
+from .models.subscription_license import SubscriptionLicense
 from .models.support_contract import SupportContract
 from .models.tag import Tag
 from .models.tag_put import TagPut
@@ -69,6 +72,7 @@ CLASSES_TO_ADD_PROPS = [
     Bucket,
     BucketReplicaLink,
     Controller,
+    CurrentMetric,
     Directory,
     Drive,
     DriveArrayStatus,
@@ -102,6 +106,8 @@ CLASSES_TO_ADD_PROPS = [
     ResourceWithLocation,
     ResourceWithLocations,
     Smb,
+    Subscription,
+    SubscriptionLicense,
     SupportContract,
     Tag,
     TagPut,

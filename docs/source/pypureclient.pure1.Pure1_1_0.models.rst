@@ -212,6 +212,14 @@ pypureclient.pure1.Pure1\_1\_0.models.controller\_response module
     :undoc-members:
     :show-inheritance:
 
+pypureclient.pure1.Pure1\_1\_0.models.current\_metric module
+------------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_0.models.current_metric
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 pypureclient.pure1.Pure1\_1\_0.models.directory module
 ------------------------------------------------------
 
@@ -440,6 +448,14 @@ pypureclient.pure1.Pure1\_1\_0.models.inline\_response401 module
 ----------------------------------------------------------------
 
 .. automodule:: pypureclient.pure1.Pure1_1_0.models.inline_response401
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.Pure1\_1\_0.models.license\_resource\_reference module
+-------------------------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_0.models.license_resource_reference
     :members:
     :undoc-members:
     :show-inheritance:
@@ -752,6 +768,62 @@ pypureclient.pure1.Pure1\_1\_0.models.smb module
 ------------------------------------------------
 
 .. automodule:: pypureclient.pure1.Pure1_1_0.models.smb
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.Pure1\_1\_0.models.subscription module
+---------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_0.models.subscription
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.Pure1\_1\_0.models.subscription\_get\_response module
+------------------------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_0.models.subscription_get_response
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.Pure1\_1\_0.models.subscription\_license module
+------------------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_0.models.subscription_license
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.Pure1\_1\_0.models.subscription\_license\_get\_response module
+---------------------------------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_0.models.subscription_license_get_response
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.Pure1\_1\_0.models.subscription\_license\_marketplace\_partner module
+----------------------------------------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_0.models.subscription_license_marketplace_partner
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.Pure1\_1\_0.models.subscription\_license\_response module
+----------------------------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_0.models.subscription_license_response
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.Pure1\_1\_0.models.subscription\_response module
+-------------------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_0.models.subscription_response
     :members:
     :undoc-members:
     :show-inheritance:

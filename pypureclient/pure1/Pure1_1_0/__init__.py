@@ -14,6 +14,7 @@ from .models.blade_array_status import BladeArrayStatus
 from .models.bucket import Bucket
 from .models.bucket_replica_link import BucketReplicaLink
 from .models.controller import Controller
+from .models.current_metric import CurrentMetric
 from .models.directory import Directory
 from .models.drive import Drive
 from .models.drive_array_status import DriveArrayStatus
@@ -27,6 +28,7 @@ from .models.fixed_reference import FixedReference
 from .models.hardware import Hardware
 from .models.hardware_connector import HardwareConnector
 from .models.http import Http
+from .models.license_resource_reference import LicenseResourceReference
 from .models.metric import Metric
 from .models.metric_availability import MetricAvailability
 from .models.metric_history import MetricHistory
@@ -46,6 +48,9 @@ from .models.resource_no_name import ResourceNoName
 from .models.resource_with_location import ResourceWithLocation
 from .models.resource_with_locations import ResourceWithLocations
 from .models.smb import Smb
+from .models.subscription import Subscription
+from .models.subscription_license import SubscriptionLicense
+from .models.subscription_license_marketplace_partner import SubscriptionLicenseMarketplacePartner
 from .models.support_contract import SupportContract
 from .models.tag import Tag
 from .models.tag_put import TagPut
@@ -68,6 +73,7 @@ CLASSES_TO_ADD_PROPS = [
     Bucket,
     BucketReplicaLink,
     Controller,
+    CurrentMetric,
     Directory,
     Drive,
     DriveArrayStatus,
@@ -81,6 +87,7 @@ CLASSES_TO_ADD_PROPS = [
     Hardware,
     HardwareConnector,
     Http,
+    LicenseResourceReference,
     Metric,
     MetricAvailability,
     MetricHistory,
@@ -100,6 +107,9 @@ CLASSES_TO_ADD_PROPS = [
     ResourceWithLocation,
     ResourceWithLocations,
     Smb,
+    Subscription,
+    SubscriptionLicense,
+    SubscriptionLicenseMarketplacePartner,
     SupportContract,
     Tag,
     TagPut,

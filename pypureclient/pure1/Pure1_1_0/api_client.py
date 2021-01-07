@@ -11,6 +11,7 @@
 
 from __future__ import absolute_import
 
+import atexit
 import datetime
 import json
 import mimetypes
@@ -63,6 +64,12 @@ class ApiClient(object):
         self.configuration = configuration
 
         self.pool = ThreadPool()
+        # Take care not to clean up the ThreadPool in a destructor method,
+        # since this can cause Python <= 3.8 to hang when interacting with
+        # threads in an invalid state.  Instead, do it at exit.
+        self._closed = False
+        atexit.register(self.close)
+
         self.rest_client = rest.RESTClientObject(configuration)
         self.default_headers = {}
         if header_name is not None:
@@ -71,10 +78,13 @@ class ApiClient(object):
         # Set default User-Agent.
         self.user_agent = 'Swagger-Codegen/1.0/python'
 
-    def __del__(self):
-        self.close()
-
     def close(self):
+        if self._closed:
+            return
+        self._closed = True
+        if hasattr(atexit, 'unregister'):
+            atexit.unregister(self.close)
+
         self.pool.close()
         self.pool.join()
 

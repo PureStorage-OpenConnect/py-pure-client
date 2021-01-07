@@ -180,6 +180,14 @@ pypureclient.pure1.Pure1\_1\_1.api.ports\_api module
     :undoc-members:
     :show-inheritance:
 
+pypureclient.pure1.Pure1\_1\_1.api.subscriptions\_api module
+------------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_1.api.subscriptions_api
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 pypureclient.pure1.Pure1\_1\_1.api.targets\_api module
 ------------------------------------------------------
 

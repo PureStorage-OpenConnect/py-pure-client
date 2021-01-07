@@ -66,6 +66,7 @@ from .bucket_response import BucketResponse
 from .controller import Controller
 from .controller_get_response import ControllerGetResponse
 from .controller_response import ControllerResponse
+from .current_metric import CurrentMetric
 from .directory import Directory
 from .directory_get_response import DirectoryGetResponse
 from .directory_response import DirectoryResponse
@@ -134,6 +135,12 @@ from .resource_no_name import ResourceNoName
 from .resource_with_location import ResourceWithLocation
 from .resource_with_locations import ResourceWithLocations
 from .smb import Smb
+from .subscription import Subscription
+from .subscription_get_response import SubscriptionGetResponse
+from .subscription_license import SubscriptionLicense
+from .subscription_license_get_response import SubscriptionLicenseGetResponse
+from .subscription_license_response import SubscriptionLicenseResponse
+from .subscription_response import SubscriptionResponse
 from .support_contract import SupportContract
 from .support_contract_get_response import SupportContractGetResponse
 from .support_contract_response import SupportContractResponse
