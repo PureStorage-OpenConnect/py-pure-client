@@ -42,6 +42,11 @@ FlashArray REST 2.4 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.FA_2_4.client.Client
+
+FlashArray REST 2.5 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.FA_2_5.client.Client
     :members:
 
 Properties
@@ -1272,10 +1277,22 @@ SnmpAgentMib
 .. autoclass:: pypureclient.flasharray.SnmpAgentMib
    :members:
 
+SnmpAgentPatch
+~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.SnmpAgentPatch
+   :members:
+
 SnmpManager
 ~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.SnmpManager
+   :members:
+
+SnmpManagerPatch
+~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.SnmpManagerPatch
    :members:
 
 SnmpManagerPost
@@ -1296,10 +1313,34 @@ SnmpV3
 .. autoclass:: pypureclient.flasharray.SnmpV3
    :members:
 
+SnmpV3Patch
+~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.SnmpV3Patch
+   :members:
+
+SnmpV3Post
+~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.SnmpV3Post
+   :members:
+
 Software
 ~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.Software
+   :members:
+
+SoftwareBundle
+~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.SoftwareBundle
+   :members:
+
+SoftwareBundlePost
+~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.SoftwareBundlePost
    :members:
 
 SoftwareInstallation

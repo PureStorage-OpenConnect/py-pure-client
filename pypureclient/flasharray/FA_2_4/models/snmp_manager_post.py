@@ -33,7 +33,7 @@ class SnmpManagerPost(object):
         'host': 'str',
         'notification': 'str',
         'v2c': 'SnmpV2c',
-        'v3': 'SnmpV3',
+        'v3': 'SnmpV3Post',
         'version': 'str'
     }
 
@@ -53,7 +53,7 @@ class SnmpManagerPost(object):
         host=None,  # type: str
         notification=None,  # type: str
         v2c=None,  # type: models.SnmpV2c
-        v3=None,  # type: models.SnmpV3
+        v3=None,  # type: models.SnmpV3Post
         version=None,  # type: str
     ):
         """
@@ -61,7 +61,7 @@ class SnmpManagerPost(object):
             host (str): DNS hostname or IP address of a computer that hosts an SNMP manager to which Purity//FA is to send trap messages when it generates alerts.
             notification (str): The type of notification the agent will send. Valid values are `inform` and `trap`.
             v2c (SnmpV2c)
-            v3 (SnmpV3)
+            v3 (SnmpV3Post)
             version (str): Version of the SNMP protocol to be used by Purity//FA to communicate with the specified manager. Valid values are `v2c` and `v3`.
         """
         if host is not None:

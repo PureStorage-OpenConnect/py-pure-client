@@ -2772,6 +2772,14 @@ pypureclient.flasharray.FA\_2\_4.models.snmp\_agent\_mib\_response module
    :undoc-members:
    :show-inheritance:
 
+pypureclient.flasharray.FA\_2\_4.models.snmp\_agent\_patch module
+-----------------------------------------------------------------
+
+.. automodule:: pypureclient.flasharray.FA_2_4.models.snmp_agent_patch
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 pypureclient.flasharray.FA\_2\_4.models.snmp\_agent\_response module
 --------------------------------------------------------------------
 
@@ -2792,6 +2800,14 @@ pypureclient.flasharray.FA\_2\_4.models.snmp\_manager\_get\_response module
 ---------------------------------------------------------------------------
 
 .. automodule:: pypureclient.flasharray.FA_2_4.models.snmp_manager_get_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.flasharray.FA\_2\_4.models.snmp\_manager\_patch module
+-------------------------------------------------------------------
+
+.. automodule:: pypureclient.flasharray.FA_2_4.models.snmp_manager_patch
    :members:
    :undoc-members:
    :show-inheritance:
@@ -2832,6 +2848,22 @@ pypureclient.flasharray.FA\_2\_4.models.snmp\_v3 module
 -------------------------------------------------------
 
 .. automodule:: pypureclient.flasharray.FA_2_4.models.snmp_v3
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.flasharray.FA\_2\_4.models.snmp\_v3\_patch module
+--------------------------------------------------------------
+
+.. automodule:: pypureclient.flasharray.FA_2_4.models.snmp_v3_patch
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.flasharray.FA\_2\_4.models.snmp\_v3\_post module
+-------------------------------------------------------------
+
+.. automodule:: pypureclient.flasharray.FA_2_4.models.snmp_v3_post
    :members:
    :undoc-members:
    :show-inheritance:

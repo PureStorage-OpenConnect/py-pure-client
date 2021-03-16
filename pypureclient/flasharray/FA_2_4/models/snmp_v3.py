@@ -78,14 +78,6 @@ class SnmpV3(object):
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
             raise KeyError("Invalid key `{}` for `SnmpV3`".format(key))
-        if key == "auth_passphrase" and value is not None:
-            if len(value) > 32:
-                raise ValueError("Invalid value for `auth_passphrase`, length must be less than or equal to `32`")
-        if key == "privacy_passphrase" and value is not None:
-            if len(value) > 63:
-                raise ValueError("Invalid value for `privacy_passphrase`, length must be less than or equal to `63`")
-            if len(value) < 8:
-                raise ValueError("Invalid value for `privacy_passphrase`, length must be greater than or equal to `8`")
         self.__dict__[key] = value
 
     def __getattribute__(self, item):

@@ -6,6 +6,7 @@ A log of changes by version and date.
 ======= ========== =====
 Version Date       Notes
 ======= ========== =====
+1.12.0  03/15/2021 Added FlashArray 2.5 client
 1.11.0  01/07/2021 Added support for Pure1 subscriptions
 1.10.0  12/21/2020 Added FlashArray 2.4 client
 1.9.0   10/22/2020 Added support for Pure1 directories endpoint

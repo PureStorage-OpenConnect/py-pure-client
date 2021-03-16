@@ -30,7 +30,6 @@ class ResourcePerformanceNoIdByArray(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
         'bytes_per_mirrored_write': 'int',
         'bytes_per_op': 'int',
         'bytes_per_read': 'int',
@@ -58,11 +57,11 @@ class ResourcePerformanceNoIdByArray(object):
         'write_bytes_per_sec': 'int',
         'writes_per_sec': 'int',
         'service_usec_per_read_op_cache_reduction': 'float',
+        'name': 'str',
         'array': 'Resource'
     }
 
     attribute_map = {
-        'name': 'name',
         'bytes_per_mirrored_write': 'bytes_per_mirrored_write',
         'bytes_per_op': 'bytes_per_op',
         'bytes_per_read': 'bytes_per_read',
@@ -90,6 +89,7 @@ class ResourcePerformanceNoIdByArray(object):
         'write_bytes_per_sec': 'write_bytes_per_sec',
         'writes_per_sec': 'writes_per_sec',
         'service_usec_per_read_op_cache_reduction': 'service_usec_per_read_op_cache_reduction',
+        'name': 'name',
         'array': 'array'
     }
 
@@ -98,7 +98,6 @@ class ResourcePerformanceNoIdByArray(object):
 
     def __init__(
         self,
-        name=None,  # type: str
         bytes_per_mirrored_write=None,  # type: int
         bytes_per_op=None,  # type: int
         bytes_per_read=None,  # type: int
@@ -126,11 +125,11 @@ class ResourcePerformanceNoIdByArray(object):
         write_bytes_per_sec=None,  # type: int
         writes_per_sec=None,  # type: int
         service_usec_per_read_op_cache_reduction=None,  # type: float
+        name=None,  # type: str
         array=None,  # type: models.Resource
     ):
         """
         Keyword args:
-            name (str): A user-specified name. The name must be locally unique and can be changed.
             bytes_per_mirrored_write (int): The average I/O size per mirrored write. Measured in bytes.
             bytes_per_op (int): The average I/O size for both read and write (all) operations.
             bytes_per_read (int): The average I/O size per read. Measured in bytes.
@@ -158,10 +157,9 @@ class ResourcePerformanceNoIdByArray(object):
             write_bytes_per_sec (int): The number of bytes written per second.
             writes_per_sec (int): The number of write requests processed per second.
             service_usec_per_read_op_cache_reduction (float): The percentage reduction in `service_usec_per_read_op` due to data cache hits. For example, a value of 0.25 indicates that the value of `service_usec_per_read_op` is 25&#37; lower than it would have been without any data cache hits.
+            name (str): A user-specified name. The name must be locally unique and can be changed.
             array (Resource): The array on which the performance metrics were recorded.
         """
-        if name is not None:
-            self.name = name
         if bytes_per_mirrored_write is not None:
             self.bytes_per_mirrored_write = bytes_per_mirrored_write
         if bytes_per_op is not None:
@@ -216,6 +214,8 @@ class ResourcePerformanceNoIdByArray(object):
             self.writes_per_sec = writes_per_sec
         if service_usec_per_read_op_cache_reduction is not None:
             self.service_usec_per_read_op_cache_reduction = service_usec_per_read_op_cache_reduction
+        if name is not None:
+            self.name = name
         if array is not None:
             self.array = array
 
