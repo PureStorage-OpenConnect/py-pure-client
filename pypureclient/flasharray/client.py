@@ -5,6 +5,7 @@ from . import PureError
 from . import FA_2_4
 from . import FA_2_1
 from . import FA_2_3
+from . import FA_2_5
 from . import FA_2_0
 from . import FA_2_2
 
@@ -12,6 +13,7 @@ fa_modules = {
     '2.4': FA_2_4,
     '2.1': FA_2_1,
     '2.3': FA_2_3,
+    '2.5': FA_2_5,
     '2.0': FA_2_0,
     '2.2': FA_2_2,
 }
@@ -88,7 +90,7 @@ def get_array_versions(target):
         return response.json()['version']
     else:
         raise PureError("Failed to retrieve supported REST versions from target array {}. status code: {}, error: {}"
-                        .format(target, response.statuse_code, response.text))
+                        .format(target, response.status_code, response.text))
 
 def validate_version(array_versions, version):
     if version not in set(fa_modules.keys()):

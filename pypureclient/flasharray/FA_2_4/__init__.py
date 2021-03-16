@@ -203,10 +203,14 @@ from .models.snapshot import Snapshot
 from .models.snapshot_schedule import SnapshotSchedule
 from .models.snmp_agent import SnmpAgent
 from .models.snmp_agent_mib import SnmpAgentMib
+from .models.snmp_agent_patch import SnmpAgentPatch
 from .models.snmp_manager import SnmpManager
+from .models.snmp_manager_patch import SnmpManagerPatch
 from .models.snmp_manager_post import SnmpManagerPost
 from .models.snmp_v2c import SnmpV2c
 from .models.snmp_v3 import SnmpV3
+from .models.snmp_v3_patch import SnmpV3Patch
+from .models.snmp_v3_post import SnmpV3Post
 from .models.software import Software
 from .models.software_installation import SoftwareInstallation
 from .models.software_installation_patch import SoftwareInstallationPatch
@@ -455,10 +459,14 @@ CLASSES_TO_ADD_PROPS = [
     SnapshotSchedule,
     SnmpAgent,
     SnmpAgentMib,
+    SnmpAgentPatch,
     SnmpManager,
+    SnmpManagerPatch,
     SnmpManagerPost,
     SnmpV2c,
     SnmpV3,
+    SnmpV3Patch,
+    SnmpV3Post,
     Software,
     SoftwareInstallation,
     SoftwareInstallationPatch,

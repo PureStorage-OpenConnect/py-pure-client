@@ -217,12 +217,20 @@ class RESTClientObject(object):
             r = RESTResponse(r)
 
             # In the python 3, the response.data is bytes.
-            # we need to decode it to string.
+            should_log_body = True
             if six.PY3:
-                r.data = r.data.decode('utf8')
+                try:
+                    decoded_data = r.data.decode('utf8')
+                    r.data = decoded_data
+                except:
+                    # make sure we don't try to log this data if it's not utf-8 compatible
+                    should_log_body = False
+                    logger.debug("response body could not be decoded using utf-8")
 
-            # log response body
-            logger.debug("response body: %s", r.data)
+            # log response body if and only if it's not file data. file data might error if we try
+            # to write it to this log
+            if should_log_body:
+                logger.debug("response body: %s", r.data)
 
         if not 200 <= r.status <= 299:
             raise ApiException(http_resp=r)

@@ -389,13 +389,17 @@ from .snmp_agent_get_response import SnmpAgentGetResponse
 from .snmp_agent_mib import SnmpAgentMib
 from .snmp_agent_mib_get_response import SnmpAgentMibGetResponse
 from .snmp_agent_mib_response import SnmpAgentMibResponse
+from .snmp_agent_patch import SnmpAgentPatch
 from .snmp_agent_response import SnmpAgentResponse
 from .snmp_manager import SnmpManager
 from .snmp_manager_get_response import SnmpManagerGetResponse
+from .snmp_manager_patch import SnmpManagerPatch
 from .snmp_manager_post import SnmpManagerPost
 from .snmp_manager_response import SnmpManagerResponse
 from .snmp_v2c import SnmpV2c
 from .snmp_v3 import SnmpV3
+from .snmp_v3_patch import SnmpV3Patch
+from .snmp_v3_post import SnmpV3Post
 from .software import Software
 from .software_get_response import SoftwareGetResponse
 from .software_installation import SoftwareInstallation

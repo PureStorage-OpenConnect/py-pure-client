@@ -30,8 +30,6 @@ class ArrayPerformance(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
-        'name': 'str',
         'bytes_per_mirrored_write': 'int',
         'bytes_per_op': 'int',
         'bytes_per_read': 'int',
@@ -59,6 +57,8 @@ class ArrayPerformance(object):
         'write_bytes_per_sec': 'int',
         'writes_per_sec': 'int',
         'service_usec_per_read_op_cache_reduction': 'float',
+        'id': 'str',
+        'name': 'str',
         'queue_depth': 'int',
         'local_queue_usec_per_op': 'int',
         'usec_per_other_op': 'int',
@@ -66,8 +66,6 @@ class ArrayPerformance(object):
     }
 
     attribute_map = {
-        'id': 'id',
-        'name': 'name',
         'bytes_per_mirrored_write': 'bytes_per_mirrored_write',
         'bytes_per_op': 'bytes_per_op',
         'bytes_per_read': 'bytes_per_read',
@@ -95,6 +93,8 @@ class ArrayPerformance(object):
         'write_bytes_per_sec': 'write_bytes_per_sec',
         'writes_per_sec': 'writes_per_sec',
         'service_usec_per_read_op_cache_reduction': 'service_usec_per_read_op_cache_reduction',
+        'id': 'id',
+        'name': 'name',
         'queue_depth': 'queue_depth',
         'local_queue_usec_per_op': 'local_queue_usec_per_op',
         'usec_per_other_op': 'usec_per_other_op',
@@ -106,8 +106,6 @@ class ArrayPerformance(object):
 
     def __init__(
         self,
-        id=None,  # type: str
-        name=None,  # type: str
         bytes_per_mirrored_write=None,  # type: int
         bytes_per_op=None,  # type: int
         bytes_per_read=None,  # type: int
@@ -135,6 +133,8 @@ class ArrayPerformance(object):
         write_bytes_per_sec=None,  # type: int
         writes_per_sec=None,  # type: int
         service_usec_per_read_op_cache_reduction=None,  # type: float
+        id=None,  # type: str
+        name=None,  # type: str
         queue_depth=None,  # type: int
         local_queue_usec_per_op=None,  # type: int
         usec_per_other_op=None,  # type: int
@@ -142,8 +142,6 @@ class ArrayPerformance(object):
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            name (str): A locally unique, system-generated name. The name cannot be modified.
             bytes_per_mirrored_write (int): The average I/O size per mirrored write. Measured in bytes.
             bytes_per_op (int): The average I/O size for both read and write (all) operations.
             bytes_per_read (int): The average I/O size per read. Measured in bytes.
@@ -171,15 +169,13 @@ class ArrayPerformance(object):
             write_bytes_per_sec (int): The number of bytes written per second.
             writes_per_sec (int): The number of write requests processed per second.
             service_usec_per_read_op_cache_reduction (float): The percentage reduction in `service_usec_per_read_op` due to data cache hits. For example, a value of 0.25 indicates that the value of `service_usec_per_read_op` is 25&#37; lower than it would have been without any data cache hits.
+            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
+            name (str): A locally unique, system-generated name. The name cannot be modified.
             queue_depth (int): Deprecated. The number displayed here may not be accurate and in later versions of the product this field will always display `null`. Instead, use `queue_usec_per_mirrored_write_op`, `queue_usec_per_read_op`, and `queue_usec_per_write_op` fields to measure IO queuing.
             local_queue_usec_per_op (int): Average local queue time for both read and write operations, measured in microseconds.
             usec_per_other_op (int): The average time it takes the array to process an I/O other request, measured in microseconds. The average time does not include SAN time, queue time, or QoS rate limit time.
             others_per_sec (int): The number of other requests processed per second.
         """
-        if id is not None:
-            self.id = id
-        if name is not None:
-            self.name = name
         if bytes_per_mirrored_write is not None:
             self.bytes_per_mirrored_write = bytes_per_mirrored_write
         if bytes_per_op is not None:
@@ -234,6 +230,10 @@ class ArrayPerformance(object):
             self.writes_per_sec = writes_per_sec
         if service_usec_per_read_op_cache_reduction is not None:
             self.service_usec_per_read_op_cache_reduction = service_usec_per_read_op_cache_reduction
+        if id is not None:
+            self.id = id
+        if name is not None:
+            self.name = name
         if queue_depth is not None:
             self.queue_depth = queue_depth
         if local_queue_usec_per_op is not None:
