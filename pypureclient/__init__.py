@@ -1,4 +1,5 @@
 from . import flasharray
+from . import flashblade
 from . import pure1
 
 from .exceptions import PureError

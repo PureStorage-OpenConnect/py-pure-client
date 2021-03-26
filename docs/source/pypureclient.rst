@@ -8,6 +8,7 @@ Subpackages
    :maxdepth: 4
 
    pypureclient.flasharray
+   pypureclient.flashblade
    pypureclient.pure1
 
 Submodules
