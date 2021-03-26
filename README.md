@@ -2,8 +2,8 @@
 
 ## Overview
 
-The `py-pure-client` Python package provides clients that use the Pure1 1.x REST API
-and the FlashArray REST 2.x API.
+The `py-pure-client` Python package provides clients that use the Pure1 1.x REST API,
+the FlashArray REST 2.x API, and the FlashBlade REST 2.x API.
 
 For the current FlashBlade REST 1.x Python SDK, [see here](https://github.com/purestorage/purity_fb_python_client).
 For the current FlashArray REST 1.x Python SDK, [see here](https://github.com/PureStorage-OpenConnect/rest-client).

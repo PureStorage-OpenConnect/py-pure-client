@@ -4,7 +4,7 @@ Quick Start
 Authentication
 --------------
 
-This section documents the instantiation of valid, working Pure1 and FlashArray
+This section documents the instantiation of valid, working Pure1, FlashArray, and FlashBlade
 clients required to subsequently call other client methods.
 
 FlashArray Client
@@ -43,6 +43,67 @@ when the ID token expires.
    from pypureclient import flasharray
    client = flasharray.Client('flasharray.example.com',
                               id_token=[...])
+
+
+FlashBlade Client
+~~~~~~~~~~~~~~~~~
+
+Start by importing the ``flashblade`` submodule in ``pypureclient``:
+
+.. code-block:: python
+
+   from pypureclient import flashblade
+
+Instantiation of a FlashBlade client requires authentication. More information
+is available in the `FlashBlade REST API FAQ
+<https://support.purestorage.com/FlashBlade/Purity_FB/PurityFB_REST_API/Management_REST_API/FlashBlade_REST_API_FAQ>`__
+
+After creating and enabling a client using ``pureapiclient`` on the FlashBlade array you wish
+to target, you can pass the various parameters into the ``Client`` constructor:
+
+.. code-block:: python
+
+   from pypureclient import flashblade
+   client = flashblade.Client('flashblade.example.com',
+                              private_key_file=[...],
+                              private_key_password=[...],
+                              username=[...],
+                              client_id=[...],
+                              key_id=[...],
+                              issuer=[...])
+
+If directly using a pre-generated ID token is preferred, it can be used in the
+same way. Note that using a pre-generated ID token will cause the client to fail
+when the ID token expires.
+
+.. code-block:: python
+
+   from pypureclient import flashblade
+   client = flashblade.Client('flashblade.example.com',
+                              id_token=[...])
+
+You can also use an API token created by using ``pureadmin`` on the FlashBlade array
+if that is preferred.
+
+.. code-block:: python
+
+   from pypureclient import flashblade
+   client = flashblade.Client('flashblade.example.com',
+                              api_token=[...])
+
+If you are writing an API integration for FlashBlade for distribution to your customers
+and partners, we ask that you ensure that your API integration "self-identifies" when
+connecting to FlashBlade.
+
+To do this, choose a unique, human-readable string that identifies your FlashBlade API
+integration by name and version, and specify it as the ``user_agent``.
+
+.. code-block:: python
+
+   from pypureclient import flashblade
+   client = flashblade.Client('flashblade.example.com',
+                              api_token=[...],
+                              user_agent='YourCompanyName_YourProductIntegrationName/YourIntegrationVersion')
 
 
 Pure1 client
@@ -97,7 +158,7 @@ These examples assume the client has already been set up using the instructions
 in the Authentication section above.
 
 The client has functions that model the endpoints of the API you are accessing
-(FlashArray or Pure1) and accept the query parameters as arguments.
+(FlashArray, FlashBlade, or Pure1) and accept the query parameters as arguments.
 
 .. code-block:: python
 
@@ -196,7 +257,7 @@ Filter objects are not required to be used if strings are preferred.
 
 These examples are for the ``pure1`` client, but are applicable to all of the
 clients (for example, the same ``Filter`` module is exposed inside the
-``flasharray`` module).
+``flasharray`` and ``flashblade`` modules).
 
 .. code-block:: python
 

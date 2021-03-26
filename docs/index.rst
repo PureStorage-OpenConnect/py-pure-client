@@ -12,13 +12,14 @@ py-pure-client Documentation
    installation
    quick_start
    fa_reference
+   fb_reference
    pure1_reference
    changelog
 
 Overview
 --------
 
-This Python package provides clients that use the Pure1 and FlashArray REST APIs.
+This Python package provides clients that use the Pure1, FlashArray, and FlashBlade REST APIs.
 
 :doc:`installation`
   Steps for installing the Python package.
@@ -28,6 +29,9 @@ This Python package provides clients that use the Pure1 and FlashArray REST APIs
 
 :doc:`fa_reference`
   A glossary of all interfaces and models used by the FlashArray client.
+
+:doc:`fb_reference`
+  A glossary of all interfaces and models used by the FlashBlade client.
 
 :doc:`pure1_reference`
   A glossary of all interfaces and models used by the Pure1 client.
