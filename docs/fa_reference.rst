@@ -47,6 +47,11 @@ FlashArray REST 2.5 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.FA_2_5.client.Client
+
+FlashArray REST 2.6 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.FA_2_6.client.Client
     :members:
 
 Properties
@@ -251,6 +256,12 @@ ArrayConnectionPost
 .. autoclass:: pypureclient.flasharray.ArrayConnectionPost
    :members:
 
+ArrayEncryption
+~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.ArrayEncryption
+   :members:
+
 ArrayFactoryResetToken
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -267,6 +278,12 @@ ArraySpace
 ~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.ArraySpace
+   :members:
+
+ArrayencryptionDataAtRest
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.ArrayencryptionDataAtRest
    :members:
 
 Arrays
@@ -327,6 +344,12 @@ Chap
 ~~~~
 
 .. autoclass:: pypureclient.flasharray.Chap
+   :members:
+
+CloudProviderTag
+~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.CloudProviderTag
    :members:
 
 Connection
@@ -477,6 +500,12 @@ Drive
 ~~~~~
 
 .. autoclass:: pypureclient.flasharray.Drive
+   :members:
+
+EradicationConfig
+~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.EradicationConfig
    :members:
 
 Eula
@@ -1594,3 +1623,10 @@ VolumeSpace
 
 .. autoclass:: pypureclient.flasharray.VolumeSpace
    :members:
+
+model
+~~~~~
+
+.. autoclass:: pypureclient.flasharray.model
+   :members:
+

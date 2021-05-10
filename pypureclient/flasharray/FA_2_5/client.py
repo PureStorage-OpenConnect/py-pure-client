@@ -20,7 +20,7 @@ class Client(object):
     DEFAULT_TIMEOUT = 15.0
     DEFAULT_RETRIES = 5
     # Format: client/client_version/endpoint/endpoint_version/system/release
-    USER_AGENT = ('pypureclient/1.12.0/FA/2.5/{sys}/{rel}'
+    USER_AGENT = ('pypureclient/1.14.0/FA/2.5/{sys}/{rel}'
                   .format(sys=platform.system(), rel=platform.release()))
 
     def __init__(self, target, id_token=None, private_key_file=None, private_key_password=None,
@@ -19190,7 +19190,8 @@ class Client(object):
     ):
         # type: (...) -> models.RemoteVolumeSnapshotResponse
         """
-        Creates a volume snapshot on the specified offload target.
+        Creates a volume snapshot on the specified connected remote target or offload
+        target.
 
         Args:
             sources (list[FixedReference], optional):
