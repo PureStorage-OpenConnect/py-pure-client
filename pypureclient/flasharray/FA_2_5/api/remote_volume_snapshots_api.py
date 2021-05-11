@@ -390,9 +390,9 @@ class RemoteVolumeSnapshotsApi(object):
         _request_timeout=None,  # type: Optional[int]
     ):
         # type: (...) -> models.RemoteVolumeSnapshotResponse
-        """Create a volume snapshot on an offload target
+        """Create a volume snapshot on a connected remote target or offload target
 
-        Creates a volume snapshot on the specified offload target.
+        Creates a volume snapshot on the specified connected remote target or offload target.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api25_remote_volume_snapshots_post_with_http_info(async_req=True)

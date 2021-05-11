@@ -6,6 +6,7 @@ A log of changes by version and date.
 ======= ========== =====
 Version Date       Notes
 ======= ========== =====
+1.14.0  05/10/2021 Added FlashArray 2.6 client
 1.13.0  03/19/2021 Added FlashBlade 2.0 client
 1.12.0  03/15/2021 Added FlashArray 2.5 client
 1.11.0  01/07/2021 Added support for Pure1 subscriptions
