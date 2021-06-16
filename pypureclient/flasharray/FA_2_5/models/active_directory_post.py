@@ -62,9 +62,9 @@ class ActiveDirectoryPost(object):
         """
         Keyword args:
             computer_name (str): The name of the computer account to be created in the Active Directory domain. If not specified, defaults to the name of the Active Directory configuration.
-            directory_servers (list[str]): A list of directory servers used for lookups related to user authorization. Accepted server formats are IP address and DNS name. All specified servers must be registered to the domain appropriately in the configured DNS of the array and are only communicated with over the secure LDAP (LDAPS) protocol. If not specified, servers are resolved for the domain in DNS. The specified list can have a maximum length of 1.
+            directory_servers (list[str]): A list of directory servers used for lookups related to user authorization. Servers must be specified in FQDN format. All specified servers must be registered to the domain appropriately in the configured DNS of the array and are only communicated with over the secure LDAP (LDAPS) protocol. If not specified, servers are resolved for the domain in DNS.
             domain (str): The Active Directory domain to join.
-            kerberos_servers (list[str]): A list of key distribution servers to use for Kerberos protocol. Accepted server formats are IP address and DNS name. All specified servers must be registered to the domain appropriately in the configured DNS of the array. If not specified, servers are resolved for the domain in DNS. The specified list can have a maximum length of 1.
+            kerberos_servers (list[str]): A list of key distribution servers to use for Kerberos protocol. Servers must be specified in FQDN format. All specified servers must be registered to the domain appropriately in the configured DNS of the array. If not specified, servers are resolved for the domain in DNS.
             password (str): The login password of the user with privileges to create the computer account in the domain. This is not persisted on the array.
             user (str): The login name of the user with privileges to create the computer account in the domain. This is not persisted on the array.
         """

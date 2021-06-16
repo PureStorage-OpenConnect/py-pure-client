@@ -61,7 +61,7 @@ class PolicySmb(object):
             id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
             name (str): A user-specified name. The name must be locally unique and can be changed.
             enabled (bool): Returns a value of `true` if the policy is enabled.
-            policy_type (str): Type of the policy. Valid values are `nfs`, `smb`, and `snapshot`.
+            policy_type (str): Type of the policy. Valid values include `nfs`, `smb`, `snapshot`, and `quota`.
             access_based_enumeration_enabled (bool): Returns a value of `true` if access based enumeration is enabled on the policy. When access based enumeration is enabled on a policy, files and folders within exports that are attached to the policy will be hidden from users who do not have permission to view them.
         """
         if id is not None:

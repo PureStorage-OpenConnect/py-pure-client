@@ -9,6 +9,7 @@ from . import FA_2_3
 from . import FA_2_5
 from . import FA_2_0
 from . import FA_2_2
+from . import FA_2_7
 
 fa_modules = {
     '2.6': FA_2_6,
@@ -18,6 +19,7 @@ fa_modules = {
     '2.5': FA_2_5,
     '2.0': FA_2_0,
     '2.2': FA_2_2,
+    '2.7': FA_2_7,
 }
 
 MW_DEV_VERSION = '2.DEV'
