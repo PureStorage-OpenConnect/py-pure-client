@@ -60,9 +60,9 @@ class ActiveDirectory(object):
         Keyword args:
             name (str): A locally unique, system-generated name. The name cannot be modified.
             computer_name (str): The name of the computer account in the Active Directory domain.
-            directory_servers (list[str]): A list of directory servers used for lookups related to user authorization. Accepted server formats are IP address and DNS name. All specified servers must be registered to the domain appropriately in the configured DNS of the array and are only communicated with over the secure LDAP (LDAPS) protocol. If this field is `null`, the servers are resolved for the domain in DNS.
+            directory_servers (list[str]): A list of directory servers used for lookups related to user authorization. Servers must be specified in FQDN format. All specified servers must be registered to the domain appropriately in the configured DNS of the array and are only communicated with over the secure LDAP (LDAPS) protocol. If this field is `null`, the servers are resolved for the domain in DNS.
             domain (str): The Active Directory domain joined.
-            kerberos_servers (list[str]): A list of key distribution servers to use for Kerberos protocol. Accepted server formats are IP address and DNS name. All specified servers must be registered to the domain appropriately in the configured DNS of the array. If this field is `null`, the servers are resolved for the domain in DNS.
+            kerberos_servers (list[str]): A list of key distribution servers to use for Kerberos protocol. Servers must be specified in FQDN format. All specified servers must be registered to the domain appropriately in the configured DNS of the array. If this field is `null`, the servers are resolved for the domain in DNS.
         """
         if name is not None:
             self.name = name

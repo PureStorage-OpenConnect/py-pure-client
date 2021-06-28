@@ -58,7 +58,7 @@ class Policy(object):
             id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
             name (str): A user-specified name. The name must be locally unique and can be changed.
             enabled (bool): Returns a value of `true` if the policy is enabled.
-            policy_type (str): Type of the policy. Valid values are `nfs`, `smb`, and `snapshot`.
+            policy_type (str): Type of the policy. Valid values include `nfs`, `smb`, `snapshot`, and `quota`.
         """
         if id is not None:
             self.id = id

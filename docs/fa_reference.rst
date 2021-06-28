@@ -52,6 +52,11 @@ FlashArray REST 2.6 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.FA_2_6.client.Client
+
+FlashArray REST 2.7 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.FA_2_7.client.Client
     :members:
 
 Properties
@@ -430,6 +435,12 @@ DirectoryPost
 .. autoclass:: pypureclient.flasharray.DirectoryPost
    :members:
 
+DirectoryQuota
+~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.DirectoryQuota
+   :members:
+
 DirectoryService
 ~~~~~~~~~~~~~~~~
 
@@ -668,6 +679,12 @@ KmipTestResult
 ~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.KmipTestResult
+   :members:
+
+LimitedBy
+~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.LimitedBy
    :members:
 
 MaintenanceWindow
@@ -958,6 +975,18 @@ PolicyRuleNfsClientPost
 .. autoclass:: pypureclient.flasharray.PolicyRuleNfsClientPost
    :members:
 
+PolicyRuleQuota
+~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyRuleQuota
+   :members:
+
+PolicyRuleQuotaPost
+~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyRuleQuotaPost
+   :members:
+
 PolicyRuleSmbClient
 ~~~~~~~~~~~~~~~~~~~
 
@@ -1016,6 +1045,12 @@ PolicyrulenfsclientpostRules
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.PolicyrulenfsclientpostRules
+   :members:
+
+PolicyrulequotapostRules
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyrulequotapostRules
    :members:
 
 PolicyrulesmbclientpostRules

@@ -54,7 +54,7 @@ class FixedReferenceWithType(object):
         Keyword args:
             id (str): A globally unique, system-generated ID. The ID cannot be modified.
             name (str): The resource name, such as volume name, pod name, snapshot name, and so on.
-            resource_type (str): Type of the object (full name of the endpoint). Valid values are `hosts`, `host-groups`, `network-interfaces`, `pods`, `ports`, `pod-replica-links`, `subnets`, `volumes`, `volume-snapshots`, `volume-groups`, `directories`, `policies/nfs`, `policies/smb`, and `policies/snapshot`.
+            resource_type (str): Type of the object (full name of the endpoint). Valid values include `hosts`, `host-groups`, `network-interfaces`, `pods`, `ports`, `pod-replica-links`, `subnets`, `volumes`, `volume-snapshots`, `volume-groups`, `directories`, `policies/nfs`, `policies/smb`, `policies/snapshot`, and `policies/quota`.
         """
         if id is not None:
             self.id = id
