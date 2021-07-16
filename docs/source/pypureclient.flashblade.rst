@@ -8,6 +8,7 @@ Subpackages
    :maxdepth: 4
 
    pypureclient.flashblade.FB_2_0
+   pypureclient.flashblade.FB_2_1
 
 Submodules
 ----------

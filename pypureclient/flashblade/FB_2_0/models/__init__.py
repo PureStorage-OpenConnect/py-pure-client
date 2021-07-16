@@ -170,6 +170,7 @@ from .file_system_snapshot_transfer import FileSystemSnapshotTransfer
 from .file_system_snapshot_transfer_response import FileSystemSnapshotTransferResponse
 from .file_system_user_performance import FileSystemUserPerformance
 from .file_system_users_performance_get_response import FileSystemUsersPerformanceGetResponse
+from .fixed_location_reference import FixedLocationReference
 from .fixed_reference import FixedReference
 from .fixed_reference_name_only import FixedReferenceNameOnly
 from .fixed_reference_no_resource_type import FixedReferenceNoResourceType

@@ -74,6 +74,7 @@ from .models.file_system_snapshot import FileSystemSnapshot
 from .models.file_system_snapshot_post import FileSystemSnapshotPost
 from .models.file_system_snapshot_transfer import FileSystemSnapshotTransfer
 from .models.file_system_user_performance import FileSystemUserPerformance
+from .models.fixed_location_reference import FixedLocationReference
 from .models.fixed_reference import FixedReference
 from .models.fixed_reference_name_only import FixedReferenceNameOnly
 from .models.fixed_reference_no_resource_type import FixedReferenceNoResourceType
@@ -235,6 +236,7 @@ CLASSES_TO_ADD_PROPS = [
     FileSystemSnapshotPost,
     FileSystemSnapshotTransfer,
     FileSystemUserPerformance,
+    FixedLocationReference,
     FixedReference,
     FixedReferenceNameOnly,
     FixedReferenceNoResourceType,

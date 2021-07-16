@@ -32,7 +32,7 @@ class UsageApi(object):
         file_system_ids=None,  # type: List[str]
         file_system_names=None,  # type: List[str]
         filter=None,  # type: str
-        gids=None,  # type: List[str]
+        gids=None,  # type: List[int]
         group_names=None,  # type: List[str]
         limit=None,  # type: int
         offset=None,  # type: int
@@ -55,7 +55,7 @@ class UsageApi(object):
         :param list[str] file_system_ids: A comma-separated list of file system IDs. If after filtering, there is not at least one resource that matches each of the elements of `file_system_ids`, then an error is returned. This cannot be provided together with the `file_system_names` query parameter.
         :param list[str] file_system_names: A comma-separated list of file system names. If there is not at least one resource that matches each of the elements of `file_system_names`, then an error is returned.
         :param str filter: Exclude resources that don't match the specified criteria.
-        :param list[str] gids: A comma-separated list of group IDs. If there is not at least one resource that matches each of the elements of `gids`, then an error is returned. This cannot be provided together with `group_names` query parameter.
+        :param list[int] gids: A comma-separated list of group IDs. If there is not at least one resource that matches each of the elements of `gids`, then an error is returned. This cannot be provided together with `group_names` query parameter.
         :param list[str] group_names: A comma-separated list of group names. If there is not at least one resource that matches each of the elements of `group_names`, then an error is returned. This cannot be provided together with `gids` query parameter.
         :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the maximum number, the request is still valid. In that case the server just returns the maximum number of items, disregarding the client's page size request.
         :param int offset: The offset of the first resource to return from a collection.
