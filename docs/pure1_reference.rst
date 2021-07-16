@@ -99,12 +99,6 @@ Controller
 .. autoclass:: pypureclient.pure1.models.Controller
     :members:
 
-CurrentMetric
-~~~~~~~~~~~~~
-
-.. autoclass:: pypureclient.pure1.models.CurrentMetric
-    :members:
-
 Drive
 ~~~~~
 
@@ -145,12 +139,6 @@ Http
 ~~~~
 
 .. autoclass:: pypureclient.pure1.models.Http
-    :members:
-
-LicenseResourceReference
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. autoclass:: pypureclient.pure1.models.LicenseResourceReference
     :members:
 
 Metric
@@ -235,18 +223,6 @@ Port
 ~~~~
 
 .. autoclass:: pypureclient.pure1.models.Port
-    :members:
-
-Subscription
-~~~~~~~~~~~~
-
-.. autoclass:: pypureclient.pure1.models.Subscription
-    :members:
-
-SubscriptionLicense
-~~~~~~~~~~~~~~~~~~~
-
-.. autoclass:: pypureclient.pure1.models.SubscriptionLicense
     :members:
 
 Smb

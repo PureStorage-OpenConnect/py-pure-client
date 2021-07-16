@@ -30,18 +30,18 @@ class LocationReference(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'id': 'str',
         'name': 'str',
         'resource_type': 'ResourceType',
-        'id': 'str',
         'display_name': 'str',
         'is_local': 'bool',
         'location': 'Reference'
     }
 
     attribute_map = {
+        'id': 'id',
         'name': 'name',
         'resource_type': 'resource_type',
-        'id': 'id',
         'display_name': 'display_name',
         'is_local': 'is_local',
         'location': 'location'
@@ -52,28 +52,28 @@ class LocationReference(object):
 
     def __init__(
         self,
+        id=None,  # type: str
         name=None,  # type: str
         resource_type=None,  # type: models.ResourceType
-        id=None,  # type: str
         display_name=None,  # type: str
         is_local=None,  # type: bool
         location=None,  # type: models.Reference
     ):
         """
         Keyword args:
+            id (str): A non-modifiable, globally unique ID chosen by the system.
             name (str): A name chosen by the user. Can be changed. Must be locally unique.
             resource_type (ResourceType)
-            id (str): A non-modifiable, globally unique ID chosen by the system.
             display_name (str): Full name of the source with remote array information. Response will be same as source name for local file systems and policies.
             is_local (bool): -> Is the location reference to the local array or somewhere remote?
             location (Reference): A reference to the location where the object is defined.
         """
+        if id is not None:
+            self.id = id
         if name is not None:
             self.name = name
         if resource_type is not None:
             self.resource_type = resource_type
-        if id is not None:
-            self.id = id
         if display_name is not None:
             self.display_name = display_name
         if is_local is not None:
