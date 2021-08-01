@@ -2,6 +2,7 @@ import requests
 
 from . import PureError
 
+from . import FA_2_8
 from . import FA_2_6
 from . import FA_2_4
 from . import FA_2_1
@@ -12,6 +13,7 @@ from . import FA_2_2
 from . import FA_2_7
 
 fa_modules = {
+    '2.8': FA_2_8,
     '2.6': FA_2_6,
     '2.4': FA_2_4,
     '2.1': FA_2_1,
