@@ -34,7 +34,7 @@ class Client(object):
     DEFAULT_TIMEOUT = 15.0
     DEFAULT_RETRIES = 5
     # Format: client/client_version/endpoint/endpoint_version/system/release
-    USER_AGENT = ('pypureclient/1.13.0/FB/2.0/{sys}/{rel}'
+    USER_AGENT = ('pypureclient/1.17.0/FB/2.0/{sys}/{rel}'
                   .format(sys=platform.system(), rel=platform.release()))
 
     def __init__(self, target, id_token=None, private_key_file=None, private_key_password=None,
@@ -7191,13 +7191,11 @@ class Client(object):
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             gids (list[str], optional):
-                A list of group IDs. If there is not at least one resource that matches each of
-                the elements of `gids`, then an error is returned. This cannot be provided
-                together with `group_names` query parameter.
+                A list of group IDs. This cannot be provided together with `group_names` query
+                parameter.
             group_names (list[str], optional):
-                A list of group names. If there is not at least one resource that matches each
-                of the elements of `group_names`, then an error is returned. This cannot be
-                provided together with `gids` query parameter.
+                A list of group names. This cannot be provided together with `gids` query
+                parameter.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -7795,13 +7793,11 @@ class Client(object):
                 Only return the total record for the specified items. The total record will be
                 the total of all items after filtering. The `items` list will be empty.
             uids (list[int], optional):
-                A list of user IDs. If there is not at least one resource that matches each of
-                the elements of `uids`, then an error is returned. This cannot be provided
-                together with `user_names` query parameter.
+                A list of user IDs. This cannot be provided together with `user_names` query
+                parameter.
             user_names (list[str], optional):
-                A list of user names. If there is not at least one resource that matches each of
-                the elements of `user_names`, then an error is returned. This cannot be provided
-                together with `uids` query parameter.
+                A list of user names. This cannot be provided together with `uids` query
+                parameter.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -11991,7 +11987,7 @@ class Client(object):
         references=None,  # type: List[models.ReferenceType]
         file_system_names=None,  # type: List[str]
         file_system_ids=None,  # type: List[str]
-        gids=None,  # type: List[str]
+        gids=None,  # type: List[int]
         group_names=None,  # type: List[str]
         names=None,  # type: List[str]
         async_req=False,  # type: bool
@@ -12019,7 +12015,7 @@ class Client(object):
                 resource that matches each of the elements of `file_system_ids`, then an error
                 is returned. This cannot be provided together with the `file_system_names` query
                 parameter.
-            gids (list[str], optional):
+            gids (list[int], optional):
                 A list of group IDs. If there is not at least one resource that matches each of
                 the elements of `gids`, then an error is returned. This cannot be provided
                 together with `group_names` query parameter.
@@ -12076,7 +12072,7 @@ class Client(object):
         file_system_ids=None,  # type: List[str]
         file_system_names=None,  # type: List[str]
         filter=None,  # type: str
-        gids=None,  # type: List[str]
+        gids=None,  # type: List[int]
         group_names=None,  # type: List[str]
         limit=None,  # type: int
         names=None,  # type: List[str]
@@ -12111,7 +12107,7 @@ class Client(object):
                 each of the elements of `file_system_names`, then an error is returned.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
-            gids (list[str], optional):
+            gids (list[int], optional):
                 A list of group IDs. If there is not at least one resource that matches each of
                 the elements of `gids`, then an error is returned. This cannot be provided
                 together with `group_names` query parameter.
@@ -12178,7 +12174,7 @@ class Client(object):
         references=None,  # type: List[models.ReferenceType]
         file_system_names=None,  # type: List[str]
         file_system_ids=None,  # type: List[str]
-        gids=None,  # type: List[str]
+        gids=None,  # type: List[int]
         group_names=None,  # type: List[str]
         names=None,  # type: List[str]
         quota=None,  # type: models.GroupQuotaPatch
@@ -12209,7 +12205,7 @@ class Client(object):
                 resource that matches each of the elements of `file_system_ids`, then an error
                 is returned. This cannot be provided together with the `file_system_names` query
                 parameter.
-            gids (list[str], optional):
+            gids (list[int], optional):
                 A list of group IDs. If there is not at least one resource that matches each of
                 the elements of `gids`, then an error is returned. This cannot be provided
                 together with `group_names` query parameter.
@@ -12264,7 +12260,7 @@ class Client(object):
         groups=None,  # type: List[models.ReferenceType]
         file_system_ids=None,  # type: List[str]
         file_system_names=None,  # type: List[str]
-        gids=None,  # type: List[str]
+        gids=None,  # type: List[int]
         group_names=None,  # type: List[str]
         quota=None,  # type: models.GroupQuotaPost
         async_req=False,  # type: bool
@@ -12290,7 +12286,7 @@ class Client(object):
             file_system_names (list[str], optional):
                 A list of file system names. If there is not at least one resource that matches
                 each of the elements of `file_system_names`, then an error is returned.
-            gids (list[str], optional):
+            gids (list[int], optional):
                 A list of group IDs. If there is not at least one resource that matches each of
                 the elements of `gids`, then an error is returned. This cannot be provided
                 together with `group_names` query parameter.
@@ -14671,7 +14667,7 @@ class Client(object):
         file_system_ids=None,  # type: List[str]
         file_system_names=None,  # type: List[str]
         filter=None,  # type: str
-        gids=None,  # type: List[str]
+        gids=None,  # type: List[int]
         group_names=None,  # type: List[str]
         limit=None,  # type: int
         offset=None,  # type: int
@@ -14703,7 +14699,7 @@ class Client(object):
                 each of the elements of `file_system_names`, then an error is returned.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
-            gids (list[str], optional):
+            gids (list[int], optional):
                 A list of group IDs. If there is not at least one resource that matches each of
                 the elements of `gids`, then an error is returned. This cannot be provided
                 together with `group_names` query parameter.

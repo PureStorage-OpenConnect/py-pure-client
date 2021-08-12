@@ -23,6 +23,12 @@ FlashBlade REST 2.0 Client
 
 .. autoclass:: pypureclient.flashblade.FB_2_0.client.Client
 
+FlashBlade REST 2.1 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.FB_2_1.client.Client
+    :members:
+
 Properties
 ----------
 
@@ -181,6 +187,12 @@ ArrayConnectionPost
 ~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.ArrayConnectionPost
+    :members:
+
+ArrayFactoryResetToken
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.ArrayFactoryResetToken
     :members:
 
 ArrayHttpSpecificPerformance
@@ -405,6 +417,12 @@ Dns
 .. autoclass:: pypureclient.flashblade.Dns
     :members:
 
+DnsLookup
+~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.DnsLookup
+    :members:
+
 Eula
 ~~~~
 
@@ -555,10 +573,22 @@ KeytabPost
 .. autoclass:: pypureclient.flashblade.KeytabPost
     :members:
 
+KmipServer
+~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.KmipServer
+    :members:
+
 LifecycleRule
 ~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.LifecycleRule
+    :members:
+
+LifecycleRulePatch
+~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.LifecycleRulePatch
     :members:
 
 LifecycleRulePost
@@ -757,6 +787,12 @@ QuotaSetting
 ~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.QuotaSetting
+    :members:
+
+RapidDataLocking
+~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.RapidDataLocking
     :members:
 
 Reference
@@ -1100,31 +1136,31 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 delete_active_directory
 '''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/delete_active_directory.py
+.. literalinclude:: source/examples/FB2.0/delete_active_directory.py
     :language: python
 
 get_active_directory
 ''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_active_directory.py
+.. literalinclude:: source/examples/FB2.0/get_active_directory.py
     :language: python
 
 patch_active_directory
 ''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/patch_active_directory.py
+.. literalinclude:: source/examples/FB2.0/patch_active_directory.py
     :language: python
 
 post_active_directory
 '''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/post_active_directory.py
+.. literalinclude:: source/examples/FB2.0/post_active_directory.py
     :language: python
 
 get_active_directory_test
 '''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_active_directory_test.py
+.. literalinclude:: source/examples/FB2.0/get_active_directory_test.py
     :language: python
 
 Administrators
@@ -1135,43 +1171,43 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 delete_admins_api_tokens
 ''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/delete_admins_api_tokens.py
+.. literalinclude:: source/examples/FB2.0/delete_admins_api_tokens.py
     :language: python
 
 get_admins_api_tokens
 '''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_admins_api_tokens.py
+.. literalinclude:: source/examples/FB2.0/get_admins_api_tokens.py
     :language: python
 
 post_admins_api_tokens
 ''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/post_admins_api_tokens.py
+.. literalinclude:: source/examples/FB2.0/post_admins_api_tokens.py
     :language: python
 
 delete_admins_cache
 '''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/delete_admins_cache.py
+.. literalinclude:: source/examples/FB2.0/delete_admins_cache.py
     :language: python
 
 get_admins_cache
 ''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_admins_cache.py
+.. literalinclude:: source/examples/FB2.0/get_admins_cache.py
     :language: python
 
 get_admins
 ''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_admins.py
+.. literalinclude:: source/examples/FB2.0/get_admins.py
     :language: python
 
 patch_admins
 ''''''''''''
 
-.. literalinclude:: source/examples/flashblade/patch_admins.py
+.. literalinclude:: source/examples/FB2.0/patch_admins.py
     :language: python
 
 Alert Watchers
@@ -1182,31 +1218,31 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 delete_alert_watchers
 '''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/delete_alert_watchers.py
+.. literalinclude:: source/examples/FB2.0/delete_alert_watchers.py
     :language: python
 
 get_alert_watchers
 ''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_alert_watchers.py
+.. literalinclude:: source/examples/FB2.0/get_alert_watchers.py
     :language: python
 
 patch_alert_watchers
 ''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/patch_alert_watchers.py
+.. literalinclude:: source/examples/FB2.0/patch_alert_watchers.py
     :language: python
 
 post_alert_watchers
 '''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/post_alert_watchers.py
+.. literalinclude:: source/examples/FB2.0/post_alert_watchers.py
     :language: python
 
 get_alert_watchers_test
 '''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_alert_watchers_test.py
+.. literalinclude:: source/examples/FB2.0/get_alert_watchers_test.py
     :language: python
 
 Alerts
@@ -1217,13 +1253,13 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 get_alerts
 ''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_alerts.py
+.. literalinclude:: source/examples/FB2.0/get_alerts.py
     :language: python
 
 patch_alerts
 ''''''''''''
 
-.. literalinclude:: source/examples/flashblade/patch_alerts.py
+.. literalinclude:: source/examples/FB2.0/patch_alerts.py
     :language: python
 
 API Clients
@@ -1234,25 +1270,25 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 delete_api_clients
 ''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/delete_api_clients.py
+.. literalinclude:: source/examples/FB2.0/delete_api_clients.py
     :language: python
 
 get_api_clients
 '''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_api_clients.py
+.. literalinclude:: source/examples/FB2.0/get_api_clients.py
     :language: python
 
 patch_api_clients
 '''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/patch_api_clients.py
+.. literalinclude:: source/examples/FB2.0/patch_api_clients.py
     :language: python
 
 post_api_clients
 ''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/post_api_clients.py
+.. literalinclude:: source/examples/FB2.0/post_api_clients.py
     :language: python
 
 Array Connections
@@ -1263,49 +1299,49 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 get_array_connections_connection_key
 ''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_array_connections_connection_key.py
+.. literalinclude:: source/examples/FB2.0/get_array_connections_connection_key.py
     :language: python
 
 post_array_connections_connection_key
 '''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/post_array_connections_connection_key.py
+.. literalinclude:: source/examples/FB2.0/post_array_connections_connection_key.py
     :language: python
 
 delete_array_connections
 ''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/delete_array_connections.py
+.. literalinclude:: source/examples/FB2.0/delete_array_connections.py
     :language: python
 
 get_array_connections
 '''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_array_connections.py
+.. literalinclude:: source/examples/FB2.0/get_array_connections.py
     :language: python
 
 patch_array_connections
 '''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/patch_array_connections.py
+.. literalinclude:: source/examples/FB2.0/patch_array_connections.py
     :language: python
 
 get_array_connections_path
 ''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_array_connections_path.py
+.. literalinclude:: source/examples/FB2.0/get_array_connections_path.py
     :language: python
 
 get_array_connections_performance_replication
 '''''''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_array_connections_performance_replication.py
+.. literalinclude:: source/examples/FB2.0/get_array_connections_performance_replication.py
     :language: python
 
 post_array_connections
 ''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/post_array_connections.py
+.. literalinclude:: source/examples/FB2.0/post_array_connections.py
     :language: python
 
 Arrays
@@ -1316,67 +1352,85 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 get_arrays_eula
 '''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_arrays_eula.py
+.. literalinclude:: source/examples/FB2.0/get_arrays_eula.py
     :language: python
 
 patch_arrays_eula
 '''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/patch_arrays_eula.py
+.. literalinclude:: source/examples/FB2.0/patch_arrays_eula.py
+    :language: python
+
+delete_arrays_factory_reset_token
+'''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/delete_arrays_factory_reset_token.py
+    :language: python
+
+get_arrays_factory_reset_token
+''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_arrays_factory_reset_token.py
+    :language: python
+
+post_arrays_factory_reset_token
+'''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/post_arrays_factory_reset_token.py
     :language: python
 
 get_arrays
 ''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_arrays.py
+.. literalinclude:: source/examples/FB2.0/get_arrays.py
     :language: python
 
 get_arrays_http_specific_performance
 ''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_arrays_http_specific_performance.py
+.. literalinclude:: source/examples/FB2.0/get_arrays_http_specific_performance.py
     :language: python
 
 get_arrays_nfs_specific_performance
 '''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_arrays_nfs_specific_performance.py
+.. literalinclude:: source/examples/FB2.0/get_arrays_nfs_specific_performance.py
     :language: python
 
 patch_arrays
 ''''''''''''
 
-.. literalinclude:: source/examples/flashblade/patch_arrays.py
+.. literalinclude:: source/examples/FB2.0/patch_arrays.py
     :language: python
 
 get_arrays_performance
 ''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_arrays_performance.py
+.. literalinclude:: source/examples/FB2.0/get_arrays_performance.py
     :language: python
 
 get_arrays_performance_replication
 ''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_arrays_performance_replication.py
+.. literalinclude:: source/examples/FB2.0/get_arrays_performance_replication.py
     :language: python
 
 get_arrays_s3_specific_performance
 ''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_arrays_s3_specific_performance.py
+.. literalinclude:: source/examples/FB2.0/get_arrays_s3_specific_performance.py
     :language: python
 
 get_arrays_space
 ''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_arrays_space.py
+.. literalinclude:: source/examples/FB2.0/get_arrays_space.py
     :language: python
 
 get_arrays_supported_time_zones
 '''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_arrays_supported_time_zones.py
+.. literalinclude:: source/examples/FB2.0/get_arrays_supported_time_zones.py
     :language: python
 
 Audits
@@ -1387,8 +1441,13 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 get_audits
 ''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_audits.py
+.. literalinclude:: source/examples/FB2.0/get_audits.py
     :language: python
+
+Authorization
+~~~~~~~~~~~~~~
+
+The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
 Blades
 ~~~~~~~
@@ -1398,7 +1457,7 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 get_blades
 ''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_blades.py
+.. literalinclude:: source/examples/FB2.0/get_blades.py
     :language: python
 
 Bucket Replica Links
@@ -1409,25 +1468,25 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 delete_bucket_replica_links
 '''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/delete_bucket_replica_links.py
+.. literalinclude:: source/examples/FB2.0/delete_bucket_replica_links.py
     :language: python
 
 get_bucket_replica_links
 ''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_bucket_replica_links.py
+.. literalinclude:: source/examples/FB2.0/get_bucket_replica_links.py
     :language: python
 
 patch_bucket_replica_links
 ''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/patch_bucket_replica_links.py
+.. literalinclude:: source/examples/FB2.0/patch_bucket_replica_links.py
     :language: python
 
 post_bucket_replica_links
 '''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/post_bucket_replica_links.py
+.. literalinclude:: source/examples/FB2.0/post_bucket_replica_links.py
     :language: python
 
 Buckets
@@ -1438,37 +1497,37 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 delete_buckets
 ''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/delete_buckets.py
+.. literalinclude:: source/examples/FB2.0/delete_buckets.py
     :language: python
 
 get_buckets
 '''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_buckets.py
+.. literalinclude:: source/examples/FB2.0/get_buckets.py
     :language: python
 
 patch_buckets
 '''''''''''''
 
-.. literalinclude:: source/examples/flashblade/patch_buckets.py
+.. literalinclude:: source/examples/FB2.0/patch_buckets.py
     :language: python
 
 get_buckets_performance
 '''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_buckets_performance.py
+.. literalinclude:: source/examples/FB2.0/get_buckets_performance.py
     :language: python
 
 post_buckets
 ''''''''''''
 
-.. literalinclude:: source/examples/flashblade/post_buckets.py
+.. literalinclude:: source/examples/FB2.0/post_buckets.py
     :language: python
 
 get_buckets_s3_specific_performance
 '''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_buckets_s3_specific_performance.py
+.. literalinclude:: source/examples/FB2.0/get_buckets_s3_specific_performance.py
     :language: python
 
 Certificate Groups
@@ -1479,43 +1538,43 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 delete_certificate_groups_certificates
 ''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/delete_certificate_groups_certificates.py
+.. literalinclude:: source/examples/FB2.0/delete_certificate_groups_certificates.py
     :language: python
 
 get_certificate_groups_certificates
 '''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_certificate_groups_certificates.py
+.. literalinclude:: source/examples/FB2.0/get_certificate_groups_certificates.py
     :language: python
 
 post_certificate_groups_certificates
 ''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/post_certificate_groups_certificates.py
+.. literalinclude:: source/examples/FB2.0/post_certificate_groups_certificates.py
     :language: python
 
 delete_certificate_groups
 '''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/delete_certificate_groups.py
+.. literalinclude:: source/examples/FB2.0/delete_certificate_groups.py
     :language: python
 
 get_certificate_groups
 ''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_certificate_groups.py
+.. literalinclude:: source/examples/FB2.0/get_certificate_groups.py
     :language: python
 
 post_certificate_groups
 '''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/post_certificate_groups.py
+.. literalinclude:: source/examples/FB2.0/post_certificate_groups.py
     :language: python
 
 get_certificate_groups_uses
 '''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_certificate_groups_uses.py
+.. literalinclude:: source/examples/FB2.0/get_certificate_groups_uses.py
     :language: python
 
 Certificates
@@ -1526,49 +1585,49 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 delete_certificates_certificate_groups
 ''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/delete_certificates_certificate_groups.py
+.. literalinclude:: source/examples/FB2.0/delete_certificates_certificate_groups.py
     :language: python
 
 get_certificates_certificate_groups
 '''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_certificates_certificate_groups.py
+.. literalinclude:: source/examples/FB2.0/get_certificates_certificate_groups.py
     :language: python
 
 post_certificates_certificate_groups
 ''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/post_certificates_certificate_groups.py
+.. literalinclude:: source/examples/FB2.0/post_certificates_certificate_groups.py
     :language: python
 
 delete_certificates
 '''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/delete_certificates.py
+.. literalinclude:: source/examples/FB2.0/delete_certificates.py
     :language: python
 
 get_certificates
 ''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_certificates.py
+.. literalinclude:: source/examples/FB2.0/get_certificates.py
     :language: python
 
 patch_certificates
 ''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/patch_certificates.py
+.. literalinclude:: source/examples/FB2.0/patch_certificates.py
     :language: python
 
 post_certificates
 '''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/post_certificates.py
+.. literalinclude:: source/examples/FB2.0/post_certificates.py
     :language: python
 
 get_certificates_uses
 '''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_certificates_uses.py
+.. literalinclude:: source/examples/FB2.0/get_certificates_uses.py
     :language: python
 
 Clients
@@ -1579,7 +1638,7 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 get_arrays_clients_performance
 ''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_arrays_clients_performance.py
+.. literalinclude:: source/examples/FB2.0/get_arrays_clients_performance.py
     :language: python
 
 Directory Services
@@ -1590,37 +1649,37 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 get_directory_services
 ''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_directory_services.py
+.. literalinclude:: source/examples/FB2.0/get_directory_services.py
     :language: python
 
 patch_directory_services
 ''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/patch_directory_services.py
+.. literalinclude:: source/examples/FB2.0/patch_directory_services.py
     :language: python
 
 get_directory_services_roles
 ''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_directory_services_roles.py
+.. literalinclude:: source/examples/FB2.0/get_directory_services_roles.py
     :language: python
 
 patch_directory_services_roles
 ''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/patch_directory_services_roles.py
+.. literalinclude:: source/examples/FB2.0/patch_directory_services_roles.py
     :language: python
 
 get_directory_services_test
 '''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_directory_services_test.py
+.. literalinclude:: source/examples/FB2.0/get_directory_services_test.py
     :language: python
 
 patch_directory_services_test
 '''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/patch_directory_services_test.py
+.. literalinclude:: source/examples/FB2.0/patch_directory_services_test.py
     :language: python
 
 DNS
@@ -1631,13 +1690,13 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 get_dns
 '''''''
 
-.. literalinclude:: source/examples/flashblade/get_dns.py
+.. literalinclude:: source/examples/FB2.0/get_dns.py
     :language: python
 
 patch_dns
 '''''''''
 
-.. literalinclude:: source/examples/flashblade/patch_dns.py
+.. literalinclude:: source/examples/FB2.0/patch_dns.py
     :language: python
 
 File System Replica Links
@@ -1648,31 +1707,37 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 get_file_system_replica_links
 '''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_file_system_replica_links.py
+.. literalinclude:: source/examples/FB2.0/get_file_system_replica_links.py
     :language: python
 
 delete_file_system_replica_links_policies
 '''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/delete_file_system_replica_links_policies.py
+.. literalinclude:: source/examples/FB2.0/delete_file_system_replica_links_policies.py
     :language: python
 
 get_file_system_replica_links_policies
 ''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_file_system_replica_links_policies.py
+.. literalinclude:: source/examples/FB2.0/get_file_system_replica_links_policies.py
     :language: python
 
 post_file_system_replica_links_policies
 '''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/post_file_system_replica_links_policies.py
+.. literalinclude:: source/examples/FB2.0/post_file_system_replica_links_policies.py
     :language: python
 
 post_file_system_replica_links
 ''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/post_file_system_replica_links.py
+.. literalinclude:: source/examples/FB2.0/post_file_system_replica_links.py
+    :language: python
+
+get_file_system_replica_links_transfer
+''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_file_system_replica_links_transfer.py
     :language: python
 
 File System Snapshots
@@ -1683,49 +1748,49 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 delete_file_system_snapshots
 ''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/delete_file_system_snapshots.py
+.. literalinclude:: source/examples/FB2.0/delete_file_system_snapshots.py
     :language: python
 
 get_file_system_snapshots
 '''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_file_system_snapshots.py
+.. literalinclude:: source/examples/FB2.0/get_file_system_snapshots.py
     :language: python
 
 patch_file_system_snapshots
 '''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/patch_file_system_snapshots.py
+.. literalinclude:: source/examples/FB2.0/patch_file_system_snapshots.py
     :language: python
 
 delete_file_system_snapshots_policies
 '''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/delete_file_system_snapshots_policies.py
+.. literalinclude:: source/examples/FB2.0/delete_file_system_snapshots_policies.py
     :language: python
 
 get_file_system_snapshots_policies
 ''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_file_system_snapshots_policies.py
+.. literalinclude:: source/examples/FB2.0/get_file_system_snapshots_policies.py
     :language: python
 
 post_file_system_snapshots
 ''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/post_file_system_snapshots.py
+.. literalinclude:: source/examples/FB2.0/post_file_system_snapshots.py
     :language: python
 
 delete_file_system_snapshots_transfer
 '''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/delete_file_system_snapshots_transfer.py
+.. literalinclude:: source/examples/FB2.0/delete_file_system_snapshots_transfer.py
     :language: python
 
 get_file_system_snapshots_transfer
 ''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_file_system_snapshots_transfer.py
+.. literalinclude:: source/examples/FB2.0/get_file_system_snapshots_transfer.py
     :language: python
 
 File Systems
@@ -1736,61 +1801,61 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 delete_file_systems
 '''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/delete_file_systems.py
+.. literalinclude:: source/examples/FB2.0/delete_file_systems.py
     :language: python
 
 get_file_systems
 ''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_file_systems.py
+.. literalinclude:: source/examples/FB2.0/get_file_systems.py
     :language: python
 
 get_file_systems_groups_performance
 '''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_file_systems_groups_performance.py
+.. literalinclude:: source/examples/FB2.0/get_file_systems_groups_performance.py
     :language: python
 
 patch_file_systems
 ''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/patch_file_systems.py
+.. literalinclude:: source/examples/FB2.0/patch_file_systems.py
     :language: python
 
 get_file_systems_performance
 ''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_file_systems_performance.py
+.. literalinclude:: source/examples/FB2.0/get_file_systems_performance.py
     :language: python
 
 delete_file_systems_policies
 ''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/delete_file_systems_policies.py
+.. literalinclude:: source/examples/FB2.0/delete_file_systems_policies.py
     :language: python
 
 get_file_systems_policies
 '''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_file_systems_policies.py
+.. literalinclude:: source/examples/FB2.0/get_file_systems_policies.py
     :language: python
 
 post_file_systems_policies
 ''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/post_file_systems_policies.py
+.. literalinclude:: source/examples/FB2.0/post_file_systems_policies.py
     :language: python
 
 post_file_systems
 '''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/post_file_systems.py
+.. literalinclude:: source/examples/FB2.0/post_file_systems.py
     :language: python
 
 get_file_systems_users_performance
 ''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_file_systems_users_performance.py
+.. literalinclude:: source/examples/FB2.0/get_file_systems_users_performance.py
     :language: python
 
 Hardware
@@ -1801,13 +1866,13 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 get_hardware
 ''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_hardware.py
+.. literalinclude:: source/examples/FB2.0/get_hardware.py
     :language: python
 
 patch_hardware
 ''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/patch_hardware.py
+.. literalinclude:: source/examples/FB2.0/patch_hardware.py
     :language: python
 
 Hardware Connectors
@@ -1818,13 +1883,13 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 get_hardware_connectors
 '''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_hardware_connectors.py
+.. literalinclude:: source/examples/FB2.0/get_hardware_connectors.py
     :language: python
 
 patch_hardware_connectors
 '''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/patch_hardware_connectors.py
+.. literalinclude:: source/examples/FB2.0/patch_hardware_connectors.py
     :language: python
 
 Keytabs
@@ -1835,31 +1900,66 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 delete_keytabs
 ''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/delete_keytabs.py
+.. literalinclude:: source/examples/FB2.0/delete_keytabs.py
     :language: python
 
 get_keytabs_download
 ''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_keytabs_download.py
+.. literalinclude:: source/examples/FB2.0/get_keytabs_download.py
     :language: python
 
 get_keytabs
 '''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_keytabs.py
+.. literalinclude:: source/examples/FB2.0/get_keytabs.py
     :language: python
 
 post_keytabs
 ''''''''''''
 
-.. literalinclude:: source/examples/flashblade/post_keytabs.py
+.. literalinclude:: source/examples/FB2.0/post_keytabs.py
     :language: python
 
 post_keytabs_upload
 '''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/post_keytabs_upload.py
+.. literalinclude:: source/examples/FB2.0/post_keytabs_upload.py
+    :language: python
+
+Kmip
+~~~~~
+
+The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+delete_kmip
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.1/delete_kmip.py
+    :language: python
+
+get_kmip
+''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_kmip.py
+    :language: python
+
+patch_kmip
+''''''''''
+
+.. literalinclude:: source/examples/FB2.1/patch_kmip.py
+    :language: python
+
+post_kmip
+'''''''''
+
+.. literalinclude:: source/examples/FB2.1/post_kmip.py
+    :language: python
+
+get_kmip_test
+'''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_kmip_test.py
     :language: python
 
 Lifecycle Rules
@@ -1870,25 +1970,25 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 delete_lifecycle_rules
 ''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/delete_lifecycle_rules.py
+.. literalinclude:: source/examples/FB2.0/delete_lifecycle_rules.py
     :language: python
 
 get_lifecycle_rules
 '''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_lifecycle_rules.py
+.. literalinclude:: source/examples/FB2.0/get_lifecycle_rules.py
     :language: python
 
 patch_lifecycle_rules
 '''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/patch_lifecycle_rules.py
+.. literalinclude:: source/examples/FB2.1/patch_lifecycle_rules.py
     :language: python
 
 post_lifecycle_rules
 ''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/post_lifecycle_rules.py
+.. literalinclude:: source/examples/FB2.1/post_lifecycle_rules.py
     :language: python
 
 Link Aggregation Groups
@@ -1899,25 +1999,25 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 delete_link_aggregation_groups
 ''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/delete_link_aggregation_groups.py
+.. literalinclude:: source/examples/FB2.0/delete_link_aggregation_groups.py
     :language: python
 
 get_link_aggregation_groups
 '''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_link_aggregation_groups.py
+.. literalinclude:: source/examples/FB2.0/get_link_aggregation_groups.py
     :language: python
 
 patch_link_aggregation_groups
 '''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/patch_link_aggregation_groups.py
+.. literalinclude:: source/examples/FB2.0/patch_link_aggregation_groups.py
     :language: python
 
 post_link_aggregation_groups
 ''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/post_link_aggregation_groups.py
+.. literalinclude:: source/examples/FB2.0/post_link_aggregation_groups.py
     :language: python
 
 Logs
@@ -1928,7 +2028,7 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 get_logs
 ''''''''
 
-.. literalinclude:: source/examples/flashblade/get_logs.py
+.. literalinclude:: source/examples/FB2.0/get_logs.py
     :language: python
 
 Network Interfaces
@@ -1939,25 +2039,25 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 delete_network_interfaces
 '''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/delete_network_interfaces.py
+.. literalinclude:: source/examples/FB2.0/delete_network_interfaces.py
     :language: python
 
 get_network_interfaces
 ''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_network_interfaces.py
+.. literalinclude:: source/examples/FB2.0/get_network_interfaces.py
     :language: python
 
 patch_network_interfaces
 ''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/patch_network_interfaces.py
+.. literalinclude:: source/examples/FB2.0/patch_network_interfaces.py
     :language: python
 
 post_network_interfaces
 '''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/post_network_interfaces.py
+.. literalinclude:: source/examples/FB2.0/post_network_interfaces.py
     :language: python
 
 Object Store Access Keys
@@ -1968,25 +2068,25 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 delete_object_store_access_keys
 '''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/delete_object_store_access_keys.py
+.. literalinclude:: source/examples/FB2.0/delete_object_store_access_keys.py
     :language: python
 
 get_object_store_access_keys
 ''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_object_store_access_keys.py
+.. literalinclude:: source/examples/FB2.0/get_object_store_access_keys.py
     :language: python
 
 patch_object_store_access_keys
 ''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/patch_object_store_access_keys.py
+.. literalinclude:: source/examples/FB2.0/patch_object_store_access_keys.py
     :language: python
 
 post_object_store_access_keys
 '''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/post_object_store_access_keys.py
+.. literalinclude:: source/examples/FB2.0/post_object_store_access_keys.py
     :language: python
 
 Object Store Access Policies
@@ -1997,25 +2097,25 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 get_object_store_access_policies
 ''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_object_store_access_policies.py
+.. literalinclude:: source/examples/FB2.0/get_object_store_access_policies.py
     :language: python
 
 delete_object_store_access_policies_object_store_users
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/delete_object_store_access_policies_object_store_users.py
+.. literalinclude:: source/examples/FB2.0/delete_object_store_access_policies_object_store_users.py
     :language: python
 
 get_object_store_access_policies_object_store_users
 '''''''''''''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_object_store_access_policies_object_store_users.py
+.. literalinclude:: source/examples/FB2.0/get_object_store_access_policies_object_store_users.py
     :language: python
 
 post_object_store_access_policies_object_store_users
 ''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/post_object_store_access_policies_object_store_users.py
+.. literalinclude:: source/examples/FB2.0/post_object_store_access_policies_object_store_users.py
     :language: python
 
 Object Store Accounts
@@ -2026,19 +2126,19 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 delete_object_store_accounts
 ''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/delete_object_store_accounts.py
+.. literalinclude:: source/examples/FB2.0/delete_object_store_accounts.py
     :language: python
 
 get_object_store_accounts
 '''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_object_store_accounts.py
+.. literalinclude:: source/examples/FB2.0/get_object_store_accounts.py
     :language: python
 
 post_object_store_accounts
 ''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/post_object_store_accounts.py
+.. literalinclude:: source/examples/FB2.0/post_object_store_accounts.py
     :language: python
 
 Object Store Remote Credentials
@@ -2049,25 +2149,25 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 delete_object_store_remote_credentials
 ''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/delete_object_store_remote_credentials.py
+.. literalinclude:: source/examples/FB2.0/delete_object_store_remote_credentials.py
     :language: python
 
 get_object_store_remote_credentials
 '''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_object_store_remote_credentials.py
+.. literalinclude:: source/examples/FB2.0/get_object_store_remote_credentials.py
     :language: python
 
 patch_object_store_remote_credentials
 '''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/patch_object_store_remote_credentials.py
+.. literalinclude:: source/examples/FB2.0/patch_object_store_remote_credentials.py
     :language: python
 
 post_object_store_remote_credentials
 ''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/post_object_store_remote_credentials.py
+.. literalinclude:: source/examples/FB2.0/post_object_store_remote_credentials.py
     :language: python
 
 Object Store Users
@@ -2078,37 +2178,37 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 delete_object_store_users
 '''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/delete_object_store_users.py
+.. literalinclude:: source/examples/FB2.0/delete_object_store_users.py
     :language: python
 
 get_object_store_users
 ''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_object_store_users.py
+.. literalinclude:: source/examples/FB2.0/get_object_store_users.py
     :language: python
 
 delete_object_store_users_object_store_access_policies
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/delete_object_store_users_object_store_access_policies.py
+.. literalinclude:: source/examples/FB2.0/delete_object_store_users_object_store_access_policies.py
     :language: python
 
 get_object_store_users_object_store_access_policies
 '''''''''''''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_object_store_users_object_store_access_policies.py
+.. literalinclude:: source/examples/FB2.0/get_object_store_users_object_store_access_policies.py
     :language: python
 
 post_object_store_users_object_store_access_policies
 ''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/post_object_store_users_object_store_access_policies.py
+.. literalinclude:: source/examples/FB2.0/post_object_store_users_object_store_access_policies.py
     :language: python
 
 post_object_store_users
 '''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/post_object_store_users.py
+.. literalinclude:: source/examples/FB2.0/post_object_store_users.py
     :language: python
 
 Object Store Virtual Hosts
@@ -2119,19 +2219,19 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 delete_object_store_virtual_hosts
 '''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/delete_object_store_virtual_hosts.py
+.. literalinclude:: source/examples/FB2.0/delete_object_store_virtual_hosts.py
     :language: python
 
 get_object_store_virtual_hosts
 ''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_object_store_virtual_hosts.py
+.. literalinclude:: source/examples/FB2.0/get_object_store_virtual_hosts.py
     :language: python
 
 post_object_store_virtual_hosts
 '''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/post_object_store_virtual_hosts.py
+.. literalinclude:: source/examples/FB2.0/post_object_store_virtual_hosts.py
     :language: python
 
 Policies
@@ -2142,79 +2242,79 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 delete_policies
 '''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/delete_policies.py
+.. literalinclude:: source/examples/FB2.0/delete_policies.py
     :language: python
 
 delete_policies_file_system_replica_links
 '''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/delete_policies_file_system_replica_links.py
+.. literalinclude:: source/examples/FB2.0/delete_policies_file_system_replica_links.py
     :language: python
 
 get_policies_file_system_replica_links
 ''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_policies_file_system_replica_links.py
+.. literalinclude:: source/examples/FB2.0/get_policies_file_system_replica_links.py
     :language: python
 
 post_policies_file_system_replica_links
 '''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/post_policies_file_system_replica_links.py
+.. literalinclude:: source/examples/FB2.0/post_policies_file_system_replica_links.py
     :language: python
 
 delete_policies_file_system_snapshots
 '''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/delete_policies_file_system_snapshots.py
+.. literalinclude:: source/examples/FB2.0/delete_policies_file_system_snapshots.py
     :language: python
 
 get_policies_file_system_snapshots
 ''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_policies_file_system_snapshots.py
+.. literalinclude:: source/examples/FB2.0/get_policies_file_system_snapshots.py
     :language: python
 
 delete_policies_file_systems
 ''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/delete_policies_file_systems.py
+.. literalinclude:: source/examples/FB2.0/delete_policies_file_systems.py
     :language: python
 
 get_policies_file_systems
 '''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_policies_file_systems.py
+.. literalinclude:: source/examples/FB2.0/get_policies_file_systems.py
     :language: python
 
 post_policies_file_systems
 ''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/post_policies_file_systems.py
+.. literalinclude:: source/examples/FB2.0/post_policies_file_systems.py
     :language: python
 
 get_policies
 ''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_policies.py
+.. literalinclude:: source/examples/FB2.0/get_policies.py
     :language: python
 
 get_policies_members
 ''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_policies_members.py
+.. literalinclude:: source/examples/FB2.0/get_policies_members.py
     :language: python
 
 patch_policies
 ''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/patch_policies.py
+.. literalinclude:: source/examples/FB2.0/patch_policies.py
     :language: python
 
 post_policies
 '''''''''''''
 
-.. literalinclude:: source/examples/flashblade/post_policies.py
+.. literalinclude:: source/examples/FB2.0/post_policies.py
     :language: python
 
 Quotas
@@ -2225,61 +2325,90 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 delete_quotas_groups
 ''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/delete_quotas_groups.py
+.. literalinclude:: source/examples/FB2.0/delete_quotas_groups.py
     :language: python
 
 get_quotas_groups
 '''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_quotas_groups.py
+.. literalinclude:: source/examples/FB2.0/get_quotas_groups.py
     :language: python
 
 patch_quotas_groups
 '''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/patch_quotas_groups.py
+.. literalinclude:: source/examples/FB2.0/patch_quotas_groups.py
     :language: python
 
 post_quotas_groups
 ''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/post_quotas_groups.py
+.. literalinclude:: source/examples/FB2.0/post_quotas_groups.py
     :language: python
 
 get_quotas_settings
 '''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_quotas_settings.py
+.. literalinclude:: source/examples/FB2.0/get_quotas_settings.py
     :language: python
 
 patch_quotas_settings
 '''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/patch_quotas_settings.py
+.. literalinclude:: source/examples/FB2.0/patch_quotas_settings.py
     :language: python
 
 delete_quotas_users
 '''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/delete_quotas_users.py
+.. literalinclude:: source/examples/FB2.0/delete_quotas_users.py
     :language: python
 
 get_quotas_users
 ''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_quotas_users.py
+.. literalinclude:: source/examples/FB2.0/get_quotas_users.py
     :language: python
 
 patch_quotas_users
 ''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/patch_quotas_users.py
+.. literalinclude:: source/examples/FB2.0/patch_quotas_users.py
     :language: python
 
 post_quotas_users
 '''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/post_quotas_users.py
+.. literalinclude:: source/examples/FB2.0/post_quotas_users.py
+    :language: python
+
+Rdl
+~~~~
+
+The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+get_rapid_data_locking
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_rapid_data_locking.py
+    :language: python
+
+patch_rapid_data_locking
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/patch_rapid_data_locking.py
+    :language: python
+
+post_rapid_data_locking_rotate
+''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/post_rapid_data_locking_rotate.py
+    :language: python
+
+get_rapid_data_locking_test
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_rapid_data_locking_test.py
     :language: python
 
 Roles
@@ -2290,7 +2419,7 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 get_roles
 '''''''''
 
-.. literalinclude:: source/examples/flashblade/get_roles.py
+.. literalinclude:: source/examples/FB2.0/get_roles.py
     :language: python
 
 SMTP
@@ -2301,13 +2430,13 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 get_smtp_servers
 ''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_smtp_servers.py
+.. literalinclude:: source/examples/FB2.0/get_smtp_servers.py
     :language: python
 
 patch_smtp_servers
 ''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/patch_smtp_servers.py
+.. literalinclude:: source/examples/FB2.0/patch_smtp_servers.py
     :language: python
 
 SNMP Agents
@@ -2318,19 +2447,19 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 get_snmp_agents
 '''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_snmp_agents.py
+.. literalinclude:: source/examples/FB2.0/get_snmp_agents.py
     :language: python
 
 get_snmp_agents_mib
 '''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_snmp_agents_mib.py
+.. literalinclude:: source/examples/FB2.0/get_snmp_agents_mib.py
     :language: python
 
 patch_snmp_agents
 '''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/patch_snmp_agents.py
+.. literalinclude:: source/examples/FB2.0/patch_snmp_agents.py
     :language: python
 
 SNMP Managers
@@ -2341,31 +2470,31 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 delete_snmp_managers
 ''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/delete_snmp_managers.py
+.. literalinclude:: source/examples/FB2.0/delete_snmp_managers.py
     :language: python
 
 get_snmp_managers
 '''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_snmp_managers.py
+.. literalinclude:: source/examples/FB2.0/get_snmp_managers.py
     :language: python
 
 patch_snmp_managers
 '''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/patch_snmp_managers.py
+.. literalinclude:: source/examples/FB2.0/patch_snmp_managers.py
     :language: python
 
 post_snmp_managers
 ''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/post_snmp_managers.py
+.. literalinclude:: source/examples/FB2.0/post_snmp_managers.py
     :language: python
 
 get_snmp_managers_test
 ''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_snmp_managers_test.py
+.. literalinclude:: source/examples/FB2.0/get_snmp_managers_test.py
     :language: python
 
 Subnets
@@ -2376,25 +2505,25 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 delete_subnets
 ''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/delete_subnets.py
+.. literalinclude:: source/examples/FB2.0/delete_subnets.py
     :language: python
 
 get_subnets
 '''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_subnets.py
+.. literalinclude:: source/examples/FB2.0/get_subnets.py
     :language: python
 
 patch_subnets
 '''''''''''''
 
-.. literalinclude:: source/examples/flashblade/patch_subnets.py
+.. literalinclude:: source/examples/FB2.0/patch_subnets.py
     :language: python
 
 post_subnets
 ''''''''''''
 
-.. literalinclude:: source/examples/flashblade/post_subnets.py
+.. literalinclude:: source/examples/FB2.0/post_subnets.py
     :language: python
 
 Support
@@ -2405,19 +2534,19 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 get_support
 '''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_support.py
+.. literalinclude:: source/examples/FB2.0/get_support.py
     :language: python
 
 patch_support
 '''''''''''''
 
-.. literalinclude:: source/examples/flashblade/patch_support.py
+.. literalinclude:: source/examples/FB2.0/patch_support.py
     :language: python
 
 get_support_test
 ''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_support_test.py
+.. literalinclude:: source/examples/FB2.0/get_support_test.py
     :language: python
 
 Syslog
@@ -2428,43 +2557,43 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 delete_syslog_servers
 '''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/delete_syslog_servers.py
+.. literalinclude:: source/examples/FB2.0/delete_syslog_servers.py
     :language: python
 
 get_syslog_servers
 ''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_syslog_servers.py
+.. literalinclude:: source/examples/FB2.0/get_syslog_servers.py
     :language: python
 
 patch_syslog_servers
 ''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/patch_syslog_servers.py
+.. literalinclude:: source/examples/FB2.0/patch_syslog_servers.py
     :language: python
 
 post_syslog_servers
 '''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/post_syslog_servers.py
+.. literalinclude:: source/examples/FB2.0/post_syslog_servers.py
     :language: python
 
 get_syslog_servers_settings
 '''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_syslog_servers_settings.py
+.. literalinclude:: source/examples/FB2.0/get_syslog_servers_settings.py
     :language: python
 
 patch_syslog_servers_settings
 '''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/patch_syslog_servers_settings.py
+.. literalinclude:: source/examples/FB2.0/patch_syslog_servers_settings.py
     :language: python
 
 get_syslog_servers_test
 '''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_syslog_servers_test.py
+.. literalinclude:: source/examples/FB2.0/get_syslog_servers_test.py
     :language: python
 
 Targets
@@ -2475,31 +2604,31 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 delete_targets
 ''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/delete_targets.py
+.. literalinclude:: source/examples/FB2.0/delete_targets.py
     :language: python
 
 get_targets
 '''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_targets.py
+.. literalinclude:: source/examples/FB2.0/get_targets.py
     :language: python
 
 patch_targets
 '''''''''''''
 
-.. literalinclude:: source/examples/flashblade/patch_targets.py
+.. literalinclude:: source/examples/FB2.0/patch_targets.py
     :language: python
 
 get_targets_performance_replication
 '''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_targets_performance_replication.py
+.. literalinclude:: source/examples/FB2.0/get_targets_performance_replication.py
     :language: python
 
 post_targets
 ''''''''''''
 
-.. literalinclude:: source/examples/flashblade/post_targets.py
+.. literalinclude:: source/examples/FB2.0/post_targets.py
     :language: python
 
 Usage
@@ -2510,11 +2639,11 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 get_usage_groups
 ''''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_usage_groups.py
+.. literalinclude:: source/examples/FB2.0/get_usage_groups.py
     :language: python
 
 get_usage_users
 '''''''''''''''
 
-.. literalinclude:: source/examples/flashblade/get_usage_users.py
+.. literalinclude:: source/examples/FB2.0/get_usage_users.py
     :language: python
