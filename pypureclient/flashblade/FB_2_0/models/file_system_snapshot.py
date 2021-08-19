@@ -35,10 +35,10 @@ class FileSystemSnapshot(object):
         'copyable': 'bool',
         'created': 'int',
         'destroyed': 'bool',
-        'owner': 'Reference',
+        'owner': 'FixedReference',
         'owner_destroyed': 'bool',
-        'policy': 'LocationReference',
-        'source': 'LocationReference',
+        'policy': 'FixedLocationReference',
+        'source': 'FixedLocationReference',
         'suffix': 'str',
         'time_remaining': 'int'
     }
@@ -67,10 +67,10 @@ class FileSystemSnapshot(object):
         copyable=None,  # type: bool
         created=None,  # type: int
         destroyed=None,  # type: bool
-        owner=None,  # type: models.Reference
+        owner=None,  # type: models.FixedReference
         owner_destroyed=None,  # type: bool
-        policy=None,  # type: models.LocationReference
-        source=None,  # type: models.LocationReference
+        policy=None,  # type: models.FixedLocationReference
+        source=None,  # type: models.FixedLocationReference
         suffix=None,  # type: str
         time_remaining=None,  # type: int
     ):
@@ -81,10 +81,10 @@ class FileSystemSnapshot(object):
             copyable (bool): Can this snapshot be used as a source for copy operations?
             created (int): Creation timestamp of the object.
             destroyed (bool): Is the file system snapshot destroyed? If not specified, defaults to `false`.
-            owner (Reference): A reference to the file system that owns this snapshot. If the owner is destroyed, this will be destroyed.
+            owner (FixedReference): A reference to the file system that owns this snapshot. If the owner is destroyed, this will be destroyed.
             owner_destroyed (bool): Is the owning file system destroyed?
-            policy (LocationReference): A reference to the associated policy.
-            source (LocationReference): A reference to the file system that was the source of the data in this snapshot. Normally this is the same as the owner, but if the snapshot is replicated, the source is the original file system.
+            policy (FixedLocationReference): A reference to the associated policy.
+            source (FixedLocationReference): A reference to the file system that was the source of the data in this snapshot. Normally this is the same as the owner, but if the snapshot is replicated, the source is the original file system.
             suffix (str): The suffix of the snapshot, e.g., `snap1`.
             time_remaining (int): Time in milliseconds before the file system snapshot is eradicated. `null` if not destroyed.
         """

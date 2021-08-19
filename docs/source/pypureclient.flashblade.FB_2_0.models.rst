@@ -804,22 +804,6 @@ pypureclient.flashblade.FB\_2\_0.models.dns\_get\_response module
    :undoc-members:
    :show-inheritance:
 
-pypureclient.flashblade.FB\_2\_0.models.dns\_lookup module
-----------------------------------------------------------
-
-.. automodule:: pypureclient.flashblade.FB_2_0.models.dns_lookup
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-pypureclient.flashblade.FB\_2\_0.models.dns\_lookup\_response module
---------------------------------------------------------------------
-
-.. automodule:: pypureclient.flashblade.FB_2_0.models.dns_lookup_response
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 pypureclient.flashblade.FB\_2\_0.models.dns\_response module
 ------------------------------------------------------------
 
@@ -1028,6 +1012,14 @@ pypureclient.flashblade.FB\_2\_0.models.file\_system\_users\_performance\_get\_r
    :undoc-members:
    :show-inheritance:
 
+pypureclient.flashblade.FB\_2\_0.models.fixed\_location\_reference module
+-------------------------------------------------------------------------
+
+.. automodule:: pypureclient.flashblade.FB_2_0.models.fixed_location_reference
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 pypureclient.flashblade.FB\_2\_0.models.fixed\_reference module
 ---------------------------------------------------------------
 
@@ -1080,6 +1072,22 @@ pypureclient.flashblade.FB\_2\_0.models.group\_quota\_get\_response module
 --------------------------------------------------------------------------
 
 .. automodule:: pypureclient.flashblade.FB_2_0.models.group_quota_get_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.flashblade.FB\_2\_0.models.group\_quota\_patch module
+------------------------------------------------------------------
+
+.. automodule:: pypureclient.flashblade.FB_2_0.models.group_quota_patch
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.flashblade.FB\_2\_0.models.group\_quota\_post module
+-----------------------------------------------------------------
+
+.. automodule:: pypureclient.flashblade.FB_2_0.models.group_quota_post
    :members:
    :undoc-members:
    :show-inheritance:
@@ -2160,6 +2168,22 @@ pypureclient.flashblade.FB\_2\_0.models.user\_quota\_get\_response module
 -------------------------------------------------------------------------
 
 .. automodule:: pypureclient.flashblade.FB_2_0.models.user_quota_get_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.flashblade.FB\_2\_0.models.user\_quota\_patch module
+-----------------------------------------------------------------
+
+.. automodule:: pypureclient.flashblade.FB_2_0.models.user_quota_patch
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.flashblade.FB\_2\_0.models.user\_quota\_post module
+----------------------------------------------------------------
+
+.. automodule:: pypureclient.flashblade.FB_2_0.models.user_quota_post
    :members:
    :undoc-members:
    :show-inheritance:

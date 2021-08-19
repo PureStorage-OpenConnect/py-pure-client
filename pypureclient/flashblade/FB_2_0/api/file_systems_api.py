@@ -266,8 +266,8 @@ class FileSystemsApi(object):
         :param list[str] file_system_ids: A comma-separated list of file system IDs. If after filtering, there is not at least one resource that matches each of the elements of `file_system_ids`, then an error is returned. This cannot be provided together with the `file_system_names` query parameter.
         :param list[str] file_system_names: A comma-separated list of file system names. If there is not at least one resource that matches each of the elements of `file_system_names`, then an error is returned.
         :param str filter: Exclude resources that don't match the specified criteria.
-        :param list[str] gids: A comma-separated list of group IDs. If there is not at least one resource that matches each of the elements of `gids`, then an error is returned. This cannot be provided together with `group_names` query parameter.
-        :param list[str] group_names: A comma-separated list of group names. If there is not at least one resource that matches each of the elements of `group_names`, then an error is returned. This cannot be provided together with `gids` query parameter.
+        :param list[str] gids: A comma-separated list of group IDs. This cannot be provided together with `group_names` query parameter.
+        :param list[str] group_names: A comma-separated list of group names. This cannot be provided together with `gids` query parameter.
         :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the maximum number, the request is still valid. In that case the server just returns the maximum number of items, disregarding the client's page size request.
         :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
         :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.
@@ -1095,8 +1095,8 @@ class FileSystemsApi(object):
         :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
         :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.
         :param bool total_only: Only return the total record for the specified items. The total record will be the total of all items after filtering. The `items` list will be empty.
-        :param list[int] uids: A comma-separated list of user IDs. If there is not at least one resource that matches each of the elements of `uids`, then an error is returned. This cannot be provided together with `user_names` query parameter.
-        :param list[str] user_names: A comma-separated list of user names. If there is not at least one resource that matches each of the elements of `user_names`, then an error is returned. This cannot be provided together with `uids` query parameter.
+        :param list[int] uids: A comma-separated list of user IDs. This cannot be provided together with `user_names` query parameter.
+        :param list[str] user_names: A comma-separated list of user names. This cannot be provided together with `uids` query parameter.
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.

@@ -30,15 +30,15 @@ class FixedReference(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'id': 'str',
         'name': 'str',
-        'resource_type': 'ResourceType',
-        'id': 'str'
+        'resource_type': 'ResourceType'
     }
 
     attribute_map = {
+        'id': 'id',
         'name': 'name',
-        'resource_type': 'resource_type',
-        'id': 'id'
+        'resource_type': 'resource_type'
     }
 
     required_args = {
@@ -46,22 +46,22 @@ class FixedReference(object):
 
     def __init__(
         self,
+        id=None,  # type: str
         name=None,  # type: str
         resource_type=None,  # type: models.ResourceType
-        id=None,  # type: str
     ):
         """
         Keyword args:
+            id (str): A non-modifiable, globally unique ID chosen by the system.
             name (str)
             resource_type (ResourceType)
-            id (str): A non-modifiable, globally unique ID chosen by the system.
         """
+        if id is not None:
+            self.id = id
         if name is not None:
             self.name = name
         if resource_type is not None:
             self.resource_type = resource_type
-        if id is not None:
-            self.id = id
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
