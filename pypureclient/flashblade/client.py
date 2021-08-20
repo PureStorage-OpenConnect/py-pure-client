@@ -1,9 +1,7 @@
-from . import __pycache__
 from . import FB_2_1
 from . import FB_2_0
 
 fb_modules = {
-    'ycache..': __pycache__,
     '2.1': FB_2_1,
     '2.0': FB_2_0,
 }
