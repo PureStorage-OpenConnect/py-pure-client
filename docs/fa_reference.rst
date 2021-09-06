@@ -62,6 +62,11 @@ FlashArray REST 2.8 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.FA_2_8.client.Client
+
+FlashArray REST 2.9 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.FA_2_9.client.Client
     :members:
 
 Properties
@@ -1148,6 +1153,12 @@ ProtectionGroupTarget
 .. autoclass:: pypureclient.flasharray.ProtectionGroupTarget
    :members:
 
+ProtectionGroupsVolumes
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.ProtectionGroupsVolumes
+   :members:
+
 Qos
 ~~~
 
@@ -1334,6 +1345,12 @@ SnapshotSchedule
 .. autoclass:: pypureclient.flasharray.SnapshotSchedule
    :members:
 
+SnapshotSpace
+~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.SnapshotSpace
+   :members:
+
 SnmpAgent
 ~~~~~~~~~
 
@@ -1412,6 +1429,24 @@ SoftwareBundlePost
 .. autoclass:: pypureclient.flasharray.SoftwareBundlePost
    :members:
 
+SoftwareCheck
+~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.SoftwareCheck
+   :members:
+
+SoftwareChecks
+~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.SoftwareChecks
+   :members:
+
+SoftwareChecksChecks
+~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.SoftwareChecksChecks
+   :members:
+
 SoftwareInstallation
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -1454,10 +1489,28 @@ SoftwareInstallations
 .. autoclass:: pypureclient.flasharray.SoftwareInstallations
    :members:
 
+SoftwarePost
+~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.SoftwarePost
+   :members:
+
 SoftwareUpgradePlan
 ~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.SoftwareUpgradePlan
+   :members:
+
+SoftwareVersion
+~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.SoftwareVersion
+   :members:
+
+SoftwareVersions
+~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.SoftwareVersions
    :members:
 
 Space
@@ -1586,6 +1639,12 @@ VolumeCommon
 .. autoclass:: pypureclient.flasharray.VolumeCommon
    :members:
 
+VolumeDiff
+~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.VolumeDiff
+   :members:
+
 VolumeGroup
 ~~~~~~~~~~~
 
@@ -1662,6 +1721,12 @@ VolumeSpace
 ~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.VolumeSpace
+   :members:
+
+VolumeSpaceCommon
+~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.VolumeSpaceCommon
    :members:
 
 model
