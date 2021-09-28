@@ -29,6 +29,7 @@ from .models.hardware import Hardware
 from .models.hardware_connector import HardwareConnector
 from .models.http import Http
 from .models.license_resource_reference import LicenseResourceReference
+from .models.marketplace_partner import MarketplacePartner
 from .models.metric import Metric
 from .models.metric_availability import MetricAvailability
 from .models.metric_history import MetricHistory
@@ -50,7 +51,6 @@ from .models.resource_with_locations import ResourceWithLocations
 from .models.smb import Smb
 from .models.subscription import Subscription
 from .models.subscription_license import SubscriptionLicense
-from .models.subscription_license_marketplace_partner import SubscriptionLicenseMarketplacePartner
 from .models.support_contract import SupportContract
 from .models.tag import Tag
 from .models.tag_put import TagPut
@@ -88,6 +88,7 @@ CLASSES_TO_ADD_PROPS = [
     HardwareConnector,
     Http,
     LicenseResourceReference,
+    MarketplacePartner,
     Metric,
     MetricAvailability,
     MetricHistory,
@@ -109,7 +110,6 @@ CLASSES_TO_ADD_PROPS = [
     Smb,
     Subscription,
     SubscriptionLicense,
-    SubscriptionLicenseMarketplacePartner,
     SupportContract,
     Tag,
     TagPut,

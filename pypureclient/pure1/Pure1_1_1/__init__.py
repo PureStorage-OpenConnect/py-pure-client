@@ -29,6 +29,8 @@ from .models.fixed_reference_fqdn import FixedReferenceFqdn
 from .models.hardware import Hardware
 from .models.hardware_connector import HardwareConnector
 from .models.http import Http
+from .models.license_resource_reference import LicenseResourceReference
+from .models.marketplace_partner import MarketplacePartner
 from .models.metric import Metric
 from .models.metric_availability import MetricAvailability
 from .models.metric_history import MetricHistory
@@ -87,6 +89,8 @@ CLASSES_TO_ADD_PROPS = [
     Hardware,
     HardwareConnector,
     Http,
+    LicenseResourceReference,
+    MarketplacePartner,
     Metric,
     MetricAvailability,
     MetricHistory,

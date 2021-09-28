@@ -35,7 +35,7 @@ class SubscriptionLicense(object):
         'name': 'str',
         'average_on_demand': 'CurrentMetric',
         'expiration_date': 'int',
-        'marketplace_partner': 'SubscriptionLicenseMarketplacePartner',
+        'marketplace_partner': 'MarketplacePartner',
         'reservation': 'CurrentMetric',
         'resources': 'list[LicenseResourceReference]',
         'service_tier': 'str',
@@ -69,7 +69,7 @@ class SubscriptionLicense(object):
         name=None,  # type: str
         average_on_demand=None,  # type: models.CurrentMetric
         expiration_date=None,  # type: int
-        marketplace_partner=None,  # type: models.SubscriptionLicenseMarketplacePartner
+        marketplace_partner=None,  # type: models.MarketplacePartner
         reservation=None,  # type: models.CurrentMetric
         resources=None,  # type: List[models.LicenseResourceReference]
         service_tier=None,  # type: str
@@ -84,7 +84,7 @@ class SubscriptionLicense(object):
             name (str): A non-modifiable, locally unique name chosen by the system.
             average_on_demand (CurrentMetric): Estimated daily on-demand usage of the license from the current calendar quarter to date.
             expiration_date (int): Date when the license expires. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch.
-            marketplace_partner (SubscriptionLicenseMarketplacePartner)
+            marketplace_partner (MarketplacePartner): Reference information about the marketplace partner of this license.
             reservation (CurrentMetric): Current reservation amount of the license.
             resources (list[LicenseResourceReference]): References to the resources that operate under this license.
             service_tier (str): The tier of the service for the license.

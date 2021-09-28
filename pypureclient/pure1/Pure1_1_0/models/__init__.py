@@ -97,6 +97,7 @@ from .http import Http
 from .inline_response400 import InlineResponse400
 from .inline_response401 import InlineResponse401
 from .license_resource_reference import LicenseResourceReference
+from .marketplace_partner import MarketplacePartner
 from .metric import Metric
 from .metric_availability import MetricAvailability
 from .metric_get_response import MetricGetResponse
@@ -139,7 +140,6 @@ from .subscription import Subscription
 from .subscription_get_response import SubscriptionGetResponse
 from .subscription_license import SubscriptionLicense
 from .subscription_license_get_response import SubscriptionLicenseGetResponse
-from .subscription_license_marketplace_partner import SubscriptionLicenseMarketplacePartner
 from .subscription_license_response import SubscriptionLicenseResponse
 from .subscription_response import SubscriptionResponse
 from .support_contract import SupportContract

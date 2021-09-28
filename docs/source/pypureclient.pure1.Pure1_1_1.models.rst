@@ -452,6 +452,22 @@ pypureclient.pure1.Pure1\_1\_1.models.inline\_response401 module
     :undoc-members:
     :show-inheritance:
 
+pypureclient.pure1.Pure1\_1\_1.models.license\_resource\_reference module
+-------------------------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_1.models.license_resource_reference
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pypureclient.pure1.Pure1\_1\_1.models.marketplace\_partner module
+-----------------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_1.models.marketplace_partner
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 pypureclient.pure1.Pure1\_1\_1.models.metric module
 ---------------------------------------------------
 

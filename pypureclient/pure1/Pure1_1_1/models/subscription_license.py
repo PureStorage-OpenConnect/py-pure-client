@@ -35,9 +35,9 @@ class SubscriptionLicense(object):
         'name': 'str',
         'average_on_demand': 'CurrentMetric',
         'expiration_date': 'int',
-        'marketplace_partner': 'TmpPure110SubscriptionlicenseMarketplacePartner',
+        'marketplace_partner': 'MarketplacePartner',
         'reservation': 'CurrentMetric',
-        'resources': 'ERRORUNKNOWN',
+        'resources': 'list[LicenseResourceReference]',
         'service_tier': 'str',
         'start_date': 'int',
         'subscription': 'FixedReference',
@@ -69,9 +69,9 @@ class SubscriptionLicense(object):
         name=None,  # type: str
         average_on_demand=None,  # type: models.CurrentMetric
         expiration_date=None,  # type: int
-        marketplace_partner=None,  # type: models.TmpPure110SubscriptionlicenseMarketplacePartner
+        marketplace_partner=None,  # type: models.MarketplacePartner
         reservation=None,  # type: models.CurrentMetric
-        resources=None,  # type: models.ERRORUNKNOWN
+        resources=None,  # type: List[models.LicenseResourceReference]
         service_tier=None,  # type: str
         start_date=None,  # type: int
         subscription=None,  # type: models.FixedReference
@@ -84,9 +84,9 @@ class SubscriptionLicense(object):
             name (str): A non-modifiable, locally unique name chosen by the system.
             average_on_demand (CurrentMetric): Estimated daily on-demand usage of the license from the current calendar quarter to date.
             expiration_date (int): Date when the license expires. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch.
-            marketplace_partner (TmpPure110SubscriptionlicenseMarketplacePartner)
+            marketplace_partner (MarketplacePartner): Reference information about the marketplace partner of this license.
             reservation (CurrentMetric): Current reservation amount of the license.
-            resources (ERRORUNKNOWN)
+            resources (list[LicenseResourceReference])
             service_tier (str): The tier of the service for the license.
             start_date (int): Date when the license starts. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch.
             subscription (FixedReference): A reference to which subscription this license belongs.

@@ -153,6 +153,12 @@ LicenseResourceReference
 .. autoclass:: pypureclient.pure1.models.LicenseResourceReference
     :members:
 
+MarketplacePartner
+~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.pure1.models.MarketplacePartner
+    :members:
+
 Metric
 ~~~~~~
 

@@ -97,6 +97,8 @@ from .hardware_response import HardwareResponse
 from .http import Http
 from .inline_response400 import InlineResponse400
 from .inline_response401 import InlineResponse401
+from .license_resource_reference import LicenseResourceReference
+from .marketplace_partner import MarketplacePartner
 from .metric import Metric
 from .metric_availability import MetricAvailability
 from .metric_get_response import MetricGetResponse

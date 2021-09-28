@@ -177,6 +177,14 @@ class ApiClient(object):
             return (return_data, response_data.status,
                     response_data.getheaders())
 
+    def extract_object_dict_from_object(self, obj):
+        """Convert model obj to dict, using `swagger_types`
+        and use `attribute_map` to determine json keys. """
+        obj_dict =  {obj.attribute_map[attr]: getattr(obj, attr)
+                       for attr, _ in six.iteritems(obj.swagger_types)
+                       if hasattr(obj, attr)}
+        return obj_dict
+
     def sanitize_for_serialization(self, obj):
         """Builds a JSON POST object.
 
@@ -207,14 +215,7 @@ class ApiClient(object):
         if isinstance(obj, dict):
             obj_dict = obj
         else:
-            # Convert model obj to dict except
-            # attributes `swagger_types`, `attribute_map`
-            # and attributes which value is not None.
-            # Convert attribute name to json key in
-            # model definition for request.
-            obj_dict = {obj.attribute_map[attr]: getattr(obj, attr)
-                        for attr, _ in six.iteritems(obj.swagger_types)
-                        if hasattr(obj, attr)}
+            obj_dict = self.extract_object_dict_from_object(obj)
 
         return {key: self.sanitize_for_serialization(val)
                 for key, val in six.iteritems(obj_dict)}
@@ -230,7 +231,7 @@ class ApiClient(object):
         """
         # handle file downloading
         # save response body into a tmp file and return the instance
-        if response_type == "file":
+        if response_type == "file" or response_type == "KeytabFileResponse":
             return self.__deserialize_file(response)
 
         # fetch data from response object
@@ -524,6 +525,11 @@ class ApiClient(object):
         :param response:  RESTResponse.
         :return: file path.
         """
+
+        # If no results, just return None
+        if response.data == "":
+            return None
+
         fd, path = tempfile.mkstemp(dir=self.configuration.temp_folder_path)
         os.close(fd)
         os.remove(path)
@@ -534,8 +540,12 @@ class ApiClient(object):
                                  content_disposition).group(1)
             path = os.path.join(os.path.dirname(path), filename)
 
-        with open(path, "wb") as f:
-            f.write(response.data)
+        if type(response.data) == str:
+            with open(path, "w") as f:
+                f.write(response.data)
+        else:
+            with open(path, "wb") as f:
+                f.write(response.data)
 
         return path
 

@@ -460,6 +460,14 @@ pypureclient.pure1.Pure1\_1\_0.models.license\_resource\_reference module
     :undoc-members:
     :show-inheritance:
 
+pypureclient.pure1.Pure1\_1\_0.models.marketplace\_partner module
+-----------------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_0.models.marketplace_partner
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 pypureclient.pure1.Pure1\_1\_0.models.metric module
 ---------------------------------------------------
 
@@ -800,14 +808,6 @@ pypureclient.pure1.Pure1\_1\_0.models.subscription\_license\_get\_response modul
 ---------------------------------------------------------------------------------
 
 .. automodule:: pypureclient.pure1.Pure1_1_0.models.subscription_license_get_response
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
-pypureclient.pure1.Pure1\_1\_0.models.subscription\_license\_marketplace\_partner module
-----------------------------------------------------------------------------------------
-
-.. automodule:: pypureclient.pure1.Pure1_1_0.models.subscription_license_marketplace_partner
     :members:
     :undoc-members:
     :show-inheritance:
