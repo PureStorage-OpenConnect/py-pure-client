@@ -876,7 +876,7 @@ class ArraysApi(object):
         # type: (...) -> models.ArrayGetResponse
         """List arrays
 
-        Displays a list of connection paths to each of the connected arrays.
+        Displays general array properties including the array name, login banner, idle timeout for management sessions, and NTP servers.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api29_arrays_get_with_http_info(async_req=True)
