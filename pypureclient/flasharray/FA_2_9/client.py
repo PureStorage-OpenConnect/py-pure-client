@@ -20,7 +20,7 @@ class Client(object):
     DEFAULT_TIMEOUT = 15.0
     DEFAULT_RETRIES = 5
     # Format: client/client_version/endpoint/endpoint_version/system/release
-    USER_AGENT = ('pypureclient/1.18.1/FA/2.9/{sys}/{rel}'
+    USER_AGENT = ('pypureclient/1.19.0/FA/2.9/{sys}/{rel}'
                   .format(sys=platform.system(), rel=platform.release()))
 
     def __init__(self, target, id_token=None, private_key_file=None, private_key_password=None,
@@ -3282,7 +3282,8 @@ class Client(object):
     ):
         # type: (...) -> models.ArrayGetResponse
         """
-        Displays a list of connection paths to each of the connected arrays.
+        Displays general array properties including the array name, login banner, idle
+        timeout for management sessions, and NTP servers.
 
         Args:
 

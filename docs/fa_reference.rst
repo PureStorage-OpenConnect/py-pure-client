@@ -67,6 +67,11 @@ FlashArray REST 2.9 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.FA_2_9.client.Client
+
+FlashArray REST 2.10 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.FA_2_10.client.Client
     :members:
 
 Properties
@@ -1093,6 +1098,12 @@ PortInitiator
 .. autoclass:: pypureclient.flasharray.PortInitiator
    :members:
 
+PriorityAdjustment
+~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PriorityAdjustment
+   :members:
+
 ProtectionGroup
 ~~~~~~~~~~~~~~~
 
@@ -1625,6 +1636,18 @@ Username
 ~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.Username
+   :members:
+
+VirtualMachine
+~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.VirtualMachine
+   :members:
+
+VirtualMachinePost
+~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.VirtualMachinePost
    :members:
 
 Volume
