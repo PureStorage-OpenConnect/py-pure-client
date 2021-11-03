@@ -91,7 +91,7 @@ class LinkAggregationGroup(object):
         if key not in self.attribute_map:
             raise KeyError("Invalid key `{}` for `LinkAggregationGroup`".format(key))
         if key == "mac_address" and value is not None:
-            if not re.search(r'^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$', mac_address):
+            if not re.search(r'^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$', value):
                 raise ValueError(r"Invalid value for `mac_address`, must be a follow pattern or equal to `/^([0-9A-Fa-f]{2}[:-]){5}([0-9A-Fa-f]{2})$/`")
         self.__dict__[key] = value
 

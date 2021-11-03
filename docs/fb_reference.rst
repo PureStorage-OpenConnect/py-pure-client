@@ -27,7 +27,13 @@ FlashBlade REST 2.1 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.FB_2_1.client.Client
+
+FlashBlade REST 2.2 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.FB_2_2.client.Client
     :members:
+
 
 Properties
 ----------
@@ -115,6 +121,12 @@ AdminPatch
 ~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.AdminPatch
+    :members:
+
+AdminSetting
+~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.AdminSetting
     :members:
 
 Alert
@@ -375,6 +387,12 @@ ClientPerformance
 .. autoclass:: pypureclient.flashblade.ClientPerformance
     :members:
 
+ContinuousReplicationPerformance
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.ContinuousReplicationPerformance
+    :members:
+
 Direction
 ~~~~~~~~~
 
@@ -385,6 +403,12 @@ DirectoryService
 ~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.DirectoryService
+    :members:
+
+DirectoryServiceLookupResult
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.DirectoryServiceLookupResult
     :members:
 
 DirectoryServiceManagement
@@ -423,6 +447,24 @@ DnsLookup
 .. autoclass:: pypureclient.flashblade.DnsLookup
     :members:
 
+Drive
+~~~~~
+
+.. autoclass:: pypureclient.flashblade.Drive
+    :members:
+
+Error
+~~~~~
+
+.. autoclass:: pypureclient.flashblade.Error
+    :members:
+
+ErrorErrors
+~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.ErrorErrors
+    :members:
+
 Eula
 ~~~~
 
@@ -435,10 +477,28 @@ EulaSignature
 .. autoclass:: pypureclient.flashblade.EulaSignature
     :members:
 
+FileLock
+~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.FileLock
+    :members:
+
+FileLockRange
+~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.FileLockRange
+    :members:
+
 FileSystem
 ~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.FileSystem
+    :members:
+
+FileSystemClient
+~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.FileSystemClient
     :members:
 
 FileSystemGroupPerformance
@@ -495,6 +555,12 @@ FileSystemUserPerformance
 .. autoclass:: pypureclient.flashblade.FileSystemUserPerformance
     :members:
 
+FixedLocationReference
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.FixedLocationReference
+    :members:
+
 FixedReference
 ~~~~~~~~~~~~~~
 
@@ -505,6 +571,12 @@ FixedReferenceNameOnly
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.FixedReferenceNameOnly
+    :members:
+
+FixedReferenceNoId
+~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.FixedReferenceNoId
     :members:
 
 FixedReferenceNoResourceType
@@ -531,6 +603,18 @@ GroupQuota
 .. autoclass:: pypureclient.flashblade.GroupQuota
     :members:
 
+GroupQuotaPatch
+~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.GroupQuotaPatch
+    :members:
+
+GroupQuotaPost
+~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.GroupQuotaPost
+    :members:
+
 Hardware
 ~~~~~~~~
 
@@ -541,6 +625,12 @@ HardwareConnector
 ~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.HardwareConnector
+    :members:
+
+HardwareConnectorPerformance
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.HardwareConnectorPerformance
     :members:
 
 Http
@@ -583,6 +673,12 @@ LifecycleRule
 ~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.LifecycleRule
+    :members:
+
+LifecycleRuleConfigExtension
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.LifecycleRuleConfigExtension
     :members:
 
 LifecycleRulePatch
@@ -663,10 +759,40 @@ Nfs
 .. autoclass:: pypureclient.flashblade.Nfs
     :members:
 
+NfsExportPolicy
+~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.NfsExportPolicy
+    :members:
+
+NfsExportPolicyRule
+~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.NfsExportPolicyRule
+    :members:
+
+NfsExportPolicyRuleBase
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.NfsExportPolicyRuleBase
+    :members:
+
+NfsExportPolicyRuleInPolicy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.NfsExportPolicyRuleInPolicy
+    :members:
+
 NfsPatch
 ~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.NfsPatch
+    :members:
+
+ObjectBacklog
+~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.ObjectBacklog
     :members:
 
 ObjectStoreAccessKey
@@ -685,6 +811,30 @@ ObjectStoreAccessPolicy
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.ObjectStoreAccessPolicy
+    :members:
+
+ObjectStoreAccessPolicyAction
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.ObjectStoreAccessPolicyAction
+    :members:
+
+ObjectStoreAccessPolicyPatch
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.ObjectStoreAccessPolicyPatch
+    :members:
+
+ObjectStoreAccessPolicyPost
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.ObjectStoreAccessPolicyPost
+    :members:
+
+ObjectStoreAccessPolicyRule
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.ObjectStoreAccessPolicyRule
     :members:
 
 ObjectStoreAccount
@@ -747,16 +897,22 @@ Policy
 .. autoclass:: pypureclient.flashblade.Policy
     :members:
 
-PolicyFileSystem
-~~~~~~~~~~~~~~~~
+PolicyBase
+~~~~~~~~~~
 
-.. autoclass:: pypureclient.flashblade.PolicyFileSystem
+.. autoclass:: pypureclient.flashblade.PolicyBase
     :members:
 
 PolicyFileSystemSnapshot
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.PolicyFileSystemSnapshot
+    :members:
+
+PolicyLocalMember
+~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.PolicyLocalMember
     :members:
 
 PolicyMember
@@ -781,6 +937,42 @@ PolicyRule
 ~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.PolicyRule
+    :members:
+
+PolicyRuleObjectAccess
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.PolicyRuleObjectAccess
+    :members:
+
+PolicyRuleObjectAccessBulkManage
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.PolicyRuleObjectAccessBulkManage
+    :members:
+
+PolicyRuleObjectAccessCondition
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.PolicyRuleObjectAccessCondition
+    :members:
+
+PolicyRuleObjectAccessPost
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.PolicyRuleObjectAccessPost
+    :members:
+
+PolicyRuleSmbAcl
+~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.PolicyRuleSmbAcl
+    :members:
+
+PolicyRuleSmbAclPost
+~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.PolicyRuleSmbAclPost
     :members:
 
 QuotaSetting
@@ -855,10 +1047,22 @@ SMTP
 .. autoclass:: pypureclient.flashblade.SMTP
     :members:
 
+Session
+~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.Session
+    :members:
+
 Smb
 ~~~
 
 .. autoclass:: pypureclient.flashblade.Smb
+    :members:
+
+SmbAclPolicy
+~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.SmbAclPolicy
     :members:
 
 SmtpServer
@@ -907,6 +1111,12 @@ SnmpV3
 ~~~~~~
 
 .. autoclass:: pypureclient.flashblade.SnmpV3
+    :members:
+
+SnmpV3Post
+~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.SnmpV3Post
     :members:
 
 Space
@@ -999,9 +1209,28 @@ UserQuota
 .. autoclass:: pypureclient.flashblade.UserQuota
     :members:
 
+UserQuotaPatch
+~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.UserQuotaPatch
+    :members:
+
+UserQuotaPost
+~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.UserQuotaPost
+    :members:
+
+model
+~~~~~
+
+.. autoclass:: pypureclient.flashblade.model
+    :members:
+
+
+
 Examples
 ---------
-
 .. _Instantiating a Client:
 
 Instantiating a Client
@@ -1128,7 +1357,7 @@ If you don't want the individual results, you can use ``total_only``.
     if type(res) == pypureclient.responses.ValidResponse:
         print(list(res.items))
 
-Active Directory
+Active Directory 
 ~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -1163,7 +1392,7 @@ get_active_directory_test
 .. literalinclude:: source/examples/FB2.0/get_active_directory_test.py
     :language: python
 
-Administrators
+Administrators 
 ~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -1210,7 +1439,7 @@ patch_admins
 .. literalinclude:: source/examples/FB2.0/patch_admins.py
     :language: python
 
-Alert Watchers
+Alert Watchers 
 ~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -1245,7 +1474,7 @@ get_alert_watchers_test
 .. literalinclude:: source/examples/FB2.0/get_alert_watchers_test.py
     :language: python
 
-Alerts
+Alerts 
 ~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -1262,7 +1491,7 @@ patch_alerts
 .. literalinclude:: source/examples/FB2.0/patch_alerts.py
     :language: python
 
-API Clients
+API Clients 
 ~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -1291,7 +1520,7 @@ post_api_clients
 .. literalinclude:: source/examples/FB2.0/post_api_clients.py
     :language: python
 
-Array Connections
+Array Connections 
 ~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -1344,7 +1573,7 @@ post_array_connections
 .. literalinclude:: source/examples/FB2.0/post_array_connections.py
     :language: python
 
-Arrays
+Arrays 
 ~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -1433,7 +1662,7 @@ get_arrays_supported_time_zones
 .. literalinclude:: source/examples/FB2.0/get_arrays_supported_time_zones.py
     :language: python
 
-Audits
+Audits 
 ~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -1444,12 +1673,12 @@ get_audits
 .. literalinclude:: source/examples/FB2.0/get_audits.py
     :language: python
 
-Authorization
+Authorization 
 ~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
-Blades
+Blades 
 ~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -1460,7 +1689,7 @@ get_blades
 .. literalinclude:: source/examples/FB2.0/get_blades.py
     :language: python
 
-Bucket Replica Links
+Bucket Replica Links 
 ~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -1474,7 +1703,7 @@ delete_bucket_replica_links
 get_bucket_replica_links
 ''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.0/get_bucket_replica_links.py
+.. literalinclude:: source/examples/FB2.2/get_bucket_replica_links.py
     :language: python
 
 patch_bucket_replica_links
@@ -1486,10 +1715,10 @@ patch_bucket_replica_links
 post_bucket_replica_links
 '''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.0/post_bucket_replica_links.py
+.. literalinclude:: source/examples/FB2.2/post_bucket_replica_links.py
     :language: python
 
-Buckets
+Buckets 
 ~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -1530,7 +1759,7 @@ get_buckets_s3_specific_performance
 .. literalinclude:: source/examples/FB2.0/get_buckets_s3_specific_performance.py
     :language: python
 
-Certificate Groups
+Certificate Groups 
 ~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -1577,7 +1806,7 @@ get_certificate_groups_uses
 .. literalinclude:: source/examples/FB2.0/get_certificate_groups_uses.py
     :language: python
 
-Certificates
+Certificates 
 ~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -1630,7 +1859,7 @@ get_certificates_uses
 .. literalinclude:: source/examples/FB2.0/get_certificates_uses.py
     :language: python
 
-Clients
+Clients 
 ~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -1641,7 +1870,7 @@ get_arrays_clients_performance
 .. literalinclude:: source/examples/FB2.0/get_arrays_clients_performance.py
     :language: python
 
-Directory Services
+Directory Services 
 ~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -1682,7 +1911,7 @@ patch_directory_services_test
 .. literalinclude:: source/examples/FB2.0/patch_directory_services_test.py
     :language: python
 
-DNS
+DNS 
 ~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -1699,7 +1928,7 @@ patch_dns
 .. literalinclude:: source/examples/FB2.0/patch_dns.py
     :language: python
 
-File System Replica Links
+File System Replica Links 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -1740,7 +1969,7 @@ get_file_system_replica_links_transfer
 .. literalinclude:: source/examples/FB2.0/get_file_system_replica_links_transfer.py
     :language: python
 
-File System Snapshots
+File System Snapshots 
 ~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -1793,7 +2022,7 @@ get_file_system_snapshots_transfer
 .. literalinclude:: source/examples/FB2.0/get_file_system_snapshots_transfer.py
     :language: python
 
-File Systems
+File Systems 
 ~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -1858,7 +2087,7 @@ get_file_systems_users_performance
 .. literalinclude:: source/examples/FB2.0/get_file_systems_users_performance.py
     :language: python
 
-Hardware
+Hardware 
 ~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -1875,7 +2104,7 @@ patch_hardware
 .. literalinclude:: source/examples/FB2.0/patch_hardware.py
     :language: python
 
-Hardware Connectors
+Hardware Connectors 
 ~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -1892,7 +2121,7 @@ patch_hardware_connectors
 .. literalinclude:: source/examples/FB2.0/patch_hardware_connectors.py
     :language: python
 
-Keytabs
+Keytabs 
 ~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -1927,7 +2156,7 @@ post_keytabs_upload
 .. literalinclude:: source/examples/FB2.0/post_keytabs_upload.py
     :language: python
 
-Kmip
+Kmip 
 ~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -1962,7 +2191,7 @@ get_kmip_test
 .. literalinclude:: source/examples/FB2.1/get_kmip_test.py
     :language: python
 
-Lifecycle Rules
+Lifecycle Rules 
 ~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -1991,7 +2220,7 @@ post_lifecycle_rules
 .. literalinclude:: source/examples/FB2.1/post_lifecycle_rules.py
     :language: python
 
-Link Aggregation Groups
+Link Aggregation Groups 
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -2020,7 +2249,7 @@ post_link_aggregation_groups
 .. literalinclude:: source/examples/FB2.0/post_link_aggregation_groups.py
     :language: python
 
-Logs
+Logs 
 ~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -2031,7 +2260,7 @@ get_logs
 .. literalinclude:: source/examples/FB2.0/get_logs.py
     :language: python
 
-Network Interfaces
+Network Interfaces 
 ~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -2060,7 +2289,7 @@ post_network_interfaces
 .. literalinclude:: source/examples/FB2.0/post_network_interfaces.py
     :language: python
 
-Object Store Access Keys
+Object Store Access Keys 
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -2089,36 +2318,7 @@ post_object_store_access_keys
 .. literalinclude:: source/examples/FB2.0/post_object_store_access_keys.py
     :language: python
 
-Object Store Access Policies
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
-
-get_object_store_access_policies
-''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.0/get_object_store_access_policies.py
-    :language: python
-
-delete_object_store_access_policies_object_store_users
-''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.0/delete_object_store_access_policies_object_store_users.py
-    :language: python
-
-get_object_store_access_policies_object_store_users
-'''''''''''''''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.0/get_object_store_access_policies_object_store_users.py
-    :language: python
-
-post_object_store_access_policies_object_store_users
-''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.0/post_object_store_access_policies_object_store_users.py
-    :language: python
-
-Object Store Accounts
+Object Store Accounts 
 ~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -2141,7 +2341,7 @@ post_object_store_accounts
 .. literalinclude:: source/examples/FB2.0/post_object_store_accounts.py
     :language: python
 
-Object Store Remote Credentials
+Object Store Remote Credentials 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -2170,7 +2370,7 @@ post_object_store_remote_credentials
 .. literalinclude:: source/examples/FB2.0/post_object_store_remote_credentials.py
     :language: python
 
-Object Store Users
+Object Store Users 
 ~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -2211,7 +2411,7 @@ post_object_store_users
 .. literalinclude:: source/examples/FB2.0/post_object_store_users.py
     :language: python
 
-Object Store Virtual Hosts
+Object Store Virtual Hosts 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -2234,8 +2434,85 @@ post_object_store_virtual_hosts
 .. literalinclude:: source/examples/FB2.0/post_object_store_virtual_hosts.py
     :language: python
 
-Policies
-~~~~~~~~~
+Policies   Object Store Access 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+delete_object_store_access_policies
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.2/delete_object_store_access_policies.py
+    :language: python
+
+get_object_store_access_policies
+''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_object_store_access_policies.py
+    :language: python
+
+delete_object_store_access_policies_object_store_users
+''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_object_store_access_policies_object_store_users.py
+    :language: python
+
+get_object_store_access_policies_object_store_users
+'''''''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_object_store_access_policies_object_store_users.py
+    :language: python
+
+post_object_store_access_policies_object_store_users
+''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_object_store_access_policies_object_store_users.py
+    :language: python
+
+patch_object_store_access_policies
+''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.2/patch_object_store_access_policies.py
+    :language: python
+
+post_object_store_access_policies
+'''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.2/post_object_store_access_policies.py
+    :language: python
+
+delete_object_store_access_policies_rules
+'''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.2/delete_object_store_access_policies_rules.py
+    :language: python
+
+get_object_store_access_policies_rules
+''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.2/get_object_store_access_policies_rules.py
+    :language: python
+
+patch_object_store_access_policies_rules
+''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.2/patch_object_store_access_policies_rules.py
+    :language: python
+
+post_object_store_access_policies_rules
+'''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.2/post_object_store_access_policies_rules.py
+    :language: python
+
+get_object_store_access_policy_actions
+''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.2/get_object_store_access_policy_actions.py
+    :language: python
+
+Policies   Snapshot 
+~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2317,7 +2594,24 @@ post_policies
 .. literalinclude:: source/examples/FB2.0/post_policies.py
     :language: python
 
-Quotas
+Policies  All 
+~~~~~~~~~~~~~~
+
+The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+get_policies_all
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.2/get_policies_all.py
+    :language: python
+
+get_policies_all_members
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.2/get_policies_all_members.py
+    :language: python
+
+Quotas 
 ~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -2382,7 +2676,7 @@ post_quotas_users
 .. literalinclude:: source/examples/FB2.0/post_quotas_users.py
     :language: python
 
-Rdl
+Rdl 
 ~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -2411,7 +2705,7 @@ get_rapid_data_locking_test
 .. literalinclude:: source/examples/FB2.1/get_rapid_data_locking_test.py
     :language: python
 
-Roles
+Roles 
 ~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -2422,7 +2716,7 @@ get_roles
 .. literalinclude:: source/examples/FB2.0/get_roles.py
     :language: python
 
-SMTP
+SMTP 
 ~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -2439,7 +2733,7 @@ patch_smtp_servers
 .. literalinclude:: source/examples/FB2.0/patch_smtp_servers.py
     :language: python
 
-SNMP Agents
+SNMP Agents 
 ~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -2462,7 +2756,7 @@ patch_snmp_agents
 .. literalinclude:: source/examples/FB2.0/patch_snmp_agents.py
     :language: python
 
-SNMP Managers
+SNMP Managers 
 ~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -2497,7 +2791,7 @@ get_snmp_managers_test
 .. literalinclude:: source/examples/FB2.0/get_snmp_managers_test.py
     :language: python
 
-Subnets
+Subnets 
 ~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -2526,7 +2820,7 @@ post_subnets
 .. literalinclude:: source/examples/FB2.0/post_subnets.py
     :language: python
 
-Support
+Support 
 ~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -2549,7 +2843,7 @@ get_support_test
 .. literalinclude:: source/examples/FB2.0/get_support_test.py
     :language: python
 
-Syslog
+Syslog 
 ~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -2596,7 +2890,7 @@ get_syslog_servers_test
 .. literalinclude:: source/examples/FB2.0/get_syslog_servers_test.py
     :language: python
 
-Targets
+Targets 
 ~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -2631,7 +2925,7 @@ post_targets
 .. literalinclude:: source/examples/FB2.0/post_targets.py
     :language: python
 
-Usage
+Usage 
 ~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -2647,3 +2941,4 @@ get_usage_users
 
 .. literalinclude:: source/examples/FB2.0/get_usage_users.py
     :language: python
+

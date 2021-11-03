@@ -9,6 +9,7 @@ Subpackages
 
    pypureclient.flashblade.FB_2_0
    pypureclient.flashblade.FB_2_1
+   pypureclient.flashblade.FB_2_2
 
 Submodules
 ----------
@@ -20,6 +21,7 @@ pypureclient.flashblade.client module
    :members:
    :undoc-members:
    :show-inheritance:
+
 
 Module contents
 ---------------

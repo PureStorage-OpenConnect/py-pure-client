@@ -1,8 +1,10 @@
 from . import FB_2_1
+from . import FB_2_2
 from . import FB_2_0
 
 fb_modules = {
     '2.1': FB_2_1,
+    '2.2': FB_2_2,
     '2.0': FB_2_0,
 }
 
@@ -11,7 +13,7 @@ DEFAULT_TIMEOUT = 15.0
 DEFAULT_RETRIES = 5
 
 
-def Client(target, version="2.1", id_token=None, private_key_file=None, private_key_password=None,
+def Client(target, version="2.2", id_token=None, private_key_file=None, private_key_password=None,
            username=None, client_id=None, key_id=None, issuer=None, api_token=None,
            retries=DEFAULT_RETRIES, timeout=DEFAULT_TIMEOUT, ssl_cert=None, user_agent=None):
     """
