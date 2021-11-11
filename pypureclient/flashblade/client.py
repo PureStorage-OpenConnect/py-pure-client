@@ -1,19 +1,24 @@
-from . import FB_2_1
+import requests
+
+from . import PureError
+
 from . import FB_2_2
+from . import FB_2_1
 from . import FB_2_0
 
 fb_modules = {
-    '2.1': FB_2_1,
     '2.2': FB_2_2,
+    '2.1': FB_2_1,
     '2.0': FB_2_0,
 }
 
+MW_DEV_VERSION = '2.latest'
 
 DEFAULT_TIMEOUT = 15.0
 DEFAULT_RETRIES = 5
 
 
-def Client(target, version="2.2", id_token=None, private_key_file=None, private_key_password=None,
+def Client(target, version=None, id_token=None, private_key_file=None, private_key_password=None,
            username=None, client_id=None, key_id=None, issuer=None, api_token=None,
            retries=DEFAULT_RETRIES, timeout=DEFAULT_TIMEOUT, ssl_cert=None, user_agent=None):
     """
@@ -23,7 +28,8 @@ def Client(target, version="2.2", id_token=None, private_key_file=None, private_
         target (str, required):
             The target array's IP or hostname.
         version (str, optional):
-            REST API version to use. Defaults to the most recent version.
+            REST API version to use. Defaults to the most recent version
+            supported by both the client and the target array.
         id_token (str, optional):
             The security token that represents the identity of the party on
             behalf of whom the request is being made, issued by an enabled
@@ -57,6 +63,11 @@ def Client(target, version="2.2", id_token=None, private_key_file=None, private_
     Raises:
         PureError: If it could not create an ID or access token
     """
+    array_versions = get_array_versions(target)
+    if version is not None:
+        validate_version(array_versions, version)
+    else:
+        version = choose_version(array_versions)
     fb_module = version_to_module(version)
     client = fb_module.Client(target=target, id_token=id_token, private_key_file=private_key_file,
                               private_key_password=private_key_password, username=username, client_id=client_id,
@@ -65,9 +76,35 @@ def Client(target, version="2.2", id_token=None, private_key_file=None, private_
     return client
 
 
+def get_array_versions(target):
+    url = 'https://{}/api/api_version'.format(target)
+    response = requests.get(url, verify=False)
+    if response.status_code == requests.codes.ok:
+        return response.json()['versions']
+    else:
+        raise PureError("Failed to retrieve supported REST versions from target array {}. status code: {}, error: {}"
+                        .format(target, response.status_code, response.text))
+
+
+def validate_version(array_versions, version):
+    if str(version).lower() == MW_DEV_VERSION and MW_DEV_VERSION in fb_modules.keys():
+        return
+    if version not in set(fb_modules.keys()):
+        msg = "version {} not supported by client.".format(version)
+        raise ValueError(msg.format(version))
+    if version not in array_versions:
+        msg = "version {} not supported by array."
+        raise ValueError(msg.format(version))
+
+
+def choose_version(array_versions):
+    client_versions = set(fb_modules.keys())
+    for version in array_versions[::-1]:
+        if version in client_versions:
+            return version
+    raise ValueError("No compatible REST version found between the client SDK and the target array.")
+
+
 def version_to_module(version):
     fb_module = fb_modules.get(version, None)
-    if fb_module is None:
-        msg = "version {} not supported".format(version)
-        raise ValueError(msg.format(version))
     return fb_module
