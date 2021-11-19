@@ -11,7 +11,7 @@ from setuptools import setup, find_packages  # noqa: H301
 NAME = 'py-pure-client'
 VERSION = '1.20.1'
 
-REQUIRES = ['urllib3 == 1.26.4', 'six >= 1.10, <= 1.15.0', 'certifi >= 14.05.14, <= 2020.12.5',
+REQUIRES = ['urllib3 == 1.26.5', 'six >= 1.10, <= 1.15.0', 'certifi >= 14.05.14, <= 2020.12.5',
             'python-dateutil >= 2.5.3, <= 2.8.1', 'paramiko == 2.7.1',
             'PyJWT >= 1.7.1, < 2.0.0', 'requests >= 2.20.1, <= 2.25.1', 'typing >=3.7.4.1, <= 3.7.4.3']
 
