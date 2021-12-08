@@ -3,11 +3,13 @@ import requests
 from . import PureError
 
 from . import FB_2_2
+from . import FB_2_3
 from . import FB_2_1
 from . import FB_2_0
 
 fb_modules = {
     '2.2': FB_2_2,
+    '2.3': FB_2_3,
     '2.1': FB_2_1,
     '2.0': FB_2_0,
 }
