@@ -1438,7 +1438,7 @@ class HostsApi(object):
         # type: (...) -> models.ResourceSpaceNoIdGetResponse
         """List host space information
 
-        Returns provisioned (virtual) size and physical storage consumption data for each host.
+        Returns provisioned size and physical storage consumption data for each host.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api211_hosts_space_get_with_http_info(async_req=True)

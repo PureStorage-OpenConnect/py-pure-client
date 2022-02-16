@@ -1448,7 +1448,7 @@ class PodsApi(object):
         # type: (...) -> models.ResourcePodSpaceGetResponse
         """List pod space information
 
-        Displays provisioned (virtual) size and physical storage consumption data for each pod on the local array.
+        Displays provisioned size and physical storage consumption data for each pod on the local array.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api22_pods_space_get_with_http_info(async_req=True)

@@ -1315,7 +1315,7 @@ class HostGroupsApi(object):
         # type: (...) -> models.ResourceSpaceNoIdGetResponse
         """List host group space information
 
-        Returns provisioned (virtual) size and physical storage consumption data for each host group.
+        Returns provisioned size and physical storage consumption data for each host group.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api22_host_groups_space_get_with_http_info(async_req=True)

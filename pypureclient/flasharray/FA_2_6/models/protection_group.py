@@ -98,7 +98,7 @@ class ProtectionGroup(object):
             snapshot_schedule (SnapshotSchedule): The schedule settings for protection group snapshots.
             source (FixedReference): The array on which the protection group was created.
             source_retention (RetentionPolicy): The retention policy for the source array of the protection group.
-            space (Space): Returns provisioned (virtual) size and physical storage consumption data for each protection group.
+            space (Space): Returns provisioned size and physical storage consumption data for each protection group.
             target_count (int): The number of targets to where this protection group replicates.
             target_retention (RetentionPolicy): The retention policy for the target(s) of the protection group.
             time_remaining (int): The amount of time left until the destroyed protection group is permanently eradicated. Measured in milliseconds. Before the `time_remaining` period has elapsed, the destroyed protection group can be recovered by setting `destroyed=false`.

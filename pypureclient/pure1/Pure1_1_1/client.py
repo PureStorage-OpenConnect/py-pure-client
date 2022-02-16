@@ -32,7 +32,7 @@ class Client(object):
     TIMEOUT_KEY = 'timeout'
     TIMEOUT_DEFAULT = 15.0
     # Format: client/client_version/endpoint/endpoint_version/system/release
-    USER_AGENT = ('pypureclient/1.18.1/Pure1/1.1/{sys}/{rel}'
+    USER_AGENT = ('pypureclient/1.23.0/Pure1/1.1/{sys}/{rel}'
                   .format(sys=platform.system(), rel=platform.release()))
 
     def __init__(self, **kwargs):
@@ -116,6 +116,10 @@ class Client(object):
         self._targets_api = api.TargetsApi(self._api_client)
         self._volume_snapshots_api = api.VolumeSnapshotsApi(self._api_client)
         self._volumes_api = api.VolumesApi(self._api_client)
+
+    def __del__(self):
+        # Cleanup this REST API client resources
+        self._api_client.close()
 
     def get_access_token(self, refresh=False):
         """

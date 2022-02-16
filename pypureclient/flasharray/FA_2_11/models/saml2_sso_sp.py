@@ -31,12 +31,18 @@ class Saml2SsoSp(object):
     """
     swagger_types = {
         'decryption_credential': 'ReferenceNoId',
-        'signing_credential': 'ReferenceNoId'
+        'signing_credential': 'ReferenceNoId',
+        'entity_id': 'str',
+        'assertion_consumer_url': 'str',
+        'metadata_url': 'str'
     }
 
     attribute_map = {
         'decryption_credential': 'decryption_credential',
-        'signing_credential': 'signing_credential'
+        'signing_credential': 'signing_credential',
+        'entity_id': 'entity_id',
+        'assertion_consumer_url': 'assertion_consumer_url',
+        'metadata_url': 'metadata_url'
     }
 
     required_args = {
@@ -46,16 +52,28 @@ class Saml2SsoSp(object):
         self,
         decryption_credential=None,  # type: models.ReferenceNoId
         signing_credential=None,  # type: models.ReferenceNoId
+        entity_id=None,  # type: str
+        assertion_consumer_url=None,  # type: str
+        metadata_url=None,  # type: str
     ):
         """
         Keyword args:
             decryption_credential (ReferenceNoId): The credential used by the service provider to decrypt encrypted SAML assertions from the identity provider. The credential is managed by the `certificates` endpoint and `purecert` CLI commands.
             signing_credential (ReferenceNoId): The credential used by the service provider to sign SAML requests. The credential is managed by the `certificates` endpoint and `purecert` CLI commands.
+            entity_id (str): A globally unique name for the service provider.
+            assertion_consumer_url (str): The URL where the identity provider will send its SAML response after authenticating a user.
+            metadata_url (str): The URL of the service provider metadata.
         """
         if decryption_credential is not None:
             self.decryption_credential = decryption_credential
         if signing_credential is not None:
             self.signing_credential = signing_credential
+        if entity_id is not None:
+            self.entity_id = entity_id
+        if assertion_consumer_url is not None:
+            self.assertion_consumer_url = assertion_consumer_url
+        if metadata_url is not None:
+            self.metadata_url = metadata_url
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

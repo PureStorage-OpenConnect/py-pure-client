@@ -85,7 +85,7 @@ class Pod(object):
             mediator (str): The URL of the mediator for the pod. By default, the Pure1 Cloud Mediator (`purestorage`) serves as the mediator.
             mediator_version (str): The mediator version.
             source (FixedReference): The source pod from where data is cloned to create the new pod.
-            space (PodSpace): Displays provisioned (virtual) size and physical storage consumption information for the sum of all volumes connected to the specified host.
+            space (PodSpace): Displays provisioned size and physical storage consumption information for the sum of all volumes connected to the specified host.
             time_remaining (int): The amount of time left until the destroyed pod is permanently eradicated. Measured in milliseconds. Before the `time_remaining` period has elapsed, the destroyed pod can be recovered by setting `destroyed=false`.
         """
         if id is not None:
