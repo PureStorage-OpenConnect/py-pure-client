@@ -167,6 +167,9 @@ class Client(object):
         self._usage_api = api.UsageApi(self._api_client)
         self._authorization_api = api.AuthorizationApi(self._api_client)
 
+    def __del__(self):
+        # Cleanup this REST API client resources
+        self._api_client.close()
 
     def get_access_token(self, refresh=False):
         """

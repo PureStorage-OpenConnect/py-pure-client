@@ -117,6 +117,10 @@ class Client(object):
         self._volume_snapshots_api = api.VolumeSnapshotsApi(self._api_client)
         self._volumes_api = api.VolumesApi(self._api_client)
 
+    def __del__(self):
+        # Cleanup this REST API client resources
+        self._api_client.close()
+
     def get_access_token(self, refresh=False):
         """
         Get the last used access token.
