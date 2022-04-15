@@ -634,7 +634,7 @@ class VolumeGroupsApi(object):
         # type: (...) -> models.ResourceSpaceGetResponse
         """List volume group space information
 
-        Returns the provisioned (virtual) size and physical storage consumption data for each volume group.
+        Returns the provisioned size and physical storage consumption data for each volume group.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api210_volume_groups_space_get_with_http_info(async_req=True)

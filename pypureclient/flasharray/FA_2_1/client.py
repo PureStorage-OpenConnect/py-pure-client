@@ -20,7 +20,7 @@ class Client(object):
     DEFAULT_TIMEOUT = 15.0
     DEFAULT_RETRIES = 5
     # Format: client/client_version/endpoint/endpoint_version/system/release
-    USER_AGENT = ('pypureclient/1.22.0/FA/2.1/{sys}/{rel}'
+    USER_AGENT = ('pypureclient/1.23.0/FA/2.1/{sys}/{rel}'
                   .format(sys=platform.system(), rel=platform.release()))
 
     def __init__(self, target, id_token=None, private_key_file=None, private_key_password=None,
@@ -119,6 +119,10 @@ class Client(object):
         self._volume_groups_api = api.VolumeGroupsApi(self._api_client)
         self._volume_snapshots_api = api.VolumeSnapshotsApi(self._api_client)
         self._volumes_api = api.VolumesApi(self._api_client)
+
+    def __del__(self):
+        # Cleanup this REST API client resources
+        self._api_client.close()
 
     def get_rest_version(self):
         """Get the REST API version being used by this client.
@@ -1698,8 +1702,8 @@ class Client(object):
     ):
         # type: (...) -> models.ResourceSpaceNoIdGetResponse
         """
-        Returns provisioned (virtual) size and physical storage consumption data for
-        each host group.
+        Returns provisioned size and physical storage consumption data for each host
+        group.
 
         Args:
             references (list[FixedReference], optional):
@@ -2732,8 +2736,7 @@ class Client(object):
     ):
         # type: (...) -> models.ResourceSpaceNoIdGetResponse
         """
-        Returns provisioned (virtual) size and physical storage consumption data for
-        each host.
+        Returns provisioned size and physical storage consumption data for each host.
 
         Args:
             references (list[FixedReference], optional):
@@ -3940,8 +3943,8 @@ class Client(object):
     ):
         # type: (...) -> models.ResourceSpaceGetResponse
         """
-        Returns provisioned (virtual) size and physical storage consumption data for
-        each pod on the local array.
+        Returns provisioned size and physical storage consumption data for each pod on
+        the local array.
 
         Args:
             references (list[FixedReference], optional):
@@ -5573,8 +5576,8 @@ class Client(object):
     ):
         # type: (...) -> models.ResourceSpaceNoIdGetResponse
         """
-        Returns provisioned (virtual) size and physical storage consumption data for
-        each protection group.
+        Returns provisioned size and physical storage consumption data for each
+        protection group.
 
         Args:
             references (list[FixedReference], optional):
@@ -7626,8 +7629,8 @@ class Client(object):
     ):
         # type: (...) -> models.ResourceSpaceGetResponse
         """
-        Returns the provisioned (virtual) size and physical storage consumption data for
-        each volume group.
+        Returns the provisioned size and physical storage consumption data for each
+        volume group.
 
         Args:
             references (list[FixedReference], optional):
@@ -9209,8 +9212,8 @@ class Client(object):
     ):
         # type: (...) -> models.ResourceSpaceGetResponse
         """
-        Returns the provisioned (virtual) size and physical storage consumption data for
-        each volume.
+        Returns the provisioned size and physical storage consumption data for each
+        volume.
 
         Args:
             references (list[FixedReference], optional):

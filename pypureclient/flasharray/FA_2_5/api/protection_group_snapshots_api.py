@@ -363,7 +363,7 @@ class ProtectionGroupSnapshotsApi(object):
         # type: (...) -> models.ProtectionGroupSnapshotResponse
         """Create a protection group snapshot
 
-        Creates a point-in-time snapshot of the contents of a protection group. The `source_ids` or `source_names` parameter is required, but cannot be set together.
+        Creates a point-in-time snapshot of the contents of a protection group. The `source_names` parameter is required.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api25_protection_group_snapshots_post_with_http_info(async_req=True)

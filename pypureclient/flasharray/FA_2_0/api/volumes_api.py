@@ -776,7 +776,7 @@ class VolumesApi(object):
         # type: (...) -> models.ResourceSpaceGetResponse
         """List volume space information
 
-        Return provisioned (virtual) size and physical storage consumption data for each volume.
+        Return provisioned size and physical storage consumption data for each volume.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api20_volumes_space_get_with_http_info(async_req=True)

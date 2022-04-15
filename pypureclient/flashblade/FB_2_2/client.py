@@ -34,7 +34,7 @@ class Client(object):
     DEFAULT_TIMEOUT = 15.0
     DEFAULT_RETRIES = 5
     # Format: client/client_version/endpoint/endpoint_version/system/release
-    USER_AGENT = ('pypureclient/1.21.0/FB/2.2/{sys}/{rel}'
+    USER_AGENT = ('pypureclient/1.23.0/FB/2.2/{sys}/{rel}'
                   .format(sys=platform.system(), rel=platform.release()))
 
     def __init__(self, target, id_token=None, private_key_file=None, private_key_password=None,
@@ -167,6 +167,9 @@ class Client(object):
         self._usage_api = api.UsageApi(self._api_client)
         self._authorization_api = api.AuthorizationApi(self._api_client)
 
+    def __del__(self):
+        # Cleanup this REST API client resources
+        self._api_client.close()
 
     def get_access_token(self, refresh=False):
         """
