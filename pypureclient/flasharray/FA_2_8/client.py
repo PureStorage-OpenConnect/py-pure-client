@@ -20,7 +20,7 @@ class Client(object):
     DEFAULT_TIMEOUT = 15.0
     DEFAULT_RETRIES = 5
     # Format: client/client_version/endpoint/endpoint_version/system/release
-    USER_AGENT = ('pypureclient/1.23.0/FA/2.8/{sys}/{rel}'
+    USER_AGENT = ('pypureclient/1.24.0/FA/2.8/{sys}/{rel}'
                   .format(sys=platform.system(), rel=platform.release()))
 
     def __init__(self, target, id_token=None, private_key_file=None, private_key_password=None,
@@ -5806,7 +5806,7 @@ class Client(object):
     ):
         # type: (...) -> models.PolicyMemberExportResponse
         """
-        Creates a membership between a directory with one or more NFS policies. The
+        Creates a membership between a directory with one or more SMB policies. The
         `member_ids` or `member_names` parameter is required, but cannot be set
         together.
 
