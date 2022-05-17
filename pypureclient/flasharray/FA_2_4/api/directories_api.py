@@ -1315,9 +1315,9 @@ class DirectoriesApi(object):
         _request_timeout=None,  # type: Optional[int]
     ):
         # type: (...) -> models.PolicyMemberExportResponse
-        """Create a membership between a directory with one or more NFS policies
+        """Create a membership between a directory with one or more SMB policies
 
-        Creates a membership between a directory with one or more NFS policies. The `member_ids` or `member_names` parameter is required, but cannot be set together.
+        Creates a membership between a directory with one or more SMB policies. The `member_ids` or `member_names` parameter is required, but cannot be set together.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api24_directories_policies_smb_post_with_http_info(policies, async_req=True)

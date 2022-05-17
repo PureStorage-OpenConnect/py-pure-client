@@ -5,6 +5,7 @@ from . import PureError
 from . import FA_2_8
 from . import FA_2_10
 from . import FA_2_6
+from . import FA_2_14
 from . import FA_2_4
 from . import FA_2_9
 from . import FA_2_13
@@ -20,6 +21,7 @@ fa_modules = {
     '2.8': FA_2_8,
     '2.10': FA_2_10,
     '2.6': FA_2_6,
+    '2.14': FA_2_14,
     '2.4': FA_2_4,
     '2.9': FA_2_9,
     '2.13': FA_2_13,
