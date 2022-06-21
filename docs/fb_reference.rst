@@ -37,6 +37,11 @@ FlashBlade REST 2.3 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.FB_2_3.client.Client
+
+FlashBlade REST 2.4 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.FB_2_4.client.Client
     :members:
 
 
@@ -440,6 +445,12 @@ Dns
 .. autoclass:: pypureclient.flashblade.Dns
    :members:
 
+Drive
+~~~~~
+
+.. autoclass:: pypureclient.flashblade.Drive
+   :members:
+
 Eula
 ~~~~
 
@@ -450,6 +461,12 @@ EulaSignature
 ~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.EulaSignature
+   :members:
+
+FileInfo
+~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.FileInfo
    :members:
 
 FileSystem
@@ -668,6 +685,12 @@ Login
 .. autoclass:: pypureclient.flashblade.Login
    :members:
 
+LogsAsync
+~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.LogsAsync
+   :members:
+
 Member
 ~~~~~~
 
@@ -714,6 +737,12 @@ NfsExportPolicy
 ~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.NfsExportPolicy
+   :members:
+
+NfsExportPolicyPost
+~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.NfsExportPolicyPost
    :members:
 
 NfsExportPolicyRule
@@ -852,6 +881,12 @@ PolicyBase
 ~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.PolicyBase
+   :members:
+
+PolicyBaseRenameable
+~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.PolicyBaseRenameable
    :members:
 
 PolicyFileSystemSnapshot
@@ -1150,7 +1185,6 @@ UserQuotaPatch
 
 UserQuotaPost
 ~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.UserQuotaPost
    :members:
 
@@ -1873,6 +1907,17 @@ patch_dns
 .. literalinclude:: source/examples/FB2.0/patch_dns.py
     :language: python
 
+Drives
+~~~~~~~
+
+The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+get_drives
+''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_drives.py
+    :language: python
+
 File System Replica Links
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -2046,7 +2091,7 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 get_hardware
 ''''''''''''
 
-.. literalinclude:: source/examples/FB2.0/get_hardware.py
+.. literalinclude:: source/examples/FB2.4/get_hardware.py
     :language: python
 
 patch_hardware
@@ -2210,6 +2255,24 @@ Logs
 ~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+get_logs_async_download
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_logs_async_download.py
+    :language: python
+
+get_logs_async
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_logs_async.py
+    :language: python
+
+patch_logs_async
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/patch_logs_async.py
+    :language: python
 
 get_logs
 ''''''''
