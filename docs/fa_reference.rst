@@ -87,6 +87,11 @@ FlashArray REST 2.14 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.FA_2_14.client.Client
+
+FlashArray REST 2.15 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.FA_2_15.client.Client
     :members:
 
 Properties
@@ -139,6 +144,12 @@ ActiveDirectory
 ~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.ActiveDirectory
+   :members:
+
+ActiveDirectoryPatch
+~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.ActiveDirectoryPatch
    :members:
 
 ActiveDirectoryPost
@@ -535,6 +546,12 @@ DnsPatch
 ~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.DnsPatch
+   :members:
+
+DnsPost
+~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.DnsPost
    :members:
 
 Drive
@@ -987,6 +1004,24 @@ PolicyMemberPost
 .. autoclass:: pypureclient.flasharray.PolicyMemberPost
    :members:
 
+PolicyNfs
+~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyNfs
+   :members:
+
+PolicyNfsPatch
+~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyNfsPatch
+   :members:
+
+PolicyNfsPost
+~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyNfsPost
+   :members:
+
 PolicyPatch
 ~~~~~~~~~~~
 
@@ -1015,6 +1050,12 @@ PolicyRuleQuota
 ~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.PolicyRuleQuota
+   :members:
+
+PolicyRuleQuotaPatch
+~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyRuleQuotaPatch
    :members:
 
 PolicyRuleQuotaPost
@@ -1081,6 +1122,12 @@ PolicyrulenfsclientpostRules
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.PolicyrulenfsclientpostRules
+   :members:
+
+PolicyrulequotapatchRules
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyrulequotapatchRules
    :members:
 
 PolicyrulequotapostRules

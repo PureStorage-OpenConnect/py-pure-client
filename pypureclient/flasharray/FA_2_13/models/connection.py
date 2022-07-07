@@ -60,7 +60,7 @@ class Connection(object):
         Keyword args:
             host (ReferenceNoId)
             host_group (ReferenceNoId)
-            lun (int): The logical unit number (LUN) by which the specified hosts are to address the specified volume. If the LUN is not specified, the system automatically assigns a LUN to the connection. To automatically assign a LUN to a private connection, the system starts at LUN `1` and counts up to the maximum LUN `4095`, assigning the first available LUN to the connection. For shared connections, the system starts at LUN `254` and counts down to the minimum LUN `1`, assigning the first available LUN to the connection. If all LUNs in the `[1...254]` range are taken, the system starts at LUN `255` and counts up to the maximum LUN `4095`, assigning the first available LUN to the connection.
+            lun (int): The logical unit number (LUN) by which the specified hosts are to address the specified volume. LUN can be in one of two formats: a simple LUN, or a LUN and Sublun with virtual volumes. A LUN and Sublun are integers in the range of 1 to 4095. The first format is simply the LUN number. The second format is a single int64 combining both ((LUN << 32) + Sublun) or (LUN * 4294967296 + Sublun). In the FA UI, a combined LUN and Sublun is represented as \"LUN:Sublun\". Example: LUN = 30, Sublun = 2, LUN:Sublun = 30:2 Combined: (30 * 4294967296 + 2) == 128849018882. In REST it will be returned as 128849018882. To automatically assign a LUN to a private connection, the system starts at LUN '1' and counts up to the maximum LUN '4095', assigning the first available LUN to the connection. For shared connections, the system starts at LUN '254' and counts down to the minimum LUN '1', assigning the first available LUN to the connection. If all LUNs in the '[1...254]' range are taken, the system starts at LUN '255' and counts up to the maximum LUN '4095', assigning the first available LUN to the connection. The maximum int64 LUN:Sublun value is 17587891081215.
             protocol_endpoint (Reference): A protocol endpoint (also known as a conglomerate volume) which acts as a proxy through which virtual volumes are created and then connected to VMware ESXi hosts or host groups. The protocol endpoint itself does not serve I/Os; instead, its job is to form connections between FlashArray volumes and ESXi hosts and host groups.
             volume (FixedReference): A container that manages the storage space on the array.
         """
@@ -78,11 +78,6 @@ class Connection(object):
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
             raise KeyError("Invalid key `{}` for `Connection`".format(key))
-        if key == "lun" and value is not None:
-            if value > 4095:
-                raise ValueError("Invalid value for `lun`, value must be less than or equal to `4095`")
-            if value < 1:
-                raise ValueError("Invalid value for `lun`, must be a value greater than or equal to `1`")
         self.__dict__[key] = value
 
     def __getattribute__(self, item):
