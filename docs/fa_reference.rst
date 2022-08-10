@@ -92,6 +92,11 @@ FlashArray REST 2.15 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.FA_2_15.client.Client
+
+FlashArray REST 2.16 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.FA_2_16.client.Client
     :members:
 
 Properties
@@ -410,6 +415,12 @@ ConnectionPost
 .. autoclass:: pypureclient.flasharray.ConnectionPost
    :members:
 
+ContainerDefaultProtection
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.ContainerDefaultProtection
+   :members:
+
 Controller
 ~~~~~~~~~~
 
@@ -420,6 +431,12 @@ Controllers
 ~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.Controllers
+   :members:
+
+DefaultProtectionReference
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.DefaultProtectionReference
    :members:
 
 DestroyedPatchPost
@@ -806,10 +823,100 @@ NetworkInterfacePerformanceFc
 .. autoclass:: pypureclient.flasharray.NetworkInterfacePerformanceFc
    :members:
 
+NetworkInterfacePortDetails
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.NetworkInterfacePortDetails
+   :members:
+
+NetworkInterfacePortDetailsRxLos
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.NetworkInterfacePortDetailsRxLos
+   :members:
+
+NetworkInterfacePortDetailsRxPower
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.NetworkInterfacePortDetailsRxPower
+   :members:
+
+NetworkInterfacePortDetailsStatic
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.NetworkInterfacePortDetailsStatic
+   :members:
+
+NetworkInterfacePortDetailsStaticRxPowerThresholds
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.NetworkInterfacePortDetailsStaticRxPowerThresholds
+   :members:
+
+NetworkInterfacePortDetailsStaticTemperatureThresholds
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.NetworkInterfacePortDetailsStaticTemperatureThresholds
+   :members:
+
+NetworkInterfacePortDetailsStaticTxBiasThresholds
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.NetworkInterfacePortDetailsStaticTxBiasThresholds
+   :members:
+
+NetworkInterfacePortDetailsStaticTxPowerThresholds
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.NetworkInterfacePortDetailsStaticTxPowerThresholds
+   :members:
+
+NetworkInterfacePortDetailsStaticVoltageThresholds
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.NetworkInterfacePortDetailsStaticVoltageThresholds
+   :members:
+
+NetworkInterfacePortDetailsTemperature
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.NetworkInterfacePortDetailsTemperature
+   :members:
+
+NetworkInterfacePortDetailsTxBias
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.NetworkInterfacePortDetailsTxBias
+   :members:
+
+NetworkInterfacePortDetailsTxFault
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.NetworkInterfacePortDetailsTxFault
+   :members:
+
+NetworkInterfacePortDetailsTxPower
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.NetworkInterfacePortDetailsTxPower
+   :members:
+
+NetworkInterfacePortDetailsVoltage
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.NetworkInterfacePortDetailsVoltage
+   :members:
+
 NetworkInterfacePost
 ~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.NetworkInterfacePost
+   :members:
+
+NetworkInterfacesPortDetails
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.NetworkInterfacesPortDetails
    :members:
 
 NetworkinterfacepatchEth

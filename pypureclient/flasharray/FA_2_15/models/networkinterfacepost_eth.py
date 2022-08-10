@@ -58,7 +58,7 @@ class NetworkinterfacepostEth(object):
             address (str): The IPv4 or IPv6 address to be associated with the specified network interface.
             subinterfaces (list[FixedReferenceNoId]): List of network interfaces configured to be a subinterface of the specified network interface.
             subnet (ReferenceNoId): Subnet that is associated with the specified network interface.
-            subtype (str): The subtype of the specified network interface. Only interfaces of subtype `virtual` and `lacp_bond` can be created. Configurable on POST only. Valid values are `failover_bond`, `lacp_bond`, `physical`, and `virtual`.
+            subtype (str): The subtype of the specified network interface. Only interfaces of subtype `vif` and `lacp_bond` can be created. Configurable on POST only. Valid values are `failover_bond`, `lacp_bond`, `physical`, and `vif`. If the subtype is `vif`, the services parameter must not be set.
         """
         if address is not None:
             self.address = address

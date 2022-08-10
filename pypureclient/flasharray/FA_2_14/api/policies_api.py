@@ -58,7 +58,7 @@ class PoliciesApi(object):
         :param str continuation_token: A token used to retrieve the next page of data with some consistency guaranteed. The token is a Base64 encoded value. Set `continuation_token` to the system-generated token taken from the `x-next-token` header field of the response. A query has reached its last page when the response does not include a token. Pagination requires the `limit` and `continuation_token` query parameters.
         :param bool destroyed: If set to `true`, lists only destroyed objects that are in the eradication pending state. If set to `false`, lists only objects that are not destroyed. For destroyed objects, the time remaining is displayed in milliseconds.
         :param str filter: Narrows down the results to only the response objects that satisfy the filter criteria.
-        :param list[str] ids: Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` and `names` parameters cannot be provided together.
+        :param list[str] ids: Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` or `names` parameter is required, but they cannot be set together.
         :param int limit: Limits the size of the response to the specified number of objects on each page. To return the total number of resources, set `limit=0`. The total number of resources is returned as a `total_item_count` value. If the page size requested is larger than the system maximum limit, the server returns the maximum limit, disregarding the requested page size.
         :param list[str] names: Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.
         :param int offset: The starting position based on the results of the query in relation to the full set of response objects returned.
@@ -194,10 +194,10 @@ class PoliciesApi(object):
         :param bool destroyed: If set to `true`, lists only destroyed objects that are in the eradication pending state. If set to `false`, lists only objects that are not destroyed. For destroyed objects, the time remaining is displayed in milliseconds.
         :param str filter: Narrows down the results to only the response objects that satisfy the filter criteria.
         :param int limit: Limits the size of the response to the specified number of objects on each page. To return the total number of resources, set `limit=0`. The total number of resources is returned as a `total_item_count` value. If the page size requested is larger than the system maximum limit, the server returns the maximum limit, disregarding the requested page size.
-        :param list[str] member_ids: Performs the operation on the unique member IDs specified. Enter multiple member IDs in comma-separated format. The `member_ids` and `member_names` parameters cannot be provided together.
+        :param list[str] member_ids: Performs the operation on the unique member IDs specified. Enter multiple member IDs in comma-separated format. The `member_ids` or `member_names` parameter is required, but they cannot be set together.
         :param list[str] member_names: Performs the operation on the unique member name specified. Examples of members include volumes, hosts, host groups, and directories. Enter multiple names in comma-separated format. For example, `vol01,vol02`.
         :param list[str] member_types: Performs the operation on the member types specified. The type of member is the full name of the resource endpoint. Valid values include `directories`. Enter multiple member types in comma-separated format. For example, `type01,type02`.
-        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` and `policy_names` parameters cannot be provided together.
+        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together.
         :param list[str] policy_names: Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.
         :param int offset: The starting position based on the results of the query in relation to the full set of response objects returned.
         :param list[str] sort: Returns the response objects in the order specified. Set `sort` to the name in the response by which to sort. Sorting can be performed on any of the names in the response, and the objects can be sorted in ascending or descending order. By default, the response objects are sorted in ascending order. To sort in descending order, append the minus sign (`-`) to the name. A single request can be sorted on multiple objects. For example, you can sort all volumes from largest to smallest volume size, and then sort volumes of the same size in ascending order by volume name. To sort on multiple names, list the names as comma-separated values.
@@ -338,7 +338,7 @@ class PoliciesApi(object):
         :param str authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :param str x_request_id: Supplied by client during request or generated by server.
         :param list[str] names: Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.
-        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` and `policy_names` parameters cannot be provided together.
+        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together.
         :param list[str] policy_names: Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
@@ -452,7 +452,7 @@ class PoliciesApi(object):
         :param int limit: Limits the size of the response to the specified number of objects on each page. To return the total number of resources, set `limit=0`. The total number of resources is returned as a `total_item_count` value. If the page size requested is larger than the system maximum limit, the server returns the maximum limit, disregarding the requested page size.
         :param list[str] names: Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.
         :param int offset: The starting position based on the results of the query in relation to the full set of response objects returned.
-        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` and `policy_names` parameters cannot be provided together.
+        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together.
         :param list[str] policy_names: Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.
         :param list[str] sort: Returns the response objects in the order specified. Set `sort` to the name in the response by which to sort. Sorting can be performed on any of the names in the response, and the objects can be sorted in ascending or descending order. By default, the response objects are sorted in ascending order. To sort in descending order, append the minus sign (`-`) to the name. A single request can be sorted on multiple objects. For example, you can sort all volumes from largest to smallest volume size, and then sort volumes of the same size in ascending order by volume name. To sort on multiple names, list the names as comma-separated values.
         :param bool total_item_count: If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.
@@ -578,7 +578,7 @@ class PoliciesApi(object):
         :param PolicyRuleNfsClientPost rules: (required)
         :param str authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :param str x_request_id: Supplied by client during request or generated by server.
-        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` and `policy_names` parameters cannot be provided together.
+        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together.
         :param list[str] policy_names: Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
@@ -671,7 +671,7 @@ class PoliciesApi(object):
         # type: (...) -> None
         """Delete NFS policies
 
-        Deletes one or more NFS policies. The `ids` or `names` parameter is required, but cannot be set together.
+        Deletes one or more NFS policies. The `ids` or `names` parameter is required, but they cannot be set together.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api214_policies_nfs_delete_with_http_info(async_req=True)
@@ -679,7 +679,7 @@ class PoliciesApi(object):
 
         :param str authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :param str x_request_id: Supplied by client during request or generated by server.
-        :param list[str] ids: Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` and `names` parameters cannot be provided together.
+        :param list[str] ids: Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` or `names` parameter is required, but they cannot be set together.
         :param list[str] names: Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
@@ -785,7 +785,7 @@ class PoliciesApi(object):
         :param str continuation_token: A token used to retrieve the next page of data with some consistency guaranteed. The token is a Base64 encoded value. Set `continuation_token` to the system-generated token taken from the `x-next-token` header field of the response. A query has reached its last page when the response does not include a token. Pagination requires the `limit` and `continuation_token` query parameters.
         :param bool destroyed: If set to `true`, lists only destroyed objects that are in the eradication pending state. If set to `false`, lists only objects that are not destroyed. For destroyed objects, the time remaining is displayed in milliseconds.
         :param str filter: Narrows down the results to only the response objects that satisfy the filter criteria.
-        :param list[str] ids: Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` and `names` parameters cannot be provided together.
+        :param list[str] ids: Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` or `names` parameter is required, but they cannot be set together.
         :param int limit: Limits the size of the response to the specified number of objects on each page. To return the total number of resources, set `limit=0`. The total number of resources is returned as a `total_item_count` value. If the page size requested is larger than the system maximum limit, the server returns the maximum limit, disregarding the requested page size.
         :param list[str] names: Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.
         :param int offset: The starting position based on the results of the query in relation to the full set of response objects returned.
@@ -910,10 +910,10 @@ class PoliciesApi(object):
 
         :param str authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :param str x_request_id: Supplied by client during request or generated by server.
-        :param list[str] member_ids: Performs the operation on the unique member IDs specified. Enter multiple member IDs in comma-separated format. The `member_ids` and `member_names` parameters cannot be provided together.
+        :param list[str] member_ids: Performs the operation on the unique member IDs specified. Enter multiple member IDs in comma-separated format. The `member_ids` or `member_names` parameter is required, but they cannot be set together.
         :param list[str] member_names: Performs the operation on the unique member name specified. Examples of members include volumes, hosts, host groups, and directories. Enter multiple names in comma-separated format. For example, `vol01,vol02`.
         :param list[str] member_types: Performs the operation on the member types specified. The type of member is the full name of the resource endpoint. Valid values include `directories`. Enter multiple member types in comma-separated format. For example, `type01,type02`.
-        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` and `policy_names` parameters cannot be provided together.
+        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together.
         :param list[str] policy_names: Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
@@ -1041,10 +1041,10 @@ class PoliciesApi(object):
         :param bool destroyed: If set to `true`, lists only destroyed objects that are in the eradication pending state. If set to `false`, lists only objects that are not destroyed. For destroyed objects, the time remaining is displayed in milliseconds.
         :param str filter: Narrows down the results to only the response objects that satisfy the filter criteria.
         :param int limit: Limits the size of the response to the specified number of objects on each page. To return the total number of resources, set `limit=0`. The total number of resources is returned as a `total_item_count` value. If the page size requested is larger than the system maximum limit, the server returns the maximum limit, disregarding the requested page size.
-        :param list[str] member_ids: Performs the operation on the unique member IDs specified. Enter multiple member IDs in comma-separated format. The `member_ids` and `member_names` parameters cannot be provided together.
+        :param list[str] member_ids: Performs the operation on the unique member IDs specified. Enter multiple member IDs in comma-separated format. The `member_ids` or `member_names` parameter is required, but they cannot be set together.
         :param list[str] member_names: Performs the operation on the unique member name specified. Examples of members include volumes, hosts, host groups, and directories. Enter multiple names in comma-separated format. For example, `vol01,vol02`.
         :param list[str] member_types: Performs the operation on the member types specified. The type of member is the full name of the resource endpoint. Valid values include `directories`. Enter multiple member types in comma-separated format. For example, `type01,type02`.
-        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` and `policy_names` parameters cannot be provided together.
+        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together.
         :param list[str] policy_names: Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.
         :param int offset: The starting position based on the results of the query in relation to the full set of response objects returned.
         :param list[str] sort: Returns the response objects in the order specified. Set `sort` to the name in the response by which to sort. Sorting can be performed on any of the names in the response, and the objects can be sorted in ascending or descending order. By default, the response objects are sorted in ascending order. To sort in descending order, append the minus sign (`-`) to the name. A single request can be sorted on multiple objects. For example, you can sort all volumes from largest to smallest volume size, and then sort volumes of the same size in ascending order by volume name. To sort on multiple names, list the names as comma-separated values.
@@ -1185,7 +1185,7 @@ class PoliciesApi(object):
         :param PolicyMemberExportPost members: (required)
         :param str authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :param str x_request_id: Supplied by client during request or generated by server.
-        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` and `policy_names` parameters cannot be provided together.
+        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together.
         :param list[str] policy_names: Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
@@ -1279,7 +1279,7 @@ class PoliciesApi(object):
         # type: (...) -> models.PolicyResponse
         """Modify NFS policies
 
-        Modifies one or more NFS policies. To enable a policy, set `enabled=true`. To disable a policy, set `enabled=false`. To rename a policy, set `name` to the new name. The `ids` or `names` parameter is required, but cannot be set together.
+        Modifies one or more NFS policies. To enable a policy, set `enabled=true`. To disable a policy, set `enabled=false`. To rename a policy, set `name` to the new name. The `ids` or `names` parameter is required, but they cannot be set together.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api214_policies_nfs_patch_with_http_info(policy, async_req=True)
@@ -1288,7 +1288,7 @@ class PoliciesApi(object):
         :param PolicyPatch policy: (required)
         :param str authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :param str x_request_id: Supplied by client during request or generated by server.
-        :param list[str] ids: Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` and `names` parameters cannot be provided together.
+        :param list[str] ids: Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` or `names` parameter is required, but they cannot be set together.
         :param list[str] names: Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
@@ -1383,7 +1383,7 @@ class PoliciesApi(object):
         # type: (...) -> models.PolicyResponse
         """Create NFS policies
 
-        Creates one or more NFS policies. Create a policy from scratch or copy an existing policy. To copy a policy, set one of either `source_names` or `source_ids` and each should have only one entry. To create a policy from scratch, policy body is required.
+        Creates one or more NFS policies. Create a policy from scratch or copy an existing policy. To copy a policy, the `source_names` or `source_ids` parameter is required, but they cannot be set together. To create a policy from scratch, policy body is required.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api214_policies_nfs_post_with_http_info(async_req=True)
@@ -1489,7 +1489,7 @@ class PoliciesApi(object):
         # type: (...) -> None
         """Delete quota policies
 
-        Deletes one or more quota policies. The `ids` or `names` parameter is required, but cannot be set together.
+        Deletes one or more quota policies. The `ids` or `names` parameter is required, but they cannot be set together.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api214_policies_quota_delete_with_http_info(async_req=True)
@@ -1497,7 +1497,7 @@ class PoliciesApi(object):
 
         :param str authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :param str x_request_id: Supplied by client during request or generated by server.
-        :param list[str] ids: Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` and `names` parameters cannot be provided together.
+        :param list[str] ids: Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` or `names` parameter is required, but they cannot be set together.
         :param list[str] names: Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
@@ -1603,7 +1603,7 @@ class PoliciesApi(object):
         :param str continuation_token: A token used to retrieve the next page of data with some consistency guaranteed. The token is a Base64 encoded value. Set `continuation_token` to the system-generated token taken from the `x-next-token` header field of the response. A query has reached its last page when the response does not include a token. Pagination requires the `limit` and `continuation_token` query parameters.
         :param bool destroyed: If set to `true`, lists only destroyed objects that are in the eradication pending state. If set to `false`, lists only objects that are not destroyed. For destroyed objects, the time remaining is displayed in milliseconds.
         :param str filter: Narrows down the results to only the response objects that satisfy the filter criteria.
-        :param list[str] ids: Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` and `names` parameters cannot be provided together.
+        :param list[str] ids: Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` or `names` parameter is required, but they cannot be set together.
         :param int limit: Limits the size of the response to the specified number of objects on each page. To return the total number of resources, set `limit=0`. The total number of resources is returned as a `total_item_count` value. If the page size requested is larger than the system maximum limit, the server returns the maximum limit, disregarding the requested page size.
         :param list[str] names: Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.
         :param int offset: The starting position based on the results of the query in relation to the full set of response objects returned.
@@ -1720,7 +1720,7 @@ class PoliciesApi(object):
         # type: (...) -> None
         """Delete membership between quota policies and managed directories
 
-        Deletes a membership between one or more quota policies and managed directories. The `policy_ids` or `policy_names` parameter is required, but cannot be set together. The `member_ids` or `member_names` parameter is required, but cannot be set together.
+        Deletes a membership between one or more quota policies and managed directories. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together. The `member_ids` or `member_names` parameter is required, but they cannot be set together.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api214_policies_quota_members_delete_with_http_info(async_req=True)
@@ -1728,10 +1728,10 @@ class PoliciesApi(object):
 
         :param str authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :param str x_request_id: Supplied by client during request or generated by server.
-        :param list[str] member_ids: Performs the operation on the unique member IDs specified. Enter multiple member IDs in comma-separated format. The `member_ids` and `member_names` parameters cannot be provided together.
+        :param list[str] member_ids: Performs the operation on the unique member IDs specified. Enter multiple member IDs in comma-separated format. The `member_ids` or `member_names` parameter is required, but they cannot be set together.
         :param list[str] member_names: Performs the operation on the unique member name specified. Examples of members include volumes, hosts, host groups, and directories. Enter multiple names in comma-separated format. For example, `vol01,vol02`.
         :param list[str] member_types: Performs the operation on the member types specified. The type of member is the full name of the resource endpoint. Valid values include `directories`. Enter multiple member types in comma-separated format. For example, `type01,type02`.
-        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` and `policy_names` parameters cannot be provided together.
+        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together.
         :param list[str] policy_names: Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
@@ -1859,10 +1859,10 @@ class PoliciesApi(object):
         :param bool destroyed: If set to `true`, lists only destroyed objects that are in the eradication pending state. If set to `false`, lists only objects that are not destroyed. For destroyed objects, the time remaining is displayed in milliseconds.
         :param str filter: Narrows down the results to only the response objects that satisfy the filter criteria.
         :param int limit: Limits the size of the response to the specified number of objects on each page. To return the total number of resources, set `limit=0`. The total number of resources is returned as a `total_item_count` value. If the page size requested is larger than the system maximum limit, the server returns the maximum limit, disregarding the requested page size.
-        :param list[str] member_ids: Performs the operation on the unique member IDs specified. Enter multiple member IDs in comma-separated format. The `member_ids` and `member_names` parameters cannot be provided together.
+        :param list[str] member_ids: Performs the operation on the unique member IDs specified. Enter multiple member IDs in comma-separated format. The `member_ids` or `member_names` parameter is required, but they cannot be set together.
         :param list[str] member_names: Performs the operation on the unique member name specified. Examples of members include volumes, hosts, host groups, and directories. Enter multiple names in comma-separated format. For example, `vol01,vol02`.
         :param list[str] member_types: Performs the operation on the member types specified. The type of member is the full name of the resource endpoint. Valid values include `directories`. Enter multiple member types in comma-separated format. For example, `type01,type02`.
-        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` and `policy_names` parameters cannot be provided together.
+        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together.
         :param list[str] policy_names: Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.
         :param int offset: The starting position based on the results of the query in relation to the full set of response objects returned.
         :param list[str] sort: Returns the response objects in the order specified. Set `sort` to the name in the response by which to sort. Sorting can be performed on any of the names in the response, and the objects can be sorted in ascending or descending order. By default, the response objects are sorted in ascending order. To sort in descending order, append the minus sign (`-`) to the name. A single request can be sorted on multiple objects. For example, you can sort all volumes from largest to smallest volume size, and then sort volumes of the same size in ascending order by volume name. To sort on multiple names, list the names as comma-separated values.
@@ -1995,7 +1995,7 @@ class PoliciesApi(object):
         # type: (...) -> models.PolicyMemberResponse
         """Create a membership between a managed directory and a quota policy
 
-        Creates a membership between one or more managed directories and a quota policy. The `policy_ids` or `policy_names` parameter is required, but cannot be set together.
+        Creates a membership between one or more managed directories and a quota policy. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api214_policies_quota_members_post_with_http_info(members, async_req=True)
@@ -2004,7 +2004,7 @@ class PoliciesApi(object):
         :param PolicyMemberPost members: (required)
         :param str authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :param str x_request_id: Supplied by client during request or generated by server.
-        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` and `policy_names` parameters cannot be provided together.
+        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together.
         :param list[str] policy_names: Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.
         :param bool ignore_usage: Flag used to override checks for quota management operations. If set to `true`, directory usage is not checked against the `quota_limits` that are set. If set to `false`, the actual logical bytes in use are prevented from exceeding the limits set on the directory. Client operations might be impacted. If the limit exceeds the quota, the client operation is not allowed. If not specified, defaults to `false`.
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
@@ -2102,7 +2102,7 @@ class PoliciesApi(object):
         # type: (...) -> models.PolicyResponse
         """Modify quota policies
 
-        Modifies one or more quota policies. To enable a policy, set `enabled=true`. To disable a policy, set `enabled=false`. To rename a policy, set `name` to the new name. The `ids` or `names` parameter is required, but cannot be set together.
+        Modifies one or more quota policies. To enable a policy, set `enabled=true`. To disable a policy, set `enabled=false`. To rename a policy, set `name` to the new name. The `ids` or `names` parameter is required, but they cannot be set together.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api214_policies_quota_patch_with_http_info(policy, async_req=True)
@@ -2111,7 +2111,7 @@ class PoliciesApi(object):
         :param PolicyPatch policy: (required)
         :param str authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :param str x_request_id: Supplied by client during request or generated by server.
-        :param list[str] ids: Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` and `names` parameters cannot be provided together.
+        :param list[str] ids: Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` or `names` parameter is required, but they cannot be set together.
         :param list[str] names: Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.
         :param bool ignore_usage: Flag used to override checks for quota management operations. If set to `true`, directory usage is not checked against the `quota_limits` that are set. If set to `false`, the actual logical bytes in use are prevented from exceeding the limits set on the directory. Client operations might be impacted. If the limit exceeds the quota, the client operation is not allowed. If not specified, defaults to `false`.
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
@@ -2209,7 +2209,7 @@ class PoliciesApi(object):
         # type: (...) -> models.PolicyResponse
         """Create quota policies
 
-        Creates one or more quota policies. To copy a policy, set one of either `source_names` or `source_ids`. Each policy can only have one entry. To create a policy from scratch, policy body is required.
+        Creates one or more quota policies. To copy a policy, the `source_names` or `source_ids` parameter is required, but they cannot be set together. To create a policy from scratch, policy body is required.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api214_policies_quota_post_with_http_info(async_req=True)
@@ -2325,7 +2325,7 @@ class PoliciesApi(object):
         :param str authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :param str x_request_id: Supplied by client during request or generated by server.
         :param list[str] names: Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.
-        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` and `policy_names` parameters cannot be provided together.
+        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together.
         :param list[str] policy_names: Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
@@ -2439,7 +2439,7 @@ class PoliciesApi(object):
         :param int limit: Limits the size of the response to the specified number of objects on each page. To return the total number of resources, set `limit=0`. The total number of resources is returned as a `total_item_count` value. If the page size requested is larger than the system maximum limit, the server returns the maximum limit, disregarding the requested page size.
         :param list[str] names: Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.
         :param int offset: The starting position based on the results of the query in relation to the full set of response objects returned.
-        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` and `policy_names` parameters cannot be provided together.
+        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together.
         :param list[str] policy_names: Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.
         :param list[str] sort: Returns the response objects in the order specified. Set `sort` to the name in the response by which to sort. Sorting can be performed on any of the names in the response, and the objects can be sorted in ascending or descending order. By default, the response objects are sorted in ascending order. To sort in descending order, append the minus sign (`-`) to the name. A single request can be sorted on multiple objects. For example, you can sort all volumes from largest to smallest volume size, and then sort volumes of the same size in ascending order by volume name. To sort on multiple names, list the names as comma-separated values.
         :param bool total_item_count: If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.
@@ -2566,7 +2566,7 @@ class PoliciesApi(object):
         :param PolicyRuleQuotaPost rules: (required)
         :param str authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :param str x_request_id: Supplied by client during request or generated by server.
-        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` and `policy_names` parameters cannot be provided together.
+        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together.
         :param list[str] policy_names: Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.
         :param bool ignore_usage: Flag used to override checks for quota management operations. If set to `true`, directory usage is not checked against the `quota_limits` that are set. If set to `false`, the actual logical bytes in use are prevented from exceeding the limits set on the directory. Client operations might be impacted. If the limit exceeds the quota, the client operation is not allowed. If not specified, defaults to `false`.
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
@@ -2672,7 +2672,7 @@ class PoliciesApi(object):
         :param str authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :param str x_request_id: Supplied by client during request or generated by server.
         :param list[str] names: Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.
-        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` and `policy_names` parameters cannot be provided together.
+        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together.
         :param list[str] policy_names: Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
@@ -2786,7 +2786,7 @@ class PoliciesApi(object):
         :param int limit: Limits the size of the response to the specified number of objects on each page. To return the total number of resources, set `limit=0`. The total number of resources is returned as a `total_item_count` value. If the page size requested is larger than the system maximum limit, the server returns the maximum limit, disregarding the requested page size.
         :param list[str] names: Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.
         :param int offset: The starting position based on the results of the query in relation to the full set of response objects returned.
-        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` and `policy_names` parameters cannot be provided together.
+        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together.
         :param list[str] policy_names: Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.
         :param list[str] sort: Returns the response objects in the order specified. Set `sort` to the name in the response by which to sort. Sorting can be performed on any of the names in the response, and the objects can be sorted in ascending or descending order. By default, the response objects are sorted in ascending order. To sort in descending order, append the minus sign (`-`) to the name. A single request can be sorted on multiple objects. For example, you can sort all volumes from largest to smallest volume size, and then sort volumes of the same size in ascending order by volume name. To sort on multiple names, list the names as comma-separated values.
         :param bool total_item_count: If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.
@@ -2912,7 +2912,7 @@ class PoliciesApi(object):
         :param PolicyRuleSmbClientPost rules: (required)
         :param str authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :param str x_request_id: Supplied by client during request or generated by server.
-        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` and `policy_names` parameters cannot be provided together.
+        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together.
         :param list[str] policy_names: Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
@@ -3013,7 +3013,7 @@ class PoliciesApi(object):
 
         :param str authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :param str x_request_id: Supplied by client during request or generated by server.
-        :param list[str] ids: Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` and `names` parameters cannot be provided together.
+        :param list[str] ids: Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` or `names` parameter is required, but they cannot be set together.
         :param list[str] names: Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
@@ -3119,7 +3119,7 @@ class PoliciesApi(object):
         :param str continuation_token: A token used to retrieve the next page of data with some consistency guaranteed. The token is a Base64 encoded value. Set `continuation_token` to the system-generated token taken from the `x-next-token` header field of the response. A query has reached its last page when the response does not include a token. Pagination requires the `limit` and `continuation_token` query parameters.
         :param bool destroyed: If set to `true`, lists only destroyed objects that are in the eradication pending state. If set to `false`, lists only objects that are not destroyed. For destroyed objects, the time remaining is displayed in milliseconds.
         :param str filter: Narrows down the results to only the response objects that satisfy the filter criteria.
-        :param list[str] ids: Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` and `names` parameters cannot be provided together.
+        :param list[str] ids: Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` or `names` parameter is required, but they cannot be set together.
         :param int limit: Limits the size of the response to the specified number of objects on each page. To return the total number of resources, set `limit=0`. The total number of resources is returned as a `total_item_count` value. If the page size requested is larger than the system maximum limit, the server returns the maximum limit, disregarding the requested page size.
         :param list[str] names: Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.
         :param int offset: The starting position based on the results of the query in relation to the full set of response objects returned.
@@ -3244,10 +3244,10 @@ class PoliciesApi(object):
 
         :param str authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :param str x_request_id: Supplied by client during request or generated by server.
-        :param list[str] member_ids: Performs the operation on the unique member IDs specified. Enter multiple member IDs in comma-separated format. The `member_ids` and `member_names` parameters cannot be provided together.
+        :param list[str] member_ids: Performs the operation on the unique member IDs specified. Enter multiple member IDs in comma-separated format. The `member_ids` or `member_names` parameter is required, but they cannot be set together.
         :param list[str] member_names: Performs the operation on the unique member name specified. Examples of members include volumes, hosts, host groups, and directories. Enter multiple names in comma-separated format. For example, `vol01,vol02`.
         :param list[str] member_types: Performs the operation on the member types specified. The type of member is the full name of the resource endpoint. Valid values include `directories`. Enter multiple member types in comma-separated format. For example, `type01,type02`.
-        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` and `policy_names` parameters cannot be provided together.
+        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together.
         :param list[str] policy_names: Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
@@ -3375,10 +3375,10 @@ class PoliciesApi(object):
         :param bool destroyed: If set to `true`, lists only destroyed objects that are in the eradication pending state. If set to `false`, lists only objects that are not destroyed. For destroyed objects, the time remaining is displayed in milliseconds.
         :param str filter: Narrows down the results to only the response objects that satisfy the filter criteria.
         :param int limit: Limits the size of the response to the specified number of objects on each page. To return the total number of resources, set `limit=0`. The total number of resources is returned as a `total_item_count` value. If the page size requested is larger than the system maximum limit, the server returns the maximum limit, disregarding the requested page size.
-        :param list[str] member_ids: Performs the operation on the unique member IDs specified. Enter multiple member IDs in comma-separated format. The `member_ids` and `member_names` parameters cannot be provided together.
+        :param list[str] member_ids: Performs the operation on the unique member IDs specified. Enter multiple member IDs in comma-separated format. The `member_ids` or `member_names` parameter is required, but they cannot be set together.
         :param list[str] member_names: Performs the operation on the unique member name specified. Examples of members include volumes, hosts, host groups, and directories. Enter multiple names in comma-separated format. For example, `vol01,vol02`.
         :param list[str] member_types: Performs the operation on the member types specified. The type of member is the full name of the resource endpoint. Valid values include `directories`. Enter multiple member types in comma-separated format. For example, `type01,type02`.
-        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` and `policy_names` parameters cannot be provided together.
+        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together.
         :param list[str] policy_names: Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.
         :param int offset: The starting position based on the results of the query in relation to the full set of response objects returned.
         :param list[str] sort: Returns the response objects in the order specified. Set `sort` to the name in the response by which to sort. Sorting can be performed on any of the names in the response, and the objects can be sorted in ascending or descending order. By default, the response objects are sorted in ascending order. To sort in descending order, append the minus sign (`-`) to the name. A single request can be sorted on multiple objects. For example, you can sort all volumes from largest to smallest volume size, and then sort volumes of the same size in ascending order by volume name. To sort on multiple names, list the names as comma-separated values.
@@ -3519,7 +3519,7 @@ class PoliciesApi(object):
         :param PolicyMemberExportPost members: (required)
         :param str authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :param str x_request_id: Supplied by client during request or generated by server.
-        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` and `policy_names` parameters cannot be provided together.
+        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together.
         :param list[str] policy_names: Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
@@ -3622,7 +3622,7 @@ class PoliciesApi(object):
         :param PolicySmbPatch policy: (required)
         :param str authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :param str x_request_id: Supplied by client during request or generated by server.
-        :param list[str] ids: Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` and `names` parameters cannot be provided together.
+        :param list[str] ids: Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` or `names` parameter is required, but they cannot be set together.
         :param list[str] names: Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
@@ -3831,7 +3831,7 @@ class PoliciesApi(object):
 
         :param str authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :param str x_request_id: Supplied by client during request or generated by server.
-        :param list[str] ids: Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` and `names` parameters cannot be provided together.
+        :param list[str] ids: Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` or `names` parameter is required, but they cannot be set together.
         :param list[str] names: Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
@@ -3937,7 +3937,7 @@ class PoliciesApi(object):
         :param str continuation_token: A token used to retrieve the next page of data with some consistency guaranteed. The token is a Base64 encoded value. Set `continuation_token` to the system-generated token taken from the `x-next-token` header field of the response. A query has reached its last page when the response does not include a token. Pagination requires the `limit` and `continuation_token` query parameters.
         :param bool destroyed: If set to `true`, lists only destroyed objects that are in the eradication pending state. If set to `false`, lists only objects that are not destroyed. For destroyed objects, the time remaining is displayed in milliseconds.
         :param str filter: Narrows down the results to only the response objects that satisfy the filter criteria.
-        :param list[str] ids: Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` and `names` parameters cannot be provided together.
+        :param list[str] ids: Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` or `names` parameter is required, but they cannot be set together.
         :param int limit: Limits the size of the response to the specified number of objects on each page. To return the total number of resources, set `limit=0`. The total number of resources is returned as a `total_item_count` value. If the page size requested is larger than the system maximum limit, the server returns the maximum limit, disregarding the requested page size.
         :param list[str] names: Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.
         :param int offset: The starting position based on the results of the query in relation to the full set of response objects returned.
@@ -4062,10 +4062,10 @@ class PoliciesApi(object):
 
         :param str authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :param str x_request_id: Supplied by client during request or generated by server.
-        :param list[str] member_ids: Performs the operation on the unique member IDs specified. Enter multiple member IDs in comma-separated format. The `member_ids` and `member_names` parameters cannot be provided together.
+        :param list[str] member_ids: Performs the operation on the unique member IDs specified. Enter multiple member IDs in comma-separated format. The `member_ids` or `member_names` parameter is required, but they cannot be set together.
         :param list[str] member_names: Performs the operation on the unique member name specified. Examples of members include volumes, hosts, host groups, and directories. Enter multiple names in comma-separated format. For example, `vol01,vol02`.
         :param list[str] member_types: Performs the operation on the member types specified. The type of member is the full name of the resource endpoint. Valid values include `directories`. Enter multiple member types in comma-separated format. For example, `type01,type02`.
-        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` and `policy_names` parameters cannot be provided together.
+        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together.
         :param list[str] policy_names: Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
@@ -4193,10 +4193,10 @@ class PoliciesApi(object):
         :param bool destroyed: If set to `true`, lists only destroyed objects that are in the eradication pending state. If set to `false`, lists only objects that are not destroyed. For destroyed objects, the time remaining is displayed in milliseconds.
         :param str filter: Narrows down the results to only the response objects that satisfy the filter criteria.
         :param int limit: Limits the size of the response to the specified number of objects on each page. To return the total number of resources, set `limit=0`. The total number of resources is returned as a `total_item_count` value. If the page size requested is larger than the system maximum limit, the server returns the maximum limit, disregarding the requested page size.
-        :param list[str] member_ids: Performs the operation on the unique member IDs specified. Enter multiple member IDs in comma-separated format. The `member_ids` and `member_names` parameters cannot be provided together.
+        :param list[str] member_ids: Performs the operation on the unique member IDs specified. Enter multiple member IDs in comma-separated format. The `member_ids` or `member_names` parameter is required, but they cannot be set together.
         :param list[str] member_names: Performs the operation on the unique member name specified. Examples of members include volumes, hosts, host groups, and directories. Enter multiple names in comma-separated format. For example, `vol01,vol02`.
         :param list[str] member_types: Performs the operation on the member types specified. The type of member is the full name of the resource endpoint. Valid values include `directories`. Enter multiple member types in comma-separated format. For example, `type01,type02`.
-        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` and `policy_names` parameters cannot be provided together.
+        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together.
         :param list[str] policy_names: Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.
         :param int offset: The starting position based on the results of the query in relation to the full set of response objects returned.
         :param list[str] sort: Returns the response objects in the order specified. Set `sort` to the name in the response by which to sort. Sorting can be performed on any of the names in the response, and the objects can be sorted in ascending or descending order. By default, the response objects are sorted in ascending order. To sort in descending order, append the minus sign (`-`) to the name. A single request can be sorted on multiple objects. For example, you can sort all volumes from largest to smallest volume size, and then sort volumes of the same size in ascending order by volume name. To sort on multiple names, list the names as comma-separated values.
@@ -4337,7 +4337,7 @@ class PoliciesApi(object):
         :param PolicyMemberPost members: (required)
         :param str authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :param str x_request_id: Supplied by client during request or generated by server.
-        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` and `policy_names` parameters cannot be provided together.
+        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together.
         :param list[str] policy_names: Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
@@ -4431,7 +4431,7 @@ class PoliciesApi(object):
         # type: (...) -> models.PolicyResponse
         """Modify snapshot policies
 
-        Modifies one or more snapshot policies. To enable a policy, set `enabled=true`. To disable a policy, set `enabled=true`. To rename a policy, set `name` to the new name. The `ids` or `names` parameter is required, but cannot be set together.
+        Modifies one or more snapshot policies. To enable a policy, set `enabled=true`. To disable a policy, set `enabled=true`. To rename a policy, set `name` to the new name. The `ids` or `names` parameter is required, but they cannot be set together.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api214_policies_snapshot_patch_with_http_info(policy, async_req=True)
@@ -4440,7 +4440,7 @@ class PoliciesApi(object):
         :param PolicyPatch policy: (required)
         :param str authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :param str x_request_id: Supplied by client during request or generated by server.
-        :param list[str] ids: Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` and `names` parameters cannot be provided together.
+        :param list[str] ids: Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` or `names` parameter is required, but they cannot be set together.
         :param list[str] names: Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
@@ -4651,7 +4651,7 @@ class PoliciesApi(object):
         :param str authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :param str x_request_id: Supplied by client during request or generated by server.
         :param list[str] names: Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.
-        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` and `policy_names` parameters cannot be provided together.
+        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together.
         :param list[str] policy_names: Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
@@ -4765,7 +4765,7 @@ class PoliciesApi(object):
         :param int limit: Limits the size of the response to the specified number of objects on each page. To return the total number of resources, set `limit=0`. The total number of resources is returned as a `total_item_count` value. If the page size requested is larger than the system maximum limit, the server returns the maximum limit, disregarding the requested page size.
         :param list[str] names: Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.
         :param int offset: The starting position based on the results of the query in relation to the full set of response objects returned.
-        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` and `policy_names` parameters cannot be provided together.
+        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together.
         :param list[str] policy_names: Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.
         :param list[str] sort: Returns the response objects in the order specified. Set `sort` to the name in the response by which to sort. Sorting can be performed on any of the names in the response, and the objects can be sorted in ascending or descending order. By default, the response objects are sorted in ascending order. To sort in descending order, append the minus sign (`-`) to the name. A single request can be sorted on multiple objects. For example, you can sort all volumes from largest to smallest volume size, and then sort volumes of the same size in ascending order by volume name. To sort on multiple names, list the names as comma-separated values.
         :param bool total_item_count: If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.
@@ -4891,7 +4891,7 @@ class PoliciesApi(object):
         :param PolicyRuleSnapshotPost rules: (required)
         :param str authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :param str x_request_id: Supplied by client during request or generated by server.
-        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` and `policy_names` parameters cannot be provided together.
+        :param list[str] policy_ids: Performs the operation on the unique policy IDs specified. Enter multiple policy IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together.
         :param list[str] policy_names: Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.

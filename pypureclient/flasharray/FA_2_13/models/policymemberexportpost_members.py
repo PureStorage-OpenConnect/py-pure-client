@@ -50,7 +50,7 @@ class PolicymemberexportpostMembers(object):
         """
         Keyword args:
             export_name (str): The name of the export to create when applying the export policy to the directory.
-            member (ReferenceWithType): Reference to the directory to which the export policy may be applied. The `id` or `name` parameter is required, but cannot be set together. If the `name` parameter is set, `resource_type` must also be set.
+            member (ReferenceWithType): Reference to the directory to which the export policy may be applied. The `id` or `name` parameter is required, but they cannot be set together. If the `name` parameter is set, `resource_type` must also be set.
         """
         if export_name is not None:
             self.export_name = export_name

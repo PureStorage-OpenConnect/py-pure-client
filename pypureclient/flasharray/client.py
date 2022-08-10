@@ -17,6 +17,7 @@ from . import FA_2_0
 from . import FA_2_15
 from . import FA_2_2
 from . import FA_2_7
+from . import FA_2_16
 
 fa_modules = {
     '2.8': FA_2_8,
@@ -34,6 +35,7 @@ fa_modules = {
     '2.15': FA_2_15,
     '2.2': FA_2_2,
     '2.7': FA_2_7,
+    '2.16': FA_2_16,
 }
 
 MW_DEV_VERSION = '2.DEV'
@@ -111,11 +113,11 @@ def get_array_versions(target):
                         .format(target, response.status_code, response.text))
 
 def validate_version(array_versions, version):
+    if version == CLIENT_DEV_VERSION:
+        version = MW_DEV_VERSION
     if version not in set(fa_modules.keys()):
         msg = "version {} not supported by client.".format(version)
         raise ValueError(msg.format(version))
-    if version == CLIENT_DEV_VERSION:
-        version = MW_DEV_VERSION
     if version not in array_versions:
         msg = "version {} not supported by array."
         raise ValueError(msg.format(version))

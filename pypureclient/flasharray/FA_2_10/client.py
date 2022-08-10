@@ -20,7 +20,7 @@ class Client(object):
     DEFAULT_TIMEOUT = 15.0
     DEFAULT_RETRIES = 5
     # Format: client/client_version/endpoint/endpoint_version/system/release
-    USER_AGENT = ('pypureclient/1.26.0/FA/2.10/{sys}/{rel}'
+    USER_AGENT = ('pypureclient/1.27.0/FA/2.10/{sys}/{rel}'
                   .format(sys=platform.system(), rel=platform.release()))
 
     def __init__(self, target, id_token=None, private_key_file=None, private_key_password=None,
@@ -1594,15 +1594,15 @@ class Client(object):
                 unflagged messages. if not specified, lists all messages.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
             names (list[str], optional):
                 Performs the operation on the unique name specified. For example, `name01`.
                 Enter multiple names in comma-separated format. The `ids` or `names` parameter
-                is required, but both cannot be set together.
+                is required, but they cannot be set together.
             offset (int, optional):
                 The starting position based on the results of the query in relation to the full
                 set of response objects returned.
@@ -1693,8 +1693,8 @@ class Client(object):
                 unflagged messages. if not specified, lists all messages.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -1779,8 +1779,8 @@ class Client(object):
                 provided.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
@@ -1833,8 +1833,8 @@ class Client(object):
     ):
         # type: (...) -> None
         """
-        Deletes an API client. The `ids` or `names` parameter is required, but cannot be
-        set together.
+        Deletes an API client. The `ids` or `names` parameter is required, but they
+        cannot be set together.
 
         Args:
             references (list[FixedReference], optional):
@@ -1845,8 +1845,8 @@ class Client(object):
                 provided.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
@@ -1916,8 +1916,8 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -1989,7 +1989,7 @@ class Client(object):
         # type: (...) -> models.ApiClientResponse
         """
         Enables or disables an API client. The `ids` or `names` parameter is required,
-        but cannot be set together.
+        but they cannot be set together.
 
         Args:
             references (list[FixedReference], optional):
@@ -2001,8 +2001,8 @@ class Client(object):
                 provided.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
@@ -3736,8 +3736,8 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -4572,7 +4572,7 @@ class Client(object):
         Deletes one or more managed directories. To be deleted, a managed directory must
         be empty and not attached to any enabled export policies. Deleted managed
         directories cannot be recovered. The `ids` or `names` parameter is required, but
-        cannot be set together.
+        they cannot be set together.
 
         Args:
             references (list[FixedReference], optional):
@@ -4583,8 +4583,8 @@ class Client(object):
                 provided.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
@@ -4666,8 +4666,8 @@ class Client(object):
                 destroyed objects, the time remaining is displayed in milliseconds.
             file_system_ids (list[str], optional):
                 Performs the operation on the file system ID specified. Enter multiple file
-                system IDs in comma-separated format. The `file_system_ids` and
-                `file_system_names` parameters cannot be provided together.
+                system IDs in comma-separated format. The `file_system_ids` or
+                `file_system_names` parameter is required, but they cannot be set together.
             file_system_names (list[str], optional):
                 Performs the operation on the file system name specified. Enter multiple file
                 system names in comma-separated format. For example,
@@ -4676,8 +4676,8 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -4760,7 +4760,7 @@ class Client(object):
         # type: (...) -> models.DirectoryResponse
         """
         Modifies a managed directory. To rename a managed directory, set `name` to the
-        new name. The `ids` or `names` parameter is required, but cannot be set
+        new name. The `ids` or `names` parameter is required, but they cannot be set
         together. The `name` or `directory_name` parameter is required.
 
         Args:
@@ -4773,8 +4773,8 @@ class Client(object):
                 provided.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
@@ -4899,8 +4899,8 @@ class Client(object):
                 resolution.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -5020,16 +5020,16 @@ class Client(object):
                 1000.
             member_ids (list[str], optional):
                 Performs the operation on the unique member IDs specified. Enter multiple member
-                IDs in comma-separated format. The `member_ids` and `member_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `member_ids` or `member_names` parameter is
+                required, but they cannot be set together.
             member_names (list[str], optional):
                 Performs the operation on the unique member name specified. Examples of members
                 include volumes, hosts, host groups, and directories. Enter multiple names in
                 comma-separated format. For example, `vol01,vol02`.
             policy_ids (list[str], optional):
                 Performs the operation on the unique policy IDs specified. Enter multiple policy
-                IDs in comma-separated format. The `policy_ids` and `policy_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is
+                required, but they cannot be set together.
             policy_names (list[str], optional):
                 Performs the operation on the policy names specified. Enter multiple policy
                 names in comma-separated format. For example, `name01,name02`.
@@ -5105,9 +5105,9 @@ class Client(object):
         # type: (...) -> None
         """
         Deletes a membership between a directory with one or more NFS policies. The
-        `policy_ids` or `policy_names` parameter is required, but cannot be set
-        together. The `member_ids` or `member_names` parameter is required, but cannot
-        be set together.
+        `policy_ids` or `policy_names` parameter is required, but they cannot be set
+        together. The `member_ids` or `member_names` parameter is required, but they
+        cannot be set together.
 
         Args:
             members (list[FixedReference], optional):
@@ -5120,16 +5120,16 @@ class Client(object):
                 provided.
             member_ids (list[str], optional):
                 Performs the operation on the unique member IDs specified. Enter multiple member
-                IDs in comma-separated format. The `member_ids` and `member_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `member_ids` or `member_names` parameter is
+                required, but they cannot be set together.
             member_names (list[str], optional):
                 Performs the operation on the unique member name specified. Examples of members
                 include volumes, hosts, host groups, and directories. Enter multiple names in
                 comma-separated format. For example, `vol01,vol02`.
             policy_ids (list[str], optional):
                 Performs the operation on the unique policy IDs specified. Enter multiple policy
-                IDs in comma-separated format. The `policy_ids` and `policy_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is
+                required, but they cannot be set together.
             policy_names (list[str], optional):
                 Performs the operation on the policy names specified. Enter multiple policy
                 names in comma-separated format. For example, `name01,name02`.
@@ -5218,16 +5218,16 @@ class Client(object):
                 1000.
             member_ids (list[str], optional):
                 Performs the operation on the unique member IDs specified. Enter multiple member
-                IDs in comma-separated format. The `member_ids` and `member_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `member_ids` or `member_names` parameter is
+                required, but they cannot be set together.
             member_names (list[str], optional):
                 Performs the operation on the unique member name specified. Examples of members
                 include volumes, hosts, host groups, and directories. Enter multiple names in
                 comma-separated format. For example, `vol01,vol02`.
             policy_ids (list[str], optional):
                 Performs the operation on the unique policy IDs specified. Enter multiple policy
-                IDs in comma-separated format. The `policy_ids` and `policy_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is
+                required, but they cannot be set together.
             policy_names (list[str], optional):
                 Performs the operation on the policy names specified. Enter multiple policy
                 names in comma-separated format. For example, `name01,name02`.
@@ -5301,7 +5301,8 @@ class Client(object):
         # type: (...) -> models.PolicyMemberExportResponse
         """
         Creates a membership between a directory with one or more NFS policies. The
-        `member_ids` or `member_names` parameter is required but cannot be set together.
+        `member_ids` or `member_names` parameter is required, but they cannot be set
+        together.
 
         Args:
             members (list[FixedReference], optional):
@@ -5313,8 +5314,8 @@ class Client(object):
                 provided.
             member_ids (list[str], optional):
                 Performs the operation on the unique member IDs specified. Enter multiple member
-                IDs in comma-separated format. The `member_ids` and `member_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `member_ids` or `member_names` parameter is
+                required, but they cannot be set together.
             member_names (list[str], optional):
                 Performs the operation on the unique member name specified. Examples of members
                 include volumes, hosts, host groups, and directories. Enter multiple names in
@@ -5372,9 +5373,9 @@ class Client(object):
         # type: (...) -> None
         """
         Deletes a membership between a directory with one or more quota policies. The
-        `policy_ids` or `policy_names` parameter is required, but cannot be set
-        together. The `member_ids` or `member_names` parameter is required, but cannot
-        be set together.
+        `policy_ids` or `policy_names` parameter is required, but they cannot be set
+        together. The `member_ids` or `member_names` parameter is required, but they
+        cannot be set together.
 
         Args:
             members (list[FixedReference], optional):
@@ -5387,16 +5388,16 @@ class Client(object):
                 provided.
             member_ids (list[str], optional):
                 Performs the operation on the unique member IDs specified. Enter multiple member
-                IDs in comma-separated format. The `member_ids` and `member_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `member_ids` or `member_names` parameter is
+                required, but they cannot be set together.
             member_names (list[str], optional):
                 Performs the operation on the unique member name specified. Examples of members
                 include volumes, hosts, host groups, and directories. Enter multiple names in
                 comma-separated format. For example, `vol01,vol02`.
             policy_ids (list[str], optional):
                 Performs the operation on the unique policy IDs specified. Enter multiple policy
-                IDs in comma-separated format. The `policy_ids` and `policy_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is
+                required, but they cannot be set together.
             policy_names (list[str], optional):
                 Performs the operation on the policy names specified. Enter multiple policy
                 names in comma-separated format. For example, `name01,name02`.
@@ -5485,16 +5486,16 @@ class Client(object):
                 1000.
             member_ids (list[str], optional):
                 Performs the operation on the unique member IDs specified. Enter multiple member
-                IDs in comma-separated format. The `member_ids` and `member_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `member_ids` or `member_names` parameter is
+                required, but they cannot be set together.
             member_names (list[str], optional):
                 Performs the operation on the unique member name specified. Examples of members
                 include volumes, hosts, host groups, and directories. Enter multiple names in
                 comma-separated format. For example, `vol01,vol02`.
             policy_ids (list[str], optional):
                 Performs the operation on the unique policy IDs specified. Enter multiple policy
-                IDs in comma-separated format. The `policy_ids` and `policy_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is
+                required, but they cannot be set together.
             policy_names (list[str], optional):
                 Performs the operation on the policy names specified. Enter multiple policy
                 names in comma-separated format. For example, `name01,name02`.
@@ -5569,7 +5570,7 @@ class Client(object):
         # type: (...) -> models.PolicyMemberResponse
         """
         Creates a membership between a directory with one or more quota policies. The
-        `member_ids` or `member_names` parameter is required, but cannot be set
+        `member_ids` or `member_names` parameter is required, but they cannot be set
         together.
 
         Args:
@@ -5582,8 +5583,8 @@ class Client(object):
                 provided.
             member_ids (list[str], optional):
                 Performs the operation on the unique member IDs specified. Enter multiple member
-                IDs in comma-separated format. The `member_ids` and `member_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `member_ids` or `member_names` parameter is
+                required, but they cannot be set together.
             member_names (list[str], optional):
                 Performs the operation on the unique member name specified. Examples of members
                 include volumes, hosts, host groups, and directories. Enter multiple names in
@@ -5649,9 +5650,9 @@ class Client(object):
         # type: (...) -> None
         """
         Deletes a membership between a directory with one or more SMB policies. The
-        `policy_ids` or `policy_names` parameter is required, but cannot be set
-        together. The `member_ids` or `member_names` parameter is required, but cannot
-        be set together.
+        `policy_ids` or `policy_names` parameter is required, but they cannot be set
+        together. The `member_ids` or `member_names` parameter is required, but they
+        cannot be set together.
 
         Args:
             members (list[FixedReference], optional):
@@ -5664,16 +5665,16 @@ class Client(object):
                 provided.
             member_ids (list[str], optional):
                 Performs the operation on the unique member IDs specified. Enter multiple member
-                IDs in comma-separated format. The `member_ids` and `member_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `member_ids` or `member_names` parameter is
+                required, but they cannot be set together.
             member_names (list[str], optional):
                 Performs the operation on the unique member name specified. Examples of members
                 include volumes, hosts, host groups, and directories. Enter multiple names in
                 comma-separated format. For example, `vol01,vol02`.
             policy_ids (list[str], optional):
                 Performs the operation on the unique policy IDs specified. Enter multiple policy
-                IDs in comma-separated format. The `policy_ids` and `policy_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is
+                required, but they cannot be set together.
             policy_names (list[str], optional):
                 Performs the operation on the policy names specified. Enter multiple policy
                 names in comma-separated format. For example, `name01,name02`.
@@ -5762,16 +5763,16 @@ class Client(object):
                 1000.
             member_ids (list[str], optional):
                 Performs the operation on the unique member IDs specified. Enter multiple member
-                IDs in comma-separated format. The `member_ids` and `member_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `member_ids` or `member_names` parameter is
+                required, but they cannot be set together.
             member_names (list[str], optional):
                 Performs the operation on the unique member name specified. Examples of members
                 include volumes, hosts, host groups, and directories. Enter multiple names in
                 comma-separated format. For example, `vol01,vol02`.
             policy_ids (list[str], optional):
                 Performs the operation on the unique policy IDs specified. Enter multiple policy
-                IDs in comma-separated format. The `policy_ids` and `policy_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is
+                required, but they cannot be set together.
             policy_names (list[str], optional):
                 Performs the operation on the policy names specified. Enter multiple policy
                 names in comma-separated format. For example, `name01,name02`.
@@ -5845,7 +5846,7 @@ class Client(object):
         # type: (...) -> models.PolicyMemberExportResponse
         """
         Creates a membership between a directory with one or more SMB policies. The
-        `member_ids` or `member_names` parameter is required, but cannot be set
+        `member_ids` or `member_names` parameter is required, but they cannot be set
         together.
 
         Args:
@@ -5858,8 +5859,8 @@ class Client(object):
                 provided.
             member_ids (list[str], optional):
                 Performs the operation on the unique member IDs specified. Enter multiple member
-                IDs in comma-separated format. The `member_ids` and `member_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `member_ids` or `member_names` parameter is
+                required, but they cannot be set together.
             member_names (list[str], optional):
                 Performs the operation on the unique member name specified. Examples of members
                 include volumes, hosts, host groups, and directories. Enter multiple names in
@@ -5917,9 +5918,9 @@ class Client(object):
         # type: (...) -> None
         """
         Deletes a membership between a directory with one or more snapshot policies. The
-        `policy_ids` or `policy_names` parameter is required, but cannot be set
-        together. The `member_ids` or `member_names` parameter is required, but cannot
-        be set together.
+        `policy_ids` or `policy_names` parameter is required, but they cannot be set
+        together. The `member_ids` or `member_names` parameter is required, but they
+        cannot be set together.
 
         Args:
             members (list[FixedReference], optional):
@@ -5932,16 +5933,16 @@ class Client(object):
                 provided.
             member_ids (list[str], optional):
                 Performs the operation on the unique member IDs specified. Enter multiple member
-                IDs in comma-separated format. The `member_ids` and `member_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `member_ids` or `member_names` parameter is
+                required, but they cannot be set together.
             member_names (list[str], optional):
                 Performs the operation on the unique member name specified. Examples of members
                 include volumes, hosts, host groups, and directories. Enter multiple names in
                 comma-separated format. For example, `vol01,vol02`.
             policy_ids (list[str], optional):
                 Performs the operation on the unique policy IDs specified. Enter multiple policy
-                IDs in comma-separated format. The `policy_ids` and `policy_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is
+                required, but they cannot be set together.
             policy_names (list[str], optional):
                 Performs the operation on the policy names specified. Enter multiple policy
                 names in comma-separated format. For example, `name01,name02`.
@@ -6030,16 +6031,16 @@ class Client(object):
                 1000.
             member_ids (list[str], optional):
                 Performs the operation on the unique member IDs specified. Enter multiple member
-                IDs in comma-separated format. The `member_ids` and `member_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `member_ids` or `member_names` parameter is
+                required, but they cannot be set together.
             member_names (list[str], optional):
                 Performs the operation on the unique member name specified. Examples of members
                 include volumes, hosts, host groups, and directories. Enter multiple names in
                 comma-separated format. For example, `vol01,vol02`.
             policy_ids (list[str], optional):
                 Performs the operation on the unique policy IDs specified. Enter multiple policy
-                IDs in comma-separated format. The `policy_ids` and `policy_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is
+                required, but they cannot be set together.
             policy_names (list[str], optional):
                 Performs the operation on the policy names specified. Enter multiple policy
                 names in comma-separated format. For example, `name01,name02`.
@@ -6113,7 +6114,7 @@ class Client(object):
         # type: (...) -> models.PolicyMemberResponse
         """
         Creates a membership between a directory with one or more snapshot policies. The
-        `member_ids` or `member_names` parameter is required, but cannot be set
+        `member_ids` or `member_names` parameter is required, but they cannot be set
         together.
 
         Args:
@@ -6126,8 +6127,8 @@ class Client(object):
                 provided.
             member_ids (list[str], optional):
                 Performs the operation on the unique member IDs specified. Enter multiple member
-                IDs in comma-separated format. The `member_ids` and `member_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `member_ids` or `member_names` parameter is
+                required, but they cannot be set together.
             member_names (list[str], optional):
                 Performs the operation on the unique member name specified. Examples of members
                 include volumes, hosts, host groups, and directories. Enter multiple names in
@@ -6190,9 +6191,10 @@ class Client(object):
         (alphanumeric and '-') in length and begin and end with a letter or number. The
         suffix must include at least one letter or '-'. Set `names` to create a managed
         directory with the specified full managed directory name, or set
-        `file_system_names` or `file_system_ids` in the query parameters and `suffix` in
-        the body parameters to create a managed directory in the specified file system
-        with the specified suffix. These two options are exclusive.
+        `file_system_names` or `file_system_ids` in the query parameters and
+        `directory_name` in the body parameters to create a managed directory in the
+        specified file system with the specified `directory_name`. These two options are
+        exclusive.
 
         Args:
             references (list[FixedReference], optional):
@@ -6213,8 +6215,8 @@ class Client(object):
                 `filesystem01,filesystem02`.
             file_system_ids (list[str], optional):
                 Performs the operation on the file system ID specified. Enter multiple file
-                system IDs in comma-separated format. The `file_system_ids` and
-                `file_system_names` parameters cannot be provided together.
+                system IDs in comma-separated format. The `file_system_ids` or
+                `file_system_names` parameter is required, but they cannot be set together.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -6334,8 +6336,8 @@ class Client(object):
                 resolution.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -6435,8 +6437,8 @@ class Client(object):
                 comma-separated format. For example, `name01,name02`.
             policy_ids (list[str], optional):
                 Performs the operation on the unique policy IDs specified. Enter multiple policy
-                IDs in comma-separated format. The `policy_ids` and `policy_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is
+                required, but they cannot be set together.
             policy_names (list[str], optional):
                 Performs the operation on the policy names specified. Enter multiple policy
                 names in comma-separated format. For example, `name01,name02`.
@@ -6523,8 +6525,8 @@ class Client(object):
                 destroyed objects, the time remaining is displayed in milliseconds.
             directory_ids (list[str], optional):
                 Performs the operation on the unique managed directory IDs specified. Enter
-                multiple managed directory IDs in comma-separated format. The `directory_ids`
-                and `directory_names` parameters cannot be provided together.
+                multiple managed directory IDs in comma-separated format. The `directory_ids` or
+                `directory_names` parameter is required, but they cannot be set together.
             directory_names (list[str], optional):
                 Performs the operation on the managed directory names specified. Enter multiple
                 full managed directory names in comma-separated format. For example,
@@ -6542,8 +6544,8 @@ class Client(object):
                 set of response objects returned.
             policy_ids (list[str], optional):
                 Performs the operation on the unique policy IDs specified. Enter multiple policy
-                IDs in comma-separated format. The `policy_ids` and `policy_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is
+                required, but they cannot be set together.
             policy_names (list[str], optional):
                 Performs the operation on the policy names specified. Enter multiple policy
                 names in comma-separated format. For example, `name01,name02`.
@@ -6635,16 +6637,16 @@ class Client(object):
                 provided.
             directory_ids (list[str], optional):
                 Performs the operation on the unique managed directory IDs specified. Enter
-                multiple managed directory IDs in comma-separated format. The `directory_ids`
-                and `directory_names` parameters cannot be provided together.
+                multiple managed directory IDs in comma-separated format. The `directory_ids` or
+                `directory_names` parameter is required, but they cannot be set together.
             directory_names (list[str], optional):
                 Performs the operation on the managed directory names specified. Enter multiple
                 full managed directory names in comma-separated format. For example,
                 `fs:dir01,fs:dir02`.
             policy_ids (list[str], optional):
                 Performs the operation on the unique policy IDs specified. Enter multiple policy
-                IDs in comma-separated format. The `policy_ids` and `policy_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is
+                required, but they cannot be set together.
             policy_names (list[str], optional):
                 Performs the operation on the policy names specified. Enter multiple policy
                 names in comma-separated format. For example, `name01,name02`.
@@ -6726,8 +6728,8 @@ class Client(object):
                 An opaque token to iterate over a collection of resources.
             directory_ids (list[str], optional):
                 Performs the operation on the unique managed directory IDs specified. Enter
-                multiple managed directory IDs in comma-separated format. The `directory_ids`
-                and `directory_names` parameters cannot be provided together.
+                multiple managed directory IDs in comma-separated format. The `directory_ids` or
+                `directory_names` parameter is required, but they cannot be set together.
             directory_names (list[str], optional):
                 Performs the operation on the managed directory names specified. Enter multiple
                 full managed directory names in comma-separated format. For example,
@@ -6742,8 +6744,8 @@ class Client(object):
                 set of response objects returned.
             policy_ids (list[str], optional):
                 Performs the operation on the unique policy IDs specified. Enter multiple policy
-                IDs in comma-separated format. The `policy_ids` and `policy_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is
+                required, but they cannot be set together.
             policy_names (list[str], optional):
                 Performs the operation on the policy names specified. Enter multiple policy
                 names in comma-separated format. For example, `name01,name02`.
@@ -7203,7 +7205,7 @@ class Client(object):
         Deletes a directory snapshot that has been destroyed and is pending eradication.
         Eradicated directory snapshots cannot be recovered. Directory snapshots are
         destroyed by using the PATCH method. The `ids` or `names` parameter is required,
-        but cannot be set together.
+        but they cannot be set together.
 
         Args:
             references (list[FixedReference], optional):
@@ -7214,8 +7216,8 @@ class Client(object):
                 provided.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
@@ -7299,8 +7301,8 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -7392,8 +7394,8 @@ class Client(object):
         time remaining of a directory snapshot. To destroy a directory snapshot, set
         `destroyed=true`. To recover a directory snapshot that has been destroyed and is
         pending eradication, set `destroyed=false`. To rename a directory snapshot, set
-        `name` to the new name. The `ids` or `names` parameter is required, but cannot
-        be set together.
+        `name` to the new name. The `ids` or `names` parameter is required, but they
+        cannot be set together.
 
         Args:
             references (list[FixedReference], optional):
@@ -7405,8 +7407,8 @@ class Client(object):
                 provided.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
@@ -7461,7 +7463,7 @@ class Client(object):
         # type: (...) -> models.DirectorySnapshotResponse
         """
         Creates a snapshot of the contents of a directory. The `source_ids` or
-        `source_names` parameter is required, but cannot be set together.
+        `source_names` parameter is required, but they cannot be set together.
 
         Args:
             sources (list[FixedReference], optional):
@@ -7809,8 +7811,8 @@ class Client(object):
                 provided.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
@@ -7888,8 +7890,8 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -7977,8 +7979,8 @@ class Client(object):
                 provided.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
@@ -11576,8 +11578,8 @@ class Client(object):
                 provided.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             local_pod_ids (list[str], optional):
                 A list of local pod IDs. If, after filtering, there is not at least one resource
                 that matches each of the elements, then an error is returned. This cannot be
@@ -11679,8 +11681,8 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -11812,8 +11814,8 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             end_time (int, optional):
                 Displays historical performance data for the specified time window, where
                 `start_time` is the beginning of the time window, and `end_time` is the end of
@@ -11996,8 +11998,8 @@ class Client(object):
                 provided.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             local_pod_ids (list[str], optional):
                 A list of local pod IDs. If, after filtering, there is not at least one resource
                 that matches each of the elements, then an error is returned. This cannot be
@@ -12154,8 +12156,8 @@ class Client(object):
                 resolution.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -12414,8 +12416,8 @@ class Client(object):
                 comma-separated format. For example, `vol01,vol02`.
             member_ids (list[str], optional):
                 Performs the operation on the unique member IDs specified. Enter multiple member
-                IDs in comma-separated format. The `member_ids` and `member_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `member_ids` or `member_names` parameter is
+                required, but they cannot be set together.
             with_unknown (bool, optional):
                 If set to `true`, unstretches the specified pod from the specified array by
                 force. Use the `with_unknown` parameter in the following rare event&#58; the
@@ -12513,8 +12515,8 @@ class Client(object):
                 comma-separated format. For example, `vol01,vol02`.
             member_ids (list[str], optional):
                 Performs the operation on the unique member IDs specified. Enter multiple member
-                IDs in comma-separated format. The `member_ids` and `member_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `member_ids` or `member_names` parameter is
+                required, but they cannot be set together.
             offset (int, optional):
                 The starting position based on the results of the query in relation to the full
                 set of response objects returned.
@@ -12612,8 +12614,8 @@ class Client(object):
                 comma-separated format. For example, `vol01,vol02`.
             member_ids (list[str], optional):
                 Performs the operation on the unique member IDs specified. Enter multiple member
-                IDs in comma-separated format. The `member_ids` and `member_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `member_ids` or `member_names` parameter is
+                required, but they cannot be set together.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -12668,7 +12670,7 @@ class Client(object):
         """
         Deletes a pod that has been destroyed and is pending eradication. Eradicated
         pods cannot be recovered. Pods are destroyed using the PATCH method. The `ids`
-        or `names` parameter is required, but cannot be set together.
+        or `names` parameter is required, but they cannot be set together.
 
         Args:
             references (list[FixedReference], optional):
@@ -12679,8 +12681,8 @@ class Client(object):
                 provided.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
@@ -12764,8 +12766,8 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -12861,8 +12863,8 @@ class Client(object):
                 provided.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
@@ -13011,8 +13013,8 @@ class Client(object):
                 resolution.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -13162,8 +13164,8 @@ class Client(object):
                 resolution.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -13313,8 +13315,8 @@ class Client(object):
                 resolution.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -13464,8 +13466,8 @@ class Client(object):
                 resolution.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -13681,8 +13683,8 @@ class Client(object):
                 resolution.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -13783,8 +13785,8 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -13890,8 +13892,8 @@ class Client(object):
                 1000.
             member_ids (list[str], optional):
                 Performs the operation on the unique member IDs specified. Enter multiple member
-                IDs in comma-separated format. The `member_ids` and `member_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `member_ids` or `member_names` parameter is
+                required, but they cannot be set together.
             member_names (list[str], optional):
                 Performs the operation on the unique member name specified. Examples of members
                 include volumes, hosts, host groups, and directories. Enter multiple names in
@@ -13902,8 +13904,8 @@ class Client(object):
                 multiple member types in comma-separated format. For example, `type01,type02`.
             policy_ids (list[str], optional):
                 Performs the operation on the unique policy IDs specified. Enter multiple policy
-                IDs in comma-separated format. The `policy_ids` and `policy_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is
+                required, but they cannot be set together.
             policy_names (list[str], optional):
                 Performs the operation on the policy names specified. Enter multiple policy
                 names in comma-separated format. For example, `name01,name02`.
@@ -13995,8 +13997,8 @@ class Client(object):
                 comma-separated format. For example, `name01,name02`.
             policy_ids (list[str], optional):
                 Performs the operation on the unique policy IDs specified. Enter multiple policy
-                IDs in comma-separated format. The `policy_ids` and `policy_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is
+                required, but they cannot be set together.
             policy_names (list[str], optional):
                 Performs the operation on the policy names specified. Enter multiple policy
                 names in comma-separated format. For example, `name01,name02`.
@@ -14084,8 +14086,8 @@ class Client(object):
                 set of response objects returned.
             policy_ids (list[str], optional):
                 Performs the operation on the unique policy IDs specified. Enter multiple policy
-                IDs in comma-separated format. The `policy_ids` and `policy_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is
+                required, but they cannot be set together.
             policy_names (list[str], optional):
                 Performs the operation on the policy names specified. Enter multiple policy
                 names in comma-separated format. For example, `name01,name02`.
@@ -14166,8 +14168,8 @@ class Client(object):
                 provided.
             policy_ids (list[str], optional):
                 Performs the operation on the unique policy IDs specified. Enter multiple policy
-                IDs in comma-separated format. The `policy_ids` and `policy_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is
+                required, but they cannot be set together.
             policy_names (list[str], optional):
                 Performs the operation on the policy names specified. Enter multiple policy
                 names in comma-separated format. For example, `name01,name02`.
@@ -14232,8 +14234,8 @@ class Client(object):
                 provided.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
@@ -14306,8 +14308,8 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -14398,8 +14400,8 @@ class Client(object):
                 provided.
             member_ids (list[str], optional):
                 Performs the operation on the unique member IDs specified. Enter multiple member
-                IDs in comma-separated format. The `member_ids` and `member_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `member_ids` or `member_names` parameter is
+                required, but they cannot be set together.
             member_names (list[str], optional):
                 Performs the operation on the unique member name specified. Examples of members
                 include volumes, hosts, host groups, and directories. Enter multiple names in
@@ -14410,8 +14412,8 @@ class Client(object):
                 multiple member types in comma-separated format. For example, `type01,type02`.
             policy_ids (list[str], optional):
                 Performs the operation on the unique policy IDs specified. Enter multiple policy
-                IDs in comma-separated format. The `policy_ids` and `policy_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is
+                required, but they cannot be set together.
             policy_names (list[str], optional):
                 Performs the operation on the policy names specified. Enter multiple policy
                 names in comma-separated format. For example, `name01,name02`.
@@ -14502,8 +14504,8 @@ class Client(object):
                 1000.
             member_ids (list[str], optional):
                 Performs the operation on the unique member IDs specified. Enter multiple member
-                IDs in comma-separated format. The `member_ids` and `member_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `member_ids` or `member_names` parameter is
+                required, but they cannot be set together.
             member_names (list[str], optional):
                 Performs the operation on the unique member name specified. Examples of members
                 include volumes, hosts, host groups, and directories. Enter multiple names in
@@ -14514,8 +14516,8 @@ class Client(object):
                 multiple member types in comma-separated format. For example, `type01,type02`.
             policy_ids (list[str], optional):
                 Performs the operation on the unique policy IDs specified. Enter multiple policy
-                IDs in comma-separated format. The `policy_ids` and `policy_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is
+                required, but they cannot be set together.
             policy_names (list[str], optional):
                 Performs the operation on the policy names specified. Enter multiple policy
                 names in comma-separated format. For example, `name01,name02`.
@@ -14603,8 +14605,8 @@ class Client(object):
                 provided.
             policy_ids (list[str], optional):
                 Performs the operation on the unique policy IDs specified. Enter multiple policy
-                IDs in comma-separated format. The `policy_ids` and `policy_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is
+                required, but they cannot be set together.
             policy_names (list[str], optional):
                 Performs the operation on the policy names specified. Enter multiple policy
                 names in comma-separated format. For example, `name01,name02`.
@@ -14672,8 +14674,8 @@ class Client(object):
                 provided.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
@@ -14799,8 +14801,8 @@ class Client(object):
                 provided.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
@@ -14873,8 +14875,8 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -14950,9 +14952,9 @@ class Client(object):
         # type: (...) -> None
         """
         Deletes a membership between one or more quota policies and managed directories.
-        The `policy_ids` or `policy_names` parameter is required, but cannot be set
-        together. The `member_ids` or `member_names` parameter is required, but cannot
-        be set together.
+        The `policy_ids` or `policy_names` parameter is required, but they cannot be set
+        together. The `member_ids` or `member_names` parameter is required, but they
+        cannot be set together.
 
         Args:
             members (list[FixedReference], optional):
@@ -14965,8 +14967,8 @@ class Client(object):
                 provided.
             member_ids (list[str], optional):
                 Performs the operation on the unique member IDs specified. Enter multiple member
-                IDs in comma-separated format. The `member_ids` and `member_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `member_ids` or `member_names` parameter is
+                required, but they cannot be set together.
             member_names (list[str], optional):
                 Performs the operation on the unique member name specified. Examples of members
                 include volumes, hosts, host groups, and directories. Enter multiple names in
@@ -14977,8 +14979,8 @@ class Client(object):
                 multiple member types in comma-separated format. For example, `type01,type02`.
             policy_ids (list[str], optional):
                 Performs the operation on the unique policy IDs specified. Enter multiple policy
-                IDs in comma-separated format. The `policy_ids` and `policy_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is
+                required, but they cannot be set together.
             policy_names (list[str], optional):
                 Performs the operation on the policy names specified. Enter multiple policy
                 names in comma-separated format. For example, `name01,name02`.
@@ -15069,8 +15071,8 @@ class Client(object):
                 1000.
             member_ids (list[str], optional):
                 Performs the operation on the unique member IDs specified. Enter multiple member
-                IDs in comma-separated format. The `member_ids` and `member_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `member_ids` or `member_names` parameter is
+                required, but they cannot be set together.
             member_names (list[str], optional):
                 Performs the operation on the unique member name specified. Examples of members
                 include volumes, hosts, host groups, and directories. Enter multiple names in
@@ -15081,8 +15083,8 @@ class Client(object):
                 multiple member types in comma-separated format. For example, `type01,type02`.
             policy_ids (list[str], optional):
                 Performs the operation on the unique policy IDs specified. Enter multiple policy
-                IDs in comma-separated format. The `policy_ids` and `policy_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is
+                required, but they cannot be set together.
             policy_names (list[str], optional):
                 Performs the operation on the policy names specified. Enter multiple policy
                 names in comma-separated format. For example, `name01,name02`.
@@ -15158,7 +15160,7 @@ class Client(object):
         # type: (...) -> models.PolicyMemberResponse
         """
         Creates a membership between one or more managed directories and a quota policy.
-        The `policy_ids` or `policy_names` parameter is required, but cannot be set
+        The `policy_ids` or `policy_names` parameter is required, but they cannot be set
         together.
 
         Args:
@@ -15171,8 +15173,8 @@ class Client(object):
                 provided.
             policy_ids (list[str], optional):
                 Performs the operation on the unique policy IDs specified. Enter multiple policy
-                IDs in comma-separated format. The `policy_ids` and `policy_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is
+                required, but they cannot be set together.
             policy_names (list[str], optional):
                 Performs the operation on the policy names specified. Enter multiple policy
                 names in comma-separated format. For example, `name01,name02`.
@@ -15249,8 +15251,8 @@ class Client(object):
                 provided.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
@@ -15391,8 +15393,8 @@ class Client(object):
                 comma-separated format. For example, `name01,name02`.
             policy_ids (list[str], optional):
                 Performs the operation on the unique policy IDs specified. Enter multiple policy
-                IDs in comma-separated format. The `policy_ids` and `policy_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is
+                required, but they cannot be set together.
             policy_names (list[str], optional):
                 Performs the operation on the policy names specified. Enter multiple policy
                 names in comma-separated format. For example, `name01,name02`.
@@ -15480,8 +15482,8 @@ class Client(object):
                 set of response objects returned.
             policy_ids (list[str], optional):
                 Performs the operation on the unique policy IDs specified. Enter multiple policy
-                IDs in comma-separated format. The `policy_ids` and `policy_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is
+                required, but they cannot be set together.
             policy_names (list[str], optional):
                 Performs the operation on the policy names specified. Enter multiple policy
                 names in comma-separated format. For example, `name01,name02`.
@@ -15563,8 +15565,8 @@ class Client(object):
                 provided.
             policy_ids (list[str], optional):
                 Performs the operation on the unique policy IDs specified. Enter multiple policy
-                IDs in comma-separated format. The `policy_ids` and `policy_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is
+                required, but they cannot be set together.
             policy_names (list[str], optional):
                 Performs the operation on the policy names specified. Enter multiple policy
                 names in comma-separated format. For example, `name01,name02`.
@@ -15644,8 +15646,8 @@ class Client(object):
                 comma-separated format. For example, `name01,name02`.
             policy_ids (list[str], optional):
                 Performs the operation on the unique policy IDs specified. Enter multiple policy
-                IDs in comma-separated format. The `policy_ids` and `policy_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is
+                required, but they cannot be set together.
             policy_names (list[str], optional):
                 Performs the operation on the policy names specified. Enter multiple policy
                 names in comma-separated format. For example, `name01,name02`.
@@ -15733,8 +15735,8 @@ class Client(object):
                 set of response objects returned.
             policy_ids (list[str], optional):
                 Performs the operation on the unique policy IDs specified. Enter multiple policy
-                IDs in comma-separated format. The `policy_ids` and `policy_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is
+                required, but they cannot be set together.
             policy_names (list[str], optional):
                 Performs the operation on the policy names specified. Enter multiple policy
                 names in comma-separated format. For example, `name01,name02`.
@@ -15815,8 +15817,8 @@ class Client(object):
                 provided.
             policy_ids (list[str], optional):
                 Performs the operation on the unique policy IDs specified. Enter multiple policy
-                IDs in comma-separated format. The `policy_ids` and `policy_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is
+                required, but they cannot be set together.
             policy_names (list[str], optional):
                 Performs the operation on the policy names specified. Enter multiple policy
                 names in comma-separated format. For example, `name01,name02`.
@@ -15869,8 +15871,8 @@ class Client(object):
     ):
         # type: (...) -> None
         """
-        Delete one or more SMB policies. The `ids` or `names` parameter is required, but
-        they cannot be set together.
+        Deletes one or more SMB policies. The `ids` or `names` parameter is required,
+        but they cannot be set together.
 
         Args:
             references (list[FixedReference], optional):
@@ -15881,8 +15883,8 @@ class Client(object):
                 provided.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
@@ -15940,7 +15942,7 @@ class Client(object):
     ):
         # type: (...) -> models.PolicySmbGetResponse
         """
-        Return a list of SMB policies.
+        Displays a list of SMB policies.
 
         Args:
             references (list[FixedReference], optional):
@@ -15955,8 +15957,8 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -16047,8 +16049,8 @@ class Client(object):
                 provided.
             member_ids (list[str], optional):
                 Performs the operation on the unique member IDs specified. Enter multiple member
-                IDs in comma-separated format. The `member_ids` and `member_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `member_ids` or `member_names` parameter is
+                required, but they cannot be set together.
             member_names (list[str], optional):
                 Performs the operation on the unique member name specified. Examples of members
                 include volumes, hosts, host groups, and directories. Enter multiple names in
@@ -16059,8 +16061,8 @@ class Client(object):
                 multiple member types in comma-separated format. For example, `type01,type02`.
             policy_ids (list[str], optional):
                 Performs the operation on the unique policy IDs specified. Enter multiple policy
-                IDs in comma-separated format. The `policy_ids` and `policy_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is
+                required, but they cannot be set together.
             policy_names (list[str], optional):
                 Performs the operation on the policy names specified. Enter multiple policy
                 names in comma-separated format. For example, `name01,name02`.
@@ -16151,8 +16153,8 @@ class Client(object):
                 1000.
             member_ids (list[str], optional):
                 Performs the operation on the unique member IDs specified. Enter multiple member
-                IDs in comma-separated format. The `member_ids` and `member_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `member_ids` or `member_names` parameter is
+                required, but they cannot be set together.
             member_names (list[str], optional):
                 Performs the operation on the unique member name specified. Examples of members
                 include volumes, hosts, host groups, and directories. Enter multiple names in
@@ -16163,8 +16165,8 @@ class Client(object):
                 multiple member types in comma-separated format. For example, `type01,type02`.
             policy_ids (list[str], optional):
                 Performs the operation on the unique policy IDs specified. Enter multiple policy
-                IDs in comma-separated format. The `policy_ids` and `policy_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is
+                required, but they cannot be set together.
             policy_names (list[str], optional):
                 Performs the operation on the policy names specified. Enter multiple policy
                 names in comma-separated format. For example, `name01,name02`.
@@ -16252,8 +16254,8 @@ class Client(object):
                 provided.
             policy_ids (list[str], optional):
                 Performs the operation on the unique policy IDs specified. Enter multiple policy
-                IDs in comma-separated format. The `policy_ids` and `policy_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is
+                required, but they cannot be set together.
             policy_names (list[str], optional):
                 Performs the operation on the policy names specified. Enter multiple policy
                 names in comma-separated format. For example, `name01,name02`.
@@ -16307,7 +16309,7 @@ class Client(object):
     ):
         # type: (...) -> models.PolicySmbResponse
         """
-        Update one or more SMB policies. To enable a policy, set `enabled=true`. To
+        Updates one or more SMB policies. To enable a policy, set `enabled=true`. To
         disable a policy, set `enabled=false`. To enable access based enumeration, set
         `access_based_enumeration_enabled=true`. To disable access based enumeration,
         set `access_based_enumeration_enabled=false`. To rename a policy, set `name` to
@@ -16324,8 +16326,8 @@ class Client(object):
                 provided.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
@@ -16378,7 +16380,7 @@ class Client(object):
     ):
         # type: (...) -> models.PolicySmbResponse
         """
-        Create one or more SMB policies. To create an SMB policy with access based
+        Creates one or more SMB policies. To create an SMB policy with access based
         enumeration enabled, set `access_based_enumeration_enabled=true`.
 
         Args:
@@ -16452,8 +16454,8 @@ class Client(object):
                 provided.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
@@ -16526,8 +16528,8 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -16618,8 +16620,8 @@ class Client(object):
                 provided.
             member_ids (list[str], optional):
                 Performs the operation on the unique member IDs specified. Enter multiple member
-                IDs in comma-separated format. The `member_ids` and `member_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `member_ids` or `member_names` parameter is
+                required, but they cannot be set together.
             member_names (list[str], optional):
                 Performs the operation on the unique member name specified. Examples of members
                 include volumes, hosts, host groups, and directories. Enter multiple names in
@@ -16630,8 +16632,8 @@ class Client(object):
                 multiple member types in comma-separated format. For example, `type01,type02`.
             policy_ids (list[str], optional):
                 Performs the operation on the unique policy IDs specified. Enter multiple policy
-                IDs in comma-separated format. The `policy_ids` and `policy_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is
+                required, but they cannot be set together.
             policy_names (list[str], optional):
                 Performs the operation on the policy names specified. Enter multiple policy
                 names in comma-separated format. For example, `name01,name02`.
@@ -16722,8 +16724,8 @@ class Client(object):
                 1000.
             member_ids (list[str], optional):
                 Performs the operation on the unique member IDs specified. Enter multiple member
-                IDs in comma-separated format. The `member_ids` and `member_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `member_ids` or `member_names` parameter is
+                required, but they cannot be set together.
             member_names (list[str], optional):
                 Performs the operation on the unique member name specified. Examples of members
                 include volumes, hosts, host groups, and directories. Enter multiple names in
@@ -16734,8 +16736,8 @@ class Client(object):
                 multiple member types in comma-separated format. For example, `type01,type02`.
             policy_ids (list[str], optional):
                 Performs the operation on the unique policy IDs specified. Enter multiple policy
-                IDs in comma-separated format. The `policy_ids` and `policy_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is
+                required, but they cannot be set together.
             policy_names (list[str], optional):
                 Performs the operation on the policy names specified. Enter multiple policy
                 names in comma-separated format. For example, `name01,name02`.
@@ -16823,8 +16825,8 @@ class Client(object):
                 provided.
             policy_ids (list[str], optional):
                 Performs the operation on the unique policy IDs specified. Enter multiple policy
-                IDs in comma-separated format. The `policy_ids` and `policy_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is
+                required, but they cannot be set together.
             policy_names (list[str], optional):
                 Performs the operation on the policy names specified. Enter multiple policy
                 names in comma-separated format. For example, `name01,name02`.
@@ -16893,8 +16895,8 @@ class Client(object):
                 provided.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
@@ -17027,8 +17029,8 @@ class Client(object):
                 comma-separated format. For example, `name01,name02`.
             policy_ids (list[str], optional):
                 Performs the operation on the unique policy IDs specified. Enter multiple policy
-                IDs in comma-separated format. The `policy_ids` and `policy_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is
+                required, but they cannot be set together.
             policy_names (list[str], optional):
                 Performs the operation on the policy names specified. Enter multiple policy
                 names in comma-separated format. For example, `name01,name02`.
@@ -17116,8 +17118,8 @@ class Client(object):
                 set of response objects returned.
             policy_ids (list[str], optional):
                 Performs the operation on the unique policy IDs specified. Enter multiple policy
-                IDs in comma-separated format. The `policy_ids` and `policy_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is
+                required, but they cannot be set together.
             policy_names (list[str], optional):
                 Performs the operation on the policy names specified. Enter multiple policy
                 names in comma-separated format. For example, `name01,name02`.
@@ -17198,8 +17200,8 @@ class Client(object):
                 provided.
             policy_ids (list[str], optional):
                 Performs the operation on the unique policy IDs specified. Enter multiple policy
-                IDs in comma-separated format. The `policy_ids` and `policy_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `policy_ids` or `policy_names` parameter is
+                required, but they cannot be set together.
             policy_names (list[str], optional):
                 Performs the operation on the policy names specified. Enter multiple policy
                 names in comma-separated format. For example, `name01,name02`.
@@ -17847,7 +17849,7 @@ class Client(object):
         Eradicates a protection group that has been destroyed and is pending
         eradication. Eradicated protection groups cannot be recovered. Protection groups
         are destroyed through the PATCH method. The`ids` or `names` parameter is
-        required, but cannot be set together.
+        required, but they cannot be set together.
 
         Args:
             references (list[FixedReference], optional):
@@ -19369,8 +19371,8 @@ class Client(object):
                 comma-separated format. For example, `vol01,vol02`.
             member_ids (list[str], optional):
                 Performs the operation on the unique member IDs specified. Enter multiple member
-                IDs in comma-separated format. The `member_ids` and `member_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `member_ids` or `member_names` parameter is
+                required, but they cannot be set together.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -19459,8 +19461,8 @@ class Client(object):
                 member object is specified in the member_names query param.
             member_ids (list[str], optional):
                 Performs the operation on the unique member IDs specified. Enter multiple member
-                IDs in comma-separated format. The `member_ids` and `member_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `member_ids` or `member_names` parameter is
+                required, but they cannot be set together.
             member_names (list[str], optional):
                 Performs the operation on the unique member name specified. Examples of members
                 include volumes, hosts, host groups, and directories. Enter multiple names in
@@ -19561,8 +19563,8 @@ class Client(object):
                 comma-separated format. For example, `vol01,vol02`.
             member_ids (list[str], optional):
                 Performs the operation on the unique member IDs specified. Enter multiple member
-                IDs in comma-separated format. The `member_ids` and `member_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `member_ids` or `member_names` parameter is
+                required, but they cannot be set together.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -19633,8 +19635,8 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -20173,8 +20175,8 @@ class Client(object):
                 provided.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
@@ -20254,8 +20256,8 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -20349,8 +20351,8 @@ class Client(object):
                 provided.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
@@ -20510,8 +20512,8 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -20768,8 +20770,8 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -20881,8 +20883,8 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -21774,8 +21776,8 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -21963,8 +21965,8 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -22124,8 +22126,8 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -22223,8 +22225,8 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -22326,8 +22328,8 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -23727,8 +23729,8 @@ class Client(object):
         """
         Deletes a volume group that has been destroyed and is pending eradication.
         Eradicated volume groups cannot be recovered. Volume groups are destroyed
-        through the PATCH method. The `ids` or `names` parameter is required, but cannot
-        be set together.
+        through the PATCH method. The `ids` or `names` parameter is required, but they
+        cannot be set together.
 
         Args:
             references (list[FixedReference], optional):
@@ -23739,8 +23741,8 @@ class Client(object):
                 provided.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
@@ -23824,8 +23826,8 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -23910,9 +23912,9 @@ class Client(object):
         a volume group, set `destroyed=true`. To recover a volume group that has been
         destroyed and is pending eradication, set `destroyed=false`. Sets the bandwidth
         and IOPs limits of a volume group through the respective `bandwidth_limit` and
-        `iops_limit` parameter. The `ids` or `names` parameter is required, but cannot
-        be set together. Sets the priority adjustment for a volume group using the
-        `priority_adjustment_operator` and `priority_adjustment_value` fields.
+        `iops_limit` parameter. The `ids` or `names` parameter is required, but they
+        cannot be set together. Sets the priority adjustment for a volume group using
+        the `priority_adjustment_operator` and `priority_adjustment_value` fields.
 
         Args:
             references (list[FixedReference], optional):
@@ -23924,8 +23926,8 @@ class Client(object):
                 provided.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
@@ -24053,8 +24055,8 @@ class Client(object):
                 resolution.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -24267,8 +24269,8 @@ class Client(object):
                 resolution.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -24379,8 +24381,8 @@ class Client(object):
                 1000.
             member_ids (list[str], optional):
                 Performs the operation on the unique member IDs specified. Enter multiple member
-                IDs in comma-separated format. The `member_ids` and `member_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `member_ids` or `member_names` parameter is
+                required, but they cannot be set together.
             offset (int, optional):
                 The starting position based on the results of the query in relation to the full
                 set of response objects returned.
@@ -24471,8 +24473,8 @@ class Client(object):
                 provided.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
@@ -24561,8 +24563,8 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -24667,8 +24669,8 @@ class Client(object):
                 provided.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
@@ -24811,11 +24813,11 @@ class Client(object):
                 A header to provide to track the API call. Generated by the server if not
                 provided.
             resource_ids (list[str], optional):
-                A list of resource IDs. The `resource_ids` and `resource_names` parameters
-                cannot be provided together.
+                A list of resource IDs. The `resource_ids` or `resource_names` parameter is
+                required, but they cannot be set together.
             resource_names (list[str], optional):
-                A list of resource names. The `resource_ids` and `resource_names` parameters
-                cannot be provided together.
+                A list of resource names. The `resource_ids` or `resource_names` parameter is
+                required, but they cannot be set together.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -24881,11 +24883,11 @@ class Client(object):
             namespaces (list[str], optional):
                 A list of namespaces. Only one namespace is allowed per delete request.
             resource_ids (list[str], optional):
-                A list of resource IDs. The `resource_ids` and `resource_names` parameters
-                cannot be provided together.
+                A list of resource IDs. The `resource_ids` or `resource_names` parameter is
+                required, but they cannot be set together.
             resource_names (list[str], optional):
-                A list of resource names. The `resource_ids` and `resource_names` parameters
-                cannot be provided together.
+                A list of resource names. The `resource_ids` or `resource_names` parameter is
+                required, but they cannot be set together.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -24972,11 +24974,11 @@ class Client(object):
                 an error if the name of a destroyed resource is specified in the
                 `resource_names` query parameter.
             resource_ids (list[str], optional):
-                A list of resource IDs. The `resource_ids` and `resource_names` parameters
-                cannot be provided together.
+                A list of resource IDs. The `resource_ids` or `resource_names` parameter is
+                required, but they cannot be set together.
             resource_names (list[str], optional):
-                A list of resource names. The `resource_ids` and `resource_names` parameters
-                cannot be provided together.
+                A list of resource names. The `resource_ids` or `resource_names` parameter is
+                required, but they cannot be set together.
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
             total_item_count (bool, optional):
@@ -25069,8 +25071,8 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -25158,7 +25160,7 @@ class Client(object):
         """
         Deletes a volume that has been destroyed and is pending eradication. Eradicated
         volumes cannot be recovered. Volumes are destroyed using the `PATCH` method. The
-        `ids` or `names` parameter is required, but cannot be set together.
+        `ids` or `names` parameter is required, but they cannot be set together.
 
         Args:
             references (list[FixedReference], optional):
@@ -25169,8 +25171,8 @@ class Client(object):
                 provided.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
@@ -25266,18 +25268,18 @@ class Client(object):
                 comma-separated format. For example, `name01,name02`.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             base_name (str, optional):
                 Name of the volume or volume snapshot that the diff comparison is based on. If a
                 base volume or volume snapshot is not specified, all mapped blocks for the
-                volume or volume snapshot are displayed. The `base_name` and `base_id`
-                parameters cannot be provided together.
+                volume or volume snapshot are displayed. The `base_name` or `base_id` parameter
+                is required, but they cannot be set together.
             base_id (str, optional):
                 ID of the volume or volume snapshot that the diff comparison is based on. If a
                 base volume or volume snapshot is not specified, all mapped blocks for the
-                volume or volume snapshot are displayed. The `base_name` and `base_id`
-                parameters cannot be provided together.
+                volume or volume snapshot are displayed. The `base_name` or `base_id` parameter
+                is required, but they cannot be set together.
             segment_offset (int, optional):
                 Absolute offset, in bytes, of the segment to compare. Must be a multiple of
                 block_size.
@@ -25372,8 +25374,8 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -25459,7 +25461,7 @@ class Client(object):
         `destroyed=false`. Sets the bandwidth and IOPs limits of a volume through the
         respective `bandwidth_limit` and `iops_limit` parameter. This moves the volume
         into a pod or volume group through the respective `pod` or `volume_group`
-        parameter. The `ids` or `names` parameter is required, but cannot be set
+        parameter. The `ids` or `names` parameter is required, but they cannot be set
         together.
 
         Args:
@@ -25472,8 +25474,8 @@ class Client(object):
                 provided.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
@@ -25608,8 +25610,8 @@ class Client(object):
                 resolution.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -25759,8 +25761,8 @@ class Client(object):
                 resolution.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -25942,8 +25944,8 @@ class Client(object):
                 comma-separated format. For example, `vol01,vol02`.
             member_ids (list[str], optional):
                 Performs the operation on the unique member IDs specified. Enter multiple member
-                IDs in comma-separated format. The `member_ids` and `member_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `member_ids` or `member_names` parameter is
+                required, but they cannot be set together.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -26032,8 +26034,8 @@ class Client(object):
                 member object is specified in the member_names query param.
             member_ids (list[str], optional):
                 Performs the operation on the unique member IDs specified. Enter multiple member
-                IDs in comma-separated format. The `member_ids` and `member_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `member_ids` or `member_names` parameter is
+                required, but they cannot be set together.
             member_names (list[str], optional):
                 Performs the operation on the unique member name specified. Examples of members
                 include volumes, hosts, host groups, and directories. Enter multiple names in
@@ -26134,8 +26136,8 @@ class Client(object):
                 comma-separated format. For example, `vol01,vol02`.
             member_ids (list[str], optional):
                 Performs the operation on the unique member IDs specified. Enter multiple member
-                IDs in comma-separated format. The `member_ids` and `member_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `member_ids` or `member_names` parameter is
+                required, but they cannot be set together.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -26255,8 +26257,8 @@ class Client(object):
                 resolution.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` and `names` parameters cannot
-                be provided together.
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -26349,11 +26351,11 @@ class Client(object):
                 A header to provide to track the API call. Generated by the server if not
                 provided.
             resource_ids (list[str], optional):
-                A list of resource IDs. The `resource_ids` and `resource_names` parameters
-                cannot be provided together.
+                A list of resource IDs. The `resource_ids` or `resource_names` parameter is
+                required, but they cannot be set together.
             resource_names (list[str], optional):
-                A list of resource names. The `resource_ids` and `resource_names` parameters
-                cannot be provided together.
+                A list of resource names. The `resource_ids` or `resource_names` parameter is
+                required, but they cannot be set together.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -26419,11 +26421,11 @@ class Client(object):
             namespaces (list[str], optional):
                 A list of namespaces. Only one namespace is allowed per delete request.
             resource_ids (list[str], optional):
-                A list of resource IDs. The `resource_ids` and `resource_names` parameters
-                cannot be provided together.
+                A list of resource IDs. The `resource_ids` or `resource_names` parameter is
+                required, but they cannot be set together.
             resource_names (list[str], optional):
-                A list of resource names. The `resource_ids` and `resource_names` parameters
-                cannot be provided together.
+                A list of resource names. The `resource_ids` or `resource_names` parameter is
+                required, but they cannot be set together.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -26510,11 +26512,11 @@ class Client(object):
                 an error if the name of a destroyed resource is specified in the
                 `resource_names` query parameter.
             resource_ids (list[str], optional):
-                A list of resource IDs. The `resource_ids` and `resource_names` parameters
-                cannot be provided together.
+                A list of resource IDs. The `resource_ids` or `resource_names` parameter is
+                required, but they cannot be set together.
             resource_names (list[str], optional):
-                A list of resource names. The `resource_ids` and `resource_names` parameters
-                cannot be provided together.
+                A list of resource names. The `resource_ids` or `resource_names` parameter is
+                required, but they cannot be set together.
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
             total_item_count (bool, optional):
@@ -26609,8 +26611,8 @@ class Client(object):
                 1000.
             member_ids (list[str], optional):
                 Performs the operation on the unique member IDs specified. Enter multiple member
-                IDs in comma-separated format. The `member_ids` and `member_names` parameters
-                cannot be provided together.
+                IDs in comma-separated format. The `member_ids` or `member_names` parameter is
+                required, but they cannot be set together.
             offset (int, optional):
                 The starting position based on the results of the query in relation to the full
                 set of response objects returned.

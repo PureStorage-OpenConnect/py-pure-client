@@ -39,7 +39,7 @@ class ProtectionGroupsApi(object):
         # type: (...) -> None
         """Eradicate a protection group
 
-        Eradicates a protection group that has been destroyed and is pending eradication. Eradicated protection groups cannot be recovered. Protection groups are destroyed through the PATCH method. The`ids` or `names` parameter is required, but cannot be set together.
+        Eradicates a protection group that has been destroyed and is pending eradication. Eradicated protection groups cannot be recovered. Protection groups are destroyed through the PATCH method. The`ids` or `names` parameter is required, but they cannot be set together.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api26_protection_groups_delete_with_http_info(async_req=True)
