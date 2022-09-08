@@ -76,7 +76,7 @@ class ArrayConnection(object):
             replication_addresses (list[str]): IP addresses of the target arrays when `replication_transport` is `ip`. WWNs of the target arrays when `replication_transport` is `fc`.
             status (str): Status of the connection. Valid values are `connected`, `connecting`, `partially_connected`, and `unbalanced`. A status of `connected` indicates that arrays are communicating. A status of `connecting` indicates that the array is trying to establish a connection. A status of `partially_connected` indicates that some replication addresses are communicating but others are not. A status of `unbalanced` indicates that the arrays are communicating, but the set of paths is either not redundant or not symmetric.
             type (str): The type of replication. Valid values are `async-replication` and `sync-replication`.
-            replication_transport (str): The protocol used to transport data betwen the local array and the remote array. Valid values are `ip` and `fc`. The default is `ip`.
+            replication_transport (str): The protocol used to transport data between the local array and the remote array. Valid values are `ip` and `fc`. The default is `ip`.
             version (str): The version of the target array.
             throttle (Throttle)
         """

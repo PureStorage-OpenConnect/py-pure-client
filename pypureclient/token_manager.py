@@ -61,7 +61,7 @@ class TokenManager(object):
         payload['iat'] = int(time.time())
         payload['exp'] = int(time.time()) + self.EXP_TIME_IN_SECONDS
         new_jwt = jwt.encode(payload, private_key, algorithm=self.ALGORITHM, headers=headers)
-        return new_jwt.decode()
+        return new_jwt if isinstance(new_jwt, str) else new_jwt.decode()
 
     def _get_private_key(self, private_key_file, private_key_password):
         try:

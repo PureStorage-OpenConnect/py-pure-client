@@ -39,7 +39,7 @@ class ProtectionGroupSnapshotsApi(object):
         # type: (...) -> None
         """Eradicate a protection group snapshot
 
-        Eradicates a protection group snapshot that has been destroyed and is pending eradication. Eradicating a protection group snapshot eradicates all of its protection group snapshots. Eradicated protection group snapshots cannot be recovered. Protection group snapshots are destroyed through the `PATCH` method. The `ids` or `names` parameter is required, but cannot be set together.
+        Eradicates a protection group snapshot that has been destroyed and is pending eradication. Eradicating a protection group snapshot eradicates all of its protection group snapshots. Eradicated protection group snapshots cannot be recovered. Protection group snapshots are destroyed through the `PATCH` method. The `ids` or `names` parameter is required, but they cannot be set together.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api21_protection_group_snapshots_delete_with_http_info(async_req=True)
@@ -360,7 +360,7 @@ class ProtectionGroupSnapshotsApi(object):
         # type: (...) -> models.ProtectionGroupSnapshotResponse
         """Generate a protection group snapshot
 
-        Creates a point-in-time snapshot of the contents of a protection group. The `source_ids` or `source_names` parameter is required, but cannot be set together.
+        Creates a point-in-time snapshot of the contents of a protection group. The `source_ids` or `source_names` parameter is required, but they cannot be set together.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api21_protection_group_snapshots_post_with_http_info(async_req=True)
