@@ -42,6 +42,16 @@ FlashBlade REST 2.4 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.FB_2_4.client.Client
+
+FlashBlade REST 2.5 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.FB_2_5.client.Client
+
+FlashBlade REST 2.6 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.FB_2_6.client.Client
     :members:
 
 
@@ -209,6 +219,12 @@ ArrayConnectionPost
 ~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.ArrayConnectionPost
+   :members:
+
+ArrayEradicationConfig
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.ArrayEradicationConfig
    :members:
 
 ArrayFactoryResetToken
@@ -727,6 +743,18 @@ NetworkInterfacePatch
 .. autoclass:: pypureclient.flashblade.NetworkInterfacePatch
    :members:
 
+NetworkInterfacePing
+~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.NetworkInterfacePing
+   :members:
+
+NetworkInterfaceTrace
+~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.NetworkInterfaceTrace
+   :members:
+
 Nfs
 ~~~
 
@@ -1185,6 +1213,7 @@ UserQuotaPatch
 
 UserQuotaPost
 ~~~~~~~~~~~~~
+
 .. autoclass:: pypureclient.flashblade.UserQuotaPost
    :members:
 
@@ -2303,10 +2332,22 @@ patch_network_interfaces
 .. literalinclude:: source/examples/FB2.0/patch_network_interfaces.py
     :language: python
 
+get_network_interfaces_ping
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.6/get_network_interfaces_ping.py
+    :language: python
+
 post_network_interfaces
 '''''''''''''''''''''''
 
 .. literalinclude:: source/examples/FB2.0/post_network_interfaces.py
+    :language: python
+
+get_network_interfaces_trace
+''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.6/get_network_interfaces_trace.py
     :language: python
 
 Object Store Access Keys

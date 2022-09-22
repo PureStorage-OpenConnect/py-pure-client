@@ -36,8 +36,7 @@ class NfsExportPolicyPost(object):
         'is_local': 'bool',
         'location': 'FixedReference',
         'policy_type': 'str',
-        'rules': 'list[NfsExportPolicyRuleInPolicy]',
-        'version': 'str'
+        'rules': 'list[NfsExportPolicyRuleInPolicy]'
     }
 
     attribute_map = {
@@ -47,8 +46,7 @@ class NfsExportPolicyPost(object):
         'is_local': 'is_local',
         'location': 'location',
         'policy_type': 'policy_type',
-        'rules': 'rules',
-        'version': 'version'
+        'rules': 'rules'
     }
 
     required_args = {
@@ -63,7 +61,6 @@ class NfsExportPolicyPost(object):
         location=None,  # type: models.FixedReference
         policy_type=None,  # type: str
         rules=None,  # type: List[models.NfsExportPolicyRuleInPolicy]
-        version=None,  # type: str
     ):
         """
         Keyword args:
@@ -74,7 +71,6 @@ class NfsExportPolicyPost(object):
             location (FixedReference): Reference to the array where the policy is defined.
             policy_type (str): Type of the policy. Valid values are `nfs`, `object-access` and `snapshot`.
             rules (list[NfsExportPolicyRuleInPolicy]): All of the rules that are part of this policy. The order is the evaluation order.
-            version (str): A hash of the other properties of this resource. This can be used when updating the resource to ensure there aren't any updates since the resource was read.
         """
         if name is not None:
             self.name = name
@@ -90,8 +86,6 @@ class NfsExportPolicyPost(object):
             self.policy_type = policy_type
         if rules is not None:
             self.rules = rules
-        if version is not None:
-            self.version = version
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
