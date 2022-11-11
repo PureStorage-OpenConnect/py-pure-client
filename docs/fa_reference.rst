@@ -325,6 +325,12 @@ ArrayPerformance
 .. autoclass:: pypureclient.flasharray.ArrayPerformance
    :members:
 
+ArrayPerformanceByLink
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.ArrayPerformanceByLink
+   :members:
+
 ArraySpace
 ~~~~~~~~~~
 
@@ -1715,6 +1721,18 @@ SoftwareInstallations
 ~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.SoftwareInstallations
+   :members:
+
+SoftwarePatch
+~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.SoftwarePatch
+   :members:
+
+SoftwarePatches
+~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.SoftwarePatches
    :members:
 
 SoftwarePost

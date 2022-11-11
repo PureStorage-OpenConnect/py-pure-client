@@ -32,7 +32,7 @@ class Client(object):
     TIMEOUT_KEY = 'timeout'
     TIMEOUT_DEFAULT = 15.0
     # Format: client/client_version/endpoint/endpoint_version/system/release
-    USER_AGENT = ('pypureclient/1.28.0/Pure1/1.1/{sys}/{rel}'
+    USER_AGENT = ('pypureclient/1.29.0/Pure1/1.1/{sys}/{rel}'
                   .format(sys=platform.system(), rel=platform.release()))
 
     def __init__(self, **kwargs):
