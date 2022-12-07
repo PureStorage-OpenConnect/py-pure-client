@@ -97,7 +97,18 @@ FlashArray REST 2.16 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.FA_2_16.client.Client
+
+FlashArray REST 2.17 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.FA_2_17.client.Client
+
+FlashArray REST 2.19 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.FA_2_19.client.Client
     :members:
+
 
 Properties
 ----------
@@ -323,6 +334,12 @@ ArrayPerformance
 ~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.ArrayPerformance
+   :members:
+
+ArrayPerformanceByLink
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.ArrayPerformanceByLink
    :members:
 
 ArraySpace
@@ -1715,6 +1732,18 @@ SoftwareInstallations
 ~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.SoftwareInstallations
+   :members:
+
+SoftwarePatch
+~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.SoftwarePatch
+   :members:
+
+SoftwarePatches
+~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.SoftwarePatches
    :members:
 
 SoftwarePost

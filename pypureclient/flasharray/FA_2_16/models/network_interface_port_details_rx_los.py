@@ -49,7 +49,7 @@ class NetworkInterfacePortDetailsRxLos(object):
     ):
         """
         Keyword args:
-            channel (int): The channel number if the transceiver is a multilane transceiver. If not specified, defaults to `null`. Valid values are `0`, `1`, `2`, and `3`.
+            channel (int): The channel number if the transceiver is a multilane transceiver. If not specified, defaults to `null`.
             flag (bool): A value of `true` indicates Rx Loss-of-Signal.
         """
         if channel is not None:
