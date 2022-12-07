@@ -52,7 +52,7 @@ class NetworkInterfacePortDetailsTemperature(object):
     ):
         """
         Keyword args:
-            channel (int): The channel number if the diagnostic has an associated channel number. If not specified, defaults to `null`. Valid values are `0`, `1`, `2`, and `3`.
+            channel (int): The channel number if the diagnostic has an associated channel number. If not specified, defaults to `null`.
             measurement (float): Temperature in degrees Celsius.
             status (str): Indicates whether the measurement is outside the high alarm, low alarm, high warning, or low warning thresholds for temperature. Valid values are `alarm low`, `alarm high`, `warn low`, `warn high`, and `ok`.
         """
