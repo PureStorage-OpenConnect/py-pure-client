@@ -107,6 +107,11 @@ FlashArray REST 2.19 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.FA_2_19.client.Client
+
+FlashArray REST 2.20 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.FA_2_19.client.Client
     :members:
 
 
@@ -1918,6 +1923,12 @@ VolumeGroup
 ~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.VolumeGroup
+   :members:
+
+VolumeGroupPatch
+~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.VolumeGroupPatch
    :members:
 
 VolumeGroupPerformance
