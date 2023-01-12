@@ -111,7 +111,7 @@ FlashArray REST 2.19 Client
 FlashArray REST 2.20 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. autoclass:: pypureclient.flasharray.FA_2_19.client.Client
+.. autoclass:: pypureclient.flasharray.FA_2_20.client.Client
     :members:
 
 
