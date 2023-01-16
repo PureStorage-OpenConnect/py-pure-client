@@ -10,7 +10,7 @@ license = {file = "LICENSE.txt"}
 requires-python = ">=3.5"
 keywords = ['Swagger', 'Pure Storage', 'Python', 'clients', 'REST', 'API', 'FlashArray', 'FlashBlade', 'Pure1']
 classifiers = [
-    "Topic :: Software Development :: SDK",
+    "Topic :: Software Development :: Libraries",
     "Operating System :: OS Independent"
 ]
 dependencies = [

@@ -29,6 +29,7 @@ setup(
     download_url='https://github.com/PureStorage-OpenConnect/py-pure-client/archive/1.30.0.tar.gz',
     keywords=['Swagger', 'Pure Storage', 'Python', 'clients', 'REST', 'API', 'FlashArray', 'FlashBlade', 'Pure1'],
     license='BSD 2-Clause',
+    license_files = ('LICENSE.txt',),
     install_requires=REQUIRES,
     packages=find_packages(),
     include_package_data=True,
