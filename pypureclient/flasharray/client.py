@@ -20,6 +20,7 @@ from . import FA_2_15
 from . import FA_2_16
 from . import FA_2_17
 from . import FA_2_19
+from . import FA_2_20
 
 fa_modules = {
     '2.0': FA_2_0,
@@ -40,6 +41,7 @@ fa_modules = {
     '2.16': FA_2_16,
     '2.17': FA_2_17,
     '2.19': FA_2_19,
+    '2.20': FA_2_20,
 }
 
 MW_DEV_VERSION = '2.DEV'

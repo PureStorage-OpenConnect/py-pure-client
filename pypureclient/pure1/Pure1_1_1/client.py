@@ -1,6 +1,6 @@
 import json
-import os
 import platform
+import os
 import time
 from typing import List, Optional
 
@@ -8,6 +8,7 @@ from ...exceptions import PureError
 from ...keywords import Headers, Responses
 from ...responses import ValidResponse, ErrorResponse, ApiError, ItemIterator
 from ...token_manager import TokenManager
+from ...client_settings import USER_AGENT_TEMPLATE
 from .api_client import ApiClient
 from .rest import ApiException
 from . import api
@@ -32,8 +33,7 @@ class Client(object):
     TIMEOUT_KEY = 'timeout'
     TIMEOUT_DEFAULT = 15.0
     # Format: client/client_version/endpoint/endpoint_version/system/release
-    USER_AGENT = ('pypureclient/1.29.0/Pure1/1.1/{sys}/{rel}'
-                  .format(sys=platform.system(), rel=platform.release()))
+    USER_AGENT = USER_AGENT_TEMPLATE.format(prod='Pure1', sys=platform.system(), rel=platform.release())
 
     def __init__(self, **kwargs):
         """

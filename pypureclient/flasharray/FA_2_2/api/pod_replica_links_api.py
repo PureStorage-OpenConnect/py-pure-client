@@ -335,8 +335,9 @@ class PodReplicaLinksApi(object):
         _request_timeout=None,  # type: Optional[int]
     ):
         # type: (...) -> models.PodReplicaLinkLagGetResponse
-        """api22_pod_replica_links_lag_get
+        """List pod replica link lag
 
+        Displays the lag in milliseconds that the replication target is behind the source. This is the time difference between the current time and the recovery point.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api22_pod_replica_links_lag_get_with_http_info(async_req=True)
@@ -656,8 +657,9 @@ class PodReplicaLinksApi(object):
         _request_timeout=None,  # type: Optional[int]
     ):
         # type: (...) -> models.PodReplicaLinkPerformanceReplicationGetResponse
-        """api22_pod_replica_links_performance_replication_get
+        """List pod replica real-time and historical performance
 
+        Displays pod replica real-time and historical performance data, including lag and bandwidth.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api22_pod_replica_links_performance_replication_get_with_http_info(async_req=True)

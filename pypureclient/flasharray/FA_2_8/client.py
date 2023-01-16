@@ -9,6 +9,7 @@ from ...keywords import Headers, Responses
 from ...responses import ValidResponse, ErrorResponse, ApiError, ItemIterator
 from ...token_manager import TokenManager
 from ...api_token_manager import APITokenManager
+from ...client_settings import USER_AGENT_TEMPLATE
 from .api_client import ApiClient
 from .rest import ApiException
 from .configuration import Configuration
@@ -20,8 +21,7 @@ class Client(object):
     DEFAULT_TIMEOUT = 15.0
     DEFAULT_RETRIES = 5
     # Format: client/client_version/endpoint/endpoint_version/system/release
-    USER_AGENT = ('pypureclient/1.29.0/FA/2.8/{sys}/{rel}'
-                  .format(sys=platform.system(), rel=platform.release()))
+    USER_AGENT = USER_AGENT_TEMPLATE.format(prod='FA', sys=platform.system(), rel=platform.release())
 
     def __init__(self, target, id_token=None, private_key_file=None, private_key_password=None,
                  username=None, client_id=None, key_id=None, issuer=None, api_token=None,
@@ -11757,6 +11757,10 @@ class Client(object):
     ):
         # type: (...) -> models.PodReplicaLinkLagGetResponse
         """
+        Displays the lag in milliseconds that the replication target is behind the
+        source. This is the time difference between the current time and the recovery
+        point.
+
         Args:
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides ids keyword arguments.

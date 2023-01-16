@@ -22,6 +22,14 @@ pypureclient.api\_token\_manager module
    :undoc-members:
    :show-inheritance:
 
+pypureclient.client\_settings module
+------------------------------------
+
+.. automodule:: pypureclient.client_settings
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 pypureclient.exceptions module
 ------------------------------
 
