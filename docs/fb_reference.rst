@@ -52,6 +52,16 @@ FlashBlade REST 2.6 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.FB_2_6.client.Client
+
+FlashBlade REST 2.7 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.FB_2_7.client.Client
+
+FlashBlade REST 2.8 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.FB_2_8.client.Client
     :members:
 
 
@@ -305,6 +315,30 @@ Bucket
 .. autoclass:: pypureclient.flashblade.Bucket
    :members:
 
+BucketDefaults
+~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.BucketDefaults
+   :members:
+
+BucketDefaultsReadonly
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.BucketDefaultsReadonly
+   :members:
+
+BucketEradicationConfig
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.BucketEradicationConfig
+   :members:
+
+BucketPatch
+~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.BucketPatch
+   :members:
+
 BucketPerformance
 ~~~~~~~~~~~~~~~~~
 
@@ -485,16 +519,34 @@ FileInfo
 .. autoclass:: pypureclient.flashblade.FileInfo
    :members:
 
+FileLock
+~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.FileLock
+   :members:
+
 FileSystem
 ~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.FileSystem
    :members:
 
+FileSystemClient
+~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.FileSystemClient
+   :members:
+
 FileSystemGroupPerformance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.FileSystemGroupPerformance
+   :members:
+
+FileSystemLockNlmReclamation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.FileSystemLockNlmReclamation
    :members:
 
 FileSystemPatch
@@ -545,6 +597,12 @@ FileSystemUserPerformance
 .. autoclass:: pypureclient.flashblade.FileSystemUserPerformance
    :members:
 
+FilelockRange
+~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.FilelockRange
+   :members:
+
 FixedLocationReference
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -561,6 +619,12 @@ FixedReferenceNameOnly
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.FixedReferenceNameOnly
+   :members:
+
+FixedReferenceNoId
+~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.FixedReferenceNoId
    :members:
 
 FixedReferenceNoResourceType
@@ -803,6 +867,18 @@ ObjectBacklog
 .. autoclass:: pypureclient.flashblade.ObjectBacklog
    :members:
 
+ObjectLockConfigBase
+~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.ObjectLockConfigBase
+   :members:
+
+ObjectLockConfigRequestBody
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.ObjectLockConfigRequestBody
+   :members:
+
 ObjectStoreAccessKey
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -849,6 +925,18 @@ ObjectStoreAccount
 ~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.ObjectStoreAccount
+   :members:
+
+ObjectStoreAccountPatch
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.ObjectStoreAccountPatch
+   :members:
+
+ObjectStoreAccountPost
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.ObjectStoreAccountPost
    :members:
 
 ObjectStoreRemoteCredentialGetResp
@@ -1121,6 +1209,12 @@ Space
 .. autoclass:: pypureclient.flashblade.Space
    :members:
 
+SpaceExtended
+~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.SpaceExtended
+   :members:
+
 Subnet
 ~~~~~~
 
@@ -1215,6 +1309,18 @@ UserQuotaPost
 ~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.UserQuotaPost
+   :members:
+
+VerificationKey
+~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.VerificationKey
+   :members:
+
+VerificationKeyPatch
+~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.VerificationKeyPatch
    :members:
 
 model
@@ -1746,7 +1852,7 @@ get_buckets
 patch_buckets
 '''''''''''''
 
-.. literalinclude:: source/examples/FB2.0/patch_buckets.py
+.. literalinclude:: source/examples/FB2.8/patch_buckets.py
     :language: python
 
 get_buckets_performance
@@ -1758,7 +1864,7 @@ get_buckets_performance
 post_buckets
 ''''''''''''
 
-.. literalinclude:: source/examples/FB2.0/post_buckets.py
+.. literalinclude:: source/examples/FB2.8/post_buckets.py
     :language: python
 
 get_buckets_s3_specific_performance
@@ -2062,6 +2168,30 @@ get_file_systems_groups_performance
 '''''''''''''''''''''''''''''''''''
 
 .. literalinclude:: source/examples/FB2.0/get_file_systems_groups_performance.py
+    :language: python
+
+get_file_systems_locks_clients
+''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.8/get_file_systems_locks_clients.py
+    :language: python
+
+delete_file_systems_locks
+'''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.8/delete_file_systems_locks.py
+    :language: python
+
+get_file_systems_locks
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.8/get_file_systems_locks.py
+    :language: python
+
+post_file_systems_locks_nlm_reclamations
+''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.8/post_file_systems_locks_nlm_reclamations.py
     :language: python
 
 patch_file_systems
@@ -2396,10 +2526,16 @@ get_object_store_accounts
 .. literalinclude:: source/examples/FB2.0/get_object_store_accounts.py
     :language: python
 
+patch_object_store_accounts
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.8/patch_object_store_accounts.py
+    :language: python
+
 post_object_store_accounts
 ''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.0/post_object_store_accounts.py
+.. literalinclude:: source/examples/FB2.8/post_object_store_accounts.py
     :language: python
 
 Object Store Remote Credentials
@@ -3065,5 +3201,22 @@ get_usage_users
 '''''''''''''''
 
 .. literalinclude:: source/examples/FB2.0/get_usage_users.py
+    :language: python
+
+Verification Keys
+~~~~~~~~~~~~~~~~~~
+
+The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+get_support_verification_keys
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.7/get_support_verification_keys.py
+    :language: python
+
+patch_support_verification_keys
+'''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.7/patch_support_verification_keys.py
     :language: python
 
