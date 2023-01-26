@@ -2,46 +2,46 @@ import requests
 
 from . import PureError
 
-from . import FA_2_0
-from . import FA_2_1
-from . import FA_2_2
 from . import FA_2_3
 from . import FA_2_4
 from . import FA_2_5
-from . import FA_2_6
-from . import FA_2_7
-from . import FA_2_8
-from . import FA_2_9
-from . import FA_2_10
-from . import FA_2_11
-from . import FA_2_13
+from . import FA_2_2
 from . import FA_2_14
+from . import FA_2_13
 from . import FA_2_15
-from . import FA_2_16
+from . import FA_2_7
+from . import FA_2_0
+from . import FA_2_9
+from . import FA_2_8
+from . import FA_2_1
+from . import FA_2_6
+from . import FA_2_10
 from . import FA_2_17
 from . import FA_2_19
 from . import FA_2_20
+from . import FA_2_16
+from . import FA_2_11
 
 fa_modules = {
-    '2.0': FA_2_0,
-    '2.1': FA_2_1,
-    '2.2': FA_2_2,
     '2.3': FA_2_3,
     '2.4': FA_2_4,
     '2.5': FA_2_5,
-    '2.6': FA_2_6,
-    '2.7': FA_2_7,
-    '2.8': FA_2_8,
-    '2.9': FA_2_9,
-    '2.10': FA_2_10,
-    '2.11': FA_2_11,
-    '2.13': FA_2_13,
+    '2.2': FA_2_2,
     '2.14': FA_2_14,
+    '2.13': FA_2_13,
     '2.15': FA_2_15,
-    '2.16': FA_2_16,
+    '2.7': FA_2_7,
+    '2.0': FA_2_0,
+    '2.9': FA_2_9,
+    '2.8': FA_2_8,
+    '2.1': FA_2_1,
+    '2.6': FA_2_6,
+    '2.10': FA_2_10,
     '2.17': FA_2_17,
     '2.19': FA_2_19,
     '2.20': FA_2_20,
+    '2.16': FA_2_16,
+    '2.11': FA_2_11,
 }
 
 MW_DEV_VERSION = '2.DEV'
