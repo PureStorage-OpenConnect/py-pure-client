@@ -112,6 +112,11 @@ FlashArray REST 2.20 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.FA_2_20.client.Client
+
+FlashArray REST 2.21 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.FA_2_21.client.Client
     :members:
 
 
@@ -485,6 +490,12 @@ DirectoryExportPost
 .. autoclass:: pypureclient.flasharray.DirectoryExportPost
    :members:
 
+DirectoryLockNlmReclamation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.DirectoryLockNlmReclamation
+   :members:
+
 DirectoryPatch
 ~~~~~~~~~~~~~~
 
@@ -771,6 +782,66 @@ LimitedBy
 ~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.LimitedBy
+   :members:
+
+LocalGroup
+~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.LocalGroup
+   :members:
+
+LocalGroupMembershipPost
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.LocalGroupMembershipPost
+   :members:
+
+LocalGroupPost
+~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.LocalGroupPost
+   :members:
+
+LocalMember
+~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.LocalMember
+   :members:
+
+LocalUser
+~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.LocalUser
+   :members:
+
+LocalUserMembershipPost
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.LocalUserMembershipPost
+   :members:
+
+LocalUserPatch
+~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.LocalUserPatch
+   :members:
+
+LocalUserPost
+~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.LocalUserPost
+   :members:
+
+LocalgroupmembershippostMembers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.LocalgroupmembershippostMembers
+   :members:
+
+LocalusermembershippostGroups
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.LocalusermembershippostGroups
    :members:
 
 MaintenanceWindow
