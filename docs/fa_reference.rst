@@ -1648,12 +1648,6 @@ Smis
 .. autoclass:: pypureclient.flasharray.Smis
    :members:
 
-Smtp
-~~~~
-
-.. autoclass:: pypureclient.flasharray.Smtp
-   :members:
-
 SmtpServer
 ~~~~~~~~~~
 
@@ -1712,12 +1706,6 @@ SnmpManagerPost
 ~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.SnmpManagerPost
-   :members:
-
-SnmpManagers
-~~~~~~~~~~~~
-
-.. autoclass:: pypureclient.flasharray.SnmpManagers
    :members:
 
 SnmpV2c
