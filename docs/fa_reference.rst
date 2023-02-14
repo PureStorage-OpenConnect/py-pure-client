@@ -69,52 +69,52 @@ FlashArray REST 2.9 Client
 .. autoclass:: pypureclient.flasharray.FA_2_9.client.Client
 
 FlashArray REST 2.10 Client
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.FA_2_10.client.Client
 
 FlashArray REST 2.11 Client
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.FA_2_11.client.Client
 
 FlashArray REST 2.13 Client
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.FA_2_13.client.Client
 
 FlashArray REST 2.14 Client
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.FA_2_14.client.Client
 
 FlashArray REST 2.15 Client
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.FA_2_15.client.Client
 
 FlashArray REST 2.16 Client
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.FA_2_16.client.Client
 
 FlashArray REST 2.17 Client
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.FA_2_17.client.Client
 
 FlashArray REST 2.19 Client
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.FA_2_19.client.Client
 
 FlashArray REST 2.20 Client
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.FA_2_20.client.Client
 
 FlashArray REST 2.21 Client
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.FA_2_21.client.Client
     :members:
@@ -1648,6 +1648,12 @@ Smis
 .. autoclass:: pypureclient.flasharray.Smis
    :members:
 
+Smtp
+~~~~
+
+.. autoclass:: pypureclient.flasharray.Smtp
+   :members:
+
 SmtpServer
 ~~~~~~~~~~
 
@@ -1706,6 +1712,12 @@ SnmpManagerPost
 ~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.SnmpManagerPost
+   :members:
+
+SnmpManagers
+~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.SnmpManagers
    :members:
 
 SnmpV2c

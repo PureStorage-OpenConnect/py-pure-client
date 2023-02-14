@@ -63,16 +63,46 @@ master_doc = 'index'
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = None
+language = 'en'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = [u'_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = [
+    u'_build',
+    'Thumbs.db',
+    '.DS_Store',
+# FlashArray
+    'source/*.FA_2_0.*',
+    'source/*.FA_2_1.*',
+    'source/*.FA_2_2.*',
+    'source/*.FA_2_3.*',
+    'source/*.FA_2_4.*',
+    'source/*.FA_2_5.*',
+    'source/*.FA_2_6.*',
+    'source/*.FA_2_7.*',
+    'source/*.FA_2_8.*',
+    'source/*.FA_2_9.*',
+    'source/*.FA_2_10.*',
+    'source/*.FA_2_11.*',
+    'source/*.FA_2_12.*',
+    'source/*.FA_2_13.*',
+    'source/*.FA_2_14.*',
+    'source/*.FA_2_15.*',
+    'source/*.FA_2_16.*',
+#    'source/*.FA_2_17.*',
+#    'source/*.FA_2_18.*',
+#    'source/*.FA_2_19.*',
+#    'source/*.FA_2_20.*',
+#    'source/*.FA_2_21.*',
+# FlashBlade
+    'source/*.FB_2_0.*',
+    'source/*.FB_2_1.*',
+    'source/*.FB_2_2.*',
+]
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = None
-
 
 # -- Options for HTML output -------------------------------------------------
 
