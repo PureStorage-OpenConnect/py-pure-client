@@ -26,9 +26,11 @@ from .models.file_system_replica_link import FileSystemReplicaLink
 from .models.file_system_snapshot import FileSystemSnapshot
 from .models.fixed_reference import FixedReference
 from .models.fixed_reference_fqdn import FixedReferenceFqdn
+from .models.geolocation import Geolocation
 from .models.hardware import Hardware
 from .models.hardware_connector import HardwareConnector
 from .models.http import Http
+from .models.install_address import InstallAddress
 from .models.license_resource_reference import LicenseResourceReference
 from .models.marketplace_partner import MarketplacePartner
 from .models.metric import Metric
@@ -53,9 +55,13 @@ from .models.smb import Smb
 from .models.subscription import Subscription
 from .models.subscription_license import SubscriptionLicense
 from .models.support_contract import SupportContract
+from .models.sustainability_array import SustainabilityArray
+from .models.sustainability_assessment import SustainabilityAssessment
+from .models.sustainability_insight_array import SustainabilityInsightArray
 from .models.tag import Tag
 from .models.tag_put import TagPut
 from .models.target import Target
+from .models.time_interval import TimeInterval
 from .models.volume import Volume
 from .models.volume_snapshot import VolumeSnapshot
 
@@ -86,9 +92,11 @@ CLASSES_TO_ADD_PROPS = [
     FileSystemSnapshot,
     FixedReference,
     FixedReferenceFqdn,
+    Geolocation,
     Hardware,
     HardwareConnector,
     Http,
+    InstallAddress,
     LicenseResourceReference,
     MarketplacePartner,
     Metric,
@@ -113,9 +121,13 @@ CLASSES_TO_ADD_PROPS = [
     Subscription,
     SubscriptionLicense,
     SupportContract,
+    SustainabilityArray,
+    SustainabilityAssessment,
+    SustainabilityInsightArray,
     Tag,
     TagPut,
     Target,
+    TimeInterval,
     Volume,
     VolumeSnapshot
 ]

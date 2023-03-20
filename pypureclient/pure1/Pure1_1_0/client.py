@@ -33,7 +33,7 @@ class Client(object):
     TIMEOUT_KEY = 'timeout'
     TIMEOUT_DEFAULT = 15.0
     # Format: client/client_version/endpoint/endpoint_version/system/release
-    USER_AGENT = USER_AGENT_TEMPLATE.format(prod='Pure1', sys=platform.system(), rel=platform.release())
+    USER_AGENT = USER_AGENT_TEMPLATE.format(prod='Pure1', rest_version='1.0', sys=platform.system(), rel=platform.release())
 
     def __init__(self, **kwargs):
         """

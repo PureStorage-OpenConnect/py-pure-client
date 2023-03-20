@@ -88,6 +88,7 @@ from .file_system_snapshot_get_response import FileSystemSnapshotGetResponse
 from .file_system_snapshot_response import FileSystemSnapshotResponse
 from .fixed_reference import FixedReference
 from .fixed_reference_fqdn import FixedReferenceFqdn
+from .geolocation import Geolocation
 from .hardware import Hardware
 from .hardware_connector import HardwareConnector
 from .hardware_connector_get_response import HardwareConnectorGetResponse
@@ -97,6 +98,7 @@ from .hardware_response import HardwareResponse
 from .http import Http
 from .inline_response400 import InlineResponse400
 from .inline_response401 import InlineResponse401
+from .install_address import InstallAddress
 from .license_resource_reference import LicenseResourceReference
 from .marketplace_partner import MarketplacePartner
 from .metric import Metric
@@ -146,6 +148,13 @@ from .subscription_response import SubscriptionResponse
 from .support_contract import SupportContract
 from .support_contract_get_response import SupportContractGetResponse
 from .support_contract_response import SupportContractResponse
+from .sustainability_array import SustainabilityArray
+from .sustainability_array_get_response import SustainabilityArrayGetResponse
+from .sustainability_array_response import SustainabilityArrayResponse
+from .sustainability_assessment import SustainabilityAssessment
+from .sustainability_insight_array import SustainabilityInsightArray
+from .sustainability_insight_array_get_response import SustainabilityInsightArrayGetResponse
+from .sustainability_insight_array_response import SustainabilityInsightArrayResponse
 from .tag import Tag
 from .tag_get_response import TagGetResponse
 from .tag_put import TagPut
@@ -153,6 +162,7 @@ from .tag_response import TagResponse
 from .target import Target
 from .target_get_response import TargetGetResponse
 from .target_response import TargetResponse
+from .time_interval import TimeInterval
 from .volume import Volume
 from .volume_get_response import VolumeGetResponse
 from .volume_response import VolumeResponse
