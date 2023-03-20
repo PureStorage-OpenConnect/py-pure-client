@@ -6,6 +6,7 @@ A log of changes by version and date.
 ======= ========== =====
 Version Date       Notes
 ======= ========== =====
+1.33.0  03/10/2023 Added support for Pure1 sustainability
 1.32.0  02/10/2023 Added FlashArray 2.21 client
 1.31.0  01/25/2023 Added FlashBlade 2.7 and 2.8 clients
 1.30.0  01/12/2023 Added FlashArray 2.20 client

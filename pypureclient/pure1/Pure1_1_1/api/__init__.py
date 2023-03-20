@@ -24,6 +24,7 @@ from .pods_api import PodsApi
 from .policies_api import PoliciesApi
 from .ports_api import PortsApi
 from .subscriptions_api import SubscriptionsApi
+from .sustainability_api import SustainabilityApi
 from .targets_api import TargetsApi
 from .volume_snapshots_api import VolumeSnapshotsApi
 from .volumes_api import VolumesApi
