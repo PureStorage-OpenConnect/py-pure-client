@@ -21,7 +21,7 @@ class Client(object):
     DEFAULT_TIMEOUT = 15.0
     DEFAULT_RETRIES = 5
     # Format: client/client_version/endpoint/endpoint_version/system/release
-    USER_AGENT = USER_AGENT_TEMPLATE.format(prod='FA', sys=platform.system(), rel=platform.release())
+    USER_AGENT = USER_AGENT_TEMPLATE.format(prod='FA', rest_version='2.9', sys=platform.system(), rel=platform.release())
 
     def __init__(self, target, id_token=None, private_key_file=None, private_key_password=None,
                  username=None, client_id=None, key_id=None, issuer=None, api_token=None,

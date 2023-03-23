@@ -66,8 +66,8 @@ class Qos(object):
             if value < 1048576:
                 raise ValueError("Invalid value for `bandwidth_limit`, must be a value greater than or equal to `1048576`")
         if key == "iops_limit" and value is not None:
-            if value > 104857600:
-                raise ValueError("Invalid value for `iops_limit`, value must be less than or equal to `104857600`")
+            if value > 100000000:
+                raise ValueError("Invalid value for `iops_limit`, value must be less than or equal to `100000000`")
             if value < 100:
                 raise ValueError("Invalid value for `iops_limit`, must be a value greater than or equal to `100`")
         self.__dict__[key] = value
