@@ -346,6 +346,7 @@ from .software_installations_get_response import SoftwareInstallationsGetRespons
 from .software_installations_response import SoftwareInstallationsResponse
 from .software_response import SoftwareResponse
 from .space import Space
+from .space2 import Space2
 from .start_end_time import StartEndTime
 from .subnet import Subnet
 from .subnet_get_response import SubnetGetResponse

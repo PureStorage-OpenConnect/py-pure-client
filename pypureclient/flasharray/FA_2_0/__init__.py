@@ -40,6 +40,7 @@ from .models.resource_performance_no_id_by_array import ResourcePerformanceNoIdB
 from .models.resource_space import ResourceSpace
 from .models.snapshot import Snapshot
 from .models.space import Space
+from .models.space2 import Space2
 from .models.transfer import Transfer
 from .models.username import Username
 from .models.volume import Volume
@@ -95,6 +96,7 @@ CLASSES_TO_ADD_PROPS = [
     ResourceSpace,
     Snapshot,
     Space,
+    Space2,
     Transfer,
     Username,
     Volume,

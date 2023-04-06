@@ -496,6 +496,7 @@ from .software_versions import SoftwareVersions
 from .software_versions_get_response import SoftwareVersionsGetResponse
 from .software_versions_response import SoftwareVersionsResponse
 from .space import Space
+from .space2 import Space2
 from .start_end_time import StartEndTime
 from .subnet import Subnet
 from .subnet_get_response import SubnetGetResponse

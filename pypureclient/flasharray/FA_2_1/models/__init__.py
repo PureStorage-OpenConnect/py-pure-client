@@ -165,6 +165,7 @@ from .retention_policy import RetentionPolicy
 from .snapshot import Snapshot
 from .snapshot_schedule import SnapshotSchedule
 from .space import Space
+from .space2 import Space2
 from .target_protection_group import TargetProtectionGroup
 from .target_protection_group_post_patch import TargetProtectionGroupPostPatch
 from .time_window import TimeWindow

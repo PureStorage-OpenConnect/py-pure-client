@@ -95,6 +95,7 @@ from .resource_space import ResourceSpace
 from .resource_space_get_response import ResourceSpaceGetResponse
 from .snapshot import Snapshot
 from .space import Space
+from .space2 import Space2
 from .transfer import Transfer
 from .username import Username
 from .username_response import UsernameResponse

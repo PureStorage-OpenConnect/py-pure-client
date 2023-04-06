@@ -3812,6 +3812,14 @@ pypureclient.flasharray.FA\_2\_21.models.space module
    :undoc-members:
    :show-inheritance:
 
+pypureclient.flasharray.FA\_2\_21.models.space2 module
+------------------------------------------------------
+
+.. automodule:: pypureclient.flasharray.FA_2_21.models.space2
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 pypureclient.flasharray.FA\_2\_21.models.start\_end\_time module
 ----------------------------------------------------------------
 

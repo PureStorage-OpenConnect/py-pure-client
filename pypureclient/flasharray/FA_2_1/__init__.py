@@ -80,6 +80,7 @@ from .models.retention_policy import RetentionPolicy
 from .models.snapshot import Snapshot
 from .models.snapshot_schedule import SnapshotSchedule
 from .models.space import Space
+from .models.space2 import Space2
 from .models.target_protection_group import TargetProtectionGroup
 from .models.target_protection_group_post_patch import TargetProtectionGroupPostPatch
 from .models.time_window import TimeWindow
@@ -182,6 +183,7 @@ CLASSES_TO_ADD_PROPS = [
     Snapshot,
     SnapshotSchedule,
     Space,
+    Space2,
     TargetProtectionGroup,
     TargetProtectionGroupPostPatch,
     TimeWindow,
