@@ -245,6 +245,20 @@ A custom X-Request-ID header can also be provided to any request.
     response = client.get_pods(x_request_id='readthedocs-test')
     print response.headers.x_request_id
 
+An example of querying sustainability information.
+
+.. code-block:: python
+
+    response = client.get_assessment_sustainability_arrays()
+    for assessment in response.items:
+        print assessment
+
+.. code-block:: python
+
+    response = client.get_assessment_sustainability_insights_arrays()
+    for insight in response.items:
+        print insight
+
 
 Filtering
 ---------
