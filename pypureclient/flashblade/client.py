@@ -2,26 +2,28 @@ import requests
 
 from . import PureError
 
-from . import FB_2_5
-from . import FB_2_2
 from . import FB_2_3
-from . import FB_2_4
-from . import FB_2_8
 from . import FB_2_1
+from . import FB_2_4
+from . import FB_2_5
+from . import FB_2_9
 from . import FB_2_6
-from . import FB_2_7
+from . import FB_2_2
 from . import FB_2_0
+from . import FB_2_7
+from . import FB_2_8
 
 fb_modules = {
-    '2.5': FB_2_5,
-    '2.2': FB_2_2,
     '2.3': FB_2_3,
-    '2.4': FB_2_4,
-    '2.8': FB_2_8,
     '2.1': FB_2_1,
+    '2.4': FB_2_4,
+    '2.5': FB_2_5,
+    '2.9': FB_2_9,
     '2.6': FB_2_6,
-    '2.7': FB_2_7,
+    '2.2': FB_2_2,
     '2.0': FB_2_0,
+    '2.7': FB_2_7,
+    '2.8': FB_2_8,
 }
 
 MW_DEV_VERSION = '2.latest'
