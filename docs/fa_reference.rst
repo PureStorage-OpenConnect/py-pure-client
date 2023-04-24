@@ -117,6 +117,16 @@ FlashArray REST 2.21 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.FA_2_21.client.Client
+
+FlashArray REST 2.22 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.FA_2_22.client.Client
+
+FlashArray REST 2.23 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.FA_2_23.client.Client
     :members:
 
 
@@ -242,6 +252,18 @@ AlertEvent
 ~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.AlertEvent
+   :members:
+
+AlertRules
+~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.AlertRules
+   :members:
+
+AlertRulesCatalog
+~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.AlertRulesCatalog
    :members:
 
 AlertWatcher
@@ -892,6 +914,42 @@ NetworkInterfaceFc
 .. autoclass:: pypureclient.flasharray.NetworkInterfaceFc
    :members:
 
+NetworkInterfaceNeighbor
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.NetworkInterfaceNeighbor
+   :members:
+
+NetworkInterfaceNeighborCapability
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.NetworkInterfaceNeighborCapability
+   :members:
+
+NetworkInterfaceNeighborNeighborChassis
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.NetworkInterfaceNeighborNeighborChassis
+   :members:
+
+NetworkInterfaceNeighborNeighborChassisId
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.NetworkInterfaceNeighborNeighborChassisId
+   :members:
+
+NetworkInterfaceNeighborNeighborPort
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.NetworkInterfaceNeighborNeighborPort
+   :members:
+
+NetworkInterfaceNeighborNeighborPortId
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.NetworkInterfaceNeighborNeighborPortId
+   :members:
+
 NetworkInterfacePatch
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -1538,6 +1596,12 @@ Resource
 ~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.Resource
+   :members:
+
+ResourceDirectorySpace
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.ResourceDirectorySpace
    :members:
 
 ResourceFixedNonUniqueName
