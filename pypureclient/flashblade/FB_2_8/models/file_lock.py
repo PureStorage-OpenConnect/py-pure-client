@@ -37,7 +37,7 @@ class FileLock(object):
         'inode': 'int',
         'path': 'str',
         'protocol': 'str',
-        'range': 'FilelockRange',
+        'range': 'FileLockRange',
         'source': 'FixedReference'
     }
 
@@ -65,7 +65,7 @@ class FileLock(object):
         inode=None,  # type: int
         path=None,  # type: str
         protocol=None,  # type: str
-        range=None,  # type: models.FilelockRange
+        range=None,  # type: models.FileLockRange
         source=None,  # type: models.FixedReference
     ):
         """
@@ -77,7 +77,7 @@ class FileLock(object):
             inode (int): The inode of the file where the lock is found relative to the specified `source`.
             path (str): Path to the file where the lock is found relative to `source`. If it is longer than 1023 characters, it will be truncated and only the last 1023 characters will be returned. If multiple hard links exist to the file on which the lock is held, only one is returned. This field will be `null` if the path cannot be resolved.
             protocol (str): The protocol utilized for obtaining and managing the lock. Valid values include `NLM`, `NFSv4.1` and `SMB`.
-            range (FilelockRange)
+            range (FileLockRange)
             source (FixedReference): Reference to location where the path/inode can be found.
         """
         if name is not None:

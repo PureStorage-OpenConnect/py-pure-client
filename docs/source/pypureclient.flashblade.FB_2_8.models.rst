@@ -1004,6 +1004,14 @@ pypureclient.flashblade.FB\_2\_8.models.file\_lock\_nlm\_reclamation\_response m
    :undoc-members:
    :show-inheritance:
 
+pypureclient.flashblade.FB\_2\_8.models.file\_lock\_range module
+----------------------------------------------------------------
+
+.. automodule:: pypureclient.flashblade.FB_2_8.models.file_lock_range
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 pypureclient.flashblade.FB\_2\_8.models.file\_lock\_response module
 -------------------------------------------------------------------
 
@@ -1208,14 +1216,6 @@ pypureclient.flashblade.FB\_2\_8.models.file\_system\_users\_performance\_get\_r
 ----------------------------------------------------------------------------------------------
 
 .. automodule:: pypureclient.flashblade.FB_2_8.models.file_system_users_performance_get_response
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-pypureclient.flashblade.FB\_2\_8.models.filelock\_range module
---------------------------------------------------------------
-
-.. automodule:: pypureclient.flashblade.FB_2_8.models.filelock_range
    :members:
    :undoc-members:
    :show-inheritance:

@@ -62,6 +62,11 @@ FlashBlade REST 2.8 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.FB_2_8.client.Client
+
+FlashBlade REST 2.9 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.FB_2_9.client.Client
     :members:
 
 
@@ -229,6 +234,18 @@ ArrayConnectionPost
 ~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.ArrayConnectionPost
+   :members:
+
+ArrayEncryption
+~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.ArrayEncryption
+   :members:
+
+ArrayEncryptionDataAtRest
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.ArrayEncryptionDataAtRest
    :members:
 
 ArrayEradicationConfig
@@ -525,6 +542,12 @@ FileLock
 .. autoclass:: pypureclient.flashblade.FileLock
    :members:
 
+FileLockRange
+~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.FileLockRange
+   :members:
+
 FileSystem
 ~~~~~~~~~~
 
@@ -595,12 +618,6 @@ FileSystemUserPerformance
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.FileSystemUserPerformance
-   :members:
-
-FilelockRange
-~~~~~~~~~~~~~
-
-.. autoclass:: pypureclient.flashblade.FilelockRange
    :members:
 
 FixedLocationReference
@@ -1459,8 +1476,8 @@ If you don't want the individual results, you can use ``total_only``.
     if type(res) == pypureclient.responses.ValidResponse:
         print(list(res.items))
 
-Active Directory 
-~~~~~~~~~~~~~~~~~
+Active Directory
+~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -1494,8 +1511,8 @@ get_active_directory_test
 .. literalinclude:: source/examples/FB2.0/get_active_directory_test.py
     :language: python
 
-Administrators 
-~~~~~~~~~~~~~~~
+Administrators
+~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -1554,7 +1571,7 @@ patch_admins_settings
     :language: python
 
 Alert Watchers
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -1589,7 +1606,7 @@ get_alert_watchers_test
     :language: python
 
 Alerts
-~~~~~~~
+~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -1606,7 +1623,7 @@ patch_alerts
     :language: python
 
 API Clients
-~~~~~~~~~~~~
+~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -1635,7 +1652,7 @@ post_api_clients
     :language: python
 
 Array Connections
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -1688,7 +1705,7 @@ post_array_connections
     :language: python
 
 Arrays
-~~~~~~~
+~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -1777,7 +1794,7 @@ get_arrays_supported_time_zones
     :language: python
 
 Audits
-~~~~~~~
+~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -1788,12 +1805,12 @@ get_audits
     :language: python
 
 Authorization
-~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
 Blades
-~~~~~~~
+~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -1804,7 +1821,7 @@ get_blades
     :language: python
 
 Bucket Replica Links
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -1833,7 +1850,7 @@ post_bucket_replica_links
     :language: python
 
 Buckets
-~~~~~~~~
+~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -1874,7 +1891,7 @@ get_buckets_s3_specific_performance
     :language: python
 
 Certificate Groups
-~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -1921,7 +1938,7 @@ get_certificate_groups_uses
     :language: python
 
 Certificates
-~~~~~~~~~~~~~
+~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -1974,7 +1991,7 @@ get_certificates_uses
     :language: python
 
 Clients
-~~~~~~~~
+~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -1985,7 +2002,7 @@ get_arrays_clients_performance
     :language: python
 
 Directory Services
-~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2026,7 +2043,7 @@ patch_directory_services_test
     :language: python
 
 DNS
-~~~~
+~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2043,7 +2060,7 @@ patch_dns
     :language: python
 
 Drives
-~~~~~~~
+~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2054,7 +2071,7 @@ get_drives
     :language: python
 
 File System Replica Links
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2095,7 +2112,7 @@ get_file_system_replica_links_transfer
     :language: python
 
 File System Snapshots
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2148,7 +2165,7 @@ get_file_system_snapshots_transfer
     :language: python
 
 File Systems
-~~~~~~~~~~~~~
+~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2243,7 +2260,7 @@ get_file_systems_users_performance
     :language: python
 
 Hardware
-~~~~~~~~~
+~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2260,7 +2277,7 @@ patch_hardware
     :language: python
 
 Hardware Connectors
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2283,7 +2300,7 @@ get_hardware_connectors_performance
     :language: python
 
 Keytabs
-~~~~~~~~
+~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2318,7 +2335,7 @@ post_keytabs_upload
     :language: python
 
 Kmip
-~~~~~
+~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2353,7 +2370,7 @@ get_kmip_test
     :language: python
 
 Lifecycle Rules
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2382,7 +2399,7 @@ post_lifecycle_rules
     :language: python
 
 Link Aggregation Groups
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2411,7 +2428,7 @@ post_link_aggregation_groups
     :language: python
 
 Logs
-~~~~~
+~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2440,7 +2457,7 @@ get_logs
     :language: python
 
 Network Interfaces
-~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2481,7 +2498,7 @@ get_network_interfaces_trace
     :language: python
 
 Object Store Access Keys
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2510,7 +2527,7 @@ post_object_store_access_keys
     :language: python
 
 Object Store Accounts
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2539,7 +2556,7 @@ post_object_store_accounts
     :language: python
 
 Object Store Remote Credentials
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2568,7 +2585,7 @@ post_object_store_remote_credentials
     :language: python
 
 Object Store Users
-~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2609,7 +2626,7 @@ post_object_store_users
     :language: python
 
 Object Store Virtual Hosts
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2632,7 +2649,7 @@ post_object_store_virtual_hosts
     :language: python
 
 Policies   Nfs
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2685,7 +2702,7 @@ post_nfs_export_policies_rules
     :language: python
 
 Policies   Object Store Access
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2762,7 +2779,7 @@ get_object_store_access_policy_actions
     :language: python
 
 Policies   Snapshot
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2845,7 +2862,7 @@ post_policies
     :language: python
 
 Policies  All
-~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2862,7 +2879,7 @@ get_policies_all_members
     :language: python
 
 Quotas
-~~~~~~~
+~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2927,7 +2944,7 @@ post_quotas_users
     :language: python
 
 Rdl
-~~~~
+~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2956,7 +2973,7 @@ get_rapid_data_locking_test
     :language: python
 
 Roles
-~~~~~~
+~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2967,7 +2984,7 @@ get_roles
     :language: python
 
 Sessions
-~~~~~~~~~
+~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2978,7 +2995,7 @@ get_sessions
     :language: python
 
 SMTP
-~~~~~
+~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2995,7 +3012,7 @@ patch_smtp_servers
     :language: python
 
 SNMP Agents
-~~~~~~~~~~~~
+~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -3018,7 +3035,7 @@ patch_snmp_agents
     :language: python
 
 SNMP Managers
-~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -3053,7 +3070,7 @@ get_snmp_managers_test
     :language: python
 
 Subnets
-~~~~~~~~
+~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -3082,7 +3099,7 @@ post_subnets
     :language: python
 
 Support
-~~~~~~~~
+~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -3105,7 +3122,7 @@ get_support_test
     :language: python
 
 Syslog
-~~~~~~~
+~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -3152,7 +3169,7 @@ get_syslog_servers_test
     :language: python
 
 Targets
-~~~~~~~~
+~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -3187,7 +3204,7 @@ post_targets
     :language: python
 
 Usage
-~~~~~~
+~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -3204,7 +3221,7 @@ get_usage_users
     :language: python
 
 Verification Keys
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
