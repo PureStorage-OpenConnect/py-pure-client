@@ -127,6 +127,11 @@ FlashArray REST 2.23 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.FA_2_23.client.Client
+
+FlashArray REST 2.24 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.FA_2_24.client.Client
     :members:
 
 
@@ -780,6 +785,18 @@ Kmip
 ~~~~
 
 .. autoclass:: pypureclient.flasharray.Kmip
+   :members:
+
+KmipCertificate
+~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.KmipCertificate
+   :members:
+
+KmipObject
+~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.KmipObject
    :members:
 
 KmipPatch

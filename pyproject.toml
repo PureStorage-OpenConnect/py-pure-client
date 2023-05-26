@@ -1,6 +1,6 @@
 [project]
 name = "py-pure-client"
-version = "1.35.0"
+version = "1.36.0"
 description = "Pure Storage Python clients for FlashArray, FlashBlade, and Pure1 APIs"
 authors = [
     { name = "Pure Storage", email = "tvilcu@purestorage.com" }
@@ -32,3 +32,4 @@ dependencies = [
 [build-system]
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
+
