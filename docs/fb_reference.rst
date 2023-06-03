@@ -67,6 +67,11 @@ FlashBlade REST 2.9 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.FB_2_9.client.Client
+
+FlashBlade REST 2.10 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.FB_2_10.client.Client
     :members:
 
 
@@ -546,6 +551,12 @@ FileLockRange
 ~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.FileLockRange
+   :members:
+
+FileSession
+~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.FileSession
    :members:
 
 FileSystem
@@ -1058,6 +1069,18 @@ PolicyRule
 .. autoclass:: pypureclient.flashblade.PolicyRule
    :members:
 
+PolicyRuleIndex
+~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.PolicyRuleIndex
+   :members:
+
+PolicyRuleIndexInPolicy
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.PolicyRuleIndexInPolicy
+   :members:
+
 PolicyRuleObjectAccess
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1164,6 +1187,84 @@ Smb
 ~~~
 
 .. autoclass:: pypureclient.flashblade.Smb
+   :members:
+
+SmbClientPolicy
+~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.SmbClientPolicy
+   :members:
+
+SmbClientPolicyPost
+~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.SmbClientPolicyPost
+   :members:
+
+SmbClientPolicyRule
+~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.SmbClientPolicyRule
+   :members:
+
+SmbClientPolicyRuleBase
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.SmbClientPolicyRuleBase
+   :members:
+
+SmbClientPolicyRuleInPolicy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.SmbClientPolicyRuleInPolicy
+   :members:
+
+SmbClientPolicyRulePost
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.SmbClientPolicyRulePost
+   :members:
+
+SmbClientPolicyRulePostBase
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.SmbClientPolicyRulePostBase
+   :members:
+
+SmbClientPolicyRulePostInPolicy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.SmbClientPolicyRulePostInPolicy
+   :members:
+
+SmbPost
+~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.SmbPost
+   :members:
+
+SmbSharePolicy
+~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.SmbSharePolicy
+   :members:
+
+SmbSharePolicyPost
+~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.SmbSharePolicyPost
+   :members:
+
+SmbSharePolicyRule
+~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.SmbSharePolicyRule
+   :members:
+
+SmbSharePolicyRulePost
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.SmbSharePolicyRulePost
    :members:
 
 SmtpServer
@@ -1310,6 +1411,12 @@ User
 .. autoclass:: pypureclient.flashblade.User
    :members:
 
+UserNoId
+~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.UserNoId
+   :members:
+
 UserQuota
 ~~~~~~~~~
 
@@ -1338,6 +1445,12 @@ VerificationKeyPatch
 ~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.VerificationKeyPatch
+   :members:
+
+Version
+~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.Version
    :members:
 
 model
@@ -2075,6 +2188,12 @@ File System Replica Links
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
+delete_file_system_replica_links
+''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.10/delete_file_system_replica_links.py
+    :language: python
+
 get_file_system_replica_links
 '''''''''''''''''''''''''''''
 
@@ -2196,7 +2315,7 @@ get_file_systems_locks_clients
 delete_file_systems_locks
 '''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.8/delete_file_systems_locks.py
+.. literalinclude:: source/examples/FB2.10/delete_file_systems_locks.py
     :language: python
 
 get_file_systems_locks
@@ -2214,13 +2333,13 @@ post_file_systems_locks_nlm_reclamations
 patch_file_systems
 ''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.3/patch_file_systems.py
+.. literalinclude:: source/examples/FB2.10/patch_file_systems.py
     :language: python
 
 get_file_systems_performance
 ''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.0/get_file_systems_performance.py
+.. literalinclude:: source/examples/FB2.10/get_file_systems_performance.py
     :language: python
 
 get_file_systems_policies_all
@@ -2250,7 +2369,19 @@ post_file_systems_policies
 post_file_systems
 '''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.3/post_file_systems.py
+.. literalinclude:: source/examples/FB2.10/post_file_systems.py
+    :language: python
+
+delete_file_systems_sessions
+''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.10/delete_file_systems_sessions.py
+    :language: python
+
+get_file_systems_sessions
+'''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.10/get_file_systems_sessions.py
     :language: python
 
 get_file_systems_users_performance
@@ -2776,6 +2907,112 @@ get_object_store_access_policy_actions
 ''''''''''''''''''''''''''''''''''''''
 
 .. literalinclude:: source/examples/FB2.2/get_object_store_access_policy_actions.py
+    :language: python
+
+Policies   Smb Client
+~~~~~~~~~~~~~~~~~~~~~
+
+The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+delete_smb_client_policies
+''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.10/delete_smb_client_policies.py
+    :language: python
+
+get_smb_client_policies
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.10/get_smb_client_policies.py
+    :language: python
+
+patch_smb_client_policies
+'''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.10/patch_smb_client_policies.py
+    :language: python
+
+post_smb_client_policies
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.10/post_smb_client_policies.py
+    :language: python
+
+delete_smb_client_policies_rules
+''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.10/delete_smb_client_policies_rules.py
+    :language: python
+
+get_smb_client_policies_rules
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.10/get_smb_client_policies_rules.py
+    :language: python
+
+patch_smb_client_policies_rules
+'''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.10/patch_smb_client_policies_rules.py
+    :language: python
+
+post_smb_client_policies_rules
+''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.10/post_smb_client_policies_rules.py
+    :language: python
+
+Policies   Smb Share
+~~~~~~~~~~~~~~~~~~~~
+
+The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+delete_smb_share_policies
+'''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.10/delete_smb_share_policies.py
+    :language: python
+
+get_smb_share_policies
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.10/get_smb_share_policies.py
+    :language: python
+
+patch_smb_share_policies
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.10/patch_smb_share_policies.py
+    :language: python
+
+post_smb_share_policies
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.10/post_smb_share_policies.py
+    :language: python
+
+delete_smb_share_policies_rules
+'''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.10/delete_smb_share_policies_rules.py
+    :language: python
+
+get_smb_share_policies_rules
+''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.10/get_smb_share_policies_rules.py
+    :language: python
+
+patch_smb_share_policies_rules
+''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.10/patch_smb_share_policies_rules.py
+    :language: python
+
+post_smb_share_policies_rules
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.10/post_smb_share_policies_rules.py
     :language: python
 
 Policies   Snapshot

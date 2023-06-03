@@ -8,6 +8,7 @@ from . import FB_2_4
 from . import FB_2_5
 from . import FB_2_9
 from . import FB_2_6
+from . import FB_2_10
 from . import FB_2_2
 from . import FB_2_0
 from . import FB_2_7
@@ -20,6 +21,7 @@ fb_modules = {
     '2.5': FB_2_5,
     '2.9': FB_2_9,
     '2.6': FB_2_6,
+    '2.10': FB_2_10,
     '2.2': FB_2_2,
     '2.0': FB_2_0,
     '2.7': FB_2_7,
