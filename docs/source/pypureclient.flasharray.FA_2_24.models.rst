@@ -892,14 +892,6 @@ pypureclient.flasharray.FA\_2\_24.models.directory\_lock\_nlm\_reclamation modul
    :undoc-members:
    :show-inheritance:
 
-pypureclient.flasharray.FA\_2\_24.models.directory\_lock\_nlm\_reclamation\_get\_response module
-------------------------------------------------------------------------------------------------
-
-.. automodule:: pypureclient.flasharray.FA_2_24.models.directory_lock_nlm_reclamation_get_response
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 pypureclient.flasharray.FA\_2\_24.models.directory\_lock\_nlm\_reclamation\_response module
 -------------------------------------------------------------------------------------------
 
