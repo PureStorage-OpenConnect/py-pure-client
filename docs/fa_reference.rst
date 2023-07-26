@@ -132,6 +132,11 @@ FlashArray REST 2.24 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.FA_2_24.client.Client
+
+FlashArray REST 2.25 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.FA_2_25.client.Client
     :members:
 
 
@@ -1493,6 +1498,12 @@ ProtectionGroupSnapshotPost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.ProtectionGroupSnapshotPost
+   :members:
+
+ProtectionGroupSnapshotReplica
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.ProtectionGroupSnapshotReplica
    :members:
 
 ProtectionGroupSnapshotTransfer

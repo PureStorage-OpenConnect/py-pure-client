@@ -92,9 +92,9 @@ class VolumeSpaceCommon(object):
             total_reduction (float): The ratio of provisioned sectors within a volume versus the amount of physical space the data occupies after reduction via data compression and deduplication and with thin provisioning savings. Total reduction is data reduction with thin provisioning savings. For example, a total reduction ratio of 10&#58;1 means that for every 10 MB of provisioned space, 1 MB is stored on the array's flash modules.
             unique (int): The unique physical space occupied by customer data. Unique physical space does not include shared space, snapshots, and internal array metadata. Measured in bytes. On Evergreen//One arrays, this is the effective space contributed by unique customer data, measured in bytes. Unique data does not include shared space, snapshots, and internal array metadata.
             virtual (int): The amount of logically written data that a volume or a snapshot references. Measured in bytes.
-            snapshots_effective (int): Deprecated. The effective space contributed by data unique to one or more snapshots, measured in bytes. Please use the `snapshots` field in the future, as it contains the same information for Evergreen//One arrays.
-            unique_effective (int): Deprecated. The effective space contributed by unique customer data. Unique data does not include shared space, snapshots, and internal array metadata, measured in bytes. Please use the `unique` field in the future, as it contains the same information for Evergreen//One arrays.
-            total_effective (int): Deprecated. The total effective space contributed by customer data, measured in bytes. Please use the `total` field in the future, as it contains the same information for Evergreen//One arrays.
+            snapshots_effective (int): Deprecated. This will always return `null`. Please use the `snapshots` field in the future, as it contains the same information for Evergreen//One arrays.
+            unique_effective (int): Deprecated. This will always return `null`. Please use the `unique` field in the future, as it contains the same information for Evergreen//One arrays.
+            total_effective (int): Deprecated. This will always return `null`. Please use the `total_physical` field instead, as it contains the same information for Evergreen//One arrays.
         """
         if data_reduction is not None:
             self.data_reduction = data_reduction
@@ -169,6 +169,24 @@ class VolumeSpaceCommon(object):
             raise AttributeError
         else:
             return value
+
+    def __getitem__(self, key):
+        if key not in self.attribute_map:
+            raise KeyError("Invalid key `{}` for `VolumeSpaceCommon`".format(key))
+        return object.__getattribute__(self, key)
+
+    def __setitem__(self, key, value):
+        if key not in self.attribute_map:
+            raise KeyError("Invalid key `{}` for `VolumeSpaceCommon`".format(key))
+        object.__setattr__(self, key, value)
+
+    def __delitem__(self, key):
+        if key not in self.attribute_map:
+            raise KeyError("Invalid key `{}` for `VolumeSpaceCommon`".format(key))
+        object.__delattr__(self, key)
+
+    def keys(self):
+        return self.attribute_map.keys()
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -1,9 +1,9 @@
 [project]
 name = "py-pure-client"
-version = "1.37.0"
+version = "1.38.0"
 description = "Pure Storage Python clients for FlashArray, FlashBlade, and Pure1 APIs"
 authors = [
-    { name = "Pure Storage", email = "tvilcu@purestorage.com" }
+    { name = "Pure Storage", email = "openconnect@purestorage.com" }
 ]
 readme = "README.md"
 license = {file = "LICENSE.txt"}

@@ -93,6 +93,24 @@ class SNMPManagers(object):
         else:
             return value
 
+    def __getitem__(self, key):
+        if key not in self.attribute_map:
+            raise KeyError("Invalid key `{}` for `SNMPManagers`".format(key))
+        return object.__getattribute__(self, key)
+
+    def __setitem__(self, key, value):
+        if key not in self.attribute_map:
+            raise KeyError("Invalid key `{}` for `SNMPManagers`".format(key))
+        object.__setattr__(self, key, value)
+
+    def __delitem__(self, key):
+        if key not in self.attribute_map:
+            raise KeyError("Invalid key `{}` for `SNMPManagers`".format(key))
+        object.__delattr__(self, key)
+
+    def keys(self):
+        return self.attribute_map.keys()
+
     def to_dict(self):
         """Returns the model properties as a dict"""
         result = {}

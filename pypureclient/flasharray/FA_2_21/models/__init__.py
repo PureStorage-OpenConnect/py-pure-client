@@ -149,7 +149,6 @@ from .directory_export_post import DirectoryExportPost
 from .directory_export_response import DirectoryExportResponse
 from .directory_get_response import DirectoryGetResponse
 from .directory_lock_nlm_reclamation import DirectoryLockNlmReclamation
-from .directory_lock_nlm_reclamation_get_response import DirectoryLockNlmReclamationGetResponse
 from .directory_lock_nlm_reclamation_response import DirectoryLockNlmReclamationResponse
 from .directory_patch import DirectoryPatch
 from .directory_performance import DirectoryPerformance

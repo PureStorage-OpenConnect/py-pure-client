@@ -1,55 +1,58 @@
 import requests
 
+from ..client_settings import resolve_ssl_validation
 from . import PureError
 
-from . import FA_2_0
-from . import FA_2_1
-from . import FA_2_2
-from . import FA_2_3
-from . import FA_2_4
 from . import FA_2_5
-from . import FA_2_6
-from . import FA_2_7
-from . import FA_2_8
-from . import FA_2_9
-from . import FA_2_10
-from . import FA_2_11
-from . import FA_2_13
-from . import FA_2_14
-from . import FA_2_15
-from . import FA_2_16
-from . import FA_2_17
-from . import FA_2_19
-from . import FA_2_20
-from . import FA_2_21
-from . import FA_2_22
-from . import FA_2_23
+from . import FA_2_4
 from . import FA_2_24
+from . import FA_2_14
+from . import FA_2_17
+from . import FA_2_20
+from . import FA_2_2
+from . import FA_2_1
+from . import FA_2_8
+from . import FA_2_15
+from . import FA_2_13
+from . import FA_2_21
+from . import FA_2_16
+from . import FA_2_22
+from . import FA_2_11
+from . import FA_2_9
+from . import FA_2_19
+from . import FA_2_10
+from . import FA_2_7
+from . import FA_2_23
+from . import FA_2_25
+from . import FA_2_0
+from . import FA_2_6
+from . import FA_2_3
 
 fa_modules = {
-    '2.0': FA_2_0,
-    '2.1': FA_2_1,
-    '2.2': FA_2_2,
-    '2.3': FA_2_3,
-    '2.4': FA_2_4,
     '2.5': FA_2_5,
-    '2.6': FA_2_6,
-    '2.7': FA_2_7,
-    '2.8': FA_2_8,
-    '2.9': FA_2_9,
-    '2.10': FA_2_10,
-    '2.11': FA_2_11,
-    '2.13': FA_2_13,
-    '2.14': FA_2_14,
-    '2.15': FA_2_15,
-    '2.16': FA_2_16,
-    '2.17': FA_2_17,
-    '2.19': FA_2_19,
-    '2.20': FA_2_20,
-    '2.21': FA_2_21,
-    '2.22': FA_2_22,
-    '2.23': FA_2_23,
+    '2.4': FA_2_4,
     '2.24': FA_2_24,
+    '2.14': FA_2_14,
+    '2.17': FA_2_17,
+    '2.20': FA_2_20,
+    '2.2': FA_2_2,
+    '2.1': FA_2_1,
+    '2.8': FA_2_8,
+    '2.15': FA_2_15,
+    '2.13': FA_2_13,
+    '2.21': FA_2_21,
+    '2.16': FA_2_16,
+    '2.22': FA_2_22,
+    '2.11': FA_2_11,
+    '2.9': FA_2_9,
+    '2.19': FA_2_19,
+    '2.10': FA_2_10,
+    '2.7': FA_2_7,
+    '2.23': FA_2_23,
+    '2.25': FA_2_25,
+    '2.0': FA_2_0,
+    '2.6': FA_2_6,
+    '2.3': FA_2_3,
 }
 
 MW_DEV_VERSION = '2.DEV'
@@ -61,7 +64,8 @@ DEFAULT_RETRIES = 5
 
 def Client(target, version=None, id_token=None, private_key_file=None, private_key_password=None,
            username=None, client_id=None, key_id=None, issuer=None, api_token=None,
-           retries=DEFAULT_RETRIES, timeout=DEFAULT_TIMEOUT, ssl_cert=None, user_agent=None):
+           retries=DEFAULT_RETRIES, timeout=DEFAULT_TIMEOUT, ssl_cert=None, user_agent=None,
+           verify_ssl=None):
     """
     Initialize a FlashArray Client.
 
@@ -89,7 +93,7 @@ def Client(target, version=None, id_token=None, private_key_file=None, private_k
         issuer (str, optional):
             API client's trusted identity issuer on the array.
         api_token (str, optional):
-                API token for the user.
+            API token for the user.
         retries (int, optional):
             The number of times to retry an API call if it fails for a
             non-blocking reason. Defaults to 5.
@@ -100,11 +104,16 @@ def Client(target, version=None, id_token=None, private_key_file=None, private_k
             SSL certificate to use. Defaults to None.
         user_agent (str, optional):
             User-Agent request header to use.
+        verify_ssl (bool | str, optional):
+            Controls SSL certificate validation.
+            `True` specifies that the server validation uses default trust anchors;
+            `False` switches certificate validation off, **not safe!**;
+            It also accepts string value for a path to directory with certificates.
 
     Raises:
         PureError: If it could not create an ID or access token
     """
-    array_versions = get_array_versions(target)
+    array_versions = get_array_versions(target, verify_ssl)
     if version is not None:
         version = validate_version(array_versions, version)
     else:
@@ -114,12 +123,12 @@ def Client(target, version=None, id_token=None, private_key_file=None, private_k
     client = fa_module.Client(target=target, id_token=id_token, private_key_file=private_key_file,
                               private_key_password=private_key_password, username=username, client_id=client_id,
                               key_id=key_id, issuer=issuer, api_token=api_token, retries=retries, timeout=timeout,
-                              ssl_cert=ssl_cert, user_agent=user_agent)
+                              ssl_cert=ssl_cert, user_agent=user_agent, verify_ssl=resolve_ssl_validation(verify_ssl))
     return client
 
-def get_array_versions(target):
+def get_array_versions(target, verify_ssl=None):
     url = 'https://{}/api/api_version'.format(target)
-    response = requests.get(url, verify=False)
+    response = requests.get(url, verify=resolve_ssl_validation(verify_ssl))
     if response.status_code == requests.codes.ok:
         return response.json()['version']
     else:
