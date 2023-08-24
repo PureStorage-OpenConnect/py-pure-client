@@ -112,12 +112,12 @@ class SustainabilityAssessment(object):
             array_total_load (float): The load percentage. Average over the assessment window.
             power_typical_spec (float): The typical power consumption of the appliance in Watts. The value is derived from benchmark data and remains static for the model and configuration.
             power_peak_spec (float): The peak power consumption of the appliance in Watts. The value is derived from benchmark data and remains static for the model and configuration.
-            power_average (float): The actual average power consumption of the appliance.
+            power_average (float): The average of power consumption of the appliance. Average over the assessment window.
             heat_typical_spec (float): The typical heat production of the appliance in BTU/hr. The value is derived from benchmark data and remains static for the model and configuration.
             heat_peak_spec (float): The peak heat production of the appliance in BTU/hr. The value is derived from benchmark data and remains static for the model and configuration.
-            heat_average (float): The actual average heat production of the appliance in BTU/Hr.
-            power_per_used_space (float): The actual power consumption per TiB of used space.
-            power_per_usable_capacity (float): The actual power consumption per TiB of usable capacity.
+            heat_average (float): The average of heat production of the appliance in BTU/Hr. Average over the assessment window.
+            power_per_used_space (float): The average of power consumption per TiB of used space.
+            power_per_usable_capacity (float): The average of power consumption per TiB of usable capacity.
             assessment_level (str): The assessment level of an appliance. Valid values include: good - The assessment level of appliance is GOOD - all green. recommendation - There are some actions   that can be done to bring appliance to a GOOD level. action_required - The lowest level of assessment.   Some actions are required to improve the assessment level.
         """
         if as_of is not None:
