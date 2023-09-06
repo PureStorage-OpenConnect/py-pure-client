@@ -14226,8 +14226,7 @@ class Client(object):
         """
         Creates an offload target, connecting it to an array. Before you can connect to,
         manage, and replicate to an offload target, the Purity Run app must be
-        installed. For more information about Purity//FA apps, see the Apps section of
-        this guide.
+        installed.
 
         Args:
             references (list[FixedReference], optional):
@@ -21304,9 +21303,9 @@ class Client(object):
     ):
         # type: (...) -> models.ProtectionGroupSnapshotReplicaResponse
         """
-        Send protection group snapshots to protection pgroup targets. When then `on`
-        option is used, only specified targets will recieve the protection group
-        snapshots.
+        Creates protection group snapshots to send to protection pgroup targets. When
+        the `on` option is used, only specified targets will recieve the protection
+        group snapshots.
 
         Args:
             references (list[FixedReference], optional):
@@ -21379,7 +21378,7 @@ class Client(object):
     ):
         # type: (...) -> models.TestResultWithResourcePostResponse
         """
-        Test the protection group snapshot path without actually taking a snapshot.
+        Create the protection group snapshot path without actually taking a snapshot.
 
         Args:
             sources (list[FixedReference], optional):
@@ -23776,8 +23775,8 @@ class Client(object):
     ):
         # type: (...) -> models.TestResultWithResourcePostResponse
         """
-        Test the remote protection group snapshot path without actually taking a remote
-        protection group snapshot.
+        Create the remote protection group snapshot path without actually taking a
+        remote protection group snapshot.
 
         Args:
             references (list[FixedReference], optional):
@@ -29797,7 +29796,7 @@ class Client(object):
     ):
         # type: (...) -> models.TestResultWithResourcePostResponse
         """
-        Test the volume snapshot path without actually taking a volume snapshot.
+        Creates the volume snapshot path without actually taking a volume snapshot.
 
         Args:
             sources (list[FixedReference], optional):

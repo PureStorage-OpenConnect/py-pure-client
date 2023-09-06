@@ -1,4 +1,4 @@
-USER_AGENT_TEMPLATE = 'pypureclient/1.38.0/{prod}/{rest_version}/{sys}/{rel}'
+USER_AGENT_TEMPLATE = 'pypureclient/1.39.0/{prod}/{rest_version}/{sys}/{rel}'
 
 def resolve_ssl_validation(verify_ssl):
     """

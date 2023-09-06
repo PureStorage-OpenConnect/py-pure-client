@@ -137,6 +137,11 @@ FlashArray REST 2.25 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.FA_2_25.client.Client
+
+FlashArray REST 2.26 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.FA_2_26.client.Client
     :members:
 
 
@@ -660,6 +665,12 @@ EulaSignature
 .. autoclass:: pypureclient.flasharray.EulaSignature
    :members:
 
+FilePost
+~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.FilePost
+   :members:
+
 FileSystem
 ~~~~~~~~~~
 
@@ -916,6 +927,12 @@ MemberNoIdGroup
 ~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.MemberNoIdGroup
+   :members:
+
+MemberNoIdMember
+~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.MemberNoIdMember
    :members:
 
 NetworkInterface
@@ -1548,6 +1565,12 @@ ReferenceNoId
 .. autoclass:: pypureclient.flasharray.ReferenceNoId
    :members:
 
+ReferenceNoIdWithType
+~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.ReferenceNoIdWithType
+   :members:
+
 ReferenceWithType
 ~~~~~~~~~~~~~~~~~
 
@@ -1968,6 +1991,24 @@ SubnetPost
 .. autoclass:: pypureclient.flasharray.SubnetPost
    :members:
 
+Subscription
+~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.Subscription
+   :members:
+
+SubscriptionAsset
+~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.SubscriptionAsset
+   :members:
+
+SubscriptionAssetSubscription
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.SubscriptionAssetSubscription
+   :members:
+
 Support
 ~~~~~~~
 
@@ -2028,6 +2069,12 @@ TestResultWithResource
 .. autoclass:: pypureclient.flasharray.TestResultWithResource
    :members:
 
+TestResultWithResourceWithId
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.TestResultWithResourceWithId
+   :members:
+
 Throttle
 ~~~~~~~~
 
@@ -2050,6 +2097,60 @@ Username
 ~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.Username
+   :members:
+
+Vchost
+~~~~~~
+
+.. autoclass:: pypureclient.flasharray.Vchost
+   :members:
+
+VchostCertificate
+~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.VchostCertificate
+   :members:
+
+VchostCertificatePatch
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.VchostCertificatePatch
+   :members:
+
+VchostCertificatePost
+~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.VchostCertificatePost
+   :members:
+
+VchostEndpoint
+~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.VchostEndpoint
+   :members:
+
+VchostEndpointPatch
+~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.VchostEndpointPatch
+   :members:
+
+VchostEndpointPost
+~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.VchostEndpointPost
+   :members:
+
+VchostPatch
+~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.VchostPatch
+   :members:
+
+VchostPost
+~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.VchostPost
    :members:
 
 VirtualMachine

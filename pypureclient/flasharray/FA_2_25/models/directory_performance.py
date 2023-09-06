@@ -94,9 +94,9 @@ class DirectoryPerformance(object):
             read_bytes_per_sec (int): The number of bytes read per second.
             reads_per_sec (int): The number of read requests processed per second.
             time (int): The time when the sample performance data was taken. Measured in milliseconds since the UNIX epoch.
-            usec_per_other_op (int): The average time it takes the array to process an I/O other request, measured in microseconds. The average time does not include SAN time, queue time, or QoS rate limit time.
-            usec_per_read_op (int): The average time it takes the array to process an I/O read request, measured in microseconds. The average time does not include SAN time, queue time, or QoS rate limit time.
-            usec_per_write_op (int): The average time it takes the array to process an I/O write request, measured in microseconds. The average time does not include SAN time, queue time, or QoS rate limit time.
+            usec_per_other_op (int): The average time it takes the array to process an I/O other request, measured in microseconds.
+            usec_per_read_op (int): The average time it takes the array to process an I/O read request, measured in microseconds.
+            usec_per_write_op (int): The average time it takes the array to process an I/O write request, measured in microseconds.
             write_bytes_per_sec (int): The number of bytes written per second.
             writes_per_sec (int): The number of write requests processed per second.
         """
