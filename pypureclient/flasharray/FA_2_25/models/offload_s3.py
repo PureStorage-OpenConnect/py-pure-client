@@ -70,7 +70,7 @@ class OffloadS3(object):
             secret_access_key (str): The secret access key that goes with the access key ID (`access_key_id`) of the AWS account. The secret access key is 40 characters in length is only accepted when creating the connection between the array and the S3 offload target. The `access_key_id`, `secret_access_key`, and `bucket` parameters must be set together.
             uri (str): The URI used to create a connection between the array and a non-AWS S3 offload target. Storage placement strategies are not supported for non-AWS S3 offload targets. Both the HTTP and HTTPS protocols are allowed.
             auth_region (str): The region that will be used for initial authentication request. This parameter is optional and should be used only when region autodetection fails.
-            profile (str): The Offload target profile that will be selected for this target. This option allows more granular configuration for the target on top of the `protocol` parameter. Values include `s3-aws`, `s3-flashblade`, `s3-scality-ring`, `s3-wasabi-pay-as-you-go`, `s3-wasabi-rcs`, and `s3-other`.
+            profile (str): The offload target profile that will be selected for this target. This option allows more granular configuration for the target on top of the `protocol` parameter. Values include `s3-aws`, `s3-flashblade`, `s3-scality-ring`, `s3-wasabi-pay-as-you-go`, `s3-wasabi-rcs`, and `s3-other`.
         """
         if access_key_id is not None:
             self.access_key_id = access_key_id

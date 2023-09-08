@@ -470,9 +470,9 @@ class ProtectionGroupSnapshotsApi(object):
         _request_timeout=None,  # type: Optional[int]
     ):
         # type: (...) -> models.ProtectionGroupSnapshotReplicaResponse
-        """Send protection group snapshots
+        """Create protection group snapshots
 
-        Send protection group snapshots to protection pgroup targets. When then `on` option is used, only specified targets will recieve the protection group snapshots.
+        Creates protection group snapshots to send to protection pgroup targets. When the `on` option is used, only specified targets will recieve the protection group snapshots.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api225_protection_group_snapshots_replica_post_with_http_info(async_req=True)
@@ -574,9 +574,9 @@ class ProtectionGroupSnapshotsApi(object):
         _request_timeout=None,  # type: Optional[int]
     ):
         # type: (...) -> models.TestResultWithResourcePostResponse
-        """Test the protection group snapshot path
+        """Create a protection group snapshot path
 
-        Test the protection group snapshot path without actually taking a snapshot.
+        Create the protection group snapshot path without actually taking a snapshot.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api225_protection_group_snapshots_test_post_with_http_info(async_req=True)

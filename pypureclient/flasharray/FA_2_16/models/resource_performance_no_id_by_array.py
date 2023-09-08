@@ -130,30 +130,30 @@ class ResourcePerformanceNoIdByArray(object):
     ):
         """
         Keyword args:
-            bytes_per_mirrored_write (int): The average I/O size per mirrored write. Measured in bytes.
+            bytes_per_mirrored_write (int): The average I/O size per mirrored write, measured in bytes.
             bytes_per_op (int): The average I/O size for both read and write (all) operations.
-            bytes_per_read (int): The average I/O size per read. Measured in bytes.
-            bytes_per_write (int): The average I/O size per write. Measured in bytes.
+            bytes_per_read (int): The average I/O size per read, measured in bytes.
+            bytes_per_write (int): The average I/O size per write, measured in bytes.
             mirrored_write_bytes_per_sec (int): The number of mirrored bytes written per second.
             mirrored_writes_per_sec (int): The number of mirrored writes per second.
-            qos_rate_limit_usec_per_mirrored_write_op (int): The average time it takes the array to process a mirrored I/O write request. Measured in microseconds.
-            qos_rate_limit_usec_per_read_op (int): The average time spent waiting due to QoS rate limiting for a read request. Measured in microseconds.
-            qos_rate_limit_usec_per_write_op (int): The average time that a write I/O request spends waiting as a result of the volume reaching its QoS bandwidth limit. Measured in microseconds.
-            queue_usec_per_mirrored_write_op (int): The average time that a mirrored write I/O request spends in the array waiting to be served. Measured in microseconds.
-            queue_usec_per_read_op (int): The average time that a read I/O request spends in the array waiting to be served. Measured in microseconds.
-            queue_usec_per_write_op (int): The average time that a write I/O request spends in the array waiting to be served. Measured in microseconds.
+            qos_rate_limit_usec_per_mirrored_write_op (int): The average time it takes the array to process a mirrored I/O write request, measured in microseconds.
+            qos_rate_limit_usec_per_read_op (int): The average time spent waiting due to QoS rate limiting for a read request, measured in microseconds.
+            qos_rate_limit_usec_per_write_op (int): The average time that a write I/O request spends waiting as a result of the volume reaching its QoS bandwidth limit, measured in microseconds.
+            queue_usec_per_mirrored_write_op (int): The average time that a mirrored write I/O request spends in the array waiting to be served, measured in microseconds.
+            queue_usec_per_read_op (int): The average time that a read I/O request spends in the array waiting to be served, measured in microseconds.
+            queue_usec_per_write_op (int): The average time that a write I/O request spends in the array waiting to be served, measured in microseconds.
             read_bytes_per_sec (int): The number of bytes read per second.
             reads_per_sec (int): The number of read requests processed per second.
-            san_usec_per_mirrored_write_op (int): The average time required to transfer data from the initiator to the array for a mirrored write request. Measured in microseconds.
-            san_usec_per_read_op (int): The average time required to transfer data from the array to the initiator for a read request. Measured in microseconds.
-            san_usec_per_write_op (int): The average time required to transfer data from the initiator to the array for a write request. Measured in microseconds.
-            service_usec_per_mirrored_write_op (int): The average time required for the array to service a mirrored write request. Measured in microseconds.
-            service_usec_per_read_op (int): The average time required for the array to service a read request. Measured in microseconds.
-            service_usec_per_write_op (int): The average time required for the array to service a write request. Measured in microseconds.
-            time (int): The time when the sample performance data was taken. Measured in milliseconds since the UNIX epoch.
-            usec_per_mirrored_write_op (int): The average time it takes the array to process a mirrored I/O write request. Measured in microseconds. The average time does not include SAN time, queue time, or QoS rate limit time.
-            usec_per_read_op (int): The average time it takes the array to process an I/O read request. Measured in microseconds. The average time does not include SAN time, queue time, or QoS rate limit time.
-            usec_per_write_op (int): The average time it takes the array to process an I/O write request. Measured in microseconds. The average time does not include SAN time, queue time, or QoS rate limit time.
+            san_usec_per_mirrored_write_op (int): The average time required to transfer data from the initiator to the array for a mirrored write request, measured in microseconds.
+            san_usec_per_read_op (int): The average time required to transfer data from the array to the initiator for a read request, measured in microseconds.
+            san_usec_per_write_op (int): The average time required to transfer data from the initiator to the array for a write request, measured in microseconds.
+            service_usec_per_mirrored_write_op (int): The average time required for the array to service a mirrored write request, measured in microseconds.
+            service_usec_per_read_op (int): The average time required for the array to service a read request, measured in microseconds.
+            service_usec_per_write_op (int): The average time required for the array to service a write request, measured in microseconds.
+            time (int): The time when the sample performance data was taken, measured in milliseconds since the UNIX epoch.
+            usec_per_mirrored_write_op (int): The average time it takes the array to process a mirrored I/O write request, measured in microseconds. Beginning in Purity 6.3.14 and 6.4.10 and later, including later major versions (6.5.x, 6.6.x and beyond), queue time is included. The average time does not include SAN time or QoS rate limit time.
+            usec_per_read_op (int): The average time it takes the array to process an I/O read request, measured in microseconds. Beginning in Purity 6.3.14 and 6.4.10 and later, including later major versions (6.5.x, 6.6.x and beyond), queue time is included. The average time does not include SAN time or QoS rate limit time.
+            usec_per_write_op (int): The average time it takes the array to process an I/O write request, measured in microseconds. Beginning in Purity 6.3.14 and 6.4.10 and later, including later major versions (6.5.x, 6.6.x and beyond), queue time is included. The average time does not include SAN time or QoS rate limit time.
             write_bytes_per_sec (int): The number of bytes written per second.
             writes_per_sec (int): The number of write requests processed per second.
             service_usec_per_read_op_cache_reduction (float): The percentage reduction in `service_usec_per_read_op` due to data cache hits. For example, a value of 0.25 indicates that the value of `service_usec_per_read_op` is 25&#37; lower than it would have been without any data cache hits.

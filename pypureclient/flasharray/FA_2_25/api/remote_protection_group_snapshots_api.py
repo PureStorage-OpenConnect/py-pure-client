@@ -501,9 +501,9 @@ class RemoteProtectionGroupSnapshotsApi(object):
         _request_timeout=None,  # type: Optional[int]
     ):
         # type: (...) -> models.TestResultWithResourcePostResponse
-        """Test the remote protection group snapshot path
+        """Create the remote protection group snapshot path
 
-        Test the remote protection group snapshot path without actually taking a remote protection group snapshot.
+        Create the remote protection group snapshot path without actually taking a remote protection group snapshot.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api225_remote_protection_group_snapshots_test_post_with_http_info(async_req=True)

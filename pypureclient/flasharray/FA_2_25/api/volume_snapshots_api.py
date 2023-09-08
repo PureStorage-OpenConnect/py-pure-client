@@ -869,9 +869,9 @@ class VolumeSnapshotsApi(object):
         _request_timeout=None,  # type: Optional[int]
     ):
         # type: (...) -> models.TestResultWithResourcePostResponse
-        """Test the volume snapshot path
+        """Create the volume snapshot path
 
-        Test the volume snapshot path without actually taking a volume snapshot.
+        Creates the volume snapshot path without actually taking a volume snapshot.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api225_volume_snapshots_test_post_with_http_info(volume_snapshot, async_req=True)

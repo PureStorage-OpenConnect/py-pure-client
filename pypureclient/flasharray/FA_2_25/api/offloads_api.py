@@ -253,7 +253,7 @@ class OffloadsApi(object):
         # type: (...) -> models.OffloadResponse
         """Create offload target
 
-        Creates an offload target, connecting it to an array. Before you can connect to, manage, and replicate to an offload target, the Purity Run app must be installed. For more information about Purity//FA apps, see the Apps section of this guide.
+        Creates an offload target, connecting it to an array. Before you can connect to, manage, and replicate to an offload target, the Purity Run app must be installed.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api225_offloads_post_with_http_info(offload, async_req=True)
