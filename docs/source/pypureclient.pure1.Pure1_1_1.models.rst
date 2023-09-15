@@ -60,6 +60,14 @@ pypureclient.pure1.Pure1\_1\_1.models.arrays module
    :undoc-members:
    :show-inheritance:
 
+pypureclient.pure1.Pure1\_1\_1.models.arrays\_built\_in module
+--------------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_1.models.arrays_built_in
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 pypureclient.pure1.Pure1\_1\_1.models.arrays\_resource module
 -------------------------------------------------------------
 
@@ -468,6 +476,46 @@ pypureclient.pure1.Pure1\_1\_1.models.install\_address module
    :undoc-members:
    :show-inheritance:
 
+pypureclient.pure1.Pure1\_1\_1.models.invoice module
+----------------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_1.models.invoice
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.pure1.Pure1\_1\_1.models.invoice\_get\_response module
+-------------------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_1.models.invoice_get_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.pure1.Pure1\_1\_1.models.invoice\_line module
+----------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_1.models.invoice_line
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.pure1.Pure1\_1\_1.models.invoice\_line\_component module
+---------------------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_1.models.invoice_line_component
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.pure1.Pure1\_1\_1.models.invoice\_response module
+--------------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_1.models.invoice_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 pypureclient.pure1.Pure1\_1\_1.models.license\_resource\_reference module
 -------------------------------------------------------------------------
 
@@ -480,14 +528,6 @@ pypureclient.pure1.Pure1\_1\_1.models.marketplace\_partner module
 -----------------------------------------------------------------
 
 .. automodule:: pypureclient.pure1.Pure1_1_1.models.marketplace_partner
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-pypureclient.pure1.Pure1\_1\_1.models.install\_address module
--------------------------------------------------------------
-
-.. automodule:: pypureclient.pure1.Pure1_1_1.models.install_address
    :members:
    :undoc-members:
    :show-inheritance:
@@ -932,62 +972,6 @@ pypureclient.pure1.Pure1\_1\_1.models.sustainability\_insight\_array\_response m
    :undoc-members:
    :show-inheritance:
 
-pypureclient.pure1.Pure1\_1\_1.models.sustainability\_array module
-------------------------------------------------------------------
-
-.. automodule:: pypureclient.pure1.Pure1_1_1.models.sustainability_array
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-pypureclient.pure1.Pure1\_1\_1.models.sustainability\_array\_get\_response module
----------------------------------------------------------------------------------
-
-.. automodule:: pypureclient.pure1.Pure1_1_1.models.sustainability_array_get_response
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-pypureclient.pure1.Pure1\_1\_1.models.sustainability\_array\_response module
-----------------------------------------------------------------------------
-
-.. automodule:: pypureclient.pure1.Pure1_1_1.models.sustainability_array_response
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-pypureclient.pure1.Pure1\_1\_1.models.sustainability\_assessment module
------------------------------------------------------------------------
-
-.. automodule:: pypureclient.pure1.Pure1_1_1.models.sustainability_assessment
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-pypureclient.pure1.Pure1\_1\_1.models.sustainability\_insight\_array module
----------------------------------------------------------------------------
-
-.. automodule:: pypureclient.pure1.Pure1_1_1.models.sustainability_insight_array
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-pypureclient.pure1.Pure1\_1\_1.models.sustainability\_insight\_array\_get\_response module
-------------------------------------------------------------------------------------------
-
-.. automodule:: pypureclient.pure1.Pure1_1_1.models.sustainability_insight_array_get_response
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-pypureclient.pure1.Pure1\_1\_1.models.sustainability\_insight\_array\_response module
--------------------------------------------------------------------------------------
-
-.. automodule:: pypureclient.pure1.Pure1_1_1.models.sustainability_insight_array_response
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 pypureclient.pure1.Pure1\_1\_1.models.tag module
 ------------------------------------------------
 
@@ -1044,18 +1028,18 @@ pypureclient.pure1.Pure1\_1\_1.models.target\_response module
    :undoc-members:
    :show-inheritance:
 
-pypureclient.pure1.Pure1\_1\_1.models.time\_aware module
---------------------------------------------------------
+pypureclient.pure1.Pure1\_1\_1.models.tax module
+------------------------------------------------
 
-.. automodule:: pypureclient.pure1.Pure1_1_1.models.time_aware
+.. automodule:: pypureclient.pure1.Pure1_1_1.models.tax
    :members:
    :undoc-members:
    :show-inheritance:
 
-pypureclient.pure1.Pure1\_1\_1.models.time\_interval module
------------------------------------------------------------
+pypureclient.pure1.Pure1\_1\_1.models.time\_aware module
+--------------------------------------------------------
 
-.. automodule:: pypureclient.pure1.Pure1_1_1.models.time_interval
+.. automodule:: pypureclient.pure1.Pure1_1_1.models.time_aware
    :members:
    :undoc-members:
    :show-inheritance:

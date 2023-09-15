@@ -6,6 +6,7 @@ A log of changes by version and date.
 ======= ========== =====
 Version Date       Notes
 ======= ========== =====
+1.40.0  09/15/2023 Expanded Pure1 1.1 client to support Pure1 invoices endpoint
 1.39.0  09/06/2023 Added FlashArray 2.26 client
 1.38.0  07/26/2023 Added FlashArray 2.25 client
 1.37.0  06/02/2023 Added FlashBlade 2.10 client

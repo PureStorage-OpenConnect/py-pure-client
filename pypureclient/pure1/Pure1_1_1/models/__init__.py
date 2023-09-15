@@ -99,6 +99,11 @@ from .http import Http
 from .inline_response400 import InlineResponse400
 from .inline_response401 import InlineResponse401
 from .install_address import InstallAddress
+from .invoice import Invoice
+from .invoice_get_response import InvoiceGetResponse
+from .invoice_line import InvoiceLine
+from .invoice_line_component import InvoiceLineComponent
+from .invoice_response import InvoiceResponse
 from .license_resource_reference import LicenseResourceReference
 from .marketplace_partner import MarketplacePartner
 from .metric import Metric
@@ -162,6 +167,7 @@ from .tag_response import TagResponse
 from .target import Target
 from .target_get_response import TargetGetResponse
 from .target_response import TargetResponse
+from .tax import Tax
 from .time_interval import TimeInterval
 from .volume import Volume
 from .volume_get_response import VolumeGetResponse

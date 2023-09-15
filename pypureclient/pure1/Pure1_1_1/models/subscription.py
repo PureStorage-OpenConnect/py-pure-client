@@ -68,7 +68,7 @@ class Subscription(object):
             id (str): A non-modifiable, globally unique ID chosen by the system.
             name (str): A non-modifiable, locally unique name chosen by the system.
             expiration_date (int): Date when the subscription expires. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch.
-            service (str): The service type of the subscription. Values include `Pure as-a-Service`, `FlashStack as a Service`, `Storage as a Service`, `PaaS (Block Storage Service)`, `PaaS (File and Object Storage Service)`, `PaaS (Data Protection Service)`, and `Pure1 Subscription`.
+            service (str): The service type of the subscription. Values include `Evergreen//One`, `Evergreen//Flex`, `FlashStack as a Service`, `Storage as a Service`, `PaaS (Block Storage Service)`, `PaaS (File and Object Storage Service)`, `PaaS (Data Protection Service)`, and `Pure1 Subscription`.
             start_date (int): Date when the subscription starts. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch.
             status (str): Current status of the subscription. Values include `active`, `terminated`, `poc-expired`, and `signed`.
         """
@@ -98,6 +98,24 @@ class Subscription(object):
             raise AttributeError
         else:
             return value
+
+    def __getitem__(self, key):
+        if key not in self.attribute_map:
+            raise KeyError("Invalid key `{}` for `Subscription`".format(key))
+        return object.__getattribute__(self, key)
+
+    def __setitem__(self, key, value):
+        if key not in self.attribute_map:
+            raise KeyError("Invalid key `{}` for `Subscription`".format(key))
+        object.__setattr__(self, key, value)
+
+    def __delitem__(self, key):
+        if key not in self.attribute_map:
+            raise KeyError("Invalid key `{}` for `Subscription`".format(key))
+        object.__delattr__(self, key)
+
+    def keys(self):
+        return self.attribute_map.keys()
 
     def to_dict(self):
         """Returns the model properties as a dict"""

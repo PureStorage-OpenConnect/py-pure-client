@@ -1,7 +1,9 @@
+from . import __pycache__
 from . import Pure1_1_0
 from . import Pure1_1_1
 
 pure1_modules = {
+    'che..': __pycache__,
     '1.0': Pure1_1_0,
     '1.1': Pure1_1_1,
 }
