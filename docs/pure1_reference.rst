@@ -147,6 +147,12 @@ Http
 .. autoclass:: pypureclient.pure1.models.Http
     :members:
 
+Invoice
+~~~~
+
+.. autoclass:: pypureclient.pure1.models.Invoice
+    :members:
+
 LicenseResourceReference
 ~~~~~~~~~~~~~~~~~~~~~~~~
 

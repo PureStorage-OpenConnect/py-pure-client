@@ -31,6 +31,9 @@ from .models.hardware import Hardware
 from .models.hardware_connector import HardwareConnector
 from .models.http import Http
 from .models.install_address import InstallAddress
+from .models.invoice import Invoice
+from .models.invoice_line import InvoiceLine
+from .models.invoice_line_component import InvoiceLineComponent
 from .models.license_resource_reference import LicenseResourceReference
 from .models.marketplace_partner import MarketplacePartner
 from .models.metric import Metric
@@ -61,6 +64,7 @@ from .models.sustainability_insight_array import SustainabilityInsightArray
 from .models.tag import Tag
 from .models.tag_put import TagPut
 from .models.target import Target
+from .models.tax import Tax
 from .models.time_interval import TimeInterval
 from .models.volume import Volume
 from .models.volume_snapshot import VolumeSnapshot
@@ -97,6 +101,9 @@ CLASSES_TO_ADD_PROPS = [
     HardwareConnector,
     Http,
     InstallAddress,
+    Invoice,
+    InvoiceLine,
+    InvoiceLineComponent,
     LicenseResourceReference,
     MarketplacePartner,
     Metric,
@@ -127,6 +134,7 @@ CLASSES_TO_ADD_PROPS = [
     Tag,
     TagPut,
     Target,
+    Tax,
     TimeInterval,
     Volume,
     VolumeSnapshot

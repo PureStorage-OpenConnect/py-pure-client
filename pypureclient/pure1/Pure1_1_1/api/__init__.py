@@ -16,6 +16,7 @@ from .file_system_snapshots_api import FileSystemSnapshotsApi
 from .file_systems_api import FileSystemsApi
 from .hardware_api import HardwareApi
 from .hardware_connectors_api import HardwareConnectorsApi
+from .invoices_api import InvoicesApi
 from .metrics_api import MetricsApi
 from .network_interfaces_api import NetworkInterfacesApi
 from .object_store_accounts_api import ObjectStoreAccountsApi

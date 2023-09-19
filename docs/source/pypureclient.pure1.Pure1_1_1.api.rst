@@ -124,6 +124,14 @@ pypureclient.pure1.Pure1\_1\_1.api.hardware\_connectors\_api module
    :undoc-members:
    :show-inheritance:
 
+pypureclient.pure1.Pure1\_1\_1.api.invoices\_api module
+-------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_1.api.invoices_api
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 pypureclient.pure1.Pure1\_1\_1.api.metrics\_api module
 ------------------------------------------------------
 
