@@ -681,7 +681,7 @@ class ArrayConnectionsApi(object):
         _preload_content=True,  # type: bool
         _request_timeout=None,  # type: Optional[int]
     ):
-        # type: (...) -> models.RelationshipPerformanceReplicationGetResp
+        # type: (...) -> models.ConnectionRelationshipPerformanceReplicationGetResp
         """GET array-connections/performance/replication
 
         List performance metrics of file systems or objects being replicated from one array to another.
@@ -708,7 +708,7 @@ class ArrayConnectionsApi(object):
         :param bool _preload_content: Response is converted into objects.
         :param int _request_timeout: Total request timeout in seconds.
                  It can also be a tuple of (connection time, read time) timeouts.
-        :return: RelationshipPerformanceReplicationGetResp
+        :return: ConnectionRelationshipPerformanceReplicationGetResp
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -802,7 +802,7 @@ class ArrayConnectionsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='RelationshipPerformanceReplicationGetResp',
+            response_type='ConnectionRelationshipPerformanceReplicationGetResp',
             auth_settings=auth_settings,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,

@@ -32,14 +32,12 @@ class RelationshipPerformanceReplication(object):
     swagger_types = {
         'id': 'str',
         'periodic': 'ReplicationPerformance',
-        'remote': 'FixedReferenceNoResourceType',
         'time': 'int'
     }
 
     attribute_map = {
         'id': 'id',
         'periodic': 'periodic',
-        'remote': 'remote',
         'time': 'time'
     }
 
@@ -50,22 +48,18 @@ class RelationshipPerformanceReplication(object):
         self,
         id=None,  # type: str
         periodic=None,  # type: models.ReplicationPerformance
-        remote=None,  # type: models.FixedReferenceNoResourceType
         time=None,  # type: int
     ):
         """
         Keyword args:
             id (str): A non-modifiable, globally unique ID chosen by the system.
             periodic (ReplicationPerformance): Total bytes transmitted or received per second for periodic replication.
-            remote (FixedReferenceNoResourceType): Reference to a remote array.
             time (int): Sample time in milliseconds since UNIX epoch.
         """
         if id is not None:
             self.id = id
         if periodic is not None:
             self.periodic = periodic
-        if remote is not None:
-            self.remote = remote
         if time is not None:
             self.time = time
 

@@ -30,7 +30,7 @@ class BucketPost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'account': 'Reference'
+        'account': 'ReferenceWritable'
     }
 
     attribute_map = {
@@ -42,11 +42,11 @@ class BucketPost(object):
 
     def __init__(
         self,
-        account=None,  # type: models.Reference
+        account=None,  # type: models.ReferenceWritable
     ):
         """
         Keyword args:
-            account (Reference): The account name for bucket creation.
+            account (ReferenceWritable): The account name for bucket creation.
         """
         if account is not None:
             self.account = account

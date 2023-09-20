@@ -30,7 +30,7 @@ class LifecycleRulePost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'bucket': 'Reference',
+        'bucket': 'ReferenceWritable',
         'keep_previous_version_for': 'int',
         'prefix': 'str',
         'rule_id': 'str'
@@ -48,14 +48,14 @@ class LifecycleRulePost(object):
 
     def __init__(
         self,
-        bucket=None,  # type: models.Reference
+        bucket=None,  # type: models.ReferenceWritable
         keep_previous_version_for=None,  # type: int
         prefix=None,  # type: str
         rule_id=None,  # type: str
     ):
         """
         Keyword args:
-            bucket (Reference): The bucket name for lifecycle rule creation.
+            bucket (ReferenceWritable): The bucket name for lifecycle rule creation.
             keep_previous_version_for (int): Time after which previous versions will be marked expired. Measured in milliseconds. Must be a multiple of 86400000 to represent a whole number of days.
             prefix (str): Object key prefix identifying one or more objects in the bucket. Can have a maximum length of 1024 characters.
             rule_id (str): Identifier for the rule that is unique to the bucket that it applies to. Can have a maximum length of 255 characters. If not specified, an id unique to the bucket will be generated in the format `fbRuleId<number>` where number increments, starting at 1.

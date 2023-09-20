@@ -32,7 +32,6 @@ class RelationshipPerformanceReplication(object):
     swagger_types = {
         'id': 'str',
         'periodic': 'ReplicationPerformance',
-        'remote': 'FixedReferenceNoResourceType',
         'time': 'int',
         'aggregate': 'ReplicationPerformance',
         'continuous': 'ReplicationPerformance'
@@ -41,7 +40,6 @@ class RelationshipPerformanceReplication(object):
     attribute_map = {
         'id': 'id',
         'periodic': 'periodic',
-        'remote': 'remote',
         'time': 'time',
         'aggregate': 'aggregate',
         'continuous': 'continuous'
@@ -54,7 +52,6 @@ class RelationshipPerformanceReplication(object):
         self,
         id=None,  # type: str
         periodic=None,  # type: models.ReplicationPerformance
-        remote=None,  # type: models.FixedReferenceNoResourceType
         time=None,  # type: int
         aggregate=None,  # type: models.ReplicationPerformance
         continuous=None,  # type: models.ReplicationPerformance
@@ -63,7 +60,6 @@ class RelationshipPerformanceReplication(object):
         Keyword args:
             id (str): A non-modifiable, globally unique ID chosen by the system.
             periodic (ReplicationPerformance): Total bytes transmitted or received per second for periodic replication. Periodic replication includes file system replication, which is snapshot based.
-            remote (FixedReferenceNoResourceType): Reference to a remote array.
             time (int): Sample time in milliseconds since UNIX epoch.
             aggregate (ReplicationPerformance): Total bytes transmitted or received per second for all types of replication.
             continuous (ReplicationPerformance): Total bytes transmitted or received per second for continuous replication. Continuous replication includes object replication.
@@ -72,8 +68,6 @@ class RelationshipPerformanceReplication(object):
             self.id = id
         if periodic is not None:
             self.periodic = periodic
-        if remote is not None:
-            self.remote = remote
         if time is not None:
             self.time = time
         if aggregate is not None:
