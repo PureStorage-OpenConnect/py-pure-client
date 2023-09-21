@@ -30,7 +30,7 @@ class BucketPost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'account': 'Reference',
+        'account': 'ReferenceWritable',
         'bucket_type': 'str',
         'hard_limit_enabled': 'bool',
         'object_lock_config': 'ObjectLockConfigRequestBody',
@@ -52,7 +52,7 @@ class BucketPost(object):
 
     def __init__(
         self,
-        account=None,  # type: models.Reference
+        account=None,  # type: models.ReferenceWritable
         bucket_type=None,  # type: str
         hard_limit_enabled=None,  # type: bool
         object_lock_config=None,  # type: models.ObjectLockConfigRequestBody
@@ -61,7 +61,7 @@ class BucketPost(object):
     ):
         """
         Keyword args:
-            account (Reference): The account name for bucket creation.
+            account (ReferenceWritable): The account name for bucket creation.
             bucket_type (str): The bucket type for the bucket.
             hard_limit_enabled (bool): If set to `true`, the bucket's size, as defined by `quota_limit`, is used as a hard limit quota. If set to `false`, a hard limit quota will not be applied to the bucket, but soft quota alerts will still be sent if the bucket has a value set for `quota_limit`. If not specified, defaults to the value of `bucket_defaults.hard_limit_enabled` of the object store account this bucket is associated with.
             object_lock_config (ObjectLockConfigRequestBody)

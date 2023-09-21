@@ -32,7 +32,6 @@ class FileSystemSnapshot(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
-        'copyable': 'bool',
         'created': 'int',
         'destroyed': 'bool',
         'owner': 'FixedReference',
@@ -46,7 +45,6 @@ class FileSystemSnapshot(object):
     attribute_map = {
         'name': 'name',
         'id': 'id',
-        'copyable': 'copyable',
         'created': 'created',
         'destroyed': 'destroyed',
         'owner': 'owner',
@@ -64,7 +62,6 @@ class FileSystemSnapshot(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
-        copyable=None,  # type: bool
         created=None,  # type: int
         destroyed=None,  # type: bool
         owner=None,  # type: models.FixedReference
@@ -78,7 +75,6 @@ class FileSystemSnapshot(object):
         Keyword args:
             name (str): A name chosen by the user. Can be changed. Must be locally unique.
             id (str): A non-modifiable, globally unique ID chosen by the system.
-            copyable (bool): Can this snapshot be used as a source for copy operations?
             created (int): Creation timestamp of the object.
             destroyed (bool): Is the file system snapshot destroyed? If not specified, defaults to `false`.
             owner (FixedReference): A reference to the file system that owns this snapshot. If the owner is destroyed, this will be destroyed.
@@ -92,8 +88,6 @@ class FileSystemSnapshot(object):
             self.name = name
         if id is not None:
             self.id = id
-        if copyable is not None:
-            self.copyable = copyable
         if created is not None:
             self.created = created
         if destroyed is not None:

@@ -39,7 +39,7 @@ class BucketReplicaLink(object):
         'recovery_point': 'int',
         'remote': 'FixedReference',
         'remote_bucket': 'FixedReferenceNameOnly',
-        'remote_credentials': 'Reference',
+        'remote_credentials': 'ReferenceWritable',
         'status': 'str',
         'cascading_enabled': 'bool',
         'object_backlog': 'ObjectBacklog'
@@ -75,7 +75,7 @@ class BucketReplicaLink(object):
         recovery_point=None,  # type: int
         remote=None,  # type: models.FixedReference
         remote_bucket=None,  # type: models.FixedReferenceNameOnly
-        remote_credentials=None,  # type: models.Reference
+        remote_credentials=None,  # type: models.ReferenceWritable
         status=None,  # type: str
         cascading_enabled=None,  # type: bool
         object_backlog=None,  # type: models.ObjectBacklog
@@ -91,7 +91,7 @@ class BucketReplicaLink(object):
             recovery_point (int): Time, in milliseconds since UNIX epoch, where all object changes before this time are guaranteed to have been replicated. Changes after this time may have been replicated.
             remote (FixedReference): Reference to the associated remote, which can either be a `target` or remote `array`. If it is an `array`, then the `resource-type` field will not be populated.
             remote_bucket (FixedReferenceNameOnly): Reference to a remote bucket.
-            remote_credentials (Reference): Reference to a remote-credentials object to access the remote bucket.
+            remote_credentials (ReferenceWritable): Reference to a remote-credentials object to access the remote bucket.
             status (str): Status of the replica link. Values include `replicating`, `paused`, and `unhealthy`.
             cascading_enabled (bool): If set to `true`, objects replicated to this bucket via a replica link from another array will also be replicated by this link to the remote bucket. Defaults to `false`.
             object_backlog (ObjectBacklog): The number of pending operations and their size that are currently in the backlog.

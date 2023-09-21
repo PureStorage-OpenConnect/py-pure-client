@@ -139,6 +139,8 @@ from .certificate_use import CertificateUse
 from .certificate_use_get_response import CertificateUseGetResponse
 from .client_performance import ClientPerformance
 from .client_performance_get_response import ClientPerformanceGetResponse
+from .connection_relationship_performance_replication import ConnectionRelationshipPerformanceReplication
+from .connection_relationship_performance_replication_get_resp import ConnectionRelationshipPerformanceReplicationGetResp
 from .continuous_replication_performance import ContinuousReplicationPerformance
 from .direction import Direction
 from .directory_service import DirectoryService
@@ -308,8 +310,8 @@ from .quota_setting_response import QuotaSettingResponse
 from .rapid_data_locking import RapidDataLocking
 from .rapid_data_locking_response import RapidDataLockingResponse
 from .reference import Reference
+from .reference_writable import ReferenceWritable
 from .relationship_performance_replication import RelationshipPerformanceReplication
-from .relationship_performance_replication_get_resp import RelationshipPerformanceReplicationGetResp
 from .replica_link_built_in import ReplicaLinkBuiltIn
 from .replication_performance import ReplicationPerformance
 from .resource import Resource

@@ -36,7 +36,7 @@ class NfsPatch(object):
         'add_rules': 'str',
         'remove_rules': 'str',
         'after': 'str',
-        'export_policy': 'Reference'
+        'export_policy': 'ReferenceWritable'
     }
 
     attribute_map = {
@@ -60,7 +60,7 @@ class NfsPatch(object):
         add_rules=None,  # type: str
         remove_rules=None,  # type: str
         after=None,  # type: str
-        export_policy=None,  # type: models.Reference
+        export_policy=None,  # type: models.ReferenceWritable
     ):
         """
         Keyword args:
@@ -70,7 +70,7 @@ class NfsPatch(object):
             add_rules (str): The rules which will be added to the existing NFS export rules for the file system. If `export_policy` is in use and and this field is set, the operation will fail.
             remove_rules (str): The rules which will be removed from the existing NFS export rules for the file system. Only the first occurrence of the `remove_rules` will be removed. If `export_policy` is in use and and this field is set, the operation will fail.
             after (str): The `after` field can be used with `add_rules` or `remove_rules` or both. If used with `add_rules`, then the `add_rules` string will be inserted after the first occurrence of the `after` string. If used with `remove_rules`, then remove the first occurrence of `remove_rules` after the first occurrence of the `after` string. The `remove_rules` will be processed before the `add_rules`.
-            export_policy (Reference): The NFS export policy for the system. Either the `export_policy` or `rules` will control the NFS export functionality for the file system. If this is set, then the `rules` field will be cleared. Both `export_policy` and `rules` can not be set in the same request.
+            export_policy (ReferenceWritable): The NFS export policy for the system. Either the `export_policy` or `rules` will control the NFS export functionality for the file system. If this is set, then the `rules` field will be cleared. Both `export_policy` and `rules` can not be set in the same request.
         """
         if v3_enabled is not None:
             self.v3_enabled = v3_enabled

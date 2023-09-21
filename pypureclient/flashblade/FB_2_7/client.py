@@ -11,7 +11,7 @@ from ...keywords import Headers, Responses
 from ...responses import ValidResponse, ErrorResponse, ApiError, ItemIterator
 from ...token_manager import TokenManager
 from ...api_token_manager import APITokenManager
-from ...client_settings import USER_AGENT_TEMPLATE
+from ...client_settings import USER_AGENT_TEMPLATE, resolve_ssl_validation
 from .api_client import ApiClient
 from .rest import ApiException
 from .configuration import Configuration
@@ -39,7 +39,8 @@ class Client(object):
 
     def __init__(self, target, id_token=None, private_key_file=None, private_key_password=None,
                  username=None, client_id=None, key_id=None, issuer=None, api_token=None,
-                 retries=DEFAULT_RETRIES, timeout=DEFAULT_TIMEOUT, ssl_cert=None, user_agent=None):
+                 retries=DEFAULT_RETRIES, timeout=DEFAULT_TIMEOUT, ssl_cert=None, user_agent=None,
+                 verify_ssl=None):
         """
         Initialize a FlashBlade Client. id_token is generated based on app ID and private
         key info. Either id_token or api_token could be used for authentication. Only one
@@ -77,13 +78,18 @@ class Client(object):
                 SSL certificate to use. Defaults to None.
             user_agent (str, optional):
                 User-Agent request header to use.
+            verify_ssl (bool | str, optional):
+                Controls SSL certificate validation.
+                `True` specifies that the server validation uses default trust anchors;
+                `False` switches certificate validation off, **not safe!**;
+                It also accepts string value for a path to directory with certificates.
 
         Raises:
             PureError: If it could not create an ID or access token
         """
         urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
         config = Configuration()
-        config.verify_ssl = ssl_cert is not None
+        config.verify_ssl = resolve_ssl_validation(verify_ssl)
         config.ssl_ca_cert = ssl_cert
         config.host = self._get_base_url(target)
 
@@ -94,7 +100,7 @@ class Client(object):
             raise PureError("id_token is generated based on app ID and private key info. Please use either id_token or api_token and try again!")
         elif api_token:
             api_token_auth_endpoint = self._get_api_token_endpoint(target)
-            self._token_man = APITokenManager(api_token_auth_endpoint, api_token, verify_ssl=False)
+            self._token_man = APITokenManager(api_token_auth_endpoint, api_token, verify_ssl=config.verify_ssl)
         else:
             auth_endpoint = 'https://{}/oauth2/1.0/token'.format(target)
             headers = {
@@ -106,7 +112,7 @@ class Client(object):
                 'sub': username,
             }
             self._token_man = TokenManager(auth_endpoint, id_token, private_key_file, private_key_password,
-                                           payload=payload, headers=headers, verify_ssl=False)
+                                           payload=payload, headers=headers, verify_ssl=config.verify_ssl)
 
         self._api_client = _FBApiClient(configuration=config)
         self._api_client.user_agent = user_agent or self.USER_AGENT
@@ -173,7 +179,8 @@ class Client(object):
 
     def __del__(self):
         # Cleanup this REST API client resources
-        self._api_client.close()
+        if self._api_client:
+            self._api_client.close()
 
     def get_access_token(self, refresh=False):
         """
@@ -1358,6 +1365,7 @@ class Client(object):
 
             names (list[str], required):
                 A list of resource names.
+            alert_watcher (AlertWatcherPost, optional):
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -2309,7 +2317,7 @@ class Client(object):
         _preload_content=True,  # type: bool
         _request_timeout=None,  # type: Optional[int]
     ):
-        # type: (...) -> models.RelationshipPerformanceReplicationGetResp
+        # type: (...) -> models.ConnectionRelationshipPerformanceReplicationGetResp
         """
         List performance metrics of file systems or objects being replicated from one
         array to another.
@@ -7160,6 +7168,7 @@ class Client(object):
             targets (list[str], optional):
                 The target arrays to replicate created snapshots to. Only valid when `send` is
                 `true`.
+            file_system_snapshot (FileSystemSnapshotPost, optional):
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -11976,6 +11985,7 @@ class Client(object):
 
             names (list[str], required):
                 A list of resource names.
+            policy (NfsExportPolicyPost, optional):
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -12731,6 +12741,7 @@ class Client(object):
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
                 each of the elements of `names`, then an error is returned.
+            policy (ObjectStoreAccessPolicyPatch, optional):
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -12791,6 +12802,7 @@ class Client(object):
                 if specified together in a rule. If set to `true`, operations which attempt to
                 set these combinations will fail. If set to `false`, such operations will
                 instead be allowed. Defaults to `true`.
+            policy (ObjectStoreAccessPolicyPost, optional):
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -14291,6 +14303,7 @@ class Client(object):
 
             names (list[str], required):
                 A list of resource names.
+            policy (Policy, optional):
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -14783,6 +14796,7 @@ class Client(object):
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
                 each of the elements of `names`, then an error is returned.
+            quota (GroupQuotaPatch, optional):
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -14861,6 +14875,7 @@ class Client(object):
                 A list of group names. If there is not at least one resource that matches each
                 of the elements of `group_names`, then an error is returned. This cannot be
                 provided together with `gids` query parameter.
+            quota (GroupQuotaPost, optional):
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -15236,6 +15251,7 @@ class Client(object):
                 A list of user names. If there is not at least one resource that matches each of
                 the elements of `user_names`, then an error is returned. This cannot be provided
                 together with `uids` query parameter.
+            quota (UserQuotaPatch, optional):
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -15314,6 +15330,7 @@ class Client(object):
                 A list of user names. If there is not at least one resource that matches each of
                 the elements of `user_names`, then an error is returned. This cannot be provided
                 together with `uids` query parameter.
+            quota (UserQuotaPost, optional):
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.

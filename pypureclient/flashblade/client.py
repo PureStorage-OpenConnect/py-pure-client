@@ -1,5 +1,6 @@
 import requests
 
+from ..client_settings import resolve_ssl_validation
 from . import PureError
 
 from . import FB_2_3
@@ -7,8 +8,10 @@ from . import FB_2_1
 from . import FB_2_4
 from . import FB_2_5
 from . import FB_2_9
+from . import FB_2_11
 from . import FB_2_6
 from . import FB_2_10
+from . import __pycache__
 from . import FB_2_2
 from . import FB_2_0
 from . import FB_2_7
@@ -20,8 +23,10 @@ fb_modules = {
     '2.4': FB_2_4,
     '2.5': FB_2_5,
     '2.9': FB_2_9,
+    '2.11': FB_2_11,
     '2.6': FB_2_6,
     '2.10': FB_2_10,
+    'ycache..': __pycache__,
     '2.2': FB_2_2,
     '2.0': FB_2_0,
     '2.7': FB_2_7,
@@ -36,7 +41,8 @@ DEFAULT_RETRIES = 5
 
 def Client(target, version=None, id_token=None, private_key_file=None, private_key_password=None,
            username=None, client_id=None, key_id=None, issuer=None, api_token=None,
-           retries=DEFAULT_RETRIES, timeout=DEFAULT_TIMEOUT, ssl_cert=None, user_agent=None):
+           retries=DEFAULT_RETRIES, timeout=DEFAULT_TIMEOUT, ssl_cert=None, user_agent=None,
+           verify_ssl=None):
     """
     Initialize a FlashBlade Client.
 
@@ -75,11 +81,16 @@ def Client(target, version=None, id_token=None, private_key_file=None, private_k
             SSL certificate to use. Defaults to None.
         user_agent (str, optional):
             User-Agent request header to use.
+        verify_ssl (bool | str, optional):
+            Controls SSL certificate validation.
+            `True` specifies that the server validation uses default trust anchors;
+            `False` switches certificate validation off, **not safe!**;
+            It also accepts string value for a path to directory with certificates.
 
     Raises:
         PureError: If it could not create an ID or access token
     """
-    array_versions = get_array_versions(target)
+    array_versions = get_array_versions(target, verify_ssl)
     if version is not None:
         validate_version(array_versions, version)
     else:
@@ -88,13 +99,13 @@ def Client(target, version=None, id_token=None, private_key_file=None, private_k
     client = fb_module.Client(target=target, id_token=id_token, private_key_file=private_key_file,
                               private_key_password=private_key_password, username=username, client_id=client_id,
                               key_id=key_id, issuer=issuer, api_token=api_token, retries=retries, timeout=timeout,
-                              ssl_cert=ssl_cert, user_agent=user_agent)
+                              ssl_cert=ssl_cert, user_agent=user_agent, verify_ssl=resolve_ssl_validation(verify_ssl))
     return client
 
 
-def get_array_versions(target):
+def get_array_versions(target, verify_ssl=None):
     url = 'https://{}/api/api_version'.format(target)
-    response = requests.get(url, verify=False)
+    response = requests.get(url, verify=resolve_ssl_validation(verify_ssl))
     if response.status_code == requests.codes.ok:
         return response.json()['versions']
     else:

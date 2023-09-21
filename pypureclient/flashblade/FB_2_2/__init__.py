@@ -56,6 +56,8 @@ from .models.certificate_patch import CertificatePatch
 from .models.certificate_post import CertificatePost
 from .models.certificate_use import CertificateUse
 from .models.client_performance import ClientPerformance
+from .models.connection_relationship_performance_replication import ConnectionRelationshipPerformanceReplication
+from .models.connection_relationship_performance_replication_get_resp import ConnectionRelationshipPerformanceReplicationGetResp
 from .models.continuous_replication_performance import ContinuousReplicationPerformance
 from .models.direction import Direction
 from .models.directory_service import DirectoryService
@@ -141,8 +143,8 @@ from .models.policy_rule_object_access_post import PolicyRuleObjectAccessPost
 from .models.quota_setting import QuotaSetting
 from .models.rapid_data_locking import RapidDataLocking
 from .models.reference import Reference
+from .models.reference_writable import ReferenceWritable
 from .models.relationship_performance_replication import RelationshipPerformanceReplication
-from .models.relationship_performance_replication_get_resp import RelationshipPerformanceReplicationGetResp
 from .models.replica_link_built_in import ReplicaLinkBuiltIn
 from .models.replication_performance import ReplicationPerformance
 from .models.resource import Resource
@@ -233,6 +235,8 @@ CLASSES_TO_ADD_PROPS = [
     CertificatePost,
     CertificateUse,
     ClientPerformance,
+    ConnectionRelationshipPerformanceReplication,
+    ConnectionRelationshipPerformanceReplicationGetResp,
     ContinuousReplicationPerformance,
     Direction,
     DirectoryService,
@@ -318,8 +322,8 @@ CLASSES_TO_ADD_PROPS = [
     QuotaSetting,
     RapidDataLocking,
     Reference,
+    ReferenceWritable,
     RelationshipPerformanceReplication,
-    RelationshipPerformanceReplicationGetResp,
     ReplicaLinkBuiltIn,
     ReplicationPerformance,
     Resource,

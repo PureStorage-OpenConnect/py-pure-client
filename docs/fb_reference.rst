@@ -72,6 +72,11 @@ FlashBlade REST 2.10 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.FB_2_10.client.Client
+
+FlashBlade REST 2.11 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.FB_2_11.client.Client
     :members:
 
 
@@ -467,6 +472,18 @@ ClientPerformance
 ~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.ClientPerformance
+   :members:
+
+ConnectionRelationshipPerformanceReplication
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.ConnectionRelationshipPerformanceReplication
+   :members:
+
+ConnectionRelationshipPerformanceReplicationGetResp
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.ConnectionRelationshipPerformanceReplicationGetResp
    :members:
 
 ContinuousReplicationPerformance
@@ -1123,16 +1140,16 @@ Reference
 .. autoclass:: pypureclient.flashblade.Reference
    :members:
 
+ReferenceWritable
+~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.ReferenceWritable
+   :members:
+
 RelationshipPerformanceReplication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.RelationshipPerformanceReplication
-   :members:
-
-RelationshipPerformanceReplicationGetResp
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. autoclass:: pypureclient.flashblade.RelationshipPerformanceReplicationGetResp
    :members:
 
 ReplicaLinkBuiltIn
@@ -1831,7 +1848,7 @@ get_arrays_eula
 patch_arrays_eula
 '''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.0/patch_arrays_eula.py
+.. literalinclude:: source/examples/FB2.11/patch_arrays_eula.py
     :language: python
 
 delete_arrays_factory_reset_token
@@ -2929,13 +2946,13 @@ get_smb_client_policies
 patch_smb_client_policies
 '''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.10/patch_smb_client_policies.py
+.. literalinclude:: source/examples/FB2.11/patch_smb_client_policies.py
     :language: python
 
 post_smb_client_policies
 ''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.10/post_smb_client_policies.py
+.. literalinclude:: source/examples/FB2.11/post_smb_client_policies.py
     :language: python
 
 delete_smb_client_policies_rules
@@ -2953,13 +2970,13 @@ get_smb_client_policies_rules
 patch_smb_client_policies_rules
 '''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.10/patch_smb_client_policies_rules.py
+.. literalinclude:: source/examples/FB2.11/patch_smb_client_policies_rules.py
     :language: python
 
 post_smb_client_policies_rules
 ''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.10/post_smb_client_policies_rules.py
+.. literalinclude:: source/examples/FB2.11/post_smb_client_policies_rules.py
     :language: python
 
 Policies   Smb Share

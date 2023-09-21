@@ -812,6 +812,22 @@ pypureclient.flashblade.FB\_2\_10.models.client\_performance\_get\_response modu
    :undoc-members:
    :show-inheritance:
 
+pypureclient.flashblade.FB\_2\_10.models.connection\_relationship\_performance\_replication module
+--------------------------------------------------------------------------------------------------
+
+.. automodule:: pypureclient.flashblade.FB_2_10.models.connection_relationship_performance_replication
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.flashblade.FB\_2\_10.models.connection\_relationship\_performance\_replication\_get\_resp module
+-------------------------------------------------------------------------------------------------------------
+
+.. automodule:: pypureclient.flashblade.FB_2_10.models.connection_relationship_performance_replication_get_resp
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 pypureclient.flashblade.FB\_2\_10.models.continuous\_replication\_performance module
 ------------------------------------------------------------------------------------
 
@@ -2372,18 +2388,18 @@ pypureclient.flashblade.FB\_2\_10.models.reference module
    :undoc-members:
    :show-inheritance:
 
-pypureclient.flashblade.FB\_2\_10.models.relationship\_performance\_replication module
---------------------------------------------------------------------------------------
+pypureclient.flashblade.FB\_2\_10.models.reference\_writable module
+-------------------------------------------------------------------
 
-.. automodule:: pypureclient.flashblade.FB_2_10.models.relationship_performance_replication
+.. automodule:: pypureclient.flashblade.FB_2_10.models.reference_writable
    :members:
    :undoc-members:
    :show-inheritance:
 
-pypureclient.flashblade.FB\_2\_10.models.relationship\_performance\_replication\_get\_resp module
--------------------------------------------------------------------------------------------------
+pypureclient.flashblade.FB\_2\_10.models.relationship\_performance\_replication module
+--------------------------------------------------------------------------------------
 
-.. automodule:: pypureclient.flashblade.FB_2_10.models.relationship_performance_replication_get_resp
+.. automodule:: pypureclient.flashblade.FB_2_10.models.relationship_performance_replication
    :members:
    :undoc-members:
    :show-inheritance:

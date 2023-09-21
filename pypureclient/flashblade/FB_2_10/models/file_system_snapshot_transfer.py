@@ -40,7 +40,7 @@ class FileSystemSnapshotTransfer(object):
         'remote_snapshot': 'FixedReferenceNoResourceType',
         'started': 'int',
         'status': 'str',
-        'local_snapshot': 'FixedReference'
+        'local_snapshot': 'FixedReferenceNoResourceType'
     }
 
     attribute_map = {
@@ -72,7 +72,7 @@ class FileSystemSnapshotTransfer(object):
         remote_snapshot=None,  # type: models.FixedReferenceNoResourceType
         started=None,  # type: int
         status=None,  # type: str
-        local_snapshot=None,  # type: models.FixedReference
+        local_snapshot=None,  # type: models.FixedReferenceNoResourceType
     ):
         """
         Keyword args:
@@ -86,7 +86,7 @@ class FileSystemSnapshotTransfer(object):
             remote_snapshot (FixedReferenceNoResourceType): A reference to the associated remote file system snapshot.
             started (int): A timestamp at which the replication of the snapshot started.
             status (str): The status of current replication. Valid values are `completed`, `in-progress`, and `queued`.
-            local_snapshot (FixedReference): A reference to the associated local file system snapshot.
+            local_snapshot (FixedReferenceNoResourceType): A reference to the associated local file system snapshot.
         """
         if name is not None:
             self.name = name

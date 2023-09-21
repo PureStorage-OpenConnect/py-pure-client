@@ -31,8 +31,8 @@ class SmbPost(object):
     """
     swagger_types = {
         'enabled': 'bool',
-        'client_policy': 'Reference',
-        'share_policy': 'Reference'
+        'client_policy': 'ReferenceWritable',
+        'share_policy': 'ReferenceWritable'
     }
 
     attribute_map = {
@@ -47,14 +47,14 @@ class SmbPost(object):
     def __init__(
         self,
         enabled=None,  # type: bool
-        client_policy=None,  # type: models.Reference
-        share_policy=None,  # type: models.Reference
+        client_policy=None,  # type: models.ReferenceWritable
+        share_policy=None,  # type: models.ReferenceWritable
     ):
         """
         Keyword args:
             enabled (bool): If set to `true`, enables access to the file system over the SMB protocol. If not specified, defaults to `false`.
-            client_policy (Reference): The SMB Client policy for the file system. Setting a policy here grants access permissions (e.g. read-only or read-write) to the file system via SMB on a per-client basis. Defaults to a pre-defined full access policy if none is specified.
-            share_policy (Reference): The SMB Share policy for the file system. Setting a policy here grants access permissions (e.g. allow or deny Full Control, Change, and/or Read) to the file system via SMB on a per-user / per-group basis. Defaults to a pre-defined full access policy if none is specified.
+            client_policy (ReferenceWritable): The SMB Client policy for the file system. Setting a policy here grants access permissions (e.g. read-only or read-write) to the file system via SMB on a per-client basis. Defaults to a pre-defined full access policy if none is specified.
+            share_policy (ReferenceWritable): The SMB Share policy for the file system. Setting a policy here grants access permissions (e.g. allow or deny Full Control, Change, and/or Read) to the file system via SMB on a per-user / per-group basis. Defaults to a pre-defined full access policy if none is specified.
         """
         if enabled is not None:
             self.enabled = enabled
