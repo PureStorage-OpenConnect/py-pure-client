@@ -29,7 +29,7 @@ author = u'Pure Storage, Inc.'
 # The short X.Y version
 version = u'1.41'
 # The full version, including alpha/beta/rc tags
-release = u'1.41.0'
+release = u'1.41.1'
 
 
 # -- General configuration ---------------------------------------------------

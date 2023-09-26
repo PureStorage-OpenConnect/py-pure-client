@@ -2887,13 +2887,13 @@ post_object_store_access_policies_object_store_users
 patch_object_store_access_policies
 ''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.2/patch_object_store_access_policies.py
+.. literalinclude:: source/examples/FB2.11/patch_object_store_access_policies.py
     :language: python
 
 post_object_store_access_policies
 '''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.2/post_object_store_access_policies.py
+.. literalinclude:: source/examples/FB2.11/post_object_store_access_policies.py
     :language: python
 
 delete_object_store_access_policies_rules
@@ -2911,13 +2911,13 @@ get_object_store_access_policies_rules
 patch_object_store_access_policies_rules
 ''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.2/patch_object_store_access_policies_rules.py
+.. literalinclude:: source/examples/FB2.11/patch_object_store_access_policies_rules.py
     :language: python
 
 post_object_store_access_policies_rules
 '''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.2/post_object_store_access_policies_rules.py
+.. literalinclude:: source/examples/FB2.11/post_object_store_access_policies_rules.py
     :language: python
 
 get_object_store_access_policy_actions
