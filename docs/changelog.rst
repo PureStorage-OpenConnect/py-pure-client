@@ -6,6 +6,8 @@ A log of changes by version and date.
 ======= ========== =====
 Version Date       Notes
 ======= ========== =====
+1.42.1  10/10/2023 Fixed import issue in 1.42.0
+1.42.0  10/10/2023 Added Pure1 1.2 client to support asset management in Pure1
 1.41.1  09/26/2023 Bug fix for FlashBlade client
 1.41.0  09/21/2023 Added FlashBlade 2.11 client
 1.40.0  09/18/2023 Expanded Pure1 1.1 client to support Pure1 invoices endpoint

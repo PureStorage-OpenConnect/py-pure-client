@@ -9,6 +9,7 @@ Subpackages
 
    pypureclient.pure1.Pure1_1_0
    pypureclient.pure1.Pure1_1_1
+   pypureclient.pure1.Pure1_1_2
 
 Submodules
 ----------

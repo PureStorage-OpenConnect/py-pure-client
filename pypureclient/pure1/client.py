@@ -1,7 +1,9 @@
+from . import Pure1_1_2
 from . import Pure1_1_0
 from . import Pure1_1_1
 
 pure1_modules = {
+    '1.2': Pure1_1_2,
     '1.0': Pure1_1_0,
     '1.1': Pure1_1_1,
 }
@@ -37,7 +39,7 @@ def Client(**kwargs):
     """
     version = (kwargs.get(VERSION_KEY)
                 if VERSION_KEY in kwargs
-                else "1.1")
+                else "1.2")
     pure1_module = version_to_module(version)
     client = pure1_module.Client(**kwargs)
     return client

@@ -1,0 +1,54 @@
+pypureclient.pure1.Pure1\_1\_2 package
+======================================
+
+Subpackages
+-----------
+
+.. toctree::
+   :maxdepth: 4
+
+   pypureclient.pure1.Pure1_1_2.api
+   pypureclient.pure1.Pure1_1_2.models
+
+Submodules
+----------
+
+pypureclient.pure1.Pure1\_1\_2.api\_client module
+-------------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_2.api_client
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.pure1.Pure1\_1\_2.client module
+--------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_2.client
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.pure1.Pure1\_1\_2.configuration module
+---------------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_2.configuration
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.pure1.Pure1\_1\_2.rest module
+------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_2.rest
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+Module contents
+---------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_2
+   :members:
+   :undoc-members:
+   :show-inheritance:
