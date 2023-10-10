@@ -2205,6 +2205,7 @@ class Client(object):
 
             aggregation (str, required):
                 Aggregation needed on the metric data. Valid values are `avg` and `max`.
+                Latency metrics averages are weighted by the IOPS.
             end_time (int, required):
                 Timestamp of when the time window ends. Measured in milliseconds since the UNIX
                 epoch.

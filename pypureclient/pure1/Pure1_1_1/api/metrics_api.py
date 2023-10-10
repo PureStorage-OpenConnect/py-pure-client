@@ -186,7 +186,7 @@ class MetricsApi(object):
         >>> thread = api.api11_metrics_history_get_with_http_info(aggregation, end_time, resolution, start_time, async_req=True)
         >>> result = thread.get()
 
-        :param str aggregation: Aggregation needed on the metric data. Valid values are `avg` and `max`. Single quotes are required around all strings. (required)
+        :param str aggregation: Aggregation needed on the metric data. Valid values are `avg` and `max`. Single quotes are required around all strings. Latency metrics averages are weighted by the IOPS. (required)
         :param int end_time: Timestamp of when the time window ends. Measured in milliseconds since the UNIX epoch. (required)
         :param int resolution: The duration of time between individual data points, in milliseconds. (required)
         :param int start_time: Timestamp of when the time window starts. Measured in milliseconds since the UNIX epoch. (required)
