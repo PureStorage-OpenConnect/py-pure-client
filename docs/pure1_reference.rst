@@ -261,6 +261,12 @@ SubscriptionLicense
 .. autoclass:: pypureclient.pure1.models.SubscriptionLicense
     :members:
 
+SubscriptionAsset
+~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.pure1.models.SubscriptionAsset
+    :members:
+
 SustainabilityArray
 ~~~~~~~~~~~~~~~~~~~
 
