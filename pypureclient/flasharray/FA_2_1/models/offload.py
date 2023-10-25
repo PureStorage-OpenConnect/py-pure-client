@@ -68,7 +68,7 @@ class Offload(object):
         """
         Keyword args:
             azure (OffloadAzure): The Microsoft Azure Blob storage settings.
-            nfs (OffloadNfs): The NFS storage settings.
+            nfs (OffloadNfs): The NFS storage settings. Deprecated from version 6.6.0 onwards - Contact support for additional information.
             s3 (OffloadS3): The Amazon S3 storage settings.
             name (str): A user-specified name. The name must be locally unique and can be changed.
             protocol (str): The type of offload. Valid values are `nfs` for Network File System, `s3` for Amazon S3, and `azure` for Microsoft Azure.
@@ -101,7 +101,10 @@ class Offload(object):
     def __getattribute__(self, item):
         value = object.__getattribute__(self, item)
         if isinstance(value, Property):
-            raise AttributeError
+            if item in self.attribute_map:
+                return None
+            else:
+                raise AttributeError(f"{self} object has no attribute '{name}'")
         else:
             return value
 

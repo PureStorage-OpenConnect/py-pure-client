@@ -17,6 +17,7 @@ import re
 
 # python 2 and python 3 compatibility library
 import six
+import uuid
 from typing import List, Optional
 
 from .. import models
@@ -67,6 +68,9 @@ class AdministratorsApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
 
         collection_formats = {}
         path_params = {}
@@ -172,6 +176,9 @@ class AdministratorsApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api213_admins_api_tokens_get`, must be a value greater than or equal to `1`")
@@ -281,6 +288,9 @@ class AdministratorsApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
 
         collection_formats = {}
         path_params = {}
@@ -368,6 +378,9 @@ class AdministratorsApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
         # verify the required parameter 'remove_all_entries' is set
         if remove_all_entries is None:
             raise TypeError("Missing the required parameter `remove_all_entries` when calling `api213_admins_cache_delete`")
@@ -473,6 +486,9 @@ class AdministratorsApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api213_admins_cache_get`, must be a value greater than or equal to `1`")
@@ -578,6 +594,9 @@ class AdministratorsApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
 
         collection_formats = {}
         path_params = {}
@@ -666,6 +685,9 @@ class AdministratorsApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
 
         collection_formats = {}
         path_params = {}
@@ -771,6 +793,9 @@ class AdministratorsApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api213_admins_get`, must be a value greater than or equal to `1`")
@@ -880,6 +905,9 @@ class AdministratorsApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
         # verify the required parameter 'admin' is set
         if admin is None:
             raise TypeError("Missing the required parameter `admin` when calling `api213_admins_patch`")
@@ -975,6 +1003,9 @@ class AdministratorsApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
         # verify the required parameter 'admin' is set
         if admin is None:
             raise TypeError("Missing the required parameter `admin` when calling `api213_admins_post`")
@@ -1076,6 +1107,9 @@ class AdministratorsApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api213_admins_settings_get`, must be a value greater than or equal to `1`")
@@ -1173,6 +1207,9 @@ class AdministratorsApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
         # verify the required parameter 'admin_settings' is set
         if admin_settings is None:
             raise TypeError("Missing the required parameter `admin_settings` when calling `api213_admins_settings_patch`")

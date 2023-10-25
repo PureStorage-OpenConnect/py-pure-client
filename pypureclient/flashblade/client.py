@@ -3,34 +3,32 @@ import requests
 from ..client_settings import resolve_ssl_validation
 from . import PureError
 
-from . import FB_2_3
+from . import FB_2_0
 from . import FB_2_1
+from . import FB_2_2
+from . import FB_2_3
 from . import FB_2_4
 from . import FB_2_5
-from . import FB_2_9
-from . import FB_2_11
 from . import FB_2_6
-from . import FB_2_10
-from . import __pycache__
-from . import FB_2_2
-from . import FB_2_0
 from . import FB_2_7
 from . import FB_2_8
+from . import FB_2_9
+from . import FB_2_10
+from . import FB_2_11
 
 fb_modules = {
-    '2.3': FB_2_3,
+    '2.0': FB_2_0,
     '2.1': FB_2_1,
+    '2.2': FB_2_2,
+    '2.3': FB_2_3,
     '2.4': FB_2_4,
     '2.5': FB_2_5,
-    '2.9': FB_2_9,
-    '2.11': FB_2_11,
     '2.6': FB_2_6,
-    '2.10': FB_2_10,
-    'ycache..': __pycache__,
-    '2.2': FB_2_2,
-    '2.0': FB_2_0,
     '2.7': FB_2_7,
     '2.8': FB_2_8,
+    '2.9': FB_2_9,
+    '2.10': FB_2_10,
+    '2.11': FB_2_11,
 }
 
 MW_DEV_VERSION = '2.latest'

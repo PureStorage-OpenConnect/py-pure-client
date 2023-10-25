@@ -17,6 +17,7 @@ import re
 
 # python 2 and python 3 compatibility library
 import six
+import uuid
 from typing import List, Optional
 
 from .. import models
@@ -72,6 +73,9 @@ class SAML2SSOApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
 
         collection_formats = {}
         path_params = {}
@@ -183,6 +187,9 @@ class SAML2SSOApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api221_sso_saml2_idps_get`, must be a value greater than or equal to `1`")
@@ -298,6 +305,9 @@ class SAML2SSOApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
         # verify the required parameter 'idp' is set
         if idp is None:
             raise TypeError("Missing the required parameter `idp` when calling `api221_sso_saml2_idps_patch`")
@@ -396,6 +406,9 @@ class SAML2SSOApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
         # verify the required parameter 'names' is set
         if names is None:
             raise TypeError("Missing the required parameter `names` when calling `api221_sso_saml2_idps_post`")
@@ -512,6 +525,9 @@ class SAML2SSOApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api221_sso_saml2_idps_test_get`, must be a value greater than or equal to `1`")
@@ -627,6 +643,9 @@ class SAML2SSOApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
         # verify the required parameter 'idp' is set
         if idp is None:
             raise TypeError("Missing the required parameter `idp` when calling `api221_sso_saml2_idps_test_patch`")

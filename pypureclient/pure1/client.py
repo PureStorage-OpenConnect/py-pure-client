@@ -1,11 +1,11 @@
-from . import Pure1_1_2
 from . import Pure1_1_0
 from . import Pure1_1_1
+from . import Pure1_1_2
 
 pure1_modules = {
-    '1.2': Pure1_1_2,
     '1.0': Pure1_1_0,
     '1.1': Pure1_1_1,
+    '1.2': Pure1_1_2,
 }
 
 VERSION_KEY = 'version'

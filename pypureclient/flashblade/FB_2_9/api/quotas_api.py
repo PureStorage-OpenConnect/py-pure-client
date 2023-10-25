@@ -17,6 +17,7 @@ import re
 
 # python 2 and python 3 compatibility library
 import six
+import uuid
 from typing import List, Optional
 
 from .. import models
@@ -83,6 +84,9 @@ class QuotasApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
 
         collection_formats = {}
         path_params = {}
@@ -208,6 +212,9 @@ class QuotasApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api29_quotas_groups_get`, must be a value greater than or equal to `1`")
@@ -337,6 +344,9 @@ class QuotasApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
 
         collection_formats = {}
         path_params = {}
@@ -448,6 +458,9 @@ class QuotasApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
 
         collection_formats = {}
         path_params = {}
@@ -544,6 +557,9 @@ class QuotasApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
 
         collection_formats = {}
         path_params = {}
@@ -624,6 +640,9 @@ class QuotasApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
         # verify the required parameter 'quota_setting' is set
         if quota_setting is None:
             raise TypeError("Missing the required parameter `quota_setting` when calling `api29_quotas_settings_patch`")
@@ -726,6 +745,9 @@ class QuotasApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
 
         collection_formats = {}
         path_params = {}
@@ -851,6 +873,9 @@ class QuotasApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api29_quotas_users_get`, must be a value greater than or equal to `1`")
@@ -980,6 +1005,9 @@ class QuotasApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
 
         collection_formats = {}
         path_params = {}
@@ -1091,6 +1119,9 @@ class QuotasApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
 
         collection_formats = {}
         path_params = {}

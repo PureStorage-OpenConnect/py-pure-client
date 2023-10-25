@@ -57,7 +57,7 @@ class OffloadPost(object):
         Keyword args:
             azure (OffloadAzure): Microsoft Azure Blob storage settings.
             google_cloud (OffloadGoogleCloud): Google Cloud Storage settings.
-            nfs (OffloadNfs): NFS settings.
+            nfs (OffloadNfs): NFS settings. Deprecated from version 6.6.0 onwards - Contact support for additional information.
             s3 (OffloadS3): S3 settings.
         """
         if azure is not None:
@@ -77,7 +77,10 @@ class OffloadPost(object):
     def __getattribute__(self, item):
         value = object.__getattribute__(self, item)
         if isinstance(value, Property):
-            raise AttributeError
+            if item in self.attribute_map:
+                return None
+            else:
+                raise AttributeError(f"{self} object has no attribute '{name}'")
         else:
             return value
 

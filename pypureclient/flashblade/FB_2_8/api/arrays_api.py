@@ -17,6 +17,7 @@ import re
 
 # python 2 and python 3 compatibility library
 import six
+import uuid
 from typing import List, Optional
 
 from .. import models
@@ -71,6 +72,9 @@ class ArraysApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api28_arrays_eula_get`, must be a value greater than or equal to `1`")
@@ -160,6 +164,9 @@ class ArraysApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
         # verify the required parameter 'eula' is set
         if eula is None:
             raise TypeError("Missing the required parameter `eula` when calling `api28_arrays_eula_patch`")
@@ -237,6 +244,9 @@ class ArraysApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
 
         collection_formats = {}
         path_params = {}
@@ -322,6 +332,9 @@ class ArraysApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api28_arrays_factory_reset_token_get`, must be a value greater than or equal to `1`")
@@ -409,6 +422,9 @@ class ArraysApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
 
         collection_formats = {}
         path_params = {}
@@ -494,6 +510,9 @@ class ArraysApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api28_arrays_get`, must be a value greater than or equal to `1`")
@@ -587,6 +606,9 @@ class ArraysApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
 
         if 'end_time' in params and params['end_time'] < 0:
             raise ValueError("Invalid value for parameter `end_time` when calling `api28_arrays_http_specific_performance_get`, must be a value greater than or equal to `0`")
@@ -677,6 +699,9 @@ class ArraysApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
 
         if 'end_time' in params and params['end_time'] < 0:
             raise ValueError("Invalid value for parameter `end_time` when calling `api28_arrays_nfs_specific_performance_get`, must be a value greater than or equal to `0`")
@@ -763,6 +788,9 @@ class ArraysApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
         # verify the required parameter 'array' is set
         if array is None:
             raise TypeError("Missing the required parameter `array` when calling `api28_arrays_patch`")
@@ -848,6 +876,9 @@ class ArraysApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
 
         if 'end_time' in params and params['end_time'] < 0:
             raise ValueError("Invalid value for parameter `end_time` when calling `api28_arrays_performance_get`, must be a value greater than or equal to `0`")
@@ -942,6 +973,9 @@ class ArraysApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
 
         if 'end_time' in params and params['end_time'] < 0:
             raise ValueError("Invalid value for parameter `end_time` when calling `api28_arrays_performance_replication_get`, must be a value greater than or equal to `0`")
@@ -1034,6 +1068,9 @@ class ArraysApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
 
         if 'end_time' in params and params['end_time'] < 0:
             raise ValueError("Invalid value for parameter `end_time` when calling `api28_arrays_s3_specific_performance_get`, must be a value greater than or equal to `0`")
@@ -1126,6 +1163,9 @@ class ArraysApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
 
         if 'end_time' in params and params['end_time'] < 0:
             raise ValueError("Invalid value for parameter `end_time` when calling `api28_arrays_space_get`, must be a value greater than or equal to `0`")
@@ -1230,6 +1270,9 @@ class ArraysApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = uuid.uuid4()
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api28_arrays_supported_time_zones_get`, must be a value greater than or equal to `1`")

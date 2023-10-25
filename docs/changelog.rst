@@ -6,6 +6,7 @@ A log of changes by version and date.
 ======= ========== =====
 Version Date       Notes
 ======= ========== =====
+1.43.0  10/18/2023 Added FlashArray 2.27 client
 1.42.1  10/10/2023 Fixed import issue in 1.42.0
 1.42.0  10/10/2023 Added Pure1 1.2 client to support asset management in Pure1
 1.41.1  09/26/2023 Bug fix for FlashBlade client

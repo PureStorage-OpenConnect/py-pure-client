@@ -27,9 +27,9 @@ copyright = u'2023, Pure Storage, Inc.'
 author = u'Pure Storage, Inc.'
 
 # The short X.Y version
-version = u'1.42'
+version = u'1.43'
 # The full version, including alpha/beta/rc tags
-release = u'1.42.1'
+release = u'1.43.0'
 
 
 # -- General configuration ---------------------------------------------------
