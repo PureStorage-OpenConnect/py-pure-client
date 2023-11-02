@@ -17,6 +17,7 @@ import re
 
 # python 2 and python 3 compatibility library
 import six
+import uuid
 from typing import List, Optional
 
 from .. import models
@@ -81,6 +82,9 @@ class FilesApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = str(uuid.uuid4())
         # verify the required parameter 'source_file' is set
         if source_file is None:
             raise TypeError("Missing the required parameter `source_file` when calling `api226_files_post`")

@@ -17,6 +17,7 @@ import re
 
 # python 2 and python 3 compatibility library
 import six
+import uuid
 from typing import List, Optional
 
 from .. import models
@@ -68,6 +69,9 @@ class AdministratorsApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = str(uuid.uuid4())
 
         collection_formats = {}
         path_params = {}
@@ -171,6 +175,9 @@ class AdministratorsApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = str(uuid.uuid4())
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api25_admins_api_tokens_get`, must be a value greater than or equal to `1`")
@@ -278,6 +285,9 @@ class AdministratorsApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = str(uuid.uuid4())
 
         collection_formats = {}
         path_params = {}
@@ -368,6 +378,9 @@ class AdministratorsApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = str(uuid.uuid4())
 
         collection_formats = {}
         path_params = {}
@@ -471,6 +484,9 @@ class AdministratorsApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = str(uuid.uuid4())
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api25_admins_cache_get`, must be a value greater than or equal to `1`")
@@ -591,6 +607,9 @@ class AdministratorsApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = str(uuid.uuid4())
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api25_admins_get`, must be a value greater than or equal to `1`")
@@ -698,6 +717,9 @@ class AdministratorsApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = str(uuid.uuid4())
         # verify the required parameter 'admin' is set
         if admin is None:
             raise TypeError("Missing the required parameter `admin` when calling `api25_admins_patch`")
@@ -794,6 +816,9 @@ class AdministratorsApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = str(uuid.uuid4())
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api25_admins_settings_get`, must be a value greater than or equal to `1`")
@@ -883,6 +908,9 @@ class AdministratorsApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = str(uuid.uuid4())
         # verify the required parameter 'admin_setting' is set
         if admin_setting is None:
             raise TypeError("Missing the required parameter `admin_setting` when calling `api25_admins_settings_patch`")

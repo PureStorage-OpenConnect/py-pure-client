@@ -17,6 +17,7 @@ import re
 
 # python 2 and python 3 compatibility library
 import six
+import uuid
 from typing import List, Optional
 
 from .. import models
@@ -70,6 +71,9 @@ class ActiveDirectoryApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = str(uuid.uuid4())
 
         collection_formats = {}
         path_params = {}
@@ -173,6 +177,9 @@ class ActiveDirectoryApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = str(uuid.uuid4())
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api20_active_directory_get`, must be a value greater than or equal to `1`")
@@ -278,6 +285,9 @@ class ActiveDirectoryApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = str(uuid.uuid4())
         # verify the required parameter 'active_directory' is set
         if active_directory is None:
             raise TypeError("Missing the required parameter `active_directory` when calling `api20_active_directory_patch`")
@@ -370,6 +380,9 @@ class ActiveDirectoryApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = str(uuid.uuid4())
         # verify the required parameter 'active_directory' is set
         if active_directory is None:
             raise TypeError("Missing the required parameter `active_directory` when calling `api20_active_directory_post`")
@@ -471,6 +484,9 @@ class ActiveDirectoryApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = str(uuid.uuid4())
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api20_active_directory_test_get`, must be a value greater than or equal to `1`")

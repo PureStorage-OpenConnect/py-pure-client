@@ -17,6 +17,7 @@ import re
 
 # python 2 and python 3 compatibility library
 import six
+import uuid
 from typing import List, Optional
 
 from .. import models
@@ -77,6 +78,9 @@ class ConnectionsApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = str(uuid.uuid4())
 
         collection_formats = {}
         path_params = {}
@@ -166,7 +170,7 @@ class ConnectionsApi(object):
         :param list[str] host_names: Performs the operation on the hosts specified. Enter multiple names in comma-separated format. For example, `host01,host02`. A request cannot include a mix of multiple objects with multiple names. For example, a request cannot include a mix of multiple host names and volume names; instead, at least one of the objects (e.g., `host_names`) must be set to only one name (e.g., `host01`).
         :param int limit: Limits the size of the response to the specified number of objects on each page. To return the total number of resources, set `limit=0`. The total number of resources is returned as a `total_item_count` value. If the page size requested is larger than the system maximum limit, the server returns the maximum limit, disregarding the requested page size.
         :param int offset: The starting position based on the results of the query in relation to the full set of response objects returned.
-        :param list[str] protocol_endpoint_names: Performs the operation on the protocol endpoints specified. Enter multiple names in comma-separated format. For example, `pe01,pe02`. A request cannot include a mix of multiple objects with multiple names. For example, a request cannot include a mix of multiple protocol endpoint names and host names; instead, at least one of the objects (e.g., `protocol_endpoint_names`) must be set to one name (e.g., `pe01`).
+        :param list[str] protocol_endpoint_names: Performs the operation on the protocol endpoints specified. Enter multiple names in comma-separated format. For example, `pe01,pe02`. A request cannot include a mix of multiple objects with multiple names. For example, a request cannot include a mix of multiple protocol endpoint names and protocol endpoint IDs; instead, at least one of the objects (e.g., `protocol_endpoint_names`) must be set to one name (e.g., `pe01`).
         :param list[str] sort: Returns the response objects in the order specified. Set `sort` to the name in the response by which to sort. Sorting can be performed on any of the names in the response, and the objects can be sorted in ascending or descending order. By default, the response objects are sorted in ascending order. To sort in descending order, append the minus sign (`-`) to the name. A single request can be sorted on multiple objects. For example, you can sort all volumes from largest to smallest volume size, and then sort volumes of the same size in ascending order by volume name. To sort on multiple names, list the names as comma-separated values.
         :param bool total_item_count: If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.
         :param list[str] volume_names: Performs the operation on the volume specified. Enter multiple names in comma-separated format. For example, `vol01,vol02`. A request cannot include a mix of multiple objects with multiple names. For example, a request cannot include a mix of multiple volume names and host names; instead, at least one of the objects (e.g., `volume_names`) must be set to only one name (e.g., `vol01`).
@@ -201,6 +205,9 @@ class ConnectionsApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = str(uuid.uuid4())
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api23_connections_get`, must be a value greater than or equal to `1`")
@@ -327,6 +334,9 @@ class ConnectionsApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = str(uuid.uuid4())
 
         collection_formats = {}
         path_params = {}

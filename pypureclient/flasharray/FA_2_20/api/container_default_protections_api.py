@@ -17,6 +17,7 @@ import re
 
 # python 2 and python 3 compatibility library
 import six
+import uuid
 from typing import List, Optional
 
 from .. import models
@@ -89,6 +90,9 @@ class ContainerDefaultProtectionsApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = str(uuid.uuid4())
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api220_container_default_protections_get`, must be a value greater than or equal to `1`")
@@ -206,6 +210,9 @@ class ContainerDefaultProtectionsApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = str(uuid.uuid4())
         # verify the required parameter 'container_default_protection' is set
         if container_default_protection is None:
             raise TypeError("Missing the required parameter `container_default_protection` when calling `api220_container_default_protections_patch`")

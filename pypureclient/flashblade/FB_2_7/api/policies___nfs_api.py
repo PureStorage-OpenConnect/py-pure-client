@@ -17,6 +17,7 @@ import re
 
 # python 2 and python 3 compatibility library
 import six
+import uuid
 from typing import List, Optional
 
 from .. import models
@@ -73,6 +74,9 @@ class PoliciesNFSApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = str(uuid.uuid4())
 
         collection_formats = {}
         path_params = {}
@@ -177,6 +181,9 @@ class PoliciesNFSApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = str(uuid.uuid4())
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api27_nfs_export_policies_get`, must be a value greater than or equal to `1`")
@@ -287,6 +294,9 @@ class PoliciesNFSApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = str(uuid.uuid4())
         # verify the required parameter 'policy' is set
         if policy is None:
             raise TypeError("Missing the required parameter `policy` when calling `api27_nfs_export_policies_patch`")
@@ -380,6 +390,9 @@ class PoliciesNFSApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = str(uuid.uuid4())
         # verify the required parameter 'names' is set
         if names is None:
             raise TypeError("Missing the required parameter `names` when calling `api27_nfs_export_policies_post`")
@@ -475,6 +488,9 @@ class PoliciesNFSApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = str(uuid.uuid4())
 
         collection_formats = {}
         path_params = {}
@@ -589,6 +605,9 @@ class PoliciesNFSApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = str(uuid.uuid4())
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api27_nfs_export_policies_rules_get`, must be a value greater than or equal to `1`")
@@ -709,6 +728,9 @@ class PoliciesNFSApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = str(uuid.uuid4())
         # verify the required parameter 'rule' is set
         if rule is None:
             raise TypeError("Missing the required parameter `rule` when calling `api27_nfs_export_policies_rules_patch`")
@@ -820,6 +842,9 @@ class PoliciesNFSApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = str(uuid.uuid4())
         # verify the required parameter 'rule' is set
         if rule is None:
             raise TypeError("Missing the required parameter `rule` when calling `api27_nfs_export_policies_rules_post`")

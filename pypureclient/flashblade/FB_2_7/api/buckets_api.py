@@ -17,6 +17,7 @@ import re
 
 # python 2 and python 3 compatibility library
 import six
+import uuid
 from typing import List, Optional
 
 from .. import models
@@ -68,6 +69,9 @@ class BucketsApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = str(uuid.uuid4())
 
         collection_formats = {}
         path_params = {}
@@ -173,6 +177,9 @@ class BucketsApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = str(uuid.uuid4())
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api27_buckets_get`, must be a value greater than or equal to `1`")
@@ -282,6 +289,9 @@ class BucketsApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = str(uuid.uuid4())
         # verify the required parameter 'bucket' is set
         if bucket is None:
             raise TypeError("Missing the required parameter `bucket` when calling `api27_buckets_patch`")
@@ -396,6 +406,9 @@ class BucketsApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = str(uuid.uuid4())
 
         if 'end_time' in params and params['end_time'] < 0:
             raise ValueError("Invalid value for parameter `end_time` when calling `api27_buckets_performance_get`, must be a value greater than or equal to `0`")
@@ -510,6 +523,9 @@ class BucketsApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = str(uuid.uuid4())
         # verify the required parameter 'bucket' is set
         if bucket is None:
             raise TypeError("Missing the required parameter `bucket` when calling `api27_buckets_post`")
@@ -624,6 +640,9 @@ class BucketsApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = str(uuid.uuid4())
 
         if 'end_time' in params and params['end_time'] < 0:
             raise ValueError("Invalid value for parameter `end_time` when calling `api27_buckets_s3_specific_performance_get`, must be a value greater than or equal to `0`")

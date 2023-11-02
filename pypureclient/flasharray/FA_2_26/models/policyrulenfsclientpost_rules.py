@@ -61,7 +61,7 @@ class PolicyrulenfsclientpostRules(object):
     ):
         """
         Keyword args:
-            access (str): Specifies access control for the export. Valid values are `root-squash`, `all-squash`, and `no-squash`. The value `root-squash` prevents client users and groups with root privilege from mapping their root privilege to a file system. All users with UID 0 will have their UID mapped to `anonuid`. All users with GID 0 will have their GID mapped to `anongid`. The value `all-squash` maps all UIDs (including root) to `anonuid` and all GIDs (including root) to `anongid`. The value `no-squash` allows users and groups to access the file system with their UIDs and GIDs. If not specified, the default value is `root-squash`.
+            access (str): Specifies access control for the export. Valid values are `root-squash`, `all-squash`, and `no-root-squash`. The value `root-squash` prevents client users and groups with root privilege from mapping their root privilege to a file system. All users with UID 0 will have their UID mapped to `anonuid`. All users with GID 0 will have their GID mapped to `anongid`. The value `all-squash` maps all UIDs (including root) to `anonuid` and all GIDs (including root) to `anongid`. The value `no-root-squash` allows users and groups to access the file system with their UIDs and GIDs. If not specified, the default value is `root-squash`.
             anongid (str): Any user whose GID is affected by an `access` of `root_squash` or `all_squash` will have their GID mapped to `anongid`. The default `anongid` is null, which means 65534. Use \"\" to clear. This value is ignored when user mapping is enabled.
             anonuid (str): Any user whose UID is affected by an `access` of `root_squash` or `all_squash` will have their UID mapped to `anonuid`. The default `anonuid` is null, which means 65534. Use \"\" to clear.
             client (str): Specifies which clients are given access. Valid values include `IP`, `IP mask`, or `hostname`. The default is `*` if not specified.
@@ -89,7 +89,10 @@ class PolicyrulenfsclientpostRules(object):
     def __getattribute__(self, item):
         value = object.__getattribute__(self, item)
         if isinstance(value, Property):
-            raise AttributeError
+            if item in self.attribute_map:
+                return None
+            else:
+                raise AttributeError(f"{self} object has no attribute '{name}'")
         else:
             return value
 
