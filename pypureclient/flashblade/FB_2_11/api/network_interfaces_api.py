@@ -17,6 +17,7 @@ import re
 
 # python 2 and python 3 compatibility library
 import six
+import uuid
 from typing import List, Optional
 
 from .. import models
@@ -68,6 +69,9 @@ class NetworkInterfacesApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = str(uuid.uuid4())
 
         collection_formats = {}
         path_params = {}
@@ -169,6 +173,9 @@ class NetworkInterfacesApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = str(uuid.uuid4())
 
         if 'limit' in params and params['limit'] < 1:
             raise ValueError("Invalid value for parameter `limit` when calling `api211_network_interfaces_get`, must be a value greater than or equal to `1`")
@@ -274,6 +281,9 @@ class NetworkInterfacesApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = str(uuid.uuid4())
         # verify the required parameter 'network_interface' is set
         if network_interface is None:
             raise TypeError("Missing the required parameter `network_interface` when calling `api211_network_interfaces_patch`")
@@ -371,6 +381,9 @@ class NetworkInterfacesApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = str(uuid.uuid4())
         # verify the required parameter 'destination' is set
         if destination is None:
             raise TypeError("Missing the required parameter `destination` when calling `api211_network_interfaces_ping_get`")
@@ -467,6 +480,9 @@ class NetworkInterfacesApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = str(uuid.uuid4())
         # verify the required parameter 'network_interface' is set
         if network_interface is None:
             raise TypeError("Missing the required parameter `network_interface` when calling `api211_network_interfaces_post`")
@@ -566,6 +582,9 @@ class NetworkInterfacesApi(object):
             params['filter'] = str(params['filter'])
         if params.get('sort'):
             params['sort'] = [str(_x) for _x in params['sort']]
+        # Assign a value to X-Request-Id if it is not specified
+        if params.get('x_request_id') is None:
+            params['x_request_id'] = str(uuid.uuid4())
         # verify the required parameter 'destination' is set
         if destination is None:
             raise TypeError("Missing the required parameter `destination` when calling `api211_network_interfaces_trace_get`")

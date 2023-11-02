@@ -72,7 +72,7 @@ class Offload(object):
         Keyword args:
             azure (OffloadAzure): Microsoft Azure Blob storage settings.
             google_cloud (OffloadGoogleCloud): Google Cloud Storage settings.
-            nfs (OffloadNfs): NFS settings.
+            nfs (OffloadNfs): NFS settings. Deprecated from version 6.6.0 onwards - Contact support for additional information.
             s3 (OffloadS3): S3 settings.
             name (str): A user-specified name. The name must be locally unique and can be changed.
             protocol (str): Type of offload. Valid values include `azure`, `google-cloud`, `nfs`, and `s3`.
@@ -107,7 +107,10 @@ class Offload(object):
     def __getattribute__(self, item):
         value = object.__getattribute__(self, item)
         if isinstance(value, Property):
-            raise AttributeError
+            if item in self.attribute_map:
+                return None
+            else:
+                raise AttributeError(f"{self} object has no attribute '{name}'")
         else:
             return value
 

@@ -58,7 +58,7 @@ class SnmpAgentPatch(object):
     ):
         """
         Keyword args:
-            name (str): A user-specified name. The name must be locally unique and can be changed.
+            name (str): A locally unique, system-generated name. The name cannot be modified.
             engine_id (str): The administration domain unique name of an SNMP agent.
             v2c (SnmpV2c)
             v3 (SnmpV3Patch)
@@ -86,7 +86,10 @@ class SnmpAgentPatch(object):
     def __getattribute__(self, item):
         value = object.__getattribute__(self, item)
         if isinstance(value, Property):
-            raise AttributeError
+            if item in self.attribute_map:
+                return None
+            else:
+                raise AttributeError(f"{self} object has no attribute '{name}'")
         else:
             return value
 
