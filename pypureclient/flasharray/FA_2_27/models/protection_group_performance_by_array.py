@@ -92,10 +92,7 @@ class ProtectionGroupPerformanceByArray(object):
     def __getattribute__(self, item):
         value = object.__getattribute__(self, item)
         if isinstance(value, Property):
-            if item in self.attribute_map:
-                return None
-            else:
-                raise AttributeError(f"{self} object has no attribute '{name}'")
+            raise AttributeError
         else:
             return value
 
