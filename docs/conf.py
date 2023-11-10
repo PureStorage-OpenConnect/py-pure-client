@@ -29,7 +29,7 @@ author = u'Pure Storage, Inc.'
 # The short X.Y version
 version = u'1.43'
 # The full version, including alpha/beta/rc tags
-release = u'1.43.0'
+release = u'1.43.1'
 
 
 # -- General configuration ---------------------------------------------------
@@ -91,14 +91,29 @@ exclude_patterns = [
     'source/*.FA_2_15.*',
     'source/*.FA_2_16.*',
 #    'source/*.FA_2_17.*',
-#    'source/*.FA_2_18.*',
-#    'source/*.FA_2_19.*',
-#    'source/*.FA_2_20.*',
-#    'source/*.FA_2_21.*',
+    'source/*.FA_2_18.*',
+    'source/*.FA_2_19.*',
+    'source/*.FA_2_20.*',
+    'source/*.FA_2_21.*',
+    'source/*.FA_2_22.*',
+    'source/*.FA_2_23.*',
+    'source/*.FA_2_24.*',
+    'source/*.FA_2_25.*',
+    'source/*.FA_2_26.*',
+#    'source/*.FA_2_27.*',
 # FlashBlade
     'source/*.FB_2_0.*',
     'source/*.FB_2_1.*',
     'source/*.FB_2_2.*',
+    'source/*.FB_2_3.*',
+#    'source/*.FB_2_4.*',
+    'source/*.FB_2_5.*',
+    'source/*.FB_2_6.*',
+    'source/*.FB_2_7.*',
+#    'source/*.FB_2_8.*',
+    'source/*.FB_2_9.*',
+    'source/*.FB_2_10.*',
+#    'source/*.FB_2_11.*',
 ]
 
 # The name of the Pygments (syntax highlighting) style to use.
