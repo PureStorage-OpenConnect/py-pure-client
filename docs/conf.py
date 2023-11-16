@@ -27,9 +27,9 @@ copyright = u'2023, Pure Storage, Inc.'
 author = u'Pure Storage, Inc.'
 
 # The short X.Y version
-version = u'1.43'
+version = u'1.44'
 # The full version, including alpha/beta/rc tags
-release = u'1.43.1'
+release = u'1.44.0'
 
 
 # -- General configuration ---------------------------------------------------
@@ -100,7 +100,8 @@ exclude_patterns = [
     'source/*.FA_2_24.*',
     'source/*.FA_2_25.*',
     'source/*.FA_2_26.*',
-#    'source/*.FA_2_27.*',
+    'source/*.FA_2_27.*',
+#    'source/*.FA_2_28.*',
 # FlashBlade
     'source/*.FB_2_0.*',
     'source/*.FB_2_1.*',

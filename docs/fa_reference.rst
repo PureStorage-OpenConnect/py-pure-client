@@ -147,6 +147,11 @@ FlashArray REST 2.27 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.FA_2_27.client.Client
+
+FlashArray REST 2.28 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.FA_2_28.client.Client
     :members:
 
 
@@ -1616,6 +1621,12 @@ RemoteVolumeSnapshot
 ~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.RemoteVolumeSnapshot
+   :members:
+
+RemoteVolumeSnapshotPost
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.RemoteVolumeSnapshotPost
    :members:
 
 RemoteVolumeSnapshotTransfer
