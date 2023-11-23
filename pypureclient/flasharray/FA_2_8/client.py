@@ -4301,9 +4301,9 @@ class Client(object):
                 Performs the operation on the protocol endpoints specified. Enter multiple names
                 in comma-separated format. For example, `pe01,pe02`. A request cannot include a
                 mix of multiple objects with multiple names. For example, a request cannot
-                include a mix of multiple protocol endpoint names and protocol endpoint IDs;
-                instead, at least one of the objects (e.g., `protocol_endpoint_names`) must be
-                set to one name (e.g., `pe01`).
+                include a mix of multiple protocol endpoint names and host names; instead, at
+                least one of the objects (e.g., `protocol_endpoint_names`) must be set to one
+                name (e.g., `pe01`).
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
             total_item_count (bool, optional):
