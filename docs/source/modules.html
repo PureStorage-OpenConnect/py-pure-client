@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pypureclient &mdash; py-pure-client 1.44.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> py-pure-client
+          </a>
+              <div class="version">
+                1.44
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../quick_start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fa_reference.html">FlashArray Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fb_reference.html">FlashBlade Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pure1_reference.html">Pure1 Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">py-pure-client</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">pypureclient</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/source/modules.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="pypureclient">
+<h1>pypureclient<a class="headerlink" href="#pypureclient" title="Permalink to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pypureclient.html">pypureclient package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pypureclient.html#subpackages">Subpackages</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pypureclient.flasharray.html">pypureclient.flasharray package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.flasharray.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.flasharray.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.flasharray.html#module-pypureclient.flasharray.client">pypureclient.flasharray.client module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.flasharray.html#module-pypureclient.flasharray">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pypureclient.flashblade.html">pypureclient.flashblade package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.flashblade.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.flashblade.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.flashblade.html#module-pypureclient.flashblade.client">pypureclient.flashblade.client module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.flashblade.html#module-pypureclient.flashblade">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pypureclient.pure1.html">pypureclient.pure1 package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.pure1.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.pure1.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.pure1.html#module-pypureclient.pure1.client">pypureclient.pure1.client module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.pure1.html#module-pypureclient.pure1">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pypureclient.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pypureclient.html#module-pypureclient.api_token_manager">pypureclient.api_token_manager module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pypureclient.html#pypureclient.api_token_manager.APITokenManager"><code class="docutils literal notranslate"><span class="pre">APITokenManager</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.api_token_manager.APITokenManager.__init__"><code class="docutils literal notranslate"><span class="pre">APITokenManager.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.api_token_manager.APITokenManager.get_session_token"><code class="docutils literal notranslate"><span class="pre">APITokenManager.get_session_token()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pypureclient.html#module-pypureclient.client_settings">pypureclient.client_settings module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pypureclient.html#pypureclient.client_settings.resolve_ssl_validation"><code class="docutils literal notranslate"><span class="pre">resolve_ssl_validation()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pypureclient.html#module-pypureclient.exceptions">pypureclient.exceptions module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pypureclient.html#pypureclient.exceptions.PureError"><code class="docutils literal notranslate"><span class="pre">PureError</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pypureclient.html#module-pypureclient.keywords">pypureclient.keywords module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pypureclient.html#pypureclient.keywords.Headers"><code class="docutils literal notranslate"><span class="pre">Headers</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.keywords.Headers.api_token"><code class="docutils literal notranslate"><span class="pre">Headers.api_token</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.keywords.Headers.authorization"><code class="docutils literal notranslate"><span class="pre">Headers.authorization</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.keywords.Headers.x_auth_token"><code class="docutils literal notranslate"><span class="pre">Headers.x_auth_token</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.keywords.Headers.x_ratelimit_min"><code class="docutils literal notranslate"><span class="pre">Headers.x_ratelimit_min</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.keywords.Headers.x_ratelimit_remaining_min"><code class="docutils literal notranslate"><span class="pre">Headers.x_ratelimit_remaining_min</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.keywords.Headers.x_ratelimit_remaining_sec"><code class="docutils literal notranslate"><span class="pre">Headers.x_ratelimit_remaining_sec</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.keywords.Headers.x_ratelimit_sec"><code class="docutils literal notranslate"><span class="pre">Headers.x_ratelimit_sec</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.keywords.Headers.x_request_id"><code class="docutils literal notranslate"><span class="pre">Headers.x_request_id</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pypureclient.html#pypureclient.keywords.Parameters"><code class="docutils literal notranslate"><span class="pre">Parameters</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.keywords.Parameters.continuation_token"><code class="docutils literal notranslate"><span class="pre">Parameters.continuation_token</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.keywords.Parameters.filter"><code class="docutils literal notranslate"><span class="pre">Parameters.filter</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.keywords.Parameters.limit"><code class="docutils literal notranslate"><span class="pre">Parameters.limit</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.keywords.Parameters.offset"><code class="docutils literal notranslate"><span class="pre">Parameters.offset</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.keywords.Parameters.sort"><code class="docutils literal notranslate"><span class="pre">Parameters.sort</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.keywords.Parameters.x_request_id"><code class="docutils literal notranslate"><span class="pre">Parameters.x_request_id</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pypureclient.html#pypureclient.keywords.Responses"><code class="docutils literal notranslate"><span class="pre">Responses</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.keywords.Responses.context"><code class="docutils literal notranslate"><span class="pre">Responses.context</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.keywords.Responses.errors"><code class="docutils literal notranslate"><span class="pre">Responses.errors</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.keywords.Responses.message"><code class="docutils literal notranslate"><span class="pre">Responses.message</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pypureclient.html#module-pypureclient.properties">pypureclient.properties module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pypureclient.html#pypureclient.properties.Filter"><code class="docutils literal notranslate"><span class="pre">Filter</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.properties.Filter.__and__"><code class="docutils literal notranslate"><span class="pre">Filter.__and__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.properties.Filter.__init__"><code class="docutils literal notranslate"><span class="pre">Filter.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.properties.Filter.__invert__"><code class="docutils literal notranslate"><span class="pre">Filter.__invert__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.properties.Filter.__or__"><code class="docutils literal notranslate"><span class="pre">Filter.__or__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.properties.Filter.__repr__"><code class="docutils literal notranslate"><span class="pre">Filter.__repr__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.properties.Filter.and_"><code class="docutils literal notranslate"><span class="pre">Filter.and_()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.properties.Filter.contains"><code class="docutils literal notranslate"><span class="pre">Filter.contains()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.properties.Filter.eq"><code class="docutils literal notranslate"><span class="pre">Filter.eq()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.properties.Filter.exists"><code class="docutils literal notranslate"><span class="pre">Filter.exists()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.properties.Filter.ge"><code class="docutils literal notranslate"><span class="pre">Filter.ge()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.properties.Filter.gt"><code class="docutils literal notranslate"><span class="pre">Filter.gt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.properties.Filter.in_"><code class="docutils literal notranslate"><span class="pre">Filter.in_()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.properties.Filter.le"><code class="docutils literal notranslate"><span class="pre">Filter.le()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.properties.Filter.lt"><code class="docutils literal notranslate"><span class="pre">Filter.lt()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.properties.Filter.ne"><code class="docutils literal notranslate"><span class="pre">Filter.ne()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.properties.Filter.not_"><code class="docutils literal notranslate"><span class="pre">Filter.not_()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.properties.Filter.or_"><code class="docutils literal notranslate"><span class="pre">Filter.or_()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.properties.Filter.tags"><code class="docutils literal notranslate"><span class="pre">Filter.tags()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pypureclient.html#pypureclient.properties.Property"><code class="docutils literal notranslate"><span class="pre">Property</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.properties.Property.__add__"><code class="docutils literal notranslate"><span class="pre">Property.__add__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.properties.Property.__eq__"><code class="docutils literal notranslate"><span class="pre">Property.__eq__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.properties.Property.__ge__"><code class="docutils literal notranslate"><span class="pre">Property.__ge__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.properties.Property.__getitem__"><code class="docutils literal notranslate"><span class="pre">Property.__getitem__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.properties.Property.__gt__"><code class="docutils literal notranslate"><span class="pre">Property.__gt__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.properties.Property.__init__"><code class="docutils literal notranslate"><span class="pre">Property.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.properties.Property.__le__"><code class="docutils literal notranslate"><span class="pre">Property.__le__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.properties.Property.__lt__"><code class="docutils literal notranslate"><span class="pre">Property.__lt__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.properties.Property.__ne__"><code class="docutils literal notranslate"><span class="pre">Property.__ne__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.properties.Property.__repr__"><code class="docutils literal notranslate"><span class="pre">Property.__repr__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.properties.Property.all"><code class="docutils literal notranslate"><span class="pre">Property.all()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.properties.Property.any"><code class="docutils literal notranslate"><span class="pre">Property.any()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.properties.Property.ascending"><code class="docutils literal notranslate"><span class="pre">Property.ascending()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.properties.Property.descending"><code class="docutils literal notranslate"><span class="pre">Property.descending()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.properties.Property.exists"><code class="docutils literal notranslate"><span class="pre">Property.exists()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.properties.Property.subproperty"><code class="docutils literal notranslate"><span class="pre">Property.subproperty()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pypureclient.html#module-pypureclient.responses">pypureclient.responses module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pypureclient.html#pypureclient.responses.ApiError"><code class="docutils literal notranslate"><span class="pre">ApiError</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.responses.ApiError.__init__"><code class="docutils literal notranslate"><span class="pre">ApiError.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.responses.ApiError.__repr__"><code class="docutils literal notranslate"><span class="pre">ApiError.__repr__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.responses.ApiError.to_dict"><code class="docutils literal notranslate"><span class="pre">ApiError.to_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pypureclient.html#pypureclient.responses.ErrorResponse"><code class="docutils literal notranslate"><span class="pre">ErrorResponse</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.responses.ErrorResponse.__init__"><code class="docutils literal notranslate"><span class="pre">ErrorResponse.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.responses.ErrorResponse.__repr__"><code class="docutils literal notranslate"><span class="pre">ErrorResponse.__repr__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.responses.ErrorResponse.to_dict"><code class="docutils literal notranslate"><span class="pre">ErrorResponse.to_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pypureclient.html#pypureclient.responses.ItemIterator"><code class="docutils literal notranslate"><span class="pre">ItemIterator</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.responses.ItemIterator.__init__"><code class="docutils literal notranslate"><span class="pre">ItemIterator.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.responses.ItemIterator.__iter__"><code class="docutils literal notranslate"><span class="pre">ItemIterator.__iter__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.responses.ItemIterator.__len__"><code class="docutils literal notranslate"><span class="pre">ItemIterator.__len__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.responses.ItemIterator.__next__"><code class="docutils literal notranslate"><span class="pre">ItemIterator.__next__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.responses.ItemIterator.next"><code class="docutils literal notranslate"><span class="pre">ItemIterator.next()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pypureclient.html#pypureclient.responses.Response"><code class="docutils literal notranslate"><span class="pre">Response</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.responses.Response.__init__"><code class="docutils literal notranslate"><span class="pre">Response.__init__()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pypureclient.html#pypureclient.responses.ResponseHeaders"><code class="docutils literal notranslate"><span class="pre">ResponseHeaders</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.responses.ResponseHeaders.__init__"><code class="docutils literal notranslate"><span class="pre">ResponseHeaders.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.responses.ResponseHeaders.__repr__"><code class="docutils literal notranslate"><span class="pre">ResponseHeaders.__repr__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.responses.ResponseHeaders.to_dict"><code class="docutils literal notranslate"><span class="pre">ResponseHeaders.to_dict()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pypureclient.html#pypureclient.responses.ValidResponse"><code class="docutils literal notranslate"><span class="pre">ValidResponse</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.responses.ValidResponse.__init__"><code class="docutils literal notranslate"><span class="pre">ValidResponse.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.responses.ValidResponse.__repr__"><code class="docutils literal notranslate"><span class="pre">ValidResponse.__repr__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.responses.ValidResponse.to_dict"><code class="docutils literal notranslate"><span class="pre">ValidResponse.to_dict()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pypureclient.html#module-pypureclient.token_manager">pypureclient.token_manager module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pypureclient.html#pypureclient.token_manager.TokenManager"><code class="docutils literal notranslate"><span class="pre">TokenManager</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.token_manager.TokenManager.ALGORITHM"><code class="docutils literal notranslate"><span class="pre">TokenManager.ALGORITHM</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.token_manager.TokenManager.EXP_TIME_IN_SECONDS"><code class="docutils literal notranslate"><span class="pre">TokenManager.EXP_TIME_IN_SECONDS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.token_manager.TokenManager.__init__"><code class="docutils literal notranslate"><span class="pre">TokenManager.__init__()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.token_manager.TokenManager.get_access_token"><code class="docutils literal notranslate"><span class="pre">TokenManager.get_access_token()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.html#pypureclient.token_manager.TokenManager.get_header"><code class="docutils literal notranslate"><span class="pre">TokenManager.get_header()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pypureclient.html#module-pypureclient">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Pure Storage, Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
