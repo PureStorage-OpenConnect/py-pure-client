@@ -4854,16 +4854,16 @@ class Client(object):
                 Performs the operation on the protocol endpoints specified. Enter multiple IDs
                 in comma-separated format. For example, `peid01,peid02`. A request cannot
                 include a mix of multiple objects with multiple IDs. For example, a request
-                cannot include a mix of multiple protocol endpoint IDs and protocol endpoint
-                names. Instead, at least one of the objects (e.g., `protocol_endpoint_ids`) must
-                be set to one ID (e.g., `peid01`).
+                cannot include a mix of multiple protocol endpoint IDs and host names. Instead,
+                at least one of the objects (e.g., `protocol_endpoint_ids`) must be set to one
+                ID (e.g., `peid01`).
             protocol_endpoint_names (list[str], optional):
                 Performs the operation on the protocol endpoints specified. Enter multiple names
                 in comma-separated format. For example, `pe01,pe02`. A request cannot include a
                 mix of multiple objects with multiple names. For example, a request cannot
-                include a mix of multiple protocol endpoint names and protocol endpoint IDs;
-                instead, at least one of the objects (e.g., `protocol_endpoint_names`) must be
-                set to one name (e.g., `pe01`).
+                include a mix of multiple protocol endpoint names and host names; instead, at
+                least one of the objects (e.g., `protocol_endpoint_names`) must be set to one
+                name (e.g., `pe01`).
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
             total_item_count (bool, optional):
@@ -28750,18 +28750,10 @@ class Client(object):
                 required, but they cannot be set together.
             vchost_names (list[str], optional):
                 Performs the operation on the unique vchost name specified. Enter multiple names
-                in a comma-separated format. For example, `vchost01,vchost02`. A request cannot
-                include a mix of multiple objects with multiple names. For example, a request
-                cannot include a mix of multiple vchost names and vchost IDs; instead, at least
-                one of the objects (e.g., `vchost_names`) must be set to one name (e.g.,
-                `vchost01`).
+                in a comma-separated format. For example, `vchost01,vchost02`.
             vchost_ids (list[str], optional):
                 Performs the operation on the unique vchost IDs specified. Enter multiple vchost
-                IDs in a comma-separated format. For example, `vchostid01,vchostid02`. A request
-                cannot include a mix of multiple objects with multiple IDs. For example, a
-                request cannot include a mix of multiple vchost IDs and vchost names. Instead,
-                at least one of the objects (e.g., `vchost_ids`) must be set to one ID (e.g.,
-                `vchostid01`).
+                IDs in a comma-separated format. For example, `vchostid01,vchostid02`.
             certificate_names (list[str], optional):
                 The names of one or more certificates. Enter multiple names in comma-separated
                 format. For example, `cert01,cert02`.
@@ -28859,18 +28851,10 @@ class Client(object):
                 required, but they cannot be set together.
             vchost_names (list[str], optional):
                 Performs the operation on the unique vchost name specified. Enter multiple names
-                in a comma-separated format. For example, `vchost01,vchost02`. A request cannot
-                include a mix of multiple objects with multiple names. For example, a request
-                cannot include a mix of multiple vchost names and vchost IDs; instead, at least
-                one of the objects (e.g., `vchost_names`) must be set to one name (e.g.,
-                `vchost01`).
+                in a comma-separated format. For example, `vchost01,vchost02`.
             vchost_ids (list[str], optional):
                 Performs the operation on the unique vchost IDs specified. Enter multiple vchost
-                IDs in a comma-separated format. For example, `vchostid01,vchostid02`. A request
-                cannot include a mix of multiple objects with multiple IDs. For example, a
-                request cannot include a mix of multiple vchost IDs and vchost names. Instead,
-                at least one of the objects (e.g., `vchost_ids`) must be set to one ID (e.g.,
-                `vchostid01`).
+                IDs in a comma-separated format. For example, `vchostid01,vchostid02`.
             certificate_names (list[str], optional):
                 The names of one or more certificates. Enter multiple names in comma-separated
                 format. For example, `cert01,cert02`.
@@ -28964,18 +28948,10 @@ class Client(object):
                 required, but they cannot be set together.
             vchost_names (list[str], optional):
                 Performs the operation on the unique vchost name specified. Enter multiple names
-                in a comma-separated format. For example, `vchost01,vchost02`. A request cannot
-                include a mix of multiple objects with multiple names. For example, a request
-                cannot include a mix of multiple vchost names and vchost IDs; instead, at least
-                one of the objects (e.g., `vchost_names`) must be set to one name (e.g.,
-                `vchost01`).
+                in a comma-separated format. For example, `vchost01,vchost02`.
             vchost_ids (list[str], optional):
                 Performs the operation on the unique vchost IDs specified. Enter multiple vchost
-                IDs in a comma-separated format. For example, `vchostid01,vchostid02`. A request
-                cannot include a mix of multiple objects with multiple IDs. For example, a
-                request cannot include a mix of multiple vchost IDs and vchost names. Instead,
-                at least one of the objects (e.g., `vchost_ids`) must be set to one ID (e.g.,
-                `vchostid01`).
+                IDs in a comma-separated format. For example, `vchostid01,vchostid02`.
             certificate_names (list[str], optional):
                 The names of one or more certificates. Enter multiple names in comma-separated
                 format. For example, `cert01,cert02`.
@@ -29046,18 +29022,10 @@ class Client(object):
                 provided.
             vchost_names (list[str], optional):
                 Performs the operation on the unique vchost name specified. Enter multiple names
-                in a comma-separated format. For example, `vchost01,vchost02`. A request cannot
-                include a mix of multiple objects with multiple names. For example, a request
-                cannot include a mix of multiple vchost names and vchost IDs; instead, at least
-                one of the objects (e.g., `vchost_names`) must be set to one name (e.g.,
-                `vchost01`).
+                in a comma-separated format. For example, `vchost01,vchost02`.
             vchost_ids (list[str], optional):
                 Performs the operation on the unique vchost IDs specified. Enter multiple vchost
-                IDs in a comma-separated format. For example, `vchostid01,vchostid02`. A request
-                cannot include a mix of multiple objects with multiple IDs. For example, a
-                request cannot include a mix of multiple vchost IDs and vchost names. Instead,
-                at least one of the objects (e.g., `vchost_ids`) must be set to one ID (e.g.,
-                `vchostid01`).
+                IDs in a comma-separated format. For example, `vchostid01,vchostid02`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -29193,18 +29161,10 @@ class Client(object):
                 required, but they cannot be set together.
             vchost_names (list[str], optional):
                 Performs the operation on the unique vchost name specified. Enter multiple names
-                in a comma-separated format. For example, `vchost01,vchost02`. A request cannot
-                include a mix of multiple objects with multiple names. For example, a request
-                cannot include a mix of multiple vchost names and vchost IDs; instead, at least
-                one of the objects (e.g., `vchost_names`) must be set to one name (e.g.,
-                `vchost01`).
+                in a comma-separated format. For example, `vchost01,vchost02`.
             vchost_ids (list[str], optional):
                 Performs the operation on the unique vchost IDs specified. Enter multiple vchost
-                IDs in a comma-separated format. For example, `vchostid01,vchostid02`. A request
-                cannot include a mix of multiple objects with multiple IDs. For example, a
-                request cannot include a mix of multiple vchost IDs and vchost names. Instead,
-                at least one of the objects (e.g., `vchost_ids`) must be set to one ID (e.g.,
-                `vchostid01`).
+                IDs in a comma-separated format. For example, `vchostid01,vchostid02`.
             endpoints (list[str], optional):
                 Performs the operation on the unique endpoints specified. Enter multiple
                 endpoints in a comma-separated format.
@@ -29298,18 +29258,10 @@ class Client(object):
                 required, but they cannot be set together.
             vchost_names (list[str], optional):
                 Performs the operation on the unique vchost name specified. Enter multiple names
-                in a comma-separated format. For example, `vchost01,vchost02`. A request cannot
-                include a mix of multiple objects with multiple names. For example, a request
-                cannot include a mix of multiple vchost names and vchost IDs; instead, at least
-                one of the objects (e.g., `vchost_names`) must be set to one name (e.g.,
-                `vchost01`).
+                in a comma-separated format. For example, `vchost01,vchost02`.
             vchost_ids (list[str], optional):
                 Performs the operation on the unique vchost IDs specified. Enter multiple vchost
-                IDs in a comma-separated format. For example, `vchostid01,vchostid02`. A request
-                cannot include a mix of multiple objects with multiple IDs. For example, a
-                request cannot include a mix of multiple vchost IDs and vchost names. Instead,
-                at least one of the objects (e.g., `vchost_ids`) must be set to one ID (e.g.,
-                `vchostid01`).
+                IDs in a comma-separated format. For example, `vchostid01,vchostid02`.
             endpoints (list[str], optional):
                 Performs the operation on the unique endpoints specified. Enter multiple
                 endpoints in a comma-separated format.
@@ -29399,18 +29351,10 @@ class Client(object):
                 required, but they cannot be set together.
             vchost_names (list[str], optional):
                 Performs the operation on the unique vchost name specified. Enter multiple names
-                in a comma-separated format. For example, `vchost01,vchost02`. A request cannot
-                include a mix of multiple objects with multiple names. For example, a request
-                cannot include a mix of multiple vchost names and vchost IDs; instead, at least
-                one of the objects (e.g., `vchost_names`) must be set to one name (e.g.,
-                `vchost01`).
+                in a comma-separated format. For example, `vchost01,vchost02`.
             vchost_ids (list[str], optional):
                 Performs the operation on the unique vchost IDs specified. Enter multiple vchost
-                IDs in a comma-separated format. For example, `vchostid01,vchostid02`. A request
-                cannot include a mix of multiple objects with multiple IDs. For example, a
-                request cannot include a mix of multiple vchost IDs and vchost names. Instead,
-                at least one of the objects (e.g., `vchost_ids`) must be set to one ID (e.g.,
-                `vchostid01`).
+                IDs in a comma-separated format. For example, `vchostid01,vchostid02`.
             endpoints (list[str], optional):
                 Performs the operation on the unique endpoints specified. Enter multiple
                 endpoints in a comma-separated format.
@@ -29480,18 +29424,10 @@ class Client(object):
                 provided.
             vchost_names (list[str], optional):
                 Performs the operation on the unique vchost name specified. Enter multiple names
-                in a comma-separated format. For example, `vchost01,vchost02`. A request cannot
-                include a mix of multiple objects with multiple names. For example, a request
-                cannot include a mix of multiple vchost names and vchost IDs; instead, at least
-                one of the objects (e.g., `vchost_names`) must be set to one name (e.g.,
-                `vchost01`).
+                in a comma-separated format. For example, `vchost01,vchost02`.
             vchost_ids (list[str], optional):
                 Performs the operation on the unique vchost IDs specified. Enter multiple vchost
-                IDs in a comma-separated format. For example, `vchostid01,vchostid02`. A request
-                cannot include a mix of multiple objects with multiple IDs. For example, a
-                request cannot include a mix of multiple vchost IDs and vchost names. Instead,
-                at least one of the objects (e.g., `vchost_ids`) must be set to one ID (e.g.,
-                `vchostid01`).
+                IDs in a comma-separated format. For example, `vchostid01,vchostid02`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.

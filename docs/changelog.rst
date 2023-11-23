@@ -6,6 +6,7 @@ A log of changes by version and date.
 ======= ========== =====
 Version Date       Notes
 ======= ========== =====
+1.44.0  11/23/2023 Added FlashArray 2.28 client
 1.43.1  11/09/2023 Bug fix for models
 1.43.0  11/02/2023 Added FlashArray 2.27 client
 1.42.1  10/10/2023 Fixed import issue in 1.42.0
