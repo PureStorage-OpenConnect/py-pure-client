@@ -1,12 +1,12 @@
-from . import Pure1_1_0
-from . import Pure1_1_1
-from . import Pure1_1_2
+import importlib
 
-pure1_modules = {
-    '1.0': Pure1_1_0,
-    '1.1': Pure1_1_1,
-    '1.2': Pure1_1_2,
+pure1_modules_dict = {
+    '1.0': 'Pure1_1_0',
+    '1.1': 'Pure1_1_1',
+    '1.2': 'Pure1_1_2',
 }
+
+pure1_modules = {}
 
 VERSION_KEY = 'version'
 
@@ -46,8 +46,11 @@ def Client(**kwargs):
 
 
 def version_to_module(version):
-    pure1_module = pure1_modules.get(version, None)
-    if pure1_module is None:
+    if version not in set(pure1_modules_dict.keys()):
         msg = "version {} not supported".format(version)
         raise ValueError(msg.format(version))
+    if version not in set(pure1_modules.keys()):
+        parent_module_name = '.'.join(__name__.split('.')[:-1])
+        pure1_modules[version] = importlib.import_module("{}.{}".format(parent_module_name,pure1_modules_dict[version]))
+    pure1_module = pure1_modules.get(version, None)
     return pure1_module

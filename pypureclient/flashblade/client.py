@@ -1,35 +1,26 @@
 import requests
+import importlib
+
 
 from ..client_settings import resolve_ssl_validation
 from . import PureError
 
-from . import FB_2_0
-from . import FB_2_1
-from . import FB_2_2
-from . import FB_2_3
-from . import FB_2_4
-from . import FB_2_5
-from . import FB_2_6
-from . import FB_2_7
-from . import FB_2_8
-from . import FB_2_9
-from . import FB_2_10
-from . import FB_2_11
-
-fb_modules = {
-    '2.0': FB_2_0,
-    '2.1': FB_2_1,
-    '2.2': FB_2_2,
-    '2.3': FB_2_3,
-    '2.4': FB_2_4,
-    '2.5': FB_2_5,
-    '2.6': FB_2_6,
-    '2.7': FB_2_7,
-    '2.8': FB_2_8,
-    '2.9': FB_2_9,
-    '2.10': FB_2_10,
-    '2.11': FB_2_11,
+fb_modules_dict = {
+    '2.0': 'FB_2_0',
+    '2.1': 'FB_2_1',
+    '2.2': 'FB_2_2',
+    '2.3': 'FB_2_3',
+    '2.4': 'FB_2_4',
+    '2.5': 'FB_2_5',
+    '2.6': 'FB_2_6',
+    '2.7': 'FB_2_7',
+    '2.8': 'FB_2_8',
+    '2.9': 'FB_2_9',
+    '2.10': 'FB_2_10',
+    '2.11': 'FB_2_11',
 }
+
+fb_modules = {}
 
 MW_DEV_VERSION = '2.latest'
 
@@ -112,9 +103,9 @@ def get_array_versions(target, verify_ssl=None):
 
 
 def validate_version(array_versions, version):
-    if str(version).lower() == MW_DEV_VERSION and MW_DEV_VERSION in fb_modules.keys():
+    if str(version).lower() == MW_DEV_VERSION and MW_DEV_VERSION in fb_modules_dict.keys():
         return
-    if version not in set(fb_modules.keys()):
+    if version not in set(fb_modules_dict.keys()):
         msg = "version {} not supported by client.".format(version)
         raise ValueError(msg.format(version))
     if version not in array_versions:
@@ -123,7 +114,7 @@ def validate_version(array_versions, version):
 
 
 def choose_version(array_versions):
-    client_versions = set(fb_modules.keys())
+    client_versions = set(fb_modules_dict.keys())
     for version in array_versions[::-1]:
         if version in client_versions:
             return version
@@ -131,5 +122,8 @@ def choose_version(array_versions):
 
 
 def version_to_module(version):
+    if version not in set(fb_modules.keys()):
+        parent_module_name = '.'.join(__name__.split('.')[:-1])
+        fb_modules[version] = importlib.import_module("{}.{}".format(parent_module_name,fb_modules_dict[version]))
     fb_module = fb_modules.get(version, None)
     return fb_module

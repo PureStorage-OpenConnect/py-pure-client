@@ -1,65 +1,41 @@
 import requests
+import importlib
 
 from ..client_settings import resolve_ssl_validation
 from . import PureError
 
-from . import FA_2_0
-from . import FA_2_1
-from . import FA_2_2
-from . import FA_2_3
-from . import FA_2_4
-from . import FA_2_5
-from . import FA_2_6
-from . import FA_2_7
-from . import FA_2_8
-from . import FA_2_9
-from . import FA_2_10
-from . import FA_2_11
-from . import FA_2_13
-from . import FA_2_14
-from . import FA_2_15
-from . import FA_2_16
-from . import FA_2_17
-from . import FA_2_19
-from . import FA_2_20
-from . import FA_2_21
-from . import FA_2_22
-from . import FA_2_23
-from . import FA_2_24
-from . import FA_2_25
-from . import FA_2_26
-from . import FA_2_27
-from . import FA_2_28
-
-fa_modules = {
-    '2.0': FA_2_0,
-    '2.1': FA_2_1,
-    '2.2': FA_2_2,
-    '2.3': FA_2_3,
-    '2.4': FA_2_4,
-    '2.5': FA_2_5,
-    '2.6': FA_2_6,
-    '2.7': FA_2_7,
-    '2.8': FA_2_8,
-    '2.9': FA_2_9,
-    '2.10': FA_2_10,
-    '2.11': FA_2_11,
-    '2.13': FA_2_13,
-    '2.14': FA_2_14,
-    '2.15': FA_2_15,
-    '2.16': FA_2_16,
-    '2.17': FA_2_17,
-    '2.19': FA_2_19,
-    '2.20': FA_2_20,
-    '2.21': FA_2_21,
-    '2.22': FA_2_22,
-    '2.23': FA_2_23,
-    '2.24': FA_2_24,
-    '2.25': FA_2_25,
-    '2.26': FA_2_26,
-    '2.27': FA_2_27,
-    '2.28': FA_2_28,
+fa_modules_dict = {
+    '2.0': 'FA_2_0',
+    '2.1': 'FA_2_1',
+    '2.2': 'FA_2_2',
+    '2.3': 'FA_2_3',
+    '2.4': 'FA_2_4',
+    '2.5': 'FA_2_5',
+    '2.6': 'FA_2_6',
+    '2.7': 'FA_2_7',
+    '2.8': 'FA_2_8',
+    '2.9': 'FA_2_9',
+    '2.10': 'FA_2_10',
+    '2.11': 'FA_2_11',
+    '2.13': 'FA_2_13',
+    '2.14': 'FA_2_14',
+    '2.15': 'FA_2_15',
+    '2.16': 'FA_2_16',
+    '2.17': 'FA_2_17',
+    '2.19': 'FA_2_19',
+    '2.20': 'FA_2_20',
+    '2.21': 'FA_2_21',
+    '2.22': 'FA_2_22',
+    '2.23': 'FA_2_23',
+    '2.24': 'FA_2_24',
+    '2.25': 'FA_2_25',
+    '2.26': 'FA_2_26',
+    '2.27': 'FA_2_27',
+    '2.28': 'FA_2_28',
+    '2.29': 'FA_2_29',
 }
+
+fa_modules = {}
 
 MW_DEV_VERSION = '2.DEV'
 CLIENT_DEV_VERSION = '2.X'
@@ -144,7 +120,7 @@ def get_array_versions(target, verify_ssl=None):
 def validate_version(array_versions, version):
     if version == MW_DEV_VERSION:
         version = CLIENT_DEV_VERSION
-    if version not in set(fa_modules.keys()):
+    if version not in set(fa_modules_dict.keys()):
         msg = "version {} not supported by client.".format(version)
         raise ValueError(msg.format(version))
     if version not in array_versions:
@@ -153,7 +129,7 @@ def validate_version(array_versions, version):
     return version
 
 def choose_version(array_versions):
-    client_versions = set(fa_modules.keys())
+    client_versions = set(fa_modules_dict.keys())
     for version in array_versions[::-1]:
         if version.upper() == MW_DEV_VERSION:
             version = CLIENT_DEV_VERSION
@@ -162,5 +138,8 @@ def choose_version(array_versions):
     raise ValueError("No compatible REST version found between the client SDK and the target array.")
 
 def version_to_module(version):
+    if version not in set(fa_modules.keys()):
+        parent_module_name = '.'.join(__name__.split('.')[:-1])
+        fa_modules[version] = importlib.import_module("{}.{}".format(parent_module_name,fa_modules_dict[version]))
     fa_module = fa_modules.get(version, None)
     return fa_module

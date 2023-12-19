@@ -152,7 +152,13 @@ FlashArray REST 2.28 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.FA_2_28.client.Client
+
+FlashArray REST 2.29 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.FA_2_29.client.Client
     :members:
+
 
 
 Properties
@@ -469,6 +475,18 @@ Chap
 ~~~~
 
 .. autoclass:: pypureclient.flasharray.Chap
+   :members:
+
+CloudCapacityStatus
+~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.CloudCapacityStatus
+   :members:
+
+CloudCapacityStep
+~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.CloudCapacityStep
    :members:
 
 CloudProviderTag
