@@ -101,7 +101,8 @@ exclude_patterns = [
     'source/*.FA_2_25.*',
     'source/*.FA_2_26.*',
     'source/*.FA_2_27.*',
-#    'source/*.FA_2_28.*',
+    'source/*.FA_2_28.*',
+#    'source/*.FA_2_29.*',
 # FlashBlade
     'source/*.FB_2_0.*',
     'source/*.FB_2_1.*',
