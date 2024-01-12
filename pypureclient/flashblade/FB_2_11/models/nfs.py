@@ -33,7 +33,7 @@ class Nfs(object):
         'v3_enabled': 'bool',
         'v4_1_enabled': 'bool',
         'rules': 'str',
-        'export_policy': 'Reference'
+        'export_policy': 'ReferenceWritable'
     }
 
     attribute_map = {
@@ -51,14 +51,14 @@ class Nfs(object):
         v3_enabled=None,  # type: bool
         v4_1_enabled=None,  # type: bool
         rules=None,  # type: str
-        export_policy=None,  # type: models.Reference
+        export_policy=None,  # type: models.ReferenceWritable
     ):
         """
         Keyword args:
             v3_enabled (bool): If set to `true`, the NFSv3 protocol will be enabled.
             v4_1_enabled (bool): If set to `true`, the NFSv4.1 protocol will be enabled.
             rules (str): The NFS export rules for the system. Either the `export_policy` or `rules` will control the NFS export functionality for the file system. If this is set, then the `policy` field will be cleared. Both `export_policy` and `rules` can not be set in the same request. Rules can be applied to an individual client or a range of clients specified by IP address (`ip_address(options)`), netmask (`ip_address/length(options)`), netgroup (`@groupname(options)`), hostname (`hostname(options)`) (see RFC-1123 part 2.1), fully qualified domain name (`host.exampledomain.com(options)`) (see RFC-1123 part 2.1, RFC 2181 part 11), or wildcards with fully qualified domain name or hostname (`*.exampledomain?.com(options)`). Possible export options include `rw`, `ro`, `fileid_32bit`,  `no_fileid_32bit`, `anonuid`, `anongid`, `root_squash`, `no_root_squash`, `all_squash`, `no_all_squash`,  `secure`, `insecure`, `atime`, `noatime`, and `sec`. If not specified, defaults to `*(rw,no_root_squash)`.
-            export_policy (Reference): The NFS export policy for the system. Either the `export_policy` or `rules` will control the NFS export functionality for the file system. If this is set, then the `rules` field will be cleared. Both `export_policy` and `rules` can not be set in the same request.
+            export_policy (ReferenceWritable): The NFS export policy for the system. Either the `export_policy` or `rules` will control the NFS export functionality for the file system. If this is set, then the `rules` field will be cleared. Both `export_policy` and `rules` can not be set in the same request.
         """
         if v3_enabled is not None:
             self.v3_enabled = v3_enabled
