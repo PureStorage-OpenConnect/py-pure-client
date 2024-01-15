@@ -47,7 +47,7 @@ class FileSystemPatch(object):
         'smb': 'Smb',
         'snapshot_directory_enabled': 'bool',
         'source': 'FixedLocationReference',
-        'space': 'Space',
+        'space': 'TmpFB20Space',
         'time_remaining': 'int',
         'writable': 'bool'
     }
@@ -97,7 +97,7 @@ class FileSystemPatch(object):
         smb=None,  # type: models.Smb
         snapshot_directory_enabled=None,  # type: bool
         source=None,  # type: models.FixedLocationReference
-        space=None,  # type: models.Space
+        space=None,  # type: models.TmpFB20Space
         time_remaining=None,  # type: int
         writable=None,  # type: bool
     ):
@@ -120,7 +120,7 @@ class FileSystemPatch(object):
             smb (Smb): SMB configuration.
             snapshot_directory_enabled (bool): If set to `true`, a hidden .snapshot directory will be present in each directory of the file system when it is mounted. The .snapshot directory allows clients read access to the contents of the snapshots that have been taken of a directory. If set to `false`, the .snapshot directory will not be present in any directories within a mounted file system.
             source (FixedLocationReference): A reference to the source file system.
-            space (Space)
+            space (TmpFB20Space): The space usage of the file system.
             time_remaining (int): Time in milliseconds before the file system is eradicated. `null` if not destroyed.
             writable (bool): Whether the file system is writable or not. If `false`, this overrides any protocol or file permission settings and prevents changes. If `true`, then the protocol and file permission settings are evaluated. If not specified, defaults to `true`. Modifiable.
         """
