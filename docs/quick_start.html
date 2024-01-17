@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quick Start &mdash; py-pure-client 1.44.0 documentation</title>
+  <title>Quick Start &mdash; py-pure-client 1.46.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -32,7 +32,7 @@
             <a href="index.html" class="icon icon-home"> py-pure-client
           </a>
               <div class="version">
-                1.44
+                1.46
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -178,16 +178,16 @@ public API. If not already configured, instructions for getting access to and
 using the Pure1 Manage public API can be found at the <a class="reference external" href="https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference">API reference page</a>.</p>
 <p>For Pure1 client instantiation you can use environment variables. It is
 recommended to use environment variables for the Pure1 client.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">export</span> <span class="nv">PURE1_PRIVATE_KEY_FILE</span><span class="o">=[</span>...<span class="o">]</span>
-$ <span class="nb">export</span> <span class="nv">PURE1_PRIVATE_KEY_PASSWORD</span><span class="o">=[</span>...<span class="o">]</span>
-$ <span class="nb">export</span> <span class="nv">PURE1_APP_ID</span><span class="o">=[</span>...<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">PURE1_PRIVATE_KEY_FILE</span><span class="o">=[</span>...<span class="o">]</span>
+$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">PURE1_PRIVATE_KEY_PASSWORD</span><span class="o">=[</span>...<span class="o">]</span>
+$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">PURE1_APP_ID</span><span class="o">=[</span>...<span class="o">]</span>
 </pre></div>
 </div>
 <p>Alternatively, the authentication information can be passed directly into the client.</p>
 <p>If directly using a pre-generated ID token is preferred, it can be used in the
 same way. Note that using a pre-generated ID token will cause the client to fail
 when the ID token expires.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">export</span> <span class="nv">PURE1_ID_TOKEN</span><span class="o">=[</span>...<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">PURE1_ID_TOKEN</span><span class="o">=[</span>...<span class="o">]</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">client</span> <span class="o">=</span> <span class="n">pure1</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">id_token</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">])</span>

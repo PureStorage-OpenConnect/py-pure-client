@@ -79,6 +79,12 @@ FlashBlade REST 2.11 Client
 .. autoclass:: pypureclient.flashblade.FB_2_11.client.Client
     :members:
 
+FlashBlade REST 2.12 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.FB_2_12.client.Client
+    :members:
+
 
 Properties
 ----------
@@ -130,6 +136,12 @@ ActiveDirectory
 ~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.ActiveDirectory
+   :members:
+
+ActiveDirectoryDirectoryServers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.ActiveDirectoryDirectoryServers
    :members:
 
 ActiveDirectoryPatch
@@ -342,6 +354,42 @@ Bucket
 .. autoclass:: pypureclient.flashblade.Bucket
    :members:
 
+BucketAccessPolicy
+~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.BucketAccessPolicy
+   :members:
+
+BucketAccessPolicyPost
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.BucketAccessPolicyPost
+   :members:
+
+BucketAccessPolicyRule
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.BucketAccessPolicyRule
+   :members:
+
+BucketAccessPolicyRuleBulkManage
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.BucketAccessPolicyRuleBulkManage
+   :members:
+
+BucketAccessPolicyRulePost
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.BucketAccessPolicyRulePost
+   :members:
+
+BucketAccessPolicyRulePrincipal
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.BucketAccessPolicyRulePrincipal
+   :members:
+
 BucketDefaults
 ~~~~~~~~~~~~~~
 
@@ -490,6 +538,36 @@ ContinuousReplicationPerformance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.ContinuousReplicationPerformance
+   :members:
+
+CrossOriginResourceSharingPolicy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.CrossOriginResourceSharingPolicy
+   :members:
+
+CrossOriginResourceSharingPolicyPatch
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.CrossOriginResourceSharingPolicyPatch
+   :members:
+
+CrossOriginResourceSharingPolicyRule
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.CrossOriginResourceSharingPolicyRule
+   :members:
+
+CrossOriginResourceSharingPolicyRuleBulkManage
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.CrossOriginResourceSharingPolicyRuleBulkManage
+   :members:
+
+CrossOriginResourceSharingPolicyRulePost
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.CrossOriginResourceSharingPolicyRulePost
    :members:
 
 Direction
@@ -1122,6 +1200,12 @@ PolicyRuleObjectAccessPost
 .. autoclass:: pypureclient.flashblade.PolicyRuleObjectAccessPost
    :members:
 
+PublicAccessConfig
+~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.PublicAccessConfig
+   :members:
+
 QuotaSetting
 ~~~~~~~~~~~~
 
@@ -1626,13 +1710,13 @@ get_active_directory
 patch_active_directory
 ''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.0/patch_active_directory.py
+.. literalinclude:: source/examples/FB2.12/patch_active_directory.py
     :language: python
 
 post_active_directory
 '''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.0/post_active_directory.py
+.. literalinclude:: source/examples/FB2.12/post_active_directory.py
     :language: python
 
 get_active_directory_test
@@ -1984,6 +2068,78 @@ Buckets
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
+delete_buckets_bucket_access_policies
+'''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.12/delete_buckets_bucket_access_policies.py
+    :language: python
+
+get_buckets_bucket_access_policies
+''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.12/get_buckets_bucket_access_policies.py
+    :language: python
+
+post_buckets_bucket_access_policies
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.12/post_buckets_bucket_access_policies.py
+    :language: python
+
+delete_buckets_bucket_access_policies_rules
+'''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.12/delete_buckets_bucket_access_policies_rules.py
+    :language: python
+
+get_buckets_bucket_access_policies_rules
+''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.12/get_buckets_bucket_access_policies_rules.py
+    :language: python
+
+post_buckets_bucket_access_policies_rules
+'''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.12/post_buckets_bucket_access_policies_rules.py
+    :language: python
+
+delete_buckets_cross_origin_resource_sharing_policies
+'''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.12/delete_buckets_cross_origin_resource_sharing_policies.py
+    :language: python
+
+get_buckets_cross_origin_resource_sharing_policies
+''''''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.12/get_buckets_cross_origin_resource_sharing_policies.py
+    :language: python
+
+post_buckets_cross_origin_resource_sharing_policies
+'''''''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.12/post_buckets_cross_origin_resource_sharing_policies.py
+    :language: python
+
+delete_buckets_cross_origin_resource_sharing_policies_rules
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.12/delete_buckets_cross_origin_resource_sharing_policies_rules.py
+    :language: python
+
+get_buckets_cross_origin_resource_sharing_policies_rules
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.12/get_buckets_cross_origin_resource_sharing_policies_rules.py
+    :language: python
+
+post_buckets_cross_origin_resource_sharing_policies_rules
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.12/post_buckets_cross_origin_resource_sharing_policies_rules.py
+    :language: python
+
 delete_buckets
 ''''''''''''''
 
@@ -1999,7 +2155,7 @@ get_buckets
 patch_buckets
 '''''''''''''
 
-.. literalinclude:: source/examples/FB2.8/patch_buckets.py
+.. literalinclude:: source/examples/FB2.12/patch_buckets.py
     :language: python
 
 get_buckets_performance
@@ -2011,7 +2167,7 @@ get_buckets_performance
 post_buckets
 ''''''''''''
 
-.. literalinclude:: source/examples/FB2.8/post_buckets.py
+.. literalinclude:: source/examples/FB2.12/post_buckets.py
     :language: python
 
 get_buckets_s3_specific_performance
@@ -2350,7 +2506,7 @@ post_file_systems_locks_nlm_reclamations
 patch_file_systems
 ''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.10/patch_file_systems.py
+.. literalinclude:: source/examples/FB2.12/patch_file_systems.py
     :language: python
 
 get_file_systems_performance
@@ -2386,7 +2542,7 @@ post_file_systems_policies
 post_file_systems
 '''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.10/post_file_systems.py
+.. literalinclude:: source/examples/FB2.12/post_file_systems.py
     :language: python
 
 delete_file_systems_sessions
@@ -2694,7 +2850,7 @@ get_object_store_accounts
 patch_object_store_accounts
 '''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.8/patch_object_store_accounts.py
+.. literalinclude:: source/examples/FB2.12/patch_object_store_accounts.py
     :language: python
 
 post_object_store_accounts
