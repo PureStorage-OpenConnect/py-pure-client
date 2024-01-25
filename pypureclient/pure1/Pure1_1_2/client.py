@@ -4081,7 +4081,7 @@ class Client(object):
         """
         Set the user-agent header of the internal client.
         """
-        self._api_client.set_default_header('User-Agent', self.USER_AGENT)
+        self._api_client.set_default_header(Headers.user_agent, self.USER_AGENT)
 
     def _set_auth_header(self, refresh=False):
         """
