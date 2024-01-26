@@ -93,6 +93,8 @@ class Client(object):
         config.ssl_ca_cert = ssl_cert
         config.host = self._get_base_url(target)
 
+        effective_user_agent = user_agent or self.USER_AGENT
+
         if id_token and api_token:
             raise PureError("Only one authentication option is allowed. Please use either id_token or api_token and try again!")
         elif private_key_file and private_key_password and username and \
@@ -100,7 +102,14 @@ class Client(object):
             raise PureError("id_token is generated based on app ID and private key info. Please use either id_token or api_token and try again!")
         elif api_token:
             api_token_auth_endpoint = self._get_api_token_endpoint(target)
-            self._token_man = APITokenManager(api_token_auth_endpoint, api_token, verify_ssl=config.verify_ssl)
+            api_token_dispose_endpoint = self._get_api_token_dispose_endpoint(target)
+            self._token_man = APITokenManager(
+                api_token_auth_endpoint,
+                api_token,
+                verify_ssl=config.verify_ssl,
+                token_dispose_endpoint=api_token_dispose_endpoint,
+                user_agent=effective_user_agent
+            )
         else:
             auth_endpoint = 'https://{}/oauth2/1.0/token'.format(target)
             headers = {
@@ -115,7 +124,7 @@ class Client(object):
                                            payload=payload, headers=headers, verify_ssl=config.verify_ssl)
 
         self._api_client = _FBApiClient(configuration=config)
-        self._api_client.user_agent = user_agent or self.USER_AGENT
+        self._api_client.user_agent = effective_user_agent
         self._set_agent_header()
         self._set_auth_header()
         self.models = models
@@ -15608,11 +15617,14 @@ class Client(object):
     def _get_api_token_endpoint(self, target):
         return self._get_base_url(target) + '/api/login'
 
+    def _get_api_token_dispose_endpoint(self, target):
+        return self._get_base_url(target) + '/api/logout'
+
     def _set_agent_header(self):
         """
         Set the user-agent header of the internal client.
         """
-        self._api_client.set_default_header('User-Agent', self._api_client.user_agent)
+        self._api_client.set_default_header(Headers.user_agent, self._api_client.user_agent)
 
     def _set_auth_header(self, refresh=False):
         """

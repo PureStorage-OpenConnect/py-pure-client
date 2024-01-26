@@ -166,7 +166,7 @@ class ConnectionsApi(object):
         # type: (...) -> models.ConnectionGetResponse
         """List volume connections
 
-        Displays a list of connections between a volume and its hosts and host groups, as well as  the logical unit numbers (LUNs) or NVMe Namespace IDs (NSIDs) used by the associated hosts  to address these volumes.
+        Displays a list of connections between a volume and its hosts and host groups, as well as the logical unit numbers (LUNs) or NVMe Namespace IDs (NSIDs) used by the associated hosts to address these volumes.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api227_connections_get_with_http_info(async_req=True)

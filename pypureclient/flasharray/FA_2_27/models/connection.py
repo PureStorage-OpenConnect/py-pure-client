@@ -63,7 +63,7 @@ class Connection(object):
         Keyword args:
             host (ReferenceNoId)
             host_group (ReferenceNoId)
-            lun (int): The logical unit number (LUN) by which the specified hosts are to address the specified volume. A LUN is set for SCSI connections only. A LUN can be in one of two formats: a simple LUN, or a LUN and Sublun  with virtual volumes. The first format is simply the LUN. The second  format is a single int64 combining both ((LUN << 32) + Sublun) or (LUN *  4294967296 + Sublun). In the FA UI, a combined LUN and Sublun is represented as `LUN:Sublun`. The maximum int64 LUN:Sublun value is `17587891081215`.
+            lun (int): The logical unit number (LUN) by which the specified hosts are to address the specified volume. A LUN is set for SCSI connections only. A LUN can be in one of two formats: a simple LUN, or a LUN and Sublun with virtual volumes. The first format is simply the LUN. The second format is a single int64 combining both ((LUN << 32) + Sublun) or (LUN * 4294967296 + Sublun). In the FA UI, a combined LUN and Sublun is represented as `LUN:Sublun`. The maximum int64 LUN:Sublun value is `17587891081215`.
             protocol_endpoint (Reference): A protocol endpoint (also known as a conglomerate volume) which acts as a proxy through which virtual volumes are created and then connected to VMware ESXi hosts or host groups. The protocol endpoint itself does not serve I/Os; instead, its job is to form connections between FlashArray volumes and ESXi hosts and host groups.
             volume (FixedReference): A container that manages the storage space on the array.
             nsid (int): Namespace identifier allocated for the NVMe namespace backing the volume. NSID is set for NVMe connections only.

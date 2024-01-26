@@ -16,6 +16,7 @@ class Headers(object):
     """
     api_token = 'api-token'
     authorization = 'Authorization'
+    user_agent = 'User-Agent'
     x_auth_token = 'x-auth-token'
     x_request_id = 'X-Request-ID'
     x_ratelimit_sec = 'X-RateLimit-Limit-second'
