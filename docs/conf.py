@@ -92,7 +92,7 @@ exclude_patterns = [
     'source/*.FA_2_14.*',
     'source/*.FA_2_15.*',
     'source/*.FA_2_16.*',
-        #    'source/*.FA_2_17.*',
+    'source/*.FA_2_17.*',
     'source/*.FA_2_18.*',
     'source/*.FA_2_19.*',
     'source/*.FA_2_20.*',
