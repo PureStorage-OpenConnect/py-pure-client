@@ -2316,3 +2316,4 @@ model
 
 .. autoclass:: pypureclient.flasharray.model
    :members:
+
