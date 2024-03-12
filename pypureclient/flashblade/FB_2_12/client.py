@@ -307,7 +307,7 @@ class Client(object):
         _preload_content=True,  # type: bool
         _request_timeout=None,  # type: Optional[int]
     ):
-        # type: (...) -> models.ActiveDirectoryResponse
+        # type: (...) -> models.ActiveDirectoryGetResponse
         """
         List an Active Directory account and its configuration.
 

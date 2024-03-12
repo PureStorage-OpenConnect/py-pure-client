@@ -46,6 +46,7 @@ def quoteStrings(s):
 # import models into model package
 from .active_directory import ActiveDirectory
 from .active_directory_directory_servers import ActiveDirectoryDirectoryServers
+from .active_directory_get_response import ActiveDirectoryGetResponse
 from .active_directory_patch import ActiveDirectoryPatch
 from .active_directory_post import ActiveDirectoryPost
 from .active_directory_response import ActiveDirectoryResponse

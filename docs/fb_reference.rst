@@ -85,6 +85,12 @@ FlashBlade REST 2.12 Client
 .. autoclass:: pypureclient.flashblade.FB_2_12.client.Client
     :members:
 
+FlashBlade REST 2.13 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.FB_2_13.client.Client
+    :members:
+
 
 Properties
 ----------
@@ -916,6 +922,42 @@ MultiProtocolPost
 ~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.MultiProtocolPost
+   :members:
+
+NetworkAccessPolicy
+~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.NetworkAccessPolicy
+   :members:
+
+NetworkAccessPolicyRule
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.NetworkAccessPolicyRule
+   :members:
+
+NetworkAccessPolicyRuleBase
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.NetworkAccessPolicyRuleBase
+   :members:
+
+NetworkAccessPolicyRuleInPolicy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.NetworkAccessPolicyRuleInPolicy
+   :members:
+
+NetworkAccessPolicyRulePost
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.NetworkAccessPolicyRulePost
+   :members:
+
+NetworkAccessPolicyRulePostBase
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.NetworkAccessPolicyRulePostBase
    :members:
 
 NetworkInterface
@@ -2155,7 +2197,7 @@ get_buckets
 patch_buckets
 '''''''''''''
 
-.. literalinclude:: source/examples/FB2.12/patch_buckets.py
+.. literalinclude:: source/examples/FB2.13/patch_buckets.py
     :language: python
 
 get_buckets_performance
@@ -2167,7 +2209,7 @@ get_buckets_performance
 post_buckets
 ''''''''''''
 
-.. literalinclude:: source/examples/FB2.12/post_buckets.py
+.. literalinclude:: source/examples/FB2.13/post_buckets.py
     :language: python
 
 get_buckets_s3_specific_performance
@@ -2506,7 +2548,7 @@ post_file_systems_locks_nlm_reclamations
 patch_file_systems
 ''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.12/patch_file_systems.py
+.. literalinclude:: source/examples/FB2.13/patch_file_systems.py
     :language: python
 
 get_file_systems_performance
@@ -2542,7 +2584,7 @@ post_file_systems_policies
 post_file_systems
 '''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.12/post_file_systems.py
+.. literalinclude:: source/examples/FB2.13/post_file_systems.py
     :language: python
 
 delete_file_systems_sessions
@@ -2950,6 +2992,53 @@ post_object_store_virtual_hosts
 '''''''''''''''''''''''''''''''
 
 .. literalinclude:: source/examples/FB2.0/post_object_store_virtual_hosts.py
+    :language: python
+
+Policies   Network Access
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+get_network_access_policies
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/get_network_access_policies.py
+    :language: python
+
+get_network_access_policies_members
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/get_network_access_policies_members.py
+    :language: python
+
+patch_network_access_policies
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/patch_network_access_policies.py
+    :language: python
+
+delete_network_access_policies_rules
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/delete_network_access_policies_rules.py
+    :language: python
+
+get_network_access_policies_rules
+'''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/get_network_access_policies_rules.py
+    :language: python
+
+patch_network_access_policies_rules
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/patch_network_access_policies_rules.py
+    :language: python
+
+post_network_access_policies_rules
+''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/post_network_access_policies_rules.py
     :language: python
 
 Policies   Nfs
