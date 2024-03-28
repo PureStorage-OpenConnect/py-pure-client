@@ -136,7 +136,7 @@ class ActiveDirectoryApi(object):
         _preload_content=True,  # type: bool
         _request_timeout=None,  # type: Optional[int]
     ):
-        # type: (...) -> models.ActiveDirectoryResponse
+        # type: (...) -> models.ActiveDirectoryGetResponse
         """GET active-directory
 
         List an Active Directory account and its configuration.
@@ -157,7 +157,7 @@ class ActiveDirectoryApi(object):
         :param bool _preload_content: Response is converted into objects.
         :param int _request_timeout: Total request timeout in seconds.
                  It can also be a tuple of (connection time, read time) timeouts.
-        :return: ActiveDirectoryResponse
+        :return: ActiveDirectoryGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -232,7 +232,7 @@ class ActiveDirectoryApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='ActiveDirectoryResponse',
+            response_type='ActiveDirectoryGetResponse',
             auth_settings=auth_settings,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
