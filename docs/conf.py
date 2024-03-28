@@ -111,15 +111,16 @@ exclude_patterns = [
     'source/*.FB_2_1.*',
     'source/*.FB_2_2.*',
     'source/*.FB_2_3.*',
-        #    'source/*.FB_2_4.*',
+    'source/*.FB_2_4.*',
     'source/*.FB_2_5.*',
     'source/*.FB_2_6.*',
     'source/*.FB_2_7.*',
-        #    'source/*.FB_2_8.*',
+    #    'source/*.FB_2_8.*',
     'source/*.FB_2_9.*',
     'source/*.FB_2_10.*',
     'source/*.FB_2_11.*',
-    #    'source/*.FB_2_12.*',
+    'source/*.FB_2_12.*',
+    #   'source/*.FB_2_13.*',
 ]
 
 # The name of the Pygments (syntax highlighting) style to use.
