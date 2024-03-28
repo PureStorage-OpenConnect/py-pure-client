@@ -77,13 +77,11 @@ FlashBlade REST 2.11 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.FB_2_11.client.Client
-    :members:
 
 FlashBlade REST 2.12 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.FB_2_12.client.Client
-    :members:
 
 FlashBlade REST 2.13 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
