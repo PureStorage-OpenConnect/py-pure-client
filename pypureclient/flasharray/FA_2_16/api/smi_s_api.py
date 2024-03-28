@@ -44,7 +44,7 @@ class SMISApi(object):
         # type: (...) -> models.SmisGetResponse
         """List SMI-S settings
 
-        Displays the SMI-S settings, including the name of the array and whether SLP and WBEM-HTTPS are enabled.
+        Displays the SMI-S settings, including whether SLP and WBEM-HTTPS are enabled.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api216_smi_s_get_with_http_info(async_req=True)

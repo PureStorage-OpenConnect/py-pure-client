@@ -21555,8 +21555,7 @@ class Client(object):
     ):
         # type: (...) -> models.SmisGetResponse
         """
-        Displays the SMI-S settings, including the name of the array and whether SLP and
-        WBEM-HTTPS are enabled.
+        Displays the SMI-S settings, including whether SLP and WBEM-HTTPS are enabled.
 
         Args:
 
