@@ -20,6 +20,14 @@ pypureclient.flashblade.FB\_2\_12.models.active\_directory\_directory\_servers m
    :undoc-members:
    :show-inheritance:
 
+pypureclient.flashblade.FB\_2\_12.models.active\_directory\_get\_response module
+--------------------------------------------------------------------------------
+
+.. automodule:: pypureclient.flashblade.FB_2_12.models.active_directory_get_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 pypureclient.flashblade.FB\_2\_12.models.active\_directory\_patch module
 ------------------------------------------------------------------------
 
