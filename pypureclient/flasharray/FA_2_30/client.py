@@ -3181,8 +3181,8 @@ class Client(object):
     ):
         # type: (...) -> models.CloudCapacityGetResponse
         """
-        Gets the capacity status of the CBS array including the progress of the capacity
-        update. Requests for non-CBS arrays will receive an error response.
+        Displays the capacity status of the CBS array including the progress of the
+        capacity update. Requests for non-CBS arrays will receive an error response.
 
         Args:
 
@@ -3315,7 +3315,7 @@ class Client(object):
     ):
         # type: (...) -> models.CloudCapacityStepsGetResponse
         """
-        Gets the list of supported raw capacity sizes in bytes the CBS array can be
+        Displays the list of supported raw capacity sizes in bytes the CBS array can be
         upgraded to. Requests for non-CBS arrays will receive an error response.
 
         Args:
