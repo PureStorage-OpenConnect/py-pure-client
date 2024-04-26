@@ -64,7 +64,7 @@ class CloudCapacityStatus(object):
             id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
             name (str): A locally unique, system-generated name. The name cannot be modified.
             current_capacity (int): The current raw capacity of the CBS array in bytes.
-            details (str): Details about the capacity update. This field can contain error details when status is `failed` or progress information when status is `expanding`.  For status `idle` the value is null.
+            details (str): Details about the capacity update. This field can contain error details when status is `failed` or progress information when status is `expanding`. For status `idle` the value is null.
             requested_capacity (int): The requested raw capacity of the CBS array in bytes. When the capacity update process finishes, it should be the same as `current_capacity`.
             status (str): The status of the capacity update process. Can be one of `idle`, `failed`, `expanding`.
         """

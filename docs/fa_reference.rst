@@ -167,6 +167,11 @@ FlashArray REST 2.31 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.FA_2_31.client.Client
+
+FlashArray REST 2.32 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.FA_2_32.client.Client
     :members:
 
 
@@ -274,6 +279,12 @@ AdminSettings
 ~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.AdminSettings
+   :members:
+
+AdminSettingsRequiredAuthenticationMethods
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.AdminSettingsRequiredAuthenticationMethods
    :members:
 
 AggregateReplicationPerformance
@@ -558,6 +569,12 @@ DirectoryExport
 .. autoclass:: pypureclient.flasharray.DirectoryExport
    :members:
 
+DirectoryExportPatch
+~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.DirectoryExportPatch
+   :members:
+
 DirectoryExportPost
 ~~~~~~~~~~~~~~~~~~~
 
@@ -700,6 +717,12 @@ EulaSignature
 ~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.EulaSignature
+   :members:
+
+ExportPolicyAttachmentMixin
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.ExportPolicyAttachmentMixin
    :members:
 
 FilePost
@@ -946,6 +969,18 @@ MaintenanceWindowPost
 ~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.MaintenanceWindowPost
+   :members:
+
+MappingPolicy
+~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.MappingPolicy
+   :members:
+
+MappingPolicyPatch
+~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.MappingPolicyPatch
    :members:
 
 Member
@@ -1284,6 +1319,12 @@ PodReplicaLinkLag
 .. autoclass:: pypureclient.flasharray.PodReplicaLinkLag
    :members:
 
+PodReplicaLinkMappingPolicy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PodReplicaLinkMappingPolicy
+   :members:
+
 PodReplicaLinkPatch
 ~~~~~~~~~~~~~~~~~~~
 
@@ -1300,6 +1341,12 @@ PodReplicaLinkPerformanceReplication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.PodReplicaLinkPerformanceReplication
+   :members:
+
+PodReplicaLinkReference
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PodReplicaLinkReference
    :members:
 
 PodSpace
@@ -1348,6 +1395,12 @@ PolicyNfsPatch
 ~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.PolicyNfsPatch
+   :members:
+
+PolicyNfsPolicyMapping
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyNfsPolicyMapping
    :members:
 
 PolicyNfsPost
@@ -1450,6 +1503,12 @@ PolicymemberpostMembers
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.PolicymemberpostMembers
+   :members:
+
+PolicynfspostPolicyMapping
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicynfspostPolicyMapping
    :members:
 
 PolicyrulenfsclientpostRules
@@ -2212,6 +2271,12 @@ Volume
 ~~~~~~
 
 .. autoclass:: pypureclient.flasharray.Volume
+   :members:
+
+VolumeBatchPost
+~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.VolumeBatchPost
    :members:
 
 VolumeCommon

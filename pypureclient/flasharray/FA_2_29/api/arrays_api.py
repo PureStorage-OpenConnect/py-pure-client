@@ -44,7 +44,7 @@ class ArraysApi(object):
         # type: (...) -> models.CloudCapacityGetResponse
         """List CBS array capacity status
 
-        Gets the capacity status of the CBS array including the progress of the capacity update. Requests for non-CBS arrays will receive an error response.
+        Displays the capacity status of the CBS array including the progress of the capacity update. Requests for non-CBS arrays will receive an error response.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api229_arrays_cloud_capacity_get_with_http_info(async_req=True)
@@ -246,7 +246,7 @@ class ArraysApi(object):
         # type: (...) -> models.CloudCapacityStepsGetResponse
         """List CBS array capacity steps
 
-        Gets the list of supported raw capacity sizes in bytes the CBS array can be upgraded to. Requests for non-CBS arrays will receive an error response.
+        Displays the list of supported raw capacity sizes in bytes the CBS array can be upgraded to. Requests for non-CBS arrays will receive an error response.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api229_arrays_cloud_capacity_supported_steps_get_with_http_info(async_req=True)
