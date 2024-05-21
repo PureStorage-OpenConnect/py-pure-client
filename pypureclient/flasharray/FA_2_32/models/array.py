@@ -98,16 +98,16 @@ class Array(object):
             name (str): A user-specified name. The name must be locally unique and can be changed.
             as_of (int): The time in milliseconds since UNIX epoch.
             banner (str)
-            capacity (int): The usable capacity in bytes.
-            console_lock_enabled (bool)
+            capacity (int): The usable capacity in bytes. If the user does not have sufficient access, this field will return `null`.
+            console_lock_enabled (bool): If `true`, console lock is enabled for the array. If the user does not have sufficient access, this field will return `null`.
             encryption (ArrayEncryption)
             eradication_config (EradicationConfig)
             idle_timeout (int): The idle timeout in milliseconds. Valid values include `0` and any multiple of `60000` in the range of `300000` and `10800000`. Any other values are rounded down to the nearest multiple of `60000`.
-            ntp_servers (list[str])
-            ntp_symmetric_key (str): The text of ntp symmetric authentication key. Supported formats include a hex-encoded string no longer than 64 characters, or an ASCII string no longer than 20 characters, excluding \"#\". Any configured key will be masked as \"****\" on return.
+            ntp_servers (list[str]): NTP Servers. If the user does not have sufficient access, this field will return `null`.
+            ntp_symmetric_key (str): The text of ntp symmetric authentication key. Supported formats include a hex-encoded string no longer than 64 characters, or an ASCII string no longer than 20 characters, excluding \"#\". Any configured key will be masked as \"****\" on return. If the user does not have sufficient access, this field will return `null`.
             os (str): Specifies the operating system. Valid values are `Purity`, `Purity//FA`, and `Purity//FB`.
-            parity (float): A representation of data redundancy on the array. Data redundancy is rebuilt automatically by the system whenever parity is less than `1.0`.
-            scsi_timeout (int): The SCSI timeout. If not specified, defaults to `60s`.
+            parity (float): A representation of data redundancy on the array. Data redundancy is rebuilt automatically by the system whenever parity is less than `1.0`. If the user does not have sufficient access, this field will return `null`.
+            scsi_timeout (int): The SCSI timeout. If not specified, defaults to `60s`. If the user does not have sufficient access, this field will return `null`.
             space (Space)
             time_zone (str): The time zone of the array.
             version (str)
