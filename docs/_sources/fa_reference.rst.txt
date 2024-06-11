@@ -172,6 +172,10 @@ FlashArray REST 2.32 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.FA_2_32.client.Client
+
+FlashArray REST 2.33 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flasharray.FA_2_33.client.Client
     :members:
 
 
@@ -387,6 +391,12 @@ ArrayConnectionKey
 ~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.ArrayConnectionKey
+   :members:
+
+ArrayConnectionPatch
+~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.ArrayConnectionPatch
    :members:
 
 ArrayConnectionPath
@@ -1421,6 +1431,24 @@ PolicyPost
 .. autoclass:: pypureclient.flasharray.PolicyPost
    :members:
 
+PolicyRuleAlertWatcher
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyRuleAlertWatcher
+   :members:
+
+PolicyRuleAlertWatcherPatch
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyRuleAlertWatcherPatch
+   :members:
+
+PolicyRuleAlertWatcherPost
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyRuleAlertWatcherPost
+   :members:
+
 PolicyRuleNfsClient
 ~~~~~~~~~~~~~~~~~~~
 
@@ -1509,6 +1537,18 @@ PolicynfspostPolicyMapping
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.PolicynfspostPolicyMapping
+   :members:
+
+PolicyrulealertwatcherpatchRules
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyrulealertwatcherpatchRules
+   :members:
+
+PolicyrulealertwatcherpostRules
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyrulealertwatcherpostRules
    :members:
 
 PolicyrulenfsclientpostRules
@@ -1641,6 +1681,12 @@ ProtectionGroupsVolumes
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.ProtectionGroupsVolumes
+   :members:
+
+ProtocolEndpoint
+~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.ProtocolEndpoint
    :members:
 
 Qos
@@ -2183,6 +2229,12 @@ Throttle
 .. autoclass:: pypureclient.flasharray.Throttle
    :members:
 
+ThrottleDeprecated
+~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.ThrottleDeprecated
+   :members:
+
 TimeWindow
 ~~~~~~~~~~
 
@@ -2223,6 +2275,12 @@ VchostCertificatePost
 ~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.VchostCertificatePost
+   :members:
+
+VchostConnection
+~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.VchostConnection
    :members:
 
 VchostEndpoint

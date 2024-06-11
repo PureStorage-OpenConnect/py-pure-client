@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>pypureclient.flashblade.FB_2_8.models package &mdash; py-pure-client 1.50.0 documentation</title>
+  <title>pypureclient.flashblade.FB_2_8.models package &mdash; py-pure-client 1.51.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -30,7 +30,7 @@
             <a href="../index.html" class="icon icon-home"> py-pure-client
           </a>
               <div class="version">
-                1.50
+                1.51
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -1002,7 +1002,7 @@ and the value is json key in definition.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – Name of the object (e.g., a file system or snapshot).</p></li>
 <li><p><strong>id</strong> (<em>str</em>) – A non-modifiable, globally unique ID chosen by the system.</p></li>
-<li><p><strong>role</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – A reference to the <cite>role</cite> of this user.</p></li>
+<li><p><strong>role</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – A reference to the <cite>role</cite> of this user.</p></li>
 <li><p><strong>time</strong> (<em>int</em>) – Time the role was cached in milliseconds since UNIX epoch.</p></li>
 </ul>
 </dd>
@@ -2443,7 +2443,7 @@ and the value is json key in definition.</p>
 <li><p><strong>enabled</strong> (<em>bool</em>) – If <cite>true</cite>, the API client is permitted to exchange ID Tokens for access tokens. API clients are disabled by default.</p></li>
 <li><p><strong>issuer</strong> (<em>str</em>) – The name of the identity provider that will be issuing ID Tokens for this API client. This string represents the JWT <cite>iss</cite> (issuer) claim in ID Tokens issued for this API client.</p></li>
 <li><p><strong>key_id</strong> (<em>str</em>) – The unique identifier for the associated public key of this API client. This string must match the JWT <cite>kid</cite> (key ID) claim in ID Tokens issued for this API client.</p></li>
-<li><p><strong>max_role</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – The maximum role allowed for ID Tokens issued by this API client. The bearer of an access token will be authorized to perform actions within the intersection of this <cite>max_role</cite> and the role of the array user specified as the JWT <cite>sub</cite> (subject) claim. The <cite>max_role</cite> field is a reference to a <cite>role</cite>. Valid <cite>role`s are `readonly</cite>, <cite>ops_admin</cite>, <cite>array_admin</cite>, and <cite>storage_admin</cite>. Users with the <cite>readonly</cite> (Read Only) role can perform operations that convey the state of the array. Read Only users cannot alter the state of the array. Users with the <cite>ops_admin</cite> (Ops Admin) role can perform the same operations as Read Only users plus enable and disable remote assistance sessions. Ops Admin users cannot alter the state of the array. Users with the <cite>storage_admin</cite> (Storage Admin) role can perform the same operations as Read Only users plus storage related operations, such as administering file systems, snapshots, and buckets. Storage Admin users cannot perform operations that deal with global and system configurations. Users with the <cite>array_admin</cite> (Array Admin) role can perform the same operations as Storage Admin users plus array-wide changes dealing with global and system configurations. In other words, Array Admin users can perform all operations.</p></li>
+<li><p><strong>max_role</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – The maximum role allowed for ID Tokens issued by this API client. The bearer of an access token will be authorized to perform actions within the intersection of this <cite>max_role</cite> and the role of the array user specified as the JWT <cite>sub</cite> (subject) claim. The <cite>max_role</cite> field is a reference to a <cite>role</cite>. Valid <cite>role`s are `readonly</cite>, <cite>ops_admin</cite>, <cite>array_admin</cite>, and <cite>storage_admin</cite>. Users with the <cite>readonly</cite> (Read Only) role can perform operations that convey the state of the array. Read Only users cannot alter the state of the array. Users with the <cite>ops_admin</cite> (Ops Admin) role can perform the same operations as Read Only users plus enable and disable remote assistance sessions. Ops Admin users cannot alter the state of the array. Users with the <cite>storage_admin</cite> (Storage Admin) role can perform the same operations as Read Only users plus storage related operations, such as administering file systems, snapshots, and buckets. Storage Admin users cannot perform operations that deal with global and system configurations. Users with the <cite>array_admin</cite> (Array Admin) role can perform the same operations as Storage Admin users plus array-wide changes dealing with global and system configurations. In other words, Array Admin users can perform all operations.</p></li>
 <li><p><strong>public_key</strong> (<em>str</em>) – The API client’s PEM formatted (Base64 encoded) RSA public key.</p></li>
 </ul>
 </dd>
@@ -2634,7 +2634,7 @@ and the value is json key in definition.</p>
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">items</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypureclient.flashblade.FB_2_8.models.api_clients_response.ApiClientsResponse.__init__" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Keyword Arguments</dt>
-<dd class="field-odd"><p><strong>items</strong> (<em>list</em><em>[</em><a class="reference internal" href="pypureclient.pure1.Pure1_1_1.html#pypureclient.pure1.Pure1_1_1.api_client.ApiClient" title="pypureclient.pure1.Pure1_1_1.api_client.ApiClient"><em>ApiClient</em></a><em>]</em>) – </p>
+<dd class="field-odd"><p><strong>items</strong> (<em>list</em><em>[</em><a class="reference internal" href="pypureclient.pure1.Pure1_1_0.html#pypureclient.pure1.Pure1_1_0.api_client.ApiClient" title="pypureclient.pure1.Pure1_1_0.api_client.ApiClient"><em>ApiClient</em></a><em>]</em>) – </p>
 </dd>
 </dl>
 </dd></dl>
@@ -3024,7 +3024,7 @@ and the value is json key in definition.</p>
 <dt class="field-odd">Keyword Arguments</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>id</strong> (<em>str</em>) – A non-modifiable, globally unique ID chosen by the system.</p></li>
-<li><p><strong>ca_certificate_group</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – The group of CA certificates that can be used, in addition to well-known Certificate Authority certificates, in order to establish a secure connection to the target array. Defaults to a reference to the <cite>_default_replication_certs</cite> group if <cite>secure_connection</cite> is <cite>true</cite>, or <cite>null</cite> otherwise.</p></li>
+<li><p><strong>ca_certificate_group</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – The group of CA certificates that can be used, in addition to well-known Certificate Authority certificates, in order to establish a secure connection to the target array. Defaults to a reference to the <cite>_default_replication_certs</cite> group if <cite>secure_connection</cite> is <cite>true</cite>, or <cite>null</cite> otherwise.</p></li>
 <li><p><strong>encrypted</strong> (<em>bool</em>) – If this is set to <cite>true</cite>, then all customer data replicated over the connection will be sent over an encrypted connection using TLS, or will not be sent if a secure connection cannot be established. If this is set to <cite>false</cite>, then all customer data replicated over the connection will be sent over an unencrypted connection. Defaults to <cite>false</cite>.</p></li>
 <li><p><strong>management_address</strong> (<em>str</em>) – Management address of the target array. Settable on POST only.</p></li>
 <li><p><strong>remote</strong> (<a class="reference internal" href="#pypureclient.flashblade.FB_2_8.models.fixed_reference_no_resource_type.FixedReferenceNoResourceType" title="pypureclient.flashblade.FB_2_8.models.fixed_reference_no_resource_type.FixedReferenceNoResourceType"><em>FixedReferenceNoResourceType</em></a>) – The remote array.</p></li>
@@ -3701,7 +3701,7 @@ and the value is json key in definition.</p>
 <dt class="field-odd">Keyword Arguments</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>id</strong> (<em>str</em>) – A non-modifiable, globally unique ID chosen by the system.</p></li>
-<li><p><strong>ca_certificate_group</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – The group of CA certificates that can be used, in addition to well-known Certificate Authority certificates, in order to establish a secure connection to the target array. Defaults to a reference to the <cite>_default_replication_certs</cite> group if <cite>secure_connection</cite> is <cite>true</cite>, or <cite>null</cite> otherwise.</p></li>
+<li><p><strong>ca_certificate_group</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – The group of CA certificates that can be used, in addition to well-known Certificate Authority certificates, in order to establish a secure connection to the target array. Defaults to a reference to the <cite>_default_replication_certs</cite> group if <cite>secure_connection</cite> is <cite>true</cite>, or <cite>null</cite> otherwise.</p></li>
 <li><p><strong>encrypted</strong> (<em>bool</em>) – If this is set to <cite>true</cite>, then all customer data replicated over the connection will be sent over an encrypted connection using TLS, or will not be sent if a secure connection cannot be established. If this is set to <cite>false</cite>, then all customer data replicated over the connection will be sent over an unencrypted connection. Defaults to <cite>false</cite>.</p></li>
 <li><p><strong>management_address</strong> (<em>str</em>) – Management address of the target array. Settable on POST only.</p></li>
 <li><p><strong>remote</strong> (<a class="reference internal" href="#pypureclient.flashblade.FB_2_8.models.fixed_reference_no_resource_type.FixedReferenceNoResourceType" title="pypureclient.flashblade.FB_2_8.models.fixed_reference_no_resource_type.FixedReferenceNoResourceType"><em>FixedReferenceNoResourceType</em></a>) – The remote array.</p></li>
@@ -6373,7 +6373,7 @@ and the value is json key in definition.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – Name of the object (e.g., a file system or snapshot).</p></li>
 <li><p><strong>id</strong> (<em>str</em>) – A non-modifiable, globally unique ID chosen by the system.</p></li>
-<li><p><strong>account</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – </p></li>
+<li><p><strong>account</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – </p></li>
 <li><p><strong>created</strong> (<em>int</em>) – Creation timestamp of the object.</p></li>
 <li><p><strong>destroyed</strong> (<em>bool</em>) – Is the bucket destroyed?</p></li>
 <li><p><strong>object_count</strong> (<em>int</em>) – The count of objects within the bucket.</p></li>
@@ -7267,10 +7267,10 @@ and the value is json key in definition.</p>
 <li><p><strong>direction</strong> (<a class="reference internal" href="#pypureclient.flashblade.FB_2_8.models.direction.Direction" title="pypureclient.flashblade.FB_2_8.models.direction.Direction"><em>Direction</em></a>) – </p></li>
 <li><p><strong>lag</strong> (<em>int</em>) – Duration in milliseconds that represents how far behind the replication target is from the source. This is the time difference between current time and <cite>recovery_point</cite>.</p></li>
 <li><p><strong>status_details</strong> (<em>str</em>) – Detailed information about the status of the replica link when it is unhealthy.</p></li>
-<li><p><strong>local_bucket</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference to a local bucket.</p></li>
+<li><p><strong>local_bucket</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference to a local bucket.</p></li>
 <li><p><strong>paused</strong> (<em>bool</em>) – Is the replica link paused?</p></li>
 <li><p><strong>recovery_point</strong> (<em>int</em>) – Time, in milliseconds since UNIX epoch, where all object changes before this time are guaranteed to have been replicated. Changes after this time may have been replicated.</p></li>
-<li><p><strong>remote</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference to the associated remote, which can either be a <cite>target</cite> or remote <cite>array</cite>. If it is an <cite>array</cite>, then the <cite>resource-type</cite> field will not be populated.</p></li>
+<li><p><strong>remote</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference to the associated remote, which can either be a <cite>target</cite> or remote <cite>array</cite>. If it is an <cite>array</cite>, then the <cite>resource-type</cite> field will not be populated.</p></li>
 <li><p><strong>remote_bucket</strong> (<a class="reference internal" href="#pypureclient.flashblade.FB_2_8.models.fixed_reference_name_only.FixedReferenceNameOnly" title="pypureclient.flashblade.FB_2_8.models.fixed_reference_name_only.FixedReferenceNameOnly"><em>FixedReferenceNameOnly</em></a>) – Reference to a remote bucket.</p></li>
 <li><p><strong>remote_credentials</strong> (<a class="reference internal" href="#pypureclient.flashblade.FB_2_8.models.reference_writable.ReferenceWritable" title="pypureclient.flashblade.FB_2_8.models.reference_writable.ReferenceWritable"><em>ReferenceWritable</em></a>) – Reference to a remote-credentials object to access the remote bucket.</p></li>
 <li><p><strong>status</strong> (<em>str</em>) – Status of the replica link. Values include <cite>replicating</cite>, <cite>paused</cite>, and <cite>unhealthy</cite>.</p></li>
@@ -9592,7 +9592,7 @@ and the value is json key in definition.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – Name of the object (e.g., a file system or snapshot).</p></li>
 <li><p><strong>id</strong> (<em>str</em>) – A non-modifiable, globally unique ID chosen by the system.</p></li>
-<li><p><strong>group</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – A reference to a certificate group that is being used, if any, where this certificate is a member of the certificate-group. This field is <cite>null</cite> if the referenced use object is not using a group, but is rather using this certificate directly.</p></li>
+<li><p><strong>group</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – A reference to a certificate group that is being used, if any, where this certificate is a member of the certificate-group. This field is <cite>null</cite> if the referenced use object is not using a group, but is rather using this certificate directly.</p></li>
 <li><p><strong>use</strong> (<a class="reference internal" href="#pypureclient.flashblade.FB_2_8.models.fixed_reference_with_remote.FixedReferenceWithRemote" title="pypureclient.flashblade.FB_2_8.models.fixed_reference_with_remote.FixedReferenceWithRemote"><em>FixedReferenceWithRemote</em></a>) – A reference to an object using this certificate.</p></li>
 </ul>
 </dd>
@@ -12191,7 +12191,7 @@ and the value is json key in definition.</p>
 <li><p><strong>path</strong> (<em>str</em>) – Path to the file where the lock is found relative to <cite>source</cite>. If it is longer than 1023 characters, it will be truncated and only the last 1023 characters will be returned. If multiple hard links exist to the file on which the lock is held, only one is returned. This field will be <cite>null</cite> if the path cannot be resolved.</p></li>
 <li><p><strong>protocol</strong> (<em>str</em>) – The protocol utilized for obtaining and managing the lock. Valid values include <cite>NLM</cite>, <cite>NFSv4.1</cite> and <cite>SMB</cite>.</p></li>
 <li><p><strong>range</strong> (<a class="reference internal" href="#pypureclient.flashblade.FB_2_8.models.file_lock_range.FileLockRange" title="pypureclient.flashblade.FB_2_8.models.file_lock_range.FileLockRange"><em>FileLockRange</em></a>) – </p></li>
-<li><p><strong>source</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference to location where the path/inode can be found.</p></li>
+<li><p><strong>source</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference to location where the path/inode can be found.</p></li>
 </ul>
 </dd>
 </dl>
@@ -13154,7 +13154,7 @@ and the value is json key in definition.</p>
 <li><p><strong>bytes_per_op</strong> (<em>float</em>) – Average operation size (read bytes+write bytes/read ops+write ops).</p></li>
 <li><p><strong>bytes_per_read</strong> (<em>float</em>) – Average read size in bytes per read operation.</p></li>
 <li><p><strong>bytes_per_write</strong> (<em>float</em>) – Average write size in bytes per write operation.</p></li>
-<li><p><strong>file_system</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – The file system on which the performance was measured.</p></li>
+<li><p><strong>file_system</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – The file system on which the performance was measured.</p></li>
 <li><p><strong>group</strong> (<a class="reference internal" href="#pypureclient.flashblade.FB_2_8.models.group.Group" title="pypureclient.flashblade.FB_2_8.models.group.Group"><em>Group</em></a>) – The group whose performance is represented.</p></li>
 <li><p><strong>others_per_sec</strong> (<em>float</em>) – Other operations processed per second.</p></li>
 <li><p><strong>read_bytes_per_sec</strong> (<em>float</em>) – Bytes read per second.</p></li>
@@ -13875,7 +13875,7 @@ and the value is json key in definition.</p>
 <li><p><strong>direction</strong> (<a class="reference internal" href="#pypureclient.flashblade.FB_2_8.models.direction.Direction" title="pypureclient.flashblade.FB_2_8.models.direction.Direction"><em>Direction</em></a>) – </p></li>
 <li><p><strong>lag</strong> (<em>int</em>) – Duration in milliseconds that represents how far behind the replication target is from the source. This is the time difference between current time and <cite>recovery_point</cite>.</p></li>
 <li><p><strong>status_details</strong> (<em>str</em>) – Detailed information about the status of the replica link when it is unhealthy.</p></li>
-<li><p><strong>local_file_system</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference to a local file system.</p></li>
+<li><p><strong>local_file_system</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference to a local file system.</p></li>
 <li><p><strong>policies</strong> (<em>list</em><em>[</em><a class="reference internal" href="#pypureclient.flashblade.FB_2_8.models.location_reference.LocationReference" title="pypureclient.flashblade.FB_2_8.models.location_reference.LocationReference"><em>LocationReference</em></a><em>]</em>) – </p></li>
 <li><p><strong>recovery_point</strong> (<em>int</em>) – Time when the last replicated snapshot was created, in milliseconds since UNIX epoch. I.e. the recovery point if the file system is promoted.</p></li>
 <li><p><strong>remote</strong> (<a class="reference internal" href="#pypureclient.flashblade.FB_2_8.models.fixed_reference_no_resource_type.FixedReferenceNoResourceType" title="pypureclient.flashblade.FB_2_8.models.fixed_reference_no_resource_type.FixedReferenceNoResourceType"><em>FixedReferenceNoResourceType</em></a>) – Reference to a remote array.</p></li>
@@ -14258,7 +14258,7 @@ and the value is json key in definition.</p>
 <li><p><strong>id</strong> (<em>str</em>) – A non-modifiable, globally unique ID chosen by the system.</p></li>
 <li><p><strong>created</strong> (<em>int</em>) – Creation timestamp of the object.</p></li>
 <li><p><strong>destroyed</strong> (<em>bool</em>) – Is the file system snapshot destroyed? If not specified, defaults to <cite>false</cite>.</p></li>
-<li><p><strong>owner</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – A reference to the file system that owns this snapshot. If the owner is destroyed, this will be destroyed.</p></li>
+<li><p><strong>owner</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – A reference to the file system that owns this snapshot. If the owner is destroyed, this will be destroyed.</p></li>
 <li><p><strong>owner_destroyed</strong> (<em>bool</em>) – Is the owning file system destroyed?</p></li>
 <li><p><strong>policy</strong> (<a class="reference internal" href="#pypureclient.flashblade.FB_2_8.models.fixed_location_reference.FixedLocationReference" title="pypureclient.flashblade.FB_2_8.models.fixed_location_reference.FixedLocationReference"><em>FixedLocationReference</em></a>) – A reference to the associated policy.</p></li>
 <li><p><strong>source</strong> (<a class="reference internal" href="#pypureclient.flashblade.FB_2_8.models.fixed_location_reference.FixedLocationReference" title="pypureclient.flashblade.FB_2_8.models.fixed_location_reference.FixedLocationReference"><em>FixedLocationReference</em></a>) – A reference to the file system that was the source of the data in this snapshot. Normally this is the same as the owner, but if the snapshot is replicated, the source is the original file system.</p></li>
@@ -14934,7 +14934,7 @@ and the value is json key in definition.</p>
 <li><p><strong>bytes_per_op</strong> (<em>float</em>) – Average operation size (read bytes+write bytes/read ops+write ops).</p></li>
 <li><p><strong>bytes_per_read</strong> (<em>float</em>) – Average read size in bytes per read operation.</p></li>
 <li><p><strong>bytes_per_write</strong> (<em>float</em>) – Average write size in bytes per write operation.</p></li>
-<li><p><strong>file_system</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – The file system on which the performance was measured.</p></li>
+<li><p><strong>file_system</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – The file system on which the performance was measured.</p></li>
 <li><p><strong>others_per_sec</strong> (<em>float</em>) – Other operations processed per second.</p></li>
 <li><p><strong>read_bytes_per_sec</strong> (<em>float</em>) – Bytes read per second.</p></li>
 <li><p><strong>reads_per_sec</strong> (<em>float</em>) – Read requests processed per second.</p></li>
@@ -15138,7 +15138,7 @@ and the value is json key in definition.</p>
 <li><p><strong>resource_type</strong> (<a class="reference internal" href="#pypureclient.flashblade.FB_2_8.models.resource_type.ResourceType" title="pypureclient.flashblade.FB_2_8.models.resource_type.ResourceType"><em>ResourceType</em></a>) – </p></li>
 <li><p><strong>display_name</strong> (<em>str</em>) – Full name of the source with remote array information. Response will be same as source name for local file systems and policies.</p></li>
 <li><p><strong>is_local</strong> (<em>bool</em>) – -&gt; Is the location reference to the local array or somewhere remote?</p></li>
-<li><p><strong>location</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – A reference to the location where the object is defined.</p></li>
+<li><p><strong>location</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – A reference to the location where the object is defined.</p></li>
 </ul>
 </dd>
 </dl>
@@ -15803,7 +15803,7 @@ and the value is json key in definition.</p>
 <dt class="field-odd">Keyword Arguments</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – Name of the object (e.g., a file system or snapshot).</p></li>
-<li><p><strong>file_system</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – </p></li>
+<li><p><strong>file_system</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – </p></li>
 <li><p><strong>file_system_default_quota</strong> (<em>int</em>) – File system’s default group quota (in bytes). If it is <cite>0</cite>, it means there is no default quota. This will be the effective group quota if the group doesn’t have an individual quota. This default quota is set through the <cite>file-systems</cite> endpoint.</p></li>
 <li><p><strong>group</strong> (<a class="reference internal" href="#pypureclient.flashblade.FB_2_8.models.group.Group" title="pypureclient.flashblade.FB_2_8.models.group.Group"><em>Group</em></a>) – The group on which this quota is enforced.</p></li>
 <li><p><strong>quota</strong> (<em>int</em>) – The space limit of the quota (in bytes) for the specified group, cannot be <cite>0</cite>. If specified, this value will override the file system’s default group quota.</p></li>
@@ -16575,7 +16575,7 @@ and the value is json key in definition.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – Name of the object (e.g., a file system or snapshot).</p></li>
 <li><p><strong>id</strong> (<em>str</em>) – A non-modifiable, globally unique ID chosen by the system.</p></li>
-<li><p><strong>link_aggregation_group</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – The link aggregation group which this entity belongs to.</p></li>
+<li><p><strong>link_aggregation_group</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – The link aggregation group which this entity belongs to.</p></li>
 <li><p><strong>other_errors_per_sec</strong> (<em>int</em>) – The sum of unspecified reception and transmission errors per second.</p></li>
 <li><p><strong>received_bytes_per_sec</strong> (<em>int</em>) – Bytes received per second.</p></li>
 <li><p><strong>received_crc_errors_per_sec</strong> (<em>int</em>) – Reception CRC errors per second.</p></li>
@@ -17347,7 +17347,7 @@ and the value is json key in definition.</p>
 <li><p><strong>prefix</strong> (<em>str</em>) – The prefix in the name of the keytab object. This is the same for all keytab objects created from a single keytab file. The name of a keytab entry is created in the format <cite>&lt;prefix&gt;.&lt;suffix&gt;</cite> for all entries.</p></li>
 <li><p><strong>principal</strong> (<em>str</em>) – The service name for which the keytab was issued.</p></li>
 <li><p><strong>realm</strong> (<em>str</em>) – The Kerberos realm that issued the keytab.</p></li>
-<li><p><strong>source</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – A reference to the Active Directory configuration for the computer account that was used to create this keytab. If this keytab was uploaded from a file, all fields in the reference possess <cite>null</cite> values.</p></li>
+<li><p><strong>source</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – A reference to the Active Directory configuration for the computer account that was used to create this keytab. If this keytab was uploaded from a file, all fields in the reference possess <cite>null</cite> values.</p></li>
 <li><p><strong>suffix</strong> (<em>int</em>) – The suffix in the name of the keytab object, determined at creation time using the slot number of the keytab entry in a file and the number of existing entries with the same prefix. The name of a keytab entry is created in the format <cite>&lt;prefix&gt;.&lt;suffix&gt;</cite> for all entries.</p></li>
 </ul>
 </dd>
@@ -18178,7 +18178,7 @@ and the value is json key in definition.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – Name of the object (e.g., a file system or snapshot).</p></li>
 <li><p><strong>id</strong> (<em>str</em>) – A non-modifiable, globally unique ID chosen by the system.</p></li>
-<li><p><strong>bucket</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – The bucket which this lifecycle rule is targeting.</p></li>
+<li><p><strong>bucket</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – The bucket which this lifecycle rule is targeting.</p></li>
 <li><p><strong>enabled</strong> (<em>bool</em>) – If set to <cite>true</cite>, this rule will be enabled.</p></li>
 <li><p><strong>keep_previous_version_for</strong> (<em>int</em>) – Time after which previous versions will be marked expired. Measured in milliseconds. Must be a multiple of 86400000 to represent a whole number of days.</p></li>
 <li><p><strong>prefix</strong> (<em>str</em>) – Object key prefix identifying one or more objects in the bucket. Can have a maximum length of 1024 characters.</p></li>
@@ -18767,7 +18767,7 @@ and the value is json key in definition.</p>
 <li><p><strong>id</strong> (<em>str</em>) – A non-modifiable, globally unique ID chosen by the system.</p></li>
 <li><p><strong>lag_speed</strong> (<em>int</em>) – Combined speed of all ports in the LAG in bits-per-second.</p></li>
 <li><p><strong>mac_address</strong> (<em>str</em>) – Unique MAC address assigned to the LAG.</p></li>
-<li><p><strong>ports</strong> (<em>list</em><em>[</em><a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a><em>]</em>) – Ports associated with the LAG.</p></li>
+<li><p><strong>ports</strong> (<em>list</em><em>[</em><a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a><em>]</em>) – Ports associated with the LAG.</p></li>
 <li><p><strong>port_speed</strong> (<em>int</em>) – Configured speed of each port in the LAG in bits-per-second.</p></li>
 <li><p><strong>status</strong> (<em>str</em>) – Health status of the LAG. Valid values are <cite>critical</cite>, <cite>healthy</cite>, <cite>identifying</cite>, <cite>unclaimed</cite>, <cite>unhealthy</cite>, <cite>unrecognized</cite>, and <cite>unused</cite>.</p></li>
 </ul>
@@ -19051,9 +19051,9 @@ and the value is json key in definition.</p>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Keyword Arguments</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>ports</strong> (<em>list</em><em>[</em><a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a><em>]</em>) – </p></li>
-<li><p><strong>add_ports</strong> (<em>list</em><em>[</em><a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a><em>]</em>) – </p></li>
-<li><p><strong>remove_ports</strong> (<em>list</em><em>[</em><a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a><em>]</em>) – </p></li>
+<li><p><strong>ports</strong> (<em>list</em><em>[</em><a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a><em>]</em>) – </p></li>
+<li><p><strong>add_ports</strong> (<em>list</em><em>[</em><a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a><em>]</em>) – </p></li>
+<li><p><strong>remove_ports</strong> (<em>list</em><em>[</em><a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a><em>]</em>) – </p></li>
 </ul>
 </dd>
 </dl>
@@ -19437,7 +19437,7 @@ and the value is json key in definition.</p>
 <li><p><strong>last_request_time</strong> (<em>int</em>) – The last time log preparation was requested (in milliseconds since epoch).</p></li>
 <li><p><strong>processing</strong> (<em>bool</em>) – Returns a value of <cite>true</cite> if the logs are being prepared.</p></li>
 <li><p><strong>progress</strong> (<em>float</em>) – A representation of log preparation progress. Ranges from 0 to 1.0.</p></li>
-<li><p><strong>hardware_components</strong> (<em>list</em><em>[</em><a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a><em>]</em>) – All of the hardware components for which logs are being processed.</p></li>
+<li><p><strong>hardware_components</strong> (<em>list</em><em>[</em><a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a><em>]</em>) – All of the hardware components for which logs are being processed.</p></li>
 <li><p><strong>available_files</strong> (<em>list</em><em>[</em><a class="reference internal" href="#pypureclient.flashblade.FB_2_8.models.file_info.FileInfo" title="pypureclient.flashblade.FB_2_8.models.file_info.FileInfo"><em>FileInfo</em></a><em>]</em>) – All of the available files ready for download.</p></li>
 </ul>
 </dd>
@@ -19815,7 +19815,7 @@ and the value is json key in definition.</p>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Keyword Arguments</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>local_file_system</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference to a local file system.</p></li>
+<li><p><strong>local_file_system</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference to a local file system.</p></li>
 <li><p><strong>remote</strong> (<a class="reference internal" href="#pypureclient.flashblade.FB_2_8.models.fixed_reference_no_resource_type.FixedReferenceNoResourceType" title="pypureclient.flashblade.FB_2_8.models.fixed_reference_no_resource_type.FixedReferenceNoResourceType"><em>FixedReferenceNoResourceType</em></a>) – Reference to a remote array.</p></li>
 <li><p><strong>remote_file_system</strong> (<a class="reference internal" href="#pypureclient.flashblade.FB_2_8.models.fixed_reference_no_resource_type.FixedReferenceNoResourceType" title="pypureclient.flashblade.FB_2_8.models.fixed_reference_no_resource_type.FixedReferenceNoResourceType"><em>FixedReferenceNoResourceType</em></a>) – Reference to a remote file system.</p></li>
 </ul>
@@ -21159,7 +21159,7 @@ and the value is json key in definition.</p>
 <li><p><strong>id</strong> (<em>str</em>) – A non-modifiable, globally unique ID chosen by the system.</p></li>
 <li><p><strong>enabled</strong> (<em>bool</em>) – If <cite>true</cite>, the policy is enabled. If not specified, defaults to <cite>true</cite>.</p></li>
 <li><p><strong>is_local</strong> (<em>bool</em>) – Whether the policy is defined on the local array.</p></li>
-<li><p><strong>location</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference to the array where the policy is defined.</p></li>
+<li><p><strong>location</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference to the array where the policy is defined.</p></li>
 <li><p><strong>policy_type</strong> (<em>str</em>) – Type of the policy. Valid values are <cite>nfs</cite>, <cite>object-access</cite> and <cite>snapshot</cite>.</p></li>
 <li><p><strong>rules</strong> (<em>list</em><em>[</em><a class="reference internal" href="#pypureclient.flashblade.FB_2_8.models.nfs_export_policy_rule_in_policy.NfsExportPolicyRuleInPolicy" title="pypureclient.flashblade.FB_2_8.models.nfs_export_policy_rule_in_policy.NfsExportPolicyRuleInPolicy"><em>NfsExportPolicyRuleInPolicy</em></a><em>]</em>) – All of the rules that are part of this policy. The order is the evaluation order.</p></li>
 <li><p><strong>version</strong> (<em>str</em>) – A hash of the other properties of this resource. This can be used when updating the resource to ensure there aren’t any updates since the resource was read.</p></li>
@@ -21356,7 +21356,7 @@ and the value is json key in definition.</p>
 <li><p><strong>id</strong> (<em>str</em>) – A non-modifiable, globally unique ID chosen by the system.</p></li>
 <li><p><strong>enabled</strong> (<em>bool</em>) – If <cite>true</cite>, the policy is enabled. If not specified, defaults to <cite>true</cite>.</p></li>
 <li><p><strong>is_local</strong> (<em>bool</em>) – Whether the policy is defined on the local array.</p></li>
-<li><p><strong>location</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference to the array where the policy is defined.</p></li>
+<li><p><strong>location</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference to the array where the policy is defined.</p></li>
 <li><p><strong>policy_type</strong> (<em>str</em>) – Type of the policy. Valid values are <cite>nfs</cite>, <cite>object-access</cite> and <cite>snapshot</cite>.</p></li>
 <li><p><strong>rules</strong> (<em>list</em><em>[</em><a class="reference internal" href="#pypureclient.flashblade.FB_2_8.models.nfs_export_policy_rule_in_policy.NfsExportPolicyRuleInPolicy" title="pypureclient.flashblade.FB_2_8.models.nfs_export_policy_rule_in_policy.NfsExportPolicyRuleInPolicy"><em>NfsExportPolicyRuleInPolicy</em></a><em>]</em>) – All of the rules that are part of this policy. The order is the evaluation order.</p></li>
 </ul>
@@ -21553,7 +21553,7 @@ and the value is json key in definition.</p>
 <li><p><strong>client</strong> (<em>str</em>) – Specifies the clients that will be permitted to access the export. Accepted notation is a single IP address, subnet in CIDR notation, netgroup, or anonymous (<cite>*</cite>). The default is <cite>*</cite> if not specified.</p></li>
 <li><p><strong>fileid_32bit</strong> (<em>bool</em>) – Whether the file id is 32 bits or not. Defaults to <cite>false</cite>.</p></li>
 <li><p><strong>permission</strong> (<em>str</em>) – Specifies which read-write client access permissions are allowed for the export. Valid values are <cite>rw</cite> and <cite>ro</cite>. The default is <cite>ro</cite> if not specified.</p></li>
-<li><p><strong>policy</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – The policy to which this rule belongs.</p></li>
+<li><p><strong>policy</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – The policy to which this rule belongs.</p></li>
 <li><p><strong>policy_version</strong> (<em>str</em>) – The policy’s version. This can be used when updating the resource to ensure there aren’t any updates to the policy since the resource was read.</p></li>
 <li><p><strong>secure</strong> (<em>bool</em>) – If <cite>true</cite>, prevents NFS access to client connections coming from non-reserved ports. Applies to NFSv3, NFSv4.1, and auxiliary protocols MOUNT and NLM. If <cite>false</cite>, allows NFS access to client connections coming from non-reserved ports. Applies to NFSv3, NFSv4.1, and auxiliary protocols MOUNT and NLM. The default is <cite>false</cite> if not specified.</p></li>
 <li><p><strong>security</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – The security flavors to use for accessing files on this mount point.  If the server does not support the requested flavor, the mount operation fails. If <cite>sys</cite>, trusts the client to specify user’s identity. If <cite>krb5</cite>, provides cryptographic proof of a user’s identity in each RPC request. This provides  strong verification of the identity of users accessing data on the server. Note that additional configuration besides adding this mount option is required in order to enable Kerberos security. If <cite>krb5i</cite>, adds integrity checking to krb5, to ensure the data has not been tampered with. If <cite>krb5p</cite>, adds integrity checking and encryption to krb5. This is the most secure setting, but it also involves the most performance overhead. The default is <cite>sys</cite> if not specified.</p></li>
@@ -21660,7 +21660,7 @@ and the value is json key in definition.</p>
 <li><p><strong>client</strong> (<em>str</em>) – Specifies the clients that will be permitted to access the export. Accepted notation is a single IP address, subnet in CIDR notation, netgroup, or anonymous (<cite>*</cite>). The default is <cite>*</cite> if not specified.</p></li>
 <li><p><strong>fileid_32bit</strong> (<em>bool</em>) – Whether the file id is 32 bits or not. Defaults to <cite>false</cite>.</p></li>
 <li><p><strong>permission</strong> (<em>str</em>) – Specifies which read-write client access permissions are allowed for the export. Valid values are <cite>rw</cite> and <cite>ro</cite>. The default is <cite>ro</cite> if not specified.</p></li>
-<li><p><strong>policy</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – The policy to which this rule belongs.</p></li>
+<li><p><strong>policy</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – The policy to which this rule belongs.</p></li>
 <li><p><strong>policy_version</strong> (<em>str</em>) – The policy’s version. This can be used when updating the resource to ensure there aren’t any updates to the policy since the resource was read.</p></li>
 <li><p><strong>secure</strong> (<em>bool</em>) – If <cite>true</cite>, prevents NFS access to client connections coming from non-reserved ports. Applies to NFSv3, NFSv4.1, and auxiliary protocols MOUNT and NLM. If <cite>false</cite>, allows NFS access to client connections coming from non-reserved ports. Applies to NFSv3, NFSv4.1, and auxiliary protocols MOUNT and NLM. The default is <cite>false</cite> if not specified.</p></li>
 <li><p><strong>security</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – The security flavors to use for accessing files on this mount point.  If the server does not support the requested flavor, the mount operation fails. If <cite>sys</cite>, trusts the client to specify user’s identity. If <cite>krb5</cite>, provides cryptographic proof of a user’s identity in each RPC request. This provides  strong verification of the identity of users accessing data on the server. Note that additional configuration besides adding this mount option is required in order to enable Kerberos security. If <cite>krb5i</cite>, adds integrity checking to krb5, to ensure the data has not been tampered with. If <cite>krb5p</cite>, adds integrity checking and encryption to krb5. This is the most secure setting, but it also involves the most performance overhead. The default is <cite>sys</cite> if not specified.</p></li>
@@ -21862,7 +21862,7 @@ and the value is json key in definition.</p>
 <li><p><strong>client</strong> (<em>str</em>) – Specifies the clients that will be permitted to access the export. Accepted notation is a single IP address, subnet in CIDR notation, netgroup, or anonymous (<cite>*</cite>). The default is <cite>*</cite> if not specified.</p></li>
 <li><p><strong>fileid_32bit</strong> (<em>bool</em>) – Whether the file id is 32 bits or not. Defaults to <cite>false</cite>.</p></li>
 <li><p><strong>permission</strong> (<em>str</em>) – Specifies which read-write client access permissions are allowed for the export. Valid values are <cite>rw</cite> and <cite>ro</cite>. The default is <cite>ro</cite> if not specified.</p></li>
-<li><p><strong>policy</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – The policy to which this rule belongs.</p></li>
+<li><p><strong>policy</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – The policy to which this rule belongs.</p></li>
 <li><p><strong>policy_version</strong> (<em>str</em>) – The policy’s version. This can be used when updating the resource to ensure there aren’t any updates to the policy since the resource was read.</p></li>
 <li><p><strong>secure</strong> (<em>bool</em>) – If <cite>true</cite>, prevents NFS access to client connections coming from non-reserved ports. Applies to NFSv3, NFSv4.1, and auxiliary protocols MOUNT and NLM. If <cite>false</cite>, allows NFS access to client connections coming from non-reserved ports. Applies to NFSv3, NFSv4.1, and auxiliary protocols MOUNT and NLM. The default is <cite>false</cite> if not specified.</p></li>
 <li><p><strong>security</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – The security flavors to use for accessing files on this mount point.  If the server does not support the requested flavor, the mount operation fails. If <cite>sys</cite>, trusts the client to specify user’s identity. If <cite>krb5</cite>, provides cryptographic proof of a user’s identity in each RPC request. This provides  strong verification of the identity of users accessing data on the server. Note that additional configuration besides adding this mount option is required in order to enable Kerberos security. If <cite>krb5i</cite>, adds integrity checking to krb5, to ensure the data has not been tampered with. If <cite>krb5p</cite>, adds integrity checking and encryption to krb5. This is the most secure setting, but it also involves the most performance overhead. The default is <cite>sys</cite> if not specified.</p></li>
@@ -22640,7 +22640,7 @@ and the value is json key in definition.</p>
 <li><p><strong>created</strong> (<em>int</em>) – Creation timestamp of the object.</p></li>
 <li><p><strong>enabled</strong> (<em>bool</em>) – Is the access key enabled? If not specified, defaults to <cite>false</cite>.</p></li>
 <li><p><strong>secret_access_key</strong> (<em>str</em>) – The secret access key, only populated on creation if it is not imported from another FlashBlade.</p></li>
-<li><p><strong>user</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference of the associated user.</p></li>
+<li><p><strong>user</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference of the associated user.</p></li>
 </ul>
 </dd>
 </dl>
@@ -23021,9 +23021,9 @@ and the value is json key in definition.</p>
 <li><p><strong>id</strong> (<em>str</em>) – A non-modifiable, globally unique ID chosen by the system.</p></li>
 <li><p><strong>enabled</strong> (<em>bool</em>) – If <cite>true</cite>, the policy is enabled. If not specified, defaults to <cite>true</cite>.</p></li>
 <li><p><strong>is_local</strong> (<em>bool</em>) – Whether the policy is defined on the local array.</p></li>
-<li><p><strong>location</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference to the array where the policy is defined.</p></li>
+<li><p><strong>location</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference to the array where the policy is defined.</p></li>
 <li><p><strong>policy_type</strong> (<em>str</em>) – Type of the policy. Valid values are <cite>nfs</cite>, <cite>object-access</cite> and <cite>snapshot</cite>.</p></li>
-<li><p><strong>account</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference of the associated account. If the policy is not associated with an account, all fields in the reference possess <cite>null</cite> values.</p></li>
+<li><p><strong>account</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference of the associated account. If the policy is not associated with an account, all fields in the reference possess <cite>null</cite> values.</p></li>
 <li><p><strong>arn</strong> (<em>str</em>) – Amazon Resource Name of the policy. Used when referencing the policy via S3 APIs.</p></li>
 <li><p><strong>created</strong> (<em>int</em>) – Creation timestamp of the object.</p></li>
 <li><p><strong>description</strong> (<em>str</em>) – A description of the policy, optionally specified when the policy is created. Cannot be modified for an existing policy.</p></li>
@@ -23784,7 +23784,7 @@ and the value is json key in definition.</p>
 <li><p><strong>actions</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – The list of actions granted by this rule. Each included action may restrict other properties of the rule. Supported actions are returned by the <cite>/object-store-access-policy-actions</cite> endpoint.</p></li>
 <li><p><strong>conditions</strong> (<a class="reference internal" href="#pypureclient.flashblade.FB_2_8.models.policy_rule_object_access_condition.PolicyRuleObjectAccessCondition" title="pypureclient.flashblade.FB_2_8.models.policy_rule_object_access_condition.PolicyRuleObjectAccessCondition"><em>PolicyRuleObjectAccessCondition</em></a>) – Conditions used to limit the scope which this rule applies to.</p></li>
 <li><p><strong>effect</strong> (<em>str</em>) – Effect of this rule. When <cite>allow</cite>, the rule allows the given actions to be performed on the given resources, subject to the given conditions. Valid values include <cite>allow</cite>.</p></li>
-<li><p><strong>policy</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – The policy to which this rule belongs.</p></li>
+<li><p><strong>policy</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – The policy to which this rule belongs.</p></li>
 <li><p><strong>resources</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – The list of resources which this rule applies to. Each resource can include a bucket component, optionally followed by an object component. The choice of which components a resource can include is dictated by which actions are included in the rule. For further details, see the Object Store Access Policy Actions section of the User Guide.</p></li>
 </ul>
 </dd>
@@ -24648,7 +24648,7 @@ and the value is json key in definition.</p>
 <li><p><strong>name</strong> (<em>str</em>) – A name chosen by the user. Can be changed. Must be locally unique.</p></li>
 <li><p><strong>id</strong> (<em>str</em>) – A non-modifiable, globally unique ID chosen by the system.</p></li>
 <li><p><strong>access_key_id</strong> (<em>str</em>) – Access Key ID to be used when connecting to a remote object store.</p></li>
-<li><p><strong>remote</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference to the associated remote, which can either be a <cite>target</cite> or remote <cite>array</cite>. If it is an <cite>array</cite>, then the <cite>resource-type</cite> field will not be populated.</p></li>
+<li><p><strong>remote</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference to the associated remote, which can either be a <cite>target</cite> or remote <cite>array</cite>. If it is an <cite>array</cite>, then the <cite>resource-type</cite> field will not be populated.</p></li>
 <li><p><strong>secret_access_key</strong> (<em>str</em>) – Secret Access Key to be used when connecting to a remote object store.</p></li>
 </ul>
 </dd>
@@ -24932,8 +24932,8 @@ and the value is json key in definition.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – Name of the object (e.g., a file system or snapshot).</p></li>
 <li><p><strong>id</strong> (<em>str</em>) – A non-modifiable, globally unique ID chosen by the system.</p></li>
-<li><p><strong>access_keys</strong> (<em>list</em><em>[</em><a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a><em>]</em>) – References of the user’s access keys.</p></li>
-<li><p><strong>account</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference of the associated account.</p></li>
+<li><p><strong>access_keys</strong> (<em>list</em><em>[</em><a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a><em>]</em>) – References of the user’s access keys.</p></li>
+<li><p><strong>account</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference of the associated account.</p></li>
 <li><p><strong>created</strong> (<em>int</em>) – Creation timestamp of the object.</p></li>
 </ul>
 </dd>
@@ -25693,7 +25693,7 @@ and the value is json key in definition.</p>
 <li><p><strong>id</strong> (<em>str</em>) – A non-modifiable, globally unique ID chosen by the system.</p></li>
 <li><p><strong>enabled</strong> (<em>bool</em>) – If <cite>true</cite>, the policy is enabled. If not specified, defaults to <cite>true</cite>.</p></li>
 <li><p><strong>is_local</strong> (<em>bool</em>) – Whether the policy is defined on the local array.</p></li>
-<li><p><strong>location</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference to the array where the policy is defined.</p></li>
+<li><p><strong>location</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference to the array where the policy is defined.</p></li>
 <li><p><strong>policy_type</strong> (<em>str</em>) – Type of the policy. Valid values are <cite>nfs</cite>, <cite>object-access</cite> and <cite>snapshot</cite>.</p></li>
 <li><p><strong>rules</strong> (<em>list</em><em>[</em><a class="reference internal" href="../pure1_reference.html#pypureclient.pure1.models.PolicyRule" title="pypureclient.pure1.models.PolicyRule"><em>PolicyRule</em></a><em>]</em>) – </p></li>
 <li><p><strong>retention_lock</strong> (<em>str</em>) – If retention lock is locked, then the the policy can not be removed from the associated file systems and the rules may not be changed. Valid values are <cite>locked</cite> and <cite>unlocked</cite>. Contact Pure Technical Services to change <cite>locked</cite> to <cite>unlocked</cite>.</p></li>
@@ -25794,7 +25794,7 @@ and the value is json key in definition.</p>
 <li><p><strong>id</strong> (<em>str</em>) – A non-modifiable, globally unique ID chosen by the system.</p></li>
 <li><p><strong>enabled</strong> (<em>bool</em>) – If <cite>true</cite>, the policy is enabled. If not specified, defaults to <cite>true</cite>.</p></li>
 <li><p><strong>is_local</strong> (<em>bool</em>) – Whether the policy is defined on the local array.</p></li>
-<li><p><strong>location</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference to the array where the policy is defined.</p></li>
+<li><p><strong>location</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference to the array where the policy is defined.</p></li>
 <li><p><strong>policy_type</strong> (<em>str</em>) – Type of the policy. Valid values are <cite>nfs</cite>, <cite>object-access</cite> and <cite>snapshot</cite>.</p></li>
 </ul>
 </dd>
@@ -25989,7 +25989,7 @@ and the value is json key in definition.</p>
 <li><p><strong>id</strong> (<em>str</em>) – A non-modifiable, globally unique ID chosen by the system.</p></li>
 <li><p><strong>enabled</strong> (<em>bool</em>) – If <cite>true</cite>, the policy is enabled. If not specified, defaults to <cite>true</cite>.</p></li>
 <li><p><strong>is_local</strong> (<em>bool</em>) – Whether the policy is defined on the local array.</p></li>
-<li><p><strong>location</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference to the array where the policy is defined.</p></li>
+<li><p><strong>location</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference to the array where the policy is defined.</p></li>
 <li><p><strong>policy_type</strong> (<em>str</em>) – Type of the policy. Valid values are <cite>nfs</cite>, <cite>object-access</cite> and <cite>snapshot</cite>.</p></li>
 </ul>
 </dd>
@@ -26176,7 +26176,7 @@ and the value is json key in definition.</p>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Keyword Arguments</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>member</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference to the resource the policy is applied to.</p></li>
+<li><p><strong>member</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference to the resource the policy is applied to.</p></li>
 <li><p><strong>policy</strong> (<a class="reference internal" href="#pypureclient.flashblade.FB_2_8.models.location_reference.LocationReference" title="pypureclient.flashblade.FB_2_8.models.location_reference.LocationReference"><em>LocationReference</em></a>) – Reference to the policy.</p></li>
 </ul>
 </dd>
@@ -26555,8 +26555,8 @@ and the value is json key in definition.</p>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Keyword Arguments</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>member</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference to the resource the policy is applied to.</p></li>
-<li><p><strong>policy</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference to the policy.</p></li>
+<li><p><strong>member</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference to the resource the policy is applied to.</p></li>
+<li><p><strong>policy</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference to the policy.</p></li>
 </ul>
 </dd>
 </dl>
@@ -26650,8 +26650,8 @@ and the value is json key in definition.</p>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Keyword Arguments</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>member</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference to the resource the policy is applied to.</p></li>
-<li><p><strong>policy</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference to the policy.</p></li>
+<li><p><strong>member</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference to the resource the policy is applied to.</p></li>
+<li><p><strong>policy</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference to the policy.</p></li>
 </ul>
 </dd>
 </dl>
@@ -26933,7 +26933,7 @@ and the value is json key in definition.</p>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Keyword Arguments</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>member</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference to the resource the policy is applied to.</p></li>
+<li><p><strong>member</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference to the resource the policy is applied to.</p></li>
 <li><p><strong>policy</strong> (<a class="reference internal" href="#pypureclient.flashblade.FB_2_8.models.location_reference.LocationReference" title="pypureclient.flashblade.FB_2_8.models.location_reference.LocationReference"><em>LocationReference</em></a>) – Reference to the policy.</p></li>
 <li><p><strong>link</strong> (<a class="reference internal" href="#pypureclient.flashblade.FB_2_8.models.member_link.MemberLink" title="pypureclient.flashblade.FB_2_8.models.member_link.MemberLink"><em>MemberLink</em></a>) – Only populated if the <cite>member</cite> is a file system replica link. Contains additional information about the link.</p></li>
 </ul>
@@ -27221,7 +27221,7 @@ and the value is json key in definition.</p>
 <li><p><strong>id</strong> (<em>str</em>) – A non-modifiable, globally unique ID chosen by the system.</p></li>
 <li><p><strong>enabled</strong> (<em>bool</em>) – If <cite>true</cite>, the policy is enabled. If not specified, defaults to <cite>true</cite>.</p></li>
 <li><p><strong>is_local</strong> (<em>bool</em>) – Whether the policy is defined on the local array.</p></li>
-<li><p><strong>location</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference to the array where the policy is defined.</p></li>
+<li><p><strong>location</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – Reference to the array where the policy is defined.</p></li>
 <li><p><strong>policy_type</strong> (<em>str</em>) – Type of the policy. Valid values are <cite>nfs</cite>, <cite>object-access</cite> and <cite>snapshot</cite>.</p></li>
 <li><p><strong>rules</strong> (<em>list</em><em>[</em><a class="reference internal" href="../pure1_reference.html#pypureclient.pure1.models.PolicyRule" title="pypureclient.pure1.models.PolicyRule"><em>PolicyRule</em></a><em>]</em>) – </p></li>
 <li><p><strong>retention_lock</strong> (<em>str</em>) – If retention lock is locked, then the the policy can not be removed from the associated file systems and the rules may not be changed. Valid values are <cite>locked</cite> and <cite>unlocked</cite>. Contact Pure Technical Services to change <cite>locked</cite> to <cite>unlocked</cite>.</p></li>
@@ -27513,7 +27513,7 @@ and the value is json key in definition.</p>
 <li><p><strong>actions</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – The list of actions granted by this rule. Each included action may restrict other properties of the rule. Supported actions are returned by the <cite>/object-store-access-policy-actions</cite> endpoint.</p></li>
 <li><p><strong>conditions</strong> (<a class="reference internal" href="#pypureclient.flashblade.FB_2_8.models.policy_rule_object_access_condition.PolicyRuleObjectAccessCondition" title="pypureclient.flashblade.FB_2_8.models.policy_rule_object_access_condition.PolicyRuleObjectAccessCondition"><em>PolicyRuleObjectAccessCondition</em></a>) – Conditions used to limit the scope which this rule applies to.</p></li>
 <li><p><strong>effect</strong> (<em>str</em>) – Effect of this rule. When <cite>allow</cite>, the rule allows the given actions to be performed on the given resources, subject to the given conditions. Valid values include <cite>allow</cite>.</p></li>
-<li><p><strong>policy</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – The policy to which this rule belongs.</p></li>
+<li><p><strong>policy</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – The policy to which this rule belongs.</p></li>
 <li><p><strong>resources</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – The list of resources which this rule applies to. Each resource can include a bucket component, optionally followed by an object component. The choice of which components a resource can include is dictated by which actions are included in the rule. For further details, see the Object Store Access Policy Actions section of the User Guide.</p></li>
 </ul>
 </dd>
@@ -29674,12 +29674,12 @@ and the value is json key in definition.</p>
 <p>OpenAPI spec version: 2.8</p>
 <p>Generated by: <a class="reference external" href="https://github.com/swagger-api/swagger-codegen.git">https://github.com/swagger-api/swagger-codegen.git</a></p>
 <dl class="py class">
-<dt class="sig sig-object py" id="pypureclient.flashblade.FB_2_8.models.smtp.SMTP">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypureclient.flashblade.FB_2_8.models.smtp.</span></span><span class="sig-name descname"><span class="pre">SMTP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relay_host</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sender_domain</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypureclient.flashblade.FB_2_8.models.smtp.SMTP" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pypureclient.flashblade.FB_2_8.models.smtp.Smtp">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypureclient.flashblade.FB_2_8.models.smtp.</span></span><span class="sig-name descname"><span class="pre">Smtp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relay_host</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sender_domain</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypureclient.flashblade.FB_2_8.models.smtp.Smtp" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <dl class="py attribute">
-<dt class="sig sig-object py" id="pypureclient.flashblade.FB_2_8.models.smtp.SMTP.swagger_types">
-<span class="sig-name descname"><span class="pre">swagger_types</span></span><a class="headerlink" href="#pypureclient.flashblade.FB_2_8.models.smtp.SMTP.swagger_types" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pypureclient.flashblade.FB_2_8.models.smtp.Smtp.swagger_types">
+<span class="sig-name descname"><span class="pre">swagger_types</span></span><a class="headerlink" href="#pypureclient.flashblade.FB_2_8.models.smtp.Smtp.swagger_types" title="Permalink to this definition"></a></dt>
 <dd><p>The key is attribute name
 and the value is attribute type.</p>
 <dl class="field-list simple">
@@ -29690,8 +29690,8 @@ and the value is attribute type.</p>
 </dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="pypureclient.flashblade.FB_2_8.models.smtp.SMTP.attribute_map">
-<span class="sig-name descname"><span class="pre">attribute_map</span></span><a class="headerlink" href="#pypureclient.flashblade.FB_2_8.models.smtp.SMTP.attribute_map" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pypureclient.flashblade.FB_2_8.models.smtp.Smtp.attribute_map">
+<span class="sig-name descname"><span class="pre">attribute_map</span></span><a class="headerlink" href="#pypureclient.flashblade.FB_2_8.models.smtp.Smtp.attribute_map" title="Permalink to this definition"></a></dt>
 <dd><p>The key is attribute name
 and the value is json key in definition.</p>
 <dl class="field-list simple">
@@ -29702,14 +29702,14 @@ and the value is json key in definition.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pypureclient.flashblade.FB_2_8.models.smtp.SMTP.__eq__">
-<span class="sig-name descname"><span class="pre">__eq__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypureclient.flashblade.FB_2_8.models.smtp.SMTP.__eq__" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pypureclient.flashblade.FB_2_8.models.smtp.Smtp.__eq__">
+<span class="sig-name descname"><span class="pre">__eq__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypureclient.flashblade.FB_2_8.models.smtp.Smtp.__eq__" title="Permalink to this definition"></a></dt>
 <dd><p>Returns true if both objects are equal</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pypureclient.flashblade.FB_2_8.models.smtp.SMTP.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relay_host</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sender_domain</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypureclient.flashblade.FB_2_8.models.smtp.SMTP.__init__" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pypureclient.flashblade.FB_2_8.models.smtp.Smtp.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">relay_host</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sender_domain</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypureclient.flashblade.FB_2_8.models.smtp.Smtp.__init__" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Keyword Arguments</dt>
 <dd class="field-odd"><ul class="simple">
@@ -29723,14 +29723,14 @@ and the value is json key in definition.</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pypureclient.flashblade.FB_2_8.models.smtp.SMTP.__ne__">
-<span class="sig-name descname"><span class="pre">__ne__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypureclient.flashblade.FB_2_8.models.smtp.SMTP.__ne__" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pypureclient.flashblade.FB_2_8.models.smtp.Smtp.__ne__">
+<span class="sig-name descname"><span class="pre">__ne__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypureclient.flashblade.FB_2_8.models.smtp.Smtp.__ne__" title="Permalink to this definition"></a></dt>
 <dd><p>Returns true if both objects are not equal</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pypureclient.flashblade.FB_2_8.models.smtp.SMTP.__repr__">
-<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypureclient.flashblade.FB_2_8.models.smtp.SMTP.__repr__" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pypureclient.flashblade.FB_2_8.models.smtp.Smtp.__repr__">
+<span class="sig-name descname"><span class="pre">__repr__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypureclient.flashblade.FB_2_8.models.smtp.Smtp.__repr__" title="Permalink to this definition"></a></dt>
 <dd><p>For <cite>print</cite> and <cite>pprint</cite></p>
 </dd></dl>
 
@@ -29740,8 +29740,8 @@ and the value is json key in definition.</p>
 <dd></dd></dl>
 
 <dl class="py attribute">
-<dt class="sig sig-object py" id="pypureclient.flashblade.FB_2_8.models.smtp.SMTP.required_args">
-<span class="sig-name descname"><span class="pre">required_args</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#pypureclient.flashblade.FB_2_8.models.smtp.SMTP.required_args" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pypureclient.flashblade.FB_2_8.models.smtp.Smtp.required_args">
+<span class="sig-name descname"><span class="pre">required_args</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#pypureclient.flashblade.FB_2_8.models.smtp.Smtp.required_args" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -29750,14 +29750,14 @@ and the value is json key in definition.</p>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pypureclient.flashblade.FB_2_8.models.smtp.SMTP.to_dict">
-<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypureclient.flashblade.FB_2_8.models.smtp.SMTP.to_dict" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pypureclient.flashblade.FB_2_8.models.smtp.Smtp.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypureclient.flashblade.FB_2_8.models.smtp.Smtp.to_dict" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the model properties as a dict</p>
 </dd></dl>
 
 <dl class="py method">
-<dt class="sig sig-object py" id="pypureclient.flashblade.FB_2_8.models.smtp.SMTP.to_str">
-<span class="sig-name descname"><span class="pre">to_str</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypureclient.flashblade.FB_2_8.models.smtp.SMTP.to_str" title="Permalink to this definition"></a></dt>
+<dt class="sig sig-object py" id="pypureclient.flashblade.FB_2_8.models.smtp.Smtp.to_str">
+<span class="sig-name descname"><span class="pre">to_str</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypureclient.flashblade.FB_2_8.models.smtp.Smtp.to_str" title="Permalink to this definition"></a></dt>
 <dd><p>Returns the string representation of the model</p>
 </dd></dl>
 
@@ -31538,7 +31538,7 @@ and the value is json key in definition.</p>
 <li><p><strong>id</strong> (<em>str</em>) – A non-modifiable, globally unique ID chosen by the system.</p></li>
 <li><p><strong>enabled</strong> (<em>bool</em>) – Indicates if subnet is enabled (<cite>true</cite>) or disabled (<cite>false</cite>). If not specified, defaults to <cite>true</cite>.</p></li>
 <li><p><strong>gateway</strong> (<em>str</em>) – The IPv4 or IPv6 address of the gateway through which the specified subnet is to communicate with the network.</p></li>
-<li><p><strong>interfaces</strong> (<em>list</em><em>[</em><a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a><em>]</em>) – List of network interfaces associated with this subnet.</p></li>
+<li><p><strong>interfaces</strong> (<em>list</em><em>[</em><a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a><em>]</em>) – List of network interfaces associated with this subnet.</p></li>
 <li><p><strong>link_aggregation_group</strong> (<a class="reference internal" href="#pypureclient.flashblade.FB_2_8.models.reference.Reference" title="pypureclient.flashblade.FB_2_8.models.reference.Reference"><em>Reference</em></a>) – Reference to the associated LAG.</p></li>
 <li><p><strong>mtu</strong> (<em>int</em>) – Maximum message transfer unit (packet) size for the subnet in bytes. MTU setting cannot exceed the MTU of the corresponding physical interface. If not specified, defaults to <cite>1500</cite>.</p></li>
 <li><p><strong>prefix</strong> (<em>str</em>) – The IPv4 or IPv6 address to be associated with the specified subnet.</p></li>
@@ -32874,7 +32874,7 @@ and the value is json key in definition.</p>
 <li><p><strong>name</strong> (<em>str</em>) – A name chosen by the user. Can be changed. Must be locally unique.</p></li>
 <li><p><strong>id</strong> (<em>str</em>) – A non-modifiable, globally unique ID chosen by the system.</p></li>
 <li><p><strong>address</strong> (<em>str</em>) – IP address or FQDN of the target system.</p></li>
-<li><p><strong>ca_certificate_group</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – The group of CA certificates that can be used, in addition to well-known Certificate Authority certificates, in order to establish a secure connection to the target system. Defaults to a reference to the <cite>_default_replication_certs</cite> group.</p></li>
+<li><p><strong>ca_certificate_group</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – The group of CA certificates that can be used, in addition to well-known Certificate Authority certificates, in order to establish a secure connection to the target system. Defaults to a reference to the <cite>_default_replication_certs</cite> group.</p></li>
 <li><p><strong>status</strong> (<em>str</em>) – Status of the connection. Valid values are <cite>connected</cite> and <cite>connecting</cite>. <cite>connected</cite> - The connection is OK. <cite>connecting</cite> - No connection exists and the array is trying to reconnect to the target.</p></li>
 <li><p><strong>status_details</strong> (<em>str</em>) – Additional information describing any issues encountered when connecting, or <cite>null</cite> if the <cite>status</cite> is <cite>connected</cite>.</p></li>
 </ul>
@@ -33255,7 +33255,7 @@ and the value is json key in definition.</p>
 <li><p><strong>description</strong> (<em>str</em>) – What the test is doing.</p></li>
 <li><p><strong>destination</strong> (<em>str</em>) – The URI of the target server being tested.</p></li>
 <li><p><strong>enabled</strong> (<em>bool</em>) – Is the service enabled or not?</p></li>
-<li><p><strong>resource</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – A reference to the object being tested.</p></li>
+<li><p><strong>resource</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – A reference to the object being tested.</p></li>
 <li><p><strong>result_details</strong> (<em>str</em>) – Additional information about the test result.</p></li>
 <li><p><strong>success</strong> (<em>bool</em>) – Returns a value of <cite>true</cite> if the specified test succeeded. Returns a value of <cite>false</cite> if the specified test failed.</p></li>
 <li><p><strong>test_type</strong> (<em>str</em>) – Displays the type of test being performed. The returned values are determined by the <cite>resource</cite> being tested and its configuration.</p></li>
@@ -33915,7 +33915,7 @@ and the value is json key in definition.</p>
 <dt class="field-odd">Keyword Arguments</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>name</strong> (<em>str</em>) – Name of the object (e.g., a file system or snapshot).</p></li>
-<li><p><strong>file_system</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – </p></li>
+<li><p><strong>file_system</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_2.models.html#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – </p></li>
 <li><p><strong>file_system_default_quota</strong> (<em>int</em>) – File system’s default user quota (in bytes). If it is <cite>0</cite>, it means there is no default quota. This will be the effective user quota if the user doesn’t have an individual quota. This default quota is set through the <cite>file-systems</cite> endpoint.</p></li>
 <li><p><strong>quota</strong> (<em>int</em>) – The limit of the quota (in bytes) for the specified user, cannot be <cite>0</cite>. If specified, this value will override the file system’s default user quota.</p></li>
 <li><p><strong>usage</strong> (<em>int</em>) – The usage of the file system (in bytes) by the specified user.</p></li>
