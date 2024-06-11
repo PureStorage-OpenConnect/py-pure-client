@@ -82,13 +82,13 @@ class Arrays(object):
             id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
             name (str): A user-specified name. The name must be locally unique and can be changed.
             banner (str)
-            capacity (int): Usable capacity in bytes.
-            console_lock_enabled (bool)
+            capacity (int): Usable capacity in bytes. If the user does not have sufficient access, this field will return `null`.
+            console_lock_enabled (bool): If `true`, console lock is enabled for the array. If the user does not have sufficient access, this field will return `null`.
             idle_timeout (int): Idle timeout in milliseconds. Valid values are `0` and any multiple of 60000 in the range of 300000 and 10800000. Any other values will be rounded down to the nearest multiple of 60000.
-            ntp_servers (list[str])
+            ntp_servers (list[str]): NTP Servers. If the user does not have sufficient access, this field will return `null`.
             os (str): Valid values are `Purity`, `Purity//FA`, and `Purity//FB`.
-            parity (float): A representation of data redundancy on the array. Data redundancy is rebuilt automatically by the system whenever parity is less than 1.0.
-            scsi_timeout (int): The SCSI timeout. This value defaults to 60s if it is not specified.
+            parity (float): A representation of data redundancy on the array. Data redundancy is rebuilt automatically by the system whenever parity is less than 1.0. If the user does not have sufficient access, this field will return `null`.
+            scsi_timeout (int): The SCSI timeout. This value defaults to 60s if it is not specified. If the user does not have sufficient access, this field will return `null`.
             space (Space)
             version (str)
         """

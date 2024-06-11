@@ -33,7 +33,6 @@ class OffloadGoogleCloud(object):
         'access_key_id': 'str',
         'bucket': 'str',
         'secret_access_key': 'str',
-        'auth_region': 'str',
         'profile': 'str'
     }
 
@@ -41,7 +40,6 @@ class OffloadGoogleCloud(object):
         'access_key_id': 'access_key_id',
         'bucket': 'bucket',
         'secret_access_key': 'secret_access_key',
-        'auth_region': 'auth_region',
         'profile': 'profile'
     }
 
@@ -53,7 +51,6 @@ class OffloadGoogleCloud(object):
         access_key_id=None,  # type: str
         bucket=None,  # type: str
         secret_access_key=None,  # type: str
-        auth_region=None,  # type: str
         profile=None,  # type: str
     ):
         """
@@ -61,7 +58,6 @@ class OffloadGoogleCloud(object):
             access_key_id (str): The access key ID of the Google Cloud account used to create a connection between the array and a Google Cloud offload target. The access key ID is 24 characters in length and is only accepted when creating the connection between the array and the Google Cloud offload target. The `access_key_id`, `secret_access_key`, and `bucket` parameters must be set together.
             bucket (str): The name of the Google Cloud Storage bucket to which the data will be offloaded. Grant basic read and write access permissions to the bucket and verify that the bucket is empty of all objects. The `access_key_id`, `secret_access_key`, and `bucket` parameters must be set together.
             secret_access_key (str): The secret access key that goes with the access key ID of the Google Cloud account. The secret access key is 40 characters in length is only accepted when creating the connection between the array and the Google Cloud offload target. The `access_key_id`, `secret_access_key`, and `bucket` parameters must be set together.
-            auth_region (str): The region that will be used for initial authentication request. This parameter is optional and should be used only when region autodetection fails.
             profile (str): The offload target profile that will be selected for this target. This option allows more granular configuration for the target on top of the `protocol` parameter. Values include `gcp`.
         """
         if access_key_id is not None:
@@ -70,8 +66,6 @@ class OffloadGoogleCloud(object):
             self.bucket = bucket
         if secret_access_key is not None:
             self.secret_access_key = secret_access_key
-        if auth_region is not None:
-            self.auth_region = auth_region
         if profile is not None:
             self.profile = profile
 
