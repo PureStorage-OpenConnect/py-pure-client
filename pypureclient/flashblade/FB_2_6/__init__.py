@@ -165,9 +165,9 @@ from .models.resource import Resource
 from .models.resource_performance_replication import ResourcePerformanceReplication
 from .models.resource_type import ResourceType
 from .models.role import Role
-from .models.smtp import SMTP
 from .models.session import Session
 from .models.smb import Smb
+from .models.smtp import Smtp
 from .models.smtp_server import SmtpServer
 from .models.snmp_agent import SnmpAgent
 from .models.snmp_agent_mib import SnmpAgentMib
@@ -361,9 +361,9 @@ CLASSES_TO_ADD_PROPS = [
     ResourcePerformanceReplication,
     ResourceType,
     Role,
-    SMTP,
     Session,
     Smb,
+    Smtp,
     SmtpServer,
     SnmpAgent,
     SnmpAgentMib,

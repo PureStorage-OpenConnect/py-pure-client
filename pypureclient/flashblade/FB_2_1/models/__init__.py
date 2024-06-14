@@ -281,8 +281,8 @@ from .resource_performance_replication_get_response import ResourcePerformanceRe
 from .resource_type import ResourceType
 from .role import Role
 from .role_get_response import RoleGetResponse
-from .smtp import SMTP
 from .smb import Smb
+from .smtp import Smtp
 from .smtp_server import SmtpServer
 from .smtp_server_get_response import SmtpServerGetResponse
 from .smtp_server_response import SmtpServerResponse

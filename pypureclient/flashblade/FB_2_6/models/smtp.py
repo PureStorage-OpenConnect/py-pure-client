@@ -21,7 +21,7 @@ from ....properties import Property
 if typing.TYPE_CHECKING:
     from pypureclient.flashblade.FB_2_6 import models
 
-class SMTP(object):
+class Smtp(object):
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -71,7 +71,7 @@ class SMTP(object):
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
-            raise KeyError("Invalid key `{}` for `SMTP`".format(key))
+            raise KeyError("Invalid key `{}` for `Smtp`".format(key))
         self.__dict__[key] = value
 
     def __getattribute__(self, item):
@@ -103,7 +103,7 @@ class SMTP(object):
                     ))
                 else:
                     result[attr] = value
-        if issubclass(SMTP, dict):
+        if issubclass(Smtp, dict):
             for key, value in self.items():
                 result[key] = value
 
@@ -119,7 +119,7 @@ class SMTP(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, SMTP):
+        if not isinstance(other, Smtp):
             return False
 
         return self.__dict__ == other.__dict__
