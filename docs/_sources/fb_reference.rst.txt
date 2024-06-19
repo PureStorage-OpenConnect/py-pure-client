@@ -87,6 +87,11 @@ FlashBlade REST 2.13 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.FB_2_13.client.Client
+
+FlashBlade REST 2.14 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.FB_2_14.client.Client
     :members:
 
 
@@ -344,6 +349,30 @@ Audit
 ~~~~~
 
 .. autoclass:: pypureclient.flashblade.Audit
+   :members:
+
+AuditFileSystemsPolicies
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.AuditFileSystemsPolicies
+   :members:
+
+AuditFileSystemsPoliciesPatch
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.AuditFileSystemsPoliciesPatch
+   :members:
+
+AuditFileSystemsPoliciesPost
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.AuditFileSystemsPoliciesPost
+   :members:
+
+AuditFileSystemsPolicy
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.AuditFileSystemsPolicy
    :members:
 
 Blade
@@ -1246,6 +1275,24 @@ PublicAccessConfig
 .. autoclass:: pypureclient.flashblade.PublicAccessConfig
    :members:
 
+PublicKey
+~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.PublicKey
+   :members:
+
+PublicKeyPost
+~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.PublicKeyPost
+   :members:
+
+PublicKeyUse
+~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.PublicKeyUse
+   :members:
+
 QuotaSetting
 ~~~~~~~~~~~~
 
@@ -1310,12 +1357,6 @@ Role
 ~~~~
 
 .. autoclass:: pypureclient.flashblade.Role
-   :members:
-
-SMTP
-~~~~
-
-.. autoclass:: pypureclient.flashblade.SMTP
    :members:
 
 Session
@@ -1408,6 +1449,12 @@ SmbSharePolicyRulePost
 .. autoclass:: pypureclient.flashblade.SmbSharePolicyRulePost
    :members:
 
+Smtp
+~~~~
+
+.. autoclass:: pypureclient.flashblade.Smtp
+   :members:
+
 SmtpServer
 ~~~~~~~~~~
 
@@ -1474,6 +1521,18 @@ SpaceExtended
 .. autoclass:: pypureclient.flashblade.SpaceExtended
    :members:
 
+SshCertificateAuthorityPolicy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.SshCertificateAuthorityPolicy
+   :members:
+
+SshCertificateAuthorityPolicyPost
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.SshCertificateAuthorityPolicyPost
+   :members:
+
 Subnet
 ~~~~~~
 
@@ -1496,6 +1555,18 @@ SyslogServer
 ~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.SyslogServer
+   :members:
+
+SyslogServerPatch
+~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.SyslogServerPatch
+   :members:
+
+SyslogServerPost
+~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.SyslogServerPost
    :members:
 
 SyslogServerPostOrPatch
@@ -2344,16 +2415,28 @@ patch_directory_services
 .. literalinclude:: source/examples/FB2.0/patch_directory_services.py
     :language: python
 
+delete_directory_services_roles
+'''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/delete_directory_services_roles.py
+    :language: python
+
 get_directory_services_roles
 ''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.0/get_directory_services_roles.py
+.. literalinclude:: source/examples/FB2.14/get_directory_services_roles.py
     :language: python
 
 patch_directory_services_roles
 ''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.0/patch_directory_services_roles.py
+.. literalinclude:: source/examples/FB2.14/patch_directory_services_roles.py
+    :language: python
+
+post_directory_services_roles
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/post_directory_services_roles.py
     :language: python
 
 get_directory_services_test
@@ -2500,6 +2583,24 @@ File Systems
 ~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+delete_file_systems_audit_policies
+''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/delete_file_systems_audit_policies.py
+    :language: python
+
+get_file_systems_audit_policies
+'''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/get_file_systems_audit_policies.py
+    :language: python
+
+post_file_systems_audit_policies
+''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/post_file_systems_audit_policies.py
+    :language: python
 
 delete_file_systems
 '''''''''''''''''''
@@ -2992,6 +3093,53 @@ post_object_store_virtual_hosts
 .. literalinclude:: source/examples/FB2.0/post_object_store_virtual_hosts.py
     :language: python
 
+Policies   Audit For File Systems
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+delete_audit_file_systems_policies
+''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/delete_audit_file_systems_policies.py
+    :language: python
+
+get_audit_file_systems_policies
+'''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/get_audit_file_systems_policies.py
+    :language: python
+
+delete_audit_file_systems_policies_members
+''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/delete_audit_file_systems_policies_members.py
+    :language: python
+
+get_audit_file_systems_policies_members
+'''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/get_audit_file_systems_policies_members.py
+    :language: python
+
+post_audit_file_systems_policies_members
+''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/post_audit_file_systems_policies_members.py
+    :language: python
+
+patch_audit_file_systems_policies
+'''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/patch_audit_file_systems_policies.py
+    :language: python
+
+post_audit_file_systems_policies
+''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/post_audit_file_systems_policies.py
+    :language: python
+
 Policies   Network Access
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -3358,6 +3506,113 @@ post_policies
 .. literalinclude:: source/examples/FB2.0/post_policies.py
     :language: python
 
+Policies   Ssh Certificate Authority
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+delete_admins_ssh_certificate_authority_policies
+''''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/delete_admins_ssh_certificate_authority_policies.py
+    :language: python
+
+get_admins_ssh_certificate_authority_policies
+'''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/get_admins_ssh_certificate_authority_policies.py
+    :language: python
+
+post_admins_ssh_certificate_authority_policies
+''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/post_admins_ssh_certificate_authority_policies.py
+    :language: python
+
+delete_arrays_ssh_certificate_authority_policies
+''''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/delete_arrays_ssh_certificate_authority_policies.py
+    :language: python
+
+get_arrays_ssh_certificate_authority_policies
+'''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/get_arrays_ssh_certificate_authority_policies.py
+    :language: python
+
+post_arrays_ssh_certificate_authority_policies
+''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/post_arrays_ssh_certificate_authority_policies.py
+    :language: python
+
+delete_ssh_certificate_authority_policies_admins
+''''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/delete_ssh_certificate_authority_policies_admins.py
+    :language: python
+
+get_ssh_certificate_authority_policies_admins
+'''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/get_ssh_certificate_authority_policies_admins.py
+    :language: python
+
+post_ssh_certificate_authority_policies_admins
+''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/post_ssh_certificate_authority_policies_admins.py
+    :language: python
+
+delete_ssh_certificate_authority_policies_arrays
+''''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/delete_ssh_certificate_authority_policies_arrays.py
+    :language: python
+
+get_ssh_certificate_authority_policies_arrays
+'''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/get_ssh_certificate_authority_policies_arrays.py
+    :language: python
+
+post_ssh_certificate_authority_policies_arrays
+''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/post_ssh_certificate_authority_policies_arrays.py
+    :language: python
+
+delete_ssh_certificate_authority_policies
+'''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/delete_ssh_certificate_authority_policies.py
+    :language: python
+
+get_ssh_certificate_authority_policies
+''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/get_ssh_certificate_authority_policies.py
+    :language: python
+
+get_ssh_certificate_authority_policies_members
+''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/get_ssh_certificate_authority_policies_members.py
+    :language: python
+
+patch_ssh_certificate_authority_policies
+''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/patch_ssh_certificate_authority_policies.py
+    :language: python
+
+post_ssh_certificate_authority_policies
+'''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/post_ssh_certificate_authority_policies.py
+    :language: python
+
 Policies  All
 ~~~~~~~~~~~~~
 
@@ -3373,6 +3628,35 @@ get_policies_all_members
 ''''''''''''''''''''''''
 
 .. literalinclude:: source/examples/FB2.2/get_policies_all_members.py
+    :language: python
+
+Public Keys
+~~~~~~~~~~~
+
+The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+delete_public_keys
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/delete_public_keys.py
+    :language: python
+
+get_public_keys
+'''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/get_public_keys.py
+    :language: python
+
+post_public_keys
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/post_public_keys.py
+    :language: python
+
+get_public_keys_uses
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/get_public_keys_uses.py
     :language: python
 
 Quotas
@@ -3609,7 +3893,7 @@ get_support
 patch_support
 '''''''''''''
 
-.. literalinclude:: source/examples/FB2.0/patch_support.py
+.. literalinclude:: source/examples/FB2.14/patch_support.py
     :language: python
 
 get_support_test
@@ -3638,13 +3922,13 @@ get_syslog_servers
 patch_syslog_servers
 ''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.0/patch_syslog_servers.py
+.. literalinclude:: source/examples/FB2.14/patch_syslog_servers.py
     :language: python
 
 post_syslog_servers
 '''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.0/post_syslog_servers.py
+.. literalinclude:: source/examples/FB2.14/post_syslog_servers.py
     :language: python
 
 get_syslog_servers_settings
