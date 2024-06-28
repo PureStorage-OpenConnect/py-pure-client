@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>pypureclient.pure1.Pure1_1_2.models package &mdash; py-pure-client 1.52.0 documentation</title>
+  <title>pypureclient.pure1.Pure1_1_2.models package &mdash; py-pure-client 1.53.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -30,7 +30,7 @@
             <a href="../index.html" class="icon icon-home"> py-pure-client
           </a>
               <div class="version">
-                1.52
+                1.53
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -843,7 +843,7 @@ and the value is json key in definition.</p>
 <li><p><strong>as_of</strong> (<em>int</em>) – The freshness of the data (timestamp in millis since epoch).</p></li>
 <li><p><strong>id</strong> (<em>str</em>) – A non-modifiable, globally unique ID chosen by the system.</p></li>
 <li><p><strong>name</strong> (<em>str</em>) – A non-modifiable, locally unique name chosen by the system.</p></li>
-<li><p><strong>arrays</strong> (<em>list</em><em>[</em><a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a><em>]</em>) – The list of arrays where this resource exists. Many resources are on a single array, but some resources, such as pods, can be shared across multiple arrays.</p></li>
+<li><p><strong>arrays</strong> (<em>list</em><em>[</em><a class="reference internal" href="#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a><em>]</em>) – The list of arrays where this resource exists. Many resources are on a single array, but some resources, such as pods, can be shared across multiple arrays.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1555,7 +1555,7 @@ and the value is json key in definition.</p>
 <li><p><strong>as_of</strong> (<em>int</em>) – The freshness of the data (timestamp in millis since epoch).</p></li>
 <li><p><strong>id</strong> (<em>str</em>) – A non-modifiable, globally unique ID chosen by the system.</p></li>
 <li><p><strong>name</strong> (<em>str</em>) – A non-modifiable, locally unique name chosen by the system.</p></li>
-<li><p><strong>arrays</strong> (<em>list</em><em>[</em><a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.blade_array_status.BladeArrayStatus" title="pypureclient.pure1.Pure1_1_0.models.blade_array_status.BladeArrayStatus"><em>BladeArrayStatus</em></a><em>]</em>) – A list of arrays that contain this blade. Each blade should only exist on one array.</p></li>
+<li><p><strong>arrays</strong> (<em>list</em><em>[</em><a class="reference internal" href="#pypureclient.pure1.Pure1_1_2.models.blade_array_status.BladeArrayStatus" title="pypureclient.pure1.Pure1_1_2.models.blade_array_status.BladeArrayStatus"><em>BladeArrayStatus</em></a><em>]</em>) – A list of arrays that contain this blade. Each blade should only exist on one array.</p></li>
 <li><p><strong>details</strong> (<em>str</em>) – Extra details about the blade. Will be <cite>null</cite> if none exist.</p></li>
 <li><p><strong>raw_capacity</strong> (<em>float</em>) – The raw storage capacity of the blade.</p></li>
 <li><p><strong>status</strong> (<em>str</em>) – Valid values are <cite>critical</cite>, <cite>evacuated</cite>, <cite>evacuating</cite>, <cite>healthy</cite>, <cite>identifying</cite>, <cite>unclaimed</cite>, <cite>unhealthy</cite>, <cite>unknown</cite>, <cite>unrecognized</cite>.</p></li>
@@ -1962,8 +1962,8 @@ and the value is json key in definition.</p>
 <li><p><strong>as_of</strong> (<em>int</em>) – The freshness of the data (timestamp in millis since epoch).</p></li>
 <li><p><strong>id</strong> (<em>str</em>) – A non-modifiable, globally unique ID chosen by the system.</p></li>
 <li><p><strong>name</strong> (<em>str</em>) – A modifiable, locally unique name chosen by the user.</p></li>
-<li><p><strong>arrays</strong> (<em>list</em><em>[</em><a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a><em>]</em>) – The list of arrays where this resource exists. Many resources are on a single array, but some resources, such as pods, can be shared across multiple arrays.</p></li>
-<li><p><strong>account</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – </p></li>
+<li><p><strong>arrays</strong> (<em>list</em><em>[</em><a class="reference internal" href="#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a><em>]</em>) – The list of arrays where this resource exists. Many resources are on a single array, but some resources, such as pods, can be shared across multiple arrays.</p></li>
+<li><p><strong>account</strong> (<a class="reference internal" href="#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – </p></li>
 <li><p><strong>created</strong> (<em>int</em>) – Creation time of the bucket, in milliseconds since Unix epoch.</p></li>
 <li><p><strong>destroyed</strong> (<em>bool</em>) – Returns a value of <cite>true</cite> if the bucket is destroyed, but not yet eradicated.</p></li>
 <li><p><strong>object_count</strong> (<em>int</em>) – The number of objects contained within the bucket.</p></li>
@@ -2977,7 +2977,7 @@ and the value is json key in definition.</p>
 <dt class="field-odd">Keyword Arguments</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>data</strong> (<em>float</em>) – The data value.</p></li>
-<li><p><strong>metric</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – A reference to the metric this data measures.</p></li>
+<li><p><strong>metric</strong> (<a class="reference internal" href="#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – A reference to the metric this data measures.</p></li>
 <li><p><strong>unit</strong> (<em>str</em>) – The unit of the metric.</p></li>
 </ul>
 </dd>
@@ -3176,7 +3176,7 @@ and the value is json key in definition.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>continuation_token</strong> (<em>str</em>) – Continuation token that can be provided in the continuation_token query param to get the next page of data. If you use the continuation token to page through data you are guaranteed to get all items exactly once regardless of how items are modified. If an item is added or deleted during the pagination then it may or may not be returned. The continuation token is generated if the limit is less than the remaining number of items, and the default sort is used (no sort is specified).</p></li>
 <li><p><strong>total_item_count</strong> (<em>int</em>) – Total number of items after applying filter params.</p></li>
-<li><p><strong>items</strong> (<em>list</em><em>[</em><a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.directory.Directory" title="pypureclient.pure1.Pure1_1_0.models.directory.Directory"><em>Directory</em></a><em>]</em>) – </p></li>
+<li><p><strong>items</strong> (<em>list</em><em>[</em><a class="reference internal" href="#pypureclient.pure1.Pure1_1_2.models.directory.Directory" title="pypureclient.pure1.Pure1_1_2.models.directory.Directory"><em>Directory</em></a><em>]</em>) – </p></li>
 </ul>
 </dd>
 </dl>
@@ -3274,7 +3274,7 @@ and the value is json key in definition.</p>
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">items</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypureclient.pure1.Pure1_1_2.models.directory_response.DirectoryResponse.__init__" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Keyword Arguments</dt>
-<dd class="field-odd"><p><strong>items</strong> (<em>list</em><em>[</em><a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.directory.Directory" title="pypureclient.pure1.Pure1_1_0.models.directory.Directory"><em>Directory</em></a><em>]</em>) – </p>
+<dd class="field-odd"><p><strong>items</strong> (<em>list</em><em>[</em><a class="reference internal" href="#pypureclient.pure1.Pure1_1_2.models.directory.Directory" title="pypureclient.pure1.Pure1_1_2.models.directory.Directory"><em>Directory</em></a><em>]</em>) – </p>
 </dd>
 </dl>
 </dd></dl>
@@ -3375,7 +3375,7 @@ and the value is json key in definition.</p>
 <li><p><strong>as_of</strong> (<em>int</em>) – The freshness of the data (timestamp in millis since epoch).</p></li>
 <li><p><strong>id</strong> (<em>str</em>) – A non-modifiable, globally unique ID chosen by the system.</p></li>
 <li><p><strong>name</strong> (<em>str</em>) – A non-modifiable, locally unique name chosen by the system.</p></li>
-<li><p><strong>arrays</strong> (<em>list</em><em>[</em><a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.drive_array_status.DriveArrayStatus" title="pypureclient.pure1.Pure1_1_0.models.drive_array_status.DriveArrayStatus"><em>DriveArrayStatus</em></a><em>]</em>) – A list of arrays that contain this drive. Each drive should only exist on one array.</p></li>
+<li><p><strong>arrays</strong> (<em>list</em><em>[</em><a class="reference internal" href="#pypureclient.pure1.Pure1_1_2.models.drive_array_status.DriveArrayStatus" title="pypureclient.pure1.Pure1_1_2.models.drive_array_status.DriveArrayStatus"><em>DriveArrayStatus</em></a><em>]</em>) – A list of arrays that contain this drive. Each drive should only exist on one array.</p></li>
 <li><p><strong>capacity</strong> (<em>float</em>) – Physical storage capacity of the module (in bytes).</p></li>
 <li><p><strong>details</strong> (<em>str</em>) – Details about the status of the module if status is not <cite>healthy</cite>.</p></li>
 <li><p><strong>protocol</strong> (<em>str</em>) – Storage protocol of the module. Values include <cite>NVMe</cite> and <cite>SAS</cite>.</p></li>
@@ -3780,7 +3780,7 @@ and the value is json key in definition.</p>
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">errors</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypureclient.pure1.Pure1_1_2.models.error.Error.__init__" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Keyword Arguments</dt>
-<dd class="field-odd"><p><strong>errors</strong> (<em>list</em><em>[</em><a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.error_errors.ErrorErrors" title="pypureclient.pure1.Pure1_1_0.models.error_errors.ErrorErrors"><em>ErrorErrors</em></a><em>]</em>) – The list of errors encountered.</p>
+<dd class="field-odd"><p><strong>errors</strong> (<em>list</em><em>[</em><a class="reference internal" href="#pypureclient.pure1.Pure1_1_2.models.error_errors.ErrorErrors" title="pypureclient.pure1.Pure1_1_2.models.error_errors.ErrorErrors"><em>ErrorErrors</em></a><em>]</em>) – The list of errors encountered.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -4697,7 +4697,7 @@ and the value is json key in definition.</p>
 <li><p><strong>created</strong> (<em>int</em>) – Creation time in milliseconds since UNIX epoch.</p></li>
 <li><p><strong>destroyed</strong> (<em>bool</em>) – Indicates if this snapshot has been destroyed and is pending eradication.</p></li>
 <li><p><strong>on</strong> (<a class="reference internal" href="#pypureclient.pure1.Pure1_1_2.models.fixed_reference_fqdn.FixedReferenceFqdn" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference_fqdn.FixedReferenceFqdn"><em>FixedReferenceFqdn</em></a>) – </p></li>
-<li><p><strong>source</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – A reference to the file system that the snapshot was taken from.</p></li>
+<li><p><strong>source</strong> (<a class="reference internal" href="#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – A reference to the file system that the snapshot was taken from.</p></li>
 <li><p><strong>suffix</strong> (<em>str</em>) – Indicates the suffix of the snapshot.</p></li>
 </ul>
 </dd>
@@ -6323,7 +6323,7 @@ and the value is json key in definition.</p>
 <li><p><strong>sales_representative</strong> (<em>str</em>) – The sales representative that issued the invoice.</p></li>
 <li><p><strong>ship_date</strong> (<em>int</em>) – The invoice shipment date. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch.</p></li>
 <li><p><strong>status</strong> (<em>str</em>) – The invoice status. Values include <cite>open</cite> and <cite>paid</cite>.</p></li>
-<li><p><strong>subscription</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – A reference to which subscription this invoice belongs.</p></li>
+<li><p><strong>subscription</strong> (<a class="reference internal" href="#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – A reference to which subscription this invoice belongs.</p></li>
 </ul>
 </dd>
 </dl>
@@ -8254,7 +8254,7 @@ and the value is json key in definition.</p>
 <li><p><strong>as_of</strong> (<em>int</em>) – The freshness of the data (timestamp in millis since epoch).</p></li>
 <li><p><strong>id</strong> (<em>str</em>) – A non-modifiable, globally unique ID chosen by the system.</p></li>
 <li><p><strong>name</strong> (<em>str</em>) – A modifiable, locally unique name chosen by the user.</p></li>
-<li><p><strong>arrays</strong> (<em>list</em><em>[</em><a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a><em>]</em>) – The list of arrays where this resource exists. Many resources are on a single array, but some resources, such as pods, can be shared across multiple arrays.</p></li>
+<li><p><strong>arrays</strong> (<em>list</em><em>[</em><a class="reference internal" href="#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a><em>]</em>) – The list of arrays where this resource exists. Many resources are on a single array, but some resources, such as pods, can be shared across multiple arrays.</p></li>
 <li><p><strong>created</strong> (<em>int</em>) – Creation timestamp of the object, in milliseconds since Unix epoch.</p></li>
 <li><p><strong>object_count</strong> (<em>int</em>) – The number of objects within the account.</p></li>
 </ul>
@@ -8658,7 +8658,7 @@ and the value is json key in definition.</p>
 <li><p><strong>name</strong> (<em>str</em>) – A modifiable, locally unique name chosen by the user.</p></li>
 <li><p><strong>arrays</strong> (<em>list</em><em>[</em><a class="reference internal" href="#pypureclient.pure1.Pure1_1_2.models.fixed_reference_fqdn.FixedReferenceFqdn" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference_fqdn.FixedReferenceFqdn"><em>FixedReferenceFqdn</em></a><em>]</em>) – The list of arrays where this resource exists. Many resources are on a single array, but some resources, such as pods, can be shared across multiple arrays.</p></li>
 <li><p><strong>mediator</strong> (<em>str</em>) – The URL of the mediator for this pod.</p></li>
-<li><p><strong>source</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – A reference to the source pod of a pod clone.</p></li>
+<li><p><strong>source</strong> (<a class="reference internal" href="#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – A reference to the source pod of a pod clone.</p></li>
 </ul>
 </dd>
 </dl>
@@ -8968,9 +8968,9 @@ and the value is json key in definition.</p>
 <li><p><strong>paused</strong> (<em>bool</em>) – Returns <cite>true</cite> if the replica link is paused.</p></li>
 <li><p><strong>recovery_point</strong> (<em>int</em>) – Time when the last piece of data was replicated, in milliseconds since the UNIX epoch, and the recovery point if the target pod is promoted. If the pod is currently baselining then the value is <cite>null</cite>.</p></li>
 <li><p><strong>status</strong> (<em>str</em>) – Status of the replica link. Values include <cite>replicating</cite>, <cite>idle</cite>, <cite>baselining</cite>, <cite>paused</cite>, <cite>quiescing</cite>, <cite>quiesced</cite>, and <cite>unhealthy</cite>.</p></li>
-<li><p><strong>members</strong> (<em>list</em><em>[</em><a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.resource_with_locations.ResourceWithLocations" title="pypureclient.pure1.Pure1_1_0.models.resource_with_locations.ResourceWithLocations"><em>ResourceWithLocations</em></a><em>]</em>) – The union of source and target pods in the replica link.</p></li>
-<li><p><strong>sources</strong> (<em>list</em><em>[</em><a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.resource_with_locations.ResourceWithLocations" title="pypureclient.pure1.Pure1_1_0.models.resource_with_locations.ResourceWithLocations"><em>ResourceWithLocations</em></a><em>]</em>) – The source pods in the replica link.</p></li>
-<li><p><strong>targets</strong> (<em>list</em><em>[</em><a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.resource_with_locations.ResourceWithLocations" title="pypureclient.pure1.Pure1_1_0.models.resource_with_locations.ResourceWithLocations"><em>ResourceWithLocations</em></a><em>]</em>) – The target pods in the replica link.</p></li>
+<li><p><strong>members</strong> (<em>list</em><em>[</em><a class="reference internal" href="#pypureclient.pure1.Pure1_1_2.models.resource_with_locations.ResourceWithLocations" title="pypureclient.pure1.Pure1_1_2.models.resource_with_locations.ResourceWithLocations"><em>ResourceWithLocations</em></a><em>]</em>) – The union of source and target pods in the replica link.</p></li>
+<li><p><strong>sources</strong> (<em>list</em><em>[</em><a class="reference internal" href="#pypureclient.pure1.Pure1_1_2.models.resource_with_locations.ResourceWithLocations" title="pypureclient.pure1.Pure1_1_2.models.resource_with_locations.ResourceWithLocations"><em>ResourceWithLocations</em></a><em>]</em>) – The source pods in the replica link.</p></li>
+<li><p><strong>targets</strong> (<em>list</em><em>[</em><a class="reference internal" href="#pypureclient.pure1.Pure1_1_2.models.resource_with_locations.ResourceWithLocations" title="pypureclient.pure1.Pure1_1_2.models.resource_with_locations.ResourceWithLocations"><em>ResourceWithLocations</em></a><em>]</em>) – The target pods in the replica link.</p></li>
 </ul>
 </dd>
 </dl>
@@ -9570,8 +9570,8 @@ and the value is json key in definition.</p>
 <dt class="field-odd">Keyword Arguments</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>as_of</strong> (<em>int</em>) – The freshness of the data (timestamp in millis since epoch).</p></li>
-<li><p><strong>policy</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – </p></li>
-<li><p><strong>member</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – </p></li>
+<li><p><strong>policy</strong> (<a class="reference internal" href="#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – </p></li>
+<li><p><strong>member</strong> (<a class="reference internal" href="#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – </p></li>
 </ul>
 </dd>
 </dl>
@@ -10987,7 +10987,7 @@ and the value is json key in definition.</p>
 <li><p><strong>status</strong> (<em>str</em>) – Current status of the subscription. Values include <cite>active</cite>, <cite>terminated</cite>, <cite>poc-expired</cite>, and <cite>signed</cite>.</p></li>
 <li><p><strong>initial_name</strong> (<em>str</em>) – A non-modifiable, locally unique name that the subscription was started with, never changes.</p></li>
 <li><p><strong>last_updated_date</strong> (<em>int</em>) – The date of the last amendment to the current subscription. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch.</p></li>
-<li><p><strong>organization</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – The Pure1 organization for the subscription.</p></li>
+<li><p><strong>organization</strong> (<a class="reference internal" href="#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – The Pure1 organization for the subscription.</p></li>
 <li><p><strong>partner_name</strong> (<em>str</em>) – The partner who invoices for the subscription.</p></li>
 <li><p><strong>subscription_term</strong> (<em>int</em>) – Length of the subscription in months.</p></li>
 </ul>
@@ -11095,8 +11095,8 @@ and the value is json key in definition.</p>
 <li><p><strong>array</strong> (<a class="reference internal" href="#pypureclient.pure1.Pure1_1_2.models.subscription_asset_array.SubscriptionAssetArray" title="pypureclient.pure1.Pure1_1_2.models.subscription_asset_array.SubscriptionAssetArray"><em>SubscriptionAssetArray</em></a>) – </p></li>
 <li><p><strong>end_of_life_date</strong> (<em>int</em>) – The date when the appliance hardware reach end of life and Pure no longer provide support. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch.</p></li>
 <li><p><strong>install_address</strong> (<a class="reference internal" href="#pypureclient.pure1.Pure1_1_2.models.base_address.BaseAddress" title="pypureclient.pure1.Pure1_1_2.models.base_address.BaseAddress"><em>BaseAddress</em></a>) – The address where the appliance is installed. This address is also where replacement parts will be shipped to.</p></li>
-<li><p><strong>license</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – A reference to which license this appliance belongs.</p></li>
-<li><p><strong>subscription</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – A reference to which subscription this appliance belongs.</p></li>
+<li><p><strong>license</strong> (<a class="reference internal" href="#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – A reference to which license this appliance belongs.</p></li>
+<li><p><strong>subscription</strong> (<a class="reference internal" href="#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – A reference to which subscription this appliance belongs.</p></li>
 </ul>
 </dd>
 </dl>
@@ -11707,7 +11707,7 @@ and the value is json key in definition.</p>
 <li><p><strong>resources</strong> (<em>list</em><em>[</em><a class="reference internal" href="../pure1_reference.html#pypureclient.pure1.models.LicenseResourceReference" title="pypureclient.pure1.models.LicenseResourceReference"><em>LicenseResourceReference</em></a><em>]</em>) – </p></li>
 <li><p><strong>service_tier</strong> (<em>str</em>) – The tier of the service for the license.</p></li>
 <li><p><strong>start_date</strong> (<em>int</em>) – Date when the license starts. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch.</p></li>
-<li><p><strong>subscription</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – A reference to which subscription this license belongs.</p></li>
+<li><p><strong>subscription</strong> (<a class="reference internal" href="#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – A reference to which subscription this license belongs.</p></li>
 <li><p><strong>usage</strong> (<a class="reference internal" href="../pure1_reference.html#pypureclient.pure1.models.CurrentMetric" title="pypureclient.pure1.models.CurrentMetric"><em>CurrentMetric</em></a>) – Usage of the license, averaged over the last day.</p></li>
 <li><p><strong>last_updated_date</strong> (<em>int</em>) – The date of the last amendment to the current license. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch.</p></li>
 <li><p><strong>pre_ratio</strong> (<em>object</em>) – The pre-reduced &amp; encrypted ratio calculated at license level.</p></li>
@@ -12209,7 +12209,7 @@ and the value is json key in definition.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>continuation_token</strong> (<em>str</em>) – Continuation token that can be provided in the continuation_token query param to get the next page of data. If you use the continuation token to page through data you are guaranteed to get all items exactly once regardless of how items are modified. If an item is added or deleted during the pagination then it may or may not be returned. The continuation token is generated if the limit is less than the remaining number of items, and the default sort is used (no sort is specified).</p></li>
 <li><p><strong>total_item_count</strong> (<em>int</em>) – Total number of items after applying filter params.</p></li>
-<li><p><strong>items</strong> (<em>list</em><em>[</em><a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.support_contract.SupportContract" title="pypureclient.pure1.Pure1_1_0.models.support_contract.SupportContract"><em>SupportContract</em></a><em>]</em>) – </p></li>
+<li><p><strong>items</strong> (<em>list</em><em>[</em><a class="reference internal" href="#pypureclient.pure1.Pure1_1_2.models.support_contract.SupportContract" title="pypureclient.pure1.Pure1_1_2.models.support_contract.SupportContract"><em>SupportContract</em></a><em>]</em>) – </p></li>
 </ul>
 </dd>
 </dl>
@@ -12307,7 +12307,7 @@ and the value is json key in definition.</p>
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">items</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypureclient.pure1.Pure1_1_2.models.support_contract_response.SupportContractResponse.__init__" title="Permalink to this definition"></a></dt>
 <dd><dl class="field-list simple">
 <dt class="field-odd">Keyword Arguments</dt>
-<dd class="field-odd"><p><strong>items</strong> (<em>list</em><em>[</em><a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.support_contract.SupportContract" title="pypureclient.pure1.Pure1_1_0.models.support_contract.SupportContract"><em>SupportContract</em></a><em>]</em>) – </p>
+<dd class="field-odd"><p><strong>items</strong> (<em>list</em><em>[</em><a class="reference internal" href="#pypureclient.pure1.Pure1_1_2.models.support_contract.SupportContract" title="pypureclient.pure1.Pure1_1_2.models.support_contract.SupportContract"><em>SupportContract</em></a><em>]</em>) – </p>
 </dd>
 </dl>
 </dd></dl>
@@ -13129,7 +13129,7 @@ and the value is json key in definition.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>key</strong> (<em>str</em>) – Key of the tag.</p></li>
 <li><p><strong>namespace</strong> (<em>str</em>) – Namespace of the tag. Namespace identifies the category of the tag.</p></li>
-<li><p><strong>resource</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – </p></li>
+<li><p><strong>resource</strong> (<a class="reference internal" href="#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – </p></li>
 <li><p><strong>tag_organization_id</strong> (<em>int</em>) – Org id of the tag.</p></li>
 <li><p><strong>value</strong> (<em>str</em>) – Value of the tag.</p></li>
 </ul>
@@ -14136,10 +14136,10 @@ and the value is json key in definition.</p>
 <li><p><strong>created</strong> (<em>int</em>) – Creation time in milliseconds since UNIX epoch.</p></li>
 <li><p><strong>destroyed</strong> (<em>bool</em>) – Whether this volume has been destroyed or not.</p></li>
 <li><p><strong>eradicated</strong> (<em>bool</em>) – Whether this volume has been eradicated or not.</p></li>
-<li><p><strong>pod</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – A reference to the pod this volume belongs to, if applicable.</p></li>
+<li><p><strong>pod</strong> (<a class="reference internal" href="#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – A reference to the pod this volume belongs to, if applicable.</p></li>
 <li><p><strong>provisioned</strong> (<em>int</em>) – Provisioned size of the volume in bytes.</p></li>
 <li><p><strong>serial</strong> (<em>str</em>) – Serial number generated by Purity when the volume was created.</p></li>
-<li><p><strong>source</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – A reference to the volume this volume was cloned from, if applicable.</p></li>
+<li><p><strong>source</strong> (<a class="reference internal" href="#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – A reference to the volume this volume was cloned from, if applicable.</p></li>
 </ul>
 </dd>
 </dl>
@@ -14442,12 +14442,12 @@ and the value is json key in definition.</p>
 <li><p><strong>arrays</strong> (<em>list</em><em>[</em><a class="reference internal" href="#pypureclient.pure1.Pure1_1_2.models.fixed_reference_fqdn.FixedReferenceFqdn" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference_fqdn.FixedReferenceFqdn"><em>FixedReferenceFqdn</em></a><em>]</em>) – The list of arrays where this resource exists. Many resources are on a single array, but some resources, such as pods, can be shared across multiple arrays.</p></li>
 <li><p><strong>created</strong> (<em>int</em>) – Creation time in milliseconds since UNIX epoch.</p></li>
 <li><p><strong>destroyed</strong> (<em>bool</em>) – Indicates if this snapshot has been destroyed and is pending eradication.</p></li>
-<li><p><strong>pod</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – A reference to the pod the source volume belongs to, if applicable.</p></li>
+<li><p><strong>pod</strong> (<a class="reference internal" href="#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – A reference to the pod the source volume belongs to, if applicable.</p></li>
 <li><p><strong>provisioned</strong> (<em>int</em>) – Indicates the size (in bytes) of the volume when the snapshot was taken.</p></li>
 <li><p><strong>on</strong> (<a class="reference internal" href="#pypureclient.pure1.Pure1_1_2.models.fixed_reference_fqdn.FixedReferenceFqdn" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference_fqdn.FixedReferenceFqdn"><em>FixedReferenceFqdn</em></a>) – </p></li>
 <li><p><strong>serial</strong> (<em>str</em>) – Serial number generated by Purity when the snapshot was created.</p></li>
-<li><p><strong>snapshot_group</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – A reference to a consistency group snapshot that this snapshot is part of.</p></li>
-<li><p><strong>source</strong> (<a class="reference internal" href="pypureclient.pure1.Pure1_1_0.models.html#pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_0.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – A reference to the volume that the snapshot was taken from.</p></li>
+<li><p><strong>snapshot_group</strong> (<a class="reference internal" href="#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – A reference to a consistency group snapshot that this snapshot is part of.</p></li>
+<li><p><strong>source</strong> (<a class="reference internal" href="#pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference" title="pypureclient.pure1.Pure1_1_2.models.fixed_reference.FixedReference"><em>FixedReference</em></a>) – A reference to the volume that the snapshot was taken from.</p></li>
 <li><p><strong>suffix</strong> (<em>str</em>) – Suffix added to the source volume name used to generate the volume snapshot name.</p></li>
 </ul>
 </dd>
