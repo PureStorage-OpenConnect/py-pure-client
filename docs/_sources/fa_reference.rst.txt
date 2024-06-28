@@ -176,6 +176,10 @@ FlashArray REST 2.32 Client
 FlashArray REST 2.33 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flasharray.FA_2_33.client.Client
+
+FlashArray REST 2.34 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flasharray.FA_2_34.client.Client
     :members:
 
 
@@ -415,6 +419,24 @@ ArrayEncryption
 ~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.ArrayEncryption
+   :members:
+
+ArrayErasure
+~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.ArrayErasure
+   :members:
+
+ArrayErasurePatch
+~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.ArrayErasurePatch
+   :members:
+
+ArrayErasures
+~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.ArrayErasures
    :members:
 
 ArrayFactoryResetToken
@@ -1209,6 +1231,12 @@ NewName
 .. autoclass:: pypureclient.flasharray.NewName
    :members:
 
+NonCopyableTag
+~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.NonCopyableTag
+   :members:
+
 Offload
 ~~~~~~~
 
@@ -1417,6 +1445,12 @@ PolicyNfsPost
 ~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.PolicyNfsPost
+   :members:
+
+PolicyPassword
+~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyPassword
    :members:
 
 PolicyPatch
