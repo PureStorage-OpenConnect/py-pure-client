@@ -73,7 +73,7 @@ class NetworkInterfacePerformanceEth(object):
     ):
         """
         Keyword args:
-            other_errors_per_sec (int): The sum of unspecified reception and transmission errors per second.
+            other_errors_per_sec (int): This field has been deprecated. Since Purity version 6.6.8, this will always return `null`. The sum of unspecified reception and transmission errors per second.
             received_bytes_per_sec (int): Bytes received per second.
             received_crc_errors_per_sec (int): Reception CRC errors per second.
             received_frame_errors_per_sec (int): Received packet frame errors per second.
