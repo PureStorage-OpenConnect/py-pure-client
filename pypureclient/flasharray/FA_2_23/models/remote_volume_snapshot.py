@@ -76,7 +76,7 @@ class RemoteVolumeSnapshot(object):
             destroyed (bool): Returns a value of `true` if the snapshot has been destroyed and is pending eradication. The `time_remaining` value displays the amount of time left until the destroyed volume snapshot is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed volume snapshot can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the volume snapshot is permanently eradicated and can no longer be recovered.
             pod (FixedReference): A reference to the pod.
             provisioned (int): The provisioned space of the snapshot. Measured in bytes. The minimum size is 1048576 (1MB), the maximum size is 4503599627370496 (4PB)
-            source (FixedReference): The volume from which this snapshot was taken.
+            source (FixedReference): The volume from which this snapshot was taken. For a replicated snapshot being viewed on the target side, the `source` is the replica volume.
             suffix (str): The suffix that is appended to the `source_name` value to generate the full volume snapshot name in the form `VOL.SUFFIX`. If the suffix is not specified, the system constructs the snapshot name in the form `VOL.NNN`, where `VOL` is the volume name, and `NNN` is a monotonically increasing number.
             time_remaining (int): The amount of time left until the destroyed snapshot is permanently eradicated. Measured in milliseconds. Before the `time_remaining` period has elapsed, the destroyed snapshot can be recovered by setting `destroyed=false`.
         """

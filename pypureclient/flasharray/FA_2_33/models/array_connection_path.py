@@ -75,7 +75,7 @@ class ArrayConnectionPath(object):
             local_address (str): IP address or WWN of the local port.
             remote_port (str): The remote port of the path.
             remote_address (str): IP address or WWN of the remote port.
-            status (str): Status of the connection. Valid values are `connected` and `connecting`. A status of `connected` indicates that the arrays are communicating. A status of `connecting` indicates that the array is trying to establish a connection.
+            status (str): Status of the connection. Valid values are `connected`, `connecting`, and `quarantined`. A status of `connected` indicates that the arrays are communicating. A status of `connecting` indicates that the array is trying to establish a connection. A status of `quarantined` indicates that the path is unstable and has been temporarily embargoed for synchronous replication connections.
             replication_transport (str): The protocol used to transport data between the local array and the remote array. Valid values are `ip` and `fc`.
             encryption (str): If `encrypted`, all traffic over this array connection will be encrypted. If `unencrypted`, all traffic over this array connection will be unencrypted.
             encryption_mode (str): Cryptographic protocol, trust model, and encryption algorithm information. Will be `null` if `encrypted` is `false`.

@@ -15764,7 +15764,6 @@ class Client(object):
         authorization=None,  # type: str
         x_request_id=None,  # type: str
         continuation_token=None,  # type: str
-        destroyed=None,  # type: bool
         filter=None,  # type: str
         limit=None,  # type: int
         names=None,  # type: List[str]
@@ -15793,10 +15792,6 @@ class Client(object):
                 provided.
             continuation_token (str, optional):
                 An opaque token to iterate over a collection of resources.
-            destroyed (bool, optional):
-                If set to `true`, lists only destroyed objects that are in the eradication
-                pending state. If set to `false`, lists only objects that are not destroyed. For
-                destroyed objects, the time remaining is displayed in milliseconds.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             limit (int, optional):
@@ -15845,7 +15840,6 @@ class Client(object):
             authorization=authorization,
             x_request_id=x_request_id,
             continuation_token=continuation_token,
-            destroyed=destroyed,
             filter=filter,
             limit=limit,
             names=names,
