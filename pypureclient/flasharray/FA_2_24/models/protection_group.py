@@ -102,7 +102,7 @@ class ProtectionGroup(object):
             pod (FixedReference): The pod in which the protection group resides.
             replication_schedule (ReplicationSchedule): The schedule settings for asynchronous replication.
             snapshot_schedule (SnapshotSchedule): The schedule settings for protection group snapshots.
-            source (FixedReference): The array on which the protection group was created.
+            source (FixedReference): The array or pod on which the protection group was created.
             source_retention (RetentionPolicy): The retention policy for the source array of the protection group.
             space (Space): Displays provisioned size and physical storage consumption data for each protection group.
             target_count (int): The number of targets to where this protection group replicates.
