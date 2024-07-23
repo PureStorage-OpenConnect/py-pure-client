@@ -5,39 +5,40 @@ from ..client_settings import resolve_ssl_validation
 from . import PureError
 
 fa_modules_dict = {
-    '2.16': 'FA_2_16',
+    '2.5': 'FA_2_5',
+    '2.28': 'FA_2_28',
+    '2.31': 'FA_2_31',
+    '2.4': 'FA_2_4',
     '2.24': 'FA_2_24',
+    '2.14': 'FA_2_14',
+    '2.17': 'FA_2_17',
+    '2.20': 'FA_2_20',
+    '2.32': 'FA_2_32',
+    '2.2': 'FA_2_2',
+    '2.1': 'FA_2_1',
+    '2.8': 'FA_2_8',
+    '2.15': 'FA_2_15',
+    '2.13': 'FA_2_13',
+    '2.26': 'FA_2_26',
+    '2.21': 'FA_2_21',
+    '2.16': 'FA_2_16',
+    '2.35': 'FA_2_35',
+    '2.27': 'FA_2_27',
+    '2.29': 'FA_2_29',
+    '2.22': 'FA_2_22',
+    '2.11': 'FA_2_11',
+    '2.9': 'FA_2_9',
+    '2.33': 'FA_2_33',
+    '2.34': 'FA_2_34',
+    '2.19': 'FA_2_19',
+    '2.10': 'FA_2_10',
     '2.7': 'FA_2_7',
-    '2.0': 'FA_2_0',
     '2.30': 'FA_2_30',
     '2.23': 'FA_2_23',
-    '2.29': 'FA_2_29',
-    '2.11': 'FA_2_11',
-    '2.15': 'FA_2_15',
-    '2.27': 'FA_2_27',
-    '2.4': 'FA_2_4',
-    '2.34': 'FA_2_34',
-    '2.33': 'FA_2_33',
-    '2.3': 'FA_2_3',
-    '2.9': 'FA_2_9',
-    '2.20': 'FA_2_20',
-    '2.28': 'FA_2_28',
-    '2.22': 'FA_2_22',
-    '2.10': 'FA_2_10',
-    '2.1': 'FA_2_1',
-    '2.31': 'FA_2_31',
-    '2.6': 'FA_2_6',
-    '2.17': 'FA_2_17',
     '2.25': 'FA_2_25',
-    '2.21': 'FA_2_21',
-    '2.13': 'FA_2_13',
-    '2.19': 'FA_2_19',
-    '2.32': 'FA_2_32',
-    '2.8': 'FA_2_8',
-    '2.2': 'FA_2_2',
-    '2.5': 'FA_2_5',
-    '2.14': 'FA_2_14',
-    '2.26': 'FA_2_26',
+    '2.0': 'FA_2_0',
+    '2.6': 'FA_2_6',
+    '2.3': 'FA_2_3',
 }
 
 fa_modules = {}
@@ -45,13 +46,12 @@ fa_modules = {}
 MW_DEV_VERSION = '2.DEV'
 CLIENT_DEV_VERSION = '2.X'
 
-DEFAULT_TIMEOUT = 15.0
 DEFAULT_RETRIES = 5
 
 
 def Client(target, version=None, id_token=None, private_key_file=None, private_key_password=None,
            username=None, client_id=None, key_id=None, issuer=None, api_token=None,
-           retries=DEFAULT_RETRIES, timeout=DEFAULT_TIMEOUT, ssl_cert=None, user_agent=None,
+           retries=DEFAULT_RETRIES, timeout=None, ssl_cert=None, user_agent=None,
            verify_ssl=None):
     """
     Initialize a FlashArray Client.
@@ -84,9 +84,9 @@ def Client(target, version=None, id_token=None, private_key_file=None, private_k
         retries (int, optional):
             The number of times to retry an API call if it fails for a
             non-blocking reason. Defaults to 5.
-        timeout (float or (float, float), optional):
+        timeout int or (float, float), optional:
             The timeout duration in seconds, either in total time or
-            (connect and read) times. Defaults to 15.0 total.
+            (connect and read) times. Defaults to None.
         ssl_cert (str, optional):
             SSL certificate to use. Defaults to None.
         user_agent (str, optional):

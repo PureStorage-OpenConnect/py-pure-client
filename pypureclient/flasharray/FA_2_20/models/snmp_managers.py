@@ -21,7 +21,7 @@ from ....properties import Property
 if typing.TYPE_CHECKING:
     from pypureclient.flasharray.FA_2_20 import models
 
-class SNMPManagers(object):
+class SnmpManagers(object):
     """
     Attributes:
       swagger_types (dict): The key is attribute name
@@ -83,7 +83,7 @@ class SNMPManagers(object):
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
-            raise KeyError("Invalid key `{}` for `SNMPManagers`".format(key))
+            raise KeyError("Invalid key `{}` for `SnmpManagers`".format(key))
         self.__dict__[key] = value
 
     def __getattribute__(self, item):
@@ -95,17 +95,17 @@ class SNMPManagers(object):
 
     def __getitem__(self, key):
         if key not in self.attribute_map:
-            raise KeyError("Invalid key `{}` for `SNMPManagers`".format(key))
+            raise KeyError("Invalid key `{}` for `SnmpManagers`".format(key))
         return object.__getattribute__(self, key)
 
     def __setitem__(self, key, value):
         if key not in self.attribute_map:
-            raise KeyError("Invalid key `{}` for `SNMPManagers`".format(key))
+            raise KeyError("Invalid key `{}` for `SnmpManagers`".format(key))
         object.__setattr__(self, key, value)
 
     def __delitem__(self, key):
         if key not in self.attribute_map:
-            raise KeyError("Invalid key `{}` for `SNMPManagers`".format(key))
+            raise KeyError("Invalid key `{}` for `SnmpManagers`".format(key))
         object.__delattr__(self, key)
 
     def keys(self):
@@ -133,7 +133,7 @@ class SNMPManagers(object):
                     ))
                 else:
                     result[attr] = value
-        if issubclass(SNMPManagers, dict):
+        if issubclass(SnmpManagers, dict):
             for key, value in self.items():
                 result[key] = value
 
@@ -149,7 +149,7 @@ class SNMPManagers(object):
 
     def __eq__(self, other):
         """Returns true if both objects are equal"""
-        if not isinstance(other, SNMPManagers):
+        if not isinstance(other, SnmpManagers):
             return False
 
         return self.__dict__ == other.__dict__
