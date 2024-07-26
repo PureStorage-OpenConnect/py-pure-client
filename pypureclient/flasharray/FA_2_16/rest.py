@@ -146,6 +146,8 @@ class RESTClientObject(object):
                   len(_request_timeout) == 2):
                 timeout = urllib3.Timeout(
                     connect=_request_timeout[0], read=_request_timeout[1])
+            else:
+                logger.warning("invalid timeout %s, ignoring", _request_timeout)
 
         if 'Content-Type' not in headers:
             headers['Content-Type'] = 'application/json'

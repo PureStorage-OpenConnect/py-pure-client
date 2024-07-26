@@ -1,7 +1,7 @@
 import pprint
 
 from .keywords import Headers, Parameters
-
+from .exceptions import PureError
 
 class ResponseHeaders(object):
     """
@@ -225,8 +225,7 @@ class ItemIterator(object):
     """
 
     def __init__(self, client, api_endpoint, kwargs,  continuation_token,
-                 total_item_count, items, x_request_id, more_items_remaining=None,
-                 response_size_limit=1000):
+                 total_item_count, items, x_request_id, more_items_remaining=None):
         """
         Initialize an ItemIterator.
 
@@ -242,7 +241,6 @@ class ItemIterator(object):
             items (list[object]): The items returned from the initial response.
             x_request_id (str): The X-Request-ID to use for all subsequent calls.
         """
-        self._response_size_limit = response_size_limit
         self._client = client
         self._api_endpoint = api_endpoint
         self._kwargs = kwargs
@@ -280,18 +278,15 @@ class ItemIterator(object):
         # If we've reached the end of all possible items, stop
         if self._total_item_count is not None and self._total_item_count <= self._index:
             raise StopIteration
-        if self._response_size_limit is None:
-            item_index = self._index
-        else:
-            item_index = self._index % self._response_size_limit
         # If we've reached the end of the current collection, get more data
-        if item_index == len(self._items):
+        if self._index == len(self._items):
             if self._more_items_remaining is False:
                 raise StopIteration
             self._refresh_data()
+            self._index = 0
         # Return the next item in the current list if possible
-        if item_index < len(self._items):
-            to_return = self._items[item_index]
+        if self._index < len(self._items):
+            to_return = self._items[self._index]
             self._index += 1
             return to_return
         # If no new data was given, just stop
@@ -318,18 +313,30 @@ class ItemIterator(object):
             StopIteration: If there was an error calling the API.
         """
         # Use continuation token if provided
-        if Parameters.continuation_token in self._kwargs:
+        if self._continuation_token is not None:
             self._kwargs[Parameters.continuation_token] = self._continuation_token
         else: # Use offset otherwise (no continuation token with sorts)
             self._kwargs[Parameters.offset] = len(self._items)
         if self._x_request_id is not None:
             self._kwargs[Parameters.x_request_id] = self._x_request_id
         # Call the API again and update internal state
-        response, is_error = self._client._call_api(self._api_endpoint,
-                                                    self._kwargs)
-        if is_error is True:
-            raise StopIteration
-        body, _, _ = response
-        self._continuation_token = '\'{}\''.format(body.continuation_token)
-        self._total_item_count = body.total_item_count
-        self._items = body.items
+        try:
+            response = self._api_endpoint(**self._kwargs)
+            body, status, headers = response
+            if body is None:
+                raise StopIteration
+            continuation_token = getattr(body, "continuation_token", None)
+            total_item_count = getattr(body, "total_item_count", None)
+            # *-get-response models have "continuation_token" attribute. Other models don't have them.
+            if continuation_token is not None:
+                self._more_items_remaining = True
+            else:
+                # Only GET responses are paged.
+                self._more_items_remaining = False
+
+            self._continuation_token = continuation_token
+            self._total_item_count = total_item_count
+            self._items = body.items
+        except Exception as e:
+            # Generic errors for pagination
+            raise PureError('Failed to collect more items: {}'.format(e))
