@@ -180,8 +180,11 @@ FlashArray REST 2.33 Client
 FlashArray REST 2.34 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flasharray.FA_2_34.client.Client
-    :members:
 
+FlashArray REST 2.35 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flasharray.FA_2_35.client.Client
+    :members:
 
 Properties
 ----------
@@ -991,6 +994,18 @@ LocalusermembershippostGroups
 .. autoclass:: pypureclient.flasharray.LocalusermembershippostGroups
    :members:
 
+LogTarget
+~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.LogTarget
+   :members:
+
+LogTargetFile
+~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.LogTargetFile
+   :members:
+
 MaintenanceWindow
 ~~~~~~~~~~~~~~~~~
 
@@ -1397,6 +1412,24 @@ Policy
 ~~~~~~
 
 .. autoclass:: pypureclient.flasharray.Policy
+   :members:
+
+PolicyAuditFile
+~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyAuditFile
+   :members:
+
+PolicyAuditFilePatch
+~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyAuditFilePatch
+   :members:
+
+PolicyAuditFilePost
+~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyAuditFilePost
    :members:
 
 PolicyMember
@@ -1945,6 +1978,12 @@ Smis
 .. autoclass:: pypureclient.flasharray.Smis
    :members:
 
+Smtp
+~~~~
+
+.. autoclass:: pypureclient.flasharray.Smtp
+   :members:
+
 SmtpServer
 ~~~~~~~~~~
 
@@ -2003,6 +2042,12 @@ SnmpManagerPost
 ~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.SnmpManagerPost
+   :members:
+
+SnmpManagers
+~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.SnmpManagers
    :members:
 
 SnmpV2c
@@ -2357,6 +2402,12 @@ VirtualMachinePost
 ~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.VirtualMachinePost
+   :members:
+
+VirtualMachineVolumeSnapshot
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.VirtualMachineVolumeSnapshot
    :members:
 
 Volume
