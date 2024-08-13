@@ -1,9 +1,9 @@
-certifi >=2022.9.24
+certifi >= 2024.07.04
 six >=1.10
 python_dateutil >=2.5.3
-setuptools >=21.0.0
+setuptools >=70.0.0
 urllib3 >= 1.26.17
-paramiko >=2.11.0
+paramiko >= 3.4.0
 pyjwt >=2.0.0
-requests >=2.20.1
+requests >= 2.32.0
 typing >=3.7.4.1; python_version < "3.5"
