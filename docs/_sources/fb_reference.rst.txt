@@ -94,6 +94,12 @@ FlashBlade REST 2.14 Client
 .. autoclass:: pypureclient.flashblade.FB_2_14.client.Client
     :members:
 
+FlashBlade REST 2.15 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.FB_2_15.client.Client
+    :members:
+
 
 Properties
 ----------
@@ -187,6 +193,12 @@ AdminPatch
 ~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.AdminPatch
+   :members:
+
+AdminPost
+~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.AdminPost
    :members:
 
 AdminSetting
@@ -697,6 +709,12 @@ FileSystemClient
 ~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.FileSystemClient
+   :members:
+
+FileSystemEradicationConfig
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.FileSystemEradicationConfig
    :members:
 
 FileSystemGroupPerformance
@@ -1359,6 +1377,42 @@ Role
 .. autoclass:: pypureclient.flashblade.Role
    :members:
 
+SMTP
+~~~~
+
+.. autoclass:: pypureclient.flashblade.SMTP
+   :members:
+
+Saml2Sso
+~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.Saml2Sso
+   :members:
+
+Saml2SsoIdp
+~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.Saml2SsoIdp
+   :members:
+
+Saml2SsoPost
+~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.Saml2SsoPost
+   :members:
+
+Saml2SsoSp
+~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.Saml2SsoSp
+   :members:
+
+Saml2SsoSpCredential
+~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.Saml2SsoSpCredential
+   :members:
+
 Session
 ~~~~~~~
 
@@ -1447,12 +1501,6 @@ SmbSharePolicyRulePost
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.SmbSharePolicyRulePost
-   :members:
-
-Smtp
-~~~~
-
-.. autoclass:: pypureclient.flashblade.Smtp
    :members:
 
 SmtpServer
@@ -1665,6 +1713,18 @@ Version
 .. autoclass:: pypureclient.flashblade.Version
    :members:
 
+WormDataPolicy
+~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.WormDataPolicy
+   :members:
+
+WormDataPolicyRetentionConfig
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.WormDataPolicyRetentionConfig
+   :members:
+
 model
 ~~~~~
 
@@ -1871,6 +1931,12 @@ get_admins_cache
 .. literalinclude:: source/examples/FB2.0/get_admins_cache.py
     :language: python
 
+delete_admins
+'''''''''''''
+
+.. literalinclude:: source/examples/FB2.15/delete_admins.py
+    :language: python
+
 get_admins
 ''''''''''
 
@@ -1881,6 +1947,12 @@ patch_admins
 ''''''''''''
 
 .. literalinclude:: source/examples/FB2.0/patch_admins.py
+    :language: python
+
+post_admins
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.15/post_admins.py
     :language: python
 
 get_admins_settings
@@ -2378,7 +2450,7 @@ patch_certificates
 post_certificates
 '''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.0/post_certificates.py
+.. literalinclude:: source/examples/FB2.15/post_certificates.py
     :language: python
 
 get_certificates_uses
@@ -2683,7 +2755,7 @@ post_file_systems_policies
 post_file_systems
 '''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.13/post_file_systems.py
+.. literalinclude:: source/examples/FB2.15/post_file_systems.py
     :language: python
 
 delete_file_systems_sessions
@@ -2702,6 +2774,12 @@ get_file_systems_users_performance
 ''''''''''''''''''''''''''''''''''
 
 .. literalinclude:: source/examples/FB2.0/get_file_systems_users_performance.py
+    :language: python
+
+get_file_systems_worm_data_policies
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.15/get_file_systems_worm_data_policies.py
     :language: python
 
 Hardware
@@ -3613,6 +3691,41 @@ post_ssh_certificate_authority_policies
 .. literalinclude:: source/examples/FB2.14/post_ssh_certificate_authority_policies.py
     :language: python
 
+Policies   Worm Data
+~~~~~~~~~~~~~~~~~~~~
+
+The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+delete_worm_data_policies
+'''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.15/delete_worm_data_policies.py
+    :language: python
+
+get_worm_data_policies
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.15/get_worm_data_policies.py
+    :language: python
+
+get_worm_data_policies_members
+''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.15/get_worm_data_policies_members.py
+    :language: python
+
+patch_worm_data_policies
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.15/patch_worm_data_policies.py
+    :language: python
+
+post_worm_data_policies
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.15/post_worm_data_policies.py
+    :language: python
+
 Policies  All
 ~~~~~~~~~~~~~
 
@@ -3764,6 +3877,35 @@ get_roles
 .. literalinclude:: source/examples/FB2.0/get_roles.py
     :language: python
 
+Saml2 Sso
+~~~~~~~~~
+
+The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+delete_sso_saml2_idps
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.15/delete_sso_saml2_idps.py
+    :language: python
+
+get_sso_saml2_idps
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.15/get_sso_saml2_idps.py
+    :language: python
+
+patch_sso_saml2_idps
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.15/patch_sso_saml2_idps.py
+    :language: python
+
+post_sso_saml2_idps
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.15/post_sso_saml2_idps.py
+    :language: python
+
 Sessions
 ~~~~~~~~
 
@@ -3789,7 +3931,7 @@ get_smtp_servers
 patch_smtp_servers
 ''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.0/patch_smtp_servers.py
+.. literalinclude:: source/examples/FB2.15/patch_smtp_servers.py
     :language: python
 
 SNMP Agents
