@@ -31373,15 +31373,16 @@ class Client(object):
         total_item_count = getattr(body, "total_item_count", None)
         total = getattr(body, "total", None)
         more_items_remaining = getattr(body, "more_items_remaining", None)
+        errors = getattr(body, "errors", None)
         items = None
         if body is not None:
             items = iter(ItemIterator(self, endpoint, kwargs,
                                       continuation_token, total_item_count,
                                       body.items,
                                       headers.get(Headers.x_request_id, None),
-                                      more_items_remaining or False, None))
+                                      more_items_remaining or False))
         return ValidResponse(status, continuation_token, total_item_count,
-                             items, headers, total, more_items_remaining)
+                             items, headers, total, more_items_remaining, errors=errors)
 
     def _create_error_response(self, error):
         """

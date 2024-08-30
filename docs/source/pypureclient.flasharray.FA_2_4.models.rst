@@ -2684,14 +2684,6 @@ pypureclient.flasharray.FA\_2\_4.models.smis\_response module
    :undoc-members:
    :show-inheritance:
 
-pypureclient.flasharray.FA\_2\_4.models.smtp module
----------------------------------------------------
-
-.. automodule:: pypureclient.flasharray.FA_2_4.models.smtp
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 pypureclient.flasharray.FA\_2\_4.models.smtp\_server module
 -----------------------------------------------------------
 
@@ -2824,14 +2816,6 @@ pypureclient.flasharray.FA\_2\_4.models.snmp\_manager\_response module
 ----------------------------------------------------------------------
 
 .. automodule:: pypureclient.flasharray.FA_2_4.models.snmp_manager_response
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-pypureclient.flasharray.FA\_2\_4.models.snmp\_managers module
--------------------------------------------------------------
-
-.. automodule:: pypureclient.flasharray.FA_2_4.models.snmp_managers
    :members:
    :undoc-members:
    :show-inheritance:

@@ -25284,7 +25284,7 @@ class Client(object):
                                       continuation_token, total_item_count,
                                       body_items,
                                       headers.get(Headers.x_request_id, None),
-                                      more_items_remaining or False, None))
+                                      more_items_remaining or False))
         return ValidResponse(status, continuation_token, total_item_count,
                              items, headers, total, more_items_remaining)
 
@@ -25318,7 +25318,7 @@ class Client(object):
                                       continuation_token, total_item_count,
                                       body_items,
                                       headers.get(Headers.x_request_id, None),
-                                      more_items_remaining or False, None))
+                                      more_items_remaining or False))
         response = ValidResponse(status, continuation_token, total_item_count,
                                  items, headers, total, more_items_remaining)
         return response
