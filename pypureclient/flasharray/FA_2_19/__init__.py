@@ -242,7 +242,6 @@ from .models.saml2_sso_sp import Saml2SsoSp
 from .models.saml2_sso_sp_credential import Saml2SsoSpCredential
 from .models.session import Session
 from .models.smis import Smis
-from .models.smtp import Smtp
 from .models.smtp_server import SmtpServer
 from .models.snapshot import Snapshot
 from .models.snapshot_schedule import SnapshotSchedule
@@ -253,7 +252,6 @@ from .models.snmp_agent_patch import SnmpAgentPatch
 from .models.snmp_manager import SnmpManager
 from .models.snmp_manager_patch import SnmpManagerPatch
 from .models.snmp_manager_post import SnmpManagerPost
-from .models.snmp_managers import SnmpManagers
 from .models.snmp_v2c import SnmpV2c
 from .models.snmp_v3 import SnmpV3
 from .models.snmp_v3_patch import SnmpV3Patch
@@ -559,7 +557,6 @@ CLASSES_TO_ADD_PROPS = [
     Saml2SsoSpCredential,
     Session,
     Smis,
-    Smtp,
     SmtpServer,
     Snapshot,
     SnapshotSchedule,
@@ -570,7 +567,6 @@ CLASSES_TO_ADD_PROPS = [
     SnmpManager,
     SnmpManagerPatch,
     SnmpManagerPost,
-    SnmpManagers,
     SnmpV2c,
     SnmpV3,
     SnmpV3Patch,

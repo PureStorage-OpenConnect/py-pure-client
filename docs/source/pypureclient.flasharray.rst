@@ -35,6 +35,7 @@ Subpackages
    pypureclient.flasharray.FA_2_33
    pypureclient.flasharray.FA_2_34
    pypureclient.flasharray.FA_2_35
+   pypureclient.flasharray.FA_2_36
    pypureclient.flasharray.FA_2_4
    pypureclient.flasharray.FA_2_5
    pypureclient.flasharray.FA_2_6

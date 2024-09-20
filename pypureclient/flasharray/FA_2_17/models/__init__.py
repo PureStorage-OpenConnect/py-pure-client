@@ -440,7 +440,6 @@ from .session_get_response import SessionGetResponse
 from .smis import Smis
 from .smis_get_response import SmisGetResponse
 from .smis_response import SmisResponse
-from .smtp import Smtp
 from .smtp_server import SmtpServer
 from .smtp_server_get_response import SmtpServerGetResponse
 from .smtp_server_response import SmtpServerResponse
@@ -459,7 +458,6 @@ from .snmp_manager_get_response import SnmpManagerGetResponse
 from .snmp_manager_patch import SnmpManagerPatch
 from .snmp_manager_post import SnmpManagerPost
 from .snmp_manager_response import SnmpManagerResponse
-from .snmp_managers import SnmpManagers
 from .snmp_v2c import SnmpV2c
 from .snmp_v3 import SnmpV3
 from .snmp_v3_patch import SnmpV3Patch

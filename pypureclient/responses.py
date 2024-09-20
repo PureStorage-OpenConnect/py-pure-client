@@ -85,7 +85,7 @@ class ValidResponse(Response):
     """
 
     def __init__(self, status_code, continuation_token, total_item_count,
-                 items, headers, total=None, more_items_remaining=None):
+                 items, headers, total=None, more_items_remaining=None, errors=None):
         """
         Initialize a ValidResponse.
 
@@ -106,6 +106,8 @@ class ValidResponse(Response):
             self.total = total
         if more_items_remaining is not None:
             self.more_items_remaining = more_items_remaining
+        if errors is not None:
+            self.errors = errors
 
     def to_dict(self):
         """
@@ -125,6 +127,8 @@ class ValidResponse(Response):
 
         if hasattr(self, 'total') and isinstance(self.total, list):
             new_dict['total'] = [item.to_dict() for item in self.total]
+        if hasattr(self, 'errors') and isinstance(self.errors, list):
+            new_dict['errors'] = [item.to_dict() for item in self.errors]
         return new_dict
 
     def __repr__(self):

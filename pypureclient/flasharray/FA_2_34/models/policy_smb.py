@@ -78,7 +78,7 @@ class PolicySmb(object):
             policy_type (str): The type of policy. Valid values include `autodir`, `nfs`, `smb`, `snapshot`, and `quota`.
             time_remaining (int): The amount of time left, measured in milliseconds, until the destroyed policy is permanently eradicated.
             access_based_enumeration_enabled (bool): Returns a value of `true` if access based enumeration is enabled on the policy. When access based enumeration is enabled on a policy, files and folders within exports that are attached to the policy will be hidden from users who do not have permission to view them.
-            policy_mapping (PolicyNfsPolicyMapping)
+            policy_mapping (PolicyNfsPolicyMapping): Specifies the mapping of this policy across a pod replica link. If this policy is not inside a pod of a pod replica link, mapping is `null`.
         """
         if id is not None:
             self.id = id
