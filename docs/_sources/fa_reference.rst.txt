@@ -184,6 +184,10 @@ FlashArray REST 2.34 Client
 FlashArray REST 2.35 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flasharray.FA_2_35.client.Client
+
+FlashArray REST 2.36 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flasharray.FA_2_36.client.Client
     :members:
 
 Properties
@@ -508,6 +512,12 @@ Certificate
 .. autoclass:: pypureclient.flasharray.Certificate
    :members:
 
+CertificateGroup
+~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.CertificateGroup
+   :members:
+
 CertificatePost
 ~~~~~~~~~~~~~~~
 
@@ -566,6 +576,24 @@ ContainerDefaultProtection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.ContainerDefaultProtection
+   :members:
+
+ContainerEradicationConfig
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.ContainerEradicationConfig
+   :members:
+
+ContainerPerformance
+~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.ContainerPerformance
+   :members:
+
+ContainerQos
+~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.ContainerQos
    :members:
 
 Controller
@@ -674,6 +702,12 @@ DirectoryServiceRole
 ~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.DirectoryServiceRole
+   :members:
+
+DirectoryServiceRolePost
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.DirectoryServiceRolePost
    :members:
 
 DirectorySnapshot
@@ -800,6 +834,48 @@ FixedReferenceWithType
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.FixedReferenceWithType
+   :members:
+
+FixedReferenceWithTypeAndLocation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.FixedReferenceWithTypeAndLocation
+   :members:
+
+Fleet
+~~~~~
+
+.. autoclass:: pypureclient.flasharray.Fleet
+   :members:
+
+FleetKey
+~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.FleetKey
+   :members:
+
+FleetMember
+~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.FleetMember
+   :members:
+
+FleetMemberPost
+~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.FleetMemberPost
+   :members:
+
+FleetmemberpostMember
+~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.FleetmemberpostMember
+   :members:
+
+FleetmemberpostMembers
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.FleetmemberpostMembers
    :members:
 
 Hardware
@@ -994,6 +1070,12 @@ LocalusermembershippostGroups
 .. autoclass:: pypureclient.flasharray.LocalusermembershippostGroups
    :members:
 
+LocationReference
+~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.LocationReference
+   :members:
+
 LogTarget
 ~~~~~~~~~
 
@@ -1052,6 +1134,12 @@ MemberNoIdMember
 ~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.MemberNoIdMember
+   :members:
+
+MemberWithType
+~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.MemberWithType
    :members:
 
 NetworkInterface
@@ -1324,6 +1412,12 @@ PodEradicationConfig
 .. autoclass:: pypureclient.flasharray.PodEradicationConfig
    :members:
 
+PodMember
+~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PodMember
+   :members:
+
 PodPatch
 ~~~~~~~~
 
@@ -1414,6 +1508,18 @@ Policy
 .. autoclass:: pypureclient.flasharray.Policy
    :members:
 
+PolicyAssignmentPost
+~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyAssignmentPost
+   :members:
+
+PolicyAssignmentPostPolicy
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyAssignmentPostPolicy
+   :members:
+
 PolicyAuditFile
 ~~~~~~~~~~~~~~~
 
@@ -1432,10 +1538,40 @@ PolicyAuditFilePost
 .. autoclass:: pypureclient.flasharray.PolicyAuditFilePost
    :members:
 
+PolicyManagementAccess
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyManagementAccess
+   :members:
+
+PolicyManagementAccessEffective
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyManagementAccessEffective
+   :members:
+
+PolicyManagementAccessPatch
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyManagementAccessPatch
+   :members:
+
+PolicyManagementAccessPost
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyManagementAccessPost
+   :members:
+
 PolicyMember
 ~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.PolicyMember
+   :members:
+
+PolicyMemberClean
+~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyMemberClean
    :members:
 
 PolicyMemberExport
@@ -1618,6 +1754,12 @@ PolicyrulealertwatcherpostRules
 .. autoclass:: pypureclient.flasharray.PolicyrulealertwatcherpostRules
    :members:
 
+PolicyrulemanagementaccessRules
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PolicyrulemanagementaccessRules
+   :members:
+
 PolicyrulenfsclientpostRules
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1762,6 +1904,36 @@ Qos
 .. autoclass:: pypureclient.flasharray.Qos
    :members:
 
+Realm
+~~~~~
+
+.. autoclass:: pypureclient.flasharray.Realm
+   :members:
+
+RealmPatch
+~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.RealmPatch
+   :members:
+
+RealmPerformance
+~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.RealmPerformance
+   :members:
+
+RealmPost
+~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.RealmPost
+   :members:
+
+RealmSpace
+~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.RealmSpace
+   :members:
+
 Reference
 ~~~~~~~~~
 
@@ -1784,6 +1956,12 @@ ReferenceWithType
 ~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.ReferenceWithType
+   :members:
+
+RemoteArray
+~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.RemoteArray
    :members:
 
 RemotePod
@@ -1912,6 +2090,12 @@ ResourcePodSpace
 .. autoclass:: pypureclient.flasharray.ResourcePodSpace
    :members:
 
+ResourceRealmSpace
+~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.ResourceRealmSpace
+   :members:
+
 ResourceSpace
 ~~~~~~~~~~~~~
 
@@ -1978,12 +2162,6 @@ Smis
 .. autoclass:: pypureclient.flasharray.Smis
    :members:
 
-Smtp
-~~~~
-
-.. autoclass:: pypureclient.flasharray.Smtp
-   :members:
-
 SmtpServer
 ~~~~~~~~~~
 
@@ -2042,12 +2220,6 @@ SnmpManagerPost
 ~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.SnmpManagerPost
-   :members:
-
-SnmpManagers
-~~~~~~~~~~~~
-
-.. autoclass:: pypureclient.flasharray.SnmpManagers
    :members:
 
 SnmpV2c
@@ -2194,6 +2366,12 @@ Space
 .. autoclass:: pypureclient.flasharray.Space
    :members:
 
+SpaceNoDeprecatedPhysicalOrEffective
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.SpaceNoDeprecatedPhysicalOrEffective
+   :members:
+
 StartEndTime
 ~~~~~~~~~~~~
 
@@ -2240,6 +2418,18 @@ Support
 ~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.Support
+   :members:
+
+SupportDiagnosticsDetails
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.SupportDiagnosticsDetails
+   :members:
+
+SupportDiagnosticsSettings
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.SupportDiagnosticsSettings
    :members:
 
 SupportPatch
