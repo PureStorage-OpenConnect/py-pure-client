@@ -188,6 +188,10 @@ FlashArray REST 2.35 Client
 FlashArray REST 2.36 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flasharray.FA_2_36.client.Client
+
+FlashArray REST 2.37 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flasharray.FA_2_37.client.Client
     :members:
 
 Properties
@@ -2514,6 +2518,12 @@ Transfer
 ~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.Transfer
+   :members:
+
+UpgradeParameters
+~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.UpgradeParameters
    :members:
 
 Username
