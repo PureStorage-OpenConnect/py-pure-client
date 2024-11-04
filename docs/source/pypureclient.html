@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>pypureclient package &mdash; py-pure-client 1.56.0 documentation</title>
+  <title>pypureclient package &mdash; py-pure-client 1.57.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -30,7 +30,7 @@
             <a href="../index.html" class="icon icon-home"> py-pure-client
           </a>
               <div class="version">
-                1.56
+                1.57
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -119,6 +119,16 @@
 <li class="toctree-l4"><a class="reference internal" href="pypureclient.flasharray.FA_2_36.html#module-pypureclient.flasharray.FA_2_36.configuration">pypureclient.flasharray.FA_2_36.configuration module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pypureclient.flasharray.FA_2_36.html#module-pypureclient.flasharray.FA_2_36.rest">pypureclient.flasharray.FA_2_36.rest module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="pypureclient.flasharray.FA_2_36.html#module-pypureclient.flasharray.FA_2_36">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pypureclient.flasharray.FA_2_37.html">pypureclient.flasharray.FA_2_37 package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.flasharray.FA_2_37.html#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.flasharray.FA_2_37.html#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.flasharray.FA_2_37.html#module-pypureclient.flasharray.FA_2_37.api_client">pypureclient.flasharray.FA_2_37.api_client module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.flasharray.FA_2_37.html#module-pypureclient.flasharray.FA_2_37.client">pypureclient.flasharray.FA_2_37.client module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.flasharray.FA_2_37.html#module-pypureclient.flasharray.FA_2_37.configuration">pypureclient.flasharray.FA_2_37.configuration module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.flasharray.FA_2_37.html#module-pypureclient.flasharray.FA_2_37.rest">pypureclient.flasharray.FA_2_37.rest module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pypureclient.flasharray.FA_2_37.html#module-pypureclient.flasharray.FA_2_37">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -417,6 +427,11 @@ Defaults to False.</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="pypureclient.keywords.Responses.errors">
 <span class="sig-name descname"><span class="pre">errors</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'errors'</span></em><a class="headerlink" href="#pypureclient.keywords.Responses.errors" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pypureclient.keywords.Responses.location_context">
+<span class="sig-name descname"><span class="pre">location_context</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'location_context'</span></em><a class="headerlink" href="#pypureclient.keywords.Responses.location_context" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
@@ -1011,18 +1026,19 @@ Property.</p>
 <span id="pypureclient-responses-module"></span><h2>pypureclient.responses module<a class="headerlink" href="#module-pypureclient.responses" title="Permalink to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="pypureclient.responses.ApiError">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypureclient.responses.</span></span><span class="sig-name descname"><span class="pre">ApiError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypureclient.responses.ApiError" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypureclient.responses.</span></span><span class="sig-name descname"><span class="pre">ApiError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location_context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypureclient.responses.ApiError" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>An object that models the error response from the server.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pypureclient.responses.ApiError.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypureclient.responses.ApiError.__init__" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location_context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypureclient.responses.ApiError.__init__" title="Permalink to this definition"></a></dt>
 <dd><p>Initialize an ApiError.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>context</strong> (<em>str</em>) – The context in which the error occurred.</p></li>
 <li><p><strong>message</strong> (<em>str</em>) – The error message.</p></li>
+<li><p><strong>location_context</strong> (<em>str</em>) – The execution context where the error occurred.</p></li>
 </ul>
 </dd>
 </dl>
