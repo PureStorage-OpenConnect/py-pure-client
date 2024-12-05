@@ -32,14 +32,13 @@ class _FBApiClient(ApiClient):
 
 
 class Client(object):
-    DEFAULT_TIMEOUT = 15.0
     DEFAULT_RETRIES = 5
     # Format: client/client_version/endpoint/endpoint_version/system/release
     USER_AGENT = USER_AGENT_TEMPLATE.format(prod='FB', rest_version='2.3', sys=platform.system(), rel=platform.release())
 
     def __init__(self, target, id_token=None, private_key_file=None, private_key_password=None,
                  username=None, client_id=None, key_id=None, issuer=None, api_token=None,
-                 retries=DEFAULT_RETRIES, timeout=DEFAULT_TIMEOUT, ssl_cert=None, user_agent=None,
+                 retries=DEFAULT_RETRIES, timeout=None, ssl_cert=None, user_agent=None,
                  verify_ssl=None):
         """
         Initialize a FlashBlade Client. id_token is generated based on app ID and private
@@ -71,9 +70,9 @@ class Client(object):
             retries (int, optional):
                 The number of times to retry an API call if it fails for a
                 non-blocking reason. Defaults to 5.
-            timeout (float or (float, float), optional):
+            timeout int or (float, float), optional:
                 The timeout duration in seconds, either in total time or
-                (connect and read) times. Defaults to 15.0 total.
+                (connect and read) times. Defaults to None.
             ssl_cert (str, optional):
                 SSL certificate to use. Defaults to None.
             user_agent (str, optional):

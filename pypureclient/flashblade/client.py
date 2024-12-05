@@ -7,6 +7,7 @@ from . import PureError
 
 fb_modules_dict = {
     '2.10': 'FB_2_10',
+    '2.16': 'FB_2_16',
     '2.3': 'FB_2_3',
     '2.1': 'FB_2_1',
     '2.7': 'FB_2_7',
@@ -28,13 +29,12 @@ fb_modules = {}
 
 MW_DEV_VERSION = '2.latest'
 
-DEFAULT_TIMEOUT = 15.0
 DEFAULT_RETRIES = 5
 
 
 def Client(target, version=None, id_token=None, private_key_file=None, private_key_password=None,
            username=None, client_id=None, key_id=None, issuer=None, api_token=None,
-           retries=DEFAULT_RETRIES, timeout=DEFAULT_TIMEOUT, ssl_cert=None, user_agent=None,
+           retries=DEFAULT_RETRIES, timeout=None, ssl_cert=None, user_agent=None,
            verify_ssl=None):
     """
     Initialize a FlashBlade Client.
@@ -67,9 +67,9 @@ def Client(target, version=None, id_token=None, private_key_file=None, private_k
         retries (int, optional):
             The number of times to retry an API call if it fails for a
             non-blocking reason. Defaults to 5.
-        timeout (float or (float, float), optional):
+        timeout int or (float, float), optional:
             The timeout duration in seconds, either in total time or
-            (connect and read) times. Defaults to 15.0 total.
+            (connect and read) times. Defaults to None.
         ssl_cert (str, optional):
             SSL certificate to use. Defaults to None.
         user_agent (str, optional):
