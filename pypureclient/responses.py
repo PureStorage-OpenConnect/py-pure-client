@@ -193,16 +193,19 @@ class ApiError(object):
     An object that models the error response from the server.
     """
 
-    def __init__(self, context, message):
+    def __init__(self, context, message, location_context=None):
         """
         Initialize an ApiError.
 
         Args:
             context (str): The context in which the error occurred.
             message (str): The error message.
+            location_context(str): The execution context where the error occurred.
         """
         self.context = context
         self.message = message
+        if location_context != None:
+            self.location_context = location_context
 
     def to_dict(self):
         """
@@ -248,7 +251,7 @@ class ItemIterator(object):
         self._client = client
         self._api_endpoint = api_endpoint
         self._kwargs = kwargs
-        self._continuation_token = '\'{}\''.format(continuation_token)
+        self._continuation_token = continuation_token
         self._total_item_count = total_item_count
         self._more_items_remaining = more_items_remaining
         self._items = items

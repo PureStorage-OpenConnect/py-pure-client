@@ -1,3 +1,4 @@
+import uuid
 import atexit
 import requests
 
@@ -64,7 +65,8 @@ class APITokenManager(object):
         """
         post_headers = {
             Headers.api_token: self._api_token,
-            Headers.user_agent: self._user_agent
+            Headers.user_agent: self._user_agent,
+            Headers.x_request_id: str(uuid.uuid4())
         }
         response = requests.post(self._token_endpoint, headers=post_headers, verify=self._verify_ssl)
         if response.status_code == requests.codes.ok:
@@ -81,7 +83,8 @@ class APITokenManager(object):
         try:
             delete_headers = {
                 Headers.x_auth_token: self._session_token,
-                Headers.user_agent: self._user_agent
+                Headers.user_agent: self._user_agent,
+                Headers.x_request_id: str(uuid.uuid4())
             }
             requests.post(self._token_dispose_endpoint, headers=delete_headers, verify=self._verify_ssl)
             self._session_token = None

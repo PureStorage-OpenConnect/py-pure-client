@@ -1,5 +1,4 @@
 import json
-import platform
 import ssl
 import time
 import urllib3
@@ -11,7 +10,8 @@ from ...keywords import Headers, Responses
 from ...responses import ValidResponse, ErrorResponse, ApiError, ItemIterator
 from ...token_manager import TokenManager
 from ...api_token_manager import APITokenManager
-from ...client_settings import USER_AGENT_TEMPLATE, resolve_ssl_validation
+from ...client_settings import resolve_ssl_validation
+from ..._version import __default_user_agent__ as DEFAULT_USER_AGENT
 from .api_client import ApiClient
 from .rest import ApiException
 from .configuration import Configuration
@@ -32,14 +32,12 @@ class _FBApiClient(ApiClient):
 
 
 class Client(object):
-    DEFAULT_TIMEOUT = 15.0
     DEFAULT_RETRIES = 5
-    # Format: client/client_version/endpoint/endpoint_version/system/release
-    USER_AGENT = USER_AGENT_TEMPLATE.format(prod='FB', rest_version='2.8', sys=platform.system(), rel=platform.release())
+    USER_AGENT = DEFAULT_USER_AGENT
 
     def __init__(self, target, id_token=None, private_key_file=None, private_key_password=None,
                  username=None, client_id=None, key_id=None, issuer=None, api_token=None,
-                 retries=DEFAULT_RETRIES, timeout=DEFAULT_TIMEOUT, ssl_cert=None, user_agent=None,
+                 retries=DEFAULT_RETRIES, timeout=None, ssl_cert=None, user_agent=None,
                  verify_ssl=None):
         """
         Initialize a FlashBlade Client. id_token is generated based on app ID and private
@@ -71,9 +69,9 @@ class Client(object):
             retries (int, optional):
                 The number of times to retry an API call if it fails for a
                 non-blocking reason. Defaults to 5.
-            timeout (float or (float, float), optional):
+            timeout int or (float, float), optional:
                 The timeout duration in seconds, either in total time or
-                (connect and read) times. Defaults to 15.0 total.
+                (connect and read) times. Defaults to None.
             ssl_cert (str, optional):
                 SSL certificate to use. Defaults to None.
             user_agent (str, optional):
