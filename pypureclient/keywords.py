@@ -32,3 +32,4 @@ class Responses(object):
     context = 'context'
     errors = 'errors'
     message = 'message'
+    location_context = 'location_context'

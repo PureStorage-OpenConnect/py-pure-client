@@ -15,6 +15,7 @@ Subpackages
    pypureclient.flashblade.FB_2_13
    pypureclient.flashblade.FB_2_14
    pypureclient.flashblade.FB_2_15
+   pypureclient.flashblade.FB_2_16
    pypureclient.flashblade.FB_2_2
    pypureclient.flashblade.FB_2_3
    pypureclient.flashblade.FB_2_4

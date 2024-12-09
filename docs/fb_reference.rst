@@ -100,6 +100,12 @@ FlashBlade REST 2.15 Client
 .. autoclass:: pypureclient.flashblade.FB_2_15.client.Client
     :members:
 
+FlashBlade REST 2.16 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.FB_2_16.client.Client
+    :members:
+
 
 Properties
 ----------
@@ -657,6 +663,12 @@ Dns
 .. autoclass:: pypureclient.flashblade.Dns
    :members:
 
+DnsPost
+~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.DnsPost
+   :members:
+
 Drive
 ~~~~~
 
@@ -715,6 +727,18 @@ FileSystemEradicationConfig
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.FileSystemEradicationConfig
+   :members:
+
+FileSystemExport
+~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.FileSystemExport
+   :members:
+
+FileSystemExportPost
+~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.FileSystemExportPost
    :members:
 
 FileSystemGroupPerformance
@@ -943,6 +967,18 @@ LogsAsync
 ~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.LogsAsync
+   :members:
+
+MaintenanceWindow
+~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.MaintenanceWindow
+   :members:
+
+MaintenanceWindowPost
+~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.MaintenanceWindowPost
    :members:
 
 Member
@@ -1191,6 +1227,12 @@ PageInfo
 .. autoclass:: pypureclient.flashblade.PageInfo
    :members:
 
+PasswordPolicy
+~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.PasswordPolicy
+   :members:
+
 Permission
 ~~~~~~~~~~
 
@@ -1329,6 +1371,12 @@ Reference
 .. autoclass:: pypureclient.flashblade.Reference
    :members:
 
+ReferenceNameOnly
+~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.ReferenceNameOnly
+   :members:
+
 ReferenceWritable
 ~~~~~~~~~~~~~~~~~
 
@@ -1357,6 +1405,12 @@ Resource
 ~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.Resource
+   :members:
+
+ResourceFixedNonUniqueName
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.ResourceFixedNonUniqueName
    :members:
 
 ResourcePerformanceReplication
@@ -1411,6 +1465,18 @@ Saml2SsoSpCredential
 ~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.Saml2SsoSpCredential
+   :members:
+
+Server
+~~~~~~
+
+.. autoclass:: pypureclient.flashblade.Server
+   :members:
+
+ServerPost
+~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.ServerPost
    :members:
 
 Session
@@ -1557,6 +1623,24 @@ SnmpV3Post
 .. autoclass:: pypureclient.flashblade.SnmpV3Post
    :members:
 
+SoftwareCheck
+~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.SoftwareCheck
+   :members:
+
+SoftwareChecks
+~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.SoftwareChecks
+   :members:
+
+SoftwareChecksChecks
+~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.SoftwareChecksChecks
+   :members:
+
 Space
 ~~~~~
 
@@ -1581,6 +1665,24 @@ SshCertificateAuthorityPolicyPost
 .. autoclass:: pypureclient.flashblade.SshCertificateAuthorityPolicyPost
    :members:
 
+StartEndTime
+~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.StartEndTime
+   :members:
+
+StorageClassInfo
+~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.StorageClassInfo
+   :members:
+
+StorageClassSpace
+~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.StorageClassSpace
+   :members:
+
 Subnet
 ~~~~~~
 
@@ -1591,6 +1693,24 @@ Support
 ~~~~~~~
 
 .. autoclass:: pypureclient.flashblade.Support
+   :members:
+
+SupportDiagnostics
+~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.SupportDiagnostics
+   :members:
+
+SupportDiagnosticsDetails
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.SupportDiagnosticsDetails
+   :members:
+
+SupportDiagnosticsSeverityCount
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flashblade.SupportDiagnosticsSeverityCount
    :members:
 
 SupportRemoteAssistPaths
@@ -2184,6 +2304,12 @@ get_arrays_space
 .. literalinclude:: source/examples/FB2.0/get_arrays_space.py
     :language: python
 
+get_arrays_space_storage_classes
+''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/get_arrays_space_storage_classes.py
+    :language: python
+
 get_arrays_supported_time_zones
 '''''''''''''''''''''''''''''''
 
@@ -2528,6 +2654,12 @@ DNS
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
+delete_dns
+''''''''''
+
+.. literalinclude:: source/examples/FB2.16/delete_dns.py
+    :language: python
+
 get_dns
 '''''''
 
@@ -2540,6 +2672,12 @@ patch_dns
 .. literalinclude:: source/examples/FB2.0/patch_dns.py
     :language: python
 
+post_dns
+''''''''
+
+.. literalinclude:: source/examples/FB2.16/post_dns.py
+    :language: python
+
 Drives
 ~~~~~~
 
@@ -2549,6 +2687,35 @@ get_drives
 ''''''''''
 
 .. literalinclude:: source/examples/FB2.4/get_drives.py
+    :language: python
+
+File System Exports
+~~~~~~~~~~~~~~~~~~~
+
+The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+delete_file_system_exports
+''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/delete_file_system_exports.py
+    :language: python
+
+get_file_system_exports
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/get_file_system_exports.py
+    :language: python
+
+patch_file_system_exports
+'''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/patch_file_system_exports.py
+    :language: python
+
+post_file_system_exports
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/post_file_system_exports.py
     :language: python
 
 File System Replica Links
@@ -2719,7 +2886,7 @@ post_file_systems_locks_nlm_reclamations
 patch_file_systems
 ''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.13/patch_file_systems.py
+.. literalinclude:: source/examples/FB2.16/patch_file_systems.py
     :language: python
 
 get_file_systems_performance
@@ -2755,7 +2922,7 @@ post_file_systems_policies
 post_file_systems
 '''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.15/post_file_systems.py
+.. literalinclude:: source/examples/FB2.16/post_file_systems.py
     :language: python
 
 delete_file_systems_sessions
@@ -2979,6 +3146,29 @@ get_logs
 .. literalinclude:: source/examples/FB2.0/get_logs.py
     :language: python
 
+Maintenance Windows
+~~~~~~~~~~~~~~~~~~~
+
+The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+delete_maintenance_windows
+''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/delete_maintenance_windows.py
+    :language: python
+
+get_maintenance_windows
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/get_maintenance_windows.py
+    :language: python
+
+post_maintenance_windows
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/post_maintenance_windows.py
+    :language: python
+
 Network Interfaces
 ~~~~~~~~~~~~~~~~~~
 
@@ -2999,7 +3189,7 @@ get_network_interfaces
 patch_network_interfaces
 ''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.0/patch_network_interfaces.py
+.. literalinclude:: source/examples/FB2.16/patch_network_interfaces.py
     :language: python
 
 get_network_interfaces_ping
@@ -3011,7 +3201,7 @@ get_network_interfaces_ping
 post_network_interfaces
 '''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.0/post_network_interfaces.py
+.. literalinclude:: source/examples/FB2.16/post_network_interfaces.py
     :language: python
 
 get_network_interfaces_trace
@@ -3393,6 +3583,23 @@ get_object_store_access_policy_actions
 ''''''''''''''''''''''''''''''''''''''
 
 .. literalinclude:: source/examples/FB2.2/get_object_store_access_policy_actions.py
+    :language: python
+
+Policies   Password
+~~~~~~~~~~~~~~~~~~~
+
+The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+get_password_policies
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/get_password_policies.py
+    :language: python
+
+patch_password_policies
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/patch_password_policies.py
     :language: python
 
 Policies   Smb Client
@@ -3906,6 +4113,47 @@ post_sso_saml2_idps
 .. literalinclude:: source/examples/FB2.15/post_sso_saml2_idps.py
     :language: python
 
+get_sso_saml2_idps_test
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/get_sso_saml2_idps_test.py
+    :language: python
+
+patch_sso_saml2_idps_test
+'''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/patch_sso_saml2_idps_test.py
+    :language: python
+
+Servers
+~~~~~~~
+
+The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+delete_servers
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/delete_servers.py
+    :language: python
+
+get_servers
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.16/get_servers.py
+    :language: python
+
+patch_servers
+'''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/patch_servers.py
+    :language: python
+
+post_servers
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/post_servers.py
+    :language: python
+
 Sessions
 ~~~~~~~~
 
@@ -3992,6 +4240,23 @@ get_snmp_managers_test
 .. literalinclude:: source/examples/FB2.0/get_snmp_managers_test.py
     :language: python
 
+Software
+~~~~~~~~
+
+The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+get_software_check
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/get_software_check.py
+    :language: python
+
+post_software_check
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/post_software_check.py
+    :language: python
+
 Subnets
 ~~~~~~~
 
@@ -4042,6 +4307,29 @@ get_support_test
 ''''''''''''''''
 
 .. literalinclude:: source/examples/FB2.0/get_support_test.py
+    :language: python
+
+Support Diagnostics
+~~~~~~~~~~~~~~~~~~~
+
+The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+get_support_diagnostics_details
+'''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/get_support_diagnostics_details.py
+    :language: python
+
+get_support_diagnostics
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/get_support_diagnostics.py
+    :language: python
+
+post_support_diagnostics
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/post_support_diagnostics.py
     :language: python
 
 Syslog
