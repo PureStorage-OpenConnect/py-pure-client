@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>pypureclient.flashblade.FB_2_13.api package &mdash; py-pure-client 1.57.0 documentation</title>
+  <title>pypureclient.flashblade.FB_2_13.api package &mdash; py-pure-client 1.58.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -30,7 +30,7 @@
             <a href="../index.html" class="icon icon-home"> py-pure-client
           </a>
               <div class="version">
-                1.57
+                1.58
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
@@ -2117,7 +2117,7 @@ asynchronous HTTP request, please pass async_req=True
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>bucket_ids</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – A comma-separated list of bucket IDs. If after filtering, there is not at least one resource that matches each of the elements of <cite>bucket_ids</cite>, then an error is returned. This cannot be provided together with the <cite>bucket_names</cite> query parameter. This can be provided with the <cite>ids</cite> query parameter but not with <cite>names</cite>.</p></li>
 <li><p><strong>bucket_names</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – A comma-separated list of bucket names. If there is not at least one resource that matches each of the elements of <cite>bucket_names</cite>, then an error is returned. This cannot be provided together with the <cite>bucket_ids</cite> query parameter. This can be provided with the <cite>ids</cite> query parameter but not with <cite>names</cite>.</p></li>
-<li><p><strong>policy</strong> (<a class="reference internal" href="pypureclient.flashblade.FB_2_14.models.html#pypureclient.flashblade.FB_2_14.models.bucket_access_policy_post.BucketAccessPolicyPost" title="pypureclient.flashblade.FB_2_14.models.bucket_access_policy_post.BucketAccessPolicyPost"><em>BucketAccessPolicyPost</em></a>) – </p></li>
+<li><p><strong>policy</strong> (<a class="reference internal" href="../fb_reference.html#pypureclient.flashblade.BucketAccessPolicyPost" title="pypureclient.flashblade.FB_2_16.models.bucket_access_policy_post.BucketAccessPolicyPost"><em>BucketAccessPolicyPost</em></a>) – </p></li>
 <li><p><strong>async_req</strong> (<em>bool</em>) – Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.</p></li>
 <li><p><strong>_return_http_data_only</strong> (<em>bool</em>) – Returns only data field.</p></li>
 <li><p><strong>_preload_content</strong> (<em>bool</em>) – Response is converted into objects.</p></li>
@@ -2213,7 +2213,7 @@ asynchronous HTTP request, please pass async_req=True
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>names</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – A comma-separated list of resource names. (required)</p></li>
-<li><p><strong>rule</strong> (<a class="reference internal" href="pypureclient.flashblade.FB_2_14.models.html#pypureclient.flashblade.FB_2_14.models.bucket_access_policy_rule_post.BucketAccessPolicyRulePost" title="pypureclient.flashblade.FB_2_14.models.bucket_access_policy_rule_post.BucketAccessPolicyRulePost"><em>BucketAccessPolicyRulePost</em></a>) – (required)</p></li>
+<li><p><strong>rule</strong> (<a class="reference internal" href="../fb_reference.html#pypureclient.flashblade.BucketAccessPolicyRulePost" title="pypureclient.flashblade.FB_2_16.models.bucket_access_policy_rule_post.BucketAccessPolicyRulePost"><em>BucketAccessPolicyRulePost</em></a>) – (required)</p></li>
 <li><p><strong>bucket_ids</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – A comma-separated list of bucket IDs. If after filtering, there is not at least one resource that matches each of the elements of <cite>bucket_ids</cite>, then an error is returned. This cannot be provided together with the <cite>bucket_names</cite> query parameter. This can be provided with the <cite>ids</cite> query parameter but not with <cite>names</cite>.</p></li>
 <li><p><strong>bucket_names</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – A comma-separated list of bucket names. If there is not at least one resource that matches each of the elements of <cite>bucket_names</cite>, then an error is returned. This cannot be provided together with the <cite>bucket_ids</cite> query parameter. This can be provided with the <cite>ids</cite> query parameter but not with <cite>names</cite>.</p></li>
 <li><p><strong>policy_names</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – A comma-separated list of policy names.</p></li>
@@ -2311,7 +2311,7 @@ asynchronous HTTP request, please pass async_req=True
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>bucket_ids</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – A comma-separated list of bucket IDs. If after filtering, there is not at least one resource that matches each of the elements of <cite>bucket_ids</cite>, then an error is returned. This cannot be provided together with the <cite>bucket_names</cite> query parameter. This can be provided with the <cite>ids</cite> query parameter but not with <cite>names</cite>.</p></li>
 <li><p><strong>bucket_names</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – A comma-separated list of bucket names. If there is not at least one resource that matches each of the elements of <cite>bucket_names</cite>, then an error is returned. This cannot be provided together with the <cite>bucket_ids</cite> query parameter. This can be provided with the <cite>ids</cite> query parameter but not with <cite>names</cite>.</p></li>
-<li><p><strong>policy</strong> (<a class="reference internal" href="pypureclient.flashblade.FB_2_14.models.html#pypureclient.flashblade.FB_2_14.models.cross_origin_resource_sharing_policy_patch.CrossOriginResourceSharingPolicyPatch" title="pypureclient.flashblade.FB_2_14.models.cross_origin_resource_sharing_policy_patch.CrossOriginResourceSharingPolicyPatch"><em>CrossOriginResourceSharingPolicyPatch</em></a>) – </p></li>
+<li><p><strong>policy</strong> (<a class="reference internal" href="../fb_reference.html#pypureclient.flashblade.CrossOriginResourceSharingPolicyPatch" title="pypureclient.flashblade.FB_2_16.models.cross_origin_resource_sharing_policy_patch.CrossOriginResourceSharingPolicyPatch"><em>CrossOriginResourceSharingPolicyPatch</em></a>) – </p></li>
 <li><p><strong>async_req</strong> (<em>bool</em>) – Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.</p></li>
 <li><p><strong>_return_http_data_only</strong> (<em>bool</em>) – Returns only data field.</p></li>
 <li><p><strong>_preload_content</strong> (<em>bool</em>) – Response is converted into objects.</p></li>
@@ -2407,7 +2407,7 @@ asynchronous HTTP request, please pass async_req=True
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>names</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – A comma-separated list of resource names. (required)</p></li>
-<li><p><strong>rule</strong> (<a class="reference internal" href="pypureclient.flashblade.FB_2_14.models.html#pypureclient.flashblade.FB_2_14.models.cross_origin_resource_sharing_policy_rule_post.CrossOriginResourceSharingPolicyRulePost" title="pypureclient.flashblade.FB_2_14.models.cross_origin_resource_sharing_policy_rule_post.CrossOriginResourceSharingPolicyRulePost"><em>CrossOriginResourceSharingPolicyRulePost</em></a>) – (required)</p></li>
+<li><p><strong>rule</strong> (<a class="reference internal" href="../fb_reference.html#pypureclient.flashblade.CrossOriginResourceSharingPolicyRulePost" title="pypureclient.flashblade.FB_2_16.models.cross_origin_resource_sharing_policy_rule_post.CrossOriginResourceSharingPolicyRulePost"><em>CrossOriginResourceSharingPolicyRulePost</em></a>) – (required)</p></li>
 <li><p><strong>bucket_ids</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – A comma-separated list of bucket IDs. If after filtering, there is not at least one resource that matches each of the elements of <cite>bucket_ids</cite>, then an error is returned. This cannot be provided together with the <cite>bucket_names</cite> query parameter. This can be provided with the <cite>ids</cite> query parameter but not with <cite>names</cite>.</p></li>
 <li><p><strong>bucket_names</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – A comma-separated list of bucket names. If there is not at least one resource that matches each of the elements of <cite>bucket_names</cite>, then an error is returned. This cannot be provided together with the <cite>bucket_ids</cite> query parameter. This can be provided with the <cite>ids</cite> query parameter but not with <cite>names</cite>.</p></li>
 <li><p><strong>policy_names</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – A comma-separated list of policy names.</p></li>
@@ -6566,7 +6566,7 @@ asynchronous HTTP request, please pass async_req=True
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>policy</strong> (<a class="reference internal" href="pypureclient.flashblade.FB_2_14.models.html#pypureclient.flashblade.FB_2_14.models.network_access_policy.NetworkAccessPolicy" title="pypureclient.flashblade.FB_2_14.models.network_access_policy.NetworkAccessPolicy"><em>NetworkAccessPolicy</em></a>) – (required)</p></li>
+<li><p><strong>policy</strong> (<a class="reference internal" href="../fb_reference.html#pypureclient.flashblade.NetworkAccessPolicy" title="pypureclient.flashblade.FB_2_16.models.network_access_policy.NetworkAccessPolicy"><em>NetworkAccessPolicy</em></a>) – (required)</p></li>
 <li><p><strong>ids</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of <cite>ids</cite>, then an error is returned. This cannot be provided together with the <cite>name</cite> or <cite>names</cite> query parameters.</p></li>
 <li><p><strong>names</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of <cite>names</cite>, then an error is returned.</p></li>
 <li><p><strong>versions</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – A comma-separated list of versions. This is an optional query param used for concurrency control. The ordering should match the names or ids query param. This will fail with a 412 Precondition failed if the resource was changed and the current version of the resource doesn’t match the value in the query param.</p></li>
@@ -6663,7 +6663,7 @@ asynchronous HTTP request, please pass async_req=True
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>rule</strong> (<a class="reference internal" href="pypureclient.flashblade.FB_2_14.models.html#pypureclient.flashblade.FB_2_14.models.network_access_policy_rule.NetworkAccessPolicyRule" title="pypureclient.flashblade.FB_2_14.models.network_access_policy_rule.NetworkAccessPolicyRule"><em>NetworkAccessPolicyRule</em></a>) – (required)</p></li>
+<li><p><strong>rule</strong> (<a class="reference internal" href="../fb_reference.html#pypureclient.flashblade.NetworkAccessPolicyRule" title="pypureclient.flashblade.FB_2_16.models.network_access_policy_rule.NetworkAccessPolicyRule"><em>NetworkAccessPolicyRule</em></a>) – (required)</p></li>
 <li><p><strong>before_rule_id</strong> (<em>str</em>) – The id of the rule to insert or move a rule before. This cannot be provided together with the <cite>before_rule_name</cite> query parameter.</p></li>
 <li><p><strong>before_rule_name</strong> (<em>str</em>) – The name of the rule to insert or move a rule before. This cannot be provided together with the <cite>before_rule_id</cite> query parameter.</p></li>
 <li><p><strong>ids</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of <cite>ids</cite>, then an error is returned. This cannot be provided together with the <cite>name</cite> or <cite>names</cite> query parameters.</p></li>
@@ -6696,7 +6696,7 @@ asynchronous HTTP request, please pass async_req=True
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>rule</strong> (<a class="reference internal" href="pypureclient.flashblade.FB_2_14.models.html#pypureclient.flashblade.FB_2_14.models.network_access_policy_rule_post.NetworkAccessPolicyRulePost" title="pypureclient.flashblade.FB_2_14.models.network_access_policy_rule_post.NetworkAccessPolicyRulePost"><em>NetworkAccessPolicyRulePost</em></a>) – (required)</p></li>
+<li><p><strong>rule</strong> (<a class="reference internal" href="../fb_reference.html#pypureclient.flashblade.NetworkAccessPolicyRulePost" title="pypureclient.flashblade.FB_2_16.models.network_access_policy_rule_post.NetworkAccessPolicyRulePost"><em>NetworkAccessPolicyRulePost</em></a>) – (required)</p></li>
 <li><p><strong>before_rule_id</strong> (<em>str</em>) – The id of the rule to insert or move a rule before. This cannot be provided together with the <cite>before_rule_name</cite> query parameter.</p></li>
 <li><p><strong>before_rule_name</strong> (<em>str</em>) – The name of the rule to insert or move a rule before. This cannot be provided together with the <cite>before_rule_id</cite> query parameter.</p></li>
 <li><p><strong>policy_ids</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – A comma-separated list of policy IDs. If after filtering, there is not at least one resource that matches each of the elements of <cite>policy_ids</cite>, then an error is returned. This cannot be provided together with the <cite>policy_names</cite> query parameter.</p></li>
@@ -7472,7 +7472,7 @@ asynchronous HTTP request, please pass async_req=True
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>policy</strong> (<a class="reference internal" href="pypureclient.flashblade.FB_2_14.models.html#pypureclient.flashblade.FB_2_14.models.smb_client_policy.SmbClientPolicy" title="pypureclient.flashblade.FB_2_14.models.smb_client_policy.SmbClientPolicy"><em>SmbClientPolicy</em></a>) – (required)</p></li>
+<li><p><strong>policy</strong> (<a class="reference internal" href="../fb_reference.html#pypureclient.flashblade.SmbClientPolicy" title="pypureclient.flashblade.FB_2_16.models.smb_client_policy.SmbClientPolicy"><em>SmbClientPolicy</em></a>) – (required)</p></li>
 <li><p><strong>ids</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of <cite>ids</cite>, then an error is returned. This cannot be provided together with the <cite>name</cite> or <cite>names</cite> query parameters.</p></li>
 <li><p><strong>names</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of <cite>names</cite>, then an error is returned.</p></li>
 <li><p><strong>async_req</strong> (<em>bool</em>) – Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.</p></li>
@@ -7503,7 +7503,7 @@ asynchronous HTTP request, please pass async_req=True
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>names</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – A comma-separated list of resource names. (required)</p></li>
-<li><p><strong>policy</strong> (<a class="reference internal" href="pypureclient.flashblade.FB_2_14.models.html#pypureclient.flashblade.FB_2_14.models.smb_client_policy_post.SmbClientPolicyPost" title="pypureclient.flashblade.FB_2_14.models.smb_client_policy_post.SmbClientPolicyPost"><em>SmbClientPolicyPost</em></a>) – </p></li>
+<li><p><strong>policy</strong> (<a class="reference internal" href="../fb_reference.html#pypureclient.flashblade.SmbClientPolicyPost" title="pypureclient.flashblade.FB_2_16.models.smb_client_policy_post.SmbClientPolicyPost"><em>SmbClientPolicyPost</em></a>) – </p></li>
 <li><p><strong>async_req</strong> (<em>bool</em>) – Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.</p></li>
 <li><p><strong>_return_http_data_only</strong> (<em>bool</em>) – Returns only data field.</p></li>
 <li><p><strong>_preload_content</strong> (<em>bool</em>) – Response is converted into objects.</p></li>
@@ -7597,7 +7597,7 @@ asynchronous HTTP request, please pass async_req=True
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>rule</strong> (<a class="reference internal" href="pypureclient.flashblade.FB_2_14.models.html#pypureclient.flashblade.FB_2_14.models.smb_client_policy_rule.SmbClientPolicyRule" title="pypureclient.flashblade.FB_2_14.models.smb_client_policy_rule.SmbClientPolicyRule"><em>SmbClientPolicyRule</em></a>) – (required)</p></li>
+<li><p><strong>rule</strong> (<a class="reference internal" href="../fb_reference.html#pypureclient.flashblade.SmbClientPolicyRule" title="pypureclient.flashblade.FB_2_16.models.smb_client_policy_rule.SmbClientPolicyRule"><em>SmbClientPolicyRule</em></a>) – (required)</p></li>
 <li><p><strong>before_rule_id</strong> (<em>str</em>) – The id of the rule to insert or move a rule before. This cannot be provided together with the <cite>before_rule_name</cite> query parameter.</p></li>
 <li><p><strong>before_rule_name</strong> (<em>str</em>) – The name of the rule to insert or move a rule before. This cannot be provided together with the <cite>before_rule_id</cite> query parameter.</p></li>
 <li><p><strong>ids</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of <cite>ids</cite>, then an error is returned. This cannot be provided together with the <cite>name</cite> or <cite>names</cite> query parameters.</p></li>
@@ -7630,7 +7630,7 @@ asynchronous HTTP request, please pass async_req=True
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>rule</strong> (<a class="reference internal" href="pypureclient.flashblade.FB_2_14.models.html#pypureclient.flashblade.FB_2_14.models.smb_client_policy_rule_post.SmbClientPolicyRulePost" title="pypureclient.flashblade.FB_2_14.models.smb_client_policy_rule_post.SmbClientPolicyRulePost"><em>SmbClientPolicyRulePost</em></a>) – (required)</p></li>
+<li><p><strong>rule</strong> (<a class="reference internal" href="../fb_reference.html#pypureclient.flashblade.SmbClientPolicyRulePost" title="pypureclient.flashblade.FB_2_16.models.smb_client_policy_rule_post.SmbClientPolicyRulePost"><em>SmbClientPolicyRulePost</em></a>) – (required)</p></li>
 <li><p><strong>before_rule_id</strong> (<em>str</em>) – The id of the rule to insert or move a rule before. This cannot be provided together with the <cite>before_rule_name</cite> query parameter.</p></li>
 <li><p><strong>before_rule_name</strong> (<em>str</em>) – The name of the rule to insert or move a rule before. This cannot be provided together with the <cite>before_rule_id</cite> query parameter.</p></li>
 <li><p><strong>policy_ids</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – A comma-separated list of policy IDs. If after filtering, there is not at least one resource that matches each of the elements of <cite>policy_ids</cite>, then an error is returned. This cannot be provided together with the <cite>policy_names</cite> query parameter.</p></li>
@@ -7739,7 +7739,7 @@ asynchronous HTTP request, please pass async_req=True
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>policy</strong> (<a class="reference internal" href="pypureclient.flashblade.FB_2_14.models.html#pypureclient.flashblade.FB_2_14.models.smb_share_policy.SmbSharePolicy" title="pypureclient.flashblade.FB_2_14.models.smb_share_policy.SmbSharePolicy"><em>SmbSharePolicy</em></a>) – (required)</p></li>
+<li><p><strong>policy</strong> (<a class="reference internal" href="../fb_reference.html#pypureclient.flashblade.SmbSharePolicy" title="pypureclient.flashblade.FB_2_16.models.smb_share_policy.SmbSharePolicy"><em>SmbSharePolicy</em></a>) – (required)</p></li>
 <li><p><strong>ids</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of <cite>ids</cite>, then an error is returned. This cannot be provided together with the <cite>name</cite> or <cite>names</cite> query parameters.</p></li>
 <li><p><strong>names</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of <cite>names</cite>, then an error is returned.</p></li>
 <li><p><strong>async_req</strong> (<em>bool</em>) – Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.</p></li>
@@ -7770,7 +7770,7 @@ asynchronous HTTP request, please pass async_req=True
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>names</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – A comma-separated list of resource names. (required)</p></li>
-<li><p><strong>policy</strong> (<a class="reference internal" href="pypureclient.flashblade.FB_2_14.models.html#pypureclient.flashblade.FB_2_14.models.smb_share_policy_post.SmbSharePolicyPost" title="pypureclient.flashblade.FB_2_14.models.smb_share_policy_post.SmbSharePolicyPost"><em>SmbSharePolicyPost</em></a>) – </p></li>
+<li><p><strong>policy</strong> (<a class="reference internal" href="../fb_reference.html#pypureclient.flashblade.SmbSharePolicyPost" title="pypureclient.flashblade.FB_2_16.models.smb_share_policy_post.SmbSharePolicyPost"><em>SmbSharePolicyPost</em></a>) – </p></li>
 <li><p><strong>async_req</strong> (<em>bool</em>) – Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.</p></li>
 <li><p><strong>_return_http_data_only</strong> (<em>bool</em>) – Returns only data field.</p></li>
 <li><p><strong>_preload_content</strong> (<em>bool</em>) – Response is converted into objects.</p></li>
@@ -7865,7 +7865,7 @@ asynchronous HTTP request, please pass async_req=True
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>rule</strong> (<a class="reference internal" href="pypureclient.flashblade.FB_2_14.models.html#pypureclient.flashblade.FB_2_14.models.smb_share_policy_rule.SmbSharePolicyRule" title="pypureclient.flashblade.FB_2_14.models.smb_share_policy_rule.SmbSharePolicyRule"><em>SmbSharePolicyRule</em></a>) – (required)</p></li>
+<li><p><strong>rule</strong> (<a class="reference internal" href="../fb_reference.html#pypureclient.flashblade.SmbSharePolicyRule" title="pypureclient.flashblade.FB_2_16.models.smb_share_policy_rule.SmbSharePolicyRule"><em>SmbSharePolicyRule</em></a>) – (required)</p></li>
 <li><p><strong>ids</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of <cite>ids</cite>, then an error is returned. This cannot be provided together with the <cite>name</cite> or <cite>names</cite> query parameters.</p></li>
 <li><p><strong>names</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of <cite>names</cite>, then an error is returned.</p></li>
 <li><p><strong>policy_ids</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – A comma-separated list of policy IDs. If after filtering, there is not at least one resource that matches each of the elements of <cite>policy_ids</cite>, then an error is returned. This cannot be provided together with the <cite>policy_names</cite> query parameter.</p></li>
@@ -7897,7 +7897,7 @@ asynchronous HTTP request, please pass async_req=True
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>rule</strong> (<a class="reference internal" href="pypureclient.flashblade.FB_2_14.models.html#pypureclient.flashblade.FB_2_14.models.smb_share_policy_rule_post.SmbSharePolicyRulePost" title="pypureclient.flashblade.FB_2_14.models.smb_share_policy_rule_post.SmbSharePolicyRulePost"><em>SmbSharePolicyRulePost</em></a>) – (required)</p></li>
+<li><p><strong>rule</strong> (<a class="reference internal" href="../fb_reference.html#pypureclient.flashblade.SmbSharePolicyRulePost" title="pypureclient.flashblade.FB_2_16.models.smb_share_policy_rule_post.SmbSharePolicyRulePost"><em>SmbSharePolicyRulePost</em></a>) – (required)</p></li>
 <li><p><strong>policy_ids</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – A comma-separated list of policy IDs. If after filtering, there is not at least one resource that matches each of the elements of <cite>policy_ids</cite>, then an error is returned. This cannot be provided together with the <cite>policy_names</cite> query parameter.</p></li>
 <li><p><strong>policy_names</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – A comma-separated list of policy names.</p></li>
 <li><p><strong>async_req</strong> (<em>bool</em>) – Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.</p></li>
