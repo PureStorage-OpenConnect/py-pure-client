@@ -1,45 +1,44 @@
-import requests
 import importlib
 
-from ..client_settings import resolve_ssl_validation
-from . import PureError
+from ..client_settings import resolve_ssl_validation, get_target_versions
 
 fa_modules_dict = {
-    '2.5': 'FA_2_5',
-    '2.28': 'FA_2_28',
-    '2.31': 'FA_2_31',
     '2.4': 'FA_2_4',
-    '2.24': 'FA_2_24',
-    '2.14': 'FA_2_14',
-    '2.17': 'FA_2_17',
-    '2.20': 'FA_2_20',
-    '2.32': 'FA_2_32',
-    '2.2': 'FA_2_2',
-    '2.1': 'FA_2_1',
-    '2.8': 'FA_2_8',
-    '2.15': 'FA_2_15',
-    '2.13': 'FA_2_13',
-    '2.26': 'FA_2_26',
-    '2.21': 'FA_2_21',
-    '2.16': 'FA_2_16',
-    '2.35': 'FA_2_35',
-    '2.27': 'FA_2_27',
-    '2.29': 'FA_2_29',
-    '2.22': 'FA_2_22',
-    '2.11': 'FA_2_11',
-    '2.9': 'FA_2_9',
-    '2.33': 'FA_2_33',
-    '2.34': 'FA_2_34',
-    '2.19': 'FA_2_19',
-    '2.10': 'FA_2_10',
-    '2.7': 'FA_2_7',
-    '2.30': 'FA_2_30',
-    '2.23': 'FA_2_23',
-    '2.36': 'FA_2_36',
-    '2.25': 'FA_2_25',
-    '2.0': 'FA_2_0',
     '2.6': 'FA_2_6',
+    '2.25': 'FA_2_25',
+    '2.5': 'FA_2_5',
+    '2.2': 'FA_2_2',
+    '2.11': 'FA_2_11',
+    '2.19': 'FA_2_19',
+    '2.20': 'FA_2_20',
+    '2.7': 'FA_2_7',
+    '2.34': 'FA_2_34',
+    '2.24': 'FA_2_24',
+    '2.35': 'FA_2_35',
+    '2.32': 'FA_2_32',
+    '2.31': 'FA_2_31',
+    '2.21': 'FA_2_21',
+    '2.9': 'FA_2_9',
+    '2.36': 'FA_2_36',
+    '2.8': 'FA_2_8',
+    '2.29': 'FA_2_29',
+    '2.15': 'FA_2_15',
+    '2.26': 'FA_2_26',
     '2.3': 'FA_2_3',
+    '2.27': 'FA_2_27',
+    '2.1': 'FA_2_1',
+    '2.30': 'FA_2_30',
+    '2.14': 'FA_2_14',
+    '2.10': 'FA_2_10',
+    '2.22': 'FA_2_22',
+    '2.37': 'FA_2_37',
+    '2.0': 'FA_2_0',
+    '2.17': 'FA_2_17',
+    '2.16': 'FA_2_16',
+    '2.28': 'FA_2_28',
+    '2.33': 'FA_2_33',
+    '2.13': 'FA_2_13',
+    '2.23': 'FA_2_23',
 }
 
 fa_modules = {}
@@ -115,13 +114,7 @@ def Client(target, version=None, id_token=None, private_key_file=None, private_k
     return client
 
 def get_array_versions(target, verify_ssl=None):
-    url = 'https://{}/api/api_version'.format(target)
-    response = requests.get(url, verify=resolve_ssl_validation(verify_ssl))
-    if response.status_code == requests.codes.ok:
-        return response.json()['version']
-    else:
-        raise PureError("Failed to retrieve supported REST versions from target array {}. status code: {}, error: {}"
-                        .format(target, response.status_code, response.text))
+    return get_target_versions(target, 'flasharray', 'version', verify_ssl)
 
 def validate_version(array_versions, version):
     if version == MW_DEV_VERSION:

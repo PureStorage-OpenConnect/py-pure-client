@@ -1,5 +1,4 @@
 import json
-import platform
 import time
 import urllib3
 from typing import List, Optional
@@ -9,7 +8,8 @@ from ...keywords import Headers, Responses
 from ...responses import ValidResponse, ErrorResponse, ApiError, ItemIterator
 from ...token_manager import TokenManager
 from ...api_token_manager import APITokenManager
-from ...client_settings import USER_AGENT_TEMPLATE, resolve_ssl_validation
+from ...client_settings import resolve_ssl_validation
+from ..._version import __default_user_agent__ as DEFAULT_USER_AGENT
 from .api_client import ApiClient
 from .rest import ApiException
 from .configuration import Configuration
@@ -19,8 +19,7 @@ from . import models
 
 class Client(object):
     DEFAULT_RETRIES = 5
-    # Format: client/client_version/endpoint/endpoint_version/system/release
-    USER_AGENT = USER_AGENT_TEMPLATE.format(prod='FA', rest_version='2.6', sys=platform.system(), rel=platform.release())
+    USER_AGENT = DEFAULT_USER_AGENT
 
     def __init__(self, target, id_token=None, private_key_file=None, private_key_password=None,
                  username=None, client_id=None, key_id=None, issuer=None, api_token=None,
@@ -24945,10 +24944,11 @@ class Client(object):
             body = {}
         if status in [403, 429]:
             # Parse differently if the error message came from kong
-            errors = [ApiError(None, body.get(Responses.message, None))]
+            errors = [ApiError(None, body.get(Responses.message, None), None)]
         else:
             errors = [ApiError(err.get(Responses.context, None),
-                               err.get(Responses.message, None))
+                               err.get(Responses.message, None),
+                               err.get(Responses.location_context, None))
                       for err in body.get(Responses.errors, {})]
         return ErrorResponse(status, errors, headers=error.headers)
 

@@ -1,5 +1,4 @@
 import json
-import platform
 import os
 import time
 from typing import List, Optional
@@ -8,7 +7,7 @@ from ...exceptions import PureError
 from ...keywords import Headers, Responses
 from ...responses import ValidResponse, ErrorResponse, ApiError, ItemIterator
 from ...token_manager import TokenManager
-from ...client_settings import USER_AGENT_TEMPLATE
+from ..._version import __default_user_agent__ as DEFAULT_USER_AGENT
 from .api_client import ApiClient
 from .rest import ApiException
 from . import api
@@ -32,8 +31,7 @@ class Client(object):
     TOKEN_ENDPOINT = 'https://api.pure1.purestorage.com/oauth2/1.0/token'
     TIMEOUT_KEY = 'timeout'
     TIMEOUT_DEFAULT = 15.0
-    # Format: client/client_version/endpoint/endpoint_version/system/release
-    USER_AGENT = USER_AGENT_TEMPLATE.format(prod='Pure1', rest_version='1.1', sys=platform.system(), rel=platform.release())
+    USER_AGENT = DEFAULT_USER_AGENT
 
     def __init__(self, **kwargs):
         """

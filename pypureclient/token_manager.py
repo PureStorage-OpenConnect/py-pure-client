@@ -1,11 +1,13 @@
 import jwt
 import requests
 import time
+import uuid
 from io import StringIO
 from paramiko import RSAKey
 
 from .exceptions import PureError
-
+from .keywords import Headers
+from ._version import __default_user_agent__
 
 class TokenManager(object):
     """
@@ -160,7 +162,11 @@ class TokenManager(object):
         post_data = {'grant_type': 'urn:ietf:params:oauth:grant-type:token-exchange',
                      'subject_token_type': 'urn:ietf:params:oauth:token-type:jwt',
                      'subject_token': self._id_token}
-        response = requests.post(self._token_endpoint, data=post_data, verify=self._verify_ssl)
+        headers = {
+            Headers.user_agent: __default_user_agent__,
+            Headers.x_request_id: str(uuid.uuid4())
+        }
+        response = requests.post(self._token_endpoint, data=post_data, verify=self._verify_ssl, headers=headers)
         if response:
             try:
                 return str(response.json()['access_token'])
