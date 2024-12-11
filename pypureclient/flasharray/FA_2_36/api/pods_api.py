@@ -1065,10 +1065,10 @@ class PodsApi(object):
         :param bool skip_quiesce: Set to `true` to demote the pod without quiescing the `pod-replica-link` and allow the pod to become a target of the remote pod. This stops all pending replication to the remote pod.
         :param str promote_from: The `undo-demote` pod that should be used to promote the pod. After the pod has been promoted, it will have the same data as the `undo-demote` pod and the `undo-demote` pod will be eradicated.
         :param bool destroy_contents: Set to `true` to destroy contents (e.g., volumes, protection groups, snapshots) and containers (e.g., realms, pods, volume groups), including eradicating containers with content.
-        :param list[str] from_member_ids: The pods will be removed from the specified local member realm or array. This should be a union of all local realms and arrays to be removed from the specified pods. Enter multiple IDs in a comma-separated format.
-        :param list[str] from_member_names: The pods will be removed from the specified local member realm or array. This should be a union of all local realms and arrays to be removed from the specified pods. Enter multiple names in a comma-separated format.
-        :param list[str] to_member_ids: The pods will be moved to the specified local member realm or array. Enter multiple IDs in a comma-separated format.
-        :param list[str] to_member_names: The pods will be moved to the specified local member realm or array. Enter multiple names in a comma-separated format.
+        :param list[str] from_member_ids: Move the resource from the specified local member realm or array. This should be a union of all local realms and arrays from which the resource should be removed. Enter multiple IDs in a comma-separated format.
+        :param list[str] from_member_names: Move the resource from the specified local member realm or array. This should be a union of all local realms and arrays to be removed from the specified resource. Enter multiple names in a comma-separated format.
+        :param list[str] to_member_ids: The resource will be moved to the specified local member realm or array. Enter multiple IDs in a comma-separated format.
+        :param list[str] to_member_names: The resource will be moved to the specified local member realm or array. Enter multiple names in a comma-separated format.
         :param list[str] move_with_host_names: The hosts to be moved together with the pods to the specified local member realm or array. Enter multiple names in a comma-separated format.
         :param list[str] move_with_host_group_names: The host groups to be moved together with the pods to the specified local member realm or array. All the hosts in the host groups will also be moved. Enter multiple names in a comma-separated format.
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
