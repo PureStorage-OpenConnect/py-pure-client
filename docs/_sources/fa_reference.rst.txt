@@ -192,6 +192,10 @@ FlashArray REST 2.36 Client
 FlashArray REST 2.37 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flasharray.FA_2_37.client.Client
+
+FlashArray REST 2.38 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flasharray.FA_2_38.client.Client
     :members:
 
 Properties
@@ -492,6 +496,12 @@ Audit
 .. autoclass:: pypureclient.flasharray.Audit
    :members:
 
+BasePort
+~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.BasePort
+   :members:
+
 BuiltIn
 ~~~~~~~
 
@@ -598,6 +608,12 @@ ContainerQos
 ~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.ContainerQos
+   :members:
+
+Context
+~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.Context
    :members:
 
 Controller
@@ -780,6 +796,12 @@ EradicationConfig
 .. autoclass:: pypureclient.flasharray.EradicationConfig
    :members:
 
+ErrorcontextresponseErrors
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.ErrorcontextresponseErrors
+   :members:
+
 Eula
 ~~~~
 
@@ -868,6 +890,12 @@ FleetMemberPost
 ~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.FleetMemberPost
+   :members:
+
+FleetPatch
+~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.FleetPatch
    :members:
 
 FleetmemberpostMember
@@ -1810,6 +1838,12 @@ PortInitiator
 ~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.PortInitiator
+   :members:
+
+PortInitiatorTarget
+~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PortInitiatorTarget
    :members:
 
 PriorityAdjustment
