@@ -34,7 +34,7 @@ class AlertRulesCatalog(object):
         'subject': 'str',
         'parameter': 'str',
         'allowed_values': 'str',
-        'default_value': 'int'
+        'default_value': 'str'
     }
 
     attribute_map = {
@@ -54,7 +54,7 @@ class AlertRulesCatalog(object):
         subject=None,  # type: str
         parameter=None,  # type: str
         allowed_values=None,  # type: str
-        default_value=None,  # type: int
+        default_value=None,  # type: str
     ):
         """
         Keyword args:
@@ -62,7 +62,7 @@ class AlertRulesCatalog(object):
             subject (str): The alert code description.
             parameter (str): The parameter of the custom alert rule.
             allowed_values (str): The range of values allowed to set the custom alert rule to.
-            default_value (int): The system default values for the alert code and parameter.
+            default_value (str): The system default values for the alert code and parameter.
         """
         if code is not None:
             self.code = code

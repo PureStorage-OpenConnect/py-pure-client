@@ -20670,18 +20670,18 @@ class Client(object):
                 and containers (e.g., realms, pods, volume groups), including eradicating
                 containers with content.
             from_member_ids (list[str], optional):
-                The pods will be removed from the specified local member realm or array. This
-                should be a union of all local realms and arrays to be removed from the
-                specified pods. Enter multiple IDs in a comma-separated format.
+                Move the resource from the specified local member realm or array. This should be
+                a union of all local realms and arrays from which the resource should be
+                removed. Enter multiple IDs in a comma-separated format.
             from_member_names (list[str], optional):
-                The pods will be removed from the specified local member realm or array. This
-                should be a union of all local realms and arrays to be removed from the
-                specified pods. Enter multiple names in a comma-separated format.
+                Move the resource from the specified local member realm or array. This should be
+                a union of all local realms and arrays to be removed from the specified
+                resource. Enter multiple names in a comma-separated format.
             to_member_ids (list[str], optional):
-                The pods will be moved to the specified local member realm or array. Enter
+                The resource will be moved to the specified local member realm or array. Enter
                 multiple IDs in a comma-separated format.
             to_member_names (list[str], optional):
-                The pods will be moved to the specified local member realm or array. Enter
+                The resource will be moved to the specified local member realm or array. Enter
                 multiple names in a comma-separated format.
             move_with_host_names (list[str], optional):
                 The hosts to be moved together with the pods to the specified local member realm
