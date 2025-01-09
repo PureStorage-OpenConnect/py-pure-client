@@ -2123,8 +2123,9 @@ class Client(object):
                 The offset of the first resource to return from a collection.
             resource_types (list[str], optional):
                 The resource types to list the available metrics. Valid values are `arrays`,
-                `volumes`, and `pods`. A metric can belong to a combination of resources, e.g.,
-                write-iops from array to pod. In that case, query by ['arrays', 'pods'].
+                `buckets`, `directories`, `file-systems`, `pods`, `subscription-licenses` and
+                `volumes`. A metric can belong to a combination of resources, e.g., write-iops
+                from array to pod. In that case, query by ['arrays', 'pods'].
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
             async_req (bool, optional):

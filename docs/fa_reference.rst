@@ -196,6 +196,10 @@ FlashArray REST 2.37 Client
 FlashArray REST 2.38 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flasharray.FA_2_38.client.Client
+
+FlashArray REST 2.39 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flasharray.FA_2_39.client.Client
     :members:
 
 Properties
@@ -950,6 +954,12 @@ HostGroupPerformanceByArray
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.HostGroupPerformanceByArray
+   :members:
+
+HostGroupPost
+~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.HostGroupPost
    :members:
 
 HostGroupSpace
@@ -1882,6 +1892,12 @@ ProtectionGroupPerformanceByArray
 .. autoclass:: pypureclient.flasharray.ProtectionGroupPerformanceByArray
    :members:
 
+ProtectionGroupPost
+~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.ProtectionGroupPost
+   :members:
+
 ProtectionGroupSnapshot
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -2498,6 +2514,12 @@ Tag
 ~~~
 
 .. autoclass:: pypureclient.flasharray.Tag
+   :members:
+
+TagBatch
+~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.TagBatch
    :members:
 
 TargetProtectionGroup
