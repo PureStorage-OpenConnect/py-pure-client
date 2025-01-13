@@ -58,7 +58,7 @@ class SubscriptionAssetArray(object):
     ):
         """
         Keyword args:
-            advanced_space (SubscriptionAssetArrayAdvancedSpace)
+            advanced_space (SubscriptionAssetArrayAdvancedSpace): The physical and effective space information. Only visible when the query parameter `advanced_space` is set to `true`.
             chassis_serial_number (str): The chassis serial number of the appliance.
             model (str): The model of the appliance.
             space (AssetSpace): Displays size and space consumption information. For Evergreen//One and Evergreen//Flex this is the effective space information. For Evergreen//Forever and Evergreen//Foundation this is the physical space information.

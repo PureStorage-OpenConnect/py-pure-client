@@ -74,7 +74,7 @@ class SubscriptionAsset(object):
             id (str): A non-modifiable, globally unique ID chosen by the system.
             name (str): A non-modifiable, locally unique name chosen by the system.
             activation_date (int): The date when the appliance is activated under the license. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch.
-            array (SubscriptionAssetArray)
+            array (SubscriptionAssetArray): The specific fields for assets that are arrays.
             end_of_life_date (int): The date when the appliance hardware reach end of life and Pure no longer provide support. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch.
             install_address (BaseAddress): The address where the appliance is installed. This address is also where replacement parts will be shipped to.
             license (FixedReference): A reference to which license this appliance belongs.
