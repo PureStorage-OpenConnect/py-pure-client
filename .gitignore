@@ -3,3 +3,10 @@
 *.log
 tmp/
 __pycache__
+*.pyc
+*.egg-info
+*.egg
+*.egg/
+build/
+.build/
+_build/
