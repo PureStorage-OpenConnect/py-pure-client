@@ -36,8 +36,8 @@ class CrossOriginResourceSharingPolicy(object):
         'is_local': 'bool',
         'location': 'FixedReference',
         'policy_type': 'str',
-        'bucket': 'FixedReference',
-        'rules': 'list[CrossOriginResourceSharingPolicyRule]'
+        'rules': 'list[CrossOriginResourceSharingPolicyRule]',
+        'bucket': 'FixedReference'
     }
 
     attribute_map = {
@@ -47,8 +47,8 @@ class CrossOriginResourceSharingPolicy(object):
         'is_local': 'is_local',
         'location': 'location',
         'policy_type': 'policy_type',
-        'bucket': 'bucket',
-        'rules': 'rules'
+        'rules': 'rules',
+        'bucket': 'bucket'
     }
 
     required_args = {
@@ -62,8 +62,8 @@ class CrossOriginResourceSharingPolicy(object):
         is_local=None,  # type: bool
         location=None,  # type: models.FixedReference
         policy_type=None,  # type: str
-        bucket=None,  # type: models.FixedReference
         rules=None,  # type: List[models.CrossOriginResourceSharingPolicyRule]
+        bucket=None,  # type: models.FixedReference
     ):
         """
         Keyword args:
@@ -73,8 +73,8 @@ class CrossOriginResourceSharingPolicy(object):
             is_local (bool): Whether the policy is defined on the local array.
             location (FixedReference): Reference to the array where the policy is defined.
             policy_type (str): Type of the policy. Valid values are `alert`, `audit`, `bucket-access`, `cross-origin-resource-sharing`, `network-access`, `nfs`, `object-access`, `smb-client`, `smb-share`, `snapshot`, `ssh-certificate-authority`, and `worm-data`.
-            bucket (FixedReference): The bucket to which this policy belongs.
             rules (list[CrossOriginResourceSharingPolicyRule])
+            bucket (FixedReference): The bucket to which this policy belongs.
         """
         if name is not None:
             self.name = name
@@ -88,10 +88,10 @@ class CrossOriginResourceSharingPolicy(object):
             self.location = location
         if policy_type is not None:
             self.policy_type = policy_type
-        if bucket is not None:
-            self.bucket = bucket
         if rules is not None:
             self.rules = rules
+        if bucket is not None:
+            self.bucket = bucket
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

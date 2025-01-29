@@ -31,16 +31,16 @@ class ResourceSpaceNoId(object):
     """
     swagger_types = {
         'name': 'str',
+        'context': 'FixedReference',
         'space': 'Space',
-        'time': 'int',
-        'context': 'Reference'
+        'time': 'int'
     }
 
     attribute_map = {
         'name': 'name',
+        'context': 'context',
         'space': 'space',
-        'time': 'time',
-        'context': 'context'
+        'time': 'time'
     }
 
     required_args = {
@@ -49,25 +49,25 @@ class ResourceSpaceNoId(object):
     def __init__(
         self,
         name=None,  # type: str
+        context=None,  # type: models.FixedReference
         space=None,  # type: models.Space
         time=None,  # type: int
-        context=None,  # type: models.Reference
     ):
         """
         Keyword args:
             name (str): A locally unique, system-generated name. The name cannot be modified.
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
             space (Space): Displays size and space consumption information.
             time (int)
-            context (Reference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
         """
         if name is not None:
             self.name = name
+        if context is not None:
+            self.context = context
         if space is not None:
             self.space = space
         if time is not None:
             self.time = time
-        if context is not None:
-            self.context = context
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

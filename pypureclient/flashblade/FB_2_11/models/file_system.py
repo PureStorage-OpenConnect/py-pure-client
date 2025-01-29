@@ -41,8 +41,8 @@ class FileSystem(object):
         'http': 'Http',
         'multi_protocol': 'MultiProtocol',
         'nfs': 'Nfs',
-        'promotion_status': 'str',
         'provisioned': 'int',
+        'promotion_status': 'str',
         'requested_promotion_state': 'str',
         'smb': 'Smb',
         'snapshot_directory_enabled': 'bool',
@@ -64,8 +64,8 @@ class FileSystem(object):
         'http': 'http',
         'multi_protocol': 'multi_protocol',
         'nfs': 'nfs',
-        'promotion_status': 'promotion_status',
         'provisioned': 'provisioned',
+        'promotion_status': 'promotion_status',
         'requested_promotion_state': 'requested_promotion_state',
         'smb': 'smb',
         'snapshot_directory_enabled': 'snapshot_directory_enabled',
@@ -91,8 +91,8 @@ class FileSystem(object):
         http=None,  # type: models.Http
         multi_protocol=None,  # type: models.MultiProtocol
         nfs=None,  # type: models.Nfs
-        promotion_status=None,  # type: str
         provisioned=None,  # type: int
+        promotion_status=None,  # type: str
         requested_promotion_state=None,  # type: str
         smb=None,  # type: models.Smb
         snapshot_directory_enabled=None,  # type: bool
@@ -113,14 +113,14 @@ class FileSystem(object):
             hard_limit_enabled (bool): If set to `true`, the file system's size, as defined by `provisioned`, is used as a hard limit quota.
             http (Http): HTTP configuration.
             multi_protocol (MultiProtocol): Multi-protocol configuration.
-            nfs (Nfs)
-            promotion_status (str): Possible values are `promoted` and `demoted`. The current status of the file system with respect to replication. Changes via `requested_promotion_state`. The default for new file systems is `promoted`.
+            nfs (Nfs): NFS configuration.
             provisioned (int): The provisioned size of the file system, displayed in bytes. If set to an empty string (`\"\"`), the file system is unlimited in size.
+            promotion_status (str): Possible values are `promoted` and `demoted`. The current status of the file system with respect to replication. Changes via `requested_promotion_state`. The default for new file systems is `promoted`.
             requested_promotion_state (str): Possible values are `promoted` and `demoted`. The `demoted` state is used for replication targets and is only allowed to be set if the file system is in a replica-link relationship. The additional query param `discard-non-snapshotted-data` must be set to `true` when demoting a file system. The default for new file systems is `promoted`.
-            smb (Smb)
+            smb (Smb): SMB configuration.
             snapshot_directory_enabled (bool): If set to `true`, a hidden .snapshot directory will be present in each directory of the file system when it is mounted. The .snapshot directory allows clients read access to the contents of the snapshots that have been taken of a directory. If set to `false`, the .snapshot directory will not be present in any directories within a mounted file system.
             source (LocationReference): A reference to the source file system.
-            space (Space)
+            space (Space): The space usage of the file system.
             time_remaining (int): Time in milliseconds before the file system is eradicated. `null` if not destroyed.
             writable (bool): Whether the file system is writable or not. If `false`, this overrides any protocol or file permission settings and prevents changes. If `true`, then the protocol and file permission settings are evaluated. If not specified, defaults to `true`. Modifiable.
         """
@@ -146,10 +146,10 @@ class FileSystem(object):
             self.multi_protocol = multi_protocol
         if nfs is not None:
             self.nfs = nfs
-        if promotion_status is not None:
-            self.promotion_status = promotion_status
         if provisioned is not None:
             self.provisioned = provisioned
+        if promotion_status is not None:
+            self.promotion_status = promotion_status
         if requested_promotion_state is not None:
             self.requested_promotion_state = requested_promotion_state
         if smb is not None:

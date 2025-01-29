@@ -30,7 +30,7 @@ class PolicyAssignmentPostPolicy(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'policy': 'object'
+        'policy': 'Reference'
     }
 
     attribute_map = {
@@ -42,11 +42,11 @@ class PolicyAssignmentPostPolicy(object):
 
     def __init__(
         self,
-        policy=None,  # type: object
+        policy=None,  # type: models.Reference
     ):
         """
         Keyword args:
-            policy (object)
+            policy (Reference): Reference to the policy to apply to the resource.
         """
         if policy is not None:
             self.policy = policy

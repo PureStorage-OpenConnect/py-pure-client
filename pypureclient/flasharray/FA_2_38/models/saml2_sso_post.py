@@ -31,14 +31,14 @@ class Saml2SsoPost(object):
     """
     swagger_types = {
         'array_url': 'str',
-        'idp': 'Saml2SsoIdp',
-        'sp': 'Saml2SsoSpCredential'
+        'sp': 'Saml2SsoSpCredential',
+        'idp': 'Saml2SsoIdp'
     }
 
     attribute_map = {
         'array_url': 'array_url',
-        'idp': 'idp',
-        'sp': 'sp'
+        'sp': 'sp',
+        'idp': 'idp'
     }
 
     required_args = {
@@ -47,21 +47,21 @@ class Saml2SsoPost(object):
     def __init__(
         self,
         array_url=None,  # type: str
-        idp=None,  # type: models.Saml2SsoIdp
         sp=None,  # type: models.Saml2SsoSpCredential
+        idp=None,  # type: models.Saml2SsoIdp
     ):
         """
         Keyword args:
             array_url (str): The URL of the array.
-            idp (Saml2SsoIdp)
             sp (Saml2SsoSpCredential): Properties specific to the service provider.
+            idp (Saml2SsoIdp)
         """
         if array_url is not None:
             self.array_url = array_url
-        if idp is not None:
-            self.idp = idp
         if sp is not None:
             self.sp = sp
+        if idp is not None:
+            self.idp = idp
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -35,9 +35,9 @@ class NetworkInterfaceEth(object):
         'mac_address': 'str',
         'mtu': 'int',
         'netmask': 'str',
+        'subtype': 'str',
         'subinterfaces': 'list[FixedReferenceNoId]',
         'subnet': 'ReferenceNoId',
-        'subtype': 'str',
         'vlan': 'int'
     }
 
@@ -47,9 +47,9 @@ class NetworkInterfaceEth(object):
         'mac_address': 'mac_address',
         'mtu': 'mtu',
         'netmask': 'netmask',
+        'subtype': 'subtype',
         'subinterfaces': 'subinterfaces',
         'subnet': 'subnet',
-        'subtype': 'subtype',
         'vlan': 'vlan'
     }
 
@@ -63,9 +63,9 @@ class NetworkInterfaceEth(object):
         mac_address=None,  # type: str
         mtu=None,  # type: int
         netmask=None,  # type: str
+        subtype=None,  # type: str
         subinterfaces=None,  # type: List[models.FixedReferenceNoId]
         subnet=None,  # type: models.ReferenceNoId
-        subtype=None,  # type: str
         vlan=None,  # type: int
     ):
         """
@@ -75,9 +75,9 @@ class NetworkInterfaceEth(object):
             mac_address (str): The media access control address associated with the specified network interface.
             mtu (int): Maximum message transfer unit (packet) size for the network interface, in bytes. MTU setting cannot exceed the MTU of the corresponding physical interface.
             netmask (str): Netmask of the specified network interface that, when combined with the address of the interface, determines the network address of the interface.
+            subtype (str): The subtype of the specified network interface. Only interfaces of subtype `virtual` can be created. Configurable on POST only. Valid values are `failover_bond`, `lacp_bond`, `physical`, and `virtual`.
             subinterfaces (list[FixedReferenceNoId]): List of network interfaces configured to be a subinterface of the specified network interface.
             subnet (ReferenceNoId): Subnet that is associated with the specified network interface.
-            subtype (str): The subtype of the specified network interface. Only interfaces of subtype `virtual` can be created. Configurable on POST only. Valid values are `failover_bond`, `lacp_bond`, `physical`, and `virtual`.
             vlan (int): VLAN ID
         """
         if address is not None:
@@ -90,12 +90,12 @@ class NetworkInterfaceEth(object):
             self.mtu = mtu
         if netmask is not None:
             self.netmask = netmask
+        if subtype is not None:
+            self.subtype = subtype
         if subinterfaces is not None:
             self.subinterfaces = subinterfaces
         if subnet is not None:
             self.subnet = subnet
-        if subtype is not None:
-            self.subtype = subtype
         if vlan is not None:
             self.vlan = vlan
 

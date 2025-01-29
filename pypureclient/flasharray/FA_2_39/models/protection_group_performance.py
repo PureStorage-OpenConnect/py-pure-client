@@ -33,16 +33,16 @@ class ProtectionGroupPerformance(object):
         'id': 'str',
         'name': 'str',
         'bytes_per_sec': 'int',
-        'time': 'int',
-        'context': 'Reference'
+        'context': 'FixedReference',
+        'time': 'int'
     }
 
     attribute_map = {
         'id': 'id',
         'name': 'name',
         'bytes_per_sec': 'bytes_per_sec',
-        'time': 'time',
-        'context': 'context'
+        'context': 'context',
+        'time': 'time'
     }
 
     required_args = {
@@ -53,16 +53,16 @@ class ProtectionGroupPerformance(object):
         id=None,  # type: str
         name=None,  # type: str
         bytes_per_sec=None,  # type: int
+        context=None,  # type: models.FixedReference
         time=None,  # type: int
-        context=None,  # type: models.Reference
     ):
         """
         Keyword args:
             id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
             name (str): A locally unique, system-generated name. The name cannot be modified.
             bytes_per_sec (int): The total number of bytes of replication data transmitted and received per second.
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
             time (int): The time when the sample performance data was taken. Measured in milliseconds since the UNIX epoch.
-            context (Reference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
         """
         if id is not None:
             self.id = id
@@ -70,10 +70,10 @@ class ProtectionGroupPerformance(object):
             self.name = name
         if bytes_per_sec is not None:
             self.bytes_per_sec = bytes_per_sec
-        if time is not None:
-            self.time = time
         if context is not None:
             self.context = context
+        if time is not None:
+            self.time = time
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

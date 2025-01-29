@@ -94,10 +94,10 @@ class FileSystemPost(object):
             hard_limit_enabled (bool): If set to `true`, the file system's size, as defined by `provisioned`, is used as a hard limit quota. If not specified, defaults to `false`.
             http (Http): HTTP configuration.
             multi_protocol (MultiProtocolPost): Multi-protocol configuration.
-            nfs (Nfs)
+            nfs (Nfs): NFS configuration.
             provisioned (int): The provisioned size of the file system, displayed in bytes. If set to an empty string (`\"\"`), the file system is unlimited in size. If not specified, defaults to unlimited.
             requested_promotion_state (str): Possible values are `promoted` and `demoted`. The `demoted` state is used for replication targets and is only allowed to be set if the file system is in a replica-link relationship. The additional query param `discard-non-snapshotted-data` must be set to `true` when demoting a file system. The default for new file systems is `promoted`.
-            smb (SmbPost)
+            smb (SmbPost): SMB configuration.
             snapshot_directory_enabled (bool): If set to `true`, a hidden .snapshot directory will be present in each directory of the file system when it is mounted. The .snapshot directory allows clients read access to the contents of the snapshots that have been taken of a directory. If set to `false`, the .snapshot directory will not be present in any directories within a mounted file system. If not specified, defaults to `true`.
             source (Reference): The source snapshot whose data is copied to the file system specified.
             writable (bool): Whether the file system is writable or not. If `false`, this overrides any protocol or file permission settings and prevents changes. If `true`, then the protocol and file permission settings are evaluated. If not specified, defaults to `true`. Modifiable.

@@ -31,16 +31,16 @@ class VirtualMachinePost(object):
     """
     swagger_types = {
         'id': 'str',
-        'source': 'Reference',
         'vm_id': 'str',
-        'vm_type': 'str'
+        'vm_type': 'str',
+        'source': 'Reference'
     }
 
     attribute_map = {
         'id': 'id',
-        'source': 'source',
         'vm_id': 'vm_id',
-        'vm_type': 'vm_type'
+        'vm_type': 'vm_type',
+        'source': 'source'
     }
 
     required_args = {
@@ -49,25 +49,25 @@ class VirtualMachinePost(object):
     def __init__(
         self,
         id=None,  # type: str
-        source=None,  # type: models.Reference
         vm_id=None,  # type: str
         vm_type=None,  # type: str
+        source=None,  # type: models.Reference
     ):
         """
         Keyword args:
             id (str): The ID of the virtual machine to create or modify, as assigned by the external system. `id` is deprecated. Use `vm_id` instead.
-            source (Reference): The recovery context for the virtual machine or virtual machine snapshot being modified.
             vm_id (str): The ID of the virtual machine to create or modify, as assigned by the external system.
             vm_type (str): The type of virtual machine. The only valid value is `vvol`.
+            source (Reference): The recovery context for the virtual machine or virtual machine snapshot being modified.
         """
         if id is not None:
             self.id = id
-        if source is not None:
-            self.source = source
         if vm_id is not None:
             self.vm_id = vm_id
         if vm_type is not None:
             self.vm_type = vm_type
+        if source is not None:
+            self.source = source
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

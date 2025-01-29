@@ -30,23 +30,23 @@ class Connection(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'context': 'FixedReference',
         'host': 'ReferenceNoId',
         'host_group': 'ReferenceNoId',
         'lun': 'int',
         'protocol_endpoint': 'Reference',
         'volume': 'FixedReference',
-        'nsid': 'int',
-        'context': 'Reference'
+        'nsid': 'int'
     }
 
     attribute_map = {
+        'context': 'context',
         'host': 'host',
         'host_group': 'host_group',
         'lun': 'lun',
         'protocol_endpoint': 'protocol_endpoint',
         'volume': 'volume',
-        'nsid': 'nsid',
-        'context': 'context'
+        'nsid': 'nsid'
     }
 
     required_args = {
@@ -54,24 +54,26 @@ class Connection(object):
 
     def __init__(
         self,
+        context=None,  # type: models.FixedReference
         host=None,  # type: models.ReferenceNoId
         host_group=None,  # type: models.ReferenceNoId
         lun=None,  # type: int
         protocol_endpoint=None,  # type: models.Reference
         volume=None,  # type: models.FixedReference
         nsid=None,  # type: int
-        context=None,  # type: models.Reference
     ):
         """
         Keyword args:
-            host (ReferenceNoId)
-            host_group (ReferenceNoId)
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
+            host (ReferenceNoId): The host computer that sends and receives I/O requests to and from volumes on the FlashArray array.
+            host_group (ReferenceNoId): A virtual collection of hosts with common connectivity to volumes.
             lun (int): The logical unit number (LUN) by which the specified hosts are to address the specified volume. A LUN is set for SCSI connections only. A LUN can be in one of two formats: a simple LUN, or a LUN and Sublun with virtual volumes. The first format is simply the LUN. The second format is a single int64 combining both ((LUN << 32) + Sublun) or (LUN * 4294967296 + Sublun). In the FA UI, a combined LUN and Sublun is represented as `LUN:Sublun`. The maximum int64 LUN:Sublun value is `17587891081215`.
             protocol_endpoint (Reference): A protocol endpoint (also known as a conglomerate volume) which acts as a proxy through which virtual volumes are created and then connected to VMware ESXi hosts or host groups. The protocol endpoint itself does not serve I/Os; instead, its job is to form connections between FlashArray volumes and ESXi hosts and host groups.
             volume (FixedReference): A container that manages the storage space on the array.
             nsid (int): Namespace identifier allocated for the NVMe namespace backing the volume. NSID is set for NVMe connections only.
-            context (Reference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
         """
+        if context is not None:
+            self.context = context
         if host is not None:
             self.host = host
         if host_group is not None:
@@ -84,8 +86,6 @@ class Connection(object):
             self.volume = volume
         if nsid is not None:
             self.nsid = nsid
-        if context is not None:
-            self.context = context
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

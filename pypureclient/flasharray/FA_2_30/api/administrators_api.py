@@ -180,8 +180,8 @@ class AdministratorsApi(object):
         if params.get('x_request_id') is None:
             params['x_request_id'] = str(uuid.uuid4())
 
-        if 'limit' in params and params['limit'] < 1:
-            raise ValueError("Invalid value for parameter `limit` when calling `api230_admins_api_tokens_get`, must be a value greater than or equal to `1`")
+        if 'limit' in params and params['limit'] < 0:
+            raise ValueError("Invalid value for parameter `limit` when calling `api230_admins_api_tokens_get`, must be a value greater than or equal to `0`")
         if 'offset' in params and params['offset'] < 0:
             raise ValueError("Invalid value for parameter `offset` when calling `api230_admins_api_tokens_get`, must be a value greater than or equal to `0`")
         collection_formats = {}
@@ -490,8 +490,8 @@ class AdministratorsApi(object):
         if params.get('x_request_id') is None:
             params['x_request_id'] = str(uuid.uuid4())
 
-        if 'limit' in params and params['limit'] < 1:
-            raise ValueError("Invalid value for parameter `limit` when calling `api230_admins_cache_get`, must be a value greater than or equal to `1`")
+        if 'limit' in params and params['limit'] < 0:
+            raise ValueError("Invalid value for parameter `limit` when calling `api230_admins_cache_get`, must be a value greater than or equal to `0`")
         if 'offset' in params and params['offset'] < 0:
             raise ValueError("Invalid value for parameter `offset` when calling `api230_admins_cache_get`, must be a value greater than or equal to `0`")
         collection_formats = {}
@@ -797,8 +797,8 @@ class AdministratorsApi(object):
         if params.get('x_request_id') is None:
             params['x_request_id'] = str(uuid.uuid4())
 
-        if 'limit' in params and params['limit'] < 1:
-            raise ValueError("Invalid value for parameter `limit` when calling `api230_admins_get`, must be a value greater than or equal to `1`")
+        if 'limit' in params and params['limit'] < 0:
+            raise ValueError("Invalid value for parameter `limit` when calling `api230_admins_get`, must be a value greater than or equal to `0`")
         if 'offset' in params and params['offset'] < 0:
             raise ValueError("Invalid value for parameter `offset` when calling `api230_admins_get`, must be a value greater than or equal to `0`")
         collection_formats = {}
@@ -1072,7 +1072,7 @@ class AdministratorsApi(object):
         _preload_content=True,  # type: bool
         _request_timeout=None,  # type: Optional[int]
     ):
-        # type: (...) -> models.AdminSettingsResponse
+        # type: (...) -> models.AdminSettingsGetResponse
         """List administrator settings
 
         Displays the global administrator settings for the array.
@@ -1093,7 +1093,7 @@ class AdministratorsApi(object):
         :param bool _preload_content: Response is converted into objects.
         :param int _request_timeout: Total request timeout in seconds.
                  It can also be a tuple of (connection time, read time) timeouts.
-        :return: AdminSettingsResponse
+        :return: AdminSettingsGetResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1111,8 +1111,8 @@ class AdministratorsApi(object):
         if params.get('x_request_id') is None:
             params['x_request_id'] = str(uuid.uuid4())
 
-        if 'limit' in params and params['limit'] < 1:
-            raise ValueError("Invalid value for parameter `limit` when calling `api230_admins_settings_get`, must be a value greater than or equal to `1`")
+        if 'limit' in params and params['limit'] < 0:
+            raise ValueError("Invalid value for parameter `limit` when calling `api230_admins_settings_get`, must be a value greater than or equal to `0`")
         if 'offset' in params and params['offset'] < 0:
             raise ValueError("Invalid value for parameter `offset` when calling `api230_admins_settings_get`, must be a value greater than or equal to `0`")
         collection_formats = {}
@@ -1160,7 +1160,7 @@ class AdministratorsApi(object):
             body=body_params,
             post_params=form_params,
             files=local_var_files,
-            response_type='AdminSettingsResponse',
+            response_type='AdminSettingsGetResponse',
             auth_settings=auth_settings,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,

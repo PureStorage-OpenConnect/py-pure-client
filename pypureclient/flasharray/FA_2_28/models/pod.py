@@ -32,43 +32,43 @@ class Pod(object):
     swagger_types = {
         'id': 'str',
         'name': 'str',
-        'array_count': 'int',
         'arrays': 'list[PodArrayStatus]',
         'destroyed': 'bool',
-        'eradication_config': 'PodEradicationConfig',
         'failover_preferences': 'list[Reference]',
         'footprint': 'int',
-        'link_source_count': 'int',
-        'link_target_count': 'int',
         'mediator': 'str',
         'mediator_version': 'str',
-        'promotion_status': 'str',
-        'quota_limit': 'int',
-        'requested_promotion_state': 'str',
         'source': 'FixedReference',
-        'space': 'PodSpace',
-        'time_remaining': 'int'
+        'time_remaining': 'int',
+        'requested_promotion_state': 'str',
+        'promotion_status': 'str',
+        'link_source_count': 'int',
+        'link_target_count': 'int',
+        'array_count': 'int',
+        'eradication_config': 'PodEradicationConfig',
+        'quota_limit': 'int',
+        'space': 'PodSpace'
     }
 
     attribute_map = {
         'id': 'id',
         'name': 'name',
-        'array_count': 'array_count',
         'arrays': 'arrays',
         'destroyed': 'destroyed',
-        'eradication_config': 'eradication_config',
         'failover_preferences': 'failover_preferences',
         'footprint': 'footprint',
-        'link_source_count': 'link_source_count',
-        'link_target_count': 'link_target_count',
         'mediator': 'mediator',
         'mediator_version': 'mediator_version',
-        'promotion_status': 'promotion_status',
-        'quota_limit': 'quota_limit',
-        'requested_promotion_state': 'requested_promotion_state',
         'source': 'source',
-        'space': 'space',
-        'time_remaining': 'time_remaining'
+        'time_remaining': 'time_remaining',
+        'requested_promotion_state': 'requested_promotion_state',
+        'promotion_status': 'promotion_status',
+        'link_source_count': 'link_source_count',
+        'link_target_count': 'link_target_count',
+        'array_count': 'array_count',
+        'eradication_config': 'eradication_config',
+        'quota_limit': 'quota_limit',
+        'space': 'space'
     }
 
     required_args = {
@@ -78,80 +78,80 @@ class Pod(object):
         self,
         id=None,  # type: str
         name=None,  # type: str
-        array_count=None,  # type: int
         arrays=None,  # type: List[models.PodArrayStatus]
         destroyed=None,  # type: bool
-        eradication_config=None,  # type: models.PodEradicationConfig
         failover_preferences=None,  # type: List[models.Reference]
         footprint=None,  # type: int
-        link_source_count=None,  # type: int
-        link_target_count=None,  # type: int
         mediator=None,  # type: str
         mediator_version=None,  # type: str
-        promotion_status=None,  # type: str
-        quota_limit=None,  # type: int
-        requested_promotion_state=None,  # type: str
         source=None,  # type: models.FixedReference
-        space=None,  # type: models.PodSpace
         time_remaining=None,  # type: int
+        requested_promotion_state=None,  # type: str
+        promotion_status=None,  # type: str
+        link_source_count=None,  # type: int
+        link_target_count=None,  # type: int
+        array_count=None,  # type: int
+        eradication_config=None,  # type: models.PodEradicationConfig
+        quota_limit=None,  # type: int
+        space=None,  # type: models.PodSpace
     ):
         """
         Keyword args:
             id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
             name (str): A user-specified name. The name must be locally unique and can be changed.
-            array_count (int): The number of arrays a pod connects to.
             arrays (list[PodArrayStatus]): A list of arrays over which the pod is stretched. If there are two or more arrays in the stretched pod, all data in the pod is synchronously replicated between all of the arrays within the pod.
             destroyed (bool): Returns a value of `true` if the pod has been destroyed and is pending eradication. The `time_remaining` value displays the amount of time left until the destroyed pod is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed pod can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the pod is permanently eradicated and can no longer be recovered.
-            eradication_config (PodEradicationConfig)
             failover_preferences (list[Reference]): Determines which array within a stretched pod should be given priority to stay online should the arrays ever lose contact with each other. The current array and any peer arrays that are connected to the current array for synchronous replication can be added to a pod for failover preference. By default, `failover_preferences=null`, meaning no arrays have been configured for failover preference.
             footprint (int): The maximum amount of physical space the pod would take up on any array, ignoring any data shared outside the pod. Measured in bytes. The footprint metric is mostly used for capacity planning.
-            link_source_count (int): The number of source pods that link to the pod.
-            link_target_count (int): The number of target pods that link to the pod.
             mediator (str): The URL of the mediator for the pod. By default, the Pure1 Cloud Mediator (`purestorage`) serves as the mediator.
             mediator_version (str): The mediator version.
-            promotion_status (str): Current promotion status of a pod. Values include `promoted`, `demoted`, and `promoting`. The `promoted` status indicates that the pod has been promoted. The pod takes writes from hosts instead of incorporating replicated data. This is the default mode for a pod when it is created. The `demoted` status indicates that the pod has been demoted. The pod does not accept write requests and is ready to be used as a link target. The `promoting` status indicates that the pod is in an intermediate status between `demoted` and `promoted` while the promotion process is taking place.
-            quota_limit (int): The logical quota limit of the pod, measured in bytes.
-            requested_promotion_state (str): Values include `promoted` and `demoted`. Patch `requested_promotion_state` to `demoted` to demote the pod so that it can be used as a link target for continuous replication between pods. Demoted pods do not accept write requests, and a destroyed version of the pod with `undo-demote` appended to the pod name is created on the array with the state of the pod when it was in the promoted state. Patch `requested_promotion_state` to `promoted` to start the process of promoting the pod. The `promotion_status` indicates when the pod has been successfully promoted. Promoted pods stop incorporating replicated data from the source pod and start accepting write requests. The replication process does not stop as the source pod continues replicating data to the pod. The space consumed by the unique replicated data is tracked by the `space.journal` field of the pod.
             source (FixedReference): The source pod from where data is cloned to create the new pod.
-            space (PodSpace): Displays provisioned size and physical storage consumption information for the sum of all volumes connected to the specified host.
             time_remaining (int): The amount of time left until the destroyed pod is permanently eradicated, measured in milliseconds. Before the `time_remaining` period has elapsed, the destroyed pod can be recovered by setting `destroyed=false`.
+            requested_promotion_state (str): Values include `promoted` and `demoted`. Patch `requested_promotion_state` to `demoted` to demote the pod so that it can be used as a link target for continuous replication between pods. Demoted pods do not accept write requests, and a destroyed version of the pod with `undo-demote` appended to the pod name is created on the array with the state of the pod when it was in the promoted state. Patch `requested_promotion_state` to `promoted` to start the process of promoting the pod. The `promotion_status` indicates when the pod has been successfully promoted. Promoted pods stop incorporating replicated data from the source pod and start accepting write requests. The replication process does not stop as the source pod continues replicating data to the pod. The space consumed by the unique replicated data is tracked by the `space.journal` field of the pod.
+            promotion_status (str): Current promotion status of a pod. Values include `promoted`, `demoted`, and `promoting`. The `promoted` status indicates that the pod has been promoted. The pod takes writes from hosts instead of incorporating replicated data. This is the default mode for a pod when it is created. The `demoted` status indicates that the pod has been demoted. The pod does not accept write requests and is ready to be used as a link target. The `promoting` status indicates that the pod is in an intermediate status between `demoted` and `promoted` while the promotion process is taking place.
+            link_source_count (int): The number of source pods that link to the pod.
+            link_target_count (int): The number of target pods that link to the pod.
+            array_count (int): The number of arrays a pod connects to.
+            eradication_config (PodEradicationConfig)
+            quota_limit (int): The logical quota limit of the pod, measured in bytes.
+            space (PodSpace): Displays provisioned size and physical storage consumption information for the sum of all volumes connected to the specified host.
         """
         if id is not None:
             self.id = id
         if name is not None:
             self.name = name
-        if array_count is not None:
-            self.array_count = array_count
         if arrays is not None:
             self.arrays = arrays
         if destroyed is not None:
             self.destroyed = destroyed
-        if eradication_config is not None:
-            self.eradication_config = eradication_config
         if failover_preferences is not None:
             self.failover_preferences = failover_preferences
         if footprint is not None:
             self.footprint = footprint
-        if link_source_count is not None:
-            self.link_source_count = link_source_count
-        if link_target_count is not None:
-            self.link_target_count = link_target_count
         if mediator is not None:
             self.mediator = mediator
         if mediator_version is not None:
             self.mediator_version = mediator_version
-        if promotion_status is not None:
-            self.promotion_status = promotion_status
-        if quota_limit is not None:
-            self.quota_limit = quota_limit
-        if requested_promotion_state is not None:
-            self.requested_promotion_state = requested_promotion_state
         if source is not None:
             self.source = source
-        if space is not None:
-            self.space = space
         if time_remaining is not None:
             self.time_remaining = time_remaining
+        if requested_promotion_state is not None:
+            self.requested_promotion_state = requested_promotion_state
+        if promotion_status is not None:
+            self.promotion_status = promotion_status
+        if link_source_count is not None:
+            self.link_source_count = link_source_count
+        if link_target_count is not None:
+            self.link_target_count = link_target_count
+        if array_count is not None:
+            self.array_count = array_count
+        if eradication_config is not None:
+            self.eradication_config = eradication_config
+        if quota_limit is not None:
+            self.quota_limit = quota_limit
+        if space is not None:
+            self.space = space
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

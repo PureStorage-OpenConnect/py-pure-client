@@ -38,8 +38,8 @@ class ArrayConnectionPost(object):
         'replication_addresses': 'list[str]',
         'status': 'str',
         'version': 'str',
-        'connection_key': 'str',
-        'throttle': 'Throttle'
+        'throttle': 'Throttle',
+        'connection_key': 'str'
     }
 
     attribute_map = {
@@ -51,8 +51,8 @@ class ArrayConnectionPost(object):
         'replication_addresses': 'replication_addresses',
         'status': 'status',
         'version': 'version',
-        'connection_key': 'connection_key',
-        'throttle': 'throttle'
+        'throttle': 'throttle',
+        'connection_key': 'connection_key'
     }
 
     required_args = {
@@ -68,8 +68,8 @@ class ArrayConnectionPost(object):
         replication_addresses=None,  # type: List[str]
         status=None,  # type: str
         version=None,  # type: str
-        connection_key=None,  # type: str
         throttle=None,  # type: models.Throttle
+        connection_key=None,  # type: str
     ):
         """
         Keyword args:
@@ -81,8 +81,8 @@ class ArrayConnectionPost(object):
             replication_addresses (list[str]): IP addresses and/or FQDNs of the target arrays. Settable on POST only. If not set on POST, will be set to all the replication addresses available on the target array at the time of the POST.
             status (str): Status of the connection. Valid values are `connected`, `partially_connected`, `connecting`, and `incompatible`. `connected` - The connection is OK. `partially_connected` - Some replication addresses are working, but others are not. `connecting` - No connection exists and the array is trying to reconnect. `incompatible` - The target array is not compatible.
             version (str): The version of the target array.
-            connection_key (str): The connection key of the target array. Settable on POST only.
             throttle (Throttle)
+            connection_key (str): The connection key of the target array. Settable on POST only.
         """
         if id is not None:
             self.id = id
@@ -100,10 +100,10 @@ class ArrayConnectionPost(object):
             self.status = status
         if version is not None:
             self.version = version
-        if connection_key is not None:
-            self.connection_key = connection_key
         if throttle is not None:
             self.throttle = throttle
+        if connection_key is not None:
+            self.connection_key = connection_key
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

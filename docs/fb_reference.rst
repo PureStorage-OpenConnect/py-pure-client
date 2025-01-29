@@ -1981,6 +1981,50 @@ If you don't want the individual results, you can use ``total_only``.
     if type(res) == pypureclient.responses.ValidResponse:
         print(list(res.items))
 
+context_names
+'''''''''
+
+Use `context_names` if you want to perform an operation on a different execution context. The execution context must 
+reference an array or arrays in the same fleet. If not specified, it defaults to the name of the array that received 
+this request. If the request is anything other than a GET request, the `context_names` must be an array of size one, 
+for example:
+
+.. code-block:: python
+    # create a filesystem with the name "myfs" on the FlashBlade "other-fb"
+    res = client.post_file_systems(names=["myfs"], context_names=["other-fb"])
+    print(res)
+    if type(res) == pypureclient.responses.ValidResponse:
+        print(list(res.items))
+
+If the request is a GET request, `context_names` may contain multiple elements. This will execute the request on all
+specified contexts and return the merged response. For example:
+
+.. code-block:: python
+    # list filesystems on the FlashBlades "other-fb" and "another-fb"
+    res = client.get_file_systems(context_names=["other-fb", "another-fb"])
+    print(res)
+    if type(res) == pypureclient.responses.ValidResponse:
+        print(list(res.items))
+
+Other parameters provided with the request, such as names of filesystems or snapshots, are resolved relative to the 
+provided *execution context*.
+
+allow_errors
+'''''''''
+
+Use `allow_errors` if you want to allow errors in the response, along the results. This can only occur when the
+*execution context* consists of multiple arrays and executing the operation on one of the arrays fails.
+
+If set to *true*, the API will allow the operation to continue even if there are errors. Any errors will be returned 
+in the errors field of the response. If set to *false*, the operation will fail if there are any errors.
+
+.. code-block:: python
+    # list filesystems on the FlashBlades "other-fb" and "another-fb" and allow errors
+    res = client.get_file_systems(context_names=["other-fb", "another-fb"], allow_errors=True)
+    print(res)
+    if type(res) == pypureclient.responses.ValidResponse:
+        print(list(res.items))
+
 Active Directory
 ~~~~~~~~~~~~~~~~
 

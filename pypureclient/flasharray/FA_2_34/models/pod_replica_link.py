@@ -36,8 +36,8 @@ class PodReplicaLink(object):
         'local_pod': 'FixedReference',
         'paused': 'bool',
         'recovery_point': 'int',
-        'remote_pod': 'FixedReference',
         'remotes': 'list[FixedReference]',
+        'remote_pod': 'FixedReference',
         'status': 'str'
     }
 
@@ -48,8 +48,8 @@ class PodReplicaLink(object):
         'local_pod': 'local_pod',
         'paused': 'paused',
         'recovery_point': 'recovery_point',
-        'remote_pod': 'remote_pod',
         'remotes': 'remotes',
+        'remote_pod': 'remote_pod',
         'status': 'status'
     }
 
@@ -64,8 +64,8 @@ class PodReplicaLink(object):
         local_pod=None,  # type: models.FixedReference
         paused=None,  # type: bool
         recovery_point=None,  # type: int
-        remote_pod=None,  # type: models.FixedReference
         remotes=None,  # type: List[models.FixedReference]
+        remote_pod=None,  # type: models.FixedReference
         status=None,  # type: str
     ):
         """
@@ -76,8 +76,8 @@ class PodReplicaLink(object):
             local_pod (FixedReference): Reference to a local pod.
             paused (bool): Returns a value of `true` if the replica link is in a `paused` state. Returns a value of `false` if the replica link is not in a `paused` state.
             recovery_point (int): Time when the last piece of data was replicated, in milliseconds since the UNIX epoch, and the recovery point if the target pod is promoted. If the pod is currently baselining, then the value is `null`.
-            remote_pod (FixedReference): Reference to a remote pod.
             remotes (list[FixedReference]): A list of remote arrays that share this pod.
+            remote_pod (FixedReference): Reference to a remote pod.
             status (str): Status of the replica-link. Valid values include `replicating`, `baselining`, `paused`, `quiescing`, `quiesced`, `idle`, and `unhealthy`.
         """
         if id is not None:
@@ -92,10 +92,10 @@ class PodReplicaLink(object):
             self.paused = paused
         if recovery_point is not None:
             self.recovery_point = recovery_point
-        if remote_pod is not None:
-            self.remote_pod = remote_pod
         if remotes is not None:
             self.remotes = remotes
+        if remote_pod is not None:
+            self.remote_pod = remote_pod
         if status is not None:
             self.status = status
 

@@ -32,27 +32,27 @@ class VolumeGroup(object):
     swagger_types = {
         'id': 'str',
         'name': 'str',
+        'context': 'FixedReference',
         'destroyed': 'bool',
         'qos': 'Qos',
         'priority_adjustment': 'PriorityAdjustment',
-        'space': 'Space',
         'time_remaining': 'int',
         'volume_count': 'int',
         'pod': 'Reference',
-        'context': 'Reference'
+        'space': 'Space'
     }
 
     attribute_map = {
         'id': 'id',
         'name': 'name',
+        'context': 'context',
         'destroyed': 'destroyed',
         'qos': 'qos',
         'priority_adjustment': 'priority_adjustment',
-        'space': 'space',
         'time_remaining': 'time_remaining',
         'volume_count': 'volume_count',
         'pod': 'pod',
-        'context': 'context'
+        'space': 'space'
     }
 
     required_args = {
@@ -62,48 +62,48 @@ class VolumeGroup(object):
         self,
         id=None,  # type: str
         name=None,  # type: str
+        context=None,  # type: models.FixedReference
         destroyed=None,  # type: bool
         qos=None,  # type: models.Qos
         priority_adjustment=None,  # type: models.PriorityAdjustment
-        space=None,  # type: models.Space
         time_remaining=None,  # type: int
         volume_count=None,  # type: int
         pod=None,  # type: models.Reference
-        context=None,  # type: models.Reference
+        space=None,  # type: models.Space
     ):
         """
         Keyword args:
             id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
             name (str): A user-specified name. The name must be locally unique and can be changed.
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
             destroyed (bool): Returns a value of `true` if the volume group has been destroyed and is pending eradication. Before the `time_remaining` period has elapsed, the destroyed volume group can be recovered by setting `destroyed=false`. After the `time_remaining` period has elapsed, the volume group is permanently eradicated and cannot be recovered.
             qos (Qos)
             priority_adjustment (PriorityAdjustment)
-            space (Space)
             time_remaining (int): The amount of time left until the destroyed volume group is permanently eradicated, measured in milliseconds.
             volume_count (int): The number of volumes in the volume group.
             pod (Reference): A reference to the pod.
-            context (Reference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
+            space (Space)
         """
         if id is not None:
             self.id = id
         if name is not None:
             self.name = name
+        if context is not None:
+            self.context = context
         if destroyed is not None:
             self.destroyed = destroyed
         if qos is not None:
             self.qos = qos
         if priority_adjustment is not None:
             self.priority_adjustment = priority_adjustment
-        if space is not None:
-            self.space = space
         if time_remaining is not None:
             self.time_remaining = time_remaining
         if volume_count is not None:
             self.volume_count = volume_count
         if pod is not None:
             self.pod = pod
-        if context is not None:
-            self.context = context
+        if space is not None:
+            self.space = space
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

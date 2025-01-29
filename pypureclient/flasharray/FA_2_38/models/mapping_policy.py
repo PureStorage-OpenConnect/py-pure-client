@@ -31,24 +31,24 @@ class MappingPolicy(object):
     """
     swagger_types = {
         'id': 'str',
-        'direction': 'str',
+        'context': 'FixedReference',
         'local_policy': 'ReferenceWithType',
-        'mapping': 'str',
-        'pod_replica_link': 'PodReplicaLinkReference',
-        'policy_type': 'str',
         'remote_policy': 'ReferenceWithType',
-        'context': 'Reference'
+        'mapping': 'str',
+        'policy_type': 'str',
+        'pod_replica_link': 'PodReplicaLinkReference',
+        'direction': 'str'
     }
 
     attribute_map = {
         'id': 'id',
-        'direction': 'direction',
+        'context': 'context',
         'local_policy': 'local_policy',
-        'mapping': 'mapping',
-        'pod_replica_link': 'pod_replica_link',
-        'policy_type': 'policy_type',
         'remote_policy': 'remote_policy',
-        'context': 'context'
+        'mapping': 'mapping',
+        'policy_type': 'policy_type',
+        'pod_replica_link': 'pod_replica_link',
+        'direction': 'direction'
     }
 
     required_args = {
@@ -57,41 +57,41 @@ class MappingPolicy(object):
     def __init__(
         self,
         id=None,  # type: str
-        direction=None,  # type: str
+        context=None,  # type: models.FixedReference
         local_policy=None,  # type: models.ReferenceWithType
-        mapping=None,  # type: str
-        pod_replica_link=None,  # type: models.PodReplicaLinkReference
-        policy_type=None,  # type: str
         remote_policy=None,  # type: models.ReferenceWithType
-        context=None,  # type: models.Reference
+        mapping=None,  # type: str
+        policy_type=None,  # type: str
+        pod_replica_link=None,  # type: models.PodReplicaLinkReference
+        direction=None,  # type: str
     ):
         """
         Keyword args:
             id (str): A non-modifiable, globally unique ID chosen by the system.
-            direction (str): The direction of replication. Valid values include `inbound` and `outbound`.
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
             local_policy (ReferenceWithType): Reference to a local policy.
-            mapping (str): The mapping for this policy mapping. Valid values are `connected` and `disconnected`.
-            pod_replica_link (PodReplicaLinkReference): Reference to a pod replica link.
-            policy_type (str): The type of policies involved in this policy mapping.
             remote_policy (ReferenceWithType): Reference to a remote policy.
-            context (Reference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
+            mapping (str): The mapping for this policy mapping. Valid values are `connected` and `disconnected`.
+            policy_type (str): The type of policies involved in this policy mapping.
+            pod_replica_link (PodReplicaLinkReference): Reference to a pod replica link.
+            direction (str): The direction of replication. Valid values include `inbound` and `outbound`.
         """
         if id is not None:
             self.id = id
-        if direction is not None:
-            self.direction = direction
-        if local_policy is not None:
-            self.local_policy = local_policy
-        if mapping is not None:
-            self.mapping = mapping
-        if pod_replica_link is not None:
-            self.pod_replica_link = pod_replica_link
-        if policy_type is not None:
-            self.policy_type = policy_type
-        if remote_policy is not None:
-            self.remote_policy = remote_policy
         if context is not None:
             self.context = context
+        if local_policy is not None:
+            self.local_policy = local_policy
+        if remote_policy is not None:
+            self.remote_policy = remote_policy
+        if mapping is not None:
+            self.mapping = mapping
+        if policy_type is not None:
+            self.policy_type = policy_type
+        if pod_replica_link is not None:
+            self.pod_replica_link = pod_replica_link
+        if direction is not None:
+            self.direction = direction
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

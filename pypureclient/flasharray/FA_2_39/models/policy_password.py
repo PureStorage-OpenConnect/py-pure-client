@@ -32,6 +32,7 @@ class PolicyPassword(object):
     swagger_types = {
         'id': 'str',
         'name': 'str',
+        'context': 'FixedReference',
         'policy_type': 'str',
         'enabled': 'bool',
         'lockout_duration': 'int',
@@ -43,13 +44,13 @@ class PolicyPassword(object):
         'min_characters_per_group': 'int',
         'enforce_username_check': 'bool',
         'enforce_dictionary_check': 'bool',
-        'context': 'Reference',
         'max_password_age': 'int'
     }
 
     attribute_map = {
         'id': 'id',
         'name': 'name',
+        'context': 'context',
         'policy_type': 'policy_type',
         'enabled': 'enabled',
         'lockout_duration': 'lockout_duration',
@@ -61,7 +62,6 @@ class PolicyPassword(object):
         'min_characters_per_group': 'min_characters_per_group',
         'enforce_username_check': 'enforce_username_check',
         'enforce_dictionary_check': 'enforce_dictionary_check',
-        'context': 'context',
         'max_password_age': 'max_password_age'
     }
 
@@ -72,6 +72,7 @@ class PolicyPassword(object):
         self,
         id=None,  # type: str
         name=None,  # type: str
+        context=None,  # type: models.FixedReference
         policy_type=None,  # type: str
         enabled=None,  # type: bool
         lockout_duration=None,  # type: int
@@ -83,13 +84,13 @@ class PolicyPassword(object):
         min_characters_per_group=None,  # type: int
         enforce_username_check=None,  # type: bool
         enforce_dictionary_check=None,  # type: bool
-        context=None,  # type: models.Reference
         max_password_age=None,  # type: int
     ):
         """
         Keyword args:
             id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
             name (str): A user-specified name. The name must be locally unique and can be changed.
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
             policy_type (str): The type of policy. Valid values include `autodir`, `nfs`, `password`, `smb`, `snapshot`, and `quota`.
             enabled (bool): Returns a value of `true` if the policy is enabled.
             lockout_duration (int): The lockout duration, in milliseconds, if a user is locked out after reaching the maximum number of login attempts. Ranges from 1 second to 90 days.
@@ -101,13 +102,14 @@ class PolicyPassword(object):
             min_characters_per_group (int): The minimum number of characters per group to count the group as present. Maximum is limited by the minimum password length divided by the number of character groups (e.g. min_password_length = 9, min_character_groups = 4, then maximum is 2).
             enforce_username_check (bool): If `true`, the username cannot be a substring of the password. It only applies to usernames of 3 characters and longer.
             enforce_dictionary_check (bool): If `true`, test password against dictionary of known leaked passwords. Only applies to passwords longer than 6 characters.
-            context (Reference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
             max_password_age (int): The maximum age of password before password change is required. Ranges from 1 day to 99999 days, with 0 meaning password expiration is disabled.
         """
         if id is not None:
             self.id = id
         if name is not None:
             self.name = name
+        if context is not None:
+            self.context = context
         if policy_type is not None:
             self.policy_type = policy_type
         if enabled is not None:
@@ -130,8 +132,6 @@ class PolicyPassword(object):
             self.enforce_username_check = enforce_username_check
         if enforce_dictionary_check is not None:
             self.enforce_dictionary_check = enforce_dictionary_check
-        if context is not None:
-            self.context = context
         if max_password_age is not None:
             self.max_password_age = max_password_age
 

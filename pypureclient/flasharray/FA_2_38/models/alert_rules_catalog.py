@@ -30,21 +30,21 @@ class AlertRulesCatalog(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'context': 'FixedReference',
         'code': 'int',
         'subject': 'str',
         'parameter': 'str',
         'allowed_values': 'str',
-        'default_value': 'str',
-        'context': 'Reference'
+        'default_value': 'str'
     }
 
     attribute_map = {
+        'context': 'context',
         'code': 'code',
         'subject': 'subject',
         'parameter': 'parameter',
         'allowed_values': 'allowed_values',
-        'default_value': 'default_value',
-        'context': 'context'
+        'default_value': 'default_value'
     }
 
     required_args = {
@@ -52,22 +52,24 @@ class AlertRulesCatalog(object):
 
     def __init__(
         self,
+        context=None,  # type: models.FixedReference
         code=None,  # type: int
         subject=None,  # type: str
         parameter=None,  # type: str
         allowed_values=None,  # type: str
         default_value=None,  # type: str
-        context=None,  # type: models.Reference
     ):
         """
         Keyword args:
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
             code (int): The alert code that the rule applies to.
             subject (str): The alert code description.
             parameter (str): The parameter of the custom alert rule.
             allowed_values (str): The range of values allowed to set the custom alert rule to.
             default_value (str): The system default values for the alert code and parameter.
-            context (Reference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
         """
+        if context is not None:
+            self.context = context
         if code is not None:
             self.code = code
         if subject is not None:
@@ -78,8 +80,6 @@ class AlertRulesCatalog(object):
             self.allowed_values = allowed_values
         if default_value is not None:
             self.default_value = default_value
-        if context is not None:
-            self.context = context
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

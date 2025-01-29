@@ -32,23 +32,23 @@ class ApiClient(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
-        'access_token_ttl_in_ms': 'int',
-        'enabled': 'bool',
-        'issuer': 'str',
-        'key_id': 'str',
         'max_role': 'FixedReference',
-        'public_key': 'str'
+        'issuer': 'str',
+        'public_key': 'str',
+        'key_id': 'str',
+        'enabled': 'bool',
+        'access_token_ttl_in_ms': 'int'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
-        'access_token_ttl_in_ms': 'access_token_ttl_in_ms',
-        'enabled': 'enabled',
-        'issuer': 'issuer',
-        'key_id': 'key_id',
         'max_role': 'max_role',
-        'public_key': 'public_key'
+        'issuer': 'issuer',
+        'public_key': 'public_key',
+        'key_id': 'key_id',
+        'enabled': 'enabled',
+        'access_token_ttl_in_ms': 'access_token_ttl_in_ms'
     }
 
     required_args = {
@@ -58,40 +58,40 @@ class ApiClient(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
-        access_token_ttl_in_ms=None,  # type: int
-        enabled=None,  # type: bool
-        issuer=None,  # type: str
-        key_id=None,  # type: str
         max_role=None,  # type: models.FixedReference
+        issuer=None,  # type: str
         public_key=None,  # type: str
+        key_id=None,  # type: str
+        enabled=None,  # type: bool
+        access_token_ttl_in_ms=None,  # type: int
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
             id (str): A non-modifiable, globally unique ID chosen by the system.
-            access_token_ttl_in_ms (int): The TTL (Time To Live) duration for which the exchanged access token is valid. Measured in milliseconds.
-            enabled (bool): If `true`, the API client is permitted to exchange ID Tokens for access tokens. API clients are disabled by default.
-            issuer (str): The name of the identity provider that will be issuing ID Tokens for this API client. This string represents the JWT `iss` (issuer) claim in ID Tokens issued for this API client.
-            key_id (str): The unique identifier for the associated public key of this API client. This string must match the JWT `kid` (key ID) claim in ID Tokens issued for this API client.
             max_role (FixedReference): The maximum role allowed for ID Tokens issued by this API client. The bearer of an access token will be authorized to perform actions within the intersection of this `max_role` and the role of the array user specified as the JWT `sub` (subject) claim. The `max_role` field is a reference to a `role`. Valid `role`s are `readonly`, `ops_admin`, `array_admin`, and `storage_admin`. Users with the `readonly` (Read Only) role can perform operations that convey the state of the array. Read Only users cannot alter the state of the array. Users with the `ops_admin` (Ops Admin) role can perform the same operations as Read Only users plus enable and disable remote assistance sessions. Ops Admin users cannot alter the state of the array. Users with the `storage_admin` (Storage Admin) role can perform the same operations as Read Only users plus storage related operations, such as administering file systems, snapshots, and buckets. Storage Admin users cannot perform operations that deal with global and system configurations. Users with the `array_admin` (Array Admin) role can perform the same operations as Storage Admin users plus array-wide changes dealing with global and system configurations. In other words, Array Admin users can perform all operations.
+            issuer (str): The name of the identity provider that will be issuing ID Tokens for this API client. This string represents the JWT `iss` (issuer) claim in ID Tokens issued for this API client.
             public_key (str): The API client's PEM formatted (Base64 encoded) RSA public key.
+            key_id (str): The unique identifier for the associated public key of this API client. This string must match the JWT `kid` (key ID) claim in ID Tokens issued for this API client.
+            enabled (bool): If `true`, the API client is permitted to exchange ID Tokens for access tokens. API clients are disabled by default.
+            access_token_ttl_in_ms (int): The TTL (Time To Live) duration for which the exchanged access token is valid. Measured in milliseconds.
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
-        if access_token_ttl_in_ms is not None:
-            self.access_token_ttl_in_ms = access_token_ttl_in_ms
-        if enabled is not None:
-            self.enabled = enabled
-        if issuer is not None:
-            self.issuer = issuer
-        if key_id is not None:
-            self.key_id = key_id
         if max_role is not None:
             self.max_role = max_role
+        if issuer is not None:
+            self.issuer = issuer
         if public_key is not None:
             self.public_key = public_key
+        if key_id is not None:
+            self.key_id = key_id
+        if enabled is not None:
+            self.enabled = enabled
+        if access_token_ttl_in_ms is not None:
+            self.access_token_ttl_in_ms = access_token_ttl_in_ms
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

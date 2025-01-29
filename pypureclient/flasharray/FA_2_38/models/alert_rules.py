@@ -30,17 +30,17 @@ class AlertRules(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'context': 'FixedReference',
         'code': 'int',
         'parameter': 'str',
-        'value': 'str',
-        'context': 'Reference'
+        'value': 'str'
     }
 
     attribute_map = {
+        'context': 'context',
         'code': 'code',
         'parameter': 'parameter',
-        'value': 'value',
-        'context': 'context'
+        'value': 'value'
     }
 
     required_args = {
@@ -48,26 +48,26 @@ class AlertRules(object):
 
     def __init__(
         self,
+        context=None,  # type: models.FixedReference
         code=None,  # type: int
         parameter=None,  # type: str
         value=None,  # type: str
-        context=None,  # type: models.Reference
     ):
         """
         Keyword args:
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
             code (int): The alert code that the rule applies to. Available alert codes for customization can be found in the alert rules catalog.
             parameter (str): The parameter of the custom alert rule to modify. Values include `info` and `warning`. Available parameter values can be found in the alert rules catalog.
             value (str): The value to use for the custom alert rule. Valid values for an alert code and parameter combination can be found in the alert rules catalog.
-            context (Reference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
         """
+        if context is not None:
+            self.context = context
         if code is not None:
             self.code = code
         if parameter is not None:
             self.parameter = parameter
         if value is not None:
             self.value = value
-        if context is not None:
-            self.context = context
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

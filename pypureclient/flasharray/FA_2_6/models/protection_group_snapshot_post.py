@@ -35,8 +35,8 @@ class ProtectionGroupSnapshotPost(object):
         'created': 'int',
         'destroyed': 'bool',
         'pod': 'FixedReference',
-        'source': 'FixedReference',
         'space': 'Space',
+        'source': 'FixedReference',
         'suffix': 'str',
         'time_remaining': 'int'
     }
@@ -47,8 +47,8 @@ class ProtectionGroupSnapshotPost(object):
         'created': 'created',
         'destroyed': 'destroyed',
         'pod': 'pod',
-        'source': 'source',
         'space': 'space',
+        'source': 'source',
         'suffix': 'suffix',
         'time_remaining': 'time_remaining'
     }
@@ -63,8 +63,8 @@ class ProtectionGroupSnapshotPost(object):
         created=None,  # type: int
         destroyed=None,  # type: bool
         pod=None,  # type: models.FixedReference
-        source=None,  # type: models.FixedReference
         space=None,  # type: models.Space
+        source=None,  # type: models.FixedReference
         suffix=None,  # type: str
         time_remaining=None,  # type: int
     ):
@@ -75,8 +75,8 @@ class ProtectionGroupSnapshotPost(object):
             created (int): The snapshot creation time of the original snapshot source. Measured in milliseconds since the UNIX epoch.
             destroyed (bool)
             pod (FixedReference): The pod in which the protection group of the protection group snapshot resides.
-            source (FixedReference): The original protection group from which this snapshot was taken. For a replicated protection group snapshot being viewed on the target side, the `source` is the replica protection group.
             space (Space): Returns provisioned size and physical storage consumption data for each protection group.
+            source (FixedReference): The original protection group from which this snapshot was taken. For a replicated protection group snapshot being viewed on the target side, the `source` is the replica protection group.
             suffix (str): The name suffix appended to the protection group name to make up the full protection group snapshot name in the form `PGROUP.SUFFIX`. If `suffix` is not specified, the protection group name is in the form `PGROUP.NNN`, where `NNN` is a unique monotonically increasing number. If multiple protection group snapshots are created at a time, the suffix name is appended to those snapshots.
             time_remaining (int): The amount of time left until the destroyed snapshot is permanently eradicated. Measured in milliseconds. Before the `time_remaining` period has elapsed, the destroyed snapshot can be recovered by setting `destroyed=false`.
         """
@@ -90,10 +90,10 @@ class ProtectionGroupSnapshotPost(object):
             self.destroyed = destroyed
         if pod is not None:
             self.pod = pod
-        if source is not None:
-            self.source = source
         if space is not None:
             self.space = space
+        if source is not None:
+            self.source = source
         if suffix is not None:
             self.suffix = suffix
         if time_remaining is not None:

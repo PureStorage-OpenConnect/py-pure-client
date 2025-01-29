@@ -30,13 +30,13 @@ class PolicymemberexportpostMembers(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'export_name': 'str',
-        'member': 'ReferenceWithType'
+        'member': 'ReferenceWithType',
+        'export_name': 'str'
     }
 
     attribute_map = {
-        'export_name': 'export_name',
-        'member': 'member'
+        'member': 'member',
+        'export_name': 'export_name'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class PolicymemberexportpostMembers(object):
 
     def __init__(
         self,
-        export_name=None,  # type: str
         member=None,  # type: models.ReferenceWithType
+        export_name=None,  # type: str
     ):
         """
         Keyword args:
-            export_name (str): The name of the export to create when applying the export policy to the directory.
             member (ReferenceWithType): Reference to the directory to which the export policy may be applied. The `id` or `name` parameter is required, but they cannot be set together. If the `name` parameter is set, `resource_type` must also be set.
+            export_name (str): The name of the export to create when applying the export policy to the directory.
         """
-        if export_name is not None:
-            self.export_name = export_name
         if member is not None:
             self.member = member
+        if export_name is not None:
+            self.export_name = export_name
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

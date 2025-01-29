@@ -32,27 +32,27 @@ class Audit(object):
     swagger_types = {
         'id': 'str',
         'name': 'str',
+        'context': 'FixedReference',
         'arguments': 'str',
         'command': 'str',
-        'origin': 'FixedReference',
         'subcommand': 'str',
         'time': 'int',
         'user': 'str',
-        'user_interface': 'str',
-        'context': 'Reference'
+        'origin': 'FixedReference',
+        'user_interface': 'str'
     }
 
     attribute_map = {
         'id': 'id',
         'name': 'name',
+        'context': 'context',
         'arguments': 'arguments',
         'command': 'command',
-        'origin': 'origin',
         'subcommand': 'subcommand',
         'time': 'time',
         'user': 'user',
-        'user_interface': 'user_interface',
-        'context': 'context'
+        'origin': 'origin',
+        'user_interface': 'user_interface'
     }
 
     required_args = {
@@ -62,48 +62,48 @@ class Audit(object):
         self,
         id=None,  # type: str
         name=None,  # type: str
+        context=None,  # type: models.FixedReference
         arguments=None,  # type: str
         command=None,  # type: str
-        origin=None,  # type: models.FixedReference
         subcommand=None,  # type: str
         time=None,  # type: int
         user=None,  # type: str
+        origin=None,  # type: models.FixedReference
         user_interface=None,  # type: str
-        context=None,  # type: models.Reference
     ):
         """
         Keyword args:
             id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
             name (str): A locally unique, system-generated name. The name cannot be modified.
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
             arguments (str): The arguments provided to the command.
             command (str): The top level command that starts with the string \"pure\" as a convention.
-            origin (FixedReference): The array from which the command originated.
             subcommand (str): The `command` and `subcommand` combination determines which action the user attempted to perform.
             time (int): The time at which the command was run in milliseconds since the UNIX epoch.
             user (str): The user who ran the command.
+            origin (FixedReference): The array from which the command originated.
             user_interface (str): The user interface through which the user session event was performed. Valid values are `CLI`, `GUI`, and `REST`.
-            context (Reference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
         """
         if id is not None:
             self.id = id
         if name is not None:
             self.name = name
+        if context is not None:
+            self.context = context
         if arguments is not None:
             self.arguments = arguments
         if command is not None:
             self.command = command
-        if origin is not None:
-            self.origin = origin
         if subcommand is not None:
             self.subcommand = subcommand
         if time is not None:
             self.time = time
         if user is not None:
             self.user = user
+        if origin is not None:
+            self.origin = origin
         if user_interface is not None:
             self.user_interface = user_interface
-        if context is not None:
-            self.context = context
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

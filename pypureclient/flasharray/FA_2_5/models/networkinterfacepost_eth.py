@@ -31,7 +31,7 @@ class NetworkinterfacepostEth(object):
     """
     swagger_types = {
         'address': 'str',
-        'subinterfaces': 'list[FixedReferenceNoId]',
+        'subinterfaces': 'list[ReferenceNoId]',
         'subnet': 'ReferenceNoId',
         'subtype': 'str'
     }
@@ -49,14 +49,14 @@ class NetworkinterfacepostEth(object):
     def __init__(
         self,
         address=None,  # type: str
-        subinterfaces=None,  # type: List[models.FixedReferenceNoId]
+        subinterfaces=None,  # type: List[models.ReferenceNoId]
         subnet=None,  # type: models.ReferenceNoId
         subtype=None,  # type: str
     ):
         """
         Keyword args:
             address (str): The IPv4 or IPv6 address to be associated with the specified network interface.
-            subinterfaces (list[FixedReferenceNoId]): List of network interfaces configured to be a subinterface of the specified network interface.
+            subinterfaces (list[ReferenceNoId]): List of network interfaces configured to be a subinterface of the specified network interface.
             subnet (ReferenceNoId): Subnet that is associated with the specified network interface.
             subtype (str): The subtype of the specified network interface. Only interfaces of subtype `vif` and `lacp_bond` can be created. Configurable on POST only. Valid values are `failover_bond`, `lacp_bond`, `physical`, and `vif`. If the subtype is `vif`, the services parameter must not be set.
         """

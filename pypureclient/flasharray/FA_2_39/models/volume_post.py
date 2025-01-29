@@ -31,9 +31,9 @@ class VolumePost(object):
     """
     swagger_types = {
         'destroyed': 'bool',
-        'priority_adjustment': 'PriorityAdjustment',
         'provisioned': 'int',
         'qos': 'Qos',
+        'priority_adjustment': 'PriorityAdjustment',
         'source': 'Reference',
         'subtype': 'str',
         'protocol_endpoint': 'ProtocolEndpoint',
@@ -42,9 +42,9 @@ class VolumePost(object):
 
     attribute_map = {
         'destroyed': 'destroyed',
-        'priority_adjustment': 'priority_adjustment',
         'provisioned': 'provisioned',
         'qos': 'qos',
+        'priority_adjustment': 'priority_adjustment',
         'source': 'source',
         'subtype': 'subtype',
         'protocol_endpoint': 'protocol_endpoint',
@@ -57,9 +57,9 @@ class VolumePost(object):
     def __init__(
         self,
         destroyed=None,  # type: bool
-        priority_adjustment=None,  # type: models.PriorityAdjustment
         provisioned=None,  # type: int
         qos=None,  # type: models.Qos
+        priority_adjustment=None,  # type: models.PriorityAdjustment
         source=None,  # type: models.Reference
         subtype=None,  # type: str
         protocol_endpoint=None,  # type: models.ProtocolEndpoint
@@ -68,9 +68,9 @@ class VolumePost(object):
         """
         Keyword args:
             destroyed (bool): If set to `true`, destroys a resource. Once set to `true`, the `time_remaining` value will display the amount of time left until the destroyed resource is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed resource can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the resource is permanently eradicated and can no longer be recovered.
-            priority_adjustment (PriorityAdjustment): Adjusts volume priority.
             provisioned (int): Sets the virtual size of the volume, measured in bytes.
             qos (Qos): Sets QoS limits.
+            priority_adjustment (PriorityAdjustment): Adjusts volume priority.
             source (Reference): The source volume of a volume copy.
             subtype (str): The type of volume. Valid values are `protocol_endpoint` and `regular`.
             protocol_endpoint (ProtocolEndpoint): Sets the properties that are specific to protocol endpoints. This can only be used in conjunction to `subtype=protocol_endpoint`.
@@ -78,12 +78,12 @@ class VolumePost(object):
         """
         if destroyed is not None:
             self.destroyed = destroyed
-        if priority_adjustment is not None:
-            self.priority_adjustment = priority_adjustment
         if provisioned is not None:
             self.provisioned = provisioned
         if qos is not None:
             self.qos = qos
+        if priority_adjustment is not None:
+            self.priority_adjustment = priority_adjustment
         if source is not None:
             self.source = source
         if subtype is not None:

@@ -31,16 +31,16 @@ class SyslogServer(object):
     """
     swagger_types = {
         'name': 'str',
+        'context': 'FixedReference',
         'target_type': 'str',
-        'context': 'Reference',
         'uri': 'str',
         'services': 'list[str]'
     }
 
     attribute_map = {
         'name': 'name',
-        'target_type': 'target_type',
         'context': 'context',
+        'target_type': 'target_type',
         'uri': 'uri',
         'services': 'services'
     }
@@ -51,25 +51,25 @@ class SyslogServer(object):
     def __init__(
         self,
         name=None,  # type: str
+        context=None,  # type: models.FixedReference
         target_type=None,  # type: str
-        context=None,  # type: models.Reference
         uri=None,  # type: str
         services=None,  # type: List[str]
     ):
         """
         Keyword args:
             name (str): A user-specified name. The name must be locally unique and cannot be changed.
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
             target_type (str): The type of log target. Valid values include `file`, and `syslog`.
-            context (Reference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
             uri (str): The URI of the syslog server in the format `PROTOCOL://HOSTNAME:PORT`.
             services (list[str]): Valid values are `data-audit` and `management`. If not specified, defaults to `management`.
         """
         if name is not None:
             self.name = name
-        if target_type is not None:
-            self.target_type = target_type
         if context is not None:
             self.context = context
+        if target_type is not None:
+            self.target_type = target_type
         if uri is not None:
             self.uri = uri
         if services is not None:

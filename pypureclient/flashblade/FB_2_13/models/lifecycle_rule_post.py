@@ -30,23 +30,23 @@ class LifecycleRulePost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'bucket': 'ReferenceWritable',
-        'keep_previous_version_for': 'int',
-        'prefix': 'str',
-        'rule_id': 'str',
         'abort_incomplete_multipart_uploads_after': 'int',
         'keep_current_version_for': 'int',
-        'keep_current_version_until': 'int'
+        'keep_current_version_until': 'int',
+        'bucket': 'ReferenceWritable',
+        'rule_id': 'str',
+        'keep_previous_version_for': 'int',
+        'prefix': 'str'
     }
 
     attribute_map = {
-        'bucket': 'bucket',
-        'keep_previous_version_for': 'keep_previous_version_for',
-        'prefix': 'prefix',
-        'rule_id': 'rule_id',
         'abort_incomplete_multipart_uploads_after': 'abort_incomplete_multipart_uploads_after',
         'keep_current_version_for': 'keep_current_version_for',
-        'keep_current_version_until': 'keep_current_version_until'
+        'keep_current_version_until': 'keep_current_version_until',
+        'bucket': 'bucket',
+        'rule_id': 'rule_id',
+        'keep_previous_version_for': 'keep_previous_version_for',
+        'prefix': 'prefix'
     }
 
     required_args = {
@@ -54,38 +54,38 @@ class LifecycleRulePost(object):
 
     def __init__(
         self,
-        bucket=None,  # type: models.ReferenceWritable
-        keep_previous_version_for=None,  # type: int
-        prefix=None,  # type: str
-        rule_id=None,  # type: str
         abort_incomplete_multipart_uploads_after=None,  # type: int
         keep_current_version_for=None,  # type: int
         keep_current_version_until=None,  # type: int
+        bucket=None,  # type: models.ReferenceWritable
+        rule_id=None,  # type: str
+        keep_previous_version_for=None,  # type: int
+        prefix=None,  # type: str
     ):
         """
         Keyword args:
-            bucket (ReferenceWritable): The bucket name for lifecycle rule creation.
-            keep_previous_version_for (int): Time after which previous versions will be marked expired. Measured in milliseconds. Must be a multiple of 86400000 to represent a whole number of days.
-            prefix (str): Object key prefix identifying one or more objects in the bucket. Can have a maximum length of 1024 characters.
-            rule_id (str): Identifier for the rule that is unique to the bucket that it applies to. Can have a maximum length of 255 characters. If not specified, an id unique to the bucket will be generated in the format `fbRuleId<number>` where number increments, starting at 1.
             abort_incomplete_multipart_uploads_after (int): Duration of time after which incomplete multipart uploads will be aborted. Measured in milliseconds. Must be a multiple of 86400000 to represent a whole number of days.
             keep_current_version_for (int): Time after which current versions will be marked expired. Measured in milliseconds. Must be a multiple of 86400000 to represent a whole number of days.
             keep_current_version_until (int): Time after which current versions will be marked expired. Measured in milliseconds, time since epoch. Must be a valid date, accurate to day.
+            bucket (ReferenceWritable): The bucket name for lifecycle rule creation.
+            rule_id (str): Identifier for the rule that is unique to the bucket that it applies to. Can have a maximum length of 255 characters. If not specified, an id unique to the bucket will be generated in the format `fbRuleId<number>` where number increments, starting at 1.
+            keep_previous_version_for (int): Time after which previous versions will be marked expired. Measured in milliseconds. Must be a multiple of 86400000 to represent a whole number of days.
+            prefix (str): Object key prefix identifying one or more objects in the bucket. Can have a maximum length of 1024 characters.
         """
-        if bucket is not None:
-            self.bucket = bucket
-        if keep_previous_version_for is not None:
-            self.keep_previous_version_for = keep_previous_version_for
-        if prefix is not None:
-            self.prefix = prefix
-        if rule_id is not None:
-            self.rule_id = rule_id
         if abort_incomplete_multipart_uploads_after is not None:
             self.abort_incomplete_multipart_uploads_after = abort_incomplete_multipart_uploads_after
         if keep_current_version_for is not None:
             self.keep_current_version_for = keep_current_version_for
         if keep_current_version_until is not None:
             self.keep_current_version_until = keep_current_version_until
+        if bucket is not None:
+            self.bucket = bucket
+        if rule_id is not None:
+            self.rule_id = rule_id
+        if keep_previous_version_for is not None:
+            self.keep_previous_version_for = keep_previous_version_for
+        if prefix is not None:
+            self.prefix = prefix
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -32,8 +32,8 @@ class NetworkAccessPolicyRuleInPolicy(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
-        'client': 'str',
         'effect': 'str',
+        'client': 'str',
         'interfaces': 'list[str]',
         'policy': 'FixedReference',
         'policy_version': 'str',
@@ -43,8 +43,8 @@ class NetworkAccessPolicyRuleInPolicy(object):
     attribute_map = {
         'name': 'name',
         'id': 'id',
-        'client': 'client',
         'effect': 'effect',
+        'client': 'client',
         'interfaces': 'interfaces',
         'policy': 'policy',
         'policy_version': 'policy_version',
@@ -58,8 +58,8 @@ class NetworkAccessPolicyRuleInPolicy(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
-        client=None,  # type: str
         effect=None,  # type: str
+        client=None,  # type: str
         interfaces=None,  # type: List[str]
         policy=None,  # type: models.FixedReference
         policy_version=None,  # type: str
@@ -69,8 +69,8 @@ class NetworkAccessPolicyRuleInPolicy(object):
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
             id (str): A non-modifiable, globally unique ID chosen by the system.
-            client (str): Specifies the clients that will be permitted or denied access to the interface. Accepted notations include a single IP address, subnet in CIDR notation, or all clients (specified as `*`). The default value is `*` if not specified.
             effect (str): If set to `allow`, the specified client will be permitted to access the specified interfaces. If set to `deny`, the specified client will be denied access to them. Valid values include `allow` and `deny`.
+            client (str): Specifies the clients that will be permitted or denied access to the interface. Accepted notations include a single IP address, subnet in CIDR notation, or all clients (specified as `*`). The default value is `*` if not specified.
             interfaces (list[str]): Specifies which product interfaces this rule applies to, whether it is permitting or denying access. Valid values include `management-ssh`, `management-rest-api`, `management-web-ui`, `snmp`, and `local-network-superuser-password-access`.
             policy (FixedReference): The policy to which this rule belongs.
             policy_version (str): The policy's version. This can be used when updating the resource to ensure there aren't any updates to the policy since the resource was read.
@@ -80,10 +80,10 @@ class NetworkAccessPolicyRuleInPolicy(object):
             self.name = name
         if id is not None:
             self.id = id
-        if client is not None:
-            self.client = client
         if effect is not None:
             self.effect = effect
+        if client is not None:
+            self.client = client
         if interfaces is not None:
             self.interfaces = interfaces
         if policy is not None:
