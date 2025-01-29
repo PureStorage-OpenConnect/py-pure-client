@@ -31,26 +31,26 @@ class FileLock(object):
     """
     swagger_types = {
         'name': 'str',
-        'access_type': 'str',
         'client': 'FixedReferenceNoId',
-        'created_at': 'int',
-        'inode': 'int',
+        'source': 'FixedReference',
         'path': 'str',
-        'protocol': 'str',
+        'inode': 'int',
         'range': 'FileLockRange',
-        'source': 'FixedReference'
+        'created_at': 'int',
+        'access_type': 'str',
+        'protocol': 'str'
     }
 
     attribute_map = {
         'name': 'name',
-        'access_type': 'access_type',
         'client': 'client',
-        'created_at': 'created_at',
-        'inode': 'inode',
+        'source': 'source',
         'path': 'path',
-        'protocol': 'protocol',
+        'inode': 'inode',
         'range': 'range',
-        'source': 'source'
+        'created_at': 'created_at',
+        'access_type': 'access_type',
+        'protocol': 'protocol'
     }
 
     required_args = {
@@ -59,45 +59,45 @@ class FileLock(object):
     def __init__(
         self,
         name=None,  # type: str
-        access_type=None,  # type: str
         client=None,  # type: models.FixedReferenceNoId
-        created_at=None,  # type: int
-        inode=None,  # type: int
-        path=None,  # type: str
-        protocol=None,  # type: str
-        range=None,  # type: models.FileLockRange
         source=None,  # type: models.FixedReference
+        path=None,  # type: str
+        inode=None,  # type: int
+        range=None,  # type: models.FileLockRange
+        created_at=None,  # type: int
+        access_type=None,  # type: str
+        protocol=None,  # type: str
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            access_type (str): Type of access the lock provides. Valid values are `shared`, `exclusive` and `no-access`.
             client (FixedReferenceNoId): Reference to the file system client that holds the lock.
-            created_at (int): Creation timestamp of the lock. Measured in milliseconds since the UNIX epoch.
-            inode (int): The inode of the file where the lock is found relative to the specified `source`.
-            path (str): Path to the file where the lock is found relative to `source`. If it is longer than 1023 characters, it will be truncated and only the last 1023 characters will be returned. If multiple hard links exist to the file on which the lock is held, only one is returned. This field will be `null` if the path cannot be resolved.
-            protocol (str): The protocol utilized for obtaining and managing the lock. Valid values include `NLM`, `NFSv4.1` and `SMB`.
-            range (FileLockRange)
             source (FixedReference): Reference to location where the path/inode can be found.
+            path (str): Path to the file where the lock is found relative to `source`. If it is longer than 1023 characters, it will be truncated and only the last 1023 characters will be returned. If multiple hard links exist to the file on which the lock is held, only one is returned. This field will be `null` if the path cannot be resolved.
+            inode (int): The inode of the file where the lock is found relative to the specified `source`.
+            range (FileLockRange)
+            created_at (int): Creation timestamp of the lock. Measured in milliseconds since the UNIX epoch.
+            access_type (str): Type of access the lock provides. Valid values are `shared`, `exclusive` and `no-access`.
+            protocol (str): The protocol utilized for obtaining and managing the lock. Valid values include `NLM`, `NFSv4.1` and `SMB`.
         """
         if name is not None:
             self.name = name
-        if access_type is not None:
-            self.access_type = access_type
         if client is not None:
             self.client = client
-        if created_at is not None:
-            self.created_at = created_at
-        if inode is not None:
-            self.inode = inode
-        if path is not None:
-            self.path = path
-        if protocol is not None:
-            self.protocol = protocol
-        if range is not None:
-            self.range = range
         if source is not None:
             self.source = source
+        if path is not None:
+            self.path = path
+        if inode is not None:
+            self.inode = inode
+        if range is not None:
+            self.range = range
+        if created_at is not None:
+            self.created_at = created_at
+        if access_type is not None:
+            self.access_type = access_type
+        if protocol is not None:
+            self.protocol = protocol
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

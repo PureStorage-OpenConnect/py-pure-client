@@ -30,17 +30,17 @@ class FleetMember(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'fleet': 'FixedReferenceWithTypeAndLocation',
         'member': 'FixedReferenceWithTypeAndLocation',
         'status': 'str',
-        'status_details': 'str'
+        'status_details': 'str',
+        'fleet': 'FixedReferenceWithTypeAndLocation'
     }
 
     attribute_map = {
-        'fleet': 'fleet',
         'member': 'member',
         'status': 'status',
-        'status_details': 'status_details'
+        'status_details': 'status_details',
+        'fleet': 'fleet'
     }
 
     required_args = {
@@ -48,26 +48,26 @@ class FleetMember(object):
 
     def __init__(
         self,
-        fleet=None,  # type: models.FixedReferenceWithTypeAndLocation
         member=None,  # type: models.FixedReferenceWithTypeAndLocation
         status=None,  # type: str
         status_details=None,  # type: str
+        fleet=None,  # type: models.FixedReferenceWithTypeAndLocation
     ):
         """
         Keyword args:
-            fleet (FixedReferenceWithTypeAndLocation)
             member (FixedReferenceWithTypeAndLocation)
             status (str): Current fleet membership status Valid values are one of: `joining`, `joined`, or `removing` A status of `joining` indicates that the member is attempting to join the fleet. A status of `joined` indicates that the member has joined the fleet. A status of `removing` indicates that the member is being removed from the fleet.
             status_details (str): Describes the error, if any.
+            fleet (FixedReferenceWithTypeAndLocation)
         """
-        if fleet is not None:
-            self.fleet = fleet
         if member is not None:
             self.member = member
         if status is not None:
             self.status = status
         if status_details is not None:
             self.status_details = status_details
+        if fleet is not None:
+            self.fleet = fleet
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

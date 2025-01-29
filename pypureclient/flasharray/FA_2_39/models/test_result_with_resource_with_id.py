@@ -38,8 +38,8 @@ class TestResultWithResourceWithId(object):
         'result_details': 'str',
         'success': 'bool',
         'test_type': 'str',
-        'resource': 'FixedReference',
-        'context': 'Reference'
+        'context': 'FixedReference',
+        'resource': 'FixedReference'
     }
 
     attribute_map = {
@@ -51,8 +51,8 @@ class TestResultWithResourceWithId(object):
         'result_details': 'result_details',
         'success': 'success',
         'test_type': 'test_type',
-        'resource': 'resource',
-        'context': 'context'
+        'context': 'context',
+        'resource': 'resource'
     }
 
     required_args = {
@@ -68,8 +68,8 @@ class TestResultWithResourceWithId(object):
         result_details=None,  # type: str
         success=None,  # type: bool
         test_type=None,  # type: str
+        context=None,  # type: models.FixedReference
         resource=None,  # type: models.FixedReference
-        context=None,  # type: models.Reference
     ):
         """
         Keyword args:
@@ -81,8 +81,8 @@ class TestResultWithResourceWithId(object):
             result_details (str): Additional information about the test result.
             success (bool): Whether the object being tested passed the test or not. Returns a value of `true` if the specified test has succeeded. Returns a value of `false` if the specified test has failed.
             test_type (str): Displays the type of test being performed. The returned values are determined by the `resource` being tested and its configuration. Values include `array-admin-group-searching`, `binding`, `connecting`, `phonehome`, `phonehome-ping`, `remote-assist`, `rootdse-searching`, `read-only-group-searching`, `storage-admin-group-searching`, and `validate-ntp-configuration`.
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
             resource (FixedReference): A reference to the object being tested.
-            context (Reference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
         """
         if component_address is not None:
             self.component_address = component_address
@@ -100,10 +100,10 @@ class TestResultWithResourceWithId(object):
             self.success = success
         if test_type is not None:
             self.test_type = test_type
-        if resource is not None:
-            self.resource = resource
         if context is not None:
             self.context = context
+        if resource is not None:
+            self.resource = resource
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

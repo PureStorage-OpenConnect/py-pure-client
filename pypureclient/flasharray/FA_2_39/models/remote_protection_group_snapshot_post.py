@@ -32,27 +32,27 @@ class RemoteProtectionGroupSnapshotPost(object):
     swagger_types = {
         'id': 'str',
         'name': 'str',
+        'context': 'FixedReference',
         'created': 'int',
         'destroyed': 'bool',
         'is_local': 'bool',
         'remote': 'FixedReference',
         'source': 'FixedReference',
         'suffix': 'str',
-        'time_remaining': 'int',
-        'context': 'Reference'
+        'time_remaining': 'int'
     }
 
     attribute_map = {
         'id': 'id',
         'name': 'name',
+        'context': 'context',
         'created': 'created',
         'destroyed': 'destroyed',
         'is_local': 'is_local',
         'remote': 'remote',
         'source': 'source',
         'suffix': 'suffix',
-        'time_remaining': 'time_remaining',
-        'context': 'context'
+        'time_remaining': 'time_remaining'
     }
 
     required_args = {
@@ -62,6 +62,7 @@ class RemoteProtectionGroupSnapshotPost(object):
         self,
         id=None,  # type: str
         name=None,  # type: str
+        context=None,  # type: models.FixedReference
         created=None,  # type: int
         destroyed=None,  # type: bool
         is_local=None,  # type: bool
@@ -69,12 +70,12 @@ class RemoteProtectionGroupSnapshotPost(object):
         source=None,  # type: models.FixedReference
         suffix=None,  # type: str
         time_remaining=None,  # type: int
-        context=None,  # type: models.Reference
     ):
         """
         Keyword args:
             id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
             name (str): A locally unique, system-generated name. The name cannot be modified.
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
             created (int): The creation time of the snapshot on the original source of the snapshot. Measured in milliseconds since the UNIX epoch.
             destroyed (bool)
             is_local (bool): The status of whether or not the remote protection group snapshot is replicated from the current array.
@@ -82,12 +83,13 @@ class RemoteProtectionGroupSnapshotPost(object):
             source (FixedReference): The original protection group from which this snapshot was taken.
             suffix (str): Specifies a name suffix for the snapshots created. The snapshot is created on the FlashArray specified by the `on` parameter. The `on` parameter cannot refer to an offload target. Snapshots with suffixes specified have names in the form `PGROUP.SUFFIX` instead of the default `PGROUP.NNN` form. The names of all snapshots created by a single command that specifies this option have the same suffix.
             time_remaining (int): The time remaining until eradication, measured in milliseconds, if the snapshot has been destroyed.
-            context (Reference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
         """
         if id is not None:
             self.id = id
         if name is not None:
             self.name = name
+        if context is not None:
+            self.context = context
         if created is not None:
             self.created = created
         if destroyed is not None:
@@ -102,8 +104,6 @@ class RemoteProtectionGroupSnapshotPost(object):
             self.suffix = suffix
         if time_remaining is not None:
             self.time_remaining = time_remaining
-        if context is not None:
-            self.context = context
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

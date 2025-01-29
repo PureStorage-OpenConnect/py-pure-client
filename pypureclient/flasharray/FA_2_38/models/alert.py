@@ -32,6 +32,7 @@ class Alert(object):
     swagger_types = {
         'id': 'str',
         'name': 'str',
+        'context': 'FixedReference',
         'actual': 'str',
         'category': 'str',
         'closed': 'int',
@@ -48,13 +49,13 @@ class Alert(object):
         'severity': 'str',
         'state': 'str',
         'summary': 'str',
-        'updated': 'int',
-        'context': 'Reference'
+        'updated': 'int'
     }
 
     attribute_map = {
         'id': 'id',
         'name': 'name',
+        'context': 'context',
         'actual': 'actual',
         'category': 'category',
         'closed': 'closed',
@@ -71,8 +72,7 @@ class Alert(object):
         'severity': 'severity',
         'state': 'state',
         'summary': 'summary',
-        'updated': 'updated',
-        'context': 'context'
+        'updated': 'updated'
     }
 
     required_args = {
@@ -82,6 +82,7 @@ class Alert(object):
         self,
         id=None,  # type: str
         name=None,  # type: str
+        context=None,  # type: models.FixedReference
         actual=None,  # type: str
         category=None,  # type: str
         closed=None,  # type: int
@@ -99,12 +100,12 @@ class Alert(object):
         state=None,  # type: str
         summary=None,  # type: str
         updated=None,  # type: int
-        context=None,  # type: models.Reference
     ):
         """
         Keyword args:
             id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
             name (str): A locally unique, system-generated name. The name cannot be modified.
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
             actual (str): Actual condition at the time the alert is created.
             category (str): The category of the alert. Valid values include `array`, `hardware` and `software`.
             closed (int): The time the alert was closed in milliseconds since the UNIX epoch.
@@ -122,12 +123,13 @@ class Alert(object):
             state (str): The current state of the alert. Valid values include `open`, `closing`, and `closed`.
             summary (str): A summary of the alert.
             updated (int): The time the alert was last updated in milliseconds since the UNIX epoch.
-            context (Reference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
         """
         if id is not None:
             self.id = id
         if name is not None:
             self.name = name
+        if context is not None:
+            self.context = context
         if actual is not None:
             self.actual = actual
         if category is not None:
@@ -162,8 +164,6 @@ class Alert(object):
             self.summary = summary
         if updated is not None:
             self.updated = updated
-        if context is not None:
-            self.context = context
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

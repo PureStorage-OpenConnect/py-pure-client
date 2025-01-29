@@ -34,8 +34,8 @@ class ProtectionGroupSnapshotPatch(object):
         'created': 'int',
         'destroyed': 'bool',
         'pod': 'FixedReference',
-        'source': 'FixedReference',
         'space': 'Space',
+        'source': 'FixedReference',
         'suffix': 'str',
         'time_remaining': 'int',
         'eradication_config': 'ProtectionGroupEradicationConfig'
@@ -46,8 +46,8 @@ class ProtectionGroupSnapshotPatch(object):
         'created': 'created',
         'destroyed': 'destroyed',
         'pod': 'pod',
-        'source': 'source',
         'space': 'space',
+        'source': 'source',
         'suffix': 'suffix',
         'time_remaining': 'time_remaining',
         'eradication_config': 'eradication_config'
@@ -62,8 +62,8 @@ class ProtectionGroupSnapshotPatch(object):
         created=None,  # type: int
         destroyed=None,  # type: bool
         pod=None,  # type: models.FixedReference
-        source=None,  # type: models.FixedReference
         space=None,  # type: models.Space
+        source=None,  # type: models.FixedReference
         suffix=None,  # type: str
         time_remaining=None,  # type: int
         eradication_config=None,  # type: models.ProtectionGroupEradicationConfig
@@ -74,8 +74,8 @@ class ProtectionGroupSnapshotPatch(object):
             created (int): The snapshot creation time of the original snapshot source. Measured in milliseconds since the UNIX epoch.
             destroyed (bool): Returns a value of `true` if the protection group snapshot has been destroyed and is pending eradication. The `time_remaining` value displays the amount of time left until the destroyed snapshot is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed snapshot can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the snapshot is permanently eradicated and can no longer be recovered.
             pod (FixedReference): The pod in which the protection group of the protection group snapshot resides.
-            source (FixedReference): The original protection group from which this snapshot was taken. For a replicated protection group snapshot being viewed on the target side, the `source` is the replica protection group.
             space (Space): Returns provisioned size and physical storage consumption data for each protection group.
+            source (FixedReference): The original protection group from which this snapshot was taken. For a replicated protection group snapshot being viewed on the target side, the `source` is the replica protection group.
             suffix (str)
             time_remaining (int): The amount of time left until the destroyed snapshot is permanently eradicated. Measured in milliseconds. Before the `time_remaining` period has elapsed, the destroyed snapshot can be recovered by setting `destroyed=false`.
             eradication_config (ProtectionGroupEradicationConfig)
@@ -88,10 +88,10 @@ class ProtectionGroupSnapshotPatch(object):
             self.destroyed = destroyed
         if pod is not None:
             self.pod = pod
-        if source is not None:
-            self.source = source
         if space is not None:
             self.space = space
+        if source is not None:
+            self.source = source
         if suffix is not None:
             self.suffix = suffix
         if time_remaining is not None:

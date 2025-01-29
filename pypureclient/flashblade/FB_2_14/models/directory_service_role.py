@@ -30,18 +30,18 @@ class DirectoryServiceRole(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'role': 'ReferenceWritable',
+        'id': 'str',
         'group': 'str',
         'group_base': 'str',
-        'id': 'str',
-        'role': 'ReferenceWritable',
         'name': 'str'
     }
 
     attribute_map = {
+        'role': 'role',
+        'id': 'id',
         'group': 'group',
         'group_base': 'group_base',
-        'id': 'id',
-        'role': 'role',
         'name': 'name'
     }
 
@@ -50,28 +50,28 @@ class DirectoryServiceRole(object):
 
     def __init__(
         self,
+        role=None,  # type: models.ReferenceWritable
+        id=None,  # type: str
         group=None,  # type: str
         group_base=None,  # type: str
-        id=None,  # type: str
-        role=None,  # type: models.ReferenceWritable
         name=None,  # type: str
     ):
         """
         Keyword args:
+            role (ReferenceWritable): A reference to the role; can be any role that exists on the system.
+            id (str): A non-modifiable, globally unique ID chosen by the system.
             group (str): Common Name (CN) of the directory service group containing users with authority level of the specified role name.
             group_base (str): Specifies where the configured group is located in the directory tree.
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            role (ReferenceWritable): A reference to the role; can be any role that exists on the system.
             name (str): Name of the role mapping object.
         """
+        if role is not None:
+            self.role = role
+        if id is not None:
+            self.id = id
         if group is not None:
             self.group = group
         if group_base is not None:
             self.group_base = group_base
-        if id is not None:
-            self.id = id
-        if role is not None:
-            self.role = role
         if name is not None:
             self.name = name
 

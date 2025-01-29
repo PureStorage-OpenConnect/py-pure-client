@@ -34,8 +34,8 @@ class ArraySpace(object):
         'id': 'str',
         'capacity': 'int',
         'parity': 'float',
-        'space': 'Space',
-        'time': 'int'
+        'time': 'int',
+        'space': 'Space'
     }
 
     attribute_map = {
@@ -43,8 +43,8 @@ class ArraySpace(object):
         'id': 'id',
         'capacity': 'capacity',
         'parity': 'parity',
-        'space': 'space',
-        'time': 'time'
+        'time': 'time',
+        'space': 'space'
     }
 
     required_args = {
@@ -56,8 +56,8 @@ class ArraySpace(object):
         id=None,  # type: str
         capacity=None,  # type: int
         parity=None,  # type: float
-        space=None,  # type: models.Space
         time=None,  # type: int
+        space=None,  # type: models.Space
     ):
         """
         Keyword args:
@@ -65,8 +65,8 @@ class ArraySpace(object):
             id (str): A non-modifiable, globally unique ID chosen by the system.
             capacity (int): Usable capacity in bytes.
             parity (float): A representation of data redundancy on the array. Data redundancy is rebuilt automatically by the system whenever parity is less than 1.0.
-            space (Space)
             time (int): Sample time in milliseconds since UNIX epoch.
+            space (Space)
         """
         if name is not None:
             self.name = name
@@ -76,10 +76,10 @@ class ArraySpace(object):
             self.capacity = capacity
         if parity is not None:
             self.parity = parity
-        if space is not None:
-            self.space = space
         if time is not None:
             self.time = time
+        if space is not None:
+            self.space = space
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

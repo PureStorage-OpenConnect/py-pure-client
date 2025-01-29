@@ -32,16 +32,16 @@ class ObjectStoreUser(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
-        'access_keys': 'list[FixedReference]',
         'account': 'FixedReference',
+        'access_keys': 'list[FixedReference]',
         'created': 'int'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
-        'access_keys': 'access_keys',
         'account': 'account',
+        'access_keys': 'access_keys',
         'created': 'created'
     }
 
@@ -52,26 +52,26 @@ class ObjectStoreUser(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
-        access_keys=None,  # type: List[models.FixedReference]
         account=None,  # type: models.FixedReference
+        access_keys=None,  # type: List[models.FixedReference]
         created=None,  # type: int
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
             id (str): A non-modifiable, globally unique ID chosen by the system.
-            access_keys (list[FixedReference]): References of the user's access keys.
             account (FixedReference): Reference of the associated account.
+            access_keys (list[FixedReference]): References of the user's access keys.
             created (int): Creation timestamp of the object.
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
-        if access_keys is not None:
-            self.access_keys = access_keys
         if account is not None:
             self.account = account
+        if access_keys is not None:
+            self.access_keys = access_keys
         if created is not None:
             self.created = created
 

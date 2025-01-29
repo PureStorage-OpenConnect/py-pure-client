@@ -58,7 +58,7 @@ class ResourcePerformanceNoId(object):
         'writes_per_sec': 'int',
         'service_usec_per_read_op_cache_reduction': 'float',
         'name': 'str',
-        'context': 'Reference'
+        'context': 'FixedReference'
     }
 
     attribute_map = {
@@ -126,7 +126,7 @@ class ResourcePerformanceNoId(object):
         writes_per_sec=None,  # type: int
         service_usec_per_read_op_cache_reduction=None,  # type: float
         name=None,  # type: str
-        context=None,  # type: models.Reference
+        context=None,  # type: models.FixedReference
     ):
         """
         Keyword args:
@@ -158,7 +158,7 @@ class ResourcePerformanceNoId(object):
             writes_per_sec (int): The number of write requests processed per second.
             service_usec_per_read_op_cache_reduction (float): The percentage reduction in `service_usec_per_read_op` due to data cache hits. For example, a value of 0.25 indicates that the value of `service_usec_per_read_op` is 25&#37; lower than it would have been without any data cache hits.
             name (str): A user-specified name. The name must be locally unique and can be changed.
-            context (Reference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
         """
         if bytes_per_mirrored_write is not None:
             self.bytes_per_mirrored_write = bytes_per_mirrored_write

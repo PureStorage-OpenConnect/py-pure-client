@@ -30,15 +30,15 @@ class PolicyMemberClean(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'context': 'FixedReference',
         'member': 'FixedReferenceWithType',
-        'policy': 'FixedReferenceWithType',
-        'context': 'Reference'
+        'policy': 'FixedReferenceWithType'
     }
 
     attribute_map = {
+        'context': 'context',
         'member': 'member',
-        'policy': 'policy',
-        'context': 'context'
+        'policy': 'policy'
     }
 
     required_args = {
@@ -46,22 +46,22 @@ class PolicyMemberClean(object):
 
     def __init__(
         self,
+        context=None,  # type: models.FixedReference
         member=None,  # type: models.FixedReferenceWithType
         policy=None,  # type: models.FixedReferenceWithType
-        context=None,  # type: models.Reference
     ):
         """
         Keyword args:
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
             member (FixedReferenceWithType): Reference to the resource that the policy is applied to.
             policy (FixedReferenceWithType): Reference to the policy.
-            context (Reference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
         """
+        if context is not None:
+            self.context = context
         if member is not None:
             self.member = member
         if policy is not None:
             self.policy = policy
-        if context is not None:
-            self.context = context
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

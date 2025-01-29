@@ -32,21 +32,21 @@ class NetworkInterface(object):
     swagger_types = {
         'name': 'str',
         'enabled': 'bool',
-        'eth': 'NetworkInterfaceEth',
-        'fc': 'NetworkInterfaceFc',
         'interface_type': 'str',
         'services': 'list[str]',
-        'speed': 'int'
+        'speed': 'int',
+        'eth': 'NetworkInterfaceEth',
+        'fc': 'NetworkInterfaceFc'
     }
 
     attribute_map = {
         'name': 'name',
         'enabled': 'enabled',
-        'eth': 'eth',
-        'fc': 'fc',
         'interface_type': 'interface_type',
         'services': 'services',
-        'speed': 'speed'
+        'speed': 'speed',
+        'eth': 'eth',
+        'fc': 'fc'
     }
 
     required_args = {
@@ -56,36 +56,36 @@ class NetworkInterface(object):
         self,
         name=None,  # type: str
         enabled=None,  # type: bool
-        eth=None,  # type: models.NetworkInterfaceEth
-        fc=None,  # type: models.NetworkInterfaceFc
         interface_type=None,  # type: str
         services=None,  # type: List[str]
         speed=None,  # type: int
+        eth=None,  # type: models.NetworkInterfaceEth
+        fc=None,  # type: models.NetworkInterfaceFc
     ):
         """
         Keyword args:
             name (str): A locally unique, system-generated name. The name cannot be modified.
             enabled (bool): Returns a value of `true` if the specified network interface or Fibre Channel port is enabled. Returns a value of `false` if the specified network interface or Fibre Channel port is disabled.
-            eth (NetworkInterfaceEth)
-            fc (NetworkInterfaceFc)
             interface_type (str): The interface type. Valid values are `eth` and `fc`.
             services (list[str]): The services provided by the specified network interface or Fibre Channel port.
             speed (int): Configured speed of the specified network interface or Fibre Channel port (in Gb/s). Typically this is the maximum speed of the port or bond represented by the network interface.
+            eth (NetworkInterfaceEth)
+            fc (NetworkInterfaceFc)
         """
         if name is not None:
             self.name = name
         if enabled is not None:
             self.enabled = enabled
-        if eth is not None:
-            self.eth = eth
-        if fc is not None:
-            self.fc = fc
         if interface_type is not None:
             self.interface_type = interface_type
         if services is not None:
             self.services = services
         if speed is not None:
             self.speed = speed
+        if eth is not None:
+            self.eth = eth
+        if fc is not None:
+            self.fc = fc
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

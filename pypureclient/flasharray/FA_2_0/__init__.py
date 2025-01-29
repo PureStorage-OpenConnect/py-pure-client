@@ -13,14 +13,6 @@ from .models.connection_post import ConnectionPost
 from .models.destroyed_patch_post import DestroyedPatchPost
 from .models.fixed_reference import FixedReference
 from .models.fixed_reference_no_id import FixedReferenceNoId
-from .models.host import Host
-from .models.host_group import HostGroup
-from .models.host_group_patch import HostGroupPatch
-from .models.host_group_performance import HostGroupPerformance
-from .models.host_group_performance_by_array import HostGroupPerformanceByArray
-from .models.host_patch import HostPatch
-from .models.host_performance import HostPerformance
-from .models.host_performance_by_array import HostPerformanceByArray
 from .models.host_port_connectivity import HostPortConnectivity
 from .models.host_post import HostPost
 from .models.member import Member
@@ -33,26 +25,28 @@ from .models.reference import Reference
 from .models.reference_no_id import ReferenceNoId
 from .models.resource import Resource
 from .models.resource_no_id import ResourceNoId
-from .models.resource_performance import ResourcePerformance
-from .models.resource_performance_by_array import ResourcePerformanceByArray
-from .models.resource_performance_no_id import ResourcePerformanceNoId
-from .models.resource_performance_no_id_by_array import ResourcePerformanceNoIdByArray
-from .models.resource_space import ResourceSpace
 from .models.snapshot import Snapshot
 from .models.space import Space
 from .models.transfer import Transfer
 from .models.username import Username
-from .models.volume import Volume
+from .models.host import Host
+from .models.host_group import HostGroup
+from .models.host_group_patch import HostGroupPatch
+from .models.host_patch import HostPatch
+from .models.resource_performance import ResourcePerformance
+from .models.resource_performance_no_id import ResourcePerformanceNoId
+from .models.resource_space import ResourceSpace
 from .models.volume_common import VolumeCommon
 from .models.volume_patch import VolumePatch
 from .models.volume_performance import VolumePerformance
-from .models.volume_performance_by_array import VolumePerformanceByArray
 from .models.volume_post import VolumePost
 from .models.volume_snapshot import VolumeSnapshot
 from .models.volume_snapshot_patch import VolumeSnapshotPatch
 from .models.volume_snapshot_post import VolumeSnapshotPost
 from .models.volume_snapshot_transfer import VolumeSnapshotTransfer
-from .models.volume_space import VolumeSpace
+from .models.resource_performance_by_array import ResourcePerformanceByArray
+from .models.resource_performance_no_id_by_array import ResourcePerformanceNoIdByArray
+from .models.volume import Volume
 
 
 def add_properties(model):
@@ -68,14 +62,6 @@ CLASSES_TO_ADD_PROPS = [
     DestroyedPatchPost,
     FixedReference,
     FixedReferenceNoId,
-    Host,
-    HostGroup,
-    HostGroupPatch,
-    HostGroupPerformance,
-    HostGroupPerformanceByArray,
-    HostPatch,
-    HostPerformance,
-    HostPerformanceByArray,
     HostPortConnectivity,
     HostPost,
     Member,
@@ -88,26 +74,28 @@ CLASSES_TO_ADD_PROPS = [
     ReferenceNoId,
     Resource,
     ResourceNoId,
-    ResourcePerformance,
-    ResourcePerformanceByArray,
-    ResourcePerformanceNoId,
-    ResourcePerformanceNoIdByArray,
-    ResourceSpace,
     Snapshot,
     Space,
     Transfer,
     Username,
-    Volume,
+    Host,
+    HostGroup,
+    HostGroupPatch,
+    HostPatch,
+    ResourcePerformance,
+    ResourcePerformanceNoId,
+    ResourceSpace,
     VolumeCommon,
     VolumePatch,
     VolumePerformance,
-    VolumePerformanceByArray,
     VolumePost,
     VolumeSnapshot,
     VolumeSnapshotPatch,
     VolumeSnapshotPost,
     VolumeSnapshotTransfer,
-    VolumeSpace
+    ResourcePerformanceByArray,
+    ResourcePerformanceNoIdByArray,
+    Volume
 ]
 
 if os.environ.get('DOCS_GENERATION') is None:

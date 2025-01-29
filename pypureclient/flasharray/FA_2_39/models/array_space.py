@@ -32,21 +32,21 @@ class ArraySpace(object):
     swagger_types = {
         'id': 'str',
         'name': 'str',
+        'context': 'FixedReference',
         'capacity': 'int',
         'parity': 'float',
         'space': 'Space',
-        'time': 'int',
-        'context': 'Reference'
+        'time': 'int'
     }
 
     attribute_map = {
         'id': 'id',
         'name': 'name',
+        'context': 'context',
         'capacity': 'capacity',
         'parity': 'parity',
         'space': 'space',
-        'time': 'time',
-        'context': 'context'
+        'time': 'time'
     }
 
     required_args = {
@@ -56,26 +56,28 @@ class ArraySpace(object):
         self,
         id=None,  # type: str
         name=None,  # type: str
+        context=None,  # type: models.FixedReference
         capacity=None,  # type: int
         parity=None,  # type: float
         space=None,  # type: models.Space
         time=None,  # type: int
-        context=None,  # type: models.Reference
     ):
         """
         Keyword args:
             id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
             name (str): A locally unique, system-generated name. The name cannot be modified.
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
             capacity (int): The usable capacity in bytes.
             parity (float): A representation of data redundancy on the array. Data redundancy is rebuilt automatically by the system whenever parity is less than 1.0.
             space (Space)
             time (int)
-            context (Reference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
         """
         if id is not None:
             self.id = id
         if name is not None:
             self.name = name
+        if context is not None:
+            self.context = context
         if capacity is not None:
             self.capacity = capacity
         if parity is not None:
@@ -84,8 +86,6 @@ class ArraySpace(object):
             self.space = space
         if time is not None:
             self.time = time
-        if context is not None:
-            self.context = context
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -32,15 +32,15 @@ class RemotePod(object):
     swagger_types = {
         'id': 'str',
         'name': 'str',
-        'arrays': 'list[Resource]',
-        'context': 'Reference'
+        'context': 'FixedReference',
+        'arrays': 'list[Resource]'
     }
 
     attribute_map = {
         'id': 'id',
         'name': 'name',
-        'arrays': 'arrays',
-        'context': 'context'
+        'context': 'context',
+        'arrays': 'arrays'
     }
 
     required_args = {
@@ -50,24 +50,24 @@ class RemotePod(object):
         self,
         id=None,  # type: str
         name=None,  # type: str
+        context=None,  # type: models.FixedReference
         arrays=None,  # type: List[models.Resource]
-        context=None,  # type: models.Reference
     ):
         """
         Keyword args:
             id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
             name (str): A user-specified name. The name must be locally unique and can be changed.
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
             arrays (list[Resource])
-            context (Reference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
         """
         if id is not None:
             self.id = id
         if name is not None:
             self.name = name
-        if arrays is not None:
-            self.arrays = arrays
         if context is not None:
             self.context = context
+        if arrays is not None:
+            self.arrays = arrays
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

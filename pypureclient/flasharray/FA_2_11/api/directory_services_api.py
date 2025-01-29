@@ -87,8 +87,8 @@ class DirectoryServicesApi(object):
         if params.get('x_request_id') is None:
             params['x_request_id'] = str(uuid.uuid4())
 
-        if 'limit' in params and params['limit'] < 1:
-            raise ValueError("Invalid value for parameter `limit` when calling `api211_directory_services_get`, must be a value greater than or equal to `1`")
+        if 'limit' in params and params['limit'] < 0:
+            raise ValueError("Invalid value for parameter `limit` when calling `api211_directory_services_get`, must be a value greater than or equal to `0`")
         if 'offset' in params and params['offset'] < 0:
             raise ValueError("Invalid value for parameter `offset` when calling `api211_directory_services_get`, must be a value greater than or equal to `0`")
         collection_formats = {}
@@ -311,8 +311,8 @@ class DirectoryServicesApi(object):
         if params.get('x_request_id') is None:
             params['x_request_id'] = str(uuid.uuid4())
 
-        if 'limit' in params and params['limit'] < 1:
-            raise ValueError("Invalid value for parameter `limit` when calling `api211_directory_services_roles_get`, must be a value greater than or equal to `1`")
+        if 'limit' in params and params['limit'] < 0:
+            raise ValueError("Invalid value for parameter `limit` when calling `api211_directory_services_roles_get`, must be a value greater than or equal to `0`")
         if 'offset' in params and params['offset'] < 0:
             raise ValueError("Invalid value for parameter `offset` when calling `api211_directory_services_roles_get`, must be a value greater than or equal to `0`")
         collection_formats = {}
@@ -538,8 +538,8 @@ class DirectoryServicesApi(object):
         if names is None:
             raise TypeError("Missing the required parameter `names` when calling `api211_directory_services_test_get`")
 
-        if 'limit' in params and params['limit'] < 1:
-            raise ValueError("Invalid value for parameter `limit` when calling `api211_directory_services_test_get`, must be a value greater than or equal to `1`")
+        if 'limit' in params and params['limit'] < 0:
+            raise ValueError("Invalid value for parameter `limit` when calling `api211_directory_services_test_get`, must be a value greater than or equal to `0`")
         if 'offset' in params and params['offset'] < 0:
             raise ValueError("Invalid value for parameter `offset` when calling `api211_directory_services_test_get`, must be a value greater than or equal to `0`")
         collection_formats = {}

@@ -32,6 +32,7 @@ class Arrays(object):
     swagger_types = {
         'id': 'str',
         'name': 'str',
+        'context': 'FixedReference',
         'as_of': 'int',
         'banner': 'str',
         'capacity': 'int',
@@ -46,13 +47,13 @@ class Arrays(object):
         'scsi_timeout': 'int',
         'space': 'Space',
         'time_zone': 'str',
-        'version': 'str',
-        'context': 'Reference'
+        'version': 'str'
     }
 
     attribute_map = {
         'id': 'id',
         'name': 'name',
+        'context': 'context',
         'as_of': '_as_of',
         'banner': 'banner',
         'capacity': 'capacity',
@@ -67,8 +68,7 @@ class Arrays(object):
         'scsi_timeout': 'scsi_timeout',
         'space': 'space',
         'time_zone': 'time_zone',
-        'version': 'version',
-        'context': 'context'
+        'version': 'version'
     }
 
     required_args = {
@@ -78,6 +78,7 @@ class Arrays(object):
         self,
         id=None,  # type: str
         name=None,  # type: str
+        context=None,  # type: models.FixedReference
         as_of=None,  # type: int
         banner=None,  # type: str
         capacity=None,  # type: int
@@ -93,12 +94,12 @@ class Arrays(object):
         space=None,  # type: models.Space
         time_zone=None,  # type: str
         version=None,  # type: str
-        context=None,  # type: models.Reference
     ):
         """
         Keyword args:
             id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
             name (str): A user-specified name. The name must be locally unique and can be changed.
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
             as_of (int): The time in milliseconds since UNIX epoch.
             banner (str)
             capacity (int): The usable capacity in bytes. If the user does not have sufficient access, this field will return `null`.
@@ -114,12 +115,13 @@ class Arrays(object):
             space (Space)
             time_zone (str): The time zone of the array.
             version (str)
-            context (Reference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
         """
         if id is not None:
             self.id = id
         if name is not None:
             self.name = name
+        if context is not None:
+            self.context = context
         if as_of is not None:
             self.as_of = as_of
         if banner is not None:
@@ -150,8 +152,6 @@ class Arrays(object):
             self.time_zone = time_zone
         if version is not None:
             self.version = version
-        if context is not None:
-            self.context = context
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

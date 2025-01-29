@@ -36,7 +36,7 @@ class Port(object):
         'portal': 'str',
         'wwn': 'str',
         'failover': 'str',
-        'context': 'Reference'
+        'context': 'FixedReference'
     }
 
     attribute_map = {
@@ -60,7 +60,7 @@ class Port(object):
         portal=None,  # type: str
         wwn=None,  # type: str
         failover=None,  # type: str
-        context=None,  # type: models.Reference
+        context=None,  # type: models.FixedReference
     ):
         """
         Keyword args:
@@ -70,7 +70,7 @@ class Port(object):
             portal (str): IP and port number (or `null` if target is not iSCSI).
             wwn (str): Fibre Channel World Wide Name (or `null` if target is not Fibre Channel).
             failover (str): If the array port has failed over, returns the name of the port to which this port has failed over.
-            context (Reference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
         """
         if name is not None:
             self.name = name

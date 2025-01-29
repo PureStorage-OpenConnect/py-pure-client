@@ -31,9 +31,9 @@ class VolumeBatchPost(object):
     """
     swagger_types = {
         'destroyed': 'bool',
-        'priority_adjustment': 'PriorityAdjustment',
         'provisioned': 'int',
         'qos': 'Qos',
+        'priority_adjustment': 'PriorityAdjustment',
         'source': 'Reference',
         'subtype': 'str',
         'add_to_protection_groups': 'list[Reference]',
@@ -43,9 +43,9 @@ class VolumeBatchPost(object):
 
     attribute_map = {
         'destroyed': 'destroyed',
-        'priority_adjustment': 'priority_adjustment',
         'provisioned': 'provisioned',
         'qos': 'qos',
+        'priority_adjustment': 'priority_adjustment',
         'source': 'source',
         'subtype': 'subtype',
         'add_to_protection_groups': 'add_to_protection_groups',
@@ -59,9 +59,9 @@ class VolumeBatchPost(object):
     def __init__(
         self,
         destroyed=None,  # type: bool
-        priority_adjustment=None,  # type: models.PriorityAdjustment
         provisioned=None,  # type: int
         qos=None,  # type: models.Qos
+        priority_adjustment=None,  # type: models.PriorityAdjustment
         source=None,  # type: models.Reference
         subtype=None,  # type: str
         add_to_protection_groups=None,  # type: List[models.Reference]
@@ -71,9 +71,9 @@ class VolumeBatchPost(object):
         """
         Keyword args:
             destroyed (bool): If set to `true`, destroys a resource. Once set to `true`, the `time_remaining` value will display the amount of time left until the destroyed resource is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed resource can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the resource is permanently eradicated and can no longer be recovered.
-            priority_adjustment (PriorityAdjustment): Adjusts volume priority.
             provisioned (int): Sets the virtual size of the volume, measured in bytes.
             qos (Qos): Sets QoS limits.
+            priority_adjustment (PriorityAdjustment): Adjusts volume priority.
             source (Reference): The source volume of a volume copy.
             subtype (str): The type of volume. Valid values are `protocol_endpoint` and `regular`.
             add_to_protection_groups (list[Reference]): Specifies a list of protection group that will compose the initial protection for the volume.
@@ -82,12 +82,12 @@ class VolumeBatchPost(object):
         """
         if destroyed is not None:
             self.destroyed = destroyed
-        if priority_adjustment is not None:
-            self.priority_adjustment = priority_adjustment
         if provisioned is not None:
             self.provisioned = provisioned
         if qos is not None:
             self.qos = qos
+        if priority_adjustment is not None:
+            self.priority_adjustment = priority_adjustment
         if source is not None:
             self.source = source
         if subtype is not None:

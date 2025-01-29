@@ -30,29 +30,29 @@ class VirtualMachineVolumeSnapshot(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'created': 'int',
-        'destroyed': 'bool',
-        'id': 'str',
-        'name': 'str',
-        'recover_context': 'FixedReference',
-        'time_remaining': 'int',
         'vm_id': 'str',
         'vm_type': 'str',
+        'vvol_type': 'str',
         'vvol_name': 'str',
-        'vvol_type': 'str'
+        'id': 'str',
+        'name': 'str',
+        'created': 'int',
+        'destroyed': 'bool',
+        'time_remaining': 'int',
+        'recover_context': 'FixedReference'
     }
 
     attribute_map = {
-        'created': 'created',
-        'destroyed': 'destroyed',
-        'id': 'id',
-        'name': 'name',
-        'recover_context': 'recover_context',
-        'time_remaining': 'time_remaining',
         'vm_id': 'vm_id',
         'vm_type': 'vm_type',
+        'vvol_type': 'vvol_type',
         'vvol_name': 'vvol_name',
-        'vvol_type': 'vvol_type'
+        'id': 'id',
+        'name': 'name',
+        'created': 'created',
+        'destroyed': 'destroyed',
+        'time_remaining': 'time_remaining',
+        'recover_context': 'recover_context'
     }
 
     required_args = {
@@ -60,50 +60,50 @@ class VirtualMachineVolumeSnapshot(object):
 
     def __init__(
         self,
-        created=None,  # type: int
-        destroyed=None,  # type: bool
-        id=None,  # type: str
-        name=None,  # type: str
-        recover_context=None,  # type: models.FixedReference
-        time_remaining=None,  # type: int
         vm_id=None,  # type: str
         vm_type=None,  # type: str
-        vvol_name=None,  # type: str
         vvol_type=None,  # type: str
+        vvol_name=None,  # type: str
+        id=None,  # type: str
+        name=None,  # type: str
+        created=None,  # type: int
+        destroyed=None,  # type: bool
+        time_remaining=None,  # type: int
+        recover_context=None,  # type: models.FixedReference
     ):
         """
         Keyword args:
-            created (int): The virtual machine volume snapshot creation time measured in milliseconds since the UNIX epoch.
-            destroyed (bool): Returns a value of `true` if the virtual machine volume snapshot has been destroyed and is pending eradication.
-            id (str): A globally unique, system-generated ID. The ID cannot be modified.
-            name (str): The name of the virtual machine volume snapshot.
-            recover_context (FixedReference): A reference to any additional entities needed to recover this virtual machine.
-            time_remaining (int): Specifies the amount of time left until the destroyed volume snapshot is permanently eradicated, measured in milliseconds. Once the `time_remaining` period has elapsed, the volume snapshot is permanently eradicated and can no longer be recovered.
             vm_id (str): The ID of the virtual machine, as assigned by the external system.
             vm_type (str): The type of virtual machine. The only valid value is `vvol`.
-            vvol_name (str): The name of the virtual machine volume.
             vvol_type (str): The type of virtual machine volume. Values include `config` and `data`.
+            vvol_name (str): The name of the virtual machine volume.
+            id (str): A globally unique, system-generated ID. The ID cannot be modified.
+            name (str): The name of the virtual machine volume snapshot.
+            created (int): The virtual machine volume snapshot creation time measured in milliseconds since the UNIX epoch.
+            destroyed (bool): Returns a value of `true` if the virtual machine volume snapshot has been destroyed and is pending eradication.
+            time_remaining (int): Specifies the amount of time left until the destroyed volume snapshot is permanently eradicated, measured in milliseconds. Once the `time_remaining` period has elapsed, the volume snapshot is permanently eradicated and can no longer be recovered.
+            recover_context (FixedReference): A reference to any additional entities needed to recover this virtual machine.
         """
-        if created is not None:
-            self.created = created
-        if destroyed is not None:
-            self.destroyed = destroyed
-        if id is not None:
-            self.id = id
-        if name is not None:
-            self.name = name
-        if recover_context is not None:
-            self.recover_context = recover_context
-        if time_remaining is not None:
-            self.time_remaining = time_remaining
         if vm_id is not None:
             self.vm_id = vm_id
         if vm_type is not None:
             self.vm_type = vm_type
-        if vvol_name is not None:
-            self.vvol_name = vvol_name
         if vvol_type is not None:
             self.vvol_type = vvol_type
+        if vvol_name is not None:
+            self.vvol_name = vvol_name
+        if id is not None:
+            self.id = id
+        if name is not None:
+            self.name = name
+        if created is not None:
+            self.created = created
+        if destroyed is not None:
+            self.destroyed = destroyed
+        if time_remaining is not None:
+            self.time_remaining = time_remaining
+        if recover_context is not None:
+            self.recover_context = recover_context
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

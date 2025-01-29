@@ -30,17 +30,17 @@ class DirectoryServiceRolePost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'group': 'str',
-        'group_base': 'str',
+        'role': 'ReferenceNoId',
         'management_access_policies': 'list[ReferenceWithType]',
-        'role': 'ReferenceNoId'
+        'group': 'str',
+        'group_base': 'str'
     }
 
     attribute_map = {
-        'group': 'group',
-        'group_base': 'group_base',
+        'role': 'role',
         'management_access_policies': 'management_access_policies',
-        'role': 'role'
+        'group': 'group',
+        'group_base': 'group_base'
     }
 
     required_args = {
@@ -48,26 +48,26 @@ class DirectoryServiceRolePost(object):
 
     def __init__(
         self,
+        role=None,  # type: models.ReferenceNoId
+        management_access_policies=None,  # type: List[models.ReferenceWithType]
         group=None,  # type: str
         group_base=None,  # type: str
-        management_access_policies=None,  # type: List[models.ReferenceWithType]
-        role=None,  # type: models.ReferenceNoId
     ):
         """
         Keyword args:
+            role (ReferenceNoId): This field has been deprecated. Predecessor to management access policies. Can be set to the premade policy of the same name. Cannot be set with management_access_policies.
+            management_access_policies (list[ReferenceWithType]): List of management access policies to associate with the group.
             group (str): Group name that contains users with the abilities granted by the associated policies.
             group_base (str): Specifies where the configured group is located in the directory tree.
-            management_access_policies (list[ReferenceWithType]): List of management access policies to associate with the group.
-            role (ReferenceNoId): This field has been deprecated. Predecessor to management access policies. Can be set to the premade policy of the same name. Cannot be set with management_access_policies.
         """
+        if role is not None:
+            self.role = role
+        if management_access_policies is not None:
+            self.management_access_policies = management_access_policies
         if group is not None:
             self.group = group
         if group_base is not None:
             self.group_base = group_base
-        if management_access_policies is not None:
-            self.management_access_policies = management_access_policies
-        if role is not None:
-            self.role = role
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

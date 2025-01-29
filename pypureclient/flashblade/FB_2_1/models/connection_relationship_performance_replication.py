@@ -34,8 +34,8 @@ class ConnectionRelationshipPerformanceReplication(object):
         'periodic': 'ReplicationPerformance',
         'remote': 'FixedReferenceNoResourceType',
         'time': 'int',
-        'aggregate': 'ReplicationPerformance',
-        'continuous': 'ReplicationPerformance'
+        'continuous': 'ReplicationPerformance',
+        'aggregate': 'ReplicationPerformance'
     }
 
     attribute_map = {
@@ -43,8 +43,8 @@ class ConnectionRelationshipPerformanceReplication(object):
         'periodic': 'periodic',
         'remote': 'remote',
         'time': 'time',
-        'aggregate': 'aggregate',
-        'continuous': 'continuous'
+        'continuous': 'continuous',
+        'aggregate': 'aggregate'
     }
 
     required_args = {
@@ -56,8 +56,8 @@ class ConnectionRelationshipPerformanceReplication(object):
         periodic=None,  # type: models.ReplicationPerformance
         remote=None,  # type: models.FixedReferenceNoResourceType
         time=None,  # type: int
-        aggregate=None,  # type: models.ReplicationPerformance
         continuous=None,  # type: models.ReplicationPerformance
+        aggregate=None,  # type: models.ReplicationPerformance
     ):
         """
         Keyword args:
@@ -65,8 +65,8 @@ class ConnectionRelationshipPerformanceReplication(object):
             periodic (ReplicationPerformance): Total bytes transmitted or received per second for periodic replication. Periodic replication includes file system replication, which is snapshot based.
             remote (FixedReferenceNoResourceType): Reference to a remote array.
             time (int): Sample time in milliseconds since UNIX epoch.
-            aggregate (ReplicationPerformance): Total bytes transmitted or received per second for all types of replication.
             continuous (ReplicationPerformance): Total bytes transmitted or received per second for continuous replication. Continuous replication includes object replication.
+            aggregate (ReplicationPerformance): Total bytes transmitted or received per second for all types of replication.
         """
         if id is not None:
             self.id = id
@@ -76,10 +76,10 @@ class ConnectionRelationshipPerformanceReplication(object):
             self.remote = remote
         if time is not None:
             self.time = time
-        if aggregate is not None:
-            self.aggregate = aggregate
         if continuous is not None:
             self.continuous = continuous
+        if aggregate is not None:
+            self.aggregate = aggregate
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

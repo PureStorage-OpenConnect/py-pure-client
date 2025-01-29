@@ -38,9 +38,9 @@ class NfsExportPolicyRuleInPolicy(object):
         'atime': 'bool',
         'client': 'str',
         'fileid_32bit': 'bool',
-        'permission': 'str',
         'policy': 'FixedReference',
         'policy_version': 'str',
+        'permission': 'str',
         'secure': 'bool',
         'security': 'list[str]',
         'index': 'int'
@@ -55,9 +55,9 @@ class NfsExportPolicyRuleInPolicy(object):
         'atime': 'atime',
         'client': 'client',
         'fileid_32bit': 'fileid_32bit',
-        'permission': 'permission',
         'policy': 'policy',
         'policy_version': 'policy_version',
+        'permission': 'permission',
         'secure': 'secure',
         'security': 'security',
         'index': 'index'
@@ -76,9 +76,9 @@ class NfsExportPolicyRuleInPolicy(object):
         atime=None,  # type: bool
         client=None,  # type: str
         fileid_32bit=None,  # type: bool
-        permission=None,  # type: str
         policy=None,  # type: models.FixedReference
         policy_version=None,  # type: str
+        permission=None,  # type: str
         secure=None,  # type: bool
         security=None,  # type: List[str]
         index=None,  # type: int
@@ -93,9 +93,9 @@ class NfsExportPolicyRuleInPolicy(object):
             atime (bool): If `true`, after a read operation has occurred, the inode access time is updated only if any of the following conditions is true: the previous access time is less than the inode modify time, the previous access time is less than the inode change time, or the previous access time is more than 24 hours ago. If `false`, disables the update of inode access times after read operations. Defaults to `true`.
             client (str): Specifies the clients that will be permitted to access the export. Accepted notation is a single IP address, subnet in CIDR notation, netgroup, or anonymous (`*`). The default is `*` if not specified.
             fileid_32bit (bool): Whether the file id is 32 bits or not. Defaults to `false`.
-            permission (str): Specifies which read-write client access permissions are allowed for the export. Valid values are `rw` and `ro`. The default is `ro` if not specified.
             policy (FixedReference): The policy to which this rule belongs.
             policy_version (str): The policy's version. This can be used when updating the resource to ensure there aren't any updates to the policy since the resource was read.
+            permission (str): Specifies which read-write client access permissions are allowed for the export. Valid values are `rw` and `ro`. The default is `ro` if not specified.
             secure (bool): If `true`, prevents NFS access to client connections coming from non-reserved ports. Applies to NFSv3, NFSv4.1, and auxiliary protocols MOUNT and NLM. If `false`, allows NFS access to client connections coming from non-reserved ports. Applies to NFSv3, NFSv4.1, and auxiliary protocols MOUNT and NLM. The default is `false` if not specified.
             security (list[str]): The security flavors to use for accessing files on this mount point.  If the server does not support the requested flavor, the mount operation fails. If `sys`, trusts the client to specify user's identity. If `krb5`, provides cryptographic proof of a user's identity in each RPC request. This provides  strong verification of the identity of users accessing data on the server. Note that additional configuration besides adding this mount option is required in order to enable Kerberos security. If `krb5i`, adds integrity checking to krb5, to ensure the data has not been tampered with. If `krb5p`, adds integrity checking and encryption to krb5. This is the most secure setting, but it also involves the most performance overhead. The default is `sys` if not specified.
             index (int): The index within the policy. The `index` indicates the order the rules are evaluated.
@@ -116,12 +116,12 @@ class NfsExportPolicyRuleInPolicy(object):
             self.client = client
         if fileid_32bit is not None:
             self.fileid_32bit = fileid_32bit
-        if permission is not None:
-            self.permission = permission
         if policy is not None:
             self.policy = policy
         if policy_version is not None:
             self.policy_version = policy_version
+        if permission is not None:
+            self.permission = permission
         if secure is not None:
             self.secure = secure
         if security is not None:

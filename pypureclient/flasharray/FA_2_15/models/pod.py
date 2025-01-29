@@ -39,7 +39,7 @@ class Pod(object):
         'mediator': 'str',
         'mediator_version': 'str',
         'source': 'FixedReference',
-        'space': 'PodSpace',
+        'space': 'object',
         'time_remaining': 'int',
         'requested_promotion_state': 'str',
         'promotion_status': 'str',
@@ -83,7 +83,7 @@ class Pod(object):
         mediator=None,  # type: str
         mediator_version=None,  # type: str
         source=None,  # type: models.FixedReference
-        space=None,  # type: models.PodSpace
+        space=None,  # type: object
         time_remaining=None,  # type: int
         requested_promotion_state=None,  # type: str
         promotion_status=None,  # type: str
@@ -103,7 +103,7 @@ class Pod(object):
             mediator (str): The URL of the mediator for the pod. By default, the Pure1 Cloud Mediator (`purestorage`) serves as the mediator.
             mediator_version (str): The mediator version.
             source (FixedReference): The source pod from where data is cloned to create the new pod.
-            space (PodSpace)
+            space (object): Displays provisioned size and physical storage consumption information for the sum of all volumes connected to the specified host.
             time_remaining (int): The amount of time left until the destroyed pod is permanently eradicated. Measured in milliseconds. Before the `time_remaining` period has elapsed, the destroyed pod can be recovered by setting `destroyed=false`.
             requested_promotion_state (str): Valid values are `promoted` and `demoted`. Patch `requested_promotion_state` to `demoted` to demote the pod so that it can be used as a link target for continuous replication between pods. Demoted pods do not accept write requests, and a destroyed version of the pod with `undo-demote` appended to the pod name is created on the array with the state of the pod when it was in the promoted state. Patch `requested_promotion_state` to `promoted` to start the process of promoting the pod. The `promotion_status` indicates when the pod has been successfully promoted. Promoted pods stop incorporating replicated data from the source pod and start accepting write requests. The replication process does not stop as the source pod continues replicating data to the pod. The space consumed by the unique replicated data is tracked by the `space.journal` field of the pod.
             promotion_status (str): Current promotion status of a pod. Valid values are `promoted`, `demoted`, and `promoting`. The `promoted` status indicates that the pod has been promoted. The pod takes writes from hosts instead of incorporating replicated data. This is the default mode for a pod when it is created. The `demoted` status indicates that the pod has been demoted. The pod does not accept write requests and is ready to be used as a link target. The `promoting` status indicates that the pod is in an intermediate status between `demoted` and `promoted` while the promotion process is taking place.

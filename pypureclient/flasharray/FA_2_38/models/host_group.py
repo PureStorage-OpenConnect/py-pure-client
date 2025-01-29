@@ -31,24 +31,24 @@ class HostGroup(object):
     """
     swagger_types = {
         'name': 'str',
+        'context': 'FixedReference',
         'connection_count': 'int',
         'host_count': 'int',
         'is_local': 'bool',
         'space': 'Space',
         'destroyed': 'bool',
-        'time_remaining': 'int',
-        'context': 'Reference'
+        'time_remaining': 'int'
     }
 
     attribute_map = {
         'name': 'name',
+        'context': 'context',
         'connection_count': 'connection_count',
         'host_count': 'host_count',
         'is_local': 'is_local',
         'space': 'space',
         'destroyed': 'destroyed',
-        'time_remaining': 'time_remaining',
-        'context': 'context'
+        'time_remaining': 'time_remaining'
     }
 
     required_args = {
@@ -57,27 +57,29 @@ class HostGroup(object):
     def __init__(
         self,
         name=None,  # type: str
+        context=None,  # type: models.FixedReference
         connection_count=None,  # type: int
         host_count=None,  # type: int
         is_local=None,  # type: bool
         space=None,  # type: models.Space
         destroyed=None,  # type: bool
         time_remaining=None,  # type: int
-        context=None,  # type: models.Reference
     ):
         """
         Keyword args:
             name (str): A user-specified name. The name must be locally unique and can be changed.
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
             connection_count (int): The number of volumes connected to the host group.
             host_count (int): The number of hosts in the host group.
             is_local (bool): Returns a value of `true` if the host or host group belongs to the current array. Returns a value of `false` if the host or host group belongs to a remote array.
             space (Space): Displays provisioned (virtual) size and physical storage consumption information for the sum of all volumes connected to the specified host.
             destroyed (bool): Returns a value of `true` if the host group has been destroyed with its container realm and is pending eradication. The `time_remaining` value displays the amount of time left until the destroyed host group is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed host group will be recovered if its container realm is recovered. Once the `time_remaining` period has elapsed, the host group is permanently eradicated and can no longer be recovered.
             time_remaining (int): The amount of time left until the destroyed host group is permanently eradicated, measured in milliseconds.
-            context (Reference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
         """
         if name is not None:
             self.name = name
+        if context is not None:
+            self.context = context
         if connection_count is not None:
             self.connection_count = connection_count
         if host_count is not None:
@@ -90,8 +92,6 @@ class HostGroup(object):
             self.destroyed = destroyed
         if time_remaining is not None:
             self.time_remaining = time_remaining
-        if context is not None:
-            self.context = context
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

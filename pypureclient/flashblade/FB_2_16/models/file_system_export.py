@@ -36,10 +36,10 @@ class FileSystemExport(object):
         'export_name': 'str',
         'member': 'FixedReference',
         'policy': 'Reference',
-        'policy_type': 'str',
         'server': 'FixedReference',
         'share_policy': 'Reference',
-        'status': 'str'
+        'status': 'str',
+        'policy_type': 'str'
     }
 
     attribute_map = {
@@ -49,10 +49,10 @@ class FileSystemExport(object):
         'export_name': 'export_name',
         'member': 'member',
         'policy': 'policy',
-        'policy_type': 'policy_type',
         'server': 'server',
         'share_policy': 'share_policy',
-        'status': 'status'
+        'status': 'status',
+        'policy_type': 'policy_type'
     }
 
     required_args = {
@@ -66,10 +66,10 @@ class FileSystemExport(object):
         export_name=None,  # type: str
         member=None,  # type: models.FixedReference
         policy=None,  # type: models.Reference
-        policy_type=None,  # type: str
         server=None,  # type: models.FixedReference
         share_policy=None,  # type: models.Reference
         status=None,  # type: str
+        policy_type=None,  # type: str
     ):
         """
         Keyword args:
@@ -79,10 +79,10 @@ class FileSystemExport(object):
             export_name (str): The name of the export used by clients to mount the file system. Export names must be unique within the same protocol/server combination.
             member (FixedReference): Reference to the file system the policy is applied to.
             policy (Reference): Reference to the NFS export policy or SMB client policy.
-            policy_type (str): Policy type attached to the export. It is either SMB or NFS.
             server (FixedReference): Reference to the server the export will be visible on.
             share_policy (Reference): Reference to the SMB share policy (only used for SMB).
             status (str): Explains why `enabled` is `false`. Valid values include `policy_disabled` and `protocol_disabled`.
+            policy_type (str): Policy type attached to the export. It is either SMB or NFS.
         """
         if name is not None:
             self.name = name
@@ -96,14 +96,14 @@ class FileSystemExport(object):
             self.member = member
         if policy is not None:
             self.policy = policy
-        if policy_type is not None:
-            self.policy_type = policy_type
         if server is not None:
             self.server = server
         if share_policy is not None:
             self.share_policy = share_policy
         if status is not None:
             self.status = status
+        if policy_type is not None:
+            self.policy_type = policy_type
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

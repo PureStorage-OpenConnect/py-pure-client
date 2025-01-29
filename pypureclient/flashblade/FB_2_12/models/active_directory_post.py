@@ -30,8 +30,9 @@ class ActiveDirectoryPost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'computer_name': 'str',
         'directory_servers': 'list[str]',
+        'global_catalog_servers': 'list[str]',
+        'computer_name': 'str',
         'domain': 'str',
         'encryption_types': 'list[str]',
         'fqdns': 'list[str]',
@@ -39,13 +40,13 @@ class ActiveDirectoryPost(object):
         'kerberos_servers': 'list[str]',
         'password': 'str',
         'service_principal_names': 'list[str]',
-        'user': 'str',
-        'global_catalog_servers': 'list[str]'
+        'user': 'str'
     }
 
     attribute_map = {
-        'computer_name': 'computer_name',
         'directory_servers': 'directory_servers',
+        'global_catalog_servers': 'global_catalog_servers',
+        'computer_name': 'computer_name',
         'domain': 'domain',
         'encryption_types': 'encryption_types',
         'fqdns': 'fqdns',
@@ -53,8 +54,7 @@ class ActiveDirectoryPost(object):
         'kerberos_servers': 'kerberos_servers',
         'password': 'password',
         'service_principal_names': 'service_principal_names',
-        'user': 'user',
-        'global_catalog_servers': 'global_catalog_servers'
+        'user': 'user'
     }
 
     required_args = {
@@ -68,19 +68,20 @@ class ActiveDirectoryPost(object):
         domain,  # type: str
         password,  # type: str
         user,  # type: str
-        computer_name=None,  # type: str
         directory_servers=None,  # type: List[str]
+        global_catalog_servers=None,  # type: List[str]
+        computer_name=None,  # type: str
         encryption_types=None,  # type: List[str]
         fqdns=None,  # type: List[str]
         join_ou=None,  # type: str
         kerberos_servers=None,  # type: List[str]
         service_principal_names=None,  # type: List[str]
-        global_catalog_servers=None,  # type: List[str]
     ):
         """
         Keyword args:
+            directory_servers (list[str]): A list of directory servers that will be used for lookups related to user authorization. Accepted server formats are IP address and DNS name. All specified servers must be registered to the domain appropriately in the array's configured DNS and will only be communicated with over the secure LDAP (LDAPS) protocol. If not specified, servers are resolved for the domain in DNS. The specified list can have a maximum length of 5.
+            global_catalog_servers (list[str]): A list of global catalog servers that will be used for lookups related to user authorization. Accepted server formats are IP address and DNS name with optional @domain suffix. If the suffix is ommited, the joined domain is assumed. All specified servers must be registered to the domain appropriately in the array's configured DNS and will only be communicated with over the secure LDAP (LDAPS) protocol. The specified list can have a maximum length of 50.
             computer_name (str): The common name of the computer account to be created in the Active Directory domain. If not specified, defaults to the name of the Active Directory configuration.
-            directory_servers (list[str]): A list of directory servers that will be used for lookups related to user authorization. Accepted server formats are IP address and DNS name with optional @domain suffix. If the suffix is ommited, the joined domain is assumed. All specified servers must be registered to the domain appropriately in the array's configured DNS and will only be communicated with over the secure LDAP (LDAPS) protocol. The specified list can have a maximum length of 50.
             domain (str, required): The Active Directory domain to join.
             encryption_types (list[str]): The encryption types that will be supported for use by clients for Kerberos authentication. Defaults to `aes256-cts-hmac-sha1-96`. Valid values include `aes256-cts-hmac-sha1-96`, `aes128-cts-hmac-sha1-96`, and `arcfour-hmac`. Cannot be provided if using an existing machine account.
             fqdns (list[str]): A list of fully qualified domain names to use to register service principal names for the machine account. If specified, every service principal that is supported by the array will be registered for each fully qualified domain name specified. If neither `fqdns` nor `service_principal_names` is specified, the default `service_principal_names` are constructed using the `computer_name` and `domain` fields. Cannot be provided in combination with `service_principal_names`. Cannot be provided if using an existing machine account.
@@ -89,12 +90,13 @@ class ActiveDirectoryPost(object):
             password (str, required): The login password of the user with privileges to create the computer account in the domain. If using an existing computer account, the user must have privileges to read attributes from the computer account and reset the password on that account. This is not persisted on the array.
             service_principal_names (list[str]): A list of service principal names to register for the machine account, which can be used for the creation of keys for Kerberos authentication. If neither `service_principal_names` nor `fqdns` is specified, the default `service_principal_names` are constructed using the `computer_name` and `domain` fields. Cannot be provided in combination with `fqdns`. Cannot be provided if using an existing machine account.
             user (str, required): The login name of the user with privileges to create the computer account in the domain. If using an existing computer account, the user must have privileges to read attributes from the computer account and reset the password on that account. This is not persisted on the array.
-            global_catalog_servers (list[str]): A list of global catalog servers that will be used for lookups related to user authorization. Accepted server formats are IP address and DNS name with optional @domain suffix. If the suffix is ommited, the joined domain is assumed. All specified servers must be registered to the domain appropriately in the array's configured DNS and will only be communicated with over the secure LDAP (LDAPS) protocol. The specified list can have a maximum length of 50.
         """
-        if computer_name is not None:
-            self.computer_name = computer_name
         if directory_servers is not None:
             self.directory_servers = directory_servers
+        if global_catalog_servers is not None:
+            self.global_catalog_servers = global_catalog_servers
+        if computer_name is not None:
+            self.computer_name = computer_name
         self.domain = domain
         if encryption_types is not None:
             self.encryption_types = encryption_types
@@ -108,8 +110,6 @@ class ActiveDirectoryPost(object):
         if service_principal_names is not None:
             self.service_principal_names = service_principal_names
         self.user = user
-        if global_catalog_servers is not None:
-            self.global_catalog_servers = global_catalog_servers
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

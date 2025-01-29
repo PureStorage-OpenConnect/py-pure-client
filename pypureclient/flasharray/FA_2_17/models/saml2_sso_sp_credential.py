@@ -30,13 +30,13 @@ class Saml2SsoSpCredential(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'decryption_credential': 'ReferenceNoId',
-        'signing_credential': 'ReferenceNoId'
+        'signing_credential': 'ReferenceNoId',
+        'decryption_credential': 'ReferenceNoId'
     }
 
     attribute_map = {
-        'decryption_credential': 'decryption_credential',
-        'signing_credential': 'signing_credential'
+        'signing_credential': 'signing_credential',
+        'decryption_credential': 'decryption_credential'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class Saml2SsoSpCredential(object):
 
     def __init__(
         self,
-        decryption_credential=None,  # type: models.ReferenceNoId
         signing_credential=None,  # type: models.ReferenceNoId
+        decryption_credential=None,  # type: models.ReferenceNoId
     ):
         """
         Keyword args:
-            decryption_credential (ReferenceNoId): The credential used by the service provider to decrypt encrypted SAML assertions from the identity provider. The credential is managed by the `certificates` endpoint and `purecert` CLI commands.
             signing_credential (ReferenceNoId): The credential used by the service provider to sign SAML requests. The credential is managed by the `certificates` endpoint and `purecert` CLI commands.
+            decryption_credential (ReferenceNoId): The credential used by the service provider to decrypt encrypted SAML assertions from the identity provider. The credential is managed by the `certificates` endpoint and `purecert` CLI commands.
         """
-        if decryption_credential is not None:
-            self.decryption_credential = decryption_credential
         if signing_credential is not None:
             self.signing_credential = signing_credential
+        if decryption_credential is not None:
+            self.decryption_credential = decryption_credential
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

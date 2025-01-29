@@ -33,10 +33,10 @@ class AlertEvent(object):
         'name': 'str',
         'actual': 'str',
         'alert': 'FixedReference',
+        'created': 'int',
         'code': 'int',
         'component_name': 'str',
         'component_type': 'str',
-        'created': 'int',
         'expected': 'str',
         'issue': 'str',
         'knowledge_base_url': 'str',
@@ -50,10 +50,10 @@ class AlertEvent(object):
         'name': 'name',
         'actual': 'actual',
         'alert': 'alert',
+        'created': 'created',
         'code': 'code',
         'component_name': 'component_name',
         'component_type': 'component_type',
-        'created': 'created',
         'expected': 'expected',
         'issue': 'issue',
         'knowledge_base_url': 'knowledge_base_url',
@@ -71,10 +71,10 @@ class AlertEvent(object):
         name=None,  # type: str
         actual=None,  # type: str
         alert=None,  # type: models.FixedReference
+        created=None,  # type: int
         code=None,  # type: int
         component_name=None,  # type: str
         component_type=None,  # type: str
-        created=None,  # type: int
         expected=None,  # type: str
         issue=None,  # type: str
         knowledge_base_url=None,  # type: str
@@ -88,10 +88,10 @@ class AlertEvent(object):
             name (str): A locally unique, system-generated name. The name cannot be modified.
             actual (str): Actual condition at the time the alert is created.
             alert (FixedReference)
+            created (int): The time the parent alert was created.
             code (int): The parent alert number.
             component_name (str): The component type of the alert.
             component_type (str): The component name of the alert.
-            created (int): The time the parent alert was created.
             expected (str): Expected state and threshold under normal conditions.
             issue (str): Information about the alert cause.
             knowledge_base_url (str): The knowledge base URL of the alert.
@@ -106,14 +106,14 @@ class AlertEvent(object):
             self.actual = actual
         if alert is not None:
             self.alert = alert
+        if created is not None:
+            self.created = created
         if code is not None:
             self.code = code
         if component_name is not None:
             self.component_name = component_name
         if component_type is not None:
             self.component_type = component_type
-        if created is not None:
-            self.created = created
         if expected is not None:
             self.expected = expected
         if issue is not None:

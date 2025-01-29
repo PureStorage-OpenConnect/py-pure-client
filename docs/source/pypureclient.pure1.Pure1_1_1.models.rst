@@ -668,14 +668,6 @@ pypureclient.pure1.Pure1\_1\_1.models.pod module
    :undoc-members:
    :show-inheritance:
 
-pypureclient.pure1.Pure1\_1\_1.models.pod\_array\_status module
----------------------------------------------------------------
-
-.. automodule:: pypureclient.pure1.Pure1_1_1.models.pod_array_status
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 pypureclient.pure1.Pure1\_1\_1.models.pod\_get\_response module
 ---------------------------------------------------------------
 

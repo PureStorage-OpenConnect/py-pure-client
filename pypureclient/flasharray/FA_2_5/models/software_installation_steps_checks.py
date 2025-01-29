@@ -30,16 +30,16 @@ class SoftwareInstallationStepsChecks(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'details': 'str',
         'name': 'str',
         'overridable': 'bool',
+        'details': 'str',
         'status': 'str'
     }
 
     attribute_map = {
-        'details': 'details',
         'name': 'name',
         'overridable': 'overridable',
+        'details': 'details',
         'status': 'status'
     }
 
@@ -48,24 +48,24 @@ class SoftwareInstallationStepsChecks(object):
 
     def __init__(
         self,
-        details=None,  # type: str
         name=None,  # type: str
         overridable=None,  # type: bool
+        details=None,  # type: str
         status=None,  # type: str
     ):
         """
         Keyword args:
-            details (str): Detailed result of the check used to diagnose check failures.
             name (str): Name of the upgrade check.
             overridable (bool): Whether the check failure can be overridden.
+            details (str): Detailed result of the check used to diagnose check failures.
             status (str): Status of the check. Valid values are `running`, `failed`, `passed`, and `overridden`. A status of `running` indicates that the check has not finished. A status of `failed` indicates that the check has failed. A status of `passed` indicates that the check has passed. A status of `overridden` indicates that the check has failed, but the failure has been overridden.
         """
-        if details is not None:
-            self.details = details
         if name is not None:
             self.name = name
         if overridable is not None:
             self.overridable = overridable
+        if details is not None:
+            self.details = details
         if status is not None:
             self.status = status
 

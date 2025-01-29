@@ -30,8 +30,8 @@ class LocalUserPatch(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'email': 'str',
         'enabled': 'bool',
+        'email': 'str',
         'name': 'str',
         'password': 'str',
         'primary_group': 'ReferenceWithType',
@@ -39,8 +39,8 @@ class LocalUserPatch(object):
     }
 
     attribute_map = {
-        'email': 'email',
         'enabled': 'enabled',
+        'email': 'email',
         'name': 'name',
         'password': 'password',
         'primary_group': 'primary_group',
@@ -52,8 +52,8 @@ class LocalUserPatch(object):
 
     def __init__(
         self,
-        email=None,  # type: str
         enabled=None,  # type: bool
+        email=None,  # type: str
         name=None,  # type: str
         password=None,  # type: str
         primary_group=None,  # type: models.ReferenceWithType
@@ -61,17 +61,17 @@ class LocalUserPatch(object):
     ):
         """
         Keyword args:
-            email (str): Optional field to set the email of the local user.
             enabled (bool): If this field is `false`, the local user will be disabled on creation. Otherwise, the local user will be enabled and functional from the beginning.
+            email (str): Optional field to set the email of the local user.
             name (str): The local user name.
             password (str): The password of the local user. This field is only required if the `enabled` field is true.
             primary_group (ReferenceWithType): Local group that would be assigned as the primary group of the local user.
             uid (int): Optional field to set the UID of the local user.
         """
-        if email is not None:
-            self.email = email
         if enabled is not None:
             self.enabled = enabled
+        if email is not None:
+            self.email = email
         if name is not None:
             self.name = name
         if password is not None:

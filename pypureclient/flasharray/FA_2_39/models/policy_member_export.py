@@ -30,25 +30,25 @@ class PolicyMemberExport(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'context': 'FixedReference',
         'destroyed': 'bool',
         'enabled': 'bool',
         'member': 'FixedReferenceWithType',
         'policy': 'FixedReferenceWithType',
         'time_remaining': 'int',
         'export_name': 'str',
-        'status': 'str',
-        'context': 'Reference'
+        'status': 'str'
     }
 
     attribute_map = {
+        'context': 'context',
         'destroyed': 'destroyed',
         'enabled': 'enabled',
         'member': 'member',
         'policy': 'policy',
         'time_remaining': 'time_remaining',
         'export_name': 'export_name',
-        'status': 'status',
-        'context': 'context'
+        'status': 'status'
     }
 
     required_args = {
@@ -56,6 +56,7 @@ class PolicyMemberExport(object):
 
     def __init__(
         self,
+        context=None,  # type: models.FixedReference
         destroyed=None,  # type: bool
         enabled=None,  # type: bool
         member=None,  # type: models.FixedReferenceWithType
@@ -63,10 +64,10 @@ class PolicyMemberExport(object):
         time_remaining=None,  # type: int
         export_name=None,  # type: str
         status=None,  # type: str
-        context=None,  # type: models.Reference
     ):
         """
         Keyword args:
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
             destroyed (bool): Returns a value of `true` if the member is destroyed.
             enabled (bool): Returns a value of `true` if and only if the export policy that manages this export is enabled AND this export is enabled.
             member (FixedReferenceWithType): Reference to the resource that the policy is applied to.
@@ -74,8 +75,9 @@ class PolicyMemberExport(object):
             time_remaining (int): The amount of time left, in milliseconds, until the destroyed policy member is permanently eradicated.
             export_name (str): The export name for accessing this export.
             status (str): Explains why `enabled` is `false`, or whether there is a name conflict with another export. Valid values include `policy_disabled`, `export_disabled`, and `name_conflict`.
-            context (Reference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
         """
+        if context is not None:
+            self.context = context
         if destroyed is not None:
             self.destroyed = destroyed
         if enabled is not None:
@@ -90,8 +92,6 @@ class PolicyMemberExport(object):
             self.export_name = export_name
         if status is not None:
             self.status = status
-        if context is not None:
-            self.context = context
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

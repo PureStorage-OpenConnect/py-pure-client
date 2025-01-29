@@ -31,10 +31,10 @@ class HostPerformanceBalance(object):
     """
     swagger_types = {
         'name': 'str',
-        'context': 'Reference',
+        'context': 'FixedReference',
+        'op_count': 'int',
         'fraction_relative_to_max': 'float',
         'initiator': 'PortCommon',
-        'op_count': 'int',
         'target': 'PortInitiatorTarget',
         'time': 'int'
     }
@@ -42,9 +42,9 @@ class HostPerformanceBalance(object):
     attribute_map = {
         'name': 'name',
         'context': 'context',
+        'op_count': 'op_count',
         'fraction_relative_to_max': 'fraction_relative_to_max',
         'initiator': 'initiator',
-        'op_count': 'op_count',
         'target': 'target',
         'time': 'time'
     }
@@ -55,20 +55,20 @@ class HostPerformanceBalance(object):
     def __init__(
         self,
         name=None,  # type: str
-        context=None,  # type: models.Reference
+        context=None,  # type: models.FixedReference
+        op_count=None,  # type: int
         fraction_relative_to_max=None,  # type: float
         initiator=None,  # type: models.PortCommon
-        op_count=None,  # type: int
         target=None,  # type: models.PortInitiatorTarget
         time=None,  # type: int
     ):
         """
         Keyword args:
             name (str): A user-specified name. The name must be locally unique and can be changed.
-            context (Reference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
+            op_count (int): Count of I/O operations for the host path, over the specified resolution.
             fraction_relative_to_max (float): The path with the highest number of operation counts is displayed with a fraction_relative_to_max of 1.0. The fraction values of all other paths in the host are then calculated relative to the path with the highest number of operation counts.
             initiator (PortCommon)
-            op_count (int): Count of I/O operations for the host path, over the specified resolution.
             target (PortInitiatorTarget)
             time (int): Sample time in milliseconds since UNIX epoch.
         """
@@ -76,12 +76,12 @@ class HostPerformanceBalance(object):
             self.name = name
         if context is not None:
             self.context = context
+        if op_count is not None:
+            self.op_count = op_count
         if fraction_relative_to_max is not None:
             self.fraction_relative_to_max = fraction_relative_to_max
         if initiator is not None:
             self.initiator = initiator
-        if op_count is not None:
-            self.op_count = op_count
         if target is not None:
             self.target = target
         if time is not None:

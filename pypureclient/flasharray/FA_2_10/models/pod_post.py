@@ -32,15 +32,15 @@ class PodPost(object):
     swagger_types = {
         'id': 'str',
         'name': 'str',
-        'failover_preferences': 'list[Reference]',
-        'source': 'Reference'
+        'source': 'Reference',
+        'failover_preferences': 'list[Reference]'
     }
 
     attribute_map = {
         'id': 'id',
         'name': 'name',
-        'failover_preferences': 'failover_preferences',
-        'source': 'source'
+        'source': 'source',
+        'failover_preferences': 'failover_preferences'
     }
 
     required_args = {
@@ -50,24 +50,24 @@ class PodPost(object):
         self,
         id=None,  # type: str
         name=None,  # type: str
-        failover_preferences=None,  # type: List[models.Reference]
         source=None,  # type: models.Reference
+        failover_preferences=None,  # type: List[models.Reference]
     ):
         """
         Keyword args:
             id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
             name (str): A locally unique, system-generated name. The name cannot be modified.
-            failover_preferences (list[Reference]): Determines which array within a stretched pod should be given priority to stay online should the arrays ever lose contact with each other. The current array and any peer arrays that are connected to the current array for synchronous replication can be added to a pod for failover preference. By default, `failover_preferences=null`, meaning no arrays have been configured for failover preference. Enter multiple arrays in comma-separated format. To clear the list of failover preferences, set to an empty list `[]`.
             source (Reference): The source pod from where data is cloned to create the new pod.
+            failover_preferences (list[Reference]): Determines which array within a stretched pod should be given priority to stay online should the arrays ever lose contact with each other. The current array and any peer arrays that are connected to the current array for synchronous replication can be added to a pod for failover preference. By default, `failover_preferences=null`, meaning no arrays have been configured for failover preference. Enter multiple arrays in comma-separated format. To clear the list of failover preferences, set to an empty list `[]`.
         """
         if id is not None:
             self.id = id
         if name is not None:
             self.name = name
-        if failover_preferences is not None:
-            self.failover_preferences = failover_preferences
         if source is not None:
             self.source = source
+        if failover_preferences is not None:
+            self.failover_preferences = failover_preferences
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
