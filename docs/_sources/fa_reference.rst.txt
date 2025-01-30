@@ -200,6 +200,10 @@ FlashArray REST 2.38 Client
 FlashArray REST 2.39 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flasharray.FA_2_39.client.Client
+
+FlashArray REST 2.40 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flasharray.FA_2_40.client.Client
     :members:
 
 Properties
@@ -398,12 +402,6 @@ AppNode
 .. autoclass:: pypureclient.flasharray.AppNode
    :members:
 
-Array
-~~~~~
-
-.. autoclass:: pypureclient.flasharray.Array
-   :members:
-
 ArrayConnection
 ~~~~~~~~~~~~~~~
 
@@ -450,12 +448,6 @@ ArrayErasurePatch
 ~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.ArrayErasurePatch
-   :members:
-
-ArrayErasures
-~~~~~~~~~~~~~
-
-.. autoclass:: pypureclient.flasharray.ArrayErasures
    :members:
 
 ArrayFactoryResetToken
@@ -572,6 +564,36 @@ CloudCapacityStep
 .. autoclass:: pypureclient.flasharray.CloudCapacityStep
    :members:
 
+CloudConfig
+~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.CloudConfig
+   :members:
+
+CloudConfigModel
+~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.CloudConfigModel
+   :members:
+
+CloudConfigModelPatch
+~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.CloudConfigModelPatch
+   :members:
+
+CloudConfigPatch
+~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.CloudConfigPatch
+   :members:
+
+CloudConfigSupported
+~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.CloudConfigSupported
+   :members:
+
 CloudProviderTag
 ~~~~~~~~~~~~~~~~
 
@@ -624,12 +646,6 @@ Controller
 ~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.Controller
-   :members:
-
-Controllers
-~~~~~~~~~~~
-
-.. autoclass:: pypureclient.flasharray.Controllers
    :members:
 
 DefaultProtectionReference
@@ -750,12 +766,6 @@ DirectorySnapshotPost
 ~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.DirectorySnapshotPost
-   :members:
-
-DirectorySpace
-~~~~~~~~~~~~~~
-
-.. autoclass:: pypureclient.flasharray.DirectorySpace
    :members:
 
 DirectorypolicyexportpostPolicies
@@ -944,28 +954,10 @@ HostGroupPatch
 .. autoclass:: pypureclient.flasharray.HostGroupPatch
    :members:
 
-HostGroupPerformance
-~~~~~~~~~~~~~~~~~~~~
-
-.. autoclass:: pypureclient.flasharray.HostGroupPerformance
-   :members:
-
-HostGroupPerformanceByArray
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. autoclass:: pypureclient.flasharray.HostGroupPerformanceByArray
-   :members:
-
 HostGroupPost
 ~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.HostGroupPost
-   :members:
-
-HostGroupSpace
-~~~~~~~~~~~~~~
-
-.. autoclass:: pypureclient.flasharray.HostGroupSpace
    :members:
 
 HostPatch
@@ -974,22 +966,10 @@ HostPatch
 .. autoclass:: pypureclient.flasharray.HostPatch
    :members:
 
-HostPerformance
-~~~~~~~~~~~~~~~
-
-.. autoclass:: pypureclient.flasharray.HostPerformance
-   :members:
-
 HostPerformanceBalance
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.HostPerformanceBalance
-   :members:
-
-HostPerformanceByArray
-~~~~~~~~~~~~~~~~~~~~~~
-
-.. autoclass:: pypureclient.flasharray.HostPerformanceByArray
    :members:
 
 HostPortConnectivity
@@ -1002,12 +982,6 @@ HostPost
 ~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.HostPost
-   :members:
-
-HostSpace
-~~~~~~~~~
-
-.. autoclass:: pypureclient.flasharray.HostSpace
    :members:
 
 Kmip
@@ -1262,12 +1236,6 @@ NetworkInterfacePerformanceFc
 .. autoclass:: pypureclient.flasharray.NetworkInterfacePerformanceFc
    :members:
 
-NetworkInterfacePortDetails
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. autoclass:: pypureclient.flasharray.NetworkInterfacePortDetails
-   :members:
-
 NetworkInterfacePortDetailsRxLos
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1508,22 +1476,10 @@ PodReplicaLinkLag
 .. autoclass:: pypureclient.flasharray.PodReplicaLinkLag
    :members:
 
-PodReplicaLinkMappingPolicy
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. autoclass:: pypureclient.flasharray.PodReplicaLinkMappingPolicy
-   :members:
-
 PodReplicaLinkPatch
 ~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.PodReplicaLinkPatch
-   :members:
-
-PodReplicaLinkPerformance
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. autoclass:: pypureclient.flasharray.PodReplicaLinkPerformance
    :members:
 
 PodReplicaLinkPerformanceReplication
@@ -1856,6 +1812,120 @@ PortInitiatorTarget
 .. autoclass:: pypureclient.flasharray.PortInitiatorTarget
    :members:
 
+PresetWorkload
+~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PresetWorkload
+   :members:
+
+PresetWorkloadBase
+~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PresetWorkloadBase
+   :members:
+
+PresetWorkloadConstraints
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PresetWorkloadConstraints
+   :members:
+
+PresetWorkloadConstraintsBoolean
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PresetWorkloadConstraintsBoolean
+   :members:
+
+PresetWorkloadConstraintsInteger
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PresetWorkloadConstraintsInteger
+   :members:
+
+PresetWorkloadConstraintsResourceReference
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PresetWorkloadConstraintsResourceReference
+   :members:
+
+PresetWorkloadConstraintsResourceReferenceAllowedValues
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PresetWorkloadConstraintsResourceReferenceAllowedValues
+   :members:
+
+PresetWorkloadConstraintsString
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PresetWorkloadConstraintsString
+   :members:
+
+PresetWorkloadMetadata
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PresetWorkloadMetadata
+   :members:
+
+PresetWorkloadParameter
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PresetWorkloadParameter
+   :members:
+
+PresetWorkloadPatch
+~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PresetWorkloadPatch
+   :members:
+
+PresetWorkloadPeriodicReplicationConfiguration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PresetWorkloadPeriodicReplicationConfiguration
+   :members:
+
+PresetWorkloadPlacementConfiguration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PresetWorkloadPlacementConfiguration
+   :members:
+
+PresetWorkloadPost
+~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PresetWorkloadPost
+   :members:
+
+PresetWorkloadQosConfiguration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PresetWorkloadQosConfiguration
+   :members:
+
+PresetWorkloadSnapshotConfiguration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PresetWorkloadSnapshotConfiguration
+   :members:
+
+PresetWorkloadSnapshotRule
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PresetWorkloadSnapshotRule
+   :members:
+
+PresetWorkloadVolumeConfiguration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PresetWorkloadVolumeConfiguration
+   :members:
+
+PresetWorkloadWorkloadTag
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.PresetWorkloadWorkloadTag
+   :members:
+
 PriorityAdjustment
 ~~~~~~~~~~~~~~~~~~
 
@@ -1884,12 +1954,6 @@ ProtectionGroupPerformanceArray
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.ProtectionGroupPerformanceArray
-   :members:
-
-ProtectionGroupPerformanceByArray
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. autoclass:: pypureclient.flasharray.ProtectionGroupPerformanceByArray
    :members:
 
 ProtectionGroupPost
@@ -1928,12 +1992,6 @@ ProtectionGroupSnapshotTransfer
 .. autoclass:: pypureclient.flasharray.ProtectionGroupSnapshotTransfer
    :members:
 
-ProtectionGroupSpace
-~~~~~~~~~~~~~~~~~~~~
-
-.. autoclass:: pypureclient.flasharray.ProtectionGroupSpace
-   :members:
-
 ProtectionGroupTarget
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -1944,6 +2002,12 @@ ProtectionGroupsVolumes
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.ProtectionGroupsVolumes
+   :members:
+
+ProtectionGroupsVolumesMember
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.ProtectionGroupsVolumesMember
    :members:
 
 ProtocolEndpoint
@@ -1970,22 +2034,10 @@ RealmPatch
 .. autoclass:: pypureclient.flasharray.RealmPatch
    :members:
 
-RealmPerformance
-~~~~~~~~~~~~~~~~
-
-.. autoclass:: pypureclient.flasharray.RealmPerformance
-   :members:
-
 RealmPost
 ~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.RealmPost
-   :members:
-
-RealmSpace
-~~~~~~~~~~
-
-.. autoclass:: pypureclient.flasharray.RealmSpace
    :members:
 
 Reference
@@ -2006,6 +2058,12 @@ ReferenceNoIdWithType
 .. autoclass:: pypureclient.flasharray.ReferenceNoIdWithType
    :members:
 
+ReferenceWithFixedType
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.ReferenceWithFixedType
+   :members:
+
 ReferenceWithType
 ~~~~~~~~~~~~~~~~~
 
@@ -2016,6 +2074,12 @@ RemoteArray
 ~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.RemoteArray
+   :members:
+
+RemoteArrayFleet
+~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.RemoteArrayFleet
    :members:
 
 RemotePod
@@ -2094,6 +2158,24 @@ Resource
 ~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.Resource
+   :members:
+
+ResourceAccess
+~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.ResourceAccess
+   :members:
+
+ResourceAccessStatus
+~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.ResourceAccessStatus
+   :members:
+
+ResourceAccessStatusCreatedBy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.ResourceAccessStatusCreatedBy
    :members:
 
 ResourceDirectorySpace
@@ -2324,12 +2406,6 @@ SoftwareCheck
 .. autoclass:: pypureclient.flasharray.SoftwareCheck
    :members:
 
-SoftwareChecks
-~~~~~~~~~~~~~~
-
-.. autoclass:: pypureclient.flasharray.SoftwareChecks
-   :members:
-
 SoftwareChecksChecks
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -2360,34 +2436,16 @@ SoftwareInstallationStep
 .. autoclass:: pypureclient.flasharray.SoftwareInstallationStep
    :members:
 
-SoftwareInstallationSteps
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. autoclass:: pypureclient.flasharray.SoftwareInstallationSteps
-   :members:
-
 SoftwareInstallationStepsChecks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.SoftwareInstallationStepsChecks
    :members:
 
-SoftwareInstallations
-~~~~~~~~~~~~~~~~~~~~~
-
-.. autoclass:: pypureclient.flasharray.SoftwareInstallations
-   :members:
-
 SoftwarePatch
 ~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.SoftwarePatch
-   :members:
-
-SoftwarePatches
-~~~~~~~~~~~~~~~
-
-.. autoclass:: pypureclient.flasharray.SoftwarePatches
    :members:
 
 SoftwarePost
@@ -2406,12 +2464,6 @@ SoftwareVersion
 ~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.SoftwareVersion
-   :members:
-
-SoftwareVersions
-~~~~~~~~~~~~~~~~
-
-.. autoclass:: pypureclient.flasharray.SoftwareVersions
    :members:
 
 Space
@@ -2714,12 +2766,6 @@ VolumeGroupPost
 .. autoclass:: pypureclient.flasharray.VolumeGroupPost
    :members:
 
-VolumeGroupSpace
-~~~~~~~~~~~~~~~~
-
-.. autoclass:: pypureclient.flasharray.VolumeGroupSpace
-   :members:
-
 VolumePatch
 ~~~~~~~~~~~
 
@@ -2732,16 +2778,16 @@ VolumePerformance
 .. autoclass:: pypureclient.flasharray.VolumePerformance
    :members:
 
-VolumePerformanceByArray
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. autoclass:: pypureclient.flasharray.VolumePerformanceByArray
-   :members:
-
 VolumePost
 ~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.VolumePost
+   :members:
+
+VolumePostBase
+~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.VolumePostBase
    :members:
 
 VolumeSnapshot
@@ -2778,6 +2824,126 @@ VolumeSpaceCommon
 ~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pypureclient.flasharray.VolumeSpaceCommon
+   :members:
+
+Workload
+~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.Workload
+   :members:
+
+WorkloadConfigurationFixedReference
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.WorkloadConfigurationFixedReference
+   :members:
+
+WorkloadConfigurationFixedReferenceWorkload
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.WorkloadConfigurationFixedReferenceWorkload
+   :members:
+
+WorkloadConfigurationReference
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.WorkloadConfigurationReference
+   :members:
+
+WorkloadParameter
+~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.WorkloadParameter
+   :members:
+
+WorkloadParameterValue
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.WorkloadParameterValue
+   :members:
+
+WorkloadParameterValueResourceReference
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.WorkloadParameterValueResourceReference
+   :members:
+
+WorkloadPatch
+~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.WorkloadPatch
+   :members:
+
+WorkloadPlacementRecommendation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.WorkloadPlacementRecommendation
+   :members:
+
+WorkloadPlacementRecommendationAdditionalConstraints
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.WorkloadPlacementRecommendationAdditionalConstraints
+   :members:
+
+WorkloadPlacementRecommendationPlacement
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.WorkloadPlacementRecommendationPlacement
+   :members:
+
+WorkloadPlacementRecommendationProjection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.WorkloadPlacementRecommendationProjection
+   :members:
+
+WorkloadPlacementRecommendationResourceReference
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.WorkloadPlacementRecommendationResourceReference
+   :members:
+
+WorkloadPlacementRecommendationResult
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.WorkloadPlacementRecommendationResult
+   :members:
+
+WorkloadPlacementRecommendationTarget
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.WorkloadPlacementRecommendationTarget
+   :members:
+
+WorkloadPlacementRecommendationTargetCapacityUsedProjections
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.WorkloadPlacementRecommendationTargetCapacityUsedProjections
+   :members:
+
+WorkloadPlacementRecommendationTargetLoadProjections
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.WorkloadPlacementRecommendationTargetLoadProjections
+   :members:
+
+WorkloadPlacementRecommendationWarning
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.WorkloadPlacementRecommendationWarning
+   :members:
+
+WorkloadPost
+~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.WorkloadPost
+   :members:
+
+WorkloadPreset
+~~~~~~~~~~~~~~
+
+.. autoclass:: pypureclient.flasharray.WorkloadPreset
    :members:
 
 model
