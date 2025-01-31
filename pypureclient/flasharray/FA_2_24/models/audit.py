@@ -34,10 +34,10 @@ class Audit(object):
         'name': 'str',
         'arguments': 'str',
         'command': 'str',
-        'origin': 'FixedReference',
         'subcommand': 'str',
         'time': 'int',
         'user': 'str',
+        'origin': 'FixedReference',
         'user_interface': 'str'
     }
 
@@ -46,10 +46,10 @@ class Audit(object):
         'name': 'name',
         'arguments': 'arguments',
         'command': 'command',
-        'origin': 'origin',
         'subcommand': 'subcommand',
         'time': 'time',
         'user': 'user',
+        'origin': 'origin',
         'user_interface': 'user_interface'
     }
 
@@ -62,10 +62,10 @@ class Audit(object):
         name=None,  # type: str
         arguments=None,  # type: str
         command=None,  # type: str
-        origin=None,  # type: models.FixedReference
         subcommand=None,  # type: str
         time=None,  # type: int
         user=None,  # type: str
+        origin=None,  # type: models.FixedReference
         user_interface=None,  # type: str
     ):
         """
@@ -74,10 +74,10 @@ class Audit(object):
             name (str): A locally unique, system-generated name. The name cannot be modified.
             arguments (str): The arguments provided to the command.
             command (str): The top level command that starts with the string \"pure\" as a convention.
-            origin (FixedReference): The array from which the command originated.
             subcommand (str): The `command` and `subcommand` combination determines which action the user attempted to perform.
             time (int): The time at which the command was run in milliseconds since the UNIX epoch.
             user (str): The user who ran the command.
+            origin (FixedReference): The array from which the command originated.
             user_interface (str): The user interface through which the user session event was performed. Valid values are `CLI`, `GUI`, and `REST`.
         """
         if id is not None:
@@ -88,14 +88,14 @@ class Audit(object):
             self.arguments = arguments
         if command is not None:
             self.command = command
-        if origin is not None:
-            self.origin = origin
         if subcommand is not None:
             self.subcommand = subcommand
         if time is not None:
             self.time = time
         if user is not None:
             self.user = user
+        if origin is not None:
+            self.origin = origin
         if user_interface is not None:
             self.user_interface = user_interface
 

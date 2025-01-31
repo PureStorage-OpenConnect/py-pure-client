@@ -30,22 +30,22 @@ class NetworkinterfacepatchEth(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'add_subinterfaces': 'list[FixedReferenceNoId]',
         'address': 'str',
         'gateway': 'str',
         'mtu': 'int',
         'netmask': 'str',
-        'remove_subinterfaces': 'list[FixedReferenceNoId]',
-        'subinterfaces': 'list[FixedReferenceNoId]',
+        'add_subinterfaces': 'list[ReferenceNoId]',
+        'remove_subinterfaces': 'list[ReferenceNoId]',
+        'subinterfaces': 'list[ReferenceNoId]',
         'subnet': 'ReferenceNoId'
     }
 
     attribute_map = {
-        'add_subinterfaces': 'add_subinterfaces',
         'address': 'address',
         'gateway': 'gateway',
         'mtu': 'mtu',
         'netmask': 'netmask',
+        'add_subinterfaces': 'add_subinterfaces',
         'remove_subinterfaces': 'remove_subinterfaces',
         'subinterfaces': 'subinterfaces',
         'subnet': 'subnet'
@@ -56,28 +56,26 @@ class NetworkinterfacepatchEth(object):
 
     def __init__(
         self,
-        add_subinterfaces=None,  # type: List[models.FixedReferenceNoId]
         address=None,  # type: str
         gateway=None,  # type: str
         mtu=None,  # type: int
         netmask=None,  # type: str
-        remove_subinterfaces=None,  # type: List[models.FixedReferenceNoId]
-        subinterfaces=None,  # type: List[models.FixedReferenceNoId]
+        add_subinterfaces=None,  # type: List[models.ReferenceNoId]
+        remove_subinterfaces=None,  # type: List[models.ReferenceNoId]
+        subinterfaces=None,  # type: List[models.ReferenceNoId]
         subnet=None,  # type: models.ReferenceNoId
     ):
         """
         Keyword args:
-            add_subinterfaces (list[FixedReferenceNoId]): Slave devices to be added to the specified bond interface.
             address (str): The IPv4 or IPv6 address to be associated with the specified network interface.
             gateway (str): The IPv4 or IPv6 address of the gateway through which the specified network interface is to communicate with the network.
             mtu (int): Maximum message transfer unit (packet) size for the network interface in bytes. MTU setting cannot exceed the MTU of the corresponding physical interface.
             netmask (str): Netmask of the specified network interface that, when combined with the address of the interface, determines the network address of the interface.
-            remove_subinterfaces (list[FixedReferenceNoId]): Slave devices to be removed from the specified bond interface.
-            subinterfaces (list[FixedReferenceNoId]): Slave devices to be added to the specified bond interface.
+            add_subinterfaces (list[ReferenceNoId]): Child devices to be added to the specified bond interface.
+            remove_subinterfaces (list[ReferenceNoId]): Child devices to be removed from the specified bond interface.
+            subinterfaces (list[ReferenceNoId]): Child devices to be added to the specified bond interface.
             subnet (ReferenceNoId): Subnet that is associated with the specified network interface.
         """
-        if add_subinterfaces is not None:
-            self.add_subinterfaces = add_subinterfaces
         if address is not None:
             self.address = address
         if gateway is not None:
@@ -86,6 +84,8 @@ class NetworkinterfacepatchEth(object):
             self.mtu = mtu
         if netmask is not None:
             self.netmask = netmask
+        if add_subinterfaces is not None:
+            self.add_subinterfaces = add_subinterfaces
         if remove_subinterfaces is not None:
             self.remove_subinterfaces = remove_subinterfaces
         if subinterfaces is not None:

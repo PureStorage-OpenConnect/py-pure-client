@@ -30,19 +30,19 @@ class ContainerDefaultProtection(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'context': 'FixedReference',
         'id': 'str',
         'name': 'str',
         'type': 'str',
-        'default_protections': 'list[DefaultProtectionReference]',
-        'context': 'Reference'
+        'default_protections': 'list[DefaultProtectionReference]'
     }
 
     attribute_map = {
+        'context': 'context',
         'id': 'id',
         'name': 'name',
         'type': 'type',
-        'default_protections': 'default_protections',
-        'context': 'context'
+        'default_protections': 'default_protections'
     }
 
     required_args = {
@@ -50,20 +50,22 @@ class ContainerDefaultProtection(object):
 
     def __init__(
         self,
+        context=None,  # type: models.FixedReference
         id=None,  # type: str
         name=None,  # type: str
         type=None,  # type: str
         default_protections=None,  # type: List[models.DefaultProtectionReference]
-        context=None,  # type: models.Reference
     ):
         """
         Keyword args:
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
             id (str): The id of an administrative domain, a data container, and a namespace for volumes and protection groups. Values can be `pod id` or `null`. `Null` represents the local array id.
             name (str): The name of an administrative domain, a data container, and a namespace for volumes and protection groups. Values can be `pod name` or `null`. `null` represents the local array name.
             type (str): The type of an administrative domain, a data container, and a namespace for volumes and protection groups. Values can be `pod` or `null`. `null` represents the local array type.
             default_protections (list[DefaultProtectionReference]): The default protection that is applied to newly created volumes. Volumes can opt out of the default protection at creation. The pod's `default_protections` defaults to the array's `default_protections` at pod creation. To clear the list of default protections, set to an empty list `[]`.
-            context (Reference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
         """
+        if context is not None:
+            self.context = context
         if id is not None:
             self.id = id
         if name is not None:
@@ -72,8 +74,6 @@ class ContainerDefaultProtection(object):
             self.type = type
         if default_protections is not None:
             self.default_protections = default_protections
-        if context is not None:
-            self.context = context
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

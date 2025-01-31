@@ -30,19 +30,19 @@ class VchostCertificate(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'certificate': 'ReferenceNoIdWithType',
-        'endpoints': 'list[str]',
         'id': 'str',
-        'is_local': 'bool',
-        'vchost': 'ReferenceWithType'
+        'certificate': 'ReferenceNoIdWithType',
+        'vchost': 'ReferenceWithType',
+        'endpoints': 'list[str]',
+        'is_local': 'bool'
     }
 
     attribute_map = {
-        'certificate': 'certificate',
-        'endpoints': 'endpoints',
         'id': 'id',
-        'is_local': 'is_local',
-        'vchost': 'vchost'
+        'certificate': 'certificate',
+        'vchost': 'vchost',
+        'endpoints': 'endpoints',
+        'is_local': 'is_local'
     }
 
     required_args = {
@@ -50,30 +50,30 @@ class VchostCertificate(object):
 
     def __init__(
         self,
-        certificate=None,  # type: models.ReferenceNoIdWithType
-        endpoints=None,  # type: List[str]
         id=None,  # type: str
-        is_local=None,  # type: bool
+        certificate=None,  # type: models.ReferenceNoIdWithType
         vchost=None,  # type: models.ReferenceWithType
+        endpoints=None,  # type: List[str]
+        is_local=None,  # type: bool
     ):
         """
         Keyword args:
-            certificate (ReferenceNoIdWithType): A reference to the certificate that will be presented to clients accessing the referenced `vchost` using any of the network addresses defined by `endpoints`.
-            endpoints (list[str]): The IPv4 or IPv6 addresses of the endpoints to configure for the vchost, over which the configured certificate will be presented.
             id (str): A globally unique, system-generated ID. The ID cannot be modified.
-            is_local (bool): Returns true if the vchost certificate is local to the array, and false otherwise.
+            certificate (ReferenceNoIdWithType): A reference to the certificate that will be presented to clients accessing the referenced `vchost` using any of the network addresses defined by `endpoints`.
             vchost (ReferenceWithType): The vchost by which the certificate is to be presented over the configured endpoints.
+            endpoints (list[str]): The IPv4 or IPv6 addresses of the endpoints to configure for the vchost, over which the configured certificate will be presented.
+            is_local (bool): Returns true if the vchost certificate is local to the array, and false otherwise.
         """
-        if certificate is not None:
-            self.certificate = certificate
-        if endpoints is not None:
-            self.endpoints = endpoints
         if id is not None:
             self.id = id
-        if is_local is not None:
-            self.is_local = is_local
+        if certificate is not None:
+            self.certificate = certificate
         if vchost is not None:
             self.vchost = vchost
+        if endpoints is not None:
+            self.endpoints = endpoints
+        if is_local is not None:
+            self.is_local = is_local
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

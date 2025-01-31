@@ -31,14 +31,14 @@ class VirtualMachinePost(object):
     """
     swagger_types = {
         'id': 'str',
-        'source': 'Reference',
-        'vm_type': 'str'
+        'vm_type': 'str',
+        'source': 'Reference'
     }
 
     attribute_map = {
         'id': 'id',
-        'source': 'source',
-        'vm_type': 'vm_type'
+        'vm_type': 'vm_type',
+        'source': 'source'
     }
 
     required_args = {
@@ -47,21 +47,21 @@ class VirtualMachinePost(object):
     def __init__(
         self,
         id=None,  # type: str
-        source=None,  # type: models.Reference
         vm_type=None,  # type: str
+        source=None,  # type: models.Reference
     ):
         """
         Keyword args:
             id (str): The ID of the virtual machine to recreate.
-            source (Reference): The protection group snapshot to recreate the virtual machine from.
             vm_type (str): The type of virtual machine. Currently, the only valid value is `vvol`.
+            source (Reference): The protection group snapshot to recreate the virtual machine from.
         """
         if id is not None:
             self.id = id
-        if source is not None:
-            self.source = source
         if vm_type is not None:
             self.vm_type = vm_type
+        if source is not None:
+            self.source = source
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

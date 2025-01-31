@@ -31,14 +31,14 @@ class NetworkInterfacePatch(object):
     """
     swagger_types = {
         'enabled': 'bool',
-        'eth': 'NetworkinterfacepatchEth',
-        'override_npiv_check': 'bool'
+        'override_npiv_check': 'bool',
+        'eth': 'NetworkinterfacepatchEth'
     }
 
     attribute_map = {
         'enabled': 'enabled',
-        'eth': 'eth',
-        'override_npiv_check': 'override_npiv_check'
+        'override_npiv_check': 'override_npiv_check',
+        'eth': 'eth'
     }
 
     required_args = {
@@ -47,21 +47,21 @@ class NetworkInterfacePatch(object):
     def __init__(
         self,
         enabled=None,  # type: bool
-        eth=None,  # type: models.NetworkinterfacepatchEth
         override_npiv_check=None,  # type: bool
+        eth=None,  # type: models.NetworkinterfacepatchEth
     ):
         """
         Keyword args:
             enabled (bool): Returns a value of `true` if the specified network interface or Fibre Channel port is enabled. Returns a value of `false` if the specified network interface or Fibre Channel port is disabled.
-            eth (NetworkinterfacepatchEth)
             override_npiv_check (bool): N-Port ID Virtualization (NPIV) requires a balanced configuration of Fibre Channel ports configured for SCSI on both controllers. Enabling or Disabling a Fibre Channel port configured for SCSI might cause the NPIV status to change from enabled to disabled or vice versa. Set this option to proceed with enabling or disabling the port.
+            eth (NetworkinterfacepatchEth)
         """
         if enabled is not None:
             self.enabled = enabled
-        if eth is not None:
-            self.eth = eth
         if override_npiv_check is not None:
             self.override_npiv_check = override_npiv_check
+        if eth is not None:
+            self.eth = eth
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -31,23 +31,23 @@ class PodPerformanceReplicationByArray(object):
     """
     swagger_types = {
         'continuous_bytes_per_sec': 'ReplicationPerformanceWithTotal',
-        'periodic_bytes_per_sec': 'ReplicationPerformanceWithTotal',
-        'pod': 'FixedReference',
         'resync_bytes_per_sec': 'ReplicationPerformanceWithTotal',
         'sync_bytes_per_sec': 'ReplicationPerformanceWithTotal',
-        'time': 'int',
+        'periodic_bytes_per_sec': 'ReplicationPerformanceWithTotal',
         'total_bytes_per_sec': 'int',
+        'pod': 'FixedReference',
+        'time': 'int',
         'array': 'Resource'
     }
 
     attribute_map = {
         'continuous_bytes_per_sec': 'continuous_bytes_per_sec',
-        'periodic_bytes_per_sec': 'periodic_bytes_per_sec',
-        'pod': 'pod',
         'resync_bytes_per_sec': 'resync_bytes_per_sec',
         'sync_bytes_per_sec': 'sync_bytes_per_sec',
-        'time': 'time',
+        'periodic_bytes_per_sec': 'periodic_bytes_per_sec',
         'total_bytes_per_sec': 'total_bytes_per_sec',
+        'pod': 'pod',
+        'time': 'time',
         'array': 'array'
     }
 
@@ -57,39 +57,39 @@ class PodPerformanceReplicationByArray(object):
     def __init__(
         self,
         continuous_bytes_per_sec=None,  # type: models.ReplicationPerformanceWithTotal
-        periodic_bytes_per_sec=None,  # type: models.ReplicationPerformanceWithTotal
-        pod=None,  # type: models.FixedReference
         resync_bytes_per_sec=None,  # type: models.ReplicationPerformanceWithTotal
         sync_bytes_per_sec=None,  # type: models.ReplicationPerformanceWithTotal
-        time=None,  # type: int
+        periodic_bytes_per_sec=None,  # type: models.ReplicationPerformanceWithTotal
         total_bytes_per_sec=None,  # type: int
+        pod=None,  # type: models.FixedReference
+        time=None,  # type: int
         array=None,  # type: models.Resource
     ):
         """
         Keyword args:
             continuous_bytes_per_sec (ReplicationPerformanceWithTotal): Total bytes transmitted or received per second for continuous replication. The continuous replication feature is used for disaster recovery on FlashArray and provides a recovery point objective (RPO) of significantly less than 30s.
-            periodic_bytes_per_sec (ReplicationPerformanceWithTotal): Total bytes transmitted or received per second for periodic replication.
-            pod (FixedReference): Reference to the pod that the performance data is associated with.
             resync_bytes_per_sec (ReplicationPerformanceWithTotal): Total bytes transmitted or received per second during resync replication. Resync replication is the mechanism to bring two arrays into sync. This may occur during an initial pod stretch, or, in case of outage, when two arrays reestablish connection. After the connection is restored, the array that was online starts replicating pod data to its peer array until the pod is once again in sync.
             sync_bytes_per_sec (ReplicationPerformanceWithTotal): Total bytes transmitted or received per second for synchronous replication.
-            time (int): Sample time in milliseconds since the UNIX epoch.
+            periodic_bytes_per_sec (ReplicationPerformanceWithTotal): Total bytes transmitted or received per second for periodic replication.
             total_bytes_per_sec (int): Total bytes transmitted and received per second for all types of replication.
+            pod (FixedReference): Reference to the pod that the performance data is associated with.
+            time (int): Sample time in milliseconds since the UNIX epoch.
             array (Resource): Array that shares this pod.
         """
         if continuous_bytes_per_sec is not None:
             self.continuous_bytes_per_sec = continuous_bytes_per_sec
-        if periodic_bytes_per_sec is not None:
-            self.periodic_bytes_per_sec = periodic_bytes_per_sec
-        if pod is not None:
-            self.pod = pod
         if resync_bytes_per_sec is not None:
             self.resync_bytes_per_sec = resync_bytes_per_sec
         if sync_bytes_per_sec is not None:
             self.sync_bytes_per_sec = sync_bytes_per_sec
-        if time is not None:
-            self.time = time
+        if periodic_bytes_per_sec is not None:
+            self.periodic_bytes_per_sec = periodic_bytes_per_sec
         if total_bytes_per_sec is not None:
             self.total_bytes_per_sec = total_bytes_per_sec
+        if pod is not None:
+            self.pod = pod
+        if time is not None:
+            self.time = time
         if array is not None:
             self.array = array
 

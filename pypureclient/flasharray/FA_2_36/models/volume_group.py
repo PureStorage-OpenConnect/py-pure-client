@@ -35,10 +35,10 @@ class VolumeGroup(object):
         'destroyed': 'bool',
         'qos': 'Qos',
         'priority_adjustment': 'PriorityAdjustment',
-        'space': 'Space',
         'time_remaining': 'int',
         'volume_count': 'int',
-        'pod': 'Reference'
+        'pod': 'Reference',
+        'space': 'Space'
     }
 
     attribute_map = {
@@ -47,10 +47,10 @@ class VolumeGroup(object):
         'destroyed': 'destroyed',
         'qos': 'qos',
         'priority_adjustment': 'priority_adjustment',
-        'space': 'space',
         'time_remaining': 'time_remaining',
         'volume_count': 'volume_count',
-        'pod': 'pod'
+        'pod': 'pod',
+        'space': 'space'
     }
 
     required_args = {
@@ -63,10 +63,10 @@ class VolumeGroup(object):
         destroyed=None,  # type: bool
         qos=None,  # type: models.Qos
         priority_adjustment=None,  # type: models.PriorityAdjustment
-        space=None,  # type: models.Space
         time_remaining=None,  # type: int
         volume_count=None,  # type: int
         pod=None,  # type: models.Reference
+        space=None,  # type: models.Space
     ):
         """
         Keyword args:
@@ -75,10 +75,10 @@ class VolumeGroup(object):
             destroyed (bool): Returns a value of `true` if the volume group has been destroyed and is pending eradication. Before the `time_remaining` period has elapsed, the destroyed volume group can be recovered by setting `destroyed=false`. After the `time_remaining` period has elapsed, the volume group is permanently eradicated and cannot be recovered.
             qos (Qos)
             priority_adjustment (PriorityAdjustment)
-            space (Space)
             time_remaining (int): The amount of time left until the destroyed volume group is permanently eradicated, measured in milliseconds.
             volume_count (int): The number of volumes in the volume group.
             pod (Reference): A reference to the pod.
+            space (Space)
         """
         if id is not None:
             self.id = id
@@ -90,14 +90,14 @@ class VolumeGroup(object):
             self.qos = qos
         if priority_adjustment is not None:
             self.priority_adjustment = priority_adjustment
-        if space is not None:
-            self.space = space
         if time_remaining is not None:
             self.time_remaining = time_remaining
         if volume_count is not None:
             self.volume_count = volume_count
         if pod is not None:
             self.pod = pod
+        if space is not None:
+            self.space = space
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

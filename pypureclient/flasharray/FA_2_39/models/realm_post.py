@@ -30,14 +30,14 @@ class RealmPost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'qos': 'ContainerQos',
         'quota_limit': 'int',
+        'qos': 'ContainerQos',
         'tags': 'list[NonCopyableTag]'
     }
 
     attribute_map = {
-        'qos': 'qos',
         'quota_limit': 'quota_limit',
+        'qos': 'qos',
         'tags': 'tags'
     }
 
@@ -46,20 +46,20 @@ class RealmPost(object):
 
     def __init__(
         self,
-        qos=None,  # type: models.ContainerQos
         quota_limit=None,  # type: int
+        qos=None,  # type: models.ContainerQos
         tags=None,  # type: List[models.NonCopyableTag]
     ):
         """
         Keyword args:
-            qos (ContainerQos): Sets QoS limits.
             quota_limit (int): The logical quota limit of the realm, measured in bytes. Must be a multiple of 512.
+            qos (ContainerQos): Sets QoS limits.
             tags (list[NonCopyableTag]): The list of tags to be upserted with the object.
         """
-        if qos is not None:
-            self.qos = qos
         if quota_limit is not None:
             self.quota_limit = quota_limit
+        if qos is not None:
+            self.qos = qos
         if tags is not None:
             self.tags = tags
 

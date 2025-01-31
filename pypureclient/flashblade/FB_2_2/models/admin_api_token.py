@@ -30,13 +30,13 @@ class AdminApiToken(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'admin': 'Reference',
-        'api_token': 'ApiToken'
+        'api_token': 'ApiToken',
+        'admin': 'Reference'
     }
 
     attribute_map = {
-        'admin': 'admin',
-        'api_token': 'api_token'
+        'api_token': 'api_token',
+        'admin': 'admin'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class AdminApiToken(object):
 
     def __init__(
         self,
-        admin=None,  # type: models.Reference
         api_token=None,  # type: models.ApiToken
+        admin=None,  # type: models.Reference
     ):
         """
         Keyword args:
-            admin (Reference): A reference to the admin to whom this token belongs.
             api_token (ApiToken)
+            admin (Reference): A reference to the admin to whom this token belongs.
         """
-        if admin is not None:
-            self.admin = admin
         if api_token is not None:
             self.api_token = api_token
+        if admin is not None:
+            self.admin = admin
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

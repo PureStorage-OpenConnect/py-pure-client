@@ -34,7 +34,7 @@ class ObjectStoreAccount(object):
         'id': 'str',
         'created': 'int',
         'object_count': 'int',
-        'space': 'SpaceExtended',
+        'space': 'object',
         'bucket_defaults': 'BucketDefaultsReadonly',
         'hard_limit_enabled': 'bool',
         'quota_limit': 'int'
@@ -60,7 +60,7 @@ class ObjectStoreAccount(object):
         id=None,  # type: str
         created=None,  # type: int
         object_count=None,  # type: int
-        space=None,  # type: models.SpaceExtended
+        space=None,  # type: object
         bucket_defaults=None,  # type: models.BucketDefaultsReadonly
         hard_limit_enabled=None,  # type: bool
         quota_limit=None,  # type: int
@@ -71,7 +71,7 @@ class ObjectStoreAccount(object):
             id (str): A non-modifiable, globally unique ID chosen by the system.
             created (int): Creation timestamp of the object.
             object_count (int): The count of objects within the account.
-            space (SpaceExtended): The space specification of the object store account.
+            space (object): The space specification of the object store account.
             bucket_defaults (BucketDefaultsReadonly): Default settings to be applied to newly created buckets associated with this account. Values here will be used in bucket creation requests which do not specify their own values for corresponding fields.
             hard_limit_enabled (bool): If set to `true`, the account's size, as defined by `quota_limit`, is used as a hard limit quota. If set to `false`, a hard limit quota will not be applied to the account, but soft quota alerts will still be sent if the account has a value set for `quota_limit`.
             quota_limit (int): The effective quota limit applied against the size of the account, displayed in bytes. If unset, the account is unlimited in size.

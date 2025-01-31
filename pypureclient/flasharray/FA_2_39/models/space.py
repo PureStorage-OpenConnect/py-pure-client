@@ -42,7 +42,12 @@ class Space(object):
         'virtual': 'int',
         'used_provisioned': 'int',
         'total_used': 'int',
-        'footprint': 'int'
+        'footprint': 'int',
+        'shared_effective': 'int',
+        'snapshots_effective': 'int',
+        'unique_effective': 'int',
+        'total_effective': 'int',
+        'replication': 'int'
     }
 
     attribute_map = {
@@ -58,7 +63,12 @@ class Space(object):
         'virtual': 'virtual',
         'used_provisioned': 'used_provisioned',
         'total_used': 'total_used',
-        'footprint': 'footprint'
+        'footprint': 'footprint',
+        'shared_effective': 'shared_effective',
+        'snapshots_effective': 'snapshots_effective',
+        'unique_effective': 'unique_effective',
+        'total_effective': 'total_effective',
+        'replication': 'replication'
     }
 
     required_args = {
@@ -79,6 +89,11 @@ class Space(object):
         used_provisioned=None,  # type: int
         total_used=None,  # type: int
         footprint=None,  # type: int
+        shared_effective=None,  # type: int
+        snapshots_effective=None,  # type: int
+        unique_effective=None,  # type: int
+        total_effective=None,  # type: int
+        replication=None,  # type: int
     ):
         """
         Keyword args:
@@ -95,6 +110,11 @@ class Space(object):
             used_provisioned (int): The amount of logical space a container has consumed, compared against the quota limit if the container has one configured. Used provisioned does not include destroyed objects inside the container. Used provisioned can include destroyed objects for a destroyed container and represents how much logical space it would take to recover the container.
             total_used (int): The total space contributed by customer data, measured in bytes.
             footprint (int): The maximum amount of physical space the container consumes on an array, ignoring any data shared outside the container, measured in bytes. On Evergreen//One arrays, this is the maximum amount of effective used space. The footprint metric is mostly used for capacity planning. This field will be null in non-container contexts.
+            shared_effective (int): This field has been deprecated. It will return `null`. Use the `shared` field in the future, as it contains the same information for Evergreen//One arrays.
+            snapshots_effective (int): This field has deprecated. It will return `null`. Use the `snapshots` field in the future, as it contains the same information for Evergreen//One arrays.
+            unique_effective (int): This field has been deprecated. It will return `null`. Use the `unique` field in the future, as it contains the same information for Evergreen//One arrays.
+            total_effective (int): This field has been deprecated. It will return `null`. PUse the `total_physical` field instead, as it contains the same information for Evergreen//One arrays.
+            replication (int): The sum of replication space consumed by all pods on this array.
         """
         if data_reduction is not None:
             self.data_reduction = data_reduction
@@ -122,6 +142,16 @@ class Space(object):
             self.total_used = total_used
         if footprint is not None:
             self.footprint = footprint
+        if shared_effective is not None:
+            self.shared_effective = shared_effective
+        if snapshots_effective is not None:
+            self.snapshots_effective = snapshots_effective
+        if unique_effective is not None:
+            self.unique_effective = unique_effective
+        if total_effective is not None:
+            self.total_effective = total_effective
+        if replication is not None:
+            self.replication = replication
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
@@ -161,6 +191,21 @@ class Space(object):
         if key == "footprint" and value is not None:
             if value < 0:
                 raise ValueError("Invalid value for `footprint`, must be a value greater than or equal to `0`")
+        if key == "shared_effective" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `shared_effective`, must be a value greater than or equal to `0`")
+        if key == "snapshots_effective" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `snapshots_effective`, must be a value greater than or equal to `0`")
+        if key == "unique_effective" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `unique_effective`, must be a value greater than or equal to `0`")
+        if key == "total_effective" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `total_effective`, must be a value greater than or equal to `0`")
+        if key == "replication" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `replication`, must be a value greater than or equal to `0`")
         self.__dict__[key] = value
 
     def __getattribute__(self, item):

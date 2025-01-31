@@ -30,25 +30,25 @@ class VirtualMachine(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'id': 'str',
+        'vm_id': 'str',
+        'name': 'str',
+        'vm_type': 'str',
         'created': 'int',
         'destroyed': 'bool',
-        'id': 'str',
-        'name': 'str',
-        'recover_context': 'FixedReference',
         'time_remaining': 'int',
-        'vm_id': 'str',
-        'vm_type': 'str'
+        'recover_context': 'FixedReference'
     }
 
     attribute_map = {
+        'id': 'id',
+        'vm_id': 'vm_id',
+        'name': 'name',
+        'vm_type': 'vm_type',
         'created': 'created',
         'destroyed': 'destroyed',
-        'id': 'id',
-        'name': 'name',
-        'recover_context': 'recover_context',
         'time_remaining': 'time_remaining',
-        'vm_id': 'vm_id',
-        'vm_type': 'vm_type'
+        'recover_context': 'recover_context'
     }
 
     required_args = {
@@ -56,42 +56,42 @@ class VirtualMachine(object):
 
     def __init__(
         self,
+        id=None,  # type: str
+        vm_id=None,  # type: str
+        name=None,  # type: str
+        vm_type=None,  # type: str
         created=None,  # type: int
         destroyed=None,  # type: bool
-        id=None,  # type: str
-        name=None,  # type: str
-        recover_context=None,  # type: models.FixedReference
         time_remaining=None,  # type: int
-        vm_id=None,  # type: str
-        vm_type=None,  # type: str
+        recover_context=None,  # type: models.FixedReference
     ):
         """
         Keyword args:
+            id (str): The ID of the virtual machine to create or modify, as assigned by the external system. `id` is deprecated. Use `vm_id` instead.
+            vm_id (str): The ID of the virtual machine, as assigned by the external system.
+            name (str): The name of the virtual machine, as assigned by the external system
+            vm_type (str): The type of virtual machine. The only valid value is `vvol`.
             created (int): The virtual machine creation time, measured in milliseconds since the UNIX epoch.
             destroyed (bool): Returns a value of `true` if the virtual machine has been destroyed and is pending eradication.
-            id (str): The ID of the virtual machine to create or modify, as assigned by the external system. `id` is deprecated. Use `vm_id` instead.
-            name (str): The name of the virtual machine, as assigned by the external system
-            recover_context (FixedReference): A reference to any additional entities needed to recover this virtual machine.
             time_remaining (int): The amount of time left until the destroyed volume is permanently eradicated, measured in milliseconds. Before the `time_remaining` period has elapsed, the destroyed volume can be recovered by setting `destroyed=false`.
-            vm_id (str): The ID of the virtual machine, as assigned by the external system.
-            vm_type (str): The type of virtual machine. The only valid value is `vvol`.
+            recover_context (FixedReference): A reference to any additional entities needed to recover this virtual machine.
         """
+        if id is not None:
+            self.id = id
+        if vm_id is not None:
+            self.vm_id = vm_id
+        if name is not None:
+            self.name = name
+        if vm_type is not None:
+            self.vm_type = vm_type
         if created is not None:
             self.created = created
         if destroyed is not None:
             self.destroyed = destroyed
-        if id is not None:
-            self.id = id
-        if name is not None:
-            self.name = name
-        if recover_context is not None:
-            self.recover_context = recover_context
         if time_remaining is not None:
             self.time_remaining = time_remaining
-        if vm_id is not None:
-            self.vm_id = vm_id
-        if vm_type is not None:
-            self.vm_type = vm_type
+        if recover_context is not None:
+            self.recover_context = recover_context
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

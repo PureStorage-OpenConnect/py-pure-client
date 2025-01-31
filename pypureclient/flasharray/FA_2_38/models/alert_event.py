@@ -31,38 +31,38 @@ class AlertEvent(object):
     """
     swagger_types = {
         'name': 'str',
+        'context': 'FixedReference',
         'actual': 'str',
         'alert': 'FixedReference',
+        'created': 'int',
         'code': 'int',
         'component_name': 'str',
         'component_type': 'str',
-        'created': 'int',
         'expected': 'str',
         'issue': 'str',
         'knowledge_base_url': 'str',
         'severity': 'str',
         'state': 'str',
         'summary': 'str',
-        'time': 'int',
-        'context': 'Reference'
+        'time': 'int'
     }
 
     attribute_map = {
         'name': 'name',
+        'context': 'context',
         'actual': 'actual',
         'alert': 'alert',
+        'created': 'created',
         'code': 'code',
         'component_name': 'component_name',
         'component_type': 'component_type',
-        'created': 'created',
         'expected': 'expected',
         'issue': 'issue',
         'knowledge_base_url': 'knowledge_base_url',
         'severity': 'severity',
         'state': 'state',
         'summary': 'summary',
-        'time': 'time',
-        'context': 'context'
+        'time': 'time'
     }
 
     required_args = {
@@ -71,12 +71,13 @@ class AlertEvent(object):
     def __init__(
         self,
         name=None,  # type: str
+        context=None,  # type: models.FixedReference
         actual=None,  # type: str
         alert=None,  # type: models.FixedReference
+        created=None,  # type: int
         code=None,  # type: int
         component_name=None,  # type: str
         component_type=None,  # type: str
-        created=None,  # type: int
         expected=None,  # type: str
         issue=None,  # type: str
         knowledge_base_url=None,  # type: str
@@ -84,17 +85,17 @@ class AlertEvent(object):
         state=None,  # type: str
         summary=None,  # type: str
         time=None,  # type: int
-        context=None,  # type: models.Reference
     ):
         """
         Keyword args:
             name (str): A locally unique, system-generated name. The name cannot be modified.
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
             actual (str): Actual condition at the time the alert is created.
             alert (FixedReference)
+            created (int): The time the parent alert was created.
             code (int): The parent alert number.
             component_name (str): The component type of the alert.
             component_type (str): The component name of the alert.
-            created (int): The time the parent alert was created.
             expected (str): Expected state and threshold under normal conditions.
             issue (str): Information about the alert cause.
             knowledge_base_url (str): The knowledge base URL of the alert.
@@ -102,22 +103,23 @@ class AlertEvent(object):
             state (str): The state of the alert. Valid values include `open`, `closing`, and `closed`.
             summary (str): A summary of the alert.
             time (int): The time the event occurred.
-            context (Reference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
         """
         if name is not None:
             self.name = name
+        if context is not None:
+            self.context = context
         if actual is not None:
             self.actual = actual
         if alert is not None:
             self.alert = alert
+        if created is not None:
+            self.created = created
         if code is not None:
             self.code = code
         if component_name is not None:
             self.component_name = component_name
         if component_type is not None:
             self.component_type = component_type
-        if created is not None:
-            self.created = created
         if expected is not None:
             self.expected = expected
         if issue is not None:
@@ -132,8 +134,6 @@ class AlertEvent(object):
             self.summary = summary
         if time is not None:
             self.time = time
-        if context is not None:
-            self.context = context
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

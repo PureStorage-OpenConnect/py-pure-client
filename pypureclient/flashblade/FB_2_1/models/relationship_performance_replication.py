@@ -33,16 +33,16 @@ class RelationshipPerformanceReplication(object):
         'id': 'str',
         'periodic': 'ReplicationPerformance',
         'time': 'int',
-        'aggregate': 'ReplicationPerformance',
-        'continuous': 'ReplicationPerformance'
+        'continuous': 'ReplicationPerformance',
+        'aggregate': 'ReplicationPerformance'
     }
 
     attribute_map = {
         'id': 'id',
         'periodic': 'periodic',
         'time': 'time',
-        'aggregate': 'aggregate',
-        'continuous': 'continuous'
+        'continuous': 'continuous',
+        'aggregate': 'aggregate'
     }
 
     required_args = {
@@ -53,16 +53,16 @@ class RelationshipPerformanceReplication(object):
         id=None,  # type: str
         periodic=None,  # type: models.ReplicationPerformance
         time=None,  # type: int
-        aggregate=None,  # type: models.ReplicationPerformance
         continuous=None,  # type: models.ReplicationPerformance
+        aggregate=None,  # type: models.ReplicationPerformance
     ):
         """
         Keyword args:
             id (str): A non-modifiable, globally unique ID chosen by the system.
             periodic (ReplicationPerformance): Total bytes transmitted or received per second for periodic replication. Periodic replication includes file system replication, which is snapshot based.
             time (int): Sample time in milliseconds since UNIX epoch.
-            aggregate (ReplicationPerformance): Total bytes transmitted or received per second for all types of replication.
             continuous (ReplicationPerformance): Total bytes transmitted or received per second for continuous replication. Continuous replication includes object replication.
+            aggregate (ReplicationPerformance): Total bytes transmitted or received per second for all types of replication.
         """
         if id is not None:
             self.id = id
@@ -70,10 +70,10 @@ class RelationshipPerformanceReplication(object):
             self.periodic = periodic
         if time is not None:
             self.time = time
-        if aggregate is not None:
-            self.aggregate = aggregate
         if continuous is not None:
             self.continuous = continuous
+        if aggregate is not None:
+            self.aggregate = aggregate
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

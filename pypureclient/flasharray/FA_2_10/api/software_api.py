@@ -83,8 +83,8 @@ class SoftwareApi(object):
         if params.get('x_request_id') is None:
             params['x_request_id'] = str(uuid.uuid4())
 
-        if 'limit' in params and params['limit'] < 1:
-            raise ValueError("Invalid value for parameter `limit` when calling `api210_software_bundle_get`, must be a value greater than or equal to `1`")
+        if 'limit' in params and params['limit'] < 0:
+            raise ValueError("Invalid value for parameter `limit` when calling `api210_software_bundle_get`, must be a value greater than or equal to `0`")
         if 'offset' in params and params['offset'] < 0:
             raise ValueError("Invalid value for parameter `offset` when calling `api210_software_bundle_get`, must be a value greater than or equal to `0`")
         collection_formats = {}
@@ -400,8 +400,8 @@ class SoftwareApi(object):
         if params.get('x_request_id') is None:
             params['x_request_id'] = str(uuid.uuid4())
 
-        if 'limit' in params and params['limit'] < 1:
-            raise ValueError("Invalid value for parameter `limit` when calling `api210_software_check_get`, must be a value greater than or equal to `1`")
+        if 'limit' in params and params['limit'] < 0:
+            raise ValueError("Invalid value for parameter `limit` when calling `api210_software_check_get`, must be a value greater than or equal to `0`")
         if 'offset' in params and params['offset'] < 0:
             raise ValueError("Invalid value for parameter `offset` when calling `api210_software_check_get`, must be a value greater than or equal to `0`")
         collection_formats = {}
@@ -637,8 +637,8 @@ class SoftwareApi(object):
         if params.get('x_request_id') is None:
             params['x_request_id'] = str(uuid.uuid4())
 
-        if 'limit' in params and params['limit'] < 1:
-            raise ValueError("Invalid value for parameter `limit` when calling `api210_software_get`, must be a value greater than or equal to `1`")
+        if 'limit' in params and params['limit'] < 0:
+            raise ValueError("Invalid value for parameter `limit` when calling `api210_software_get`, must be a value greater than or equal to `0`")
         if 'offset' in params and params['offset'] < 0:
             raise ValueError("Invalid value for parameter `offset` when calling `api210_software_get`, must be a value greater than or equal to `0`")
         collection_formats = {}
@@ -774,8 +774,8 @@ class SoftwareApi(object):
         if params.get('x_request_id') is None:
             params['x_request_id'] = str(uuid.uuid4())
 
-        if 'limit' in params and params['limit'] < 1:
-            raise ValueError("Invalid value for parameter `limit` when calling `api210_software_installation_steps_get`, must be a value greater than or equal to `1`")
+        if 'limit' in params and params['limit'] < 0:
+            raise ValueError("Invalid value for parameter `limit` when calling `api210_software_installation_steps_get`, must be a value greater than or equal to `0`")
         if 'offset' in params and params['offset'] < 0:
             raise ValueError("Invalid value for parameter `offset` when calling `api210_software_installation_steps_get`, must be a value greater than or equal to `0`")
         collection_formats = {}
@@ -918,8 +918,8 @@ class SoftwareApi(object):
         if params.get('x_request_id') is None:
             params['x_request_id'] = str(uuid.uuid4())
 
-        if 'limit' in params and params['limit'] < 1:
-            raise ValueError("Invalid value for parameter `limit` when calling `api210_software_installations_get`, must be a value greater than or equal to `1`")
+        if 'limit' in params and params['limit'] < 0:
+            raise ValueError("Invalid value for parameter `limit` when calling `api210_software_installations_get`, must be a value greater than or equal to `0`")
         if 'offset' in params and params['offset'] < 0:
             raise ValueError("Invalid value for parameter `offset` when calling `api210_software_installations_get`, must be a value greater than or equal to `0`")
         collection_formats = {}
@@ -1335,8 +1335,8 @@ class SoftwareApi(object):
         if params.get('x_request_id') is None:
             params['x_request_id'] = str(uuid.uuid4())
 
-        if 'limit' in params and params['limit'] < 1:
-            raise ValueError("Invalid value for parameter `limit` when calling `api210_software_versions_get`, must be a value greater than or equal to `1`")
+        if 'limit' in params and params['limit'] < 0:
+            raise ValueError("Invalid value for parameter `limit` when calling `api210_software_versions_get`, must be a value greater than or equal to `0`")
         if 'offset' in params and params['offset'] < 0:
             raise ValueError("Invalid value for parameter `offset` when calling `api210_software_versions_get`, must be a value greater than or equal to `0`")
         collection_formats = {}

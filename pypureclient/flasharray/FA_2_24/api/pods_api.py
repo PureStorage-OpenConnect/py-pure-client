@@ -219,8 +219,8 @@ class PodsApi(object):
         if params.get('x_request_id') is None:
             params['x_request_id'] = str(uuid.uuid4())
 
-        if 'limit' in params and params['limit'] < 1:
-            raise ValueError("Invalid value for parameter `limit` when calling `api224_pods_arrays_get`, must be a value greater than or equal to `1`")
+        if 'limit' in params and params['limit'] < 0:
+            raise ValueError("Invalid value for parameter `limit` when calling `api224_pods_arrays_get`, must be a value greater than or equal to `0`")
         if 'offset' in params and params['offset'] < 0:
             raise ValueError("Invalid value for parameter `offset` when calling `api224_pods_arrays_get`, must be a value greater than or equal to `0`")
         collection_formats = {}
@@ -576,8 +576,8 @@ class PodsApi(object):
         if params.get('x_request_id') is None:
             params['x_request_id'] = str(uuid.uuid4())
 
-        if 'limit' in params and params['limit'] < 1:
-            raise ValueError("Invalid value for parameter `limit` when calling `api224_pods_get`, must be a value greater than or equal to `1`")
+        if 'limit' in params and params['limit'] < 0:
+            raise ValueError("Invalid value for parameter `limit` when calling `api224_pods_get`, must be a value greater than or equal to `0`")
         if 'offset' in params and params['offset'] < 0:
             raise ValueError("Invalid value for parameter `offset` when calling `api224_pods_get`, must be a value greater than or equal to `0`")
         collection_formats = {}
@@ -851,8 +851,8 @@ class PodsApi(object):
 
         if 'resolution' in params and params['resolution'] < 0:
             raise ValueError("Invalid value for parameter `resolution` when calling `api224_pods_performance_by_array_get`, must be a value greater than or equal to `0`")
-        if 'limit' in params and params['limit'] < 1:
-            raise ValueError("Invalid value for parameter `limit` when calling `api224_pods_performance_by_array_get`, must be a value greater than or equal to `1`")
+        if 'limit' in params and params['limit'] < 0:
+            raise ValueError("Invalid value for parameter `limit` when calling `api224_pods_performance_by_array_get`, must be a value greater than or equal to `0`")
         if 'offset' in params and params['offset'] < 0:
             raise ValueError("Invalid value for parameter `offset` when calling `api224_pods_performance_by_array_get`, must be a value greater than or equal to `0`")
         collection_formats = {}
@@ -1008,8 +1008,8 @@ class PodsApi(object):
 
         if 'resolution' in params and params['resolution'] < 0:
             raise ValueError("Invalid value for parameter `resolution` when calling `api224_pods_performance_get`, must be a value greater than or equal to `0`")
-        if 'limit' in params and params['limit'] < 1:
-            raise ValueError("Invalid value for parameter `limit` when calling `api224_pods_performance_get`, must be a value greater than or equal to `1`")
+        if 'limit' in params and params['limit'] < 0:
+            raise ValueError("Invalid value for parameter `limit` when calling `api224_pods_performance_get`, must be a value greater than or equal to `0`")
         if 'offset' in params and params['offset'] < 0:
             raise ValueError("Invalid value for parameter `offset` when calling `api224_pods_performance_get`, must be a value greater than or equal to `0`")
         collection_formats = {}
@@ -1161,8 +1161,8 @@ class PodsApi(object):
 
         if 'resolution' in params and params['resolution'] < 0:
             raise ValueError("Invalid value for parameter `resolution` when calling `api224_pods_performance_replication_by_array_get`, must be a value greater than or equal to `0`")
-        if 'limit' in params and params['limit'] < 1:
-            raise ValueError("Invalid value for parameter `limit` when calling `api224_pods_performance_replication_by_array_get`, must be a value greater than or equal to `1`")
+        if 'limit' in params and params['limit'] < 0:
+            raise ValueError("Invalid value for parameter `limit` when calling `api224_pods_performance_replication_by_array_get`, must be a value greater than or equal to `0`")
         if 'offset' in params and params['offset'] < 0:
             raise ValueError("Invalid value for parameter `offset` when calling `api224_pods_performance_replication_by_array_get`, must be a value greater than or equal to `0`")
         collection_formats = {}
@@ -1310,8 +1310,8 @@ class PodsApi(object):
 
         if 'resolution' in params and params['resolution'] < 0:
             raise ValueError("Invalid value for parameter `resolution` when calling `api224_pods_performance_replication_get`, must be a value greater than or equal to `0`")
-        if 'limit' in params and params['limit'] < 1:
-            raise ValueError("Invalid value for parameter `limit` when calling `api224_pods_performance_replication_get`, must be a value greater than or equal to `1`")
+        if 'limit' in params and params['limit'] < 0:
+            raise ValueError("Invalid value for parameter `limit` when calling `api224_pods_performance_replication_get`, must be a value greater than or equal to `0`")
         if 'offset' in params and params['offset'] < 0:
             raise ValueError("Invalid value for parameter `offset` when calling `api224_pods_performance_replication_get`, must be a value greater than or equal to `0`")
         collection_formats = {}
@@ -1484,6 +1484,7 @@ class PodsApi(object):
 
     def api224_pods_space_get_with_http_info(
         self,
+        names=None,  # type: List[str]
         authorization=None,  # type: str
         x_request_id=None,  # type: str
         destroyed=None,  # type: bool
@@ -1497,7 +1498,6 @@ class PodsApi(object):
         sort=None,  # type: List[str]
         total_item_count=None,  # type: bool
         total_only=None,  # type: bool
-        names=None,  # type: List[str]
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -1512,6 +1512,7 @@ class PodsApi(object):
         >>> thread = api.api224_pods_space_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
+        :param list[str] names: Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.
         :param str authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :param str x_request_id: Supplied by client during request or generated by server.
         :param bool destroyed: If set to `true`, lists only destroyed objects that are in the eradication pending state. If set to `false`, lists only objects that are not destroyed. For destroyed objects, the time remaining is displayed in milliseconds.
@@ -1525,7 +1526,6 @@ class PodsApi(object):
         :param list[str] sort: Returns the response objects in the order specified. Set `sort` to the name in the response by which to sort. Sorting can be performed on any of the names in the response, and the objects can be sorted in ascending or descending order. By default, the response objects are sorted in ascending order. To sort in descending order, append the minus sign (`-`) to the name. A single request can be sorted on multiple objects. For example, you can sort all volumes from largest to smallest volume size, and then sort volumes of the same size in ascending order by volume name. To sort on multiple names, list the names as comma-separated values.
         :param bool total_item_count: If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.
         :param bool total_only: If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.
-        :param list[str] names: Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -1535,15 +1535,15 @@ class PodsApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
+        if names is not None:
+            if not isinstance(names, list):
+                names = [names]
         if ids is not None:
             if not isinstance(ids, list):
                 ids = [ids]
         if sort is not None:
             if not isinstance(sort, list):
                 sort = [sort]
-        if names is not None:
-            if not isinstance(names, list):
-                names = [names]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
 
         # Convert the filter into a string
@@ -1557,14 +1557,17 @@ class PodsApi(object):
 
         if 'resolution' in params and params['resolution'] < 0:
             raise ValueError("Invalid value for parameter `resolution` when calling `api224_pods_space_get`, must be a value greater than or equal to `0`")
-        if 'limit' in params and params['limit'] < 1:
-            raise ValueError("Invalid value for parameter `limit` when calling `api224_pods_space_get`, must be a value greater than or equal to `1`")
+        if 'limit' in params and params['limit'] < 0:
+            raise ValueError("Invalid value for parameter `limit` when calling `api224_pods_space_get`, must be a value greater than or equal to `0`")
         if 'offset' in params and params['offset'] < 0:
             raise ValueError("Invalid value for parameter `offset` when calling `api224_pods_space_get`, must be a value greater than or equal to `0`")
         collection_formats = {}
         path_params = {}
 
         query_params = []
+        if 'names' in params:
+            query_params.append(('names', params['names']))
+            collection_formats['names'] = 'csv'
         if 'destroyed' in params:
             query_params.append(('destroyed', params['destroyed']))
         if 'filter' in params:
@@ -1589,9 +1592,6 @@ class PodsApi(object):
             query_params.append(('total_item_count', params['total_item_count']))
         if 'total_only' in params:
             query_params.append(('total_only', params['total_only']))
-        if 'names' in params:
-            query_params.append(('names', params['names']))
-            collection_formats['names'] = 'csv'
 
         header_params = {}
         if 'authorization' in params:

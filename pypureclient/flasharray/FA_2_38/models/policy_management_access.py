@@ -32,7 +32,7 @@ class PolicyManagementAccess(object):
     swagger_types = {
         'id': 'str',
         'name': 'str',
-        'context': 'Reference',
+        'context': 'FixedReference',
         'aggregation_strategy': 'str',
         'enabled': 'bool',
         'policy_type': 'str',
@@ -56,7 +56,7 @@ class PolicyManagementAccess(object):
         self,
         id=None,  # type: str
         name=None,  # type: str
-        context=None,  # type: models.Reference
+        context=None,  # type: models.FixedReference
         aggregation_strategy=None,  # type: str
         enabled=None,  # type: bool
         policy_type=None,  # type: str
@@ -66,7 +66,7 @@ class PolicyManagementAccess(object):
         Keyword args:
             id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
             name (str): A user-specified name. The name must be locally unique and can be changed.
-            context (Reference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
             aggregation_strategy (str): When this is set to `least-common-permissions`, any users to whom this policy applies can receive no access rights exceeding those defined in this policy's rules. When this is set to `all-permissions`, any users to whom this policy applies are capable of receiving additional access rights from other policies that apply to them.
             enabled (bool): Returns a value of `true` if the policy is enabled.
             policy_type (str): The type of policy. Valid values include `management-access`, `autodir`, `nfs`, `smb`, `snapshot`, and `quota`.

@@ -39,8 +39,8 @@ class RemoteVolumeSnapshot(object):
         'source': 'FixedReference',
         'suffix': 'str',
         'time_remaining': 'int',
-        'remote': 'FixedReference',
-        'context': 'Reference'
+        'context': 'FixedReference',
+        'remote': 'FixedReference'
     }
 
     attribute_map = {
@@ -53,8 +53,8 @@ class RemoteVolumeSnapshot(object):
         'source': 'source',
         'suffix': 'suffix',
         'time_remaining': 'time_remaining',
-        'remote': 'remote',
-        'context': 'context'
+        'context': 'context',
+        'remote': 'remote'
     }
 
     required_args = {
@@ -71,8 +71,8 @@ class RemoteVolumeSnapshot(object):
         source=None,  # type: models.FixedReference
         suffix=None,  # type: str
         time_remaining=None,  # type: int
+        context=None,  # type: models.FixedReference
         remote=None,  # type: models.FixedReference
-        context=None,  # type: models.Reference
     ):
         """
         Keyword args:
@@ -85,8 +85,8 @@ class RemoteVolumeSnapshot(object):
             source (FixedReference): The volume from which this snapshot was taken. For a replicated snapshot being viewed on the target side, the `source` is the replica volume.
             suffix (str): The suffix that is appended to the `source_name` value to generate the full volume snapshot name in the form `VOL.SUFFIX`. If the suffix is not specified, the system constructs the snapshot name in the form `VOL.NNN`, where `VOL` is the volume name, and `NNN` is a monotonically increasing number.
             time_remaining (int): The amount of time left until the destroyed snapshot is permanently eradicated. Measured in milliseconds. Before the `time_remaining` period has elapsed, the destroyed snapshot can be recovered by setting `destroyed=false`.
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
             remote (FixedReference): Remote target where this volume snapshot is located.
-            context (Reference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
         """
         if id is not None:
             self.id = id
@@ -106,10 +106,10 @@ class RemoteVolumeSnapshot(object):
             self.suffix = suffix
         if time_remaining is not None:
             self.time_remaining = time_remaining
-        if remote is not None:
-            self.remote = remote
         if context is not None:
             self.context = context
+        if remote is not None:
+            self.remote = remote
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

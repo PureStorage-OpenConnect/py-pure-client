@@ -32,7 +32,7 @@ class RemoteArray(object):
     swagger_types = {
         'id': 'str',
         'name': 'str',
-        'fleet': 'object',
+        'fleet': 'RemoteArrayFleet',
         'os': 'str',
         'version': 'str',
         'model': 'str',
@@ -56,7 +56,7 @@ class RemoteArray(object):
         self,
         id=None,  # type: str
         name=None,  # type: str
-        fleet=None,  # type: object
+        fleet=None,  # type: models.RemoteArrayFleet
         os=None,  # type: str
         version=None,  # type: str
         model=None,  # type: str
@@ -66,7 +66,7 @@ class RemoteArray(object):
         Keyword args:
             id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
             name (str): A user-specified name. The name must be locally unique and can be changed.
-            fleet (object)
+            fleet (RemoteArrayFleet)
             os (str): Specifies the operating system. Valid values are `Purity`, `Purity//FA`, and `Purity//FB`.
             version (str): Specifies the operating system version.
             model (str): Specifies the array model.

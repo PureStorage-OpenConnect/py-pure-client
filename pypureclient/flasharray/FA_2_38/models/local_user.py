@@ -31,8 +31,8 @@ class LocalUser(object):
     """
     swagger_types = {
         'built_in': 'bool',
-        'email': 'str',
         'enabled': 'bool',
+        'email': 'str',
         'name': 'str',
         'primary_group': 'ReferenceWithType',
         'sid': 'str',
@@ -41,8 +41,8 @@ class LocalUser(object):
 
     attribute_map = {
         'built_in': 'built_in',
-        'email': 'email',
         'enabled': 'enabled',
+        'email': 'email',
         'name': 'name',
         'primary_group': 'primary_group',
         'sid': 'sid',
@@ -55,8 +55,8 @@ class LocalUser(object):
     def __init__(
         self,
         built_in=None,  # type: bool
-        email=None,  # type: str
         enabled=None,  # type: bool
+        email=None,  # type: str
         name=None,  # type: str
         primary_group=None,  # type: models.ReferenceWithType
         sid=None,  # type: str
@@ -65,8 +65,8 @@ class LocalUser(object):
         """
         Keyword args:
             built_in (bool): Returns a value of `true` if the local user is built in. Otherwise returns a value of `false` if the user has been created manually.
-            email (str): The email address of the local user.
             enabled (bool): Returns a value of `true` if the local user is enabled.
+            email (str): The email address of the local user.
             name (str): The name of the local user.
             primary_group (ReferenceWithType): Primary group of the local user.
             sid (str): The SID (security ID) of the local user.
@@ -74,10 +74,10 @@ class LocalUser(object):
         """
         if built_in is not None:
             self.built_in = built_in
-        if email is not None:
-            self.email = email
         if enabled is not None:
             self.enabled = enabled
+        if email is not None:
+            self.email = email
         if name is not None:
             self.name = name
         if primary_group is not None:

@@ -30,17 +30,17 @@ class DirectoryServiceRole(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'group': 'str',
-        'group_base': 'str',
+        'role': 'Reference',
         'id': 'str',
-        'role': 'Reference'
+        'group': 'str',
+        'group_base': 'str'
     }
 
     attribute_map = {
-        'group': 'group',
-        'group_base': 'group_base',
+        'role': 'role',
         'id': 'id',
-        'role': 'role'
+        'group': 'group',
+        'group_base': 'group_base'
     }
 
     required_args = {
@@ -48,26 +48,26 @@ class DirectoryServiceRole(object):
 
     def __init__(
         self,
+        role=None,  # type: models.Reference
+        id=None,  # type: str
         group=None,  # type: str
         group_base=None,  # type: str
-        id=None,  # type: str
-        role=None,  # type: models.Reference
     ):
         """
         Keyword args:
+            role (Reference): A reference to the role; can be any role that exists on the system.
+            id (str): A non-modifiable, globally unique ID chosen by the system.
             group (str): Common Name (CN) of the directory service group containing users with authority level of the specified role name.
             group_base (str): Specifies where the configured group is located in the directory tree.
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            role (Reference): A reference to the role; can be any role that exists on the system.
         """
+        if role is not None:
+            self.role = role
+        if id is not None:
+            self.id = id
         if group is not None:
             self.group = group
         if group_base is not None:
             self.group_base = group_base
-        if id is not None:
-            self.id = id
-        if role is not None:
-            self.role = role
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -30,14 +30,14 @@ class PolicyMemberWithRemote(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'member': 'FixedReference',
         'policy': 'LocationReference',
+        'member': 'FixedReference',
         'link': 'MemberLink'
     }
 
     attribute_map = {
-        'member': 'member',
         'policy': 'policy',
+        'member': 'member',
         'link': 'link'
     }
 
@@ -46,20 +46,20 @@ class PolicyMemberWithRemote(object):
 
     def __init__(
         self,
-        member=None,  # type: models.FixedReference
         policy=None,  # type: models.LocationReference
+        member=None,  # type: models.FixedReference
         link=None,  # type: models.MemberLink
     ):
         """
         Keyword args:
-            member (FixedReference): Reference to the resource the policy is applied to.
             policy (LocationReference): Reference to the policy.
+            member (FixedReference): Reference to the resource the policy is applied to.
             link (MemberLink): Only populated if the `member` is a file system replica link. Contains additional information about the link.
         """
-        if member is not None:
-            self.member = member
         if policy is not None:
             self.policy = policy
+        if member is not None:
+            self.member = member
         if link is not None:
             self.link = link
 

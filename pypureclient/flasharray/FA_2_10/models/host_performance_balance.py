@@ -31,18 +31,18 @@ class HostPerformanceBalance(object):
     """
     swagger_types = {
         'name': 'str',
+        'op_count': 'int',
         'fraction_relative_to_max': 'float',
         'initiator': 'PortCommon',
-        'op_count': 'int',
         'target': 'Port',
         'time': 'int'
     }
 
     attribute_map = {
         'name': 'name',
+        'op_count': 'op_count',
         'fraction_relative_to_max': 'fraction_relative_to_max',
         'initiator': 'initiator',
-        'op_count': 'op_count',
         'target': 'target',
         'time': 'time'
     }
@@ -53,29 +53,29 @@ class HostPerformanceBalance(object):
     def __init__(
         self,
         name=None,  # type: str
+        op_count=None,  # type: int
         fraction_relative_to_max=None,  # type: float
         initiator=None,  # type: models.PortCommon
-        op_count=None,  # type: int
         target=None,  # type: models.Port
         time=None,  # type: int
     ):
         """
         Keyword args:
             name (str): A user-specified name. The name must be locally unique and can be changed.
+            op_count (int): Count of I/O operations for the host path, over the specified resolution.
             fraction_relative_to_max (float): The path with the highest number of op counts is displayed with a fraction_relative_to_max of 1.0. The fraction values of all other paths in the host are then calculated relative to the path with the highest number of op counts.
             initiator (PortCommon)
-            op_count (int): Count of I/O operations for the host path, over the specified resolution.
             target (Port)
             time (int): Sample time in milliseconds since UNIX epoch.
         """
         if name is not None:
             self.name = name
+        if op_count is not None:
+            self.op_count = op_count
         if fraction_relative_to_max is not None:
             self.fraction_relative_to_max = fraction_relative_to_max
         if initiator is not None:
             self.initiator = initiator
-        if op_count is not None:
-            self.op_count = op_count
         if target is not None:
             self.target = target
         if time is not None:

@@ -30,21 +30,21 @@ class LifecycleRulePatch(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'enabled': 'bool',
-        'keep_previous_version_for': 'int',
-        'prefix': 'str',
         'abort_incomplete_multipart_uploads_after': 'int',
         'keep_current_version_for': 'int',
-        'keep_current_version_until': 'int'
+        'keep_current_version_until': 'int',
+        'enabled': 'bool',
+        'keep_previous_version_for': 'int',
+        'prefix': 'str'
     }
 
     attribute_map = {
-        'enabled': 'enabled',
-        'keep_previous_version_for': 'keep_previous_version_for',
-        'prefix': 'prefix',
         'abort_incomplete_multipart_uploads_after': 'abort_incomplete_multipart_uploads_after',
         'keep_current_version_for': 'keep_current_version_for',
-        'keep_current_version_until': 'keep_current_version_until'
+        'keep_current_version_until': 'keep_current_version_until',
+        'enabled': 'enabled',
+        'keep_previous_version_for': 'keep_previous_version_for',
+        'prefix': 'prefix'
     }
 
     required_args = {
@@ -52,34 +52,34 @@ class LifecycleRulePatch(object):
 
     def __init__(
         self,
-        enabled=None,  # type: bool
-        keep_previous_version_for=None,  # type: int
-        prefix=None,  # type: str
         abort_incomplete_multipart_uploads_after=None,  # type: int
         keep_current_version_for=None,  # type: int
         keep_current_version_until=None,  # type: int
+        enabled=None,  # type: bool
+        keep_previous_version_for=None,  # type: int
+        prefix=None,  # type: str
     ):
         """
         Keyword args:
-            enabled (bool): If set to `true`, this rule will be enabled.
-            keep_previous_version_for (int): Time after which previous versions will be marked expired. Measured in milliseconds. Must be a multiple of 86400000 to represent a whole number of days.
-            prefix (str): Object key prefix identifying one or more objects in the bucket. Can have a maximum length of 1024 characters.
             abort_incomplete_multipart_uploads_after (int): Duration of time after which incomplete multipart uploads will be aborted. Measured in milliseconds. Must be a multiple of 86400000 to represent a whole number of days.
             keep_current_version_for (int): Time after which current versions will be marked expired. Measured in milliseconds. Must be a multiple of 86400000 to represent a whole number of days.
             keep_current_version_until (int): Time after which current versions will be marked expired. Measured in milliseconds, time since epoch. Must be a valid date, accurate to day.
+            enabled (bool): If set to `true`, this rule will be enabled.
+            keep_previous_version_for (int): Time after which previous versions will be marked expired. Measured in milliseconds. Must be a multiple of 86400000 to represent a whole number of days.
+            prefix (str): Object key prefix identifying one or more objects in the bucket. Can have a maximum length of 1024 characters.
         """
-        if enabled is not None:
-            self.enabled = enabled
-        if keep_previous_version_for is not None:
-            self.keep_previous_version_for = keep_previous_version_for
-        if prefix is not None:
-            self.prefix = prefix
         if abort_incomplete_multipart_uploads_after is not None:
             self.abort_incomplete_multipart_uploads_after = abort_incomplete_multipart_uploads_after
         if keep_current_version_for is not None:
             self.keep_current_version_for = keep_current_version_for
         if keep_current_version_until is not None:
             self.keep_current_version_until = keep_current_version_until
+        if enabled is not None:
+            self.enabled = enabled
+        if keep_previous_version_for is not None:
+            self.keep_previous_version_for = keep_previous_version_for
+        if prefix is not None:
+            self.prefix = prefix
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

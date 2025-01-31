@@ -37,9 +37,9 @@ class DirectorySnapshot(object):
         'destroyed': 'bool',
         'policy': 'FixedReference',
         'source': 'FixedReference',
-        'space': 'Space',
         'suffix': 'int',
-        'time_remaining': 'int'
+        'time_remaining': 'int',
+        'space': 'Space'
     }
 
     attribute_map = {
@@ -50,9 +50,9 @@ class DirectorySnapshot(object):
         'destroyed': 'destroyed',
         'policy': 'policy',
         'source': 'source',
-        'space': 'space',
         'suffix': 'suffix',
-        'time_remaining': 'time_remaining'
+        'time_remaining': 'time_remaining',
+        'space': 'space'
     }
 
     required_args = {
@@ -67,9 +67,9 @@ class DirectorySnapshot(object):
         destroyed=None,  # type: bool
         policy=None,  # type: models.FixedReference
         source=None,  # type: models.FixedReference
-        space=None,  # type: models.Space
         suffix=None,  # type: int
         time_remaining=None,  # type: int
+        space=None,  # type: models.Space
     ):
         """
         Keyword args:
@@ -80,9 +80,9 @@ class DirectorySnapshot(object):
             destroyed (bool): Returns a value of `true` if the snapshot has been destroyed and is pending eradication. The `time_remaining` value displays the amount of time left until the destroyed directory snapshot is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed directory snapshot can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the directory snapshot is permanently eradicated and can no longer be recovered.
             policy (FixedReference): The snapshot policy that manages this snapshot, if applicable.
             source (FixedReference): The directory from which this snapshot was taken.
-            space (Space): Displays size and space consumption information.
             suffix (int): The suffix that is appended to the `source_name` value and the `client_name` value to generate the full directory snapshot name in the form of `DIR.CLIENT_NAME.SUFFIX` where `DIR` is the managed directory name, `CLIENT_NAME` is the client name, and `SUFFIX` is the suffix. If the suffix is a string, this field returns `null`. See the `name` value for the full snapshot name including the suffix.
             time_remaining (int): The amount of time left until the directory snapshot is permanently eradicated. Measured in milliseconds. Before the `time_remaining` period has elapsed, the snapshot can be recovered by setting `destroyed=false` if it is destroyed, by setting `policy=\"\"` if it is managed by a snapshot policy, or by setting `keep_for=\"\"` if it is a manual snapshot.
+            space (Space): Displays size and space consumption information.
         """
         if id is not None:
             self.id = id
@@ -98,12 +98,12 @@ class DirectorySnapshot(object):
             self.policy = policy
         if source is not None:
             self.source = source
-        if space is not None:
-            self.space = space
         if suffix is not None:
             self.suffix = suffix
         if time_remaining is not None:
             self.time_remaining = time_remaining
+        if space is not None:
+            self.space = space
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

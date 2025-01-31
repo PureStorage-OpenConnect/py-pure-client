@@ -31,8 +31,8 @@ class LogTargetFile(object):
     """
     swagger_types = {
         'name': 'str',
+        'context': 'FixedReference',
         'target_type': 'str',
-        'context': 'Reference',
         'directory': 'ReferenceWithType',
         'keep_for': 'int',
         'keep_size': 'int'
@@ -40,8 +40,8 @@ class LogTargetFile(object):
 
     attribute_map = {
         'name': 'name',
-        'target_type': 'target_type',
         'context': 'context',
+        'target_type': 'target_type',
         'directory': 'directory',
         'keep_for': 'keep_for',
         'keep_size': 'keep_size'
@@ -53,8 +53,8 @@ class LogTargetFile(object):
     def __init__(
         self,
         name=None,  # type: str
+        context=None,  # type: models.FixedReference
         target_type=None,  # type: str
-        context=None,  # type: models.Reference
         directory=None,  # type: models.ReferenceWithType
         keep_for=None,  # type: int
         keep_size=None,  # type: int
@@ -62,18 +62,18 @@ class LogTargetFile(object):
         """
         Keyword args:
             name (str): A user-specified name. The name must be locally unique and cannot be changed.
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
             target_type (str): The type of log target. Valid values include `file`, and `syslog`.
-            context (Reference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
             directory (ReferenceWithType): Directory name to be used as log target.
             keep_for (int): Specifies the period that audit logs are retained before they are deleted, in milliseconds. Default value is `null` which means size based retention does not apply. Use 0 to reset the value to `null`. At least one of the `keep_for` or `keep_size` parameters is required, and they can be set together.
             keep_size (int): Specifies the maximum size of audit logs to be retained. Measured in bytes. When exceeded, older logs will be deleted. Default value is `null` which means size-based retention does not apply. Use 0 to reset the value to `null`.
         """
         if name is not None:
             self.name = name
-        if target_type is not None:
-            self.target_type = target_type
         if context is not None:
             self.context = context
+        if target_type is not None:
+            self.target_type = target_type
         if directory is not None:
             self.directory = directory
         if keep_for is not None:

@@ -36,9 +36,9 @@ class SoftwareInstallationStep(object):
         'end_time': 'int',
         'checks': 'list[SoftwareInstallationStepsChecks]',
         'description': 'str',
-        'details': 'str',
         'hop_version': 'str',
         'installation': 'Reference',
+        'details': 'str',
         'status': 'str'
     }
 
@@ -49,9 +49,9 @@ class SoftwareInstallationStep(object):
         'end_time': 'end_time',
         'checks': 'checks',
         'description': 'description',
-        'details': 'details',
         'hop_version': 'hop_version',
         'installation': 'installation',
+        'details': 'details',
         'status': 'status'
     }
 
@@ -66,9 +66,9 @@ class SoftwareInstallationStep(object):
         end_time=None,  # type: int
         checks=None,  # type: List[models.SoftwareInstallationStepsChecks]
         description=None,  # type: str
-        details=None,  # type: str
         hop_version=None,  # type: str
         installation=None,  # type: models.Reference
+        details=None,  # type: str
         status=None,  # type: str
     ):
         """
@@ -79,9 +79,9 @@ class SoftwareInstallationStep(object):
             end_time (int): End time in milliseconds since the UNIX epoch.
             checks (list[SoftwareInstallationStepsChecks]): A list of checks in this upgrade step.
             description (str): Detailed description of the step.
-            details (str): Detailed result of the step used to diagnose step failures.
             hop_version (str): The version to which the current hop is upgrading.
             installation (Reference): Referenced `software-installation` to which the step belongs.
+            details (str): Detailed result of the step used to diagnose step failures.
             status (str): Status of the step. Valid values are `running` and `finished`. A status of `running` indicates that the step has not finished. A status of `finished` indicates that the check has finished.
         """
         if id is not None:
@@ -96,12 +96,12 @@ class SoftwareInstallationStep(object):
             self.checks = checks
         if description is not None:
             self.description = description
-        if details is not None:
-            self.details = details
         if hop_version is not None:
             self.hop_version = hop_version
         if installation is not None:
             self.installation = installation
+        if details is not None:
+            self.details = details
         if status is not None:
             self.status = status
 

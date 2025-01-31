@@ -30,13 +30,13 @@ class FileLockRange(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'length': 'int',
-        'offset': 'int'
+        'offset': 'int',
+        'length': 'int'
     }
 
     attribute_map = {
-        'length': 'length',
-        'offset': 'offset'
+        'offset': 'offset',
+        'length': 'length'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class FileLockRange(object):
 
     def __init__(
         self,
-        length=None,  # type: int
         offset=None,  # type: int
+        length=None,  # type: int
     ):
         """
         Keyword args:
-            length (int)
             offset (int)
+            length (int)
         """
-        if length is not None:
-            self.length = length
         if offset is not None:
             self.offset = offset
+        if length is not None:
+            self.length = length
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

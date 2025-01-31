@@ -30,11 +30,13 @@ class TestResultGetResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'items': 'list[TestResult]'
+        'items': 'list[TestResult]',
+        'total_item_count': 'int'
     }
 
     attribute_map = {
-        'items': 'items'
+        'items': 'items',
+        'total_item_count': 'total_item_count'
     }
 
     required_args = {
@@ -43,13 +45,17 @@ class TestResultGetResponse(object):
     def __init__(
         self,
         items=None,  # type: List[models.TestResult]
+        total_item_count=None,  # type: int
     ):
         """
         Keyword args:
             items (list[TestResult])
+            total_item_count (int): Total number of items after applying `filter` params.
         """
         if items is not None:
             self.items = items
+        if total_item_count is not None:
+            self.total_item_count = total_item_count
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

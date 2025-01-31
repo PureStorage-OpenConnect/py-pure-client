@@ -2899,7 +2899,7 @@ class Client(object):
 
     def patch_arrays(
         self,
-        array=None,  # type: list
+        array=None,  # type: models.Array
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -8583,13 +8583,13 @@ class Client(object):
     def get_hardware(
         self,
         references=None,  # type: List[models.ReferenceType]
+        ids=None,  # type: List[str]
+        names=None,  # type: List[str]
         continuation_token=None,  # type: str
         filter=None,  # type: str
         limit=None,  # type: int
         offset=None,  # type: int
         sort=None,  # type: List[str]
-        ids=None,  # type: List[str]
-        names=None,  # type: List[str]
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -8603,6 +8603,13 @@ class Client(object):
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides ids and names keyword arguments.
 
+            ids (list[str], optional):
+                A list of resource IDs. If after filtering, there is not at least one resource
+                that matches each of the elements of `ids`, then an error is returned. This
+                cannot be provided together with the `name` or `names` query parameters.
+            names (list[str], optional):
+                A list of resource names. If there is not at least one resource that matches
+                each of the elements of `names`, then an error is returned.
             continuation_token (str, optional):
                 An opaque token to iterate over a collection of resources.
             filter (Filter, optional):
@@ -8614,13 +8621,6 @@ class Client(object):
                 The offset of the first resource to return from a collection.
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
-            ids (list[str], optional):
-                A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
-                cannot be provided together with the `name` or `names` query parameters.
-            names (list[str], optional):
-                A list of resource names. If there is not at least one resource that matches
-                each of the elements of `names`, then an error is returned.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -8641,13 +8641,13 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
+            ids=ids,
+            names=names,
             continuation_token=continuation_token,
             filter=filter,
             limit=limit,
             offset=offset,
             sort=sort,
-            ids=ids,
-            names=names,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
             _preload_content=_preload_content,
@@ -8721,13 +8721,13 @@ class Client(object):
     def get_hardware_connectors(
         self,
         references=None,  # type: List[models.ReferenceType]
+        ids=None,  # type: List[str]
+        names=None,  # type: List[str]
         continuation_token=None,  # type: str
         filter=None,  # type: str
         limit=None,  # type: int
         offset=None,  # type: int
         sort=None,  # type: List[str]
-        ids=None,  # type: List[str]
-        names=None,  # type: List[str]
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -8741,6 +8741,13 @@ class Client(object):
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides ids and names keyword arguments.
 
+            ids (list[str], optional):
+                A list of resource IDs. If after filtering, there is not at least one resource
+                that matches each of the elements of `ids`, then an error is returned. This
+                cannot be provided together with the `name` or `names` query parameters.
+            names (list[str], optional):
+                A list of resource names. If there is not at least one resource that matches
+                each of the elements of `names`, then an error is returned.
             continuation_token (str, optional):
                 An opaque token to iterate over a collection of resources.
             filter (Filter, optional):
@@ -8752,13 +8759,6 @@ class Client(object):
                 The offset of the first resource to return from a collection.
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
-            ids (list[str], optional):
-                A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
-                cannot be provided together with the `name` or `names` query parameters.
-            names (list[str], optional):
-                A list of resource names. If there is not at least one resource that matches
-                each of the elements of `names`, then an error is returned.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -8779,13 +8779,13 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
+            ids=ids,
+            names=names,
             continuation_token=continuation_token,
             filter=filter,
             limit=limit,
             offset=offset,
             sort=sort,
-            ids=ids,
-            names=names,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
             _preload_content=_preload_content,
@@ -9196,7 +9196,7 @@ class Client(object):
 
     def post_keytabs_upload(
         self,
-        keytab_file=None,  # type: models.ERRORUNKNOWN
+        keytab_file=None,  # type: str
         name_prefixes=None,  # type: str
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
@@ -9212,7 +9212,7 @@ class Client(object):
 
         Args:
 
-            keytab_file (ERRORUNKNOWN, required):
+            keytab_file (str, required):
                 The keytab file to upload.
             name_prefixes (str, optional):
                 The prefix to use for the names of all Kerberos keytab objects that are being
@@ -14437,7 +14437,7 @@ class Client(object):
         local_file_system_names=None,  # type: List[str]
         member_ids=None,  # type: List[str]
         member_names=None,  # type: List[str]
-        member_types=None,  # type: List[models.ModelsFB29ResourceTypeYaml]
+        member_types=None,  # type: List[models.ResourceType]
         offset=None,  # type: int
         policy_ids=None,  # type: List[str]
         policy_names=None,  # type: List[str]
@@ -14489,7 +14489,7 @@ class Client(object):
                 This cannot be provided together with the `member_names` query parameter.
             member_names (list[str], optional):
                 A list of member names.
-            member_types (list[ModelsFB29ResourceTypeYaml], optional):
+            member_types (list[ResourceType], optional):
                 A list of member types. Valid values are `file-systems`, `file-system-
                 snapshots`, `file-system-replica-links`, and `object-store-users`. Different
                 endpoints may accept different subsets of these values.
@@ -14782,7 +14782,7 @@ class Client(object):
         local_file_system_names=None,  # type: List[str]
         member_ids=None,  # type: List[str]
         member_names=None,  # type: List[str]
-        member_types=None,  # type: List[models.ModelsFB29ResourceTypeYaml]
+        member_types=None,  # type: List[models.ResourceType]
         offset=None,  # type: int
         policy_ids=None,  # type: List[str]
         policy_names=None,  # type: List[str]
@@ -14834,7 +14834,7 @@ class Client(object):
                 This cannot be provided together with the `member_names` query parameter.
             member_names (list[str], optional):
                 A list of member names.
-            member_types (list[ModelsFB29ResourceTypeYaml], optional):
+            member_types (list[ResourceType], optional):
                 A list of member types. Valid values are `file-systems`, `file-system-
                 snapshots`, `file-system-replica-links`, and `object-store-users`. Different
                 endpoints may accept different subsets of these values.

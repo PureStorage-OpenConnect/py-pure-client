@@ -59,7 +59,7 @@ class ResourcePerformanceByArray(object):
         'service_usec_per_read_op_cache_reduction': 'float',
         'id': 'str',
         'name': 'str',
-        'context': 'Reference',
+        'context': 'FixedReference',
         'array': 'Resource'
     }
 
@@ -131,7 +131,7 @@ class ResourcePerformanceByArray(object):
         service_usec_per_read_op_cache_reduction=None,  # type: float
         id=None,  # type: str
         name=None,  # type: str
-        context=None,  # type: models.Reference
+        context=None,  # type: models.FixedReference
         array=None,  # type: models.Resource
     ):
         """
@@ -165,7 +165,7 @@ class ResourcePerformanceByArray(object):
             service_usec_per_read_op_cache_reduction (float): The percentage reduction in `service_usec_per_read_op` due to data cache hits. For example, a value of 0.25 indicates that the value of `service_usec_per_read_op` is 25&#37; lower than it would have been without any data cache hits.
             id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
             name (str): A user-specified name. The name must be locally unique and can be changed.
-            context (Reference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
             array (Resource): The array on which the performance metrics were recorded.
         """
         if bytes_per_mirrored_write is not None:

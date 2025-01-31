@@ -36,8 +36,8 @@ class FileSession(object):
         'connection_time': 'int',
         'idle_time': 'int',
         'opens': 'int',
-        'port': 'int',
         'protocol': 'str',
+        'port': 'int',
         'time': 'int',
         'user': 'UserNoId'
     }
@@ -49,8 +49,8 @@ class FileSession(object):
         'connection_time': 'connection_time',
         'idle_time': 'idle_time',
         'opens': 'opens',
-        'port': 'port',
         'protocol': 'protocol',
+        'port': 'port',
         'time': 'time',
         'user': 'user'
     }
@@ -66,8 +66,8 @@ class FileSession(object):
         connection_time=None,  # type: int
         idle_time=None,  # type: int
         opens=None,  # type: int
-        port=None,  # type: int
         protocol=None,  # type: str
+        port=None,  # type: int
         time=None,  # type: int
         user=None,  # type: models.UserNoId
     ):
@@ -79,8 +79,8 @@ class FileSession(object):
             connection_time (int): Connection time in milliseconds since UNIX epoch.
             idle_time (int): Duration in milliseconds that indicates how long the session has been idle.
             opens (int): Number of opens for the given session.
-            port (int): Port number the client is connected from.
             protocol (str): The protocol utilized for obtaining and managing the session. Valid values include `nfs` and `smb`.
+            port (int): Port number the client is connected from.
             time (int): Current time in milliseconds since UNIX epoch.
             user (UserNoId): The user who has created the session.
         """
@@ -96,10 +96,10 @@ class FileSession(object):
             self.idle_time = idle_time
         if opens is not None:
             self.opens = opens
-        if port is not None:
-            self.port = port
         if protocol is not None:
             self.protocol = protocol
+        if port is not None:
+            self.port = port
         if time is not None:
             self.time = time
         if user is not None:

@@ -30,17 +30,17 @@ class VchostCertificate(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'certificate': 'ReferenceNoIdWithType',
-        'endpoints': 'list[str]',
         'id': 'str',
-        'vchost': 'ReferenceWithType'
+        'certificate': 'ReferenceNoIdWithType',
+        'vchost': 'ReferenceWithType',
+        'endpoints': 'list[str]'
     }
 
     attribute_map = {
-        'certificate': 'certificate',
-        'endpoints': 'endpoints',
         'id': 'id',
-        'vchost': 'vchost'
+        'certificate': 'certificate',
+        'vchost': 'vchost',
+        'endpoints': 'endpoints'
     }
 
     required_args = {
@@ -48,26 +48,26 @@ class VchostCertificate(object):
 
     def __init__(
         self,
-        certificate=None,  # type: models.ReferenceNoIdWithType
-        endpoints=None,  # type: List[str]
         id=None,  # type: str
+        certificate=None,  # type: models.ReferenceNoIdWithType
         vchost=None,  # type: models.ReferenceWithType
+        endpoints=None,  # type: List[str]
     ):
         """
         Keyword args:
-            certificate (ReferenceNoIdWithType): A reference to the certificate that will be presented to clients accessing the referenced `vchost` using any of the network addresses defined by `endpoints`.
-            endpoints (list[str]): The IPv4 or IPv6 addresses of the endpoints to configure for the vchost, over which the configured certificate will be presented.
             id (str): A globally unique, system-generated ID. The ID cannot be modified.
+            certificate (ReferenceNoIdWithType): A reference to the certificate that will be presented to clients accessing the referenced `vchost` using any of the network addresses defined by `endpoints`.
             vchost (ReferenceWithType): The vchost by which the certificate is to be presented over the configured endpoints.
+            endpoints (list[str]): The IPv4 or IPv6 addresses of the endpoints to configure for the vchost, over which the configured certificate will be presented.
         """
-        if certificate is not None:
-            self.certificate = certificate
-        if endpoints is not None:
-            self.endpoints = endpoints
         if id is not None:
             self.id = id
+        if certificate is not None:
+            self.certificate = certificate
         if vchost is not None:
             self.vchost = vchost
+        if endpoints is not None:
+            self.endpoints = endpoints
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

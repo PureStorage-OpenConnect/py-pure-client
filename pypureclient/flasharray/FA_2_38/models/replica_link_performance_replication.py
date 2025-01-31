@@ -35,8 +35,8 @@ class ReplicaLinkPerformanceReplication(object):
         'bytes_per_sec_total': 'int',
         'direction': 'str',
         'local_pod': 'FixedReference',
-        'remote_pod': 'FixedReference',
         'remotes': 'list[FixedReference]',
+        'remote_pod': 'FixedReference',
         'time': 'int'
     }
 
@@ -46,8 +46,8 @@ class ReplicaLinkPerformanceReplication(object):
         'bytes_per_sec_total': 'bytes_per_sec_total',
         'direction': 'direction',
         'local_pod': 'local_pod',
-        'remote_pod': 'remote_pod',
         'remotes': 'remotes',
+        'remote_pod': 'remote_pod',
         'time': 'time'
     }
 
@@ -61,8 +61,8 @@ class ReplicaLinkPerformanceReplication(object):
         bytes_per_sec_total=None,  # type: int
         direction=None,  # type: str
         local_pod=None,  # type: models.FixedReference
-        remote_pod=None,  # type: models.FixedReference
         remotes=None,  # type: List[models.FixedReference]
+        remote_pod=None,  # type: models.FixedReference
         time=None,  # type: int
     ):
         """
@@ -72,8 +72,8 @@ class ReplicaLinkPerformanceReplication(object):
             bytes_per_sec_total (int): Total bytes transmitted and received per second.
             direction (str): The direction of replication. Valid values are `inbound` and `outbound`.
             local_pod (FixedReference): Reference to a local pod.
-            remote_pod (FixedReference): Reference to a remote pod.
             remotes (list[FixedReference]): Reference to a remote array.
+            remote_pod (FixedReference): Reference to a remote pod.
             time (int): Sample time in milliseconds since the UNIX epoch.
         """
         if bytes_per_sec_from_remote is not None:
@@ -86,10 +86,10 @@ class ReplicaLinkPerformanceReplication(object):
             self.direction = direction
         if local_pod is not None:
             self.local_pod = local_pod
-        if remote_pod is not None:
-            self.remote_pod = remote_pod
         if remotes is not None:
             self.remotes = remotes
+        if remote_pod is not None:
+            self.remote_pod = remote_pod
         if time is not None:
             self.time = time
 

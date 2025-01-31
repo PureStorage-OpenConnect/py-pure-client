@@ -30,21 +30,21 @@ class PolicyMember(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'context': 'FixedReference',
         'destroyed': 'bool',
         'enabled': 'bool',
         'member': 'FixedReferenceWithType',
         'policy': 'FixedReferenceWithType',
-        'time_remaining': 'int',
-        'context': 'Reference'
+        'time_remaining': 'int'
     }
 
     attribute_map = {
+        'context': 'context',
         'destroyed': 'destroyed',
         'enabled': 'enabled',
         'member': 'member',
         'policy': 'policy',
-        'time_remaining': 'time_remaining',
-        'context': 'context'
+        'time_remaining': 'time_remaining'
     }
 
     required_args = {
@@ -52,22 +52,24 @@ class PolicyMember(object):
 
     def __init__(
         self,
+        context=None,  # type: models.FixedReference
         destroyed=None,  # type: bool
         enabled=None,  # type: bool
         member=None,  # type: models.FixedReferenceWithType
         policy=None,  # type: models.FixedReferenceWithType
         time_remaining=None,  # type: int
-        context=None,  # type: models.Reference
     ):
         """
         Keyword args:
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
             destroyed (bool): Returns a value of `true` if the member is destroyed.
             enabled (bool): Returns a value of `true` if the policy is enabled.
             member (FixedReferenceWithType): Reference to the resource that the policy is applied to.
             policy (FixedReferenceWithType): Reference to the policy.
             time_remaining (int): The amount of time left, in milliseconds, until the destroyed policy member is permanently eradicated.
-            context (Reference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
         """
+        if context is not None:
+            self.context = context
         if destroyed is not None:
             self.destroyed = destroyed
         if enabled is not None:
@@ -78,8 +80,6 @@ class PolicyMember(object):
             self.policy = policy
         if time_remaining is not None:
             self.time_remaining = time_remaining
-        if context is not None:
-            self.context = context
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

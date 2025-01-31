@@ -42,11 +42,11 @@ class Volume(object):
         'space': 'VolumeSpaceCommon',
         'time_remaining': 'int',
         'pod': 'Reference',
-        'promotion_status': 'str',
-        'requested_promotion_state': 'str',
         'source': 'FixedReference',
         'subtype': 'str',
-        'volume_group': 'Reference'
+        'volume_group': 'Reference',
+        'requested_promotion_state': 'str',
+        'promotion_status': 'str'
     }
 
     attribute_map = {
@@ -62,11 +62,11 @@ class Volume(object):
         'space': 'space',
         'time_remaining': 'time_remaining',
         'pod': 'pod',
-        'promotion_status': 'promotion_status',
-        'requested_promotion_state': 'requested_promotion_state',
         'source': 'source',
         'subtype': 'subtype',
-        'volume_group': 'volume_group'
+        'volume_group': 'volume_group',
+        'requested_promotion_state': 'requested_promotion_state',
+        'promotion_status': 'promotion_status'
     }
 
     required_args = {
@@ -86,11 +86,11 @@ class Volume(object):
         space=None,  # type: models.VolumeSpaceCommon
         time_remaining=None,  # type: int
         pod=None,  # type: models.Reference
-        promotion_status=None,  # type: str
-        requested_promotion_state=None,  # type: str
         source=None,  # type: models.FixedReference
         subtype=None,  # type: str
         volume_group=None,  # type: models.Reference
+        requested_promotion_state=None,  # type: str
+        promotion_status=None,  # type: str
     ):
         """
         Keyword args:
@@ -106,11 +106,11 @@ class Volume(object):
             space (VolumeSpaceCommon): Displays size and space consumption information.
             time_remaining (int): The amount of time left until the destroyed volume is permanently eradicated, measured in milliseconds. Before the `time_remaining` period has elapsed, the destroyed volume can be recovered by setting `destroyed=false`.
             pod (Reference): A reference to the pod.
-            promotion_status (str): Current promotion status of a volume. Valid values are `promoted` and `demoted`. A status of `promoted` indicates that the volume has been promoted and can accept write requests from hosts. This is the default status for a volume when it is created. A status of `demoted` indicates that the volume has been demoted and no longer accepts write requests.
-            requested_promotion_state (str): Valid values are `promoted` and `demoted`. Patch `requested_promotion_state` to `demoted` to demote the volume so that the volume stops accepting write requests. Patch `requested_promotion_state` to `promoted` to promote the volume so that the volume starts accepting write requests.
             source (FixedReference): A reference to the originating volume as a result of a volume copy.
             subtype (str): The type of volume. Valid values are `protocol_endpoint` and `regular`.
             volume_group (Reference): A reference to the volume group.
+            requested_promotion_state (str): Valid values are `promoted` and `demoted`. Patch `requested_promotion_state` to `demoted` to demote the volume so that the volume stops accepting write requests. Patch `requested_promotion_state` to `promoted` to promote the volume so that the volume starts accepting write requests.
+            promotion_status (str): Current promotion status of a volume. Valid values are `promoted` and `demoted`. A status of `promoted` indicates that the volume has been promoted and can accept write requests from hosts. This is the default status for a volume when it is created. A status of `demoted` indicates that the volume has been demoted and no longer accepts write requests.
         """
         if id is not None:
             self.id = id
@@ -136,16 +136,16 @@ class Volume(object):
             self.time_remaining = time_remaining
         if pod is not None:
             self.pod = pod
-        if promotion_status is not None:
-            self.promotion_status = promotion_status
-        if requested_promotion_state is not None:
-            self.requested_promotion_state = requested_promotion_state
         if source is not None:
             self.source = source
         if subtype is not None:
             self.subtype = subtype
         if volume_group is not None:
             self.volume_group = volume_group
+        if requested_promotion_state is not None:
+            self.requested_promotion_state = requested_promotion_state
+        if promotion_status is not None:
+            self.promotion_status = promotion_status
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -31,28 +31,28 @@ class PodReplicaLinkLag(object):
     """
     swagger_types = {
         'id': 'str',
+        'context': 'FixedReference',
         'direction': 'str',
         'lag': 'ReplicaLinkLag',
         'local_pod': 'FixedReference',
         'recovery_point': 'int',
-        'remote_pod': 'FixedReference',
         'remotes': 'list[FixedReference]',
+        'remote_pod': 'FixedReference',
         'status': 'str',
-        'time': 'int',
-        'context': 'Reference'
+        'time': 'int'
     }
 
     attribute_map = {
         'id': 'id',
+        'context': 'context',
         'direction': 'direction',
         'lag': 'lag',
         'local_pod': 'local_pod',
         'recovery_point': 'recovery_point',
-        'remote_pod': 'remote_pod',
         'remotes': 'remotes',
+        'remote_pod': 'remote_pod',
         'status': 'status',
-        'time': 'time',
-        'context': 'context'
+        'time': 'time'
     }
 
     required_args = {
@@ -61,31 +61,33 @@ class PodReplicaLinkLag(object):
     def __init__(
         self,
         id=None,  # type: str
+        context=None,  # type: models.FixedReference
         direction=None,  # type: str
         lag=None,  # type: models.ReplicaLinkLag
         local_pod=None,  # type: models.FixedReference
         recovery_point=None,  # type: int
-        remote_pod=None,  # type: models.FixedReference
         remotes=None,  # type: List[models.FixedReference]
+        remote_pod=None,  # type: models.FixedReference
         status=None,  # type: str
         time=None,  # type: int
-        context=None,  # type: models.Reference
     ):
         """
         Keyword args:
             id (str): A non-modifiable, globally unique ID chosen by the system.
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
             direction (str): The direction of replication. Valid values include `inbound` and `outbound`.
             lag (ReplicaLinkLag): Duration in milliseconds that indicates how far behind the replication target is from the source.
             local_pod (FixedReference): Reference to a local pod.
             recovery_point (int): Time when the last piece of data was replicated, in milliseconds since the UNIX epoch, and the recovery point if the pod is promoted. If the pod is baselining then the value is `null`.
-            remote_pod (FixedReference): Reference to a remote pod.
             remotes (list[FixedReference]): Reference to a remote array.
+            remote_pod (FixedReference): Reference to a remote pod.
             status (str): Status of the replica-link. Valid values include `replicating`, `baselining`, `paused`, `quiescing`, `quiesced`, `idle`, and `unhealthy`.
             time (int): Sample time in milliseconds since the UNIX epoch.
-            context (Reference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
         """
         if id is not None:
             self.id = id
+        if context is not None:
+            self.context = context
         if direction is not None:
             self.direction = direction
         if lag is not None:
@@ -94,16 +96,14 @@ class PodReplicaLinkLag(object):
             self.local_pod = local_pod
         if recovery_point is not None:
             self.recovery_point = recovery_point
-        if remote_pod is not None:
-            self.remote_pod = remote_pod
         if remotes is not None:
             self.remotes = remotes
+        if remote_pod is not None:
+            self.remote_pod = remote_pod
         if status is not None:
             self.status = status
         if time is not None:
             self.time = time
-        if context is not None:
-            self.context = context
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -30,13 +30,13 @@ class PolicyMember(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'member': 'FixedReference',
-        'policy': 'FixedReference'
+        'policy': 'FixedReference',
+        'member': 'FixedReference'
     }
 
     attribute_map = {
-        'member': 'member',
-        'policy': 'policy'
+        'policy': 'policy',
+        'member': 'member'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class PolicyMember(object):
 
     def __init__(
         self,
-        member=None,  # type: models.FixedReference
         policy=None,  # type: models.FixedReference
+        member=None,  # type: models.FixedReference
     ):
         """
         Keyword args:
-            member (FixedReference): Reference to the resource the policy is applied to.
             policy (FixedReference): Reference to the policy.
+            member (FixedReference): Reference to the resource the policy is applied to.
         """
-        if member is not None:
-            self.member = member
         if policy is not None:
             self.policy = policy
+        if member is not None:
+            self.member = member
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

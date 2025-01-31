@@ -36,8 +36,8 @@ class FileSystemSnapshot(object):
         'destroyed': 'bool',
         'owner': 'FixedReference',
         'owner_destroyed': 'bool',
-        'policies': 'list[FixedLocationReference]',
         'policy': 'FixedLocationReference',
+        'policies': 'list[FixedLocationReference]',
         'source': 'FixedLocationReference',
         'suffix': 'str',
         'time_remaining': 'int'
@@ -50,8 +50,8 @@ class FileSystemSnapshot(object):
         'destroyed': 'destroyed',
         'owner': 'owner',
         'owner_destroyed': 'owner_destroyed',
-        'policies': 'policies',
         'policy': 'policy',
+        'policies': 'policies',
         'source': 'source',
         'suffix': 'suffix',
         'time_remaining': 'time_remaining'
@@ -68,8 +68,8 @@ class FileSystemSnapshot(object):
         destroyed=None,  # type: bool
         owner=None,  # type: models.FixedReference
         owner_destroyed=None,  # type: bool
-        policies=None,  # type: List[models.FixedLocationReference]
         policy=None,  # type: models.FixedLocationReference
+        policies=None,  # type: List[models.FixedLocationReference]
         source=None,  # type: models.FixedLocationReference
         suffix=None,  # type: str
         time_remaining=None,  # type: int
@@ -82,8 +82,8 @@ class FileSystemSnapshot(object):
             destroyed (bool): Is the file system snapshot destroyed? If not specified, defaults to `false`.
             owner (FixedReference): A reference to the file system that owns this snapshot. If the owner is destroyed, this will be destroyed.
             owner_destroyed (bool): Is the owning file system destroyed?
-            policies (list[FixedLocationReference]): An array of references to the associated policies.
             policy (FixedLocationReference): A reference to the associated policy that drives the behavior of the snapshot.
+            policies (list[FixedLocationReference]): An array of references to the associated policies.
             source (FixedLocationReference): A reference to the file system that was the source of the data in this snapshot. Normally this is the same as the owner, but if the snapshot is replicated, the source is the original file system.
             suffix (str): The suffix of the snapshot, e.g., `snap1`.
             time_remaining (int): Time in milliseconds before the file system snapshot is eradicated. `null` if not destroyed.
@@ -100,10 +100,10 @@ class FileSystemSnapshot(object):
             self.owner = owner
         if owner_destroyed is not None:
             self.owner_destroyed = owner_destroyed
-        if policies is not None:
-            self.policies = policies
         if policy is not None:
             self.policy = policy
+        if policies is not None:
+            self.policies = policies
         if source is not None:
             self.source = source
         if suffix is not None:

@@ -30,24 +30,38 @@ class GroupQuotaPatch(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'name': 'str',
+        'quota': 'int'
     }
 
     attribute_map = {
+        'name': 'name',
+        'quota': 'quota'
     }
 
     required_args = {
+        'quota',
     }
 
     def __init__(
         self,
+        quota,  # type: int
+        name=None,  # type: str
     ):
         """
         Keyword args:
+            name (str): Name of the object (e.g., a file system or snapshot).
+            quota (int, required): The space limit of the quota (in bytes) for the specified group, cannot be `0`. If specified, this value will override the file system's default group quota.
         """
+        if name is not None:
+            self.name = name
+        self.quota = quota
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
             raise KeyError("Invalid key `{}` for `GroupQuotaPatch`".format(key))
+        if key == "quota" and value is None:
+            raise ValueError("Invalid value for `quota`, must not be `None`")
         self.__dict__[key] = value
 
     def __getattribute__(self, item):

@@ -33,16 +33,16 @@ class TagBatch(object):
         'copyable': 'bool',
         'key': 'str',
         'namespace': 'str',
-        'resource': 'Reference',
-        'value': 'str'
+        'value': 'str',
+        'resource': 'Reference'
     }
 
     attribute_map = {
         'copyable': 'copyable',
         'key': 'key',
         'namespace': 'namespace',
-        'resource': 'resource',
-        'value': 'value'
+        'value': 'value',
+        'resource': 'resource'
     }
 
     required_args = {
@@ -53,16 +53,16 @@ class TagBatch(object):
         copyable=None,  # type: bool
         key=None,  # type: str
         namespace=None,  # type: str
-        resource=None,  # type: models.Reference
         value=None,  # type: str
+        resource=None,  # type: models.Reference
     ):
         """
         Keyword args:
             copyable (bool): Specifies whether or not to include the tag when copying the parent resource. If set to `true`, the tag is included in resource copying. If set to `false`, the tag is not included. If not specified, defaults to `true`.
             key (str): Key of the tag. Supports up to 64 Unicode characters.
             namespace (str): Optional namespace of the tag. Namespace identifies the category of the tag. Omitting the namespace defaults to the namespace `default`. The `pure&#42;` namespaces are reserved for plugins and integration partners. It is recommended that customers avoid using reserved namespaces.
-            resource (Reference): A reference to the parent object.
             value (str): Value of the tag. Supports up to 256 Unicode characters.
+            resource (Reference): A reference to the parent object.
         """
         if copyable is not None:
             self.copyable = copyable
@@ -70,10 +70,10 @@ class TagBatch(object):
             self.key = key
         if namespace is not None:
             self.namespace = namespace
-        if resource is not None:
-            self.resource = resource
         if value is not None:
             self.value = value
+        if resource is not None:
+            self.resource = resource
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

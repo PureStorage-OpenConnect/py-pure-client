@@ -67,7 +67,7 @@ class SshCertificateAuthorityPolicy(object):
     ):
         """
         Keyword args:
-            name (str): Name of the object (e.g., a file system or snapshot).
+            name (str): A name chosen by the user. Can be changed. Must be locally unique.
             id (str): A non-modifiable, globally unique ID chosen by the system.
             enabled (bool): If `true`, the policy is enabled. If not specified, defaults to `true`.
             is_local (bool): Whether the policy is defined on the local array.

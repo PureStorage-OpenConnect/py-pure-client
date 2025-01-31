@@ -38,8 +38,8 @@ class RemoteProtectionGroupSnapshotTransfer(object):
         'completed': 'int',
         'data_transferred': 'int',
         'physical_bytes_written': 'int',
-        'source': 'Reference',
-        'context': 'Reference'
+        'context': 'FixedReference',
+        'source': 'Reference'
     }
 
     attribute_map = {
@@ -51,8 +51,8 @@ class RemoteProtectionGroupSnapshotTransfer(object):
         'completed': 'completed',
         'data_transferred': 'data_transferred',
         'physical_bytes_written': 'physical_bytes_written',
-        'source': 'source',
-        'context': 'context'
+        'context': 'context',
+        'source': 'source'
     }
 
     required_args = {
@@ -68,8 +68,8 @@ class RemoteProtectionGroupSnapshotTransfer(object):
         completed=None,  # type: int
         data_transferred=None,  # type: int
         physical_bytes_written=None,  # type: int
+        context=None,  # type: models.FixedReference
         source=None,  # type: models.Reference
-        context=None,  # type: models.Reference
     ):
         """
         Keyword args:
@@ -81,8 +81,8 @@ class RemoteProtectionGroupSnapshotTransfer(object):
             completed (int): The timestamp of when the snapshot replication process completed. Measured in milliseconds since the UNIX epoch.
             data_transferred (int): The number of bytes transferred from the source to the target as part of the replication process. Measured in bytes.
             physical_bytes_written (int): The amount of physical/logical data written to the target due to replication. Measured in bytes.
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
             source (Reference): The original protection group from which this snapshot was taken.
-            context (Reference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
         """
         if id is not None:
             self.id = id
@@ -100,10 +100,10 @@ class RemoteProtectionGroupSnapshotTransfer(object):
             self.data_transferred = data_transferred
         if physical_bytes_written is not None:
             self.physical_bytes_written = physical_bytes_written
-        if source is not None:
-            self.source = source
         if context is not None:
             self.context = context
+        if source is not None:
+            self.source = source
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

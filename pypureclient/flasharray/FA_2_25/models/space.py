@@ -40,7 +40,12 @@ class Space(object):
         'total_reduction': 'float',
         'unique': 'int',
         'virtual': 'int',
-        'used_provisioned': 'int'
+        'used_provisioned': 'int',
+        'replication': 'int',
+        'shared_effective': 'int',
+        'snapshots_effective': 'int',
+        'unique_effective': 'int',
+        'total_effective': 'int'
     }
 
     attribute_map = {
@@ -54,7 +59,12 @@ class Space(object):
         'total_reduction': 'total_reduction',
         'unique': 'unique',
         'virtual': 'virtual',
-        'used_provisioned': 'used_provisioned'
+        'used_provisioned': 'used_provisioned',
+        'replication': 'replication',
+        'shared_effective': 'shared_effective',
+        'snapshots_effective': 'snapshots_effective',
+        'unique_effective': 'unique_effective',
+        'total_effective': 'total_effective'
     }
 
     required_args = {
@@ -73,6 +83,11 @@ class Space(object):
         unique=None,  # type: int
         virtual=None,  # type: int
         used_provisioned=None,  # type: int
+        replication=None,  # type: int
+        shared_effective=None,  # type: int
+        snapshots_effective=None,  # type: int
+        unique_effective=None,  # type: int
+        total_effective=None,  # type: int
     ):
         """
         Keyword args:
@@ -87,6 +102,11 @@ class Space(object):
             unique (int): The unique physical space occupied by customer data. Unique physical space does not include shared space, snapshots, and internal array metadata. Measured in bytes. On Evergreen//One arrays, this is the effective space contributed by unique customer data, measured in bytes. Unique data does not include shared space, snapshots, and internal array metadata.
             virtual (int): The amount of logically written data that a volume or a snapshot references. Measured in bytes.
             used_provisioned (int): The amount of logical space a container has consumed. The number is compared against the quota limit if the container has one one configured. Used provisioned does not include destroyed objects inside the container. For a destroyed container, used provisioned can include destroyed objects and represents how much logical space it would take to recover the container.
+            replication (int): The sum of replication space consumed by all pods on this array.
+            shared_effective (int): Deprecated. This will always return `null`. Please use the `shared` field in the future, as it contains the same information for Evergreen//One arrays.
+            snapshots_effective (int): Deprecated. This will always return `null`. Please use the `snapshots` field in the future, as it contains the same information for Evergreen//One arrays.
+            unique_effective (int): Deprecated. This will always return `null`. Please use the `unique` field in the future, as it contains the same information for Evergreen//One arrays.
+            total_effective (int): Deprecated. This will always return `null`. Please use the `total_physical` field instead, as it contains the same information for Evergreen//One arrays.
         """
         if data_reduction is not None:
             self.data_reduction = data_reduction
@@ -110,6 +130,16 @@ class Space(object):
             self.virtual = virtual
         if used_provisioned is not None:
             self.used_provisioned = used_provisioned
+        if replication is not None:
+            self.replication = replication
+        if shared_effective is not None:
+            self.shared_effective = shared_effective
+        if snapshots_effective is not None:
+            self.snapshots_effective = snapshots_effective
+        if unique_effective is not None:
+            self.unique_effective = unique_effective
+        if total_effective is not None:
+            self.total_effective = total_effective
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
@@ -143,6 +173,21 @@ class Space(object):
         if key == "used_provisioned" and value is not None:
             if value < 0:
                 raise ValueError("Invalid value for `used_provisioned`, must be a value greater than or equal to `0`")
+        if key == "replication" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `replication`, must be a value greater than or equal to `0`")
+        if key == "shared_effective" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `shared_effective`, must be a value greater than or equal to `0`")
+        if key == "snapshots_effective" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `snapshots_effective`, must be a value greater than or equal to `0`")
+        if key == "unique_effective" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `unique_effective`, must be a value greater than or equal to `0`")
+        if key == "total_effective" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `total_effective`, must be a value greater than or equal to `0`")
         self.__dict__[key] = value
 
     def __getattribute__(self, item):

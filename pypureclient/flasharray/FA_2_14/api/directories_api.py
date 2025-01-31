@@ -205,8 +205,8 @@ class DirectoriesApi(object):
         if params.get('x_request_id') is None:
             params['x_request_id'] = str(uuid.uuid4())
 
-        if 'limit' in params and params['limit'] < 1:
-            raise ValueError("Invalid value for parameter `limit` when calling `api214_directories_get`, must be a value greater than or equal to `1`")
+        if 'limit' in params and params['limit'] < 0:
+            raise ValueError("Invalid value for parameter `limit` when calling `api214_directories_get`, must be a value greater than or equal to `0`")
         if 'offset' in params and params['offset'] < 0:
             raise ValueError("Invalid value for parameter `offset` when calling `api214_directories_get`, must be a value greater than or equal to `0`")
         collection_formats = {}
@@ -466,8 +466,8 @@ class DirectoriesApi(object):
 
         if 'resolution' in params and params['resolution'] < 0:
             raise ValueError("Invalid value for parameter `resolution` when calling `api214_directories_performance_get`, must be a value greater than or equal to `0`")
-        if 'limit' in params and params['limit'] < 1:
-            raise ValueError("Invalid value for parameter `limit` when calling `api214_directories_performance_get`, must be a value greater than or equal to `1`")
+        if 'limit' in params and params['limit'] < 0:
+            raise ValueError("Invalid value for parameter `limit` when calling `api214_directories_performance_get`, must be a value greater than or equal to `0`")
         if 'offset' in params and params['offset'] < 0:
             raise ValueError("Invalid value for parameter `offset` when calling `api214_directories_performance_get`, must be a value greater than or equal to `0`")
         collection_formats = {}
@@ -621,8 +621,8 @@ class DirectoriesApi(object):
         if params.get('x_request_id') is None:
             params['x_request_id'] = str(uuid.uuid4())
 
-        if 'limit' in params and params['limit'] < 1:
-            raise ValueError("Invalid value for parameter `limit` when calling `api214_directories_policies_get`, must be a value greater than or equal to `1`")
+        if 'limit' in params and params['limit'] < 0:
+            raise ValueError("Invalid value for parameter `limit` when calling `api214_directories_policies_get`, must be a value greater than or equal to `0`")
         if 'offset' in params and params['offset'] < 0:
             raise ValueError("Invalid value for parameter `offset` when calling `api214_directories_policies_get`, must be a value greater than or equal to `0`")
         collection_formats = {}
@@ -887,8 +887,8 @@ class DirectoriesApi(object):
         if params.get('x_request_id') is None:
             params['x_request_id'] = str(uuid.uuid4())
 
-        if 'limit' in params and params['limit'] < 1:
-            raise ValueError("Invalid value for parameter `limit` when calling `api214_directories_policies_nfs_get`, must be a value greater than or equal to `1`")
+        if 'limit' in params and params['limit'] < 0:
+            raise ValueError("Invalid value for parameter `limit` when calling `api214_directories_policies_nfs_get`, must be a value greater than or equal to `0`")
         if 'offset' in params and params['offset'] < 0:
             raise ValueError("Invalid value for parameter `offset` when calling `api214_directories_policies_nfs_get`, must be a value greater than or equal to `0`")
         collection_formats = {}
@@ -1259,8 +1259,8 @@ class DirectoriesApi(object):
         if params.get('x_request_id') is None:
             params['x_request_id'] = str(uuid.uuid4())
 
-        if 'limit' in params and params['limit'] < 1:
-            raise ValueError("Invalid value for parameter `limit` when calling `api214_directories_policies_quota_get`, must be a value greater than or equal to `1`")
+        if 'limit' in params and params['limit'] < 0:
+            raise ValueError("Invalid value for parameter `limit` when calling `api214_directories_policies_quota_get`, must be a value greater than or equal to `0`")
         if 'offset' in params and params['offset'] < 0:
             raise ValueError("Invalid value for parameter `offset` when calling `api214_directories_policies_quota_get`, must be a value greater than or equal to `0`")
         collection_formats = {}
@@ -1635,8 +1635,8 @@ class DirectoriesApi(object):
         if params.get('x_request_id') is None:
             params['x_request_id'] = str(uuid.uuid4())
 
-        if 'limit' in params and params['limit'] < 1:
-            raise ValueError("Invalid value for parameter `limit` when calling `api214_directories_policies_smb_get`, must be a value greater than or equal to `1`")
+        if 'limit' in params and params['limit'] < 0:
+            raise ValueError("Invalid value for parameter `limit` when calling `api214_directories_policies_smb_get`, must be a value greater than or equal to `0`")
         if 'offset' in params and params['offset'] < 0:
             raise ValueError("Invalid value for parameter `offset` when calling `api214_directories_policies_smb_get`, must be a value greater than or equal to `0`")
         collection_formats = {}
@@ -2007,8 +2007,8 @@ class DirectoriesApi(object):
         if params.get('x_request_id') is None:
             params['x_request_id'] = str(uuid.uuid4())
 
-        if 'limit' in params and params['limit'] < 1:
-            raise ValueError("Invalid value for parameter `limit` when calling `api214_directories_policies_snapshot_get`, must be a value greater than or equal to `1`")
+        if 'limit' in params and params['limit'] < 0:
+            raise ValueError("Invalid value for parameter `limit` when calling `api214_directories_policies_snapshot_get`, must be a value greater than or equal to `0`")
         if 'offset' in params and params['offset'] < 0:
             raise ValueError("Invalid value for parameter `offset` when calling `api214_directories_policies_snapshot_get`, must be a value greater than or equal to `0`")
         collection_formats = {}
@@ -2376,8 +2376,8 @@ class DirectoriesApi(object):
 
         if 'resolution' in params and params['resolution'] < 0:
             raise ValueError("Invalid value for parameter `resolution` when calling `api214_directories_space_get`, must be a value greater than or equal to `0`")
-        if 'limit' in params and params['limit'] < 1:
-            raise ValueError("Invalid value for parameter `limit` when calling `api214_directories_space_get`, must be a value greater than or equal to `1`")
+        if 'limit' in params and params['limit'] < 0:
+            raise ValueError("Invalid value for parameter `limit` when calling `api214_directories_space_get`, must be a value greater than or equal to `0`")
         if 'offset' in params and params['offset'] < 0:
             raise ValueError("Invalid value for parameter `offset` when calling `api214_directories_space_get`, must be a value greater than or equal to `0`")
         collection_formats = {}

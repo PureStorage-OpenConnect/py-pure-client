@@ -33,22 +33,22 @@ class VolumePatch(object):
         'destroyed': 'bool',
         'name': 'str',
         'pod': 'Reference',
-        'priority_adjustment': 'PriorityAdjustment',
         'provisioned': 'int',
         'qos': 'Qos',
-        'requested_promotion_state': 'str',
-        'volume_group': 'Reference'
+        'priority_adjustment': 'PriorityAdjustment',
+        'volume_group': 'Reference',
+        'requested_promotion_state': 'str'
     }
 
     attribute_map = {
         'destroyed': 'destroyed',
         'name': 'name',
         'pod': 'pod',
-        'priority_adjustment': 'priority_adjustment',
         'provisioned': 'provisioned',
         'qos': 'qos',
-        'requested_promotion_state': 'requested_promotion_state',
-        'volume_group': 'volume_group'
+        'priority_adjustment': 'priority_adjustment',
+        'volume_group': 'volume_group',
+        'requested_promotion_state': 'requested_promotion_state'
     }
 
     required_args = {
@@ -59,22 +59,22 @@ class VolumePatch(object):
         destroyed=None,  # type: bool
         name=None,  # type: str
         pod=None,  # type: models.Reference
-        priority_adjustment=None,  # type: models.PriorityAdjustment
         provisioned=None,  # type: int
         qos=None,  # type: models.Qos
-        requested_promotion_state=None,  # type: str
+        priority_adjustment=None,  # type: models.PriorityAdjustment
         volume_group=None,  # type: models.Reference
+        requested_promotion_state=None,  # type: str
     ):
         """
         Keyword args:
             destroyed (bool): If set to `true`, destroys a resource. Once set to `true`, the `time_remaining` value will display the amount of time left until the destroyed resource is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed resource can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the resource is permanently eradicated and can no longer be recovered.
             name (str): The new name for the resource.
             pod (Reference): Moves the volume into the specified pod.
-            priority_adjustment (PriorityAdjustment): Adjusts volume priority.
             provisioned (int): Updates the virtual size of the volume, measured in bytes.
             qos (Qos): Sets QoS limits.
-            requested_promotion_state (str): Valid values are `promoted` and `demoted`. Patch `requested_promotion_state` to `demoted` to demote the volume so that the volume stops accepting write requests. Patch `requested_promotion_state` to `promoted` to promote the volume so that the volume starts accepting write requests.
+            priority_adjustment (PriorityAdjustment): Adjusts volume priority.
             volume_group (Reference): Adds the volume to the specified volume group.
+            requested_promotion_state (str): Valid values are `promoted` and `demoted`. Patch `requested_promotion_state` to `demoted` to demote the volume so that the volume stops accepting write requests. Patch `requested_promotion_state` to `promoted` to promote the volume so that the volume starts accepting write requests.
         """
         if destroyed is not None:
             self.destroyed = destroyed
@@ -82,16 +82,16 @@ class VolumePatch(object):
             self.name = name
         if pod is not None:
             self.pod = pod
-        if priority_adjustment is not None:
-            self.priority_adjustment = priority_adjustment
         if provisioned is not None:
             self.provisioned = provisioned
         if qos is not None:
             self.qos = qos
-        if requested_promotion_state is not None:
-            self.requested_promotion_state = requested_promotion_state
+        if priority_adjustment is not None:
+            self.priority_adjustment = priority_adjustment
         if volume_group is not None:
             self.volume_group = volume_group
+        if requested_promotion_state is not None:
+            self.requested_promotion_state = requested_promotion_state
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

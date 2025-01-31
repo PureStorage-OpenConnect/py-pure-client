@@ -148,6 +148,14 @@ pypureclient.flasharray.FA\_2\_32.models.admin\_settings module
    :undoc-members:
    :show-inheritance:
 
+pypureclient.flasharray.FA\_2\_32.models.admin\_settings\_get\_response module
+------------------------------------------------------------------------------
+
+.. automodule:: pypureclient.flasharray.FA_2_32.models.admin_settings_get_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 pypureclient.flasharray.FA\_2\_32.models.admin\_settings\_required\_authentication\_methods module
 --------------------------------------------------------------------------------------------------
 
@@ -408,14 +416,6 @@ pypureclient.flasharray.FA\_2\_32.models.app\_response module
 -------------------------------------------------------------
 
 .. automodule:: pypureclient.flasharray.FA_2_32.models.app_response
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-pypureclient.flasharray.FA\_2\_32.models.array module
------------------------------------------------------
-
-.. automodule:: pypureclient.flasharray.FA_2_32.models.array
    :members:
    :undoc-members:
    :show-inheritance:
@@ -860,14 +860,6 @@ pypureclient.flasharray.FA\_2\_32.models.controller\_get\_response module
    :undoc-members:
    :show-inheritance:
 
-pypureclient.flasharray.FA\_2\_32.models.controllers module
------------------------------------------------------------
-
-.. automodule:: pypureclient.flasharray.FA_2_32.models.controllers
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 pypureclient.flasharray.FA\_2\_32.models.default\_protection\_reference module
 ------------------------------------------------------------------------------
 
@@ -1128,14 +1120,6 @@ pypureclient.flasharray.FA\_2\_32.models.directory\_snapshot\_response module
 -----------------------------------------------------------------------------
 
 .. automodule:: pypureclient.flasharray.FA_2_32.models.directory_snapshot_response
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-pypureclient.flasharray.FA\_2\_32.models.directory\_space module
-----------------------------------------------------------------
-
-.. automodule:: pypureclient.flasharray.FA_2_32.models.directory_space
    :members:
    :undoc-members:
    :show-inheritance:
@@ -1412,22 +1396,6 @@ pypureclient.flasharray.FA\_2\_32.models.host\_group\_patch module
    :undoc-members:
    :show-inheritance:
 
-pypureclient.flasharray.FA\_2\_32.models.host\_group\_performance module
-------------------------------------------------------------------------
-
-.. automodule:: pypureclient.flasharray.FA_2_32.models.host_group_performance
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-pypureclient.flasharray.FA\_2\_32.models.host\_group\_performance\_by\_array module
------------------------------------------------------------------------------------
-
-.. automodule:: pypureclient.flasharray.FA_2_32.models.host_group_performance_by_array
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 pypureclient.flasharray.FA\_2\_32.models.host\_group\_response module
 ---------------------------------------------------------------------
 
@@ -1436,26 +1404,10 @@ pypureclient.flasharray.FA\_2\_32.models.host\_group\_response module
    :undoc-members:
    :show-inheritance:
 
-pypureclient.flasharray.FA\_2\_32.models.host\_group\_space module
-------------------------------------------------------------------
-
-.. automodule:: pypureclient.flasharray.FA_2_32.models.host_group_space
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 pypureclient.flasharray.FA\_2\_32.models.host\_patch module
 -----------------------------------------------------------
 
 .. automodule:: pypureclient.flasharray.FA_2_32.models.host_patch
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-pypureclient.flasharray.FA\_2\_32.models.host\_performance module
------------------------------------------------------------------
-
-.. automodule:: pypureclient.flasharray.FA_2_32.models.host_performance
    :members:
    :undoc-members:
    :show-inheritance:
@@ -1472,14 +1424,6 @@ pypureclient.flasharray.FA\_2\_32.models.host\_performance\_balance\_get\_respon
 -----------------------------------------------------------------------------------------
 
 .. automodule:: pypureclient.flasharray.FA_2_32.models.host_performance_balance_get_response
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-pypureclient.flasharray.FA\_2\_32.models.host\_performance\_by\_array module
-----------------------------------------------------------------------------
-
-.. automodule:: pypureclient.flasharray.FA_2_32.models.host_performance_by_array
    :members:
    :undoc-members:
    :show-inheritance:
@@ -1504,14 +1448,6 @@ pypureclient.flasharray.FA\_2\_32.models.host\_response module
 --------------------------------------------------------------
 
 .. automodule:: pypureclient.flasharray.FA_2_32.models.host_response
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-pypureclient.flasharray.FA\_2\_32.models.host\_space module
------------------------------------------------------------
-
-.. automodule:: pypureclient.flasharray.FA_2_32.models.host_space
    :members:
    :undoc-members:
    :show-inheritance:
@@ -2004,14 +1940,6 @@ pypureclient.flasharray.FA\_2\_32.models.network\_interface\_performance\_get\_r
    :undoc-members:
    :show-inheritance:
 
-pypureclient.flasharray.FA\_2\_32.models.network\_interface\_port\_details module
----------------------------------------------------------------------------------
-
-.. automodule:: pypureclient.flasharray.FA_2_32.models.network_interface_port_details
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 pypureclient.flasharray.FA\_2\_32.models.network\_interface\_port\_details\_rx\_los module
 ------------------------------------------------------------------------------------------
 
@@ -2444,14 +2372,6 @@ pypureclient.flasharray.FA\_2\_32.models.pod\_replica\_link\_lag\_response modul
    :undoc-members:
    :show-inheritance:
 
-pypureclient.flasharray.FA\_2\_32.models.pod\_replica\_link\_mapping\_policy module
------------------------------------------------------------------------------------
-
-.. automodule:: pypureclient.flasharray.FA_2_32.models.pod_replica_link_mapping_policy
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 pypureclient.flasharray.FA\_2\_32.models.pod\_replica\_link\_mapping\_policy\_get\_response module
 --------------------------------------------------------------------------------------------------
 
@@ -2472,14 +2392,6 @@ pypureclient.flasharray.FA\_2\_32.models.pod\_replica\_link\_patch module
 -------------------------------------------------------------------------
 
 .. automodule:: pypureclient.flasharray.FA_2_32.models.pod_replica_link_patch
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-pypureclient.flasharray.FA\_2\_32.models.pod\_replica\_link\_performance module
--------------------------------------------------------------------------------
-
-.. automodule:: pypureclient.flasharray.FA_2_32.models.pod_replica_link_performance
    :members:
    :undoc-members:
    :show-inheritance:
@@ -3028,14 +2940,6 @@ pypureclient.flasharray.FA\_2\_32.models.protection\_group\_performance\_array\_
    :undoc-members:
    :show-inheritance:
 
-pypureclient.flasharray.FA\_2\_32.models.protection\_group\_performance\_by\_array module
------------------------------------------------------------------------------------------
-
-.. automodule:: pypureclient.flasharray.FA_2_32.models.protection_group_performance_by_array
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 pypureclient.flasharray.FA\_2\_32.models.protection\_group\_performance\_response module
 ----------------------------------------------------------------------------------------
 
@@ -3132,14 +3036,6 @@ pypureclient.flasharray.FA\_2\_32.models.protection\_group\_snapshot\_transfer\_
    :undoc-members:
    :show-inheritance:
 
-pypureclient.flasharray.FA\_2\_32.models.protection\_group\_space module
-------------------------------------------------------------------------
-
-.. automodule:: pypureclient.flasharray.FA_2_32.models.protection_group_space
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 pypureclient.flasharray.FA\_2\_32.models.protection\_group\_target module
 -------------------------------------------------------------------------
 
@@ -3176,6 +3072,14 @@ pypureclient.flasharray.FA\_2\_32.models.protection\_groups\_volumes\_get\_respo
 ------------------------------------------------------------------------------------------
 
 .. automodule:: pypureclient.flasharray.FA_2_32.models.protection_groups_volumes_get_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.flasharray.FA\_2\_32.models.protection\_groups\_volumes\_member module
+-----------------------------------------------------------------------------------
+
+.. automodule:: pypureclient.flasharray.FA_2_32.models.protection_groups_volumes_member
    :members:
    :undoc-members:
    :show-inheritance:
@@ -3900,14 +3804,6 @@ pypureclient.flasharray.FA\_2\_32.models.software\_check module
    :undoc-members:
    :show-inheritance:
 
-pypureclient.flasharray.FA\_2\_32.models.software\_checks module
-----------------------------------------------------------------
-
-.. automodule:: pypureclient.flasharray.FA_2_32.models.software_checks
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 pypureclient.flasharray.FA\_2\_32.models.software\_checks\_checks module
 ------------------------------------------------------------------------
 
@@ -3972,14 +3868,6 @@ pypureclient.flasharray.FA\_2\_32.models.software\_installation\_step module
    :undoc-members:
    :show-inheritance:
 
-pypureclient.flasharray.FA\_2\_32.models.software\_installation\_steps module
------------------------------------------------------------------------------
-
-.. automodule:: pypureclient.flasharray.FA_2_32.models.software_installation_steps
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 pypureclient.flasharray.FA\_2\_32.models.software\_installation\_steps\_checks module
 -------------------------------------------------------------------------------------
 
@@ -4004,14 +3892,6 @@ pypureclient.flasharray.FA\_2\_32.models.software\_installation\_steps\_response
    :undoc-members:
    :show-inheritance:
 
-pypureclient.flasharray.FA\_2\_32.models.software\_installations module
------------------------------------------------------------------------
-
-.. automodule:: pypureclient.flasharray.FA_2_32.models.software_installations
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 pypureclient.flasharray.FA\_2\_32.models.software\_installations\_get\_response module
 --------------------------------------------------------------------------------------
 
@@ -4032,14 +3912,6 @@ pypureclient.flasharray.FA\_2\_32.models.software\_patch module
 ---------------------------------------------------------------
 
 .. automodule:: pypureclient.flasharray.FA_2_32.models.software_patch
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-pypureclient.flasharray.FA\_2\_32.models.software\_patches module
------------------------------------------------------------------
-
-.. automodule:: pypureclient.flasharray.FA_2_32.models.software_patches
    :members:
    :undoc-members:
    :show-inheritance:
@@ -4088,14 +3960,6 @@ pypureclient.flasharray.FA\_2\_32.models.software\_version module
 -----------------------------------------------------------------
 
 .. automodule:: pypureclient.flasharray.FA_2_32.models.software_version
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-pypureclient.flasharray.FA\_2\_32.models.software\_versions module
-------------------------------------------------------------------
-
-.. automodule:: pypureclient.flasharray.FA_2_32.models.software_versions
    :members:
    :undoc-members:
    :show-inheritance:
@@ -4724,14 +4588,6 @@ pypureclient.flasharray.FA\_2\_32.models.volume\_group\_response module
    :undoc-members:
    :show-inheritance:
 
-pypureclient.flasharray.FA\_2\_32.models.volume\_group\_space module
---------------------------------------------------------------------
-
-.. automodule:: pypureclient.flasharray.FA_2_32.models.volume_group_space
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 pypureclient.flasharray.FA\_2\_32.models.volume\_patch module
 -------------------------------------------------------------
 
@@ -4744,14 +4600,6 @@ pypureclient.flasharray.FA\_2\_32.models.volume\_performance module
 -------------------------------------------------------------------
 
 .. automodule:: pypureclient.flasharray.FA_2_32.models.volume_performance
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-pypureclient.flasharray.FA\_2\_32.models.volume\_performance\_by\_array module
-------------------------------------------------------------------------------
-
-.. automodule:: pypureclient.flasharray.FA_2_32.models.volume_performance_by_array
    :members:
    :undoc-members:
    :show-inheritance:

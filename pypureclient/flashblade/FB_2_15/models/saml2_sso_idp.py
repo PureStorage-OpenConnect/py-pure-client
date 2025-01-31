@@ -30,20 +30,20 @@ class Saml2SsoIdp(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'encrypt_assertion_enabled': 'bool',
         'entity_id': 'str',
+        'url': 'str',
         'metadata_url': 'str',
         'sign_request_enabled': 'bool',
-        'url': 'str',
+        'encrypt_assertion_enabled': 'bool',
         'verification_certificate': 'ReferenceWritable'
     }
 
     attribute_map = {
-        'encrypt_assertion_enabled': 'encrypt_assertion_enabled',
         'entity_id': 'entity_id',
+        'url': 'url',
         'metadata_url': 'metadata_url',
         'sign_request_enabled': 'sign_request_enabled',
-        'url': 'url',
+        'encrypt_assertion_enabled': 'encrypt_assertion_enabled',
         'verification_certificate': 'verification_certificate'
     }
 
@@ -52,32 +52,32 @@ class Saml2SsoIdp(object):
 
     def __init__(
         self,
-        encrypt_assertion_enabled=None,  # type: bool
         entity_id=None,  # type: str
+        url=None,  # type: str
         metadata_url=None,  # type: str
         sign_request_enabled=None,  # type: bool
-        url=None,  # type: str
+        encrypt_assertion_enabled=None,  # type: bool
         verification_certificate=None,  # type: models.ReferenceWritable
     ):
         """
         Keyword args:
-            encrypt_assertion_enabled (bool): If set to `true`, SAML assertions will be encrypted by the identity provider.
             entity_id (str): A globally unique name for the identity provider.
+            url (str): The URL of the identity provider.
             metadata_url (str): The URL of the identity provider metadata.
             sign_request_enabled (bool): If set to `true`, SAML requests will be signed by the service provider.
-            url (str): The URL of the identity provider.
+            encrypt_assertion_enabled (bool): If set to `true`, SAML assertions will be encrypted by the identity provider.
             verification_certificate (ReferenceWritable): The certificate used by the service provider to verify the SAML response signature from the identity provider. The credential is managed by the `certificates` endpoint and `purecert` CLI commands.
         """
-        if encrypt_assertion_enabled is not None:
-            self.encrypt_assertion_enabled = encrypt_assertion_enabled
         if entity_id is not None:
             self.entity_id = entity_id
+        if url is not None:
+            self.url = url
         if metadata_url is not None:
             self.metadata_url = metadata_url
         if sign_request_enabled is not None:
             self.sign_request_enabled = sign_request_enabled
-        if url is not None:
-            self.url = url
+        if encrypt_assertion_enabled is not None:
+            self.encrypt_assertion_enabled = encrypt_assertion_enabled
         if verification_certificate is not None:
             self.verification_certificate = verification_certificate
 

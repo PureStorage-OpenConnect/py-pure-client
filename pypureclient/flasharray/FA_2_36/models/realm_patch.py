@@ -32,15 +32,15 @@ class RealmPatch(object):
     swagger_types = {
         'name': 'str',
         'destroyed': 'bool',
-        'qos': 'ContainerQos',
-        'quota_limit': 'int'
+        'quota_limit': 'int',
+        'qos': 'ContainerQos'
     }
 
     attribute_map = {
         'name': 'name',
         'destroyed': 'destroyed',
-        'qos': 'qos',
-        'quota_limit': 'quota_limit'
+        'quota_limit': 'quota_limit',
+        'qos': 'qos'
     }
 
     required_args = {
@@ -50,24 +50,24 @@ class RealmPatch(object):
         self,
         name=None,  # type: str
         destroyed=None,  # type: bool
-        qos=None,  # type: models.ContainerQos
         quota_limit=None,  # type: int
+        qos=None,  # type: models.ContainerQos
     ):
         """
         Keyword args:
             name (str): The new name for the resource.
             destroyed (bool): If set to `true`, the realm will be destroyed and pending eradication. The `time_remaining` value displays the amount of time left until the destroyed realm is permanently eradicated. A realm can only be destroyed if it is empty or destroy_contents is set to true. Before the `time_remaining` period has elapsed, the destroyed realm can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the realm is permanently eradicated and can no longer be recovered.
-            qos (ContainerQos): Sets QoS limits.
             quota_limit (int): The logical quota limit of the realm, measured in bytes.
+            qos (ContainerQos): Sets QoS limits.
         """
         if name is not None:
             self.name = name
         if destroyed is not None:
             self.destroyed = destroyed
-        if qos is not None:
-            self.qos = qos
         if quota_limit is not None:
             self.quota_limit = quota_limit
+        if qos is not None:
+            self.qos = qos
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

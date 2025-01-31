@@ -255,8 +255,8 @@ class PodReplicaLinksApi(object):
         if params.get('x_request_id') is None:
             params['x_request_id'] = str(uuid.uuid4())
 
-        if 'limit' in params and params['limit'] < 1:
-            raise ValueError("Invalid value for parameter `limit` when calling `api239_pod_replica_links_get`, must be a value greater than or equal to `1`")
+        if 'limit' in params and params['limit'] < 0:
+            raise ValueError("Invalid value for parameter `limit` when calling `api239_pod_replica_links_get`, must be a value greater than or equal to `0`")
         if 'offset' in params and params['offset'] < 0:
             raise ValueError("Invalid value for parameter `offset` when calling `api239_pod_replica_links_get`, must be a value greater than or equal to `0`")
         collection_formats = {}
@@ -446,8 +446,8 @@ class PodReplicaLinksApi(object):
 
         if 'resolution' in params and params['resolution'] < 0:
             raise ValueError("Invalid value for parameter `resolution` when calling `api239_pod_replica_links_lag_get`, must be a value greater than or equal to `0`")
-        if 'limit' in params and params['limit'] < 1:
-            raise ValueError("Invalid value for parameter `limit` when calling `api239_pod_replica_links_lag_get`, must be a value greater than or equal to `1`")
+        if 'limit' in params and params['limit'] < 0:
+            raise ValueError("Invalid value for parameter `limit` when calling `api239_pod_replica_links_lag_get`, must be a value greater than or equal to `0`")
         if 'offset' in params and params['offset'] < 0:
             raise ValueError("Invalid value for parameter `offset` when calling `api239_pod_replica_links_lag_get`, must be a value greater than or equal to `0`")
         collection_formats = {}
@@ -640,8 +640,8 @@ class PodReplicaLinksApi(object):
         if params.get('x_request_id') is None:
             params['x_request_id'] = str(uuid.uuid4())
 
-        if 'limit' in params and params['limit'] < 1:
-            raise ValueError("Invalid value for parameter `limit` when calling `api239_pod_replica_links_mappings_policies_get`, must be a value greater than or equal to `1`")
+        if 'limit' in params and params['limit'] < 0:
+            raise ValueError("Invalid value for parameter `limit` when calling `api239_pod_replica_links_mappings_policies_get`, must be a value greater than or equal to `0`")
         if 'offset' in params and params['offset'] < 0:
             raise ValueError("Invalid value for parameter `offset` when calling `api239_pod_replica_links_mappings_policies_get`, must be a value greater than or equal to `0`")
         collection_formats = {}
@@ -1167,8 +1167,8 @@ class PodReplicaLinksApi(object):
 
         if 'resolution' in params and params['resolution'] < 0:
             raise ValueError("Invalid value for parameter `resolution` when calling `api239_pod_replica_links_performance_replication_get`, must be a value greater than or equal to `0`")
-        if 'limit' in params and params['limit'] < 1:
-            raise ValueError("Invalid value for parameter `limit` when calling `api239_pod_replica_links_performance_replication_get`, must be a value greater than or equal to `1`")
+        if 'limit' in params and params['limit'] < 0:
+            raise ValueError("Invalid value for parameter `limit` when calling `api239_pod_replica_links_performance_replication_get`, must be a value greater than or equal to `0`")
         if 'offset' in params and params['offset'] < 0:
             raise ValueError("Invalid value for parameter `offset` when calling `api239_pod_replica_links_performance_replication_get`, must be a value greater than or equal to `0`")
         collection_formats = {}

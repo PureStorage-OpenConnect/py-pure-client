@@ -30,15 +30,15 @@ class VchostConnection(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'all_vchosts': 'bool',
         'protocol_endpoint': 'FixedReference',
-        'vchost': 'FixedReference'
+        'vchost': 'FixedReference',
+        'all_vchosts': 'bool'
     }
 
     attribute_map = {
-        'all_vchosts': 'all_vchosts',
         'protocol_endpoint': 'protocol_endpoint',
-        'vchost': 'vchost'
+        'vchost': 'vchost',
+        'all_vchosts': 'all_vchosts'
     }
 
     required_args = {
@@ -46,22 +46,22 @@ class VchostConnection(object):
 
     def __init__(
         self,
-        all_vchosts=None,  # type: bool
         protocol_endpoint=None,  # type: models.FixedReference
         vchost=None,  # type: models.FixedReference
+        all_vchosts=None,  # type: bool
     ):
         """
         Keyword args:
-            all_vchosts (bool): If set to `true`, the storage container represented by the protocol endpoint is accessible to all vchosts. If set to `false`, the storage container represented by the protocol endpoint is only accesible to the vchosts that have explicit vchost-connections to this protocol endpoint. The default is `false`.
             protocol_endpoint (FixedReference): A reference to the protocol endpoint, representing a storage container that vCenter can use.
             vchost (FixedReference): For vchost-connections, a vchost represents a vCenter. By connecting to a protocol endpoint, the corresponding vCenter gets the access to the storage container represented by this protocol endpoint. The vchost name should be null if `all_vchosts` is set to `true`, which means the storage container is accessible to all vchosts.
+            all_vchosts (bool): If set to `true`, the storage container represented by the protocol endpoint is accessible to all vchosts. If set to `false`, the storage container represented by the protocol endpoint is only accesible to the vchosts that have explicit vchost-connections to this protocol endpoint. The default is `false`.
         """
-        if all_vchosts is not None:
-            self.all_vchosts = all_vchosts
         if protocol_endpoint is not None:
             self.protocol_endpoint = protocol_endpoint
         if vchost is not None:
             self.vchost = vchost
+        if all_vchosts is not None:
+            self.all_vchosts = all_vchosts
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

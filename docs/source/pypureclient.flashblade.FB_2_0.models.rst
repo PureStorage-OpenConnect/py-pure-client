@@ -1644,14 +1644,6 @@ pypureclient.flashblade.FB\_2\_0.models.policy\_get\_response module
    :undoc-members:
    :show-inheritance:
 
-pypureclient.flashblade.FB\_2\_0.models.policy\_local\_member module
---------------------------------------------------------------------
-
-.. automodule:: pypureclient.flashblade.FB_2_0.models.policy_local_member
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 pypureclient.flashblade.FB\_2\_0.models.policy\_member module
 -------------------------------------------------------------
 
@@ -1840,14 +1832,6 @@ pypureclient.flashblade.FB\_2\_0.models.smb module
 --------------------------------------------------
 
 .. automodule:: pypureclient.flashblade.FB_2_0.models.smb
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-pypureclient.flashblade.FB\_2\_0.models.smtp module
----------------------------------------------------
-
-.. automodule:: pypureclient.flashblade.FB_2_0.models.smtp
    :members:
    :undoc-members:
    :show-inheritance:

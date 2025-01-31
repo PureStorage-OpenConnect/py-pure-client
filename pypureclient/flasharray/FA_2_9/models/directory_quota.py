@@ -33,10 +33,10 @@ class DirectoryQuota(object):
         'directory': 'FixedReferenceWithType',
         'enabled': 'bool',
         'enforced': 'bool',
+        'quota_limit': 'int',
         'path': 'str',
         'percentage_used': 'float',
         'policy': 'FixedReferenceWithType',
-        'quota_limit': 'int',
         'rule_name': 'str',
         'usage': 'int'
     }
@@ -45,10 +45,10 @@ class DirectoryQuota(object):
         'directory': 'directory',
         'enabled': 'enabled',
         'enforced': 'enforced',
+        'quota_limit': 'quota_limit',
         'path': 'path',
         'percentage_used': 'percentage_used',
         'policy': 'policy',
-        'quota_limit': 'quota_limit',
         'rule_name': 'rule_name',
         'usage': 'usage'
     }
@@ -61,10 +61,10 @@ class DirectoryQuota(object):
         directory=None,  # type: models.FixedReferenceWithType
         enabled=None,  # type: bool
         enforced=None,  # type: bool
+        quota_limit=None,  # type: int
         path=None,  # type: str
         percentage_used=None,  # type: float
         policy=None,  # type: models.FixedReferenceWithType
-        quota_limit=None,  # type: int
         rule_name=None,  # type: str
         usage=None,  # type: int
     ):
@@ -73,10 +73,10 @@ class DirectoryQuota(object):
             directory (FixedReferenceWithType): The directory to which the quota applies.
             enabled (bool): Returns a value of `true` if the policy is enabled.
             enforced (bool): Defines whether the quota rule is enforced or unenforced. If the quota rule is enforced and logical space usage exceeds the quota limit, any modification operations that result in a need for more space are blocked. If the quota rule is unenforced and logical space usage exceeds the quota limit, notification emails are sent to targets that are specified using the `notification` parameter. No client operations are blocked when an unenforced limit is exceeded. If set to `true`, the limit is enforced. If set to `false`, notification targets are informed when the usage exceeds 80 percent of the limit.
+            quota_limit (int): Effective quota limit imposed by the quota policy rule attached to the directory, measured in bytes.
             path (str): Absolute path of the directory in the file system.
             percentage_used (float): The percentage of the space used in the directory with respect to the quota limit.
             policy (FixedReferenceWithType): The effective quota policy that imposes the limit. This is the policy with the lowest limit.
-            quota_limit (int): Effective quota limit imposed by the quota policy rule attached to the directory, measured in bytes.
             rule_name (str): Name of the rule that results in this quota and behavior being applied to this directory.
             usage (int): The amount of logically written data for the directory, measured in bytes.
         """
@@ -86,14 +86,14 @@ class DirectoryQuota(object):
             self.enabled = enabled
         if enforced is not None:
             self.enforced = enforced
+        if quota_limit is not None:
+            self.quota_limit = quota_limit
         if path is not None:
             self.path = path
         if percentage_used is not None:
             self.percentage_used = percentage_used
         if policy is not None:
             self.policy = policy
-        if quota_limit is not None:
-            self.quota_limit = quota_limit
         if rule_name is not None:
             self.rule_name = rule_name
         if usage is not None:
@@ -102,12 +102,12 @@ class DirectoryQuota(object):
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
             raise KeyError("Invalid key `{}` for `DirectoryQuota`".format(key))
-        if key == "percentage_used" and value is not None:
-            if value < 0.0:
-                raise ValueError("Invalid value for `percentage_used`, must be a value greater than or equal to `0.0`")
         if key == "quota_limit" and value is not None:
             if value < 0:
                 raise ValueError("Invalid value for `quota_limit`, must be a value greater than or equal to `0`")
+        if key == "percentage_used" and value is not None:
+            if value < 0.0:
+                raise ValueError("Invalid value for `percentage_used`, must be a value greater than or equal to `0.0`")
         if key == "usage" and value is not None:
             if value < 0:
                 raise ValueError("Invalid value for `usage`, must be a value greater than or equal to `0`")

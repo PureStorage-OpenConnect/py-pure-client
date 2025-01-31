@@ -38,8 +38,8 @@ class Host(object):
         'nqns': 'list[str]',
         'personality': 'str',
         'port_connectivity': 'HostPortConnectivity',
-        'preferred_arrays': 'list[Reference]',
         'space': 'Space',
+        'preferred_arrays': 'list[Reference]',
         'wwns': 'list[str]'
     }
 
@@ -52,8 +52,8 @@ class Host(object):
         'nqns': 'nqns',
         'personality': 'personality',
         'port_connectivity': 'port_connectivity',
-        'preferred_arrays': 'preferred_arrays',
         'space': 'space',
+        'preferred_arrays': 'preferred_arrays',
         'wwns': 'wwns'
     }
 
@@ -70,8 +70,8 @@ class Host(object):
         nqns=None,  # type: List[str]
         personality=None,  # type: str
         port_connectivity=None,  # type: models.HostPortConnectivity
-        preferred_arrays=None,  # type: List[models.Reference]
         space=None,  # type: models.Space
+        preferred_arrays=None,  # type: List[models.Reference]
         wwns=None,  # type: List[str]
     ):
         """
@@ -84,8 +84,8 @@ class Host(object):
             nqns (list[str]): The NVMe Qualified Name (NQN) associated with the host.
             personality (str): Determines how the system tunes the array to ensure that it works optimally with the host. Set `personality` to the name of the host operating system or virtual memory system. Valid values are `aix`, `esxi`, `hitachi-vsp`, `hpux`, `oracle-vm-server`, `solaris`, and `vms`. If your system is not listed as one of the valid host personalities, do not set the option. By default, the personality is not set.
             port_connectivity (HostPortConnectivity)
-            preferred_arrays (list[Reference]): For synchronous replication configurations, sets a host's preferred array to specify which array exposes active/optimized paths to that host. Enter multiple preferred arrays in comma-separated format. If a preferred array is set for a host, then the other arrays in the same pod will expose active/non-optimized paths to that host. If the host is in a host group, `preferred_arrays` cannot be set because host groups have their own preferred arrays. On a preferred array of a certain host, all the paths on all the ports (for both the primary and secondary controllers) are set up as A/O (active/optimized) paths, while on a non-preferred array, all the paths are A/N (Active/Non-optimized) paths.
             space (Space): Displays provisioned size and physical storage consumption information for the sum of all volumes connected to the specified host.
+            preferred_arrays (list[Reference]): For synchronous replication configurations, sets a host's preferred array to specify which array exposes active/optimized paths to that host. Enter multiple preferred arrays in comma-separated format. If a preferred array is set for a host, then the other arrays in the same pod will expose active/non-optimized paths to that host. If the host is in a host group, `preferred_arrays` cannot be set because host groups have their own preferred arrays. On a preferred array of a certain host, all the paths on all the ports (for both the primary and secondary controllers) are set up as A/O (active/optimized) paths, while on a non-preferred array, all the paths are A/N (Active/Non-optimized) paths.
             wwns (list[str]): The Fibre Channel World Wide Name (WWN) associated with the host.
         """
         if name is not None:
@@ -104,10 +104,10 @@ class Host(object):
             self.personality = personality
         if port_connectivity is not None:
             self.port_connectivity = port_connectivity
-        if preferred_arrays is not None:
-            self.preferred_arrays = preferred_arrays
         if space is not None:
             self.space = space
+        if preferred_arrays is not None:
+            self.preferred_arrays = preferred_arrays
         if wwns is not None:
             self.wwns = wwns
 

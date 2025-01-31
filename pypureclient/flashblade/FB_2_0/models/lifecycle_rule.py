@@ -34,9 +34,9 @@ class LifecycleRule(object):
         'id': 'str',
         'bucket': 'FixedReference',
         'enabled': 'bool',
+        'rule_id': 'str',
         'keep_previous_version_for': 'int',
-        'prefix': 'str',
-        'rule_id': 'str'
+        'prefix': 'str'
     }
 
     attribute_map = {
@@ -44,9 +44,9 @@ class LifecycleRule(object):
         'id': 'id',
         'bucket': 'bucket',
         'enabled': 'enabled',
+        'rule_id': 'rule_id',
         'keep_previous_version_for': 'keep_previous_version_for',
-        'prefix': 'prefix',
-        'rule_id': 'rule_id'
+        'prefix': 'prefix'
     }
 
     required_args = {
@@ -58,9 +58,9 @@ class LifecycleRule(object):
         id=None,  # type: str
         bucket=None,  # type: models.FixedReference
         enabled=None,  # type: bool
+        rule_id=None,  # type: str
         keep_previous_version_for=None,  # type: int
         prefix=None,  # type: str
-        rule_id=None,  # type: str
     ):
         """
         Keyword args:
@@ -68,9 +68,9 @@ class LifecycleRule(object):
             id (str): A non-modifiable, globally unique ID chosen by the system.
             bucket (FixedReference): The bucket which this lifecycle rule is targeting.
             enabled (bool): If set to `true`, this rule will be enabled.
+            rule_id (str): Unique identifier for the rule. Can have a maximum length of 255 characters.
             keep_previous_version_for (int): Time after which previous versions will be marked expired. Measured in milliseconds. Must be a multiple of 86400000 to represent a whole number of days.
             prefix (str): Object key prefix identifying one or more objects in the bucket. Can have a maximum length of 1024 characters.
-            rule_id (str): Unique identifier for the rule. Can have a maximum length of 255 characters.
         """
         if name is not None:
             self.name = name
@@ -80,12 +80,12 @@ class LifecycleRule(object):
             self.bucket = bucket
         if enabled is not None:
             self.enabled = enabled
+        if rule_id is not None:
+            self.rule_id = rule_id
         if keep_previous_version_for is not None:
             self.keep_previous_version_for = keep_previous_version_for
         if prefix is not None:
             self.prefix = prefix
-        if rule_id is not None:
-            self.rule_id = rule_id
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -41,8 +41,8 @@ class ProtectionGroup(object):
         'source': 'FixedReference',
         'source_retention': 'RetentionPolicy',
         'space': 'Space',
-        'target_count': 'int',
         'target_retention': 'RetentionPolicy',
+        'target_count': 'int',
         'time_remaining': 'int',
         'volume_count': 'int'
     }
@@ -59,8 +59,8 @@ class ProtectionGroup(object):
         'source': 'source',
         'source_retention': 'source_retention',
         'space': 'space',
-        'target_count': 'target_count',
         'target_retention': 'target_retention',
+        'target_count': 'target_count',
         'time_remaining': 'time_remaining',
         'volume_count': 'volume_count'
     }
@@ -81,8 +81,8 @@ class ProtectionGroup(object):
         source=None,  # type: models.FixedReference
         source_retention=None,  # type: models.RetentionPolicy
         space=None,  # type: models.Space
-        target_count=None,  # type: int
         target_retention=None,  # type: models.RetentionPolicy
+        target_count=None,  # type: int
         time_remaining=None,  # type: int
         volume_count=None,  # type: int
     ):
@@ -99,8 +99,8 @@ class ProtectionGroup(object):
             source (FixedReference): The array or pod on which the protection group was created.
             source_retention (RetentionPolicy): The retention policy for the source array of the protection group.
             space (Space): Returns provisioned size and physical storage consumption data for each protection group.
-            target_count (int): The number of targets to where this protection group replicates.
             target_retention (RetentionPolicy): The retention policy for the target(s) of the protection group.
+            target_count (int): The number of targets to where this protection group replicates.
             time_remaining (int): The amount of time left until the destroyed protection group is permanently eradicated. Measured in milliseconds. Before the `time_remaining` period has elapsed, the destroyed protection group can be recovered by setting `destroyed=false`.
             volume_count (int): The number of volumes in the protection group.
         """
@@ -126,10 +126,10 @@ class ProtectionGroup(object):
             self.source_retention = source_retention
         if space is not None:
             self.space = space
-        if target_count is not None:
-            self.target_count = target_count
         if target_retention is not None:
             self.target_retention = target_retention
+        if target_count is not None:
+            self.target_count = target_count
         if time_remaining is not None:
             self.time_remaining = time_remaining
         if volume_count is not None:

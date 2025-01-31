@@ -30,15 +30,15 @@ class PodMember(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'context': 'FixedReference',
         'pod': 'ReferenceWithType',
-        'member': 'ReferenceWithType',
-        'context': 'Reference'
+        'member': 'ReferenceWithType'
     }
 
     attribute_map = {
+        'context': 'context',
         'pod': 'pod',
-        'member': 'member',
-        'context': 'context'
+        'member': 'member'
     }
 
     required_args = {
@@ -46,22 +46,22 @@ class PodMember(object):
 
     def __init__(
         self,
+        context=None,  # type: models.FixedReference
         pod=None,  # type: models.ReferenceWithType
         member=None,  # type: models.ReferenceWithType
-        context=None,  # type: models.Reference
     ):
         """
         Keyword args:
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
             pod (ReferenceWithType)
             member (ReferenceWithType)
-            context (Reference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
         """
+        if context is not None:
+            self.context = context
         if pod is not None:
             self.pod = pod
         if member is not None:
             self.member = member
-        if context is not None:
-            self.context = context
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

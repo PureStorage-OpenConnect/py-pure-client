@@ -30,7 +30,7 @@ class SyslogServerSettings(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'context': 'Reference',
+        'context': 'FixedReference',
         'ca_certificate': 'str',
         'tls_audit_enabled': 'bool',
         'logging_severity': 'str'
@@ -48,14 +48,14 @@ class SyslogServerSettings(object):
 
     def __init__(
         self,
-        context=None,  # type: models.Reference
+        context=None,  # type: models.FixedReference
         ca_certificate=None,  # type: str
         tls_audit_enabled=None,  # type: bool
         logging_severity=None,  # type: str
     ):
         """
         Keyword args:
-            context (Reference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
             ca_certificate (str): The certificate of the certificate authority (CA) that signed the directory servers' certificate(s), which is used to validate the authenticity of the configured servers.
             tls_audit_enabled (bool): Returns a value of `true` if messages that are necessary in order to audit TLS negotiations performed by the array are forwarded to the configured syslog servers.
             logging_severity (str): Returns the configured logging severity threshold for which events will be forwarded to the configured syslog servers. Default configuration is info level severity. Valid values are `debug`, `info`, and `notice`.

@@ -39,7 +39,8 @@ class Space(object):
         'total_provisioned': 'int',
         'total_reduction': 'float',
         'unique': 'int',
-        'virtual': 'int'
+        'virtual': 'int',
+        'replication': 'int'
     }
 
     attribute_map = {
@@ -52,7 +53,8 @@ class Space(object):
         'total_provisioned': 'total_provisioned',
         'total_reduction': 'total_reduction',
         'unique': 'unique',
-        'virtual': 'virtual'
+        'virtual': 'virtual',
+        'replication': 'replication'
     }
 
     required_args = {
@@ -70,6 +72,7 @@ class Space(object):
         total_reduction=None,  # type: float
         unique=None,  # type: int
         virtual=None,  # type: int
+        replication=None,  # type: int
     ):
         """
         Keyword args:
@@ -83,6 +86,7 @@ class Space(object):
             total_reduction (float): The ratio of provisioned sectors within a volume versus the amount of physical space the data occupies after reduction via data compression and deduplication and with thin provisioning savings. Total reduction is data reduction with thin provisioning savings. For example, a total reduction ratio of 10&#58;1 means that for every 10 MB of provisioned space, 1 MB is stored on the array's flash modules.
             unique (int): The unique physical space occupied by customer data. Unique physical space does not include shared space, snapshots, and internal array metadata. Measured in bytes. On Evergreen//One arrays, this is the effective space contributed by unique customer data, measured in bytes. Unique data does not include shared space, snapshots, and internal array metadata.
             virtual (int): The amount of logically written data that a volume or a snapshot references. Measured in bytes.
+            replication (int): This is the sum of replication space consumed by all pods on this array.
         """
         if data_reduction is not None:
             self.data_reduction = data_reduction
@@ -104,6 +108,8 @@ class Space(object):
             self.unique = unique
         if virtual is not None:
             self.virtual = virtual
+        if replication is not None:
+            self.replication = replication
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
@@ -134,6 +140,9 @@ class Space(object):
         if key == "virtual" and value is not None:
             if value < 0:
                 raise ValueError("Invalid value for `virtual`, must be a value greater than or equal to `0`")
+        if key == "replication" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `replication`, must be a value greater than or equal to `0`")
         self.__dict__[key] = value
 
     def __getattribute__(self, item):

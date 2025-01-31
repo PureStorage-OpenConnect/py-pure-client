@@ -35,8 +35,8 @@ class PodReplicaLinkLag(object):
         'lag': 'ReplicaLinkLag',
         'local_pod': 'FixedReference',
         'recovery_point': 'int',
-        'remote_pod': 'FixedReference',
         'remotes': 'list[FixedReference]',
+        'remote_pod': 'FixedReference',
         'status': 'str',
         'time': 'int'
     }
@@ -47,8 +47,8 @@ class PodReplicaLinkLag(object):
         'lag': 'lag',
         'local_pod': 'local_pod',
         'recovery_point': 'recovery_point',
-        'remote_pod': 'remote_pod',
         'remotes': 'remotes',
+        'remote_pod': 'remote_pod',
         'status': 'status',
         'time': 'time'
     }
@@ -63,8 +63,8 @@ class PodReplicaLinkLag(object):
         lag=None,  # type: models.ReplicaLinkLag
         local_pod=None,  # type: models.FixedReference
         recovery_point=None,  # type: int
-        remote_pod=None,  # type: models.FixedReference
         remotes=None,  # type: List[models.FixedReference]
+        remote_pod=None,  # type: models.FixedReference
         status=None,  # type: str
         time=None,  # type: int
     ):
@@ -75,8 +75,8 @@ class PodReplicaLinkLag(object):
             lag (ReplicaLinkLag): Duration in milliseconds that indicates how far behind the replication target is from the source.
             local_pod (FixedReference): Reference to a local pod.
             recovery_point (int): Time when the last piece of data was replicated, in milliseconds since the UNIX epoch, and the recovery point if the pod is promoted. If the pod is baselining then the value is `null`.
-            remote_pod (FixedReference): Reference to a remote pod.
             remotes (list[FixedReference]): Reference to a remote array.
+            remote_pod (FixedReference): Reference to a remote pod.
             status (str): Status of the replica-link. Valid values include `replicating`, `baselining`, `paused`, `quiescing`, `quiesced`, `idle`, and `unhealthy`.
             time (int): Sample time in milliseconds since the UNIX epoch.
         """
@@ -90,10 +90,10 @@ class PodReplicaLinkLag(object):
             self.local_pod = local_pod
         if recovery_point is not None:
             self.recovery_point = recovery_point
-        if remote_pod is not None:
-            self.remote_pod = remote_pod
         if remotes is not None:
             self.remotes = remotes
+        if remote_pod is not None:
+            self.remote_pod = remote_pod
         if status is not None:
             self.status = status
         if time is not None:

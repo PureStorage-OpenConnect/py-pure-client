@@ -33,18 +33,18 @@ class LocationReference(object):
         'id': 'str',
         'name': 'str',
         'resource_type': 'ResourceType',
+        'location': 'Reference',
         'display_name': 'str',
-        'is_local': 'bool',
-        'location': 'Reference'
+        'is_local': 'bool'
     }
 
     attribute_map = {
         'id': 'id',
         'name': 'name',
         'resource_type': 'resource_type',
+        'location': 'location',
         'display_name': 'display_name',
-        'is_local': 'is_local',
-        'location': 'location'
+        'is_local': 'is_local'
     }
 
     required_args = {
@@ -55,18 +55,18 @@ class LocationReference(object):
         id=None,  # type: str
         name=None,  # type: str
         resource_type=None,  # type: models.ResourceType
+        location=None,  # type: models.Reference
         display_name=None,  # type: str
         is_local=None,  # type: bool
-        location=None,  # type: models.Reference
     ):
         """
         Keyword args:
             id (str): A non-modifiable, globally unique ID chosen by the system.
             name (str): A name chosen by the user. Can be changed. Must be locally unique.
             resource_type (ResourceType)
+            location (Reference): A reference to the location where the object is defined.
             display_name (str): Full name of the source with remote array information. Response will be same as source name for local file systems and policies.
             is_local (bool): -> Is the location reference to the local array or somewhere remote?
-            location (Reference): A reference to the location where the object is defined.
         """
         if id is not None:
             self.id = id
@@ -74,12 +74,12 @@ class LocationReference(object):
             self.name = name
         if resource_type is not None:
             self.resource_type = resource_type
+        if location is not None:
+            self.location = location
         if display_name is not None:
             self.display_name = display_name
         if is_local is not None:
             self.is_local = is_local
-        if location is not None:
-            self.location = location
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

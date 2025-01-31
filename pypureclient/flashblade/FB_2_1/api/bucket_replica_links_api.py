@@ -180,7 +180,7 @@ class BucketReplicaLinksApi(object):
         :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :param str filter: Exclude resources that don't match the specified criteria.
         :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the maximum number, the request is still valid. In that case the server just returns the maximum number of items, disregarding the client's page size request.
+        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.
         :param list[str] local_bucket_ids: A comma-separated list of local bucket IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `local_bucket_names` query parameter.
         :param list[str] local_bucket_names: A comma-separated list of local bucket names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `local_bucket_ids` query parameter.
         :param int offset: The offset of the first resource to return from a collection.
@@ -229,8 +229,8 @@ class BucketReplicaLinksApi(object):
         if params.get('x_request_id') is None:
             params['x_request_id'] = str(uuid.uuid4())
 
-        if 'limit' in params and params['limit'] < 1:
-            raise ValueError("Invalid value for parameter `limit` when calling `api21_bucket_replica_links_get`, must be a value greater than or equal to `1`")
+        if 'limit' in params and params['limit'] < 0:
+            raise ValueError("Invalid value for parameter `limit` when calling `api21_bucket_replica_links_get`, must be a value greater than or equal to `0`")
         if 'offset' in params and params['offset'] < 0:
             raise ValueError("Invalid value for parameter `offset` when calling `api21_bucket_replica_links_get`, must be a value greater than or equal to `0`")
         collection_formats = {}

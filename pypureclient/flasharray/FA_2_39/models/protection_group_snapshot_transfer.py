@@ -38,7 +38,7 @@ class ProtectionGroupSnapshotTransfer(object):
         'completed': 'int',
         'data_transferred': 'int',
         'physical_bytes_written': 'int',
-        'context': 'Reference'
+        'context': 'FixedReference'
     }
 
     attribute_map = {
@@ -66,7 +66,7 @@ class ProtectionGroupSnapshotTransfer(object):
         completed=None,  # type: int
         data_transferred=None,  # type: int
         physical_bytes_written=None,  # type: int
-        context=None,  # type: models.Reference
+        context=None,  # type: models.FixedReference
     ):
         """
         Keyword args:
@@ -78,7 +78,7 @@ class ProtectionGroupSnapshotTransfer(object):
             completed (int): The timestamp of when the snapshot replication process completed. Measured in milliseconds since the UNIX epoch.
             data_transferred (int): The number of bytes transferred from the source to the target as part of the replication process. Measured in bytes.
             physical_bytes_written (int): The amount of physical/logical data written to the target due to replication. Measured in bytes.
-            context (Reference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
         """
         if id is not None:
             self.id = id

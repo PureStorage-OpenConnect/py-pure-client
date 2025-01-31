@@ -88,7 +88,7 @@ class FileSystemPost(object):
             hard_limit_enabled (bool): If set to `true`, the file system's size, as defined by `provisioned`, is used as a hard limit quota. If not specified, defaults to `false`.
             http (Http): HTTP configuration.
             multi_protocol (MultiProtocolPost): Multi-protocol configuration.
-            nfs (Nfs)
+            nfs (Nfs): NFS configuration.
             provisioned (int): The provisioned size of the file system, displayed in bytes. If set to an empty string (`\"\"`), the file system is unlimited in size. If not specified, defaults to unlimited.
             requested_promotion_state (str): Possible values are `promoted` and `demoted`. The `demoted` state is used for replication targets and is only allowed to be set if the file system is in a replica-link relationship. The additional query param `discard-non-snapshotted-data` must be set to `true` when demoting a file system. The default for new file systems is `promoted`.
             smb (Smb): SMB configuration.

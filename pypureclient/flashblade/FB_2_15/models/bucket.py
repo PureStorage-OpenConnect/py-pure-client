@@ -103,7 +103,7 @@ class Bucket(object):
             created (int): Creation timestamp of the object.
             destroyed (bool): Is the bucket destroyed?
             object_count (int): The count of objects within the bucket.
-            space (Space)
+            space (Space): The space specification of the bucket.
             time_remaining (int): Time in milliseconds before the bucket is eradicated. `null` if not destroyed or legal hold was found or the remaining time until eradication is not known yet.
             versioning (str): The versioning state for objects within the bucket. Valid values are `none`, `enabled`, and `suspended`.
             bucket_type (str): The bucket type for the bucket.

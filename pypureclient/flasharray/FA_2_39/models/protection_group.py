@@ -31,6 +31,8 @@ class ProtectionGroup(object):
     """
     swagger_types = {
         'name': 'str',
+        'id': 'str',
+        'context': 'FixedReference',
         'destroyed': 'bool',
         'host_count': 'int',
         'host_group_count': 'int',
@@ -41,18 +43,18 @@ class ProtectionGroup(object):
         'source': 'FixedReference',
         'source_retention': 'RetentionPolicy',
         'space': 'Space',
-        'target_count': 'int',
         'target_retention': 'RetentionPolicy',
+        'target_count': 'int',
         'time_remaining': 'int',
         'volume_count': 'int',
         'eradication_config': 'ProtectionGroupEradicationConfig',
-        'retention_lock': 'str',
-        'id': 'str',
-        'context': 'Reference'
+        'retention_lock': 'str'
     }
 
     attribute_map = {
         'name': 'name',
+        'id': 'id',
+        'context': 'context',
         'destroyed': 'destroyed',
         'host_count': 'host_count',
         'host_group_count': 'host_group_count',
@@ -63,14 +65,12 @@ class ProtectionGroup(object):
         'source': 'source',
         'source_retention': 'source_retention',
         'space': 'space',
-        'target_count': 'target_count',
         'target_retention': 'target_retention',
+        'target_count': 'target_count',
         'time_remaining': 'time_remaining',
         'volume_count': 'volume_count',
         'eradication_config': 'eradication_config',
-        'retention_lock': 'retention_lock',
-        'id': 'id',
-        'context': 'context'
+        'retention_lock': 'retention_lock'
     }
 
     required_args = {
@@ -79,6 +79,8 @@ class ProtectionGroup(object):
     def __init__(
         self,
         name=None,  # type: str
+        id=None,  # type: str
+        context=None,  # type: models.FixedReference
         destroyed=None,  # type: bool
         host_count=None,  # type: int
         host_group_count=None,  # type: int
@@ -89,18 +91,18 @@ class ProtectionGroup(object):
         source=None,  # type: models.FixedReference
         source_retention=None,  # type: models.RetentionPolicy
         space=None,  # type: models.Space
-        target_count=None,  # type: int
         target_retention=None,  # type: models.RetentionPolicy
+        target_count=None,  # type: int
         time_remaining=None,  # type: int
         volume_count=None,  # type: int
         eradication_config=None,  # type: models.ProtectionGroupEradicationConfig
         retention_lock=None,  # type: str
-        id=None,  # type: str
-        context=None,  # type: models.Reference
     ):
         """
         Keyword args:
             name (str): A user-specified name. The name must be locally unique and can be changed.
+            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
             destroyed (bool): Has this protection group been destroyed? To destroy a protection group, patch to `true`. To recover a destroyed protection group, patch to `false`. If not specified, defaults to `false`.
             host_count (int): Number of hosts in this protection group.
             host_group_count (int): Number of host groups in this protection group.
@@ -111,17 +113,19 @@ class ProtectionGroup(object):
             source (FixedReference): The array or pod on which the protection group was created.
             source_retention (RetentionPolicy): The retention policy for the source array of the protection group.
             space (Space): Displays provisioned size and physical storage consumption data for each protection group.
-            target_count (int): The number of targets to where this protection group replicates.
             target_retention (RetentionPolicy): The retention policy for the target(s) of the protection group.
+            target_count (int): The number of targets to where this protection group replicates.
             time_remaining (int): The amount of time left until the destroyed protection group is permanently eradicated. Measured in milliseconds. Before the `time_remaining` period has elapsed, the destroyed protection group can be recovered by setting `destroyed=false`.
             volume_count (int): The number of volumes in the protection group.
             eradication_config (ProtectionGroupEradicationConfig)
             retention_lock (str): The valid values are `ratcheted` and `unlocked`. The default value for a newly created protection group is `unlocked`. Set `retention_lock` to `ratcheted` to enable SafeMode restrictions on the protection group. Contact Pure Technical Services to change `retention_lock` to `unlocked`.
-            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            context (Reference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
         """
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
+        if context is not None:
+            self.context = context
         if destroyed is not None:
             self.destroyed = destroyed
         if host_count is not None:
@@ -142,10 +146,10 @@ class ProtectionGroup(object):
             self.source_retention = source_retention
         if space is not None:
             self.space = space
-        if target_count is not None:
-            self.target_count = target_count
         if target_retention is not None:
             self.target_retention = target_retention
+        if target_count is not None:
+            self.target_count = target_count
         if time_remaining is not None:
             self.time_remaining = time_remaining
         if volume_count is not None:
@@ -154,10 +158,6 @@ class ProtectionGroup(object):
             self.eradication_config = eradication_config
         if retention_lock is not None:
             self.retention_lock = retention_lock
-        if id is not None:
-            self.id = id
-        if context is not None:
-            self.context = context
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

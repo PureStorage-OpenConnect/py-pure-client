@@ -31,14 +31,14 @@ class ErrorcontextresponseErrors(object):
     """
     swagger_types = {
         'context': 'str',
-        'location_context': 'FixedReference',
-        'message': 'str'
+        'message': 'str',
+        'location_context': 'FixedReferenceWithType'
     }
 
     attribute_map = {
         'context': 'context',
-        'location_context': 'location_context',
-        'message': 'message'
+        'message': 'message',
+        'location_context': 'location_context'
     }
 
     required_args = {
@@ -47,21 +47,21 @@ class ErrorcontextresponseErrors(object):
     def __init__(
         self,
         context=None,  # type: str
-        location_context=None,  # type: models.FixedReference
         message=None,  # type: str
+        location_context=None,  # type: models.FixedReferenceWithType
     ):
         """
         Keyword args:
             context (str): Contains information relating to the cause of this error, or the name of the object that was being processed when the error was encountered. This may be `null` for more general errors.
-            location_context (FixedReference): Contains information relating to the context in which the request was executing when the error occurred. For example, this may be the name of an array in the same fleet. This may be `null` for more general errors, or if no explicit `context` parameter was provided with the request.
             message (str): A description of the error which occurred.
+            location_context (FixedReferenceWithType): Contains information relating to the context in which the request was executing when the error occurred. For example, this may be the name of an array in the same fleet. This may be `null` for more general errors, or if no explicit `context` parameter was provided with the request.
         """
         if context is not None:
             self.context = context
-        if location_context is not None:
-            self.location_context = location_context
         if message is not None:
             self.message = message
+        if location_context is not None:
+            self.location_context = location_context
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

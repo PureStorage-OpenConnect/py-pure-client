@@ -30,13 +30,13 @@ class FilePost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'source': 'ReferenceWithType',
-        'source_path': 'str'
+        'source_path': 'str',
+        'source': 'ReferenceWithType'
     }
 
     attribute_map = {
-        'source': 'source',
-        'source_path': 'source_path'
+        'source_path': 'source_path',
+        'source': 'source'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class FilePost(object):
 
     def __init__(
         self,
-        source=None,  # type: models.ReferenceWithType
         source_path=None,  # type: str
+        source=None,  # type: models.ReferenceWithType
     ):
         """
         Keyword args:
-            source (ReferenceWithType): The source information of a file copy.
             source_path (str): The source file path relative to the source directory.
+            source (ReferenceWithType): The source information of a file copy.
         """
-        if source is not None:
-            self.source = source
         if source_path is not None:
             self.source_path = source_path
+        if source is not None:
+            self.source = source
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -30,9 +30,21 @@ class PortInitiatorTarget(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'name': 'str',
+        'iqn': 'str',
+        'nqn': 'str',
+        'portal': 'str',
+        'wwn': 'str',
+        'failover': 'str'
     }
 
     attribute_map = {
+        'name': 'name',
+        'iqn': 'iqn',
+        'nqn': 'nqn',
+        'portal': 'portal',
+        'wwn': 'wwn',
+        'failover': 'failover'
     }
 
     required_args = {
@@ -40,10 +52,34 @@ class PortInitiatorTarget(object):
 
     def __init__(
         self,
+        name=None,  # type: str
+        iqn=None,  # type: str
+        nqn=None,  # type: str
+        portal=None,  # type: str
+        wwn=None,  # type: str
+        failover=None,  # type: str
     ):
         """
         Keyword args:
+            name (str): A locally unique, system-generated name. The name cannot be modified.
+            iqn (str): The iSCSI Qualified Name (or `null` if target is not iSCSI).
+            nqn (str): NVMe Qualified Name (or `null` if target is not NVMeoF).
+            portal (str): IP and port number (or `null` if target is not iSCSI).
+            wwn (str): Fibre Channel World Wide Name (or `null` if target is not Fibre Channel).
+            failover (str): If the array port has failed over, returns the name of the port to which this port has failed over.
         """
+        if name is not None:
+            self.name = name
+        if iqn is not None:
+            self.iqn = iqn
+        if nqn is not None:
+            self.nqn = nqn
+        if portal is not None:
+            self.portal = portal
+        if wwn is not None:
+            self.wwn = wwn
+        if failover is not None:
+            self.failover = failover
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

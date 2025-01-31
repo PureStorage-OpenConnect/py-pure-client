@@ -31,20 +31,20 @@ class DnsPatch(object):
     """
     swagger_types = {
         'name': 'str',
-        'ca_certificate': 'ReferenceWithType',
-        'ca_certificate_group': 'ReferenceWithType',
         'domain': 'str',
         'nameservers': 'list[str]',
+        'ca_certificate': 'ReferenceWithType',
+        'ca_certificate_group': 'ReferenceWithType',
         'services': 'list[str]',
         'source': 'ReferenceNoId'
     }
 
     attribute_map = {
         'name': 'name',
-        'ca_certificate': 'ca_certificate',
-        'ca_certificate_group': 'ca_certificate_group',
         'domain': 'domain',
         'nameservers': 'nameservers',
+        'ca_certificate': 'ca_certificate',
+        'ca_certificate_group': 'ca_certificate_group',
         'services': 'services',
         'source': 'source'
     }
@@ -55,33 +55,33 @@ class DnsPatch(object):
     def __init__(
         self,
         name=None,  # type: str
-        ca_certificate=None,  # type: models.ReferenceWithType
-        ca_certificate_group=None,  # type: models.ReferenceWithType
         domain=None,  # type: str
         nameservers=None,  # type: List[str]
+        ca_certificate=None,  # type: models.ReferenceWithType
+        ca_certificate_group=None,  # type: models.ReferenceWithType
         services=None,  # type: List[str]
         source=None,  # type: models.ReferenceNoId
     ):
         """
         Keyword args:
             name (str): The new name for the resource.
-            ca_certificate (ReferenceWithType): A reference to the `certificate` to use for validating nameservers with HTTPS connections. This property is mutually exclusive with `ca_certificate_group` property and may only be configured when nameservers begin with HTTPS.
-            ca_certificate_group (ReferenceWithType): A reference to the `certificate group` to use for validating nameservers with HTTPS connections. This property is mutually exclusive with `ca_certificate` property and may only be configured when nameservers begin with HTTPS.
             domain (str): The domain suffix to be appended by the appliance when performing DNS lookups.
             nameservers (list[str]): The list of DNS servers either in the form of IP addresses or HTTPS endpoints. Domain names in HTTPS endpoints are not supported. IP addresses must be used instead. If nameservers begin with `https://`, then DNS queries will be performed over HTTPS. Otherwise, unencrypted DNS queries will be performed. Using a combination of nameservers that begin with `https://` and that do not begin with `https://` is not supported. If servers are specified with `https://` one of `ca_certificate` and `ca_certificate_group` parameters must be set.
+            ca_certificate (ReferenceWithType): A reference to the `certificate` to use for validating nameservers with HTTPS connections. This property is mutually exclusive with `ca_certificate_group` property and may only be configured when nameservers begin with HTTPS.
+            ca_certificate_group (ReferenceWithType): A reference to the `certificate group` to use for validating nameservers with HTTPS connections. This property is mutually exclusive with `ca_certificate` property and may only be configured when nameservers begin with HTTPS.
             services (list[str]): The list of services utilizing the DNS configuration.
             source (ReferenceNoId): The network interface used for communication with the DNS server.
         """
         if name is not None:
             self.name = name
-        if ca_certificate is not None:
-            self.ca_certificate = ca_certificate
-        if ca_certificate_group is not None:
-            self.ca_certificate_group = ca_certificate_group
         if domain is not None:
             self.domain = domain
         if nameservers is not None:
             self.nameservers = nameservers
+        if ca_certificate is not None:
+            self.ca_certificate = ca_certificate
+        if ca_certificate_group is not None:
+            self.ca_certificate_group = ca_certificate_group
         if services is not None:
             self.services = services
         if source is not None:

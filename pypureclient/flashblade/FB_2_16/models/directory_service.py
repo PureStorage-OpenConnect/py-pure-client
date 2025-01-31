@@ -41,8 +41,8 @@ class DirectoryService(object):
         'management': 'DirectoryServiceManagement',
         'nfs': 'DirectoryServiceNfs',
         'services': 'list[str]',
-        'smb': 'DirectoryServiceSmb',
-        'uris': 'list[str]'
+        'uris': 'list[str]',
+        'smb': 'DirectoryServiceSmb'
     }
 
     attribute_map = {
@@ -57,8 +57,8 @@ class DirectoryService(object):
         'management': 'management',
         'nfs': 'nfs',
         'services': 'services',
-        'smb': 'smb',
-        'uris': 'uris'
+        'uris': 'uris',
+        'smb': 'smb'
     }
 
     required_args = {
@@ -77,8 +77,8 @@ class DirectoryService(object):
         management=None,  # type: models.DirectoryServiceManagement
         nfs=None,  # type: models.DirectoryServiceNfs
         services=None,  # type: List[str]
-        smb=None,  # type: models.DirectoryServiceSmb
         uris=None,  # type: List[str]
+        smb=None,  # type: models.DirectoryServiceSmb
     ):
         """
         Keyword args:
@@ -93,8 +93,8 @@ class DirectoryService(object):
             management (DirectoryServiceManagement)
             nfs (DirectoryServiceNfs)
             services (list[str]): Services that the directory service configuration is used for.
-            smb (DirectoryServiceSmb)
             uris (list[str]): List of URIs for the configured directory servers.
+            smb (DirectoryServiceSmb)
         """
         if name is not None:
             self.name = name
@@ -118,10 +118,10 @@ class DirectoryService(object):
             self.nfs = nfs
         if services is not None:
             self.services = services
-        if smb is not None:
-            self.smb = smb
         if uris is not None:
             self.uris = uris
+        if smb is not None:
+            self.smb = smb
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

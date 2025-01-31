@@ -100,6 +100,14 @@ pypureclient.pure1.Pure1\_1\_3.models.asset\_space module
    :undoc-members:
    :show-inheritance:
 
+pypureclient.pure1.Pure1\_1\_3.models.asset\_space\_total\_used\_ratio module
+-----------------------------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_3.models.asset_space_total_used_ratio
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 pypureclient.pure1.Pure1\_1\_3.models.audit module
 --------------------------------------------------
 
@@ -700,14 +708,6 @@ pypureclient.pure1.Pure1\_1\_3.models.pod module
    :undoc-members:
    :show-inheritance:
 
-pypureclient.pure1.Pure1\_1\_3.models.pod\_array\_status module
----------------------------------------------------------------
-
-.. automodule:: pypureclient.pure1.Pure1_1_3.models.pod_array_status
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 pypureclient.pure1.Pure1\_1\_3.models.pod\_get\_response module
 ---------------------------------------------------------------
 
@@ -944,6 +944,14 @@ pypureclient.pure1.Pure1\_1\_3.models.subscription\_license\_get\_response modul
 ---------------------------------------------------------------------------------
 
 .. automodule:: pypureclient.pure1.Pure1_1_3.models.subscription_license_get_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.pure1.Pure1\_1\_3.models.subscription\_license\_pre\_ratio module
+------------------------------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_3.models.subscription_license_pre_ratio
    :members:
    :undoc-members:
    :show-inheritance:

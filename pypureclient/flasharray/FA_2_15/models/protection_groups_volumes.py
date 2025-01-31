@@ -31,7 +31,7 @@ class ProtectionGroupsVolumes(object):
     """
     swagger_types = {
         'group': 'ReferenceNoId',
-        'member': 'object'
+        'member': 'ProtectionGroupsVolumesMember'
     }
 
     attribute_map = {
@@ -45,12 +45,12 @@ class ProtectionGroupsVolumes(object):
     def __init__(
         self,
         group=None,  # type: models.ReferenceNoId
-        member=None,  # type: object
+        member=None,  # type: models.ProtectionGroupsVolumesMember
     ):
         """
         Keyword args:
             group (ReferenceNoId)
-            member (object)
+            member (ProtectionGroupsVolumesMember)
         """
         if group is not None:
             self.group = group

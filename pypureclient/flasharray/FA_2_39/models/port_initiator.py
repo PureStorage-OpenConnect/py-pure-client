@@ -30,7 +30,7 @@ class PortInitiator(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'context': 'Reference',
+        'context': 'FixedReference',
         'initiator': 'PortCommon',
         'target': 'PortInitiatorTarget'
     }
@@ -46,13 +46,13 @@ class PortInitiator(object):
 
     def __init__(
         self,
-        context=None,  # type: models.Reference
+        context=None,  # type: models.FixedReference
         initiator=None,  # type: models.PortCommon
         target=None,  # type: models.PortInitiatorTarget
     ):
         """
         Keyword args:
-            context (Reference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
             initiator (PortCommon)
             target (PortInitiatorTarget)
         """

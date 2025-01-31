@@ -32,21 +32,21 @@ class FileSystem(object):
     swagger_types = {
         'id': 'str',
         'name': 'str',
+        'context': 'FixedReference',
         'created': 'int',
         'destroyed': 'bool',
         'time_remaining': 'int',
-        'pod': 'Reference',
-        'context': 'Reference'
+        'pod': 'Reference'
     }
 
     attribute_map = {
         'id': 'id',
         'name': 'name',
+        'context': 'context',
         'created': 'created',
         'destroyed': 'destroyed',
         'time_remaining': 'time_remaining',
-        'pod': 'pod',
-        'context': 'context'
+        'pod': 'pod'
     }
 
     required_args = {
@@ -56,26 +56,28 @@ class FileSystem(object):
         self,
         id=None,  # type: str
         name=None,  # type: str
+        context=None,  # type: models.FixedReference
         created=None,  # type: int
         destroyed=None,  # type: bool
         time_remaining=None,  # type: int
         pod=None,  # type: models.Reference
-        context=None,  # type: models.Reference
     ):
         """
         Keyword args:
             id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
             name (str): A user-specified name. The name must be locally unique and can be changed.
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
             created (int): The file system creation time, measured in milliseconds since the UNIX epoch.
             destroyed (bool): Returns a value of `true` if the file system has been destroyed and is pending eradication. The `time_remaining` value displays the amount of time left until the destroyed file system is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed file system can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the file system is permanently eradicated and can no longer be recovered.
             time_remaining (int): The amount of time left, measured in milliseconds until the destroyed file system is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed file system can be recovered by setting `destroyed=false`.
             pod (Reference): The reference to the pod this file systems belongs to, or `null` if it is not in a pod.
-            context (Reference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
         """
         if id is not None:
             self.id = id
         if name is not None:
             self.name = name
+        if context is not None:
+            self.context = context
         if created is not None:
             self.created = created
         if destroyed is not None:
@@ -84,8 +86,6 @@ class FileSystem(object):
             self.time_remaining = time_remaining
         if pod is not None:
             self.pod = pod
-        if context is not None:
-            self.context = context
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

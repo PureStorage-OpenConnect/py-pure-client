@@ -56,8 +56,8 @@ class SmbPost(object):
         """
         Keyword args:
             enabled (bool): If set to `true`, enables access to the file system over the SMB protocol. If not specified, defaults to `false`.
-            client_policy (ReferenceWritable): The SMB Client policy for the file system. Setting a policy here grants access permissions (e.g. read-only or read-write) to the file system via SMB on a per-client basis. If no policy is set here, no client will have access. Use \"\" to clear.
-            share_policy (ReferenceWritable): The SMB Share policy for the file system. Setting a policy here grants access permissions (e.g. allow or deny Full Control, Change, and/or Read) to the file system via SMB on a per-user / per-group basis. If no policy is set here, no user or group will have access. Use \"\" to clear.
+            client_policy (ReferenceWritable): The SMB Client policy for the file system. Setting a policy here grants access permissions (e.g. read-only or read-write) to the file system via SMB on a per-client basis. Defaults to a pre-defined full access policy if none is specified.
+            share_policy (ReferenceWritable): The SMB Share policy for the file system. Setting a policy here grants access permissions (e.g. allow or deny Full Control, Change, and/or Read) to the file system via SMB on a per-user / per-group basis. Defaults to a pre-defined full access policy if none is specified.
             continuous_availability_enabled (bool): If set to `true`, the file system will be continuously available during disruptive scenarios such as network disruption, blades failover, etc. If not specified, defaults to `true`.
         """
         if enabled is not None:

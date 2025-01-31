@@ -38,7 +38,8 @@ class RemoteVolumeSnapshot(object):
         'provisioned': 'int',
         'source': 'FixedReference',
         'suffix': 'str',
-        'time_remaining': 'int'
+        'time_remaining': 'int',
+        'remote': 'FixedReference'
     }
 
     attribute_map = {
@@ -50,7 +51,8 @@ class RemoteVolumeSnapshot(object):
         'provisioned': 'provisioned',
         'source': 'source',
         'suffix': 'suffix',
-        'time_remaining': 'time_remaining'
+        'time_remaining': 'time_remaining',
+        'remote': 'remote'
     }
 
     required_args = {
@@ -67,6 +69,7 @@ class RemoteVolumeSnapshot(object):
         source=None,  # type: models.FixedReference
         suffix=None,  # type: str
         time_remaining=None,  # type: int
+        remote=None,  # type: models.FixedReference
     ):
         """
         Keyword args:
@@ -79,6 +82,7 @@ class RemoteVolumeSnapshot(object):
             source (FixedReference): The volume from which this snapshot was taken. For a replicated snapshot being viewed on the target side, the `source` is the replica volume.
             suffix (str): The suffix that is appended to the `source_name` value to generate the full volume snapshot name in the form `VOL.SUFFIX`. If the suffix is not specified, the system constructs the snapshot name in the form `VOL.NNN`, where `VOL` is the volume name, and `NNN` is a monotonically increasing number.
             time_remaining (int): The amount of time left until the destroyed snapshot is permanently eradicated. Measured in milliseconds. Before the `time_remaining` period has elapsed, the destroyed snapshot can be recovered by setting `destroyed=false`.
+            remote (FixedReference): Remote target where this volume snapshot is located.
         """
         if id is not None:
             self.id = id
@@ -98,6 +102,8 @@ class RemoteVolumeSnapshot(object):
             self.suffix = suffix
         if time_remaining is not None:
             self.time_remaining = time_remaining
+        if remote is not None:
+            self.remote = remote
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -30,15 +30,15 @@ class OffloadPost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'azure': 'OffloadAzure',
         'nfs': 'OffloadNfs',
-        's3': 'OffloadS3'
+        's3': 'OffloadS3',
+        'azure': 'OffloadAzure'
     }
 
     attribute_map = {
-        'azure': 'azure',
         'nfs': 'nfs',
-        's3': 's3'
+        's3': 's3',
+        'azure': 'azure'
     }
 
     required_args = {
@@ -46,22 +46,22 @@ class OffloadPost(object):
 
     def __init__(
         self,
-        azure=None,  # type: models.OffloadAzure
         nfs=None,  # type: models.OffloadNfs
         s3=None,  # type: models.OffloadS3
+        azure=None,  # type: models.OffloadAzure
     ):
         """
         Keyword args:
-            azure (OffloadAzure): The Microsoft Azure Blob storage settings.
             nfs (OffloadNfs): The NFS storage settings. Deprecated from version 6.6.0 onwards - Contact support for additional information.
             s3 (OffloadS3): The Amazon S3 storage settings.
+            azure (OffloadAzure): The Microsoft Azure Blob storage settings.
         """
-        if azure is not None:
-            self.azure = azure
         if nfs is not None:
             self.nfs = nfs
         if s3 is not None:
             self.s3 = s3
+        if azure is not None:
+            self.azure = azure
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

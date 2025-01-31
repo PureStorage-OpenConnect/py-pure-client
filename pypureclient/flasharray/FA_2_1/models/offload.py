@@ -30,25 +30,25 @@ class Offload(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'azure': 'OffloadAzure',
         'nfs': 'OffloadNfs',
         's3': 'OffloadS3',
+        'azure': 'OffloadAzure',
         'name': 'str',
         'protocol': 'str',
+        'target_id': 'str',
         'space': 'Space',
-        'status': 'str',
-        'target_id': 'str'
+        'status': 'str'
     }
 
     attribute_map = {
-        'azure': 'azure',
         'nfs': 'nfs',
         's3': 's3',
+        'azure': 'azure',
         'name': 'name',
         'protocol': 'protocol',
+        'target_id': 'target_id',
         'space': 'space',
-        'status': 'status',
-        'target_id': 'target_id'
+        'status': 'status'
     }
 
     required_args = {
@@ -56,42 +56,42 @@ class Offload(object):
 
     def __init__(
         self,
-        azure=None,  # type: models.OffloadAzure
         nfs=None,  # type: models.OffloadNfs
         s3=None,  # type: models.OffloadS3
+        azure=None,  # type: models.OffloadAzure
         name=None,  # type: str
         protocol=None,  # type: str
+        target_id=None,  # type: str
         space=None,  # type: models.Space
         status=None,  # type: str
-        target_id=None,  # type: str
     ):
         """
         Keyword args:
-            azure (OffloadAzure): The Microsoft Azure Blob storage settings.
             nfs (OffloadNfs): The NFS storage settings. Deprecated from version 6.6.0 onwards - Contact support for additional information.
             s3 (OffloadS3): The Amazon S3 storage settings.
+            azure (OffloadAzure): The Microsoft Azure Blob storage settings.
             name (str): A user-specified name. The name must be locally unique and can be changed.
             protocol (str): The type of offload. Valid values are `nfs` for Network File System, `s3` for Amazon S3, and `azure` for Microsoft Azure.
+            target_id (str): The unique ID for the offload target. When multiple connections to one offload target are created, they will each have distinct IDs but share the same target ID.
             space (Space): Displays provisioned size and physical storage consumption information for the sum of all volumes connected to the specified host.
             status (str): The connection status of the offload target. Valid values are `connecting`, `connected`, `disconnecting`, `not connected`, and `scanning`.  If set to `connected`, the array is connected to the offload target  and is functioning properly.  If set to `connecting`, the connection between the array and offload target is unhealthy,  possibly due to network issues. Check the network connectivity between the interfaces,  disconnect the array from the offload target, and then reconnect. If the issue persists,  contact Pure Storage Support.  If set to `not connected`, the offload app is not running and data  cannot be replicated to the offload targets. Contact Pure Storage Support.  If set to `scanning`,  a connection has been established between the array and offload target,  and the system is determining the state of the offload target.  Once the scan successfully completes, the status will change to `connected`.
-            target_id (str): The unique ID for the offload target. When multiple connections to one offload target are created, they will each have distinct IDs but share the same target ID.
         """
-        if azure is not None:
-            self.azure = azure
         if nfs is not None:
             self.nfs = nfs
         if s3 is not None:
             self.s3 = s3
+        if azure is not None:
+            self.azure = azure
         if name is not None:
             self.name = name
         if protocol is not None:
             self.protocol = protocol
+        if target_id is not None:
+            self.target_id = target_id
         if space is not None:
             self.space = space
         if status is not None:
             self.status = status
-        if target_id is not None:
-            self.target_id = target_id
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

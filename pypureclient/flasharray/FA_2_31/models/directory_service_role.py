@@ -31,16 +31,16 @@ class DirectoryServiceRole(object):
     """
     swagger_types = {
         'name': 'str',
+        'role': 'ReferenceNoId',
         'group': 'str',
-        'group_base': 'str',
-        'role': 'ReferenceNoId'
+        'group_base': 'str'
     }
 
     attribute_map = {
         'name': 'name',
+        'role': 'role',
         'group': 'group',
-        'group_base': 'group_base',
-        'role': 'role'
+        'group_base': 'group_base'
     }
 
     required_args = {
@@ -49,25 +49,25 @@ class DirectoryServiceRole(object):
     def __init__(
         self,
         name=None,  # type: str
+        role=None,  # type: models.ReferenceNoId
         group=None,  # type: str
         group_base=None,  # type: str
-        role=None,  # type: models.ReferenceNoId
     ):
         """
         Keyword args:
             name (str): A user-specified name. The name must be locally unique and cannot be changed.
+            role (ReferenceNoId): A reference to the role to be assigned. Can be any role that exists on the system.
             group (str): A group name that contains users with the authority level of the specified role.
             group_base (str): Specifies where the configured group is located in the directory tree.
-            role (ReferenceNoId): A reference to the role to be assigned. Can be any role that exists on the system.
         """
         if name is not None:
             self.name = name
+        if role is not None:
+            self.role = role
         if group is not None:
             self.group = group
         if group_base is not None:
             self.group_base = group_base
-        if role is not None:
-            self.role = role
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

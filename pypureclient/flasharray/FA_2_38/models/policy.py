@@ -32,23 +32,23 @@ class Policy(object):
     swagger_types = {
         'id': 'str',
         'name': 'str',
+        'context': 'FixedReference',
         'destroyed': 'bool',
         'enabled': 'bool',
         'pod': 'Reference',
         'policy_type': 'str',
-        'time_remaining': 'int',
-        'context': 'Reference'
+        'time_remaining': 'int'
     }
 
     attribute_map = {
         'id': 'id',
         'name': 'name',
+        'context': 'context',
         'destroyed': 'destroyed',
         'enabled': 'enabled',
         'pod': 'pod',
         'policy_type': 'policy_type',
-        'time_remaining': 'time_remaining',
-        'context': 'context'
+        'time_remaining': 'time_remaining'
     }
 
     required_args = {
@@ -58,28 +58,30 @@ class Policy(object):
         self,
         id=None,  # type: str
         name=None,  # type: str
+        context=None,  # type: models.FixedReference
         destroyed=None,  # type: bool
         enabled=None,  # type: bool
         pod=None,  # type: models.Reference
         policy_type=None,  # type: str
         time_remaining=None,  # type: int
-        context=None,  # type: models.Reference
     ):
         """
         Keyword args:
             id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
             name (str): A user-specified name. The name must be locally unique and can be changed.
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
             destroyed (bool): Returns a value of `true` if the policy has been destroyed and is pending eradication. The `time_remaining` value displays the amount of time left until the destroyed policy is permanently eradicated. Once the `time_remaining` period has elapsed, the policy is permanently eradicated and can no longer be recovered.
             enabled (bool): Returns a value of `true` if the policy is enabled.
             pod (Reference): A reference to the pod.
             policy_type (str): The type of policy. Valid values include `autodir`, `nfs`, `smb`, `snapshot`, and `quota`.
             time_remaining (int): The amount of time left, measured in milliseconds, until the destroyed policy is permanently eradicated.
-            context (Reference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
         """
         if id is not None:
             self.id = id
         if name is not None:
             self.name = name
+        if context is not None:
+            self.context = context
         if destroyed is not None:
             self.destroyed = destroyed
         if enabled is not None:
@@ -90,8 +92,6 @@ class Policy(object):
             self.policy_type = policy_type
         if time_remaining is not None:
             self.time_remaining = time_remaining
-        if context is not None:
-            self.context = context
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
