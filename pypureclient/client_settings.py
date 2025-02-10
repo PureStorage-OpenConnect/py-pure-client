@@ -16,9 +16,10 @@ def get_target_versions(target, target_type, key_to_check, timeout: int, verify_
     from . import PureError
     url = 'https://{target}/api/api_version'.format(target=target)
     MAX_TIMEOUT: int = 120
+    DEFAULT_TIMEOUT: int = 5
     response = requests.get(url,
                             verify=resolve_ssl_validation(verify_ssl),
-                            timeout=min(max(1, int(timeout)), MAX_TIMEOUT),
+                            timeout=min(max(1, int(timeout)), MAX_TIMEOUT) if timeout else DEFAULT_TIMEOUT,
                             headers={
                                 Headers.user_agent: __default_user_agent__,
                                 Headers.x_request_id: str(uuid.uuid4())}
