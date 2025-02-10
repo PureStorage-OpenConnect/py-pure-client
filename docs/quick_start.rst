@@ -227,8 +227,8 @@ collection.
     num_volumes = 0
     for volume in response.items:
         num_volumes += 1
-        print volume
-    print num_volumes
+        print(volume)
+    print(num_volumes)
 
 It is also possible to get all of the items in a list without explicitly
 iterating. It will exhaust the iterator and put the items in a list.
@@ -243,7 +243,7 @@ A custom X-Request-ID header can also be provided to any request.
 .. code-block:: python
 
     response = client.get_pods(x_request_id='readthedocs-test')
-    print response.headers.x_request_id
+    print(response.headers.x_request_id)
 
 An example of querying sustainability information.
 
@@ -251,13 +251,13 @@ An example of querying sustainability information.
 
     response = client.get_assessment_sustainability_arrays()
     for assessment in response.items:
-        print assessment
+        print(assessment)
 
 .. code-block:: python
 
     response = client.get_assessment_sustainability_insights_arrays()
     for insight in response.items:
-        print insight
+        print(insight)
 
 
 Filtering
