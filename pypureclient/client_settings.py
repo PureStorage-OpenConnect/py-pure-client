@@ -10,15 +10,15 @@ def resolve_ssl_validation(verify_ssl):
     """
     return verify_ssl if verify_ssl is not None else False
 
-MAX_TIMEOUT: int = 5
 
-def get_target_versions(target, target_type, key_to_check, verify_ssl=None):
+def get_target_versions(target, target_type, key_to_check, timeout: int, verify_ssl=None):
     from ._version import __default_user_agent__
     from . import PureError
     url = 'https://{target}/api/api_version'.format(target=target)
+    MAX_TIMEOUT: int = 120
     response = requests.get(url,
                             verify=resolve_ssl_validation(verify_ssl),
-                            timeout=MAX_TIMEOUT,
+                            timeout=min(max(1, int(timeout)), MAX_TIMEOUT),
                             headers={
                                 Headers.user_agent: __default_user_agent__,
                                 Headers.x_request_id: str(uuid.uuid4())}
