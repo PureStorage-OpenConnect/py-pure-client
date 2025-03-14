@@ -10,7 +10,7 @@ For the current FlashArray REST 1.x Python SDK, [see here](https://github.com/Pu
 
 ## Requirements
 
-The library requires Python 3.5 or higher. Third-party libraries are also required.
+The library requires Python 3.8 or higher. Third-party libraries are also required.
 
 ## Installation
 

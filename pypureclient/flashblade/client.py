@@ -1,26 +1,21 @@
 import importlib
 
+from typing import Dict
 from ..client_settings import resolve_ssl_validation, get_target_versions
 
-fb_modules_dict = {
-    '2.10': 'FB_2_10',
-    '2.4': 'FB_2_4',
-    '2.1': 'FB_2_1',
-    '2.2': 'FB_2_2',
-    '2.13': 'FB_2_13',
-    '2.12': 'FB_2_12',
-    '2.5': 'FB_2_5',
-    '2.15': 'FB_2_15',
-    '2.16': 'FB_2_16',
-    '2.6': 'FB_2_6',
-    '2.3': 'FB_2_3',
-    '2.7': 'FB_2_7',
-    '2.0': 'FB_2_0',
-    '2.9': 'FB_2_9',
-    '2.8': 'FB_2_8',
-    '2.14': 'FB_2_14',
-    '2.11': 'FB_2_11',
-}
+
+def __load_modules_dict() -> Dict[str, str]:
+    import os
+    _tmp = {}
+    _prefix = 'FB_'
+    parent = os.path.dirname(__file__)
+    for _f in os.listdir(os.path.dirname(__file__)):
+        if os.path.isdir(os.path.join(parent, _f)) and _f.startswith(_prefix):
+            _tmp[_f[len(_prefix):].replace('_', '.')] = _f
+    return _tmp
+
+
+fb_modules_dict = __load_modules_dict()
 
 fb_modules = {}
 
@@ -119,6 +114,6 @@ def choose_version(array_versions):
 def version_to_module(version):
     if version not in set(fb_modules.keys()):
         parent_module_name = '.'.join(__name__.split('.')[:-1])
-        fb_modules[version] = importlib.import_module("{}.{}".format(parent_module_name,fb_modules_dict[version]))
+        fb_modules[version] = importlib.import_module("{}.{}".format(parent_module_name, fb_modules_dict[version]))
     fb_module = fb_modules.get(version, None)
     return fb_module

@@ -1,48 +1,21 @@
 import importlib
 
+from typing import Dict
 from ..client_settings import resolve_ssl_validation, get_target_versions
 
-fa_modules_dict = {
-    '2.39': 'FA_2_39',
-    '2.35': 'FA_2_35',
-    '2.1': 'FA_2_1',
-    '2.9': 'FA_2_9',
-    '2.20': 'FA_2_20',
-    '2.13': 'FA_2_13',
-    '2.34': 'FA_2_34',
-    '2.27': 'FA_2_27',
-    '2.3': 'FA_2_3',
-    '2.21': 'FA_2_21',
-    '2.10': 'FA_2_10',
-    '2.2': 'FA_2_2',
-    '2.16': 'FA_2_16',
-    '2.6': 'FA_2_6',
-    '2.28': 'FA_2_28',
-    '2.17': 'FA_2_17',
-    '2.8': 'FA_2_8',
-    '2.22': 'FA_2_22',
-    '2.0': 'FA_2_0',
-    '2.24': 'FA_2_24',
-    '2.15': 'FA_2_15',
-    '2.19': 'FA_2_19',
-    '2.25': 'FA_2_25',
-    '2.29': 'FA_2_29',
-    '2.36': 'FA_2_36',
-    '2.37': 'FA_2_37',
-    '2.11': 'FA_2_11',
-    '2.4': 'FA_2_4',
-    '2.14': 'FA_2_14',
-    '2.38': 'FA_2_38',
-    '2.31': 'FA_2_31',
-    '2.40': 'FA_2_40',
-    '2.32': 'FA_2_32',
-    '2.26': 'FA_2_26',
-    '2.5': 'FA_2_5',
-    '2.7': 'FA_2_7',
-    '2.30': 'FA_2_30',
-    '2.33': 'FA_2_33',
-    '2.23': 'FA_2_23',
-}
+
+def __load_modules_dict() -> Dict[str, str]:
+    import os
+    _tmp = {}
+    _prefix = 'FA_'
+    parent = os.path.dirname(__file__)
+    for _f in os.listdir(os.path.dirname(__file__)):
+        if os.path.isdir(os.path.join(parent, _f)) and _f.startswith(_prefix):
+            _tmp[_f[len(_prefix):].replace('_', '.')] = _f
+    return _tmp
+
+
+fa_modules_dict = __load_modules_dict()
 
 fa_modules = {}
 
@@ -142,6 +115,6 @@ def choose_version(array_versions):
 def version_to_module(version):
     if version not in set(fa_modules.keys()):
         parent_module_name = '.'.join(__name__.split('.')[:-1])
-        fa_modules[version] = importlib.import_module("{}.{}".format(parent_module_name,fa_modules_dict[version]))
+        fa_modules[version] = importlib.import_module("{}.{}".format(parent_module_name, fa_modules_dict[version]))
     fa_module = fa_modules.get(version, None)
     return fa_module

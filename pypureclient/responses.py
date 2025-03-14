@@ -1,5 +1,7 @@
 import pprint
 
+from typing import Any, Dict
+from pydantic import BaseModel
 from .keywords import Headers, Parameters
 from .exceptions import PureError
 
@@ -120,15 +122,15 @@ class ValidResponse(Response):
         """
         new_dict = dict(self.__dict__)
         if isinstance(self.items, ItemIterator):
-            new_dict['items'] = [item.to_dict() for item in list(self.items)]
+            new_dict['items'] = [item.to_dict(include_readonly=True) for item in list(self.items)]
 
         new_dict['headers'] = (self.headers.to_dict
                                if self.headers is not None else None)
 
         if hasattr(self, 'total') and isinstance(self.total, list):
-            new_dict['total'] = [item.to_dict() for item in self.total]
+            new_dict['total'] = [item.to_dict(include_readonly=True) for item in self.total]
         if hasattr(self, 'errors') and isinstance(self.errors, list):
-            new_dict['errors'] = [item.to_dict() for item in self.errors]
+            new_dict['errors'] = [item.to_dict(include_readonly=True) for item in self.errors]
         return new_dict
 
     def __repr__(self):

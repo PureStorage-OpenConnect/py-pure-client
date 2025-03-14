@@ -1,11 +1,10 @@
 certifi >=2024.07.04
 docutils<0.18
-six >=1.10, <=1.16.0
 python_dateutil >=2.5.3
 setuptools >=70.0.0
 urllib3 >= 1.26.17
 paramiko >= 3.4.0
 pyjwt >=2.0.0, <=2.8.0
 requests >= 2.32.0
-typing >=3.7.4.1, <=3.7.4.3; python_version < "3.5"
 sphinx-rtd-theme == 1.1.1
+pydantic >= 2
