@@ -30,8 +30,6 @@ class Saml2SsoPost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'ERRORUNKNOWN',
-        'id': 'str',
         'enabled': 'bool',
         'array_url': 'str',
         'sp': 'Saml2SsoSp',
@@ -39,8 +37,6 @@ class Saml2SsoPost(object):
     }
 
     attribute_map = {
-        'name': 'name',
-        'id': 'id',
         'enabled': 'enabled',
         'array_url': 'array_url',
         'sp': 'sp',
@@ -52,8 +48,6 @@ class Saml2SsoPost(object):
 
     def __init__(
         self,
-        name=None,  # type: models.ERRORUNKNOWN
-        id=None,  # type: str
         enabled=None,  # type: bool
         array_url=None,  # type: str
         sp=None,  # type: models.Saml2SsoSp
@@ -61,17 +55,11 @@ class Saml2SsoPost(object):
     ):
         """
         Keyword args:
-            name (ERRORUNKNOWN)
-            id (str): A non-modifiable, globally unique ID chosen by the system.
             enabled (bool): If set to `true`, the SAML2 SSO configuration is enabled.
             array_url (str): The URL of the array.
             sp (Saml2SsoSp)
             idp (Saml2SsoIdp)
         """
-        if name is not None:
-            self.name = name
-        if id is not None:
-            self.id = id
         if enabled is not None:
             self.enabled = enabled
         if array_url is not None:

@@ -20586,7 +20586,7 @@ class Client(object):
         local_file_system_names=None,  # type: List[str]
         member_ids=None,  # type: List[str]
         member_names=None,  # type: List[str]
-        member_types=None,  # type: List[models.ResourceType]
+        member_types=None,  # type: List[str]
         offset=None,  # type: int
         policy_ids=None,  # type: List[str]
         policy_names=None,  # type: List[str]
@@ -20641,7 +20641,7 @@ class Client(object):
                 This cannot be provided together with the `member_names` query parameter.
             member_names (list[str], optional):
                 A list of member names.
-            member_types (list[ResourceType], optional):
+            member_types (list[str], optional):
                 A list of member types. Valid values are `file-systems`, `file-system-
                 snapshots`, `file-system-replica-links`, and `object-store-users`. Different
                 endpoints may accept different subsets of these values.
@@ -22215,8 +22215,8 @@ class Client(object):
     ):
         # type: (...) -> None
         """
-        -> Delete a WORM data policy. Deletion is not allowed if the policy is attached
-        to one or more file systems.
+        Delete a WORM data policy. Deletion is not allowed if the policy is attached to
+        one or more file systems.
 
         Args:
             references (list[FixedReference], optional):
@@ -22665,7 +22665,7 @@ class Client(object):
         local_file_system_names=None,  # type: List[str]
         member_ids=None,  # type: List[str]
         member_names=None,  # type: List[str]
-        member_types=None,  # type: List[models.ResourceType]
+        member_types=None,  # type: List[str]
         offset=None,  # type: int
         policy_ids=None,  # type: List[str]
         policy_names=None,  # type: List[str]
@@ -22720,7 +22720,7 @@ class Client(object):
                 This cannot be provided together with the `member_names` query parameter.
             member_names (list[str], optional):
                 A list of member names.
-            member_types (list[ResourceType], optional):
+            member_types (list[str], optional):
                 A list of member types. Valid values are `file-systems`, `file-system-
                 snapshots`, `file-system-replica-links`, and `object-store-users`. Different
                 endpoints may accept different subsets of these values.
@@ -26269,7 +26269,7 @@ class Client(object):
     ):
         # type: (...) -> models.SupportDiagnosticsDetailsGetResponse
         """
-        -> Lists the diagnostics tasks details.
+        Lists the diagnostics tasks details.
 
         Args:
             references (list[FixedReference], optional):
@@ -26352,7 +26352,7 @@ class Client(object):
     ):
         # type: (...) -> models.SupportDiagnosticsGetResponse
         """
-        -> Lists the support diagnostics tasks.
+        Lists the support diagnostics tasks.
 
         Args:
             references (list[FixedReference], optional):
@@ -26429,7 +26429,7 @@ class Client(object):
     ):
         # type: (...) -> models.SupportDiagnosticsGetResponse
         """
-        -> Creates a diagnostics task for a given time interval. If `start_time` is not
+        Creates a diagnostics task for a given time interval. If `start_time` is not
         provided, defaults to Current System Time - 1 hour. If `end_time` is not
         provided, defaults to Current System Time. If a task is already running, an
         error is returned.

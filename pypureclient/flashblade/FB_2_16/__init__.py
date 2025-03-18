@@ -38,6 +38,7 @@ from .models.directory_service_management import DirectoryServiceManagement
 from .models.directory_service_nfs import DirectoryServiceNfs
 from .models.directory_service_role import DirectoryServiceRole
 from .models.directory_service_smb import DirectoryServiceSmb
+from .models.dns_post import DnsPost
 from .models.eula import Eula
 from .models.eula_signature import EulaSignature
 from .models.file_lock_range import FileLockRange
@@ -92,9 +93,10 @@ from .models.reference_writable import ReferenceWritable
 from .models.replication_performance import ReplicationPerformance
 from .models.resource import Resource
 from .models.resource_fixed_non_unique_name import ResourceFixedNonUniqueName
-from .models.resource_type import ResourceType
 from .models.saml2_sso_idp import Saml2SsoIdp
+from .models.saml2_sso_post import Saml2SsoPost
 from .models.saml2_sso_sp_credential import Saml2SsoSpCredential
+from .models.server_post import ServerPost
 from .models.smb import Smb
 from .models.snmp_agent_mib import SnmpAgentMib
 from .models.snmp_manager_post import SnmpManagerPost
@@ -246,7 +248,6 @@ from .models.user_quota_post import UserQuotaPost
 from .models.array_connection_post import ArrayConnectionPost
 from .models.audit_file_systems_policy import AuditFileSystemsPolicy
 from .models.bucket_replica_link import BucketReplicaLink
-from .models.dns_post import DnsPost
 from .models.file_system_replica_link import FileSystemReplicaLink
 from .models.group_quota_patch import GroupQuotaPatch
 from .models.network_access_policy import NetworkAccessPolicy
@@ -259,8 +260,6 @@ from .models.nfs_export_policy_rule_in_policy import NfsExportPolicyRuleInPolicy
 from .models.password_policy import PasswordPolicy
 from .models.policy_base import PolicyBase
 from .models.policy_member_with_remote import PolicyMemberWithRemote
-from .models.saml2_sso_post import Saml2SsoPost
-from .models.server_post import ServerPost
 from .models.smb_client_policy import SmbClientPolicy
 from .models.smb_client_policy_rule import SmbClientPolicyRule
 from .models.smb_client_policy_rule_in_policy import SmbClientPolicyRuleInPolicy
@@ -287,6 +286,11 @@ from .models.ssh_certificate_authority_policy import SshCertificateAuthorityPoli
 def add_properties(model):
     for name, value in model.attribute_map.items():
         setattr(model, name, Property(value))
+
+
+def add_all_properties():
+    for model in CLASSES_TO_ADD_PROPS:
+        add_properties(model)
 
 
 CLASSES_TO_ADD_PROPS = [
@@ -322,6 +326,7 @@ CLASSES_TO_ADD_PROPS = [
     DirectoryServiceNfs,
     DirectoryServiceRole,
     DirectoryServiceSmb,
+    DnsPost,
     Eula,
     EulaSignature,
     FileLockRange,
@@ -376,9 +381,10 @@ CLASSES_TO_ADD_PROPS = [
     ReplicationPerformance,
     Resource,
     ResourceFixedNonUniqueName,
-    ResourceType,
     Saml2SsoIdp,
+    Saml2SsoPost,
     Saml2SsoSpCredential,
+    ServerPost,
     Smb,
     SnmpAgentMib,
     SnmpManagerPost,
@@ -530,7 +536,6 @@ CLASSES_TO_ADD_PROPS = [
     ArrayConnectionPost,
     AuditFileSystemsPolicy,
     BucketReplicaLink,
-    DnsPost,
     FileSystemReplicaLink,
     GroupQuotaPatch,
     NetworkAccessPolicy,
@@ -543,8 +548,6 @@ CLASSES_TO_ADD_PROPS = [
     PasswordPolicy,
     PolicyBase,
     PolicyMemberWithRemote,
-    Saml2SsoPost,
-    ServerPost,
     SmbClientPolicy,
     SmbClientPolicyRule,
     SmbClientPolicyRuleInPolicy,
@@ -569,5 +572,4 @@ CLASSES_TO_ADD_PROPS = [
 ]
 
 if os.environ.get('DOCS_GENERATION') is None:
-    for model in CLASSES_TO_ADD_PROPS:
-        add_properties(model)
+    add_all_properties()

@@ -14437,7 +14437,7 @@ class Client(object):
         local_file_system_names=None,  # type: List[str]
         member_ids=None,  # type: List[str]
         member_names=None,  # type: List[str]
-        member_types=None,  # type: List[models.ResourceType]
+        member_types=None,  # type: List[str]
         offset=None,  # type: int
         policy_ids=None,  # type: List[str]
         policy_names=None,  # type: List[str]
@@ -14489,7 +14489,7 @@ class Client(object):
                 This cannot be provided together with the `member_names` query parameter.
             member_names (list[str], optional):
                 A list of member names.
-            member_types (list[ResourceType], optional):
+            member_types (list[str], optional):
                 A list of member types. Valid values are `file-systems`, `file-system-
                 snapshots`, `file-system-replica-links`, and `object-store-users`. Different
                 endpoints may accept different subsets of these values.
@@ -14782,7 +14782,7 @@ class Client(object):
         local_file_system_names=None,  # type: List[str]
         member_ids=None,  # type: List[str]
         member_names=None,  # type: List[str]
-        member_types=None,  # type: List[models.ResourceType]
+        member_types=None,  # type: List[str]
         offset=None,  # type: int
         policy_ids=None,  # type: List[str]
         policy_names=None,  # type: List[str]
@@ -14834,7 +14834,7 @@ class Client(object):
                 This cannot be provided together with the `member_names` query parameter.
             member_names (list[str], optional):
                 A list of member names.
-            member_types (list[ResourceType], optional):
+            member_types (list[str], optional):
                 A list of member types. Valid values are `file-systems`, `file-system-
                 snapshots`, `file-system-replica-links`, and `object-store-users`. Different
                 endpoints may accept different subsets of these values.

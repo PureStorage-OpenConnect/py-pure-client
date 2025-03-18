@@ -200,8 +200,8 @@ from .reference import Reference
 from .reference_writable import ReferenceWritable
 from .replication_performance import ReplicationPerformance
 from .resource import Resource
-from .resource_type import ResourceType
 from .saml2_sso_idp import Saml2SsoIdp
+from .saml2_sso_post import Saml2SsoPost
 from .saml2_sso_response import Saml2SsoResponse
 from .saml2_sso_sp_credential import Saml2SsoSpCredential
 from .smb import Smb
@@ -471,7 +471,6 @@ from .nfs_export_policy_rule import NfsExportPolicyRule
 from .nfs_export_policy_rule_in_policy import NfsExportPolicyRuleInPolicy
 from .policy_base import PolicyBase
 from .policy_member_with_remote import PolicyMemberWithRemote
-from .saml2_sso_post import Saml2SsoPost
 from .smb_client_policy import SmbClientPolicy
 from .smb_client_policy_rule import SmbClientPolicyRule
 from .smb_client_policy_rule_in_policy import SmbClientPolicyRuleInPolicy

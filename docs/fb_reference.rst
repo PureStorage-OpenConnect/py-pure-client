@@ -1,6 +1,5 @@
 FlashBlade Reference
 ====================
-
 .. toctree::
    :maxdepth: 4
 
@@ -9,1856 +8,1500 @@ Client
 
 FlashBlade REST Client Factory Method
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autofunction:: pypureclient.flashblade.client.Client
-
    Importable as
-
    .. code-block:: python
-
       from pypureclient.flashblade import Client
 
 FlashBlade REST 2.0 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.FB_2_0.client.Client
 
 FlashBlade REST 2.1 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.FB_2_1.client.Client
 
 FlashBlade REST 2.2 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.FB_2_2.client.Client
 
 FlashBlade REST 2.3 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.FB_2_3.client.Client
 
 FlashBlade REST 2.4 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.FB_2_4.client.Client
 
 FlashBlade REST 2.5 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.FB_2_5.client.Client
 
 FlashBlade REST 2.6 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.FB_2_6.client.Client
 
 FlashBlade REST 2.7 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.FB_2_7.client.Client
 
 FlashBlade REST 2.8 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.FB_2_8.client.Client
 
 FlashBlade REST 2.9 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.FB_2_9.client.Client
 
 FlashBlade REST 2.10 Client
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.FB_2_10.client.Client
 
 FlashBlade REST 2.11 Client
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.FB_2_11.client.Client
 
 FlashBlade REST 2.12 Client
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.FB_2_12.client.Client
 
 FlashBlade REST 2.13 Client
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.FB_2_13.client.Client
 
 FlashBlade REST 2.14 Client
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.FB_2_14.client.Client
-    :members:
 
 FlashBlade REST 2.15 Client
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.FB_2_15.client.Client
-    :members:
 
 FlashBlade REST 2.16 Client
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.FB_2_16.client.Client
-    :members:
-
+   :members:
 
 Properties
 ----------
 
 Property
 ~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.Property
-    :members:
-
+   :members:
 
 Filter
 ~~~~~~
-
 .. autoclass:: pypureclient.flashblade.Filter
-    :members:
+   :members:
 
 Responses
 ---------
 
 ResponseHeaders
 ~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ResponseHeaders
    :members:
 
 ValidResponse
 ~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ValidResponse
-    :members:
+   :members:
 
 ApiError
 ~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ApiError
-    :members:
+   :members:
 
 ErrorResponse
 ~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ErrorResponse
-    :members:
-
+   :members:
 
 Models
 ------
+
 ActiveDirectory
 ~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ActiveDirectory
    :members:
 
 ActiveDirectoryDirectoryServers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ActiveDirectoryDirectoryServers
    :members:
 
 ActiveDirectoryPatch
 ~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ActiveDirectoryPatch
    :members:
 
 ActiveDirectoryPost
 ~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ActiveDirectoryPost
    :members:
 
 Admin
 ~~~~~
-
 .. autoclass:: pypureclient.flashblade.Admin
    :members:
 
 AdminApiToken
 ~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.AdminApiToken
    :members:
 
 AdminCache
 ~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.AdminCache
    :members:
 
 AdminPatch
 ~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.AdminPatch
    :members:
 
 AdminPost
 ~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.AdminPost
    :members:
 
 AdminSetting
 ~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.AdminSetting
    :members:
 
 Alert
 ~~~~~
-
 .. autoclass:: pypureclient.flashblade.Alert
    :members:
 
 AlertWatcher
 ~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.AlertWatcher
    :members:
 
 AlertWatcherPost
 ~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.AlertWatcherPost
    :members:
 
 ApiClient
 ~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ApiClient
    :members:
 
 ApiClientsPost
 ~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ApiClientsPost
    :members:
 
 ApiToken
 ~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ApiToken
    :members:
 
 ApiVersion
 ~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ApiVersion
    :members:
 
 Array
 ~~~~~
-
 .. autoclass:: pypureclient.flashblade.Array
    :members:
 
 ArrayConnection
 ~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ArrayConnection
    :members:
 
 ArrayConnectionKey
 ~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ArrayConnectionKey
    :members:
 
 ArrayConnectionPath
 ~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ArrayConnectionPath
    :members:
 
 ArrayConnectionPost
 ~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ArrayConnectionPost
    :members:
 
 ArrayEncryption
 ~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ArrayEncryption
    :members:
 
 ArrayEncryptionDataAtRest
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ArrayEncryptionDataAtRest
    :members:
 
 ArrayEradicationConfig
 ~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ArrayEradicationConfig
    :members:
 
 ArrayFactoryResetToken
 ~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ArrayFactoryResetToken
    :members:
 
 ArrayHttpSpecificPerformance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ArrayHttpSpecificPerformance
    :members:
 
 ArrayHttpSpecificPerformanceGet
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ArrayHttpSpecificPerformanceGet
    :members:
 
 ArrayNfsSpecificPerformance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ArrayNfsSpecificPerformance
    :members:
 
 ArrayNfsSpecificPerformanceGet
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ArrayNfsSpecificPerformanceGet
    :members:
 
 ArrayPerformance
 ~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ArrayPerformance
    :members:
 
 ArrayPerformanceReplicationGetResp
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ArrayPerformanceReplicationGetResp
    :members:
 
 ArrayS3SpecificPerformance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ArrayS3SpecificPerformance
    :members:
 
 ArrayS3SpecificPerformanceGetResp
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ArrayS3SpecificPerformanceGetResp
    :members:
 
 ArraySpace
 ~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ArraySpace
    :members:
 
 Audit
 ~~~~~
-
 .. autoclass:: pypureclient.flashblade.Audit
-   :members:
-
-AuditFileSystemsPolicies
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. autoclass:: pypureclient.flashblade.AuditFileSystemsPolicies
    :members:
 
 AuditFileSystemsPoliciesPatch
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.AuditFileSystemsPoliciesPatch
    :members:
 
 AuditFileSystemsPoliciesPost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.AuditFileSystemsPoliciesPost
    :members:
 
 AuditFileSystemsPolicy
 ~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.AuditFileSystemsPolicy
    :members:
 
 Blade
 ~~~~~
-
 .. autoclass:: pypureclient.flashblade.Blade
    :members:
 
 Bucket
 ~~~~~~
-
 .. autoclass:: pypureclient.flashblade.Bucket
    :members:
 
 BucketAccessPolicy
 ~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.BucketAccessPolicy
    :members:
 
 BucketAccessPolicyPost
 ~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.BucketAccessPolicyPost
    :members:
 
 BucketAccessPolicyRule
 ~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.BucketAccessPolicyRule
    :members:
 
 BucketAccessPolicyRuleBulkManage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.BucketAccessPolicyRuleBulkManage
    :members:
 
 BucketAccessPolicyRulePost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.BucketAccessPolicyRulePost
    :members:
 
 BucketAccessPolicyRulePrincipal
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.BucketAccessPolicyRulePrincipal
    :members:
 
 BucketDefaults
 ~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.BucketDefaults
    :members:
 
 BucketDefaultsReadonly
 ~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.BucketDefaultsReadonly
    :members:
 
 BucketEradicationConfig
 ~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.BucketEradicationConfig
    :members:
 
 BucketPatch
 ~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.BucketPatch
    :members:
 
 BucketPerformance
 ~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.BucketPerformance
    :members:
 
 BucketPost
 ~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.BucketPost
    :members:
 
 BucketReplicaLink
 ~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.BucketReplicaLink
    :members:
 
 BucketReplicaLinkPost
 ~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.BucketReplicaLinkPost
    :members:
 
 BucketS3SpecificPerformance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.BucketS3SpecificPerformance
    :members:
 
 BucketS3SpecificPerformanceGetResp
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.BucketS3SpecificPerformanceGetResp
    :members:
 
 BuiltIn
 ~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.BuiltIn
    :members:
 
 BuiltInNoId
 ~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.BuiltInNoId
    :members:
 
 BuiltInRelationship
 ~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.BuiltInRelationship
    :members:
 
 Certificate
 ~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.Certificate
    :members:
 
 CertificateCertificateGroupGetResp
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.CertificateCertificateGroupGetResp
    :members:
 
 CertificateGroup
 ~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.CertificateGroup
    :members:
 
 CertificateGroupCertificateGetResp
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.CertificateGroupCertificateGetResp
    :members:
 
 CertificateGroupUse
 ~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.CertificateGroupUse
    :members:
 
 CertificatePatch
 ~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.CertificatePatch
    :members:
 
 CertificatePost
 ~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.CertificatePost
    :members:
 
 CertificateUse
 ~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.CertificateUse
    :members:
 
 ClientPerformance
 ~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ClientPerformance
    :members:
 
 ConnectionRelationshipPerformanceReplication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ConnectionRelationshipPerformanceReplication
    :members:
 
 ConnectionRelationshipPerformanceReplicationGetResp
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ConnectionRelationshipPerformanceReplicationGetResp
    :members:
 
 ContinuousReplicationPerformance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ContinuousReplicationPerformance
    :members:
 
 CrossOriginResourceSharingPolicy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.CrossOriginResourceSharingPolicy
    :members:
 
 CrossOriginResourceSharingPolicyPatch
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.CrossOriginResourceSharingPolicyPatch
    :members:
 
 CrossOriginResourceSharingPolicyRule
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.CrossOriginResourceSharingPolicyRule
    :members:
 
 CrossOriginResourceSharingPolicyRuleBulkManage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.CrossOriginResourceSharingPolicyRuleBulkManage
    :members:
 
 CrossOriginResourceSharingPolicyRulePost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.CrossOriginResourceSharingPolicyRulePost
    :members:
 
 Direction
 ~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.Direction
    :members:
 
 DirectoryService
 ~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.DirectoryService
    :members:
 
 DirectoryServiceManagement
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.DirectoryServiceManagement
    :members:
 
 DirectoryServiceNfs
 ~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.DirectoryServiceNfs
    :members:
 
 DirectoryServiceRole
 ~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.DirectoryServiceRole
    :members:
 
 DirectoryServiceSmb
 ~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.DirectoryServiceSmb
    :members:
 
 Dns
 ~~~
-
 .. autoclass:: pypureclient.flashblade.Dns
    :members:
 
 DnsPost
 ~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.DnsPost
    :members:
 
 Drive
 ~~~~~
-
 .. autoclass:: pypureclient.flashblade.Drive
    :members:
 
 Eula
 ~~~~
-
 .. autoclass:: pypureclient.flashblade.Eula
    :members:
 
 EulaSignature
 ~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.EulaSignature
    :members:
 
 FileInfo
 ~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.FileInfo
    :members:
 
 FileLock
 ~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.FileLock
    :members:
 
 FileLockRange
 ~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.FileLockRange
    :members:
 
 FileSession
 ~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.FileSession
    :members:
 
 FileSystem
 ~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.FileSystem
    :members:
 
 FileSystemClient
 ~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.FileSystemClient
    :members:
 
 FileSystemEradicationConfig
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.FileSystemEradicationConfig
    :members:
 
 FileSystemExport
 ~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.FileSystemExport
    :members:
 
 FileSystemExportPost
 ~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.FileSystemExportPost
    :members:
 
 FileSystemGroupPerformance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.FileSystemGroupPerformance
    :members:
 
 FileSystemLockNlmReclamation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.FileSystemLockNlmReclamation
    :members:
 
 FileSystemPatch
 ~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.FileSystemPatch
    :members:
 
 FileSystemPerformance
 ~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.FileSystemPerformance
    :members:
 
 FileSystemPost
 ~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.FileSystemPost
    :members:
 
 FileSystemReplicaLink
 ~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.FileSystemReplicaLink
    :members:
 
 FileSystemSnapshot
 ~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.FileSystemSnapshot
    :members:
 
 FileSystemSnapshotPost
 ~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.FileSystemSnapshotPost
    :members:
 
 FileSystemSnapshotTransfer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.FileSystemSnapshotTransfer
    :members:
 
 FileSystemUserPerformance
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.FileSystemUserPerformance
    :members:
 
 FixedLocationReference
 ~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.FixedLocationReference
    :members:
 
 FixedReference
 ~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.FixedReference
    :members:
 
 FixedReferenceNameOnly
 ~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.FixedReferenceNameOnly
    :members:
 
 FixedReferenceNoId
 ~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.FixedReferenceNoId
    :members:
 
 FixedReferenceNoResourceType
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.FixedReferenceNoResourceType
    :members:
 
 FixedReferenceWithRemote
 ~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.FixedReferenceWithRemote
    :members:
 
 Group
 ~~~~~
-
 .. autoclass:: pypureclient.flashblade.Group
    :members:
 
 GroupQuota
 ~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.GroupQuota
    :members:
 
 GroupQuotaPatch
 ~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.GroupQuotaPatch
    :members:
 
 GroupQuotaPost
 ~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.GroupQuotaPost
    :members:
 
 Hardware
 ~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.Hardware
    :members:
 
 HardwareConnector
 ~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.HardwareConnector
    :members:
 
 HardwareConnectorPerformance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.HardwareConnectorPerformance
    :members:
 
 Http
 ~~~~
-
 .. autoclass:: pypureclient.flashblade.Http
    :members:
 
 Keytab
 ~~~~~~
-
 .. autoclass:: pypureclient.flashblade.Keytab
    :members:
 
 KeytabFileBase64
 ~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.KeytabFileBase64
    :members:
 
 KeytabFileBinary
 ~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.KeytabFileBinary
    :members:
 
 KeytabPost
 ~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.KeytabPost
    :members:
 
 KmipServer
 ~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.KmipServer
    :members:
 
 LifecycleRule
 ~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.LifecycleRule
    :members:
 
 LifecycleRuleConfigExtension
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.LifecycleRuleConfigExtension
    :members:
 
 LifecycleRulePatch
 ~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.LifecycleRulePatch
    :members:
 
 LifecycleRulePost
 ~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.LifecycleRulePost
    :members:
 
 LinkAggregationGroup
 ~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.LinkAggregationGroup
    :members:
 
 Linkaggregationgroup
 ~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.Linkaggregationgroup
    :members:
 
 LocationReference
 ~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.LocationReference
    :members:
 
 Login
 ~~~~~
-
 .. autoclass:: pypureclient.flashblade.Login
    :members:
 
 LogsAsync
 ~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.LogsAsync
    :members:
 
 MaintenanceWindow
 ~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.MaintenanceWindow
    :members:
 
 MaintenanceWindowPost
 ~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.MaintenanceWindowPost
    :members:
 
 Member
 ~~~~~~
-
 .. autoclass:: pypureclient.flashblade.Member
    :members:
 
 MemberLink
 ~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.MemberLink
    :members:
 
 MultiProtocol
 ~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.MultiProtocol
    :members:
 
 MultiProtocolPost
 ~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.MultiProtocolPost
    :members:
 
 NetworkAccessPolicy
 ~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.NetworkAccessPolicy
    :members:
 
 NetworkAccessPolicyRule
 ~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.NetworkAccessPolicyRule
    :members:
 
 NetworkAccessPolicyRuleBase
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.NetworkAccessPolicyRuleBase
    :members:
 
 NetworkAccessPolicyRuleInPolicy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.NetworkAccessPolicyRuleInPolicy
    :members:
 
 NetworkAccessPolicyRulePost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.NetworkAccessPolicyRulePost
    :members:
 
 NetworkAccessPolicyRulePostBase
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.NetworkAccessPolicyRulePostBase
    :members:
 
 NetworkInterface
 ~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.NetworkInterface
    :members:
 
 NetworkInterfacePatch
 ~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.NetworkInterfacePatch
    :members:
 
 NetworkInterfacePing
 ~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.NetworkInterfacePing
    :members:
 
 NetworkInterfaceTrace
 ~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.NetworkInterfaceTrace
    :members:
 
 Nfs
 ~~~
-
 .. autoclass:: pypureclient.flashblade.Nfs
    :members:
 
 NfsExportPolicy
 ~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.NfsExportPolicy
    :members:
 
 NfsExportPolicyPost
 ~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.NfsExportPolicyPost
    :members:
 
 NfsExportPolicyRule
 ~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.NfsExportPolicyRule
    :members:
 
 NfsExportPolicyRuleBase
 ~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.NfsExportPolicyRuleBase
    :members:
 
 NfsExportPolicyRuleInPolicy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.NfsExportPolicyRuleInPolicy
    :members:
 
 NfsPatch
 ~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.NfsPatch
    :members:
 
 ObjectBacklog
 ~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ObjectBacklog
    :members:
 
 ObjectLockConfigBase
 ~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ObjectLockConfigBase
    :members:
 
 ObjectLockConfigRequestBody
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ObjectLockConfigRequestBody
    :members:
 
 ObjectStoreAccessKey
 ~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ObjectStoreAccessKey
    :members:
 
 ObjectStoreAccessKeyPost
 ~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ObjectStoreAccessKeyPost
    :members:
 
 ObjectStoreAccessPolicy
 ~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ObjectStoreAccessPolicy
    :members:
 
 ObjectStoreAccessPolicyAction
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ObjectStoreAccessPolicyAction
    :members:
 
 ObjectStoreAccessPolicyPatch
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ObjectStoreAccessPolicyPatch
    :members:
 
 ObjectStoreAccessPolicyPost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ObjectStoreAccessPolicyPost
-   :members:
-
-ObjectStoreAccessPolicyRule
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. autoclass:: pypureclient.flashblade.ObjectStoreAccessPolicyRule
    :members:
 
 ObjectStoreAccount
 ~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ObjectStoreAccount
    :members:
 
 ObjectStoreAccountPatch
 ~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ObjectStoreAccountPatch
    :members:
 
 ObjectStoreAccountPost
 ~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ObjectStoreAccountPost
    :members:
 
 ObjectStoreRemoteCredentialGetResp
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ObjectStoreRemoteCredentialGetResp
    :members:
 
 ObjectStoreRemoteCredentials
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ObjectStoreRemoteCredentials
    :members:
 
 ObjectStoreRemoteCredentialsPost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ObjectStoreRemoteCredentialsPost
    :members:
 
 ObjectStoreRemoteCredentialsResp
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ObjectStoreRemoteCredentialsResp
    :members:
 
 ObjectStoreUser
 ~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ObjectStoreUser
    :members:
 
 ObjectStoreVirtualHost
 ~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ObjectStoreVirtualHost
    :members:
 
 PageInfo
 ~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.PageInfo
    :members:
 
 PasswordPolicy
 ~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.PasswordPolicy
    :members:
 
 Permission
 ~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.Permission
    :members:
 
 Policy
 ~~~~~~
-
 .. autoclass:: pypureclient.flashblade.Policy
    :members:
 
 PolicyBase
 ~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.PolicyBase
    :members:
 
 PolicyBaseRenameable
 ~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.PolicyBaseRenameable
    :members:
 
 PolicyFileSystemSnapshot
 ~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.PolicyFileSystemSnapshot
-   :members:
-
-PolicyLocalMember
-~~~~~~~~~~~~~~~~~
-
-.. autoclass:: pypureclient.flashblade.PolicyLocalMember
    :members:
 
 PolicyMember
 ~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.PolicyMember
    :members:
 
 PolicyMemberWithRemote
 ~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.PolicyMemberWithRemote
    :members:
 
 PolicyPatch
 ~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.PolicyPatch
    :members:
 
 PolicyRule
 ~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.PolicyRule
    :members:
 
 PolicyRuleIndex
 ~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.PolicyRuleIndex
    :members:
 
 PolicyRuleIndexInPolicy
 ~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.PolicyRuleIndexInPolicy
    :members:
 
 PolicyRuleObjectAccess
 ~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.PolicyRuleObjectAccess
    :members:
 
 PolicyRuleObjectAccessBulkManage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.PolicyRuleObjectAccessBulkManage
    :members:
 
 PolicyRuleObjectAccessCondition
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.PolicyRuleObjectAccessCondition
    :members:
 
 PolicyRuleObjectAccessPost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.PolicyRuleObjectAccessPost
    :members:
 
 PublicAccessConfig
 ~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.PublicAccessConfig
    :members:
 
 PublicKey
 ~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.PublicKey
    :members:
 
 PublicKeyPost
 ~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.PublicKeyPost
    :members:
 
 PublicKeyUse
 ~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.PublicKeyUse
    :members:
 
 QuotaSetting
 ~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.QuotaSetting
    :members:
 
 RapidDataLocking
 ~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.RapidDataLocking
    :members:
 
 Reference
 ~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.Reference
    :members:
 
 ReferenceNameOnly
 ~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ReferenceNameOnly
    :members:
 
 ReferenceWritable
 ~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ReferenceWritable
    :members:
 
 RelationshipPerformanceReplication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.RelationshipPerformanceReplication
    :members:
 
 ReplicaLinkBuiltIn
 ~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ReplicaLinkBuiltIn
    :members:
 
 ReplicationPerformance
 ~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ReplicationPerformance
    :members:
 
 Resource
 ~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.Resource
    :members:
 
 ResourceFixedNonUniqueName
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ResourceFixedNonUniqueName
    :members:
 
 ResourcePerformanceReplication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ResourcePerformanceReplication
-   :members:
-
-ResourceType
-~~~~~~~~~~~~
-
-.. autoclass:: pypureclient.flashblade.ResourceType
    :members:
 
 Role
 ~~~~
-
 .. autoclass:: pypureclient.flashblade.Role
-   :members:
-
-SMTP
-~~~~
-
-.. autoclass:: pypureclient.flashblade.SMTP
    :members:
 
 Saml2Sso
 ~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.Saml2Sso
    :members:
 
 Saml2SsoIdp
 ~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.Saml2SsoIdp
    :members:
 
 Saml2SsoPost
 ~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.Saml2SsoPost
    :members:
 
 Saml2SsoSp
 ~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.Saml2SsoSp
    :members:
 
 Saml2SsoSpCredential
 ~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.Saml2SsoSpCredential
    :members:
 
 Server
 ~~~~~~
-
 .. autoclass:: pypureclient.flashblade.Server
    :members:
 
 ServerPost
 ~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.ServerPost
    :members:
 
 Session
 ~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.Session
    :members:
 
 Smb
 ~~~
-
 .. autoclass:: pypureclient.flashblade.Smb
    :members:
 
 SmbClientPolicy
 ~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.SmbClientPolicy
    :members:
 
 SmbClientPolicyPost
 ~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.SmbClientPolicyPost
    :members:
 
 SmbClientPolicyRule
 ~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.SmbClientPolicyRule
    :members:
 
 SmbClientPolicyRuleBase
 ~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.SmbClientPolicyRuleBase
    :members:
 
 SmbClientPolicyRuleInPolicy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.SmbClientPolicyRuleInPolicy
    :members:
 
 SmbClientPolicyRulePost
 ~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.SmbClientPolicyRulePost
    :members:
 
 SmbClientPolicyRulePostBase
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.SmbClientPolicyRulePostBase
    :members:
 
 SmbClientPolicyRulePostInPolicy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.SmbClientPolicyRulePostInPolicy
    :members:
 
 SmbPost
 ~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.SmbPost
    :members:
 
 SmbSharePolicy
 ~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.SmbSharePolicy
    :members:
 
 SmbSharePolicyPost
 ~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.SmbSharePolicyPost
    :members:
 
 SmbSharePolicyRule
 ~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.SmbSharePolicyRule
    :members:
 
 SmbSharePolicyRulePost
 ~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.SmbSharePolicyRulePost
    :members:
 
 SmtpServer
 ~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.SmtpServer
    :members:
 
 SnmpAgent
 ~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.SnmpAgent
    :members:
 
 SnmpAgentMib
 ~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.SnmpAgentMib
    :members:
 
 SnmpManager
 ~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.SnmpManager
    :members:
 
 SnmpManagerPost
 ~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.SnmpManagerPost
    :members:
 
 SnmpManagerTest
 ~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.SnmpManagerTest
    :members:
 
 SnmpV2c
 ~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.SnmpV2c
    :members:
 
 SnmpV3
 ~~~~~~
-
 .. autoclass:: pypureclient.flashblade.SnmpV3
    :members:
 
 SnmpV3Post
 ~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.SnmpV3Post
    :members:
 
 SoftwareCheck
 ~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.SoftwareCheck
-   :members:
-
-SoftwareChecks
-~~~~~~~~~~~~~~
-
-.. autoclass:: pypureclient.flashblade.SoftwareChecks
    :members:
 
 SoftwareChecksChecks
 ~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.SoftwareChecksChecks
    :members:
 
 Space
 ~~~~~
-
 .. autoclass:: pypureclient.flashblade.Space
-   :members:
-
-SpaceExtended
-~~~~~~~~~~~~~
-
-.. autoclass:: pypureclient.flashblade.SpaceExtended
    :members:
 
 SshCertificateAuthorityPolicy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.SshCertificateAuthorityPolicy
    :members:
 
 SshCertificateAuthorityPolicyPost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.SshCertificateAuthorityPolicyPost
    :members:
 
 StartEndTime
 ~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.StartEndTime
    :members:
 
 StorageClassInfo
 ~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.StorageClassInfo
    :members:
 
 StorageClassSpace
 ~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.StorageClassSpace
    :members:
 
 Subnet
 ~~~~~~
-
 .. autoclass:: pypureclient.flashblade.Subnet
    :members:
 
 Support
 ~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.Support
    :members:
 
 SupportDiagnostics
 ~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.SupportDiagnostics
    :members:
 
 SupportDiagnosticsDetails
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.SupportDiagnosticsDetails
    :members:
 
 SupportDiagnosticsSeverityCount
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.SupportDiagnosticsSeverityCount
    :members:
 
 SupportRemoteAssistPaths
 ~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.SupportRemoteAssistPaths
    :members:
 
 SyslogServer
 ~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.SyslogServer
    :members:
 
 SyslogServerPatch
 ~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.SyslogServerPatch
    :members:
 
 SyslogServerPost
 ~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.SyslogServerPost
    :members:
 
 SyslogServerPostOrPatch
 ~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.SyslogServerPostOrPatch
    :members:
 
 SyslogServerSettings
 ~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.SyslogServerSettings
    :members:
 
 Target
 ~~~~~~
-
 .. autoclass:: pypureclient.flashblade.Target
    :members:
 
 TargetPost
 ~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.TargetPost
    :members:
 
 TestResult
 ~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.TestResult
    :members:
 
 Throttle
 ~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.Throttle
    :members:
 
 TimeWindow
 ~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.TimeWindow
    :members:
 
 TimeZone
 ~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.TimeZone
    :members:
 
 User
 ~~~~
-
 .. autoclass:: pypureclient.flashblade.User
    :members:
 
 UserNoId
 ~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.UserNoId
    :members:
 
 UserQuota
 ~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.UserQuota
    :members:
 
 UserQuotaPatch
 ~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.UserQuotaPatch
    :members:
 
 UserQuotaPost
 ~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.UserQuotaPost
    :members:
 
 VerificationKey
 ~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.VerificationKey
    :members:
 
 VerificationKeyPatch
 ~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.VerificationKeyPatch
    :members:
 
 Version
 ~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.Version
    :members:
 
 WormDataPolicy
 ~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.WormDataPolicy
    :members:
 
 WormDataPolicyRetentionConfig
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. autoclass:: pypureclient.flashblade.WormDataPolicyRetentionConfig
    :members:
 
-model
-~~~~~
-
-.. autoclass:: pypureclient.flashblade.model
-   :members:
-
-
-
 Examples
----------
+--------
 .. _Instantiating a Client:
 
 Instantiating a Client
-~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
 All of the examples on this page assume that you have instantiated a client object in this way and
 also have these imports. Different methods of authentication are discussed in :doc:`quick_start`.
@@ -1875,10 +1518,10 @@ also have these imports. Different methods of authentication are discussed in :d
         print("Exception when logging in to the array: %s\n" % e)
 
 Common Fields
-~~~~~~~~~
+~~~~~~~~~~~~~
 
 ids, names
-'''''''''
+''''''''''
 
 Instead of getting all things, you can just get values for specific items.
 
@@ -1898,12 +1541,12 @@ There are a number of other fields that follow the same logic such as ``bucket_n
 will be the same and in these cases the object is clearly referenced by the field name.
 
 filter
-'''''''''
+''''''
 
 Check :doc:`quick_start` for more information
 
 sort
-'''''''''
+''''
 
 You can sort on a given field. By default it is in increasing order.
 
@@ -1936,7 +1579,7 @@ For nested fields, use a ``.``
         print(list(res.items))
 
 offset, limit, continuation_token
-'''''''''
+'''''''''''''''''''''''''''''''''
 
 Use ``offset`` to ignore the first couple items from the collection.
 
@@ -1968,7 +1611,7 @@ You can see that ``res`` will contain a ``continuation_token`` field. You can us
         print(list(res.items))
 
 total_only
-'''''''''
+''''''''''
 
 If you don't want the individual results, you can use ``total_only``.
 
@@ -1982,11 +1625,11 @@ If you don't want the individual results, you can use ``total_only``.
         print(list(res.items))
 
 context_names
-'''''''''
+'''''''''''''
 
-Use `context_names` if you want to perform an operation on a different execution context. The execution context must 
-reference an array or arrays in the same fleet. If not specified, it defaults to the name of the array that received 
-this request. If the request is anything other than a GET request, the `context_names` must be an array of size one, 
+Use `context_names` if you want to perform an operation on a different execution context. The execution context must
+reference an array or arrays in the same fleet. If not specified, it defaults to the name of the array that received
+this request. If the request is anything other than a GET request, the `context_names` must be an array of size one,
 for example:
 
 .. code-block:: python
@@ -2006,16 +1649,16 @@ specified contexts and return the merged response. For example:
     if type(res) == pypureclient.responses.ValidResponse:
         print(list(res.items))
 
-Other parameters provided with the request, such as names of filesystems or snapshots, are resolved relative to the 
+Other parameters provided with the request, such as names of filesystems or snapshots, are resolved relative to the
 provided *execution context*.
 
 allow_errors
-'''''''''
+''''''''''''
 
 Use `allow_errors` if you want to allow errors in the response, along the results. This can only occur when the
 *execution context* consists of multiple arrays and executing the operation on one of the arrays fails.
 
-If set to *true*, the API will allow the operation to continue even if there are errors. Any errors will be returned 
+If set to *true*, the API will allow the operation to continue even if there are errors. Any errors will be returned
 in the errors field of the response. If set to *false*, the operation will fail if there are any errors.
 
 .. code-block:: python
@@ -4491,4 +4134,3 @@ patch_support_verification_keys
 
 .. literalinclude:: source/examples/FB2.7/patch_support_verification_keys.py
     :language: python
-

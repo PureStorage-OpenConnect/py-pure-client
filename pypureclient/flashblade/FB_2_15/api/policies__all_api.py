@@ -160,7 +160,7 @@ class PoliciesAllApi(object):
         local_file_system_names=None,  # type: List[str]
         member_ids=None,  # type: List[str]
         member_names=None,  # type: List[str]
-        member_types=None,  # type: List[models.ResourceType]
+        member_types=None,  # type: List[str]
         offset=None,  # type: int
         policy_ids=None,  # type: List[str]
         policy_names=None,  # type: List[str]
@@ -191,7 +191,7 @@ class PoliciesAllApi(object):
         :param list[str] local_file_system_names: A comma-separated list of local file system names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `local_file_system_ids` query parameter.
         :param list[str] member_ids: A comma-separated list of member IDs. If after filtering, there is not at least one resource that matches each of the elements of `member_ids`, then an error is returned. This cannot be provided together with the `member_names` query parameter.
         :param list[str] member_names: A comma-separated list of member names.
-        :param list[ResourceType] member_types: A comma-separated list of member types. Valid values are `file-systems`, `file-system-snapshots`, `file-system-replica-links`, and `object-store-users`. Different endpoints may accept different subsets of these values.
+        :param list[str] member_types: A comma-separated list of member types. Valid values are `file-systems`, `file-system-snapshots`, `file-system-replica-links`, and `object-store-users`. Different endpoints may accept different subsets of these values.
         :param int offset: The offset of the first resource to return from a collection.
         :param list[str] policy_ids: A comma-separated list of policy IDs. If after filtering, there is not at least one resource that matches each of the elements of `policy_ids`, then an error is returned. This cannot be provided together with the `policy_names` query parameter.
         :param list[str] policy_names: A comma-separated list of policy names.
