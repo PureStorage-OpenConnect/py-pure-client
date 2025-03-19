@@ -57,7 +57,7 @@ class FixedReferenceWithTypeAndLocation(object):
         Keyword args:
             id (str): A globally unique, system-generated ID. The ID cannot be modified.
             name (str): The resource name, such as volume name, pod name, snapshot name, and so on.
-            is_local (bool): -> If set to `true`, the location reference is to the local array. If set to `false`, the location reference is to a remote location, such as a remote array or offload target.
+            is_local (bool): If set to `true`, the location reference is to the local array. If set to `false`, the location reference is to a remote location, such as a remote array or offload target.
             resource_type (str): Type of the object (full name of the endpoint).   Valid values are the unique part of the resource's REST endpoint.   For example, a reference to a fleet would have a   `resource_type` of `fleets`.
         """
         if id is not None:

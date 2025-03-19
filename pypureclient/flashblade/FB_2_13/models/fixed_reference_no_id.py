@@ -31,7 +31,7 @@ class FixedReferenceNoId(object):
     """
     swagger_types = {
         'name': 'str',
-        'resource_type': 'ResourceType'
+        'resource_type': 'str'
     }
 
     attribute_map = {
@@ -45,12 +45,12 @@ class FixedReferenceNoId(object):
     def __init__(
         self,
         name=None,  # type: str
-        resource_type=None,  # type: models.ResourceType
+        resource_type=None,  # type: str
     ):
         """
         Keyword args:
             name (str)
-            resource_type (ResourceType)
+            resource_type (str): Type of the object (full name of the endpoint). Valid values are the unique part of the resource's REST endpoint. For example, a reference to a file system would have a `resource_type` of `file-systems`.
         """
         if name is not None:
             self.name = name

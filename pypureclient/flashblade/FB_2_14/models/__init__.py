@@ -198,7 +198,6 @@ from .reference import Reference
 from .reference_writable import ReferenceWritable
 from .replication_performance import ReplicationPerformance
 from .resource import Resource
-from .resource_type import ResourceType
 from .smb import Smb
 from .smb_client_policy_response import SmbClientPolicyResponse
 from .smb_client_policy_rule_response import SmbClientPolicyRuleResponse

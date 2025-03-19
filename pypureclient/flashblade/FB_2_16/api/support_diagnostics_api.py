@@ -45,7 +45,7 @@ class SupportDiagnosticsApi(object):
         # type: (...) -> models.SupportDiagnosticsDetailsGetResponse
         """GET diagnostics details
 
-        -> Lists the diagnostics tasks details.
+        Lists the diagnostics tasks details.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api216_support_diagnostics_details_get_with_http_info(async_req=True)
@@ -168,7 +168,7 @@ class SupportDiagnosticsApi(object):
         # type: (...) -> models.SupportDiagnosticsGetResponse
         """GET diagnostics list
 
-        -> Lists the support diagnostics tasks.
+        Lists the support diagnostics tasks.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api216_support_diagnostics_get_with_http_info(async_req=True)
@@ -286,7 +286,7 @@ class SupportDiagnosticsApi(object):
         # type: (...) -> models.SupportDiagnosticsGetResponse
         """Start a diagnostic task
 
-        -> Creates a diagnostics task for a given time interval. If `start_time` is not provided, defaults to Current System Time - 1 hour. If `end_time` is not provided, defaults to Current System Time. If a task is already running, an error is returned.
+        Creates a diagnostics task for a given time interval. If `start_time` is not provided, defaults to Current System Time - 1 hour. If `end_time` is not provided, defaults to Current System Time. If a task is already running, an error is returned.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api216_support_diagnostics_post_with_http_info(async_req=True)

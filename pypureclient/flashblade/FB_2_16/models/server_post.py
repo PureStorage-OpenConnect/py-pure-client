@@ -30,17 +30,11 @@ class ServerPost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'ERRORUNKNOWN',
-        'id': 'str',
-        'created': 'int',
         'dns': 'list[Reference]',
         'directory_services': 'list[Reference]'
     }
 
     attribute_map = {
-        'name': 'name',
-        'id': 'id',
-        'created': 'created',
         'dns': 'dns',
         'directory_services': 'directory_services'
     }
@@ -50,26 +44,14 @@ class ServerPost(object):
 
     def __init__(
         self,
-        name=None,  # type: models.ERRORUNKNOWN
-        id=None,  # type: str
-        created=None,  # type: int
         dns=None,  # type: List[models.Reference]
         directory_services=None,  # type: List[models.Reference]
     ):
         """
         Keyword args:
-            name (ERRORUNKNOWN)
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            created (int): Creation timestamp of the server.
             dns (list[Reference]): The DNS config to be used by this server.
             directory_services (list[Reference]): The directory service config to be used by this server.
         """
-        if name is not None:
-            self.name = name
-        if id is not None:
-            self.id = id
-        if created is not None:
-            self.created = created
         if dns is not None:
             self.dns = dns
         if directory_services is not None:

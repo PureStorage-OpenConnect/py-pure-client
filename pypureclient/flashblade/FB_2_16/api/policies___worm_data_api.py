@@ -40,7 +40,7 @@ class PoliciesWORMDataApi(object):
         # type: (...) -> None
         """DELETE worm-data-policies
 
-        -> Delete a WORM data policy. Deletion is not allowed if the policy is attached to one or more file systems.
+        Delete a WORM data policy. Deletion is not allowed if the policy is attached to one or more file systems.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api216_worm_data_policies_delete_with_http_info(async_req=True)

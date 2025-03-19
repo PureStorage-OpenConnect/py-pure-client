@@ -32,7 +32,7 @@ class FixedLocationReference(object):
     swagger_types = {
         'id': 'str',
         'name': 'str',
-        'resource_type': 'ResourceType',
+        'resource_type': 'str',
         'location': 'FixedReference',
         'display_name': 'str',
         'is_local': 'bool'
@@ -54,7 +54,7 @@ class FixedLocationReference(object):
         self,
         id=None,  # type: str
         name=None,  # type: str
-        resource_type=None,  # type: models.ResourceType
+        resource_type=None,  # type: str
         location=None,  # type: models.FixedReference
         display_name=None,  # type: str
         is_local=None,  # type: bool
@@ -63,10 +63,10 @@ class FixedLocationReference(object):
         Keyword args:
             id (str): A non-modifiable, globally unique ID chosen by the system.
             name (str)
-            resource_type (ResourceType)
+            resource_type (str): Type of the object (full name of the endpoint). Valid values are the unique part of the resource's REST endpoint. For example, a reference to a file system would have a `resource_type` of `file-systems`.
             location (FixedReference): A reference to the location where the object is defined.
             display_name (str): Full name of the source with remote array information. Response will be same as source name for local file systems and policies.
-            is_local (bool): -> Is the location reference to the local array or somewhere remote?
+            is_local (bool): Is the location reference to the local array or somewhere remote?
         """
         if id is not None:
             self.id = id

@@ -88,8 +88,8 @@ from .models.reference import Reference
 from .models.reference_writable import ReferenceWritable
 from .models.replication_performance import ReplicationPerformance
 from .models.resource import Resource
-from .models.resource_type import ResourceType
 from .models.saml2_sso_idp import Saml2SsoIdp
+from .models.saml2_sso_post import Saml2SsoPost
 from .models.saml2_sso_sp_credential import Saml2SsoSpCredential
 from .models.smb import Smb
 from .models.snmp_agent_mib import SnmpAgentMib
@@ -242,7 +242,6 @@ from .models.nfs_export_policy_rule import NfsExportPolicyRule
 from .models.nfs_export_policy_rule_in_policy import NfsExportPolicyRuleInPolicy
 from .models.policy_base import PolicyBase
 from .models.policy_member_with_remote import PolicyMemberWithRemote
-from .models.saml2_sso_post import Saml2SsoPost
 from .models.smb_client_policy import SmbClientPolicy
 from .models.smb_client_policy_rule import SmbClientPolicyRule
 from .models.smb_client_policy_rule_in_policy import SmbClientPolicyRuleInPolicy
@@ -269,6 +268,11 @@ from .models.ssh_certificate_authority_policy import SshCertificateAuthorityPoli
 def add_properties(model):
     for name, value in model.attribute_map.items():
         setattr(model, name, Property(value))
+
+
+def add_all_properties():
+    for model in CLASSES_TO_ADD_PROPS:
+        add_properties(model)
 
 
 CLASSES_TO_ADD_PROPS = [
@@ -354,8 +358,8 @@ CLASSES_TO_ADD_PROPS = [
     ReferenceWritable,
     ReplicationPerformance,
     Resource,
-    ResourceType,
     Saml2SsoIdp,
+    Saml2SsoPost,
     Saml2SsoSpCredential,
     Smb,
     SnmpAgentMib,
@@ -508,7 +512,6 @@ CLASSES_TO_ADD_PROPS = [
     NfsExportPolicyRuleInPolicy,
     PolicyBase,
     PolicyMemberWithRemote,
-    Saml2SsoPost,
     SmbClientPolicy,
     SmbClientPolicyRule,
     SmbClientPolicyRuleInPolicy,
@@ -533,5 +536,4 @@ CLASSES_TO_ADD_PROPS = [
 ]
 
 if os.environ.get('DOCS_GENERATION') is None:
-    for model in CLASSES_TO_ADD_PROPS:
-        add_properties(model)
+    add_all_properties()

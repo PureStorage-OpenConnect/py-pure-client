@@ -54,7 +54,7 @@ class LocationReference(object):
         Keyword args:
             id (str): A globally unique, system-generated ID. The ID cannot be modified.
             name (str): The resource name, such as volume name, pod name, snapshot name, and so on.
-            is_local (bool): -> If set to `true`, the location reference is to the local array. If set to `false`, the location reference is to a remote location, such as a remote array or offload target.
+            is_local (bool): If set to `true`, the location reference is to the local array. If set to `false`, the location reference is to a remote location, such as a remote array or offload target.
         """
         if id is not None:
             self.id = id
