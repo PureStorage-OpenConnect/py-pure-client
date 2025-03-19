@@ -30,19 +30,15 @@ class Server(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
-        'id': 'str',
-        'created': 'int',
         'dns': 'list[Reference]',
-        'directory_services': 'list[Reference]'
+        'directory_services': 'list[Reference]',
+        'created': 'int'
     }
 
     attribute_map = {
-        'name': 'name',
-        'id': 'id',
-        'created': 'created',
         'dns': 'dns',
-        'directory_services': 'directory_services'
+        'directory_services': 'directory_services',
+        'created': 'created'
     }
 
     required_args = {
@@ -50,30 +46,22 @@ class Server(object):
 
     def __init__(
         self,
-        name=None,  # type: str
-        id=None,  # type: str
-        created=None,  # type: int
         dns=None,  # type: List[models.Reference]
         directory_services=None,  # type: List[models.Reference]
+        created=None,  # type: int
     ):
         """
         Keyword args:
-            name (str): A name chosen by the user. Can be changed. Must be locally unique.
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            created (int): Creation timestamp of the server.
             dns (list[Reference]): The DNS config to be used by this server.
             directory_services (list[Reference]): The directory service config to be used by this server.
+            created (int): Creation timestamp of the server.
         """
-        if name is not None:
-            self.name = name
-        if id is not None:
-            self.id = id
-        if created is not None:
-            self.created = created
         if dns is not None:
             self.dns = dns
         if directory_services is not None:
             self.directory_services = directory_services
+        if created is not None:
+            self.created = created
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

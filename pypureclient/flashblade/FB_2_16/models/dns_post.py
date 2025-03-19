@@ -30,8 +30,6 @@ class DnsPost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'ERRORUNKNOWN',
-        'id': 'str',
         'domain': 'str',
         'nameservers': 'list[str]',
         'services': 'list[str]',
@@ -39,8 +37,6 @@ class DnsPost(object):
     }
 
     attribute_map = {
-        'name': 'name',
-        'id': 'id',
         'domain': 'domain',
         'nameservers': 'nameservers',
         'services': 'services',
@@ -52,8 +48,6 @@ class DnsPost(object):
 
     def __init__(
         self,
-        name=None,  # type: models.ERRORUNKNOWN
-        id=None,  # type: str
         domain=None,  # type: str
         nameservers=None,  # type: List[str]
         services=None,  # type: List[str]
@@ -61,17 +55,11 @@ class DnsPost(object):
     ):
         """
         Keyword args:
-            name (ERRORUNKNOWN)
-            id (str): A non-modifiable, globally unique ID chosen by the system.
             domain (str): Domain suffix to be appended by the appliance when performing DNS lookups.
             nameservers (list[str]): List of DNS server IP addresses.
             services (list[str]): The list of services utilizing the DNS configuration.
             sources (list[Reference]): The network interfaces used for communication with the DNS server. The network interfaces must have the `services` value of `data`. Clear this by setting an empty list.
         """
-        if name is not None:
-            self.name = name
-        if id is not None:
-            self.id = id
         if domain is not None:
             self.domain = domain
         if nameservers is not None:

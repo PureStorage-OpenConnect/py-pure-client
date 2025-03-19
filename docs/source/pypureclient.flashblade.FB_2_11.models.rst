@@ -2428,14 +2428,6 @@ pypureclient.flashblade.FB\_2\_11.models.resource\_performance\_replication\_get
    :undoc-members:
    :show-inheritance:
 
-pypureclient.flashblade.FB\_2\_11.models.resource\_type module
---------------------------------------------------------------
-
-.. automodule:: pypureclient.flashblade.FB_2_11.models.resource_type
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 pypureclient.flashblade.FB\_2\_11.models.role module
 ----------------------------------------------------
 

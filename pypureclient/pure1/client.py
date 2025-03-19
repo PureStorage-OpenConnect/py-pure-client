@@ -3,8 +3,8 @@ import importlib
 pure1_modules_dict = {
     '1.0': 'Pure1_1_0',
     '1.1': 'Pure1_1_1',
-    '1.3': 'Pure1_1_3',
     '1.2': 'Pure1_1_2',
+    '1.3': 'Pure1_1_3',
 }
 
 pure1_modules = {}

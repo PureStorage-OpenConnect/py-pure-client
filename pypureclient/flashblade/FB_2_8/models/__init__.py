@@ -179,7 +179,6 @@ from .reference import Reference
 from .reference_writable import ReferenceWritable
 from .replication_performance import ReplicationPerformance
 from .resource import Resource
-from .resource_type import ResourceType
 from .smb import Smb
 from .smtp_server_response import SmtpServerResponse
 from .snmp_agent_mib import SnmpAgentMib

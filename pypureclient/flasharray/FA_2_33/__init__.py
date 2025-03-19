@@ -364,6 +364,11 @@ def add_properties(model):
         setattr(model, name, Property(value))
 
 
+def add_all_properties():
+    for model in CLASSES_TO_ADD_PROPS:
+        add_properties(model)
+
+
 CLASSES_TO_ADD_PROPS = [
     ActiveDirectoryPatch,
     ActiveDirectoryPost,
@@ -719,5 +724,4 @@ CLASSES_TO_ADD_PROPS = [
 ]
 
 if os.environ.get('DOCS_GENERATION') is None:
-    for model in CLASSES_TO_ADD_PROPS:
-        add_properties(model)
+    add_all_properties()

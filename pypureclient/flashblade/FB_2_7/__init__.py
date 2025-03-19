@@ -66,7 +66,6 @@ from .models.reference import Reference
 from .models.reference_writable import ReferenceWritable
 from .models.replication_performance import ReplicationPerformance
 from .models.resource import Resource
-from .models.resource_type import ResourceType
 from .models.smb import Smb
 from .models.snmp_agent_mib import SnmpAgentMib
 from .models.snmp_manager_post import SnmpManagerPost
@@ -200,6 +199,11 @@ def add_properties(model):
         setattr(model, name, Property(value))
 
 
+def add_all_properties():
+    for model in CLASSES_TO_ADD_PROPS:
+        add_properties(model)
+
+
 CLASSES_TO_ADD_PROPS = [
     ActiveDirectoryPatch,
     ActiveDirectoryPost,
@@ -261,7 +265,6 @@ CLASSES_TO_ADD_PROPS = [
     ReferenceWritable,
     ReplicationPerformance,
     Resource,
-    ResourceType,
     Smb,
     SnmpAgentMib,
     SnmpManagerPost,
@@ -391,5 +394,4 @@ CLASSES_TO_ADD_PROPS = [
 ]
 
 if os.environ.get('DOCS_GENERATION') is None:
-    for model in CLASSES_TO_ADD_PROPS:
-        add_properties(model)
+    add_all_properties()

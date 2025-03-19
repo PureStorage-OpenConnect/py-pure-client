@@ -102,6 +102,7 @@ from .directory_service_response import DirectoryServiceResponse
 from .directory_service_role import DirectoryServiceRole
 from .directory_service_roles_response import DirectoryServiceRolesResponse
 from .directory_service_smb import DirectoryServiceSmb
+from .dns_post import DnsPost
 from .dns_response import DnsResponse
 from .eula import Eula
 from .eula_response import EulaResponse
@@ -207,10 +208,11 @@ from .reference_writable import ReferenceWritable
 from .replication_performance import ReplicationPerformance
 from .resource import Resource
 from .resource_fixed_non_unique_name import ResourceFixedNonUniqueName
-from .resource_type import ResourceType
 from .saml2_sso_idp import Saml2SsoIdp
+from .saml2_sso_post import Saml2SsoPost
 from .saml2_sso_response import Saml2SsoResponse
 from .saml2_sso_sp_credential import Saml2SsoSpCredential
+from .server_post import ServerPost
 from .server_response import ServerResponse
 from .smb import Smb
 from .smb_client_policy_response import SmbClientPolicyResponse
@@ -490,7 +492,6 @@ from .worm_data_policies_members_get_response import WormDataPoliciesMembersGetR
 from .array_connection_post import ArrayConnectionPost
 from .audit_file_systems_policy import AuditFileSystemsPolicy
 from .bucket_replica_link import BucketReplicaLink
-from .dns_post import DnsPost
 from .file_system_replica_link import FileSystemReplicaLink
 from .group_quota_patch import GroupQuotaPatch
 from .network_access_policy import NetworkAccessPolicy
@@ -503,8 +504,6 @@ from .nfs_export_policy_rule_in_policy import NfsExportPolicyRuleInPolicy
 from .password_policy import PasswordPolicy
 from .policy_base import PolicyBase
 from .policy_member_with_remote import PolicyMemberWithRemote
-from .saml2_sso_post import Saml2SsoPost
-from .server_post import ServerPost
 from .smb_client_policy import SmbClientPolicy
 from .smb_client_policy_rule import SmbClientPolicyRule
 from .smb_client_policy_rule_in_policy import SmbClientPolicyRuleInPolicy
