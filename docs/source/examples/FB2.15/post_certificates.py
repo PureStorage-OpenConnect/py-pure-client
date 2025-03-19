@@ -1,0 +1,23 @@
+from pypureclient.flashblade.FB_2_15 import CertificatePost
+
+# create a new external certificate named "ad-cert-1"
+cert_name = 'ad-cert-1'
+cert_text = '-----BEGIN CERTIFICATE-----\nMIIESzCCAzOgAwIBAgIJAIJMKJXXDn/JMA0GCSqGSIb3DQEBBQUAMHYxCzAJBgNV\nBAYTAlVTMQ0wCwYDVQQIEwR0ZXN0MQ4wDAYDVQQHEwV0ZXN0IDENMAsGA1UEChME\ndGVzdDENMAsGA1UECxMEdGVzdDEVMBMGA1UEAxMMUHVyZSBTdG9yYWdlMRMwEQYJ\nKoZIhvcNAQkBFgR0ZXN0MB4XDTE3MTEwNjIyMzYyMFoXDTE4MTEwNjIyMzYyMFow\ndjELMAkGA1UEBhMCVVMxDTALBgNVBAgTBHRlc3QxDjAMBgNVBAcTBXRlc3QgMQ0w\nCwYDVQQKEwR0ZXN0MQ0wCwYDVQQLEwR0ZXN0MRUwEwYDVQQDEwxQdXJlIFN0b3Jh\nZ2UxEzARBgkqhkiG9w0BCQEWBHRlc3QwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAw\nggEKAoIBAQDcaGpPXJC1EC515wMEKyXEFuKFEDn4y1V5YmaLt+hXz8cfuA+gS3eD\nltP8PJah+7WrPouUQtfamHsuQtnFFLcVcdl83rIFX0m58zUiWbOUHI5wWnBYsqof\n52k/m40HM5XTATn5xpFsTSxm7vmlsKfGlQS7yI11HbD0OOz9CqT+iMFhTn/Wfyg2\nYOtmYIfCz0kt6wIFHlI9oPERwJ0JiMnPhsg0gerJwYl1j1vDhBiK32OVc4iIdOO4\nPVwpP1YbINr8LJ5qX2DOzBHDnaYrtJk9YEsSAwoqJ2/d29xA9JOeJwahl/M6aO48\nAbXbSlxVwOz0lEs85dseLp9dyTQb/uzjAgMBAAGjgdswgdgwHQYDVR0OBBYEFJJM\nML8khiOYzpaJP8sJCn0JSpx9MIGoBgNVHSMEgaAwgZ2AFJJMML8khiOYzpaJP8sJ\nCn0JSpx9oXqkeDB2MQswCQYDVQQGEwJVUzENMAsGA1UECBMEdGVzdDEOMAwGA1UE\nBxMFdGVzdCAxDTALBgNVBAoTBHRlc3QxDTALBgNVBAsTBHRlc3QxFTATBgNVBAMT\nDFB1cmUgU3RvcmFnZTETMBEGCSqGSIb3DQEJARYEdGVzdIIJAIJMKJXXDn/JMAwG\nA1UdEwQFMAMBAf8wDQYJKoZIhvcNAQEFBQADggEBAKjQ/SFPra2YmtNynNukuHOl\nCryjsXjBkeiyyfg3Bt9+M+9F6Y4Sh3/SSJCb6LQaqTQkeJJeb1fOHNaFjAxkjvaI\n2tnlCwhpQuoSXNgQEMdidMi9+S8hBonlXYePYZUQbvAu1VAZrU6f0k2OEDcAPLvA\nhZLvrmZeug+VZp3JfVOdU+QnzUx2atBBfN5lMFFNdqOzZ5Yz/Ooi9CVA73szIevi\nE728OLimWQ91u1s16isjusK3+zoqirFC7PN6K63sp0gPAldgCQD2bywmwgaYDnzP\n+9ZWNy6ebn927Qh22YUPWhj+kiITkhxcVYPMx4QtRjJhs5pQVBqHOIDnJQJc7qY=\n-----END CERTIFICATE-----'
+cert_type = 'external'
+create_body = CertificatePost(certificate=cert_text, certificate_type=cert_type)
+res = client.post_certificates(names=[cert_name], certificate=create_body)
+print(res)
+if type(res) == pypureclient.responses.ValidResponse:
+    print(list(res.items))
+
+# create a new array certificate named "ad-cert-2"
+cert_name = 'ad-cert-2'
+cert_text = '-----BEGIN CERTIFICATE-----\nMIICNTCCAbsCCQCRnJR7HCsWbDAKBggqhkjOPQQDAjCBgjELMAkGA1UEBhMCVVMx\nEzARBgNVBAgMCkNhbGlmb3JuaWExFjAUBgNVBAcMDU1vdW50YWluIFZpZXcxFTAT\nBgNVBAoMDFB1cmUgU3RvcmFnZTEbMBkGA1UECwwSRmxhc2hCbGFkZSBUZXN0aW5n\nMRIwEAYDVQQDDAl0ZXN0LWVjLTIwIBcNMjExMjE1MjMzNzQyWhgPMjEyMTExMjEy\nMzM3NDJaMIGCMQswCQYDVQQGEwJVUzETMBEGA1UECAwKQ2FsaWZvcm5pYTEWMBQG\nA1UEBwwNTW91bnRhaW4gVmlldzEVMBMGA1UECgwMUHVyZSBTdG9yYWdlMRswGQYD\nVQQLDBJGbGFzaEJsYWRlIFRlc3RpbmcxEjAQBgNVBAMMCXRlc3QtZWMtMjB2MBAG\nByqGSM49AgEGBSuBBAAiA2IABAjj51tZhGmPS31wdIeBXFfbJ0UR+uw9/qX55ph+\n/bsaQHXYJ5iebbE3XkVugIKoRVywq9ql+DjRe0hFAPUZicPcikkIxuDiYclzm7ja\nN2StP9U6i2HS0gmufU4bRPBDhzAKBggqhkjOPQQDAgNoADBlAjBEOp4LxZxypvxd\n28QtBf8Kug/JuW+dMr3S2Z5Tenl0x7WZCoDxXGUyg8CF5V9T/hcCMQDiuY5ihnEG\nSA8PmcLPoc0tMnUVBIp0k8dyiq47BL8zabhuLc8RTvlYCpfNl4rtFSo=\n-----END CERTIFICATE-----\n'
+private_key = '-----BEGIN ENCRYPTED PRIVATE KEY-----\nMIHgMBsGCSqGSIb3DQEFAzAOBAjU/e1D/TrYsgICCAAEgcBlj5k6GkoCr85PNj6y\npRalEktQQs0Y4VnVM9sRKe6FCwH2iMCU4t0KP7SrjNG+I5e41v7F968A2wyhn+7v\nY96zefS1VnumVFzLSNUVpv9eZM9MucaNXc3JJfa1XonsKg8MoRMofD3z7wUQqR6Y\nGUJZfl4ABNW9gbARnoKo4Wi4Vt6FLJjdgLTu3u1sYYB+JZg5EJNNCzwpyNi5rVK3\n-----END ENCRYPTED PRIVATE KEY-----\n'
+private_key_password = 'testing-password'
+cert_type = 'array'
+create_body = CertificatePost(certificate=cert_text, private_key=private_key, passphrase=private_key_password, certificate_type=cert_type)
+res = client.post_certificates(names=[cert_name], certificate=create_body)
+print(res)
+if type(res) == pypureclient.responses.ValidResponse:
+    print(list(res.items))

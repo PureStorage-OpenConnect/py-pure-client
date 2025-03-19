@@ -1,13 +1,23 @@
 import importlib
 
-pure1_modules_dict = {
-    '1.0': 'Pure1_1_0',
-    '1.1': 'Pure1_1_1',
-    '1.3': 'Pure1_1_3',
-    '1.2': 'Pure1_1_2',
-}
+from typing import Dict
+
+def __load_modules_dict() -> Dict[str, str]:
+    import os
+    _tmp = {}
+    _prefix = 'Pure1_'
+    parent = os.path.dirname(__file__)
+    for _f in os.listdir(os.path.dirname(__file__)):
+        if os.path.isdir(os.path.join(parent, _f)) and _f.startswith(_prefix):
+            _tmp[_f[len(_prefix):].replace('_', '.')] = _f
+    return _tmp
+
+pure1_modules_dict = __load_modules_dict()
 
 pure1_modules = {}
+
+
+DEFAULT_VERSION = sorted(pure1_modules_dict.keys())[-1]
 
 VERSION_KEY = 'version'
 
@@ -40,7 +50,7 @@ def Client(**kwargs):
     """
     version = (kwargs.get(VERSION_KEY)
                 if VERSION_KEY in kwargs
-                else "1.3")
+                else DEFAULT_VERSION)
     pure1_module = version_to_module(version)
     client = pure1_module.Client(**kwargs)
     return client
@@ -52,6 +62,6 @@ def version_to_module(version):
         raise ValueError(msg.format(version))
     if version not in set(pure1_modules.keys()):
         parent_module_name = '.'.join(__name__.split('.')[:-1])
-        pure1_modules[version] = importlib.import_module("{}.{}".format(parent_module_name,pure1_modules_dict[version]))
+        pure1_modules[version] = importlib.import_module("{}.{}".format(parent_module_name, pure1_modules_dict[version]))
     pure1_module = pure1_modules.get(version, None)
     return pure1_module
