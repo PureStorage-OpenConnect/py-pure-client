@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quick Start &mdash; py-pure-client 1.62.0 documentation</title>
+  <title>Quick Start &mdash; py-pure-client 1.63.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
   <!--[if lt IE 9]>
@@ -32,7 +32,7 @@
             <a href="index.html" class="icon icon-home"> py-pure-client
           </a>
               <div class="version">
-                1.62
+                1.63
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -94,14 +94,14 @@ clients required to subsequently call other client methods.</p>
 <section id="flasharray-client">
 <h3>FlashArray Client<a class="headerlink" href="#flasharray-client" title="Permalink to this heading"></a></h3>
 <p>Start by importing the <code class="docutils literal notranslate"><span class="pre">flasharray</span></code> submodule in <code class="docutils literal notranslate"><span class="pre">pypureclient</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pypureclient</span> <span class="kn">import</span> <span class="n">flasharray</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pypureclient</span><span class="w"> </span><span class="kn">import</span> <span class="n">flasharray</span>
 </pre></div>
 </div>
 <p>Instantiation of a FlashArray client requires authentication. More information
 is available in the <a class="reference external" href="https://support.purestorage.com/FlashArray/PurityFA/Purity_FA_REST_API/Reference/REST_API_2.0_Authentication_Guide">REST API 2.0 Authentication Guide</a></p>
 <p>After creating a client using <code class="docutils literal notranslate"><span class="pre">pureapiclient</span></code> on the FlashArray array you wish
 to target, you can pass the various parameters into the <code class="docutils literal notranslate"><span class="pre">Client</span></code> constructor:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pypureclient</span> <span class="kn">import</span> <span class="n">flasharray</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pypureclient</span><span class="w"> </span><span class="kn">import</span> <span class="n">flasharray</span>
 <span class="n">client</span> <span class="o">=</span> <span class="n">flasharray</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="s1">&#39;flasharray.example.com&#39;</span><span class="p">,</span>
                            <span class="n">private_key_file</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">],</span>
                            <span class="n">private_key_password</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">],</span>
@@ -114,7 +114,7 @@ to target, you can pass the various parameters into the <code class="docutils li
 <p>If directly using a pre-generated ID token is preferred, it can be used in the
 same way. Note that using a pre-generated ID token will cause the client to fail
 when the ID token expires.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pypureclient</span> <span class="kn">import</span> <span class="n">flasharray</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pypureclient</span><span class="w"> </span><span class="kn">import</span> <span class="n">flasharray</span>
 <span class="n">client</span> <span class="o">=</span> <span class="n">flasharray</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="s1">&#39;flasharray.example.com&#39;</span><span class="p">,</span>
                            <span class="n">id_token</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">])</span>
 </pre></div>
@@ -123,14 +123,14 @@ when the ID token expires.</p>
 <section id="flashblade-client">
 <h3>FlashBlade Client<a class="headerlink" href="#flashblade-client" title="Permalink to this heading"></a></h3>
 <p>Start by importing the <code class="docutils literal notranslate"><span class="pre">flashblade</span></code> submodule in <code class="docutils literal notranslate"><span class="pre">pypureclient</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pypureclient</span> <span class="kn">import</span> <span class="n">flashblade</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pypureclient</span><span class="w"> </span><span class="kn">import</span> <span class="n">flashblade</span>
 </pre></div>
 </div>
 <p>Instantiation of a FlashBlade client requires authentication. More information
 is available in the <a class="reference external" href="https://support.purestorage.com/FlashBlade/Purity_FB/PurityFB_REST_API/Management_REST_API/FlashBlade_REST_API_FAQ">FlashBlade REST API FAQ</a></p>
 <p>After creating and enabling a client using <code class="docutils literal notranslate"><span class="pre">pureapiclient</span></code> on the FlashBlade array you wish
 to target, you can pass the various parameters into the <code class="docutils literal notranslate"><span class="pre">Client</span></code> constructor:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pypureclient</span> <span class="kn">import</span> <span class="n">flashblade</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pypureclient</span><span class="w"> </span><span class="kn">import</span> <span class="n">flashblade</span>
 <span class="n">client</span> <span class="o">=</span> <span class="n">flashblade</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="s1">&#39;flashblade.example.com&#39;</span><span class="p">,</span>
                            <span class="n">private_key_file</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">],</span>
                            <span class="n">private_key_password</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">],</span>
@@ -143,14 +143,14 @@ to target, you can pass the various parameters into the <code class="docutils li
 <p>If directly using a pre-generated ID token is preferred, it can be used in the
 same way. Note that using a pre-generated ID token will cause the client to fail
 when the ID token expires.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pypureclient</span> <span class="kn">import</span> <span class="n">flashblade</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pypureclient</span><span class="w"> </span><span class="kn">import</span> <span class="n">flashblade</span>
 <span class="n">client</span> <span class="o">=</span> <span class="n">flashblade</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="s1">&#39;flashblade.example.com&#39;</span><span class="p">,</span>
                            <span class="n">id_token</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>You can also use an API token created by using <code class="docutils literal notranslate"><span class="pre">pureadmin</span></code> on the FlashBlade array
 if that is preferred.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pypureclient</span> <span class="kn">import</span> <span class="n">flashblade</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pypureclient</span><span class="w"> </span><span class="kn">import</span> <span class="n">flashblade</span>
 <span class="n">client</span> <span class="o">=</span> <span class="n">flashblade</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="s1">&#39;flashblade.example.com&#39;</span><span class="p">,</span>
                            <span class="n">api_token</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">])</span>
 </pre></div>
@@ -160,7 +160,7 @@ and partners, we ask that you ensure that your API integration “self-identifie
 connecting to FlashBlade.</p>
 <p>To do this, choose a unique, human-readable string that identifies your FlashBlade API
 integration by name and version, and specify it as the <code class="docutils literal notranslate"><span class="pre">user_agent</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pypureclient</span> <span class="kn">import</span> <span class="n">flashblade</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pypureclient</span><span class="w"> </span><span class="kn">import</span> <span class="n">flashblade</span>
 <span class="n">client</span> <span class="o">=</span> <span class="n">flashblade</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="s1">&#39;flashblade.example.com&#39;</span><span class="p">,</span>
                            <span class="n">api_token</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">],</span>
                            <span class="n">user_agent</span><span class="o">=</span><span class="s1">&#39;YourCompanyName_YourProductIntegrationName/YourIntegrationVersion&#39;</span><span class="p">)</span>
@@ -170,7 +170,7 @@ integration by name and version, and specify it as the <code class="docutils lit
 <section id="pure1-client">
 <h3>Pure1 client<a class="headerlink" href="#pure1-client" title="Permalink to this heading"></a></h3>
 <p>Start by importing the <code class="docutils literal notranslate"><span class="pre">pure1</span></code> submodule in <code class="docutils literal notranslate"><span class="pre">pypureclient</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pypureclient</span> <span class="kn">import</span> <span class="n">pure1</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pypureclient</span><span class="w"> </span><span class="kn">import</span> <span class="n">pure1</span>
 </pre></div>
 </div>
 <p>Instantiation of a Pure1 client requires authentication to use the Pure1 Manage

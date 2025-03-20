@@ -6,6 +6,7 @@ A log of changes by version and date.
 ======= ========== =====
 Version Date       Notes
 ======= ========== =====
+1.63.0  03/18/2025 Added FlashArray 2.41 client
 1.62.0  01/31/2025 Added FlashArray 2.40 client
 1.61.0  01/13/2025 Added FlashArray 2.39 client
 1.60.0  01/08/2025 Added Pure1 1.3 client
