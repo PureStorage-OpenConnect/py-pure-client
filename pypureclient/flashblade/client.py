@@ -28,7 +28,6 @@ MW_DEV_VERSION = '2.latest'
 
 DEFAULT_RETRIES = 5
 
-
 def Client(target, version=None, id_token=None, private_key_file=None, private_key_password=None,
            username=None, client_id=None, key_id=None, issuer=None, api_token=None,
            retries=DEFAULT_RETRIES, timeout=None, ssl_cert=None, user_agent=None,
@@ -80,7 +79,7 @@ def Client(target, version=None, id_token=None, private_key_file=None, private_k
     Raises:
         PureError: If it could not create an ID or access token
     """
-    array_versions = get_array_versions(target, verify_ssl)
+    array_versions = get_array_versions(target, timeout, verify_ssl)
     if version is not None:
         validate_version(array_versions, version)
     else:
@@ -93,8 +92,8 @@ def Client(target, version=None, id_token=None, private_key_file=None, private_k
     return client
 
 
-def get_array_versions(target, verify_ssl=None):
-    return get_target_versions(target, 'flashblade', 'versions', verify_ssl)
+def get_array_versions(target, timeout, verify_ssl=None):
+    return get_target_versions(target, 'flashblade', 'versions', timeout, verify_ssl)
 
 
 def validate_version(array_versions, version):
