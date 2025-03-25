@@ -28,6 +28,10 @@ Pure1 REST 1.2 Client
 Pure1 REST 1.3 Client
 ~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.pure1.Pure1_1_3.client.Client
+
+Pure1 REST 1.4 Client
+~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.Pure1_1_4.client.Client
    :members:
 
 Properties
@@ -99,6 +103,11 @@ AssetSpaceTotalUsedRatio
 .. autoclass:: pypureclient.pure1.AssetSpaceTotalUsedRatio
    :members:
 
+AssetUpgradeDetails
+~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.AssetUpgradeDetails
+   :members:
+
 Audit
 ~~~~~
 .. autoclass:: pypureclient.pure1.Audit
@@ -139,6 +148,11 @@ CurrentMetric
 .. autoclass:: pypureclient.pure1.CurrentMetric
    :members:
 
+DefaultDetails
+~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.DefaultDetails
+   :members:
+
 Directory
 ~~~~~~~~~
 .. autoclass:: pypureclient.pure1.Directory
@@ -167,6 +181,11 @@ ErrorErrors
 ErrorNoContext
 ~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.pure1.ErrorNoContext
+   :members:
+
+EvergreenForeverAndFoundationDetails
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.EvergreenForeverAndFoundationDetails
    :members:
 
 FileSystem
@@ -359,6 +378,11 @@ SubscriptionLicense
 .. autoclass:: pypureclient.pure1.SubscriptionLicense
    :members:
 
+SubscriptionLicenseAddOnSla
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.SubscriptionLicenseAddOnSla
+   :members:
+
 SubscriptionLicensePreRatio
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.pure1.SubscriptionLicensePreRatio
@@ -387,6 +411,11 @@ SustainabilityInsightArray
 Tag
 ~~~
 .. autoclass:: pypureclient.pure1.Tag
+   :members:
+
+TagBatchRequired
+~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.TagBatchRequired
    :members:
 
 TagPut
