@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.16
     
@@ -30,15 +30,15 @@ class LifecycleRuleConfigExtension(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'keep_current_version_until': 'int',
         'abort_incomplete_multipart_uploads_after': 'int',
-        'keep_current_version_for': 'int',
-        'keep_current_version_until': 'int'
+        'keep_current_version_for': 'int'
     }
 
     attribute_map = {
+        'keep_current_version_until': 'keep_current_version_until',
         'abort_incomplete_multipart_uploads_after': 'abort_incomplete_multipart_uploads_after',
-        'keep_current_version_for': 'keep_current_version_for',
-        'keep_current_version_until': 'keep_current_version_until'
+        'keep_current_version_for': 'keep_current_version_for'
     }
 
     required_args = {
@@ -46,22 +46,22 @@ class LifecycleRuleConfigExtension(object):
 
     def __init__(
         self,
+        keep_current_version_until=None,  # type: int
         abort_incomplete_multipart_uploads_after=None,  # type: int
         keep_current_version_for=None,  # type: int
-        keep_current_version_until=None,  # type: int
     ):
         """
         Keyword args:
-            abort_incomplete_multipart_uploads_after (int): Duration of time after which incomplete multipart uploads will be aborted. Measured in milliseconds. Must be a multiple of 86400000 to represent a whole number of days.
-            keep_current_version_for (int): Time after which current versions will be marked expired. Measured in milliseconds. Must be a multiple of 86400000 to represent a whole number of days.
-            keep_current_version_until (int): Time after which current versions will be marked expired. Measured in milliseconds, time since epoch. Must be a valid date, accurate to day.
+            keep_current_version_until (int): Time after which current versions will be marked expired. Measured in milliseconds, time since epoch. Must be a valid date, accurate to day. 
+            abort_incomplete_multipart_uploads_after (int): Duration of time after which incomplete multipart uploads will be aborted. Measured in milliseconds. Must be a multiple of 86400000 to represent a whole number of days. 
+            keep_current_version_for (int): Time after which current versions will be marked expired. Measured in milliseconds. Must be a multiple of 86400000 to represent a whole number of days. 
         """
+        if keep_current_version_until is not None:
+            self.keep_current_version_until = keep_current_version_until
         if abort_incomplete_multipart_uploads_after is not None:
             self.abort_incomplete_multipart_uploads_after = abort_incomplete_multipart_uploads_after
         if keep_current_version_for is not None:
             self.keep_current_version_for = keep_current_version_for
-        if keep_current_version_until is not None:
-            self.keep_current_version_until = keep_current_version_until
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

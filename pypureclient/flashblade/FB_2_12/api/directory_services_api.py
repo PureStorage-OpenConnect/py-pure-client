@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.12, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.12, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.12
     
@@ -50,13 +50,13 @@ class DirectoryServicesApi(object):
         >>> thread = api.api212_directory_services_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
-        :param str filter: Exclude resources that don't match the specified criteria.
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
-        :param int offset: The offset of the first resource to return from a collection.
-        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.
+        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result. 
+        :param str filter: Exclude resources that don't match the specified criteria. 
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
+        :param int offset: The offset of the first resource to return from a collection. 
+        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -159,15 +159,15 @@ class DirectoryServicesApi(object):
         # type: (...) -> models.DirectoryServiceResponse
         """PATCH directory-services
 
-        Modifies and tests the directory service configuration.
+        Modifies and tests the directory service configuration. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api212_directory_services_patch_with_http_info(directory_service, async_req=True)
         >>> result = thread.get()
 
         :param DirectoryService directory_service: (required)
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -247,8 +247,8 @@ class DirectoryServicesApi(object):
     def api212_directory_services_roles_get_with_http_info(
         self,
         continuation_token=None,  # type: str
-        ids=None,  # type: List[str]
         filter=None,  # type: str
+        ids=None,  # type: List[str]
         limit=None,  # type: int
         offset=None,  # type: int
         role_ids=None,  # type: List[str]
@@ -262,20 +262,20 @@ class DirectoryServicesApi(object):
         # type: (...) -> models.DirectoryServiceRolesGetResponse
         """GET directory-service/roles
 
-        Return array's RBAC group configuration settings for manageability.
+        Return array's RBAC group configuration settings for manageability. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api212_directory_services_roles_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `role_names` or `role_ids` query parameters.
-        :param str filter: Exclude resources that don't match the specified criteria.
-        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.
-        :param int offset: The offset of the first resource to return from a collection.
-        :param list[str] role_ids: A comma-separated list of role_ids. If after filtering, there is not at least one resource that matches each of the elements of `role_ids`, then an error is returned. This cannot be provided together with the `ids` or `role_names` query parameters.
-        :param list[str] role_names: A comma-separated list of role_names. If there is not at least one resource that matches each of the elements of `role_names`, then an error is returned. This cannot be provided together with the `ids` or `role_ids` query parameters.
-        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.
+        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result. 
+        :param str filter: Exclude resources that don't match the specified criteria. 
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `role_names` or `role_ids` query parameters. 
+        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request. 
+        :param int offset: The offset of the first resource to return from a collection. 
+        :param list[str] role_ids: A comma-separated list of role_ids. If after filtering, there is not at least one resource that matches each of the elements of `role_ids`, then an error is returned.  This cannot be provided together with the `ids` or `role_names` query parameters. 
+        :param list[str] role_names: A comma-separated list of role_names. If there is not at least one resource that matches each of the elements of `role_names`, then an error is returned. This cannot be provided together with the `ids` or `role_ids` query parameters. 
+        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -318,11 +318,11 @@ class DirectoryServicesApi(object):
         query_params = []
         if 'continuation_token' in params:
             query_params.append(('continuation_token', params['continuation_token']))
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))
         if 'ids' in params:
             query_params.append(('ids', params['ids']))
             collection_formats['ids'] = 'csv'
-        if 'filter' in params:
-            query_params.append(('filter', params['filter']))
         if 'limit' in params:
             query_params.append(('limit', params['limit']))
         if 'offset' in params:
@@ -385,16 +385,16 @@ class DirectoryServicesApi(object):
         # type: (...) -> models.DirectoryServiceRolesResponse
         """PATCH directory-service/roles
 
-        Update an RBAC group configuration setting for manageability.
+        Update an RBAC group configuration setting for manageability. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api212_directory_services_roles_patch_with_http_info(directory_service_roles, async_req=True)
         >>> result = thread.get()
 
         :param DirectoryServiceRole directory_service_roles: (required)
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `role_names` or `role_ids` query parameters.
-        :param list[str] role_ids: A comma-separated list of role_ids. If after filtering, there is not at least one resource that matches each of the elements of `role_ids`, then an error is returned. This cannot be provided together with the `ids` or `role_names` query parameters.
-        :param list[str] role_names: A comma-separated list of role_names. If there is not at least one resource that matches each of the elements of `role_names`, then an error is returned. This cannot be provided together with the `ids` or `role_ids` query parameters.
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `role_names` or `role_ids` query parameters. 
+        :param list[str] role_ids: A comma-separated list of role_ids. If after filtering, there is not at least one resource that matches each of the elements of `role_ids`, then an error is returned.  This cannot be provided together with the `ids` or `role_names` query parameters. 
+        :param list[str] role_names: A comma-separated list of role_names. If there is not at least one resource that matches each of the elements of `role_names`, then an error is returned. This cannot be provided together with the `ids` or `role_ids` query parameters. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -498,11 +498,11 @@ class DirectoryServicesApi(object):
         >>> thread = api.api212_directory_services_test_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param str filter: Exclude resources that don't match the specified criteria.
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
-        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.
+        :param str filter: Exclude resources that don't match the specified criteria. 
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
+        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -588,11 +588,11 @@ class DirectoryServicesApi(object):
 
     def api212_directory_services_test_patch_with_http_info(
         self,
+        directory_service=None,  # type: models.DirectoryService
         filter=None,  # type: str
         ids=None,  # type: List[str]
         names=None,  # type: List[str]
         sort=None,  # type: List[str]
-        directory_service=None,  # type: models.DirectoryService
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -607,11 +607,11 @@ class DirectoryServicesApi(object):
         >>> thread = api.api212_directory_services_test_patch_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param str filter: Exclude resources that don't match the specified criteria.
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
-        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.
-        :param DirectoryService directory_service: An optional directory service configuration that, if provided, will be used to overwrite aspects of the existing directory service objects when performing tests.
+        :param DirectoryService directory_service: An optional directory service configuration that, if provided, will be used to overwrite aspects of the existing directory service objects when performing tests. 
+        :param str filter: Exclude resources that don't match the specified criteria. 
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
+        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.

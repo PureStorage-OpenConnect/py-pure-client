@@ -31,18 +31,18 @@ class SnmpManagerPatch(object):
     """
     swagger_types = {
         'name': 'str',
-        'host': 'str',
         'notification': 'str',
         'v2c': 'SnmpV2c',
+        'host': 'str',
         'v3': 'SnmpV3Patch',
         'version': 'str'
     }
 
     attribute_map = {
         'name': 'name',
-        'host': 'host',
         'notification': 'notification',
         'v2c': 'v2c',
+        'host': 'host',
         'v3': 'v3',
         'version': 'version'
     }
@@ -53,29 +53,29 @@ class SnmpManagerPatch(object):
     def __init__(
         self,
         name=None,  # type: str
-        host=None,  # type: str
         notification=None,  # type: str
         v2c=None,  # type: models.SnmpV2c
+        host=None,  # type: str
         v3=None,  # type: models.SnmpV3Patch
         version=None,  # type: str
     ):
         """
         Keyword args:
-            name (str): A user-specified name. The name must be locally unique and can be changed.
-            host (str): DNS hostname or IP address of a computer that hosts an SNMP manager to which Purity//FA is to send trap messages when it generates alerts.
-            notification (str): The type of notification the agent will send. Valid values are `inform` and `trap`.
+            name (str): A user-specified name. The name must be locally unique and can be changed. 
+            notification (str): The type of notification the agent will send. Valid values are `inform` and `trap`. 
             v2c (SnmpV2c)
+            host (str): DNS hostname or IP address of a computer that hosts an SNMP manager to which Purity//FA is to send trap messages when it generates alerts. 
             v3 (SnmpV3Patch)
-            version (str): Version of the SNMP protocol to be used by Purity//FA to communicate with the specified manager. Valid values are `v2c` and `v3`.
+            version (str): Version of the SNMP protocol to be used by Purity//FA to communicate with the specified manager. Valid values are `v2c` and `v3`. 
         """
         if name is not None:
             self.name = name
-        if host is not None:
-            self.host = host
         if notification is not None:
             self.notification = notification
         if v2c is not None:
             self.v2c = v2c
+        if host is not None:
+            self.host = host
         if v3 is not None:
             self.v3 = v3
         if version is not None:

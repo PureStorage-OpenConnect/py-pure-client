@@ -56,9 +56,9 @@ class SoftwareInstallationStepsChecks(object):
         """
         Keyword args:
             name (str): Name of the upgrade check.
-            overridable (bool): Whether the check failure can be overridden.
-            details (str): Detailed result of the check used to diagnose check failures.
-            status (str): Status of the check. Valid values are `running`, `failed`, `passed`, and `overridden`. A status of `running` indicates that the check has not finished. A status of `failed` indicates that the check has failed. A status of `passed` indicates that the check has passed. A status of `overridden` indicates that the check has failed, but the failure has been overridden.
+            overridable (bool): Whether the check failure can be overridden. 
+            details (str): Detailed result of the check used to diagnose check failures. 
+            status (str): Status of the check. Valid values are `running`, `failed`, `passed`, and `overridden`. A status of `running` indicates that the check has not finished. A status of `failed` indicates that the check has failed. A status of `passed` indicates that the check has passed. A status of `overridden` indicates that the check has failed, but the failure has been overridden. 
         """
         if name is not None:
             self.name = name

@@ -30,19 +30,19 @@ class PodPost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
-        'source': 'Reference',
+        'id': 'str',
+        'quota_limit': 'int',
         'failover_preferences': 'list[Reference]',
-        'quota_limit': 'int'
+        'source': 'Reference'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
-        'source': 'source',
+        'id': 'id',
+        'quota_limit': 'quota_limit',
         'failover_preferences': 'failover_preferences',
-        'quota_limit': 'quota_limit'
+        'source': 'source'
     }
 
     required_args = {
@@ -50,30 +50,30 @@ class PodPost(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
-        source=None,  # type: models.Reference
-        failover_preferences=None,  # type: List[models.Reference]
+        id=None,  # type: str
         quota_limit=None,  # type: int
+        failover_preferences=None,  # type: List[models.Reference]
+        source=None,  # type: models.Reference
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            name (str): A locally unique, system-generated name. The name cannot be modified.
+            name (str): A locally unique, system-generated name. The name cannot be modified. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource. 
+            quota_limit (int): The logical quota limit of the pod, measured in bytes. Must be a multiple of 512. 
+            failover_preferences (list[Reference]): Determines which array within a stretched pod should be given priority to stay online should the arrays ever lose contact with each other. The current array and any peer arrays that are connected to the current array for synchronous replication can be added to a pod for failover preference. By default, `failover_preferences=null`,  meaning no arrays have been configured for failover preference. Enter multiple arrays in comma-separated format. To clear the list of failover preferences, set to an empty list `[]`. 
             source (Reference): The source pod from where data is cloned to create the new pod.
-            failover_preferences (list[Reference]): Determines which array within a stretched pod should be given priority to stay online should the arrays ever lose contact with each other. The current array and any peer arrays that are connected to the current array for synchronous replication can be added to a pod for failover preference. By default, `failover_preferences=null`, meaning no arrays have been configured for failover preference. Enter multiple arrays in comma-separated format. To clear the list of failover preferences, set to an empty list `[]`.
-            quota_limit (int): The logical quota limit of the pod, measured in bytes. Must be a multiple of 512.
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
-        if source is not None:
-            self.source = source
-        if failover_preferences is not None:
-            self.failover_preferences = failover_preferences
+        if id is not None:
+            self.id = id
         if quota_limit is not None:
             self.quota_limit = quota_limit
+        if failover_preferences is not None:
+            self.failover_preferences = failover_preferences
+        if source is not None:
+            self.source = source
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -49,8 +49,8 @@ class DefaultProtectionReference(object):
     ):
         """
         Keyword args:
-            name (str): The resource name, such as volume name, pod name, snapshot name, and so on.
-            type (str): The type of default protection. Currently, the only valid value is `protection_group`.
+            name (str): The resource name, such as volume name, pod name, snapshot name, and so on. 
+            type (str): The type of default protection. Currently, the only valid value is `protection_group`. 
         """
         if name is not None:
             self.name = name

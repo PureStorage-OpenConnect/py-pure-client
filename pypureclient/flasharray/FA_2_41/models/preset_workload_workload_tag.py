@@ -31,51 +31,51 @@ class PresetWorkloadWorkloadTag(object):
     """
     swagger_types = {
         'copyable': 'str',
-        'key': 'str',
         'namespace': 'str',
-        'value': 'str'
+        'value': 'str',
+        'key': 'str'
     }
 
     attribute_map = {
         'copyable': 'copyable',
-        'key': 'key',
         'namespace': 'namespace',
-        'value': 'value'
+        'value': 'value',
+        'key': 'key'
     }
 
     required_args = {
-        'key',
         'value',
+        'key',
     }
 
     def __init__(
         self,
-        key,  # type: str
         value,  # type: str
+        key,  # type: str
         copyable=None,  # type: str
         namespace=None,  # type: str
     ):
         """
         Keyword args:
-            copyable (str): Specifies whether to include the tag when copying the parent resource. If set to `true`, the tag is included in resource copying. If set to `false`, the tag is not included. If not specified, defaults to `true`.
-            key (str, required): Key of the tag. Supports up to 64 Unicode characters.
-            namespace (str): Optional namespace of the tag. Namespace identifies the category of the tag. Omitting the namespace defaults to the namespace `default`. The `pure&#42;` namespaces are reserved for plugins and integration partners. It is recommended that customers avoid using reserved namespaces.
-            value (str, required): Value of the tag. Supports up to 256 Unicode characters. Supports parameterization.
+            copyable (str): Specifies whether to include the tag when copying the parent resource. If set to `true`, the tag is included in resource copying. If set to `false`, the tag is not included. If not specified, defaults to `true`. 
+            namespace (str): Optional namespace of the tag. Namespace identifies the category of the tag. Omitting the namespace defaults to the namespace `default`. The `pure&#42;` namespaces are reserved for plugins and integration partners. It is recommended that customers avoid using reserved namespaces. 
+            value (str, required): Value of the tag. Supports up to 256 Unicode characters. Supports parameterization. 
+            key (str, required): Key of the tag. Supports up to 64 Unicode characters. 
         """
         if copyable is not None:
             self.copyable = copyable
-        self.key = key
         if namespace is not None:
             self.namespace = namespace
         self.value = value
+        self.key = key
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
             raise KeyError("Invalid key `{}` for `PresetWorkloadWorkloadTag`".format(key))
-        if key == "key" and value is None:
-            raise ValueError("Invalid value for `key`, must not be `None`")
         if key == "value" and value is None:
             raise ValueError("Invalid value for `value`, must not be `None`")
+        if key == "key" and value is None:
+            raise ValueError("Invalid value for `key`, must not be `None`")
         self.__dict__[key] = value
 
     def __getattribute__(self, item):

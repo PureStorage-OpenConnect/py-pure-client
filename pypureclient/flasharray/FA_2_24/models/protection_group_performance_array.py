@@ -33,16 +33,16 @@ class ProtectionGroupPerformanceArray(object):
         'name': 'str',
         'bytes_per_sec': 'int',
         'source': 'str',
-        'target': 'str',
-        'time': 'int'
+        'time': 'int',
+        'target': 'str'
     }
 
     attribute_map = {
         'name': 'name',
         'bytes_per_sec': 'bytes_per_sec',
         'source': 'source',
-        'target': 'target',
-        'time': 'time'
+        'time': 'time',
+        'target': 'target'
     }
 
     required_args = {
@@ -53,16 +53,16 @@ class ProtectionGroupPerformanceArray(object):
         name=None,  # type: str
         bytes_per_sec=None,  # type: int
         source=None,  # type: str
-        target=None,  # type: str
         time=None,  # type: int
+        target=None,  # type: str
     ):
         """
         Keyword args:
-            name (str): A locally unique, system-generated name. The name cannot be modified.
+            name (str): A locally unique, system-generated name. The name cannot be modified. 
             bytes_per_sec (int): The total number of bytes of replication data transmitted and received per second.
             source (str): The source array from where the data is replicated.
+            time (int): The time when the sample performance data was taken. Measured in milliseconds since the UNIX epoch. 
             target (str): The target to where the data is replicated.
-            time (int): The time when the sample performance data was taken. Measured in milliseconds since the UNIX epoch.
         """
         if name is not None:
             self.name = name
@@ -70,10 +70,10 @@ class ProtectionGroupPerformanceArray(object):
             self.bytes_per_sec = bytes_per_sec
         if source is not None:
             self.source = source
-        if target is not None:
-            self.target = target
         if time is not None:
             self.time = time
+        if target is not None:
+            self.target = target
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

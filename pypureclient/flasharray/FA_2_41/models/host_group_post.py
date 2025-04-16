@@ -46,7 +46,7 @@ class HostGroupPost(object):
     ):
         """
         Keyword args:
-            tags (list[NonCopyableTag]): The list of tags to be upserted with the object.
+            tags (list[NonCopyableTag]): The list of tags to be upserted with the object. 
         """
         if tags is not None:
             self.tags = tags

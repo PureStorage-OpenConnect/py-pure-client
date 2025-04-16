@@ -49,8 +49,8 @@ class UpgradeParameters(object):
     ):
         """
         Keyword args:
-            name (str): The name of the upgrade parameter to be sent to the upgrade process.
-            value (str): The value of the upgrade parameter to be sent to the upgrade process.
+            name (str): The name of the upgrade parameter to be sent to the upgrade process. 
+            value (str): The value of the upgrade parameter to be sent to the upgrade process. 
         """
         if name is not None:
             self.name = name

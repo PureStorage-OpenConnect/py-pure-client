@@ -30,13 +30,13 @@ class KmipObject(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
-        'uid': 'str'
+        'uid': 'str',
+        'name': 'str'
     }
 
     attribute_map = {
-        'name': 'name',
-        'uid': 'uid'
+        'uid': 'uid',
+        'name': 'name'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class KmipObject(object):
 
     def __init__(
         self,
-        name=None,  # type: str
         uid=None,  # type: str
+        name=None,  # type: str
     ):
         """
         Keyword args:
-            name (str): Name of the KMIP object.
-            uid (str): User ID of the KMIP object.
+            uid (str): User ID of the KMIP object. 
+            name (str): Name of the KMIP object. 
         """
-        if name is not None:
-            self.name = name
         if uid is not None:
             self.uid = uid
+        if name is not None:
+            self.name = name
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

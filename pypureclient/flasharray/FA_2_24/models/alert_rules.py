@@ -52,9 +52,9 @@ class AlertRules(object):
     ):
         """
         Keyword args:
-            code (int): The alert code that the rule applies to. Available alert codes for customization can be found in the alert rules catalog.
-            parameter (str): The parameter of the custom alert rule to modify. Values include `info` and `warning`. Available parameter values can be found in the alert rules catalog.
-            value (str): The value to use for the custom alert rule. Valid values for an alert code and parameter combination can be found in the alert rules catalog.
+            code (int): The alert code that the rule applies to. Available alert codes for customization can be found in the alert rules catalog. 
+            parameter (str): The parameter of the custom alert rule to modify. Values include `info` and `warning`. Available parameter values can be found in the alert rules catalog. 
+            value (str): The value to use for the custom alert rule. Valid values for an alert code and parameter combination can be found in the alert rules catalog. 
         """
         if code is not None:
             self.code = code

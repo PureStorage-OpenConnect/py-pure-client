@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.16
     
@@ -32,23 +32,23 @@ class SupportDiagnosticsDetails(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
-        'task_id': 'str',
-        'index': 'float',
-        'test_type': 'str',
-        'test_name': 'str',
         'severity': 'str',
-        'result_details': 'str'
+        'index': 'float',
+        'task_id': 'str',
+        'test_name': 'str',
+        'result_details': 'str',
+        'test_type': 'str'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
-        'task_id': 'task_id',
-        'index': 'index',
-        'test_type': 'test_type',
-        'test_name': 'test_name',
         'severity': 'severity',
-        'result_details': 'result_details'
+        'index': 'index',
+        'task_id': 'task_id',
+        'test_name': 'test_name',
+        'result_details': 'result_details',
+        'test_type': 'test_type'
     }
 
     required_args = {
@@ -58,40 +58,40 @@ class SupportDiagnosticsDetails(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
-        task_id=None,  # type: str
-        index=None,  # type: float
-        test_type=None,  # type: str
-        test_name=None,  # type: str
         severity=None,  # type: str
+        index=None,  # type: float
+        task_id=None,  # type: str
+        test_name=None,  # type: str
         result_details=None,  # type: str
+        test_type=None,  # type: str
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            task_id (str): The task ID of the diagnostics for which this refers to.
-            index (float): The unique index of the test. It will be of the format A.B where A is the task index and B is the test index.
-            test_type (str): Category to which the test belongs to.
-            test_name (str): Name of the test that was performed.
-            severity (str): Severity level of the test. Valid values include `info`, `warning`, `critical`.
-            result_details (str): More details related to the test. This field can provide remediation information as well.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            severity (str): Severity level of the test. Valid values include `info`, `warning`, `critical`. 
+            index (float): The unique index of the test. It will be of the format A.B where A is the task index and B is the test index. 
+            task_id (str): The task ID of the diagnostics for which this refers to. 
+            test_name (str): Name of the test that was performed. 
+            result_details (str): More details related to the test. This field can provide remediation information as well. 
+            test_type (str): Category to which the test belongs to. 
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
-        if task_id is not None:
-            self.task_id = task_id
-        if index is not None:
-            self.index = index
-        if test_type is not None:
-            self.test_type = test_type
-        if test_name is not None:
-            self.test_name = test_name
         if severity is not None:
             self.severity = severity
+        if index is not None:
+            self.index = index
+        if task_id is not None:
+            self.task_id = task_id
+        if test_name is not None:
+            self.test_name = test_name
         if result_details is not None:
             self.result_details = result_details
+        if test_type is not None:
+            self.test_type = test_type
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

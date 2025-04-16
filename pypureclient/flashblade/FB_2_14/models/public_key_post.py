@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.14, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.14, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.14
     
@@ -46,7 +46,7 @@ class PublicKeyPost(object):
     ):
         """
         Keyword args:
-            public_key (str): The text of the public key. May be PEM-formatted or OpenSSH-formatted at the time of input.
+            public_key (str): The text of the public key. May be PEM-formatted or OpenSSH-formatted at the time of input. 
         """
         if public_key is not None:
             self.public_key = public_key

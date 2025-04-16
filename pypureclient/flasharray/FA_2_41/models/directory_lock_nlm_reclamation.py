@@ -49,8 +49,8 @@ class DirectoryLockNlmReclamation(object):
     ):
         """
         Keyword args:
-            start (int): Start time of the NLM reclamation in milliseconds since the UNIX epoch.
-            end (int): End time of the NLM reclamation in milliseconds since the UNIX epoch.
+            start (int): Start time of the NLM reclamation in milliseconds since the UNIX epoch. 
+            end (int): End time of the NLM reclamation in milliseconds since the UNIX epoch. 
         """
         if start is not None:
             self.start = start

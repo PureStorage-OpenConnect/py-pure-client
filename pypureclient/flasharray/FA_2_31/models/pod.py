@@ -30,45 +30,45 @@ class Pod(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
-        'arrays': 'list[PodArrayStatus]',
-        'destroyed': 'bool',
-        'failover_preferences': 'list[Reference]',
-        'footprint': 'int',
-        'mediator': 'str',
-        'mediator_version': 'str',
-        'source': 'FixedReference',
-        'time_remaining': 'int',
-        'requested_promotion_state': 'str',
-        'promotion_status': 'str',
-        'link_source_count': 'int',
-        'link_target_count': 'int',
-        'array_count': 'int',
-        'eradication_config': 'PodEradicationConfig',
+        'id': 'str',
         'quota_limit': 'int',
-        'space': 'PodSpace'
+        'promotion_status': 'str',
+        'failover_preferences': 'list[Reference]',
+        'eradication_config': 'PodEradicationConfig',
+        'source': 'FixedReference',
+        'link_target_count': 'int',
+        'space': 'PodSpace',
+        'time_remaining': 'int',
+        'destroyed': 'bool',
+        'footprint': 'int',
+        'array_count': 'int',
+        'link_source_count': 'int',
+        'requested_promotion_state': 'str',
+        'arrays': 'list[PodArrayStatus]',
+        'mediator': 'str',
+        'mediator_version': 'str'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
-        'arrays': 'arrays',
-        'destroyed': 'destroyed',
-        'failover_preferences': 'failover_preferences',
-        'footprint': 'footprint',
-        'mediator': 'mediator',
-        'mediator_version': 'mediator_version',
-        'source': 'source',
-        'time_remaining': 'time_remaining',
-        'requested_promotion_state': 'requested_promotion_state',
-        'promotion_status': 'promotion_status',
-        'link_source_count': 'link_source_count',
-        'link_target_count': 'link_target_count',
-        'array_count': 'array_count',
-        'eradication_config': 'eradication_config',
+        'id': 'id',
         'quota_limit': 'quota_limit',
-        'space': 'space'
+        'promotion_status': 'promotion_status',
+        'failover_preferences': 'failover_preferences',
+        'eradication_config': 'eradication_config',
+        'source': 'source',
+        'link_target_count': 'link_target_count',
+        'space': 'space',
+        'time_remaining': 'time_remaining',
+        'destroyed': 'destroyed',
+        'footprint': 'footprint',
+        'array_count': 'array_count',
+        'link_source_count': 'link_source_count',
+        'requested_promotion_state': 'requested_promotion_state',
+        'arrays': 'arrays',
+        'mediator': 'mediator',
+        'mediator_version': 'mediator_version'
     }
 
     required_args = {
@@ -76,92 +76,92 @@ class Pod(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
-        arrays=None,  # type: List[models.PodArrayStatus]
-        destroyed=None,  # type: bool
+        id=None,  # type: str
+        quota_limit=None,  # type: int
+        promotion_status=None,  # type: str
         failover_preferences=None,  # type: List[models.Reference]
+        eradication_config=None,  # type: models.PodEradicationConfig
+        source=None,  # type: models.FixedReference
+        link_target_count=None,  # type: int
+        space=None,  # type: models.PodSpace
+        time_remaining=None,  # type: int
+        destroyed=None,  # type: bool
         footprint=None,  # type: int
+        array_count=None,  # type: int
+        link_source_count=None,  # type: int
+        requested_promotion_state=None,  # type: str
+        arrays=None,  # type: List[models.PodArrayStatus]
         mediator=None,  # type: str
         mediator_version=None,  # type: str
-        source=None,  # type: models.FixedReference
-        time_remaining=None,  # type: int
-        requested_promotion_state=None,  # type: str
-        promotion_status=None,  # type: str
-        link_source_count=None,  # type: int
-        link_target_count=None,  # type: int
-        array_count=None,  # type: int
-        eradication_config=None,  # type: models.PodEradicationConfig
-        quota_limit=None,  # type: int
-        space=None,  # type: models.PodSpace
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            name (str): A user-specified name. The name must be locally unique and can be changed.
-            arrays (list[PodArrayStatus]): A list of arrays over which the pod is stretched. If there are two or more arrays in the stretched pod, all data in the pod is synchronously replicated between all of the arrays within the pod.
-            destroyed (bool): Returns a value of `true` if the pod has been destroyed and is pending eradication. The `time_remaining` value displays the amount of time left until the destroyed pod is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed pod can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the pod is permanently eradicated and can no longer be recovered.
-            failover_preferences (list[Reference]): Determines which array within a stretched pod should be given priority to stay online should the arrays ever lose contact with each other. The current array and any peer arrays that are connected to the current array for synchronous replication can be added to a pod for failover preference. By default, `failover_preferences=null`, meaning no arrays have been configured for failover preference.
-            footprint (int): The maximum amount of physical space the pod would take up on any array, ignoring any data shared outside the pod. Measured in bytes. The footprint metric is mostly used for capacity planning.
-            mediator (str): The URL of the mediator for the pod. By default, the Pure1 Cloud Mediator (`purestorage`) serves as the mediator.
-            mediator_version (str): The mediator version.
-            source (FixedReference): The source pod from where data is cloned to create the new pod.
-            time_remaining (int): The amount of time left until the destroyed pod is permanently eradicated, measured in milliseconds. Before the `time_remaining` period has elapsed, the destroyed pod can be recovered by setting `destroyed=false`.
-            requested_promotion_state (str): Values include `promoted` and `demoted`. Patch `requested_promotion_state` to `demoted` to demote the pod so that it can be used as a link target for continuous replication between pods. Demoted pods do not accept write requests, and a destroyed version of the pod with `undo-demote` appended to the pod name is created on the array with the state of the pod when it was in the promoted state. Patch `requested_promotion_state` to `promoted` to start the process of promoting the pod. The `promotion_status` indicates when the pod has been successfully promoted. Promoted pods stop incorporating replicated data from the source pod and start accepting write requests. The replication process does not stop as the source pod continues replicating data to the pod. The space consumed by the unique replicated data is tracked by the `space.journal` field of the pod.
-            promotion_status (str): Current promotion status of a pod. Values include `promoted`, `demoted`, and `promoting`. The `promoted` status indicates that the pod has been promoted. The pod takes writes from hosts instead of incorporating replicated data. This is the default mode for a pod when it is created. The `demoted` status indicates that the pod has been demoted. The pod does not accept write requests and is ready to be used as a link target. The `promoting` status indicates that the pod is in an intermediate status between `demoted` and `promoted` while the promotion process is taking place.
-            link_source_count (int): The number of source pods that link to the pod.
-            link_target_count (int): The number of target pods that link to the pod.
-            array_count (int): The number of arrays a pod connects to.
+            name (str): A user-specified name. The name must be locally unique and can be changed. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource. 
+            quota_limit (int): The logical quota limit of the pod, measured in bytes. 
+            promotion_status (str): Current promotion status of a pod. Values include `promoted`, `demoted`, and `promoting`. The `promoted` status indicates that the pod has been promoted. The pod takes writes from hosts instead of incorporating replicated data. This is the default mode for a pod when it is created. The `demoted` status indicates that the pod has been demoted. The pod does not accept write requests and is ready to be used as a link target. The `promoting` status indicates that the pod is in an intermediate status between `demoted` and `promoted` while the promotion process is taking place. 
+            failover_preferences (list[Reference]): Determines which array within a stretched pod should be given priority to stay online should the arrays ever lose contact with each other. The current array and any peer arrays that are connected to the current array for synchronous replication can be added to a pod for failover preference. By default, `failover_preferences=null`,  meaning no arrays have been configured for failover preference. 
             eradication_config (PodEradicationConfig)
-            quota_limit (int): The logical quota limit of the pod, measured in bytes.
-            space (PodSpace): Displays provisioned size and physical storage consumption information for the sum of all volumes connected to the specified host.
+            source (FixedReference): The source pod from where data is cloned to create the new pod. 
+            link_target_count (int): The number of target pods that link to the pod. 
+            space (PodSpace): Displays provisioned size and physical storage consumption information for the sum of all volumes connected to the specified host. 
+            time_remaining (int): The amount of time left until the destroyed pod is permanently eradicated, measured in milliseconds. Before the `time_remaining` period has elapsed, the destroyed pod can be recovered by setting `destroyed=false`. 
+            destroyed (bool): Returns a value of `true` if the pod has been destroyed and is pending eradication. The `time_remaining` value displays the amount of time left until the destroyed pod is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed pod can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the pod is permanently eradicated and can no longer be recovered. 
+            footprint (int): The maximum amount of physical space the pod would take up on any array, ignoring any data shared outside the pod. Measured in bytes. The footprint metric is mostly used for capacity planning. 
+            array_count (int): The number of arrays a pod connects to. 
+            link_source_count (int): The number of source pods that link to the pod. 
+            requested_promotion_state (str): Values include `promoted` and `demoted`. Patch `requested_promotion_state` to `demoted` to demote the pod so that it can be used as a link target for continuous replication between pods. Demoted pods do not accept write requests, and a destroyed version of the pod with `undo-demote` appended to the pod name is created on the array with the state of the pod when it was in the promoted state. Patch `requested_promotion_state` to `promoted` to start the process of promoting the pod. The `promotion_status` indicates when the pod has been successfully promoted. Promoted pods stop incorporating replicated data from the source pod and start accepting write requests. The replication process does not stop as the source pod continues replicating data to the pod. The space consumed by the unique replicated data is tracked by the `space.journal` field of the pod. 
+            arrays (list[PodArrayStatus]): A list of arrays over which the pod is stretched. If there are two or more arrays in the stretched pod, all data in the pod is synchronously replicated between all of the arrays within the pod. 
+            mediator (str): The URL of the mediator for the pod. By default, the Pure1 Cloud Mediator (`purestorage`) serves as the mediator. 
+            mediator_version (str): The mediator version. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
-        if arrays is not None:
-            self.arrays = arrays
-        if destroyed is not None:
-            self.destroyed = destroyed
+        if id is not None:
+            self.id = id
+        if quota_limit is not None:
+            self.quota_limit = quota_limit
+        if promotion_status is not None:
+            self.promotion_status = promotion_status
         if failover_preferences is not None:
             self.failover_preferences = failover_preferences
+        if eradication_config is not None:
+            self.eradication_config = eradication_config
+        if source is not None:
+            self.source = source
+        if link_target_count is not None:
+            self.link_target_count = link_target_count
+        if space is not None:
+            self.space = space
+        if time_remaining is not None:
+            self.time_remaining = time_remaining
+        if destroyed is not None:
+            self.destroyed = destroyed
         if footprint is not None:
             self.footprint = footprint
+        if array_count is not None:
+            self.array_count = array_count
+        if link_source_count is not None:
+            self.link_source_count = link_source_count
+        if requested_promotion_state is not None:
+            self.requested_promotion_state = requested_promotion_state
+        if arrays is not None:
+            self.arrays = arrays
         if mediator is not None:
             self.mediator = mediator
         if mediator_version is not None:
             self.mediator_version = mediator_version
-        if source is not None:
-            self.source = source
-        if time_remaining is not None:
-            self.time_remaining = time_remaining
-        if requested_promotion_state is not None:
-            self.requested_promotion_state = requested_promotion_state
-        if promotion_status is not None:
-            self.promotion_status = promotion_status
-        if link_source_count is not None:
-            self.link_source_count = link_source_count
-        if link_target_count is not None:
-            self.link_target_count = link_target_count
-        if array_count is not None:
-            self.array_count = array_count
-        if eradication_config is not None:
-            self.eradication_config = eradication_config
-        if quota_limit is not None:
-            self.quota_limit = quota_limit
-        if space is not None:
-            self.space = space
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
             raise KeyError("Invalid key `{}` for `Pod`".format(key))
-        if key == "footprint" and value is not None:
-            if value < 0:
-                raise ValueError("Invalid value for `footprint`, must be a value greater than or equal to `0`")
         if key == "quota_limit" and value is not None:
             if value > 4503599627370496:
                 raise ValueError("Invalid value for `quota_limit`, value must be less than or equal to `4503599627370496`")
+        if key == "footprint" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `footprint`, must be a value greater than or equal to `0`")
         self.__dict__[key] = value
 
     def __getattribute__(self, item):

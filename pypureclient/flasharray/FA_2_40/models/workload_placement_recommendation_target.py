@@ -30,25 +30,25 @@ class WorkloadPlacementRecommendationTarget(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
+        'id': 'str',
         'resource_type': 'str',
+        'warnings': 'list[WorkloadPlacementRecommendationWarning]',
         'model': 'str',
-        'capacity': 'int',
-        'capacity_used_projections': 'WorkloadPlacementRecommendationTargetCapacityUsedProjections',
         'load_projections': 'WorkloadPlacementRecommendationTargetLoadProjections',
-        'warnings': 'list[WorkloadPlacementRecommendationWarning]'
+        'capacity': 'int',
+        'capacity_used_projections': 'WorkloadPlacementRecommendationTargetCapacityUsedProjections'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
+        'id': 'id',
         'resource_type': 'resource_type',
+        'warnings': 'warnings',
         'model': 'model',
-        'capacity': 'capacity',
-        'capacity_used_projections': 'capacity_used_projections',
         'load_projections': 'load_projections',
-        'warnings': 'warnings'
+        'capacity': 'capacity',
+        'capacity_used_projections': 'capacity_used_projections'
     }
 
     required_args = {
@@ -56,42 +56,42 @@ class WorkloadPlacementRecommendationTarget(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
+        id=None,  # type: str
         resource_type=None,  # type: str
+        warnings=None,  # type: List[models.WorkloadPlacementRecommendationWarning]
         model=None,  # type: str
+        load_projections=None,  # type: models.WorkloadPlacementRecommendationTargetLoadProjections
         capacity=None,  # type: int
         capacity_used_projections=None,  # type: models.WorkloadPlacementRecommendationTargetCapacityUsedProjections
-        load_projections=None,  # type: models.WorkloadPlacementRecommendationTargetLoadProjections
-        warnings=None,  # type: List[models.WorkloadPlacementRecommendationWarning]
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified.
-            name (str): The resource name, such as volume name, pod name, snapshot name, and so on.
-            resource_type (str): Type of the object (full name of the endpoint). Valid values are `hosts`, `host-groups`, `network-interfaces`, `pods`, `ports`, `pod-replica-links`, `subnets`, `volumes`, `volume-snapshots`, `volume-groups`, `directories`, `policies/nfs`, `policies/smb`, and `policies/snapshot`, etc.
-            model (str): The model of the target. For example, `FA-X20R2`.
-            capacity (int): The usable capacity of the target, measured in bytes.
-            capacity_used_projections (WorkloadPlacementRecommendationTargetCapacityUsedProjections)
+            name (str): The resource name, such as volume name, pod name, snapshot name, and so on. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified. 
+            resource_type (str): Type of the object (full name of the endpoint). Valid values are `hosts`, `host-groups`, `network-interfaces`, `pods`, `ports`, `pod-replica-links`, `subnets`, `volumes`, `volume-snapshots`, `volume-groups`, `directories`, `policies/nfs`, `policies/smb`, and `policies/snapshot`, etc. 
+            warnings (list[WorkloadPlacementRecommendationWarning]): The warnings for the target. 
+            model (str): The model of the target. For example, `FA-X20R2`. 
             load_projections (WorkloadPlacementRecommendationTargetLoadProjections)
-            warnings (list[WorkloadPlacementRecommendationWarning]): The warnings for the target.
+            capacity (int): The usable capacity of the target, measured in bytes. 
+            capacity_used_projections (WorkloadPlacementRecommendationTargetCapacityUsedProjections)
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
         if resource_type is not None:
             self.resource_type = resource_type
+        if warnings is not None:
+            self.warnings = warnings
         if model is not None:
             self.model = model
+        if load_projections is not None:
+            self.load_projections = load_projections
         if capacity is not None:
             self.capacity = capacity
         if capacity_used_projections is not None:
             self.capacity_used_projections = capacity_used_projections
-        if load_projections is not None:
-            self.load_projections = load_projections
-        if warnings is not None:
-            self.warnings = warnings
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

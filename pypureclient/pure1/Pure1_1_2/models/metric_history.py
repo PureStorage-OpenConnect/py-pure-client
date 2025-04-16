@@ -3,7 +3,7 @@
 """
     Pure1 Public REST API
 
-    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)  The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
+    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)   The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
 
     OpenAPI spec version: 1.2
     
@@ -31,24 +31,24 @@ class MetricHistory(object):
     """
     swagger_types = {
         'as_of': 'int',
-        'id': 'str',
         'name': 'str',
-        'aggregation': 'str',
+        'id': 'str',
+        'unit': 'str',
         'data': 'list[list[float]]',
-        'resolution': 'int',
         'resources': 'list[FixedReferenceFqdn]',
-        'unit': 'str'
+        'aggregation': 'str',
+        'resolution': 'int'
     }
 
     attribute_map = {
         'as_of': '_as_of',
-        'id': 'id',
         'name': 'name',
-        'aggregation': 'aggregation',
+        'id': 'id',
+        'unit': 'unit',
         'data': 'data',
-        'resolution': 'resolution',
         'resources': 'resources',
-        'unit': 'unit'
+        'aggregation': 'aggregation',
+        'resolution': 'resolution'
     }
 
     required_args = {
@@ -57,41 +57,41 @@ class MetricHistory(object):
     def __init__(
         self,
         as_of=None,  # type: int
-        id=None,  # type: str
         name=None,  # type: str
-        aggregation=None,  # type: str
-        data=None,  # type: List[List[float]]
-        resolution=None,  # type: int
-        resources=None,  # type: List[models.FixedReferenceFqdn]
+        id=None,  # type: str
         unit=None,  # type: str
+        data=None,  # type: List[List[float]]
+        resources=None,  # type: List[models.FixedReferenceFqdn]
+        aggregation=None,  # type: str
+        resolution=None,  # type: int
     ):
         """
         Keyword args:
             as_of (int): The freshness of the data (timestamp in millis since epoch).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
             name (str): A non-modifiable, locally unique name chosen by the system.
-            aggregation (str): The aggregation of the metric data.
-            data (list[list[float]]): The data points of the metric corresponding to the time window, resolution and aggregation. The points are returned in a nested array of 2-element arrays. For each of the 2-element array, the 1st element is the UTC millisecond epoch, and the 2nd element is the value, e.g. [[1519362000000, 11], [1519362030000, 21], ...].
-            resolution (int): The resolution of the metric data in milliseconds.
-            resources (list[FixedReferenceFqdn]): The references to the resources that the metric data is for. For example, write-iops metric for an array will have one element in this list referencing the array entity. the write-iops from an array to a pod will contain two elements in this list - first element pointing to the array, and second element pointing to the pod.
+            id (str): A non-modifiable, globally unique ID chosen by the system.
             unit (str): The unit of the metric data.
+            data (list[list[float]]): The data points of the metric corresponding to the time window, resolution and aggregation. The points are returned in a nested array of 2-element arrays. For each of the 2-element array, the 1st element is the UTC millisecond epoch, and the 2nd element is the value, e.g. [[1519362000000, 11], [1519362030000, 21], ...]. 
+            resources (list[FixedReferenceFqdn]): The references to the resources that the metric data is for. For example, write-iops metric for an array will have one element in this list referencing the array entity. the write-iops from an array to a pod will contain two elements in this list - first element pointing to the array, and second element pointing to the pod. 
+            aggregation (str): The aggregation of the metric data.
+            resolution (int): The resolution of the metric data in milliseconds.
         """
         if as_of is not None:
             self.as_of = as_of
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
-        if aggregation is not None:
-            self.aggregation = aggregation
-        if data is not None:
-            self.data = data
-        if resolution is not None:
-            self.resolution = resolution
-        if resources is not None:
-            self.resources = resources
+        if id is not None:
+            self.id = id
         if unit is not None:
             self.unit = unit
+        if data is not None:
+            self.data = data
+        if resources is not None:
+            self.resources = resources
+        if aggregation is not None:
+            self.aggregation = aggregation
+        if resolution is not None:
+            self.resolution = resolution
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

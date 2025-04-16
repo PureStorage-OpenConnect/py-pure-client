@@ -30,17 +30,17 @@ class NetworkInterfacePatch(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'enabled': 'bool',
+        'eth': 'NetworkinterfacepatchEth',
         'override_npiv_check': 'bool',
         'services': 'list[str]',
-        'eth': 'NetworkinterfacepatchEth'
+        'enabled': 'bool'
     }
 
     attribute_map = {
-        'enabled': 'enabled',
+        'eth': 'eth',
         'override_npiv_check': 'override_npiv_check',
         'services': 'services',
-        'eth': 'eth'
+        'enabled': 'enabled'
     }
 
     required_args = {
@@ -48,26 +48,26 @@ class NetworkInterfacePatch(object):
 
     def __init__(
         self,
-        enabled=None,  # type: bool
+        eth=None,  # type: models.NetworkinterfacepatchEth
         override_npiv_check=None,  # type: bool
         services=None,  # type: List[str]
-        eth=None,  # type: models.NetworkinterfacepatchEth
+        enabled=None,  # type: bool
     ):
         """
         Keyword args:
-            enabled (bool): Returns a value of `true` if the specified network interface or Fibre Channel port is enabled. Returns a value of `false` if the specified network interface or Fibre Channel port is disabled.
-            override_npiv_check (bool): N-Port ID Virtualization (NPIV) requires a balanced configuration of Fibre Channel ports configured for SCSI on both controllers. Enabling or Disabling a Fibre Channel port configured for SCSI might cause the NPIV status to change from enabled to disabled or vice versa. Set this option to proceed with enabling or disabling the port.
-            services (list[str]): The services provided by the specified network interface or Fibre Channel port.
             eth (NetworkinterfacepatchEth)
+            override_npiv_check (bool): N-Port ID Virtualization (NPIV) requires a balanced configuration of Fibre Channel ports configured for SCSI on both controllers. Enabling or Disabling a Fibre Channel port configured for SCSI might cause the NPIV status to change from enabled to disabled or vice versa. Set this option to proceed with enabling or disabling the port. 
+            services (list[str]): The services provided by the specified network interface or Fibre Channel port. 
+            enabled (bool): Returns a value of `true` if the specified network interface or Fibre Channel port is enabled. Returns a value of `false` if the specified network interface or Fibre Channel port is disabled. 
         """
-        if enabled is not None:
-            self.enabled = enabled
+        if eth is not None:
+            self.eth = eth
         if override_npiv_check is not None:
             self.override_npiv_check = override_npiv_check
         if services is not None:
             self.services = services
-        if eth is not None:
-            self.eth = eth
+        if enabled is not None:
+            self.enabled = enabled
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

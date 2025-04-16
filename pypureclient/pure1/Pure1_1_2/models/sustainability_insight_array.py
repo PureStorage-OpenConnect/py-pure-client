@@ -3,7 +3,7 @@
 """
     Pure1 Public REST API
 
-    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)  The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
+    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)   The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
 
     OpenAPI spec version: 1.2
     
@@ -31,22 +31,22 @@ class SustainabilityInsightArray(object):
     """
     swagger_types = {
         'as_of': 'int',
-        'interval_start': 'int',
         'interval_end': 'int',
-        'resource': 'FixedReferenceFqdn',
-        'type': 'str',
+        'interval_start': 'int',
         'severity': 'str',
-        'additional_data': 'object'
+        'additional_data': 'object',
+        'resource': 'FixedReferenceFqdn',
+        'type': 'str'
     }
 
     attribute_map = {
         'as_of': '_as_of',
-        'interval_start': '_interval_start',
         'interval_end': '_interval_end',
-        'resource': 'resource',
-        'type': 'type',
+        'interval_start': '_interval_start',
         'severity': 'severity',
-        'additional_data': 'additional_data'
+        'additional_data': 'additional_data',
+        'resource': 'resource',
+        'type': 'type'
     }
 
     required_args = {
@@ -55,37 +55,37 @@ class SustainabilityInsightArray(object):
     def __init__(
         self,
         as_of=None,  # type: int
-        interval_start=None,  # type: int
         interval_end=None,  # type: int
-        resource=None,  # type: models.FixedReferenceFqdn
-        type=None,  # type: str
+        interval_start=None,  # type: int
         severity=None,  # type: str
         additional_data=None,  # type: object
+        resource=None,  # type: models.FixedReferenceFqdn
+        type=None,  # type: str
     ):
         """
         Keyword args:
             as_of (int): The freshness of the data (timestamp in millis since epoch).
-            interval_start (int): The timestamp of the start of the time interval.
             interval_end (int): The timestamp of the end of the time interval.
+            interval_start (int): The timestamp of the start of the time interval.
+            severity (str): The severity of the insight. Should be one of medium, high. 
+            additional_data (object): The arbitrary data associated with the insight. 
             resource (FixedReferenceFqdn)
-            type (str): The type of the insight.
-            severity (str): The severity of the insight. Should be one of medium, high.
-            additional_data (object): The arbitrary data associated with the insight.
+            type (str): The type of the insight. 
         """
         if as_of is not None:
             self.as_of = as_of
-        if interval_start is not None:
-            self.interval_start = interval_start
         if interval_end is not None:
             self.interval_end = interval_end
-        if resource is not None:
-            self.resource = resource
-        if type is not None:
-            self.type = type
+        if interval_start is not None:
+            self.interval_start = interval_start
         if severity is not None:
             self.severity = severity
         if additional_data is not None:
             self.additional_data = additional_data
+        if resource is not None:
+            self.resource = resource
+        if type is not None:
+            self.type = type
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

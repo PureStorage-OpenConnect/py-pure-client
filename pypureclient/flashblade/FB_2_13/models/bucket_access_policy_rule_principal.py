@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.13, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.13, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.13
     
@@ -46,7 +46,7 @@ class BucketAccessPolicyRulePrincipal(object):
     ):
         """
         Keyword args:
-            all (bool): If `true`, the rule will apply to all object store users regardless of their origin or principal.
+            all (bool): If `true`, the rule will apply to all object store users regardless of their origin or principal. 
         """
         if all is not None:
             self.all = all

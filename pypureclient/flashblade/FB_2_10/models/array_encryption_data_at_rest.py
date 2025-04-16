@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.10, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.10, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.10
     
@@ -31,14 +31,14 @@ class ArrayEncryptionDataAtRest(object):
     """
     swagger_types = {
         'algorithms': 'list[str]',
-        'enabled': 'bool',
-        'entropy_source': 'str'
+        'entropy_source': 'str',
+        'enabled': 'bool'
     }
 
     attribute_map = {
         'algorithms': 'algorithms',
-        'enabled': 'enabled',
-        'entropy_source': 'entropy_source'
+        'entropy_source': 'entropy_source',
+        'enabled': 'enabled'
     }
 
     required_args = {
@@ -47,21 +47,21 @@ class ArrayEncryptionDataAtRest(object):
     def __init__(
         self,
         algorithms=None,  # type: List[str]
-        enabled=None,  # type: bool
         entropy_source=None,  # type: str
+        enabled=None,  # type: bool
     ):
         """
         Keyword args:
             algorithms (list[str]): The algorithms used to encrypt data at rest on the array.
+            entropy_source (str): The entropy source used to generate the Data at Rest Encryption key on the array. 
             enabled (bool): Returns a value of `true` if Data at Rest Encryption is enabled.
-            entropy_source (str): The entropy source used to generate the Data at Rest Encryption key on the array.
         """
         if algorithms is not None:
             self.algorithms = algorithms
-        if enabled is not None:
-            self.enabled = enabled
         if entropy_source is not None:
             self.entropy_source = entropy_source
+        if enabled is not None:
+            self.enabled = enabled
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

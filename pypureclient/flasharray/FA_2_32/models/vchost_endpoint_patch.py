@@ -46,7 +46,7 @@ class VchostEndpointPatch(object):
     ):
         """
         Keyword args:
-            certificates (list[ReferenceNoIdWithType]): The certificate to be presented by the vchost over the configured endpoints.
+            certificates (list[ReferenceNoIdWithType]): The certificate to be presented by the vchost over the configured endpoints. 
         """
         if certificates is not None:
             self.certificates = certificates

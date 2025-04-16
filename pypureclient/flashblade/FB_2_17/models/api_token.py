@@ -54,7 +54,7 @@ class ApiToken(object):
         Keyword args:
             expires_at (int): Expiration time in milliseconds since the UNIX epoch.
             created_at (int): Creation time in milliseconds since the UNIX epoch.
-            token (str)
+            token (str): An Admin API token. A newly-created token is visible as the result of the POST operation which created it. An existing token is visible when `expose_api_token` is `true` and it is being requested by the user to whom it belongs. In all other cases, the token will be masked. 
         """
         if expires_at is not None:
             self.expires_at = expires_at

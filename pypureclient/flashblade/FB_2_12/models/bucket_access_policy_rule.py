@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.12, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.12, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.12
     
@@ -31,19 +31,19 @@ class BucketAccessPolicyRule(object):
     """
     swagger_types = {
         'name': 'str',
-        'actions': 'list[str]',
         'effect': 'str',
-        'principals': 'BucketAccessPolicyRulePrincipal',
         'resources': 'list[str]',
+        'principals': 'BucketAccessPolicyRulePrincipal',
+        'actions': 'list[str]',
         'policy': 'FixedReference'
     }
 
     attribute_map = {
         'name': 'name',
-        'actions': 'actions',
         'effect': 'effect',
-        'principals': 'principals',
         'resources': 'resources',
+        'principals': 'principals',
+        'actions': 'actions',
         'policy': 'policy'
     }
 
@@ -53,31 +53,31 @@ class BucketAccessPolicyRule(object):
     def __init__(
         self,
         name=None,  # type: str
-        actions=None,  # type: List[str]
         effect=None,  # type: str
-        principals=None,  # type: models.BucketAccessPolicyRulePrincipal
         resources=None,  # type: List[str]
+        principals=None,  # type: models.BucketAccessPolicyRulePrincipal
+        actions=None,  # type: List[str]
         policy=None,  # type: models.FixedReference
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            actions (list[str]): The list of actions granted by this rule. Each included action may restrict other properties of the rule. The only currently supported action is `s3:GetObject`.
-            effect (str): Effect of this rule. When `allow`, the rule allows the given actions to be performed on the given resources, subject to the given conditions. The only currently supported effect is `allow`.
-            principals (BucketAccessPolicyRulePrincipal): The principals to which this rule applies. Currently, only all principals are supported.
-            resources (list[str]): The list of resources which this rule applies to. The only currently supported resource is all objects in a bucket to which the parent policy belongs.
+            effect (str): Effect of this rule. When `allow`, the rule allows the given actions to be performed on the given resources, subject to the given conditions. The only currently supported effect is `allow`. 
+            resources (list[str]): The list of resources which this rule applies to. The only currently supported resource is all objects in a bucket to which the parent policy belongs. 
+            principals (BucketAccessPolicyRulePrincipal): The principals to which this rule applies. Currently, only all principals are supported. 
+            actions (list[str]): The list of actions granted by this rule. Each included action may restrict other properties of the rule. The only currently supported action is `s3:GetObject`. 
             policy (FixedReference): The policy to which this rule belongs.
         """
         if name is not None:
             self.name = name
-        if actions is not None:
-            self.actions = actions
         if effect is not None:
             self.effect = effect
-        if principals is not None:
-            self.principals = principals
         if resources is not None:
             self.resources = resources
+        if principals is not None:
+            self.principals = principals
+        if actions is not None:
+            self.actions = actions
         if policy is not None:
             self.policy = policy
 

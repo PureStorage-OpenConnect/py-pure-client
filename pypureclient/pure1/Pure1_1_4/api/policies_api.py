@@ -36,9 +36,9 @@ class PoliciesApi(object):
         limit=None,  # type: int
         member_ids=None,  # type: List[str]
         member_names=None,  # type: List[str]
+        offset=None,  # type: int
         policy_ids=None,  # type: List[str]
         policy_names=None,  # type: List[str]
-        offset=None,  # type: int
         sort=None,  # type: List[str]
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
@@ -61,9 +61,9 @@ class PoliciesApi(object):
         :param int limit: Limit the size of the response to the specified number of resources. A limit of 0 can be used to get the number of resources without getting all of the resources. It will be returned in the total_item_count field. If a client asks for a page size larger than the maximum number, the request is still valid. In that case the server just returns the maximum number of items, disregarding the client's page size request. If not specified, defaults to 1000. 
         :param list[str] member_ids: A comma-separated list of member IDs. If there is not at least one resource that matches each `member_id` element, an error is returned. Single quotes are required around all strings. 
         :param list[str] member_names: A comma-separated list of member names. If there is not at least one resource that matches each `member_name` element, an error is returned. Single quotes are required around all strings. 
+        :param int offset: The offset of the first resource to return from a collection. 
         :param list[str] policy_ids: A comma-separated list of policy IDs. If there is not at least one resource that matches each `policy_id` element, an error is returned. Single quotes are required around all strings. 
         :param list[str] policy_names: A comma-separated list of policy names. If there is not at least one resource that matches each `policy_name` element, an error is returned. Single quotes are required around all strings. 
-        :param int offset: The offset of the first resource to return from a collection. 
         :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
@@ -123,14 +123,14 @@ class PoliciesApi(object):
         if 'member_names' in params:
             query_params.append(('member_names', params['member_names']))
             collection_formats['member_names'] = 'csv'
+        if 'offset' in params:
+            query_params.append(('offset', params['offset']))
         if 'policy_ids' in params:
             query_params.append(('policy_ids', params['policy_ids']))
             collection_formats['policy_ids'] = 'csv'
         if 'policy_names' in params:
             query_params.append(('policy_names', params['policy_names']))
             collection_formats['policy_names'] = 'csv'
-        if 'offset' in params:
-            query_params.append(('offset', params['offset']))
         if 'sort' in params:
             query_params.append(('sort', params['sort']))
             collection_formats['sort'] = 'csv'
@@ -151,7 +151,7 @@ class PoliciesApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
-            ['application/x-www-form-urlencoded', 'application/json'])
+            ['application/json'])
 
         # Authentication setting
         auth_settings = ['AuthorizationHeader']
@@ -182,9 +182,9 @@ class PoliciesApi(object):
         limit=None,  # type: int
         member_ids=None,  # type: List[str]
         member_names=None,  # type: List[str]
+        offset=None,  # type: int
         policy_ids=None,  # type: List[str]
         policy_names=None,  # type: List[str]
-        offset=None,  # type: int
         sort=None,  # type: List[str]
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
@@ -207,9 +207,9 @@ class PoliciesApi(object):
         :param int limit: Limit the size of the response to the specified number of resources. A limit of 0 can be used to get the number of resources without getting all of the resources. It will be returned in the total_item_count field. If a client asks for a page size larger than the maximum number, the request is still valid. In that case the server just returns the maximum number of items, disregarding the client's page size request. If not specified, defaults to 1000. 
         :param list[str] member_ids: A comma-separated list of member IDs. If there is not at least one resource that matches each `member_id` element, an error is returned. Single quotes are required around all strings. 
         :param list[str] member_names: A comma-separated list of member names. If there is not at least one resource that matches each `member_name` element, an error is returned. Single quotes are required around all strings. 
+        :param int offset: The offset of the first resource to return from a collection. 
         :param list[str] policy_ids: A comma-separated list of policy IDs. If there is not at least one resource that matches each `policy_id` element, an error is returned. Single quotes are required around all strings. 
         :param list[str] policy_names: A comma-separated list of policy names. If there is not at least one resource that matches each `policy_name` element, an error is returned. Single quotes are required around all strings. 
-        :param int offset: The offset of the first resource to return from a collection. 
         :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
@@ -269,14 +269,14 @@ class PoliciesApi(object):
         if 'member_names' in params:
             query_params.append(('member_names', params['member_names']))
             collection_formats['member_names'] = 'csv'
+        if 'offset' in params:
+            query_params.append(('offset', params['offset']))
         if 'policy_ids' in params:
             query_params.append(('policy_ids', params['policy_ids']))
             collection_formats['policy_ids'] = 'csv'
         if 'policy_names' in params:
             query_params.append(('policy_names', params['policy_names']))
             collection_formats['policy_names'] = 'csv'
-        if 'offset' in params:
-            query_params.append(('offset', params['offset']))
         if 'sort' in params:
             query_params.append(('sort', params['sort']))
             collection_formats['sort'] = 'csv'
@@ -297,7 +297,7 @@ class PoliciesApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
-            ['application/x-www-form-urlencoded', 'application/json'])
+            ['application/json'])
 
         # Authentication setting
         auth_settings = ['AuthorizationHeader']
@@ -328,9 +328,9 @@ class PoliciesApi(object):
         limit=None,  # type: int
         member_ids=None,  # type: List[str]
         member_names=None,  # type: List[str]
+        offset=None,  # type: int
         policy_ids=None,  # type: List[str]
         policy_names=None,  # type: List[str]
-        offset=None,  # type: int
         sort=None,  # type: List[str]
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
@@ -353,9 +353,9 @@ class PoliciesApi(object):
         :param int limit: Limit the size of the response to the specified number of resources. A limit of 0 can be used to get the number of resources without getting all of the resources. It will be returned in the total_item_count field. If a client asks for a page size larger than the maximum number, the request is still valid. In that case the server just returns the maximum number of items, disregarding the client's page size request. If not specified, defaults to 1000. 
         :param list[str] member_ids: A comma-separated list of member IDs. If there is not at least one resource that matches each `member_id` element, an error is returned. Single quotes are required around all strings. 
         :param list[str] member_names: A comma-separated list of member names. If there is not at least one resource that matches each `member_name` element, an error is returned. Single quotes are required around all strings. 
+        :param int offset: The offset of the first resource to return from a collection. 
         :param list[str] policy_ids: A comma-separated list of policy IDs. If there is not at least one resource that matches each `policy_id` element, an error is returned. Single quotes are required around all strings. 
         :param list[str] policy_names: A comma-separated list of policy names. If there is not at least one resource that matches each `policy_name` element, an error is returned. Single quotes are required around all strings. 
-        :param int offset: The offset of the first resource to return from a collection. 
         :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
@@ -415,14 +415,14 @@ class PoliciesApi(object):
         if 'member_names' in params:
             query_params.append(('member_names', params['member_names']))
             collection_formats['member_names'] = 'csv'
+        if 'offset' in params:
+            query_params.append(('offset', params['offset']))
         if 'policy_ids' in params:
             query_params.append(('policy_ids', params['policy_ids']))
             collection_formats['policy_ids'] = 'csv'
         if 'policy_names' in params:
             query_params.append(('policy_names', params['policy_names']))
             collection_formats['policy_names'] = 'csv'
-        if 'offset' in params:
-            query_params.append(('offset', params['offset']))
         if 'sort' in params:
             query_params.append(('sort', params['sort']))
             collection_formats['sort'] = 'csv'
@@ -443,7 +443,7 @@ class PoliciesApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
-            ['application/x-www-form-urlencoded', 'application/json'])
+            ['application/json'])
 
         # Authentication setting
         auth_settings = ['AuthorizationHeader']
@@ -571,7 +571,7 @@ class PoliciesApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
-            ['application/x-www-form-urlencoded', 'application/json'])
+            ['application/json'])
 
         # Authentication setting
         auth_settings = ['AuthorizationHeader']
@@ -602,9 +602,9 @@ class PoliciesApi(object):
         limit=None,  # type: int
         member_ids=None,  # type: List[str]
         member_names=None,  # type: List[str]
+        offset=None,  # type: int
         policy_ids=None,  # type: List[str]
         policy_names=None,  # type: List[str]
-        offset=None,  # type: int
         sort=None,  # type: List[str]
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
@@ -627,9 +627,9 @@ class PoliciesApi(object):
         :param int limit: Limit the size of the response to the specified number of resources. A limit of 0 can be used to get the number of resources without getting all of the resources. It will be returned in the total_item_count field. If a client asks for a page size larger than the maximum number, the request is still valid. In that case the server just returns the maximum number of items, disregarding the client's page size request. If not specified, defaults to 1000. 
         :param list[str] member_ids: A comma-separated list of member IDs. If there is not at least one resource that matches each `member_id` element, an error is returned. Single quotes are required around all strings. 
         :param list[str] member_names: A comma-separated list of member names. If there is not at least one resource that matches each `member_name` element, an error is returned. Single quotes are required around all strings. 
+        :param int offset: The offset of the first resource to return from a collection. 
         :param list[str] policy_ids: A comma-separated list of policy IDs. If there is not at least one resource that matches each `policy_id` element, an error is returned. Single quotes are required around all strings. 
         :param list[str] policy_names: A comma-separated list of policy names. If there is not at least one resource that matches each `policy_name` element, an error is returned. Single quotes are required around all strings. 
-        :param int offset: The offset of the first resource to return from a collection. 
         :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
@@ -689,14 +689,14 @@ class PoliciesApi(object):
         if 'member_names' in params:
             query_params.append(('member_names', params['member_names']))
             collection_formats['member_names'] = 'csv'
+        if 'offset' in params:
+            query_params.append(('offset', params['offset']))
         if 'policy_ids' in params:
             query_params.append(('policy_ids', params['policy_ids']))
             collection_formats['policy_ids'] = 'csv'
         if 'policy_names' in params:
             query_params.append(('policy_names', params['policy_names']))
             collection_formats['policy_names'] = 'csv'
-        if 'offset' in params:
-            query_params.append(('offset', params['offset']))
         if 'sort' in params:
             query_params.append(('sort', params['sort']))
             collection_formats['sort'] = 'csv'
@@ -717,7 +717,7 @@ class PoliciesApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
-            ['application/x-www-form-urlencoded', 'application/json'])
+            ['application/json'])
 
         # Authentication setting
         auth_settings = ['AuthorizationHeader']

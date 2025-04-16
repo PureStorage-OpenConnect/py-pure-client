@@ -46,7 +46,7 @@ class ContainerEradicationConfig(object):
     ):
         """
         Keyword args:
-            manual_eradication (str): The manual eradication status of the container. If `all-enabled`, the container and its contents can be eradicated. If `partially-disabled`, the container cannot be eradicated because the container contains some non-empty protection groups that are retention-locked. If `all-disabled`, the container and its contents cannot be eradicated. Values include `all-disabled`, `all-enabled`, and `partially-disabled`.
+            manual_eradication (str): The manual eradication status of the container. If `all-enabled`, the container and its contents can be eradicated. If `partially-disabled`, the container cannot be eradicated because the container contains some non-empty protection groups that are retention-locked. If `all-disabled`, the container and its contents cannot be eradicated.  Values include `all-disabled`, `all-enabled`, and `partially-disabled`. 
         """
         if manual_eradication is not None:
             self.manual_eradication = manual_eradication

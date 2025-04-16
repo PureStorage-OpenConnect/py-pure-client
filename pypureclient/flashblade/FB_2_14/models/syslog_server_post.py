@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.14, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.14, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.14
     
@@ -49,8 +49,8 @@ class SyslogServerPost(object):
     ):
         """
         Keyword args:
-            uri (str): The URI of the syslog server in the format PROTOCOL://HOSTNAME:PORT.
-            services (list[str]): Valid values are `data-audit` and `management`. If not specified, defaults to `management`.
+            uri (str): The URI of the syslog server in the format PROTOCOL://HOSTNAME:PORT. 
+            services (list[str]): Valid values are `data-audit` and `management`. If not specified, defaults to `management`. 
         """
         if uri is not None:
             self.uri = uri

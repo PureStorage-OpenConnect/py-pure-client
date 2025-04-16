@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.10, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.10, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.10
     
@@ -30,21 +30,21 @@ class BucketPost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'account': 'ReferenceWritable',
-        'bucket_type': 'str',
-        'hard_limit_enabled': 'bool',
         'object_lock_config': 'ObjectLockConfigRequestBody',
         'quota_limit': 'str',
-        'retention_lock': 'str'
+        'hard_limit_enabled': 'bool',
+        'bucket_type': 'str',
+        'retention_lock': 'str',
+        'account': 'ReferenceWritable'
     }
 
     attribute_map = {
-        'account': 'account',
-        'bucket_type': 'bucket_type',
-        'hard_limit_enabled': 'hard_limit_enabled',
         'object_lock_config': 'object_lock_config',
         'quota_limit': 'quota_limit',
-        'retention_lock': 'retention_lock'
+        'hard_limit_enabled': 'hard_limit_enabled',
+        'bucket_type': 'bucket_type',
+        'retention_lock': 'retention_lock',
+        'account': 'account'
     }
 
     required_args = {
@@ -52,34 +52,34 @@ class BucketPost(object):
 
     def __init__(
         self,
-        account=None,  # type: models.ReferenceWritable
-        bucket_type=None,  # type: str
-        hard_limit_enabled=None,  # type: bool
         object_lock_config=None,  # type: models.ObjectLockConfigRequestBody
         quota_limit=None,  # type: str
+        hard_limit_enabled=None,  # type: bool
+        bucket_type=None,  # type: str
         retention_lock=None,  # type: str
+        account=None,  # type: models.ReferenceWritable
     ):
         """
         Keyword args:
-            account (ReferenceWritable): The account name for bucket creation.
-            bucket_type (str): The bucket type for the bucket.
-            hard_limit_enabled (bool): If set to `true`, the bucket's size, as defined by `quota_limit`, is used as a hard limit quota. If set to `false`, a hard limit quota will not be applied to the bucket, but soft quota alerts will still be sent if the bucket has a value set for `quota_limit`. If not specified, defaults to the value of `bucket_defaults.hard_limit_enabled` of the object store account this bucket is associated with.
             object_lock_config (ObjectLockConfigRequestBody)
-            quota_limit (str): The effective quota limit applied against the size of the bucket, displayed in bytes. If set to an empty string (`\"\"`), the bucket is unlimited in size. If not specified, defaults to the value of `bucket_defaults.quota_limit` of the object store account this bucket is associated with.
-            retention_lock (str): If set to `ratcheted`, then `object_lock_config.default_retention_mode` cannot be changed if set to `compliance`. In this case, the value of `object_lock_config.default_retention` can only be increased and `object_lock_config.default_retention_mode` cannot be changed once set to `compliance`. Valid values are `unlocked` and `ratcheted`. If not specified, defaults to `unlocked`.
+            quota_limit (str): The effective quota limit applied against the size of the bucket, displayed in bytes. If set to an empty string (`\"\"`), the bucket is unlimited in size. If not specified, defaults to the value of `bucket_defaults.quota_limit` of the object store account this bucket is associated with. 
+            hard_limit_enabled (bool): If set to `true`, the bucket's size, as defined by `quota_limit`, is used as a hard limit quota. If set to `false`, a hard limit quota will not be applied to the bucket, but soft quota alerts will still be sent if the bucket has a value set for `quota_limit`. If not specified, defaults to the value of `bucket_defaults.hard_limit_enabled` of the object store account this bucket is associated with. 
+            bucket_type (str): The bucket type for the bucket. 
+            retention_lock (str): If set to `ratcheted`, then `object_lock_config.default_retention_mode` cannot be changed if set to `compliance`. In this case, the value of `object_lock_config.default_retention` can only be increased and `object_lock_config.default_retention_mode` cannot be changed once set to `compliance`. Valid values are `unlocked` and `ratcheted`. If not specified, defaults to `unlocked`. 
+            account (ReferenceWritable): The account name for bucket creation.
         """
-        if account is not None:
-            self.account = account
-        if bucket_type is not None:
-            self.bucket_type = bucket_type
-        if hard_limit_enabled is not None:
-            self.hard_limit_enabled = hard_limit_enabled
         if object_lock_config is not None:
             self.object_lock_config = object_lock_config
         if quota_limit is not None:
             self.quota_limit = quota_limit
+        if hard_limit_enabled is not None:
+            self.hard_limit_enabled = hard_limit_enabled
+        if bucket_type is not None:
+            self.bucket_type = bucket_type
         if retention_lock is not None:
             self.retention_lock = retention_lock
+        if account is not None:
+            self.account = account
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

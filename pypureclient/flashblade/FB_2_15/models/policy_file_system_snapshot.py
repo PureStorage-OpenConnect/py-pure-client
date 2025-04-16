@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.15, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.15, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.15
     
@@ -30,13 +30,13 @@ class PolicyFileSystemSnapshot(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'policy': 'LocationReference',
-        'member': 'FixedReference'
+        'member': 'FixedReference',
+        'policy': 'LocationReference'
     }
 
     attribute_map = {
-        'policy': 'policy',
-        'member': 'member'
+        'member': 'member',
+        'policy': 'policy'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class PolicyFileSystemSnapshot(object):
 
     def __init__(
         self,
-        policy=None,  # type: models.LocationReference
         member=None,  # type: models.FixedReference
+        policy=None,  # type: models.LocationReference
     ):
         """
         Keyword args:
-            policy (LocationReference): Reference to the policy.
             member (FixedReference): Reference to the resource the policy is applied to.
+            policy (LocationReference): Reference to the policy.
         """
-        if policy is not None:
-            self.policy = policy
         if member is not None:
             self.member = member
+        if policy is not None:
+            self.policy = policy
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

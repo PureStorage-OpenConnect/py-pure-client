@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.16
     
@@ -32,10 +32,10 @@ class SmbClientPolicy(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
-        'enabled': 'bool',
-        'is_local': 'bool',
-        'location': 'FixedReference',
         'policy_type': 'str',
+        'location': 'FixedReference',
+        'is_local': 'bool',
+        'enabled': 'bool',
         'version': 'str',
         'rules': 'list[SmbClientPolicyRuleInPolicy]'
     }
@@ -43,10 +43,10 @@ class SmbClientPolicy(object):
     attribute_map = {
         'name': 'name',
         'id': 'id',
-        'enabled': 'enabled',
-        'is_local': 'is_local',
-        'location': 'location',
         'policy_type': 'policy_type',
+        'location': 'location',
+        'is_local': 'is_local',
+        'enabled': 'enabled',
         'version': 'version',
         'rules': 'rules'
     }
@@ -58,36 +58,36 @@ class SmbClientPolicy(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
-        enabled=None,  # type: bool
-        is_local=None,  # type: bool
-        location=None,  # type: models.FixedReference
         policy_type=None,  # type: str
+        location=None,  # type: models.FixedReference
+        is_local=None,  # type: bool
+        enabled=None,  # type: bool
         version=None,  # type: str
         rules=None,  # type: List[models.SmbClientPolicyRuleInPolicy]
     ):
         """
         Keyword args:
-            name (str): A name chosen by the user. Can be changed. Must be locally unique.
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            enabled (bool): If `true`, the policy is enabled. If not specified, defaults to `true`.
-            is_local (bool): Whether the policy is defined on the local array.
+            name (str): A name chosen by the user. Can be changed. Must be locally unique. 
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            policy_type (str): Type of the policy. Valid values include `alert`, `audit`, `bucket-access`, `cross-origin-resource-sharing`, `network-access`, `nfs`, `object-access`, `smb-client`, `smb-share`, `snapshot`, `ssh-certificate-authority`, and `worm-data`. 
             location (FixedReference): Reference to the array where the policy is defined.
-            policy_type (str): Type of the policy. Valid values include `alert`, `audit`, `bucket-access`, `cross-origin-resource-sharing`, `network-access`, `nfs`, `object-access`, `smb-client`, `smb-share`, `snapshot`, `ssh-certificate-authority`, and `worm-data`.
-            version (str): A hash of the other properties of this resource. This can be used when updating the resource to ensure there aren't any updates since the resource was read.
-            rules (list[SmbClientPolicyRuleInPolicy]): All of the rules that are part of this policy. The order is the evaluation order.
+            is_local (bool): Whether the policy is defined on the local array.
+            enabled (bool): If `true`, the policy is enabled. If not specified, defaults to `true`. 
+            version (str): A hash of the other properties of this resource. This can be used when updating the resource to ensure there aren't any updates since the resource was read. 
+            rules (list[SmbClientPolicyRuleInPolicy]): All of the rules that are part of this policy. The order is the evaluation order. 
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
-        if enabled is not None:
-            self.enabled = enabled
-        if is_local is not None:
-            self.is_local = is_local
-        if location is not None:
-            self.location = location
         if policy_type is not None:
             self.policy_type = policy_type
+        if location is not None:
+            self.location = location
+        if is_local is not None:
+            self.is_local = is_local
+        if enabled is not None:
+            self.enabled = enabled
         if version is not None:
             self.version = version
         if rules is not None:

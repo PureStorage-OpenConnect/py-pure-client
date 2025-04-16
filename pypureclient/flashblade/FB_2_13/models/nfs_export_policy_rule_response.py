@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.13, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.13, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.13
     
@@ -46,7 +46,7 @@ class NfsExportPolicyRuleResponse(object):
     ):
         """
         Keyword args:
-            items (list[NfsExportPolicyRule]): Displays a list of all items after filtering.
+            items (list[NfsExportPolicyRule]): Displays a list of all items after filtering. 
         """
         if items is not None:
             self.items = items

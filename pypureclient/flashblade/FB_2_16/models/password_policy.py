@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.16
     
@@ -32,37 +32,37 @@ class PasswordPolicy(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
-        'enabled': 'bool',
-        'is_local': 'bool',
-        'location': 'FixedReference',
         'policy_type': 'str',
+        'location': 'FixedReference',
+        'is_local': 'bool',
+        'enabled': 'bool',
+        'enforce_dictionary_check': 'bool',
         'lockout_duration': 'int',
-        'max_login_attempts': 'int',
         'min_password_length': 'int',
-        'password_history': 'int',
-        'min_password_age': 'int',
         'min_character_groups': 'int',
-        'min_characters_per_group': 'int',
+        'max_login_attempts': 'int',
         'enforce_username_check': 'bool',
-        'enforce_dictionary_check': 'bool'
+        'min_characters_per_group': 'int',
+        'password_history': 'int',
+        'min_password_age': 'int'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
-        'enabled': 'enabled',
-        'is_local': 'is_local',
-        'location': 'location',
         'policy_type': 'policy_type',
+        'location': 'location',
+        'is_local': 'is_local',
+        'enabled': 'enabled',
+        'enforce_dictionary_check': 'enforce_dictionary_check',
         'lockout_duration': 'lockout_duration',
-        'max_login_attempts': 'max_login_attempts',
         'min_password_length': 'min_password_length',
-        'password_history': 'password_history',
-        'min_password_age': 'min_password_age',
         'min_character_groups': 'min_character_groups',
-        'min_characters_per_group': 'min_characters_per_group',
+        'max_login_attempts': 'max_login_attempts',
         'enforce_username_check': 'enforce_username_check',
-        'enforce_dictionary_check': 'enforce_dictionary_check'
+        'min_characters_per_group': 'min_characters_per_group',
+        'password_history': 'password_history',
+        'min_password_age': 'min_password_age'
     }
 
     required_args = {
@@ -72,68 +72,68 @@ class PasswordPolicy(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
-        enabled=None,  # type: bool
-        is_local=None,  # type: bool
-        location=None,  # type: models.FixedReference
         policy_type=None,  # type: str
+        location=None,  # type: models.FixedReference
+        is_local=None,  # type: bool
+        enabled=None,  # type: bool
+        enforce_dictionary_check=None,  # type: bool
         lockout_duration=None,  # type: int
-        max_login_attempts=None,  # type: int
         min_password_length=None,  # type: int
+        min_character_groups=None,  # type: int
+        max_login_attempts=None,  # type: int
+        enforce_username_check=None,  # type: bool
+        min_characters_per_group=None,  # type: int
         password_history=None,  # type: int
         min_password_age=None,  # type: int
-        min_character_groups=None,  # type: int
-        min_characters_per_group=None,  # type: int
-        enforce_username_check=None,  # type: bool
-        enforce_dictionary_check=None,  # type: bool
     ):
         """
         Keyword args:
-            name (str): A name chosen by the user. Can be changed. Must be locally unique.
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            enabled (bool): If `true`, the policy is enabled. If not specified, defaults to `true`.
-            is_local (bool): Whether the policy is defined on the local array.
+            name (str): A name chosen by the user. Can be changed. Must be locally unique. 
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            policy_type (str): Type of the policy. Valid values include `alert`, `audit`, `bucket-access`, `cross-origin-resource-sharing`, `network-access`, `nfs`, `object-access`, `smb-client`, `smb-share`, `snapshot`, `ssh-certificate-authority`, and `worm-data`. 
             location (FixedReference): Reference to the array where the policy is defined.
-            policy_type (str): Type of the policy. Valid values include `alert`, `audit`, `bucket-access`, `cross-origin-resource-sharing`, `network-access`, `nfs`, `object-access`, `smb-client`, `smb-share`, `snapshot`, `ssh-certificate-authority`, and `worm-data`.
-            lockout_duration (int): The lockout duration, in milliseconds, if a user is locked out after reaching the maximum number of login attempts. Ranges from 1 second to 90 days.
-            max_login_attempts (int): Maximum number of failed login attempts allowed before the user is locked out.
-            min_password_length (int): Minimum password length. If not specified, defaults to 1.
-            password_history (int): The number of passwords tracked to prevent reuse of passwords.
-            min_password_age (int): The minimum age, in milliseconds, of password before password change is allowed. Ranges from 0 ms to 7 days with precision to 1 hour.
-            min_character_groups (int): The minimum number of character groups ([a-z], [A-Z], [0-9], other) required to be present in a password.
-            min_characters_per_group (int): The minimum number of characters per group to count the group as present.
-            enforce_username_check (bool): If `true`, the username cannot be a substring of the password. Only applies to usernames of 4 characters and longer.
-            enforce_dictionary_check (bool): If `true`, test password against dictionary of known leaked passwords. Requires passwords longer than 6 characters.
+            is_local (bool): Whether the policy is defined on the local array.
+            enabled (bool): If `true`, the policy is enabled. If not specified, defaults to `true`. 
+            enforce_dictionary_check (bool): If `true`, test password against dictionary of known leaked passwords. Requires passwords longer than 6 characters. 
+            lockout_duration (int): The lockout duration, in milliseconds, if a user is locked out after reaching the maximum number of login attempts. Ranges from 1 second to 90 days. 
+            min_password_length (int): Minimum password length. If not specified, defaults to 1. 
+            min_character_groups (int): The minimum number of character groups ([a-z], [A-Z], [0-9], other) required to be present in a password. 
+            max_login_attempts (int): Maximum number of failed login attempts allowed before the user is locked out. 
+            enforce_username_check (bool): If `true`, the username cannot be a substring of the password. Only applies to usernames of 4 characters and longer. 
+            min_characters_per_group (int): The minimum number of characters per group to count the group as present. 
+            password_history (int): The number of passwords tracked to prevent reuse of passwords. 
+            min_password_age (int): The minimum age, in milliseconds, of password before password change is allowed. Ranges from 0 ms to 7 days with precision to 1 hour. 
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
-        if enabled is not None:
-            self.enabled = enabled
-        if is_local is not None:
-            self.is_local = is_local
-        if location is not None:
-            self.location = location
         if policy_type is not None:
             self.policy_type = policy_type
+        if location is not None:
+            self.location = location
+        if is_local is not None:
+            self.is_local = is_local
+        if enabled is not None:
+            self.enabled = enabled
+        if enforce_dictionary_check is not None:
+            self.enforce_dictionary_check = enforce_dictionary_check
         if lockout_duration is not None:
             self.lockout_duration = lockout_duration
-        if max_login_attempts is not None:
-            self.max_login_attempts = max_login_attempts
         if min_password_length is not None:
             self.min_password_length = min_password_length
+        if min_character_groups is not None:
+            self.min_character_groups = min_character_groups
+        if max_login_attempts is not None:
+            self.max_login_attempts = max_login_attempts
+        if enforce_username_check is not None:
+            self.enforce_username_check = enforce_username_check
+        if min_characters_per_group is not None:
+            self.min_characters_per_group = min_characters_per_group
         if password_history is not None:
             self.password_history = password_history
         if min_password_age is not None:
             self.min_password_age = min_password_age
-        if min_character_groups is not None:
-            self.min_character_groups = min_character_groups
-        if min_characters_per_group is not None:
-            self.min_characters_per_group = min_characters_per_group
-        if enforce_username_check is not None:
-            self.enforce_username_check = enforce_username_check
-        if enforce_dictionary_check is not None:
-            self.enforce_dictionary_check = enforce_dictionary_check
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
@@ -143,16 +143,24 @@ class PasswordPolicy(object):
                 raise ValueError("Invalid value for `lockout_duration`, value must be less than or equal to `7776000000`")
             if value < 0:
                 raise ValueError("Invalid value for `lockout_duration`, must be a value greater than or equal to `0`")
-        if key == "max_login_attempts" and value is not None:
-            if value > 100:
-                raise ValueError("Invalid value for `max_login_attempts`, value must be less than or equal to `100`")
-            if value < 0:
-                raise ValueError("Invalid value for `max_login_attempts`, must be a value greater than or equal to `0`")
         if key == "min_password_length" and value is not None:
             if value > 100:
                 raise ValueError("Invalid value for `min_password_length`, value must be less than or equal to `100`")
             if value < 0:
                 raise ValueError("Invalid value for `min_password_length`, must be a value greater than or equal to `0`")
+        if key == "min_character_groups" and value is not None:
+            if value > 4:
+                raise ValueError("Invalid value for `min_character_groups`, value must be less than or equal to `4`")
+            if value < 0:
+                raise ValueError("Invalid value for `min_character_groups`, must be a value greater than or equal to `0`")
+        if key == "max_login_attempts" and value is not None:
+            if value > 100:
+                raise ValueError("Invalid value for `max_login_attempts`, value must be less than or equal to `100`")
+            if value < 0:
+                raise ValueError("Invalid value for `max_login_attempts`, must be a value greater than or equal to `0`")
+        if key == "min_characters_per_group" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `min_characters_per_group`, must be a value greater than or equal to `0`")
         if key == "password_history" and value is not None:
             if value > 64:
                 raise ValueError("Invalid value for `password_history`, value must be less than or equal to `64`")
@@ -163,14 +171,6 @@ class PasswordPolicy(object):
                 raise ValueError("Invalid value for `min_password_age`, value must be less than or equal to `604800000`")
             if value < 0:
                 raise ValueError("Invalid value for `min_password_age`, must be a value greater than or equal to `0`")
-        if key == "min_character_groups" and value is not None:
-            if value > 4:
-                raise ValueError("Invalid value for `min_character_groups`, value must be less than or equal to `4`")
-            if value < 0:
-                raise ValueError("Invalid value for `min_character_groups`, must be a value greater than or equal to `0`")
-        if key == "min_characters_per_group" and value is not None:
-            if value < 0:
-                raise ValueError("Invalid value for `min_characters_per_group`, must be a value greater than or equal to `0`")
         self.__dict__[key] = value
 
     def __getattribute__(self, item):

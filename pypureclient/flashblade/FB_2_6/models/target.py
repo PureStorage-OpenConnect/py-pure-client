@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.6, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.6, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.6
     
@@ -34,8 +34,8 @@ class Target(object):
         'id': 'str',
         'address': 'str',
         'ca_certificate_group': 'FixedReference',
-        'status': 'str',
-        'status_details': 'str'
+        'status_details': 'str',
+        'status': 'str'
     }
 
     attribute_map = {
@@ -43,8 +43,8 @@ class Target(object):
         'id': 'id',
         'address': 'address',
         'ca_certificate_group': 'ca_certificate_group',
-        'status': 'status',
-        'status_details': 'status_details'
+        'status_details': 'status_details',
+        'status': 'status'
     }
 
     required_args = {
@@ -56,17 +56,17 @@ class Target(object):
         id=None,  # type: str
         address=None,  # type: str
         ca_certificate_group=None,  # type: models.FixedReference
-        status=None,  # type: str
         status_details=None,  # type: str
+        status=None,  # type: str
     ):
         """
         Keyword args:
-            name (str): A name chosen by the user. Can be changed. Must be locally unique.
-            id (str): A non-modifiable, globally unique ID chosen by the system.
+            name (str): A name chosen by the user. Can be changed. Must be locally unique. 
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
             address (str): IP address or FQDN of the target system.
-            ca_certificate_group (FixedReference): The group of CA certificates that can be used, in addition to well-known Certificate Authority certificates, in order to establish a secure connection to the target system. Defaults to a reference to the `_default_replication_certs` group.
-            status (str): Status of the connection. Valid values are `connected` and `connecting`. `connected` - The connection is OK. `connecting` - No connection exists and the array is trying to reconnect to the target.
-            status_details (str): Additional information describing any issues encountered when connecting, or `null` if the `status` is `connected`.
+            ca_certificate_group (FixedReference): The group of CA certificates that can be used, in addition to well-known Certificate Authority certificates, in order to establish a secure connection to the target system. Defaults to a reference to the `_default_replication_certs` group. 
+            status_details (str): Additional information describing any issues encountered when connecting, or `null` if the `status` is `connected`. 
+            status (str): Status of the connection. Valid values are `connected` and `connecting`. `connected` - The connection is OK. `connecting` - No connection exists and the array is trying to reconnect to the target. 
         """
         if name is not None:
             self.name = name
@@ -76,10 +76,10 @@ class Target(object):
             self.address = address
         if ca_certificate_group is not None:
             self.ca_certificate_group = ca_certificate_group
-        if status is not None:
-            self.status = status
         if status_details is not None:
             self.status_details = status_details
+        if status is not None:
+            self.status = status
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

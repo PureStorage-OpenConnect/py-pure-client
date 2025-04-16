@@ -31,14 +31,14 @@ class ProtectionGroupsVolumes(object):
     """
     swagger_types = {
         'context': 'FixedReference',
-        'group': 'Reference',
-        'member': 'ProtectionGroupsVolumesMember'
+        'member': 'ProtectionGroupsVolumesMember',
+        'group': 'Reference'
     }
 
     attribute_map = {
         'context': 'context',
-        'group': 'group',
-        'member': 'member'
+        'member': 'member',
+        'group': 'group'
     }
 
     required_args = {
@@ -47,21 +47,21 @@ class ProtectionGroupsVolumes(object):
     def __init__(
         self,
         context=None,  # type: models.FixedReference
-        group=None,  # type: models.Reference
         member=None,  # type: models.ProtectionGroupsVolumesMember
+        group=None,  # type: models.Reference
     ):
         """
         Keyword args:
-            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
-            group (Reference)
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request.  Other parameters provided with the request, such as names of volumes or snapshots,  are resolved relative to the provided `context`. 
             member (ProtectionGroupsVolumesMember)
+            group (Reference)
         """
         if context is not None:
             self.context = context
-        if group is not None:
-            self.group = group
         if member is not None:
             self.member = member
+        if group is not None:
+            self.group = group
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

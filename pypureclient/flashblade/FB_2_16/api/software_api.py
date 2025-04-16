@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.16
     
@@ -34,8 +34,8 @@ class SoftwareApi(object):
         limit=None,  # type: int
         names=None,  # type: List[str]
         offset=None,  # type: int
-        software_versions=None,  # type: List[str]
         software_names=None,  # type: List[str]
+        software_versions=None,  # type: List[str]
         sort=None,  # type: List[str]
         total_item_count=None,  # type: bool
         async_req=False,  # type: bool
@@ -52,15 +52,15 @@ class SoftwareApi(object):
         >>> thread = api.api216_software_check_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param str filter: Exclude resources that don't match the specified criteria.
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
-        :param int offset: The offset of the first resource to return from a collection.
-        :param list[str] software_versions: A comma-separated list of target software versions.
-        :param list[str] software_names: A comma-separated list of software names.
-        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.
-        :param bool total_item_count: If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.
+        :param str filter: Exclude resources that don't match the specified criteria. 
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
+        :param int offset: The offset of the first resource to return from a collection. 
+        :param list[str] software_names: A comma-separated list of software names. 
+        :param list[str] software_versions: A comma-separated list of target software versions. 
+        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response. 
+        :param bool total_item_count: If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count`  is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -76,12 +76,12 @@ class SoftwareApi(object):
         if names is not None:
             if not isinstance(names, list):
                 names = [names]
-        if software_versions is not None:
-            if not isinstance(software_versions, list):
-                software_versions = [software_versions]
         if software_names is not None:
             if not isinstance(software_names, list):
                 software_names = [software_names]
+        if software_versions is not None:
+            if not isinstance(software_versions, list):
+                software_versions = [software_versions]
         if sort is not None:
             if not isinstance(sort, list):
                 sort = [sort]
@@ -116,12 +116,12 @@ class SoftwareApi(object):
             collection_formats['names'] = 'csv'
         if 'offset' in params:
             query_params.append(('offset', params['offset']))
-        if 'software_versions' in params:
-            query_params.append(('software_versions', params['software_versions']))
-            collection_formats['software_versions'] = 'csv'
         if 'software_names' in params:
             query_params.append(('software_names', params['software_names']))
             collection_formats['software_names'] = 'csv'
+        if 'software_versions' in params:
+            query_params.append(('software_versions', params['software_versions']))
+            collection_formats['software_versions'] = 'csv'
         if 'sort' in params:
             query_params.append(('sort', params['sort']))
             collection_formats['sort'] = 'csv'
@@ -165,8 +165,8 @@ class SoftwareApi(object):
     def api216_software_check_post_with_http_info(
         self,
         x_request_id=None,  # type: str
-        software_versions=None,  # type: List[str]
         software_names=None,  # type: List[str]
+        software_versions=None,  # type: List[str]
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -175,15 +175,15 @@ class SoftwareApi(object):
         # type: (...) -> models.SoftwareChecksResponse
         """Create a software check task
 
-        Creates a software check task. To create a task, use a software name and version. If a task is already running, an error is returned.
+        Creates a software check task. To create a task, use a software name and version. If a task is already running, an error is returned. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api216_software_check_post_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param str x_request_id: Supplied by client during request or generated by server.
-        :param list[str] software_versions: A comma-separated list of target software versions.
-        :param list[str] software_names: A comma-separated list of software names.
+        :param str x_request_id: Supplied by client during request or generated by server. 
+        :param list[str] software_names: A comma-separated list of software names. 
+        :param list[str] software_versions: A comma-separated list of target software versions. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -193,12 +193,12 @@ class SoftwareApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        if software_versions is not None:
-            if not isinstance(software_versions, list):
-                software_versions = [software_versions]
         if software_names is not None:
             if not isinstance(software_names, list):
                 software_names = [software_names]
+        if software_versions is not None:
+            if not isinstance(software_versions, list):
+                software_versions = [software_versions]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
 
         # Convert the filter into a string
@@ -214,12 +214,12 @@ class SoftwareApi(object):
         path_params = {}
 
         query_params = []
-        if 'software_versions' in params:
-            query_params.append(('software_versions', params['software_versions']))
-            collection_formats['software_versions'] = 'csv'
         if 'software_names' in params:
             query_params.append(('software_names', params['software_names']))
             collection_formats['software_names'] = 'csv'
+        if 'software_versions' in params:
+            query_params.append(('software_versions', params['software_versions']))
+            collection_formats['software_versions'] = 'csv'
 
         header_params = {}
         if 'x_request_id' in params:
