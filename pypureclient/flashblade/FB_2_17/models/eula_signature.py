@@ -55,10 +55,10 @@ class EulaSignature(object):
     ):
         """
         Keyword args:
-            name (str): The name of the person who accepted the End User Agreement. This field is deprecated and the response will be `null`. Modification to this field will be ignored. 
+            name (str): Name of the person who accepted the End User Agreement. This field is deprecated and the response will be `null`. Modification to this field will be ignored. 
             accepted (int): Accepted time in milliseconds since the UNIX epoch.
-            company (str): The company of the person who accepted the End User Agreement. This field is deprecated and the response will be `null`. Modification to this field will be ignored. 
-            title (str): The title of the person who accepted the End User Agreement. This field is deprecated and the response will be `null`. Modification to this field will be ignored. 
+            company (str): Company of the person who accepted the End User Agreement. This field is deprecated and the response will be `null`. Modification to this field will be ignored. 
+            title (str): Title of the person who accepted the End User Agreement. This field is deprecated and the response will be `null`. Modification to this field will be ignored. 
         """
         if name is not None:
             self.name = name

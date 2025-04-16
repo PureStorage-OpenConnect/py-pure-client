@@ -30,28 +30,28 @@ class RemoteVolumeSnapshot(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
-        'created': 'int',
+        'id': 'str',
+        'time_remaining': 'int',
         'destroyed': 'bool',
         'pod': 'FixedReference',
         'provisioned': 'int',
+        'created': 'int',
         'source': 'FixedReference',
         'suffix': 'str',
-        'time_remaining': 'int',
         'remote': 'FixedReference'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
-        'created': 'created',
+        'id': 'id',
+        'time_remaining': 'time_remaining',
         'destroyed': 'destroyed',
         'pod': 'pod',
         'provisioned': 'provisioned',
+        'created': 'created',
         'source': 'source',
         'suffix': 'suffix',
-        'time_remaining': 'time_remaining',
         'remote': 'remote'
     }
 
@@ -60,48 +60,48 @@ class RemoteVolumeSnapshot(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
-        created=None,  # type: int
+        id=None,  # type: str
+        time_remaining=None,  # type: int
         destroyed=None,  # type: bool
         pod=None,  # type: models.FixedReference
         provisioned=None,  # type: int
+        created=None,  # type: int
         source=None,  # type: models.FixedReference
         suffix=None,  # type: str
-        time_remaining=None,  # type: int
         remote=None,  # type: models.FixedReference
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            name (str): A user-specified name. The name must be locally unique and can be changed.
-            created (int): The snapshot creation time. Measured in milliseconds since the UNIX epoch.
-            destroyed (bool): Returns a value of `true` if the snapshot has been destroyed and is pending eradication. The `time_remaining` value displays the amount of time left until the destroyed volume snapshot is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed volume snapshot can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the volume snapshot is permanently eradicated and can no longer be recovered.
-            pod (FixedReference): A reference to the pod.
-            provisioned (int): The provisioned space of the snapshot. Measured in bytes. The minimum size is 1048576 (1MB), the maximum size is 4503599627370496 (4PB)
-            source (FixedReference): The volume from which this snapshot was taken. For a replicated snapshot being viewed on the target side, the `source` is the replica volume.
-            suffix (str): The suffix that is appended to the `source_name` value to generate the full volume snapshot name in the form `VOL.SUFFIX`. If the suffix is not specified, the system constructs the snapshot name in the form `VOL.NNN`, where `VOL` is the volume name, and `NNN` is a monotonically increasing number.
-            time_remaining (int): The amount of time left until the destroyed snapshot is permanently eradicated. Measured in milliseconds. Before the `time_remaining` period has elapsed, the destroyed snapshot can be recovered by setting `destroyed=false`.
-            remote (FixedReference): Remote target where this volume snapshot is located.
+            name (str): A user-specified name. The name must be locally unique and can be changed. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource. 
+            time_remaining (int): The amount of time left until the destroyed snapshot is permanently eradicated. Measured in milliseconds. Before the `time_remaining` period has elapsed, the destroyed snapshot can be recovered by setting `destroyed=false`. 
+            destroyed (bool): Returns a value of `true` if the snapshot has been destroyed and is pending eradication. The `time_remaining` value displays the amount of time left until the destroyed volume snapshot is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed volume snapshot can be recovered by setting `destroyed=false`.  Once the `time_remaining` period has elapsed, the volume snapshot is permanently eradicated and can no longer be recovered. 
+            pod (FixedReference): A reference to the pod. 
+            provisioned (int): The provisioned space of the snapshot. Measured in bytes. The minimum size is 1048576 (1MB), the maximum size is 4503599627370496 (4PB) 
+            created (int): The snapshot creation time. Measured in milliseconds since the UNIX epoch. 
+            source (FixedReference): The volume from which this snapshot was taken. For a replicated snapshot being viewed on the target side, the `source` is the replica volume. 
+            suffix (str): The suffix that is appended to the `source_name` value to generate the full volume snapshot name in the form `VOL.SUFFIX`. If the suffix is not specified, the system constructs the snapshot name in the form `VOL.NNN`, where `VOL` is the volume name, and `NNN` is a monotonically increasing number. 
+            remote (FixedReference): Remote target where this volume snapshot is located. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
-        if created is not None:
-            self.created = created
+        if id is not None:
+            self.id = id
+        if time_remaining is not None:
+            self.time_remaining = time_remaining
         if destroyed is not None:
             self.destroyed = destroyed
         if pod is not None:
             self.pod = pod
         if provisioned is not None:
             self.provisioned = provisioned
+        if created is not None:
+            self.created = created
         if source is not None:
             self.source = source
         if suffix is not None:
             self.suffix = suffix
-        if time_remaining is not None:
-            self.time_remaining = time_remaining
         if remote is not None:
             self.remote = remote
 

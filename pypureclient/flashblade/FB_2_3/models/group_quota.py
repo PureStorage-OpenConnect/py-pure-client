@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.3, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.3, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.3
     
@@ -32,19 +32,19 @@ class GroupQuota(object):
     swagger_types = {
         'name': 'str',
         'file_system': 'FixedReference',
-        'file_system_default_quota': 'int',
-        'group': 'Group',
         'quota': 'int',
-        'usage': 'int'
+        'usage': 'int',
+        'file_system_default_quota': 'int',
+        'group': 'Group'
     }
 
     attribute_map = {
         'name': 'name',
         'file_system': 'file_system',
-        'file_system_default_quota': 'file_system_default_quota',
-        'group': 'group',
         'quota': 'quota',
-        'usage': 'usage'
+        'usage': 'usage',
+        'file_system_default_quota': 'file_system_default_quota',
+        'group': 'group'
     }
 
     required_args = {
@@ -54,32 +54,32 @@ class GroupQuota(object):
         self,
         name=None,  # type: str
         file_system=None,  # type: models.FixedReference
-        file_system_default_quota=None,  # type: int
-        group=None,  # type: models.Group
         quota=None,  # type: int
         usage=None,  # type: int
+        file_system_default_quota=None,  # type: int
+        group=None,  # type: models.Group
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
             file_system (FixedReference)
-            file_system_default_quota (int): File system's default group quota (in bytes). If it is `0`, it means there is no default quota. This will be the effective group quota if the group doesn't have an individual quota. This default quota is set through the `file-systems` endpoint.
+            quota (int): The space limit of the quota (in bytes) for the specified group, cannot be `0`. If specified, this value will override the file system's default group quota. 
+            usage (int): The usage of the file system (in bytes) by the specified group. 
+            file_system_default_quota (int): File system's default group quota (in bytes). If it is `0`, it means there is no default quota. This will be the effective group quota if the group doesn't have an individual quota. This default quota is set through the `file-systems` endpoint. 
             group (Group): The group on which this quota is enforced.
-            quota (int): The space limit of the quota (in bytes) for the specified group, cannot be `0`. If specified, this value will override the file system's default group quota.
-            usage (int): The usage of the file system (in bytes) by the specified group.
         """
         if name is not None:
             self.name = name
         if file_system is not None:
             self.file_system = file_system
-        if file_system_default_quota is not None:
-            self.file_system_default_quota = file_system_default_quota
-        if group is not None:
-            self.group = group
         if quota is not None:
             self.quota = quota
         if usage is not None:
             self.usage = usage
+        if file_system_default_quota is not None:
+            self.file_system_default_quota = file_system_default_quota
+        if group is not None:
+            self.group = group
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

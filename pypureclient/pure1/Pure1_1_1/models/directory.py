@@ -3,7 +3,7 @@
 """
     Pure1 Public REST API
 
-    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)  The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
+    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)   The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
 
     OpenAPI spec version: 1.1
     
@@ -31,26 +31,26 @@ class Directory(object):
     """
     swagger_types = {
         'as_of': 'int',
-        'id': 'str',
         'name': 'str',
+        'id': 'str',
         'arrays': 'list[FixedReferenceFqdn]',
-        'created': 'int',
+        'path': 'str',
         'destroyed': 'bool',
-        'directory_name': 'str',
         'file_system': 'FixedReference',
-        'path': 'str'
+        'created': 'int',
+        'directory_name': 'str'
     }
 
     attribute_map = {
         'as_of': '_as_of',
-        'id': 'id',
         'name': 'name',
+        'id': 'id',
         'arrays': 'arrays',
-        'created': 'created',
+        'path': 'path',
         'destroyed': 'destroyed',
-        'directory_name': 'directory_name',
         'file_system': 'file_system',
-        'path': 'path'
+        'created': 'created',
+        'directory_name': 'directory_name'
     }
 
     required_args = {
@@ -59,45 +59,45 @@ class Directory(object):
     def __init__(
         self,
         as_of=None,  # type: int
-        id=None,  # type: str
         name=None,  # type: str
+        id=None,  # type: str
         arrays=None,  # type: List[models.FixedReferenceFqdn]
-        created=None,  # type: int
-        destroyed=None,  # type: bool
-        directory_name=None,  # type: str
-        file_system=None,  # type: models.FixedReference
         path=None,  # type: str
+        destroyed=None,  # type: bool
+        file_system=None,  # type: models.FixedReference
+        created=None,  # type: int
+        directory_name=None,  # type: str
     ):
         """
         Keyword args:
             as_of (int): The freshness of the data (timestamp in millis since epoch).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
             name (str): A non-modifiable, locally unique name chosen by the system.
-            arrays (list[FixedReferenceFqdn]): The list of arrays where this resource exists. Many resources are on a single array, but some resources, such as pods, can be shared across multiple arrays.
+            id (str): A non-modifiable, globally unique ID chosen by the system.
+            arrays (list[FixedReferenceFqdn]): The list of arrays where this resource exists. Many resources are on a single array, but some resources, such as pods, can be shared across multiple arrays. 
+            path (str): Absolute path of the managed directory in the file system. 
+            destroyed (bool): Is the managed directory destroyed? 
+            file_system (FixedReference): The file system that this managed directory is in. 
             created (int): Creation time in milliseconds since UNIX epoch.
-            destroyed (bool): Is the managed directory destroyed?
-            directory_name (str): The managed directory name without the file system name prefix. A managed directory full name is constructed in the form of `FILE_SYSTEM:DIR` where `FILE_SYSTEM` is the file system name and `DIR` is the value of this field. On FlashArray versions below `6.0.2`, the value is always `null`.
-            file_system (FixedReference): The file system that this managed directory is in.
-            path (str): Absolute path of the managed directory in the file system.
+            directory_name (str): The managed directory name without the file system name prefix. A managed directory full name is constructed in the form of `FILE_SYSTEM:DIR` where `FILE_SYSTEM` is the file system name and `DIR` is the value of this field. On FlashArray versions below `6.0.2`, the value is always `null`. 
         """
         if as_of is not None:
             self.as_of = as_of
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
         if arrays is not None:
             self.arrays = arrays
-        if created is not None:
-            self.created = created
-        if destroyed is not None:
-            self.destroyed = destroyed
-        if directory_name is not None:
-            self.directory_name = directory_name
-        if file_system is not None:
-            self.file_system = file_system
         if path is not None:
             self.path = path
+        if destroyed is not None:
+            self.destroyed = destroyed
+        if file_system is not None:
+            self.file_system = file_system
+        if created is not None:
+            self.created = created
+        if directory_name is not None:
+            self.directory_name = directory_name
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

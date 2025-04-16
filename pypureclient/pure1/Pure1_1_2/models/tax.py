@@ -3,7 +3,7 @@
 """
     Pure1 Public REST API
 
-    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)  The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
+    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)   The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
 
     OpenAPI spec version: 1.2
     
@@ -30,15 +30,15 @@ class Tax(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'percentage': 'float',
+        'exemption_statement': 'str',
         'amount': 'float',
-        'exemption_statement': 'str'
+        'percentage': 'float'
     }
 
     attribute_map = {
-        'percentage': 'percentage',
+        'exemption_statement': 'exemption_statement',
         'amount': 'amount',
-        'exemption_statement': 'exemption_statement'
+        'percentage': 'percentage'
     }
 
     required_args = {
@@ -46,31 +46,31 @@ class Tax(object):
 
     def __init__(
         self,
-        percentage=None,  # type: float
-        amount=None,  # type: float
         exemption_statement=None,  # type: str
+        amount=None,  # type: float
+        percentage=None,  # type: float
     ):
         """
         Keyword args:
-            percentage (float): The tax ratio in percentage.
-            amount (float): The total taxes of current invoice item, currency is specified in invoice currency.
             exemption_statement (str): The tax exemption statement.
+            amount (float): The total taxes of current invoice item, currency is specified in invoice currency.
+            percentage (float): The tax ratio in percentage.
         """
-        if percentage is not None:
-            self.percentage = percentage
-        if amount is not None:
-            self.amount = amount
         if exemption_statement is not None:
             self.exemption_statement = exemption_statement
+        if amount is not None:
+            self.amount = amount
+        if percentage is not None:
+            self.percentage = percentage
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
             raise KeyError("Invalid key `{}` for `Tax`".format(key))
         if key == "percentage" and value is not None:
-            if value > 1.0:
-                raise ValueError("Invalid value for `percentage`, value must be less than or equal to `1.0`")
-            if value < 0.0:
-                raise ValueError("Invalid value for `percentage`, must be a value greater than or equal to `0.0`")
+            if value > 1:
+                raise ValueError("Invalid value for `percentage`, value must be less than or equal to `1`")
+            if value < 0:
+                raise ValueError("Invalid value for `percentage`, must be a value greater than or equal to `0`")
         self.__dict__[key] = value
 
     def __getattribute__(self, item):

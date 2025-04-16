@@ -3,7 +3,7 @@
 """
     FlashBlade REST API Client
 
-    A lightweight client for FlashBlade REST API 2.0, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.0, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.0
     
@@ -32,15 +32,15 @@ class LifecycleRulePost(object):
     swagger_types = {
         'bucket': 'ReferenceWritable',
         'rule_id': 'str',
-        'keep_previous_version_for': 'int',
-        'prefix': 'str'
+        'prefix': 'str',
+        'keep_previous_version_for': 'int'
     }
 
     attribute_map = {
         'bucket': 'bucket',
         'rule_id': 'rule_id',
-        'keep_previous_version_for': 'keep_previous_version_for',
-        'prefix': 'prefix'
+        'prefix': 'prefix',
+        'keep_previous_version_for': 'keep_previous_version_for'
     }
 
     required_args = {
@@ -50,24 +50,24 @@ class LifecycleRulePost(object):
         self,
         bucket=None,  # type: models.ReferenceWritable
         rule_id=None,  # type: str
-        keep_previous_version_for=None,  # type: int
         prefix=None,  # type: str
+        keep_previous_version_for=None,  # type: int
     ):
         """
         Keyword args:
             bucket (ReferenceWritable): The bucket name for lifecycle rule creation.
-            rule_id (str): Identifier for the rule that is unique to the bucket that it applies to. Can have a maximum length of 255 characters. If not specified, an id unique to the bucket will be generated in the format `fbRuleId<number>` where number increments, starting at 1.
-            keep_previous_version_for (int): Time after which previous versions will be marked expired. Measured in milliseconds. Must be a multiple of 86400000 to represent a whole number of days.
-            prefix (str): Object key prefix identifying one or more objects in the bucket. Can have a maximum length of 1024 characters.
+            rule_id (str): Identifier for the rule that is unique to the bucket that it applies to. Can have a maximum length of 255 characters. If not specified, an id unique to the bucket will be generated in the format `fbRuleId<number>` where number increments, starting at 1. 
+            prefix (str): Object key prefix identifying one or more objects in the bucket. Can have a maximum length of 1024 characters. 
+            keep_previous_version_for (int): Time after which previous versions will be marked expired. Measured in milliseconds. Must be a multiple of 86400000 to represent a whole number of days. 
         """
         if bucket is not None:
             self.bucket = bucket
         if rule_id is not None:
             self.rule_id = rule_id
-        if keep_previous_version_for is not None:
-            self.keep_previous_version_for = keep_previous_version_for
         if prefix is not None:
             self.prefix = prefix
+        if keep_previous_version_for is not None:
+            self.keep_previous_version_for = keep_previous_version_for
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

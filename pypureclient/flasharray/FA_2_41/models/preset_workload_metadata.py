@@ -30,15 +30,15 @@ class PresetWorkloadMetadata(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'display_name': 'str',
+        'subtype': 'str',
         'description': 'str',
-        'subtype': 'str'
+        'display_name': 'str'
     }
 
     attribute_map = {
-        'display_name': 'display_name',
+        'subtype': 'subtype',
         'description': 'description',
-        'subtype': 'subtype'
+        'display_name': 'display_name'
     }
 
     required_args = {
@@ -46,22 +46,22 @@ class PresetWorkloadMetadata(object):
 
     def __init__(
         self,
-        display_name=None,  # type: str
-        description=None,  # type: str
         subtype=None,  # type: str
+        description=None,  # type: str
+        display_name=None,  # type: str
     ):
         """
         Keyword args:
-            display_name (str): The human-friendly name of the parameter, which will be shown in the GUI instead of the standard name if configured. Supports up to 64 unicode characters.
-            description (str): A brief description of the parameter and how it is used within the preset. Supports up to 1KB of unicode characters.
-            subtype (str): The subtype of the parameter, which the GUI will use to contextualize the prompt for the parameter value. For example, when set to size, the GUI will display an input field with a dropdown menu that contains common size units such as MB, GB, TB, etc. Valid values include `size`, `iops`, `bandwidth`, `time` and `duration`. Subtype can only be used with integer parameters.
+            subtype (str): The subtype of the parameter, which the GUI will use to contextualize the prompt for the parameter value. For example, when set to size, the GUI will display an input field with a dropdown menu that contains common size units such as MB, GB, TB, etc. Valid values include `size`, `iops`, `bandwidth`, `time` and `duration`. Subtype can only be used with integer parameters. 
+            description (str): A brief description of the parameter and how it is used within the preset. Supports up to 1KB of unicode characters. 
+            display_name (str): The human-friendly name of the parameter, which will be shown in the GUI instead of the standard name if configured. Supports up to 64 unicode characters. 
         """
-        if display_name is not None:
-            self.display_name = display_name
-        if description is not None:
-            self.description = description
         if subtype is not None:
             self.subtype = subtype
+        if description is not None:
+            self.description = description
+        if display_name is not None:
+            self.display_name = display_name
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

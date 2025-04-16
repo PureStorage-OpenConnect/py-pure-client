@@ -61,12 +61,12 @@ class BasePort(object):
     ):
         """
         Keyword args:
-            name (str): A locally unique, system-generated name. The name cannot be modified.
+            name (str): A locally unique, system-generated name. The name cannot be modified. 
             iqn (str): The iSCSI Qualified Name (or `null` if target is not iSCSI).
             nqn (str): NVMe Qualified Name (or `null` if target is not NVMeoF).
             portal (str): IP and port number (or `null` if target is not iSCSI).
-            wwn (str): Fibre Channel World Wide Name (or `null` if target is not Fibre Channel).
-            failover (str): If the array port has failed over, returns the name of the port to which this port has failed over.
+            wwn (str): Fibre Channel World Wide Name (or `null` if target is not Fibre Channel). 
+            failover (str): If the array port has failed over, returns the name of the port to which this port has failed over. 
         """
         if name is not None:
             self.name = name

@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.15, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.15, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.15
     
@@ -32,19 +32,19 @@ class Saml2Sso(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
-        'enabled': 'bool',
-        'array_url': 'str',
+        'idp': 'Saml2SsoIdp',
         'sp': 'Saml2SsoSp',
-        'idp': 'Saml2SsoIdp'
+        'enabled': 'bool',
+        'array_url': 'str'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
-        'enabled': 'enabled',
-        'array_url': 'array_url',
+        'idp': 'idp',
         'sp': 'sp',
-        'idp': 'idp'
+        'enabled': 'enabled',
+        'array_url': 'array_url'
     }
 
     required_args = {
@@ -54,32 +54,32 @@ class Saml2Sso(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
+        idp=None,  # type: models.Saml2SsoIdp
+        sp=None,  # type: models.Saml2SsoSp
         enabled=None,  # type: bool
         array_url=None,  # type: str
-        sp=None,  # type: models.Saml2SsoSp
-        idp=None,  # type: models.Saml2SsoIdp
     ):
         """
         Keyword args:
-            name (str): A name chosen by the user. Can be changed. Must be locally unique.
-            id (str): A non-modifiable, globally unique ID chosen by the system.
+            name (str): A name chosen by the user. Can be changed. Must be locally unique. 
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            idp (Saml2SsoIdp)
+            sp (Saml2SsoSp)
             enabled (bool): If set to `true`, the SAML2 SSO configuration is enabled.
             array_url (str): The URL of the array.
-            sp (Saml2SsoSp)
-            idp (Saml2SsoIdp)
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
+        if idp is not None:
+            self.idp = idp
+        if sp is not None:
+            self.sp = sp
         if enabled is not None:
             self.enabled = enabled
         if array_url is not None:
             self.array_url = array_url
-        if sp is not None:
-            self.sp = sp
-        if idp is not None:
-            self.idp = idp
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

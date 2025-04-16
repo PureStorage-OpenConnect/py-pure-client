@@ -58,7 +58,7 @@ class PortCommon(object):
             iqn (str): The iSCSI Qualified Name (or `null` if target is not iSCSI).
             nqn (str): NVMe Qualified Name (or `null` if target is not NVMeoF).
             portal (str): IP and port number (or `null` if target is not iSCSI).
-            wwn (str): Fibre Channel World Wide Name (or `null` if target is not Fibre Channel).
+            wwn (str): Fibre Channel World Wide Name (or `null` if target is not Fibre Channel). 
         """
         if iqn is not None:
             self.iqn = iqn

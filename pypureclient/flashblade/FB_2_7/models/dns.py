@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.7, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.7, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.7
     
@@ -32,15 +32,15 @@ class Dns(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
-        'domain': 'str',
-        'nameservers': 'list[str]'
+        'nameservers': 'list[str]',
+        'domain': 'str'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
-        'domain': 'domain',
-        'nameservers': 'nameservers'
+        'nameservers': 'nameservers',
+        'domain': 'domain'
     }
 
     required_args = {
@@ -50,24 +50,24 @@ class Dns(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
-        domain=None,  # type: str
         nameservers=None,  # type: List[str]
+        domain=None,  # type: str
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            domain (str): Domain suffix to be appended by the Array when performing DNS lookups.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
             nameservers (list[str]): List of DNS server IP addresses.
+            domain (str): Domain suffix to be appended by the Array when performing DNS lookups. 
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
-        if domain is not None:
-            self.domain = domain
         if nameservers is not None:
             self.nameservers = nameservers
+        if domain is not None:
+            self.domain = domain
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -46,7 +46,7 @@ class SubscriptionAssetSubscription(object):
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified.
+            id (str): A globally unique, system-generated ID. The ID cannot be modified. 
         """
         if id is not None:
             self.id = id

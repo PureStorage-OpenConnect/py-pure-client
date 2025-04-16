@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.13, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.13, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.13
     
@@ -29,11 +29,11 @@ class HardwareConnectorsApi(object):
 
     def api213_hardware_connectors_get_with_http_info(
         self,
-        ids=None,  # type: List[str]
-        names=None,  # type: List[str]
         continuation_token=None,  # type: str
         filter=None,  # type: str
+        ids=None,  # type: List[str]
         limit=None,  # type: int
+        names=None,  # type: List[str]
         offset=None,  # type: int
         sort=None,  # type: List[str]
         async_req=False,  # type: bool
@@ -50,13 +50,13 @@ class HardwareConnectorsApi(object):
         >>> thread = api.api213_hardware_connectors_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
-        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
-        :param str filter: Exclude resources that don't match the specified criteria.
-        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.
-        :param int offset: The offset of the first resource to return from a collection.
-        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.
+        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result. 
+        :param str filter: Exclude resources that don't match the specified criteria. 
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
+        :param int offset: The offset of the first resource to return from a collection. 
+        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -94,18 +94,18 @@ class HardwareConnectorsApi(object):
         path_params = {}
 
         query_params = []
-        if 'ids' in params:
-            query_params.append(('ids', params['ids']))
-            collection_formats['ids'] = 'csv'
-        if 'names' in params:
-            query_params.append(('names', params['names']))
-            collection_formats['names'] = 'csv'
         if 'continuation_token' in params:
             query_params.append(('continuation_token', params['continuation_token']))
         if 'filter' in params:
             query_params.append(('filter', params['filter']))
+        if 'ids' in params:
+            query_params.append(('ids', params['ids']))
+            collection_formats['ids'] = 'csv'
         if 'limit' in params:
             query_params.append(('limit', params['limit']))
+        if 'names' in params:
+            query_params.append(('names', params['names']))
+            collection_formats['names'] = 'csv'
         if 'offset' in params:
             query_params.append(('offset', params['offset']))
         if 'sort' in params:
@@ -166,8 +166,8 @@ class HardwareConnectorsApi(object):
         >>> result = thread.get()
 
         :param HardwareConnector hardware_connector: (required)
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -264,22 +264,22 @@ class HardwareConnectorsApi(object):
         # type: (...) -> models.HardwareConnectorPerformanceGetResponse
         """GET hardware-connectors/performance
 
-        Displays network statistics, historical bandwidth, and error reporting for all specified hardware connectors.
+        Displays network statistics, historical bandwidth, and error reporting for all specified hardware connectors. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api213_hardware_connectors_performance_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param int end_time: When the time window ends (in milliseconds since epoch).
-        :param str filter: Exclude resources that don't match the specified criteria.
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
-        :param int offset: The offset of the first resource to return from a collection.
-        :param int resolution: The desired ms between samples. Available resolutions may depend on data type, `start_time` and `end_time`. In general `1000`, `30000`, `300000`, `1800000`, `7200000`, and `86400000` are possible values.
-        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.
-        :param int start_time: When the time window starts (in milliseconds since epoch).
-        :param bool total_only: Only return the total record for the specified items. The total record will be the total of all items after filtering. The `items` list will be empty.
+        :param int end_time: When the time window ends (in milliseconds since epoch). 
+        :param str filter: Exclude resources that don't match the specified criteria. 
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
+        :param int offset: The offset of the first resource to return from a collection. 
+        :param int resolution: The desired ms between samples. Available resolutions may depend on data type, `start_time` and `end_time`. In general `1000`, `30000`, `300000`, `1800000`, `7200000`, and `86400000` are possible values. 
+        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response. 
+        :param int start_time: When the time window starts (in milliseconds since epoch). 
+        :param bool total_only: Only return the total record for the specified items. The total record will be the total of all items after filtering. The `items` list will be empty. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.

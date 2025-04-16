@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.11, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.11, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.11
     
@@ -50,7 +50,7 @@ class ObjectStoreAccessPolicyPost(object):
         """
         Keyword args:
             rules (list[PolicyRuleObjectAccessBulkManage])
-            description (str): A description of the policy, optionally specified when the policy is created. Cannot be modified for an existing policy.
+            description (str): A description of the policy, optionally specified when the policy is created. Cannot be modified for an existing policy. 
         """
         if rules is not None:
             self.rules = rules

@@ -30,68 +30,68 @@ class PresetWorkloadVolumeConfiguration(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
+        'periodic_replication_configurations': 'list[str]',
         'count': 'str',
-        'provisioned_size': 'str',
+        'name': 'str',
         'placement_configurations': 'list[str]',
-        'snapshot_configurations': 'list[str]',
-        'periodic_replication_configurations': 'list[str]'
+        'provisioned_size': 'str',
+        'snapshot_configurations': 'list[str]'
     }
 
     attribute_map = {
-        'name': 'name',
+        'periodic_replication_configurations': 'periodic_replication_configurations',
         'count': 'count',
-        'provisioned_size': 'provisioned_size',
+        'name': 'name',
         'placement_configurations': 'placement_configurations',
-        'snapshot_configurations': 'snapshot_configurations',
-        'periodic_replication_configurations': 'periodic_replication_configurations'
+        'provisioned_size': 'provisioned_size',
+        'snapshot_configurations': 'snapshot_configurations'
     }
 
     required_args = {
-        'name',
         'count',
-        'provisioned_size',
+        'name',
         'placement_configurations',
+        'provisioned_size',
     }
 
     def __init__(
         self,
-        name,  # type: str
         count,  # type: str
-        provisioned_size,  # type: str
+        name,  # type: str
         placement_configurations,  # type: List[str]
-        snapshot_configurations=None,  # type: List[str]
+        provisioned_size,  # type: str
         periodic_replication_configurations=None,  # type: List[str]
+        snapshot_configurations=None,  # type: List[str]
     ):
         """
         Keyword args:
-            name (str, required): The name of the volume configuration, by which other configuration objects in the preset can reference it. Name must be unique across all configuration objects in the preset.
+            periodic_replication_configurations (list[str]): The names of the periodic replication configurations to apply to the volumes. 
             count (str, required): The number of volumes to provision. Supports parameterization.
-            provisioned_size (str, required): The virtual size of each volume. Measured in bytes and must be a multiple of 512. The maximum size is 4503599627370496 (4PB). Supports parameterization.
-            placement_configurations (list[str], required): The names of the placement configurations with which to associate the volumes.
-            snapshot_configurations (list[str]): The names of the snapshot configurations to apply to the volumes.
-            periodic_replication_configurations (list[str]): The names of the periodic replication configurations to apply to the volumes.
+            name (str, required): The name of the volume configuration, by which other configuration objects in the preset can reference it. Name must be unique across all configuration objects in the preset. 
+            placement_configurations (list[str], required): The names of the placement configurations with which to associate the volumes. 
+            provisioned_size (str, required): The virtual size of each volume. Measured in bytes and must be a multiple of 512. The maximum size is 4503599627370496 (4PB). Supports parameterization. 
+            snapshot_configurations (list[str]): The names of the snapshot configurations to apply to the volumes. 
         """
-        self.name = name
-        self.count = count
-        self.provisioned_size = provisioned_size
-        self.placement_configurations = placement_configurations
-        if snapshot_configurations is not None:
-            self.snapshot_configurations = snapshot_configurations
         if periodic_replication_configurations is not None:
             self.periodic_replication_configurations = periodic_replication_configurations
+        self.count = count
+        self.name = name
+        self.placement_configurations = placement_configurations
+        self.provisioned_size = provisioned_size
+        if snapshot_configurations is not None:
+            self.snapshot_configurations = snapshot_configurations
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
             raise KeyError("Invalid key `{}` for `PresetWorkloadVolumeConfiguration`".format(key))
-        if key == "name" and value is None:
-            raise ValueError("Invalid value for `name`, must not be `None`")
         if key == "count" and value is None:
             raise ValueError("Invalid value for `count`, must not be `None`")
-        if key == "provisioned_size" and value is None:
-            raise ValueError("Invalid value for `provisioned_size`, must not be `None`")
+        if key == "name" and value is None:
+            raise ValueError("Invalid value for `name`, must not be `None`")
         if key == "placement_configurations" and value is None:
             raise ValueError("Invalid value for `placement_configurations`, must not be `None`")
+        if key == "provisioned_size" and value is None:
+            raise ValueError("Invalid value for `provisioned_size`, must not be `None`")
         self.__dict__[key] = value
 
     def __getattribute__(self, item):

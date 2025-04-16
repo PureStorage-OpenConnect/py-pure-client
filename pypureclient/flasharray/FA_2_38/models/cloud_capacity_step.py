@@ -46,7 +46,7 @@ class CloudCapacityStep(object):
     ):
         """
         Keyword args:
-            supported_capacity (int): A possible supported raw capacity of the CBS array in bytes.
+            supported_capacity (int): A possible supported raw capacity of the CBS array in bytes. 
         """
         if supported_capacity is not None:
             self.supported_capacity = supported_capacity

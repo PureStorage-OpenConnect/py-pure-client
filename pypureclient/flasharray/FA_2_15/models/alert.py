@@ -30,46 +30,46 @@ class Alert(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
+        'id': 'str',
+        'severity': 'str',
+        'summary': 'str',
         'actual': 'str',
-        'category': 'str',
-        'closed': 'int',
         'code': 'int',
-        'component_name': 'str',
-        'component_type': 'str',
-        'created': 'int',
-        'description': 'str',
-        'expected': 'str',
-        'flagged': 'bool',
         'issue': 'str',
         'knowledge_base_url': 'str',
+        'created': 'int',
         'notified': 'int',
-        'severity': 'str',
+        'component_name': 'str',
+        'expected': 'str',
+        'description': 'str',
+        'component_type': 'str',
+        'flagged': 'bool',
+        'closed': 'int',
         'state': 'str',
-        'summary': 'str',
+        'category': 'str',
         'updated': 'int'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
+        'id': 'id',
+        'severity': 'severity',
+        'summary': 'summary',
         'actual': 'actual',
-        'category': 'category',
-        'closed': 'closed',
         'code': 'code',
-        'component_name': 'component_name',
-        'component_type': 'component_type',
-        'created': 'created',
-        'description': 'description',
-        'expected': 'expected',
-        'flagged': 'flagged',
         'issue': 'issue',
         'knowledge_base_url': 'knowledge_base_url',
+        'created': 'created',
         'notified': 'notified',
-        'severity': 'severity',
+        'component_name': 'component_name',
+        'expected': 'expected',
+        'description': 'description',
+        'component_type': 'component_type',
+        'flagged': 'flagged',
+        'closed': 'closed',
         'state': 'state',
-        'summary': 'summary',
+        'category': 'category',
         'updated': 'updated'
     }
 
@@ -78,84 +78,84 @@ class Alert(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
+        id=None,  # type: str
+        severity=None,  # type: str
+        summary=None,  # type: str
         actual=None,  # type: str
-        category=None,  # type: str
-        closed=None,  # type: int
         code=None,  # type: int
-        component_name=None,  # type: str
-        component_type=None,  # type: str
-        created=None,  # type: int
-        description=None,  # type: str
-        expected=None,  # type: str
-        flagged=None,  # type: bool
         issue=None,  # type: str
         knowledge_base_url=None,  # type: str
+        created=None,  # type: int
         notified=None,  # type: int
-        severity=None,  # type: str
+        component_name=None,  # type: str
+        expected=None,  # type: str
+        description=None,  # type: str
+        component_type=None,  # type: str
+        flagged=None,  # type: bool
+        closed=None,  # type: int
         state=None,  # type: str
-        summary=None,  # type: str
+        category=None,  # type: str
         updated=None,  # type: int
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            name (str): A locally unique, system-generated name. The name cannot be modified.
+            name (str): A locally unique, system-generated name. The name cannot be modified. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource. 
+            severity (str): The severity level of the alert. Valid values include `info`, `warning`, `critical`, and `hidden`. 
+            summary (str): A summary of the alert.
             actual (str): Actual condition at the time the alert is created.
-            category (str): The category of the alert. Valid values include `array`, `hardware` and `software`.
-            closed (int): The time the alert was closed in milliseconds since the UNIX epoch.
             code (int): The code number of the alert.
-            component_name (str): The name of the component that generated the alert.
-            component_type (str): The type of component that generated the alert.
-            created (int): The time the alert was created in milliseconds since the UNIX epoch.
-            description (str): A short description of the alert.
-            expected (str): Expected state or threshold under normal conditions.
-            flagged (bool): If set to `true`, the message is flagged. Important messages can can be flagged and listed separately.
             issue (str): Information about the alert cause.
             knowledge_base_url (str): The URL of the relevant knowledge base page.
-            notified (int): The time the most recent alert notification was sent in milliseconds since the UNIX epoch.
-            severity (str): The severity level of the alert. Valid values include `info`, `warning`, `critical`, and `hidden`.
-            state (str): The current state of the alert. Valid values include `open`, `closing`, and `closed`.
-            summary (str): A summary of the alert.
+            created (int): The time the alert was created in milliseconds since the UNIX epoch.
+            notified (int): The time the most recent alert notification was sent in milliseconds since the UNIX epoch. 
+            component_name (str): The name of the component that generated the alert.
+            expected (str): Expected state or threshold under normal conditions.
+            description (str): A short description of the alert.
+            component_type (str): The type of component that generated the alert.
+            flagged (bool): If set to `true`, the message is flagged. Important messages can can be flagged and listed separately. 
+            closed (int): The time the alert was closed in milliseconds since the UNIX epoch.
+            state (str): The current state of the alert. Valid values include `open`, `closing`, and `closed`. 
+            category (str): The category of the alert. Valid values include `array`, `hardware` and `software`. 
             updated (int): The time the alert was last updated in milliseconds since the UNIX epoch.
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
+        if severity is not None:
+            self.severity = severity
+        if summary is not None:
+            self.summary = summary
         if actual is not None:
             self.actual = actual
-        if category is not None:
-            self.category = category
-        if closed is not None:
-            self.closed = closed
         if code is not None:
             self.code = code
-        if component_name is not None:
-            self.component_name = component_name
-        if component_type is not None:
-            self.component_type = component_type
-        if created is not None:
-            self.created = created
-        if description is not None:
-            self.description = description
-        if expected is not None:
-            self.expected = expected
-        if flagged is not None:
-            self.flagged = flagged
         if issue is not None:
             self.issue = issue
         if knowledge_base_url is not None:
             self.knowledge_base_url = knowledge_base_url
+        if created is not None:
+            self.created = created
         if notified is not None:
             self.notified = notified
-        if severity is not None:
-            self.severity = severity
+        if component_name is not None:
+            self.component_name = component_name
+        if expected is not None:
+            self.expected = expected
+        if description is not None:
+            self.description = description
+        if component_type is not None:
+            self.component_type = component_type
+        if flagged is not None:
+            self.flagged = flagged
+        if closed is not None:
+            self.closed = closed
         if state is not None:
             self.state = state
-        if summary is not None:
-            self.summary = summary
+        if category is not None:
+            self.category = category
         if updated is not None:
             self.updated = updated
 

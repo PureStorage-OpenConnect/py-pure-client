@@ -50,8 +50,8 @@ class PresetWorkloadConstraintsResourceReference(object):
     ):
         """
         Keyword args:
-            allowed_values (list[PresetWorkloadConstraintsResourceReferenceAllowedValues], required): The valid values that can be supplied to the parameter. Exactly one value must be specified.
-            default (ReferenceWithType): The default value to use if no value is provided. Must match the `resource_type` set in `allowed_values`. One of `id` or `name` must be set, but they cannot be set together.
+            allowed_values (list[PresetWorkloadConstraintsResourceReferenceAllowedValues], required): The valid values that can be supplied to the parameter. Exactly one value must be specified. 
+            default (ReferenceWithType): The default value to use if no value is provided. Must match the `resource_type` set in `allowed_values`. One of `id` or `name` must be set, but they cannot be set together. 
         """
         self.allowed_values = allowed_values
         if default is not None:

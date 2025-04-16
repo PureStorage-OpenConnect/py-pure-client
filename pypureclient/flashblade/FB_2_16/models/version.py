@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.16
     
@@ -46,7 +46,7 @@ class Version(object):
     ):
         """
         Keyword args:
-            version (str): A hash of the other properties of this resource. This can be used when updating the resource to ensure there aren't any updates since the resource was read.
+            version (str): A hash of the other properties of this resource. This can be used when updating the resource to ensure there aren't any updates since the resource was read. 
         """
         if version is not None:
             self.version = version

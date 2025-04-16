@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.15, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.15, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.15
     
@@ -30,17 +30,17 @@ class Saml2SsoPost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'enabled': 'bool',
-        'array_url': 'str',
+        'idp': 'Saml2SsoIdp',
         'sp': 'Saml2SsoSp',
-        'idp': 'Saml2SsoIdp'
+        'enabled': 'bool',
+        'array_url': 'str'
     }
 
     attribute_map = {
-        'enabled': 'enabled',
-        'array_url': 'array_url',
+        'idp': 'idp',
         'sp': 'sp',
-        'idp': 'idp'
+        'enabled': 'enabled',
+        'array_url': 'array_url'
     }
 
     required_args = {
@@ -48,26 +48,26 @@ class Saml2SsoPost(object):
 
     def __init__(
         self,
+        idp=None,  # type: models.Saml2SsoIdp
+        sp=None,  # type: models.Saml2SsoSp
         enabled=None,  # type: bool
         array_url=None,  # type: str
-        sp=None,  # type: models.Saml2SsoSp
-        idp=None,  # type: models.Saml2SsoIdp
     ):
         """
         Keyword args:
+            idp (Saml2SsoIdp)
+            sp (Saml2SsoSp)
             enabled (bool): If set to `true`, the SAML2 SSO configuration is enabled.
             array_url (str): The URL of the array.
-            sp (Saml2SsoSp)
-            idp (Saml2SsoIdp)
         """
+        if idp is not None:
+            self.idp = idp
+        if sp is not None:
+            self.sp = sp
         if enabled is not None:
             self.enabled = enabled
         if array_url is not None:
             self.array_url = array_url
-        if sp is not None:
-            self.sp = sp
-        if idp is not None:
-            self.idp = idp
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

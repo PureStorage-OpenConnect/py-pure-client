@@ -47,7 +47,7 @@ class WorkloadPlacementRecommendationResourceReference(object):
     ):
         """
         Keyword args:
-            allowed_values (list[ReferenceWithType], required): A list of allowed values for the resource reference. For hosts and host groups, each item does not define a specific object on some target, but defines a pattern which should be matched by the target. For example, { `type`: `host`, `name`: `host1` } will match all targets that have a host with name `host1`.
+            allowed_values (list[ReferenceWithType], required): A list of allowed values for the resource reference. For hosts and host groups, each item does not define a specific object on some target, but defines a pattern which should be matched by the target. For example, { `type`: `host`, `name`: `host1` } will match all targets that have a host with name `host1`. 
         """
         self.allowed_values = allowed_values
 

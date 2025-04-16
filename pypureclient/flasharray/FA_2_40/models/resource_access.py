@@ -30,15 +30,15 @@ class ResourceAccess(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'resource': 'ReferenceWithType',
-        'scope': 'ReferenceWithType'
+        'scope': 'ReferenceWithType',
+        'id': 'str'
     }
 
     attribute_map = {
-        'id': 'id',
         'resource': 'resource',
-        'scope': 'scope'
+        'scope': 'scope',
+        'id': 'id'
     }
 
     required_args = {
@@ -46,22 +46,22 @@ class ResourceAccess(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         resource=None,  # type: models.ReferenceWithType
         scope=None,  # type: models.ReferenceWithType
+        id=None,  # type: str
     ):
         """
         Keyword args:
-            id (str): ID of a resource access object.
             resource (ReferenceWithType): Resource to which the scope has access.
             scope (ReferenceWithType): Scope which has access to the resource.
+            id (str): ID of a resource access object.
         """
-        if id is not None:
-            self.id = id
         if resource is not None:
             self.resource = resource
         if scope is not None:
             self.scope = scope
+        if id is not None:
+            self.id = id
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

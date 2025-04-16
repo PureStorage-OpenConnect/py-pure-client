@@ -3,7 +3,7 @@
 """
     FlashBlade REST API Client
 
-    A lightweight client for FlashBlade REST API 2.0, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.0, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.0
     
@@ -30,16 +30,16 @@ class FixedReferenceWithRemote(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
         'resource_type': 'str',
+        'id': 'str',
         'remote': 'FixedReferenceNoResourceType'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
         'resource_type': 'resource_type',
+        'id': 'id',
         'remote': 'remote'
     }
 
@@ -48,24 +48,24 @@ class FixedReferenceWithRemote(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
         resource_type=None,  # type: str
+        id=None,  # type: str
         remote=None,  # type: models.FixedReferenceNoResourceType
     ):
         """
         Keyword args:
-            id (str): A non-modifiable, globally unique ID chosen by the system.
             name (str)
-            resource_type (str): Type of the object (full name of the endpoint). Valid values are the unique part of the resource's REST endpoint. For example, a reference to a file system would have a `resource_type` of `file-systems`.
+            resource_type (str): Type of the object (full name of the endpoint). Valid values are the unique part of the resource's REST endpoint. For example, a reference to a file system would have a `resource_type` of `file-systems`. 
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
             remote (FixedReferenceNoResourceType): The remote field of the corresponding array connection.
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
         if resource_type is not None:
             self.resource_type = resource_type
+        if id is not None:
+            self.id = id
         if remote is not None:
             self.remote = remote
 

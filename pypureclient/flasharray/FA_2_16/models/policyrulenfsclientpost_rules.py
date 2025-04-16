@@ -31,16 +31,16 @@ class PolicyrulenfsclientpostRules(object):
     """
     swagger_types = {
         'access': 'str',
-        'anongid': 'str',
         'anonuid': 'str',
+        'anongid': 'str',
         'client': 'str',
         'permission': 'str'
     }
 
     attribute_map = {
         'access': 'access',
-        'anongid': 'anongid',
         'anonuid': 'anonuid',
+        'anongid': 'anongid',
         'client': 'client',
         'permission': 'permission'
     }
@@ -51,25 +51,25 @@ class PolicyrulenfsclientpostRules(object):
     def __init__(
         self,
         access=None,  # type: str
-        anongid=None,  # type: str
         anonuid=None,  # type: str
+        anongid=None,  # type: str
         client=None,  # type: str
         permission=None,  # type: str
     ):
         """
         Keyword args:
-            access (str): Specifies access control for the export. Valid values are `root-squash`, `all-squash`, and `no-root-squash`. The value `root-squash` prevents client users and groups with root privilege from mapping their root privilege to a file system. All users with UID 0 will have their UID mapped to `anonuid`. All users with GID 0 will have their GID mapped to `anongid`. The value `all-squash` maps all UIDs (including root) to `anonuid` and all GIDs (including root) to `anongid`. The value `no-root-squash` allows users and groups to access the file system with their UIDs and GIDs. If not specified, the default value is `root-squash`.
-            anongid (str): Any user whose GID is affected by an `access` of `root_squash` or `all_squash` will have their GID mapped to `anongid`. The default `anongid` is null, which means 65534. Use \"\" to clear. This value is ignored when user mapping is enabled.
-            anonuid (str): Any user whose UID is affected by an `access` of `root_squash` or `all_squash` will have their UID mapped to `anonuid`. The default `anonuid` is null, which means 65534. Use \"\" to clear.
-            client (str): Specifies which clients are given access. Valid values include `IP`, `IP mask`, or `hostname`. The default is `*` if not specified.
-            permission (str): Specifies which read-write client access permissions are allowed for the export. Values include `rw` and `ro`. The default value is `rw` if not specified.
+            access (str): Specifies access control for the export. Valid values are `root-squash`, `all-squash`, and `no-root-squash`. The value `root-squash` prevents client users and groups with root privilege from mapping their root privilege to a file system. All users with UID 0 will have their UID mapped to `anonuid`. All users with GID 0 will have their GID mapped to `anongid`. The value `all-squash` maps all UIDs (including root) to `anonuid` and all GIDs (including root) to `anongid`. The value `no-root-squash` allows users and groups to access the file system with their UIDs and GIDs. If not specified, the default value is `root-squash`. 
+            anonuid (str): Any user whose UID is affected by an `access` of `root_squash` or `all_squash` will have their UID mapped to `anonuid`. The default `anonuid` is null, which means 65534. Use \"\" to clear. 
+            anongid (str): Any user whose GID is affected by an `access` of `root_squash` or `all_squash` will have their GID mapped to `anongid`. The default `anongid` is null, which means 65534. Use \"\" to clear. This value is ignored when user mapping is enabled. 
+            client (str): Specifies which clients are given access. Valid values include `IP`, `IP mask`, or `hostname`. The default is `*` if not specified. 
+            permission (str): Specifies which read-write client access permissions are allowed for the export. Values include `rw` and `ro`. The default value is `rw` if not specified. 
         """
         if access is not None:
             self.access = access
-        if anongid is not None:
-            self.anongid = anongid
         if anonuid is not None:
             self.anonuid = anonuid
+        if anongid is not None:
+            self.anongid = anongid
         if client is not None:
             self.client = client
         if permission is not None:

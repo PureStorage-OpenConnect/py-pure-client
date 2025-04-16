@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.15, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.15, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.15
     
@@ -32,19 +32,19 @@ class UserQuota(object):
     swagger_types = {
         'name': 'str',
         'file_system': 'FixedReference',
-        'file_system_default_quota': 'int',
         'quota': 'int',
         'usage': 'int',
-        'user': 'User'
+        'user': 'User',
+        'file_system_default_quota': 'int'
     }
 
     attribute_map = {
         'name': 'name',
         'file_system': 'file_system',
-        'file_system_default_quota': 'file_system_default_quota',
         'quota': 'quota',
         'usage': 'usage',
-        'user': 'user'
+        'user': 'user',
+        'file_system_default_quota': 'file_system_default_quota'
     }
 
     required_args = {
@@ -54,32 +54,32 @@ class UserQuota(object):
         self,
         name=None,  # type: str
         file_system=None,  # type: models.FixedReference
-        file_system_default_quota=None,  # type: int
         quota=None,  # type: int
         usage=None,  # type: int
         user=None,  # type: models.User
+        file_system_default_quota=None,  # type: int
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
             file_system (FixedReference)
-            file_system_default_quota (int): File system's default user quota (in bytes). If it is `0`, it means there is no default quota. This will be the effective user quota if the user doesn't have an individual quota. This default quota is set through the `file-systems` endpoint.
-            quota (int): The limit of the quota (in bytes) for the specified user, cannot be `0`. If specified, this value will override the file system's default user quota.
-            usage (int): The usage of the file system (in bytes) by the specified user.
+            quota (int): The limit of the quota (in bytes) for the specified user, cannot be `0`. If specified, this value will override the file system's default user quota. 
+            usage (int): The usage of the file system (in bytes) by the specified user. 
             user (User): The user on which this quota is enforced.
+            file_system_default_quota (int): File system's default user quota (in bytes). If it is `0`, it means there is no default quota. This will be the effective user quota if the user doesn't have an individual quota. This default quota is set through the `file-systems` endpoint. 
         """
         if name is not None:
             self.name = name
         if file_system is not None:
             self.file_system = file_system
-        if file_system_default_quota is not None:
-            self.file_system_default_quota = file_system_default_quota
         if quota is not None:
             self.quota = quota
         if usage is not None:
             self.usage = usage
         if user is not None:
             self.user = user
+        if file_system_default_quota is not None:
+            self.file_system_default_quota = file_system_default_quota
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -3,7 +3,7 @@
 """
     Pure1 Public REST API
 
-    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)  The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
+    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)   The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
 
     OpenAPI spec version: 1.3
     
@@ -31,47 +31,47 @@ class Alert(object):
     """
     swagger_types = {
         'as_of': 'int',
-        'id': 'str',
         'name': 'str',
+        'id': 'str',
         'arrays': 'list[FixedReferenceFqdn]',
-        'actual': 'str',
-        'category': 'str',
-        'closed': 'int',
-        'code': 'int',
-        'component_name': 'str',
-        'component_type': 'str',
-        'created': 'int',
-        'description': 'str',
-        'expected': 'str',
-        'knowledge_base_url': 'str',
-        'notified': 'int',
-        'origin': 'str',
         'severity': 'str',
-        'state': 'str',
         'summary': 'str',
+        'actual': 'str',
+        'code': 'int',
+        'knowledge_base_url': 'str',
+        'created': 'int',
+        'notified': 'int',
+        'component_name': 'str',
+        'expected': 'str',
+        'origin': 'str',
+        'description': 'str',
+        'component_type': 'str',
+        'closed': 'int',
+        'state': 'str',
+        'category': 'str',
         'updated': 'int'
     }
 
     attribute_map = {
         'as_of': '_as_of',
-        'id': 'id',
         'name': 'name',
+        'id': 'id',
         'arrays': 'arrays',
-        'actual': 'actual',
-        'category': 'category',
-        'closed': 'closed',
-        'code': 'code',
-        'component_name': 'component_name',
-        'component_type': 'component_type',
-        'created': 'created',
-        'description': 'description',
-        'expected': 'expected',
-        'knowledge_base_url': 'knowledge_base_url',
-        'notified': 'notified',
-        'origin': 'origin',
         'severity': 'severity',
-        'state': 'state',
         'summary': 'summary',
+        'actual': 'actual',
+        'code': 'code',
+        'knowledge_base_url': 'knowledge_base_url',
+        'created': 'created',
+        'notified': 'notified',
+        'component_name': 'component_name',
+        'expected': 'expected',
+        'origin': 'origin',
+        'description': 'description',
+        'component_type': 'component_type',
+        'closed': 'closed',
+        'state': 'state',
+        'category': 'category',
         'updated': 'updated'
     }
 
@@ -81,87 +81,87 @@ class Alert(object):
     def __init__(
         self,
         as_of=None,  # type: int
-        id=None,  # type: str
         name=None,  # type: str
+        id=None,  # type: str
         arrays=None,  # type: List[models.FixedReferenceFqdn]
-        actual=None,  # type: str
-        category=None,  # type: str
-        closed=None,  # type: int
-        code=None,  # type: int
-        component_name=None,  # type: str
-        component_type=None,  # type: str
-        created=None,  # type: int
-        description=None,  # type: str
-        expected=None,  # type: str
-        knowledge_base_url=None,  # type: str
-        notified=None,  # type: int
-        origin=None,  # type: str
         severity=None,  # type: str
-        state=None,  # type: str
         summary=None,  # type: str
+        actual=None,  # type: str
+        code=None,  # type: int
+        knowledge_base_url=None,  # type: str
+        created=None,  # type: int
+        notified=None,  # type: int
+        component_name=None,  # type: str
+        expected=None,  # type: str
+        origin=None,  # type: str
+        description=None,  # type: str
+        component_type=None,  # type: str
+        closed=None,  # type: int
+        state=None,  # type: str
+        category=None,  # type: str
         updated=None,  # type: int
     ):
         """
         Keyword args:
             as_of (int): The freshness of the data (timestamp in millis since epoch).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
             name (str): A modifiable, locally unique name chosen by the user.
-            arrays (list[FixedReferenceFqdn]): The list of arrays where this resource exists. Many resources are on a single array, but some resources, such as pods, can be shared across multiple arrays.
-            actual (str): Actual condition at the time of the alert.
-            category (str): Category of the alert. Valid values are `array`, `hardware`, and `software`.
-            closed (int): Time when the alert was closed, in milliseconds since UNIX epoch.
-            code (int): Code associated with the alert.
-            component_name (str): Name of the component alerted about.
-            component_type (str): Type of the component alerted about.
-            created (int): Time when the alert was created, in milliseconds since UNIX epoch.
-            description (str): Short description of the alert.
-            expected (str): Expected state/threshold under normal conditions.
-            knowledge_base_url (str): URL of the relevant Knowledge Base page.
-            notified (int): Time when the user was notified of the alert, in milliseconds since UNIX epoch.
-            origin (str): Origin of the alert. Valid values are `array` and `Pure1`.
-            severity (str): Current severity level. Valid values are `info`, `warning`, `critical`, and `hidden`.
-            state (str): Current state of the alert. Valid values are `open`, `closing`, and `closed`.
+            id (str): A non-modifiable, globally unique ID chosen by the system.
+            arrays (list[FixedReferenceFqdn]): The list of arrays where this resource exists. Many resources are on a single array, but some resources, such as pods, can be shared across multiple arrays. 
+            severity (str): Current severity level. Valid values are `info`, `warning`, `critical`, and `hidden`. 
             summary (str): Summary of the alert.
-            updated (int): Time when the alert was last updated, in milliseconds since UNIX epoch.
+            actual (str): Actual condition at the time of the alert.
+            code (int): Code associated with the alert.
+            knowledge_base_url (str): URL of the relevant Knowledge Base page.
+            created (int): Time when the alert was created, in milliseconds since UNIX epoch. 
+            notified (int): Time when the user was notified of the alert, in milliseconds since UNIX epoch. 
+            component_name (str): Name of the component alerted about.
+            expected (str): Expected state/threshold under normal conditions.
+            origin (str): Origin of the alert. Valid values are `array` and `Pure1`.
+            description (str): Short description of the alert.
+            component_type (str): Type of the component alerted about.
+            closed (int): Time when the alert was closed, in milliseconds since UNIX epoch. 
+            state (str): Current state of the alert. Valid values are `open`, `closing`, and `closed`. 
+            category (str): Category of the alert. Valid values are `array`, `hardware`, and `software`. 
+            updated (int): Time when the alert was last updated, in milliseconds since UNIX epoch. 
         """
         if as_of is not None:
             self.as_of = as_of
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
         if arrays is not None:
             self.arrays = arrays
-        if actual is not None:
-            self.actual = actual
-        if category is not None:
-            self.category = category
-        if closed is not None:
-            self.closed = closed
-        if code is not None:
-            self.code = code
-        if component_name is not None:
-            self.component_name = component_name
-        if component_type is not None:
-            self.component_type = component_type
-        if created is not None:
-            self.created = created
-        if description is not None:
-            self.description = description
-        if expected is not None:
-            self.expected = expected
-        if knowledge_base_url is not None:
-            self.knowledge_base_url = knowledge_base_url
-        if notified is not None:
-            self.notified = notified
-        if origin is not None:
-            self.origin = origin
         if severity is not None:
             self.severity = severity
-        if state is not None:
-            self.state = state
         if summary is not None:
             self.summary = summary
+        if actual is not None:
+            self.actual = actual
+        if code is not None:
+            self.code = code
+        if knowledge_base_url is not None:
+            self.knowledge_base_url = knowledge_base_url
+        if created is not None:
+            self.created = created
+        if notified is not None:
+            self.notified = notified
+        if component_name is not None:
+            self.component_name = component_name
+        if expected is not None:
+            self.expected = expected
+        if origin is not None:
+            self.origin = origin
+        if description is not None:
+            self.description = description
+        if component_type is not None:
+            self.component_type = component_type
+        if closed is not None:
+            self.closed = closed
+        if state is not None:
+            self.state = state
+        if category is not None:
+            self.category = category
         if updated is not None:
             self.updated = updated
 

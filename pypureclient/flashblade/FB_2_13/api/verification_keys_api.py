@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.13, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.13, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.13
     
@@ -42,17 +42,17 @@ class VerificationKeysApi(object):
         # type: (...) -> models.VerificationKeyGetResponse
         """GET verification-keys
 
-        List the key used to verify the signed challenges that are used by Pure Support to access the FlashBlade.
+        List the key used to verify the signed challenges that are used by Pure Support to access the FlashBlade. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api213_support_verification_keys_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
-        :param str filter: Exclude resources that don't match the specified criteria.
-        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.
-        :param int offset: The offset of the first resource to return from a collection.
-        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.
+        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result. 
+        :param str filter: Exclude resources that don't match the specified criteria. 
+        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request. 
+        :param int offset: The offset of the first resource to return from a collection. 
+        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -141,7 +141,7 @@ class VerificationKeysApi(object):
         # type: (...) -> models.VerificationKeyResponse
         """PATCH verification-keys
 
-        Update the key used to verify the signed challenges that are used by Pure Support to access the FlashBlade.
+        Update the key used to verify the signed challenges that are used by Pure Support to access the FlashBlade. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api213_support_verification_keys_patch_with_http_info(key, async_req=True)

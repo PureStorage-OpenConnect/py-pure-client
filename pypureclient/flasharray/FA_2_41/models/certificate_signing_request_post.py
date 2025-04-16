@@ -30,27 +30,27 @@ class CertificateSigningRequestPost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'certificate': 'ReferenceNoId',
-        'common_name': 'str',
         'country': 'str',
-        'email': 'str',
-        'locality': 'str',
         'organization': 'str',
-        'organizational_unit': 'str',
+        'subject_alternative_names': 'list[str]',
+        'certificate': 'ReferenceNoId',
+        'locality': 'str',
         'state': 'str',
-        'subject_alternative_names': 'list[str]'
+        'common_name': 'str',
+        'email': 'str',
+        'organizational_unit': 'str'
     }
 
     attribute_map = {
-        'certificate': 'certificate',
-        'common_name': 'common_name',
         'country': 'country',
-        'email': 'email',
-        'locality': 'locality',
         'organization': 'organization',
-        'organizational_unit': 'organizational_unit',
+        'subject_alternative_names': 'subject_alternative_names',
+        'certificate': 'certificate',
+        'locality': 'locality',
         'state': 'state',
-        'subject_alternative_names': 'subject_alternative_names'
+        'common_name': 'common_name',
+        'email': 'email',
+        'organizational_unit': 'organizational_unit'
     }
 
     required_args = {
@@ -58,46 +58,46 @@ class CertificateSigningRequestPost(object):
 
     def __init__(
         self,
-        certificate=None,  # type: models.ReferenceNoId
-        common_name=None,  # type: str
         country=None,  # type: str
-        email=None,  # type: str
-        locality=None,  # type: str
         organization=None,  # type: str
-        organizational_unit=None,  # type: str
-        state=None,  # type: str
         subject_alternative_names=None,  # type: List[str]
+        certificate=None,  # type: models.ReferenceNoId
+        locality=None,  # type: str
+        state=None,  # type: str
+        common_name=None,  # type: str
+        email=None,  # type: str
+        organizational_unit=None,  # type: str
     ):
         """
         Keyword args:
-            certificate (ReferenceNoId)
-            common_name (str): The common name field listed in the certificate.
             country (str): Two-letter country (ISO) code listed in the certificate.
-            email (str): The email field listed in the certificate.
-            locality (str): The locality field listed in the certificate.
             organization (str): The organization field listed in the certificate.
-            organizational_unit (str): The organizational unit field listed in the certificate.
+            subject_alternative_names (list[str]): The alternative names that are secured by this certificate. Alternative names include IP addresses, DNS names, or URIs. 
+            certificate (ReferenceNoId)
+            locality (str): The locality field listed in the certificate.
             state (str): The state/province field listed in the certificate.
-            subject_alternative_names (list[str]): The alternative names that are secured by this certificate. Alternative names include IP addresses, DNS names, or URIs.
+            common_name (str): The common name field listed in the certificate.
+            email (str): The email field listed in the certificate.
+            organizational_unit (str): The organizational unit field listed in the certificate.
         """
-        if certificate is not None:
-            self.certificate = certificate
-        if common_name is not None:
-            self.common_name = common_name
         if country is not None:
             self.country = country
-        if email is not None:
-            self.email = email
-        if locality is not None:
-            self.locality = locality
         if organization is not None:
             self.organization = organization
-        if organizational_unit is not None:
-            self.organizational_unit = organizational_unit
-        if state is not None:
-            self.state = state
         if subject_alternative_names is not None:
             self.subject_alternative_names = subject_alternative_names
+        if certificate is not None:
+            self.certificate = certificate
+        if locality is not None:
+            self.locality = locality
+        if state is not None:
+            self.state = state
+        if common_name is not None:
+            self.common_name = common_name
+        if email is not None:
+            self.email = email
+        if organizational_unit is not None:
+            self.organizational_unit = organizational_unit
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

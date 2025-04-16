@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.16
     
@@ -32,15 +32,15 @@ class MaintenanceWindow(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
-        'created': 'int',
-        'expires': 'int'
+        'expires': 'int',
+        'created': 'int'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
-        'created': 'created',
-        'expires': 'expires'
+        'expires': 'expires',
+        'created': 'created'
     }
 
     required_args = {
@@ -50,24 +50,24 @@ class MaintenanceWindow(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
-        created=None,  # type: int
         expires=None,  # type: int
+        created=None,  # type: int
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            created (int): The maintenance window start time, measured in milliseconds since the UNIX epoch.
-            expires (int): The maintenance window end time, measured in milliseconds since the UNIX epoch.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            expires (int): The maintenance window end time, measured in milliseconds since the UNIX epoch. 
+            created (int): The maintenance window start time, measured in milliseconds since the UNIX epoch. 
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
-        if created is not None:
-            self.created = created
         if expires is not None:
             self.expires = expires
+        if created is not None:
+            self.created = created
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

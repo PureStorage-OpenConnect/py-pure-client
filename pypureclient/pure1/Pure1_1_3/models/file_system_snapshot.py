@@ -3,7 +3,7 @@
 """
     Pure1 Public REST API
 
-    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)  The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
+    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)   The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
 
     OpenAPI spec version: 1.3
     
@@ -31,26 +31,26 @@ class FileSystemSnapshot(object):
     """
     swagger_types = {
         'as_of': 'int',
-        'id': 'str',
         'name': 'str',
+        'id': 'str',
         'arrays': 'list[FixedReferenceFqdn]',
-        'created': 'int',
         'destroyed': 'bool',
-        'on': 'FixedReferenceFqdn',
+        'created': 'int',
         'source': 'FixedReference',
-        'suffix': 'str'
+        'suffix': 'str',
+        'on': 'FixedReferenceFqdn'
     }
 
     attribute_map = {
         'as_of': '_as_of',
-        'id': 'id',
         'name': 'name',
+        'id': 'id',
         'arrays': 'arrays',
-        'created': 'created',
         'destroyed': 'destroyed',
-        'on': 'on',
+        'created': 'created',
         'source': 'source',
-        'suffix': 'suffix'
+        'suffix': 'suffix',
+        'on': 'on'
     }
 
     required_args = {
@@ -59,45 +59,45 @@ class FileSystemSnapshot(object):
     def __init__(
         self,
         as_of=None,  # type: int
-        id=None,  # type: str
         name=None,  # type: str
+        id=None,  # type: str
         arrays=None,  # type: List[models.FixedReferenceFqdn]
-        created=None,  # type: int
         destroyed=None,  # type: bool
-        on=None,  # type: models.FixedReferenceFqdn
+        created=None,  # type: int
         source=None,  # type: models.FixedReference
         suffix=None,  # type: str
+        on=None,  # type: models.FixedReferenceFqdn
     ):
         """
         Keyword args:
             as_of (int): The freshness of the data (timestamp in millis since epoch).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
             name (str): A non-modifiable, locally unique name chosen by the system.
-            arrays (list[FixedReferenceFqdn]): The list of arrays where this resource exists. Many resources are on a single array, but some resources, such as pods, can be shared across multiple arrays.
+            id (str): A non-modifiable, globally unique ID chosen by the system.
+            arrays (list[FixedReferenceFqdn]): The list of arrays where this resource exists. Many resources are on a single array, but some resources, such as pods, can be shared across multiple arrays. 
+            destroyed (bool): Indicates if this snapshot has been destroyed and is pending eradication. 
             created (int): Creation time in milliseconds since UNIX epoch.
-            destroyed (bool): Indicates if this snapshot has been destroyed and is pending eradication.
-            on (FixedReferenceFqdn)
-            source (FixedReference): A reference to the file system that the snapshot was taken from.
+            source (FixedReference): A reference to the file system that the snapshot was taken from. 
             suffix (str): Indicates the suffix of the snapshot.
+            on (FixedReferenceFqdn)
         """
         if as_of is not None:
             self.as_of = as_of
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
         if arrays is not None:
             self.arrays = arrays
-        if created is not None:
-            self.created = created
         if destroyed is not None:
             self.destroyed = destroyed
-        if on is not None:
-            self.on = on
+        if created is not None:
+            self.created = created
         if source is not None:
             self.source = source
         if suffix is not None:
             self.suffix = suffix
+        if on is not None:
+            self.on = on
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -3,7 +3,7 @@
 """
     Pure1 Public REST API
 
-    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)  The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
+    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)   The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
 
     OpenAPI spec version: 1.0
     
@@ -31,26 +31,26 @@ class Controller(object):
     """
     swagger_types = {
         'as_of': 'int',
-        'id': 'str',
         'name': 'str',
+        'id': 'str',
         'arrays': 'list[FixedReference]',
         'mode': 'str',
         'model': 'str',
-        'status': 'str',
         'type': 'str',
-        'version': 'str'
+        'version': 'str',
+        'status': 'str'
     }
 
     attribute_map = {
         'as_of': '_as_of',
-        'id': 'id',
         'name': 'name',
+        'id': 'id',
         'arrays': 'arrays',
         'mode': 'mode',
         'model': 'model',
-        'status': 'status',
         'type': 'type',
-        'version': 'version'
+        'version': 'version',
+        'status': 'status'
     }
 
     required_args = {
@@ -59,45 +59,45 @@ class Controller(object):
     def __init__(
         self,
         as_of=None,  # type: int
-        id=None,  # type: str
         name=None,  # type: str
+        id=None,  # type: str
         arrays=None,  # type: List[models.FixedReference]
         mode=None,  # type: str
         model=None,  # type: str
-        status=None,  # type: str
         type=None,  # type: str
         version=None,  # type: str
+        status=None,  # type: str
     ):
         """
         Keyword args:
             as_of (int): The freshness of the data (timestamp in millis since epoch).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
             name (str): A non-modifiable, locally unique name chosen by the system.
-            arrays (list[FixedReference]): The list of arrays where this resource exists. Many resources are on a single array, but some resources, such as pods, can be shared across multiple arrays.
-            mode (str): Mode of the controller. Values include `not present`, `offline`, `primary`, and `secondary`.
+            id (str): A non-modifiable, globally unique ID chosen by the system.
+            arrays (list[FixedReference]): The list of arrays where this resource exists. Many resources are on a single array, but some resources, such as pods, can be shared across multiple arrays. 
+            mode (str): Mode of the controller. Values include `not present`, `offline`, `primary`, and `secondary`. 
             model (str): Model of the controller.
-            status (str): Status of the controller. Values include `not ready`, `ready`, `unknown`, and `updating`.
-            type (str): Type of the controller. Values include `array_controller` and `shelf_controller`.
+            type (str): Type of the controller. Values include `array_controller` and `shelf_controller`. 
             version (str): Version of the controller.
+            status (str): Status of the controller. Values include `not ready`, `ready`, `unknown`, and `updating`. 
         """
         if as_of is not None:
             self.as_of = as_of
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
         if arrays is not None:
             self.arrays = arrays
         if mode is not None:
             self.mode = mode
         if model is not None:
             self.model = model
-        if status is not None:
-            self.status = status
         if type is not None:
             self.type = type
         if version is not None:
             self.version = version
+        if status is not None:
+            self.status = status
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
