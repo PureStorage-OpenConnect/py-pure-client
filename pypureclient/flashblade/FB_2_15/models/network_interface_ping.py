@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.15, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.15, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.15
     
@@ -30,17 +30,17 @@ class NetworkInterfacePing(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'source': 'str',
-        'destination': 'str',
         'component_name': 'str',
-        'details': 'str'
+        'destination': 'str',
+        'details': 'str',
+        'source': 'str'
     }
 
     attribute_map = {
-        'source': 'source',
-        'destination': 'destination',
         'component_name': 'component_name',
-        'details': 'details'
+        'destination': 'destination',
+        'details': 'details',
+        'source': 'source'
     }
 
     required_args = {
@@ -48,26 +48,26 @@ class NetworkInterfacePing(object):
 
     def __init__(
         self,
-        source=None,  # type: str
-        destination=None,  # type: str
         component_name=None,  # type: str
+        destination=None,  # type: str
         details=None,  # type: str
+        source=None,  # type: str
     ):
         """
         Keyword args:
-            source (str): The address where the check starts. Can be a subnet or IP inside the subnet.
-            destination (str): The destination address or hostname provided in the request that the operation is run against.
             component_name (str): Name of the component running the check.
-            details (str): Giant text block that contains raw output of the operation and a client needs to parse.
+            destination (str): The destination address or hostname provided in the request that the operation is run against. 
+            details (str): Giant text block that contains raw output of the operation and a client needs to parse. 
+            source (str): The address where the check starts. Can be a subnet or IP inside the subnet. 
         """
-        if source is not None:
-            self.source = source
-        if destination is not None:
-            self.destination = destination
         if component_name is not None:
             self.component_name = component_name
+        if destination is not None:
+            self.destination = destination
         if details is not None:
             self.details = details
+        if source is not None:
+            self.source = source
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

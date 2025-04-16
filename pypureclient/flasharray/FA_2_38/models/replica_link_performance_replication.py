@@ -30,25 +30,25 @@ class ReplicaLinkPerformanceReplication(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'bytes_per_sec_from_remote': 'int',
-        'bytes_per_sec_to_remote': 'int',
         'bytes_per_sec_total': 'int',
-        'direction': 'str',
-        'local_pod': 'FixedReference',
+        'bytes_per_sec_from_remote': 'int',
         'remotes': 'list[FixedReference]',
+        'bytes_per_sec_to_remote': 'int',
         'remote_pod': 'FixedReference',
-        'time': 'int'
+        'time': 'int',
+        'local_pod': 'FixedReference',
+        'direction': 'str'
     }
 
     attribute_map = {
-        'bytes_per_sec_from_remote': 'bytes_per_sec_from_remote',
-        'bytes_per_sec_to_remote': 'bytes_per_sec_to_remote',
         'bytes_per_sec_total': 'bytes_per_sec_total',
-        'direction': 'direction',
-        'local_pod': 'local_pod',
+        'bytes_per_sec_from_remote': 'bytes_per_sec_from_remote',
         'remotes': 'remotes',
+        'bytes_per_sec_to_remote': 'bytes_per_sec_to_remote',
         'remote_pod': 'remote_pod',
-        'time': 'time'
+        'time': 'time',
+        'local_pod': 'local_pod',
+        'direction': 'direction'
     }
 
     required_args = {
@@ -56,55 +56,55 @@ class ReplicaLinkPerformanceReplication(object):
 
     def __init__(
         self,
-        bytes_per_sec_from_remote=None,  # type: int
-        bytes_per_sec_to_remote=None,  # type: int
         bytes_per_sec_total=None,  # type: int
-        direction=None,  # type: str
-        local_pod=None,  # type: models.FixedReference
+        bytes_per_sec_from_remote=None,  # type: int
         remotes=None,  # type: List[models.FixedReference]
+        bytes_per_sec_to_remote=None,  # type: int
         remote_pod=None,  # type: models.FixedReference
         time=None,  # type: int
+        local_pod=None,  # type: models.FixedReference
+        direction=None,  # type: str
     ):
         """
         Keyword args:
-            bytes_per_sec_from_remote (int): The number of bytes received per second from a remote array.
-            bytes_per_sec_to_remote (int): The number of bytes transmitted per second to a remote array.
             bytes_per_sec_total (int): Total bytes transmitted and received per second.
-            direction (str): The direction of replication. Valid values are `inbound` and `outbound`.
-            local_pod (FixedReference): Reference to a local pod.
+            bytes_per_sec_from_remote (int): The number of bytes received per second from a remote array.
             remotes (list[FixedReference]): Reference to a remote array.
+            bytes_per_sec_to_remote (int): The number of bytes transmitted per second to a remote array.
             remote_pod (FixedReference): Reference to a remote pod.
             time (int): Sample time in milliseconds since the UNIX epoch.
+            local_pod (FixedReference): Reference to a local pod.
+            direction (str): The direction of replication. Valid values are `inbound` and `outbound`.
         """
-        if bytes_per_sec_from_remote is not None:
-            self.bytes_per_sec_from_remote = bytes_per_sec_from_remote
-        if bytes_per_sec_to_remote is not None:
-            self.bytes_per_sec_to_remote = bytes_per_sec_to_remote
         if bytes_per_sec_total is not None:
             self.bytes_per_sec_total = bytes_per_sec_total
-        if direction is not None:
-            self.direction = direction
-        if local_pod is not None:
-            self.local_pod = local_pod
+        if bytes_per_sec_from_remote is not None:
+            self.bytes_per_sec_from_remote = bytes_per_sec_from_remote
         if remotes is not None:
             self.remotes = remotes
+        if bytes_per_sec_to_remote is not None:
+            self.bytes_per_sec_to_remote = bytes_per_sec_to_remote
         if remote_pod is not None:
             self.remote_pod = remote_pod
         if time is not None:
             self.time = time
+        if local_pod is not None:
+            self.local_pod = local_pod
+        if direction is not None:
+            self.direction = direction
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
             raise KeyError("Invalid key `{}` for `ReplicaLinkPerformanceReplication`".format(key))
+        if key == "bytes_per_sec_total" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `bytes_per_sec_total`, must be a value greater than or equal to `0`")
         if key == "bytes_per_sec_from_remote" and value is not None:
             if value < 0:
                 raise ValueError("Invalid value for `bytes_per_sec_from_remote`, must be a value greater than or equal to `0`")
         if key == "bytes_per_sec_to_remote" and value is not None:
             if value < 0:
                 raise ValueError("Invalid value for `bytes_per_sec_to_remote`, must be a value greater than or equal to `0`")
-        if key == "bytes_per_sec_total" and value is not None:
-            if value < 0:
-                raise ValueError("Invalid value for `bytes_per_sec_total`, must be a value greater than or equal to `0`")
         self.__dict__[key] = value
 
     def __getattribute__(self, item):

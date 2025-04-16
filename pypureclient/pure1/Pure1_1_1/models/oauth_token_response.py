@@ -3,7 +3,7 @@
 """
     Pure1 Public REST API
 
-    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)  The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
+    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)   The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
 
     OpenAPI spec version: 1.1
     
@@ -55,10 +55,10 @@ class OauthTokenResponse(object):
     ):
         """
         Keyword args:
-            access_token (str): The serialized OAuth 2.0 Bearer token used to perform authenticated requests. The access token must be added to the Authorization header of all API calls.
-            issued_token_type (str): The type of token that is issued. The Pure Storage REST API supports OAuth 2.0 access tokens.
-            token_type (str): Indicates how the API client can use the access token issued. The Pure Storage REST API supports the `Bearer` token.
-            expires_in (int): The duration after which the access token will expire. Measured in seconds. This differs from other duration fields that are expressed in milliseconds.
+            access_token (str): The serialized OAuth 2.0 Bearer token used to perform authenticated requests. The access token must be added to the Authorization header of all API calls. 
+            issued_token_type (str): The type of token that is issued. The Pure Storage REST API supports OAuth 2.0 access tokens. 
+            token_type (str): Indicates how the API client can use the access token issued. The Pure Storage REST API supports the `Bearer` token. 
+            expires_in (int): The duration after which the access token will expire. Measured in seconds. This differs from other duration fields that are expressed in milliseconds. 
         """
         if access_token is not None:
             self.access_token = access_token

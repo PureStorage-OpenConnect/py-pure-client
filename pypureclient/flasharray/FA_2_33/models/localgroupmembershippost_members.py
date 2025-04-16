@@ -30,13 +30,13 @@ class LocalgroupmembershippostMembers(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'member': 'ReferenceWithType',
-        'member_id': 'int'
+        'member_id': 'int',
+        'member': 'ReferenceWithType'
     }
 
     attribute_map = {
-        'member': 'member',
-        'member_id': 'member_id'
+        'member_id': 'member_id',
+        'member': 'member'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class LocalgroupmembershippostMembers(object):
 
     def __init__(
         self,
-        member=None,  # type: models.ReferenceWithType
         member_id=None,  # type: int
+        member=None,  # type: models.ReferenceWithType
     ):
         """
         Keyword args:
-            member (ReferenceWithType): Reference to the resource that will be a member of the group. The `id` or `name` parameter is required, but cannot be set together.
             member_id (int): The member ID that should be mapped.
+            member (ReferenceWithType): Reference to the resource that will be a member of the group. The `id` or `name` parameter is required, but cannot be set together. 
         """
-        if member is not None:
-            self.member = member
         if member_id is not None:
             self.member_id = member_id
+        if member is not None:
+            self.member = member
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

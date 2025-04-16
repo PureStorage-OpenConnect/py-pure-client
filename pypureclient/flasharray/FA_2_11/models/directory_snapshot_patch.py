@@ -31,20 +31,20 @@ class DirectorySnapshotPatch(object):
     """
     swagger_types = {
         'destroyed': 'bool',
-        'keep_for': 'int',
-        'policy': 'Reference',
         'name': 'str',
+        'keep_for': 'int',
+        'suffix': 'str',
         'client_name': 'str',
-        'suffix': 'str'
+        'policy': 'Reference'
     }
 
     attribute_map = {
         'destroyed': 'destroyed',
-        'keep_for': 'keep_for',
-        'policy': 'policy',
         'name': 'name',
+        'keep_for': 'keep_for',
+        'suffix': 'suffix',
         'client_name': 'client_name',
-        'suffix': 'suffix'
+        'policy': 'policy'
     }
 
     required_args = {
@@ -53,33 +53,33 @@ class DirectorySnapshotPatch(object):
     def __init__(
         self,
         destroyed=None,  # type: bool
-        keep_for=None,  # type: int
-        policy=None,  # type: models.Reference
         name=None,  # type: str
-        client_name=None,  # type: str
+        keep_for=None,  # type: int
         suffix=None,  # type: str
+        client_name=None,  # type: str
+        policy=None,  # type: models.Reference
     ):
         """
         Keyword args:
-            destroyed (bool): If set to `true`, destroys a resource. Once set to `true`, the `time_remaining` value will display the amount of time left until the destroyed resource is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed resource can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the resource is permanently eradicated and can no longer be recovered.
-            keep_for (int): The amount of time to keep the snapshots, in milliseconds. Can only be set on snapshots that are not managed by any snapshot policy. Set to `\"\"` to clear the keep_for value.
-            policy (Reference): The snapshot policy that manages this snapshot. Set to `name` or `id` to `\"\"` to clear the policy.
-            name (str): The new name of a directory snapshot. The name of a directory snapshot managed by a snapshot policy is not changeable.
-            client_name (str): The client name portion of the client-visible snapshot name. A full snapshot name is constructed in the form of `DIR.CLIENT_NAME.SUFFIX` where `DIR` is the managed directory name, `CLIENT_NAME` is the value of this field, and `SUFFIX` is the suffix. The client-visible snapshot name is `CLIENT_NAME.SUFFIX`. The client name of a directory snapshot managed by a snapshot policy is not changeable. If the `name` and `client_name` parameters are both specified, `client_name` must match the client name portion of `name`.
-            suffix (str): The suffix portion of the client-visible snapshot name. A full snapshot name is constructed in the form of `DIR.CLIENT_NAME.SUFFIX` where `DIR` is the managed directory name, `CLIENT_NAME` is the client name, and `SUFFIX` is the value of this field. The client-visible snapshot name is `CLIENT_NAME.SUFFIX`. The suffix of a directory snapshot managed by a snapshot policy is not changeable. If the `name` and `suffix` parameters are both specified, `suffix` must match the suffix portion of `name`.
+            destroyed (bool): If set to `true`, destroys a resource. Once set to `true`, the `time_remaining` value will display the amount of time left until the destroyed resource is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed resource can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed,  the resource is permanently eradicated and can no longer be recovered. 
+            name (str): The new name of a directory snapshot. The name of a directory snapshot managed by a snapshot policy is not changeable. 
+            keep_for (int): The amount of time to keep the snapshots, in milliseconds. Can only be set on snapshots that are not managed by any snapshot policy. Set to `\"\"` to clear the keep_for value. 
+            suffix (str): The suffix portion of the client-visible snapshot name. A full snapshot name is constructed in the form of `DIR.CLIENT_NAME.SUFFIX` where `DIR` is the managed directory name, `CLIENT_NAME` is the client name, and `SUFFIX` is the value of this field. The client-visible snapshot name is `CLIENT_NAME.SUFFIX`. The suffix of a directory snapshot managed by a snapshot policy is not changeable. If the `name` and `suffix` parameters are both specified, `suffix` must match the suffix portion of `name`. 
+            client_name (str): The client name portion of the client-visible snapshot name. A full snapshot name is constructed in the form of `DIR.CLIENT_NAME.SUFFIX` where `DIR` is the managed directory name, `CLIENT_NAME` is the value of this field, and `SUFFIX` is the suffix. The client-visible snapshot name is `CLIENT_NAME.SUFFIX`. The client name of a directory snapshot managed by a snapshot policy is not changeable. If the `name` and `client_name` parameters are both specified, `client_name` must match the client name portion of `name`. 
+            policy (Reference): The snapshot policy that manages this snapshot. Set to `name` or `id` to `\"\"` to clear the policy. 
         """
         if destroyed is not None:
             self.destroyed = destroyed
-        if keep_for is not None:
-            self.keep_for = keep_for
-        if policy is not None:
-            self.policy = policy
         if name is not None:
             self.name = name
-        if client_name is not None:
-            self.client_name = client_name
+        if keep_for is not None:
+            self.keep_for = keep_for
         if suffix is not None:
             self.suffix = suffix
+        if client_name is not None:
+            self.client_name = client_name
+        if policy is not None:
+            self.policy = policy
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

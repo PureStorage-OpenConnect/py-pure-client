@@ -30,13 +30,13 @@ class LocalUserMembershipPost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'groups': 'list[LocalusermembershippostGroups]',
-        'is_primary': 'bool'
+        'is_primary': 'bool',
+        'groups': 'list[LocalusermembershippostGroups]'
     }
 
     attribute_map = {
-        'groups': 'groups',
-        'is_primary': 'is_primary'
+        'is_primary': 'is_primary',
+        'groups': 'groups'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class LocalUserMembershipPost(object):
 
     def __init__(
         self,
-        groups=None,  # type: List[models.LocalusermembershippostGroups]
         is_primary=None,  # type: bool
+        groups=None,  # type: List[models.LocalusermembershippostGroups]
     ):
         """
         Keyword args:
-            groups (list[LocalusermembershippostGroups]): A list of groups of which the user is a member.
             is_primary (bool): Determines whether memberships are primary group memberships or not.
+            groups (list[LocalusermembershippostGroups]): A list of groups of which the user is a member. 
         """
-        if groups is not None:
-            self.groups = groups
         if is_primary is not None:
             self.is_primary = is_primary
+        if groups is not None:
+            self.groups = groups
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

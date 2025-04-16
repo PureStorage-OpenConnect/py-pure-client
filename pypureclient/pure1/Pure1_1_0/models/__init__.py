@@ -86,6 +86,7 @@ from .subscription_response import SubscriptionResponse
 from .support_contract import SupportContract
 from .support_contract_response import SupportContractResponse
 from .tag import Tag
+from .tag_batch_required import TagBatchRequired
 from .tag_put import TagPut
 from .tag_response import TagResponse
 from .target_response import TargetResponse

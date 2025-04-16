@@ -32,15 +32,15 @@ class SyslogServer(object):
     swagger_types = {
         'name': 'str',
         'target_type': 'str',
-        'uri': 'str',
-        'services': 'list[str]'
+        'services': 'list[str]',
+        'uri': 'str'
     }
 
     attribute_map = {
         'name': 'name',
         'target_type': 'target_type',
-        'uri': 'uri',
-        'services': 'services'
+        'services': 'services',
+        'uri': 'uri'
     }
 
     required_args = {
@@ -50,24 +50,24 @@ class SyslogServer(object):
         self,
         name=None,  # type: str
         target_type=None,  # type: str
-        uri=None,  # type: str
         services=None,  # type: List[str]
+        uri=None,  # type: str
     ):
         """
         Keyword args:
-            name (str): A user-specified name. The name must be locally unique and cannot be changed.
-            target_type (str): The type of log target. Valid values include `file`, and `syslog`.
-            uri (str): The URI of the syslog server in the format `PROTOCOL://HOSTNAME:PORT`.
-            services (list[str]): Valid values are `data-audit` and `management`. If not specified, defaults to `management`.
+            name (str): A user-specified name. The name must be locally unique and cannot be changed. 
+            target_type (str): The type of log target. Valid values include `file`, and `syslog`. 
+            services (list[str]): Valid values are `data-audit` and `management`. If not specified, defaults to `management`. 
+            uri (str): The URI of the syslog server in the format `PROTOCOL://HOSTNAME:PORT`. 
         """
         if name is not None:
             self.name = name
         if target_type is not None:
             self.target_type = target_type
-        if uri is not None:
-            self.uri = uri
         if services is not None:
             self.services = services
+        if uri is not None:
+            self.uri = uri
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

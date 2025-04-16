@@ -46,7 +46,7 @@ class ArrayPerformanceByLinkResponse(object):
     ):
         """
         Keyword args:
-            items (list[ArrayPerformanceByLink]): Array-level front-end I/O performance metrics grouped by link. A link represents a set of arrays that an I/O operation depends on.
+            items (list[ArrayPerformanceByLink]): Array-level front-end I/O performance metrics grouped by link. A link represents a set of arrays that an I/O operation depends on. 
         """
         if items is not None:
             self.items = items

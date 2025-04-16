@@ -30,13 +30,13 @@ class Subscription(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
-        'service': 'str'
+        'service': 'str',
+        'id': 'str'
     }
 
     attribute_map = {
-        'id': 'id',
-        'service': 'service'
+        'service': 'service',
+        'id': 'id'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class Subscription(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         service=None,  # type: str
+        id=None,  # type: str
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified.
-            service (str): The service type of the subscription.
+            service (str): The service type of the subscription. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified. 
         """
-        if id is not None:
-            self.id = id
         if service is not None:
             self.service = service
+        if id is not None:
+            self.id = id
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

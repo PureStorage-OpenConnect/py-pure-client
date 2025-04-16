@@ -3,7 +3,7 @@
 """
     Pure1 Public REST API
 
-    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)  The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
+    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)   The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
 
     OpenAPI spec version: 1.3
     
@@ -31,34 +31,34 @@ class FileSystem(object):
     """
     swagger_types = {
         'as_of': 'int',
-        'id': 'str',
         'name': 'str',
+        'id': 'str',
         'arrays': 'list[FixedReferenceFqdn]',
-        'created': 'int',
         'destroyed': 'bool',
-        'fast_remove_directory_enabled': 'bool',
         'hard_limit_enabled': 'bool',
-        'http': 'Http',
-        'nfs': 'Nfs',
         'provisioned': 'int',
+        'created': 'int',
+        'http': 'Http',
         'smb': 'Smb',
-        'snapshot_directory_enabled': 'bool'
+        'nfs': 'Nfs',
+        'snapshot_directory_enabled': 'bool',
+        'fast_remove_directory_enabled': 'bool'
     }
 
     attribute_map = {
         'as_of': '_as_of',
-        'id': 'id',
         'name': 'name',
+        'id': 'id',
         'arrays': 'arrays',
-        'created': 'created',
         'destroyed': 'destroyed',
-        'fast_remove_directory_enabled': 'fast_remove_directory_enabled',
         'hard_limit_enabled': 'hard_limit_enabled',
-        'http': 'http',
-        'nfs': 'nfs',
         'provisioned': 'provisioned',
+        'created': 'created',
+        'http': 'http',
         'smb': 'smb',
-        'snapshot_directory_enabled': 'snapshot_directory_enabled'
+        'nfs': 'nfs',
+        'snapshot_directory_enabled': 'snapshot_directory_enabled',
+        'fast_remove_directory_enabled': 'fast_remove_directory_enabled'
     }
 
     required_args = {
@@ -67,61 +67,61 @@ class FileSystem(object):
     def __init__(
         self,
         as_of=None,  # type: int
-        id=None,  # type: str
         name=None,  # type: str
+        id=None,  # type: str
         arrays=None,  # type: List[models.FixedReferenceFqdn]
-        created=None,  # type: int
         destroyed=None,  # type: bool
-        fast_remove_directory_enabled=None,  # type: bool
         hard_limit_enabled=None,  # type: bool
-        http=None,  # type: models.Http
-        nfs=None,  # type: models.Nfs
         provisioned=None,  # type: int
+        created=None,  # type: int
+        http=None,  # type: models.Http
         smb=None,  # type: models.Smb
+        nfs=None,  # type: models.Nfs
         snapshot_directory_enabled=None,  # type: bool
+        fast_remove_directory_enabled=None,  # type: bool
     ):
         """
         Keyword args:
             as_of (int): The freshness of the data (timestamp in millis since epoch).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
             name (str): A non-modifiable, locally unique name chosen by the system.
-            arrays (list[FixedReferenceFqdn]): The list of arrays where this resource exists. Many resources are on a single array, but some resources, such as pods, can be shared across multiple arrays.
+            id (str): A non-modifiable, globally unique ID chosen by the system.
+            arrays (list[FixedReferenceFqdn]): The list of arrays where this resource exists. Many resources are on a single array, but some resources, such as pods, can be shared across multiple arrays. 
+            destroyed (bool): Is the file system destroyed? 
+            hard_limit_enabled (bool): On a FlashBlade file system, returns the value of `true` if the file system's size is a hard limit quota and `false` if it is not. On a FlashArray file system, the value is always `null`. 
+            provisioned (int): The provisioned size of the file system in bytes. A value of 0 means unlimited. On a FlashArray file system, the value is always `null`. 
             created (int): Creation time in milliseconds since UNIX epoch.
-            destroyed (bool): Is the file system destroyed?
-            fast_remove_directory_enabled (bool): On a FlashBlade file system, returns the value of `true` if fast remove directory is enabled and `false` if it is not. On a FlashArray file system, the value is always `null`.
-            hard_limit_enabled (bool): On a FlashBlade file system, returns the value of `true` if the file system's size is a hard limit quota and `false` if it is not. On a FlashArray file system, the value is always `null`.
             http (Http): HTTP configuration. On a FlashArray file system, the value is always `null`.
-            nfs (Nfs): NFS configuration. On a FlashArray file system, the value is always `null`.
-            provisioned (int): The provisioned size of the file system in bytes. A value of 0 means unlimited. On a FlashArray file system, the value is always `null`.
             smb (Smb): SMB configuration. On a FlashArray file system, the value is always `null`.
-            snapshot_directory_enabled (bool): On a FlashBlade file system, returns the value of `true` if snapshot directory is enabled and `false` if it is not. On a FlashArray file system, the value is always `null`.
+            nfs (Nfs): NFS configuration. On a FlashArray file system, the value is always `null`.
+            snapshot_directory_enabled (bool): On a FlashBlade file system, returns the value of `true` if snapshot directory is enabled and `false` if it is not. On a FlashArray file system, the value is always `null`. 
+            fast_remove_directory_enabled (bool): On a FlashBlade file system, returns the value of `true` if fast remove directory is enabled and `false` if it is not. On a FlashArray file system, the value is always `null`. 
         """
         if as_of is not None:
             self.as_of = as_of
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
         if arrays is not None:
             self.arrays = arrays
-        if created is not None:
-            self.created = created
         if destroyed is not None:
             self.destroyed = destroyed
-        if fast_remove_directory_enabled is not None:
-            self.fast_remove_directory_enabled = fast_remove_directory_enabled
         if hard_limit_enabled is not None:
             self.hard_limit_enabled = hard_limit_enabled
-        if http is not None:
-            self.http = http
-        if nfs is not None:
-            self.nfs = nfs
         if provisioned is not None:
             self.provisioned = provisioned
+        if created is not None:
+            self.created = created
+        if http is not None:
+            self.http = http
         if smb is not None:
             self.smb = smb
+        if nfs is not None:
+            self.nfs = nfs
         if snapshot_directory_enabled is not None:
             self.snapshot_directory_enabled = snapshot_directory_enabled
+        if fast_remove_directory_enabled is not None:
+            self.fast_remove_directory_enabled = fast_remove_directory_enabled
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

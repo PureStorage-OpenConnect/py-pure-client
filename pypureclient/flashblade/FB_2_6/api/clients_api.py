@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.6, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.6, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.6
     
@@ -48,11 +48,11 @@ class ClientsApi(object):
         >>> thread = api.api26_arrays_clients_performance_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param str filter: Exclude resources that don't match the specified criteria.
-        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
-        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.
-        :param bool total_only: Only return the total record for the specified items. The total record will be the total of all items after filtering. The `items` list will be empty.
+        :param str filter: Exclude resources that don't match the specified criteria. 
+        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
+        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response. 
+        :param bool total_only: Only return the total record for the specified items. The total record will be the total of all items after filtering. The `items` list will be empty. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.

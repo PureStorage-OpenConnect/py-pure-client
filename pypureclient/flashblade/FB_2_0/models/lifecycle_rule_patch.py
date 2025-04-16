@@ -3,7 +3,7 @@
 """
     FlashBlade REST API Client
 
-    A lightweight client for FlashBlade REST API 2.0, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.0, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.0
     
@@ -30,15 +30,15 @@ class LifecycleRulePatch(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'enabled': 'bool',
+        'prefix': 'str',
         'keep_previous_version_for': 'int',
-        'prefix': 'str'
+        'enabled': 'bool'
     }
 
     attribute_map = {
-        'enabled': 'enabled',
+        'prefix': 'prefix',
         'keep_previous_version_for': 'keep_previous_version_for',
-        'prefix': 'prefix'
+        'enabled': 'enabled'
     }
 
     required_args = {
@@ -46,22 +46,22 @@ class LifecycleRulePatch(object):
 
     def __init__(
         self,
-        enabled=None,  # type: bool
-        keep_previous_version_for=None,  # type: int
         prefix=None,  # type: str
+        keep_previous_version_for=None,  # type: int
+        enabled=None,  # type: bool
     ):
         """
         Keyword args:
-            enabled (bool): If set to `true`, this rule will be enabled.
-            keep_previous_version_for (int): Time after which previous versions will be marked expired. Measured in milliseconds. Must be a multiple of 86400000 to represent a whole number of days.
-            prefix (str): Object key prefix identifying one or more objects in the bucket. Can have a maximum length of 1024 characters.
+            prefix (str): Object key prefix identifying one or more objects in the bucket. Can have a maximum length of 1024 characters. 
+            keep_previous_version_for (int): Time after which previous versions will be marked expired. Measured in milliseconds. Must be a multiple of 86400000 to represent a whole number of days. 
+            enabled (bool): If set to `true`, this rule will be enabled. 
         """
-        if enabled is not None:
-            self.enabled = enabled
-        if keep_previous_version_for is not None:
-            self.keep_previous_version_for = keep_previous_version_for
         if prefix is not None:
             self.prefix = prefix
+        if keep_previous_version_for is not None:
+            self.keep_previous_version_for = keep_previous_version_for
+        if enabled is not None:
+            self.enabled = enabled
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

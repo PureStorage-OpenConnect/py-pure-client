@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.15, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.15, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.15
     
@@ -32,18 +32,18 @@ class NetworkAccessPolicyRulePost(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
+        'interfaces': 'list[str]',
         'effect': 'str',
         'client': 'str',
-        'interfaces': 'list[str]',
         'index': 'int'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
+        'interfaces': 'interfaces',
         'effect': 'effect',
         'client': 'client',
-        'interfaces': 'interfaces',
         'index': 'index'
     }
 
@@ -54,30 +54,30 @@ class NetworkAccessPolicyRulePost(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
+        interfaces=None,  # type: List[str]
         effect=None,  # type: str
         client=None,  # type: str
-        interfaces=None,  # type: List[str]
         index=None,  # type: int
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            effect (str): If set to `allow`, the specified client will be permitted to access the specified interfaces. If set to `deny`, the specified client will be denied access to them. Valid values include `allow` and `deny`. The default value is `allow` if not specified.
-            client (str): Specifies the clients that will be permitted or denied access to the interface. Accepted notations include a single IP address, subnet in CIDR notation, or all clients (specified as `*`). The default value is `*` if not specified.
-            interfaces (list[str]): Specifies which product interfaces this rule applies to, whether it is permitting or denying access. Valid values include `management-ssh`, `management-rest-api`, `management-web-ui`, `snmp`, and `local-network-superuser-password-access`.
-            index (int): The index within the policy. The `index` indicates the order the rules are evaluated. NOTE: It is recommended to use the query param `before_rule_id` to do reordering to avoid concurrency issues, but changing `index` is also supported. `index` can not be changed if `before_rule_id` or `before_rule_name` are specified.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            interfaces (list[str]): Specifies which product interfaces this rule applies to, whether it is permitting or denying access. Valid values include `management-ssh`, `management-rest-api`, `management-web-ui`, `snmp`, and `local-network-superuser-password-access`. 
+            effect (str): If set to `allow`, the specified client will be permitted to access the specified interfaces. If set to `deny`, the specified client will be denied access to them. Valid values include `allow` and `deny`. The default value is `allow` if not specified. 
+            client (str): Specifies the clients that will be permitted or denied access to the interface. Accepted notations include a single IP address, subnet in CIDR notation, or all clients (specified as `*`). The default value is `*` if not specified. 
+            index (int): The index within the policy. The `index` indicates the order the rules are evaluated. NOTE: It is recommended to use the query param `before_rule_id` to do reordering to avoid concurrency issues, but changing `index` is also supported. `index` can not be changed if `before_rule_id` or `before_rule_name` are specified. 
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
+        if interfaces is not None:
+            self.interfaces = interfaces
         if effect is not None:
             self.effect = effect
         if client is not None:
             self.client = client
-        if interfaces is not None:
-            self.interfaces = interfaces
         if index is not None:
             self.index = index
 

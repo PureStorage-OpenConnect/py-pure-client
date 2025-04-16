@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.16
     
@@ -30,18 +30,18 @@ class SnmpV3(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'auth_passphrase': 'str',
         'auth_protocol': 'str',
-        'privacy_passphrase': 'str',
         'privacy_protocol': 'str',
+        'auth_passphrase': 'str',
+        'privacy_passphrase': 'str',
         'user': 'str'
     }
 
     attribute_map = {
-        'auth_passphrase': 'auth_passphrase',
         'auth_protocol': 'auth_protocol',
-        'privacy_passphrase': 'privacy_passphrase',
         'privacy_protocol': 'privacy_protocol',
+        'auth_passphrase': 'auth_passphrase',
+        'privacy_passphrase': 'privacy_passphrase',
         'user': 'user'
     }
 
@@ -50,28 +50,28 @@ class SnmpV3(object):
 
     def __init__(
         self,
-        auth_passphrase=None,  # type: str
         auth_protocol=None,  # type: str
-        privacy_passphrase=None,  # type: str
         privacy_protocol=None,  # type: str
+        auth_passphrase=None,  # type: str
+        privacy_passphrase=None,  # type: str
         user=None,  # type: str
     ):
         """
         Keyword args:
-            auth_passphrase (str): Passphrase used by Purity to authenticate the array with the specified managers.
-            auth_protocol (str): Hash algorithm used to validate the authentication passphrase. Valid values are `MD5` and `SHA`.
+            auth_protocol (str): Hash algorithm used to validate the authentication passphrase. Valid values are `MD5` and `SHA`. 
+            privacy_protocol (str): Encryption protocol for SNMP messages. Valid values are `AES` and `DES`. 
+            auth_passphrase (str): Passphrase used by Purity to authenticate the array with the specified managers. 
             privacy_passphrase (str): Passphrase used to encrypt SNMP messages.
-            privacy_protocol (str): Encryption protocol for SNMP messages. Valid values are `AES` and `DES`.
-            user (str): User ID recognized by the specified SNMP managers which Purity is to use in communications with them.
+            user (str): User ID recognized by the specified SNMP managers which Purity is to use in communications with them. 
         """
-        if auth_passphrase is not None:
-            self.auth_passphrase = auth_passphrase
         if auth_protocol is not None:
             self.auth_protocol = auth_protocol
-        if privacy_passphrase is not None:
-            self.privacy_passphrase = privacy_passphrase
         if privacy_protocol is not None:
             self.privacy_protocol = privacy_protocol
+        if auth_passphrase is not None:
+            self.auth_passphrase = auth_passphrase
+        if privacy_passphrase is not None:
+            self.privacy_passphrase = privacy_passphrase
         if user is not None:
             self.user = user
 

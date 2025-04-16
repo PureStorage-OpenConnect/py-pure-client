@@ -35,9 +35,9 @@ class VolumePatch(object):
         'pod': 'Reference',
         'provisioned': 'int',
         'qos': 'Qos',
-        'priority_adjustment': 'PriorityAdjustment',
+        'requested_promotion_state': 'str',
         'volume_group': 'Reference',
-        'requested_promotion_state': 'str'
+        'priority_adjustment': 'PriorityAdjustment'
     }
 
     attribute_map = {
@@ -46,9 +46,9 @@ class VolumePatch(object):
         'pod': 'pod',
         'provisioned': 'provisioned',
         'qos': 'qos',
-        'priority_adjustment': 'priority_adjustment',
+        'requested_promotion_state': 'requested_promotion_state',
         'volume_group': 'volume_group',
-        'requested_promotion_state': 'requested_promotion_state'
+        'priority_adjustment': 'priority_adjustment'
     }
 
     required_args = {
@@ -61,20 +61,20 @@ class VolumePatch(object):
         pod=None,  # type: models.Reference
         provisioned=None,  # type: int
         qos=None,  # type: models.Qos
-        priority_adjustment=None,  # type: models.PriorityAdjustment
-        volume_group=None,  # type: models.Reference
         requested_promotion_state=None,  # type: str
+        volume_group=None,  # type: models.Reference
+        priority_adjustment=None,  # type: models.PriorityAdjustment
     ):
         """
         Keyword args:
-            destroyed (bool): If set to `true`, destroys a resource. Once set to `true`, the `time_remaining` value will display the amount of time left until the destroyed resource is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed resource can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the resource is permanently eradicated and can no longer be recovered.
+            destroyed (bool): If set to `true`, destroys a resource. Once set to `true`, the `time_remaining` value will display the amount of time left until the destroyed resource is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed resource can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed,  the resource is permanently eradicated and can no longer be recovered. 
             name (str): The new name for the resource.
             pod (Reference): Moves the volume into the specified pod.
             provisioned (int): Updates the virtual size of the volume, measured in bytes.
             qos (Qos): Sets QoS limits.
-            priority_adjustment (PriorityAdjustment): Adjusts volume priority.
+            requested_promotion_state (str): Valid values are `promoted` and `demoted`. Patch `requested_promotion_state` to `demoted` to demote the volume so that the volume stops accepting write requests.  Patch `requested_promotion_state` to `promoted` to promote the volume so that the volume starts accepting write requests. 
             volume_group (Reference): Adds the volume to the specified volume group.
-            requested_promotion_state (str): Valid values are `promoted` and `demoted`. Patch `requested_promotion_state` to `demoted` to demote the volume so that the volume stops accepting write requests. Patch `requested_promotion_state` to `promoted` to promote the volume so that the volume starts accepting write requests.
+            priority_adjustment (PriorityAdjustment): Adjusts volume priority.
         """
         if destroyed is not None:
             self.destroyed = destroyed
@@ -86,12 +86,12 @@ class VolumePatch(object):
             self.provisioned = provisioned
         if qos is not None:
             self.qos = qos
-        if priority_adjustment is not None:
-            self.priority_adjustment = priority_adjustment
-        if volume_group is not None:
-            self.volume_group = volume_group
         if requested_promotion_state is not None:
             self.requested_promotion_state = requested_promotion_state
+        if volume_group is not None:
+            self.volume_group = volume_group
+        if priority_adjustment is not None:
+            self.priority_adjustment = priority_adjustment
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

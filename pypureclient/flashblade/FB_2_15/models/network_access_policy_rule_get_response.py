@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.15, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.15, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.15
     
@@ -52,9 +52,9 @@ class NetworkAccessPolicyRuleGetResponse(object):
     ):
         """
         Keyword args:
-            continuation_token (str): Continuation token that can be provided in the `continuation_token` query param to get the next page of data. If you use the `continuation_token` to page through data you are guaranteed to get all items exactly once regardless of how items are modified. If an item is added or deleted during the pagination then it may or may not be returned. The `continuation_token` is generated if the `limit` is less than the remaining number of items, and the default sort is used (no sort is specified).
+            continuation_token (str): Continuation token that can be provided in the `continuation_token` query param to get the next page of data. If you use the `continuation_token` to page through data you are guaranteed to get all items exactly once regardless of how items are modified. If an item is added or deleted during the pagination then it may or may not be returned. The `continuation_token` is generated if the `limit` is less than the remaining number of items, and the default sort is used (no sort is specified). 
             total_item_count (int): Total number of items after applying `filter` params.
-            items (list[NetworkAccessPolicyRule]): Displays a list of all items after filtering.
+            items (list[NetworkAccessPolicyRule]): Displays a list of all items after filtering. 
         """
         if continuation_token is not None:
             self.continuation_token = continuation_token

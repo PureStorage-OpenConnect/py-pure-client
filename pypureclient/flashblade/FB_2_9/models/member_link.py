@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.9, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.9, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.9
     
@@ -30,14 +30,14 @@ class MemberLink(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'local_file_system': 'FixedReference',
         'remote': 'FixedReferenceNoResourceType',
+        'local_file_system': 'FixedReference',
         'remote_file_system': 'FixedReferenceNoResourceType'
     }
 
     attribute_map = {
-        'local_file_system': 'local_file_system',
         'remote': 'remote',
+        'local_file_system': 'local_file_system',
         'remote_file_system': 'remote_file_system'
     }
 
@@ -46,20 +46,20 @@ class MemberLink(object):
 
     def __init__(
         self,
-        local_file_system=None,  # type: models.FixedReference
         remote=None,  # type: models.FixedReferenceNoResourceType
+        local_file_system=None,  # type: models.FixedReference
         remote_file_system=None,  # type: models.FixedReferenceNoResourceType
     ):
         """
         Keyword args:
-            local_file_system (FixedReference): Reference to a local file system.
             remote (FixedReferenceNoResourceType): Reference to a remote array.
+            local_file_system (FixedReference): Reference to a local file system.
             remote_file_system (FixedReferenceNoResourceType): Reference to a remote file system.
         """
-        if local_file_system is not None:
-            self.local_file_system = local_file_system
         if remote is not None:
             self.remote = remote
+        if local_file_system is not None:
+            self.local_file_system = local_file_system
         if remote_file_system is not None:
             self.remote_file_system = remote_file_system
 

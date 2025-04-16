@@ -30,15 +30,15 @@ class DnsPost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'domain': 'str',
         'nameservers': 'list[str]',
+        'domain': 'str',
         'services': 'list[str]',
         'source': 'ReferenceNoId'
     }
 
     attribute_map = {
-        'domain': 'domain',
         'nameservers': 'nameservers',
+        'domain': 'domain',
         'services': 'services',
         'source': 'source'
     }
@@ -48,22 +48,22 @@ class DnsPost(object):
 
     def __init__(
         self,
-        domain=None,  # type: str
         nameservers=None,  # type: List[str]
+        domain=None,  # type: str
         services=None,  # type: List[str]
         source=None,  # type: models.ReferenceNoId
     ):
         """
         Keyword args:
-            domain (str): The domain suffix to be appended by the appliance when performing DNS lookups.
-            nameservers (list[str]): The list of DNS server IP addresses.
-            services (list[str]): The list of services utilizing the DNS configuration.
-            source (ReferenceNoId): The network interface used for communication with the DNS server.
+            nameservers (list[str]): The list of DNS server IP addresses. 
+            domain (str): The domain suffix to be appended by the appliance when performing DNS lookups. 
+            services (list[str]): The list of services utilizing the DNS configuration. 
+            source (ReferenceNoId): The network interface used for communication with the DNS server. 
         """
-        if domain is not None:
-            self.domain = domain
         if nameservers is not None:
             self.nameservers = nameservers
+        if domain is not None:
+            self.domain = domain
         if services is not None:
             self.services = services
         if source is not None:

@@ -30,28 +30,28 @@ class SoftwareCheck(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
+        'id': 'str',
         'start_time': 'int',
         'end_time': 'int',
         'checks': 'list[SoftwareChecksChecks]',
         'details': 'str',
         'software_name': 'str',
-        'software_upgrade_hops': 'list[str]',
         'software_version': 'str',
+        'software_upgrade_hops': 'list[str]',
         'status': 'str'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
+        'id': 'id',
         'start_time': 'start_time',
         'end_time': 'end_time',
         'checks': 'checks',
         'details': 'details',
         'software_name': 'software_name',
-        'software_upgrade_hops': 'software_upgrade_hops',
         'software_version': 'software_version',
+        'software_upgrade_hops': 'software_upgrade_hops',
         'status': 'status'
     }
 
@@ -60,34 +60,34 @@ class SoftwareCheck(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
+        id=None,  # type: str
         start_time=None,  # type: int
         end_time=None,  # type: int
         checks=None,  # type: List[models.SoftwareChecksChecks]
         details=None,  # type: str
         software_name=None,  # type: str
-        software_upgrade_hops=None,  # type: List[str]
         software_version=None,  # type: str
+        software_upgrade_hops=None,  # type: List[str]
         status=None,  # type: str
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified.
-            name (str): Name of the resource. The name cannot be modified.
+            name (str): Name of the resource. The name cannot be modified. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified. 
             start_time (int): Start time in milliseconds since the UNIX epoch.
             end_time (int): End time in milliseconds since the UNIX epoch.
-            checks (list[SoftwareChecksChecks]): A list of checks in this check task.
-            details (str): The detailed reason for the `status`.
-            software_name (str): The name of the software the upgrade checks will test.
-            software_upgrade_hops (list[str]): The list of software versions the upgrade goes through. The upgrade checks also test this particular path.
-            software_version (str): The version of the software that the upgrade checks will test.
-            status (str): The status of the check task. Valid values are `queued`, `running`, `passed`, and `failed`. A status of `queued` indicates that the task is queued to run and is waiting for other check tasks to complete. A status of `running` indicates that the task is currently running. A status of `passed` indicates that all upgrade checks in the task are complete. A status of `failed` indicates that at least one upgrade check in the task has failed.
+            checks (list[SoftwareChecksChecks]): A list of checks in this check task. 
+            details (str): The detailed reason for the `status`. 
+            software_name (str): The name of the software the upgrade checks will test. 
+            software_version (str): The version of the software that the upgrade checks will test. 
+            software_upgrade_hops (list[str]): The list of software versions the upgrade goes through. The upgrade checks also test this particular path. 
+            status (str): The status of the check task. Valid values are `queued`, `running`, `passed`, and `failed`. A status of `queued` indicates that the task is queued to run and is waiting for other check tasks to complete. A status of `running` indicates that the task is currently running. A status of `passed` indicates that all upgrade checks in the task are complete. A status of `failed` indicates that at least one upgrade check in the task has failed. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
         if start_time is not None:
             self.start_time = start_time
         if end_time is not None:
@@ -98,10 +98,10 @@ class SoftwareCheck(object):
             self.details = details
         if software_name is not None:
             self.software_name = software_name
-        if software_upgrade_hops is not None:
-            self.software_upgrade_hops = software_upgrade_hops
         if software_version is not None:
             self.software_version = software_version
+        if software_upgrade_hops is not None:
+            self.software_upgrade_hops = software_upgrade_hops
         if status is not None:
             self.status = status
 

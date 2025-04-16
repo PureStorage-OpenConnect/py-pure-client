@@ -51,7 +51,7 @@ class PresetWorkloadSnapshotConfiguration(object):
     ):
         """
         Keyword args:
-            name (str, required): The name of the snapshot configuration, by which other configuration objects in the preset can reference it. Name must be unique across all configuration objects in the preset.
+            name (str, required): The name of the snapshot configuration, by which other configuration objects in the preset can reference it. Name must be unique across all configuration objects in the preset. 
             rules (list[PresetWorkloadSnapshotRule], required): Rules describe the frequency and retention of snapshots taken by the configuration.
         """
         self.name = name

@@ -30,26 +30,26 @@ class TestResultWithResourceWithId(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'component_address': 'str',
+        'success': 'bool',
         'component_name': 'str',
-        'description': 'str',
         'destination': 'str',
+        'description': 'str',
+        'component_address': 'str',
         'enabled': 'bool',
         'result_details': 'str',
-        'success': 'bool',
         'test_type': 'str',
         'context': 'FixedReference',
         'resource': 'FixedReference'
     }
 
     attribute_map = {
-        'component_address': 'component_address',
+        'success': 'success',
         'component_name': 'component_name',
-        'description': 'description',
         'destination': 'destination',
+        'description': 'description',
+        'component_address': 'component_address',
         'enabled': 'enabled',
         'result_details': 'result_details',
-        'success': 'success',
         'test_type': 'test_type',
         'context': 'context',
         'resource': 'resource'
@@ -60,44 +60,44 @@ class TestResultWithResourceWithId(object):
 
     def __init__(
         self,
-        component_address=None,  # type: str
+        success=None,  # type: bool
         component_name=None,  # type: str
-        description=None,  # type: str
         destination=None,  # type: str
+        description=None,  # type: str
+        component_address=None,  # type: str
         enabled=None,  # type: bool
         result_details=None,  # type: str
-        success=None,  # type: bool
         test_type=None,  # type: str
         context=None,  # type: models.FixedReference
         resource=None,  # type: models.FixedReference
     ):
         """
         Keyword args:
-            component_address (str): Address of the component running the test.
+            success (bool): Whether the object being tested passed the test or not. Returns a value of `true` if the specified test has succeeded. Returns a value of `false` if the specified test has failed. 
             component_name (str): Name of the component running the test.
-            description (str): What the test is doing.
             destination (str): The URI of the target server being tested.
-            enabled (bool): Whether the object being tested is enabled or not. Returns a value of `true` if the the service is enabled. Returns a value of `false` if the service is disabled.
+            description (str): What the test is doing.
+            component_address (str): Address of the component running the test.
+            enabled (bool): Whether the object being tested is enabled or not. Returns a value of `true` if the the service is enabled. Returns a value of `false` if the service is disabled. 
             result_details (str): Additional information about the test result.
-            success (bool): Whether the object being tested passed the test or not. Returns a value of `true` if the specified test has succeeded. Returns a value of `false` if the specified test has failed.
-            test_type (str): Displays the type of test being performed. The returned values are determined by the `resource` being tested and its configuration. Values include `array-admin-group-searching`, `binding`, `connecting`, `phonehome`, `phonehome-ping`, `remote-assist`, `rootdse-searching`, `read-only-group-searching`, `storage-admin-group-searching`, and `validate-ntp-configuration`.
-            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
-            resource (FixedReference): A reference to the object being tested.
+            test_type (str): Displays the type of test being performed. The returned values are determined by the `resource` being tested and its configuration. Values include `array-admin-group-searching`, `binding`, `connecting`, `phonehome`, `phonehome-ping`, `remote-assist`, `rootdse-searching`, `read-only-group-searching`, `storage-admin-group-searching`, and `validate-ntp-configuration`. 
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request.  Other parameters provided with the request, such as names of volumes or snapshots,  are resolved relative to the provided `context`. 
+            resource (FixedReference): A reference to the object being tested. 
         """
-        if component_address is not None:
-            self.component_address = component_address
+        if success is not None:
+            self.success = success
         if component_name is not None:
             self.component_name = component_name
-        if description is not None:
-            self.description = description
         if destination is not None:
             self.destination = destination
+        if description is not None:
+            self.description = description
+        if component_address is not None:
+            self.component_address = component_address
         if enabled is not None:
             self.enabled = enabled
         if result_details is not None:
             self.result_details = result_details
-        if success is not None:
-            self.success = success
         if test_type is not None:
             self.test_type = test_type
         if context is not None:

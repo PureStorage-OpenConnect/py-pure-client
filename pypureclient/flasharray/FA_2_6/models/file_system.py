@@ -30,19 +30,19 @@ class FileSystem(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
-        'created': 'int',
+        'id': 'str',
+        'time_remaining': 'int',
         'destroyed': 'bool',
-        'time_remaining': 'int'
+        'created': 'int'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
-        'created': 'created',
+        'id': 'id',
+        'time_remaining': 'time_remaining',
         'destroyed': 'destroyed',
-        'time_remaining': 'time_remaining'
+        'created': 'created'
     }
 
     required_args = {
@@ -50,30 +50,30 @@ class FileSystem(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
-        created=None,  # type: int
-        destroyed=None,  # type: bool
+        id=None,  # type: str
         time_remaining=None,  # type: int
+        destroyed=None,  # type: bool
+        created=None,  # type: int
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            name (str): A user-specified name. The name must be locally unique and can be changed.
-            created (int): The file system creation time, measured in milliseconds since the UNIX epoch.
-            destroyed (bool): Returns a value of `true` if the file system has been destroyed and is pending eradication. The `time_remaining` value displays the amount of time left until the destroyed file system is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed file system can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the file system is permanently eradicated and can no longer be recovered.
-            time_remaining (int): The amount of time left, measured in milliseconds until the destroyed file system is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed file system can be recovered by setting `destroyed=false`.
+            name (str): A user-specified name. The name must be locally unique and can be changed. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource. 
+            time_remaining (int): The amount of time left, measured in milliseconds until the destroyed file system is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed file system can be recovered by setting `destroyed=false`. 
+            destroyed (bool): Returns a value of `true` if the file system has been destroyed and is pending eradication. The `time_remaining` value displays the amount of time left until the destroyed file system is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed file system can be recovered by setting `destroyed=false`.  Once the `time_remaining` period has elapsed, the file system is permanently eradicated and can no longer be recovered. 
+            created (int): The file system creation time, measured in milliseconds since the UNIX epoch. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
-        if created is not None:
-            self.created = created
-        if destroyed is not None:
-            self.destroyed = destroyed
+        if id is not None:
+            self.id = id
         if time_remaining is not None:
             self.time_remaining = time_remaining
+        if destroyed is not None:
+            self.destroyed = destroyed
+        if created is not None:
+            self.created = created
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

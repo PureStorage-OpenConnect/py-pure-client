@@ -30,25 +30,25 @@ class ActiveDirectoryPost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'kerberos_servers': 'list[str]',
         'computer_name': 'str',
+        'join_ou': 'str',
+        'password': 'str',
         'directory_servers': 'list[str]',
         'domain': 'str',
-        'kerberos_servers': 'list[str]',
-        'password': 'str',
-        'user': 'str',
-        'join_ou': 'str',
-        'tls': 'str'
+        'tls': 'str',
+        'user': 'str'
     }
 
     attribute_map = {
+        'kerberos_servers': 'kerberos_servers',
         'computer_name': 'computer_name',
+        'join_ou': 'join_ou',
+        'password': 'password',
         'directory_servers': 'directory_servers',
         'domain': 'domain',
-        'kerberos_servers': 'kerberos_servers',
-        'password': 'password',
-        'user': 'user',
-        'join_ou': 'join_ou',
-        'tls': 'tls'
+        'tls': 'tls',
+        'user': 'user'
     }
 
     required_args = {
@@ -56,42 +56,42 @@ class ActiveDirectoryPost(object):
 
     def __init__(
         self,
+        kerberos_servers=None,  # type: List[str]
         computer_name=None,  # type: str
+        join_ou=None,  # type: str
+        password=None,  # type: str
         directory_servers=None,  # type: List[str]
         domain=None,  # type: str
-        kerberos_servers=None,  # type: List[str]
-        password=None,  # type: str
-        user=None,  # type: str
-        join_ou=None,  # type: str
         tls=None,  # type: str
+        user=None,  # type: str
     ):
         """
         Keyword args:
-            computer_name (str): The name of the computer account to be created in the Active Directory domain. If not specified, defaults to the name of the Active Directory configuration.
-            directory_servers (list[str]): A list of directory servers used for lookups related to user authorization. Servers must be specified in FQDN format. All specified servers must be registered to the domain appropriately in the configured DNS of the array and are only communicated with over the secure LDAP (LDAPS) protocol. If not specified, servers are resolved for the domain in DNS.
+            kerberos_servers (list[str]): A list of key distribution servers to use for Kerberos protocol. Servers must be specified in FQDN format. All specified servers must be registered to the domain appropriately in the configured DNS of the array. If not specified, servers are resolved for the domain in DNS. 
+            computer_name (str): The name of the computer account to be created in the Active Directory domain. If not specified, defaults to the name of the Active Directory configuration. 
+            join_ou (str): The distinguished name of the organizational unit in which the computer account should be created when joining the domain. The `DC=...` components of the distinguished name can be optionally omitted. If not specified, defaults to `CN=Computers`. 
+            password (str): The login password of the user with privileges to create the computer account in the domain. This is not persisted on the array. 
+            directory_servers (list[str]): A list of directory servers used for lookups related to user authorization. Servers must be specified in FQDN format. All specified servers must be registered to the domain appropriately in the configured DNS of the array and are only communicated with over the secure LDAP (LDAPS) protocol. If not specified, servers are resolved for the domain in DNS. 
             domain (str): The Active Directory domain to join.
-            kerberos_servers (list[str]): A list of key distribution servers to use for Kerberos protocol. Servers must be specified in FQDN format. All specified servers must be registered to the domain appropriately in the configured DNS of the array. If not specified, servers are resolved for the domain in DNS.
-            password (str): The login password of the user with privileges to create the computer account in the domain. This is not persisted on the array.
-            user (str): The login name of the user with privileges to create the computer account in the domain. This is not persisted on the array.
-            join_ou (str): The distinguished name of the organizational unit in which the computer account should be created when joining the domain. The `DC=...` components of the distinguished name can be optionally omitted. If not specified, defaults to `CN=Computers`.
-            tls (str): TLS mode for communication with domain controllers. Valid values are `required` and `optional`. `required` forces TLS communication with a domain controller. `optional` allows the use of non-TLS communication, TLS will still be preferred, if available. If not specified, defaults to `required`.
+            tls (str): TLS mode for communication with domain controllers. Valid values are `required` and `optional`. `required` forces TLS communication with a domain controller.  `optional` allows the use of non-TLS communication, TLS will still be preferred, if available. If not specified, defaults to `required`. 
+            user (str): The login name of the user with privileges to create the computer account in the domain. This is not persisted on the array. 
         """
+        if kerberos_servers is not None:
+            self.kerberos_servers = kerberos_servers
         if computer_name is not None:
             self.computer_name = computer_name
+        if join_ou is not None:
+            self.join_ou = join_ou
+        if password is not None:
+            self.password = password
         if directory_servers is not None:
             self.directory_servers = directory_servers
         if domain is not None:
             self.domain = domain
-        if kerberos_servers is not None:
-            self.kerberos_servers = kerberos_servers
-        if password is not None:
-            self.password = password
-        if user is not None:
-            self.user = user
-        if join_ou is not None:
-            self.join_ou = join_ou
         if tls is not None:
             self.tls = tls
+        if user is not None:
+            self.user = user
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

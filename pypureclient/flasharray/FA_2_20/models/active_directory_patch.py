@@ -46,7 +46,7 @@ class ActiveDirectoryPatch(object):
     ):
         """
         Keyword args:
-            tls (str): TLS mode for communication with domain controllers. Valid values are `required` and `optional`. `required` forces TLS communication with domain controller. `optional` allows the use of non-TLS communication, TLS will still be preferred, if available. If not specified, defaults to `required`.
+            tls (str): TLS mode for communication with domain controllers. Valid values are `required` and `optional`. `required` forces TLS communication with domain controller.  `optional` allows the use of non-TLS communication, TLS will still be preferred, if available. If not specified, defaults to `required`. 
         """
         if tls is not None:
             self.tls = tls

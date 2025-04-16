@@ -30,13 +30,13 @@ class NetworkInterfaceNeighborCapability(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'supported': 'bool',
-        'enabled': 'bool'
+        'enabled': 'bool',
+        'supported': 'bool'
     }
 
     attribute_map = {
-        'supported': 'supported',
-        'enabled': 'enabled'
+        'enabled': 'enabled',
+        'supported': 'supported'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class NetworkInterfaceNeighborCapability(object):
 
     def __init__(
         self,
-        supported=None,  # type: bool
         enabled=None,  # type: bool
+        supported=None,  # type: bool
     ):
         """
         Keyword args:
-            supported (bool): If true, this capability is supported by this neighbor; false otherwise.
-            enabled (bool): If true, this capability is enabled by this neighbor; false otherwise.
+            enabled (bool): If true, this capability is enabled by this neighbor; false otherwise. 
+            supported (bool): If true, this capability is supported by this neighbor; false otherwise. 
         """
-        if supported is not None:
-            self.supported = supported
         if enabled is not None:
             self.enabled = enabled
+        if supported is not None:
+            self.supported = supported
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

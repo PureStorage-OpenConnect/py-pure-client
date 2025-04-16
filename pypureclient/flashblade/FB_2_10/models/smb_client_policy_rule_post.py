@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.10, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.10, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.10
     
@@ -59,10 +59,10 @@ class SmbClientPolicyRulePost(object):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            client (str): Specifies the clients that will be permitted to access the export. Accepted notation is a single IP address, subnet in CIDR notation, or anonymous (`*`). The default is `*` if not specified.
-            permission (str): Specifies which read-write client access permissions are allowed for the export. Valid values are `rw` and `ro`. The default is `ro` if not specified.
-            index (int): The index within the policy. The `index` indicates the order the rules are evaluated. NOTE: It is recommended to use the query param `before_rule_id` to do reordering to avoid concurrency issues, but changing `index` is also supported. `index` can not be changed if `before_rule_id` or `before_rule_name` are specified.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            client (str): Specifies the clients that will be permitted to access the export. Accepted notation is a single IP address, subnet in CIDR notation, or anonymous (`*`).  The default is `*` if not specified. 
+            permission (str): Specifies which read-write client access permissions are allowed for the export. Valid values are `rw` and `ro`. The default is `ro` if not specified. 
+            index (int): The index within the policy. The `index` indicates the order the rules are evaluated. NOTE: It is recommended to use the query param `before_rule_id` to do reordering to avoid concurrency issues, but changing `index` is also supported. `index` can not be changed if `before_rule_id` or `before_rule_name` are specified. 
         """
         if name is not None:
             self.name = name

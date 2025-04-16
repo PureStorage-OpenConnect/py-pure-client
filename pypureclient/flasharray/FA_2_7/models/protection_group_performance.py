@@ -52,9 +52,9 @@ class ProtectionGroupPerformance(object):
     ):
         """
         Keyword args:
-            name (str): A locally unique, system-generated name. The name cannot be modified.
+            name (str): A locally unique, system-generated name. The name cannot be modified. 
             bytes_per_sec (int): The total number of bytes of replication data transmitted and received per second.
-            time (int): The time when the sample performance data was taken. Measured in milliseconds since the UNIX epoch.
+            time (int): The time when the sample performance data was taken. Measured in milliseconds since the UNIX epoch. 
         """
         if name is not None:
             self.name = name

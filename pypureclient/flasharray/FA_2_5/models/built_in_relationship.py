@@ -46,7 +46,7 @@ class BuiltInRelationship(object):
     ):
         """
         Keyword args:
-            id (str): A non-modifiable, globally unique ID chosen by the system.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
         """
         if id is not None:
             self.id = id

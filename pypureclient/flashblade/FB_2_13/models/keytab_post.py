@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.13, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.13, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.13
     
@@ -46,7 +46,7 @@ class KeytabPost(object):
     ):
         """
         Keyword args:
-            source (Reference): A reference to the Active Directory configuration for the computer account whose keys will be rotated in order to create new keytabs for all of its registered service principal names.
+            source (Reference): A reference to the Active Directory configuration for the computer account whose keys will be rotated in order to create new keytabs for all of its registered service principal names. 
         """
         if source is not None:
             self.source = source

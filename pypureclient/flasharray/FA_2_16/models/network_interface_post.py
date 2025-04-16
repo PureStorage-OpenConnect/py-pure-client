@@ -31,14 +31,14 @@ class NetworkInterfacePost(object):
     """
     swagger_types = {
         'name': 'str',
-        'services': 'list[str]',
-        'eth': 'NetworkinterfacepostEth'
+        'eth': 'NetworkinterfacepostEth',
+        'services': 'list[str]'
     }
 
     attribute_map = {
         'name': 'name',
-        'services': 'services',
-        'eth': 'eth'
+        'eth': 'eth',
+        'services': 'services'
     }
 
     required_args = {
@@ -47,21 +47,21 @@ class NetworkInterfacePost(object):
     def __init__(
         self,
         name=None,  # type: str
-        services=None,  # type: List[str]
         eth=None,  # type: models.NetworkinterfacepostEth
+        services=None,  # type: List[str]
     ):
         """
         Keyword args:
-            name (str): A locally unique, system-generated name. The name cannot be modified.
-            services (list[str]): The services provided by the specified network interface or Fibre Channel port.
+            name (str): A locally unique, system-generated name. The name cannot be modified. 
             eth (NetworkinterfacepostEth)
+            services (list[str]): The services provided by the specified network interface or Fibre Channel port. 
         """
         if name is not None:
             self.name = name
-        if services is not None:
-            self.services = services
         if eth is not None:
             self.eth = eth
+        if services is not None:
+            self.services = services
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

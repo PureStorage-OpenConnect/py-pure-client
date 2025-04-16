@@ -30,14 +30,14 @@ class VirtualMachinePost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'vm_type': 'str',
+        'id': 'str',
         'source': 'Reference'
     }
 
     attribute_map = {
-        'id': 'id',
         'vm_type': 'vm_type',
+        'id': 'id',
         'source': 'source'
     }
 
@@ -46,20 +46,20 @@ class VirtualMachinePost(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         vm_type=None,  # type: str
+        id=None,  # type: str
         source=None,  # type: models.Reference
     ):
         """
         Keyword args:
+            vm_type (str): The type of virtual machine. Currently, the only valid value is `vvol`. 
             id (str): The ID of the virtual machine to recreate.
-            vm_type (str): The type of virtual machine. Currently, the only valid value is `vvol`.
-            source (Reference): The protection group snapshot to recreate the virtual machine from.
+            source (Reference): The protection group snapshot to recreate the virtual machine from. 
         """
-        if id is not None:
-            self.id = id
         if vm_type is not None:
             self.vm_type = vm_type
+        if id is not None:
+            self.id = id
         if source is not None:
             self.source = source
 

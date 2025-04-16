@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.14, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.14, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.14
     
@@ -50,7 +50,7 @@ class CertificateGroup(object):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
         """
         if name is not None:
             self.name = name

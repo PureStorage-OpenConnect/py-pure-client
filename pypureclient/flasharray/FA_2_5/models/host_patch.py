@@ -31,36 +31,36 @@ class HostPatch(object):
     """
     swagger_types = {
         'name': 'str',
-        'add_iqns': 'list[str]',
-        'add_nqns': 'list[str]',
-        'add_wwns': 'list[str]',
-        'chap': 'Chap',
-        'host_group': 'ReferenceNoId',
-        'iqns': 'list[str]',
-        'nqns': 'list[str]',
-        'personality': 'str',
-        'preferred_arrays': 'list[Reference]',
-        'remove_iqns': 'list[str]',
-        'remove_nqns': 'list[str]',
         'remove_wwns': 'list[str]',
-        'wwns': 'list[str]'
+        'host_group': 'ReferenceNoId',
+        'add_nqns': 'list[str]',
+        'wwns': 'list[str]',
+        'remove_iqns': 'list[str]',
+        'personality': 'str',
+        'add_iqns': 'list[str]',
+        'chap': 'Chap',
+        'add_wwns': 'list[str]',
+        'nqns': 'list[str]',
+        'iqns': 'list[str]',
+        'preferred_arrays': 'list[Reference]',
+        'remove_nqns': 'list[str]'
     }
 
     attribute_map = {
         'name': 'name',
-        'add_iqns': 'add_iqns',
-        'add_nqns': 'add_nqns',
-        'add_wwns': 'add_wwns',
-        'chap': 'chap',
-        'host_group': 'host_group',
-        'iqns': 'iqns',
-        'nqns': 'nqns',
-        'personality': 'personality',
-        'preferred_arrays': 'preferred_arrays',
-        'remove_iqns': 'remove_iqns',
-        'remove_nqns': 'remove_nqns',
         'remove_wwns': 'remove_wwns',
-        'wwns': 'wwns'
+        'host_group': 'host_group',
+        'add_nqns': 'add_nqns',
+        'wwns': 'wwns',
+        'remove_iqns': 'remove_iqns',
+        'personality': 'personality',
+        'add_iqns': 'add_iqns',
+        'chap': 'chap',
+        'add_wwns': 'add_wwns',
+        'nqns': 'nqns',
+        'iqns': 'iqns',
+        'preferred_arrays': 'preferred_arrays',
+        'remove_nqns': 'remove_nqns'
     }
 
     required_args = {
@@ -69,65 +69,65 @@ class HostPatch(object):
     def __init__(
         self,
         name=None,  # type: str
-        add_iqns=None,  # type: List[str]
-        add_nqns=None,  # type: List[str]
-        add_wwns=None,  # type: List[str]
-        chap=None,  # type: models.Chap
-        host_group=None,  # type: models.ReferenceNoId
-        iqns=None,  # type: List[str]
-        nqns=None,  # type: List[str]
-        personality=None,  # type: str
-        preferred_arrays=None,  # type: List[models.Reference]
-        remove_iqns=None,  # type: List[str]
-        remove_nqns=None,  # type: List[str]
         remove_wwns=None,  # type: List[str]
+        host_group=None,  # type: models.ReferenceNoId
+        add_nqns=None,  # type: List[str]
         wwns=None,  # type: List[str]
+        remove_iqns=None,  # type: List[str]
+        personality=None,  # type: str
+        add_iqns=None,  # type: List[str]
+        chap=None,  # type: models.Chap
+        add_wwns=None,  # type: List[str]
+        nqns=None,  # type: List[str]
+        iqns=None,  # type: List[str]
+        preferred_arrays=None,  # type: List[models.Reference]
+        remove_nqns=None,  # type: List[str]
     ):
         """
         Keyword args:
             name (str): The new name for the resource.
-            add_iqns (list[str]): Adds the specified iSCSI Qualified Names (IQNs) to those already associated with the specified host.
-            add_nqns (list[str]): Adds the specified NVMe Qualified Names (NQNs) to those already associated with the specified host.
-            add_wwns (list[str]): Adds the specified Fibre Channel World Wide Names (WWNs) to those already associated with the specified host.
-            chap (Chap)
+            remove_wwns (list[str]): Disassociates the specified Fibre Channel World Wide Names (WWNs) from the specified host. 
             host_group (ReferenceNoId): The host group to which the host should be associated.
-            iqns (list[str]): The iSCSI qualified name (IQN) associated with the host.
-            nqns (list[str]): The NVMe Qualified Name (NQN) associated with the host.
-            personality (str): Determines how the system tunes the array to ensure that it works optimally with the host. Set `personality` to the name of the host operating system or virtual memory system. Valid values are `aix`, `esxi`, `hitachi-vsp`, `hpux`, `oracle-vm-server`, `solaris`, and `vms`. If your system is not listed as one of the valid host personalities, do not set the option. By default, the personality is not set.
-            preferred_arrays (list[Reference]): For synchronous replication configurations, sets a host's preferred array to specify which array exposes active/optimized paths to that host. Enter multiple preferred arrays in comma-separated format. If a preferred array is set for a host, then the other arrays in the same pod will expose active/non-optimized paths to that host. If the host is in a host group, `preferred_arrays` cannot be set because host groups have their own preferred arrays. On a preferred array of a certain host, all the paths on all the ports (for both the primary and secondary controllers) are set up as A/O (active/optimized) paths, while on a non-preferred array, all the paths are A/N (Active/Non-optimized) paths.
-            remove_iqns (list[str]): Disassociates the specified iSCSI Qualified Names (IQNs) from the specified host.
-            remove_nqns (list[str]): Disassociates the specified NVMe Qualified Names (NQNs) from the specified host.
-            remove_wwns (list[str]): Disassociates the specified Fibre Channel World Wide Names (WWNs) from the specified host.
+            add_nqns (list[str]): Adds the specified NVMe Qualified Names (NQNs) to those already associated with the specified host. 
             wwns (list[str]): The Fibre Channel World Wide Name (WWN) associated with the host.
+            remove_iqns (list[str]): Disassociates the specified iSCSI Qualified Names (IQNs) from the specified host. 
+            personality (str): Determines how the system tunes the array to ensure that it works optimally with the host. Set `personality` to the name of the host operating system or virtual memory system. Valid values are `aix`, `esxi`, `hitachi-vsp`, `hpux`, `oracle-vm-server`, `solaris`, and `vms`. If your system is not listed as one of the valid host personalities, do not set the option. By default, the personality is not set. 
+            add_iqns (list[str]): Adds the specified iSCSI Qualified Names (IQNs) to those already associated with the specified host. 
+            chap (Chap)
+            add_wwns (list[str]): Adds the specified Fibre Channel World Wide Names (WWNs) to those already associated with the specified host. 
+            nqns (list[str]): The NVMe Qualified Name (NQN) associated with the host.
+            iqns (list[str]): The iSCSI qualified name (IQN) associated with the host. 
+            preferred_arrays (list[Reference]): For synchronous replication configurations, sets a host's preferred array to specify which array exposes active/optimized paths to that host. Enter multiple preferred arrays in comma-separated format. If a preferred array is set for a host, then the other arrays in the same pod will expose active/non-optimized paths to that host. If the host is in a host group, `preferred_arrays` cannot be set because host groups have their own preferred arrays. On a preferred array of a certain host, all the paths on all the ports (for both the primary and secondary controllers) are set up as A/O (active/optimized) paths, while on a non-preferred array, all the paths are A/N (Active/Non-optimized) paths. 
+            remove_nqns (list[str]): Disassociates the specified NVMe Qualified Names (NQNs) from the specified host. 
         """
         if name is not None:
             self.name = name
-        if add_iqns is not None:
-            self.add_iqns = add_iqns
-        if add_nqns is not None:
-            self.add_nqns = add_nqns
-        if add_wwns is not None:
-            self.add_wwns = add_wwns
-        if chap is not None:
-            self.chap = chap
-        if host_group is not None:
-            self.host_group = host_group
-        if iqns is not None:
-            self.iqns = iqns
-        if nqns is not None:
-            self.nqns = nqns
-        if personality is not None:
-            self.personality = personality
-        if preferred_arrays is not None:
-            self.preferred_arrays = preferred_arrays
-        if remove_iqns is not None:
-            self.remove_iqns = remove_iqns
-        if remove_nqns is not None:
-            self.remove_nqns = remove_nqns
         if remove_wwns is not None:
             self.remove_wwns = remove_wwns
+        if host_group is not None:
+            self.host_group = host_group
+        if add_nqns is not None:
+            self.add_nqns = add_nqns
         if wwns is not None:
             self.wwns = wwns
+        if remove_iqns is not None:
+            self.remove_iqns = remove_iqns
+        if personality is not None:
+            self.personality = personality
+        if add_iqns is not None:
+            self.add_iqns = add_iqns
+        if chap is not None:
+            self.chap = chap
+        if add_wwns is not None:
+            self.add_wwns = add_wwns
+        if nqns is not None:
+            self.nqns = nqns
+        if iqns is not None:
+            self.iqns = iqns
+        if preferred_arrays is not None:
+            self.preferred_arrays = preferred_arrays
+        if remove_nqns is not None:
+            self.remove_nqns = remove_nqns
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

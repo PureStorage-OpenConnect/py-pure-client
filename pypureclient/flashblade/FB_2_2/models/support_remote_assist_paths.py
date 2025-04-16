@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.2, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.2, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.2
     
@@ -50,7 +50,7 @@ class SupportRemoteAssistPaths(object):
         """
         Keyword args:
             component_name (str): The name of the FM.
-            status (str): The status of the remote-assist session on the local FM. Valid values are `reconnecting`, `connected`, `disconnected`, and `unknown`.
+            status (str): The status of the remote-assist session on the local FM. Valid values are `reconnecting`, `connected`, `disconnected`, and `unknown`. 
         """
         if component_name is not None:
             self.component_name = component_name

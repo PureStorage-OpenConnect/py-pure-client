@@ -49,8 +49,8 @@ class VolumeDiff(object):
     ):
         """
         Keyword args:
-            offset (int): Absolute offset of the chunk that is different, in bytes.
-            length (int): Length of the chunk that is different, in bytes.
+            offset (int): Absolute offset of the chunk that is different, in bytes. 
+            length (int): Length of the chunk that is different, in bytes. 
         """
         if offset is not None:
             self.offset = offset

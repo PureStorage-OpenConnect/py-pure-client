@@ -30,21 +30,21 @@ class ArraySpace(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
-        'capacity': 'int',
+        'id': 'str',
         'parity': 'float',
+        'time': 'int',
         'space': 'Space',
-        'time': 'int'
+        'capacity': 'int'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
-        'capacity': 'capacity',
+        'id': 'id',
         'parity': 'parity',
+        'time': 'time',
         'space': 'space',
-        'time': 'time'
+        'capacity': 'capacity'
     }
 
     required_args = {
@@ -52,34 +52,34 @@ class ArraySpace(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
-        capacity=None,  # type: int
+        id=None,  # type: str
         parity=None,  # type: float
-        space=None,  # type: models.Space
         time=None,  # type: int
+        space=None,  # type: models.Space
+        capacity=None,  # type: int
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            name (str): A locally unique, system-generated name. The name cannot be modified.
-            capacity (int): The usable capacity in bytes.
-            parity (float): A representation of data redundancy on the array. Data redundancy is rebuilt automatically by the system whenever parity is less than 1.0.
-            space (Space)
+            name (str): A locally unique, system-generated name. The name cannot be modified. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource. 
+            parity (float): A representation of data redundancy on the array. Data redundancy is rebuilt automatically by the system whenever parity is less than 1.0. 
             time (int)
+            space (Space)
+            capacity (int): The usable capacity in bytes. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
-        if capacity is not None:
-            self.capacity = capacity
+        if id is not None:
+            self.id = id
         if parity is not None:
             self.parity = parity
-        if space is not None:
-            self.space = space
         if time is not None:
             self.time = time
+        if space is not None:
+            self.space = space
+        if capacity is not None:
+            self.capacity = capacity
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -3,7 +3,7 @@
 """
     FlashBlade REST API Client
 
-    A lightweight client for FlashBlade REST API 2.0, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.0, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.0
     
@@ -49,8 +49,8 @@ class ObjectStoreRemoteCredentialsPost(object):
     ):
         """
         Keyword args:
-            access_key_id (str): Access Key ID to be used when connecting to a remote object store.
-            secret_access_key (str): Secret Access Key to be used when connecting to a remote object store.
+            access_key_id (str): Access Key ID to be used when connecting to a remote object store. 
+            secret_access_key (str): Secret Access Key to be used when connecting to a remote object store. 
         """
         if access_key_id is not None:
             self.access_key_id = access_key_id

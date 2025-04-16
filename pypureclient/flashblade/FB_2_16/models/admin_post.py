@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.16
     
@@ -30,14 +30,14 @@ class AdminPost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'password': 'str',
         'public_key': 'str',
+        'password': 'str',
         'role': 'ReferenceWritable'
     }
 
     attribute_map = {
-        'password': 'password',
         'public_key': 'public_key',
+        'password': 'password',
         'role': 'role'
     }
 
@@ -46,20 +46,20 @@ class AdminPost(object):
 
     def __init__(
         self,
-        password=None,  # type: str
         public_key=None,  # type: str
+        password=None,  # type: str
         role=None,  # type: models.ReferenceWritable
     ):
         """
         Keyword args:
-            password (str): New user password.
             public_key (str): Public key for SSH access. Supported key types include `Ed25519` and `RSA`.
-            role (ReferenceWritable): A reference to this administrator's management role.
+            password (str): New user password.
+            role (ReferenceWritable): A reference to this administrator's management role. 
         """
-        if password is not None:
-            self.password = password
         if public_key is not None:
             self.public_key = public_key
+        if password is not None:
+            self.password = password
         if role is not None:
             self.role = role
 

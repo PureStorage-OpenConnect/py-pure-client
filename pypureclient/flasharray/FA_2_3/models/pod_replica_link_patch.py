@@ -46,7 +46,7 @@ class PodReplicaLinkPatch(object):
     ):
         """
         Keyword args:
-            paused (bool): Returns a value of `true` if the replica link is to be created in a `paused` state. Returns a value of `false` if the replica link is to be created not in a `paused` state. If not specified, defaults to `false`.
+            paused (bool): Returns a value of `true` if the replica link is to be created in a `paused` state. Returns a value of `false` if the replica link is to be created not in a `paused` state. If not specified, defaults to `false`. 
         """
         if paused is not None:
             self.paused = paused

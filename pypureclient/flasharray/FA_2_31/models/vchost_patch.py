@@ -46,7 +46,7 @@ class VchostPatch(object):
     ):
         """
         Keyword args:
-            name (str): The new name of the vchost.
+            name (str): The new name of the vchost. 
         """
         if name is not None:
             self.name = name

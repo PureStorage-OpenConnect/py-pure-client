@@ -31,14 +31,14 @@ class PolicySmbPost(object):
     """
     swagger_types = {
         'enabled': 'bool',
-        'access_based_enumeration_enabled': 'bool',
-        'policy_mapping': 'PolicynfspostPolicyMapping'
+        'policy_mapping': 'PolicynfspostPolicyMapping',
+        'access_based_enumeration_enabled': 'bool'
     }
 
     attribute_map = {
         'enabled': 'enabled',
-        'access_based_enumeration_enabled': 'access_based_enumeration_enabled',
-        'policy_mapping': 'policy_mapping'
+        'policy_mapping': 'policy_mapping',
+        'access_based_enumeration_enabled': 'access_based_enumeration_enabled'
     }
 
     required_args = {
@@ -47,21 +47,21 @@ class PolicySmbPost(object):
     def __init__(
         self,
         enabled=None,  # type: bool
-        access_based_enumeration_enabled=None,  # type: bool
         policy_mapping=None,  # type: models.PolicynfspostPolicyMapping
+        access_based_enumeration_enabled=None,  # type: bool
     ):
         """
         Keyword args:
             enabled (bool): If set to `true`, enables the policy. If set to `false`, disables the policy.
-            access_based_enumeration_enabled (bool): If set to `true`, enables access based enumeration on the policy. When access based enumeration is enabled on a policy, files and folders within exports that are attached to the policy will be hidden from users who do not have permission to view them. If not specified, defaults to `false`.
             policy_mapping (PolicynfspostPolicyMapping)
+            access_based_enumeration_enabled (bool): If set to `true`, enables access based enumeration on the policy. When access based enumeration is enabled on a policy, files and folders within exports that are attached to the policy will be hidden from users who do not have permission to view them. If not specified, defaults to `false`. 
         """
         if enabled is not None:
             self.enabled = enabled
-        if access_based_enumeration_enabled is not None:
-            self.access_based_enumeration_enabled = access_based_enumeration_enabled
         if policy_mapping is not None:
             self.policy_mapping = policy_mapping
+        if access_based_enumeration_enabled is not None:
+            self.access_based_enumeration_enabled = access_based_enumeration_enabled
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

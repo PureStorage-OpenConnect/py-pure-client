@@ -30,23 +30,23 @@ class SupportRemoteAssistSessions(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'active': 'bool',
-        'duration': 'int',
         'access_level': 'str',
-        'opened': 'int',
+        'duration': 'int',
         'expires': 'int',
-        'status': 'str',
-        'paths': 'list[SupportRemoteAssistSessionsPaths]'
+        'paths': 'list[SupportRemoteAssistSessionsPaths]',
+        'active': 'bool',
+        'opened': 'int',
+        'status': 'str'
     }
 
     attribute_map = {
-        'active': 'active',
-        'duration': 'duration',
         'access_level': 'access_level',
-        'opened': 'opened',
+        'duration': 'duration',
         'expires': 'expires',
-        'status': 'status',
-        'paths': 'paths'
+        'paths': 'paths',
+        'active': 'active',
+        'opened': 'opened',
+        'status': 'status'
     }
 
     required_args = {
@@ -54,38 +54,38 @@ class SupportRemoteAssistSessions(object):
 
     def __init__(
         self,
-        active=None,  # type: bool
-        duration=None,  # type: int
         access_level=None,  # type: str
-        opened=None,  # type: int
+        duration=None,  # type: int
         expires=None,  # type: int
-        status=None,  # type: str
         paths=None,  # type: List[models.SupportRemoteAssistSessionsPaths]
+        active=None,  # type: bool
+        opened=None,  # type: int
+        status=None,  # type: str
     ):
         """
         Keyword args:
-            active (bool): The status of a remote assist session. If set to `true`, enables the remote assist session. If set to `false`, disables the remote assist session.
-            duration (int): Specifies the duration of the remote assist session in milliseconds. This parameter should only be provided when establishing a new session. This parameter determines the length of time the session will remain active after initiation. Defaults to 86400000 (24h) with a min of 14400000 (4h) and a max of 172800000 (48h).
-            access_level (str): The access level for this remote assist session. This is set to default_access_level unless access_level_override is provided. Values include `restricted` and `elevated`.
-            opened (int): The timestamp when the session opened, measured in milliseconds since the UNIX epoch.
-            expires (int): The timestamp when the session expires, measured in milliseconds since the UNIX epoch.
-            status (str): The status of the remote assist session. Values include `connected`, `connecting`, `disconnected`, and `session-active`.
+            access_level (str): The access level for this remote assist session. This is set to default_access_level unless access_level_override is provided. Values include `restricted` and `elevated`. 
+            duration (int): Specifies the duration of the remote assist session in milliseconds. This parameter should only be provided when establishing a new session. This parameter determines the length of time the session will remain active after initiation. Defaults to 86400000 (24h) with a min of 14400000 (4h) and a max of 172800000 (48h). 
+            expires (int): The timestamp when the session expires, measured in milliseconds since the UNIX epoch. 
             paths (list[SupportRemoteAssistSessionsPaths])
+            active (bool): The status of a remote assist session. If set to `true`, enables the remote assist session. If set to `false`, disables the remote assist session. 
+            opened (int): The timestamp when the session opened, measured in milliseconds since the UNIX epoch. 
+            status (str): The status of the remote assist session. Values include `connected`, `connecting`, `disconnected`, and `session-active`. 
         """
-        if active is not None:
-            self.active = active
-        if duration is not None:
-            self.duration = duration
         if access_level is not None:
             self.access_level = access_level
-        if opened is not None:
-            self.opened = opened
+        if duration is not None:
+            self.duration = duration
         if expires is not None:
             self.expires = expires
-        if status is not None:
-            self.status = status
         if paths is not None:
             self.paths = paths
+        if active is not None:
+            self.active = active
+        if opened is not None:
+            self.opened = opened
+        if status is not None:
+            self.status = status
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

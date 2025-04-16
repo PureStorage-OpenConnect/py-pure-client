@@ -33,16 +33,16 @@ class VolumePost(object):
         'destroyed': 'bool',
         'provisioned': 'int',
         'qos': 'Qos',
-        'source': 'Reference',
-        'subtype': 'str'
+        'subtype': 'str',
+        'source': 'Reference'
     }
 
     attribute_map = {
         'destroyed': 'destroyed',
         'provisioned': 'provisioned',
         'qos': 'qos',
-        'source': 'source',
-        'subtype': 'subtype'
+        'subtype': 'subtype',
+        'source': 'source'
     }
 
     required_args = {
@@ -53,16 +53,16 @@ class VolumePost(object):
         destroyed=None,  # type: bool
         provisioned=None,  # type: int
         qos=None,  # type: models.Qos
-        source=None,  # type: models.Reference
         subtype=None,  # type: str
+        source=None,  # type: models.Reference
     ):
         """
         Keyword args:
-            destroyed (bool): If set to `true`, destroys a resource. Once set to `true`, the `time_remaining` value will display the amount of time left until the destroyed resource is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed resource can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the resource is permanently eradicated and can no longer be recovered.
-            provisioned (int): Sets the virtual size of the volume. Measured in bytes.
-            qos (Qos): Sets QoS limits.
+            destroyed (bool): If set to `true`, destroys a resource. Once set to `true`, the `time_remaining` value will display the amount of time left until the destroyed resource is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed resource can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed,  the resource is permanently eradicated and can no longer be recovered. 
+            provisioned (int): Sets the virtual size of the volume. Measured in bytes. 
+            qos (Qos): Sets QoS limits. 
+            subtype (str): The type of volume. Valid values are `protocol_endpoint` and `regular`. 
             source (Reference): The source volume of a volume copy.
-            subtype (str): The type of volume. Valid values are `protocol_endpoint` and `regular`.
         """
         if destroyed is not None:
             self.destroyed = destroyed
@@ -70,10 +70,10 @@ class VolumePost(object):
             self.provisioned = provisioned
         if qos is not None:
             self.qos = qos
-        if source is not None:
-            self.source = source
         if subtype is not None:
             self.subtype = subtype
+        if source is not None:
+            self.source = source
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

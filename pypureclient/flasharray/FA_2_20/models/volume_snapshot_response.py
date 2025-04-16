@@ -46,7 +46,7 @@ class VolumeSnapshotResponse(object):
     ):
         """
         Keyword args:
-            items (list[VolumeSnapshot]): Returns a list of all items after filtering. The values are displayed for each name if meaningful. If `total_only=true`, the `items` list will be empty.
+            items (list[VolumeSnapshot]): Returns a list of all items after filtering. The values are displayed for each name if meaningful. If `total_only=true`, the `items` list will be empty. 
         """
         if items is not None:
             self.items = items

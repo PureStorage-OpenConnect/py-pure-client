@@ -142,7 +142,7 @@ class ArraysApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
-            ['application/x-www-form-urlencoded', 'application/json'])
+            ['application/json'])
 
         # Authentication setting
         auth_settings = ['AuthorizationHeader']
@@ -172,8 +172,8 @@ class ArraysApi(object):
         filter=None,  # type: str
         limit=None,  # type: int
         offset=None,  # type: int
-        resource_ids=None,  # type: List[str]
         resource_fqdns=None,  # type: List[str]
+        resource_ids=None,  # type: List[str]
         resource_names=None,  # type: List[str]
         sort=None,  # type: List[str]
         async_req=False,  # type: bool
@@ -196,8 +196,8 @@ class ArraysApi(object):
         :param str filter: Exclude resources that don't match the specified criteria. Single quotes are required around all strings inside the filters. 
         :param int limit: Limit the size of the response to the specified number of resources. A limit of 0 can be used to get the number of resources without getting all of the resources. It will be returned in the total_item_count field. If a client asks for a page size larger than the maximum number, the request is still valid. In that case the server just returns the maximum number of items, disregarding the client's page size request. If not specified, defaults to 1000. 
         :param int offset: The offset of the first resource to return from a collection. 
-        :param list[str] resource_ids: A comma-separated list of resource IDs. If there is not at least one resource that matches each `resource_id` element, an error is returned. Single quotes are required around all strings. 
         :param list[str] resource_fqdns: A comma-separated list of resource FQDNs. If there is not at least one resource that matches each `resource_fqdn` element, an error is returned. Single quotes are required around all strings. 
+        :param list[str] resource_ids: A comma-separated list of resource IDs. If there is not at least one resource that matches each `resource_id` element, an error is returned. Single quotes are required around all strings. 
         :param list[str] resource_names: A comma-separated list of resource names. If there is not at least one resource that matches each `resource_name` element, an error is returned. Single quotes are required around all strings. 
         :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
@@ -210,14 +210,14 @@ class ArraysApi(object):
                  returns the request thread.
         """
         continuation_token = models.quoteString(continuation_token)
-        if resource_ids is not None:
-            if not isinstance(resource_ids, list):
-                resource_ids = [resource_ids]
-        resource_ids = models.quoteStrings(resource_ids)
         if resource_fqdns is not None:
             if not isinstance(resource_fqdns, list):
                 resource_fqdns = [resource_fqdns]
         resource_fqdns = models.quoteStrings(resource_fqdns)
+        if resource_ids is not None:
+            if not isinstance(resource_ids, list):
+                resource_ids = [resource_ids]
+        resource_ids = models.quoteStrings(resource_ids)
         if resource_names is not None:
             if not isinstance(resource_names, list):
                 resource_names = [resource_names]
@@ -250,12 +250,12 @@ class ArraysApi(object):
             query_params.append(('limit', params['limit']))
         if 'offset' in params:
             query_params.append(('offset', params['offset']))
-        if 'resource_ids' in params:
-            query_params.append(('resource_ids', params['resource_ids']))
-            collection_formats['resource_ids'] = 'csv'
         if 'resource_fqdns' in params:
             query_params.append(('resource_fqdns', params['resource_fqdns']))
             collection_formats['resource_fqdns'] = 'csv'
+        if 'resource_ids' in params:
+            query_params.append(('resource_ids', params['resource_ids']))
+            collection_formats['resource_ids'] = 'csv'
         if 'resource_names' in params:
             query_params.append(('resource_names', params['resource_names']))
             collection_formats['resource_names'] = 'csv'
@@ -279,7 +279,7 @@ class ArraysApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
-            ['application/x-www-form-urlencoded', 'application/json'])
+            ['application/json'])
 
         # Authentication setting
         auth_settings = ['AuthorizationHeader']
@@ -396,7 +396,7 @@ class ArraysApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
-            ['application/x-www-form-urlencoded', 'application/json'])
+            ['application/json'])
 
         # Authentication setting
         auth_settings = ['AuthorizationHeader']
@@ -509,13 +509,9 @@ class ArraysApi(object):
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
-
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
-            ['application/x-www-form-urlencoded', 'application/json'])
+            ['application/json'])
 
         # Authentication setting
         auth_settings = ['AuthorizationHeader']
@@ -653,7 +649,7 @@ class ArraysApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
-            ['application/x-www-form-urlencoded', 'application/json'])
+            ['application/json'])
 
         # Authentication setting
         auth_settings = ['AuthorizationHeader']

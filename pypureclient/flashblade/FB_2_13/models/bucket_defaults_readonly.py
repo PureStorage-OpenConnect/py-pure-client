@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.13, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.13, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.13
     
@@ -30,13 +30,13 @@ class BucketDefaultsReadonly(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'hard_limit_enabled': 'bool',
-        'quota_limit': 'int'
+        'quota_limit': 'int',
+        'hard_limit_enabled': 'bool'
     }
 
     attribute_map = {
-        'hard_limit_enabled': 'hard_limit_enabled',
-        'quota_limit': 'quota_limit'
+        'quota_limit': 'quota_limit',
+        'hard_limit_enabled': 'hard_limit_enabled'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class BucketDefaultsReadonly(object):
 
     def __init__(
         self,
-        hard_limit_enabled=None,  # type: bool
         quota_limit=None,  # type: int
+        hard_limit_enabled=None,  # type: bool
     ):
         """
         Keyword args:
-            hard_limit_enabled (bool): The value of this field will be used to configure the `hard_limit_enabled` field of newly created buckets associated with this object store account, if the bucket creation does not specify its own value. If not specified, defaults to `false`.
-            quota_limit (int): The value of this field will be used to configure the `quota_limit` field of newly created buckets associated with this object store account, if the bucket creation does not specify its own value. If unset, the bucket default is unlimited in size.
+            quota_limit (int): The value of this field will be used to configure the `quota_limit` field of newly created buckets associated with this object store account, if the bucket creation does not specify its own value. If unset, the bucket default is unlimited in size. 
+            hard_limit_enabled (bool): The value of this field will be used to configure the `hard_limit_enabled` field of newly created buckets associated with this object store account, if the bucket creation does not specify its own value. If not specified, defaults to `false`. 
         """
-        if hard_limit_enabled is not None:
-            self.hard_limit_enabled = hard_limit_enabled
         if quota_limit is not None:
             self.quota_limit = quota_limit
+        if hard_limit_enabled is not None:
+            self.hard_limit_enabled = hard_limit_enabled
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

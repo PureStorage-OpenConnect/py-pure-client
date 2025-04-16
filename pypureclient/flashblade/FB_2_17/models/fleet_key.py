@@ -52,8 +52,8 @@ class FleetKey(object):
     ):
         """
         Keyword args:
-            expires (int): Expiration time in milliseconds since UNIX epoch. 
-            created (int): Creation time in milliseconds since UNIX epoch. 
+            expires (int): Expiration time in milliseconds since UNIX epoch.
+            created (int): Creation time in milliseconds since UNIX epoch.
             fleet_key (str): Fleet key, used for fleet connections. After creation, listing will only show ****. 
         """
         if expires is not None:

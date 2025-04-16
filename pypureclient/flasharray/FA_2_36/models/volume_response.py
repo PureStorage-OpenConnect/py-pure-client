@@ -46,7 +46,7 @@ class VolumeResponse(object):
     ):
         """
         Keyword args:
-            items (list[Volume]): Displays a list of all items after filtering. If applicable, the values are displayed for each name. If `total_only=true`, the `items` list is empty.
+            items (list[Volume]): Displays a list of all items after filtering. If applicable, the values are displayed for each name. If `total_only=true`, the `items` list is empty. 
         """
         if items is not None:
             self.items = items

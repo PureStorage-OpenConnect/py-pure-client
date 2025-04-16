@@ -49,8 +49,8 @@ class SupportRemoteAssistPaths(object):
     ):
         """
         Keyword args:
-            component_name (str): The name of the local controller that is running the remote assist session.
-            status (str): The status of the remote assist session on the local controller. Values include `connected`, `connecting`, `disconnected`, and `session-active`.
+            component_name (str): The name of the local controller that is running the remote assist session. 
+            status (str): The status of the remote assist session on the local controller. Values include `connected`, `connecting`, `disconnected`, and `session-active`. 
         """
         if component_name is not None:
             self.component_name = component_name

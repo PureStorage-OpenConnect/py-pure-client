@@ -54,7 +54,7 @@ class PolicySmbPatch(object):
         Keyword args:
             name (str): The new name for the resource.
             enabled (bool): If set to `true`, enables the policy. If set to `false`, disables the policy.
-            access_based_enumeration_enabled (bool): If set to `true`, enables access based enumeration on the policy. When access based enumeration is enabled on a policy, files and folders within exports that are attached to the policy will be hidden from users who do not have permission to view them.
+            access_based_enumeration_enabled (bool): If set to `true`, enables access based enumeration on the policy. When access based enumeration is enabled on a policy, files and folders within exports that are attached to the policy will be hidden from users who do not have permission to view them. 
         """
         if name is not None:
             self.name = name

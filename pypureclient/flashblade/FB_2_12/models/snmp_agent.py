@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.12, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.12, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.12
     
@@ -33,18 +33,18 @@ class SnmpAgent(object):
         'name': 'str',
         'id': 'str',
         'engine_id': 'str',
-        'version': 'str',
         'v2c': 'SnmpV2c',
-        'v3': 'SnmpV3'
+        'v3': 'SnmpV3',
+        'version': 'str'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
         'engine_id': 'engine_id',
-        'version': 'version',
         'v2c': 'v2c',
-        'v3': 'v3'
+        'v3': 'v3',
+        'version': 'version'
     }
 
     required_args = {
@@ -55,18 +55,18 @@ class SnmpAgent(object):
         name=None,  # type: str
         id=None,  # type: str
         engine_id=None,  # type: str
-        version=None,  # type: str
         v2c=None,  # type: models.SnmpV2c
         v3=None,  # type: models.SnmpV3
+        version=None,  # type: str
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            engine_id (str): An SNMP agent's adminstration domain unique name.
-            version (str): Version of the SNMP protocol to be used by an SNMP manager in communications with Purity's SNMP agent. Valid values are `v2c` and `v3`.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            engine_id (str): An SNMP agent's adminstration domain unique name. 
             v2c (SnmpV2c)
             v3 (SnmpV3)
+            version (str): Version of the SNMP protocol to be used by an SNMP manager in communications with Purity's SNMP agent. Valid values are `v2c` and `v3`. 
         """
         if name is not None:
             self.name = name
@@ -74,12 +74,12 @@ class SnmpAgent(object):
             self.id = id
         if engine_id is not None:
             self.engine_id = engine_id
-        if version is not None:
-            self.version = version
         if v2c is not None:
             self.v2c = v2c
         if v3 is not None:
             self.v3 = v3
+        if version is not None:
+            self.version = version
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

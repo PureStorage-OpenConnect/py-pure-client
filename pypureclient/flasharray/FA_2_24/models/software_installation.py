@@ -30,28 +30,28 @@ class SoftwareInstallation(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
+        'id': 'str',
         'start_time': 'int',
         'end_time': 'int',
-        'current_step_id': 'str',
-        'details': 'str',
         'mode': 'str',
+        'current_step_id': 'str',
         'override_checks': 'list[OverrideCheck]',
         'software': 'Reference',
+        'details': 'str',
         'status': 'str'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
+        'id': 'id',
         'start_time': 'start_time',
         'end_time': 'end_time',
-        'current_step_id': 'current_step_id',
-        'details': 'details',
         'mode': 'mode',
+        'current_step_id': 'current_step_id',
         'override_checks': 'override_checks',
         'software': 'software',
+        'details': 'details',
         'status': 'status'
     }
 
@@ -60,48 +60,48 @@ class SoftwareInstallation(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
+        id=None,  # type: str
         start_time=None,  # type: int
         end_time=None,  # type: int
-        current_step_id=None,  # type: str
-        details=None,  # type: str
         mode=None,  # type: str
+        current_step_id=None,  # type: str
         override_checks=None,  # type: List[models.OverrideCheck]
         software=None,  # type: models.Reference
+        details=None,  # type: str
         status=None,  # type: str
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified.
-            name (str): Name of the resource. The name cannot be modified.
+            name (str): Name of the resource. The name cannot be modified. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified. 
             start_time (int): Start time in milliseconds since the UNIX epoch.
             end_time (int): End time in milliseconds since the UNIX epoch.
+            mode (str): Mode that the upgrade is in. Valid values are `check-only`, `interactive`, `semi-interactive`, and `one-click`. The `check_only` mode is deprecated. Use `/software-checks`. In this mode, the upgrade only runs pre-upgrade checks and returns. In `interactive` mode, the upgrade pauses at several points, at which users must enter certain commands to proceed. In `semi-interactive` mode, the upgrade pauses if there are any upgrade check failures, and functions like `one-click` mode otherwise. In `one-click` mode, the upgrade proceeds automatically without pausing. 
             current_step_id (str): The `id` of the current step or `null` if the upgrade is not active.
+            override_checks (list[OverrideCheck]): A list of upgrade checks whose failure is overridden during the upgrade. If any optional `args` are provided, they are validated later when the corresponding  check script runs. 
+            software (Reference): Referenced `software` to which the upgrade belongs. 
             details (str): The detailed reason for the `status`.
-            mode (str): Mode that the upgrade is in. Valid values are `check-only`, `interactive`, `semi-interactive`, and `one-click`. The `check_only` mode is deprecated. Use `/software-checks`. In this mode, the upgrade only runs pre-upgrade checks and returns. In `interactive` mode, the upgrade pauses at several points, at which users must enter certain commands to proceed. In `semi-interactive` mode, the upgrade pauses if there are any upgrade check failures, and functions like `one-click` mode otherwise. In `one-click` mode, the upgrade proceeds automatically without pausing.
-            override_checks (list[OverrideCheck]): A list of upgrade checks whose failure is overridden during the upgrade. If any optional `args` are provided, they are validated later when the corresponding check script runs.
-            software (Reference): Referenced `software` to which the upgrade belongs.
-            status (str): Status of the upgrade. Valid values are `installing`, `paused`, `aborting`, `aborted`, and `finished`. A status of `installing` indicates that the upgrade is running. A status of `paused` indicates that the upgrade is paused and waiting for user input. A status of `aborting` indicates that the upgrade is being aborted. A status of `aborted` indicates that the upgrade has stopped due to an abort. A status of `finished` indicates that the upgrade has finished successfully.
+            status (str): Status of the upgrade. Valid values are `installing`, `paused`, `aborting`, `aborted`, and `finished`. A status of `installing` indicates that the upgrade is running. A status of `paused` indicates that the upgrade is paused and waiting for user input. A status of `aborting` indicates that the upgrade is being aborted. A status of `aborted` indicates that the upgrade has stopped due to an abort. A status of `finished` indicates that the upgrade has finished successfully. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
         if start_time is not None:
             self.start_time = start_time
         if end_time is not None:
             self.end_time = end_time
-        if current_step_id is not None:
-            self.current_step_id = current_step_id
-        if details is not None:
-            self.details = details
         if mode is not None:
             self.mode = mode
+        if current_step_id is not None:
+            self.current_step_id = current_step_id
         if override_checks is not None:
             self.override_checks = override_checks
         if software is not None:
             self.software = software
+        if details is not None:
+            self.details = details
         if status is not None:
             self.status = status
 

@@ -30,46 +30,46 @@ class PresetWorkloadPeriodicReplicationConfiguration(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
         'remote_targets': 'list[ReferenceWithType]',
+        'name': 'str',
         'rules': 'list[PresetWorkloadSnapshotRule]'
     }
 
     attribute_map = {
-        'name': 'name',
         'remote_targets': 'remote_targets',
+        'name': 'name',
         'rules': 'rules'
     }
 
     required_args = {
-        'name',
         'remote_targets',
+        'name',
         'rules',
     }
 
     def __init__(
         self,
-        name,  # type: str
         remote_targets,  # type: List[models.ReferenceWithType]
+        name,  # type: str
         rules,  # type: List[models.PresetWorkloadSnapshotRule]
     ):
         """
         Keyword args:
-            name (str, required): The name of the periodic replication configuration, by which other configuration objects in the preset can reference it. Name must be unique across all configuration objects in the preset.
             remote_targets (list[ReferenceWithType], required): The remote targets to which snapshots may be replicated.
+            name (str, required): The name of the periodic replication configuration, by which other configuration objects in the preset can reference it. Name must be unique across all configuration objects in the preset. 
             rules (list[PresetWorkloadSnapshotRule], required): Rules describe the frequency and retention of snapshots taken by the configuration.
         """
-        self.name = name
         self.remote_targets = remote_targets
+        self.name = name
         self.rules = rules
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
             raise KeyError("Invalid key `{}` for `PresetWorkloadPeriodicReplicationConfiguration`".format(key))
-        if key == "name" and value is None:
-            raise ValueError("Invalid value for `name`, must not be `None`")
         if key == "remote_targets" and value is None:
             raise ValueError("Invalid value for `remote_targets`, must not be `None`")
+        if key == "name" and value is None:
+            raise ValueError("Invalid value for `name`, must not be `None`")
         if key == "rules" and value is None:
             raise ValueError("Invalid value for `rules`, must not be `None`")
         self.__dict__[key] = value

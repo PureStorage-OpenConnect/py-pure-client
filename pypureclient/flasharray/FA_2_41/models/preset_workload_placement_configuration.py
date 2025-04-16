@@ -30,46 +30,46 @@ class PresetWorkloadPlacementConfiguration(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
         'storage_class': 'ReferenceWithType',
+        'name': 'str',
         'qos_configurations': 'list[str]'
     }
 
     attribute_map = {
-        'name': 'name',
         'storage_class': 'storage_class',
+        'name': 'name',
         'qos_configurations': 'qos_configurations'
     }
 
     required_args = {
-        'name',
         'storage_class',
+        'name',
     }
 
     def __init__(
         self,
-        name,  # type: str
         storage_class,  # type: models.ReferenceWithType
+        name,  # type: str
         qos_configurations=None,  # type: List[str]
     ):
         """
         Keyword args:
-            name (str, required): The name of the placement configuration, by which other configuration objects in the preset can reference it. Name must be unique across all configuration objects in the preset.
-            storage_class (ReferenceWithType, required): The storage class to which the placement and its associated storage resources may be deployed. Supports parameterization.
-            qos_configurations (list[str]): The names of the QoS configurations to apply to the storage resources (such as volumes) in the placement. The limits defined in the QoS configurations will be shared across all storage resources in the placement.
+            storage_class (ReferenceWithType, required): The storage class to which the placement and its associated storage resources may be deployed. Supports parameterization. 
+            name (str, required): The name of the placement configuration, by which other configuration objects in the preset can reference it. Name must be unique across all configuration objects in the preset. 
+            qos_configurations (list[str]): The names of the QoS configurations to apply to the storage resources (such as volumes) in the placement. The limits defined in the QoS configurations will be shared across all storage resources in the placement. 
         """
-        self.name = name
         self.storage_class = storage_class
+        self.name = name
         if qos_configurations is not None:
             self.qos_configurations = qos_configurations
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
             raise KeyError("Invalid key `{}` for `PresetWorkloadPlacementConfiguration`".format(key))
-        if key == "name" and value is None:
-            raise ValueError("Invalid value for `name`, must not be `None`")
         if key == "storage_class" and value is None:
             raise ValueError("Invalid value for `storage_class`, must not be `None`")
+        if key == "name" and value is None:
+            raise ValueError("Invalid value for `name`, must not be `None`")
         self.__dict__[key] = value
 
     def __getattribute__(self, item):

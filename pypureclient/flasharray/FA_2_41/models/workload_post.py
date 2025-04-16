@@ -46,7 +46,7 @@ class WorkloadPost(object):
     ):
         """
         Keyword args:
-            parameters (list[WorkloadParameter]): The parameter values to pass to the preset when creating the workload. Value must be supplied for all parameters that do not have a default defined in the preset.
+            parameters (list[WorkloadParameter]): The parameter values to pass to the preset when creating the workload. Value must be supplied for all parameters that do not have a default defined in the preset. 
         """
         if parameters is not None:
             self.parameters = parameters

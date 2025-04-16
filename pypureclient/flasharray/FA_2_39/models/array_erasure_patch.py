@@ -30,13 +30,13 @@ class ArrayErasurePatch(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'image_source': 'str',
-        'image_version': 'str'
+        'image_version': 'str',
+        'image_source': 'str'
     }
 
     attribute_map = {
-        'image_source': 'image_source',
-        'image_version': 'image_version'
+        'image_version': 'image_version',
+        'image_source': 'image_source'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class ArrayErasurePatch(object):
 
     def __init__(
         self,
-        image_source=None,  # type: str
         image_version=None,  # type: str
+        image_source=None,  # type: str
     ):
         """
         Keyword args:
-            image_source (str): Source of the ISO image to download. Valid values include `auto` and URLs. `auto` means download the image from Pure1 cloud, and a URL means download the image from the specified URL. Default value is `auto`.
-            image_version (str): Version of the image to download. `image_version` is optional, and the default value is the current running Purity version. If `image_source` is `auto`, the image with the specified version will be downloaded from Pure1 cloud. If `image_source` is a URL, `image_version` will be used to compare to the downloaded image version for the purpose of validation.
+            image_version (str): Version of the image to download. `image_version` is optional, and the default value is the current running Purity version. If `image_source` is `auto`, the image with the specified version will be downloaded from Pure1 cloud. If `image_source` is a URL, `image_version` will be used to compare to the downloaded image version for the purpose of validation. 
+            image_source (str): Source of the ISO image to download. Valid values include `auto` and URLs. `auto` means download the image from Pure1 cloud, and a URL means download the image from the specified URL. Default value is `auto`. 
         """
-        if image_source is not None:
-            self.image_source = image_source
         if image_version is not None:
             self.image_version = image_version
+        if image_source is not None:
+            self.image_source = image_source
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -30,15 +30,15 @@ class CloudConfig(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
-        'model': 'CloudConfigModel'
+        'model': 'CloudConfigModel',
+        'id': 'str'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
-        'model': 'model'
+        'model': 'model',
+        'id': 'id'
     }
 
     required_args = {
@@ -46,22 +46,22 @@ class CloudConfig(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
         model=None,  # type: models.CloudConfigModel
+        id=None,  # type: str
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            name (str): A locally unique, system-generated name. The name cannot be modified.
+            name (str): A locally unique, system-generated name. The name cannot be modified. 
             model (CloudConfigModel): The model configuration of the CBS array.
+            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
         if model is not None:
             self.model = model
+        if id is not None:
+            self.id = id
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

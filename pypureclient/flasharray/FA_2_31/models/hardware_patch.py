@@ -52,9 +52,9 @@ class HardwarePatch(object):
     ):
         """
         Keyword args:
-            name (str): A locally unique, system-generated name. The name cannot be modified.
-            identify_enabled (bool): State of an LED used to visually identify the component.
-            index (int): Number that identifies the relative position of a hardware component within the array.
+            name (str): A locally unique, system-generated name. The name cannot be modified. 
+            identify_enabled (bool): State of an LED used to visually identify the component. 
+            index (int): Number that identifies the relative position of a hardware component within the array. 
         """
         if name is not None:
             self.name = name

@@ -30,23 +30,23 @@ class LocalUser(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'built_in': 'bool',
-        'enabled': 'bool',
-        'email': 'str',
-        'name': 'str',
+        'uid': 'int',
         'primary_group': 'ReferenceWithType',
-        'sid': 'str',
-        'uid': 'int'
+        'built_in': 'bool',
+        'name': 'str',
+        'email': 'str',
+        'enabled': 'bool',
+        'sid': 'str'
     }
 
     attribute_map = {
-        'built_in': 'built_in',
-        'enabled': 'enabled',
-        'email': 'email',
-        'name': 'name',
+        'uid': 'uid',
         'primary_group': 'primary_group',
-        'sid': 'sid',
-        'uid': 'uid'
+        'built_in': 'built_in',
+        'name': 'name',
+        'email': 'email',
+        'enabled': 'enabled',
+        'sid': 'sid'
     }
 
     required_args = {
@@ -54,38 +54,38 @@ class LocalUser(object):
 
     def __init__(
         self,
-        built_in=None,  # type: bool
-        enabled=None,  # type: bool
-        email=None,  # type: str
-        name=None,  # type: str
-        primary_group=None,  # type: models.ReferenceWithType
-        sid=None,  # type: str
         uid=None,  # type: int
+        primary_group=None,  # type: models.ReferenceWithType
+        built_in=None,  # type: bool
+        name=None,  # type: str
+        email=None,  # type: str
+        enabled=None,  # type: bool
+        sid=None,  # type: str
     ):
         """
         Keyword args:
-            built_in (bool): Returns a value of `true` if the local user is built in. Otherwise returns a value of `false` if the user has been created manually.
-            enabled (bool): Returns a value of `true` if the local user is enabled.
-            email (str): The email address of the local user.
-            name (str): The name of the local user.
-            primary_group (ReferenceWithType): Primary group of the local user.
-            sid (str): The SID (security ID) of the local user.
-            uid (int): The POSIX user ID of this object (user ID).
+            uid (int): The POSIX user ID of this object (user ID). 
+            primary_group (ReferenceWithType): Primary group of the local user. 
+            built_in (bool): Returns a value of `true` if the local user is built in. Otherwise returns a value of `false` if the user has been created manually. 
+            name (str): The name of the local user. 
+            email (str): The email address of the local user. 
+            enabled (bool): Returns a value of `true` if the local user is enabled. 
+            sid (str): The SID (security ID) of the local user. 
         """
-        if built_in is not None:
-            self.built_in = built_in
-        if enabled is not None:
-            self.enabled = enabled
-        if email is not None:
-            self.email = email
-        if name is not None:
-            self.name = name
-        if primary_group is not None:
-            self.primary_group = primary_group
-        if sid is not None:
-            self.sid = sid
         if uid is not None:
             self.uid = uid
+        if primary_group is not None:
+            self.primary_group = primary_group
+        if built_in is not None:
+            self.built_in = built_in
+        if name is not None:
+            self.name = name
+        if email is not None:
+            self.email = email
+        if enabled is not None:
+            self.enabled = enabled
+        if sid is not None:
+            self.sid = sid
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

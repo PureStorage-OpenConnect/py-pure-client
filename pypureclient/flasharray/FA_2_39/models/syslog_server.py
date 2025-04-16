@@ -33,16 +33,16 @@ class SyslogServer(object):
         'name': 'str',
         'context': 'FixedReference',
         'target_type': 'str',
-        'uri': 'str',
-        'services': 'list[str]'
+        'services': 'list[str]',
+        'uri': 'str'
     }
 
     attribute_map = {
         'name': 'name',
         'context': 'context',
         'target_type': 'target_type',
-        'uri': 'uri',
-        'services': 'services'
+        'services': 'services',
+        'uri': 'uri'
     }
 
     required_args = {
@@ -53,16 +53,16 @@ class SyslogServer(object):
         name=None,  # type: str
         context=None,  # type: models.FixedReference
         target_type=None,  # type: str
-        uri=None,  # type: str
         services=None,  # type: List[str]
+        uri=None,  # type: str
     ):
         """
         Keyword args:
-            name (str): A user-specified name. The name must be locally unique and cannot be changed.
-            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
-            target_type (str): The type of log target. Valid values include `file`, and `syslog`.
-            uri (str): The URI of the syslog server in the format `PROTOCOL://HOSTNAME:PORT`.
-            services (list[str]): Valid values are `data-audit` and `management`. If not specified, defaults to `management`.
+            name (str): A user-specified name. The name must be locally unique and cannot be changed. 
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request.  Other parameters provided with the request, such as names of volumes or snapshots,  are resolved relative to the provided `context`. 
+            target_type (str): The type of log target. Valid values include `file`, and `syslog`. 
+            services (list[str]): Valid values are `data-audit` and `management`. If not specified, defaults to `management`. 
+            uri (str): The URI of the syslog server in the format `PROTOCOL://HOSTNAME:PORT`. 
         """
         if name is not None:
             self.name = name
@@ -70,10 +70,10 @@ class SyslogServer(object):
             self.context = context
         if target_type is not None:
             self.target_type = target_type
-        if uri is not None:
-            self.uri = uri
         if services is not None:
             self.services = services
+        if uri is not None:
+            self.uri = uri
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

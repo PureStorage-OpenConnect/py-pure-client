@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.10, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.10, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.10
     
@@ -46,7 +46,7 @@ class AlertWatcherPost(object):
     ):
         """
         Keyword args:
-            minimum_notification_severity (str): The minimum severity that an alert must have in order for emails to be sent to the watcher. Possible values include `info`, `warning`, and `critical`. If not specified, defaults to `info`.
+            minimum_notification_severity (str): The minimum severity that an alert must have in order for emails to be sent to the watcher. Possible values include `info`, `warning`, and `critical`. If not specified, defaults to `info`. 
         """
         if minimum_notification_severity is not None:
             self.minimum_notification_severity = minimum_notification_severity

@@ -32,19 +32,19 @@ class CloudConfigModel(object):
     swagger_types = {
         'current': 'str',
         'requested': 'str',
-        'status': 'str',
         'override_checks': 'list[str]',
+        'details': 'str',
         'step': 'str',
-        'details': 'str'
+        'status': 'str'
     }
 
     attribute_map = {
         'current': 'current',
         'requested': 'requested',
-        'status': 'status',
         'override_checks': 'override_checks',
+        'details': 'details',
         'step': 'step',
-        'details': 'details'
+        'status': 'status'
     }
 
     required_args = {
@@ -54,32 +54,32 @@ class CloudConfigModel(object):
         self,
         current=None,  # type: str
         requested=None,  # type: str
-        status=None,  # type: str
         override_checks=None,  # type: List[str]
-        step=None,  # type: str
         details=None,  # type: str
+        step=None,  # type: str
+        status=None,  # type: str
     ):
         """
         Keyword args:
             current (str): The current model of the CBS array.
             requested (str): A requested model of the CBS array.
-            status (str): The status of the hardware upgrade process. Can be one of `idle`, `paused`, `upgrading`.
             override_checks (list[str]): A list of upgrade checks to be overridden.
-            step (str): The current step of the hardware upgrade process. Can be `pre-upgrade-check`, `upgrade-ct0`, `failover` and so on. The default value is an empty string.
-            details (str): Details about the hardware upgrade. This field can contain error details or progress information when the status is `upgrading`. The default value is an empty string.
+            details (str): Details about the hardware upgrade. This field can contain error details or progress information when the status is `upgrading`. The default value is an empty string. 
+            step (str): The current step of the hardware upgrade process. Can be `pre-upgrade-check`, `upgrade-ct0`, `failover` and so on. The default value is an empty string. 
+            status (str): The status of the hardware upgrade process. Can be one of `idle`, `paused`, `upgrading`. 
         """
         if current is not None:
             self.current = current
         if requested is not None:
             self.requested = requested
-        if status is not None:
-            self.status = status
         if override_checks is not None:
             self.override_checks = override_checks
-        if step is not None:
-            self.step = step
         if details is not None:
             self.details = details
+        if step is not None:
+            self.step = step
+        if status is not None:
+            self.status = status
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

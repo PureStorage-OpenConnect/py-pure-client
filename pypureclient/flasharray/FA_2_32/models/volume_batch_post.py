@@ -33,9 +33,9 @@ class VolumeBatchPost(object):
         'destroyed': 'bool',
         'provisioned': 'int',
         'qos': 'Qos',
-        'priority_adjustment': 'PriorityAdjustment',
-        'source': 'Reference',
         'subtype': 'str',
+        'source': 'Reference',
+        'priority_adjustment': 'PriorityAdjustment',
         'add_to_protection_groups': 'list[Reference]',
         'name': 'str',
         'tags': 'list[Tag]'
@@ -45,9 +45,9 @@ class VolumeBatchPost(object):
         'destroyed': 'destroyed',
         'provisioned': 'provisioned',
         'qos': 'qos',
-        'priority_adjustment': 'priority_adjustment',
-        'source': 'source',
         'subtype': 'subtype',
+        'source': 'source',
+        'priority_adjustment': 'priority_adjustment',
         'add_to_protection_groups': 'add_to_protection_groups',
         'name': 'name',
         'tags': 'tags'
@@ -61,24 +61,24 @@ class VolumeBatchPost(object):
         destroyed=None,  # type: bool
         provisioned=None,  # type: int
         qos=None,  # type: models.Qos
-        priority_adjustment=None,  # type: models.PriorityAdjustment
-        source=None,  # type: models.Reference
         subtype=None,  # type: str
+        source=None,  # type: models.Reference
+        priority_adjustment=None,  # type: models.PriorityAdjustment
         add_to_protection_groups=None,  # type: List[models.Reference]
         name=None,  # type: str
         tags=None,  # type: List[models.Tag]
     ):
         """
         Keyword args:
-            destroyed (bool): If set to `true`, destroys a resource. Once set to `true`, the `time_remaining` value will display the amount of time left until the destroyed resource is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed resource can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the resource is permanently eradicated and can no longer be recovered.
-            provisioned (int): Sets the virtual size of the volume, measured in bytes.
+            destroyed (bool): If set to `true`, destroys a resource. Once set to `true`, the `time_remaining` value will display the amount of time left until the destroyed resource is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed resource can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed,  the resource is permanently eradicated and can no longer be recovered. 
+            provisioned (int): Sets the virtual size of the volume, measured in bytes. 
             qos (Qos): Sets QoS limits.
-            priority_adjustment (PriorityAdjustment): Adjusts volume priority.
+            subtype (str): The type of volume. Valid values are `protocol_endpoint` and `regular`. 
             source (Reference): The source volume of a volume copy.
-            subtype (str): The type of volume. Valid values are `protocol_endpoint` and `regular`.
-            add_to_protection_groups (list[Reference]): Specifies a list of protection group that will compose the initial protection for the volume.
-            name (str): Specifies the name of the volume.
-            tags (list[Tag]): The list of tags of this volume to be upserted.
+            priority_adjustment (PriorityAdjustment): Adjusts volume priority.
+            add_to_protection_groups (list[Reference]): Specifies a list of protection group that will compose the initial protection for the volume. 
+            name (str): Specifies the name of the volume. 
+            tags (list[Tag]): The list of tags of this volume to be upserted. 
         """
         if destroyed is not None:
             self.destroyed = destroyed
@@ -86,12 +86,12 @@ class VolumeBatchPost(object):
             self.provisioned = provisioned
         if qos is not None:
             self.qos = qos
-        if priority_adjustment is not None:
-            self.priority_adjustment = priority_adjustment
-        if source is not None:
-            self.source = source
         if subtype is not None:
             self.subtype = subtype
+        if source is not None:
+            self.source = source
+        if priority_adjustment is not None:
+            self.priority_adjustment = priority_adjustment
         if add_to_protection_groups is not None:
             self.add_to_protection_groups = add_to_protection_groups
         if name is not None:

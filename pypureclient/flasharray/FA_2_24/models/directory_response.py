@@ -46,7 +46,7 @@ class DirectoryResponse(object):
     ):
         """
         Keyword args:
-            items (list[Directory]): Displays a list of all items after filtering. The values are displayed for each name, if applicable.
+            items (list[Directory]): Displays a list of all items after filtering. The values are displayed for each name, if applicable. 
         """
         if items is not None:
             self.items = items

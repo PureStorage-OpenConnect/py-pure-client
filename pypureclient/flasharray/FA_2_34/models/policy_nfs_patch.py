@@ -32,17 +32,17 @@ class PolicyNfsPatch(object):
     swagger_types = {
         'name': 'str',
         'enabled': 'bool',
+        'security': 'list[str]',
         'user_mapping_enabled': 'bool',
-        'nfs_version': 'list[str]',
-        'security': 'list[str]'
+        'nfs_version': 'list[str]'
     }
 
     attribute_map = {
         'name': 'name',
         'enabled': 'enabled',
+        'security': 'security',
         'user_mapping_enabled': 'user_mapping_enabled',
-        'nfs_version': 'nfs_version',
-        'security': 'security'
+        'nfs_version': 'nfs_version'
     }
 
     required_args = {
@@ -52,28 +52,28 @@ class PolicyNfsPatch(object):
         self,
         name=None,  # type: str
         enabled=None,  # type: bool
+        security=None,  # type: List[str]
         user_mapping_enabled=None,  # type: bool
         nfs_version=None,  # type: List[str]
-        security=None,  # type: List[str]
     ):
         """
         Keyword args:
             name (str): The new name for the resource.
             enabled (bool): If set to `true`, enables the policy. If set to `false`, disables the policy.
-            user_mapping_enabled (bool): If set to `true`, FlashArray queries the joined AD/OpenLDAP server to find the user corresponding to the incoming UID. If set to `false`, users are defined by UID/GID pair.
-            nfs_version (list[str]): NFS protocol version allowed for the export to set for the policy. This operation updates all rules of the specified policy. Valid values are `nfsv3` and `nfsv4`.
-            security (list[str]): The security flavors to use for accessing files on this mount point. Values include `auth_sys`, `krb5`, `krb5i`, and `krb5p`. If the server does not support the requested flavor, the mount operation fails. This operation updates all rules of the specified policy. If `auth_sys`, the client is trusted to specify the identity of the user. If `krb5`, cryptographic proof of the identity of the user is provided in each RPC request. This provides strong verification of the identity of users accessing data on the server. Note that additional configuration besides adding this mount option is required to enable Kerberos security. If `krb5i`, integrity checking is added to krb5. This ensures the data has not been tampered with. If `krb5p`, integrity checking and encryption is added to `krb5`. This is the most secure setting, but it also involves the most performance overhead.
+            security (list[str]): The security flavors to use for accessing files on this mount point. Values include `auth_sys`, `krb5`, `krb5i`, and `krb5p`. If the server does not support the requested flavor, the mount operation fails. This operation updates all rules of the specified policy. If `auth_sys`, the client is trusted to specify the identity of the user. If `krb5`, cryptographic proof of the identity of the user is provided in each RPC request. This provides strong verification of the identity of users accessing data on the server. Note that additional configuration besides adding this mount option is required to enable Kerberos security. If `krb5i`, integrity checking is added to krb5. This ensures the data has not been tampered with. If `krb5p`, integrity checking and encryption is added to `krb5`. This is the most secure setting, but it also involves the most performance overhead. 
+            user_mapping_enabled (bool): If set to `true`, FlashArray queries the joined AD/OpenLDAP server to find the user corresponding to the incoming UID. If set to `false`, users are defined by UID/GID pair. 
+            nfs_version (list[str]): NFS protocol version allowed for the export to set for the policy. This operation updates all rules of the specified policy. Valid values are `nfsv3` and `nfsv4`. 
         """
         if name is not None:
             self.name = name
         if enabled is not None:
             self.enabled = enabled
+        if security is not None:
+            self.security = security
         if user_mapping_enabled is not None:
             self.user_mapping_enabled = user_mapping_enabled
         if nfs_version is not None:
             self.nfs_version = nfs_version
-        if security is not None:
-            self.security = security
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

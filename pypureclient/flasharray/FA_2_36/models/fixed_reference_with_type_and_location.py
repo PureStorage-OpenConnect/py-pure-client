@@ -30,15 +30,15 @@ class FixedReferenceWithTypeAndLocation(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
+        'id': 'str',
         'is_local': 'bool',
         'resource_type': 'str'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
+        'id': 'id',
         'is_local': 'is_local',
         'resource_type': 'resource_type'
     }
@@ -48,22 +48,22 @@ class FixedReferenceWithTypeAndLocation(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
+        id=None,  # type: str
         is_local=None,  # type: bool
         resource_type=None,  # type: str
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified.
-            name (str): The resource name, such as volume name, pod name, snapshot name, and so on.
-            is_local (bool): If set to `true`, the location reference is to the local array. If set to `false`, the location reference is to a remote location, such as a remote array or offload target.
-            resource_type (str): Type of the object (full name of the endpoint).   Valid values are the unique part of the resource's REST endpoint.   For example, a reference to a fleet would have a   `resource_type` of `fleets`.
+            name (str): The resource name, such as volume name, pod name, snapshot name, and so on. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified. 
+            is_local (bool): If set to `true`, the location reference is to the local array. If set to `false`, the location reference is to a remote location, such as a remote array or offload target. 
+            resource_type (str): Type of the object (full name of the endpoint).   Valid values are the unique part of the resource's REST endpoint.   For example, a reference to a fleet would have a   `resource_type` of `fleets`. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
         if is_local is not None:
             self.is_local = is_local
         if resource_type is not None:

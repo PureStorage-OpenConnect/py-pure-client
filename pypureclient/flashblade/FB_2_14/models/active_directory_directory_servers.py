@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.14, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.14, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.14
     
@@ -30,13 +30,13 @@ class ActiveDirectoryDirectoryServers(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'directory_servers': 'list[str]',
-        'global_catalog_servers': 'list[str]'
+        'global_catalog_servers': 'list[str]',
+        'directory_servers': 'list[str]'
     }
 
     attribute_map = {
-        'directory_servers': 'directory_servers',
-        'global_catalog_servers': 'global_catalog_servers'
+        'global_catalog_servers': 'global_catalog_servers',
+        'directory_servers': 'directory_servers'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class ActiveDirectoryDirectoryServers(object):
 
     def __init__(
         self,
-        directory_servers=None,  # type: List[str]
         global_catalog_servers=None,  # type: List[str]
+        directory_servers=None,  # type: List[str]
     ):
         """
         Keyword args:
-            directory_servers (list[str]): A list of directory servers that will be used for lookups related to user authorization. Accepted server formats are IP address and DNS name with optional @domain suffix. If the suffix is ommited, the joined domain is assumed. All specified servers must be registered to the domain appropriately in the array's configured DNS and will only be communicated with over the secure LDAP (LDAPS) protocol. The specified list can have a maximum length of 50.
-            global_catalog_servers (list[str]): A list of global catalog servers that will be used for lookups related to user authorization. Accepted server formats are IP address and DNS name with optional @domain suffix. If the suffix is ommited, the joined domain is assumed. All specified servers must be registered to the domain appropriately in the array's configured DNS and will only be communicated with over the secure LDAP (LDAPS) protocol. The specified list can have a maximum length of 50.
+            global_catalog_servers (list[str]): A list of global catalog servers that will be used for lookups related to user authorization. Accepted server formats are IP address and DNS name with optional @domain suffix. If the suffix is ommited, the joined domain is assumed. All specified servers must be registered to the domain appropriately in the array's configured DNS and will only be communicated with over the secure LDAP (LDAPS) protocol. The specified list can have a maximum length of 50. 
+            directory_servers (list[str]): A list of directory servers that will be used for lookups related to user authorization. Accepted server formats are IP address and DNS name with optional @domain suffix. If the suffix is ommited, the joined domain is assumed. All specified servers must be registered to the domain appropriately in the array's configured DNS and will only be communicated with over the secure LDAP (LDAPS) protocol. The specified list can have a maximum length of 50. 
         """
-        if directory_servers is not None:
-            self.directory_servers = directory_servers
         if global_catalog_servers is not None:
             self.global_catalog_servers = global_catalog_servers
+        if directory_servers is not None:
+            self.directory_servers = directory_servers
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

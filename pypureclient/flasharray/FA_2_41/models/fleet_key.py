@@ -30,15 +30,15 @@ class FleetKey(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'fleet_key': 'str',
+        'expires': 'int',
         'created': 'int',
-        'expires': 'int'
+        'fleet_key': 'str'
     }
 
     attribute_map = {
-        'fleet_key': 'fleet_key',
+        'expires': 'expires',
         'created': 'created',
-        'expires': 'expires'
+        'fleet_key': 'fleet_key'
     }
 
     required_args = {
@@ -46,22 +46,22 @@ class FleetKey(object):
 
     def __init__(
         self,
-        fleet_key=None,  # type: str
-        created=None,  # type: int
         expires=None,  # type: int
+        created=None,  # type: int
+        fleet_key=None,  # type: str
     ):
         """
         Keyword args:
-            fleet_key (str): Fleet key, used for fleet connections. After creation, listing will only show ****.
-            created (int): Creation time in milliseconds since UNIX epoch.
-            expires (int): Expiration time in milliseconds since UNIX epoch.
+            expires (int): Expiration time in milliseconds since UNIX epoch. 
+            created (int): Creation time in milliseconds since UNIX epoch. 
+            fleet_key (str): Fleet key, used for fleet connections. After creation, listing will only show ****. 
         """
-        if fleet_key is not None:
-            self.fleet_key = fleet_key
-        if created is not None:
-            self.created = created
         if expires is not None:
             self.expires = expires
+        if created is not None:
+            self.created = created
+        if fleet_key is not None:
+            self.fleet_key = fleet_key
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.5, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.5, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.5
     
@@ -30,14 +30,14 @@ class PolicyMemberWithRemote(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'policy': 'LocationReference',
         'member': 'FixedReference',
+        'policy': 'LocationReference',
         'link': 'MemberLink'
     }
 
     attribute_map = {
-        'policy': 'policy',
         'member': 'member',
+        'policy': 'policy',
         'link': 'link'
     }
 
@@ -46,20 +46,20 @@ class PolicyMemberWithRemote(object):
 
     def __init__(
         self,
-        policy=None,  # type: models.LocationReference
         member=None,  # type: models.FixedReference
+        policy=None,  # type: models.LocationReference
         link=None,  # type: models.MemberLink
     ):
         """
         Keyword args:
-            policy (LocationReference): Reference to the policy.
             member (FixedReference): Reference to the resource the policy is applied to.
-            link (MemberLink): Only populated if the `member` is a file system replica link. Contains additional information about the link.
+            policy (LocationReference): Reference to the policy.
+            link (MemberLink): Only populated if the `member` is a file system replica link. Contains additional information about the link. 
         """
-        if policy is not None:
-            self.policy = policy
         if member is not None:
             self.member = member
+        if policy is not None:
+            self.policy = policy
         if link is not None:
             self.link = link
 

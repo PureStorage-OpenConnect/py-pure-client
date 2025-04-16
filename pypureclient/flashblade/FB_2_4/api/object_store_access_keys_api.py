@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.4, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.4, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.4
     
@@ -44,7 +44,7 @@ class ObjectStoreAccessKeysApi(object):
         >>> thread = api.api24_object_store_access_keys_delete_with_http_info(names, async_req=True)
         >>> result = thread.get()
 
-        :param list[str] names: A comma-separated list of resource names. (required)
+        :param list[str] names: A comma-separated list of resource names.  (required)
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -85,10 +85,6 @@ class ObjectStoreAccessKeysApi(object):
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
-
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
@@ -135,12 +131,12 @@ class ObjectStoreAccessKeysApi(object):
         >>> thread = api.api24_object_store_access_keys_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
-        :param str filter: Exclude resources that don't match the specified criteria.
-        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
-        :param int offset: The offset of the first resource to return from a collection.
-        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.
+        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result. 
+        :param str filter: Exclude resources that don't match the specified criteria. 
+        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
+        :param int offset: The offset of the first resource to return from a collection. 
+        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -226,8 +222,8 @@ class ObjectStoreAccessKeysApi(object):
 
     def api24_object_store_access_keys_patch_with_http_info(
         self,
-        names=None,  # type: List[str]
         object_store_access_key=None,  # type: models.ObjectStoreAccessKey
+        names=None,  # type: List[str]
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -239,11 +235,11 @@ class ObjectStoreAccessKeysApi(object):
         Enable or disable object store access keys.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api24_object_store_access_keys_patch_with_http_info(names, object_store_access_key, async_req=True)
+        >>> thread = api.api24_object_store_access_keys_patch_with_http_info(object_store_access_key, names, async_req=True)
         >>> result = thread.get()
 
-        :param list[str] names: A comma-separated list of resource names. (required)
         :param ObjectStoreAccessKey object_store_access_key: (required)
+        :param list[str] names: A comma-separated list of resource names.  (required)
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -266,12 +262,12 @@ class ObjectStoreAccessKeysApi(object):
         # Assign a value to X-Request-Id if it is not specified
         if params.get('x_request_id') is None:
             params['x_request_id'] = str(uuid.uuid4())
-        # verify the required parameter 'names' is set
-        if names is None:
-            raise TypeError("Missing the required parameter `names` when calling `api24_object_store_access_keys_patch`")
         # verify the required parameter 'object_store_access_key' is set
         if object_store_access_key is None:
             raise TypeError("Missing the required parameter `object_store_access_key` when calling `api24_object_store_access_keys_patch`")
+        # verify the required parameter 'names' is set
+        if names is None:
+            raise TypeError("Missing the required parameter `names` when calling `api24_object_store_access_keys_patch`")
 
         collection_formats = {}
         path_params = {}
@@ -336,7 +332,7 @@ class ObjectStoreAccessKeysApi(object):
         >>> result = thread.get()
 
         :param ObjectStoreAccessKeyPost object_store_access_key: (required)
-        :param list[str] names: A comma-separated list of resource names to import. To import a set of credentials, this field must be specified with the `secret_access_key` body parameter. If both of these are not specified, the system will generate a new set of credentials.
+        :param list[str] names: A comma-separated list of resource names to import. To import a set of credentials, this field must be specified with the `secret_access_key` body parameter. If both of these are not specified, the system will generate a new set of credentials. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.

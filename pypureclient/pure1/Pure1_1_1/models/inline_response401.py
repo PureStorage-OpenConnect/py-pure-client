@@ -3,7 +3,7 @@
 """
     Pure1 Public REST API
 
-    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)  The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
+    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)   The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
 
     OpenAPI spec version: 1.1
     
@@ -30,13 +30,13 @@ class InlineResponse401(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'error': 'str',
-        'error_description': 'str'
+        'error_description': 'str',
+        'error': 'str'
     }
 
     attribute_map = {
-        'error': 'error',
-        'error_description': 'error_description'
+        'error_description': 'error_description',
+        'error': 'error'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class InlineResponse401(object):
 
     def __init__(
         self,
-        error=None,  # type: str
         error_description=None,  # type: str
+        error=None,  # type: str
     ):
         """
         Keyword args:
-            error (str)
             error_description (str)
+            error (str)
         """
-        if error is not None:
-            self.error = error
         if error_description is not None:
             self.error_description = error_description
+        if error is not None:
+            self.error = error
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

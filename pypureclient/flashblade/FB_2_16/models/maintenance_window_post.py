@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.16
     
@@ -46,7 +46,7 @@ class MaintenanceWindowPost(object):
     ):
         """
         Keyword args:
-            timeout (int): Duration of a maintenance window measured in milliseconds. The `names` and `timeout` parameters must be set together, and the `names` parameter must be set to `array`.
+            timeout (int): Duration of a maintenance window measured in milliseconds. The `names` and `timeout` parameters must be set together, and the `names` parameter must be set to `array`. 
         """
         if timeout is not None:
             self.timeout = timeout

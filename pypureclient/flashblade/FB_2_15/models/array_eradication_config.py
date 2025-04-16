@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.15, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.15, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.15
     
@@ -49,8 +49,8 @@ class ArrayEradicationConfig(object):
     ):
         """
         Keyword args:
-            eradication_delay (int): The file eradication delay is in milliseconds. Automatically eradicate destroyed filesystems and snapshots after the delay time. Valid values are `86400000` and any multiple of `86400000` in the range of `86400000` and `2592000000`. Any other values will be rounded down to the nearest multiple of `86400000`.
-            manual_eradication (str): Manual eradication status is applied on the array level. If status is all-disabled, you cannot eradicate buckets and file systems. If status is file-disabled then you can not eradicate files systems. If status is object-disabled then you can not eradicate buckets. If status is all-enabled then you can eradicate file systems and buckets. Values include `all-enabled`, `file-disabled`, `object-disabled`, and `all-disabled`.
+            eradication_delay (int): The file eradication delay is in milliseconds. Automatically eradicate destroyed filesystems and snapshots after the delay time. Valid values are `86400000` and any multiple of `86400000` in the range of `86400000` and `2592000000`. Any other values will be rounded down to the nearest multiple of `86400000`. 
+            manual_eradication (str): Manual eradication status is applied on the array level. If status is all-disabled, you cannot eradicate buckets and file systems. If status is file-disabled then you can not eradicate files systems. If status is object-disabled then you can not eradicate buckets. If status is all-enabled then you can eradicate file systems and buckets. Values include `all-enabled`, `file-disabled`, `object-disabled`, and `all-disabled`. 
         """
         if eradication_delay is not None:
             self.eradication_delay = eradication_delay

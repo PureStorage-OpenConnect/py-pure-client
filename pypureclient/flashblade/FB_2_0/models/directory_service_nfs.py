@@ -3,7 +3,7 @@
 """
     FlashBlade REST API Client
 
-    A lightweight client for FlashBlade REST API 2.0, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.0, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.0
     
@@ -50,7 +50,7 @@ class DirectoryServiceNfs(object):
         """
         Keyword args:
             nis_domains (list[str]): NIS domains to search.
-            nis_servers (list[str]): A list of the IP addresses or hostnames of NIS servers to search.
+            nis_servers (list[str]): A list of the IP addresses or hostnames of NIS servers to search. 
         """
         if nis_domains is not None:
             self.nis_domains = nis_domains

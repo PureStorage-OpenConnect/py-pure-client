@@ -3,7 +3,7 @@
 """
     Pure1 Public REST API
 
-    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)  The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
+    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)   The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
 
     OpenAPI spec version: 1.2
     
@@ -32,8 +32,8 @@ class ReplicaLink(object):
     swagger_types = {
         'as_of': 'int',
         'id': 'str',
-        'lag': 'int',
         'paused': 'bool',
+        'lag': 'int',
         'recovery_point': 'int',
         'status': 'str'
     }
@@ -41,8 +41,8 @@ class ReplicaLink(object):
     attribute_map = {
         'as_of': '_as_of',
         'id': 'id',
-        'lag': 'lag',
         'paused': 'paused',
+        'lag': 'lag',
         'recovery_point': 'recovery_point',
         'status': 'status'
     }
@@ -54,8 +54,8 @@ class ReplicaLink(object):
         self,
         as_of=None,  # type: int
         id=None,  # type: str
-        lag=None,  # type: int
         paused=None,  # type: bool
+        lag=None,  # type: int
         recovery_point=None,  # type: int
         status=None,  # type: str
     ):
@@ -63,19 +63,19 @@ class ReplicaLink(object):
         Keyword args:
             as_of (int): The freshness of the data (timestamp in millis since epoch).
             id (str): A non-modifiable, globally unique ID chosen by the system.
-            lag (int): Duration, in milliseconds, which represents how far behind the replication `target` is from the `source`.
-            paused (bool): Returns `true` if the replica link is paused.
-            recovery_point (int): Time when the last piece of data was replicated, measured in milliseconds since the UNIX epoch, and the recovery point of the resource.
-            status (str): Status of the replica link. Values include `replicating`, `idle`, and `unhealthy`.
+            paused (bool): Returns `true` if the replica link is paused. 
+            lag (int): Duration, in milliseconds, which represents how far behind the replication `target` is from the `source`. 
+            recovery_point (int): Time when the last piece of data was replicated, measured in milliseconds since the UNIX epoch, and the recovery point of the resource. 
+            status (str): Status of the replica link. Values include `replicating`, `idle`, and `unhealthy`. 
         """
         if as_of is not None:
             self.as_of = as_of
         if id is not None:
             self.id = id
-        if lag is not None:
-            self.lag = lag
         if paused is not None:
             self.paused = paused
+        if lag is not None:
+            self.lag = lag
         if recovery_point is not None:
             self.recovery_point = recovery_point
         if status is not None:

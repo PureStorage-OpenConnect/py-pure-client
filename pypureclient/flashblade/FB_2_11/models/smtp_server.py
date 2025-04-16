@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.11, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.11, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.11
     
@@ -56,9 +56,9 @@ class SmtpServer(object):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            relay_host (str): Relay server used as a forwarding point for email sent from the array. Can be set as a hostname, IPv4 address, or IPv6 address, with optional port numbers. The expected format for IPv4 is `ddd.ddd.ddd.ddd:PORT`. The expected format for IPv6 is `xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx`, or if a port number is specified, `[xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx]:PORT`.
-            sender_domain (str): Domain name appended to alert email messages.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            relay_host (str): Relay server used as a forwarding point for email sent from the array. Can be set as a hostname, IPv4 address, or IPv6 address, with optional port numbers.  The expected format for IPv4 is `ddd.ddd.ddd.ddd:PORT`. The expected format for IPv6 is `xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx`, or if a port number is specified, `[xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx]:PORT`. 
+            sender_domain (str): Domain name appended to alert email messages. 
         """
         if name is not None:
             self.name = name

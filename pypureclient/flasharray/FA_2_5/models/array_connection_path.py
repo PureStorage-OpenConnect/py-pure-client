@@ -32,21 +32,21 @@ class ArrayConnectionPath(object):
     swagger_types = {
         'name': 'str',
         'local_port': 'str',
+        'replication_transport': 'str',
         'local_address': 'str',
         'remote_port': 'str',
         'remote_address': 'str',
-        'status': 'str',
-        'replication_transport': 'str'
+        'status': 'str'
     }
 
     attribute_map = {
         'name': 'name',
         'local_port': 'local_port',
+        'replication_transport': 'replication_transport',
         'local_address': 'local_address',
         'remote_port': 'remote_port',
         'remote_address': 'remote_address',
-        'status': 'status',
-        'replication_transport': 'replication_transport'
+        'status': 'status'
     }
 
     required_args = {
@@ -56,26 +56,28 @@ class ArrayConnectionPath(object):
         self,
         name=None,  # type: str
         local_port=None,  # type: str
+        replication_transport=None,  # type: str
         local_address=None,  # type: str
         remote_port=None,  # type: str
         remote_address=None,  # type: str
         status=None,  # type: str
-        replication_transport=None,  # type: str
     ):
         """
         Keyword args:
-            name (str): A locally unique, system-generated name. The name cannot be modified.
-            local_port (str): The local port of the path.
-            local_address (str): IP address or WWN of the local port.
-            remote_port (str): The remote port of the path.
-            remote_address (str): IP address or WWN of the remote port.
-            status (str): Status of the connection. Valid values are `connected`, `connecting`, and `quarantined`. A status of `connected` indicates that the arrays are communicating. A status of `connecting` indicates that the array is trying to establish a connection. A status of `quarantined` indicates that the path is unstable and has been temporarily embargoed for synchronous replication connections.
-            replication_transport (str): The protocol used to transport data between the local array and the remote array. Valid values are `ip` and `fc`.
+            name (str): A locally unique, system-generated name. The name cannot be modified. 
+            local_port (str): The local port of the path. 
+            replication_transport (str): The protocol used to transport data between the local array and the remote array. Valid values are `ip` and `fc`. 
+            local_address (str): IP address or WWN of the local port. 
+            remote_port (str): The remote port of the path. 
+            remote_address (str): IP address or WWN of the remote port. 
+            status (str): Status of the connection. Valid values are `connected`, `connecting`, and `quarantined`. A status of `connected` indicates that the arrays are communicating.  A status of `connecting` indicates that the array is trying to establish a connection. A status of `quarantined` indicates that the path is unstable and has been temporarily  embargoed for synchronous replication connections. 
         """
         if name is not None:
             self.name = name
         if local_port is not None:
             self.local_port = local_port
+        if replication_transport is not None:
+            self.replication_transport = replication_transport
         if local_address is not None:
             self.local_address = local_address
         if remote_port is not None:
@@ -84,8 +86,6 @@ class ArrayConnectionPath(object):
             self.remote_address = remote_address
         if status is not None:
             self.status = status
-        if replication_transport is not None:
-            self.replication_transport = replication_transport
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

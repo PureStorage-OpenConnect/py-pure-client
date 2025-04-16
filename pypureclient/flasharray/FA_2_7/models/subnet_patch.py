@@ -31,20 +31,20 @@ class SubnetPatch(object):
     """
     swagger_types = {
         'name': 'str',
+        'vlan': 'int',
+        'prefix': 'str',
         'enabled': 'bool',
         'gateway': 'str',
-        'mtu': 'int',
-        'prefix': 'str',
-        'vlan': 'int'
+        'mtu': 'int'
     }
 
     attribute_map = {
         'name': 'name',
+        'vlan': 'vlan',
+        'prefix': 'prefix',
         'enabled': 'enabled',
         'gateway': 'gateway',
-        'mtu': 'mtu',
-        'prefix': 'prefix',
-        'vlan': 'vlan'
+        'mtu': 'mtu'
     }
 
     required_args = {
@@ -53,33 +53,33 @@ class SubnetPatch(object):
     def __init__(
         self,
         name=None,  # type: str
+        vlan=None,  # type: int
+        prefix=None,  # type: str
         enabled=None,  # type: bool
         gateway=None,  # type: str
         mtu=None,  # type: int
-        prefix=None,  # type: str
-        vlan=None,  # type: int
     ):
         """
         Keyword args:
-            name (str): A user-specified name. The name must be locally unique and can be changed.
-            enabled (bool): Returns a value of `true` if subnet is enabled. Returns a value of `false` if subnet is disabled. If not specified, defaults to `true`.
-            gateway (str): The IPv4 or IPv6 address of the gateway through which the specified subnet is to communicate with the network.
-            mtu (int): Maximum message transfer unit (packet) size for the subnet in bytes. MTU setting cannot exceed the MTU of the corresponding physical interface. If not specified, defaults to `1500`.
-            prefix (str): The IPv4 or IPv6 address to be associated with the specified subnet.
+            name (str): A user-specified name. The name must be locally unique and can be changed. 
             vlan (int): VLAN ID number.
+            prefix (str): The IPv4 or IPv6 address to be associated with the specified subnet. 
+            enabled (bool): Returns a value of `true` if subnet is enabled. Returns a value of `false` if subnet is disabled. If not specified, defaults to `true`. 
+            gateway (str): The IPv4 or IPv6 address of the gateway through which the specified subnet is to communicate with the network. 
+            mtu (int): Maximum message transfer unit (packet) size for the subnet in bytes. MTU setting cannot exceed the MTU of the corresponding physical interface. If not specified, defaults to `1500`. 
         """
         if name is not None:
             self.name = name
+        if vlan is not None:
+            self.vlan = vlan
+        if prefix is not None:
+            self.prefix = prefix
         if enabled is not None:
             self.enabled = enabled
         if gateway is not None:
             self.gateway = gateway
         if mtu is not None:
             self.mtu = mtu
-        if prefix is not None:
-            self.prefix = prefix
-        if vlan is not None:
-            self.vlan = vlan
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

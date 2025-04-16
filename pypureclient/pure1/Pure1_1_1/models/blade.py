@@ -3,7 +3,7 @@
 """
     Pure1 Public REST API
 
-    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)  The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
+    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)   The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
 
     OpenAPI spec version: 1.1
     
@@ -31,21 +31,21 @@ class Blade(object):
     """
     swagger_types = {
         'as_of': 'int',
-        'id': 'str',
         'name': 'str',
-        'arrays': 'list[BladeArrayStatus]',
-        'details': 'str',
+        'id': 'str',
         'raw_capacity': 'float',
+        'details': 'str',
+        'arrays': 'list[BladeArrayStatus]',
         'status': 'str'
     }
 
     attribute_map = {
         'as_of': '_as_of',
-        'id': 'id',
         'name': 'name',
-        'arrays': 'arrays',
-        'details': 'details',
+        'id': 'id',
         'raw_capacity': 'raw_capacity',
+        'details': 'details',
+        'arrays': 'arrays',
         'status': 'status'
     }
 
@@ -55,35 +55,35 @@ class Blade(object):
     def __init__(
         self,
         as_of=None,  # type: int
-        id=None,  # type: str
         name=None,  # type: str
-        arrays=None,  # type: List[models.BladeArrayStatus]
-        details=None,  # type: str
+        id=None,  # type: str
         raw_capacity=None,  # type: float
+        details=None,  # type: str
+        arrays=None,  # type: List[models.BladeArrayStatus]
         status=None,  # type: str
     ):
         """
         Keyword args:
             as_of (int): The freshness of the data (timestamp in millis since epoch).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
             name (str): A non-modifiable, locally unique name chosen by the system.
-            arrays (list[BladeArrayStatus]): A list of arrays that contain this blade. Each blade should only exist on one array.
-            details (str): Extra details about the blade. Will be `null` if none exist.
-            raw_capacity (float): The raw storage capacity of the blade.
-            status (str): Valid values are `critical`, `evacuated`, `evacuating`, `healthy`, `identifying`, `unclaimed`, `unhealthy`, `unknown`, `unrecognized`.
+            id (str): A non-modifiable, globally unique ID chosen by the system.
+            raw_capacity (float): The raw storage capacity of the blade. 
+            details (str): Extra details about the blade. Will be `null` if none exist. 
+            arrays (list[BladeArrayStatus]): A list of arrays that contain this blade. Each blade should only exist on one array. 
+            status (str): Valid values are `critical`, `evacuated`, `evacuating`, `healthy`, `identifying`, `unclaimed`, `unhealthy`, `unknown`, `unrecognized`. 
         """
         if as_of is not None:
             self.as_of = as_of
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
-        if arrays is not None:
-            self.arrays = arrays
-        if details is not None:
-            self.details = details
+        if id is not None:
+            self.id = id
         if raw_capacity is not None:
             self.raw_capacity = raw_capacity
+        if details is not None:
+            self.details = details
+        if arrays is not None:
+            self.arrays = arrays
         if status is not None:
             self.status = status
 

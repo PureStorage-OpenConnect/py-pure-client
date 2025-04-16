@@ -46,7 +46,7 @@ class PolicyAssignmentPost(object):
     ):
         """
         Keyword args:
-            policies (list[PolicyAssignmentPostPolicy]): A list of policies to apply to the resource. One of `id` or `name` is required in each `policy`.
+            policies (list[PolicyAssignmentPostPolicy]): A list of policies to apply to the resource. One of `id` or `name` is required in each `policy`. 
         """
         if policies is not None:
             self.policies = policies

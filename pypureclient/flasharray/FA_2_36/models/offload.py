@@ -30,10 +30,10 @@ class Offload(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'nfs': 'OffloadNfs',
         's3': 'OffloadS3',
-        'azure': 'OffloadAzure',
         'google_cloud': 'OffloadGoogleCloud',
+        'nfs': 'OffloadNfs',
+        'azure': 'OffloadAzure',
         'name': 'str',
         'protocol': 'str',
         'target_id': 'str',
@@ -42,10 +42,10 @@ class Offload(object):
     }
 
     attribute_map = {
-        'nfs': 'nfs',
         's3': 's3',
-        'azure': 'azure',
         'google_cloud': 'google-cloud',
+        'nfs': 'nfs',
+        'azure': 'azure',
         'name': 'name',
         'protocol': 'protocol',
         'target_id': 'target_id',
@@ -58,10 +58,10 @@ class Offload(object):
 
     def __init__(
         self,
-        nfs=None,  # type: models.OffloadNfs
         s3=None,  # type: models.OffloadS3
-        azure=None,  # type: models.OffloadAzure
         google_cloud=None,  # type: models.OffloadGoogleCloud
+        nfs=None,  # type: models.OffloadNfs
+        azure=None,  # type: models.OffloadAzure
         name=None,  # type: str
         protocol=None,  # type: str
         target_id=None,  # type: str
@@ -70,24 +70,24 @@ class Offload(object):
     ):
         """
         Keyword args:
+            s3 (OffloadS3): S3 settings. 
+            google_cloud (OffloadGoogleCloud): Google Cloud Storage settings. 
             nfs (OffloadNfs): NFS settings. Deprecated from version 6.6.0 onwards - Contact support for additional information.
-            s3 (OffloadS3): S3 settings.
-            azure (OffloadAzure): Microsoft Azure Blob storage settings.
-            google_cloud (OffloadGoogleCloud): Google Cloud Storage settings.
-            name (str): A user-specified name. The name must be locally unique and can be changed.
-            protocol (str): Type of offload. Valid values include `azure`, `google-cloud`, `nfs`, and `s3`.
-            target_id (str): Unique ID for the offload target. When multiple connections to one offload target are created, they each have distinct IDs but share the same `target_id`.
+            azure (OffloadAzure): Microsoft Azure Blob storage settings. 
+            name (str): A user-specified name. The name must be locally unique and can be changed. 
+            protocol (str): Type of offload. Valid values include `azure`, `google-cloud`, `nfs`, and `s3`. 
+            target_id (str): Unique ID for the offload target. When multiple connections to one offload target are created, they each have distinct IDs but share the same `target_id`. 
             space (Space)
-            status (str): Offload status. Valid values are `connecting`, `connected`, `disconnecting`, `not connected`, and `scanning`.
+            status (str): Offload status. Valid values are `connecting`, `connected`, `disconnecting`, `not connected`, and `scanning`. 
         """
-        if nfs is not None:
-            self.nfs = nfs
         if s3 is not None:
             self.s3 = s3
-        if azure is not None:
-            self.azure = azure
         if google_cloud is not None:
             self.google_cloud = google_cloud
+        if nfs is not None:
+            self.nfs = nfs
+        if azure is not None:
+            self.azure = azure
         if name is not None:
             self.name = name
         if protocol is not None:

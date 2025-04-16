@@ -30,14 +30,14 @@ class PolicyrulequotapatchRules(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'enforced': 'bool',
         'quota_limit': 'int',
+        'enforced': 'bool',
         'notifications': 'str'
     }
 
     attribute_map = {
-        'enforced': 'enforced',
         'quota_limit': 'quota_limit',
+        'enforced': 'enforced',
         'notifications': 'notifications'
     }
 
@@ -46,20 +46,20 @@ class PolicyrulequotapatchRules(object):
 
     def __init__(
         self,
-        enforced=None,  # type: bool
         quota_limit=None,  # type: int
+        enforced=None,  # type: bool
         notifications=None,  # type: str
     ):
         """
         Keyword args:
-            enforced (bool): If set to `true`, this rule describes an enforced quota. An out-of-space warning is issued if logical space usage exceeds the limit value described in this rule. If set to `false`, this rule describes an unenforced quota. Alerts and/or notifications are issued when logical space usage exceeds the limit value described in this rule.
-            quota_limit (int): Logical space limit of the quota (in bytes) assigned by the rule. This value cannot be set to 0.
-            notifications (str): Targets to notify when usage approaches the quota limit. The list of notification targets is a comma-separated string. Valid values are one or more of `user` and `group`. To notify no targets, use `none`.
+            quota_limit (int): Logical space limit of the quota (in bytes) assigned by the rule. This value cannot be set to 0. 
+            enforced (bool): If set to `true`, this rule describes an enforced quota. An out-of-space warning is issued if logical space usage exceeds the limit value described in this rule.  If set to `false`, this rule describes an unenforced quota. Alerts and/or notifications are issued when logical space usage exceeds the limit value described in this rule. 
+            notifications (str): Targets to notify when usage approaches the quota limit. The list of notification targets is a comma-separated string. Valid values are one or more of `user` and `group`. To notify no targets, use `none`. 
         """
-        if enforced is not None:
-            self.enforced = enforced
         if quota_limit is not None:
             self.quota_limit = quota_limit
+        if enforced is not None:
+            self.enforced = enforced
         if notifications is not None:
             self.notifications = notifications
 

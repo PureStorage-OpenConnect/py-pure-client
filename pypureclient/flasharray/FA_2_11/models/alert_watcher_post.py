@@ -46,7 +46,7 @@ class AlertWatcherPost(object):
     ):
         """
         Keyword args:
-            enabled (bool): If set to `true`, email notifications will be sent to this watcher for alerts. If set to `false`, email notifications are disabled. If not specified, defaults to `true`.
+            enabled (bool): If set to `true`, email notifications will be sent to this watcher for alerts. If set to `false`, email notifications are disabled. If not specified, defaults to `true`. 
         """
         if enabled is not None:
             self.enabled = enabled

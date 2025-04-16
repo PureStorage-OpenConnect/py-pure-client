@@ -31,20 +31,20 @@ class Drive(object):
     """
     swagger_types = {
         'name': 'str',
-        'capacity': 'int',
-        'details': 'str',
         'protocol': 'str',
-        'status': 'str',
-        'type': 'str'
+        'details': 'str',
+        'type': 'str',
+        'capacity': 'int',
+        'status': 'str'
     }
 
     attribute_map = {
         'name': 'name',
-        'capacity': 'capacity',
-        'details': 'details',
         'protocol': 'protocol',
-        'status': 'status',
-        'type': 'type'
+        'details': 'details',
+        'type': 'type',
+        'capacity': 'capacity',
+        'status': 'status'
     }
 
     required_args = {
@@ -53,33 +53,33 @@ class Drive(object):
     def __init__(
         self,
         name=None,  # type: str
-        capacity=None,  # type: int
-        details=None,  # type: str
         protocol=None,  # type: str
-        status=None,  # type: str
+        details=None,  # type: str
         type=None,  # type: str
+        capacity=None,  # type: int
+        status=None,  # type: str
     ):
         """
         Keyword args:
-            name (str): A locally unique, system-generated name. The name cannot be modified.
+            name (str): A locally unique, system-generated name. The name cannot be modified. 
+            protocol (str): Storage protocol of the module. Valid values are `NVMe` and `SAS`. 
+            details (str): Details about the status of the module if not healthy. 
+            type (str): The type of the module. Valid values are `cache`, `NVRAM`, `SSD`, and `virtual`. 
             capacity (int): Physical storage capacity of the module in bytes.
-            details (str): Details about the status of the module if not healthy.
-            protocol (str): Storage protocol of the module. Valid values are `NVMe` and `SAS`.
-            status (str): Current status of the module. Valid values are `empty`, `failed`, `healthy`, `identifying`, `missing`, `recovering`, `unadmitted`, `unhealthy`, `unrecognized`, and `updating`.
-            type (str): The type of the module. Valid values are `cache`, `NVRAM`, `SSD`, and `virtual`.
+            status (str): Current status of the module. Valid values are `empty`, `failed`, `healthy`, `identifying`, `missing`, `recovering`, `unadmitted`, `unhealthy`, `unrecognized`,  and `updating`. 
         """
         if name is not None:
             self.name = name
-        if capacity is not None:
-            self.capacity = capacity
-        if details is not None:
-            self.details = details
         if protocol is not None:
             self.protocol = protocol
-        if status is not None:
-            self.status = status
+        if details is not None:
+            self.details = details
         if type is not None:
             self.type = type
+        if capacity is not None:
+            self.capacity = capacity
+        if status is not None:
+            self.status = status
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -53,8 +53,8 @@ class AdminSettingsGetResponse(object):
         """
         Keyword args:
             items (list[AdminSettings])
-            more_items_remaining (bool): Returns a value of `true` if subsequent items can be retrieved.
-            total_item_count (int): The total number of records after applying all filter query parameters. The `total_item_count` will be calculated if and only if the corresponding query parameter `total_item_count` is set to `true`. If this query parameter is not set or set to `false`, a value of `null` will be returned.
+            more_items_remaining (bool): Returns a value of `true` if subsequent items can be retrieved. 
+            total_item_count (int): The total number of records after applying all filter query parameters. The `total_item_count` will be calculated if and only if the corresponding query parameter `total_item_count` is set to `true`. If this query parameter is not set or set to `false`, a value of `null` will be returned. 
         """
         if items is not None:
             self.items = items

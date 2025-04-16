@@ -33,16 +33,16 @@ class SmtpServer(object):
         'name': 'str',
         'password': 'str',
         'relay_host': 'str',
-        'sender_domain': 'str',
-        'user_name': 'str'
+        'user_name': 'str',
+        'sender_domain': 'str'
     }
 
     attribute_map = {
         'name': 'name',
         'password': 'password',
         'relay_host': 'relay_host',
-        'sender_domain': 'sender_domain',
-        'user_name': 'user_name'
+        'user_name': 'user_name',
+        'sender_domain': 'sender_domain'
     }
 
     required_args = {
@@ -53,16 +53,16 @@ class SmtpServer(object):
         name=None,  # type: str
         password=None,  # type: str
         relay_host=None,  # type: str
-        sender_domain=None,  # type: str
         user_name=None,  # type: str
+        sender_domain=None,  # type: str
     ):
         """
         Keyword args:
-            name (str): A locally unique, system-generated name. The name cannot be modified.
-            password (str): Password for the relay host, if needed.
-            relay_host (str): Relay server used as a forwarding point for email sent from the array. Can be set as a hostname, IPv4 address, or IPv6 address, with optional port numbers. The expected format for IPv4 is `ddd.ddd.ddd.ddd:PORT`. The expected format for IPv6 is `xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx` or, if a port number is specified, `[xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx]:PORT`.
-            sender_domain (str): Domain name appended to alert email messages.
-            user_name (str): User name for the relay host, if needed.
+            name (str): A locally unique, system-generated name. The name cannot be modified. 
+            password (str): Password for the relay host, if needed. 
+            relay_host (str): Relay server used as a forwarding point for email sent from the array. Can be set as a hostname, IPv4 address, or IPv6 address, with optional port numbers.  The expected format for IPv4 is `ddd.ddd.ddd.ddd:PORT`. The expected format for IPv6 is `xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx` or, if a port number is specified, `[xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx]:PORT`. 
+            user_name (str): User name for the relay host, if needed. 
+            sender_domain (str): Domain name appended to alert email messages. 
         """
         if name is not None:
             self.name = name
@@ -70,10 +70,10 @@ class SmtpServer(object):
             self.password = password
         if relay_host is not None:
             self.relay_host = relay_host
-        if sender_domain is not None:
-            self.sender_domain = sender_domain
         if user_name is not None:
             self.user_name = user_name
+        if sender_domain is not None:
+            self.sender_domain = sender_domain
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

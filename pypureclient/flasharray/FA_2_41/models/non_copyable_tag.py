@@ -30,17 +30,17 @@ class NonCopyableTag(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'key': 'str',
-        'namespace': 'str',
         'resource': 'FixedReference',
-        'value': 'str'
+        'namespace': 'str',
+        'value': 'str',
+        'key': 'str'
     }
 
     attribute_map = {
-        'key': 'key',
-        'namespace': 'namespace',
         'resource': 'resource',
-        'value': 'value'
+        'namespace': 'namespace',
+        'value': 'value',
+        'key': 'key'
     }
 
     required_args = {
@@ -48,26 +48,26 @@ class NonCopyableTag(object):
 
     def __init__(
         self,
-        key=None,  # type: str
-        namespace=None,  # type: str
         resource=None,  # type: models.FixedReference
+        namespace=None,  # type: str
         value=None,  # type: str
+        key=None,  # type: str
     ):
         """
         Keyword args:
-            key (str): Key of the tag. Supports up to 64 Unicode characters.
-            namespace (str): Optional namespace of the tag. Namespace identifies the category of the tag. Omitting the namespace defaults to the namespace `default`. The `pure&#42;` namespaces are reserved for plugins and integration partners. It is recommended that customers avoid using reserved namespaces.
             resource (FixedReference)
-            value (str): Value of the tag. Supports up to 256 Unicode characters.
+            namespace (str): Optional namespace of the tag. Namespace identifies the category of the tag. Omitting the namespace defaults to the namespace `default`. The `pure&#42;` namespaces are reserved for plugins and integration partners. It is recommended that customers avoid using reserved namespaces. 
+            value (str): Value of the tag. Supports up to 256 Unicode characters. 
+            key (str): Key of the tag. Supports up to 64 Unicode characters. 
         """
-        if key is not None:
-            self.key = key
-        if namespace is not None:
-            self.namespace = namespace
         if resource is not None:
             self.resource = resource
+        if namespace is not None:
+            self.namespace = namespace
         if value is not None:
             self.value = value
+        if key is not None:
+            self.key = key
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

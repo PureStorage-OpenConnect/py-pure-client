@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.1, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.1, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.1
     
@@ -32,27 +32,27 @@ class FileSystemSnapshot(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
-        'created': 'int',
-        'destroyed': 'bool',
         'owner': 'FixedReference',
-        'owner_destroyed': 'bool',
-        'policy': 'FixedLocationReference',
+        'time_remaining': 'int',
+        'destroyed': 'bool',
+        'created': 'int',
         'source': 'FixedLocationReference',
         'suffix': 'str',
-        'time_remaining': 'int'
+        'owner_destroyed': 'bool',
+        'policy': 'FixedLocationReference'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
-        'created': 'created',
-        'destroyed': 'destroyed',
         'owner': 'owner',
-        'owner_destroyed': 'owner_destroyed',
-        'policy': 'policy',
+        'time_remaining': 'time_remaining',
+        'destroyed': 'destroyed',
+        'created': 'created',
         'source': 'source',
         'suffix': 'suffix',
-        'time_remaining': 'time_remaining'
+        'owner_destroyed': 'owner_destroyed',
+        'policy': 'policy'
     }
 
     required_args = {
@@ -62,48 +62,48 @@ class FileSystemSnapshot(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
-        created=None,  # type: int
-        destroyed=None,  # type: bool
         owner=None,  # type: models.FixedReference
-        owner_destroyed=None,  # type: bool
-        policy=None,  # type: models.FixedLocationReference
+        time_remaining=None,  # type: int
+        destroyed=None,  # type: bool
+        created=None,  # type: int
         source=None,  # type: models.FixedLocationReference
         suffix=None,  # type: str
-        time_remaining=None,  # type: int
+        owner_destroyed=None,  # type: bool
+        policy=None,  # type: models.FixedLocationReference
     ):
         """
         Keyword args:
-            name (str): A name chosen by the user. Can be changed. Must be locally unique.
-            id (str): A non-modifiable, globally unique ID chosen by the system.
+            name (str): A name chosen by the user. Can be changed. Must be locally unique. 
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            owner (FixedReference): A reference to the file system that owns this snapshot. If the owner is destroyed, this will be destroyed. 
+            time_remaining (int): Time in milliseconds before the file system snapshot is eradicated. `null` if not destroyed. 
+            destroyed (bool): Is the file system snapshot destroyed? If not specified, defaults to `false`. 
             created (int): Creation timestamp of the object.
-            destroyed (bool): Is the file system snapshot destroyed? If not specified, defaults to `false`.
-            owner (FixedReference): A reference to the file system that owns this snapshot. If the owner is destroyed, this will be destroyed.
+            source (FixedLocationReference): A reference to the file system that was the source of the data in this snapshot. Normally this is the same as the owner, but if the snapshot is replicated, the source is the original file system. 
+            suffix (str): The suffix of the snapshot, e.g., `snap1`.
             owner_destroyed (bool): Is the owning file system destroyed?
             policy (FixedLocationReference): A reference to the associated policy.
-            source (FixedLocationReference): A reference to the file system that was the source of the data in this snapshot. Normally this is the same as the owner, but if the snapshot is replicated, the source is the original file system.
-            suffix (str): The suffix of the snapshot, e.g., `snap1`.
-            time_remaining (int): Time in milliseconds before the file system snapshot is eradicated. `null` if not destroyed.
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
-        if created is not None:
-            self.created = created
-        if destroyed is not None:
-            self.destroyed = destroyed
         if owner is not None:
             self.owner = owner
-        if owner_destroyed is not None:
-            self.owner_destroyed = owner_destroyed
-        if policy is not None:
-            self.policy = policy
+        if time_remaining is not None:
+            self.time_remaining = time_remaining
+        if destroyed is not None:
+            self.destroyed = destroyed
+        if created is not None:
+            self.created = created
         if source is not None:
             self.source = source
         if suffix is not None:
             self.suffix = suffix
-        if time_remaining is not None:
-            self.time_remaining = time_remaining
+        if owner_destroyed is not None:
+            self.owner_destroyed = owner_destroyed
+        if policy is not None:
+            self.policy = policy
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

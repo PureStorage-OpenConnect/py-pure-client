@@ -31,17 +31,17 @@ class TargetProtectionGroup(object):
     """
     swagger_types = {
         'context': 'FixedReference',
-        'group': 'Reference',
-        'member': 'ReferenceWithType',
         'allowed': 'bool',
+        'member': 'ReferenceWithType',
+        'group': 'Reference',
         'status': 'str'
     }
 
     attribute_map = {
         'context': 'context',
-        'group': 'group',
-        'member': 'member',
         'allowed': 'allowed',
+        'member': 'member',
+        'group': 'group',
         'status': 'status'
     }
 
@@ -51,27 +51,27 @@ class TargetProtectionGroup(object):
     def __init__(
         self,
         context=None,  # type: models.FixedReference
-        group=None,  # type: models.Reference
-        member=None,  # type: models.ReferenceWithType
         allowed=None,  # type: bool
+        member=None,  # type: models.ReferenceWithType
+        group=None,  # type: models.Reference
         status=None,  # type: str
     ):
         """
         Keyword args:
-            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
-            group (Reference)
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request.  Other parameters provided with the request, such as names of volumes or snapshots,  are resolved relative to the provided `context`. 
+            allowed (bool): If set to `true`, the target array or pod allows the source array to replicate protection group data to the target. If set to `false`, the target array or pod does not allow the source array to replicate protection group data to the target. 
             member (ReferenceWithType)
-            allowed (bool): If set to `true`, the target array or pod allows the source array to replicate protection group data to the target. If set to `false`, the target array or pod does not allow the source array to replicate protection group data to the target.
-            status (str): The replication status of the target. Valid values are `replicating`, `suspended`, and `disallowed`. If `allowed` is `true` and protection group data is replicating to the target, `status` will display `replicating`. If `allowed` is `true`, but replication is suspended due to the target being demoted, linked, stretched, etc., `status` will display `suspended`. Replication will be automatically resumed if the target becomes promoted or local only again. If `allowed` is `false`, `status` will display `disallowed`.
+            group (Reference)
+            status (str): The replication status of the target. Valid values are `replicating`, `suspended`, and `disallowed`. If `allowed` is `true` and protection group data is replicating to the target, `status` will display `replicating`. If `allowed` is `true`, but replication is suspended due to the target being demoted, linked, stretched, etc., `status` will display `suspended`. Replication will be automatically resumed if the target becomes promoted or local only again. If `allowed` is `false`, `status` will display `disallowed`. 
         """
         if context is not None:
             self.context = context
-        if group is not None:
-            self.group = group
-        if member is not None:
-            self.member = member
         if allowed is not None:
             self.allowed = allowed
+        if member is not None:
+            self.member = member
+        if group is not None:
+            self.group = group
         if status is not None:
             self.status = status
 

@@ -46,7 +46,7 @@ class VolumesBatchResponse(object):
     ):
         """
         Keyword args:
-            items (list[Volume]): Displays a list of all items. The values are displayed for each name, if meaningful.
+            items (list[Volume]): Displays a list of all items. The values are displayed for each name, if meaningful. 
         """
         if items is not None:
             self.items = items

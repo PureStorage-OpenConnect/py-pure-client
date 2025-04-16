@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.16
     
@@ -30,17 +30,17 @@ class DnsPost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'domain': 'str',
         'nameservers': 'list[str]',
-        'services': 'list[str]',
-        'sources': 'list[Reference]'
+        'sources': 'list[Reference]',
+        'domain': 'str',
+        'services': 'list[str]'
     }
 
     attribute_map = {
-        'domain': 'domain',
         'nameservers': 'nameservers',
-        'services': 'services',
-        'sources': 'sources'
+        'sources': 'sources',
+        'domain': 'domain',
+        'services': 'services'
     }
 
     required_args = {
@@ -48,26 +48,26 @@ class DnsPost(object):
 
     def __init__(
         self,
-        domain=None,  # type: str
         nameservers=None,  # type: List[str]
-        services=None,  # type: List[str]
         sources=None,  # type: List[models.Reference]
+        domain=None,  # type: str
+        services=None,  # type: List[str]
     ):
         """
         Keyword args:
-            domain (str): Domain suffix to be appended by the appliance when performing DNS lookups.
             nameservers (list[str]): List of DNS server IP addresses.
-            services (list[str]): The list of services utilizing the DNS configuration.
-            sources (list[Reference]): The network interfaces used for communication with the DNS server. The network interfaces must have the `services` value of `data`. Clear this by setting an empty list.
+            sources (list[Reference]): The network interfaces used for communication with the DNS server. The network interfaces must have the `services` value of `data`. Clear this by setting an empty list. 
+            domain (str): Domain suffix to be appended by the appliance when performing DNS lookups. 
+            services (list[str]): The list of services utilizing the DNS configuration. 
         """
-        if domain is not None:
-            self.domain = domain
         if nameservers is not None:
             self.nameservers = nameservers
-        if services is not None:
-            self.services = services
         if sources is not None:
             self.sources = sources
+        if domain is not None:
+            self.domain = domain
+        if services is not None:
+            self.services = services
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -49,7 +49,7 @@ class TestResultWithResourceGetResponse(object):
     ):
         """
         Keyword args:
-            total_item_count (int): The total number of records after applying all filter query parameters. The `total_item_count` will be calculated if and only if the corresponding query parameter `total_item_count` is set to `true`. If this query parameter is not set or set to `false`, a value of `null` will be returned.
+            total_item_count (int): The total number of records after applying all filter query parameters. The `total_item_count` will be calculated if and only if the corresponding query parameter `total_item_count` is set to `true`. If this query parameter is not set or set to `false`, a value of `null` will be returned. 
             items (list[TestResultWithResource])
         """
         if total_item_count is not None:

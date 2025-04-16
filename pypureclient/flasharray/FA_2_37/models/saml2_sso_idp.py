@@ -30,21 +30,21 @@ class Saml2SsoIdp(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'entity_id': 'str',
-        'url': 'str',
-        'metadata_url': 'str',
+        'verification_certificate': 'str',
         'sign_request_enabled': 'bool',
+        'metadata_url': 'str',
         'encrypt_assertion_enabled': 'bool',
-        'verification_certificate': 'str'
+        'entity_id': 'str',
+        'url': 'str'
     }
 
     attribute_map = {
-        'entity_id': 'entity_id',
-        'url': 'url',
-        'metadata_url': 'metadata_url',
+        'verification_certificate': 'verification_certificate',
         'sign_request_enabled': 'sign_request_enabled',
+        'metadata_url': 'metadata_url',
         'encrypt_assertion_enabled': 'encrypt_assertion_enabled',
-        'verification_certificate': 'verification_certificate'
+        'entity_id': 'entity_id',
+        'url': 'url'
     }
 
     required_args = {
@@ -52,34 +52,34 @@ class Saml2SsoIdp(object):
 
     def __init__(
         self,
+        verification_certificate=None,  # type: str
+        sign_request_enabled=None,  # type: bool
+        metadata_url=None,  # type: str
+        encrypt_assertion_enabled=None,  # type: bool
         entity_id=None,  # type: str
         url=None,  # type: str
-        metadata_url=None,  # type: str
-        sign_request_enabled=None,  # type: bool
-        encrypt_assertion_enabled=None,  # type: bool
-        verification_certificate=None,  # type: str
     ):
         """
         Keyword args:
-            entity_id (str): A globally unique name for the identity provider.
-            url (str): The URL of the identity provider.
-            metadata_url (str): The URL of the identity provider metadata.
-            sign_request_enabled (bool): If set to `true`, SAML requests will be signed by the service provider.
-            encrypt_assertion_enabled (bool): If set to `true`, SAML assertions will be encrypted by the identity provider.
-            verification_certificate (str): The X509 certificate that the service provider uses to verify the SAML response signature from the identity provider.
+            verification_certificate (str): The X509 certificate that the service provider uses to verify the SAML response signature from the identity provider. 
+            sign_request_enabled (bool): If set to `true`, SAML requests will be signed by the service provider. 
+            metadata_url (str): The URL of the identity provider metadata. 
+            encrypt_assertion_enabled (bool): If set to `true`, SAML assertions will be encrypted by the identity provider. 
+            entity_id (str): A globally unique name for the identity provider. 
+            url (str): The URL of the identity provider. 
         """
+        if verification_certificate is not None:
+            self.verification_certificate = verification_certificate
+        if sign_request_enabled is not None:
+            self.sign_request_enabled = sign_request_enabled
+        if metadata_url is not None:
+            self.metadata_url = metadata_url
+        if encrypt_assertion_enabled is not None:
+            self.encrypt_assertion_enabled = encrypt_assertion_enabled
         if entity_id is not None:
             self.entity_id = entity_id
         if url is not None:
             self.url = url
-        if metadata_url is not None:
-            self.metadata_url = metadata_url
-        if sign_request_enabled is not None:
-            self.sign_request_enabled = sign_request_enabled
-        if encrypt_assertion_enabled is not None:
-            self.encrypt_assertion_enabled = encrypt_assertion_enabled
-        if verification_certificate is not None:
-            self.verification_certificate = verification_certificate
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

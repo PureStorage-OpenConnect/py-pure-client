@@ -30,17 +30,17 @@ class VchostEndpoint(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'endpoint': 'str',
         'certificates': 'list[ReferenceNoIdWithType]',
-        'vchost': 'ReferenceWithType'
+        'vchost': 'ReferenceWithType',
+        'id': 'str'
     }
 
     attribute_map = {
-        'id': 'id',
         'endpoint': 'endpoint',
         'certificates': 'certificates',
-        'vchost': 'vchost'
+        'vchost': 'vchost',
+        'id': 'id'
     }
 
     required_args = {
@@ -48,26 +48,26 @@ class VchostEndpoint(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         endpoint=None,  # type: str
         certificates=None,  # type: List[models.ReferenceNoIdWithType]
         vchost=None,  # type: models.ReferenceWithType
+        id=None,  # type: str
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified.
-            endpoint (str): The IPv4 or IPv6 address of the endpoint.
-            certificates (list[ReferenceNoIdWithType]): The certificate to be presented by the vchost over the configured endpoints.
-            vchost (ReferenceWithType): The vchost for which this endpoint is to be configured.
+            endpoint (str): The IPv4 or IPv6 address of the endpoint. 
+            certificates (list[ReferenceNoIdWithType]): The certificate to be presented by the vchost over the configured endpoints. 
+            vchost (ReferenceWithType): The vchost for which this endpoint is to be configured. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified. 
         """
-        if id is not None:
-            self.id = id
         if endpoint is not None:
             self.endpoint = endpoint
         if certificates is not None:
             self.certificates = certificates
         if vchost is not None:
             self.vchost = vchost
+        if id is not None:
+            self.id = id
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

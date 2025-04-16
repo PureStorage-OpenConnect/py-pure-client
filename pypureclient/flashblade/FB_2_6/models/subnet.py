@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.6, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.6, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.6
     
@@ -32,27 +32,27 @@ class Subnet(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
-        'enabled': 'bool',
-        'gateway': 'str',
-        'interfaces': 'list[FixedReference]',
         'link_aggregation_group': 'Reference',
-        'mtu': 'int',
+        'interfaces': 'list[FixedReference]',
+        'vlan': 'int',
         'prefix': 'str',
         'services': 'list[str]',
-        'vlan': 'int'
+        'enabled': 'bool',
+        'gateway': 'str',
+        'mtu': 'int'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
-        'enabled': 'enabled',
-        'gateway': 'gateway',
-        'interfaces': 'interfaces',
         'link_aggregation_group': 'link_aggregation_group',
-        'mtu': 'mtu',
+        'interfaces': 'interfaces',
+        'vlan': 'vlan',
         'prefix': 'prefix',
         'services': 'services',
-        'vlan': 'vlan'
+        'enabled': 'enabled',
+        'gateway': 'gateway',
+        'mtu': 'mtu'
     }
 
     required_args = {
@@ -62,48 +62,48 @@ class Subnet(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
-        enabled=None,  # type: bool
-        gateway=None,  # type: str
-        interfaces=None,  # type: List[models.FixedReference]
         link_aggregation_group=None,  # type: models.Reference
-        mtu=None,  # type: int
+        interfaces=None,  # type: List[models.FixedReference]
+        vlan=None,  # type: int
         prefix=None,  # type: str
         services=None,  # type: List[str]
-        vlan=None,  # type: int
+        enabled=None,  # type: bool
+        gateway=None,  # type: str
+        mtu=None,  # type: int
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            enabled (bool): Indicates if subnet is enabled (`true`) or disabled (`false`). If not specified, defaults to `true`.
-            gateway (str): The IPv4 or IPv6 address of the gateway through which the specified subnet is to communicate with the network.
-            interfaces (list[FixedReference]): List of network interfaces associated with this subnet.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
             link_aggregation_group (Reference): Reference to the associated LAG.
-            mtu (int): Maximum message transfer unit (packet) size for the subnet in bytes. MTU setting cannot exceed the MTU of the corresponding physical interface. If not specified, defaults to `1500`.
-            prefix (str): The IPv4 or IPv6 address to be associated with the specified subnet.
-            services (list[str]): The services provided by this subnet, as inherited from all of its interfaces.
+            interfaces (list[FixedReference]): List of network interfaces associated with this subnet.
             vlan (int): VLAN ID.
+            prefix (str): The IPv4 or IPv6 address to be associated with the specified subnet. 
+            services (list[str]): The services provided by this subnet, as inherited from all of its interfaces. 
+            enabled (bool): Indicates if subnet is enabled (`true`) or disabled (`false`). If not specified, defaults to `true`. 
+            gateway (str): The IPv4 or IPv6 address of the gateway through which the specified subnet is to communicate with the network. 
+            mtu (int): Maximum message transfer unit (packet) size for the subnet in bytes. MTU setting cannot exceed the MTU of the corresponding physical interface. If not specified, defaults to `1500`. 
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
-        if enabled is not None:
-            self.enabled = enabled
-        if gateway is not None:
-            self.gateway = gateway
-        if interfaces is not None:
-            self.interfaces = interfaces
         if link_aggregation_group is not None:
             self.link_aggregation_group = link_aggregation_group
-        if mtu is not None:
-            self.mtu = mtu
+        if interfaces is not None:
+            self.interfaces = interfaces
+        if vlan is not None:
+            self.vlan = vlan
         if prefix is not None:
             self.prefix = prefix
         if services is not None:
             self.services = services
-        if vlan is not None:
-            self.vlan = vlan
+        if enabled is not None:
+            self.enabled = enabled
+        if gateway is not None:
+            self.gateway = gateway
+        if mtu is not None:
+            self.mtu = mtu
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

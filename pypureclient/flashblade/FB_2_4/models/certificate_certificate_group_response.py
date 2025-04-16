@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.4, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.4, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.4
     
@@ -46,7 +46,7 @@ class CertificateCertificateGroupResponse(object):
     ):
         """
         Keyword args:
-            items (list[Member]): A list of certificate and certificate group relationships.
+            items (list[Member]): A list of certificate and certificate group relationships. 
         """
         if items is not None:
             self.items = items

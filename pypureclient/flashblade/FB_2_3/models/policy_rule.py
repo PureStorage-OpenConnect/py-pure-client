@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.3, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.3, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.3
     
@@ -31,16 +31,16 @@ class PolicyRule(object):
     """
     swagger_types = {
         'at': 'int',
-        'every': 'int',
         'keep_for': 'int',
-        'time_zone': 'str'
+        'time_zone': 'str',
+        'every': 'int'
     }
 
     attribute_map = {
         'at': 'at',
-        'every': 'every',
         'keep_for': 'keep_for',
-        'time_zone': 'time_zone'
+        'time_zone': 'time_zone',
+        'every': 'every'
     }
 
     required_args = {
@@ -49,25 +49,25 @@ class PolicyRule(object):
     def __init__(
         self,
         at=None,  # type: int
-        every=None,  # type: int
         keep_for=None,  # type: int
         time_zone=None,  # type: str
+        every=None,  # type: int
     ):
         """
         Keyword args:
-            at (int): Time during the day to take the snapshot (using array time zone), only valid if 'every' is in days.
-            every (int): How often to take snapshots.
+            at (int): Time during the day to take the snapshot (using array time zone), only valid if 'every' is in days. 
             keep_for (int): The time to keep the snapshots for.
             time_zone (str): The time zone to use with the `at` time.
+            every (int): How often to take snapshots.
         """
         if at is not None:
             self.at = at
-        if every is not None:
-            self.every = every
         if keep_for is not None:
             self.keep_for = keep_for
         if time_zone is not None:
             self.time_zone = time_zone
+        if every is not None:
+            self.every = every
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.8, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.8, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.8
     
@@ -32,27 +32,27 @@ class Audit(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
-        'arguments': 'str',
-        'command': 'str',
-        'ip_address': 'str',
         'subcommand': 'str',
+        'user_interface': 'str',
+        'arguments': 'str',
+        'ip_address': 'str',
         'time': 'int',
         'user': 'str',
-        'user_agent': 'str',
-        'user_interface': 'str'
+        'command': 'str',
+        'user_agent': 'str'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
-        'arguments': 'arguments',
-        'command': 'command',
-        'ip_address': 'ip_address',
         'subcommand': 'subcommand',
+        'user_interface': 'user_interface',
+        'arguments': 'arguments',
+        'ip_address': 'ip_address',
         'time': 'time',
         'user': 'user',
-        'user_agent': 'user_agent',
-        'user_interface': 'user_interface'
+        'command': 'command',
+        'user_agent': 'user_agent'
     }
 
     required_args = {
@@ -62,48 +62,48 @@ class Audit(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
-        arguments=None,  # type: str
-        command=None,  # type: str
-        ip_address=None,  # type: str
         subcommand=None,  # type: str
+        user_interface=None,  # type: str
+        arguments=None,  # type: str
+        ip_address=None,  # type: str
         time=None,  # type: int
         user=None,  # type: str
+        command=None,  # type: str
         user_agent=None,  # type: str
-        user_interface=None,  # type: str
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            arguments (str)
-            command (str)
-            ip_address (str)
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
             subcommand (str)
+            user_interface (str): The user interface through which the user session event was performed. Valid values are `CLI`, `GUI`, and `REST`. 
+            arguments (str)
+            ip_address (str)
             time (int)
             user (str)
+            command (str)
             user_agent (str)
-            user_interface (str): The user interface through which the user session event was performed. Valid values are `CLI`, `GUI`, and `REST`.
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
-        if arguments is not None:
-            self.arguments = arguments
-        if command is not None:
-            self.command = command
-        if ip_address is not None:
-            self.ip_address = ip_address
         if subcommand is not None:
             self.subcommand = subcommand
+        if user_interface is not None:
+            self.user_interface = user_interface
+        if arguments is not None:
+            self.arguments = arguments
+        if ip_address is not None:
+            self.ip_address = ip_address
         if time is not None:
             self.time = time
         if user is not None:
             self.user = user
+        if command is not None:
+            self.command = command
         if user_agent is not None:
             self.user_agent = user_agent
-        if user_interface is not None:
-            self.user_interface = user_interface
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -49,8 +49,8 @@ class HostPortConnectivity(object):
     ):
         """
         Keyword args:
-            details (str): The host connection status. Values include `Redundant`, `N/A`, `Redundant-Failover`, `Uneven`, `Unused Port`, `Single Controller`, `Single Controller-Failover`, and `None`.
-            status (str): The host connection health status. Values include `healthy`, `unhealthy`, and `critical`.
+            details (str): The host connection status. Values include `Redundant`, `N/A`, `Redundant-Failover`, `Uneven`, `Unused Port`, `Single Controller`, `Single Controller-Failover`, and `None`. 
+            status (str): The host connection health status. Values include `healthy`, `unhealthy`, and `critical`. 
         """
         if details is not None:
             self.details = details

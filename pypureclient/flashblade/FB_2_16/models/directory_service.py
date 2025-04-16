@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.16
     
@@ -32,33 +32,33 @@ class DirectoryService(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
+        'ca_certificate': 'Reference',
+        'uris': 'list[str]',
         'base_dn': 'str',
         'bind_password': 'str',
-        'bind_user': 'str',
-        'ca_certificate': 'Reference',
-        'ca_certificate_group': 'Reference',
-        'enabled': 'bool',
         'management': 'DirectoryServiceManagement',
+        'smb': 'DirectoryServiceSmb',
+        'ca_certificate_group': 'Reference',
         'nfs': 'DirectoryServiceNfs',
         'services': 'list[str]',
-        'uris': 'list[str]',
-        'smb': 'DirectoryServiceSmb'
+        'bind_user': 'str',
+        'enabled': 'bool'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
+        'ca_certificate': 'ca_certificate',
+        'uris': 'uris',
         'base_dn': 'base_dn',
         'bind_password': 'bind_password',
-        'bind_user': 'bind_user',
-        'ca_certificate': 'ca_certificate',
-        'ca_certificate_group': 'ca_certificate_group',
-        'enabled': 'enabled',
         'management': 'management',
+        'smb': 'smb',
+        'ca_certificate_group': 'ca_certificate_group',
         'nfs': 'nfs',
         'services': 'services',
-        'uris': 'uris',
-        'smb': 'smb'
+        'bind_user': 'bind_user',
+        'enabled': 'enabled'
     }
 
     required_args = {
@@ -68,60 +68,60 @@ class DirectoryService(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
+        ca_certificate=None,  # type: models.Reference
+        uris=None,  # type: List[str]
         base_dn=None,  # type: str
         bind_password=None,  # type: str
-        bind_user=None,  # type: str
-        ca_certificate=None,  # type: models.Reference
-        ca_certificate_group=None,  # type: models.Reference
-        enabled=None,  # type: bool
         management=None,  # type: models.DirectoryServiceManagement
+        smb=None,  # type: models.DirectoryServiceSmb
+        ca_certificate_group=None,  # type: models.Reference
         nfs=None,  # type: models.DirectoryServiceNfs
         services=None,  # type: List[str]
-        uris=None,  # type: List[str]
-        smb=None,  # type: models.DirectoryServiceSmb
+        bind_user=None,  # type: str
+        enabled=None,  # type: bool
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            base_dn (str): Base of the Distinguished Name (DN) of the directory service groups.
-            bind_password (str): Obfuscated password used to query the directory.
-            bind_user (str): Username used to query the directory.
-            ca_certificate (Reference): CA certificate used to validate the authenticity of the configured servers.
-            ca_certificate_group (Reference): A certificate group containing CA certificates that can be used to validate the authenticity of the configured servers.
-            enabled (bool): Is the directory service enabled or not?
-            management (DirectoryServiceManagement)
-            nfs (DirectoryServiceNfs)
-            services (list[str]): Services that the directory service configuration is used for.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            ca_certificate (Reference): CA certificate used to validate the authenticity of the configured servers. 
             uris (list[str]): List of URIs for the configured directory servers.
+            base_dn (str): Base of the Distinguished Name (DN) of the directory service groups. 
+            bind_password (str): Obfuscated password used to query the directory.
+            management (DirectoryServiceManagement)
             smb (DirectoryServiceSmb)
+            ca_certificate_group (Reference): A certificate group containing CA certificates that can be used to validate the authenticity of the configured servers. 
+            nfs (DirectoryServiceNfs)
+            services (list[str]): Services that the directory service configuration is used for. 
+            bind_user (str): Username used to query the directory.
+            enabled (bool): Is the directory service enabled or not?
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
+        if ca_certificate is not None:
+            self.ca_certificate = ca_certificate
+        if uris is not None:
+            self.uris = uris
         if base_dn is not None:
             self.base_dn = base_dn
         if bind_password is not None:
             self.bind_password = bind_password
-        if bind_user is not None:
-            self.bind_user = bind_user
-        if ca_certificate is not None:
-            self.ca_certificate = ca_certificate
-        if ca_certificate_group is not None:
-            self.ca_certificate_group = ca_certificate_group
-        if enabled is not None:
-            self.enabled = enabled
         if management is not None:
             self.management = management
+        if smb is not None:
+            self.smb = smb
+        if ca_certificate_group is not None:
+            self.ca_certificate_group = ca_certificate_group
         if nfs is not None:
             self.nfs = nfs
         if services is not None:
             self.services = services
-        if uris is not None:
-            self.uris = uris
-        if smb is not None:
-            self.smb = smb
+        if bind_user is not None:
+            self.bind_user = bind_user
+        if enabled is not None:
+            self.enabled = enabled
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

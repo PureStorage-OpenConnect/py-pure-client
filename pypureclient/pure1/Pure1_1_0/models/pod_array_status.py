@@ -3,7 +3,7 @@
 """
     Pure1 Public REST API
 
-    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)  The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
+    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)   The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
 
     OpenAPI spec version: 1.0
     
@@ -30,20 +30,20 @@ class PodArrayStatus(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
         'resource_type': 'str',
-        'frozen_at': 'int',
+        'id': 'str',
         'mediator_status': 'str',
+        'frozen_at': 'int',
         'status': 'str'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
         'resource_type': 'resource_type',
-        'frozen_at': 'frozen_at',
+        'id': 'id',
         'mediator_status': 'mediator_status',
+        'frozen_at': 'frozen_at',
         'status': 'status'
     }
 
@@ -52,32 +52,32 @@ class PodArrayStatus(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
         resource_type=None,  # type: str
-        frozen_at=None,  # type: int
+        id=None,  # type: str
         mediator_status=None,  # type: str
+        frozen_at=None,  # type: int
         status=None,  # type: str
     ):
         """
         Keyword args:
-            id (str): The opaque and unique id of this resource.
             name (str): The name of this resource.
-            resource_type (str): The type of this resource represented by the name of its REST endpoint. For example, \"arrays\", \"network-interfaces\", and \"metrics\". The value may be `null` if the resource is not represented.
-            frozen_at (int): The Unix timestamp of when the array was last in sync with the pod (or null if the array is currently in sync).
-            mediator_status (str): The status of the mediator as assessed by this array. Valid values are `flummoxed`, `online`, `unknown`, and `unreachable`. `flummoxed` - The array has the wrong UUID for the mediator. This means that the array can reach a mediator, but is talking to the wrong one. Typically, this would be due to a misconfiguration in the customer environment (e.g. DNS misconfiguration). UUIDs also have a TTL. If a pod goes offline on one array, and stays like that for weeks (such that the TTL expires), it may also show this status until the peer array is reachable again. `online` - The array is successfully communicating with the mediator. `unreachable` - The array cannot reach the mediator. This could be due to a network issue or the mediator is down.
-            status (str): Status of an array in the pod. Valid values are `offline`, `online`, `resyncing`, and `unknown`. `offline` - There is a problem. This array cannot confirm it has the latest data for this pod. This array can not handle IO to the pod nor could it take over during an HA event. `online` - Everything is fine. This array has the latest data for this pod. This array can handle IO to the pod and can take over during an HA event. `resyncing` - There was a problem. This array is actively catching up to get the latest data for this pod. This array can handle IO to this pod's volumes, however it could not take over during an HA event. `unknown` - The state of the pod on this array cannot be determined. This state is only seen on disconnected arrays. The disconnected array cannot determine if the pod on another array is online or offline.
+            resource_type (str): The type of this resource represented by the name of its REST endpoint. For example, \"arrays\", \"network-interfaces\", and \"metrics\". The value may be `null` if the resource is not represented. 
+            id (str): The opaque and unique id of this resource.
+            mediator_status (str): The status of the mediator as assessed by this array. Valid values are `flummoxed`, `online`, `unknown`, and `unreachable`. `flummoxed` - The array has the wrong UUID for the mediator. This means that the array can reach a mediator, but is talking to the wrong one. Typically, this would be due to a misconfiguration in the customer environment (e.g. DNS misconfiguration). UUIDs also have a TTL. If a pod goes offline on one array, and stays like that for weeks (such that the TTL expires), it may also show this status until the peer array is reachable again. `online` - The array is successfully communicating with the mediator. `unreachable` - The array cannot reach the mediator. This could be due to a network issue or the mediator is down. 
+            frozen_at (int): The Unix timestamp of when the array was last in sync with the pod (or null if the array is currently in sync). 
+            status (str): Status of an array in the pod. Valid values are `offline`, `online`, `resyncing`, and `unknown`. `offline` - There is a problem. This array cannot confirm it has the latest data for this pod. This array can not handle IO to the pod nor could it take over during an HA event. `online` - Everything is fine. This array has the latest data for this pod. This array can handle IO to the pod and can take over during an HA event. `resyncing` - There was a problem. This array is actively catching up to get the latest data for this pod. This array can handle IO to this pod's volumes, however it could not take over during an HA event. `unknown` - The state of the pod on this array cannot be determined. This state is only seen on disconnected arrays. The disconnected array cannot determine if the pod on another array is online or offline. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
         if resource_type is not None:
             self.resource_type = resource_type
-        if frozen_at is not None:
-            self.frozen_at = frozen_at
+        if id is not None:
+            self.id = id
         if mediator_status is not None:
             self.mediator_status = mediator_status
+        if frozen_at is not None:
+            self.frozen_at = frozen_at
         if status is not None:
             self.status = status
 

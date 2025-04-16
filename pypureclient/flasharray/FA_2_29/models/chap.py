@@ -31,16 +31,16 @@ class Chap(object):
     """
     swagger_types = {
         'host_password': 'str',
-        'host_user': 'str',
         'target_password': 'str',
-        'target_user': 'str'
+        'target_user': 'str',
+        'host_user': 'str'
     }
 
     attribute_map = {
         'host_password': 'host_password',
-        'host_user': 'host_user',
         'target_password': 'target_password',
-        'target_user': 'target_user'
+        'target_user': 'target_user',
+        'host_user': 'host_user'
     }
 
     required_args = {
@@ -49,25 +49,25 @@ class Chap(object):
     def __init__(
         self,
         host_password=None,  # type: str
-        host_user=None,  # type: str
         target_password=None,  # type: str
         target_user=None,  # type: str
+        host_user=None,  # type: str
     ):
         """
         Keyword args:
-            host_password (str): The host password for CHAP authentication. The password must be between 12 and 255 characters (inclusive) and cannot be the same as the target password.
-            host_user (str): The host username for CHAP authentication.
-            target_password (str): The target password for CHAP authentication. The password must be between 12 and 255 characters (inclusive) and cannot be the same as the host password.
+            host_password (str): The host password for CHAP authentication. The password must be between 12 and 255 characters (inclusive) and cannot be the same as the target password. 
+            target_password (str): The target password for CHAP authentication. The password must be between 12 and 255 characters (inclusive) and cannot be the same as the host password. 
             target_user (str): The target username for CHAP authentication.
+            host_user (str): The host username for CHAP authentication.
         """
         if host_password is not None:
             self.host_password = host_password
-        if host_user is not None:
-            self.host_user = host_user
         if target_password is not None:
             self.target_password = target_password
         if target_user is not None:
             self.target_user = target_user
+        if host_user is not None:
+            self.host_user = host_user
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

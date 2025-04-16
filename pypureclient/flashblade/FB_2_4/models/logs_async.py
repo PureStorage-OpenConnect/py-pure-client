@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.4, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.4, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.4
     
@@ -32,25 +32,25 @@ class LogsAsync(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
+        'available_files': 'list[FileInfo]',
         'start_time': 'int',
         'end_time': 'int',
-        'last_request_time': 'int',
         'processing': 'bool',
         'progress': 'float',
         'hardware_components': 'list[FixedReference]',
-        'available_files': 'list[FileInfo]'
+        'last_request_time': 'int'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
+        'available_files': 'available_files',
         'start_time': 'start_time',
         'end_time': 'end_time',
-        'last_request_time': 'last_request_time',
         'processing': 'processing',
         'progress': 'progress',
         'hardware_components': 'hardware_components',
-        'available_files': 'available_files'
+        'last_request_time': 'last_request_time'
     }
 
     required_args = {
@@ -60,44 +60,44 @@ class LogsAsync(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
+        available_files=None,  # type: List[models.FileInfo]
         start_time=None,  # type: int
         end_time=None,  # type: int
-        last_request_time=None,  # type: int
         processing=None,  # type: bool
         progress=None,  # type: float
         hardware_components=None,  # type: List[models.FixedReference]
-        available_files=None,  # type: List[models.FileInfo]
+        last_request_time=None,  # type: int
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            start_time (int): When the time window starts (in milliseconds since epoch). start_time and end_time determine the number of hours for which the logs are prepared for. At most 6 hours of logs can be prepared in one request. start_time and end_time are truncated to hour boundaries.
-            end_time (int): When the time window ends (in milliseconds since epoch). start_time and end_time determine the number of hours for which the logs are prepared for. At most 6 hours of logs can be prepared in one request. start_time and end_time are truncated to hour boundaries.
-            last_request_time (int): The last time log preparation was requested (in milliseconds since epoch).
-            processing (bool): Returns a value of `true` if the logs are being prepared.
-            progress (float): A representation of log preparation progress. Ranges from 0 to 1.0.
-            hardware_components (list[FixedReference]): All of the hardware components for which logs are being processed.
-            available_files (list[FileInfo]): All of the available files ready for download.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            available_files (list[FileInfo]): All of the available files ready for download. 
+            start_time (int): When the time window starts (in milliseconds since epoch). start_time and end_time determine the number of hours for which the logs are prepared for. At most 6 hours of logs can be prepared in one request. start_time and end_time are truncated to hour boundaries. 
+            end_time (int): When the time window ends (in milliseconds since epoch). start_time and end_time determine the number of hours for which the logs are prepared for. At most 6 hours of logs can be prepared in one request. start_time and end_time are truncated to hour boundaries. 
+            processing (bool): Returns a value of `true` if the logs are being prepared. 
+            progress (float): A representation of log preparation progress. Ranges from 0 to 1.0. 
+            hardware_components (list[FixedReference]): All of the hardware components for which logs are being processed. 
+            last_request_time (int): The last time log preparation was requested (in milliseconds since epoch). 
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
+        if available_files is not None:
+            self.available_files = available_files
         if start_time is not None:
             self.start_time = start_time
         if end_time is not None:
             self.end_time = end_time
-        if last_request_time is not None:
-            self.last_request_time = last_request_time
         if processing is not None:
             self.processing = processing
         if progress is not None:
             self.progress = progress
         if hardware_components is not None:
             self.hardware_components = hardware_components
-        if available_files is not None:
-            self.available_files = available_files
+        if last_request_time is not None:
+            self.last_request_time = last_request_time
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

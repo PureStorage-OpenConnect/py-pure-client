@@ -3,7 +3,7 @@
 """
     Pure1 Public REST API
 
-    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)  The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
+    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)   The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
 
     OpenAPI spec version: 1.3
     
@@ -30,16 +30,16 @@ class AssetAddress(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'country': 'str',
         'city': 'str',
         'state': 'str',
-        'country': 'str',
         'street_address': 'str'
     }
 
     attribute_map = {
+        'country': 'country',
         'city': 'city',
         'state': 'state',
-        'country': 'country',
         'street_address': 'street_address'
     }
 
@@ -48,24 +48,24 @@ class AssetAddress(object):
 
     def __init__(
         self,
+        country=None,  # type: str
         city=None,  # type: str
         state=None,  # type: str
-        country=None,  # type: str
         street_address=None,  # type: str
     ):
         """
         Keyword args:
+            country (str)
             city (str)
             state (str): The state or province.
-            country (str)
             street_address (str)
         """
+        if country is not None:
+            self.country = country
         if city is not None:
             self.city = city
         if state is not None:
             self.state = state
-        if country is not None:
-            self.country = country
         if street_address is not None:
             self.street_address = street_address
 

@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.11, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.11, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.11
     
@@ -31,26 +31,26 @@ class FileLock(object):
     """
     swagger_types = {
         'name': 'str',
-        'client': 'FixedReferenceNoId',
-        'source': 'FixedReference',
-        'path': 'str',
         'inode': 'int',
-        'range': 'FileLockRange',
-        'created_at': 'int',
+        'path': 'str',
         'access_type': 'str',
-        'protocol': 'str'
+        'protocol': 'str',
+        'client': 'FixedReferenceNoId',
+        'created_at': 'int',
+        'range': 'FileLockRange',
+        'source': 'FixedReference'
     }
 
     attribute_map = {
         'name': 'name',
-        'client': 'client',
-        'source': 'source',
-        'path': 'path',
         'inode': 'inode',
-        'range': 'range',
-        'created_at': 'created_at',
+        'path': 'path',
         'access_type': 'access_type',
-        'protocol': 'protocol'
+        'protocol': 'protocol',
+        'client': 'client',
+        'created_at': 'created_at',
+        'range': 'range',
+        'source': 'source'
     }
 
     required_args = {
@@ -59,45 +59,45 @@ class FileLock(object):
     def __init__(
         self,
         name=None,  # type: str
-        client=None,  # type: models.FixedReferenceNoId
-        source=None,  # type: models.FixedReference
-        path=None,  # type: str
         inode=None,  # type: int
-        range=None,  # type: models.FileLockRange
-        created_at=None,  # type: int
+        path=None,  # type: str
         access_type=None,  # type: str
         protocol=None,  # type: str
+        client=None,  # type: models.FixedReferenceNoId
+        created_at=None,  # type: int
+        range=None,  # type: models.FileLockRange
+        source=None,  # type: models.FixedReference
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            client (FixedReferenceNoId): Reference to the file system client that holds the lock.
-            source (FixedReference): Reference to location where the path/inode can be found.
-            path (str): Path to the file where the lock is found relative to `source`. If it is longer than 1023 characters, it will be truncated and only the last 1023 characters will be returned. If multiple hard links exist to the file on which the lock is held, only one is returned. This field will be `null` if the path cannot be resolved.
-            inode (int): The inode of the file where the lock is found relative to the specified `source`.
+            inode (int): The inode of the file where the lock is found relative to the specified `source`. 
+            path (str): Path to the file where the lock is found relative to `source`. If it is longer than 1023 characters, it will be truncated and only the last 1023 characters will be returned. If multiple hard links exist to the file on which the lock is held, only one is returned. This field will be `null` if the path cannot be resolved. 
+            access_type (str): Type of access the lock provides. Valid values are `shared`, `exclusive` and `no-access`. 
+            protocol (str): The protocol utilized for obtaining and managing the lock. Valid values include `NLM`, `NFSv4.1` and `SMB`. 
+            client (FixedReferenceNoId): Reference to the file system client that holds the lock. 
+            created_at (int): Creation timestamp of the lock. Measured in milliseconds since the UNIX epoch. 
             range (FileLockRange)
-            created_at (int): Creation timestamp of the lock. Measured in milliseconds since the UNIX epoch.
-            access_type (str): Type of access the lock provides. Valid values are `shared`, `exclusive` and `no-access`.
-            protocol (str): The protocol utilized for obtaining and managing the lock. Valid values include `NLM`, `NFSv4.1` and `SMB`.
+            source (FixedReference): Reference to location where the path/inode can be found. 
         """
         if name is not None:
             self.name = name
-        if client is not None:
-            self.client = client
-        if source is not None:
-            self.source = source
-        if path is not None:
-            self.path = path
         if inode is not None:
             self.inode = inode
-        if range is not None:
-            self.range = range
-        if created_at is not None:
-            self.created_at = created_at
+        if path is not None:
+            self.path = path
         if access_type is not None:
             self.access_type = access_type
         if protocol is not None:
             self.protocol = protocol
+        if client is not None:
+            self.client = client
+        if created_at is not None:
+            self.created_at = created_at
+        if range is not None:
+            self.range = range
+        if source is not None:
+            self.source = source
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

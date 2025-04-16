@@ -30,20 +30,20 @@ class SoftwarePatch(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
-        'details': 'str',
+        'id': 'str',
         'description': 'str',
         'progress': 'float',
+        'details': 'str',
         'status': 'str'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
-        'details': 'details',
+        'id': 'id',
         'description': 'description',
         'progress': 'progress',
+        'details': 'details',
         'status': 'status'
     }
 
@@ -52,32 +52,32 @@ class SoftwarePatch(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
-        details=None,  # type: str
+        id=None,  # type: str
         description=None,  # type: str
         progress=None,  # type: float
+        details=None,  # type: str
         status=None,  # type: str
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified.
-            name (str): Name of the resource. The name cannot be modified.
-            details (str): The detailed reason for the `status`.
+            name (str): Name of the resource. The name cannot be modified. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified. 
             description (str): The detailed description of the patch.
             progress (float): The progress of the software patch installation, displayed in decimal format.
-            status (str): The status of the software patch installation. Valid values are `available`, `downloaded`, `downloading`, `download_failed`, `installing`, `installed`, `failed`, and `not_applicable`. A status of `available` indicates that the patch is available for download. A status of `downloaded` indicates that the patch has been downloaded and will be installed. A status of `downloading` indicates that the patch is currently downloading. A status of `download_failed` indicates that the download of the patch failed. A status of `installing` indicates that the patch is currently being installed. A status of `installed` indicates that the patch has been installed. A status of `failed` indicates that the patch failed to be installed. A status of `not_applicable` indicates the patch does not need to be installed on the array.
+            details (str): The detailed reason for the `status`.
+            status (str): The status of the software patch installation. Valid values are `available`, `downloaded`, `downloading`, `download_failed`, `installing`, `installed`, `failed`, and `not_applicable`. A status of `available` indicates that the patch is available for download. A status of `downloaded` indicates that the patch has been downloaded and will be installed. A status of `downloading` indicates that the patch is currently downloading. A status of `download_failed` indicates that the download of the patch failed. A status of `installing` indicates that the patch is currently being installed. A status of `installed` indicates that the patch has been installed. A status of `failed` indicates that the patch failed to be installed. A status of `not_applicable` indicates the patch does not need to be installed on the array. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
-        if details is not None:
-            self.details = details
+        if id is not None:
+            self.id = id
         if description is not None:
             self.description = description
         if progress is not None:
             self.progress = progress
+        if details is not None:
+            self.details = details
         if status is not None:
             self.status = status
 

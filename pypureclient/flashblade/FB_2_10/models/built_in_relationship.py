@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.10, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.10, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.10
     
@@ -46,7 +46,7 @@ class BuiltInRelationship(object):
     ):
         """
         Keyword args:
-            id (str): A non-modifiable, globally unique ID chosen by the system.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
         """
         if id is not None:
             self.id = id

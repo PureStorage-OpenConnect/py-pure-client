@@ -30,27 +30,27 @@ class VolumeGroup(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
-        'destroyed': 'bool',
-        'qos': 'Qos',
-        'priority_adjustment': 'PriorityAdjustment',
-        'space': 'Space',
+        'id': 'str',
         'time_remaining': 'int',
+        'destroyed': 'bool',
+        'pod': 'Reference',
+        'qos': 'Qos',
         'volume_count': 'int',
-        'pod': 'Reference'
+        'priority_adjustment': 'PriorityAdjustment',
+        'space': 'Space'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
-        'destroyed': 'destroyed',
-        'qos': 'qos',
-        'priority_adjustment': 'priority_adjustment',
-        'space': 'space',
+        'id': 'id',
         'time_remaining': 'time_remaining',
+        'destroyed': 'destroyed',
+        'pod': 'pod',
+        'qos': 'qos',
         'volume_count': 'volume_count',
-        'pod': 'pod'
+        'priority_adjustment': 'priority_adjustment',
+        'space': 'space'
     }
 
     required_args = {
@@ -58,46 +58,46 @@ class VolumeGroup(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
+        id=None,  # type: str
+        time_remaining=None,  # type: int
         destroyed=None,  # type: bool
+        pod=None,  # type: models.Reference
         qos=None,  # type: models.Qos
+        volume_count=None,  # type: int
         priority_adjustment=None,  # type: models.PriorityAdjustment
         space=None,  # type: models.Space
-        time_remaining=None,  # type: int
-        volume_count=None,  # type: int
-        pod=None,  # type: models.Reference
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            name (str): A user-specified name. The name must be locally unique and can be changed.
-            destroyed (bool): Returns a value of `true` if the volume group has been destroyed and is pending eradication. Before the `time_remaining` period has elapsed, the destroyed volume group can be recovered by setting `destroyed=false`. After the `time_remaining` period has elapsed, the volume group is permanently eradicated and cannot be recovered.
+            name (str): A user-specified name. The name must be locally unique and can be changed. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource. 
+            time_remaining (int): The amount of time left until the destroyed volume group is permanently eradicated, measured in milliseconds. 
+            destroyed (bool): Returns a value of `true` if the volume group has been destroyed and is pending eradication. Before the `time_remaining` period has elapsed, the destroyed volume group can be recovered by setting `destroyed=false`. After the `time_remaining` period has elapsed, the volume group is permanently eradicated and cannot be recovered. 
+            pod (Reference): A reference to the pod.
             qos (Qos)
+            volume_count (int): The number of volumes in the volume group.
             priority_adjustment (PriorityAdjustment)
             space (Space)
-            time_remaining (int): The amount of time left until the destroyed volume group is permanently eradicated, measured in milliseconds.
-            volume_count (int): The number of volumes in the volume group.
-            pod (Reference): A reference to the pod.
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
+        if time_remaining is not None:
+            self.time_remaining = time_remaining
         if destroyed is not None:
             self.destroyed = destroyed
+        if pod is not None:
+            self.pod = pod
         if qos is not None:
             self.qos = qos
+        if volume_count is not None:
+            self.volume_count = volume_count
         if priority_adjustment is not None:
             self.priority_adjustment = priority_adjustment
         if space is not None:
             self.space = space
-        if time_remaining is not None:
-            self.time_remaining = time_remaining
-        if volume_count is not None:
-            self.volume_count = volume_count
-        if pod is not None:
-            self.pod = pod
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

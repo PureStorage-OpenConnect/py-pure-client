@@ -49,7 +49,7 @@ class RealmPost(object):
     ):
         """
         Keyword args:
-            quota_limit (int): The logical quota limit of the realm, measured in bytes. Must be a multiple of 512.
+            quota_limit (int): The logical quota limit of the realm, measured in bytes. Must be a multiple of 512. 
             qos (ContainerQos): Sets QoS limits.
         """
         if quota_limit is not None:

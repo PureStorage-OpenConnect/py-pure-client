@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.3, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.3, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.3
     
@@ -32,19 +32,19 @@ class ArraySpace(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
-        'capacity': 'int',
         'parity': 'float',
+        'time': 'int',
         'space': 'Space',
-        'time': 'int'
+        'capacity': 'int'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
-        'capacity': 'capacity',
         'parity': 'parity',
+        'time': 'time',
         'space': 'space',
-        'time': 'time'
+        'capacity': 'capacity'
     }
 
     required_args = {
@@ -54,32 +54,32 @@ class ArraySpace(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
-        capacity=None,  # type: int
         parity=None,  # type: float
-        space=None,  # type: models.Space
         time=None,  # type: int
+        space=None,  # type: models.Space
+        capacity=None,  # type: int
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            capacity (int): Usable capacity in bytes.
-            parity (float): A representation of data redundancy on the array. Data redundancy is rebuilt automatically by the system whenever parity is less than 1.0.
-            space (Space)
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            parity (float): A representation of data redundancy on the array. Data redundancy is rebuilt automatically by the system whenever parity is less than 1.0. 
             time (int): Sample time in milliseconds since UNIX epoch.
+            space (Space)
+            capacity (int): Usable capacity in bytes.
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
-        if capacity is not None:
-            self.capacity = capacity
         if parity is not None:
             self.parity = parity
-        if space is not None:
-            self.space = space
         if time is not None:
             self.time = time
+        if space is not None:
+            self.space = space
+        if capacity is not None:
+            self.capacity = capacity
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

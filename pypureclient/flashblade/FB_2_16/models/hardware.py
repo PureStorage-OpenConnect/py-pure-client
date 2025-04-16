@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.16
     
@@ -32,37 +32,37 @@ class Hardware(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
-        'details': 'str',
-        'identify_enabled': 'bool',
-        'index': 'int',
-        'model': 'str',
-        'serial': 'str',
-        'slot': 'int',
-        'speed': 'int',
-        'status': 'str',
-        'temperature': 'int',
-        'type': 'str',
-        'part_number': 'str',
         'management_mac': 'str',
-        'data_mac': 'str'
+        'index': 'int',
+        'slot': 'int',
+        'type': 'str',
+        'speed': 'int',
+        'identify_enabled': 'bool',
+        'serial': 'str',
+        'temperature': 'int',
+        'part_number': 'str',
+        'details': 'str',
+        'model': 'str',
+        'data_mac': 'str',
+        'status': 'str'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
-        'details': 'details',
-        'identify_enabled': 'identify_enabled',
-        'index': 'index',
-        'model': 'model',
-        'serial': 'serial',
-        'slot': 'slot',
-        'speed': 'speed',
-        'status': 'status',
-        'temperature': 'temperature',
-        'type': 'type',
-        'part_number': 'part_number',
         'management_mac': 'management_mac',
-        'data_mac': 'data_mac'
+        'index': 'index',
+        'slot': 'slot',
+        'type': 'type',
+        'speed': 'speed',
+        'identify_enabled': 'identify_enabled',
+        'serial': 'serial',
+        'temperature': 'temperature',
+        'part_number': 'part_number',
+        'details': 'details',
+        'model': 'model',
+        'data_mac': 'data_mac',
+        'status': 'status'
     }
 
     required_args = {
@@ -72,68 +72,68 @@ class Hardware(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
-        details=None,  # type: str
-        identify_enabled=None,  # type: bool
-        index=None,  # type: int
-        model=None,  # type: str
-        serial=None,  # type: str
-        slot=None,  # type: int
-        speed=None,  # type: int
-        status=None,  # type: str
-        temperature=None,  # type: int
-        type=None,  # type: str
-        part_number=None,  # type: str
         management_mac=None,  # type: str
+        index=None,  # type: int
+        slot=None,  # type: int
+        type=None,  # type: str
+        speed=None,  # type: int
+        identify_enabled=None,  # type: bool
+        serial=None,  # type: str
+        temperature=None,  # type: int
+        part_number=None,  # type: str
+        details=None,  # type: str
+        model=None,  # type: str
         data_mac=None,  # type: str
+        status=None,  # type: str
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            details (str): Details about the status of the component if not healthy.
-            identify_enabled (bool): State of an LED used to visually identify the component.
-            index (int): Number that identifies the relative position of a hardware component within the array.
-            model (str): Model number of the hardware component.
-            serial (str): Serial number of the hardware component.
-            slot (int): Slot number occupied by the PCI Express card that hosts the component.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            management_mac (str): Hardware component (burned-in) MAC address 
+            index (int): Number that identifies the relative position of a hardware component within the array. 
+            slot (int): Slot number occupied by the PCI Express card that hosts the component. 
+            type (str): Type of hardware component. Valid values are `bay`, `ch`, `eth`, `fan`, `fb`, `fm`, `pwr`, and `xfm`. 
             speed (int): The maximum speed (in b/s) at which the component is capable of operating.
-            status (str): Component status. Valid values are `critical`, `healthy`, `identifying`, `unhealthy`, `unknown`, and `unused`.
+            identify_enabled (bool): State of an LED used to visually identify the component. 
+            serial (str): Serial number of the hardware component.
             temperature (int): Temperature (in degrees celsius) reported by the component.
-            type (str): Type of hardware component. Valid values are `bay`, `ch`, `eth`, `fan`, `fb`, `fm`, `pwr`, and `xfm`.
-            part_number (str): Part number of the hardware component.
-            management_mac (str): Hardware component (burned-in) MAC address
-            data_mac (str): Ethernet (data) MAC address
+            part_number (str): Part number of the hardware component. 
+            details (str): Details about the status of the component if not healthy. 
+            model (str): Model number of the hardware component.
+            data_mac (str): Ethernet (data) MAC address 
+            status (str): Component status. Valid values are `critical`, `healthy`, `identifying`, `unhealthy`, `unknown`, and `unused`. 
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
-        if details is not None:
-            self.details = details
-        if identify_enabled is not None:
-            self.identify_enabled = identify_enabled
-        if index is not None:
-            self.index = index
-        if model is not None:
-            self.model = model
-        if serial is not None:
-            self.serial = serial
-        if slot is not None:
-            self.slot = slot
-        if speed is not None:
-            self.speed = speed
-        if status is not None:
-            self.status = status
-        if temperature is not None:
-            self.temperature = temperature
-        if type is not None:
-            self.type = type
-        if part_number is not None:
-            self.part_number = part_number
         if management_mac is not None:
             self.management_mac = management_mac
+        if index is not None:
+            self.index = index
+        if slot is not None:
+            self.slot = slot
+        if type is not None:
+            self.type = type
+        if speed is not None:
+            self.speed = speed
+        if identify_enabled is not None:
+            self.identify_enabled = identify_enabled
+        if serial is not None:
+            self.serial = serial
+        if temperature is not None:
+            self.temperature = temperature
+        if part_number is not None:
+            self.part_number = part_number
+        if details is not None:
+            self.details = details
+        if model is not None:
+            self.model = model
         if data_mac is not None:
             self.data_mac = data_mac
+        if status is not None:
+            self.status = status
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

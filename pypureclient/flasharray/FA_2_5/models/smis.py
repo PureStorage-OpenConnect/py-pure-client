@@ -30,13 +30,13 @@ class Smis(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'slp_enabled': 'bool',
-        'wbem_https_enabled': 'bool'
+        'wbem_https_enabled': 'bool',
+        'slp_enabled': 'bool'
     }
 
     attribute_map = {
-        'slp_enabled': 'slp_enabled',
-        'wbem_https_enabled': 'wbem_https_enabled'
+        'wbem_https_enabled': 'wbem_https_enabled',
+        'slp_enabled': 'slp_enabled'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class Smis(object):
 
     def __init__(
         self,
-        slp_enabled=None,  # type: bool
         wbem_https_enabled=None,  # type: bool
+        slp_enabled=None,  # type: bool
     ):
         """
         Keyword args:
-            slp_enabled (bool): If set to `true`, the Service Location Protocol (SLP) and its ports, TCP 427 and UDP 427, are enabled.
-            wbem_https_enabled (bool): If set to `true`, the SMI-S provider and its port, TCP 5989 is enabled.
+            wbem_https_enabled (bool): If set to `true`, the SMI-S provider and its port, TCP 5989 is enabled. 
+            slp_enabled (bool): If set to `true`, the Service Location Protocol (SLP) and its ports, TCP 427 and UDP 427, are enabled. 
         """
-        if slp_enabled is not None:
-            self.slp_enabled = slp_enabled
         if wbem_https_enabled is not None:
             self.wbem_https_enabled = wbem_https_enabled
+        if slp_enabled is not None:
+            self.slp_enabled = slp_enabled
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

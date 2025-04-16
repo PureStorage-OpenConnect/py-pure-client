@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.4, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.4, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.4
     
@@ -32,29 +32,29 @@ class Array(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
-        'as_of': 'int',
+        'os': 'str',
         'banner': 'str',
         'idle_timeout': 'int',
         'ntp_servers': 'list[str]',
-        'os': 'str',
-        'revision': 'str',
+        'as_of': 'int',
         'time_zone': 'str',
+        'smb_mode': 'str',
         'version': 'str',
-        'smb_mode': 'str'
+        'revision': 'str'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
-        'as_of': '_as_of',
+        'os': 'os',
         'banner': 'banner',
         'idle_timeout': 'idle_timeout',
         'ntp_servers': 'ntp_servers',
-        'os': 'os',
-        'revision': 'revision',
+        'as_of': '_as_of',
         'time_zone': 'time_zone',
+        'smb_mode': 'smb_mode',
         'version': 'version',
-        'smb_mode': 'smb_mode'
+        'revision': 'revision'
     }
 
     required_args = {
@@ -64,52 +64,52 @@ class Array(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
-        as_of=None,  # type: int
+        os=None,  # type: str
         banner=None,  # type: str
         idle_timeout=None,  # type: int
         ntp_servers=None,  # type: List[str]
-        os=None,  # type: str
-        revision=None,  # type: str
+        as_of=None,  # type: int
         time_zone=None,  # type: str
-        version=None,  # type: str
         smb_mode=None,  # type: str
+        version=None,  # type: str
+        revision=None,  # type: str
     ):
         """
         Keyword args:
-            name (str): A name chosen by the user. Can be changed. Must be locally unique.
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            as_of (int): Array time in milliseconds since UNIX epoch.
-            banner (str): A string to be shown when logging in to the array.
-            idle_timeout (int): Idle timeout in milliseconds. Valid values are in the range of 300000 and 10800000. Setting this value to 0 disables timeouts.
+            name (str): A name chosen by the user. Can be changed. Must be locally unique. 
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            os (str): Valid values are `Purity//FA` and `Purity//FB`. 
+            banner (str): A string to be shown when logging in to the array. 
+            idle_timeout (int): Idle timeout in milliseconds. Valid values are in the range of 300000 and 10800000. Setting this value to 0 disables timeouts. 
             ntp_servers (list[str])
-            os (str): Valid values are `Purity//FA` and `Purity//FB`.
-            revision (str)
-            time_zone (str): The time zone to use for the array. In particular this affects the CLI formatting and the default snapshot policy time zone.
+            as_of (int): Array time in milliseconds since UNIX epoch.
+            time_zone (str): The time zone to use for the array. In particular this affects the CLI formatting and the default snapshot policy time zone. 
+            smb_mode (str): The current SMB mode of the array. This controls the type of authentication that is used by the array for SMB. Possible values include `ad-auto`, `ad-rfc2307`, `guest`, and `native`. Modifying this value requires the assistance of Pure Storage Support. 
             version (str)
-            smb_mode (str): The current SMB mode of the array. This controls the type of authentication that is used by the array for SMB. Possible values include `ad-auto`, `ad-rfc2307`, `guest`, and `native`. Modifying this value requires the assistance of Pure Storage Support.
+            revision (str)
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
-        if as_of is not None:
-            self.as_of = as_of
+        if os is not None:
+            self.os = os
         if banner is not None:
             self.banner = banner
         if idle_timeout is not None:
             self.idle_timeout = idle_timeout
         if ntp_servers is not None:
             self.ntp_servers = ntp_servers
-        if os is not None:
-            self.os = os
-        if revision is not None:
-            self.revision = revision
+        if as_of is not None:
+            self.as_of = as_of
         if time_zone is not None:
             self.time_zone = time_zone
-        if version is not None:
-            self.version = version
         if smb_mode is not None:
             self.smb_mode = smb_mode
+        if version is not None:
+            self.version = version
+        if revision is not None:
+            self.revision = revision
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

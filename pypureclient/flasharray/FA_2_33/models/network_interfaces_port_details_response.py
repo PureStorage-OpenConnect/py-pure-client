@@ -46,7 +46,7 @@ class NetworkInterfacesPortDetailsResponse(object):
     ):
         """
         Keyword args:
-            items (list[NetworkInterfacesPortDetails]): A list of port details objects.
+            items (list[NetworkInterfacesPortDetails]): A list of port details objects. 
         """
         if items is not None:
             self.items = items

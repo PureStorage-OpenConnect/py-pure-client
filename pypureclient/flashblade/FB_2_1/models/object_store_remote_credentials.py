@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.1, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.1, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.1
     
@@ -58,11 +58,11 @@ class ObjectStoreRemoteCredentials(object):
     ):
         """
         Keyword args:
-            name (str): A name chosen by the user. Can be changed. Must be locally unique.
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            access_key_id (str): Access Key ID to be used when connecting to a remote object store.
-            secret_access_key (str): Secret Access Key to be used when connecting to a remote object store.
-            remote (FixedReference): Reference to the associated remote, which can either be a `target` or remote `array`. If it is an `array`, then the `resource-type` field will not be populated.
+            name (str): A name chosen by the user. Can be changed. Must be locally unique. 
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            access_key_id (str): Access Key ID to be used when connecting to a remote object store. 
+            secret_access_key (str): Secret Access Key to be used when connecting to a remote object store. 
+            remote (FixedReference): Reference to the associated remote, which can either be a `target` or remote `array`. If it is an `array`, then the `resource-type` field will not be populated. 
         """
         if name is not None:
             self.name = name

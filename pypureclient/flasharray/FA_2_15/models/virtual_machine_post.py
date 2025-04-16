@@ -30,16 +30,16 @@ class VirtualMachinePost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'vm_id': 'str',
         'vm_type': 'str',
+        'id': 'str',
         'source': 'Reference'
     }
 
     attribute_map = {
-        'id': 'id',
         'vm_id': 'vm_id',
         'vm_type': 'vm_type',
+        'id': 'id',
         'source': 'source'
     }
 
@@ -48,24 +48,24 @@ class VirtualMachinePost(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         vm_id=None,  # type: str
         vm_type=None,  # type: str
+        id=None,  # type: str
         source=None,  # type: models.Reference
     ):
         """
         Keyword args:
-            id (str): The ID of the virtual machine to create or modify, as assigned by the external system. `id` is deprecated. Use `vm_id` instead.
-            vm_id (str): The ID of the virtual machine to create or modify, as assigned by the external system.
-            vm_type (str): The type of virtual machine. The only valid value is `vvol`.
-            source (Reference): The recovery context for the virtual machine or virtual machine snapshot being modified.
+            vm_id (str): The ID of the virtual machine to create or modify, as assigned by the external system. 
+            vm_type (str): The type of virtual machine. The only valid value is `vvol`. 
+            id (str): The ID of the virtual machine to create or modify, as assigned by the external system. `id` is deprecated. Use `vm_id` instead. 
+            source (Reference): The recovery context for the virtual machine or virtual machine snapshot being modified. 
         """
-        if id is not None:
-            self.id = id
         if vm_id is not None:
             self.vm_id = vm_id
         if vm_type is not None:
             self.vm_type = vm_type
+        if id is not None:
+            self.id = id
         if source is not None:
             self.source = source
 

@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.15, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.15, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.15
     
@@ -49,7 +49,7 @@ class NetworkInterfacePatch(object):
     ):
         """
         Keyword args:
-            address (str): The IPv4 or IPv6 address to be associated with the specified network interface.
+            address (str): The IPv4 or IPv6 address to be associated with the specified network interface. 
             services (list[str]): Services and protocols that are enabled on the interface.
         """
         if address is not None:

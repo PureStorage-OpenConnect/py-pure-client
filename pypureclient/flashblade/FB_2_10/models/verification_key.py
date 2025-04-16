@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.10, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.10, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.10
     
@@ -52,8 +52,8 @@ class VerificationKey(object):
     ):
         """
         Keyword args:
-            key_id (int): The key id of the verification key.
-            name (str): Name of the verification key. Possible values include `access`.
+            key_id (int): The key id of the verification key. 
+            name (str): Name of the verification key. Possible values include `access`. 
             verification_key (str): The text of the verification key.
         """
         if key_id is not None:

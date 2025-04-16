@@ -32,15 +32,15 @@ class OffloadAzure(object):
     swagger_types = {
         'container_name': 'str',
         'account_name': 'str',
-        'secret_access_key': 'str',
-        'profile': 'str'
+        'profile': 'str',
+        'secret_access_key': 'str'
     }
 
     attribute_map = {
         'container_name': 'container_name',
         'account_name': 'account_name',
-        'secret_access_key': 'secret_access_key',
-        'profile': 'profile'
+        'profile': 'profile',
+        'secret_access_key': 'secret_access_key'
     }
 
     required_args = {
@@ -50,24 +50,24 @@ class OffloadAzure(object):
         self,
         container_name=None,  # type: str
         account_name=None,  # type: str
-        secret_access_key=None,  # type: str
         profile=None,  # type: str
+        secret_access_key=None,  # type: str
     ):
         """
         Keyword args:
-            container_name (str): The name of the container in the Azure Blob storage account to where the data will be offloaded. The name must be a valid DNS name. If not specified, defaults to `offload`.
-            account_name (str): The name of the existing Azure Blob storage account.
-            secret_access_key (str): The secret access key that goes with the account name (`account_name`) of the Azure Blob storage account. The secret access key is only accepted when creating the connection between the array and the Azure Blob storage account. The `account_name` and `container_name`, and `secret_access_key` parameters must be set together.
-            profile (str): The offload target profile that will be selected for this target. This option allows more granular configuration for the target on top of the `protocol` parameter. Values include `azure`.
+            container_name (str): The name of the container in the Azure Blob storage account to where the data will be offloaded. The name must be a valid DNS name. If not specified, defaults to `offload`. 
+            account_name (str): The name of the existing Azure Blob storage account. 
+            profile (str): The offload target profile that will be selected for this target. This option allows more granular configuration for the target on top of the `protocol` parameter. Values include `azure`. 
+            secret_access_key (str): The secret access key that goes with the account name (`account_name`) of the Azure Blob storage account. The secret access key is only accepted when creating the connection between the array and the Azure Blob storage account. The `account_name` and `container_name`, and `secret_access_key` parameters must be set together. 
         """
         if container_name is not None:
             self.container_name = container_name
         if account_name is not None:
             self.account_name = account_name
-        if secret_access_key is not None:
-            self.secret_access_key = secret_access_key
         if profile is not None:
             self.profile = profile
+        if secret_access_key is not None:
+            self.secret_access_key = secret_access_key
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

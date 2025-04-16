@@ -3,7 +3,7 @@
 """
     Pure1 Public REST API
 
-    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)  The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
+    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)   The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
 
     OpenAPI spec version: 1.0
     
@@ -31,26 +31,26 @@ class Drive(object):
     """
     swagger_types = {
         'as_of': 'int',
-        'id': 'str',
         'name': 'str',
-        'arrays': 'list[DriveArrayStatus]',
-        'capacity': 'float',
-        'details': 'str',
+        'id': 'str',
         'protocol': 'str',
-        'status': 'str',
-        'type': 'str'
+        'details': 'str',
+        'arrays': 'list[DriveArrayStatus]',
+        'type': 'str',
+        'capacity': 'float',
+        'status': 'str'
     }
 
     attribute_map = {
         'as_of': '_as_of',
-        'id': 'id',
         'name': 'name',
-        'arrays': 'arrays',
-        'capacity': 'capacity',
-        'details': 'details',
+        'id': 'id',
         'protocol': 'protocol',
-        'status': 'status',
-        'type': 'type'
+        'details': 'details',
+        'arrays': 'arrays',
+        'type': 'type',
+        'capacity': 'capacity',
+        'status': 'status'
     }
 
     required_args = {
@@ -59,45 +59,45 @@ class Drive(object):
     def __init__(
         self,
         as_of=None,  # type: int
-        id=None,  # type: str
         name=None,  # type: str
-        arrays=None,  # type: List[models.DriveArrayStatus]
-        capacity=None,  # type: float
-        details=None,  # type: str
+        id=None,  # type: str
         protocol=None,  # type: str
-        status=None,  # type: str
+        details=None,  # type: str
+        arrays=None,  # type: List[models.DriveArrayStatus]
         type=None,  # type: str
+        capacity=None,  # type: float
+        status=None,  # type: str
     ):
         """
         Keyword args:
             as_of (int): The freshness of the data (timestamp in millis since epoch).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
             name (str): A non-modifiable, locally unique name chosen by the system.
-            arrays (list[DriveArrayStatus]): A list of arrays that contain this drive. Each drive should only exist on one array.
-            capacity (float): Physical storage capacity of the module (in bytes).
-            details (str): Details about the status of the module if status is not `healthy`.
-            protocol (str): Storage protocol of the module. Values include `NVMe` and `SAS`.
-            status (str): Current status of the module. Values include `empty`, `failed`, `healthy`, `identifying`, `missing`, `recovering`, `unadmitted`, `unhealthy`, `unrecognized`, and `updating`.
-            type (str): The type of the module. Values include `cache`, `NVRAM`, `SSD`, and `virtual`.
+            id (str): A non-modifiable, globally unique ID chosen by the system.
+            protocol (str): Storage protocol of the module. Values include `NVMe` and `SAS`. 
+            details (str): Details about the status of the module if status is not `healthy`. 
+            arrays (list[DriveArrayStatus]): A list of arrays that contain this drive. Each drive should only exist on one array. 
+            type (str): The type of the module. Values include `cache`, `NVRAM`, `SSD`, and `virtual`. 
+            capacity (float): Physical storage capacity of the module (in bytes). 
+            status (str): Current status of the module. Values include `empty`, `failed`, `healthy`, `identifying`, `missing`, `recovering`, `unadmitted`, `unhealthy`, `unrecognized`, and `updating`. 
         """
         if as_of is not None:
             self.as_of = as_of
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
-        if arrays is not None:
-            self.arrays = arrays
-        if capacity is not None:
-            self.capacity = capacity
-        if details is not None:
-            self.details = details
+        if id is not None:
+            self.id = id
         if protocol is not None:
             self.protocol = protocol
-        if status is not None:
-            self.status = status
+        if details is not None:
+            self.details = details
+        if arrays is not None:
+            self.arrays = arrays
         if type is not None:
             self.type = type
+        if capacity is not None:
+            self.capacity = capacity
+        if status is not None:
+            self.status = status
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

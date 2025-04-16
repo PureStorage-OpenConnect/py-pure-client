@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.11, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.11, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.11
     
@@ -33,26 +33,26 @@ class Keytab(object):
         'name': 'str',
         'id': 'str',
         'encryption_type': 'str',
-        'fqdn': 'str',
-        'kvno': 'int',
-        'prefix': 'str',
         'principal': 'str',
+        'fqdn': 'str',
+        'prefix': 'str',
         'realm': 'str',
         'source': 'FixedReference',
-        'suffix': 'int'
+        'suffix': 'int',
+        'kvno': 'int'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
         'encryption_type': 'encryption_type',
-        'fqdn': 'fqdn',
-        'kvno': 'kvno',
-        'prefix': 'prefix',
         'principal': 'principal',
+        'fqdn': 'fqdn',
+        'prefix': 'prefix',
         'realm': 'realm',
         'source': 'source',
-        'suffix': 'suffix'
+        'suffix': 'suffix',
+        'kvno': 'kvno'
     }
 
     required_args = {
@@ -63,26 +63,26 @@ class Keytab(object):
         name=None,  # type: str
         id=None,  # type: str
         encryption_type=None,  # type: str
-        fqdn=None,  # type: str
-        kvno=None,  # type: int
-        prefix=None,  # type: str
         principal=None,  # type: str
+        fqdn=None,  # type: str
+        prefix=None,  # type: str
         realm=None,  # type: str
         source=None,  # type: models.FixedReference
         suffix=None,  # type: int
+        kvno=None,  # type: int
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            encryption_type (str): The encryption type used by the Kerberos key distribution center to generate the keytab.
-            fqdn (str): The fully qualified domain name to which the keytab was issued.
-            kvno (int): The key version number of the key used to generate the keytab.
-            prefix (str): The prefix in the name of the keytab object. This is the same for all keytab objects created from a single keytab file. The name of a keytab entry is created in the format `<prefix>.<suffix>` for all entries.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            encryption_type (str): The encryption type used by the Kerberos key distribution center to generate the keytab. 
             principal (str): The service name for which the keytab was issued.
+            fqdn (str): The fully qualified domain name to which the keytab was issued. 
+            prefix (str): The prefix in the name of the keytab object. This is the same for all keytab objects created from a single keytab file. The name of a keytab entry is created in the format `<prefix>.<suffix>` for all entries. 
             realm (str): The Kerberos realm that issued the keytab.
-            source (FixedReference): A reference to the Active Directory configuration for the computer account that was used to create this keytab. If this keytab was uploaded from a file, all fields in the reference possess `null` values.
-            suffix (int): The suffix in the name of the keytab object, determined at creation time using the slot number of the keytab entry in a file and the number of existing entries with the same prefix. The name of a keytab entry is created in the format `<prefix>.<suffix>` for all entries.
+            source (FixedReference): A reference to the Active Directory configuration for the computer account that was used to create this keytab. If this keytab was uploaded from a file, all fields in the reference possess `null` values. 
+            suffix (int): The suffix in the name of the keytab object, determined at creation time using the slot number of the keytab entry in a file and the number of existing entries with the same prefix. The name of a keytab entry is created in the format `<prefix>.<suffix>` for all entries. 
+            kvno (int): The key version number of the key used to generate the keytab. 
         """
         if name is not None:
             self.name = name
@@ -90,20 +90,20 @@ class Keytab(object):
             self.id = id
         if encryption_type is not None:
             self.encryption_type = encryption_type
-        if fqdn is not None:
-            self.fqdn = fqdn
-        if kvno is not None:
-            self.kvno = kvno
-        if prefix is not None:
-            self.prefix = prefix
         if principal is not None:
             self.principal = principal
+        if fqdn is not None:
+            self.fqdn = fqdn
+        if prefix is not None:
+            self.prefix = prefix
         if realm is not None:
             self.realm = realm
         if source is not None:
             self.source = source
         if suffix is not None:
             self.suffix = suffix
+        if kvno is not None:
+            self.kvno = kvno
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

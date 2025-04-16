@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.3, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.3, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.3
     
@@ -55,18 +55,18 @@ class FileSystemReplicaLinksApi(object):
         >>> thread = api.api23_file_system_replica_links_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
-        :param str filter: Exclude resources that don't match the specified criteria.
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.
-        :param list[str] local_file_system_ids: A comma-separated list of local file system IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `local_file_system_names` query parameter.
-        :param list[str] local_file_system_names: A comma-separated list of local file system names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `local_file_system_ids` query parameter.
-        :param int offset: The offset of the first resource to return from a collection.
-        :param list[str] remote_file_system_ids: A comma-separated list of remote file system IDs. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `remote_file_system_names` query parameter.
-        :param list[str] remote_file_system_names: A comma-separated list of remote file system names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `remote_file_system_ids` query parameter.
-        :param list[str] remote_ids: A comma-separated list of remote array IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `remote_names` query parameter.
-        :param list[str] remote_names: A comma-separated list of remote array names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `remote_ids` query parameter.
-        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.
+        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result. 
+        :param str filter: Exclude resources that don't match the specified criteria. 
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request. 
+        :param list[str] local_file_system_ids: A comma-separated list of local file system IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `local_file_system_names` query parameter. 
+        :param list[str] local_file_system_names: A comma-separated list of local file system names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `local_file_system_ids` query parameter. 
+        :param int offset: The offset of the first resource to return from a collection. 
+        :param list[str] remote_file_system_ids: A comma-separated list of remote file system IDs. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `remote_file_system_names` query parameter. 
+        :param list[str] remote_file_system_names: A comma-separated list of remote file system names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `remote_file_system_ids` query parameter. 
+        :param list[str] remote_ids: A comma-separated list of remote array IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `remote_names` query parameter. 
+        :param list[str] remote_names: A comma-separated list of remote array names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `remote_ids` query parameter. 
+        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -209,13 +209,13 @@ class FileSystemReplicaLinksApi(object):
         >>> thread = api.api23_file_system_replica_links_policies_delete_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param list[str] local_file_system_ids: A comma-separated list of local file system IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `local_file_system_names` query parameter.
-        :param list[str] local_file_system_names: A comma-separated list of local file system names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `local_file_system_ids` query parameter.
-        :param list[str] member_ids: A comma-separated list of member IDs. If after filtering, there is not at least one resource that matches each of the elements of `member_ids`, then an error is returned. This cannot be provided together with the `member_names` query parameter.
-        :param list[str] policy_ids: A comma-separated list of policy IDs. If after filtering, there is not at least one resource that matches each of the elements of `policy_ids`, then an error is returned. This cannot be provided together with the `policy_names` query parameter.
-        :param list[str] policy_names: A comma-separated list of policy names.
-        :param list[str] remote_ids: A comma-separated list of remote array IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `remote_names` query parameter.
-        :param list[str] remote_names: A comma-separated list of remote array names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `remote_ids` query parameter.
+        :param list[str] local_file_system_ids: A comma-separated list of local file system IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `local_file_system_names` query parameter. 
+        :param list[str] local_file_system_names: A comma-separated list of local file system names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `local_file_system_ids` query parameter. 
+        :param list[str] member_ids: A comma-separated list of member IDs. If after filtering, there is not at least one resource that matches each of the elements of `member_ids`, then an error is returned.  This cannot be provided together with the `member_names` query parameter. 
+        :param list[str] policy_ids: A comma-separated list of policy IDs. If after filtering, there is not at least one resource that matches each of the elements of `policy_ids`, then an error is returned.  This cannot be provided together with the `policy_names` query parameter. 
+        :param list[str] policy_names: A comma-separated list of policy names. 
+        :param list[str] remote_ids: A comma-separated list of remote array IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `remote_names` query parameter. 
+        :param list[str] remote_names: A comma-separated list of remote array names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `remote_ids` query parameter. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -289,10 +289,6 @@ class FileSystemReplicaLinksApi(object):
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
-
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
@@ -328,9 +324,9 @@ class FileSystemReplicaLinksApi(object):
         offset=None,  # type: int
         policy_ids=None,  # type: List[str]
         policy_names=None,  # type: List[str]
-        remote_ids=None,  # type: List[str]
         remote_file_system_ids=None,  # type: List[str]
         remote_file_system_names=None,  # type: List[str]
+        remote_ids=None,  # type: List[str]
         remote_names=None,  # type: List[str]
         sort=None,  # type: List[str]
         async_req=False,  # type: bool
@@ -347,20 +343,20 @@ class FileSystemReplicaLinksApi(object):
         >>> thread = api.api23_file_system_replica_links_policies_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
-        :param str filter: Exclude resources that don't match the specified criteria.
-        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.
-        :param list[str] local_file_system_ids: A comma-separated list of local file system IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `local_file_system_names` query parameter.
-        :param list[str] local_file_system_names: A comma-separated list of local file system names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `local_file_system_ids` query parameter.
-        :param list[str] member_ids: A comma-separated list of member IDs. If after filtering, there is not at least one resource that matches each of the elements of `member_ids`, then an error is returned. This cannot be provided together with the `member_names` query parameter.
-        :param int offset: The offset of the first resource to return from a collection.
-        :param list[str] policy_ids: A comma-separated list of policy IDs. If after filtering, there is not at least one resource that matches each of the elements of `policy_ids`, then an error is returned. This cannot be provided together with the `policy_names` query parameter.
-        :param list[str] policy_names: A comma-separated list of policy names.
-        :param list[str] remote_ids: A comma-separated list of remote array IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `remote_names` query parameter.
-        :param list[str] remote_file_system_ids: A comma-separated list of remote file system IDs. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `remote_file_system_names` query parameter.
-        :param list[str] remote_file_system_names: A comma-separated list of remote file system names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `remote_file_system_ids` query parameter.
-        :param list[str] remote_names: A comma-separated list of remote array names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `remote_ids` query parameter.
-        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.
+        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result. 
+        :param str filter: Exclude resources that don't match the specified criteria. 
+        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request. 
+        :param list[str] local_file_system_ids: A comma-separated list of local file system IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `local_file_system_names` query parameter. 
+        :param list[str] local_file_system_names: A comma-separated list of local file system names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `local_file_system_ids` query parameter. 
+        :param list[str] member_ids: A comma-separated list of member IDs. If after filtering, there is not at least one resource that matches each of the elements of `member_ids`, then an error is returned.  This cannot be provided together with the `member_names` query parameter. 
+        :param int offset: The offset of the first resource to return from a collection. 
+        :param list[str] policy_ids: A comma-separated list of policy IDs. If after filtering, there is not at least one resource that matches each of the elements of `policy_ids`, then an error is returned.  This cannot be provided together with the `policy_names` query parameter. 
+        :param list[str] policy_names: A comma-separated list of policy names. 
+        :param list[str] remote_file_system_ids: A comma-separated list of remote file system IDs. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `remote_file_system_names` query parameter. 
+        :param list[str] remote_file_system_names: A comma-separated list of remote file system names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `remote_file_system_ids` query parameter. 
+        :param list[str] remote_ids: A comma-separated list of remote array IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `remote_names` query parameter. 
+        :param list[str] remote_names: A comma-separated list of remote array names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `remote_ids` query parameter. 
+        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -385,15 +381,15 @@ class FileSystemReplicaLinksApi(object):
         if policy_names is not None:
             if not isinstance(policy_names, list):
                 policy_names = [policy_names]
-        if remote_ids is not None:
-            if not isinstance(remote_ids, list):
-                remote_ids = [remote_ids]
         if remote_file_system_ids is not None:
             if not isinstance(remote_file_system_ids, list):
                 remote_file_system_ids = [remote_file_system_ids]
         if remote_file_system_names is not None:
             if not isinstance(remote_file_system_names, list):
                 remote_file_system_names = [remote_file_system_names]
+        if remote_ids is not None:
+            if not isinstance(remote_ids, list):
+                remote_ids = [remote_ids]
         if remote_names is not None:
             if not isinstance(remote_names, list):
                 remote_names = [remote_names]
@@ -442,15 +438,15 @@ class FileSystemReplicaLinksApi(object):
         if 'policy_names' in params:
             query_params.append(('policy_names', params['policy_names']))
             collection_formats['policy_names'] = 'csv'
-        if 'remote_ids' in params:
-            query_params.append(('remote_ids', params['remote_ids']))
-            collection_formats['remote_ids'] = 'csv'
         if 'remote_file_system_ids' in params:
             query_params.append(('remote_file_system_ids', params['remote_file_system_ids']))
             collection_formats['remote_file_system_ids'] = 'csv'
         if 'remote_file_system_names' in params:
             query_params.append(('remote_file_system_names', params['remote_file_system_names']))
             collection_formats['remote_file_system_names'] = 'csv'
+        if 'remote_ids' in params:
+            query_params.append(('remote_ids', params['remote_ids']))
+            collection_formats['remote_ids'] = 'csv'
         if 'remote_names' in params:
             query_params.append(('remote_names', params['remote_names']))
             collection_formats['remote_names'] = 'csv'
@@ -515,13 +511,13 @@ class FileSystemReplicaLinksApi(object):
         >>> thread = api.api23_file_system_replica_links_policies_post_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param list[str] local_file_system_ids: A comma-separated list of local file system IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `local_file_system_names` query parameter.
-        :param list[str] local_file_system_names: A comma-separated list of local file system names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `local_file_system_ids` query parameter.
-        :param list[str] member_ids: A comma-separated list of member IDs. If after filtering, there is not at least one resource that matches each of the elements of `member_ids`, then an error is returned. This cannot be provided together with the `member_names` query parameter.
-        :param list[str] policy_ids: A comma-separated list of policy IDs. If after filtering, there is not at least one resource that matches each of the elements of `policy_ids`, then an error is returned. This cannot be provided together with the `policy_names` query parameter.
-        :param list[str] policy_names: A comma-separated list of policy names.
-        :param list[str] remote_ids: A comma-separated list of remote array IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `remote_names` query parameter.
-        :param list[str] remote_names: A comma-separated list of remote array names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `remote_ids` query parameter.
+        :param list[str] local_file_system_ids: A comma-separated list of local file system IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `local_file_system_names` query parameter. 
+        :param list[str] local_file_system_names: A comma-separated list of local file system names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `local_file_system_ids` query parameter. 
+        :param list[str] member_ids: A comma-separated list of member IDs. If after filtering, there is not at least one resource that matches each of the elements of `member_ids`, then an error is returned.  This cannot be provided together with the `member_names` query parameter. 
+        :param list[str] policy_ids: A comma-separated list of policy IDs. If after filtering, there is not at least one resource that matches each of the elements of `policy_ids`, then an error is returned.  This cannot be provided together with the `policy_names` query parameter. 
+        :param list[str] policy_names: A comma-separated list of policy names. 
+        :param list[str] remote_ids: A comma-separated list of remote array IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `remote_names` query parameter. 
+        :param list[str] remote_names: A comma-separated list of remote array names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `remote_ids` query parameter. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -647,12 +643,12 @@ class FileSystemReplicaLinksApi(object):
         >>> result = thread.get()
 
         :param FileSystemReplicaLink file_system_replica_link: (required)
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param list[str] local_file_system_ids: A comma-separated list of local file system IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `local_file_system_names` query parameter.
-        :param list[str] local_file_system_names: A comma-separated list of local file system names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `local_file_system_ids` query parameter.
-        :param list[str] remote_file_system_names: A comma-separated list of remote file system names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `remote_file_system_ids` query parameter.
-        :param list[str] remote_ids: A comma-separated list of remote array IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `remote_names` query parameter.
-        :param list[str] remote_names: A comma-separated list of remote array names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `remote_ids` query parameter.
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param list[str] local_file_system_ids: A comma-separated list of local file system IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `local_file_system_names` query parameter. 
+        :param list[str] local_file_system_names: A comma-separated list of local file system names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `local_file_system_ids` query parameter. 
+        :param list[str] remote_file_system_names: A comma-separated list of remote file system names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `remote_file_system_ids` query parameter. 
+        :param list[str] remote_ids: A comma-separated list of remote array IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `remote_names` query parameter. 
+        :param list[str] remote_names: A comma-separated list of remote array names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `remote_ids` query parameter. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -779,16 +775,16 @@ class FileSystemReplicaLinksApi(object):
         >>> thread = api.api23_file_system_replica_links_transfer_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
-        :param str filter: Exclude resources that don't match the specified criteria.
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.
-        :param list[str] names_or_owner_names: A comma-separated list of resource names. Either the names of the snapshots or the owning file systems.
-        :param int offset: The offset of the first resource to return from a collection.
-        :param list[str] remote_ids: A comma-separated list of remote array IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `remote_names` query parameter.
-        :param list[str] remote_names: A comma-separated list of remote array names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `remote_ids` query parameter.
-        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.
-        :param bool total_only: Only return the total record for the specified items. The total record will be the total of all items after filtering. The `items` list will be empty.
+        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result. 
+        :param str filter: Exclude resources that don't match the specified criteria. 
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request. 
+        :param list[str] names_or_owner_names: A comma-separated list of resource names. Either the names of the snapshots or the owning file systems. 
+        :param int offset: The offset of the first resource to return from a collection. 
+        :param list[str] remote_ids: A comma-separated list of remote array IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `remote_names` query parameter. 
+        :param list[str] remote_names: A comma-separated list of remote array names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `remote_ids` query parameter. 
+        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response. 
+        :param bool total_only: Only return the total record for the specified items. The total record will be the total of all items after filtering. The `items` list will be empty. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.

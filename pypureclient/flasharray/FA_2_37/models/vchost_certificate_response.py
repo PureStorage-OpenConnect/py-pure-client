@@ -46,7 +46,7 @@ class VchostCertificateResponse(object):
     ):
         """
         Keyword args:
-            items (list[VchostCertificate]): Returns a list of all items after filtering. If applicable, the values are displayed for each name.
+            items (list[VchostCertificate]): Returns a list of all items after filtering. If applicable, the values are displayed for each name. 
         """
         if items is not None:
             self.items = items

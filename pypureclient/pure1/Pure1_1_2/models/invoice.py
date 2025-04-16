@@ -3,7 +3,7 @@
 """
     Pure1 Public REST API
 
-    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)  The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
+    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)   The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
 
     OpenAPI spec version: 1.2
     
@@ -30,37 +30,37 @@ class Invoice(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         '_date': 'int',
-        'status': 'str',
         'amount': 'float',
-        'currency': 'str',
         'due_date': 'int',
-        'payment_terms': 'str',
-        'ship_date': 'int',
-        'sales_representative': 'str',
-        'partner_purchase_order': 'str',
         'end_user_purchase_order': 'str',
+        'subscription': 'FixedReference',
         'end_user_name': 'str',
+        'payment_terms': 'str',
+        'partner_purchase_order': 'str',
+        'sales_representative': 'str',
+        'currency': 'str',
+        'id': 'str',
         'lines': 'list[InvoiceLine]',
-        'subscription': 'FixedReference'
+        'ship_date': 'int',
+        'status': 'str'
     }
 
     attribute_map = {
-        'id': 'id',
         '_date': 'date',
-        'status': 'status',
         'amount': 'amount',
-        'currency': 'currency',
         'due_date': 'due_date',
-        'payment_terms': 'payment_terms',
-        'ship_date': 'ship_date',
-        'sales_representative': 'sales_representative',
-        'partner_purchase_order': 'partner_purchase_order',
         'end_user_purchase_order': 'end_user_purchase_order',
+        'subscription': 'subscription',
         'end_user_name': 'end_user_name',
+        'payment_terms': 'payment_terms',
+        'partner_purchase_order': 'partner_purchase_order',
+        'sales_representative': 'sales_representative',
+        'currency': 'currency',
+        'id': 'id',
         'lines': 'lines',
-        'subscription': 'subscription'
+        'ship_date': 'ship_date',
+        'status': 'status'
     }
 
     required_args = {
@@ -68,66 +68,66 @@ class Invoice(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         _date=None,  # type: int
-        status=None,  # type: str
         amount=None,  # type: float
-        currency=None,  # type: str
         due_date=None,  # type: int
-        payment_terms=None,  # type: str
-        ship_date=None,  # type: int
-        sales_representative=None,  # type: str
-        partner_purchase_order=None,  # type: str
         end_user_purchase_order=None,  # type: str
-        end_user_name=None,  # type: str
-        lines=None,  # type: List[models.InvoiceLine]
         subscription=None,  # type: models.FixedReference
+        end_user_name=None,  # type: str
+        payment_terms=None,  # type: str
+        partner_purchase_order=None,  # type: str
+        sales_representative=None,  # type: str
+        currency=None,  # type: str
+        id=None,  # type: str
+        lines=None,  # type: List[models.InvoiceLine]
+        ship_date=None,  # type: int
+        status=None,  # type: str
     ):
         """
         Keyword args:
-            id (str): The invoice number, a globally unique identifier for this invoice.
-            _date (int): The issuance date. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch.
-            status (str): The invoice status. Values include `open` and `paid`.
+            _date (int): The issuance date. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch. 
             amount (float): The total invoice amount, expressed in the currency defined in `currency`.
-            currency (str): The currency of the invoice in ISO 4217 format. This currency applies to the total invoice amount as well as all amounts in line items.
-            due_date (int): The payment due date. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch.
-            payment_terms (str): The invoice payment terms.
-            ship_date (int): The invoice shipment date. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch.
-            sales_representative (str): The sales representative that issued the invoice.
-            partner_purchase_order (str): The partner purchase order number.
+            due_date (int): The payment due date. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch. 
             end_user_purchase_order (str): The end user customer purchase order number.
-            end_user_name (str): The end user customer name.
-            lines (list[InvoiceLine]): A list of invoice line items.
             subscription (FixedReference): A reference to which subscription this invoice belongs.
+            end_user_name (str): The end user customer name.
+            payment_terms (str): The invoice payment terms.
+            partner_purchase_order (str): The partner purchase order number.
+            sales_representative (str): The sales representative that issued the invoice.
+            currency (str): The currency of the invoice in ISO 4217 format. This currency applies to the total invoice amount as well as all amounts in line items. 
+            id (str): The invoice number, a globally unique identifier for this invoice.
+            lines (list[InvoiceLine]): A list of invoice line items.
+            ship_date (int): The invoice shipment date. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch. 
+            status (str): The invoice status. Values include `open` and `paid`.
         """
-        if id is not None:
-            self.id = id
         if _date is not None:
             self._date = _date
-        if status is not None:
-            self.status = status
         if amount is not None:
             self.amount = amount
-        if currency is not None:
-            self.currency = currency
         if due_date is not None:
             self.due_date = due_date
-        if payment_terms is not None:
-            self.payment_terms = payment_terms
-        if ship_date is not None:
-            self.ship_date = ship_date
-        if sales_representative is not None:
-            self.sales_representative = sales_representative
-        if partner_purchase_order is not None:
-            self.partner_purchase_order = partner_purchase_order
         if end_user_purchase_order is not None:
             self.end_user_purchase_order = end_user_purchase_order
-        if end_user_name is not None:
-            self.end_user_name = end_user_name
-        if lines is not None:
-            self.lines = lines
         if subscription is not None:
             self.subscription = subscription
+        if end_user_name is not None:
+            self.end_user_name = end_user_name
+        if payment_terms is not None:
+            self.payment_terms = payment_terms
+        if partner_purchase_order is not None:
+            self.partner_purchase_order = partner_purchase_order
+        if sales_representative is not None:
+            self.sales_representative = sales_representative
+        if currency is not None:
+            self.currency = currency
+        if id is not None:
+            self.id = id
+        if lines is not None:
+            self.lines = lines
+        if ship_date is not None:
+            self.ship_date = ship_date
+        if status is not None:
+            self.status = status
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

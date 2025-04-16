@@ -46,7 +46,7 @@ class ProtectionGroupPost(object):
     ):
         """
         Keyword args:
-            tags (list[Tag]): The list of tags to be upserted with the object.
+            tags (list[Tag]): The list of tags to be upserted with the object. 
         """
         if tags is not None:
             self.tags = tags

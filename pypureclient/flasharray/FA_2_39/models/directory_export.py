@@ -30,22 +30,22 @@ class DirectoryExport(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'enabled': 'bool',
         'export_name': 'str',
+        'enabled': 'bool',
         'status': 'str',
+        'path': 'str',
         'destroyed': 'bool',
         'directory': 'FixedReferenceWithType',
-        'path': 'str',
         'policy': 'FixedReferenceWithType'
     }
 
     attribute_map = {
-        'enabled': 'enabled',
         'export_name': 'export_name',
+        'enabled': 'enabled',
         'status': 'status',
+        'path': 'path',
         'destroyed': 'destroyed',
         'directory': 'directory',
-        'path': 'path',
         'policy': 'policy'
     }
 
@@ -54,36 +54,36 @@ class DirectoryExport(object):
 
     def __init__(
         self,
-        enabled=None,  # type: bool
         export_name=None,  # type: str
+        enabled=None,  # type: bool
         status=None,  # type: str
+        path=None,  # type: str
         destroyed=None,  # type: bool
         directory=None,  # type: models.FixedReferenceWithType
-        path=None,  # type: str
         policy=None,  # type: models.FixedReferenceWithType
     ):
         """
         Keyword args:
-            enabled (bool): Returns a value of `true` if the export policy that manages this export is enabled.
             export_name (str): The export name for accessing this export.
-            status (str): Explains why `enabled` is `false`, or whether there is a name conflict with another export. Valid values include `policy_disabled`, `export_disabled`, and `name_conflict`.
-            destroyed (bool): Returns a value of `true` if the managed directory of the export has been destroyed and is pending eradication. The export can be recovered by recovering the destroyed managed directory.
-            directory (FixedReferenceWithType): The managed directory of the export.
+            enabled (bool): Returns a value of `true` if the export policy that manages this export is enabled. 
+            status (str): Explains why `enabled` is `false`, or whether there is a name conflict with another export. Valid values include `policy_disabled`, `export_disabled`, and `name_conflict`. 
             path (str): The path of the exported managed directory.
-            policy (FixedReferenceWithType): The export policy that manages this export. An export can be managed by at most one export policy.
+            destroyed (bool): Returns a value of `true` if the managed directory of the export has been destroyed and is pending eradication. The export can be recovered by recovering the destroyed managed directory. 
+            directory (FixedReferenceWithType): The managed directory of the export.
+            policy (FixedReferenceWithType): The export policy that manages this export. An export can be managed by at most one export policy. 
         """
-        if enabled is not None:
-            self.enabled = enabled
         if export_name is not None:
             self.export_name = export_name
+        if enabled is not None:
+            self.enabled = enabled
         if status is not None:
             self.status = status
+        if path is not None:
+            self.path = path
         if destroyed is not None:
             self.destroyed = destroyed
         if directory is not None:
             self.directory = directory
-        if path is not None:
-            self.path = path
         if policy is not None:
             self.policy = policy
 

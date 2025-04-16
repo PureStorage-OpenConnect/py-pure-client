@@ -3,7 +3,7 @@
 """
     Pure1 Public REST API
 
-    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)  The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
+    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)   The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
 
     OpenAPI spec version: 1.1
     
@@ -30,15 +30,15 @@ class SupportContract(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'start_date': 'int',
         'end_date': 'int',
-        'resource': 'FixedReferenceFqdn'
+        'resource': 'FixedReferenceFqdn',
+        'start_date': 'int'
     }
 
     attribute_map = {
-        'start_date': 'start_date',
         'end_date': 'end_date',
-        'resource': 'resource'
+        'resource': 'resource',
+        'start_date': 'start_date'
     }
 
     required_args = {
@@ -46,22 +46,22 @@ class SupportContract(object):
 
     def __init__(
         self,
-        start_date=None,  # type: int
         end_date=None,  # type: int
         resource=None,  # type: models.FixedReferenceFqdn
+        start_date=None,  # type: int
     ):
         """
         Keyword args:
-            start_date (int): Date when the support contract started. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch.
-            end_date (int): Date when the support contract ended. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch.
+            end_date (int): Date when the support contract ended. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch. 
             resource (FixedReferenceFqdn)
+            start_date (int): Date when the support contract started. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch. 
         """
-        if start_date is not None:
-            self.start_date = start_date
         if end_date is not None:
             self.end_date = end_date
         if resource is not None:
             self.resource = resource
+        if start_date is not None:
+            self.start_date = start_date
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

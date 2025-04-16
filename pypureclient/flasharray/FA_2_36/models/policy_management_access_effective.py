@@ -49,8 +49,8 @@ class PolicyManagementAccessEffective(object):
     ):
         """
         Keyword args:
-            details (str): Additional details about policy resolution.
-            rules (list[PolicyrulemanagementaccessRules]): List the rules that defines the scoped roles.
+            details (str): Additional details about policy resolution. 
+            rules (list[PolicyrulemanagementaccessRules]): List the rules that defines the scoped roles. 
         """
         if details is not None:
             self.details = details

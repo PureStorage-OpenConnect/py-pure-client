@@ -46,7 +46,7 @@ class DirectoryPolicyExportPost(object):
     ):
         """
         Keyword args:
-            policies (list[DirectorypolicyexportpostPolicies]): A list of export policies to apply to the directory. The `id` and `name` fields in each `policy` parameter are required, but cannot be set together.
+            policies (list[DirectorypolicyexportpostPolicies]): A list of export policies to apply to the directory. The `id` and `name` fields in each `policy` parameter are required, but cannot be set together. 
         """
         if policies is not None:
             self.policies = policies

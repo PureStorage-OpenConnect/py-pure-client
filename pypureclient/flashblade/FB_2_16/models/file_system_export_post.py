@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.16
     
@@ -30,15 +30,15 @@ class FileSystemExportPost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'export_name': 'str',
         'server': 'Reference',
-        'share_policy': 'Reference'
+        'share_policy': 'Reference',
+        'export_name': 'str'
     }
 
     attribute_map = {
-        'export_name': 'export_name',
         'server': 'server',
-        'share_policy': 'share_policy'
+        'share_policy': 'share_policy',
+        'export_name': 'export_name'
     }
 
     required_args = {
@@ -46,22 +46,22 @@ class FileSystemExportPost(object):
 
     def __init__(
         self,
-        export_name=None,  # type: str
         server=None,  # type: models.Reference
         share_policy=None,  # type: models.Reference
+        export_name=None,  # type: str
     ):
         """
         Keyword args:
-            export_name (str): The name of the export to create. Export names must be unique within the same protocol and server.
             server (Reference): Reference to the server the export will be visible on.
             share_policy (Reference): Reference to the SMB share policy (only used for SMB).
+            export_name (str): The name of the export to create. Export names must be unique within the same protocol and server. 
         """
-        if export_name is not None:
-            self.export_name = export_name
         if server is not None:
             self.server = server
         if share_policy is not None:
             self.share_policy = share_policy
+        if export_name is not None:
+            self.export_name = export_name
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

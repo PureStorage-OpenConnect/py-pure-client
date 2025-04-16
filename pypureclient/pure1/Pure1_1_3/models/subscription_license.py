@@ -3,7 +3,7 @@
 """
     Pure1 Public REST API
 
-    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)  The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
+    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)   The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
 
     OpenAPI spec version: 1.3
     
@@ -31,40 +31,40 @@ class SubscriptionLicense(object):
     """
     swagger_types = {
         'as_of': 'int',
-        'id': 'str',
         'name': 'str',
+        'id': 'str',
         'average_on_demand': 'CurrentMetric',
-        'expiration_date': 'int',
-        'marketplace_partner': 'MarketplacePartner',
-        'reservation': 'CurrentMetric',
-        'resources': 'list[LicenseResourceReference]',
-        'service_tier': 'str',
-        'start_date': 'int',
-        'subscription': 'FixedReference',
+        'quarter_on_demand': 'CurrentMetric',
         'usage': 'CurrentMetric',
-        'site_address': 'BaseAddress',
-        'last_updated_date': 'int',
+        'resources': 'list[LicenseResourceReference]',
+        'marketplace_partner': 'MarketplacePartner',
+        'subscription': 'FixedReference',
+        'expiration_date': 'int',
         'pre_ratio': 'SubscriptionLicensePreRatio',
-        'quarter_on_demand': 'CurrentMetric'
+        'site_address': 'BaseAddress',
+        'reservation': 'CurrentMetric',
+        'service_tier': 'str',
+        'last_updated_date': 'int',
+        'start_date': 'int'
     }
 
     attribute_map = {
         'as_of': '_as_of',
-        'id': 'id',
         'name': 'name',
+        'id': 'id',
         'average_on_demand': 'average_on_demand',
-        'expiration_date': 'expiration_date',
-        'marketplace_partner': 'marketplace_partner',
-        'reservation': 'reservation',
-        'resources': 'resources',
-        'service_tier': 'service_tier',
-        'start_date': 'start_date',
-        'subscription': 'subscription',
+        'quarter_on_demand': 'quarter_on_demand',
         'usage': 'usage',
-        'site_address': 'site_address',
-        'last_updated_date': 'last_updated_date',
+        'resources': 'resources',
+        'marketplace_partner': 'marketplace_partner',
+        'subscription': 'subscription',
+        'expiration_date': 'expiration_date',
         'pre_ratio': 'pre_ratio',
-        'quarter_on_demand': 'quarter_on_demand'
+        'site_address': 'site_address',
+        'reservation': 'reservation',
+        'service_tier': 'service_tier',
+        'last_updated_date': 'last_updated_date',
+        'start_date': 'start_date'
     }
 
     required_args = {
@@ -73,73 +73,73 @@ class SubscriptionLicense(object):
     def __init__(
         self,
         as_of=None,  # type: int
-        id=None,  # type: str
         name=None,  # type: str
+        id=None,  # type: str
         average_on_demand=None,  # type: models.CurrentMetric
-        expiration_date=None,  # type: int
-        marketplace_partner=None,  # type: models.MarketplacePartner
-        reservation=None,  # type: models.CurrentMetric
-        resources=None,  # type: List[models.LicenseResourceReference]
-        service_tier=None,  # type: str
-        start_date=None,  # type: int
-        subscription=None,  # type: models.FixedReference
-        usage=None,  # type: models.CurrentMetric
-        site_address=None,  # type: models.BaseAddress
-        last_updated_date=None,  # type: int
-        pre_ratio=None,  # type: models.SubscriptionLicensePreRatio
         quarter_on_demand=None,  # type: models.CurrentMetric
+        usage=None,  # type: models.CurrentMetric
+        resources=None,  # type: List[models.LicenseResourceReference]
+        marketplace_partner=None,  # type: models.MarketplacePartner
+        subscription=None,  # type: models.FixedReference
+        expiration_date=None,  # type: int
+        pre_ratio=None,  # type: models.SubscriptionLicensePreRatio
+        site_address=None,  # type: models.BaseAddress
+        reservation=None,  # type: models.CurrentMetric
+        service_tier=None,  # type: str
+        last_updated_date=None,  # type: int
+        start_date=None,  # type: int
     ):
         """
         Keyword args:
             as_of (int): The freshness of the data (timestamp in millis since epoch).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
             name (str): A non-modifiable, locally unique name chosen by the system.
-            average_on_demand (CurrentMetric): Estimated daily on-demand usage of the license from the current calendar quarter to date.
-            expiration_date (int): Date when the license expires. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch.
-            marketplace_partner (MarketplacePartner): Reference information about the marketplace partner of this license.
-            reservation (CurrentMetric): Current reservation amount of the license.
-            resources (list[LicenseResourceReference]): References to the resources that operate under this license.
-            service_tier (str): The tier of the service for the license.
-            start_date (int): Date when the license starts. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch.
-            subscription (FixedReference): A reference to which subscription this license belongs.
-            usage (CurrentMetric): Usage of the license, averaged over the last day.
-            site_address (BaseAddress): The license site address.
-            last_updated_date (int): The date of the last amendment to the current license. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch.
+            id (str): A non-modifiable, globally unique ID chosen by the system.
+            average_on_demand (CurrentMetric): Estimated daily on-demand usage of the license from the current calendar quarter to date. 
+            quarter_on_demand (CurrentMetric): Estimated total on-demand usage of the license of the current calendar quarter to date. 
+            usage (CurrentMetric): Usage of the license, averaged over the last day. 
+            resources (list[LicenseResourceReference]): References to the resources that operate under this license. 
+            marketplace_partner (MarketplacePartner): Reference information about the marketplace partner of this license. 
+            subscription (FixedReference): A reference to which subscription this license belongs. 
+            expiration_date (int): Date when the license expires. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch. 
             pre_ratio (SubscriptionLicensePreRatio)
-            quarter_on_demand (CurrentMetric): Estimated total on-demand usage of the license of the current calendar quarter to date.
+            site_address (BaseAddress): The license site address.
+            reservation (CurrentMetric): Current reservation amount of the license. 
+            service_tier (str): The tier of the service for the license. 
+            last_updated_date (int): The date of the last amendment to the current license. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch. 
+            start_date (int): Date when the license starts. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch. 
         """
         if as_of is not None:
             self.as_of = as_of
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
         if average_on_demand is not None:
             self.average_on_demand = average_on_demand
-        if expiration_date is not None:
-            self.expiration_date = expiration_date
-        if marketplace_partner is not None:
-            self.marketplace_partner = marketplace_partner
-        if reservation is not None:
-            self.reservation = reservation
-        if resources is not None:
-            self.resources = resources
-        if service_tier is not None:
-            self.service_tier = service_tier
-        if start_date is not None:
-            self.start_date = start_date
-        if subscription is not None:
-            self.subscription = subscription
-        if usage is not None:
-            self.usage = usage
-        if site_address is not None:
-            self.site_address = site_address
-        if last_updated_date is not None:
-            self.last_updated_date = last_updated_date
-        if pre_ratio is not None:
-            self.pre_ratio = pre_ratio
         if quarter_on_demand is not None:
             self.quarter_on_demand = quarter_on_demand
+        if usage is not None:
+            self.usage = usage
+        if resources is not None:
+            self.resources = resources
+        if marketplace_partner is not None:
+            self.marketplace_partner = marketplace_partner
+        if subscription is not None:
+            self.subscription = subscription
+        if expiration_date is not None:
+            self.expiration_date = expiration_date
+        if pre_ratio is not None:
+            self.pre_ratio = pre_ratio
+        if site_address is not None:
+            self.site_address = site_address
+        if reservation is not None:
+            self.reservation = reservation
+        if service_tier is not None:
+            self.service_tier = service_tier
+        if last_updated_date is not None:
+            self.last_updated_date = last_updated_date
+        if start_date is not None:
+            self.start_date = start_date
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -31,14 +31,14 @@ class PolicyManagementAccessPost(object):
     """
     swagger_types = {
         'enabled': 'bool',
-        'aggregation_strategy': 'str',
-        'rules': 'list[PolicyrulemanagementaccessRules]'
+        'rules': 'list[PolicyrulemanagementaccessRules]',
+        'aggregation_strategy': 'str'
     }
 
     attribute_map = {
         'enabled': 'enabled',
-        'aggregation_strategy': 'aggregation_strategy',
-        'rules': 'rules'
+        'rules': 'rules',
+        'aggregation_strategy': 'aggregation_strategy'
     }
 
     required_args = {
@@ -47,21 +47,21 @@ class PolicyManagementAccessPost(object):
     def __init__(
         self,
         enabled=None,  # type: bool
-        aggregation_strategy=None,  # type: str
         rules=None,  # type: List[models.PolicyrulemanagementaccessRules]
+        aggregation_strategy=None,  # type: str
     ):
         """
         Keyword args:
             enabled (bool): If set to `true`, enables the policy. If set to `false`, disables the policy.
-            aggregation_strategy (str): When set to `least-common-permissions`, any users to whom this policy applies can receive no access rights exceeding those defined in this policy's capability and resource. When this is set to `all-permissions`, any users to whom this policy applies are capable of receiving additional access rights from other policies that apply to them. If not specified, defaults to `all-permissions`.
-            rules (list[PolicyrulemanagementaccessRules]): List the rules that defines the scoped roles.
+            rules (list[PolicyrulemanagementaccessRules]): List the rules that defines the scoped roles. 
+            aggregation_strategy (str): When set to `least-common-permissions`, any users to whom this policy applies can receive no access rights exceeding those defined in this policy's capability and resource. When this is set to `all-permissions`, any users to whom this policy applies are capable of receiving additional access rights from other policies that apply to them. If not specified, defaults to `all-permissions`. 
         """
         if enabled is not None:
             self.enabled = enabled
-        if aggregation_strategy is not None:
-            self.aggregation_strategy = aggregation_strategy
         if rules is not None:
             self.rules = rules
+        if aggregation_strategy is not None:
+            self.aggregation_strategy = aggregation_strategy
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

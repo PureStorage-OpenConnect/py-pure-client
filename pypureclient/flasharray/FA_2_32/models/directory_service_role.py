@@ -32,15 +32,15 @@ class DirectoryServiceRole(object):
     swagger_types = {
         'name': 'str',
         'role': 'ReferenceNoId',
-        'group': 'str',
-        'group_base': 'str'
+        'group_base': 'str',
+        'group': 'str'
     }
 
     attribute_map = {
         'name': 'name',
         'role': 'role',
-        'group': 'group',
-        'group_base': 'group_base'
+        'group_base': 'group_base',
+        'group': 'group'
     }
 
     required_args = {
@@ -50,24 +50,24 @@ class DirectoryServiceRole(object):
         self,
         name=None,  # type: str
         role=None,  # type: models.ReferenceNoId
-        group=None,  # type: str
         group_base=None,  # type: str
+        group=None,  # type: str
     ):
         """
         Keyword args:
-            name (str): A user-specified name. The name must be locally unique and cannot be changed.
-            role (ReferenceNoId): A reference to the role to be assigned. Can be any role that exists on the system.
-            group (str): A group name that contains users with the authority level of the specified role.
-            group_base (str): Specifies where the configured group is located in the directory tree.
+            name (str): A user-specified name. The name must be locally unique and cannot be changed. 
+            role (ReferenceNoId): A reference to the role to be assigned. Can be any role that exists on the system. 
+            group_base (str): Specifies where the configured group is located in the directory tree. 
+            group (str): A group name that contains users with the authority level of the specified role. 
         """
         if name is not None:
             self.name = name
         if role is not None:
             self.role = role
-        if group is not None:
-            self.group = group
         if group_base is not None:
             self.group_base = group_base
+        if group is not None:
+            self.group = group
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

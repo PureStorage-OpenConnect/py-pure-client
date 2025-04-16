@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.9, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.9, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.9
     
@@ -30,21 +30,21 @@ class BucketPatch(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'destroyed': 'bool',
-        'hard_limit_enabled': 'bool',
         'object_lock_config': 'ObjectLockConfigRequestBody',
         'quota_limit': 'str',
-        'retention_lock': 'str',
-        'versioning': 'str'
+        'destroyed': 'bool',
+        'versioning': 'str',
+        'hard_limit_enabled': 'bool',
+        'retention_lock': 'str'
     }
 
     attribute_map = {
-        'destroyed': 'destroyed',
-        'hard_limit_enabled': 'hard_limit_enabled',
         'object_lock_config': 'object_lock_config',
         'quota_limit': 'quota_limit',
-        'retention_lock': 'retention_lock',
-        'versioning': 'versioning'
+        'destroyed': 'destroyed',
+        'versioning': 'versioning',
+        'hard_limit_enabled': 'hard_limit_enabled',
+        'retention_lock': 'retention_lock'
     }
 
     required_args = {
@@ -52,34 +52,34 @@ class BucketPatch(object):
 
     def __init__(
         self,
-        destroyed=None,  # type: bool
-        hard_limit_enabled=None,  # type: bool
         object_lock_config=None,  # type: models.ObjectLockConfigRequestBody
         quota_limit=None,  # type: str
-        retention_lock=None,  # type: str
+        destroyed=None,  # type: bool
         versioning=None,  # type: str
+        hard_limit_enabled=None,  # type: bool
+        retention_lock=None,  # type: str
     ):
         """
         Keyword args:
-            destroyed (bool): Is the bucket destroyed?
-            hard_limit_enabled (bool): If set to `true`, the bucket's size, as defined by `quota_limit`, is used as a hard limit quota. If set to `false`, a hard limit quota will not be applied to the bucket, but soft quota alerts will still be sent if the bucket has a value set for `quota_limit`.
             object_lock_config (ObjectLockConfigRequestBody)
-            quota_limit (str): The effective quota limit applied against the size of the bucket, displayed in bytes. If set to an empty string (`\"\"`), the bucket is unlimited in size.
-            retention_lock (str): If set to `ratcheted`, then `object_lock_config.default_retention_mode` cannot be changed if set to `compliance`. In this case, the value of `object_lock_config.default_retention` can only be increased and `object_lock_config.default_retention_mode` cannot be changed once set to `compliance`. Valid values are `unlocked` and `ratcheted`. Contact Pure Technical Services to change `ratcheted` to `unlocked`.
-            versioning (str): The versioning state for objects within the bucket. Valid values are `none`, `enabled`, and `suspended`.
+            quota_limit (str): The effective quota limit applied against the size of the bucket, displayed in bytes. If set to an empty string (`\"\"`), the bucket is unlimited in size. 
+            destroyed (bool): Is the bucket destroyed? 
+            versioning (str): The versioning state for objects within the bucket. Valid values are `none`, `enabled`, and `suspended`. 
+            hard_limit_enabled (bool): If set to `true`, the bucket's size, as defined by `quota_limit`, is used as a hard limit quota. If set to `false`, a hard limit quota will not be applied to the bucket, but soft quota alerts will still be sent if the bucket has a value set for `quota_limit`. 
+            retention_lock (str): If set to `ratcheted`, then `object_lock_config.default_retention_mode` cannot be changed if set to `compliance`. In this case, the value of `object_lock_config.default_retention` can only be increased and `object_lock_config.default_retention_mode` cannot be changed once set to `compliance`. Valid values are `unlocked` and `ratcheted`. Contact Pure Technical Services to change `ratcheted` to `unlocked`. 
         """
-        if destroyed is not None:
-            self.destroyed = destroyed
-        if hard_limit_enabled is not None:
-            self.hard_limit_enabled = hard_limit_enabled
         if object_lock_config is not None:
             self.object_lock_config = object_lock_config
         if quota_limit is not None:
             self.quota_limit = quota_limit
-        if retention_lock is not None:
-            self.retention_lock = retention_lock
+        if destroyed is not None:
+            self.destroyed = destroyed
         if versioning is not None:
             self.versioning = versioning
+        if hard_limit_enabled is not None:
+            self.hard_limit_enabled = hard_limit_enabled
+        if retention_lock is not None:
+            self.retention_lock = retention_lock
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -47,7 +47,7 @@ class PresetWorkloadConstraintsResourceReferenceAllowedValues(object):
     ):
         """
         Keyword args:
-            resource_type (str, required): The type of resource the parameter references. Valid values include `storage-classes` and `remote-arrays`.
+            resource_type (str, required): The type of resource the parameter references. Valid values include `storage-classes` and `remote-arrays`. 
         """
         self.resource_type = resource_type
 

@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.3, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.3, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.3
     
@@ -50,7 +50,7 @@ class ArrayFactoryResetToken(object):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            token (int): A random 7-digit number required as input to perform a factory reset of the array.
+            token (int): A random 7-digit number required as input to perform a factory reset of the array. 
         """
         if name is not None:
             self.name = name

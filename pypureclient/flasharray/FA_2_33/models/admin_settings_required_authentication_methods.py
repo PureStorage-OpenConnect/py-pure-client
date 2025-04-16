@@ -30,13 +30,13 @@ class AdminSettingsRequiredAuthenticationMethods(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'ssh': 'list[str]',
-        'web_ui': 'list[str]'
+        'web_ui': 'list[str]',
+        'ssh': 'list[str]'
     }
 
     attribute_map = {
-        'ssh': 'ssh',
-        'web_ui': 'web_ui'
+        'web_ui': 'web_ui',
+        'ssh': 'ssh'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class AdminSettingsRequiredAuthenticationMethods(object):
 
     def __init__(
         self,
-        ssh=None,  # type: List[str]
         web_ui=None,  # type: List[str]
+        ssh=None,  # type: List[str]
     ):
         """
         Keyword args:
-            ssh (list[str]): List of authentication methods that are required for SSH. Possible values include `password`, `key`, and `default`. `securid-am` is a possible value, but it cannot be changed through PATCH. If not specified, defaults to `default`. Specify `password` and `key` authentication methods to set up local multi-factor authentication for SSH.
-            web_ui (list[str]): List of authentication methods that are required for the web UI. Possible values include `password`, `webauthn`, and `default`. Other possible values include `saml2` and `securid-am` but these cannot be changed through PATCH. If not specified, defaults to `default`. Specify `password` and `webauthn` authentication methods to set up local multi-factor authentication for web UI. External multi-factor authentication is configured through SAML2 SSO endpoints.
+            web_ui (list[str]): List of authentication methods that are required for the web UI. Possible values include `password`, `webauthn`, and `default`. Other possible values include `saml2` and `securid-am` but these cannot be changed through PATCH. If not specified, defaults to `default`. Specify `password` and `webauthn` authentication methods to set up local multi-factor authentication for web UI. External multi-factor authentication is configured through SAML2 SSO endpoints. 
+            ssh (list[str]): List of authentication methods that are required for SSH. Possible values include `password`, `key`, and `default`. `securid-am` is a possible value, but it cannot be changed through PATCH. If not specified, defaults to `default`. Specify `password` and `key` authentication methods to set up local multi-factor authentication for SSH. 
         """
-        if ssh is not None:
-            self.ssh = ssh
         if web_ui is not None:
             self.web_ui = web_ui
+        if ssh is not None:
+            self.ssh = ssh
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

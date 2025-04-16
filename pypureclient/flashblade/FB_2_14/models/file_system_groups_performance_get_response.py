@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.14, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.14, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.14
     
@@ -30,13 +30,13 @@ class FileSystemGroupsPerformanceGetResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'items': 'list[FileSystemGroupPerformance]',
-        'total': 'list[FileSystemGroupPerformance]'
+        'total': 'list[FileSystemGroupPerformance]',
+        'items': 'list[FileSystemGroupPerformance]'
     }
 
     attribute_map = {
-        'items': 'items',
-        'total': 'total'
+        'total': 'total',
+        'items': 'items'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class FileSystemGroupsPerformanceGetResponse(object):
 
     def __init__(
         self,
-        items=None,  # type: List[models.FileSystemGroupPerformance]
         total=None,  # type: List[models.FileSystemGroupPerformance]
+        items=None,  # type: List[models.FileSystemGroupPerformance]
     ):
         """
         Keyword args:
+            total (list[FileSystemGroupPerformance]): Total of all records after filtering. If `total_only` query param is `true`, then no items will be returned. 
             items (list[FileSystemGroupPerformance]): A list of file system group performance objects.
-            total (list[FileSystemGroupPerformance]): Total of all records after filtering. If `total_only` query param is `true`, then no items will be returned.
         """
-        if items is not None:
-            self.items = items
         if total is not None:
             self.total = total
+        if items is not None:
+            self.items = items
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

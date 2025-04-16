@@ -30,13 +30,13 @@ class PodPerformanceReplicationResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'items': 'list[PodPerformanceReplication]',
-        'total': 'list[PodPerformanceReplication]'
+        'total': 'list[PodPerformanceReplication]',
+        'items': 'list[PodPerformanceReplication]'
     }
 
     attribute_map = {
-        'items': 'items',
-        'total': 'total'
+        'total': 'total',
+        'items': 'items'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class PodPerformanceReplicationResponse(object):
 
     def __init__(
         self,
-        items=None,  # type: List[models.PodPerformanceReplication]
         total=None,  # type: List[models.PodPerformanceReplication]
+        items=None,  # type: List[models.PodPerformanceReplication]
     ):
         """
         Keyword args:
+            total (list[PodPerformanceReplication]): The aggregate value of all items after filtering. For real-time performance, the values are aggregated for the latest timestamp. For historical performance, the values are aggregated for each timestamp from `start_time` to `end_time`. When applicable, the average value is displayed instead. The values are displayed for each field if meaningful. 
             items (list[PodPerformanceReplication]): A list of pod performance replication objects.
-            total (list[PodPerformanceReplication]): The aggregate value of all items after filtering. For real-time performance, the values are aggregated for the latest timestamp. For historical performance, the values are aggregated for each timestamp from `start_time` to `end_time`. When applicable, the average value is displayed instead. The values are displayed for each field if meaningful.
         """
-        if items is not None:
-            self.items = items
         if total is not None:
             self.total = total
+        if items is not None:
+            self.items = items
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -30,31 +30,31 @@ class NetworkInterfaceNeighborNeighborChassis(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'NetworkInterfaceNeighborNeighborChassisId',
-        'name': 'str',
+        'station_only': 'NetworkInterfaceNeighborCapability',
         'addresses': 'list[str]',
-        'description': 'str',
-        'repeater': 'NetworkInterfaceNeighborCapability',
-        'bridge': 'NetworkInterfaceNeighborCapability',
-        'wlan_access_point': 'NetworkInterfaceNeighborCapability',
         'router': 'NetworkInterfaceNeighborCapability',
+        'wlan_access_point': 'NetworkInterfaceNeighborCapability',
+        'name': 'str',
+        'description': 'str',
         'telephone': 'NetworkInterfaceNeighborCapability',
+        'bridge': 'NetworkInterfaceNeighborCapability',
+        'id': 'NetworkInterfaceNeighborNeighborChassisId',
         'docsis_cable_device': 'NetworkInterfaceNeighborCapability',
-        'station_only': 'NetworkInterfaceNeighborCapability'
+        'repeater': 'NetworkInterfaceNeighborCapability'
     }
 
     attribute_map = {
-        'id': 'id',
-        'name': 'name',
+        'station_only': 'station_only',
         'addresses': 'addresses',
-        'description': 'description',
-        'repeater': 'repeater',
-        'bridge': 'bridge',
-        'wlan_access_point': 'wlan_access_point',
         'router': 'router',
+        'wlan_access_point': 'wlan_access_point',
+        'name': 'name',
+        'description': 'description',
         'telephone': 'telephone',
+        'bridge': 'bridge',
+        'id': 'id',
         'docsis_cable_device': 'docsis_cable_device',
-        'station_only': 'station_only'
+        'repeater': 'repeater'
     }
 
     required_args = {
@@ -62,54 +62,54 @@ class NetworkInterfaceNeighborNeighborChassis(object):
 
     def __init__(
         self,
-        id=None,  # type: models.NetworkInterfaceNeighborNeighborChassisId
-        name=None,  # type: str
-        addresses=None,  # type: List[str]
-        description=None,  # type: str
-        repeater=None,  # type: models.NetworkInterfaceNeighborCapability
-        bridge=None,  # type: models.NetworkInterfaceNeighborCapability
-        wlan_access_point=None,  # type: models.NetworkInterfaceNeighborCapability
-        router=None,  # type: models.NetworkInterfaceNeighborCapability
-        telephone=None,  # type: models.NetworkInterfaceNeighborCapability
-        docsis_cable_device=None,  # type: models.NetworkInterfaceNeighborCapability
         station_only=None,  # type: models.NetworkInterfaceNeighborCapability
+        addresses=None,  # type: List[str]
+        router=None,  # type: models.NetworkInterfaceNeighborCapability
+        wlan_access_point=None,  # type: models.NetworkInterfaceNeighborCapability
+        name=None,  # type: str
+        description=None,  # type: str
+        telephone=None,  # type: models.NetworkInterfaceNeighborCapability
+        bridge=None,  # type: models.NetworkInterfaceNeighborCapability
+        id=None,  # type: models.NetworkInterfaceNeighborNeighborChassisId
+        docsis_cable_device=None,  # type: models.NetworkInterfaceNeighborCapability
+        repeater=None,  # type: models.NetworkInterfaceNeighborCapability
     ):
         """
         Keyword args:
-            id (NetworkInterfaceNeighborNeighborChassisId)
-            name (str): Administratively assigned name of the neighbour.
-            addresses (list[str]): Management IP addresses of the neighbor.
-            description (str): The textual description of the neighbor. The description may include the full name and version identification of the system hardware type, software operating system, and networking software.
-            repeater (NetworkInterfaceNeighborCapability): Neighbor system's repeater capability.
-            bridge (NetworkInterfaceNeighborCapability): Bridge capability of the neighbor system.
-            wlan_access_point (NetworkInterfaceNeighborCapability): WLAN access point capability of the neighbor system.
-            router (NetworkInterfaceNeighborCapability): IP router capability of the neighbor system.
-            telephone (NetworkInterfaceNeighborCapability): Telephone capability of the neighbor system.
-            docsis_cable_device (NetworkInterfaceNeighborCapability): DOCSIS cable device capability of the neighbor system.
             station_only (NetworkInterfaceNeighborCapability): Station only status of the neighbor system.
+            addresses (list[str]): Management IP addresses of the neighbor.
+            router (NetworkInterfaceNeighborCapability): IP router capability of the neighbor system.
+            wlan_access_point (NetworkInterfaceNeighborCapability): WLAN access point capability of the neighbor system.
+            name (str): Administratively assigned name of the neighbour.
+            description (str): The textual description of the neighbor. The description may include the full name and version identification of the system hardware type, software operating system, and networking software. 
+            telephone (NetworkInterfaceNeighborCapability): Telephone capability of the neighbor system.
+            bridge (NetworkInterfaceNeighborCapability): Bridge capability of the neighbor system.
+            id (NetworkInterfaceNeighborNeighborChassisId)
+            docsis_cable_device (NetworkInterfaceNeighborCapability): DOCSIS cable device capability of the neighbor system.
+            repeater (NetworkInterfaceNeighborCapability): Neighbor system's repeater capability.
         """
-        if id is not None:
-            self.id = id
-        if name is not None:
-            self.name = name
-        if addresses is not None:
-            self.addresses = addresses
-        if description is not None:
-            self.description = description
-        if repeater is not None:
-            self.repeater = repeater
-        if bridge is not None:
-            self.bridge = bridge
-        if wlan_access_point is not None:
-            self.wlan_access_point = wlan_access_point
-        if router is not None:
-            self.router = router
-        if telephone is not None:
-            self.telephone = telephone
-        if docsis_cable_device is not None:
-            self.docsis_cable_device = docsis_cable_device
         if station_only is not None:
             self.station_only = station_only
+        if addresses is not None:
+            self.addresses = addresses
+        if router is not None:
+            self.router = router
+        if wlan_access_point is not None:
+            self.wlan_access_point = wlan_access_point
+        if name is not None:
+            self.name = name
+        if description is not None:
+            self.description = description
+        if telephone is not None:
+            self.telephone = telephone
+        if bridge is not None:
+            self.bridge = bridge
+        if id is not None:
+            self.id = id
+        if docsis_cable_device is not None:
+            self.docsis_cable_device = docsis_cable_device
+        if repeater is not None:
+            self.repeater = repeater
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

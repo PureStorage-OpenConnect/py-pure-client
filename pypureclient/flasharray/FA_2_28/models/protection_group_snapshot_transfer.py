@@ -30,25 +30,25 @@ class ProtectionGroupSnapshotTransfer(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
-        'destroyed': 'bool',
-        'started': 'int',
-        'progress': 'float',
-        'completed': 'int',
+        'id': 'str',
+        'physical_bytes_written': 'int',
         'data_transferred': 'int',
-        'physical_bytes_written': 'int'
+        'destroyed': 'bool',
+        'progress': 'float',
+        'started': 'int',
+        'completed': 'int'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
-        'destroyed': 'destroyed',
-        'started': 'started',
-        'progress': 'progress',
-        'completed': 'completed',
+        'id': 'id',
+        'physical_bytes_written': 'physical_bytes_written',
         'data_transferred': 'data_transferred',
-        'physical_bytes_written': 'physical_bytes_written'
+        'destroyed': 'destroyed',
+        'progress': 'progress',
+        'started': 'started',
+        'completed': 'completed'
     }
 
     required_args = {
@@ -56,42 +56,42 @@ class ProtectionGroupSnapshotTransfer(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
-        destroyed=None,  # type: bool
-        started=None,  # type: int
-        progress=None,  # type: float
-        completed=None,  # type: int
-        data_transferred=None,  # type: int
+        id=None,  # type: str
         physical_bytes_written=None,  # type: int
+        data_transferred=None,  # type: int
+        destroyed=None,  # type: bool
+        progress=None,  # type: float
+        started=None,  # type: int
+        completed=None,  # type: int
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            name (str): A user-specified name. The name must be locally unique and can be changed.
-            destroyed (bool): Returns a value of `true` if the snapshot has been destroyed and is pending eradication. The destroyed snapshot can be recovered by setting `destroyed=false`. Once the eradication pending period has elapsed, the snapshot is permanently eradicated and can no longer be recovered.
-            started (int): The timestamp of when the snapshot replication process started. Measured in milliseconds since the UNIX epoch.
-            progress (float): The percentage progress of the snapshot transfer from the source array to the target. Displayed in decimal format.
-            completed (int): The timestamp of when the snapshot replication process completed. Measured in milliseconds since the UNIX epoch.
-            data_transferred (int): The number of bytes transferred from the source to the target as part of the replication process. Measured in bytes.
-            physical_bytes_written (int): The amount of physical/logical data written to the target due to replication. Measured in bytes.
+            name (str): A user-specified name. The name must be locally unique and can be changed. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource. 
+            physical_bytes_written (int): The amount of physical/logical data written to the target due to replication. Measured in bytes. 
+            data_transferred (int): The number of bytes transferred from the source to the target as part of the replication process. Measured in bytes. 
+            destroyed (bool): Returns a value of `true` if the snapshot has been destroyed and is pending eradication. The destroyed snapshot can be recovered by setting `destroyed=false`.  Once the eradication pending period has elapsed, the snapshot is permanently eradicated and can no longer be recovered. 
+            progress (float): The percentage progress of the snapshot transfer from the source array to the target. Displayed in decimal format. 
+            started (int): The timestamp of when the snapshot replication process started. Measured in milliseconds since the UNIX epoch. 
+            completed (int): The timestamp of when the snapshot replication process completed. Measured in milliseconds since the UNIX epoch. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
-        if destroyed is not None:
-            self.destroyed = destroyed
-        if started is not None:
-            self.started = started
-        if progress is not None:
-            self.progress = progress
-        if completed is not None:
-            self.completed = completed
-        if data_transferred is not None:
-            self.data_transferred = data_transferred
+        if id is not None:
+            self.id = id
         if physical_bytes_written is not None:
             self.physical_bytes_written = physical_bytes_written
+        if data_transferred is not None:
+            self.data_transferred = data_transferred
+        if destroyed is not None:
+            self.destroyed = destroyed
+        if progress is not None:
+            self.progress = progress
+        if started is not None:
+            self.started = started
+        if completed is not None:
+            self.completed = completed
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

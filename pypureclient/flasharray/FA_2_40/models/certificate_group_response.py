@@ -46,7 +46,7 @@ class CertificateGroupResponse(object):
     ):
         """
         Keyword args:
-            items (list[CertificateGroup]): A list of certificate group objects.
+            items (list[CertificateGroup]): A list of certificate group objects. 
         """
         if items is not None:
             self.items = items

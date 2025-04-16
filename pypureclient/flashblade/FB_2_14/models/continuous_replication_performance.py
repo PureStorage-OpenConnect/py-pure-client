@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.14, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.14, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.14
     
@@ -54,7 +54,7 @@ class ContinuousReplicationPerformance(object):
         Keyword args:
             transmitted_bytes_per_sec (float): Total bytes transmitted per second.
             received_bytes_per_sec (float): Total bytes received per second.
-            object_backlog (ObjectBacklog): The total number of pending object operations and their size that are currently in the backlog.
+            object_backlog (ObjectBacklog): The total number of pending object operations and their size that are currently in the backlog. 
         """
         if transmitted_bytes_per_sec is not None:
             self.transmitted_bytes_per_sec = transmitted_bytes_per_sec
@@ -67,11 +67,11 @@ class ContinuousReplicationPerformance(object):
         if key not in self.attribute_map:
             raise KeyError("Invalid key `{}` for `ContinuousReplicationPerformance`".format(key))
         if key == "transmitted_bytes_per_sec" and value is not None:
-            if value < 0.0:
-                raise ValueError("Invalid value for `transmitted_bytes_per_sec`, must be a value greater than or equal to `0.0`")
+            if value < 0:
+                raise ValueError("Invalid value for `transmitted_bytes_per_sec`, must be a value greater than or equal to `0`")
         if key == "received_bytes_per_sec" and value is not None:
-            if value < 0.0:
-                raise ValueError("Invalid value for `received_bytes_per_sec`, must be a value greater than or equal to `0.0`")
+            if value < 0:
+                raise ValueError("Invalid value for `received_bytes_per_sec`, must be a value greater than or equal to `0`")
         self.__dict__[key] = value
 
     def __getattribute__(self, item):

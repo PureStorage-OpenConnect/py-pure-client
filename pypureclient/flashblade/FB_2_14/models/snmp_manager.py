@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.14, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.14, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.14
     
@@ -32,21 +32,21 @@ class SnmpManager(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
-        'host': 'str',
         'notification': 'str',
-        'version': 'str',
         'v2c': 'SnmpV2c',
-        'v3': 'SnmpV3'
+        'host': 'str',
+        'v3': 'SnmpV3',
+        'version': 'str'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
-        'host': 'host',
         'notification': 'notification',
-        'version': 'version',
         'v2c': 'v2c',
-        'v3': 'v3'
+        'host': 'host',
+        'v3': 'v3',
+        'version': 'version'
     }
 
     required_args = {
@@ -56,36 +56,36 @@ class SnmpManager(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
-        host=None,  # type: str
         notification=None,  # type: str
-        version=None,  # type: str
         v2c=None,  # type: models.SnmpV2c
+        host=None,  # type: str
         v3=None,  # type: models.SnmpV3
+        version=None,  # type: str
     ):
         """
         Keyword args:
-            name (str): A name chosen by the user. Can be changed. Must be locally unique.
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            host (str): DNS hostname or IP address of a computer that hosts an SNMP manager to which Purity is to send trap messages when it generates alerts.
-            notification (str): The type of notification the agent will send. Valid values are `inform` and `trap`.
-            version (str): Version of the SNMP protocol to be used by Purity in communications with the specified manager. Valid values are `v2c` and `v3`.
+            name (str): A name chosen by the user. Can be changed. Must be locally unique. 
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            notification (str): The type of notification the agent will send. Valid values are `inform` and `trap`. 
             v2c (SnmpV2c)
+            host (str): DNS hostname or IP address of a computer that hosts an SNMP manager to which Purity is to send trap messages when it generates alerts. 
             v3 (SnmpV3)
+            version (str): Version of the SNMP protocol to be used by Purity in communications with the specified manager. Valid values are `v2c` and `v3`. 
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
-        if host is not None:
-            self.host = host
         if notification is not None:
             self.notification = notification
-        if version is not None:
-            self.version = version
         if v2c is not None:
             self.v2c = v2c
+        if host is not None:
+            self.host = host
         if v3 is not None:
             self.v3 = v3
+        if version is not None:
+            self.version = version
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

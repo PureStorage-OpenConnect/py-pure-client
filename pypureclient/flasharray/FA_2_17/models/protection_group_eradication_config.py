@@ -46,7 +46,7 @@ class ProtectionGroupEradicationConfig(object):
     ):
         """
         Keyword args:
-            manual_eradication (str): Manual eradication status of objects like protection group and protection group snapshots. If manual_eradication is `disabled`, you cannot eradicate objects. Values include `disabled` and `enabled`.
+            manual_eradication (str): Manual eradication status of objects like protection group and protection group snapshots. If manual_eradication is `disabled`, you cannot eradicate objects.  Values include `disabled` and `enabled`. 
         """
         if manual_eradication is not None:
             self.manual_eradication = manual_eradication

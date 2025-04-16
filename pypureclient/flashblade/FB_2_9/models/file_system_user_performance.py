@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.9, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.9, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.9
     
@@ -31,38 +31,38 @@ class FileSystemUserPerformance(object):
     """
     swagger_types = {
         'name': 'str',
+        'read_bytes_per_sec': 'float',
+        'others_per_sec': 'float',
+        'write_bytes_per_sec': 'float',
+        'usec_per_other_op': 'float',
         'bytes_per_op': 'float',
         'bytes_per_read': 'float',
-        'bytes_per_write': 'float',
-        'file_system': 'FixedReference',
-        'others_per_sec': 'float',
-        'read_bytes_per_sec': 'float',
-        'reads_per_sec': 'float',
-        'time': 'int',
-        'usec_per_other_op': 'float',
         'usec_per_read_op': 'float',
+        'file_system': 'FixedReference',
+        'reads_per_sec': 'float',
+        'bytes_per_write': 'float',
+        'writes_per_sec': 'float',
+        'time': 'int',
         'usec_per_write_op': 'float',
-        'user': 'User',
-        'write_bytes_per_sec': 'float',
-        'writes_per_sec': 'float'
+        'user': 'User'
     }
 
     attribute_map = {
         'name': 'name',
+        'read_bytes_per_sec': 'read_bytes_per_sec',
+        'others_per_sec': 'others_per_sec',
+        'write_bytes_per_sec': 'write_bytes_per_sec',
+        'usec_per_other_op': 'usec_per_other_op',
         'bytes_per_op': 'bytes_per_op',
         'bytes_per_read': 'bytes_per_read',
-        'bytes_per_write': 'bytes_per_write',
-        'file_system': 'file_system',
-        'others_per_sec': 'others_per_sec',
-        'read_bytes_per_sec': 'read_bytes_per_sec',
-        'reads_per_sec': 'reads_per_sec',
-        'time': 'time',
-        'usec_per_other_op': 'usec_per_other_op',
         'usec_per_read_op': 'usec_per_read_op',
+        'file_system': 'file_system',
+        'reads_per_sec': 'reads_per_sec',
+        'bytes_per_write': 'bytes_per_write',
+        'writes_per_sec': 'writes_per_sec',
+        'time': 'time',
         'usec_per_write_op': 'usec_per_write_op',
-        'user': 'user',
-        'write_bytes_per_sec': 'write_bytes_per_sec',
-        'writes_per_sec': 'writes_per_sec'
+        'user': 'user'
     }
 
     required_args = {
@@ -71,106 +71,106 @@ class FileSystemUserPerformance(object):
     def __init__(
         self,
         name=None,  # type: str
+        read_bytes_per_sec=None,  # type: float
+        others_per_sec=None,  # type: float
+        write_bytes_per_sec=None,  # type: float
+        usec_per_other_op=None,  # type: float
         bytes_per_op=None,  # type: float
         bytes_per_read=None,  # type: float
-        bytes_per_write=None,  # type: float
-        file_system=None,  # type: models.FixedReference
-        others_per_sec=None,  # type: float
-        read_bytes_per_sec=None,  # type: float
-        reads_per_sec=None,  # type: float
-        time=None,  # type: int
-        usec_per_other_op=None,  # type: float
         usec_per_read_op=None,  # type: float
+        file_system=None,  # type: models.FixedReference
+        reads_per_sec=None,  # type: float
+        bytes_per_write=None,  # type: float
+        writes_per_sec=None,  # type: float
+        time=None,  # type: int
         usec_per_write_op=None,  # type: float
         user=None,  # type: models.User
-        write_bytes_per_sec=None,  # type: float
-        writes_per_sec=None,  # type: float
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            bytes_per_op (float): Average operation size (read bytes+write bytes/read ops+write ops).
-            bytes_per_read (float): Average read size in bytes per read operation.
-            bytes_per_write (float): Average write size in bytes per write operation.
-            file_system (FixedReference): The file system on which the performance was measured.
-            others_per_sec (float): Other operations processed per second.
             read_bytes_per_sec (float): Bytes read per second.
-            reads_per_sec (float): Read requests processed per second.
-            time (int): Sample time in milliseconds since UNIX epoch.
-            usec_per_other_op (float): Average time, measured in microseconds, it takes the array to process other operations.
-            usec_per_read_op (float): Average time, measured in microseconds, it takes the array to process a read request.
-            usec_per_write_op (float): Average time, measured in microseconds, it takes the array to process a write request.
-            user (User): The user whose performance is represented.
+            others_per_sec (float): Other operations processed per second.
             write_bytes_per_sec (float): Bytes written per second.
+            usec_per_other_op (float): Average time, measured in microseconds, it takes the array to process other operations. 
+            bytes_per_op (float): Average operation size (read bytes+write bytes/read ops+write ops). 
+            bytes_per_read (float): Average read size in bytes per read operation.
+            usec_per_read_op (float): Average time, measured in microseconds, it takes the array to process a read request. 
+            file_system (FixedReference): The file system on which the performance was measured.
+            reads_per_sec (float): Read requests processed per second.
+            bytes_per_write (float): Average write size in bytes per write operation.
             writes_per_sec (float): Write requests processed per second.
+            time (int): Sample time in milliseconds since UNIX epoch.
+            usec_per_write_op (float): Average time, measured in microseconds, it takes the array to process a write request. 
+            user (User): The user whose performance is represented.
         """
         if name is not None:
             self.name = name
+        if read_bytes_per_sec is not None:
+            self.read_bytes_per_sec = read_bytes_per_sec
+        if others_per_sec is not None:
+            self.others_per_sec = others_per_sec
+        if write_bytes_per_sec is not None:
+            self.write_bytes_per_sec = write_bytes_per_sec
+        if usec_per_other_op is not None:
+            self.usec_per_other_op = usec_per_other_op
         if bytes_per_op is not None:
             self.bytes_per_op = bytes_per_op
         if bytes_per_read is not None:
             self.bytes_per_read = bytes_per_read
-        if bytes_per_write is not None:
-            self.bytes_per_write = bytes_per_write
-        if file_system is not None:
-            self.file_system = file_system
-        if others_per_sec is not None:
-            self.others_per_sec = others_per_sec
-        if read_bytes_per_sec is not None:
-            self.read_bytes_per_sec = read_bytes_per_sec
-        if reads_per_sec is not None:
-            self.reads_per_sec = reads_per_sec
-        if time is not None:
-            self.time = time
-        if usec_per_other_op is not None:
-            self.usec_per_other_op = usec_per_other_op
         if usec_per_read_op is not None:
             self.usec_per_read_op = usec_per_read_op
+        if file_system is not None:
+            self.file_system = file_system
+        if reads_per_sec is not None:
+            self.reads_per_sec = reads_per_sec
+        if bytes_per_write is not None:
+            self.bytes_per_write = bytes_per_write
+        if writes_per_sec is not None:
+            self.writes_per_sec = writes_per_sec
+        if time is not None:
+            self.time = time
         if usec_per_write_op is not None:
             self.usec_per_write_op = usec_per_write_op
         if user is not None:
             self.user = user
-        if write_bytes_per_sec is not None:
-            self.write_bytes_per_sec = write_bytes_per_sec
-        if writes_per_sec is not None:
-            self.writes_per_sec = writes_per_sec
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
             raise KeyError("Invalid key `{}` for `FileSystemUserPerformance`".format(key))
-        if key == "bytes_per_op" and value is not None:
-            if value < 0.0:
-                raise ValueError("Invalid value for `bytes_per_op`, must be a value greater than or equal to `0.0`")
-        if key == "bytes_per_read" and value is not None:
-            if value < 0.0:
-                raise ValueError("Invalid value for `bytes_per_read`, must be a value greater than or equal to `0.0`")
-        if key == "bytes_per_write" and value is not None:
-            if value < 0.0:
-                raise ValueError("Invalid value for `bytes_per_write`, must be a value greater than or equal to `0.0`")
-        if key == "others_per_sec" and value is not None:
-            if value < 0.0:
-                raise ValueError("Invalid value for `others_per_sec`, must be a value greater than or equal to `0.0`")
         if key == "read_bytes_per_sec" and value is not None:
-            if value < 0.0:
-                raise ValueError("Invalid value for `read_bytes_per_sec`, must be a value greater than or equal to `0.0`")
-        if key == "reads_per_sec" and value is not None:
-            if value < 0.0:
-                raise ValueError("Invalid value for `reads_per_sec`, must be a value greater than or equal to `0.0`")
-        if key == "usec_per_other_op" and value is not None:
-            if value < 0.0:
-                raise ValueError("Invalid value for `usec_per_other_op`, must be a value greater than or equal to `0.0`")
-        if key == "usec_per_read_op" and value is not None:
-            if value < 0.0:
-                raise ValueError("Invalid value for `usec_per_read_op`, must be a value greater than or equal to `0.0`")
-        if key == "usec_per_write_op" and value is not None:
-            if value < 0.0:
-                raise ValueError("Invalid value for `usec_per_write_op`, must be a value greater than or equal to `0.0`")
+            if value < 0:
+                raise ValueError("Invalid value for `read_bytes_per_sec`, must be a value greater than or equal to `0`")
+        if key == "others_per_sec" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `others_per_sec`, must be a value greater than or equal to `0`")
         if key == "write_bytes_per_sec" and value is not None:
-            if value < 0.0:
-                raise ValueError("Invalid value for `write_bytes_per_sec`, must be a value greater than or equal to `0.0`")
+            if value < 0:
+                raise ValueError("Invalid value for `write_bytes_per_sec`, must be a value greater than or equal to `0`")
+        if key == "usec_per_other_op" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `usec_per_other_op`, must be a value greater than or equal to `0`")
+        if key == "bytes_per_op" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `bytes_per_op`, must be a value greater than or equal to `0`")
+        if key == "bytes_per_read" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `bytes_per_read`, must be a value greater than or equal to `0`")
+        if key == "usec_per_read_op" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `usec_per_read_op`, must be a value greater than or equal to `0`")
+        if key == "reads_per_sec" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `reads_per_sec`, must be a value greater than or equal to `0`")
+        if key == "bytes_per_write" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `bytes_per_write`, must be a value greater than or equal to `0`")
         if key == "writes_per_sec" and value is not None:
-            if value < 0.0:
-                raise ValueError("Invalid value for `writes_per_sec`, must be a value greater than or equal to `0.0`")
+            if value < 0:
+                raise ValueError("Invalid value for `writes_per_sec`, must be a value greater than or equal to `0`")
+        if key == "usec_per_write_op" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `usec_per_write_op`, must be a value greater than or equal to `0`")
         self.__dict__[key] = value
 
     def __getattribute__(self, item):

@@ -49,8 +49,8 @@ class WorkloadPlacementRecommendationWarning(object):
     ):
         """
         Keyword args:
-            code (str): The warning code. Possible values include `limit_volumes_count`, `limit_pods_count`, etc.
-            message (str): The warning message. Possible values include `Adding the workload on the array would exceed the limit on volumes`, `Adding the workload on the array would exceed the limit on pods`, etc.
+            code (str): The warning code. Possible values include `limit_volumes_count`, `limit_pods_count`, etc. 
+            message (str): The warning message. Possible values include `Adding the workload on the array would exceed the limit on volumes`, `Adding the workload on the array would exceed the limit on pods`, etc. 
         """
         if code is not None:
             self.code = code

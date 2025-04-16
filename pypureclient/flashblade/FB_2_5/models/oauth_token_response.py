@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.5, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.5, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.5
     
@@ -55,10 +55,10 @@ class OauthTokenResponse(object):
     ):
         """
         Keyword args:
-            access_token (str): The serialized OAuth 2.0 Bearer token used to perform authenticated requests. The access token must be added to the Authorization header of all API calls.
-            issued_token_type (str): The type of token that is issued. The Pure Storage REST API supports OAuth 2.0 access tokens.
-            token_type (str): Indicates how the API client can use the access token issued. The Pure Storage REST API supports the `Bearer` token.
-            expires_in (int): The duration after which the access token will expire. Measured in seconds. This differs from other duration fields that are expressed in milliseconds.
+            access_token (str): The serialized OAuth 2.0 Bearer token used to perform authenticated requests. The access token must be added to the Authorization header of all API calls. 
+            issued_token_type (str): The type of token that is issued. The Pure Storage REST API supports OAuth 2.0 access tokens. 
+            token_type (str): Indicates how the API client can use the access token issued. The Pure Storage REST API supports the `Bearer` token. 
+            expires_in (int): The duration after which the access token will expire. Measured in seconds. This differs from other duration fields that are expressed in milliseconds. 
         """
         if access_token is not None:
             self.access_token = access_token

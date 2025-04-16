@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.13, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.13, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.13
     
@@ -33,9 +33,9 @@ class LinkAggregationGroup(object):
         'name': 'str',
         'id': 'str',
         'lag_speed': 'int',
+        'port_speed': 'int',
         'mac_address': 'str',
         'ports': 'list[FixedReference]',
-        'port_speed': 'int',
         'status': 'str'
     }
 
@@ -43,9 +43,9 @@ class LinkAggregationGroup(object):
         'name': 'name',
         'id': 'id',
         'lag_speed': 'lag_speed',
+        'port_speed': 'port_speed',
         'mac_address': 'mac_address',
         'ports': 'ports',
-        'port_speed': 'port_speed',
         'status': 'status'
     }
 
@@ -57,20 +57,20 @@ class LinkAggregationGroup(object):
         name=None,  # type: str
         id=None,  # type: str
         lag_speed=None,  # type: int
+        port_speed=None,  # type: int
         mac_address=None,  # type: str
         ports=None,  # type: List[models.FixedReference]
-        port_speed=None,  # type: int
         status=None,  # type: str
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            lag_speed (int): Combined speed of all ports in the LAG in bits-per-second.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            lag_speed (int): Combined speed of all ports in the LAG in bits-per-second. 
+            port_speed (int): Configured speed of each port in the LAG in bits-per-second.
             mac_address (str): Unique MAC address assigned to the LAG.
             ports (list[FixedReference]): Ports associated with the LAG.
-            port_speed (int): Configured speed of each port in the LAG in bits-per-second.
-            status (str): Health status of the LAG. Valid values are `critical`, `healthy`, `identifying`, `unclaimed`, `unhealthy`, `unrecognized`, and `unused`.
+            status (str): Health status of the LAG. Valid values are `critical`, `healthy`, `identifying`, `unclaimed`, `unhealthy`, `unrecognized`, and `unused`. 
         """
         if name is not None:
             self.name = name
@@ -78,12 +78,12 @@ class LinkAggregationGroup(object):
             self.id = id
         if lag_speed is not None:
             self.lag_speed = lag_speed
+        if port_speed is not None:
+            self.port_speed = port_speed
         if mac_address is not None:
             self.mac_address = mac_address
         if ports is not None:
             self.ports = ports
-        if port_speed is not None:
-            self.port_speed = port_speed
         if status is not None:
             self.status = status
 

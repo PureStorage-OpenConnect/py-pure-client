@@ -30,16 +30,16 @@ class PresetWorkloadParameter(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'metadata': 'PresetWorkloadMetadata',
         'name': 'str',
         'type': 'str',
-        'metadata': 'PresetWorkloadMetadata',
         'constraints': 'PresetWorkloadConstraints'
     }
 
     attribute_map = {
+        'metadata': 'metadata',
         'name': 'name',
         'type': 'type',
-        'metadata': 'metadata',
         'constraints': 'constraints'
     }
 
@@ -57,15 +57,15 @@ class PresetWorkloadParameter(object):
     ):
         """
         Keyword args:
-            name (str, required): The name of the parameter, by which other fields in the preset can reference it. Name must be unique across all parameters in the preset.
-            type (str, required): The type of the parameter. Valid values include `string`, `integer`, `boolean` and `resource_reference`. String parameters can be used to collect metadata about workloads deployed from the preset, such as the environment to which they are deployed (e.g., production, development, etc.) or the billing account to which they belong for charge back and show back purposes. Integer and boolean parameters can be used to configure specific fields in the preset, such as the number or size of volumes to provision. Resource reference parameters can be used to collect references to other objects, such as storage classes or remote arrays.
             metadata (PresetWorkloadMetadata)
+            name (str, required): The name of the parameter, by which other fields in the preset can reference it. Name must be unique across all parameters in the preset. 
+            type (str, required): The type of the parameter. Valid values include `string`, `integer`, `boolean` and `resource_reference`.  String parameters can be used to collect metadata about workloads deployed from the preset, such as the environment to which they are deployed (e.g., production, development, etc.) or the billing account to which they belong for charge back and show back purposes.  Integer and boolean parameters can be used to configure specific fields in the preset, such as the number or size of volumes to provision.   Resource reference parameters can be used to collect references to other objects, such as storage classes or remote arrays.
             constraints (PresetWorkloadConstraints)
         """
-        self.name = name
-        self.type = type
         if metadata is not None:
             self.metadata = metadata
+        self.name = name
+        self.type = type
         if constraints is not None:
             self.constraints = constraints
 

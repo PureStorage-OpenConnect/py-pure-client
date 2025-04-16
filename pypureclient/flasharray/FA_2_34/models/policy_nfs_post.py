@@ -31,14 +31,14 @@ class PolicyNfsPost(object):
     """
     swagger_types = {
         'enabled': 'bool',
-        'user_mapping_enabled': 'bool',
-        'policy_mapping': 'PolicynfspostPolicyMapping'
+        'policy_mapping': 'PolicynfspostPolicyMapping',
+        'user_mapping_enabled': 'bool'
     }
 
     attribute_map = {
         'enabled': 'enabled',
-        'user_mapping_enabled': 'user_mapping_enabled',
-        'policy_mapping': 'policy_mapping'
+        'policy_mapping': 'policy_mapping',
+        'user_mapping_enabled': 'user_mapping_enabled'
     }
 
     required_args = {
@@ -47,21 +47,21 @@ class PolicyNfsPost(object):
     def __init__(
         self,
         enabled=None,  # type: bool
-        user_mapping_enabled=None,  # type: bool
         policy_mapping=None,  # type: models.PolicynfspostPolicyMapping
+        user_mapping_enabled=None,  # type: bool
     ):
         """
         Keyword args:
             enabled (bool): If set to `true`, enables the policy. If set to `false`, disables the policy.
-            user_mapping_enabled (bool): If set to `true`, FlashArray queries the joined AD/OpenLDAP server to find the user corresponding to the incoming UID. If set to `false`, users are defined by UID/GID pair. If not specified, defaults to `true`.
             policy_mapping (PolicynfspostPolicyMapping)
+            user_mapping_enabled (bool): If set to `true`, FlashArray queries the joined AD/OpenLDAP server to find the user corresponding to the incoming UID. If set to `false`, users are defined by UID/GID pair. If not specified, defaults to `true`. 
         """
         if enabled is not None:
             self.enabled = enabled
-        if user_mapping_enabled is not None:
-            self.user_mapping_enabled = user_mapping_enabled
         if policy_mapping is not None:
             self.policy_mapping = policy_mapping
+        if user_mapping_enabled is not None:
+            self.user_mapping_enabled = user_mapping_enabled
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

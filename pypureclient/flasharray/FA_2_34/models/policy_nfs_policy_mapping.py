@@ -49,8 +49,8 @@ class PolicyNfsPolicyMapping(object):
     ):
         """
         Keyword args:
-            mapping (str): The mapping of this policy. Valid values are `connected` and `disconnected`.
-            remote_policy (str): The policy on the remote pod of the pod replica link for this policy mapping.
+            mapping (str): The mapping of this policy. Valid values are `connected` and `disconnected`. 
+            remote_policy (str): The policy on the remote pod of the pod replica link for this policy mapping. 
         """
         if mapping is not None:
             self.mapping = mapping

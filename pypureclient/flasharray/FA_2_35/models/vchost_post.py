@@ -46,7 +46,7 @@ class VchostPost(object):
     ):
         """
         Keyword args:
-            vcuuid (str): The vCenter Server uuid of the vchost.
+            vcuuid (str): The vCenter Server uuid of the vchost. 
         """
         if vcuuid is not None:
             self.vcuuid = vcuuid

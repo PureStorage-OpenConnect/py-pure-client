@@ -49,8 +49,8 @@ class SoftwareInstallationPost(object):
     ):
         """
         Keyword args:
-            mode (str): Which mode the upgrade is in. Valid values are `interactive`, `one_click`, and `check_only`. In `interactive` mode, the upgrade process pauses at several points, at which users must enter certain commands to proceed. In `one_click` mode, the upgrade proceeds automatically without pausing. In `check_only` mode, the upgrade only runs pre-upgrade checks and returns.
-            override_checks (list[OverrideCheck]): A list of upgrade checks whose failure is overridden during the upgrade. If any optional `args` are provided, they are validated later when the corresponding check script runs.
+            mode (str): Which mode the upgrade is in. Valid values are `interactive`, `one_click`, and `check_only`. In `interactive` mode, the upgrade process pauses at several points, at which users must enter certain commands to proceed. In `one_click` mode, the upgrade proceeds automatically without pausing. In `check_only` mode, the upgrade only runs pre-upgrade checks and returns. 
+            override_checks (list[OverrideCheck]): A list of upgrade checks whose failure is overridden during the upgrade. If any optional `args` are provided, they are validated later when the corresponding check  script runs. 
         """
         if mode is not None:
             self.mode = mode

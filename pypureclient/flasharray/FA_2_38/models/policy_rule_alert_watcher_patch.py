@@ -46,7 +46,7 @@ class PolicyRuleAlertWatcherPatch(object):
     ):
         """
         Keyword args:
-            rules (list[PolicyrulealertwatcherpatchRules]): Updates an alert-watcher rule in a policy. Only one update object will be accepted.
+            rules (list[PolicyrulealertwatcherpatchRules]): Updates an alert-watcher rule in a policy. Only one update object will be accepted. 
         """
         if rules is not None:
             self.rules = rules

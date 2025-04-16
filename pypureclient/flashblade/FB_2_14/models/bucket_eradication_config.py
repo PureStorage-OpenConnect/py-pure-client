@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.14, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.14, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.14
     
@@ -31,14 +31,14 @@ class BucketEradicationConfig(object):
     """
     swagger_types = {
         'eradication_delay': 'int',
-        'manual_eradication': 'str',
-        'eradication_mode': 'str'
+        'eradication_mode': 'str',
+        'manual_eradication': 'str'
     }
 
     attribute_map = {
         'eradication_delay': 'eradication_delay',
-        'manual_eradication': 'manual_eradication',
-        'eradication_mode': 'eradication_mode'
+        'eradication_mode': 'eradication_mode',
+        'manual_eradication': 'manual_eradication'
     }
 
     required_args = {
@@ -47,21 +47,21 @@ class BucketEradicationConfig(object):
     def __init__(
         self,
         eradication_delay=None,  # type: int
-        manual_eradication=None,  # type: str
         eradication_mode=None,  # type: str
+        manual_eradication=None,  # type: str
     ):
         """
         Keyword args:
-            eradication_delay (int): Minimum eradication delay in milliseconds. Automatically eradicate destroyed buckets after the delay time passes unless automatic eradication is delayed due to other configuration values.
-            manual_eradication (str): The manual eradication status of the bucket. If `disabled`, the bucket cannot be eradicated after it has been destroyed, unless it is empty. If `enabled`, the bucket can be eradicated. Valid values are `disabled` and `enabled`.
-            eradication_mode (str): The eradication mode of the bucket. If it's `permission-based` the bucket can be eradicated based on user permissions. If it's `retention-based` the bucket can never be eradicated as long as there are locked objects still being retained. Valid values are `permission-based` and `retention-based`.
+            eradication_delay (int): Minimum eradication delay in milliseconds. Automatically eradicate destroyed buckets after the delay time passes unless automatic eradication is delayed due to other configuration values. 
+            eradication_mode (str): The eradication mode of the bucket. If it's `permission-based` the bucket can be eradicated based on user permissions. If it's `retention-based` the bucket can never be eradicated as long as there are locked objects still being retained. Valid values are `permission-based` and `retention-based`. 
+            manual_eradication (str): The manual eradication status of the bucket. If `disabled`, the bucket cannot be eradicated after it has been destroyed, unless it is empty. If `enabled`, the bucket can be eradicated. Valid values are `disabled` and `enabled`. 
         """
         if eradication_delay is not None:
             self.eradication_delay = eradication_delay
-        if manual_eradication is not None:
-            self.manual_eradication = manual_eradication
         if eradication_mode is not None:
             self.eradication_mode = eradication_mode
+        if manual_eradication is not None:
+            self.manual_eradication = manual_eradication
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

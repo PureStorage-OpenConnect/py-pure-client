@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.15, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.15, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.15
     
@@ -32,21 +32,21 @@ class HardwareConnector(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
-        'connector_type': 'str',
         'lane_speed': 'int',
-        'port_count': 'int',
+        'port_speed': 'int',
         'transceiver_type': 'str',
-        'port_speed': 'int'
+        'connector_type': 'str',
+        'port_count': 'int'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
-        'connector_type': 'connector_type',
         'lane_speed': 'lane_speed',
-        'port_count': 'port_count',
+        'port_speed': 'port_speed',
         'transceiver_type': 'transceiver_type',
-        'port_speed': 'port_speed'
+        'connector_type': 'connector_type',
+        'port_count': 'port_count'
     }
 
     required_args = {
@@ -56,36 +56,36 @@ class HardwareConnector(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
-        connector_type=None,  # type: str
         lane_speed=None,  # type: int
-        port_count=None,  # type: int
-        transceiver_type=None,  # type: str
         port_speed=None,  # type: int
+        transceiver_type=None,  # type: str
+        connector_type=None,  # type: str
+        port_count=None,  # type: int
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            connector_type (str): Form-factor of the interface. Valid values include `QSFP` and `RJ-45`.
-            lane_speed (int): Configured speed of each lane in the connector in bits-per-second.
-            port_count (int): Configured number of ports in the connector (1/2/4 for QSFP).
-            transceiver_type (str): Details about the transceiver which is plugged into the connector port. Transceiver type will be read-only for pureuser. If nothing is plugged into QSFP port, value will be `Unused` and type cannot be auto-detected, and internal user has not specified a type - value will be `Unknown`. If transceiver is plugged in, and type is auto-detected, and/or type has been explicitly set by internal user - that value will be shown. Transceiver type is not applicable for RJ-45 connectors.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            lane_speed (int): Configured speed of each lane in the connector in bits-per-second. 
             port_speed (int): Configured speed of each port in the connector in bits-per-second.
+            transceiver_type (str): Details about the transceiver which is plugged into the connector port. Transceiver type will be read-only for pureuser. If nothing is plugged into QSFP port, value will be `Unused` and type cannot be auto-detected, and internal user has not specified a type - value will be `Unknown`. If transceiver is plugged in, and type is auto-detected, and/or type has been explicitly set by internal user - that value will be shown. Transceiver type is not applicable for RJ-45 connectors. 
+            connector_type (str): Form-factor of the interface. Valid values include `QSFP` and `RJ-45`. 
+            port_count (int): Configured number of ports in the connector (1/2/4 for QSFP). 
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
-        if connector_type is not None:
-            self.connector_type = connector_type
         if lane_speed is not None:
             self.lane_speed = lane_speed
-        if port_count is not None:
-            self.port_count = port_count
-        if transceiver_type is not None:
-            self.transceiver_type = transceiver_type
         if port_speed is not None:
             self.port_speed = port_speed
+        if transceiver_type is not None:
+            self.transceiver_type = transceiver_type
+        if connector_type is not None:
+            self.connector_type = connector_type
+        if port_count is not None:
+            self.port_count = port_count
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

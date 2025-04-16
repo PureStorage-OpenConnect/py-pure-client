@@ -46,7 +46,7 @@ class BuiltInResourceNoId(object):
     ):
         """
         Keyword args:
-            name (str): A locally unique, system-generated name. The name cannot be modified.
+            name (str): A locally unique, system-generated name. The name cannot be modified. 
         """
         if name is not None:
             self.name = name

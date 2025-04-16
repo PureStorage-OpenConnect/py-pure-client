@@ -30,27 +30,27 @@ class RemoteProtectionGroupSnapshot(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
-        'created': 'int',
+        'id': 'str',
+        'time_remaining': 'int',
         'destroyed': 'bool',
+        'created': 'int',
+        'source': 'FixedReference',
         'is_local': 'bool',
         'remote': 'FixedReference',
-        'source': 'FixedReference',
-        'suffix': 'str',
-        'time_remaining': 'int'
+        'suffix': 'str'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
-        'created': 'created',
+        'id': 'id',
+        'time_remaining': 'time_remaining',
         'destroyed': 'destroyed',
+        'created': 'created',
+        'source': 'source',
         'is_local': 'is_local',
         'remote': 'remote',
-        'source': 'source',
-        'suffix': 'suffix',
-        'time_remaining': 'time_remaining'
+        'suffix': 'suffix'
     }
 
     required_args = {
@@ -58,46 +58,46 @@ class RemoteProtectionGroupSnapshot(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
-        created=None,  # type: int
+        id=None,  # type: str
+        time_remaining=None,  # type: int
         destroyed=None,  # type: bool
+        created=None,  # type: int
+        source=None,  # type: models.FixedReference
         is_local=None,  # type: bool
         remote=None,  # type: models.FixedReference
-        source=None,  # type: models.FixedReference
         suffix=None,  # type: str
-        time_remaining=None,  # type: int
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            name (str): A locally unique, system-generated name. The name cannot be modified.
-            created (int): The creation time of the snapshot on the original source of the snapshot. Measured in milliseconds since the UNIX epoch.
-            destroyed (bool): Destroyed and pending eradication? If not specified, defaults to false.
-            is_local (bool): The status of whether or not the remote protection group snapshot is replicated from the current array.
-            remote (FixedReference): The offload target where the remote protection group snapshot is located.
-            source (FixedReference): The original protection group from which this snapshot was taken.
-            suffix (str): The suffix that is appended to the `source_name` value to generate the full remote protection group snapshot name in the form `PGROUP.SUFFIX`. If the suffix is not specified, the system constructs the snapshot name in the form `PGROUP.NNN`, where `PGROUP` is the protection group name, and `NNN` is a monotonically increasing number.
-            time_remaining (int): The time remaining until eradication, measured in milliseconds, if the snapshot has been destroyed.
+            name (str): A locally unique, system-generated name. The name cannot be modified. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource. 
+            time_remaining (int): The time remaining until eradication, measured in milliseconds, if the snapshot has been destroyed. 
+            destroyed (bool): Destroyed and pending eradication? If not specified, defaults to false. 
+            created (int): The creation time of the snapshot on the original source of the snapshot. Measured in milliseconds since the UNIX epoch. 
+            source (FixedReference): The original protection group from which this snapshot was taken. 
+            is_local (bool): The status of whether or not the remote protection group snapshot is replicated from the current array. 
+            remote (FixedReference): The offload target where the remote protection group snapshot is located. 
+            suffix (str): The suffix that is appended to the `source_name` value to generate the full remote protection group snapshot name in the form `PGROUP.SUFFIX`. If the suffix is not specified, the system constructs the snapshot name in the form `PGROUP.NNN`, where `PGROUP` is the protection group name, and `NNN` is a monotonically increasing number. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
-        if created is not None:
-            self.created = created
+        if id is not None:
+            self.id = id
+        if time_remaining is not None:
+            self.time_remaining = time_remaining
         if destroyed is not None:
             self.destroyed = destroyed
+        if created is not None:
+            self.created = created
+        if source is not None:
+            self.source = source
         if is_local is not None:
             self.is_local = is_local
         if remote is not None:
             self.remote = remote
-        if source is not None:
-            self.source = source
         if suffix is not None:
             self.suffix = suffix
-        if time_remaining is not None:
-            self.time_remaining = time_remaining
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -30,27 +30,27 @@ class NetworkInterfaceEth(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'subnet': 'ReferenceNoId',
         'address': 'str',
-        'gateway': 'str',
-        'mac_address': 'str',
-        'mtu': 'int',
+        'vlan': 'int',
         'netmask': 'str',
         'subtype': 'str',
+        'mac_address': 'str',
         'subinterfaces': 'list[FixedReferenceNoId]',
-        'subnet': 'ReferenceNoId',
-        'vlan': 'int'
+        'gateway': 'str',
+        'mtu': 'int'
     }
 
     attribute_map = {
+        'subnet': 'subnet',
         'address': 'address',
-        'gateway': 'gateway',
-        'mac_address': 'mac_address',
-        'mtu': 'mtu',
+        'vlan': 'vlan',
         'netmask': 'netmask',
         'subtype': 'subtype',
+        'mac_address': 'mac_address',
         'subinterfaces': 'subinterfaces',
-        'subnet': 'subnet',
-        'vlan': 'vlan'
+        'gateway': 'gateway',
+        'mtu': 'mtu'
     }
 
     required_args = {
@@ -58,46 +58,46 @@ class NetworkInterfaceEth(object):
 
     def __init__(
         self,
+        subnet=None,  # type: models.ReferenceNoId
         address=None,  # type: str
-        gateway=None,  # type: str
-        mac_address=None,  # type: str
-        mtu=None,  # type: int
+        vlan=None,  # type: int
         netmask=None,  # type: str
         subtype=None,  # type: str
+        mac_address=None,  # type: str
         subinterfaces=None,  # type: List[models.FixedReferenceNoId]
-        subnet=None,  # type: models.ReferenceNoId
-        vlan=None,  # type: int
+        gateway=None,  # type: str
+        mtu=None,  # type: int
     ):
         """
         Keyword args:
-            address (str): The IPv4 or IPv6 address to be associated with the specified network interface.
-            gateway (str): The IPv4 or IPv6 address of the gateway through which the specified network interface is to communicate with the network.
-            mac_address (str): The media access control address associated with the specified network interface.
-            mtu (int): Maximum message transfer unit (packet) size for the network interface, in bytes. MTU setting cannot exceed the MTU of the corresponding physical interface.
-            netmask (str): Netmask of the specified network interface that, when combined with the address of the interface, determines the network address of the interface.
-            subtype (str): The subtype of the specified network interface. Only interfaces of subtype `virtual` can be created. Configurable on POST only. Valid values are `failover_bond`, `lacp_bond`, `physical`, and `virtual`.
-            subinterfaces (list[FixedReferenceNoId]): List of network interfaces configured to be a subinterface of the specified network interface.
-            subnet (ReferenceNoId): Subnet that is associated with the specified network interface.
+            subnet (ReferenceNoId): Subnet that is associated with the specified network interface. 
+            address (str): The IPv4 or IPv6 address to be associated with the specified network interface. 
             vlan (int): VLAN ID
+            netmask (str): Netmask of the specified network interface that, when combined with the address of the interface, determines the network address of the interface. 
+            subtype (str): The subtype of the specified network interface. Only interfaces of subtype `virtual` can be created. Configurable on POST only. Valid values are `failover_bond`, `lacp_bond`, `physical`, and `virtual`. 
+            mac_address (str): The media access control address associated with the specified network interface. 
+            subinterfaces (list[FixedReferenceNoId]): List of network interfaces configured to be a subinterface of the specified network interface. 
+            gateway (str): The IPv4 or IPv6 address of the gateway through which the specified network interface is to communicate with the network. 
+            mtu (int): Maximum message transfer unit (packet) size for the network interface, in bytes. MTU setting cannot exceed the MTU of the corresponding physical interface. 
         """
+        if subnet is not None:
+            self.subnet = subnet
         if address is not None:
             self.address = address
-        if gateway is not None:
-            self.gateway = gateway
-        if mac_address is not None:
-            self.mac_address = mac_address
-        if mtu is not None:
-            self.mtu = mtu
+        if vlan is not None:
+            self.vlan = vlan
         if netmask is not None:
             self.netmask = netmask
         if subtype is not None:
             self.subtype = subtype
+        if mac_address is not None:
+            self.mac_address = mac_address
         if subinterfaces is not None:
             self.subinterfaces = subinterfaces
-        if subnet is not None:
-            self.subnet = subnet
-        if vlan is not None:
-            self.vlan = vlan
+        if gateway is not None:
+            self.gateway = gateway
+        if mtu is not None:
+            self.mtu = mtu
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

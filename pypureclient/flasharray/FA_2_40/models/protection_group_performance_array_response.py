@@ -30,17 +30,17 @@ class ProtectionGroupPerformanceArrayResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'continuation_token': 'str',
         'more_items_remaining': 'bool',
         'total_item_count': 'int',
-        'continuation_token': 'str',
         'errors': 'list[ErrorcontextresponseErrors]',
         'items': 'list[ProtectionGroupPerformanceArray]'
     }
 
     attribute_map = {
+        'continuation_token': 'continuation_token',
         'more_items_remaining': 'more_items_remaining',
         'total_item_count': 'total_item_count',
-        'continuation_token': 'continuation_token',
         'errors': 'errors',
         'items': 'items'
     }
@@ -50,26 +50,26 @@ class ProtectionGroupPerformanceArrayResponse(object):
 
     def __init__(
         self,
+        continuation_token=None,  # type: str
         more_items_remaining=None,  # type: bool
         total_item_count=None,  # type: int
-        continuation_token=None,  # type: str
         errors=None,  # type: List[models.ErrorcontextresponseErrors]
         items=None,  # type: List[models.ProtectionGroupPerformanceArray]
     ):
         """
         Keyword args:
-            more_items_remaining (bool): Returns a value of `true` if subsequent items can be retrieved.
-            total_item_count (int): The total number of records after applying all filter query parameters. The `total_item_count` will be calculated if and only if the corresponding query parameter `total_item_count` is set to `true`. If this query parameter is not set or set to `false`, a value of `null` will be returned.
-            continuation_token (str): Continuation token that can be provided in the `continuation_token` query param to get the next page of data. If you use the continuation token to page through data you are guaranteed to get all items exactly once regardless of how items are modified. If an item is added or deleted during the pagination then it may or may not be returned. The continuation token is generated if the limit is less than the remaining number of items, and the default sort is used (no sort is specified).
+            continuation_token (str): Continuation token that can be provided in the `continuation_token` query param to get the next page of data. If you use the continuation token to page through data you are guaranteed to get all items exactly once regardless of how items are modified. If an item is added or deleted during the pagination then it may or may not be returned. The continuation token is generated if the limit is less than the remaining number of items, and the default sort is used (no sort is specified). 
+            more_items_remaining (bool): Returns a value of `true` if subsequent items can be retrieved. 
+            total_item_count (int): The total number of records after applying all filter query parameters. The `total_item_count` will be calculated if and only if the corresponding query parameter `total_item_count` is set to `true`. If this query parameter is not set or set to `false`, a value of `null` will be returned. 
             errors (list[ErrorcontextresponseErrors]): The list of errors encountered when attempting to perform an operation.
-            items (list[ProtectionGroupPerformanceArray]): Lists performance data, broken down by array.
+            items (list[ProtectionGroupPerformanceArray]): Lists performance data, broken down by array. 
         """
+        if continuation_token is not None:
+            self.continuation_token = continuation_token
         if more_items_remaining is not None:
             self.more_items_remaining = more_items_remaining
         if total_item_count is not None:
             self.total_item_count = total_item_count
-        if continuation_token is not None:
-            self.continuation_token = continuation_token
         if errors is not None:
             self.errors = errors
         if items is not None:

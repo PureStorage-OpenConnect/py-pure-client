@@ -46,7 +46,7 @@ class ActiveDirectoryResponse(object):
     ):
         """
         Keyword args:
-            items (list[ActiveDirectory]): A list of Active Directory computer account configuration objects.
+            items (list[ActiveDirectory]): A list of Active Directory computer account configuration objects. 
         """
         if items is not None:
             self.items = items

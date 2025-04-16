@@ -30,24 +30,24 @@ class ApiClient(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
-        'name': 'str',
-        'max_role': 'str',
-        'issuer': 'str',
         'public_key': 'str',
+        'max_role': 'str',
         'key_id': 'str',
+        'name': 'str',
+        'id': 'str',
         'enabled': 'bool',
+        'issuer': 'str',
         'access_token_ttl_in_ms': 'int'
     }
 
     attribute_map = {
-        'id': 'id',
-        'name': 'name',
-        'max_role': 'max_role',
-        'issuer': 'issuer',
         'public_key': 'public_key',
+        'max_role': 'max_role',
         'key_id': 'key_id',
+        'name': 'name',
+        'id': 'id',
         'enabled': 'enabled',
+        'issuer': 'issuer',
         'access_token_ttl_in_ms': 'access_token_ttl_in_ms'
     }
 
@@ -56,40 +56,40 @@ class ApiClient(object):
 
     def __init__(
         self,
-        id=None,  # type: str
-        name=None,  # type: str
-        max_role=None,  # type: str
-        issuer=None,  # type: str
         public_key=None,  # type: str
+        max_role=None,  # type: str
         key_id=None,  # type: str
+        name=None,  # type: str
+        id=None,  # type: str
         enabled=None,  # type: bool
+        issuer=None,  # type: str
         access_token_ttl_in_ms=None,  # type: int
     ):
         """
         Keyword args:
-            id (str): The unique identifier for the associated API client. The ID represents the JWT `aud` (audience) claim in ID Tokens issued for this API client.
-            name (str): The API client name.
-            max_role (str): The maximum role allowed for ID Tokens issued by this API client. The bearer of an access token will be authorized to perform actions within the intersection of this `max_role` and the role of the array user specified as the JWT `sub` (subject) claim. Valid `max_role` values are `readonly`, `ops_admin`, `array_admin`, and `storage_admin`. Users with the `readonly` (Read Only) role can perform operations that convey the state of the array. Read Only users cannot alter the state of the array. Users with the `ops_admin` (Ops Admin) role can perform the same operations as Read Only users plus enable and disable remote assistance sessions. Ops Admin users cannot alter the state of the array. Users with the `storage_admin` (Storage Admin) role can perform the same operations as Read Only users plus storage related operations, such as administering volumes, hosts, and host groups. Storage Admin users cannot perform operations that deal with global and system configurations. Users with the `array_admin` (Array Admin) role can perform the same operations as Storage Admin users plus array-wide changes dealing with global and system configurations. In other words, Array Admin users can perform all operations.
-            issuer (str): The name of the identity provider that will be issuing ID Tokens for this API client. This string represents the JWT `iss` (issuer) claim in ID Tokens issued for this API client.
-            public_key (str): The API client's PEM formatted (Base64 encoded) RSA public key.
-            key_id (str): The unique identifier for the associated public key of this API client. This string must match the JWT `kid` (key ID) claim in ID Tokens issued for this API client.
-            enabled (bool): If `true`, the API client is permitted to exchange ID Tokens for access tokens. API clients are disabled by default.
-            access_token_ttl_in_ms (int): The requested TTL (Time To Live) length of time for the exchanged access token. Measured in milliseconds.
+            public_key (str): The API client's PEM formatted (Base64 encoded) RSA public key. 
+            max_role (str): The maximum role allowed for ID Tokens issued by this API client. The bearer of an access token will be authorized to perform actions within the intersection of this `max_role` and the role of the array user specified as the JWT `sub` (subject) claim. Valid `max_role` values are `readonly`, `ops_admin`, `array_admin`, and `storage_admin`.  Users with the `readonly` (Read Only) role can perform operations that convey the state of the array. Read Only users cannot alter the state of the array. Users with the `ops_admin` (Ops Admin) role can perform the same operations as Read Only users plus enable and disable remote assistance sessions. Ops Admin users cannot alter the state of the array. Users with the `storage_admin` (Storage Admin) role can perform the same operations as Read Only users plus storage related operations, such as administering volumes, hosts, and host groups. Storage Admin users cannot perform operations that deal with global and system configurations. Users with the `array_admin` (Array Admin) role can perform the same operations as Storage Admin users plus array-wide changes dealing with global and system configurations. In other words, Array Admin users can perform all operations. 
+            key_id (str): The unique identifier for the associated public key of this API client. This string must match the JWT `kid` (key ID) claim in ID Tokens issued for this API client. 
+            name (str): The API client name. 
+            id (str): The unique identifier for the associated API client. The ID represents the JWT `aud` (audience) claim in ID Tokens issued for this API client. 
+            enabled (bool): If `true`, the API client is permitted to exchange ID Tokens for access tokens. API clients are disabled by default. 
+            issuer (str): The name of the identity provider that will be issuing ID Tokens for this API client. This string represents the JWT `iss` (issuer) claim in ID Tokens issued for this API client. 
+            access_token_ttl_in_ms (int): The requested TTL (Time To Live) length of time for the exchanged access token. Measured in milliseconds. 
         """
-        if id is not None:
-            self.id = id
-        if name is not None:
-            self.name = name
-        if max_role is not None:
-            self.max_role = max_role
-        if issuer is not None:
-            self.issuer = issuer
         if public_key is not None:
             self.public_key = public_key
+        if max_role is not None:
+            self.max_role = max_role
         if key_id is not None:
             self.key_id = key_id
+        if name is not None:
+            self.name = name
+        if id is not None:
+            self.id = id
         if enabled is not None:
             self.enabled = enabled
+        if issuer is not None:
+            self.issuer = issuer
         if access_token_ttl_in_ms is not None:
             self.access_token_ttl_in_ms = access_token_ttl_in_ms
 

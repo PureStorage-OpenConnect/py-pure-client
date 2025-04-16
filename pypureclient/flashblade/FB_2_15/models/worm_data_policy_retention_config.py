@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.15, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.15, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.15
     
@@ -31,17 +31,17 @@ class WormDataPolicyRetentionConfig(object):
     """
     swagger_types = {
         'mode': 'str',
-        'min_retention': 'int',
-        'max_retention': 'int',
         'default_retention': 'int',
+        'max_retention': 'int',
+        'min_retention': 'int',
         'retention_lock': 'str'
     }
 
     attribute_map = {
         'mode': 'mode',
-        'min_retention': 'min_retention',
-        'max_retention': 'max_retention',
         'default_retention': 'default_retention',
+        'max_retention': 'max_retention',
+        'min_retention': 'min_retention',
         'retention_lock': 'retention_lock'
     }
 
@@ -51,27 +51,27 @@ class WormDataPolicyRetentionConfig(object):
     def __init__(
         self,
         mode=None,  # type: str
-        min_retention=None,  # type: int
-        max_retention=None,  # type: int
         default_retention=None,  # type: int
+        max_retention=None,  # type: int
+        min_retention=None,  # type: int
         retention_lock=None,  # type: str
     ):
         """
         Keyword args:
-            mode (str): The type of the retention lock. Valid values is `compliance`.
-            min_retention (int): Minimum retention period, in milliseconds.
-            max_retention (int): Maximum retention period, in milliseconds.
-            default_retention (int): Default retention period, in milliseconds. If the access time is not specified when committing a file, then the default retention period is applied.
-            retention_lock (str): If set to `locked`, then the value of retention attributes or policy attributes are not allowed to change. If set to `unlocked`, then the value of the retention attributes and policy attributes are allowed to change. Valid values are `unlocked` and `locked`. It is always allowed to change from `unlocked` to `locked`. Contact Pure Technical Services to change from `locked` to `unlocked`.
+            mode (str): The type of the retention lock. Valid values is `compliance`. 
+            default_retention (int): Default retention period, in milliseconds. If the access time is not specified when committing a file, then the default retention period is applied. 
+            max_retention (int): Maximum retention period, in milliseconds. 
+            min_retention (int): Minimum retention period, in milliseconds. 
+            retention_lock (str): If set to `locked`, then the value of retention attributes or policy attributes are not allowed to change. If set to `unlocked`, then the value of the retention attributes and policy attributes are allowed to change. Valid values are `unlocked` and `locked`. It is always allowed to change from `unlocked` to `locked`. Contact Pure Technical Services to change from `locked` to `unlocked`. 
         """
         if mode is not None:
             self.mode = mode
-        if min_retention is not None:
-            self.min_retention = min_retention
-        if max_retention is not None:
-            self.max_retention = max_retention
         if default_retention is not None:
             self.default_retention = default_retention
+        if max_retention is not None:
+            self.max_retention = max_retention
+        if min_retention is not None:
+            self.min_retention = min_retention
         if retention_lock is not None:
             self.retention_lock = retention_lock
 

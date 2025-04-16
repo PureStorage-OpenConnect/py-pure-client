@@ -49,7 +49,7 @@ class AdminApiToken(object):
     ):
         """
         Keyword args:
-            name (str): A user-specified name. The name must be locally unique and cannot be changed.
+            name (str): A user-specified name. The name must be locally unique and cannot be changed. 
             api_token (ApiToken)
         """
         if name is not None:

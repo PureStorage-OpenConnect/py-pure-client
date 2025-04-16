@@ -30,51 +30,51 @@ class NetworkInterfacePerformanceEth(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'other_errors_per_sec': 'int',
-        'received_bytes_per_sec': 'int',
-        'received_crc_errors_per_sec': 'int',
-        'received_frame_errors_per_sec': 'int',
-        'received_packets_per_sec': 'int',
-        'total_errors_per_sec': 'int',
-        'transmitted_bytes_per_sec': 'int',
-        'transmitted_carrier_errors_per_sec': 'int',
+        'flow_control_transmitted_lossless_bytes_per_sec': 'int',
         'transmitted_dropped_errors_per_sec': 'int',
-        'transmitted_packets_per_sec': 'int',
-        'flow_control_received_congestion_packets_per_sec': 'int',
+        'rdma_received_sequence_errors_per_sec': 'int',
+        'transmitted_carrier_errors_per_sec': 'int',
+        'flow_control_transmitted_pause_frames_per_sec': 'int',
+        'received_bytes_per_sec': 'int',
+        'flow_control_transmitted_congestion_packets_per_sec': 'int',
+        'rdma_transmitted_local_ack_timeout_errors_per_sec': 'int',
         'flow_control_received_discarded_packets_per_sec': 'int',
+        'received_packets_per_sec': 'int',
         'flow_control_received_lossless_bytes_per_sec': 'int',
         'flow_control_received_pause_frames_per_sec': 'int',
-        'flow_control_transmitted_congestion_packets_per_sec': 'int',
-        'flow_control_transmitted_discarded_packets_per_sec': 'int',
-        'flow_control_transmitted_lossless_bytes_per_sec': 'int',
-        'flow_control_transmitted_pause_frames_per_sec': 'int',
+        'received_crc_errors_per_sec': 'int',
         'rdma_received_req_cqe_errors_per_sec': 'int',
-        'rdma_received_sequence_errors_per_sec': 'int',
-        'rdma_transmitted_local_ack_timeout_errors_per_sec': 'int'
+        'transmitted_packets_per_sec': 'int',
+        'transmitted_bytes_per_sec': 'int',
+        'flow_control_received_congestion_packets_per_sec': 'int',
+        'received_frame_errors_per_sec': 'int',
+        'other_errors_per_sec': 'int',
+        'total_errors_per_sec': 'int',
+        'flow_control_transmitted_discarded_packets_per_sec': 'int'
     }
 
     attribute_map = {
-        'other_errors_per_sec': 'other_errors_per_sec',
-        'received_bytes_per_sec': 'received_bytes_per_sec',
-        'received_crc_errors_per_sec': 'received_crc_errors_per_sec',
-        'received_frame_errors_per_sec': 'received_frame_errors_per_sec',
-        'received_packets_per_sec': 'received_packets_per_sec',
-        'total_errors_per_sec': 'total_errors_per_sec',
-        'transmitted_bytes_per_sec': 'transmitted_bytes_per_sec',
-        'transmitted_carrier_errors_per_sec': 'transmitted_carrier_errors_per_sec',
+        'flow_control_transmitted_lossless_bytes_per_sec': 'flow_control_transmitted_lossless_bytes_per_sec',
         'transmitted_dropped_errors_per_sec': 'transmitted_dropped_errors_per_sec',
-        'transmitted_packets_per_sec': 'transmitted_packets_per_sec',
-        'flow_control_received_congestion_packets_per_sec': 'flow_control_received_congestion_packets_per_sec',
+        'rdma_received_sequence_errors_per_sec': 'rdma_received_sequence_errors_per_sec',
+        'transmitted_carrier_errors_per_sec': 'transmitted_carrier_errors_per_sec',
+        'flow_control_transmitted_pause_frames_per_sec': 'flow_control_transmitted_pause_frames_per_sec',
+        'received_bytes_per_sec': 'received_bytes_per_sec',
+        'flow_control_transmitted_congestion_packets_per_sec': 'flow_control_transmitted_congestion_packets_per_sec',
+        'rdma_transmitted_local_ack_timeout_errors_per_sec': 'rdma_transmitted_local_ack_timeout_errors_per_sec',
         'flow_control_received_discarded_packets_per_sec': 'flow_control_received_discarded_packets_per_sec',
+        'received_packets_per_sec': 'received_packets_per_sec',
         'flow_control_received_lossless_bytes_per_sec': 'flow_control_received_lossless_bytes_per_sec',
         'flow_control_received_pause_frames_per_sec': 'flow_control_received_pause_frames_per_sec',
-        'flow_control_transmitted_congestion_packets_per_sec': 'flow_control_transmitted_congestion_packets_per_sec',
-        'flow_control_transmitted_discarded_packets_per_sec': 'flow_control_transmitted_discarded_packets_per_sec',
-        'flow_control_transmitted_lossless_bytes_per_sec': 'flow_control_transmitted_lossless_bytes_per_sec',
-        'flow_control_transmitted_pause_frames_per_sec': 'flow_control_transmitted_pause_frames_per_sec',
+        'received_crc_errors_per_sec': 'received_crc_errors_per_sec',
         'rdma_received_req_cqe_errors_per_sec': 'rdma_received_req_cqe_errors_per_sec',
-        'rdma_received_sequence_errors_per_sec': 'rdma_received_sequence_errors_per_sec',
-        'rdma_transmitted_local_ack_timeout_errors_per_sec': 'rdma_transmitted_local_ack_timeout_errors_per_sec'
+        'transmitted_packets_per_sec': 'transmitted_packets_per_sec',
+        'transmitted_bytes_per_sec': 'transmitted_bytes_per_sec',
+        'flow_control_received_congestion_packets_per_sec': 'flow_control_received_congestion_packets_per_sec',
+        'received_frame_errors_per_sec': 'received_frame_errors_per_sec',
+        'other_errors_per_sec': 'other_errors_per_sec',
+        'total_errors_per_sec': 'total_errors_per_sec',
+        'flow_control_transmitted_discarded_packets_per_sec': 'flow_control_transmitted_discarded_packets_per_sec'
     }
 
     required_args = {
@@ -82,161 +82,161 @@ class NetworkInterfacePerformanceEth(object):
 
     def __init__(
         self,
-        other_errors_per_sec=None,  # type: int
-        received_bytes_per_sec=None,  # type: int
-        received_crc_errors_per_sec=None,  # type: int
-        received_frame_errors_per_sec=None,  # type: int
-        received_packets_per_sec=None,  # type: int
-        total_errors_per_sec=None,  # type: int
-        transmitted_bytes_per_sec=None,  # type: int
-        transmitted_carrier_errors_per_sec=None,  # type: int
+        flow_control_transmitted_lossless_bytes_per_sec=None,  # type: int
         transmitted_dropped_errors_per_sec=None,  # type: int
-        transmitted_packets_per_sec=None,  # type: int
-        flow_control_received_congestion_packets_per_sec=None,  # type: int
+        rdma_received_sequence_errors_per_sec=None,  # type: int
+        transmitted_carrier_errors_per_sec=None,  # type: int
+        flow_control_transmitted_pause_frames_per_sec=None,  # type: int
+        received_bytes_per_sec=None,  # type: int
+        flow_control_transmitted_congestion_packets_per_sec=None,  # type: int
+        rdma_transmitted_local_ack_timeout_errors_per_sec=None,  # type: int
         flow_control_received_discarded_packets_per_sec=None,  # type: int
+        received_packets_per_sec=None,  # type: int
         flow_control_received_lossless_bytes_per_sec=None,  # type: int
         flow_control_received_pause_frames_per_sec=None,  # type: int
-        flow_control_transmitted_congestion_packets_per_sec=None,  # type: int
-        flow_control_transmitted_discarded_packets_per_sec=None,  # type: int
-        flow_control_transmitted_lossless_bytes_per_sec=None,  # type: int
-        flow_control_transmitted_pause_frames_per_sec=None,  # type: int
+        received_crc_errors_per_sec=None,  # type: int
         rdma_received_req_cqe_errors_per_sec=None,  # type: int
-        rdma_received_sequence_errors_per_sec=None,  # type: int
-        rdma_transmitted_local_ack_timeout_errors_per_sec=None,  # type: int
+        transmitted_packets_per_sec=None,  # type: int
+        transmitted_bytes_per_sec=None,  # type: int
+        flow_control_received_congestion_packets_per_sec=None,  # type: int
+        received_frame_errors_per_sec=None,  # type: int
+        other_errors_per_sec=None,  # type: int
+        total_errors_per_sec=None,  # type: int
+        flow_control_transmitted_discarded_packets_per_sec=None,  # type: int
     ):
         """
         Keyword args:
-            other_errors_per_sec (int): This field has been deprecated. Since Purity version 6.6.8, this will always return `null`. The sum of unspecified reception and transmission errors per second.
-            received_bytes_per_sec (int): Bytes received per second.
-            received_crc_errors_per_sec (int): Reception CRC errors per second.
-            received_frame_errors_per_sec (int): Received packet frame errors per second.
-            received_packets_per_sec (int): Packets received per second.
-            total_errors_per_sec (int): The sum of all reception and transmission errors per second.
-            transmitted_bytes_per_sec (int): Bytes transmitted per second.
-            transmitted_carrier_errors_per_sec (int): Transmission carrier errors per second.
-            transmitted_dropped_errors_per_sec (int): Transmitted packets dropped per second.
-            transmitted_packets_per_sec (int): Packets transmitted per second.
-            flow_control_received_congestion_packets_per_sec (int): Number of congestion control packets received per second.
-            flow_control_received_discarded_packets_per_sec (int): Number of received packets that were physically discarded by the NIC per second due to errors or other reasons.
-            flow_control_received_lossless_bytes_per_sec (int): Bytes received per second with lossless flow control settings.
-            flow_control_received_pause_frames_per_sec (int): Received pause frames per second.
-            flow_control_transmitted_congestion_packets_per_sec (int): Number of congestion control packets transmitted per second.
-            flow_control_transmitted_discarded_packets_per_sec (int): Number of transmitted packets that were physically discarded by the NIC per second due to errors or other reasons.
-            flow_control_transmitted_lossless_bytes_per_sec (int): Bytes transmitted per second with lossless flow control settings.
-            flow_control_transmitted_pause_frames_per_sec (int): Transmitted pause frames per second.
-            rdma_received_req_cqe_errors_per_sec (int): The number of times port detected RDMA CQEs with error per second.
-            rdma_received_sequence_errors_per_sec (int): The number of received RDMA packet sequence errors per second.
-            rdma_transmitted_local_ack_timeout_errors_per_sec (int): The number of times RDMA ack timer expired for QPs per second.
+            flow_control_transmitted_lossless_bytes_per_sec (int): Bytes transmitted per second with lossless flow control settings. 
+            transmitted_dropped_errors_per_sec (int): Transmitted packets dropped per second. 
+            rdma_received_sequence_errors_per_sec (int): The number of received RDMA packet sequence errors per second. 
+            transmitted_carrier_errors_per_sec (int): Transmission carrier errors per second. 
+            flow_control_transmitted_pause_frames_per_sec (int): Transmitted pause frames per second. 
+            received_bytes_per_sec (int): Bytes received per second. 
+            flow_control_transmitted_congestion_packets_per_sec (int): Number of congestion control packets transmitted per second. 
+            rdma_transmitted_local_ack_timeout_errors_per_sec (int): The number of times RDMA ack timer expired for QPs per second. 
+            flow_control_received_discarded_packets_per_sec (int): Number of received packets that were physically discarded by the NIC per second due to errors or other reasons. 
+            received_packets_per_sec (int): Packets received per second. 
+            flow_control_received_lossless_bytes_per_sec (int): Bytes received per second with lossless flow control settings. 
+            flow_control_received_pause_frames_per_sec (int): Received pause frames per second. 
+            received_crc_errors_per_sec (int): Reception CRC errors per second. 
+            rdma_received_req_cqe_errors_per_sec (int): The number of times port detected RDMA CQEs with error per second. 
+            transmitted_packets_per_sec (int): Packets transmitted per second. 
+            transmitted_bytes_per_sec (int): Bytes transmitted per second. 
+            flow_control_received_congestion_packets_per_sec (int): Number of congestion control packets received per second. 
+            received_frame_errors_per_sec (int): Received packet frame errors per second. 
+            other_errors_per_sec (int): This field has been deprecated. Since Purity version 6.6.8, this will always return `null`. The sum of unspecified reception and transmission errors per second. 
+            total_errors_per_sec (int): The sum of all reception and transmission errors per second. 
+            flow_control_transmitted_discarded_packets_per_sec (int): Number of transmitted packets that were physically discarded by the NIC per second due to errors or other reasons. 
         """
-        if other_errors_per_sec is not None:
-            self.other_errors_per_sec = other_errors_per_sec
-        if received_bytes_per_sec is not None:
-            self.received_bytes_per_sec = received_bytes_per_sec
-        if received_crc_errors_per_sec is not None:
-            self.received_crc_errors_per_sec = received_crc_errors_per_sec
-        if received_frame_errors_per_sec is not None:
-            self.received_frame_errors_per_sec = received_frame_errors_per_sec
-        if received_packets_per_sec is not None:
-            self.received_packets_per_sec = received_packets_per_sec
-        if total_errors_per_sec is not None:
-            self.total_errors_per_sec = total_errors_per_sec
-        if transmitted_bytes_per_sec is not None:
-            self.transmitted_bytes_per_sec = transmitted_bytes_per_sec
-        if transmitted_carrier_errors_per_sec is not None:
-            self.transmitted_carrier_errors_per_sec = transmitted_carrier_errors_per_sec
+        if flow_control_transmitted_lossless_bytes_per_sec is not None:
+            self.flow_control_transmitted_lossless_bytes_per_sec = flow_control_transmitted_lossless_bytes_per_sec
         if transmitted_dropped_errors_per_sec is not None:
             self.transmitted_dropped_errors_per_sec = transmitted_dropped_errors_per_sec
-        if transmitted_packets_per_sec is not None:
-            self.transmitted_packets_per_sec = transmitted_packets_per_sec
-        if flow_control_received_congestion_packets_per_sec is not None:
-            self.flow_control_received_congestion_packets_per_sec = flow_control_received_congestion_packets_per_sec
+        if rdma_received_sequence_errors_per_sec is not None:
+            self.rdma_received_sequence_errors_per_sec = rdma_received_sequence_errors_per_sec
+        if transmitted_carrier_errors_per_sec is not None:
+            self.transmitted_carrier_errors_per_sec = transmitted_carrier_errors_per_sec
+        if flow_control_transmitted_pause_frames_per_sec is not None:
+            self.flow_control_transmitted_pause_frames_per_sec = flow_control_transmitted_pause_frames_per_sec
+        if received_bytes_per_sec is not None:
+            self.received_bytes_per_sec = received_bytes_per_sec
+        if flow_control_transmitted_congestion_packets_per_sec is not None:
+            self.flow_control_transmitted_congestion_packets_per_sec = flow_control_transmitted_congestion_packets_per_sec
+        if rdma_transmitted_local_ack_timeout_errors_per_sec is not None:
+            self.rdma_transmitted_local_ack_timeout_errors_per_sec = rdma_transmitted_local_ack_timeout_errors_per_sec
         if flow_control_received_discarded_packets_per_sec is not None:
             self.flow_control_received_discarded_packets_per_sec = flow_control_received_discarded_packets_per_sec
+        if received_packets_per_sec is not None:
+            self.received_packets_per_sec = received_packets_per_sec
         if flow_control_received_lossless_bytes_per_sec is not None:
             self.flow_control_received_lossless_bytes_per_sec = flow_control_received_lossless_bytes_per_sec
         if flow_control_received_pause_frames_per_sec is not None:
             self.flow_control_received_pause_frames_per_sec = flow_control_received_pause_frames_per_sec
-        if flow_control_transmitted_congestion_packets_per_sec is not None:
-            self.flow_control_transmitted_congestion_packets_per_sec = flow_control_transmitted_congestion_packets_per_sec
-        if flow_control_transmitted_discarded_packets_per_sec is not None:
-            self.flow_control_transmitted_discarded_packets_per_sec = flow_control_transmitted_discarded_packets_per_sec
-        if flow_control_transmitted_lossless_bytes_per_sec is not None:
-            self.flow_control_transmitted_lossless_bytes_per_sec = flow_control_transmitted_lossless_bytes_per_sec
-        if flow_control_transmitted_pause_frames_per_sec is not None:
-            self.flow_control_transmitted_pause_frames_per_sec = flow_control_transmitted_pause_frames_per_sec
+        if received_crc_errors_per_sec is not None:
+            self.received_crc_errors_per_sec = received_crc_errors_per_sec
         if rdma_received_req_cqe_errors_per_sec is not None:
             self.rdma_received_req_cqe_errors_per_sec = rdma_received_req_cqe_errors_per_sec
-        if rdma_received_sequence_errors_per_sec is not None:
-            self.rdma_received_sequence_errors_per_sec = rdma_received_sequence_errors_per_sec
-        if rdma_transmitted_local_ack_timeout_errors_per_sec is not None:
-            self.rdma_transmitted_local_ack_timeout_errors_per_sec = rdma_transmitted_local_ack_timeout_errors_per_sec
+        if transmitted_packets_per_sec is not None:
+            self.transmitted_packets_per_sec = transmitted_packets_per_sec
+        if transmitted_bytes_per_sec is not None:
+            self.transmitted_bytes_per_sec = transmitted_bytes_per_sec
+        if flow_control_received_congestion_packets_per_sec is not None:
+            self.flow_control_received_congestion_packets_per_sec = flow_control_received_congestion_packets_per_sec
+        if received_frame_errors_per_sec is not None:
+            self.received_frame_errors_per_sec = received_frame_errors_per_sec
+        if other_errors_per_sec is not None:
+            self.other_errors_per_sec = other_errors_per_sec
+        if total_errors_per_sec is not None:
+            self.total_errors_per_sec = total_errors_per_sec
+        if flow_control_transmitted_discarded_packets_per_sec is not None:
+            self.flow_control_transmitted_discarded_packets_per_sec = flow_control_transmitted_discarded_packets_per_sec
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
             raise KeyError("Invalid key `{}` for `NetworkInterfacePerformanceEth`".format(key))
-        if key == "other_errors_per_sec" and value is not None:
+        if key == "flow_control_transmitted_lossless_bytes_per_sec" and value is not None:
             if value < 0:
-                raise ValueError("Invalid value for `other_errors_per_sec`, must be a value greater than or equal to `0`")
-        if key == "received_bytes_per_sec" and value is not None:
-            if value < 0:
-                raise ValueError("Invalid value for `received_bytes_per_sec`, must be a value greater than or equal to `0`")
-        if key == "received_crc_errors_per_sec" and value is not None:
-            if value < 0:
-                raise ValueError("Invalid value for `received_crc_errors_per_sec`, must be a value greater than or equal to `0`")
-        if key == "received_frame_errors_per_sec" and value is not None:
-            if value < 0:
-                raise ValueError("Invalid value for `received_frame_errors_per_sec`, must be a value greater than or equal to `0`")
-        if key == "received_packets_per_sec" and value is not None:
-            if value < 0:
-                raise ValueError("Invalid value for `received_packets_per_sec`, must be a value greater than or equal to `0`")
-        if key == "total_errors_per_sec" and value is not None:
-            if value < 0:
-                raise ValueError("Invalid value for `total_errors_per_sec`, must be a value greater than or equal to `0`")
-        if key == "transmitted_bytes_per_sec" and value is not None:
-            if value < 0:
-                raise ValueError("Invalid value for `transmitted_bytes_per_sec`, must be a value greater than or equal to `0`")
-        if key == "transmitted_carrier_errors_per_sec" and value is not None:
-            if value < 0:
-                raise ValueError("Invalid value for `transmitted_carrier_errors_per_sec`, must be a value greater than or equal to `0`")
+                raise ValueError("Invalid value for `flow_control_transmitted_lossless_bytes_per_sec`, must be a value greater than or equal to `0`")
         if key == "transmitted_dropped_errors_per_sec" and value is not None:
             if value < 0:
                 raise ValueError("Invalid value for `transmitted_dropped_errors_per_sec`, must be a value greater than or equal to `0`")
-        if key == "transmitted_packets_per_sec" and value is not None:
+        if key == "rdma_received_sequence_errors_per_sec" and value is not None:
             if value < 0:
-                raise ValueError("Invalid value for `transmitted_packets_per_sec`, must be a value greater than or equal to `0`")
-        if key == "flow_control_received_congestion_packets_per_sec" and value is not None:
+                raise ValueError("Invalid value for `rdma_received_sequence_errors_per_sec`, must be a value greater than or equal to `0`")
+        if key == "transmitted_carrier_errors_per_sec" and value is not None:
             if value < 0:
-                raise ValueError("Invalid value for `flow_control_received_congestion_packets_per_sec`, must be a value greater than or equal to `0`")
+                raise ValueError("Invalid value for `transmitted_carrier_errors_per_sec`, must be a value greater than or equal to `0`")
+        if key == "flow_control_transmitted_pause_frames_per_sec" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `flow_control_transmitted_pause_frames_per_sec`, must be a value greater than or equal to `0`")
+        if key == "received_bytes_per_sec" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `received_bytes_per_sec`, must be a value greater than or equal to `0`")
+        if key == "flow_control_transmitted_congestion_packets_per_sec" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `flow_control_transmitted_congestion_packets_per_sec`, must be a value greater than or equal to `0`")
+        if key == "rdma_transmitted_local_ack_timeout_errors_per_sec" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `rdma_transmitted_local_ack_timeout_errors_per_sec`, must be a value greater than or equal to `0`")
         if key == "flow_control_received_discarded_packets_per_sec" and value is not None:
             if value < 0:
                 raise ValueError("Invalid value for `flow_control_received_discarded_packets_per_sec`, must be a value greater than or equal to `0`")
+        if key == "received_packets_per_sec" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `received_packets_per_sec`, must be a value greater than or equal to `0`")
         if key == "flow_control_received_lossless_bytes_per_sec" and value is not None:
             if value < 0:
                 raise ValueError("Invalid value for `flow_control_received_lossless_bytes_per_sec`, must be a value greater than or equal to `0`")
         if key == "flow_control_received_pause_frames_per_sec" and value is not None:
             if value < 0:
                 raise ValueError("Invalid value for `flow_control_received_pause_frames_per_sec`, must be a value greater than or equal to `0`")
-        if key == "flow_control_transmitted_congestion_packets_per_sec" and value is not None:
+        if key == "received_crc_errors_per_sec" and value is not None:
             if value < 0:
-                raise ValueError("Invalid value for `flow_control_transmitted_congestion_packets_per_sec`, must be a value greater than or equal to `0`")
-        if key == "flow_control_transmitted_discarded_packets_per_sec" and value is not None:
-            if value < 0:
-                raise ValueError("Invalid value for `flow_control_transmitted_discarded_packets_per_sec`, must be a value greater than or equal to `0`")
-        if key == "flow_control_transmitted_lossless_bytes_per_sec" and value is not None:
-            if value < 0:
-                raise ValueError("Invalid value for `flow_control_transmitted_lossless_bytes_per_sec`, must be a value greater than or equal to `0`")
-        if key == "flow_control_transmitted_pause_frames_per_sec" and value is not None:
-            if value < 0:
-                raise ValueError("Invalid value for `flow_control_transmitted_pause_frames_per_sec`, must be a value greater than or equal to `0`")
+                raise ValueError("Invalid value for `received_crc_errors_per_sec`, must be a value greater than or equal to `0`")
         if key == "rdma_received_req_cqe_errors_per_sec" and value is not None:
             if value < 0:
                 raise ValueError("Invalid value for `rdma_received_req_cqe_errors_per_sec`, must be a value greater than or equal to `0`")
-        if key == "rdma_received_sequence_errors_per_sec" and value is not None:
+        if key == "transmitted_packets_per_sec" and value is not None:
             if value < 0:
-                raise ValueError("Invalid value for `rdma_received_sequence_errors_per_sec`, must be a value greater than or equal to `0`")
-        if key == "rdma_transmitted_local_ack_timeout_errors_per_sec" and value is not None:
+                raise ValueError("Invalid value for `transmitted_packets_per_sec`, must be a value greater than or equal to `0`")
+        if key == "transmitted_bytes_per_sec" and value is not None:
             if value < 0:
-                raise ValueError("Invalid value for `rdma_transmitted_local_ack_timeout_errors_per_sec`, must be a value greater than or equal to `0`")
+                raise ValueError("Invalid value for `transmitted_bytes_per_sec`, must be a value greater than or equal to `0`")
+        if key == "flow_control_received_congestion_packets_per_sec" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `flow_control_received_congestion_packets_per_sec`, must be a value greater than or equal to `0`")
+        if key == "received_frame_errors_per_sec" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `received_frame_errors_per_sec`, must be a value greater than or equal to `0`")
+        if key == "other_errors_per_sec" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `other_errors_per_sec`, must be a value greater than or equal to `0`")
+        if key == "total_errors_per_sec" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `total_errors_per_sec`, must be a value greater than or equal to `0`")
+        if key == "flow_control_transmitted_discarded_packets_per_sec" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `flow_control_transmitted_discarded_packets_per_sec`, must be a value greater than or equal to `0`")
         self.__dict__[key] = value
 
     def __getattribute__(self, item):

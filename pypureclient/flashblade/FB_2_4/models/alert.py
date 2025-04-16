@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.4, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.4, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.4
     
@@ -32,41 +32,41 @@ class Alert(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
-        'action': 'str',
-        'code': 'int',
-        'component_name': 'str',
-        'component_type': 'str',
-        'created': 'int',
-        'description': 'str',
-        'flagged': 'bool',
-        'index': 'int',
-        'knowledge_base_url': 'str',
-        'notified': 'int',
         'severity': 'str',
-        'state': 'str',
         'summary': 'str',
-        'updated': 'int',
-        'variables': 'dict(str, str)'
+        'variables': 'dict(str, str)',
+        'code': 'int',
+        'knowledge_base_url': 'str',
+        'created': 'int',
+        'notified': 'int',
+        'component_name': 'str',
+        'description': 'str',
+        'index': 'int',
+        'component_type': 'str',
+        'flagged': 'bool',
+        'action': 'str',
+        'state': 'str',
+        'updated': 'int'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
-        'action': 'action',
-        'code': 'code',
-        'component_name': 'component_name',
-        'component_type': 'component_type',
-        'created': 'created',
-        'description': 'description',
-        'flagged': 'flagged',
-        'index': 'index',
-        'knowledge_base_url': 'knowledge_base_url',
-        'notified': 'notified',
         'severity': 'severity',
-        'state': 'state',
         'summary': 'summary',
-        'updated': 'updated',
-        'variables': 'variables'
+        'variables': 'variables',
+        'code': 'code',
+        'knowledge_base_url': 'knowledge_base_url',
+        'created': 'created',
+        'notified': 'notified',
+        'component_name': 'component_name',
+        'description': 'description',
+        'index': 'index',
+        'component_type': 'component_type',
+        'flagged': 'flagged',
+        'action': 'action',
+        'state': 'state',
+        'updated': 'updated'
     }
 
     required_args = {
@@ -76,76 +76,76 @@ class Alert(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
-        action=None,  # type: str
-        code=None,  # type: int
-        component_name=None,  # type: str
-        component_type=None,  # type: str
-        created=None,  # type: int
-        description=None,  # type: str
-        flagged=None,  # type: bool
-        index=None,  # type: int
-        knowledge_base_url=None,  # type: str
-        notified=None,  # type: int
         severity=None,  # type: str
-        state=None,  # type: str
         summary=None,  # type: str
-        updated=None,  # type: int
         variables=None,  # type: dict(str, str)
+        code=None,  # type: int
+        knowledge_base_url=None,  # type: str
+        created=None,  # type: int
+        notified=None,  # type: int
+        component_name=None,  # type: str
+        description=None,  # type: str
+        index=None,  # type: int
+        component_type=None,  # type: str
+        flagged=None,  # type: bool
+        action=None,  # type: str
+        state=None,  # type: str
+        updated=None,  # type: int
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            action (str): The action of the alert.
-            code (int): Alert code.
-            component_name (str): The component name of the alert.
-            component_type (str): The component type of the alert.
-            created (int): The creation timestamp of the alert.
-            description (str): The description of the alert.
-            flagged (bool): Flagged state of the alert.
-            index (int): The unique index of the alert.
-            knowledge_base_url (str): URL of the relevant Knowledge Base page.
-            notified (int): The last notification timestamp of the alert.
-            severity (str): Severity of the alert. Valid values are `info`, `warning`, and `critical`.
-            state (str): The current state of the alert. Valid values are `open`, `closing`, `closed`, and `waiting to downgrade`.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            severity (str): Severity of the alert. Valid values are `info`, `warning`, and `critical`. 
             summary (str): The summary of the alert.
-            updated (int): The last updated timestamp of the alert.
             variables (dict(str, str)): Key-value pairs of additional information of the alert.
+            code (int): Alert code.
+            knowledge_base_url (str): URL of the relevant Knowledge Base page.
+            created (int): The creation timestamp of the alert.
+            notified (int): The last notification timestamp of the alert.
+            component_name (str): The component name of the alert.
+            description (str): The description of the alert.
+            index (int): The unique index of the alert.
+            component_type (str): The component type of the alert.
+            flagged (bool): Flagged state of the alert.
+            action (str): The action of the alert.
+            state (str): The current state of the alert. Valid values are `open`, `closing`, `closed`, and `waiting to downgrade`. 
+            updated (int): The last updated timestamp of the alert.
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
-        if action is not None:
-            self.action = action
-        if code is not None:
-            self.code = code
-        if component_name is not None:
-            self.component_name = component_name
-        if component_type is not None:
-            self.component_type = component_type
-        if created is not None:
-            self.created = created
-        if description is not None:
-            self.description = description
-        if flagged is not None:
-            self.flagged = flagged
-        if index is not None:
-            self.index = index
-        if knowledge_base_url is not None:
-            self.knowledge_base_url = knowledge_base_url
-        if notified is not None:
-            self.notified = notified
         if severity is not None:
             self.severity = severity
-        if state is not None:
-            self.state = state
         if summary is not None:
             self.summary = summary
-        if updated is not None:
-            self.updated = updated
         if variables is not None:
             self.variables = variables
+        if code is not None:
+            self.code = code
+        if knowledge_base_url is not None:
+            self.knowledge_base_url = knowledge_base_url
+        if created is not None:
+            self.created = created
+        if notified is not None:
+            self.notified = notified
+        if component_name is not None:
+            self.component_name = component_name
+        if description is not None:
+            self.description = description
+        if index is not None:
+            self.index = index
+        if component_type is not None:
+            self.component_type = component_type
+        if flagged is not None:
+            self.flagged = flagged
+        if action is not None:
+            self.action = action
+        if state is not None:
+            self.state = state
+        if updated is not None:
+            self.updated = updated
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

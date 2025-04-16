@@ -31,28 +31,28 @@ class NetworkInterfacesPortDetails(object):
     """
     swagger_types = {
         'name': 'str',
-        'interface_type': 'str',
-        'temperature': 'list[NetworkInterfacePortDetailsTemperature]',
-        'voltage': 'list[NetworkInterfacePortDetailsVoltage]',
+        'rx_power': 'list[NetworkInterfacePortDetailsRxPower]',
+        'static': 'NetworkInterfacePortDetailsStatic',
         'tx_bias': 'list[NetworkInterfacePortDetailsTxBias]',
         'tx_power': 'list[NetworkInterfacePortDetailsTxPower]',
-        'rx_power': 'list[NetworkInterfacePortDetailsRxPower]',
-        'tx_fault': 'list[NetworkInterfacePortDetailsTxFault]',
         'rx_los': 'list[NetworkInterfacePortDetailsRxLos]',
-        'static': 'NetworkInterfacePortDetailsStatic'
+        'temperature': 'list[NetworkInterfacePortDetailsTemperature]',
+        'interface_type': 'str',
+        'tx_fault': 'list[NetworkInterfacePortDetailsTxFault]',
+        'voltage': 'list[NetworkInterfacePortDetailsVoltage]'
     }
 
     attribute_map = {
         'name': 'name',
-        'interface_type': 'interface_type',
-        'temperature': 'temperature',
-        'voltage': 'voltage',
+        'rx_power': 'rx_power',
+        'static': 'static',
         'tx_bias': 'tx_bias',
         'tx_power': 'tx_power',
-        'rx_power': 'rx_power',
-        'tx_fault': 'tx_fault',
         'rx_los': 'rx_los',
-        'static': 'static'
+        'temperature': 'temperature',
+        'interface_type': 'interface_type',
+        'tx_fault': 'tx_fault',
+        'voltage': 'voltage'
     }
 
     required_args = {
@@ -61,49 +61,49 @@ class NetworkInterfacesPortDetails(object):
     def __init__(
         self,
         name=None,  # type: str
-        interface_type=None,  # type: str
-        temperature=None,  # type: List[models.NetworkInterfacePortDetailsTemperature]
-        voltage=None,  # type: List[models.NetworkInterfacePortDetailsVoltage]
+        rx_power=None,  # type: List[models.NetworkInterfacePortDetailsRxPower]
+        static=None,  # type: models.NetworkInterfacePortDetailsStatic
         tx_bias=None,  # type: List[models.NetworkInterfacePortDetailsTxBias]
         tx_power=None,  # type: List[models.NetworkInterfacePortDetailsTxPower]
-        rx_power=None,  # type: List[models.NetworkInterfacePortDetailsRxPower]
-        tx_fault=None,  # type: List[models.NetworkInterfacePortDetailsTxFault]
         rx_los=None,  # type: List[models.NetworkInterfacePortDetailsRxLos]
-        static=None,  # type: models.NetworkInterfacePortDetailsStatic
+        temperature=None,  # type: List[models.NetworkInterfacePortDetailsTemperature]
+        interface_type=None,  # type: str
+        tx_fault=None,  # type: List[models.NetworkInterfacePortDetailsTxFault]
+        voltage=None,  # type: List[models.NetworkInterfacePortDetailsVoltage]
     ):
         """
         Keyword args:
-            name (str): A locally unique, system-generated name. The name cannot be modified.
-            interface_type (str): The interface type. Valid values are `eth` and `fc`.
-            temperature (list[NetworkInterfacePortDetailsTemperature]): Displays real-time measurement of transceiver temperature and range. If the transceiver does not support digital diagnostic monitoring, the array is empty.
-            voltage (list[NetworkInterfacePortDetailsVoltage]): Displays real-time measurement of supply voltage and whether it is within range. If the transceiver does not support digital diagnostic monitoring, the array is empty.
-            tx_bias (list[NetworkInterfacePortDetailsTxBias]): Displays real-time measurement of Tx bias current and whether it is within range. For four-lane modules, the array contains a measurement and status for each channel. If the transceiver does not support digital diagnostic monitoring, the array is empty.
-            tx_power (list[NetworkInterfacePortDetailsTxPower]): Displays real-time measurement of Tx output power and whether it is within range. For four-lane modules, the array contains a measurement and status for each channel. If the transceiver does not support digital diagnostic monitoring, the array is empty.
-            rx_power (list[NetworkInterfacePortDetailsRxPower]): Displays real-time measurement of Rx input power and whether it is within range. For four-lane modules, the array contains a measurement and status for each channel. If the transceiver does not support digital diagnostic monitoring, the array is empty.
-            tx_fault (list[NetworkInterfacePortDetailsTxFault]): Displays status flags for Tx Fault. A value of `true` indicates transmitter/laser fault. For four-lane modules, the array contains a flag for each channel. If the transceiver does not support digital diagnostic monitoring, the array is empty.
-            rx_los (list[NetworkInterfacePortDetailsRxLos]): Displays status flags for Rx LOS. A value of `true` indicates Rx Loss-of-Signal. For four-lane modules, the array contains a flag for each channel. If the transceiver does not support digital diagnostic monitoring, the array is empty.
+            name (str): A locally unique, system-generated name. The name cannot be modified. 
+            rx_power (list[NetworkInterfacePortDetailsRxPower]): Displays real-time measurement of Rx input power and whether it is within range. For four-lane modules, the array contains a measurement and status for each channel. If the transceiver does not support digital diagnostic monitoring, the array is empty. 
             static (NetworkInterfacePortDetailsStatic)
+            tx_bias (list[NetworkInterfacePortDetailsTxBias]): Displays real-time measurement of Tx bias current and whether it is within range. For four-lane modules, the array contains a measurement and status for each channel. If the transceiver does not support digital diagnostic monitoring, the array is empty. 
+            tx_power (list[NetworkInterfacePortDetailsTxPower]): Displays real-time measurement of Tx output power and whether it is within range. For four-lane modules, the array contains a measurement and status for each channel. If the transceiver does not support digital diagnostic monitoring, the array is empty. 
+            rx_los (list[NetworkInterfacePortDetailsRxLos]): Displays status flags for Rx LOS. A value of `true` indicates Rx Loss-of-Signal. For four-lane modules, the array contains a flag for each channel. If the transceiver does not support digital diagnostic monitoring, the array is empty. 
+            temperature (list[NetworkInterfacePortDetailsTemperature]): Displays real-time measurement of transceiver temperature and range. If the transceiver does not support digital diagnostic monitoring, the array is empty. 
+            interface_type (str): The interface type. Valid values are `eth` and `fc`. 
+            tx_fault (list[NetworkInterfacePortDetailsTxFault]): Displays status flags for Tx Fault. A value of `true` indicates transmitter/laser fault. For four-lane modules, the array contains a flag for each channel.  If the transceiver does not support digital diagnostic monitoring, the array is empty. 
+            voltage (list[NetworkInterfacePortDetailsVoltage]): Displays real-time measurement of supply voltage and whether it is within range. If the transceiver does not support digital diagnostic monitoring, the array is empty. 
         """
         if name is not None:
             self.name = name
-        if interface_type is not None:
-            self.interface_type = interface_type
-        if temperature is not None:
-            self.temperature = temperature
-        if voltage is not None:
-            self.voltage = voltage
+        if rx_power is not None:
+            self.rx_power = rx_power
+        if static is not None:
+            self.static = static
         if tx_bias is not None:
             self.tx_bias = tx_bias
         if tx_power is not None:
             self.tx_power = tx_power
-        if rx_power is not None:
-            self.rx_power = rx_power
-        if tx_fault is not None:
-            self.tx_fault = tx_fault
         if rx_los is not None:
             self.rx_los = rx_los
-        if static is not None:
-            self.static = static
+        if temperature is not None:
+            self.temperature = temperature
+        if interface_type is not None:
+            self.interface_type = interface_type
+        if tx_fault is not None:
+            self.tx_fault = tx_fault
+        if voltage is not None:
+            self.voltage = voltage
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -3,7 +3,7 @@
 """
     FlashBlade REST API Client
 
-    A lightweight client for FlashBlade REST API 2.0, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.0, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.0
     
@@ -31,29 +31,29 @@ class BucketReplicaLink(object):
     """
     swagger_types = {
         'id': 'str',
-        'direction': 'Direction',
         'lag': 'int',
         'status_details': 'str',
-        'local_bucket': 'FixedReference',
+        'direction': 'Direction',
         'paused': 'bool',
-        'recovery_point': 'int',
-        'remote': 'FixedReference',
-        'remote_bucket': 'FixedReferenceNameOnly',
         'remote_credentials': 'ReferenceWritable',
+        'local_bucket': 'FixedReference',
+        'recovery_point': 'int',
+        'remote_bucket': 'FixedReferenceNameOnly',
+        'remote': 'FixedReference',
         'status': 'str'
     }
 
     attribute_map = {
         'id': 'id',
-        'direction': 'direction',
         'lag': 'lag',
         'status_details': 'status_details',
-        'local_bucket': 'local_bucket',
+        'direction': 'direction',
         'paused': 'paused',
-        'recovery_point': 'recovery_point',
-        'remote': 'remote',
-        'remote_bucket': 'remote_bucket',
         'remote_credentials': 'remote_credentials',
+        'local_bucket': 'local_bucket',
+        'recovery_point': 'recovery_point',
+        'remote_bucket': 'remote_bucket',
+        'remote': 'remote',
         'status': 'status'
     }
 
@@ -63,51 +63,51 @@ class BucketReplicaLink(object):
     def __init__(
         self,
         id=None,  # type: str
-        direction=None,  # type: models.Direction
         lag=None,  # type: int
         status_details=None,  # type: str
-        local_bucket=None,  # type: models.FixedReference
+        direction=None,  # type: models.Direction
         paused=None,  # type: bool
-        recovery_point=None,  # type: int
-        remote=None,  # type: models.FixedReference
-        remote_bucket=None,  # type: models.FixedReferenceNameOnly
         remote_credentials=None,  # type: models.ReferenceWritable
+        local_bucket=None,  # type: models.FixedReference
+        recovery_point=None,  # type: int
+        remote_bucket=None,  # type: models.FixedReferenceNameOnly
+        remote=None,  # type: models.FixedReference
         status=None,  # type: str
     ):
         """
         Keyword args:
-            id (str): A non-modifiable, globally unique ID chosen by the system.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            lag (int): Duration in milliseconds that represents how far behind the replication target is from the source. This is the time difference between current time and `recovery_point`. 
+            status_details (str): Detailed information about the status of the replica link when it is unhealthy. 
             direction (Direction)
-            lag (int): Duration in milliseconds that represents how far behind the replication target is from the source. This is the time difference between current time and `recovery_point`.
-            status_details (str): Detailed information about the status of the replica link when it is unhealthy.
-            local_bucket (FixedReference): Reference to a local bucket.
             paused (bool): Is the replica link paused?
-            recovery_point (int): Time, in milliseconds since UNIX epoch, where all object changes before this time are guaranteed to have been replicated. Changes after this time may have been replicated.
-            remote (FixedReference): Reference to the associated remote, which can either be a `target` or remote `array`. If it is an `array`, then the `resource-type` field will not be populated.
+            remote_credentials (ReferenceWritable): Reference to a remote-credentials object to access the remote bucket. 
+            local_bucket (FixedReference): Reference to a local bucket. 
+            recovery_point (int): Time, in milliseconds since UNIX epoch, where all object changes before this time are guaranteed to have been replicated. Changes after this time may have been replicated. 
             remote_bucket (FixedReferenceNameOnly): Reference to a remote bucket.
-            remote_credentials (ReferenceWritable): Reference to a remote-credentials object to access the remote bucket.
-            status (str): Status of the replica link. Values include `replicating`, `paused`, and `unhealthy`.
+            remote (FixedReference): Reference to the associated remote, which can either be a `target` or remote `array`. If it is an `array`, then the `resource-type` field will not be populated. 
+            status (str): Status of the replica link. Values include `replicating`, `paused`, and `unhealthy`. 
         """
         if id is not None:
             self.id = id
-        if direction is not None:
-            self.direction = direction
         if lag is not None:
             self.lag = lag
         if status_details is not None:
             self.status_details = status_details
-        if local_bucket is not None:
-            self.local_bucket = local_bucket
+        if direction is not None:
+            self.direction = direction
         if paused is not None:
             self.paused = paused
-        if recovery_point is not None:
-            self.recovery_point = recovery_point
-        if remote is not None:
-            self.remote = remote
-        if remote_bucket is not None:
-            self.remote_bucket = remote_bucket
         if remote_credentials is not None:
             self.remote_credentials = remote_credentials
+        if local_bucket is not None:
+            self.local_bucket = local_bucket
+        if recovery_point is not None:
+            self.recovery_point = recovery_point
+        if remote_bucket is not None:
+            self.remote_bucket = remote_bucket
+        if remote is not None:
+            self.remote = remote
         if status is not None:
             self.status = status
 

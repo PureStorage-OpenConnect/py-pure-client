@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.13, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.13, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.13
     
@@ -31,14 +31,14 @@ class AdminSetting(object):
     """
     swagger_types = {
         'lockout_duration': 'int',
-        'max_login_attempts': 'int',
-        'min_password_length': 'int'
+        'min_password_length': 'int',
+        'max_login_attempts': 'int'
     }
 
     attribute_map = {
         'lockout_duration': 'lockout_duration',
-        'max_login_attempts': 'max_login_attempts',
-        'min_password_length': 'min_password_length'
+        'min_password_length': 'min_password_length',
+        'max_login_attempts': 'max_login_attempts'
     }
 
     required_args = {
@@ -47,21 +47,21 @@ class AdminSetting(object):
     def __init__(
         self,
         lockout_duration=None,  # type: int
-        max_login_attempts=None,  # type: int
         min_password_length=None,  # type: int
+        max_login_attempts=None,  # type: int
     ):
         """
         Keyword args:
-            lockout_duration (int): The lockout duration, in milliseconds, if a user has reached the maximum number of login attempts. Ranges from 1 second to 90 days. Default value is `null`. Use 0 to reset the value to `null`.
-            max_login_attempts (int): The maximum number of failed login attempts allowed before the user is locked out. Default value is `null`. Use 0 to reset the value to `null`.
-            min_password_length (int): The minimum password length. If not specified, defaults to 1 character.
+            lockout_duration (int): The lockout duration, in milliseconds, if a user has reached the maximum number of login attempts. Ranges from 1 second to 90 days. Default value is `null`. Use 0 to reset the value to `null`. 
+            min_password_length (int): The minimum password length. If not specified, defaults to 1 character. 
+            max_login_attempts (int): The maximum number of failed login attempts allowed before the user is locked out. Default value is `null`. Use 0 to reset the value to `null`. 
         """
         if lockout_duration is not None:
             self.lockout_duration = lockout_duration
-        if max_login_attempts is not None:
-            self.max_login_attempts = max_login_attempts
         if min_password_length is not None:
             self.min_password_length = min_password_length
+        if max_login_attempts is not None:
+            self.max_login_attempts = max_login_attempts
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
@@ -71,16 +71,16 @@ class AdminSetting(object):
                 raise ValueError("Invalid value for `lockout_duration`, value must be less than or equal to `7776000000`")
             if value < 0:
                 raise ValueError("Invalid value for `lockout_duration`, must be a value greater than or equal to `0`")
-        if key == "max_login_attempts" and value is not None:
-            if value > 100:
-                raise ValueError("Invalid value for `max_login_attempts`, value must be less than or equal to `100`")
-            if value < 0:
-                raise ValueError("Invalid value for `max_login_attempts`, must be a value greater than or equal to `0`")
         if key == "min_password_length" and value is not None:
             if value > 100:
                 raise ValueError("Invalid value for `min_password_length`, value must be less than or equal to `100`")
             if value < 1:
                 raise ValueError("Invalid value for `min_password_length`, must be a value greater than or equal to `1`")
+        if key == "max_login_attempts" and value is not None:
+            if value > 100:
+                raise ValueError("Invalid value for `max_login_attempts`, value must be less than or equal to `100`")
+            if value < 0:
+                raise ValueError("Invalid value for `max_login_attempts`, must be a value greater than or equal to `0`")
         self.__dict__[key] = value
 
     def __getattribute__(self, item):

@@ -32,15 +32,15 @@ class PresetWorkloadConstraintsInteger(object):
     swagger_types = {
         'allowed_values': 'list[int]',
         'default': 'int',
-        'minimum': 'int',
-        'maximum': 'int'
+        'maximum': 'int',
+        'minimum': 'int'
     }
 
     attribute_map = {
         'allowed_values': 'allowed_values',
         'default': 'default',
-        'minimum': 'minimum',
-        'maximum': 'maximum'
+        'maximum': 'maximum',
+        'minimum': 'minimum'
     }
 
     required_args = {
@@ -50,24 +50,24 @@ class PresetWorkloadConstraintsInteger(object):
         self,
         allowed_values=None,  # type: List[int]
         default=None,  # type: int
-        minimum=None,  # type: int
         maximum=None,  # type: int
+        minimum=None,  # type: int
     ):
         """
         Keyword args:
-            allowed_values (list[int]): The valid values that can be supplied to the parameter. A parameter that collects the number of volumes to provision might, for example, limit the allowed values to a few fixed options. Supports up to five values.
-            default (int): The default value to use if no value is provided. Must be present in `allowed_values`, if set. Must comply with `minimum`, if set. Must comply with `maximum`, if set.
-            minimum (int): The minimum acceptable value, inclusive.
+            allowed_values (list[int]): The valid values that can be supplied to the parameter. A parameter that collects the number of volumes to provision might, for example, limit the allowed values to a few fixed options. Supports up to five values. 
+            default (int): The default value to use if no value is provided. Must be present in `allowed_values`, if set. Must comply with `minimum`, if set. Must comply with `maximum`, if set. 
             maximum (int): The maximum acceptable value, inclusive.
+            minimum (int): The minimum acceptable value, inclusive.
         """
         if allowed_values is not None:
             self.allowed_values = allowed_values
         if default is not None:
             self.default = default
-        if minimum is not None:
-            self.minimum = minimum
         if maximum is not None:
             self.maximum = maximum
+        if minimum is not None:
+            self.minimum = minimum
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

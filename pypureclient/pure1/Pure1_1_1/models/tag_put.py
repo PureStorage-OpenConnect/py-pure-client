@@ -3,7 +3,7 @@
 """
     Pure1 Public REST API
 
-    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)  The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
+    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)   The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
 
     OpenAPI spec version: 1.1
     
@@ -30,13 +30,13 @@ class TagPut(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'key': 'str',
-        'value': 'str'
+        'value': 'str',
+        'key': 'str'
     }
 
     attribute_map = {
-        'key': 'key',
-        'value': 'value'
+        'value': 'value',
+        'key': 'key'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class TagPut(object):
 
     def __init__(
         self,
-        key=None,  # type: str
         value=None,  # type: str
+        key=None,  # type: str
     ):
         """
         Keyword args:
-            key (str): Key of the tag.
             value (str): Value of the tag.
+            key (str): Key of the tag.
         """
-        if key is not None:
-            self.key = key
         if value is not None:
             self.value = value
+        if key is not None:
+            self.key = key
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

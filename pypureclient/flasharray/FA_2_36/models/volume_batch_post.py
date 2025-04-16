@@ -31,12 +31,12 @@ class VolumeBatchPost(object):
     """
     swagger_types = {
         'destroyed': 'bool',
+        'protocol_endpoint': 'ProtocolEndpoint',
         'provisioned': 'int',
         'qos': 'Qos',
-        'priority_adjustment': 'PriorityAdjustment',
-        'source': 'Reference',
         'subtype': 'str',
-        'protocol_endpoint': 'ProtocolEndpoint',
+        'source': 'Reference',
+        'priority_adjustment': 'PriorityAdjustment',
         'add_to_protection_groups': 'list[Reference]',
         'name': 'str',
         'tags': 'list[Tag]'
@@ -44,12 +44,12 @@ class VolumeBatchPost(object):
 
     attribute_map = {
         'destroyed': 'destroyed',
+        'protocol_endpoint': 'protocol_endpoint',
         'provisioned': 'provisioned',
         'qos': 'qos',
-        'priority_adjustment': 'priority_adjustment',
-        'source': 'source',
         'subtype': 'subtype',
-        'protocol_endpoint': 'protocol_endpoint',
+        'source': 'source',
+        'priority_adjustment': 'priority_adjustment',
         'add_to_protection_groups': 'add_to_protection_groups',
         'name': 'name',
         'tags': 'tags'
@@ -61,43 +61,43 @@ class VolumeBatchPost(object):
     def __init__(
         self,
         destroyed=None,  # type: bool
+        protocol_endpoint=None,  # type: models.ProtocolEndpoint
         provisioned=None,  # type: int
         qos=None,  # type: models.Qos
-        priority_adjustment=None,  # type: models.PriorityAdjustment
-        source=None,  # type: models.Reference
         subtype=None,  # type: str
-        protocol_endpoint=None,  # type: models.ProtocolEndpoint
+        source=None,  # type: models.Reference
+        priority_adjustment=None,  # type: models.PriorityAdjustment
         add_to_protection_groups=None,  # type: List[models.Reference]
         name=None,  # type: str
         tags=None,  # type: List[models.Tag]
     ):
         """
         Keyword args:
-            destroyed (bool): If set to `true`, destroys a resource. Once set to `true`, the `time_remaining` value will display the amount of time left until the destroyed resource is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed resource can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the resource is permanently eradicated and can no longer be recovered.
-            provisioned (int): Sets the virtual size of the volume, measured in bytes.
+            destroyed (bool): If set to `true`, destroys a resource. Once set to `true`, the `time_remaining` value will display the amount of time left until the destroyed resource is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed resource can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed,  the resource is permanently eradicated and can no longer be recovered. 
+            protocol_endpoint (ProtocolEndpoint): Sets the properties that are specific to protocol endpoints. This can only be used in conjunction to `subtype=protocol_endpoint`. 
+            provisioned (int): Sets the virtual size of the volume, measured in bytes. 
             qos (Qos): Sets QoS limits.
-            priority_adjustment (PriorityAdjustment): Adjusts volume priority.
+            subtype (str): The type of volume. Valid values are `protocol_endpoint` and `regular`. 
             source (Reference): The source volume of a volume copy.
-            subtype (str): The type of volume. Valid values are `protocol_endpoint` and `regular`.
-            protocol_endpoint (ProtocolEndpoint): Sets the properties that are specific to protocol endpoints. This can only be used in conjunction to `subtype=protocol_endpoint`.
-            add_to_protection_groups (list[Reference]): Specifies a list of protection groups that will protect the volume.
-            name (str): Specifies the name of the volume.
-            tags (list[Tag]): Specifies the list of tags to be upserted on this volume.
+            priority_adjustment (PriorityAdjustment): Adjusts volume priority.
+            add_to_protection_groups (list[Reference]): Specifies a list of protection groups that will protect the volume. 
+            name (str): Specifies the name of the volume. 
+            tags (list[Tag]): Specifies the list of tags to be upserted on this volume. 
         """
         if destroyed is not None:
             self.destroyed = destroyed
+        if protocol_endpoint is not None:
+            self.protocol_endpoint = protocol_endpoint
         if provisioned is not None:
             self.provisioned = provisioned
         if qos is not None:
             self.qos = qos
-        if priority_adjustment is not None:
-            self.priority_adjustment = priority_adjustment
-        if source is not None:
-            self.source = source
         if subtype is not None:
             self.subtype = subtype
-        if protocol_endpoint is not None:
-            self.protocol_endpoint = protocol_endpoint
+        if source is not None:
+            self.source = source
+        if priority_adjustment is not None:
+            self.priority_adjustment = priority_adjustment
         if add_to_protection_groups is not None:
             self.add_to_protection_groups = add_to_protection_groups
         if name is not None:

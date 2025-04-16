@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.16
     
@@ -30,19 +30,19 @@ class Saml2SsoSp(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'signing_credential': 'ReferenceWritable',
         'decryption_credential': 'ReferenceWritable',
-        'entity_id': 'str',
+        'signing_credential': 'ReferenceWritable',
+        'metadata_url': 'str',
         'assertion_consumer_url': 'str',
-        'metadata_url': 'str'
+        'entity_id': 'str'
     }
 
     attribute_map = {
-        'signing_credential': 'signing_credential',
         'decryption_credential': 'decryption_credential',
-        'entity_id': 'entity_id',
+        'signing_credential': 'signing_credential',
+        'metadata_url': 'metadata_url',
         'assertion_consumer_url': 'assertion_consumer_url',
-        'metadata_url': 'metadata_url'
+        'entity_id': 'entity_id'
     }
 
     required_args = {
@@ -50,30 +50,30 @@ class Saml2SsoSp(object):
 
     def __init__(
         self,
-        signing_credential=None,  # type: models.ReferenceWritable
         decryption_credential=None,  # type: models.ReferenceWritable
-        entity_id=None,  # type: str
-        assertion_consumer_url=None,  # type: str
+        signing_credential=None,  # type: models.ReferenceWritable
         metadata_url=None,  # type: str
+        assertion_consumer_url=None,  # type: str
+        entity_id=None,  # type: str
     ):
         """
         Keyword args:
-            signing_credential (ReferenceWritable): The credential used by the service provider to sign SAML requests. The credential is managed by the `certificates` endpoint and `purecert` CLI commands.
-            decryption_credential (ReferenceWritable): The credential used by the service provider to decrypt encrypted SAML assertions from the identity provider. The credential is managed by the `certificates` endpoint and `purecert` CLI commands.
-            entity_id (str): A globally unique name for the service provider.
-            assertion_consumer_url (str): The URL where the identity provider will send its SAML response after authenticating a user.
+            decryption_credential (ReferenceWritable): The credential used by the service provider to decrypt encrypted SAML assertions from the identity provider. The credential is managed by the `certificates` endpoint and `purecert` CLI commands. 
+            signing_credential (ReferenceWritable): The credential used by the service provider to sign SAML requests. The credential is managed by the `certificates` endpoint and `purecert` CLI commands. 
             metadata_url (str): The URL of the service provider metadata.
+            assertion_consumer_url (str): The URL where the identity provider will send its SAML response after authenticating a user. 
+            entity_id (str): A globally unique name for the service provider.
         """
-        if signing_credential is not None:
-            self.signing_credential = signing_credential
         if decryption_credential is not None:
             self.decryption_credential = decryption_credential
-        if entity_id is not None:
-            self.entity_id = entity_id
-        if assertion_consumer_url is not None:
-            self.assertion_consumer_url = assertion_consumer_url
+        if signing_credential is not None:
+            self.signing_credential = signing_credential
         if metadata_url is not None:
             self.metadata_url = metadata_url
+        if assertion_consumer_url is not None:
+            self.assertion_consumer_url = assertion_consumer_url
+        if entity_id is not None:
+            self.entity_id = entity_id
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

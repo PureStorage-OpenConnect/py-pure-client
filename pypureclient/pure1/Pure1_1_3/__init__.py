@@ -29,6 +29,7 @@ from .models.subscription_asset_array import SubscriptionAssetArray
 from .models.subscription_asset_array_advanced_space import SubscriptionAssetArrayAdvancedSpace
 from .models.support_contract import SupportContract
 from .models.tag import Tag
+from .models.tag_batch_required import TagBatchRequired
 from .models.tag_put import TagPut
 from .models.tax import Tax
 from .models.time_interval import TimeInterval
@@ -112,6 +113,7 @@ CLASSES_TO_ADD_PROPS = [
     SubscriptionAssetArrayAdvancedSpace,
     SupportContract,
     Tag,
+    TagBatchRequired,
     TagPut,
     Tax,
     TimeInterval,

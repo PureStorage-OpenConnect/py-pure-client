@@ -30,25 +30,25 @@ class SoftwarePatch(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
-        'details': 'str',
+        'id': 'str',
         'description': 'str',
         'progress': 'float',
-        'status': 'str',
+        'details': 'str',
+        'alert_code': 'int',
         'ha_reduction_required': 'bool',
-        'alert_code': 'int'
+        'status': 'str'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
-        'details': 'details',
+        'id': 'id',
         'description': 'description',
         'progress': 'progress',
-        'status': 'status',
+        'details': 'details',
+        'alert_code': 'alert_code',
         'ha_reduction_required': 'ha_reduction_required',
-        'alert_code': 'alert_code'
+        'status': 'status'
     }
 
     required_args = {
@@ -56,42 +56,42 @@ class SoftwarePatch(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
-        details=None,  # type: str
+        id=None,  # type: str
         description=None,  # type: str
         progress=None,  # type: float
-        status=None,  # type: str
-        ha_reduction_required=None,  # type: bool
+        details=None,  # type: str
         alert_code=None,  # type: int
+        ha_reduction_required=None,  # type: bool
+        status=None,  # type: str
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified.
-            name (str): Name of the resource. The name cannot be modified.
-            details (str): The detailed reason for the `status`.
+            name (str): Name of the resource. The name cannot be modified. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified. 
             description (str): The detailed description of the patch.
             progress (float): The progress of the software patch installation, displayed in decimal format.
-            status (str): The status of the software patch installation. Valid values are `available`, `downloaded`, `downloading`, `download_failed`, `installing`, `installed`, `failed`, and `not_applicable`. A status of `available` indicates that the patch is available for download. A status of `downloaded` indicates that the patch has been downloaded and will be installed. A status of `downloading` indicates that the patch is currently downloading. A status of `download_failed` indicates that the download of the patch failed. A status of `installing` indicates that the patch is currently being installed. A status of `installed` indicates that the patch has been installed. A status of `failed` indicates that the patch failed to be installed. A status of `not_applicable` indicates the patch does not need to be installed on the array.
-            ha_reduction_required (bool): If set to `true`, indicates reduction in high availability is required for Software Patch installation. If set to `false`, indicates such a reduction is not required.
-            alert_code (int): Alert code for the Software Patch. This code is used to uniquely identify the Software Patch.
+            details (str): The detailed reason for the `status`.
+            alert_code (int): Alert code for the Software Patch. This code is used to uniquely identify the Software Patch. 
+            ha_reduction_required (bool): If set to `true`, indicates reduction in high availability is required for Software Patch installation. If set to `false`, indicates such a reduction is not required. 
+            status (str): The status of the software patch installation. Valid values are `available`, `downloaded`, `downloading`, `download_failed`, `installing`, `installed`, `failed`, and `not_applicable`. A status of `available` indicates that the patch is available for download. A status of `downloaded` indicates that the patch has been downloaded and will be installed. A status of `downloading` indicates that the patch is currently downloading. A status of `download_failed` indicates that the download of the patch failed. A status of `installing` indicates that the patch is currently being installed. A status of `installed` indicates that the patch has been installed. A status of `failed` indicates that the patch failed to be installed. A status of `not_applicable` indicates the patch does not need to be installed on the array. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
-        if details is not None:
-            self.details = details
+        if id is not None:
+            self.id = id
         if description is not None:
             self.description = description
         if progress is not None:
             self.progress = progress
-        if status is not None:
-            self.status = status
-        if ha_reduction_required is not None:
-            self.ha_reduction_required = ha_reduction_required
+        if details is not None:
+            self.details = details
         if alert_code is not None:
             self.alert_code = alert_code
+        if ha_reduction_required is not None:
+            self.ha_reduction_required = ha_reduction_required
+        if status is not None:
+            self.status = status
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

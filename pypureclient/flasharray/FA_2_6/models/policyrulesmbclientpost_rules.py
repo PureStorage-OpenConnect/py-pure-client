@@ -52,9 +52,9 @@ class PolicyrulesmbclientpostRules(object):
     ):
         """
         Keyword args:
-            anonymous_access_allowed (bool): Specifies whether access to information is allowed for anonymous users. If not specified, defaults to `false`.
-            client (str): Specifies which clients are given access. Accepted notation, IP, IP mask, or hostname. The default is `*` if not specified.
-            smb_encryption_required (bool): Specifies whether the remote client is required to use SMB encryption. If not specified, defaults to `false`.
+            anonymous_access_allowed (bool): Specifies whether access to information is allowed for anonymous users. If not specified, defaults to `false`. 
+            client (str): Specifies which clients are given access. Accepted notation, IP, IP mask, or hostname. The default is `*` if not specified. 
+            smb_encryption_required (bool): Specifies whether the remote client is required to use SMB encryption. If not specified, defaults to `false`. 
         """
         if anonymous_access_allowed is not None:
             self.anonymous_access_allowed = anonymous_access_allowed

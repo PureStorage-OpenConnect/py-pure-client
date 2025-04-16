@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.4, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.4, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.4
     
@@ -32,23 +32,23 @@ class Admin(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
-        'api_token': 'ApiToken',
-        'is_local': 'bool',
         'public_key': 'str',
         'role': 'Reference',
-        'locked': 'bool',
-        'lockout_remaining': 'int'
+        'api_token': 'ApiToken',
+        'lockout_remaining': 'int',
+        'is_local': 'bool',
+        'locked': 'bool'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
-        'api_token': 'api_token',
-        'is_local': 'is_local',
         'public_key': 'public_key',
         'role': 'role',
-        'locked': 'locked',
-        'lockout_remaining': 'lockout_remaining'
+        'api_token': 'api_token',
+        'lockout_remaining': 'lockout_remaining',
+        'is_local': 'is_local',
+        'locked': 'locked'
     }
 
     required_args = {
@@ -58,40 +58,40 @@ class Admin(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
-        api_token=None,  # type: models.ApiToken
-        is_local=None,  # type: bool
         public_key=None,  # type: str
         role=None,  # type: models.Reference
-        locked=None,  # type: bool
+        api_token=None,  # type: models.ApiToken
         lockout_remaining=None,  # type: int
+        is_local=None,  # type: bool
+        locked=None,  # type: bool
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            api_token (ApiToken)
-            is_local (bool): Returns a value of `true` if the user is local to the machine, otherwise `false`.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
             public_key (str): Public key for SSH access. Supported key types are `Ed25519` and `RSA`.
             role (Reference): A reference to this administrator's management role.
-            locked (bool): Returns a value of `true` if the user is currently locked out, otherwise `false`. Can be patched to false to unlock a user. This field is only visible to `array_admin` roles. For all other users, the value is always `null`.
-            lockout_remaining (int): The remaining lockout period, in milliseconds, if the user is locked out. This field is only visible to `array_admin` roles. For all other users, the value is always `null`.
+            api_token (ApiToken)
+            lockout_remaining (int): The remaining lockout period, in milliseconds, if the user is locked out. This field is only visible to `array_admin` roles. For all other users, the value is always `null`. 
+            is_local (bool): Returns a value of `true` if the user is local to the machine, otherwise `false`.
+            locked (bool): Returns a value of `true` if the user is currently locked out, otherwise `false`. Can be patched to false to unlock a user. This field is only visible to `array_admin` roles. For all other users, the value is always `null`. 
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
-        if api_token is not None:
-            self.api_token = api_token
-        if is_local is not None:
-            self.is_local = is_local
         if public_key is not None:
             self.public_key = public_key
         if role is not None:
             self.role = role
-        if locked is not None:
-            self.locked = locked
+        if api_token is not None:
+            self.api_token = api_token
         if lockout_remaining is not None:
             self.lockout_remaining = lockout_remaining
+        if is_local is not None:
+            self.is_local = is_local
+        if locked is not None:
+            self.locked = locked
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

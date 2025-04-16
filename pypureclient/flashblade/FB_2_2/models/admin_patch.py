@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.2, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.2, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.2
     
@@ -30,15 +30,15 @@ class AdminPatch(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'public_key': 'str',
         'old_password': 'str',
-        'password': 'str',
-        'public_key': 'str'
+        'password': 'str'
     }
 
     attribute_map = {
+        'public_key': 'public_key',
         'old_password': 'old_password',
-        'password': 'password',
-        'public_key': 'public_key'
+        'password': 'password'
     }
 
     required_args = {
@@ -46,22 +46,22 @@ class AdminPatch(object):
 
     def __init__(
         self,
+        public_key=None,  # type: str
         old_password=None,  # type: str
         password=None,  # type: str
-        public_key=None,  # type: str
     ):
         """
         Keyword args:
+            public_key (str): Public key for SSH access. Supported key types are `Ed25519` and `RSA`.
             old_password (str): Old user password.
             password (str): New user password.
-            public_key (str): Public key for SSH access. Supported key types are `Ed25519` and `RSA`.
         """
+        if public_key is not None:
+            self.public_key = public_key
         if old_password is not None:
             self.old_password = old_password
         if password is not None:
             self.password = password
-        if public_key is not None:
-            self.public_key = public_key
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

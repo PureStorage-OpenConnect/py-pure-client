@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.4, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.4, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.4
     
@@ -49,12 +49,12 @@ class BucketReplicaLinksApi(object):
         >>> thread = api.api24_bucket_replica_links_delete_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param list[str] local_bucket_ids: A comma-separated list of local bucket IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `local_bucket_names` query parameter.
-        :param list[str] local_bucket_names: A comma-separated list of local bucket names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `local_bucket_ids` query parameter.
-        :param list[str] remote_bucket_names: A comma-separated list of remote bucket names. If there is not at least one resource that matches each of the elements, then an error is returned.
-        :param list[str] remote_ids: A comma-separated list of remote array IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `remote_names` query parameter.
-        :param list[str] remote_names: A comma-separated list of remote array names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `remote_ids` query parameter.
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param list[str] local_bucket_ids: A comma-separated list of local bucket IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `local_bucket_names` query parameter. 
+        :param list[str] local_bucket_names: A comma-separated list of local bucket names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `local_bucket_ids` query parameter. 
+        :param list[str] remote_bucket_names: A comma-separated list of remote bucket names. If there is not at least one resource that matches each of the elements, then an error is returned. 
+        :param list[str] remote_ids: A comma-separated list of remote array IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `remote_names` query parameter. 
+        :param list[str] remote_names: A comma-separated list of remote array names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `remote_ids` query parameter. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -122,10 +122,6 @@ class BucketReplicaLinksApi(object):
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
-
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
@@ -178,18 +174,18 @@ class BucketReplicaLinksApi(object):
         >>> thread = api.api24_bucket_replica_links_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
-        :param str filter: Exclude resources that don't match the specified criteria.
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.
-        :param list[str] local_bucket_ids: A comma-separated list of local bucket IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `local_bucket_names` query parameter.
-        :param list[str] local_bucket_names: A comma-separated list of local bucket names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `local_bucket_ids` query parameter.
-        :param int offset: The offset of the first resource to return from a collection.
-        :param list[str] remote_bucket_names: A comma-separated list of remote bucket names. If there is not at least one resource that matches each of the elements, then an error is returned.
-        :param list[str] remote_ids: A comma-separated list of remote array IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `remote_names` query parameter.
-        :param list[str] remote_names: A comma-separated list of remote array names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `remote_ids` query parameter.
-        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.
-        :param bool total_only: Only return the total record for the specified items. The total record will be the total of all items after filtering. The `items` list will be empty.
+        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result. 
+        :param str filter: Exclude resources that don't match the specified criteria. 
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request. 
+        :param list[str] local_bucket_ids: A comma-separated list of local bucket IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `local_bucket_names` query parameter. 
+        :param list[str] local_bucket_names: A comma-separated list of local bucket names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `local_bucket_ids` query parameter. 
+        :param int offset: The offset of the first resource to return from a collection. 
+        :param list[str] remote_bucket_names: A comma-separated list of remote bucket names. If there is not at least one resource that matches each of the elements, then an error is returned. 
+        :param list[str] remote_ids: A comma-separated list of remote array IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `remote_names` query parameter. 
+        :param list[str] remote_names: A comma-separated list of remote array names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `remote_ids` query parameter. 
+        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response. 
+        :param bool total_only: Only return the total record for the specified items. The total record will be the total of all items after filtering. The `items` list will be empty. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -329,12 +325,12 @@ class BucketReplicaLinksApi(object):
         >>> result = thread.get()
 
         :param BucketReplicaLink bucket_replica_link: (required)
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param list[str] local_bucket_ids: A comma-separated list of local bucket IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `local_bucket_names` query parameter.
-        :param list[str] local_bucket_names: A comma-separated list of local bucket names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `local_bucket_ids` query parameter.
-        :param list[str] remote_bucket_names: A comma-separated list of remote bucket names. If there is not at least one resource that matches each of the elements, then an error is returned.
-        :param list[str] remote_ids: A comma-separated list of remote array IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `remote_names` query parameter.
-        :param list[str] remote_names: A comma-separated list of remote array names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `remote_ids` query parameter.
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param list[str] local_bucket_ids: A comma-separated list of local bucket IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `local_bucket_names` query parameter. 
+        :param list[str] local_bucket_names: A comma-separated list of local bucket names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `local_bucket_ids` query parameter. 
+        :param list[str] remote_bucket_names: A comma-separated list of remote bucket names. If there is not at least one resource that matches each of the elements, then an error is returned. 
+        :param list[str] remote_ids: A comma-separated list of remote array IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `remote_names` query parameter. 
+        :param list[str] remote_names: A comma-separated list of remote array names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `remote_ids` query parameter. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -438,11 +434,11 @@ class BucketReplicaLinksApi(object):
     def api24_bucket_replica_links_post_with_http_info(
         self,
         bucket_replica_link=None,  # type: models.BucketReplicaLinkPost
-        local_bucket_names=None,  # type: List[str]
         local_bucket_ids=None,  # type: List[str]
+        local_bucket_names=None,  # type: List[str]
         remote_bucket_names=None,  # type: List[str]
-        remote_credentials_names=None,  # type: List[str]
         remote_credentials_ids=None,  # type: List[str]
+        remote_credentials_names=None,  # type: List[str]
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -458,11 +454,11 @@ class BucketReplicaLinksApi(object):
         >>> result = thread.get()
 
         :param BucketReplicaLinkPost bucket_replica_link: (required)
-        :param list[str] local_bucket_names: A comma-separated list of local bucket names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `local_bucket_ids` query parameter.
-        :param list[str] local_bucket_ids: A comma-separated list of local bucket IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `local_bucket_names` query parameter.
-        :param list[str] remote_bucket_names: A comma-separated list of remote bucket names. If there is not at least one resource that matches each of the elements, then an error is returned.
-        :param list[str] remote_credentials_names: A comma-separated list of remote credentials names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `remote_credentials_ids` query parameter.
-        :param list[str] remote_credentials_ids: A comma-separated list of remote credentials IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `remote_credentials_names` query parameter.
+        :param list[str] local_bucket_ids: A comma-separated list of local bucket IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `local_bucket_names` query parameter. 
+        :param list[str] local_bucket_names: A comma-separated list of local bucket names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `local_bucket_ids` query parameter. 
+        :param list[str] remote_bucket_names: A comma-separated list of remote bucket names. If there is not at least one resource that matches each of the elements, then an error is returned. 
+        :param list[str] remote_credentials_ids: A comma-separated list of remote credentials IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `remote_credentials_names` query parameter. 
+        :param list[str] remote_credentials_names: A comma-separated list of remote credentials names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `remote_credentials_ids` query parameter. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -472,21 +468,21 @@ class BucketReplicaLinksApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        if local_bucket_names is not None:
-            if not isinstance(local_bucket_names, list):
-                local_bucket_names = [local_bucket_names]
         if local_bucket_ids is not None:
             if not isinstance(local_bucket_ids, list):
                 local_bucket_ids = [local_bucket_ids]
+        if local_bucket_names is not None:
+            if not isinstance(local_bucket_names, list):
+                local_bucket_names = [local_bucket_names]
         if remote_bucket_names is not None:
             if not isinstance(remote_bucket_names, list):
                 remote_bucket_names = [remote_bucket_names]
-        if remote_credentials_names is not None:
-            if not isinstance(remote_credentials_names, list):
-                remote_credentials_names = [remote_credentials_names]
         if remote_credentials_ids is not None:
             if not isinstance(remote_credentials_ids, list):
                 remote_credentials_ids = [remote_credentials_ids]
+        if remote_credentials_names is not None:
+            if not isinstance(remote_credentials_names, list):
+                remote_credentials_names = [remote_credentials_names]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
 
         # Convert the filter into a string
@@ -505,21 +501,21 @@ class BucketReplicaLinksApi(object):
         path_params = {}
 
         query_params = []
-        if 'local_bucket_names' in params:
-            query_params.append(('local_bucket_names', params['local_bucket_names']))
-            collection_formats['local_bucket_names'] = 'csv'
         if 'local_bucket_ids' in params:
             query_params.append(('local_bucket_ids', params['local_bucket_ids']))
             collection_formats['local_bucket_ids'] = 'csv'
+        if 'local_bucket_names' in params:
+            query_params.append(('local_bucket_names', params['local_bucket_names']))
+            collection_formats['local_bucket_names'] = 'csv'
         if 'remote_bucket_names' in params:
             query_params.append(('remote_bucket_names', params['remote_bucket_names']))
             collection_formats['remote_bucket_names'] = 'csv'
-        if 'remote_credentials_names' in params:
-            query_params.append(('remote_credentials_names', params['remote_credentials_names']))
-            collection_formats['remote_credentials_names'] = 'csv'
         if 'remote_credentials_ids' in params:
             query_params.append(('remote_credentials_ids', params['remote_credentials_ids']))
             collection_formats['remote_credentials_ids'] = 'csv'
+        if 'remote_credentials_names' in params:
+            query_params.append(('remote_credentials_names', params['remote_credentials_names']))
+            collection_formats['remote_credentials_names'] = 'csv'
 
         header_params = {}
 

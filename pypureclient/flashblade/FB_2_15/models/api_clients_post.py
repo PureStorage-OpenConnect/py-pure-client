@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.15, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.15, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.15
     
@@ -30,52 +30,52 @@ class ApiClientsPost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'public_key': 'str',
         'max_role': 'ReferenceWritable',
         'issuer': 'str',
-        'public_key': 'str',
         'access_token_ttl_in_ms': 'int'
     }
 
     attribute_map = {
+        'public_key': 'public_key',
         'max_role': 'max_role',
         'issuer': 'issuer',
-        'public_key': 'public_key',
         'access_token_ttl_in_ms': 'access_token_ttl_in_ms'
     }
 
     required_args = {
-        'max_role',
         'public_key',
+        'max_role',
     }
 
     def __init__(
         self,
-        max_role,  # type: models.ReferenceWritable
         public_key,  # type: str
+        max_role,  # type: models.ReferenceWritable
         issuer=None,  # type: str
         access_token_ttl_in_ms=None,  # type: int
     ):
         """
         Keyword args:
-            max_role (ReferenceWritable, required): The maximum role allowed for ID Tokens issued by this API client. The bearer of an access token will be authorized to perform actions within the intersection of this `max_role` and the role of the array user specified as the JWT `sub` (subject) claim. The `max_role` field is a reference to a `role`. Valid `role`s are `readonly`, `ops_admin`, `array_admin`, and `storage_admin`. Users with the `readonly` (Read Only) role can perform operations that convey the state of the array. Read Only users cannot alter the state of the array. Users with the `ops_admin` (Ops Admin) role can perform the same operations as Read Only users plus enable and disable remote assistance sessions. Ops Admin users cannot alter the state of the array. Users with the `storage_admin` (Storage Admin) role can perform the same operations as Read Only users plus storage related operations, such as administering volumes, hosts, and host groups. Storage Admin users cannot perform operations that deal with global and system configurations. Users with the `array_admin` (Array Admin) role can perform the same operations as Storage Admin users plus array-wide changes dealing with global and system configurations. In other words, Array Admin users can perform all operations.
-            issuer (str): The name of the identity provider that will be issuing ID Tokens for this API client. The `iss` claim in the JWT issued must match this string. If not specified, defaults to the API client name.
-            public_key (str, required): The API client's PEM formatted (Base64 encoded) RSA public key. It must include the `-----BEGIN PUBLIC KEY-----` and `-----END PUBLIC KEY-----` lines.
-            access_token_ttl_in_ms (int): The TTL (Time To Live) duration for which the exchanged access token is valid. Measured in milliseconds. If not specified, defaults to `86400000`.
+            public_key (str, required): The API client's PEM formatted (Base64 encoded) RSA public key. It must include the `-----BEGIN PUBLIC KEY-----` and `-----END PUBLIC KEY-----` lines. 
+            max_role (ReferenceWritable, required): The maximum role allowed for ID Tokens issued by this API client. The bearer of an access token will be authorized to perform actions within the intersection of this `max_role` and the role of the array user specified as the JWT `sub` (subject) claim. The `max_role` field is a reference to a `role`. Valid `role`s are `readonly`, `ops_admin`, `array_admin`, and `storage_admin`. Users with the `readonly` (Read Only) role can perform operations that convey the state of the array. Read Only users cannot alter the state of the array. Users with the `ops_admin` (Ops Admin) role can perform the same operations as Read Only users plus enable and disable remote assistance sessions. Ops Admin users cannot alter the state of the array. Users with the `storage_admin` (Storage Admin) role can perform the same operations as Read Only users plus storage related operations, such as administering volumes, hosts, and host groups. Storage Admin users cannot perform operations that deal with global and system configurations.  Users with the `array_admin` (Array Admin) role can perform the same operations as Storage Admin users plus array-wide changes dealing with global and system configurations. In other words, Array Admin users can perform all operations. 
+            issuer (str): The name of the identity provider that will be issuing ID Tokens for this API client. The `iss` claim in the JWT issued must match this string. If not specified, defaults to the API client name. 
+            access_token_ttl_in_ms (int): The TTL (Time To Live) duration for which the exchanged access token is valid. Measured in milliseconds. If not specified, defaults to `86400000`. 
         """
+        self.public_key = public_key
         self.max_role = max_role
         if issuer is not None:
             self.issuer = issuer
-        self.public_key = public_key
         if access_token_ttl_in_ms is not None:
             self.access_token_ttl_in_ms = access_token_ttl_in_ms
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
             raise KeyError("Invalid key `{}` for `ApiClientsPost`".format(key))
-        if key == "max_role" and value is None:
-            raise ValueError("Invalid value for `max_role`, must not be `None`")
         if key == "public_key" and value is None:
             raise ValueError("Invalid value for `public_key`, must not be `None`")
+        if key == "max_role" and value is None:
+            raise ValueError("Invalid value for `max_role`, must not be `None`")
         self.__dict__[key] = value
 
     def __getattribute__(self, item):

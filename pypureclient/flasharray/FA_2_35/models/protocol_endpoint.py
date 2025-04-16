@@ -46,7 +46,7 @@ class ProtocolEndpoint(object):
     ):
         """
         Keyword args:
-            container_version (str): Defines vCenter and EXSi host compatibility of the protocol endpoint and its associated container. Valid values include: `1`, `2`, `3`. When `container_version` is set to `1`, it's compatible with vSphere version 7.0.1 or higher. When `container_version` is set to `2`, it's compatible with vSphere version 8.0.0 or higher. When `container_version` is set to `3`, it's compatible with vSphere version 8.0.1 or higher. The default `container_version` is `1`.
+            container_version (str): Defines vCenter and EXSi host compatibility of the protocol endpoint and its associated container. Valid values include: `1`, `2`, `3`. When `container_version` is set to `1`, it's compatible with vSphere version 7.0.1 or higher. When `container_version` is set to `2`, it's compatible with vSphere version 8.0.0 or higher. When `container_version` is set to `3`, it's compatible with vSphere version 8.0.1 or higher. The default `container_version` is `1`. 
         """
         if container_version is not None:
             self.container_version = container_version

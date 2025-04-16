@@ -52,9 +52,9 @@ class SyslogServerSettings(object):
     ):
         """
         Keyword args:
-            ca_certificate (str): The certificate of the certificate authority (CA) that signed the directory servers' certificate(s), which is used to validate the authenticity of the configured servers.
-            tls_audit_enabled (bool): Returns a value of `true` if messages that are necessary in order to audit TLS negotiations performed by the array are forwarded to the configured syslog servers.
-            logging_severity (str): Returns the configured logging severity threshold for which events will be forwarded to the configured syslog servers. Default configuration is info level severity. Valid values are `debug`, `info`, and `notice`.
+            ca_certificate (str): The certificate of the certificate authority (CA) that signed the directory servers' certificate(s), which is used to validate the authenticity of the configured servers. 
+            tls_audit_enabled (bool): Returns a value of `true` if messages that are necessary in order to audit TLS negotiations performed by the array are forwarded to the configured syslog servers. 
+            logging_severity (str): Returns the configured logging severity threshold for which events will be forwarded to the configured syslog servers. Default configuration is info level severity.  Valid values are `debug`, `info`, and `notice`. 
         """
         if ca_certificate is not None:
             self.ca_certificate = ca_certificate

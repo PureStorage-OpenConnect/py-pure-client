@@ -46,7 +46,7 @@ class CertificateSigningRequest(object):
     ):
         """
         Keyword args:
-            certificate_signing_request (str): The text of a new certificate signing request.
+            certificate_signing_request (str): The text of a new certificate signing request. 
         """
         if certificate_signing_request is not None:
             self.certificate_signing_request = certificate_signing_request

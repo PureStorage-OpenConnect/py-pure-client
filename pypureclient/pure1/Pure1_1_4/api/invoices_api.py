@@ -36,8 +36,8 @@ class InvoicesApi(object):
         ids=None,  # type: List[str]
         limit=None,  # type: int
         offset=None,  # type: int
-        sort=None,  # type: List[str]
         partner_purchase_orders=None,  # type: List[str]
+        sort=None,  # type: List[str]
         subscription_ids=None,  # type: List[str]
         subscription_names=None,  # type: List[str]
         async_req=False,  # type: bool
@@ -61,8 +61,8 @@ class InvoicesApi(object):
         :param list[str] ids: A comma-separated list of resource IDs. If there is not at least one resource that matches each `id` element, an error is returned. Single quotes are required around all strings. 
         :param int limit: Limit the size of the response to the specified number of resources. A limit of 0 can be used to get the number of resources without getting all of the resources. It will be returned in the total_item_count field. If a client asks for a page size larger than the maximum number, the request is still valid. In that case the server just returns the maximum number of items, disregarding the client's page size request. If not specified, defaults to 1000. 
         :param int offset: The offset of the first resource to return from a collection. 
-        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response. 
         :param list[str] partner_purchase_orders: A comma-separated list of partner purchase order numbers. If there is not at least one resource that matches each `partner_purchase_order` element, an error is returned.  Single quotes are required around all strings. 
+        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response. 
         :param list[str] subscription_ids: A comma-separated list of subscription IDs. If there is not at least one resource that matches each `subscription.id` element, an error is returned. Single quotes are required around all strings. 
         :param list[str] subscription_names: A comma-separated list of subscription names. If there is not at least one resource that matches each `subscription.name` element, an error is returned. Single quotes are required around all strings. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
@@ -79,13 +79,13 @@ class InvoicesApi(object):
             if not isinstance(ids, list):
                 ids = [ids]
         ids = models.quoteStrings(ids)
-        if sort is not None:
-            if not isinstance(sort, list):
-                sort = [sort]
         if partner_purchase_orders is not None:
             if not isinstance(partner_purchase_orders, list):
                 partner_purchase_orders = [partner_purchase_orders]
         partner_purchase_orders = models.quoteStrings(partner_purchase_orders)
+        if sort is not None:
+            if not isinstance(sort, list):
+                sort = [sort]
         if subscription_ids is not None:
             if not isinstance(subscription_ids, list):
                 subscription_ids = [subscription_ids]
@@ -122,12 +122,12 @@ class InvoicesApi(object):
             query_params.append(('limit', params['limit']))
         if 'offset' in params:
             query_params.append(('offset', params['offset']))
-        if 'sort' in params:
-            query_params.append(('sort', params['sort']))
-            collection_formats['sort'] = 'csv'
         if 'partner_purchase_orders' in params:
             query_params.append(('partner_purchase_orders', params['partner_purchase_orders']))
             collection_formats['partner_purchase_orders'] = 'csv'
+        if 'sort' in params:
+            query_params.append(('sort', params['sort']))
+            collection_formats['sort'] = 'csv'
         if 'subscription_ids' in params:
             query_params.append(('subscription_ids', params['subscription_ids']))
             collection_formats['subscription_ids'] = 'csv'
@@ -151,7 +151,7 @@ class InvoicesApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
-            ['application/x-www-form-urlencoded', 'application/json'])
+            ['application/json'])
 
         # Authentication setting
         auth_settings = ['AuthorizationHeader']

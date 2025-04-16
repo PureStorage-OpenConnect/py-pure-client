@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.4, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.4, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.4
     
@@ -49,8 +49,8 @@ class Member(object):
     ):
         """
         Keyword args:
-            member (Reference): A reference to an object that is a member of the referenced group.
-            group (Reference): A reference to a group object that has the referenced member object as a member.
+            member (Reference): A reference to an object that is a member of the referenced group. 
+            group (Reference): A reference to a group object that has the referenced member object as a member. 
         """
         if member is not None:
             self.member = member

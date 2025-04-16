@@ -46,7 +46,7 @@ class AlertWatcherPatch(object):
     ):
         """
         Keyword args:
-            enabled (bool): If set to `true`, email notifications will be sent to this watcher for alerts. If set to `false`, email notifications are disabled.
+            enabled (bool): If set to `true`, email notifications will be sent to this watcher for alerts. If set to `false`, email notifications are disabled. 
         """
         if enabled is not None:
             self.enabled = enabled

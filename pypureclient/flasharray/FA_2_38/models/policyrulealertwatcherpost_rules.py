@@ -30,17 +30,17 @@ class PolicyrulealertwatcherpostRules(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'email': 'str',
+        'minimum_notification_severity': 'str',
         'included_codes': 'list[int]',
-        'excluded_codes': 'list[int]',
-        'minimum_notification_severity': 'str'
+        'email': 'str',
+        'excluded_codes': 'list[int]'
     }
 
     attribute_map = {
-        'email': 'email',
+        'minimum_notification_severity': 'minimum_notification_severity',
         'included_codes': 'included_codes',
-        'excluded_codes': 'excluded_codes',
-        'minimum_notification_severity': 'minimum_notification_severity'
+        'email': 'email',
+        'excluded_codes': 'excluded_codes'
     }
 
     required_args = {
@@ -48,26 +48,26 @@ class PolicyrulealertwatcherpostRules(object):
 
     def __init__(
         self,
-        email=None,  # type: str
-        included_codes=None,  # type: List[int]
-        excluded_codes=None,  # type: List[int]
         minimum_notification_severity=None,  # type: str
+        included_codes=None,  # type: List[int]
+        email=None,  # type: str
+        excluded_codes=None,  # type: List[int]
     ):
         """
         Keyword args:
-            email (str): The email address that will receive the alert notification emails.
-            included_codes (list[int]): An alert must have one of these codes in order for emails to be sent to the recipient. Cannot be specified with `exclude_codes`. If specified while `exclude_codes` is already set, `exclude_codes` will be cleared. Use \"\" to clear. If both `exclude_codes` and `include_codes` are cleared, defaults to an empty list for `exclude_codes`.
-            excluded_codes (list[int]): An alert with one of these codes will not have emails sent to the recipient. Cannot be specified with `include_codes`. If specified while `include_codes` is already set, `include_codes` will be cleared. Use \"\" to clear. If both `exclude_codes` and `include_codes` are cleared, defaults to an empty list for `exclude_codes`.
-            minimum_notification_severity (str): The minimum severity that an alert must have in order for emails to be sent to the recipient. Possible values include `info`, `warning`, and `critical`. If not specified, defaults to `info`.
+            minimum_notification_severity (str): The minimum severity that an alert must have in order for emails to be sent to the recipient. Possible values include `info`, `warning`, and `critical`. If not specified, defaults to `info`. 
+            included_codes (list[int]): An alert must have one of these codes in order for emails to be sent to the recipient. Cannot be specified with `exclude_codes`. If specified while `exclude_codes` is already set, `exclude_codes` will be cleared. Use \"\" to clear. If both `exclude_codes` and `include_codes` are cleared, defaults to an empty list for `exclude_codes`. 
+            email (str): The email address that will receive the alert notification emails. 
+            excluded_codes (list[int]): An alert with one of these codes will not have emails sent to the recipient. Cannot be specified with `include_codes`. If specified while `include_codes` is already set, `include_codes` will be cleared. Use \"\" to clear. If both `exclude_codes` and `include_codes` are cleared, defaults to an empty list for `exclude_codes`. 
         """
-        if email is not None:
-            self.email = email
-        if included_codes is not None:
-            self.included_codes = included_codes
-        if excluded_codes is not None:
-            self.excluded_codes = excluded_codes
         if minimum_notification_severity is not None:
             self.minimum_notification_severity = minimum_notification_severity
+        if included_codes is not None:
+            self.included_codes = included_codes
+        if email is not None:
+            self.email = email
+        if excluded_codes is not None:
+            self.excluded_codes = excluded_codes
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

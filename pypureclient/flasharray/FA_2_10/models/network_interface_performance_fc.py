@@ -30,29 +30,29 @@ class NetworkInterfacePerformanceFc(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'received_bytes_per_sec': 'int',
         'received_crc_errors_per_sec': 'int',
-        'received_frames_per_sec': 'int',
+        'transmitted_frames_per_sec': 'int',
         'received_link_failures_per_sec': 'int',
+        'transmitted_invalid_words_per_sec': 'int',
         'received_loss_of_signal_per_sec': 'int',
         'received_loss_of_sync_per_sec': 'int',
-        'total_errors_per_sec': 'int',
         'transmitted_bytes_per_sec': 'int',
-        'transmitted_frames_per_sec': 'int',
-        'transmitted_invalid_words_per_sec': 'int'
+        'received_bytes_per_sec': 'int',
+        'total_errors_per_sec': 'int',
+        'received_frames_per_sec': 'int'
     }
 
     attribute_map = {
-        'received_bytes_per_sec': 'received_bytes_per_sec',
         'received_crc_errors_per_sec': 'received_crc_errors_per_sec',
-        'received_frames_per_sec': 'received_frames_per_sec',
+        'transmitted_frames_per_sec': 'transmitted_frames_per_sec',
         'received_link_failures_per_sec': 'received_link_failures_per_sec',
+        'transmitted_invalid_words_per_sec': 'transmitted_invalid_words_per_sec',
         'received_loss_of_signal_per_sec': 'received_loss_of_signal_per_sec',
         'received_loss_of_sync_per_sec': 'received_loss_of_sync_per_sec',
-        'total_errors_per_sec': 'total_errors_per_sec',
         'transmitted_bytes_per_sec': 'transmitted_bytes_per_sec',
-        'transmitted_frames_per_sec': 'transmitted_frames_per_sec',
-        'transmitted_invalid_words_per_sec': 'transmitted_invalid_words_per_sec'
+        'received_bytes_per_sec': 'received_bytes_per_sec',
+        'total_errors_per_sec': 'total_errors_per_sec',
+        'received_frames_per_sec': 'received_frames_per_sec'
     }
 
     required_args = {
@@ -60,84 +60,84 @@ class NetworkInterfacePerformanceFc(object):
 
     def __init__(
         self,
-        received_bytes_per_sec=None,  # type: int
         received_crc_errors_per_sec=None,  # type: int
-        received_frames_per_sec=None,  # type: int
+        transmitted_frames_per_sec=None,  # type: int
         received_link_failures_per_sec=None,  # type: int
+        transmitted_invalid_words_per_sec=None,  # type: int
         received_loss_of_signal_per_sec=None,  # type: int
         received_loss_of_sync_per_sec=None,  # type: int
-        total_errors_per_sec=None,  # type: int
         transmitted_bytes_per_sec=None,  # type: int
-        transmitted_frames_per_sec=None,  # type: int
-        transmitted_invalid_words_per_sec=None,  # type: int
+        received_bytes_per_sec=None,  # type: int
+        total_errors_per_sec=None,  # type: int
+        received_frames_per_sec=None,  # type: int
     ):
         """
         Keyword args:
-            received_bytes_per_sec (int): Bytes received per second.
-            received_crc_errors_per_sec (int): Fibre Channel frame CRC errors per second.
-            received_frames_per_sec (int): Fibre Channel frames received per second.
-            received_link_failures_per_sec (int): Loss of connectivity errors per second.
-            received_loss_of_signal_per_sec (int): Loss of signal errors on Fibre Channel port per second.
-            received_loss_of_sync_per_sec (int): Loss of sync errors on Fibre Channel port per second.
-            total_errors_per_sec (int): The sum of all reception and transmission errors per second.
-            transmitted_bytes_per_sec (int): Bytes transmitted per second.
-            transmitted_frames_per_sec (int): Fibre Channel frames transmitted per second.
-            transmitted_invalid_words_per_sec (int): Bit errors in transmission word per second.
+            received_crc_errors_per_sec (int): Fibre Channel frame CRC errors per second. 
+            transmitted_frames_per_sec (int): Fibre Channel frames transmitted per second. 
+            received_link_failures_per_sec (int): Loss of connectivity errors per second. 
+            transmitted_invalid_words_per_sec (int): Bit errors in transmission word per second. 
+            received_loss_of_signal_per_sec (int): Loss of signal errors on Fibre Channel port per second. 
+            received_loss_of_sync_per_sec (int): Loss of sync errors on Fibre Channel port per second. 
+            transmitted_bytes_per_sec (int): Bytes transmitted per second. 
+            received_bytes_per_sec (int): Bytes received per second. 
+            total_errors_per_sec (int): The sum of all reception and transmission errors per second. 
+            received_frames_per_sec (int): Fibre Channel frames received per second. 
         """
-        if received_bytes_per_sec is not None:
-            self.received_bytes_per_sec = received_bytes_per_sec
         if received_crc_errors_per_sec is not None:
             self.received_crc_errors_per_sec = received_crc_errors_per_sec
-        if received_frames_per_sec is not None:
-            self.received_frames_per_sec = received_frames_per_sec
+        if transmitted_frames_per_sec is not None:
+            self.transmitted_frames_per_sec = transmitted_frames_per_sec
         if received_link_failures_per_sec is not None:
             self.received_link_failures_per_sec = received_link_failures_per_sec
+        if transmitted_invalid_words_per_sec is not None:
+            self.transmitted_invalid_words_per_sec = transmitted_invalid_words_per_sec
         if received_loss_of_signal_per_sec is not None:
             self.received_loss_of_signal_per_sec = received_loss_of_signal_per_sec
         if received_loss_of_sync_per_sec is not None:
             self.received_loss_of_sync_per_sec = received_loss_of_sync_per_sec
-        if total_errors_per_sec is not None:
-            self.total_errors_per_sec = total_errors_per_sec
         if transmitted_bytes_per_sec is not None:
             self.transmitted_bytes_per_sec = transmitted_bytes_per_sec
-        if transmitted_frames_per_sec is not None:
-            self.transmitted_frames_per_sec = transmitted_frames_per_sec
-        if transmitted_invalid_words_per_sec is not None:
-            self.transmitted_invalid_words_per_sec = transmitted_invalid_words_per_sec
+        if received_bytes_per_sec is not None:
+            self.received_bytes_per_sec = received_bytes_per_sec
+        if total_errors_per_sec is not None:
+            self.total_errors_per_sec = total_errors_per_sec
+        if received_frames_per_sec is not None:
+            self.received_frames_per_sec = received_frames_per_sec
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
             raise KeyError("Invalid key `{}` for `NetworkInterfacePerformanceFc`".format(key))
-        if key == "received_bytes_per_sec" and value is not None:
-            if value < 0:
-                raise ValueError("Invalid value for `received_bytes_per_sec`, must be a value greater than or equal to `0`")
         if key == "received_crc_errors_per_sec" and value is not None:
             if value < 0:
                 raise ValueError("Invalid value for `received_crc_errors_per_sec`, must be a value greater than or equal to `0`")
-        if key == "received_frames_per_sec" and value is not None:
+        if key == "transmitted_frames_per_sec" and value is not None:
             if value < 0:
-                raise ValueError("Invalid value for `received_frames_per_sec`, must be a value greater than or equal to `0`")
+                raise ValueError("Invalid value for `transmitted_frames_per_sec`, must be a value greater than or equal to `0`")
         if key == "received_link_failures_per_sec" and value is not None:
             if value < 0:
                 raise ValueError("Invalid value for `received_link_failures_per_sec`, must be a value greater than or equal to `0`")
+        if key == "transmitted_invalid_words_per_sec" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `transmitted_invalid_words_per_sec`, must be a value greater than or equal to `0`")
         if key == "received_loss_of_signal_per_sec" and value is not None:
             if value < 0:
                 raise ValueError("Invalid value for `received_loss_of_signal_per_sec`, must be a value greater than or equal to `0`")
         if key == "received_loss_of_sync_per_sec" and value is not None:
             if value < 0:
                 raise ValueError("Invalid value for `received_loss_of_sync_per_sec`, must be a value greater than or equal to `0`")
-        if key == "total_errors_per_sec" and value is not None:
-            if value < 0:
-                raise ValueError("Invalid value for `total_errors_per_sec`, must be a value greater than or equal to `0`")
         if key == "transmitted_bytes_per_sec" and value is not None:
             if value < 0:
                 raise ValueError("Invalid value for `transmitted_bytes_per_sec`, must be a value greater than or equal to `0`")
-        if key == "transmitted_frames_per_sec" and value is not None:
+        if key == "received_bytes_per_sec" and value is not None:
             if value < 0:
-                raise ValueError("Invalid value for `transmitted_frames_per_sec`, must be a value greater than or equal to `0`")
-        if key == "transmitted_invalid_words_per_sec" and value is not None:
+                raise ValueError("Invalid value for `received_bytes_per_sec`, must be a value greater than or equal to `0`")
+        if key == "total_errors_per_sec" and value is not None:
             if value < 0:
-                raise ValueError("Invalid value for `transmitted_invalid_words_per_sec`, must be a value greater than or equal to `0`")
+                raise ValueError("Invalid value for `total_errors_per_sec`, must be a value greater than or equal to `0`")
+        if key == "received_frames_per_sec" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `received_frames_per_sec`, must be a value greater than or equal to `0`")
         self.__dict__[key] = value
 
     def __getattribute__(self, item):

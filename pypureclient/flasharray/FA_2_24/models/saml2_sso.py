@@ -30,21 +30,21 @@ class Saml2Sso(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
-        'enabled': 'bool',
-        'array_url': 'str',
+        'id': 'str',
+        'idp': 'Saml2SsoIdp',
         'sp': 'Saml2SsoSp',
-        'idp': 'Saml2SsoIdp'
+        'enabled': 'bool',
+        'array_url': 'str'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
-        'enabled': 'enabled',
-        'array_url': 'array_url',
+        'id': 'id',
+        'idp': 'idp',
         'sp': 'sp',
-        'idp': 'idp'
+        'enabled': 'enabled',
+        'array_url': 'array_url'
     }
 
     required_args = {
@@ -52,34 +52,34 @@ class Saml2Sso(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
+        id=None,  # type: str
+        idp=None,  # type: models.Saml2SsoIdp
+        sp=None,  # type: models.Saml2SsoSp
         enabled=None,  # type: bool
         array_url=None,  # type: str
-        sp=None,  # type: models.Saml2SsoSp
-        idp=None,  # type: models.Saml2SsoIdp
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified.
-            name (str): Name of the resource. The name cannot be modified.
-            enabled (bool): If set to `true`, the SAML2 SSO configuration is enabled.
-            array_url (str): The URL of the array.
-            sp (Saml2SsoSp)
+            name (str): Name of the resource. The name cannot be modified. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified. 
             idp (Saml2SsoIdp)
+            sp (Saml2SsoSp)
+            enabled (bool): If set to `true`, the SAML2 SSO configuration is enabled. 
+            array_url (str): The URL of the array. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
+        if idp is not None:
+            self.idp = idp
+        if sp is not None:
+            self.sp = sp
         if enabled is not None:
             self.enabled = enabled
         if array_url is not None:
             self.array_url = array_url
-        if sp is not None:
-            self.sp = sp
-        if idp is not None:
-            self.idp = idp
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

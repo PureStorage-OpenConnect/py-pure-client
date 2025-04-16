@@ -30,15 +30,15 @@ class CloudProviderTag(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'key': 'str',
+        'details': 'str',
         'value': 'str',
-        'details': 'str'
+        'key': 'str'
     }
 
     attribute_map = {
-        'key': 'key',
+        'details': 'details',
         'value': 'value',
-        'details': 'details'
+        'key': 'key'
     }
 
     required_args = {
@@ -46,22 +46,22 @@ class CloudProviderTag(object):
 
     def __init__(
         self,
-        key=None,  # type: str
-        value=None,  # type: str
         details=None,  # type: str
+        value=None,  # type: str
+        key=None,  # type: str
     ):
         """
         Keyword args:
-            key (str): Key of the tag. Supports UTF-8 Unicode characters. Please refer to the offical document from cloud providers for limitations.
-            value (str): Value of the tag. Supports UTF-8 Unicode characters. Please refer to the offical document from cloud providers for limitations.
-            details (str): Details about the status of the tag if not healthy.
+            details (str): Details about the status of the tag if not healthy. 
+            value (str): Value of the tag. Supports UTF-8 Unicode characters. Please refer to the offical document from cloud providers for limitations. 
+            key (str): Key of the tag. Supports UTF-8 Unicode characters. Please refer to the offical document from cloud providers for limitations. 
         """
-        if key is not None:
-            self.key = key
-        if value is not None:
-            self.value = value
         if details is not None:
             self.details = details
+        if value is not None:
+            self.value = value
+        if key is not None:
+            self.key = key
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

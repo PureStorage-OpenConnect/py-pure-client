@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.10, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.10, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.10
     
@@ -30,17 +30,17 @@ class ObjectBacklog(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'bytes_count': 'int',
         'delete_ops_count': 'int',
-        'other_ops_count': 'int',
-        'put_ops_count': 'int'
+        'bytes_count': 'int',
+        'put_ops_count': 'int',
+        'other_ops_count': 'int'
     }
 
     attribute_map = {
-        'bytes_count': 'bytes_count',
         'delete_ops_count': 'delete_ops_count',
-        'other_ops_count': 'other_ops_count',
-        'put_ops_count': 'put_ops_count'
+        'bytes_count': 'bytes_count',
+        'put_ops_count': 'put_ops_count',
+        'other_ops_count': 'other_ops_count'
     }
 
     required_args = {
@@ -48,26 +48,26 @@ class ObjectBacklog(object):
 
     def __init__(
         self,
-        bytes_count=None,  # type: int
         delete_ops_count=None,  # type: int
-        other_ops_count=None,  # type: int
+        bytes_count=None,  # type: int
         put_ops_count=None,  # type: int
+        other_ops_count=None,  # type: int
     ):
         """
         Keyword args:
-            bytes_count (int): The size of the objects in bytes that need to be replicated. This does not include the size of custom metadata.
-            delete_ops_count (int): The number of DELETE operations that need to be replicated.
-            other_ops_count (int): The number of other operations that need to be replicated.
-            put_ops_count (int): The number of PUT operations that need to be replicated.
+            delete_ops_count (int): The number of DELETE operations that need to be replicated. 
+            bytes_count (int): The size of the objects in bytes that need to be replicated. This does not include the size of custom metadata. 
+            put_ops_count (int): The number of PUT operations that need to be replicated. 
+            other_ops_count (int): The number of other operations that need to be replicated. 
         """
-        if bytes_count is not None:
-            self.bytes_count = bytes_count
         if delete_ops_count is not None:
             self.delete_ops_count = delete_ops_count
-        if other_ops_count is not None:
-            self.other_ops_count = other_ops_count
+        if bytes_count is not None:
+            self.bytes_count = bytes_count
         if put_ops_count is not None:
             self.put_ops_count = put_ops_count
+        if other_ops_count is not None:
+            self.other_ops_count = other_ops_count
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

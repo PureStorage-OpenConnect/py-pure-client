@@ -3,7 +3,7 @@
 """
     FlashBlade REST API Client
 
-    A lightweight client for FlashBlade REST API 2.0, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.0, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.0
     
@@ -30,15 +30,15 @@ class ReferenceWritable(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
-        'resource_type': 'str'
+        'resource_type': 'str',
+        'id': 'str'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
-        'resource_type': 'resource_type'
+        'resource_type': 'resource_type',
+        'id': 'id'
     }
 
     required_args = {
@@ -46,22 +46,22 @@ class ReferenceWritable(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
         resource_type=None,  # type: str
+        id=None,  # type: str
     ):
         """
         Keyword args:
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            name (str): A name chosen by the user. Can be changed. Must be locally unique.
-            resource_type (str): Type of the object (full name of the endpoint). Valid values are the unique part of the resource's REST endpoint. For example, a reference to a file system would have a `resource_type` of `file-systems`.
+            name (str): A name chosen by the user. Can be changed. Must be locally unique. 
+            resource_type (str): Type of the object (full name of the endpoint). Valid values are the unique part of the resource's REST endpoint. For example, a reference to a file system would have a `resource_type` of `file-systems`. 
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
         if resource_type is not None:
             self.resource_type = resource_type
+        if id is not None:
+            self.id = id
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

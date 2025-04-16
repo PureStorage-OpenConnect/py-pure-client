@@ -46,7 +46,7 @@ class LocalGroupMembershipPost(object):
     ):
         """
         Keyword args:
-            members (list[LocalgroupmembershippostMembers]): A list of resources to be a member of the group.
+            members (list[LocalgroupmembershippostMembers]): A list of resources to be a member of the group. 
         """
         if members is not None:
             self.members = members

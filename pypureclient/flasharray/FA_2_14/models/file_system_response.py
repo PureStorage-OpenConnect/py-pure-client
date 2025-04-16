@@ -46,7 +46,7 @@ class FileSystemResponse(object):
     ):
         """
         Keyword args:
-            items (list[FileSystem]): Displays a list of all items after filtering. If applicable, the values are displayed for each name.
+            items (list[FileSystem]): Displays a list of all items after filtering. If applicable, the values are displayed for each name. 
         """
         if items is not None:
             self.items = items

@@ -30,15 +30,15 @@ class ReplicationPerformanceWithTotal(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'from_remote_bytes_per_sec': 'int',
+        'total_bytes_per_sec': 'int',
         'to_remote_bytes_per_sec': 'int',
-        'total_bytes_per_sec': 'int'
+        'from_remote_bytes_per_sec': 'int'
     }
 
     attribute_map = {
-        'from_remote_bytes_per_sec': 'from_remote_bytes_per_sec',
+        'total_bytes_per_sec': 'total_bytes_per_sec',
         'to_remote_bytes_per_sec': 'to_remote_bytes_per_sec',
-        'total_bytes_per_sec': 'total_bytes_per_sec'
+        'from_remote_bytes_per_sec': 'from_remote_bytes_per_sec'
     }
 
     required_args = {
@@ -46,35 +46,35 @@ class ReplicationPerformanceWithTotal(object):
 
     def __init__(
         self,
-        from_remote_bytes_per_sec=None,  # type: int
-        to_remote_bytes_per_sec=None,  # type: int
         total_bytes_per_sec=None,  # type: int
+        to_remote_bytes_per_sec=None,  # type: int
+        from_remote_bytes_per_sec=None,  # type: int
     ):
         """
         Keyword args:
-            from_remote_bytes_per_sec (int): The number of bytes received per second from a remote array. The number will be zero if the arrays are unable to communicate.
-            to_remote_bytes_per_sec (int): The number of bytes transmitted per second to a remote array. The number will be zero if the arrays are unable to communicate.
-            total_bytes_per_sec (int): Total bytes transmitted and received per second. The number will be zero if the arrays are unable to communicate.
+            total_bytes_per_sec (int): Total bytes transmitted and received per second. The number will be zero if the arrays are unable to communicate. 
+            to_remote_bytes_per_sec (int): The number of bytes transmitted per second to a remote array. The number will be zero if the arrays are unable to communicate. 
+            from_remote_bytes_per_sec (int): The number of bytes received per second from a remote array. The number will be zero if the arrays are unable to communicate. 
         """
-        if from_remote_bytes_per_sec is not None:
-            self.from_remote_bytes_per_sec = from_remote_bytes_per_sec
-        if to_remote_bytes_per_sec is not None:
-            self.to_remote_bytes_per_sec = to_remote_bytes_per_sec
         if total_bytes_per_sec is not None:
             self.total_bytes_per_sec = total_bytes_per_sec
+        if to_remote_bytes_per_sec is not None:
+            self.to_remote_bytes_per_sec = to_remote_bytes_per_sec
+        if from_remote_bytes_per_sec is not None:
+            self.from_remote_bytes_per_sec = from_remote_bytes_per_sec
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
             raise KeyError("Invalid key `{}` for `ReplicationPerformanceWithTotal`".format(key))
-        if key == "from_remote_bytes_per_sec" and value is not None:
-            if value < 0:
-                raise ValueError("Invalid value for `from_remote_bytes_per_sec`, must be a value greater than or equal to `0`")
-        if key == "to_remote_bytes_per_sec" and value is not None:
-            if value < 0:
-                raise ValueError("Invalid value for `to_remote_bytes_per_sec`, must be a value greater than or equal to `0`")
         if key == "total_bytes_per_sec" and value is not None:
             if value < 0:
                 raise ValueError("Invalid value for `total_bytes_per_sec`, must be a value greater than or equal to `0`")
+        if key == "to_remote_bytes_per_sec" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `to_remote_bytes_per_sec`, must be a value greater than or equal to `0`")
+        if key == "from_remote_bytes_per_sec" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `from_remote_bytes_per_sec`, must be a value greater than or equal to `0`")
         self.__dict__[key] = value
 
     def __getattribute__(self, item):

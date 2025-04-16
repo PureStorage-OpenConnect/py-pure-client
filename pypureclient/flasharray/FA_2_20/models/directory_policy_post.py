@@ -46,7 +46,7 @@ class DirectoryPolicyPost(object):
     ):
         """
         Keyword args:
-            policies (list[DirectorypolicypostPolicies]): A list of policies to apply to the resource. The `id` or `name` field in each `policy` parameter is required, but they cannot be set together.
+            policies (list[DirectorypolicypostPolicies]): A list of policies to apply to the resource. The `id` or `name` field in each `policy` parameter is required, but they cannot be set together. 
         """
         if policies is not None:
             self.policies = policies

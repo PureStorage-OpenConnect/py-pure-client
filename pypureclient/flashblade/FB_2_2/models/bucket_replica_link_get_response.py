@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.2, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.2, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.2
     
@@ -32,15 +32,15 @@ class BucketReplicaLinkGetResponse(object):
     swagger_types = {
         'continuation_token': 'str',
         'total_item_count': 'int',
-        'items': 'list[BucketReplicaLink]',
-        'total': 'BucketReplicaLink'
+        'total': 'BucketReplicaLink',
+        'items': 'list[BucketReplicaLink]'
     }
 
     attribute_map = {
         'continuation_token': 'continuation_token',
         'total_item_count': 'total_item_count',
-        'items': 'items',
-        'total': 'total'
+        'total': 'total',
+        'items': 'items'
     }
 
     required_args = {
@@ -50,24 +50,24 @@ class BucketReplicaLinkGetResponse(object):
         self,
         continuation_token=None,  # type: str
         total_item_count=None,  # type: int
-        items=None,  # type: List[models.BucketReplicaLink]
         total=None,  # type: models.BucketReplicaLink
+        items=None,  # type: List[models.BucketReplicaLink]
     ):
         """
         Keyword args:
-            continuation_token (str): Continuation token that can be provided in the `continuation_token` query param to get the next page of data. If you use the `continuation_token` to page through data you are guaranteed to get all items exactly once regardless of how items are modified. If an item is added or deleted during the pagination then it may or may not be returned. The `continuation_token` is generated if the `limit` is less than the remaining number of items, and the default sort is used (no sort is specified).
+            continuation_token (str): Continuation token that can be provided in the `continuation_token` query param to get the next page of data. If you use the `continuation_token` to page through data you are guaranteed to get all items exactly once regardless of how items are modified. If an item is added or deleted during the pagination then it may or may not be returned. The `continuation_token` is generated if the `limit` is less than the remaining number of items, and the default sort is used (no sort is specified). 
             total_item_count (int): Total number of items after applying `filter` params.
+            total (BucketReplicaLink): If `total_only` query param is `true`, then it will be a total of all records after filtering and no items will be returned. If `total_only` is `false`, then it will be a total of all records on this page. 
             items (list[BucketReplicaLink]): A list of object store bucket replica link objects.
-            total (BucketReplicaLink): If `total_only` query param is `true`, then it will be a total of all records after filtering and no items will be returned. If `total_only` is `false`, then it will be a total of all records on this page.
         """
         if continuation_token is not None:
             self.continuation_token = continuation_token
         if total_item_count is not None:
             self.total_item_count = total_item_count
-        if items is not None:
-            self.items = items
         if total is not None:
             self.total = total
+        if items is not None:
+            self.items = items
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

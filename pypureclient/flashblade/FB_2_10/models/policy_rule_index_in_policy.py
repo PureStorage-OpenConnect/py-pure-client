@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.10, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.10, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.10
     
@@ -46,7 +46,7 @@ class PolicyRuleIndexInPolicy(object):
     ):
         """
         Keyword args:
-            index (int): The index within the policy. The `index` indicates the order the rules are evaluated.
+            index (int): The index within the policy. The `index` indicates the order the rules are evaluated. 
         """
         if index is not None:
             self.index = index

@@ -49,7 +49,7 @@ class NetworkInterfaceNeighborNeighborPortId(object):
     ):
         """
         Keyword args:
-            type (str): The port ID subtype. Valid values are `ifname`, `ifalias`, `local`, `mac`, `ip`, and `unhandled`.
+            type (str): The port ID subtype. Valid values are `ifname`, `ifalias`, `local`, `mac`, `ip`, and `unhandled`. 
             value (str): The specific identifier for the particular port.
         """
         if type is not None:

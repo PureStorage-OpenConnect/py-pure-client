@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.3, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.3, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.3
     
@@ -31,26 +31,26 @@ class FileSystemReplicaLink(object):
     """
     swagger_types = {
         'id': 'str',
-        'direction': 'Direction',
         'lag': 'int',
         'status_details': 'str',
-        'local_file_system': 'FixedReference',
+        'direction': 'Direction',
         'policies': 'list[LocationReference]',
         'recovery_point': 'int',
         'remote': 'FixedReferenceNoResourceType',
+        'local_file_system': 'FixedReference',
         'remote_file_system': 'FixedReferenceNoResourceType',
         'status': 'str'
     }
 
     attribute_map = {
         'id': 'id',
-        'direction': 'direction',
         'lag': 'lag',
         'status_details': 'status_details',
-        'local_file_system': 'local_file_system',
+        'direction': 'direction',
         'policies': 'policies',
         'recovery_point': 'recovery_point',
         'remote': 'remote',
+        'local_file_system': 'local_file_system',
         'remote_file_system': 'remote_file_system',
         'status': 'status'
     }
@@ -61,45 +61,45 @@ class FileSystemReplicaLink(object):
     def __init__(
         self,
         id=None,  # type: str
-        direction=None,  # type: models.Direction
         lag=None,  # type: int
         status_details=None,  # type: str
-        local_file_system=None,  # type: models.FixedReference
+        direction=None,  # type: models.Direction
         policies=None,  # type: List[models.LocationReference]
         recovery_point=None,  # type: int
         remote=None,  # type: models.FixedReferenceNoResourceType
+        local_file_system=None,  # type: models.FixedReference
         remote_file_system=None,  # type: models.FixedReferenceNoResourceType
         status=None,  # type: str
     ):
         """
         Keyword args:
-            id (str): A non-modifiable, globally unique ID chosen by the system.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            lag (int): Duration in milliseconds that represents how far behind the replication target is from the source. This is the time difference between current time and `recovery_point`. 
+            status_details (str): Detailed information about the status of the replica link when it is unhealthy. 
             direction (Direction)
-            lag (int): Duration in milliseconds that represents how far behind the replication target is from the source. This is the time difference between current time and `recovery_point`.
-            status_details (str): Detailed information about the status of the replica link when it is unhealthy.
-            local_file_system (FixedReference): Reference to a local file system.
             policies (list[LocationReference])
-            recovery_point (int): Time when the last replicated snapshot was created, in milliseconds since UNIX epoch. I.e. the recovery point if the file system is promoted.
+            recovery_point (int): Time when the last replicated snapshot was created, in milliseconds since UNIX epoch. I.e. the recovery point if the file system is promoted. 
             remote (FixedReferenceNoResourceType): Reference to a remote array.
+            local_file_system (FixedReference): Reference to a local file system.
             remote_file_system (FixedReferenceNoResourceType): Reference to a remote file system.
-            status (str): Status of the replica link. Values include `replicating`, `idle`, and `unhealthy`.
+            status (str): Status of the replica link. Values include `replicating`, `idle`, and `unhealthy`. 
         """
         if id is not None:
             self.id = id
-        if direction is not None:
-            self.direction = direction
         if lag is not None:
             self.lag = lag
         if status_details is not None:
             self.status_details = status_details
-        if local_file_system is not None:
-            self.local_file_system = local_file_system
+        if direction is not None:
+            self.direction = direction
         if policies is not None:
             self.policies = policies
         if recovery_point is not None:
             self.recovery_point = recovery_point
         if remote is not None:
             self.remote = remote
+        if local_file_system is not None:
+            self.local_file_system = local_file_system
         if remote_file_system is not None:
             self.remote_file_system = remote_file_system
         if status is not None:

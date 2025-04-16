@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.13, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.13, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.13
     
@@ -30,18 +30,18 @@ class PolicyRuleObjectAccessBulkManage(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'actions': 'list[str]',
-        'conditions': 'PolicyRuleObjectAccessCondition',
-        'resources': 'list[str]',
         'effect': 'str',
+        'resources': 'list[str]',
+        'conditions': 'PolicyRuleObjectAccessCondition',
+        'actions': 'list[str]',
         'name': 'str'
     }
 
     attribute_map = {
-        'actions': 'actions',
-        'conditions': 'conditions',
-        'resources': 'resources',
         'effect': 'effect',
+        'resources': 'resources',
+        'conditions': 'conditions',
+        'actions': 'actions',
         'name': 'name'
     }
 
@@ -50,28 +50,28 @@ class PolicyRuleObjectAccessBulkManage(object):
 
     def __init__(
         self,
-        actions=None,  # type: List[str]
-        conditions=None,  # type: models.PolicyRuleObjectAccessCondition
-        resources=None,  # type: List[str]
         effect=None,  # type: str
+        resources=None,  # type: List[str]
+        conditions=None,  # type: models.PolicyRuleObjectAccessCondition
+        actions=None,  # type: List[str]
         name=None,  # type: str
     ):
         """
         Keyword args:
-            actions (list[str]): The list of actions granted by this rule. Each included action may restrict other properties of the rule. Supported actions are returned by the `/object-store-access-policy-actions` endpoint.
-            conditions (PolicyRuleObjectAccessCondition): Conditions used to limit the scope which this rule applies to.
-            resources (list[str]): The list of resources which this rule applies to. Each resource can include a bucket component, optionally followed by an object component. The choice of which components a resource can include is dictated by which actions are included in the rule. For further details, see the Object Store Access Policy Actions section of the User Guide.
-            effect (str): Effect of this rule. When `allow`, the rule allows the given actions to be performed on the given resources, subject to the given conditions. When `deny`, the rule disallows performing the given actions on the given resources, subject to the given condition. This takes precedence over any matching `allow` rules. Valid values include `allow` and `deny`.
+            effect (str): Effect of this rule. When `allow`, the rule allows the given actions to be performed on the given resources, subject to the given conditions. When `deny`, the rule disallows performing the given actions on the given resources, subject to the given condition. This takes precedence over any matching `allow` rules. Valid values include `allow` and `deny`. 
+            resources (list[str]): The list of resources which this rule applies to. Each resource can include a bucket component, optionally followed by an object component. The choice of which components a resource can include is dictated by which actions are included in the rule. For further details, see the Object Store Access Policy Actions section of the User Guide. 
+            conditions (PolicyRuleObjectAccessCondition): Conditions used to limit the scope which this rule applies to. 
+            actions (list[str]): The list of actions granted by this rule. Each included action may restrict other properties of the rule. Supported actions are returned by the `/object-store-access-policy-actions` endpoint. 
             name (str): Name of the object (e.g., a file system or snapshot).
         """
-        if actions is not None:
-            self.actions = actions
-        if conditions is not None:
-            self.conditions = conditions
-        if resources is not None:
-            self.resources = resources
         if effect is not None:
             self.effect = effect
+        if resources is not None:
+            self.resources = resources
+        if conditions is not None:
+            self.conditions = conditions
+        if actions is not None:
+            self.actions = actions
         if name is not None:
             self.name = name
 

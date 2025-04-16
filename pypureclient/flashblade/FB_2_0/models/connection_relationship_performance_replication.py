@@ -3,7 +3,7 @@
 """
     FlashBlade REST API Client
 
-    A lightweight client for FlashBlade REST API 2.0, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.0, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.0
     
@@ -32,15 +32,15 @@ class ConnectionRelationshipPerformanceReplication(object):
     swagger_types = {
         'id': 'str',
         'periodic': 'ReplicationPerformance',
-        'remote': 'FixedReferenceNoResourceType',
-        'time': 'int'
+        'time': 'int',
+        'remote': 'FixedReferenceNoResourceType'
     }
 
     attribute_map = {
         'id': 'id',
         'periodic': 'periodic',
-        'remote': 'remote',
-        'time': 'time'
+        'time': 'time',
+        'remote': 'remote'
     }
 
     required_args = {
@@ -50,24 +50,24 @@ class ConnectionRelationshipPerformanceReplication(object):
         self,
         id=None,  # type: str
         periodic=None,  # type: models.ReplicationPerformance
-        remote=None,  # type: models.FixedReferenceNoResourceType
         time=None,  # type: int
+        remote=None,  # type: models.FixedReferenceNoResourceType
     ):
         """
         Keyword args:
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            periodic (ReplicationPerformance): Total bytes transmitted or received per second for periodic replication.
-            remote (FixedReferenceNoResourceType): Reference to a remote array.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            periodic (ReplicationPerformance): Total bytes transmitted or received per second for periodic replication. 
             time (int): Sample time in milliseconds since UNIX epoch.
+            remote (FixedReferenceNoResourceType): Reference to a remote array.
         """
         if id is not None:
             self.id = id
         if periodic is not None:
             self.periodic = periodic
-        if remote is not None:
-            self.remote = remote
         if time is not None:
             self.time = time
+        if remote is not None:
+            self.remote = remote
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

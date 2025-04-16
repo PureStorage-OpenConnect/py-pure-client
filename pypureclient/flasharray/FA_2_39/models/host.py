@@ -32,39 +32,39 @@ class Host(object):
     swagger_types = {
         'name': 'str',
         'context': 'FixedReference',
-        'chap': 'Chap',
-        'connection_count': 'int',
-        'host_group': 'ReferenceNoId',
-        'iqns': 'list[str]',
-        'nqns': 'list[str]',
-        'personality': 'str',
-        'port_connectivity': 'HostPortConnectivity',
         'space': 'Space',
-        'preferred_arrays': 'list[Reference]',
-        'wwns': 'list[str]',
-        'is_local': 'bool',
-        'vlan': 'str',
+        'time_remaining': 'int',
+        'host_group': 'ReferenceNoId',
         'destroyed': 'bool',
-        'time_remaining': 'int'
+        'port_connectivity': 'HostPortConnectivity',
+        'wwns': 'list[str]',
+        'personality': 'str',
+        'vlan': 'str',
+        'connection_count': 'int',
+        'chap': 'Chap',
+        'nqns': 'list[str]',
+        'iqns': 'list[str]',
+        'is_local': 'bool',
+        'preferred_arrays': 'list[Reference]'
     }
 
     attribute_map = {
         'name': 'name',
         'context': 'context',
-        'chap': 'chap',
-        'connection_count': 'connection_count',
-        'host_group': 'host_group',
-        'iqns': 'iqns',
-        'nqns': 'nqns',
-        'personality': 'personality',
-        'port_connectivity': 'port_connectivity',
         'space': 'space',
-        'preferred_arrays': 'preferred_arrays',
-        'wwns': 'wwns',
-        'is_local': 'is_local',
-        'vlan': 'vlan',
+        'time_remaining': 'time_remaining',
+        'host_group': 'host_group',
         'destroyed': 'destroyed',
-        'time_remaining': 'time_remaining'
+        'port_connectivity': 'port_connectivity',
+        'wwns': 'wwns',
+        'personality': 'personality',
+        'vlan': 'vlan',
+        'connection_count': 'connection_count',
+        'chap': 'chap',
+        'nqns': 'nqns',
+        'iqns': 'iqns',
+        'is_local': 'is_local',
+        'preferred_arrays': 'preferred_arrays'
     }
 
     required_args = {
@@ -74,72 +74,72 @@ class Host(object):
         self,
         name=None,  # type: str
         context=None,  # type: models.FixedReference
-        chap=None,  # type: models.Chap
-        connection_count=None,  # type: int
-        host_group=None,  # type: models.ReferenceNoId
-        iqns=None,  # type: List[str]
-        nqns=None,  # type: List[str]
-        personality=None,  # type: str
-        port_connectivity=None,  # type: models.HostPortConnectivity
         space=None,  # type: models.Space
-        preferred_arrays=None,  # type: List[models.Reference]
-        wwns=None,  # type: List[str]
-        is_local=None,  # type: bool
-        vlan=None,  # type: str
-        destroyed=None,  # type: bool
         time_remaining=None,  # type: int
+        host_group=None,  # type: models.ReferenceNoId
+        destroyed=None,  # type: bool
+        port_connectivity=None,  # type: models.HostPortConnectivity
+        wwns=None,  # type: List[str]
+        personality=None,  # type: str
+        vlan=None,  # type: str
+        connection_count=None,  # type: int
+        chap=None,  # type: models.Chap
+        nqns=None,  # type: List[str]
+        iqns=None,  # type: List[str]
+        is_local=None,  # type: bool
+        preferred_arrays=None,  # type: List[models.Reference]
     ):
         """
         Keyword args:
-            name (str): A user-specified name. The name must be locally unique and can be changed.
-            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
-            chap (Chap)
-            connection_count (int): The number of volumes connected to the specified host.
+            name (str): A user-specified name. The name must be locally unique and can be changed. 
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request.  Other parameters provided with the request, such as names of volumes or snapshots,  are resolved relative to the provided `context`. 
+            space (Space): Displays provisioned (virtual) size and physical storage consumption information for the sum of all volumes connected to the specified host. 
+            time_remaining (int): The amount of time left until the destroyed host is permanently eradicated, measured in milliseconds. 
             host_group (ReferenceNoId): The host group to which the host should be associated.
-            iqns (list[str]): The iSCSI qualified name (IQN) associated with the host.
-            nqns (list[str]): The NVMe Qualified Name (NQN) associated with the host.
-            personality (str): Determines how the system tunes the array to ensure that it works optimally with the host. Set `personality` to the name of the host operating system or virtual memory system. Valid values are `aix`, `esxi`, `hitachi-vsp`, `hpux`, `oracle-vm-server`, `solaris`, and `vms`. If your system is not listed as one of the valid host personalities, do not set the option. By default, the personality is not set.
+            destroyed (bool): Returns a value of `true` if the host has been destroyed with its container realm and is pending eradication. The `time_remaining` value displays the amount of time left until the destroyed host is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed host will be recovered if its container realm is recovered. Once the `time_remaining` period has elapsed, the host is permanently eradicated and can no longer be recovered. 
             port_connectivity (HostPortConnectivity)
-            space (Space): Displays provisioned (virtual) size and physical storage consumption information for the sum of all volumes connected to the specified host.
-            preferred_arrays (list[Reference]): For synchronous replication configurations, sets a host's preferred array to specify which array exposes active/optimized paths to that host. Enter multiple preferred arrays in comma-separated format. If a preferred array is set for a host, then the other arrays in the same pod will expose active/non-optimized paths to that host. If the host is in a host group, `preferred_arrays` cannot be set because host groups have their own preferred arrays. On a preferred array of a certain host, all the paths on all the ports (for both the primary and secondary controllers) are set up as A/O (active/optimized) paths, while on a non-preferred array, all the paths are A/N (Active/Non-optimized) paths.
             wwns (list[str]): The Fibre Channel World Wide Name (WWN) associated with the host.
-            is_local (bool): If set to `true`, the location reference is to the local array. If set to `false`, the location reference is to a remote location, such as a remote array or offload target.
-            vlan (str): The VLAN ID that the host is associated with. If set to `any`, the host can access any VLAN. If set to `untagged`, the host can only access untagged VLANs. If set to a number between `1` and `4094`, the host can only access the specified VLAN with that number.
-            destroyed (bool): Returns a value of `true` if the host has been destroyed with its container realm and is pending eradication. The `time_remaining` value displays the amount of time left until the destroyed host is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed host will be recovered if its container realm is recovered. Once the `time_remaining` period has elapsed, the host is permanently eradicated and can no longer be recovered.
-            time_remaining (int): The amount of time left until the destroyed host is permanently eradicated, measured in milliseconds.
+            personality (str): Determines how the system tunes the array to ensure that it works optimally with the host. Set `personality` to the name of the host operating system or virtual memory system. Valid values are `aix`, `esxi`, `hitachi-vsp`, `hpux`, `oracle-vm-server`, `solaris`, and `vms`. If your system is not listed as one of the valid host personalities, do not set the option. By default, the personality is not set. 
+            vlan (str): The VLAN ID that the host is associated with. If set to `any`, the host can access any VLAN. If set to `untagged`, the host can only access untagged VLANs.  If set to a number between `1` and `4094`, the host can only access the specified VLAN with that number. 
+            connection_count (int): The number of volumes connected to the specified host.
+            chap (Chap)
+            nqns (list[str]): The NVMe Qualified Name (NQN) associated with the host.
+            iqns (list[str]): The iSCSI qualified name (IQN) associated with the host. 
+            is_local (bool): If set to `true`, the location reference is to the local array. If set to `false`, the location reference is to a remote location, such as a remote array or offload target. 
+            preferred_arrays (list[Reference]): For synchronous replication configurations, sets a host's preferred array to specify which array exposes active/optimized paths to that host. Enter multiple preferred arrays in comma-separated format. If a preferred array is set for a host, then the other arrays in the same pod will expose active/non-optimized paths to that host. If the host is in a host group, `preferred_arrays` cannot be set because host groups have their own preferred arrays. On a preferred array of a certain host, all the paths on all the ports (for both the primary and secondary controllers) are set up as A/O (active/optimized) paths, while on a non-preferred array, all the paths are A/N (Active/Non-optimized) paths. 
         """
         if name is not None:
             self.name = name
         if context is not None:
             self.context = context
-        if chap is not None:
-            self.chap = chap
-        if connection_count is not None:
-            self.connection_count = connection_count
-        if host_group is not None:
-            self.host_group = host_group
-        if iqns is not None:
-            self.iqns = iqns
-        if nqns is not None:
-            self.nqns = nqns
-        if personality is not None:
-            self.personality = personality
-        if port_connectivity is not None:
-            self.port_connectivity = port_connectivity
         if space is not None:
             self.space = space
-        if preferred_arrays is not None:
-            self.preferred_arrays = preferred_arrays
-        if wwns is not None:
-            self.wwns = wwns
-        if is_local is not None:
-            self.is_local = is_local
-        if vlan is not None:
-            self.vlan = vlan
-        if destroyed is not None:
-            self.destroyed = destroyed
         if time_remaining is not None:
             self.time_remaining = time_remaining
+        if host_group is not None:
+            self.host_group = host_group
+        if destroyed is not None:
+            self.destroyed = destroyed
+        if port_connectivity is not None:
+            self.port_connectivity = port_connectivity
+        if wwns is not None:
+            self.wwns = wwns
+        if personality is not None:
+            self.personality = personality
+        if vlan is not None:
+            self.vlan = vlan
+        if connection_count is not None:
+            self.connection_count = connection_count
+        if chap is not None:
+            self.chap = chap
+        if nqns is not None:
+            self.nqns = nqns
+        if iqns is not None:
+            self.iqns = iqns
+        if is_local is not None:
+            self.is_local = is_local
+        if preferred_arrays is not None:
+            self.preferred_arrays = preferred_arrays
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

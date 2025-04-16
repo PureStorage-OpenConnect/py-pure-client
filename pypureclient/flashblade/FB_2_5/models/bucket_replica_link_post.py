@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.5, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.5, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.5
     
@@ -50,7 +50,7 @@ class BucketReplicaLinkPost(object):
         """
         Keyword args:
             paused (bool): Create link in the paused state? Defaults to `false`.
-            cascading_enabled (bool): If set to `true`, objects replicated to this bucket via a replica link from another array will also be replicated by this link to the remote bucket. Defaults to `false`.
+            cascading_enabled (bool): If set to `true`, objects replicated to this bucket via a replica link from another array will also be replicated by this link to the remote bucket. Defaults to `false`. 
         """
         if paused is not None:
             self.paused = paused

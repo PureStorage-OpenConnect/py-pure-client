@@ -30,27 +30,27 @@ class RemoteProtectionGroup(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
+        'id': 'str',
         'context': 'FixedReference',
-        'destroyed': 'bool',
-        'is_local': 'bool',
-        'remote': 'FixedReference',
-        'source': 'FixedReference',
         'target_retention': 'RetentionPolicy',
-        'time_remaining': 'int'
+        'time_remaining': 'int',
+        'destroyed': 'bool',
+        'source': 'FixedReference',
+        'is_local': 'bool',
+        'remote': 'FixedReference'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
+        'id': 'id',
         'context': 'context',
-        'destroyed': 'destroyed',
-        'is_local': 'is_local',
-        'remote': 'remote',
-        'source': 'source',
         'target_retention': 'target_retention',
-        'time_remaining': 'time_remaining'
+        'time_remaining': 'time_remaining',
+        'destroyed': 'destroyed',
+        'source': 'source',
+        'is_local': 'is_local',
+        'remote': 'remote'
     }
 
     required_args = {
@@ -58,46 +58,46 @@ class RemoteProtectionGroup(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
+        id=None,  # type: str
         context=None,  # type: models.FixedReference
-        destroyed=None,  # type: bool
-        is_local=None,  # type: bool
-        remote=None,  # type: models.FixedReference
-        source=None,  # type: models.FixedReference
         target_retention=None,  # type: models.RetentionPolicy
         time_remaining=None,  # type: int
+        destroyed=None,  # type: bool
+        source=None,  # type: models.FixedReference
+        is_local=None,  # type: bool
+        remote=None,  # type: models.FixedReference
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            name (str): A locally unique, system-generated name. The name cannot be modified.
-            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
-            destroyed (bool): Returns a value of `true` if the remote protection group has been destroyed and is pending eradication. The `time_remaining` value displays the amount of time left until the destroyed remote protection group is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed remote protection group can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the remote protection group is permanently eradicated and can no longer be recovered.
-            is_local (bool): If set to `true`, the location reference is to the local array. If set to `false`, the location reference is to a remote location, such as a remote array or offload target.
-            remote (FixedReference): The offload target that the remote protection group is on.
-            source (FixedReference): The array where the remote protection group is replicated from.
+            name (str): A locally unique, system-generated name. The name cannot be modified. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource. 
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request.  Other parameters provided with the request, such as names of volumes or snapshots,  are resolved relative to the provided `context`. 
             target_retention (RetentionPolicy): The retention policy for the remote protection group.
-            time_remaining (int): Milliseconds remaining until eradication, if remote protection group has been destroyed.
+            time_remaining (int): Milliseconds remaining until eradication, if remote protection group has been destroyed. 
+            destroyed (bool): Returns a value of `true` if the remote protection group has been destroyed and is pending eradication. The `time_remaining` value displays the amount of time left until the destroyed remote protection group is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed remote protection group can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the remote protection group is permanently eradicated and can no longer be recovered. 
+            source (FixedReference): The array where the remote protection group is replicated from. 
+            is_local (bool): If set to `true`, the location reference is to the local array. If set to `false`, the location reference is to a remote location, such as a remote array or offload target. 
+            remote (FixedReference): The offload target that the remote protection group is on. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
         if context is not None:
             self.context = context
-        if destroyed is not None:
-            self.destroyed = destroyed
-        if is_local is not None:
-            self.is_local = is_local
-        if remote is not None:
-            self.remote = remote
-        if source is not None:
-            self.source = source
         if target_retention is not None:
             self.target_retention = target_retention
         if time_remaining is not None:
             self.time_remaining = time_remaining
+        if destroyed is not None:
+            self.destroyed = destroyed
+        if source is not None:
+            self.source = source
+        if is_local is not None:
+            self.is_local = is_local
+        if remote is not None:
+            self.remote = remote
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

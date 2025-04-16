@@ -30,37 +30,37 @@ class Arrays(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
-        'banner': 'str',
-        'capacity': 'int',
-        'console_lock_enabled': 'bool',
+        'id': 'str',
         'encryption': 'ArrayEncryption',
+        'os': 'str',
+        'scsi_timeout': 'int',
+        'parity': 'float',
+        'banner': 'str',
+        'console_lock_enabled': 'bool',
         'eradication_config': 'EradicationConfig',
         'idle_timeout': 'int',
         'ntp_servers': 'list[str]',
-        'os': 'str',
-        'parity': 'float',
-        'scsi_timeout': 'int',
+        'version': 'str',
         'space': 'Space',
-        'version': 'str'
+        'capacity': 'int'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
-        'banner': 'banner',
-        'capacity': 'capacity',
-        'console_lock_enabled': 'console_lock_enabled',
+        'id': 'id',
         'encryption': 'encryption',
+        'os': 'os',
+        'scsi_timeout': 'scsi_timeout',
+        'parity': 'parity',
+        'banner': 'banner',
+        'console_lock_enabled': 'console_lock_enabled',
         'eradication_config': 'eradication_config',
         'idle_timeout': 'idle_timeout',
         'ntp_servers': 'ntp_servers',
-        'os': 'os',
-        'parity': 'parity',
-        'scsi_timeout': 'scsi_timeout',
+        'version': 'version',
         'space': 'space',
-        'version': 'version'
+        'capacity': 'capacity'
     }
 
     required_args = {
@@ -68,66 +68,66 @@ class Arrays(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
-        banner=None,  # type: str
-        capacity=None,  # type: int
-        console_lock_enabled=None,  # type: bool
+        id=None,  # type: str
         encryption=None,  # type: models.ArrayEncryption
+        os=None,  # type: str
+        scsi_timeout=None,  # type: int
+        parity=None,  # type: float
+        banner=None,  # type: str
+        console_lock_enabled=None,  # type: bool
         eradication_config=None,  # type: models.EradicationConfig
         idle_timeout=None,  # type: int
         ntp_servers=None,  # type: List[str]
-        os=None,  # type: str
-        parity=None,  # type: float
-        scsi_timeout=None,  # type: int
-        space=None,  # type: models.Space
         version=None,  # type: str
+        space=None,  # type: models.Space
+        capacity=None,  # type: int
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            name (str): A user-specified name. The name must be locally unique and can be changed.
-            banner (str)
-            capacity (int): The usable capacity in bytes. If the user does not have sufficient access, this field will return `null`.
-            console_lock_enabled (bool): If `true`, console lock is enabled for the array. If the user does not have sufficient access, this field will return `null`.
+            name (str): A user-specified name. The name must be locally unique and can be changed. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource. 
             encryption (ArrayEncryption)
+            os (str): Specifies the operating system. Valid values are `Purity`, `Purity//FA`, and `Purity//FB`. 
+            scsi_timeout (int): The SCSI timeout. If not specified, defaults to `60s`. If the user does not have sufficient access, this field will return `null`. 
+            parity (float): A representation of data redundancy on the array. Data redundancy is rebuilt automatically by the system whenever parity is less than `1.0`. If the user does not have sufficient access, this field will return `null`. 
+            banner (str)
+            console_lock_enabled (bool): If `true`, console lock is enabled for the array. If the user does not have sufficient access, this field will return `null`. 
             eradication_config (EradicationConfig)
-            idle_timeout (int): The idle timeout in milliseconds. Valid values include `0` and any multiple of `60000` in the range of `300000` and `10800000`. Any other values will be rounded down to the nearest multiple of `60000`.
-            ntp_servers (list[str]): NTP Servers. If the user does not have sufficient access, this field will return `null`.
-            os (str): Specifies the operating system. Valid values are `Purity`, `Purity//FA`, and `Purity//FB`.
-            parity (float): A representation of data redundancy on the array. Data redundancy is rebuilt automatically by the system whenever parity is less than `1.0`. If the user does not have sufficient access, this field will return `null`.
-            scsi_timeout (int): The SCSI timeout. If not specified, defaults to `60s`. If the user does not have sufficient access, this field will return `null`.
-            space (Space)
+            idle_timeout (int): The idle timeout in milliseconds. Valid values include `0` and any multiple of `60000` in the range of `300000` and `10800000`. Any other values will be rounded down to the nearest multiple of `60000`. 
+            ntp_servers (list[str]): NTP Servers. If the user does not have sufficient access, this field will return `null`. 
             version (str)
+            space (Space)
+            capacity (int): The usable capacity in bytes. If the user does not have sufficient access, this field will return `null`. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
-        if banner is not None:
-            self.banner = banner
-        if capacity is not None:
-            self.capacity = capacity
-        if console_lock_enabled is not None:
-            self.console_lock_enabled = console_lock_enabled
+        if id is not None:
+            self.id = id
         if encryption is not None:
             self.encryption = encryption
+        if os is not None:
+            self.os = os
+        if scsi_timeout is not None:
+            self.scsi_timeout = scsi_timeout
+        if parity is not None:
+            self.parity = parity
+        if banner is not None:
+            self.banner = banner
+        if console_lock_enabled is not None:
+            self.console_lock_enabled = console_lock_enabled
         if eradication_config is not None:
             self.eradication_config = eradication_config
         if idle_timeout is not None:
             self.idle_timeout = idle_timeout
         if ntp_servers is not None:
             self.ntp_servers = ntp_servers
-        if os is not None:
-            self.os = os
-        if parity is not None:
-            self.parity = parity
-        if scsi_timeout is not None:
-            self.scsi_timeout = scsi_timeout
-        if space is not None:
-            self.space = space
         if version is not None:
             self.version = version
+        if space is not None:
+            self.space = space
+        if capacity is not None:
+            self.capacity = capacity
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

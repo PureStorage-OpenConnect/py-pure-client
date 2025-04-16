@@ -52,9 +52,9 @@ class PolicyrulenfsclientpostRules(object):
     ):
         """
         Keyword args:
-            access (str): Specifies access control for the export. Valid values are `root-squash` and `no-root-squash`. If not specified, the default value is `root-squash`.
-            client (str): Specifies which clients are given access. Valid values include `IP`, `IP mask`, or `hostname`. The default is `*` if not specified.
-            permission (str): Specifies which read-write client access permissions are allowed for the export. Values include `rw` and `ro`. The default value is `rw` if not specified.
+            access (str): Specifies access control for the export. Valid values are `root-squash` and `no-root-squash`. If not specified, the default value is `root-squash`. 
+            client (str): Specifies which clients are given access. Valid values include `IP`, `IP mask`, or `hostname`. The default is `*` if not specified. 
+            permission (str): Specifies which read-write client access permissions are allowed for the export. Values include `rw` and `ro`. The default value is `rw` if not specified. 
         """
         if access is not None:
             self.access = access

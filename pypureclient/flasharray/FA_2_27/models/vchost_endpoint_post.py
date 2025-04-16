@@ -49,8 +49,8 @@ class VchostEndpointPost(object):
     ):
         """
         Keyword args:
-            endpoint (str): The IPv4 or IPv6 address of the endpoint.
-            certificates (list[ReferenceNoIdWithType]): The certificate to be presented by the vchost over the configured endpoints.
+            endpoint (str): The IPv4 or IPv6 address of the endpoint. 
+            certificates (list[ReferenceNoIdWithType]): The certificate to be presented by the vchost over the configured endpoints. 
         """
         if endpoint is not None:
             self.endpoint = endpoint

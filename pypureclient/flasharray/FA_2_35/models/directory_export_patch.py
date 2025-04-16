@@ -49,8 +49,8 @@ class DirectoryExportPatch(object):
     ):
         """
         Keyword args:
-            export_enabled (bool): If set to `true`, the export is enabled. If not specified, defaults to `true`.
-            export_name (str): The new name of the export. Export names must be unique within the same protocol.
+            export_enabled (bool): If set to `true`, the export is enabled. If not specified, defaults to `true`. 
+            export_name (str): The new name of the export. Export names must be unique within the same protocol. 
         """
         if export_enabled is not None:
             self.export_enabled = export_enabled

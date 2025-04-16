@@ -33,18 +33,18 @@ class Controller(object):
         'name': 'str',
         'mode': 'str',
         'model': 'str',
-        'status': 'str',
         'type': 'str',
-        'version': 'str'
+        'version': 'str',
+        'status': 'str'
     }
 
     attribute_map = {
         'name': 'name',
         'mode': 'mode',
         'model': 'model',
-        'status': 'status',
         'type': 'type',
-        'version': 'version'
+        'version': 'version',
+        'status': 'status'
     }
 
     required_args = {
@@ -55,18 +55,18 @@ class Controller(object):
         name=None,  # type: str
         mode=None,  # type: str
         model=None,  # type: str
-        status=None,  # type: str
         type=None,  # type: str
         version=None,  # type: str
+        status=None,  # type: str
     ):
         """
         Keyword args:
-            name (str): A locally unique, system-generated name. The name cannot be modified.
-            mode (str): Mode of controller. Values include `not present`, `offline`, `primary`, and `secondary`.
+            name (str): A locally unique, system-generated name. The name cannot be modified. 
+            mode (str): Mode of controller. Values include `not present`, `offline`, `primary`, and `secondary`. 
             model (str)
-            status (str): Status of controller. Values include `not ready`, `ready`, `unknown`, and `updating`.
-            type (str): Type of controller. Values include `array_controller` and `shelf_controller`.
+            type (str): Type of controller. Values include `array_controller` and `shelf_controller`. 
             version (str)
+            status (str): Status of controller. Values include `not ready`, `ready`, `unknown`, and `updating`. 
         """
         if name is not None:
             self.name = name
@@ -74,12 +74,12 @@ class Controller(object):
             self.mode = mode
         if model is not None:
             self.model = model
-        if status is not None:
-            self.status = status
         if type is not None:
             self.type = type
         if version is not None:
             self.version = version
+        if status is not None:
+            self.status = status
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.8, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.8, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.8
     
@@ -30,13 +30,13 @@ class MultiProtocolPost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'access_control_style': 'str',
-        'safeguard_acls': 'bool'
+        'safeguard_acls': 'bool',
+        'access_control_style': 'str'
     }
 
     attribute_map = {
-        'access_control_style': 'access_control_style',
-        'safeguard_acls': 'safeguard_acls'
+        'safeguard_acls': 'safeguard_acls',
+        'access_control_style': 'access_control_style'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class MultiProtocolPost(object):
 
     def __init__(
         self,
-        access_control_style=None,  # type: str
         safeguard_acls=None,  # type: bool
+        access_control_style=None,  # type: str
     ):
         """
         Keyword args:
-            access_control_style (str): The access control style that is utilized for client actions such as setting file and directory ACLs. Possible values include `nfs`, `smb`, `shared`, `independent`, and `mode-bits`. If `nfs` is specified, then SMB clients will be unable to set permissions on files and directories. If `smb` is specified, then NFS clients will be unable to set permissions on files and directories. If `shared` is specified, then NFS and SMB clients will both be able to set permissions on files and directories. Any client will be able to overwrite the permissions set by another client, regardless of protocol. If `independent` is specified, then NFS and SMB clients will both be able to set permissions on files and directories, and can access files and directories created over any protocol. Permissions set by SMB clients will not affect NFS clients and vice versa. NFS clients will be restricted to only using mode bits to set permissions. If `mode-bits` is specified, then NFS and SMB clients will both be able to set permissions on files and directories, but only mode bits may be used to set permissions for NFS clients. When SMB clients set an ACL, it will be converted to have the same permission granularity as NFS mode bits. Defaults to `shared`.
-            safeguard_acls (bool): If set to `true`, prevents NFS clients from erasing a configured ACL when setting NFS mode bits. If this is `true`, then attempts to set mode bits on a file or directory will fail if they cannot be combined with the existing ACL set on a file or directory without erasing the ACL. Attempts to set mode bits that would not erase an existing ACL will still succeed and the mode bit changes will be merged with the existing ACL. This must be `false` when `access_control_style` is set to either `independent` or `mode-bits`. Defaults to `true`.
+            safeguard_acls (bool): If set to `true`, prevents NFS clients from erasing a configured ACL when setting NFS mode bits. If this is `true`, then attempts to set mode bits on a file or directory will fail if they cannot be combined with the existing ACL set on a file or directory without erasing the ACL. Attempts to set mode bits that would not erase an existing ACL will still succeed and the mode bit changes will be merged with the existing ACL. This must be `false` when `access_control_style` is set to either `independent` or `mode-bits`. Defaults to `true`. 
+            access_control_style (str): The access control style that is utilized for client actions such as setting file and directory ACLs. Possible values include `nfs`, `smb`, `shared`, `independent`, and `mode-bits`. If `nfs` is specified, then SMB clients will be unable to set permissions on files and directories. If `smb` is specified, then NFS clients will be unable to set permissions on files and directories. If `shared` is specified, then NFS and SMB clients will both be able to set permissions on files and directories. Any client will be able to overwrite the permissions set by another client, regardless of protocol. If `independent` is specified, then NFS and SMB clients will both be able to set permissions on files and directories, and can access files and directories created over any protocol. Permissions set by SMB clients will not affect NFS clients and vice versa. NFS clients will be restricted to only using mode bits to set permissions. If `mode-bits` is specified, then NFS and SMB clients will both be able to set permissions on files and directories, but only mode bits may be used to set permissions for NFS clients. When SMB clients set an ACL, it will be converted to have the same permission granularity as NFS mode bits. Defaults to `shared`. 
         """
-        if access_control_style is not None:
-            self.access_control_style = access_control_style
         if safeguard_acls is not None:
             self.safeguard_acls = safeguard_acls
+        if access_control_style is not None:
+            self.access_control_style = access_control_style
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.16
     
@@ -31,14 +31,14 @@ class StorageClassInfo(object):
     """
     swagger_types = {
         'name': 'str',
-        'status': 'str',
-        'status_details': 'str'
+        'status_details': 'str',
+        'status': 'str'
     }
 
     attribute_map = {
         'name': 'name',
-        'status': 'status',
-        'status_details': 'status_details'
+        'status_details': 'status_details',
+        'status': 'status'
     }
 
     required_args = {
@@ -47,21 +47,21 @@ class StorageClassInfo(object):
     def __init__(
         self,
         name=None,  # type: str
-        status=None,  # type: str
         status_details=None,  # type: str
+        status=None,  # type: str
     ):
         """
         Keyword args:
             name (str)
-            status (str): The status of the transition from the policy to the requested policy. If there is an ongoing transition, the status will be one of `In-Progress` or `Queued`. If there is no transition ongoing, this field will be null.
             status_details (str): Additional details about the status of the transition. If there is no transition ongoing, this field will be null.
+            status (str): The status of the transition from the policy to the requested policy. If there is an ongoing transition, the status will be one of `In-Progress` or `Queued`. If there is no transition ongoing, this field will be null.
         """
         if name is not None:
             self.name = name
-        if status is not None:
-            self.status = status
         if status_details is not None:
             self.status_details = status_details
+        if status is not None:
+            self.status = status
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

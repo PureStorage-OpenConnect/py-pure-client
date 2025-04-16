@@ -50,7 +50,7 @@ class PolicyAuditFilePost(object):
         """
         Keyword args:
             enabled (bool): If set to `true`, enables the policy. If set to `false`, disables the policy.
-            log_targets (list[ReferenceNoIdWithType]): A list of targets to which audit logs will be sent.
+            log_targets (list[ReferenceNoIdWithType]): A list of targets to which audit logs will be sent. 
         """
         if enabled is not None:
             self.enabled = enabled

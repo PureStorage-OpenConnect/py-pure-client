@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.2, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.2, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.2
     
@@ -31,16 +31,16 @@ class DirectoryServiceRole(object):
     """
     swagger_types = {
         'role': 'Reference',
+        'group_base': 'str',
         'id': 'str',
-        'group': 'str',
-        'group_base': 'str'
+        'group': 'str'
     }
 
     attribute_map = {
         'role': 'role',
+        'group_base': 'group_base',
         'id': 'id',
-        'group': 'group',
-        'group_base': 'group_base'
+        'group': 'group'
     }
 
     required_args = {
@@ -49,25 +49,25 @@ class DirectoryServiceRole(object):
     def __init__(
         self,
         role=None,  # type: models.Reference
+        group_base=None,  # type: str
         id=None,  # type: str
         group=None,  # type: str
-        group_base=None,  # type: str
     ):
         """
         Keyword args:
-            role (Reference): A reference to the role; can be any role that exists on the system.
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            group (str): Common Name (CN) of the directory service group containing users with authority level of the specified role name.
-            group_base (str): Specifies where the configured group is located in the directory tree.
+            role (Reference): A reference to the role; can be any role that exists on the system. 
+            group_base (str): Specifies where the configured group is located in the directory tree. 
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            group (str): Common Name (CN) of the directory service group containing users with authority level of the specified role name. 
         """
         if role is not None:
             self.role = role
+        if group_base is not None:
+            self.group_base = group_base
         if id is not None:
             self.id = id
         if group is not None:
             self.group = group
-        if group_base is not None:
-            self.group_base = group_base
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

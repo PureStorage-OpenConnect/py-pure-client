@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.13, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.13, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.13
     
@@ -30,26 +30,26 @@ class TestResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'component_address': 'str',
-        'component_name': 'str',
-        'description': 'str',
-        'destination': 'str',
-        'enabled': 'bool',
         'resource': 'FixedReference',
-        'result_details': 'str',
         'success': 'bool',
+        'component_name': 'str',
+        'destination': 'str',
+        'description': 'str',
+        'component_address': 'str',
+        'enabled': 'bool',
+        'result_details': 'str',
         'test_type': 'str'
     }
 
     attribute_map = {
-        'component_address': 'component_address',
-        'component_name': 'component_name',
-        'description': 'description',
-        'destination': 'destination',
-        'enabled': 'enabled',
         'resource': 'resource',
-        'result_details': 'result_details',
         'success': 'success',
+        'component_name': 'component_name',
+        'destination': 'destination',
+        'description': 'description',
+        'component_address': 'component_address',
+        'enabled': 'enabled',
+        'result_details': 'result_details',
         'test_type': 'test_type'
     }
 
@@ -58,44 +58,44 @@ class TestResult(object):
 
     def __init__(
         self,
-        component_address=None,  # type: str
-        component_name=None,  # type: str
-        description=None,  # type: str
-        destination=None,  # type: str
-        enabled=None,  # type: bool
         resource=None,  # type: models.FixedReference
-        result_details=None,  # type: str
         success=None,  # type: bool
+        component_name=None,  # type: str
+        destination=None,  # type: str
+        description=None,  # type: str
+        component_address=None,  # type: str
+        enabled=None,  # type: bool
+        result_details=None,  # type: str
         test_type=None,  # type: str
     ):
         """
         Keyword args:
-            component_address (str): Address of the component running the test.
-            component_name (str): Name of the component running the test.
-            description (str): What the test is doing.
-            destination (str): The URI of the target server being tested.
-            enabled (bool): Is the service enabled or not?
             resource (FixedReference): A reference to the object being tested.
+            success (bool): Returns a value of `true` if the specified test succeeded. Returns a value of `false` if the specified test failed. 
+            component_name (str): Name of the component running the test.
+            destination (str): The URI of the target server being tested.
+            description (str): What the test is doing.
+            component_address (str): Address of the component running the test.
+            enabled (bool): Is the service enabled or not?
             result_details (str): Additional information about the test result.
-            success (bool): Returns a value of `true` if the specified test succeeded. Returns a value of `false` if the specified test failed.
-            test_type (str): Displays the type of test being performed. The returned values are determined by the `resource` being tested and its configuration.
+            test_type (str): Displays the type of test being performed. The returned values are determined by the `resource` being tested and its configuration. 
         """
-        if component_address is not None:
-            self.component_address = component_address
-        if component_name is not None:
-            self.component_name = component_name
-        if description is not None:
-            self.description = description
-        if destination is not None:
-            self.destination = destination
-        if enabled is not None:
-            self.enabled = enabled
         if resource is not None:
             self.resource = resource
-        if result_details is not None:
-            self.result_details = result_details
         if success is not None:
             self.success = success
+        if component_name is not None:
+            self.component_name = component_name
+        if destination is not None:
+            self.destination = destination
+        if description is not None:
+            self.description = description
+        if component_address is not None:
+            self.component_address = component_address
+        if enabled is not None:
+            self.enabled = enabled
+        if result_details is not None:
+            self.result_details = result_details
         if test_type is not None:
             self.test_type = test_type
 

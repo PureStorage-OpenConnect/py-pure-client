@@ -30,17 +30,17 @@ class Policy(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
-        'enabled': 'bool',
-        'policy_type': 'str'
+        'id': 'str',
+        'policy_type': 'str',
+        'enabled': 'bool'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
-        'enabled': 'enabled',
-        'policy_type': 'policy_type'
+        'id': 'id',
+        'policy_type': 'policy_type',
+        'enabled': 'enabled'
     }
 
     required_args = {
@@ -48,26 +48,26 @@ class Policy(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
-        enabled=None,  # type: bool
+        id=None,  # type: str
         policy_type=None,  # type: str
+        enabled=None,  # type: bool
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            name (str): A user-specified name. The name must be locally unique and can be changed.
-            enabled (bool): Returns a value of `true` if the policy is enabled.
-            policy_type (str): Type of the policy. Valid values include `nfs`, `smb`, `snapshot`, and `quota`.
+            name (str): A user-specified name. The name must be locally unique and can be changed. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource. 
+            policy_type (str): Type of the policy. Valid values include `nfs`, `smb`, `snapshot`, and `quota`. 
+            enabled (bool): Returns a value of `true` if the policy is enabled. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
-        if enabled is not None:
-            self.enabled = enabled
+        if id is not None:
+            self.id = id
         if policy_type is not None:
             self.policy_type = policy_type
+        if enabled is not None:
+            self.enabled = enabled
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

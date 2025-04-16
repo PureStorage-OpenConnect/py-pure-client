@@ -52,9 +52,9 @@ class SoftwareApi(object):
         >>> thread = api.api217_software_check_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param str filter: Narrows down the results to only the response objects that satisfy the filter criteria. 
+        :param str filter: Exclude resources that don't match the specified criteria. 
         :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
-        :param int limit: Limits the size of the response to the specified number of objects on each page. To return the total number of resources, set `limit=0`. The total number of resources is returned as a `total_item_count` value. If the page size requested is larger than the system maximum limit, the server returns the maximum limit, disregarding the requested page size. 
+        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request. 
         :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
         :param int offset: The offset of the first resource to return from a collection. 
         :param list[str] software_names: A comma-separated list of software names. 

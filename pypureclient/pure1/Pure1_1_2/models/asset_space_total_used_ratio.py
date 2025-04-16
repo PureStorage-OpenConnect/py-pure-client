@@ -3,7 +3,7 @@
 """
     Pure1 Public REST API
 
-    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)  The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
+    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)   The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
 
     OpenAPI spec version: 1.2
     
@@ -30,15 +30,15 @@ class AssetSpaceTotalUsedRatio(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'unit': 'str',
         'data': 'float',
-        'metric': 'FixedReference',
-        'unit': 'str'
+        'metric': 'FixedReference'
     }
 
     attribute_map = {
+        'unit': 'unit',
         'data': 'data',
-        'metric': 'metric',
-        'unit': 'unit'
+        'metric': 'metric'
     }
 
     required_args = {
@@ -46,31 +46,31 @@ class AssetSpaceTotalUsedRatio(object):
 
     def __init__(
         self,
+        unit=None,  # type: str
         data=None,  # type: float
         metric=None,  # type: models.FixedReference
-        unit=None,  # type: str
     ):
         """
         Keyword args:
-            data (float)
-            metric (FixedReference): A reference to the metric this data measures.
             unit (str): The unit of the metric.
+            data (float)
+            metric (FixedReference): A reference to the metric this data measures. 
         """
+        if unit is not None:
+            self.unit = unit
         if data is not None:
             self.data = data
         if metric is not None:
             self.metric = metric
-        if unit is not None:
-            self.unit = unit
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
             raise KeyError("Invalid key `{}` for `AssetSpaceTotalUsedRatio`".format(key))
         if key == "data" and value is not None:
-            if value > 1.0:
-                raise ValueError("Invalid value for `data`, value must be less than or equal to `1.0`")
-            if value < 0.0:
-                raise ValueError("Invalid value for `data`, must be a value greater than or equal to `0.0`")
+            if value > 1:
+                raise ValueError("Invalid value for `data`, value must be less than or equal to `1`")
+            if value < 0:
+                raise ValueError("Invalid value for `data`, must be a value greater than or equal to `0`")
         self.__dict__[key] = value
 
     def __getattribute__(self, item):

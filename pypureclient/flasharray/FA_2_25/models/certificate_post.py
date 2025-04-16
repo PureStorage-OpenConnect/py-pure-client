@@ -31,46 +31,46 @@ class CertificatePost(object):
     """
     swagger_types = {
         'name': 'str',
-        'certificate': 'str',
-        'common_name': 'str',
         'country': 'str',
-        'email': 'str',
-        'intermediate_certificate': 'str',
         'issued_by': 'str',
         'issued_to': 'str',
-        'key_size': 'int',
+        'certificate': 'str',
         'locality': 'str',
-        'organization': 'str',
-        'organizational_unit': 'str',
-        'state': 'str',
-        'status': 'str',
         'valid_from': 'int',
+        'intermediate_certificate': 'str',
+        'organization': 'str',
         'valid_to': 'int',
+        'state': 'str',
+        'common_name': 'str',
+        'email': 'str',
+        'organizational_unit': 'str',
+        'key_size': 'int',
+        'status': 'str',
         'days': 'int',
-        'key': 'str',
-        'passphrase': 'str'
+        'passphrase': 'str',
+        'key': 'str'
     }
 
     attribute_map = {
         'name': 'name',
-        'certificate': 'certificate',
-        'common_name': 'common_name',
         'country': 'country',
-        'email': 'email',
-        'intermediate_certificate': 'intermediate_certificate',
         'issued_by': 'issued_by',
         'issued_to': 'issued_to',
-        'key_size': 'key_size',
+        'certificate': 'certificate',
         'locality': 'locality',
-        'organization': 'organization',
-        'organizational_unit': 'organizational_unit',
-        'state': 'state',
-        'status': 'status',
         'valid_from': 'valid_from',
+        'intermediate_certificate': 'intermediate_certificate',
+        'organization': 'organization',
         'valid_to': 'valid_to',
+        'state': 'state',
+        'common_name': 'common_name',
+        'email': 'email',
+        'organizational_unit': 'organizational_unit',
+        'key_size': 'key_size',
+        'status': 'status',
         'days': 'days',
-        'key': 'key',
-        'passphrase': 'passphrase'
+        'passphrase': 'passphrase',
+        'key': 'key'
     }
 
     required_args = {
@@ -79,85 +79,85 @@ class CertificatePost(object):
     def __init__(
         self,
         name=None,  # type: str
-        certificate=None,  # type: str
-        common_name=None,  # type: str
         country=None,  # type: str
-        email=None,  # type: str
-        intermediate_certificate=None,  # type: str
         issued_by=None,  # type: str
         issued_to=None,  # type: str
-        key_size=None,  # type: int
+        certificate=None,  # type: str
         locality=None,  # type: str
-        organization=None,  # type: str
-        organizational_unit=None,  # type: str
-        state=None,  # type: str
-        status=None,  # type: str
         valid_from=None,  # type: int
+        intermediate_certificate=None,  # type: str
+        organization=None,  # type: str
         valid_to=None,  # type: int
+        state=None,  # type: str
+        common_name=None,  # type: str
+        email=None,  # type: str
+        organizational_unit=None,  # type: str
+        key_size=None,  # type: int
+        status=None,  # type: str
         days=None,  # type: int
-        key=None,  # type: str
         passphrase=None,  # type: str
+        key=None,  # type: str
     ):
         """
         Keyword args:
-            name (str): A locally unique, system-generated name. The name cannot be modified.
-            certificate (str): The text of the certificate.
-            common_name (str): The common name field listed in the certificate.
+            name (str): A locally unique, system-generated name. The name cannot be modified. 
             country (str): Two-letter country (ISO) code listed in the certificate.
-            email (str): The email field listed in the certificate.
-            intermediate_certificate (str): The text of the intermediate certificate chains.
             issued_by (str): The party that issued the certificate.
             issued_to (str): The party to whom the certificate is issued.
-            key_size (int): The size of the private key for the certificate in bits. Default is 2048 bits.
+            certificate (str): The text of the certificate.
             locality (str): The locality field listed in the certificate.
-            organization (str): The organization field listed in the certificate.
-            organizational_unit (str): The organizational unit field listed in the certificate.
-            state (str): The state/province field listed in the certificate.
-            status (str): The type of certificate. Valid values are `self-signed` and `imported`.
             valid_from (int): The date when the certificate starts being valid.
+            intermediate_certificate (str): The text of the intermediate certificate chains.
+            organization (str): The organization field listed in the certificate.
             valid_to (int): The date of when the certificate stops being valid.
-            days (int): The number of days that the self-signed certificate is valid. If not specified, defaults to 3650.
-            key (str): The text of private key.
+            state (str): The state/province field listed in the certificate.
+            common_name (str): The common name field listed in the certificate.
+            email (str): The email field listed in the certificate.
+            organizational_unit (str): The organizational unit field listed in the certificate.
+            key_size (int): The size of the private key for the certificate in bits. Default is 2048 bits.
+            status (str): The type of certificate. Valid values are `self-signed` and `imported`. 
+            days (int): The number of days that the self-signed certificate is valid. If not specified, defaults to 3650. 
             passphrase (str): The passphrase used to encrypt `private_key`.
+            key (str): The text of private key.
         """
         if name is not None:
             self.name = name
-        if certificate is not None:
-            self.certificate = certificate
-        if common_name is not None:
-            self.common_name = common_name
         if country is not None:
             self.country = country
-        if email is not None:
-            self.email = email
-        if intermediate_certificate is not None:
-            self.intermediate_certificate = intermediate_certificate
         if issued_by is not None:
             self.issued_by = issued_by
         if issued_to is not None:
             self.issued_to = issued_to
-        if key_size is not None:
-            self.key_size = key_size
+        if certificate is not None:
+            self.certificate = certificate
         if locality is not None:
             self.locality = locality
-        if organization is not None:
-            self.organization = organization
-        if organizational_unit is not None:
-            self.organizational_unit = organizational_unit
-        if state is not None:
-            self.state = state
-        if status is not None:
-            self.status = status
         if valid_from is not None:
             self.valid_from = valid_from
+        if intermediate_certificate is not None:
+            self.intermediate_certificate = intermediate_certificate
+        if organization is not None:
+            self.organization = organization
         if valid_to is not None:
             self.valid_to = valid_to
+        if state is not None:
+            self.state = state
+        if common_name is not None:
+            self.common_name = common_name
+        if email is not None:
+            self.email = email
+        if organizational_unit is not None:
+            self.organizational_unit = organizational_unit
+        if key_size is not None:
+            self.key_size = key_size
+        if status is not None:
+            self.status = status
         if days is not None:
             self.days = days
-        if key is not None:
-            self.key = key
         if passphrase is not None:
             self.passphrase = passphrase
+        if key is not None:
+            self.key = key
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -31,16 +31,16 @@ class PolicyManagementAccessPatch(object):
     """
     swagger_types = {
         'name': 'str',
+        'rules': 'list[PolicyrulemanagementaccessRules]',
         'aggregation_strategy': 'str',
-        'enabled': 'bool',
-        'rules': 'list[PolicyrulemanagementaccessRules]'
+        'enabled': 'bool'
     }
 
     attribute_map = {
         'name': 'name',
+        'rules': 'rules',
         'aggregation_strategy': 'aggregation_strategy',
-        'enabled': 'enabled',
-        'rules': 'rules'
+        'enabled': 'enabled'
     }
 
     required_args = {
@@ -49,25 +49,25 @@ class PolicyManagementAccessPatch(object):
     def __init__(
         self,
         name=None,  # type: str
+        rules=None,  # type: List[models.PolicyrulemanagementaccessRules]
         aggregation_strategy=None,  # type: str
         enabled=None,  # type: bool
-        rules=None,  # type: List[models.PolicyrulemanagementaccessRules]
     ):
         """
         Keyword args:
             name (str): The new name for the resource.
-            aggregation_strategy (str): When this is set to `least-common-permissions`, any users to whom this policy applies can receive no access rights exceeding those defined in this policy's capability and resource. When this is set to `all-permissions`, any users to whom this policy applies are capable of receiving additional access rights from other policies that apply to them.
-            enabled (bool): Sets whether the policy is enabled and grants the permissions specified.
-            rules (list[PolicyrulemanagementaccessRules]): List the rules that defines the scoped roles.
+            rules (list[PolicyrulemanagementaccessRules]): List the rules that defines the scoped roles. 
+            aggregation_strategy (str): When this is set to `least-common-permissions`, any users to whom this policy applies can receive no access rights exceeding those defined in this policy's capability and resource. When this is set to `all-permissions`, any users to whom this policy applies are capable of receiving additional access rights from other policies that apply to them. 
+            enabled (bool): Sets whether the policy is enabled and grants the permissions specified. 
         """
         if name is not None:
             self.name = name
+        if rules is not None:
+            self.rules = rules
         if aggregation_strategy is not None:
             self.aggregation_strategy = aggregation_strategy
         if enabled is not None:
             self.enabled = enabled
-        if rules is not None:
-            self.rules = rules
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

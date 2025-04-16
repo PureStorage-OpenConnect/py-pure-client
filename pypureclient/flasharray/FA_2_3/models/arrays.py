@@ -30,33 +30,33 @@ class Arrays(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
+        'id': 'str',
+        'os': 'str',
+        'scsi_timeout': 'int',
+        'parity': 'float',
         'banner': 'str',
-        'capacity': 'int',
         'console_lock_enabled': 'bool',
         'idle_timeout': 'int',
         'ntp_servers': 'list[str]',
-        'os': 'str',
-        'parity': 'float',
-        'scsi_timeout': 'int',
+        'version': 'str',
         'space': 'Space',
-        'version': 'str'
+        'capacity': 'int'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
+        'id': 'id',
+        'os': 'os',
+        'scsi_timeout': 'scsi_timeout',
+        'parity': 'parity',
         'banner': 'banner',
-        'capacity': 'capacity',
         'console_lock_enabled': 'console_lock_enabled',
         'idle_timeout': 'idle_timeout',
         'ntp_servers': 'ntp_servers',
-        'os': 'os',
-        'parity': 'parity',
-        'scsi_timeout': 'scsi_timeout',
+        'version': 'version',
         'space': 'space',
-        'version': 'version'
+        'capacity': 'capacity'
     }
 
     required_args = {
@@ -64,58 +64,58 @@ class Arrays(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
+        id=None,  # type: str
+        os=None,  # type: str
+        scsi_timeout=None,  # type: int
+        parity=None,  # type: float
         banner=None,  # type: str
-        capacity=None,  # type: int
         console_lock_enabled=None,  # type: bool
         idle_timeout=None,  # type: int
         ntp_servers=None,  # type: List[str]
-        os=None,  # type: str
-        parity=None,  # type: float
-        scsi_timeout=None,  # type: int
-        space=None,  # type: models.Space
         version=None,  # type: str
+        space=None,  # type: models.Space
+        capacity=None,  # type: int
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            name (str): A user-specified name. The name must be locally unique and can be changed.
+            name (str): A user-specified name. The name must be locally unique and can be changed. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource. 
+            os (str): Valid values are `Purity`, `Purity//FA`, and `Purity//FB`. 
+            scsi_timeout (int): The SCSI timeout. This value defaults to 60s if it is not specified. If the user does not have sufficient access, this field will return `null`. 
+            parity (float): A representation of data redundancy on the array. Data redundancy is rebuilt automatically by the system whenever parity is less than 1.0. If the user does not have sufficient access, this field will return `null`. 
             banner (str)
-            capacity (int): Usable capacity in bytes. If the user does not have sufficient access, this field will return `null`.
-            console_lock_enabled (bool): If `true`, console lock is enabled for the array. If the user does not have sufficient access, this field will return `null`.
-            idle_timeout (int): Idle timeout in milliseconds. Valid values are `0` and any multiple of 60000 in the range of 300000 and 10800000. Any other values will be rounded down to the nearest multiple of 60000.
-            ntp_servers (list[str]): NTP Servers. If the user does not have sufficient access, this field will return `null`.
-            os (str): Valid values are `Purity`, `Purity//FA`, and `Purity//FB`.
-            parity (float): A representation of data redundancy on the array. Data redundancy is rebuilt automatically by the system whenever parity is less than 1.0. If the user does not have sufficient access, this field will return `null`.
-            scsi_timeout (int): The SCSI timeout. This value defaults to 60s if it is not specified. If the user does not have sufficient access, this field will return `null`.
-            space (Space)
+            console_lock_enabled (bool): If `true`, console lock is enabled for the array. If the user does not have sufficient access, this field will return `null`. 
+            idle_timeout (int): Idle timeout in milliseconds. Valid values are `0` and any multiple of 60000 in the range of 300000 and 10800000. Any other values will be rounded down to the nearest multiple of 60000. 
+            ntp_servers (list[str]): NTP Servers. If the user does not have sufficient access, this field will return `null`. 
             version (str)
+            space (Space)
+            capacity (int): Usable capacity in bytes. If the user does not have sufficient access, this field will return `null`. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
+        if os is not None:
+            self.os = os
+        if scsi_timeout is not None:
+            self.scsi_timeout = scsi_timeout
+        if parity is not None:
+            self.parity = parity
         if banner is not None:
             self.banner = banner
-        if capacity is not None:
-            self.capacity = capacity
         if console_lock_enabled is not None:
             self.console_lock_enabled = console_lock_enabled
         if idle_timeout is not None:
             self.idle_timeout = idle_timeout
         if ntp_servers is not None:
             self.ntp_servers = ntp_servers
-        if os is not None:
-            self.os = os
-        if parity is not None:
-            self.parity = parity
-        if scsi_timeout is not None:
-            self.scsi_timeout = scsi_timeout
-        if space is not None:
-            self.space = space
         if version is not None:
             self.version = version
+        if space is not None:
+            self.space = space
+        if capacity is not None:
+            self.capacity = capacity
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

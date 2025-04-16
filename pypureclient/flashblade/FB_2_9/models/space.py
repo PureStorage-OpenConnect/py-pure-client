@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.9, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.9, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.9
     
@@ -30,19 +30,19 @@ class Space(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'data_reduction': 'float',
         'snapshots': 'int',
         'total_physical': 'int',
-        'unique': 'int',
-        'virtual': 'int'
+        'data_reduction': 'float',
+        'virtual': 'int',
+        'unique': 'int'
     }
 
     attribute_map = {
-        'data_reduction': 'data_reduction',
         'snapshots': 'snapshots',
         'total_physical': 'total_physical',
-        'unique': 'unique',
-        'virtual': 'virtual'
+        'data_reduction': 'data_reduction',
+        'virtual': 'virtual',
+        'unique': 'unique'
     }
 
     required_args = {
@@ -50,30 +50,30 @@ class Space(object):
 
     def __init__(
         self,
-        data_reduction=None,  # type: float
         snapshots=None,  # type: int
         total_physical=None,  # type: int
-        unique=None,  # type: int
+        data_reduction=None,  # type: float
         virtual=None,  # type: int
+        unique=None,  # type: int
     ):
         """
         Keyword args:
-            data_reduction (float): Reduction of data.
             snapshots (int): Physical usage by snapshots, other than unique in bytes.
             total_physical (int): Total physical usage (including snapshots) in bytes.
-            unique (int): Unique physical space occupied by customer data, in bytes. Excludes shared space, snapshots, and metadata.
+            data_reduction (float): Reduction of data.
             virtual (int): Virtual space, in bytes.
+            unique (int): Unique physical space occupied by customer data, in bytes. Excludes shared space, snapshots, and metadata. 
         """
-        if data_reduction is not None:
-            self.data_reduction = data_reduction
         if snapshots is not None:
             self.snapshots = snapshots
         if total_physical is not None:
             self.total_physical = total_physical
-        if unique is not None:
-            self.unique = unique
+        if data_reduction is not None:
+            self.data_reduction = data_reduction
         if virtual is not None:
             self.virtual = virtual
+        if unique is not None:
+            self.unique = unique
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

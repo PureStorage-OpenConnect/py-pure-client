@@ -3,7 +3,7 @@
 """
     Pure1 Public REST API
 
-    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)  The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
+    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)   The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
 
     OpenAPI spec version: 1.2
     
@@ -31,26 +31,26 @@ class SubscriptionAsset(object):
     """
     swagger_types = {
         'as_of': 'int',
-        'id': 'str',
         'name': 'str',
-        'install_address': 'BaseAddress',
+        'id': 'str',
+        'license': 'FixedReference',
         'activation_date': 'int',
-        'end_of_life_date': 'int',
         'array': 'SubscriptionAssetArray',
+        'end_of_life_date': 'int',
         'subscription': 'FixedReference',
-        'license': 'FixedReference'
+        'install_address': 'BaseAddress'
     }
 
     attribute_map = {
         'as_of': '_as_of',
-        'id': 'id',
         'name': 'name',
-        'install_address': 'install_address',
+        'id': 'id',
+        'license': 'license',
         'activation_date': 'activation_date',
-        'end_of_life_date': 'end_of_life_date',
         'array': 'array',
+        'end_of_life_date': 'end_of_life_date',
         'subscription': 'subscription',
-        'license': 'license'
+        'install_address': 'install_address'
     }
 
     required_args = {
@@ -59,45 +59,45 @@ class SubscriptionAsset(object):
     def __init__(
         self,
         as_of=None,  # type: int
-        id=None,  # type: str
         name=None,  # type: str
-        install_address=None,  # type: models.BaseAddress
-        activation_date=None,  # type: int
-        end_of_life_date=None,  # type: int
-        array=None,  # type: models.SubscriptionAssetArray
-        subscription=None,  # type: models.FixedReference
+        id=None,  # type: str
         license=None,  # type: models.FixedReference
+        activation_date=None,  # type: int
+        array=None,  # type: models.SubscriptionAssetArray
+        end_of_life_date=None,  # type: int
+        subscription=None,  # type: models.FixedReference
+        install_address=None,  # type: models.BaseAddress
     ):
         """
         Keyword args:
             as_of (int): The freshness of the data (timestamp in millis since epoch).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
             name (str): A non-modifiable, locally unique name chosen by the system.
-            install_address (BaseAddress): The address where the appliance is installed. This address is also where replacement parts will be shipped to.
-            activation_date (int): The date when the appliance is activated under the license. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch.
-            end_of_life_date (int): The date when the appliance hardware reach end of life and Pure no longer provide support. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch.
-            array (SubscriptionAssetArray): The specific fields for assets that are arrays.
-            subscription (FixedReference): A reference to which subscription this appliance belongs.
+            id (str): A non-modifiable, globally unique ID chosen by the system.
             license (FixedReference): A reference to which license this appliance belongs.
+            activation_date (int): The date when the appliance is activated under the license. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch. 
+            array (SubscriptionAssetArray): The specific fields for assets that are arrays.
+            end_of_life_date (int): The date when the appliance hardware reach end of life and Pure no longer provide support. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch. 
+            subscription (FixedReference): A reference to which subscription this appliance belongs.
+            install_address (BaseAddress): The address where the appliance is installed. This address is also where replacement parts will be shipped to. 
         """
         if as_of is not None:
             self.as_of = as_of
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
-        if install_address is not None:
-            self.install_address = install_address
-        if activation_date is not None:
-            self.activation_date = activation_date
-        if end_of_life_date is not None:
-            self.end_of_life_date = end_of_life_date
-        if array is not None:
-            self.array = array
-        if subscription is not None:
-            self.subscription = subscription
+        if id is not None:
+            self.id = id
         if license is not None:
             self.license = license
+        if activation_date is not None:
+            self.activation_date = activation_date
+        if array is not None:
+            self.array = array
+        if end_of_life_date is not None:
+            self.end_of_life_date = end_of_life_date
+        if subscription is not None:
+            self.subscription = subscription
+        if install_address is not None:
+            self.install_address = install_address
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

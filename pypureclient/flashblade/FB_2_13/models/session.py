@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.13, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.13, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.13
     
@@ -32,27 +32,27 @@ class Session(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
-        'end_time': 'int',
-        'event': 'str',
-        'event_count': 'int',
-        'location': 'str',
-        'method': 'str',
         'start_time': 'int',
-        'user': 'str',
-        'user_interface': 'str'
+        'method': 'str',
+        'event_count': 'int',
+        'end_time': 'int',
+        'user_interface': 'str',
+        'location': 'str',
+        'event': 'str',
+        'user': 'str'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
-        'end_time': 'end_time',
-        'event': 'event',
-        'event_count': 'event_count',
-        'location': 'location',
-        'method': 'method',
         'start_time': 'start_time',
-        'user': 'user',
-        'user_interface': 'user_interface'
+        'method': 'method',
+        'event_count': 'event_count',
+        'end_time': 'end_time',
+        'user_interface': 'user_interface',
+        'location': 'location',
+        'event': 'event',
+        'user': 'user'
     }
 
     required_args = {
@@ -62,48 +62,48 @@ class Session(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
-        end_time=None,  # type: int
-        event=None,  # type: str
-        event_count=None,  # type: int
-        location=None,  # type: str
-        method=None,  # type: str
         start_time=None,  # type: int
-        user=None,  # type: str
+        method=None,  # type: str
+        event_count=None,  # type: int
+        end_time=None,  # type: int
         user_interface=None,  # type: str
+        location=None,  # type: str
+        event=None,  # type: str
+        user=None,  # type: str
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            end_time (int): Date and time the user logged out of the Purity//FB interface in milliseconds since UNIX epoch. Set to 0 if the session is still active.
-            event (str): Description of session events. Valid values include `failed authentication`, `user session`, `login`, `logout`, `API token obtained`, and `request without session`.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            start_time (int): Date and time the user logged in to the Purity//FB interface in milliseconds since UNIX epoch. 
+            method (str): Method by which the user attempted to log in. Valid values include `API token`, `password`, and `public key`. 
             event_count (int): Number of session events.
-            location (str): IP address of the user client connecting to the array or console if connected through local console.
-            method (str): Method by which the user attempted to log in. Valid values include `API token`, `password`, and `public key`.
-            start_time (int): Date and time the user logged in to the Purity//FB interface in milliseconds since UNIX epoch.
+            end_time (int): Date and time the user logged out of the Purity//FB interface in milliseconds since UNIX epoch. Set to 0 if the session is still active. 
+            user_interface (str): The user interface through which the user session event was performed. Valid values include `CLI`, `GUI`, and `REST`. 
+            location (str): IP address of the user client connecting to the array or console if connected through local console. 
+            event (str): Description of session events. Valid values include `failed authentication`, `user session`, `login`, `logout`, `API token obtained`, and `request without session`. 
             user (str): Username of the Purity//FB user who triggered the user session event.
-            user_interface (str): The user interface through which the user session event was performed. Valid values include `CLI`, `GUI`, and `REST`.
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
-        if end_time is not None:
-            self.end_time = end_time
-        if event is not None:
-            self.event = event
-        if event_count is not None:
-            self.event_count = event_count
-        if location is not None:
-            self.location = location
-        if method is not None:
-            self.method = method
         if start_time is not None:
             self.start_time = start_time
-        if user is not None:
-            self.user = user
+        if method is not None:
+            self.method = method
+        if event_count is not None:
+            self.event_count = event_count
+        if end_time is not None:
+            self.end_time = end_time
         if user_interface is not None:
             self.user_interface = user_interface
+        if location is not None:
+            self.location = location
+        if event is not None:
+            self.event = event
+        if user is not None:
+            self.user = user
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

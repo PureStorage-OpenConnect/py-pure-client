@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.9, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.9, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.9
     
@@ -30,21 +30,21 @@ class SpaceExtended(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'data_reduction': 'float',
         'snapshots': 'int',
         'total_physical': 'int',
-        'total_provisioned': 'int',
+        'data_reduction': 'float',
+        'virtual': 'int',
         'unique': 'int',
-        'virtual': 'int'
+        'total_provisioned': 'int'
     }
 
     attribute_map = {
-        'data_reduction': 'data_reduction',
         'snapshots': 'snapshots',
         'total_physical': 'total_physical',
-        'total_provisioned': 'total_provisioned',
+        'data_reduction': 'data_reduction',
+        'virtual': 'virtual',
         'unique': 'unique',
-        'virtual': 'virtual'
+        'total_provisioned': 'total_provisioned'
     }
 
     required_args = {
@@ -52,34 +52,34 @@ class SpaceExtended(object):
 
     def __init__(
         self,
-        data_reduction=None,  # type: float
         snapshots=None,  # type: int
         total_physical=None,  # type: int
-        total_provisioned=None,  # type: int
-        unique=None,  # type: int
+        data_reduction=None,  # type: float
         virtual=None,  # type: int
+        unique=None,  # type: int
+        total_provisioned=None,  # type: int
     ):
         """
         Keyword args:
-            data_reduction (float): Reduction of data.
             snapshots (int): Physical usage by snapshots, other than unique in bytes.
             total_physical (int): Total physical usage (including snapshots) in bytes.
-            total_provisioned (int): The effective provisioned size of the container, at which a hard limit will be applied. For a bucket with a `quota_limit` value and `hard_limit_enabled` set to `true`, this is its `quota_limit` value, unless the available space of the associated object store account, as defined by its `quota_limit` value, would prevent the bucket from reaching its own `quota_limit` value. In such a case, `total_provisioned` will reflect the smaller value. For an object store account with a `quota_limit` value and `hard_limit_enabled` set to `true`, this is the `quota_limit` value of the object store account. Measured in bytes.
-            unique (int): Unique physical space occupied by customer data, in bytes. Excludes shared space, snapshots, and metadata.
+            data_reduction (float): Reduction of data.
             virtual (int): Virtual space, in bytes.
+            unique (int): Unique physical space occupied by customer data, in bytes. Excludes shared space, snapshots, and metadata. 
+            total_provisioned (int): The effective provisioned size of the container, at which a hard limit will be applied. For a bucket with a `quota_limit` value and `hard_limit_enabled` set to `true`, this is its `quota_limit` value, unless the available space of the associated object store account, as defined by its `quota_limit` value, would prevent the bucket from reaching its own `quota_limit` value. In such a case, `total_provisioned` will reflect the smaller value. For an object store account with a `quota_limit` value and `hard_limit_enabled` set to `true`, this is the `quota_limit` value of the object store account. Measured in bytes. 
         """
-        if data_reduction is not None:
-            self.data_reduction = data_reduction
         if snapshots is not None:
             self.snapshots = snapshots
         if total_physical is not None:
             self.total_physical = total_physical
-        if total_provisioned is not None:
-            self.total_provisioned = total_provisioned
-        if unique is not None:
-            self.unique = unique
+        if data_reduction is not None:
+            self.data_reduction = data_reduction
         if virtual is not None:
             self.virtual = virtual
+        if unique is not None:
+            self.unique = unique
+        if total_provisioned is not None:
+            self.total_provisioned = total_provisioned
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

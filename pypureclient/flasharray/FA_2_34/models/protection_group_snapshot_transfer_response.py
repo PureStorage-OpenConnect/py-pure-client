@@ -46,7 +46,7 @@ class ProtectionGroupSnapshotTransferResponse(object):
     ):
         """
         Keyword args:
-            items (list[ProtectionGroupSnapshotTransfer]): Returns a list of all items after filtering. If applicable, the values are displayed for each name.
+            items (list[ProtectionGroupSnapshotTransfer]): Returns a list of all items after filtering. If applicable, the values are displayed for each name. 
         """
         if items is not None:
             self.items = items

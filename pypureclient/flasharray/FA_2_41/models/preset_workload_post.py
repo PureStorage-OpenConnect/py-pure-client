@@ -30,90 +30,90 @@ class PresetWorkloadPost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'volume_configurations': 'list[PresetWorkloadVolumeConfiguration]',
+        'periodic_replication_configurations': 'list[PresetWorkloadPeriodicReplicationConfiguration]',
         'description': 'str',
-        'revision': 'int',
-        'workload_type': 'str',
-        'parameters': 'list[PresetWorkloadParameter]',
-        'workload_tags': 'list[PresetWorkloadWorkloadTag]',
         'placement_configurations': 'list[PresetWorkloadPlacementConfiguration]',
+        'workload_tags': 'list[PresetWorkloadWorkloadTag]',
+        'parameters': 'list[PresetWorkloadParameter]',
         'qos_configurations': 'list[PresetWorkloadQosConfiguration]',
         'snapshot_configurations': 'list[PresetWorkloadSnapshotConfiguration]',
-        'periodic_replication_configurations': 'list[PresetWorkloadPeriodicReplicationConfiguration]',
-        'volume_configurations': 'list[PresetWorkloadVolumeConfiguration]'
+        'workload_type': 'str',
+        'revision': 'int'
     }
 
     attribute_map = {
+        'volume_configurations': 'volume_configurations',
+        'periodic_replication_configurations': 'periodic_replication_configurations',
         'description': 'description',
-        'revision': 'revision',
-        'workload_type': 'workload_type',
-        'parameters': 'parameters',
-        'workload_tags': 'workload_tags',
         'placement_configurations': 'placement_configurations',
+        'workload_tags': 'workload_tags',
+        'parameters': 'parameters',
         'qos_configurations': 'qos_configurations',
         'snapshot_configurations': 'snapshot_configurations',
-        'periodic_replication_configurations': 'periodic_replication_configurations',
-        'volume_configurations': 'volume_configurations'
+        'workload_type': 'workload_type',
+        'revision': 'revision'
     }
 
     required_args = {
-        'workload_type',
-        'placement_configurations',
         'volume_configurations',
+        'placement_configurations',
+        'workload_type',
     }
 
     def __init__(
         self,
-        workload_type,  # type: str
-        placement_configurations,  # type: List[models.PresetWorkloadPlacementConfiguration]
         volume_configurations,  # type: List[models.PresetWorkloadVolumeConfiguration]
+        placement_configurations,  # type: List[models.PresetWorkloadPlacementConfiguration]
+        workload_type,  # type: str
+        periodic_replication_configurations=None,  # type: List[models.PresetWorkloadPeriodicReplicationConfiguration]
         description=None,  # type: str
-        revision=None,  # type: int
-        parameters=None,  # type: List[models.PresetWorkloadParameter]
         workload_tags=None,  # type: List[models.PresetWorkloadWorkloadTag]
+        parameters=None,  # type: List[models.PresetWorkloadParameter]
         qos_configurations=None,  # type: List[models.PresetWorkloadQosConfiguration]
         snapshot_configurations=None,  # type: List[models.PresetWorkloadSnapshotConfiguration]
-        periodic_replication_configurations=None,  # type: List[models.PresetWorkloadPeriodicReplicationConfiguration]
+        revision=None,  # type: int
     ):
         """
         Keyword args:
-            description (str): A brief description of the workload the preset will configure. Supports up to 1KB of unicode characters.
-            revision (int): A counter that is automatically incremented by the server when the preset is updated.
-            workload_type (str, required): The type of workload the preset will configure. Valid values include `VDI`, `File`, `MySQL` etc.
-            parameters (list[PresetWorkloadParameter]): The parameters to prompt the user when they deploy workloads from the preset.
+            volume_configurations (list[PresetWorkloadVolumeConfiguration], required): The volumes that will be provisioned by the preset. 
+            periodic_replication_configurations (list[PresetWorkloadPeriodicReplicationConfiguration]): The periodic replication configurations that can be applied to storage resources (such as volumes) within the preset. 
+            description (str): A brief description of the workload the preset will configure. Supports up to 1KB of unicode characters. 
+            placement_configurations (list[PresetWorkloadPlacementConfiguration], required): The placement configurations that can be applied to storage resources (such as volumes) within the preset. All storage resources associated with the same placement will be colocated on the same array. 
             workload_tags (list[PresetWorkloadWorkloadTag]): The tags that will be associated with workloads provisioned by the preset.
-            placement_configurations (list[PresetWorkloadPlacementConfiguration], required): The placement configurations that can be applied to storage resources (such as volumes) within the preset. All storage resources associated with the same placement will be colocated on the same array.
-            qos_configurations (list[PresetWorkloadQosConfiguration]): The QoS configurations that can be applied to storage resources (such as volumes) within the preset.
-            snapshot_configurations (list[PresetWorkloadSnapshotConfiguration]): The snapshot configurations that can be applied to storage resources (such as volumes) within the preset.
-            periodic_replication_configurations (list[PresetWorkloadPeriodicReplicationConfiguration]): The periodic replication configurations that can be applied to storage resources (such as volumes) within the preset.
-            volume_configurations (list[PresetWorkloadVolumeConfiguration], required): The volumes that will be provisioned by the preset.
+            parameters (list[PresetWorkloadParameter]): The parameters to prompt the user when they deploy workloads from the preset.
+            qos_configurations (list[PresetWorkloadQosConfiguration]): The QoS configurations that can be applied to storage resources (such as volumes) within the preset. 
+            snapshot_configurations (list[PresetWorkloadSnapshotConfiguration]): The snapshot configurations that can be applied to storage resources (such as volumes) within the preset. 
+            workload_type (str, required): The type of workload the preset will configure. Valid values include `VDI`, `File`, `MySQL` etc. 
+            revision (int): A counter that is automatically incremented by the server when the preset is updated. 
         """
+        self.volume_configurations = volume_configurations
+        if periodic_replication_configurations is not None:
+            self.periodic_replication_configurations = periodic_replication_configurations
         if description is not None:
             self.description = description
-        if revision is not None:
-            self.revision = revision
-        self.workload_type = workload_type
-        if parameters is not None:
-            self.parameters = parameters
+        self.placement_configurations = placement_configurations
         if workload_tags is not None:
             self.workload_tags = workload_tags
-        self.placement_configurations = placement_configurations
+        if parameters is not None:
+            self.parameters = parameters
         if qos_configurations is not None:
             self.qos_configurations = qos_configurations
         if snapshot_configurations is not None:
             self.snapshot_configurations = snapshot_configurations
-        if periodic_replication_configurations is not None:
-            self.periodic_replication_configurations = periodic_replication_configurations
-        self.volume_configurations = volume_configurations
+        self.workload_type = workload_type
+        if revision is not None:
+            self.revision = revision
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
             raise KeyError("Invalid key `{}` for `PresetWorkloadPost`".format(key))
-        if key == "workload_type" and value is None:
-            raise ValueError("Invalid value for `workload_type`, must not be `None`")
-        if key == "placement_configurations" and value is None:
-            raise ValueError("Invalid value for `placement_configurations`, must not be `None`")
         if key == "volume_configurations" and value is None:
             raise ValueError("Invalid value for `volume_configurations`, must not be `None`")
+        if key == "placement_configurations" and value is None:
+            raise ValueError("Invalid value for `placement_configurations`, must not be `None`")
+        if key == "workload_type" and value is None:
+            raise ValueError("Invalid value for `workload_type`, must not be `None`")
         self.__dict__[key] = value
 
     def __getattribute__(self, item):

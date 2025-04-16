@@ -30,16 +30,16 @@ class ApiClientPost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'public_key': 'str',
         'max_role': 'str',
         'issuer': 'str',
-        'public_key': 'str',
         'access_token_ttl_in_ms': 'int'
     }
 
     attribute_map = {
+        'public_key': 'public_key',
         'max_role': 'max_role',
         'issuer': 'issuer',
-        'public_key': 'public_key',
         'access_token_ttl_in_ms': 'access_token_ttl_in_ms'
     }
 
@@ -48,24 +48,24 @@ class ApiClientPost(object):
 
     def __init__(
         self,
+        public_key=None,  # type: str
         max_role=None,  # type: str
         issuer=None,  # type: str
-        public_key=None,  # type: str
         access_token_ttl_in_ms=None,  # type: int
     ):
         """
         Keyword args:
-            max_role (str): The maximum role allowed for ID Tokens issued by this API client. The bearer of an access token will be authorized to perform actions within the intersection of this `max_role` and the role of the array user specified as the `sub`. Valid values are `array_admin`, `storage_admin`, `ops_admin`, and `readonly`. Users with the `readonly` (Read Only) role can perform operations that convey the state of the array. Read Only users cannot alter the state of the array. Users with the `ops_admin` (Ops Admin) role can perform the same operations as Read Only users plus enable and disable remote assistance sessions. Ops Admin users cannot alter the state of the array. Users with the `storage_admin` (Storage Admin) role can perform the same operations as Read Only users plus storage related operations, such as administering volumes, hosts, and host groups. Storage Admin users cannot perform operations that deal with global and system configurations. Users with the `array_admin` (Array Admin) role can perform the same operations as Storage Admin users plus array-wide changes dealing with global and system configurations. In other words, Array Admin users can perform all operations.
-            issuer (str): The name of the identity provider that will be issuing ID Tokens for this API client. The `iss` claim in the JWT issued must match this string. If not specified, defaults to the API client name.
-            public_key (str): The API client's PEM formatted (Base64 encoded) RSA public key. Include the `-----BEGIN PUBLIC KEY-----` and `-----END PUBLIC KEY-----` lines.
-            access_token_ttl_in_ms (int): The TTL (Time To Live) length of time for the exchanged access token. Measured in milliseconds. If not specified, defaults to `86400000`.
+            public_key (str): The API client's PEM formatted (Base64 encoded) RSA public key. Include the `-----BEGIN PUBLIC KEY-----` and `-----END PUBLIC KEY-----` lines. 
+            max_role (str): The maximum role allowed for ID Tokens issued by this API client. The bearer of an access token will be authorized to perform actions within the intersection of this `max_role` and the role of the array user specified as the `sub`. Valid values are `array_admin`, `storage_admin`, `ops_admin`, and `readonly`. Users with the `readonly` (Read Only) role can perform operations that convey the state of the array. Read Only users cannot alter the state of the array. Users with the `ops_admin` (Ops Admin) role can perform the same operations as Read Only users plus enable and disable remote assistance sessions. Ops Admin users cannot alter the state of the array. Users with the `storage_admin` (Storage Admin) role can perform the same operations as Read Only users plus storage related operations, such as administering volumes, hosts, and host groups.  Storage Admin users cannot perform operations that deal with global and system configurations. Users with the `array_admin` (Array Admin) role can perform the same operations as Storage Admin users plus array-wide changes dealing with global and system configurations. In other words, Array Admin users can perform all operations. 
+            issuer (str): The name of the identity provider that will be issuing ID Tokens for this API client. The `iss` claim in the JWT issued must match this string. If not specified, defaults to the API client name. 
+            access_token_ttl_in_ms (int): The TTL (Time To Live) length of time for the exchanged access token. Measured in milliseconds. If not specified, defaults to `86400000`. 
         """
+        if public_key is not None:
+            self.public_key = public_key
         if max_role is not None:
             self.max_role = max_role
         if issuer is not None:
             self.issuer = issuer
-        if public_key is not None:
-            self.public_key = public_key
         if access_token_ttl_in_ms is not None:
             self.access_token_ttl_in_ms = access_token_ttl_in_ms
 

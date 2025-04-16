@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.3, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.3, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.3
     
@@ -46,7 +46,7 @@ class Smb(object):
     ):
         """
         Keyword args:
-            enabled (bool): If set to `true`, enables access to the file system over the SMB protocol. If not specified, defaults to `false`.
+            enabled (bool): If set to `true`, enables access to the file system over the SMB protocol. If not specified, defaults to `false`. 
         """
         if enabled is not None:
             self.enabled = enabled

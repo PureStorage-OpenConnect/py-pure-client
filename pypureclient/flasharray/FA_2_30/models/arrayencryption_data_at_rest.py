@@ -30,13 +30,13 @@ class ArrayencryptionDataAtRest(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'algorithm': 'str',
-        'enabled': 'bool'
+        'enabled': 'bool',
+        'algorithm': 'str'
     }
 
     attribute_map = {
-        'algorithm': 'algorithm',
-        'enabled': 'enabled'
+        'enabled': 'enabled',
+        'algorithm': 'algorithm'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class ArrayencryptionDataAtRest(object):
 
     def __init__(
         self,
-        algorithm=None,  # type: str
         enabled=None,  # type: bool
+        algorithm=None,  # type: str
     ):
         """
         Keyword args:
-            algorithm (str): The algorithm used to encrypt data on the array. Values include `AES-256-CTR` and `null`.
-            enabled (bool): Returns a value of `true` if data at rest encryption is enabled on the array.
+            enabled (bool): Returns a value of `true` if data at rest encryption is enabled on the array. 
+            algorithm (str): The algorithm used to encrypt data on the array. Values include `AES-256-CTR` and `null`. 
         """
-        if algorithm is not None:
-            self.algorithm = algorithm
         if enabled is not None:
             self.enabled = enabled
+        if algorithm is not None:
+            self.algorithm = algorithm
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

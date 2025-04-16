@@ -32,19 +32,19 @@ class Tag(object):
     swagger_types = {
         'context': 'FixedReference',
         'copyable': 'bool',
-        'key': 'str',
-        'namespace': 'str',
         'resource': 'FixedReference',
-        'value': 'str'
+        'namespace': 'str',
+        'value': 'str',
+        'key': 'str'
     }
 
     attribute_map = {
         'context': 'context',
         'copyable': 'copyable',
-        'key': 'key',
-        'namespace': 'namespace',
         'resource': 'resource',
-        'value': 'value'
+        'namespace': 'namespace',
+        'value': 'value',
+        'key': 'key'
     }
 
     required_args = {
@@ -54,32 +54,32 @@ class Tag(object):
         self,
         context=None,  # type: models.FixedReference
         copyable=None,  # type: bool
-        key=None,  # type: str
-        namespace=None,  # type: str
         resource=None,  # type: models.FixedReference
+        namespace=None,  # type: str
         value=None,  # type: str
+        key=None,  # type: str
     ):
         """
         Keyword args:
-            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
-            copyable (bool): Specifies whether or not to include the tag when copying the parent resource. If set to `true`, the tag is included in resource copying. If set to `false`, the tag is not included. If not specified, defaults to `true`.
-            key (str): Key of the tag. Supports up to 64 Unicode characters.
-            namespace (str): Optional namespace of the tag. Namespace identifies the category of the tag. Omitting the namespace defaults to the namespace `default`. The `pure&#42;` namespaces are reserved for plugins and integration partners. It is recommended that customers avoid using reserved namespaces.
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request.  Other parameters provided with the request, such as names of volumes or snapshots,  are resolved relative to the provided `context`. 
+            copyable (bool): Specifies whether or not to include the tag when copying the parent resource. If set to `true`, the tag is included in resource copying. If set to `false`, the tag is not included. If not specified, defaults to `true`. 
             resource (FixedReference)
-            value (str): Value of the tag. Supports up to 256 Unicode characters.
+            namespace (str): Optional namespace of the tag. Namespace identifies the category of the tag. Omitting the namespace defaults to the namespace `default`. The `pure&#42;` namespaces are reserved for plugins and integration partners. It is recommended that customers avoid using reserved namespaces. 
+            value (str): Value of the tag. Supports up to 256 Unicode characters. 
+            key (str): Key of the tag. Supports up to 64 Unicode characters. 
         """
         if context is not None:
             self.context = context
         if copyable is not None:
             self.copyable = copyable
-        if key is not None:
-            self.key = key
-        if namespace is not None:
-            self.namespace = namespace
         if resource is not None:
             self.resource = resource
+        if namespace is not None:
+            self.namespace = namespace
         if value is not None:
             self.value = value
+        if key is not None:
+            self.key = key
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

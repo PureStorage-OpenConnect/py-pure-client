@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.13, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.13, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.13
     
@@ -40,15 +40,15 @@ class BucketsApi(object):
         # type: (...) -> None
         """DELETE buckets/bucket-access-policies
 
-        Delete a bucket policy of the specified bucket. Either `names` or `bucket_names`/`bucket_ids` query parameters can be used.
+        Delete a bucket policy of the specified bucket. Either `names` or `bucket_names`/`bucket_ids` query parameters can be used. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api213_buckets_bucket_access_policies_delete_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param list[str] bucket_ids: A comma-separated list of bucket IDs. If after filtering, there is not at least one resource that matches each of the elements of `bucket_ids`, then an error is returned. This cannot be provided together with the `bucket_names` query parameter. This can be provided with the `ids` query parameter but not with `names`.
-        :param list[str] bucket_names: A comma-separated list of bucket names. If there is not at least one resource that matches each of the elements of `bucket_names`, then an error is returned. This cannot be provided together with the `bucket_ids` query parameter. This can be provided with the `ids` query parameter but not with `names`.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
+        :param list[str] bucket_ids: A comma-separated list of bucket IDs. If after filtering, there is not at least one resource that matches each of the elements of `bucket_ids`, then an error is returned.  This cannot be provided together with the `bucket_names` query parameter. This can be provided with the `ids` query parameter but not with `names`. 
+        :param list[str] bucket_names: A comma-separated list of bucket names. If there is not at least one resource that matches each of the elements of `bucket_names`, then an error is returned. This cannot be provided together with the `bucket_ids` query parameter. This can be provided with the `ids` query parameter but not with `names`. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -98,10 +98,6 @@ class BucketsApi(object):
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
-
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
@@ -144,20 +140,20 @@ class BucketsApi(object):
         # type: (...) -> models.BucketAccessPolicyGetResponse
         """GET buckets/bucket-access-policies
 
-        List a policy for the specified bucket and its attributes. Either `names` or `bucket_names`/`bucket_ids` query parameters can be used.
+        List a policy for the specified bucket and its attributes. Either `names` or `bucket_names`/`bucket_ids` query parameters can be used. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api213_buckets_bucket_access_policies_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param list[str] bucket_ids: A comma-separated list of bucket IDs. If after filtering, there is not at least one resource that matches each of the elements of `bucket_ids`, then an error is returned. This cannot be provided together with the `bucket_names` query parameter. This can be provided with the `ids` query parameter but not with `names`.
-        :param list[str] bucket_names: A comma-separated list of bucket names. If there is not at least one resource that matches each of the elements of `bucket_names`, then an error is returned. This cannot be provided together with the `bucket_ids` query parameter. This can be provided with the `ids` query parameter but not with `names`.
-        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
-        :param str filter: Exclude resources that don't match the specified criteria.
-        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
-        :param int offset: The offset of the first resource to return from a collection.
-        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.
+        :param list[str] bucket_ids: A comma-separated list of bucket IDs. If after filtering, there is not at least one resource that matches each of the elements of `bucket_ids`, then an error is returned.  This cannot be provided together with the `bucket_names` query parameter. This can be provided with the `ids` query parameter but not with `names`. 
+        :param list[str] bucket_names: A comma-separated list of bucket names. If there is not at least one resource that matches each of the elements of `bucket_names`, then an error is returned. This cannot be provided together with the `bucket_ids` query parameter. This can be provided with the `ids` query parameter but not with `names`. 
+        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result. 
+        :param str filter: Exclude resources that don't match the specified criteria. 
+        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
+        :param int offset: The offset of the first resource to return from a collection. 
+        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -255,9 +251,9 @@ class BucketsApi(object):
 
     def api213_buckets_bucket_access_policies_post_with_http_info(
         self,
+        policy=None,  # type: models.BucketAccessPolicyPost
         bucket_ids=None,  # type: List[str]
         bucket_names=None,  # type: List[str]
-        policy=None,  # type: models.BucketAccessPolicyPost
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -266,15 +262,15 @@ class BucketsApi(object):
         # type: (...) -> models.BucketAccessPolicyResponse
         """POST buckets/bucket-access-policies
 
-        Create a new policy for the specified bucket. Policy's name will be autogenerated by the system.
+        Create a new policy for the specified bucket. Policy's name will be autogenerated by the system. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api213_buckets_bucket_access_policies_post_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param list[str] bucket_ids: A comma-separated list of bucket IDs. If after filtering, there is not at least one resource that matches each of the elements of `bucket_ids`, then an error is returned. This cannot be provided together with the `bucket_names` query parameter. This can be provided with the `ids` query parameter but not with `names`.
-        :param list[str] bucket_names: A comma-separated list of bucket names. If there is not at least one resource that matches each of the elements of `bucket_names`, then an error is returned. This cannot be provided together with the `bucket_ids` query parameter. This can be provided with the `ids` query parameter but not with `names`.
         :param BucketAccessPolicyPost policy:
+        :param list[str] bucket_ids: A comma-separated list of bucket IDs. If after filtering, there is not at least one resource that matches each of the elements of `bucket_ids`, then an error is returned.  This cannot be provided together with the `bucket_names` query parameter. This can be provided with the `ids` query parameter but not with `names`. 
+        :param list[str] bucket_names: A comma-separated list of bucket names. If there is not at least one resource that matches each of the elements of `bucket_names`, then an error is returned. This cannot be provided together with the `bucket_ids` query parameter. This can be provided with the `ids` query parameter but not with `names`. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -362,16 +358,16 @@ class BucketsApi(object):
         # type: (...) -> None
         """DELETE buckets/bucket-access-policies/rules
 
-        Delete one or more bucket policy rules for the specified bucket. Either `policy_names` or `bucket_names`/`bucket_ids` query parameters can be used.
+        Delete one or more bucket policy rules for the specified bucket. Either `policy_names` or `bucket_names`/`bucket_ids` query parameters can be used. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api213_buckets_bucket_access_policies_rules_delete_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param list[str] bucket_ids: A comma-separated list of bucket IDs. If after filtering, there is not at least one resource that matches each of the elements of `bucket_ids`, then an error is returned. This cannot be provided together with the `bucket_names` query parameter. This can be provided with the `ids` query parameter but not with `names`.
-        :param list[str] bucket_names: A comma-separated list of bucket names. If there is not at least one resource that matches each of the elements of `bucket_names`, then an error is returned. This cannot be provided together with the `bucket_ids` query parameter. This can be provided with the `ids` query parameter but not with `names`.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
-        :param list[str] policy_names: A comma-separated list of policy names.
+        :param list[str] bucket_ids: A comma-separated list of bucket IDs. If after filtering, there is not at least one resource that matches each of the elements of `bucket_ids`, then an error is returned.  This cannot be provided together with the `bucket_names` query parameter. This can be provided with the `ids` query parameter but not with `names`. 
+        :param list[str] bucket_names: A comma-separated list of bucket names. If there is not at least one resource that matches each of the elements of `bucket_names`, then an error is returned. This cannot be provided together with the `bucket_ids` query parameter. This can be provided with the `ids` query parameter but not with `names`. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
+        :param list[str] policy_names: A comma-separated list of policy names. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -427,10 +423,6 @@ class BucketsApi(object):
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
-
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
@@ -474,21 +466,21 @@ class BucketsApi(object):
         # type: (...) -> models.BucketAccessPolicyRuleGetResponse
         """GET buckets/bucket-access-policies/rules
 
-        List bucket policy rules for the specified bucket and their attributes. Either `policy_names` or `bucket_names`/`bucket_ids` query parameters can be used.
+        List bucket policy rules for the specified bucket and their attributes. Either `policy_names` or `bucket_names`/`bucket_ids` query parameters can be used. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api213_buckets_bucket_access_policies_rules_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param list[str] bucket_ids: A comma-separated list of bucket IDs. If after filtering, there is not at least one resource that matches each of the elements of `bucket_ids`, then an error is returned. This cannot be provided together with the `bucket_names` query parameter. This can be provided with the `ids` query parameter but not with `names`.
-        :param list[str] bucket_names: A comma-separated list of bucket names. If there is not at least one resource that matches each of the elements of `bucket_names`, then an error is returned. This cannot be provided together with the `bucket_ids` query parameter. This can be provided with the `ids` query parameter but not with `names`.
-        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
-        :param str filter: Exclude resources that don't match the specified criteria.
-        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
-        :param int offset: The offset of the first resource to return from a collection.
-        :param list[str] policy_names: A comma-separated list of policy names.
-        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.
+        :param list[str] bucket_ids: A comma-separated list of bucket IDs. If after filtering, there is not at least one resource that matches each of the elements of `bucket_ids`, then an error is returned.  This cannot be provided together with the `bucket_names` query parameter. This can be provided with the `ids` query parameter but not with `names`. 
+        :param list[str] bucket_names: A comma-separated list of bucket names. If there is not at least one resource that matches each of the elements of `bucket_names`, then an error is returned. This cannot be provided together with the `bucket_ids` query parameter. This can be provided with the `ids` query parameter but not with `names`. 
+        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result. 
+        :param str filter: Exclude resources that don't match the specified criteria. 
+        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
+        :param int offset: The offset of the first resource to return from a collection. 
+        :param list[str] policy_names: A comma-separated list of policy names. 
+        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -592,8 +584,8 @@ class BucketsApi(object):
 
     def api213_buckets_bucket_access_policies_rules_post_with_http_info(
         self,
-        names=None,  # type: List[str]
         rule=None,  # type: models.BucketAccessPolicyRulePost
+        names=None,  # type: List[str]
         bucket_ids=None,  # type: List[str]
         bucket_names=None,  # type: List[str]
         policy_names=None,  # type: List[str]
@@ -605,17 +597,17 @@ class BucketsApi(object):
         # type: (...) -> models.BucketAccessPolicyRuleResponse
         """POST buckets/bucket-access-policies/rules
 
-        Create a new bucket policy rule for the specified bucket. Either `policy_names` or `bucket_names`/`bucket_ids` query parameters can be used.
+        Create a new bucket policy rule for the specified bucket. Either `policy_names` or `bucket_names`/`bucket_ids` query parameters can be used. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api213_buckets_bucket_access_policies_rules_post_with_http_info(names, rule, async_req=True)
+        >>> thread = api.api213_buckets_bucket_access_policies_rules_post_with_http_info(rule, names, async_req=True)
         >>> result = thread.get()
 
-        :param list[str] names: A comma-separated list of resource names. (required)
         :param BucketAccessPolicyRulePost rule: (required)
-        :param list[str] bucket_ids: A comma-separated list of bucket IDs. If after filtering, there is not at least one resource that matches each of the elements of `bucket_ids`, then an error is returned. This cannot be provided together with the `bucket_names` query parameter. This can be provided with the `ids` query parameter but not with `names`.
-        :param list[str] bucket_names: A comma-separated list of bucket names. If there is not at least one resource that matches each of the elements of `bucket_names`, then an error is returned. This cannot be provided together with the `bucket_ids` query parameter. This can be provided with the `ids` query parameter but not with `names`.
-        :param list[str] policy_names: A comma-separated list of policy names.
+        :param list[str] names: A comma-separated list of resource names.  (required)
+        :param list[str] bucket_ids: A comma-separated list of bucket IDs. If after filtering, there is not at least one resource that matches each of the elements of `bucket_ids`, then an error is returned.  This cannot be provided together with the `bucket_names` query parameter. This can be provided with the `ids` query parameter but not with `names`. 
+        :param list[str] bucket_names: A comma-separated list of bucket names. If there is not at least one resource that matches each of the elements of `bucket_names`, then an error is returned. This cannot be provided together with the `bucket_ids` query parameter. This can be provided with the `ids` query parameter but not with `names`. 
+        :param list[str] policy_names: A comma-separated list of policy names. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -647,12 +639,12 @@ class BucketsApi(object):
         # Assign a value to X-Request-Id if it is not specified
         if params.get('x_request_id') is None:
             params['x_request_id'] = str(uuid.uuid4())
-        # verify the required parameter 'names' is set
-        if names is None:
-            raise TypeError("Missing the required parameter `names` when calling `api213_buckets_bucket_access_policies_rules_post`")
         # verify the required parameter 'rule' is set
         if rule is None:
             raise TypeError("Missing the required parameter `rule` when calling `api213_buckets_bucket_access_policies_rules_post`")
+        # verify the required parameter 'names' is set
+        if names is None:
+            raise TypeError("Missing the required parameter `names` when calling `api213_buckets_bucket_access_policies_rules_post`")
 
         collection_formats = {}
         path_params = {}
@@ -720,15 +712,15 @@ class BucketsApi(object):
         # type: (...) -> None
         """DELETE buckets/cross-origin-resource-sharing-policies
 
-        Delete a cross origin resource sharing policy of the specified bucket. Either `names` or `bucket_names`/`bucket_ids` query parameters can be used.
+        Delete a cross origin resource sharing policy of the specified bucket. Either `names` or `bucket_names`/`bucket_ids` query parameters can be used. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api213_buckets_cross_origin_resource_sharing_policies_delete_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param list[str] bucket_ids: A comma-separated list of bucket IDs. If after filtering, there is not at least one resource that matches each of the elements of `bucket_ids`, then an error is returned. This cannot be provided together with the `bucket_names` query parameter. This can be provided with the `ids` query parameter but not with `names`.
-        :param list[str] bucket_names: A comma-separated list of bucket names. If there is not at least one resource that matches each of the elements of `bucket_names`, then an error is returned. This cannot be provided together with the `bucket_ids` query parameter. This can be provided with the `ids` query parameter but not with `names`.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
+        :param list[str] bucket_ids: A comma-separated list of bucket IDs. If after filtering, there is not at least one resource that matches each of the elements of `bucket_ids`, then an error is returned.  This cannot be provided together with the `bucket_names` query parameter. This can be provided with the `ids` query parameter but not with `names`. 
+        :param list[str] bucket_names: A comma-separated list of bucket names. If there is not at least one resource that matches each of the elements of `bucket_names`, then an error is returned. This cannot be provided together with the `bucket_ids` query parameter. This can be provided with the `ids` query parameter but not with `names`. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -778,10 +770,6 @@ class BucketsApi(object):
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
-
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
@@ -824,20 +812,20 @@ class BucketsApi(object):
         # type: (...) -> models.CrossOriginResourceSharingPolicyGetResponse
         """GET buckets/cross-origin-resource-sharing-policies
 
-        List cross origin resource sharing policy for the specified bucket and its attributes. Either `names` or `bucket_names`/`bucket_ids` query parameters can be used.
+        List cross origin resource sharing policy for the specified bucket and its attributes. Either `names` or `bucket_names`/`bucket_ids` query parameters can be used. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api213_buckets_cross_origin_resource_sharing_policies_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param list[str] bucket_ids: A comma-separated list of bucket IDs. If after filtering, there is not at least one resource that matches each of the elements of `bucket_ids`, then an error is returned. This cannot be provided together with the `bucket_names` query parameter. This can be provided with the `ids` query parameter but not with `names`.
-        :param list[str] bucket_names: A comma-separated list of bucket names. If there is not at least one resource that matches each of the elements of `bucket_names`, then an error is returned. This cannot be provided together with the `bucket_ids` query parameter. This can be provided with the `ids` query parameter but not with `names`.
-        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
-        :param str filter: Exclude resources that don't match the specified criteria.
-        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
-        :param int offset: The offset of the first resource to return from a collection.
-        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.
+        :param list[str] bucket_ids: A comma-separated list of bucket IDs. If after filtering, there is not at least one resource that matches each of the elements of `bucket_ids`, then an error is returned.  This cannot be provided together with the `bucket_names` query parameter. This can be provided with the `ids` query parameter but not with `names`. 
+        :param list[str] bucket_names: A comma-separated list of bucket names. If there is not at least one resource that matches each of the elements of `bucket_names`, then an error is returned. This cannot be provided together with the `bucket_ids` query parameter. This can be provided with the `ids` query parameter but not with `names`. 
+        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result. 
+        :param str filter: Exclude resources that don't match the specified criteria. 
+        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
+        :param int offset: The offset of the first resource to return from a collection. 
+        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -935,9 +923,9 @@ class BucketsApi(object):
 
     def api213_buckets_cross_origin_resource_sharing_policies_post_with_http_info(
         self,
+        policy=None,  # type: models.CrossOriginResourceSharingPolicyPatch
         bucket_ids=None,  # type: List[str]
         bucket_names=None,  # type: List[str]
-        policy=None,  # type: models.CrossOriginResourceSharingPolicyPatch
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -946,15 +934,15 @@ class BucketsApi(object):
         # type: (...) -> models.CrossOriginResourceSharingPolicyResponse
         """POST buckets/cross-origin-resource-sharing-policies
 
-        Create a new cross origin resource sharing policy for the specified bucket. Policy's name will be autogenerated by the system.
+        Create a new cross origin resource sharing policy for the specified bucket. Policy's name will be autogenerated by the system. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api213_buckets_cross_origin_resource_sharing_policies_post_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param list[str] bucket_ids: A comma-separated list of bucket IDs. If after filtering, there is not at least one resource that matches each of the elements of `bucket_ids`, then an error is returned. This cannot be provided together with the `bucket_names` query parameter. This can be provided with the `ids` query parameter but not with `names`.
-        :param list[str] bucket_names: A comma-separated list of bucket names. If there is not at least one resource that matches each of the elements of `bucket_names`, then an error is returned. This cannot be provided together with the `bucket_ids` query parameter. This can be provided with the `ids` query parameter but not with `names`.
         :param CrossOriginResourceSharingPolicyPatch policy:
+        :param list[str] bucket_ids: A comma-separated list of bucket IDs. If after filtering, there is not at least one resource that matches each of the elements of `bucket_ids`, then an error is returned.  This cannot be provided together with the `bucket_names` query parameter. This can be provided with the `ids` query parameter but not with `names`. 
+        :param list[str] bucket_names: A comma-separated list of bucket names. If there is not at least one resource that matches each of the elements of `bucket_names`, then an error is returned. This cannot be provided together with the `bucket_ids` query parameter. This can be provided with the `ids` query parameter but not with `names`. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -1042,16 +1030,16 @@ class BucketsApi(object):
         # type: (...) -> None
         """DELETE buckets/cross-origin-resource-sharing-policies/rules
 
-        Delete one or more cross origin resource sharing policy rules for the specified bucket. Either `policy_names` or `bucket_names` query parameters can be used.
+        Delete one or more cross origin resource sharing policy rules for the specified bucket. Either `policy_names` or `bucket_names` query parameters can be used. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api213_buckets_cross_origin_resource_sharing_policies_rules_delete_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param list[str] bucket_ids: A comma-separated list of bucket IDs. If after filtering, there is not at least one resource that matches each of the elements of `bucket_ids`, then an error is returned. This cannot be provided together with the `bucket_names` query parameter. This can be provided with the `ids` query parameter but not with `names`.
-        :param list[str] bucket_names: A comma-separated list of bucket names. If there is not at least one resource that matches each of the elements of `bucket_names`, then an error is returned. This cannot be provided together with the `bucket_ids` query parameter. This can be provided with the `ids` query parameter but not with `names`.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
-        :param list[str] policy_names: A comma-separated list of policy names.
+        :param list[str] bucket_ids: A comma-separated list of bucket IDs. If after filtering, there is not at least one resource that matches each of the elements of `bucket_ids`, then an error is returned.  This cannot be provided together with the `bucket_names` query parameter. This can be provided with the `ids` query parameter but not with `names`. 
+        :param list[str] bucket_names: A comma-separated list of bucket names. If there is not at least one resource that matches each of the elements of `bucket_names`, then an error is returned. This cannot be provided together with the `bucket_ids` query parameter. This can be provided with the `ids` query parameter but not with `names`. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
+        :param list[str] policy_names: A comma-separated list of policy names. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -1107,10 +1095,6 @@ class BucketsApi(object):
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
-
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
@@ -1154,21 +1138,21 @@ class BucketsApi(object):
         # type: (...) -> models.CrossOriginResourceSharingPolicyRuleGetResponse
         """GET buckets/cross-origin-resource-sharing-policies/rules
 
-        List cross origin resource sharing policy rules for the specified bucket and their attributes. Either `policy_names` or `bucket_names` query parameters can be used.
+        List cross origin resource sharing policy rules for the specified bucket and their attributes. Either `policy_names` or `bucket_names` query parameters can be used. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api213_buckets_cross_origin_resource_sharing_policies_rules_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param list[str] bucket_ids: A comma-separated list of bucket IDs. If after filtering, there is not at least one resource that matches each of the elements of `bucket_ids`, then an error is returned. This cannot be provided together with the `bucket_names` query parameter. This can be provided with the `ids` query parameter but not with `names`.
-        :param list[str] bucket_names: A comma-separated list of bucket names. If there is not at least one resource that matches each of the elements of `bucket_names`, then an error is returned. This cannot be provided together with the `bucket_ids` query parameter. This can be provided with the `ids` query parameter but not with `names`.
-        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
-        :param str filter: Exclude resources that don't match the specified criteria.
-        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
-        :param int offset: The offset of the first resource to return from a collection.
-        :param list[str] policy_names: A comma-separated list of policy names.
-        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.
+        :param list[str] bucket_ids: A comma-separated list of bucket IDs. If after filtering, there is not at least one resource that matches each of the elements of `bucket_ids`, then an error is returned.  This cannot be provided together with the `bucket_names` query parameter. This can be provided with the `ids` query parameter but not with `names`. 
+        :param list[str] bucket_names: A comma-separated list of bucket names. If there is not at least one resource that matches each of the elements of `bucket_names`, then an error is returned. This cannot be provided together with the `bucket_ids` query parameter. This can be provided with the `ids` query parameter but not with `names`. 
+        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result. 
+        :param str filter: Exclude resources that don't match the specified criteria. 
+        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
+        :param int offset: The offset of the first resource to return from a collection. 
+        :param list[str] policy_names: A comma-separated list of policy names. 
+        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -1272,8 +1256,8 @@ class BucketsApi(object):
 
     def api213_buckets_cross_origin_resource_sharing_policies_rules_post_with_http_info(
         self,
-        names=None,  # type: List[str]
         rule=None,  # type: models.CrossOriginResourceSharingPolicyRulePost
+        names=None,  # type: List[str]
         bucket_ids=None,  # type: List[str]
         bucket_names=None,  # type: List[str]
         policy_names=None,  # type: List[str]
@@ -1285,17 +1269,17 @@ class BucketsApi(object):
         # type: (...) -> models.CrossOriginResourceSharingPolicyRuleResponse
         """POST buckets/cross-origin-resource-sharing-policies/rules
 
-        Create a new cross origin resource sharing policy rule for the specified bucket. Either `policy_names` or `bucket_names` query parameters can be used.
+        Create a new cross origin resource sharing policy rule for the specified bucket. Either `policy_names` or `bucket_names` query parameters can be used. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api213_buckets_cross_origin_resource_sharing_policies_rules_post_with_http_info(names, rule, async_req=True)
+        >>> thread = api.api213_buckets_cross_origin_resource_sharing_policies_rules_post_with_http_info(rule, names, async_req=True)
         >>> result = thread.get()
 
-        :param list[str] names: A comma-separated list of resource names. (required)
         :param CrossOriginResourceSharingPolicyRulePost rule: (required)
-        :param list[str] bucket_ids: A comma-separated list of bucket IDs. If after filtering, there is not at least one resource that matches each of the elements of `bucket_ids`, then an error is returned. This cannot be provided together with the `bucket_names` query parameter. This can be provided with the `ids` query parameter but not with `names`.
-        :param list[str] bucket_names: A comma-separated list of bucket names. If there is not at least one resource that matches each of the elements of `bucket_names`, then an error is returned. This cannot be provided together with the `bucket_ids` query parameter. This can be provided with the `ids` query parameter but not with `names`.
-        :param list[str] policy_names: A comma-separated list of policy names.
+        :param list[str] names: A comma-separated list of resource names.  (required)
+        :param list[str] bucket_ids: A comma-separated list of bucket IDs. If after filtering, there is not at least one resource that matches each of the elements of `bucket_ids`, then an error is returned.  This cannot be provided together with the `bucket_names` query parameter. This can be provided with the `ids` query parameter but not with `names`. 
+        :param list[str] bucket_names: A comma-separated list of bucket names. If there is not at least one resource that matches each of the elements of `bucket_names`, then an error is returned. This cannot be provided together with the `bucket_ids` query parameter. This can be provided with the `ids` query parameter but not with `names`. 
+        :param list[str] policy_names: A comma-separated list of policy names. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -1327,12 +1311,12 @@ class BucketsApi(object):
         # Assign a value to X-Request-Id if it is not specified
         if params.get('x_request_id') is None:
             params['x_request_id'] = str(uuid.uuid4())
-        # verify the required parameter 'names' is set
-        if names is None:
-            raise TypeError("Missing the required parameter `names` when calling `api213_buckets_cross_origin_resource_sharing_policies_rules_post`")
         # verify the required parameter 'rule' is set
         if rule is None:
             raise TypeError("Missing the required parameter `rule` when calling `api213_buckets_cross_origin_resource_sharing_policies_rules_post`")
+        # verify the required parameter 'names' is set
+        if names is None:
+            raise TypeError("Missing the required parameter `names` when calling `api213_buckets_cross_origin_resource_sharing_policies_rules_post`")
 
         collection_formats = {}
         path_params = {}
@@ -1405,8 +1389,8 @@ class BucketsApi(object):
         >>> thread = api.api213_buckets_delete_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -1450,10 +1434,6 @@ class BucketsApi(object):
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
-
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
@@ -1503,15 +1483,15 @@ class BucketsApi(object):
         >>> thread = api.api213_buckets_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
-        :param bool destroyed: If set to `true`, lists only destroyed objects that are in the eradication pending state. If set to `false`, lists only objects that are not destroyed. If not set, lists both objects that are destroyed and those that are not destroyed. If object name(s) are specified in the `names` parameter, then each object referenced must exist. If `destroyed` is set to `true`, then each object referenced must also be destroyed. If `destroyed` is set to `false`, then each object referenced must also not be destroyed. An error is returned if any of these conditions are not met.
-        :param str filter: Exclude resources that don't match the specified criteria.
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
-        :param int offset: The offset of the first resource to return from a collection.
-        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.
-        :param bool total_only: Only return the total record for the specified items. The total record will be the total of all items after filtering. The `items` list will be empty.
+        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result. 
+        :param bool destroyed: If set to `true`, lists only destroyed objects that are in the eradication pending state. If set to `false`, lists only objects that are not destroyed. If not set, lists both objects that are destroyed and those that are not destroyed.  If object name(s) are specified in the `names` parameter, then each object referenced must exist. If `destroyed` is set to `true`, then each object referenced must also be destroyed. If `destroyed` is set to `false`, then each object referenced must also not be destroyed. An error is returned if any of these conditions are not met. 
+        :param str filter: Exclude resources that don't match the specified criteria. 
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
+        :param int offset: The offset of the first resource to return from a collection. 
+        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response. 
+        :param bool total_only: Only return the total record for the specified items. The total record will be the total of all items after filtering. The `items` list will be empty. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -1626,9 +1606,9 @@ class BucketsApi(object):
         >>> result = thread.get()
 
         :param BucketPatch bucket: (required)
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param bool ignore_usage: Allow update operations that lead to a `hard_limit_enabled` object store account, bucket, or file system with usage over its limiting value. For object store accounts and buckets, the limiting value is that of `quota_limit`, and for file systems it is that of `provisioned`. The operation can be either setting `hard_limit_enabled` when usage is higher than the limiting value, modifying the limiting value to a value under usage when `hard_limit_enabled` or recovering a destroyed bucket of an object store account that cause account's space usage to go over its hard `quota_limit`.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param bool ignore_usage: Allow update operations that lead to a `hard_limit_enabled` object store account, bucket, or file system with usage over its limiting value. For object store accounts and buckets, the limiting value is that of `quota_limit`, and for file systems it is that of `provisioned`. The operation can be either setting `hard_limit_enabled` when usage is higher than the limiting value, modifying the limiting value to a value under usage when `hard_limit_enabled` or recovering a destroyed bucket of an object store account that cause account's space usage to go over its hard `quota_limit`. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -1734,17 +1714,17 @@ class BucketsApi(object):
         >>> thread = api.api213_buckets_performance_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
-        :param int end_time: When the time window ends (in milliseconds since epoch).
-        :param str filter: Exclude resources that don't match the specified criteria.
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
-        :param int offset: The offset of the first resource to return from a collection.
-        :param int resolution: The desired ms between samples. Available resolutions may depend on data type, `start_time` and `end_time`. In general `1000`, `30000`, `300000`, `1800000`, `7200000`, and `86400000` are possible values.
-        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.
-        :param int start_time: When the time window starts (in milliseconds since epoch).
-        :param bool total_only: Only return the total record for the specified items. The total record will be the total of all items after filtering. The `items` list will be empty.
+        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result. 
+        :param int end_time: When the time window ends (in milliseconds since epoch). 
+        :param str filter: Exclude resources that don't match the specified criteria. 
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
+        :param int offset: The offset of the first resource to return from a collection. 
+        :param int resolution: The desired ms between samples. Available resolutions may depend on data type, `start_time` and `end_time`. In general `1000`, `30000`, `300000`, `1800000`, `7200000`, and `86400000` are possible values. 
+        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response. 
+        :param int start_time: When the time window starts (in milliseconds since epoch). 
+        :param bool total_only: Only return the total record for the specified items. The total record will be the total of all items after filtering. The `items` list will be empty. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -1850,8 +1830,8 @@ class BucketsApi(object):
 
     def api213_buckets_post_with_http_info(
         self,
-        names=None,  # type: List[str]
         bucket=None,  # type: models.BucketPost
+        names=None,  # type: List[str]
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -1863,11 +1843,11 @@ class BucketsApi(object):
         Create a new object store bucket.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api213_buckets_post_with_http_info(names, bucket, async_req=True)
+        >>> thread = api.api213_buckets_post_with_http_info(bucket, names, async_req=True)
         >>> result = thread.get()
 
-        :param list[str] names: A comma-separated list of resource names. (required)
         :param BucketPost bucket: (required)
+        :param list[str] names: A comma-separated list of resource names.  (required)
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -1890,12 +1870,12 @@ class BucketsApi(object):
         # Assign a value to X-Request-Id if it is not specified
         if params.get('x_request_id') is None:
             params['x_request_id'] = str(uuid.uuid4())
-        # verify the required parameter 'names' is set
-        if names is None:
-            raise TypeError("Missing the required parameter `names` when calling `api213_buckets_post`")
         # verify the required parameter 'bucket' is set
         if bucket is None:
             raise TypeError("Missing the required parameter `bucket` when calling `api213_buckets_post`")
+        # verify the required parameter 'names' is set
+        if names is None:
+            raise TypeError("Missing the required parameter `names` when calling `api213_buckets_post`")
 
         collection_formats = {}
         path_params = {}
@@ -1968,17 +1948,17 @@ class BucketsApi(object):
         >>> thread = api.api213_buckets_s3_specific_performance_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
-        :param int end_time: When the time window ends (in milliseconds since epoch).
-        :param str filter: Exclude resources that don't match the specified criteria.
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
-        :param int offset: The offset of the first resource to return from a collection.
-        :param int resolution: The desired ms between samples. Available resolutions may depend on data type, `start_time` and `end_time`. In general `1000`, `30000`, `300000`, `1800000`, `7200000`, and `86400000` are possible values.
-        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.
-        :param int start_time: When the time window starts (in milliseconds since epoch).
-        :param bool total_only: Only return the total record for the specified items. The total record will be the total of all items after filtering. The `items` list will be empty.
+        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result. 
+        :param int end_time: When the time window ends (in milliseconds since epoch). 
+        :param str filter: Exclude resources that don't match the specified criteria. 
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
+        :param int offset: The offset of the first resource to return from a collection. 
+        :param int resolution: The desired ms between samples. Available resolutions may depend on data type, `start_time` and `end_time`. In general `1000`, `30000`, `300000`, `1800000`, `7200000`, and `86400000` are possible values. 
+        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response. 
+        :param int start_time: When the time window starts (in milliseconds since epoch). 
+        :param bool total_only: Only return the total record for the specified items. The total record will be the total of all items after filtering. The `items` list will be empty. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.

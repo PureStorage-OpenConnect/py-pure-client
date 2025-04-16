@@ -31,16 +31,16 @@ class Kmip(object):
     """
     swagger_types = {
         'name': 'str',
+        'ca_certificate': 'str',
         'uris': 'list[str]',
-        'certificate': 'ReferenceNoId',
-        'ca_certificate': 'str'
+        'certificate': 'ReferenceNoId'
     }
 
     attribute_map = {
         'name': 'name',
+        'ca_certificate': 'ca_certificate',
         'uris': 'uris',
-        'certificate': 'certificate',
-        'ca_certificate': 'ca_certificate'
+        'certificate': 'certificate'
     }
 
     required_args = {
@@ -49,25 +49,25 @@ class Kmip(object):
     def __init__(
         self,
         name=None,  # type: str
+        ca_certificate=None,  # type: str
         uris=None,  # type: List[str]
         certificate=None,  # type: models.ReferenceNoId
-        ca_certificate=None,  # type: str
     ):
         """
         Keyword args:
-            name (str): A locally unique, system-generated name. The name cannot be modified.
-            uris (list[str]): List of URIs for the configured KMIP servers.
-            certificate (ReferenceNoId): The certificate used to verify FlashArray authenticity to the KMIP servers.
+            name (str): A locally unique, system-generated name. The name cannot be modified. 
             ca_certificate (str): The text of the CA certificate for the KMIP server.
+            uris (list[str]): List of URIs for the configured KMIP servers.
+            certificate (ReferenceNoId): The certificate used to verify FlashArray authenticity to the KMIP servers. 
         """
         if name is not None:
             self.name = name
+        if ca_certificate is not None:
+            self.ca_certificate = ca_certificate
         if uris is not None:
             self.uris = uris
         if certificate is not None:
             self.certificate = certificate
-        if ca_certificate is not None:
-            self.ca_certificate = ca_certificate
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

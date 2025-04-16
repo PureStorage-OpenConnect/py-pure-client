@@ -30,14 +30,14 @@ class CertificateGroupUse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
+        'id': 'str',
         'use': 'FixedReferenceWithType'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
+        'id': 'id',
         'use': 'use'
     }
 
@@ -46,20 +46,20 @@ class CertificateGroupUse(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
+        id=None,  # type: str
         use=None,  # type: models.FixedReferenceWithType
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            name (str): A locally unique, system-generated name. The name cannot be modified.
-            use (FixedReferenceWithType): A reference to an object using this certificate group.
+            name (str): A locally unique, system-generated name. The name cannot be modified. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource. 
+            use (FixedReferenceWithType): A reference to an object using this certificate group. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
         if use is not None:
             self.use = use
 

@@ -32,27 +32,27 @@ class PodReplicaLinkLag(object):
     swagger_types = {
         'id': 'str',
         'context': 'FixedReference',
-        'direction': 'str',
         'lag': 'ReplicaLinkLag',
-        'local_pod': 'FixedReference',
         'recovery_point': 'int',
         'remotes': 'list[FixedReference]',
         'remote_pod': 'FixedReference',
-        'status': 'str',
-        'time': 'int'
+        'time': 'int',
+        'local_pod': 'FixedReference',
+        'direction': 'str',
+        'status': 'str'
     }
 
     attribute_map = {
         'id': 'id',
         'context': 'context',
-        'direction': 'direction',
         'lag': 'lag',
-        'local_pod': 'local_pod',
         'recovery_point': 'recovery_point',
         'remotes': 'remotes',
         'remote_pod': 'remote_pod',
-        'status': 'status',
-        'time': 'time'
+        'time': 'time',
+        'local_pod': 'local_pod',
+        'direction': 'direction',
+        'status': 'status'
     }
 
     required_args = {
@@ -62,48 +62,48 @@ class PodReplicaLinkLag(object):
         self,
         id=None,  # type: str
         context=None,  # type: models.FixedReference
-        direction=None,  # type: str
         lag=None,  # type: models.ReplicaLinkLag
-        local_pod=None,  # type: models.FixedReference
         recovery_point=None,  # type: int
         remotes=None,  # type: List[models.FixedReference]
         remote_pod=None,  # type: models.FixedReference
-        status=None,  # type: str
         time=None,  # type: int
+        local_pod=None,  # type: models.FixedReference
+        direction=None,  # type: str
+        status=None,  # type: str
     ):
         """
         Keyword args:
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
-            direction (str): The direction of replication. Valid values include `inbound` and `outbound`.
-            lag (ReplicaLinkLag): Duration in milliseconds that indicates how far behind the replication target is from the source.
-            local_pod (FixedReference): Reference to a local pod.
-            recovery_point (int): Time when the last piece of data was replicated, in milliseconds since the UNIX epoch, and the recovery point if the pod is promoted. If the pod is baselining then the value is `null`.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request.  Other parameters provided with the request, such as names of volumes or snapshots,  are resolved relative to the provided `context`. 
+            lag (ReplicaLinkLag): Duration in milliseconds that indicates how far behind the replication target is from the source. 
+            recovery_point (int): Time when the last piece of data was replicated, in milliseconds since the UNIX epoch, and the recovery point if the pod is promoted. If the pod is baselining then the value is `null`. 
             remotes (list[FixedReference]): Reference to a remote array.
             remote_pod (FixedReference): Reference to a remote pod.
-            status (str): Status of the replica-link. Valid values include `replicating`, `baselining`, `paused`, `quiescing`, `quiesced`, `idle`, and `unhealthy`.
             time (int): Sample time in milliseconds since the UNIX epoch.
+            local_pod (FixedReference): Reference to a local pod.
+            direction (str): The direction of replication. Valid values include `inbound` and `outbound`. 
+            status (str): Status of the replica-link. Valid values include `replicating`, `baselining`, `paused`, `quiescing`, `quiesced`, `idle`, and `unhealthy`. 
         """
         if id is not None:
             self.id = id
         if context is not None:
             self.context = context
-        if direction is not None:
-            self.direction = direction
         if lag is not None:
             self.lag = lag
-        if local_pod is not None:
-            self.local_pod = local_pod
         if recovery_point is not None:
             self.recovery_point = recovery_point
         if remotes is not None:
             self.remotes = remotes
         if remote_pod is not None:
             self.remote_pod = remote_pod
-        if status is not None:
-            self.status = status
         if time is not None:
             self.time = time
+        if local_pod is not None:
+            self.local_pod = local_pod
+        if direction is not None:
+            self.direction = direction
+        if status is not None:
+            self.status = status
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

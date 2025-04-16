@@ -30,29 +30,29 @@ class Audit(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
+        'id': 'str',
         'context': 'FixedReference',
-        'arguments': 'str',
-        'command': 'str',
         'subcommand': 'str',
+        'origin': 'FixedReference',
+        'user_interface': 'str',
+        'arguments': 'str',
         'time': 'int',
         'user': 'str',
-        'origin': 'FixedReference',
-        'user_interface': 'str'
+        'command': 'str'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
+        'id': 'id',
         'context': 'context',
-        'arguments': 'arguments',
-        'command': 'command',
         'subcommand': 'subcommand',
+        'origin': 'origin',
+        'user_interface': 'user_interface',
+        'arguments': 'arguments',
         'time': 'time',
         'user': 'user',
-        'origin': 'origin',
-        'user_interface': 'user_interface'
+        'command': 'command'
     }
 
     required_args = {
@@ -60,50 +60,50 @@ class Audit(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
+        id=None,  # type: str
         context=None,  # type: models.FixedReference
-        arguments=None,  # type: str
-        command=None,  # type: str
         subcommand=None,  # type: str
-        time=None,  # type: int
-        user=None,  # type: str
         origin=None,  # type: models.FixedReference
         user_interface=None,  # type: str
+        arguments=None,  # type: str
+        time=None,  # type: int
+        user=None,  # type: str
+        command=None,  # type: str
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            name (str): A locally unique, system-generated name. The name cannot be modified.
-            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
+            name (str): A locally unique, system-generated name. The name cannot be modified. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource. 
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request.  Other parameters provided with the request, such as names of volumes or snapshots,  are resolved relative to the provided `context`. 
+            subcommand (str): The `command` and `subcommand` combination determines which action the user attempted to perform. 
+            origin (FixedReference): The array from which the command originated.
+            user_interface (str): The user interface through which the user session event was performed. Valid values are `CLI`, `GUI`, and `REST`. 
             arguments (str): The arguments provided to the command.
-            command (str): The top level command that starts with the string \"pure\" as a convention.
-            subcommand (str): The `command` and `subcommand` combination determines which action the user attempted to perform.
             time (int): The time at which the command was run in milliseconds since the UNIX epoch.
             user (str): The user who ran the command.
-            origin (FixedReference): The array from which the command originated.
-            user_interface (str): The user interface through which the user session event was performed. Valid values are `CLI`, `GUI`, and `REST`.
+            command (str): The top level command that starts with the string \"pure\" as a convention.
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
         if context is not None:
             self.context = context
-        if arguments is not None:
-            self.arguments = arguments
-        if command is not None:
-            self.command = command
         if subcommand is not None:
             self.subcommand = subcommand
-        if time is not None:
-            self.time = time
-        if user is not None:
-            self.user = user
         if origin is not None:
             self.origin = origin
         if user_interface is not None:
             self.user_interface = user_interface
+        if arguments is not None:
+            self.arguments = arguments
+        if time is not None:
+            self.time = time
+        if user is not None:
+            self.user = user
+        if command is not None:
+            self.command = command
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

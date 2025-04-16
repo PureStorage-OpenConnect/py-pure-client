@@ -49,8 +49,8 @@ class AlertWatcher(object):
     ):
         """
         Keyword args:
-            name (str): A locally unique, system-generated name. The name cannot be modified.
-            enabled (bool): If set to `true`, email notifications will be sent to this watcher for alerts. If set to `false`, email notification is disabled.
+            name (str): A locally unique, system-generated name. The name cannot be modified. 
+            enabled (bool): If set to `true`, email notifications will be sent to this watcher for alerts. If set to `false`, email notification is disabled. 
         """
         if name is not None:
             self.name = name

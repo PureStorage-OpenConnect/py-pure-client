@@ -46,7 +46,7 @@ class ArrayConnectionKey(object):
     ):
         """
         Keyword args:
-            connection_key (str): Connection-key used on another array to connect to this array.
+            connection_key (str): Connection-key used on another array to connect to this array. 
         """
         if connection_key is not None:
             self.connection_key = connection_key

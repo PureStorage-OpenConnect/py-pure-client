@@ -32,15 +32,15 @@ class OffloadGoogleCloud(object):
     swagger_types = {
         'access_key_id': 'str',
         'bucket': 'str',
-        'secret_access_key': 'str',
-        'profile': 'str'
+        'profile': 'str',
+        'secret_access_key': 'str'
     }
 
     attribute_map = {
         'access_key_id': 'access_key_id',
         'bucket': 'bucket',
-        'secret_access_key': 'secret_access_key',
-        'profile': 'profile'
+        'profile': 'profile',
+        'secret_access_key': 'secret_access_key'
     }
 
     required_args = {
@@ -50,24 +50,24 @@ class OffloadGoogleCloud(object):
         self,
         access_key_id=None,  # type: str
         bucket=None,  # type: str
-        secret_access_key=None,  # type: str
         profile=None,  # type: str
+        secret_access_key=None,  # type: str
     ):
         """
         Keyword args:
             access_key_id (str): The access key ID of the Google Cloud account used to create a connection between the array and a Google Cloud offload target. The access key ID is 24 characters in length and is only accepted when creating the connection between the array and the Google Cloud offload target. The `access_key_id`, `secret_access_key`, and `bucket` parameters must be set together.
             bucket (str): The name of the Google Cloud Storage bucket to which the data will be offloaded. Grant basic read and write access permissions to the bucket and verify that the bucket is empty of all objects. The `access_key_id`, `secret_access_key`, and `bucket` parameters must be set together.
+            profile (str): The offload target profile that will be selected for this target. This option allows more granular configuration for the target on top of the `protocol` parameter. Values include `gcp`. 
             secret_access_key (str): The secret access key that goes with the access key ID of the Google Cloud account. The secret access key is 40 characters in length is only accepted when creating the connection between the array and the Google Cloud offload target. The `access_key_id`, `secret_access_key`, and `bucket` parameters must be set together.
-            profile (str): The offload target profile that will be selected for this target. This option allows more granular configuration for the target on top of the `protocol` parameter. Values include `gcp`.
         """
         if access_key_id is not None:
             self.access_key_id = access_key_id
         if bucket is not None:
             self.bucket = bucket
-        if secret_access_key is not None:
-            self.secret_access_key = secret_access_key
         if profile is not None:
             self.profile = profile
+        if secret_access_key is not None:
+            self.secret_access_key = secret_access_key
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

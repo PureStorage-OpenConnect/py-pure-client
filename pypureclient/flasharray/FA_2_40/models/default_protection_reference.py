@@ -30,14 +30,14 @@ class DefaultProtectionReference(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
+        'id': 'str',
         'type': 'str'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
+        'id': 'id',
         'type': 'type'
     }
 
@@ -46,20 +46,20 @@ class DefaultProtectionReference(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
+        id=None,  # type: str
         type=None,  # type: str
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified.
-            name (str): The resource name, such as volume name, pod name, snapshot name, and so on.
-            type (str): The type of default protection. Currently, the only valid value is `protection_group`.
+            name (str): The resource name, such as volume name, pod name, snapshot name, and so on. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified. 
+            type (str): The type of default protection. Currently, the only valid value is `protection_group`. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
         if type is not None:
             self.type = type
 

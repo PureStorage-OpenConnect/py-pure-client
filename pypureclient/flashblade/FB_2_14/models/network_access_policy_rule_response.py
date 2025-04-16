@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.14, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.14, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.14
     
@@ -46,7 +46,7 @@ class NetworkAccessPolicyRuleResponse(object):
     ):
         """
         Keyword args:
-            items (list[NetworkAccessPolicyRule]): Displays a list of all items after filtering.
+            items (list[NetworkAccessPolicyRule]): Displays a list of all items after filtering. 
         """
         if items is not None:
             self.items = items

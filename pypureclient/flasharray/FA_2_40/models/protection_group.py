@@ -34,21 +34,21 @@ class ProtectionGroup(object):
         'id': 'str',
         'context': 'FixedReference',
         'workload': 'WorkloadConfigurationFixedReferenceWorkload',
-        'destroyed': 'bool',
-        'host_count': 'int',
-        'host_group_count': 'int',
-        'is_local': 'bool',
+        'target_retention': 'RetentionPolicy',
         'pod': 'FixedReference',
+        'host_group_count': 'int',
+        'host_count': 'int',
+        'eradication_config': 'ProtectionGroupEradicationConfig',
+        'source': 'FixedReference',
+        'volume_count': 'int',
+        'space': 'Space',
+        'time_remaining': 'int',
+        'target_count': 'int',
+        'destroyed': 'bool',
+        'source_retention': 'RetentionPolicy',
         'replication_schedule': 'ReplicationSchedule',
         'snapshot_schedule': 'SnapshotSchedule',
-        'source': 'FixedReference',
-        'source_retention': 'RetentionPolicy',
-        'space': 'Space',
-        'target_retention': 'RetentionPolicy',
-        'target_count': 'int',
-        'time_remaining': 'int',
-        'volume_count': 'int',
-        'eradication_config': 'ProtectionGroupEradicationConfig',
+        'is_local': 'bool',
         'retention_lock': 'str'
     }
 
@@ -57,21 +57,21 @@ class ProtectionGroup(object):
         'id': 'id',
         'context': 'context',
         'workload': 'workload',
-        'destroyed': 'destroyed',
-        'host_count': 'host_count',
-        'host_group_count': 'host_group_count',
-        'is_local': 'is_local',
+        'target_retention': 'target_retention',
         'pod': 'pod',
+        'host_group_count': 'host_group_count',
+        'host_count': 'host_count',
+        'eradication_config': 'eradication_config',
+        'source': 'source',
+        'volume_count': 'volume_count',
+        'space': 'space',
+        'time_remaining': 'time_remaining',
+        'target_count': 'target_count',
+        'destroyed': 'destroyed',
+        'source_retention': 'source_retention',
         'replication_schedule': 'replication_schedule',
         'snapshot_schedule': 'snapshot_schedule',
-        'source': 'source',
-        'source_retention': 'source_retention',
-        'space': 'space',
-        'target_retention': 'target_retention',
-        'target_count': 'target_count',
-        'time_remaining': 'time_remaining',
-        'volume_count': 'volume_count',
-        'eradication_config': 'eradication_config',
+        'is_local': 'is_local',
         'retention_lock': 'retention_lock'
     }
 
@@ -84,45 +84,45 @@ class ProtectionGroup(object):
         id=None,  # type: str
         context=None,  # type: models.FixedReference
         workload=None,  # type: models.WorkloadConfigurationFixedReferenceWorkload
-        destroyed=None,  # type: bool
-        host_count=None,  # type: int
-        host_group_count=None,  # type: int
-        is_local=None,  # type: bool
+        target_retention=None,  # type: models.RetentionPolicy
         pod=None,  # type: models.FixedReference
+        host_group_count=None,  # type: int
+        host_count=None,  # type: int
+        eradication_config=None,  # type: models.ProtectionGroupEradicationConfig
+        source=None,  # type: models.FixedReference
+        volume_count=None,  # type: int
+        space=None,  # type: models.Space
+        time_remaining=None,  # type: int
+        target_count=None,  # type: int
+        destroyed=None,  # type: bool
+        source_retention=None,  # type: models.RetentionPolicy
         replication_schedule=None,  # type: models.ReplicationSchedule
         snapshot_schedule=None,  # type: models.SnapshotSchedule
-        source=None,  # type: models.FixedReference
-        source_retention=None,  # type: models.RetentionPolicy
-        space=None,  # type: models.Space
-        target_retention=None,  # type: models.RetentionPolicy
-        target_count=None,  # type: int
-        time_remaining=None,  # type: int
-        volume_count=None,  # type: int
-        eradication_config=None,  # type: models.ProtectionGroupEradicationConfig
+        is_local=None,  # type: bool
         retention_lock=None,  # type: str
     ):
         """
         Keyword args:
-            name (str): A user-specified name. The name must be locally unique and can be changed.
-            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
+            name (str): A user-specified name. The name must be locally unique and can be changed. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource. 
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request.  Other parameters provided with the request, such as names of volumes or snapshots,  are resolved relative to the provided `context`. 
             workload (WorkloadConfigurationFixedReferenceWorkload)
-            destroyed (bool): Has this protection group been destroyed? To destroy a protection group, patch to `true`. To recover a destroyed protection group, patch to `false`. If not specified, defaults to `false`.
-            host_count (int): Number of hosts in this protection group.
-            host_group_count (int): Number of host groups in this protection group.
-            is_local (bool): If set to `true`, the protection group belongs to the local array. If set to `false`, the protection group belongs to the remote array.
+            target_retention (RetentionPolicy): The retention policy for the target(s) of the protection group. 
             pod (FixedReference): The pod in which the protection group resides.
+            host_group_count (int): Number of host groups in this protection group.
+            host_count (int): Number of hosts in this protection group.
+            eradication_config (ProtectionGroupEradicationConfig)
+            source (FixedReference): The array or pod on which the protection group was created.
+            volume_count (int): The number of volumes in the protection group.
+            space (Space): Displays provisioned size and physical storage consumption data for each protection group. 
+            time_remaining (int): The amount of time left until the destroyed protection group is permanently eradicated. Measured in milliseconds. Before the `time_remaining` period has elapsed, the destroyed protection group can be recovered by setting `destroyed=false`. 
+            target_count (int): The number of targets to where this protection group replicates.
+            destroyed (bool): Has this protection group been destroyed? To destroy a protection group, patch to `true`. To recover a destroyed protection group, patch to `false`. If not specified, defaults to `false`. 
+            source_retention (RetentionPolicy): The retention policy for the source array of the protection group. 
             replication_schedule (ReplicationSchedule): The schedule settings for asynchronous replication.
             snapshot_schedule (SnapshotSchedule): The schedule settings for protection group snapshots.
-            source (FixedReference): The array or pod on which the protection group was created.
-            source_retention (RetentionPolicy): The retention policy for the source array of the protection group.
-            space (Space): Displays provisioned size and physical storage consumption data for each protection group.
-            target_retention (RetentionPolicy): The retention policy for the target(s) of the protection group.
-            target_count (int): The number of targets to where this protection group replicates.
-            time_remaining (int): The amount of time left until the destroyed protection group is permanently eradicated. Measured in milliseconds. Before the `time_remaining` period has elapsed, the destroyed protection group can be recovered by setting `destroyed=false`.
-            volume_count (int): The number of volumes in the protection group.
-            eradication_config (ProtectionGroupEradicationConfig)
-            retention_lock (str): The valid values are `ratcheted` and `unlocked`. The default value for a newly created protection group is `unlocked`. Set `retention_lock` to `ratcheted` to enable SafeMode restrictions on the protection group. Contact Pure Technical Services to change `retention_lock` to `unlocked`.
+            is_local (bool): If set to `true`, the protection group belongs to the local array. If set to `false`, the protection group belongs to the remote array. 
+            retention_lock (str): The valid values are `ratcheted` and `unlocked`. The default value for a newly created protection group is `unlocked`. Set `retention_lock` to `ratcheted` to enable SafeMode restrictions on the protection group. Contact Pure Technical Services to change `retention_lock` to `unlocked`. 
         """
         if name is not None:
             self.name = name
@@ -132,36 +132,36 @@ class ProtectionGroup(object):
             self.context = context
         if workload is not None:
             self.workload = workload
-        if destroyed is not None:
-            self.destroyed = destroyed
-        if host_count is not None:
-            self.host_count = host_count
-        if host_group_count is not None:
-            self.host_group_count = host_group_count
-        if is_local is not None:
-            self.is_local = is_local
+        if target_retention is not None:
+            self.target_retention = target_retention
         if pod is not None:
             self.pod = pod
+        if host_group_count is not None:
+            self.host_group_count = host_group_count
+        if host_count is not None:
+            self.host_count = host_count
+        if eradication_config is not None:
+            self.eradication_config = eradication_config
+        if source is not None:
+            self.source = source
+        if volume_count is not None:
+            self.volume_count = volume_count
+        if space is not None:
+            self.space = space
+        if time_remaining is not None:
+            self.time_remaining = time_remaining
+        if target_count is not None:
+            self.target_count = target_count
+        if destroyed is not None:
+            self.destroyed = destroyed
+        if source_retention is not None:
+            self.source_retention = source_retention
         if replication_schedule is not None:
             self.replication_schedule = replication_schedule
         if snapshot_schedule is not None:
             self.snapshot_schedule = snapshot_schedule
-        if source is not None:
-            self.source = source
-        if source_retention is not None:
-            self.source_retention = source_retention
-        if space is not None:
-            self.space = space
-        if target_retention is not None:
-            self.target_retention = target_retention
-        if target_count is not None:
-            self.target_count = target_count
-        if time_remaining is not None:
-            self.time_remaining = time_remaining
-        if volume_count is not None:
-            self.volume_count = volume_count
-        if eradication_config is not None:
-            self.eradication_config = eradication_config
+        if is_local is not None:
+            self.is_local = is_local
         if retention_lock is not None:
             self.retention_lock = retention_lock
 

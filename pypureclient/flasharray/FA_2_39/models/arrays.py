@@ -30,45 +30,45 @@ class Arrays(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
+        'id': 'str',
         'context': 'FixedReference',
-        'as_of': 'int',
-        'banner': 'str',
-        'capacity': 'int',
-        'console_lock_enabled': 'bool',
-        'encryption': 'ArrayEncryption',
-        'eradication_config': 'EradicationConfig',
-        'idle_timeout': 'int',
-        'ntp_servers': 'list[str]',
-        'ntp_symmetric_key': 'str',
         'os': 'str',
-        'parity': 'float',
         'scsi_timeout': 'int',
-        'space': 'Space',
+        'parity': 'float',
+        'banner': 'str',
+        'console_lock_enabled': 'bool',
+        'eradication_config': 'EradicationConfig',
+        'ntp_servers': 'list[str]',
+        'as_of': 'int',
         'time_zone': 'str',
-        'version': 'str'
+        'version': 'str',
+        'space': 'Space',
+        'capacity': 'int',
+        'encryption': 'ArrayEncryption',
+        'ntp_symmetric_key': 'str',
+        'idle_timeout': 'int'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
+        'id': 'id',
         'context': 'context',
-        'as_of': '_as_of',
-        'banner': 'banner',
-        'capacity': 'capacity',
-        'console_lock_enabled': 'console_lock_enabled',
-        'encryption': 'encryption',
-        'eradication_config': 'eradication_config',
-        'idle_timeout': 'idle_timeout',
-        'ntp_servers': 'ntp_servers',
-        'ntp_symmetric_key': 'ntp_symmetric_key',
         'os': 'os',
-        'parity': 'parity',
         'scsi_timeout': 'scsi_timeout',
-        'space': 'space',
+        'parity': 'parity',
+        'banner': 'banner',
+        'console_lock_enabled': 'console_lock_enabled',
+        'eradication_config': 'eradication_config',
+        'ntp_servers': 'ntp_servers',
+        'as_of': '_as_of',
         'time_zone': 'time_zone',
-        'version': 'version'
+        'version': 'version',
+        'space': 'space',
+        'capacity': 'capacity',
+        'encryption': 'encryption',
+        'ntp_symmetric_key': 'ntp_symmetric_key',
+        'idle_timeout': 'idle_timeout'
     }
 
     required_args = {
@@ -76,82 +76,82 @@ class Arrays(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
+        id=None,  # type: str
         context=None,  # type: models.FixedReference
-        as_of=None,  # type: int
-        banner=None,  # type: str
-        capacity=None,  # type: int
-        console_lock_enabled=None,  # type: bool
-        encryption=None,  # type: models.ArrayEncryption
-        eradication_config=None,  # type: models.EradicationConfig
-        idle_timeout=None,  # type: int
-        ntp_servers=None,  # type: List[str]
-        ntp_symmetric_key=None,  # type: str
         os=None,  # type: str
-        parity=None,  # type: float
         scsi_timeout=None,  # type: int
-        space=None,  # type: models.Space
+        parity=None,  # type: float
+        banner=None,  # type: str
+        console_lock_enabled=None,  # type: bool
+        eradication_config=None,  # type: models.EradicationConfig
+        ntp_servers=None,  # type: List[str]
+        as_of=None,  # type: int
         time_zone=None,  # type: str
         version=None,  # type: str
+        space=None,  # type: models.Space
+        capacity=None,  # type: int
+        encryption=None,  # type: models.ArrayEncryption
+        ntp_symmetric_key=None,  # type: str
+        idle_timeout=None,  # type: int
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            name (str): A user-specified name. The name must be locally unique and can be changed.
-            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
-            as_of (int): The time in milliseconds since UNIX epoch.
+            name (str): A user-specified name. The name must be locally unique and can be changed. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource. 
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request.  Other parameters provided with the request, such as names of volumes or snapshots,  are resolved relative to the provided `context`. 
+            os (str): Specifies the operating system. Valid values are `Purity`, `Purity//FA`, and `Purity//FB`. 
+            scsi_timeout (int): The SCSI timeout. If not specified, defaults to `60s`. If the user does not have sufficient access, this field will return `null`. 
+            parity (float): A representation of data redundancy on the array. Data redundancy is rebuilt automatically by the system whenever parity is less than `1.0`. If the user does not have sufficient access, this field will return `null`. 
             banner (str)
-            capacity (int): The usable capacity in bytes. If the user does not have sufficient access, this field will return `null`.
-            console_lock_enabled (bool): If `true`, console lock is enabled for the array. If the user does not have sufficient access, this field will return `null`.
-            encryption (ArrayEncryption)
+            console_lock_enabled (bool): If `true`, console lock is enabled for the array. If the user does not have sufficient access, this field will return `null`. 
             eradication_config (EradicationConfig)
-            idle_timeout (int): The idle timeout in milliseconds. Valid values include `0` and any multiple of `60000` in the range of `300000` and `10800000`. Any other values are rounded down to the nearest multiple of `60000`.
-            ntp_servers (list[str]): NTP Servers. If the user does not have sufficient access, this field will return `null`.
-            ntp_symmetric_key (str): The text of ntp symmetric authentication key. Supported formats include a hex-encoded string no longer than 64 characters, or an ASCII string no longer than 20 characters, excluding \"#\". Any configured key will be masked as \"****\" on return. If the user does not have sufficient access, this field will return `null`.
-            os (str): Specifies the operating system. Valid values are `Purity`, `Purity//FA`, and `Purity//FB`.
-            parity (float): A representation of data redundancy on the array. Data redundancy is rebuilt automatically by the system whenever parity is less than `1.0`. If the user does not have sufficient access, this field will return `null`.
-            scsi_timeout (int): The SCSI timeout. If not specified, defaults to `60s`. If the user does not have sufficient access, this field will return `null`.
-            space (Space)
-            time_zone (str): The time zone of the array.
+            ntp_servers (list[str]): NTP Servers. If the user does not have sufficient access, this field will return `null`. 
+            as_of (int): The time in milliseconds since UNIX epoch. 
+            time_zone (str): The time zone of the array. 
             version (str)
+            space (Space)
+            capacity (int): The usable capacity in bytes. If the user does not have sufficient access, this field will return `null`. 
+            encryption (ArrayEncryption)
+            ntp_symmetric_key (str): The text of ntp symmetric authentication key. Supported formats include a hex-encoded string no longer than 64 characters, or an ASCII string no longer than 20 characters, excluding \"#\". Any configured key will be masked as \"****\" on return. If the user does not have sufficient access, this field will return `null`. 
+            idle_timeout (int): The idle timeout in milliseconds. Valid values include `0` and any multiple of `60000` in the range of `300000` and `10800000`. Any other values are rounded down to the nearest multiple of `60000`. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
         if context is not None:
             self.context = context
-        if as_of is not None:
-            self.as_of = as_of
-        if banner is not None:
-            self.banner = banner
-        if capacity is not None:
-            self.capacity = capacity
-        if console_lock_enabled is not None:
-            self.console_lock_enabled = console_lock_enabled
-        if encryption is not None:
-            self.encryption = encryption
-        if eradication_config is not None:
-            self.eradication_config = eradication_config
-        if idle_timeout is not None:
-            self.idle_timeout = idle_timeout
-        if ntp_servers is not None:
-            self.ntp_servers = ntp_servers
-        if ntp_symmetric_key is not None:
-            self.ntp_symmetric_key = ntp_symmetric_key
         if os is not None:
             self.os = os
-        if parity is not None:
-            self.parity = parity
         if scsi_timeout is not None:
             self.scsi_timeout = scsi_timeout
-        if space is not None:
-            self.space = space
+        if parity is not None:
+            self.parity = parity
+        if banner is not None:
+            self.banner = banner
+        if console_lock_enabled is not None:
+            self.console_lock_enabled = console_lock_enabled
+        if eradication_config is not None:
+            self.eradication_config = eradication_config
+        if ntp_servers is not None:
+            self.ntp_servers = ntp_servers
+        if as_of is not None:
+            self.as_of = as_of
         if time_zone is not None:
             self.time_zone = time_zone
         if version is not None:
             self.version = version
+        if space is not None:
+            self.space = space
+        if capacity is not None:
+            self.capacity = capacity
+        if encryption is not None:
+            self.encryption = encryption
+        if ntp_symmetric_key is not None:
+            self.ntp_symmetric_key = ntp_symmetric_key
+        if idle_timeout is not None:
+            self.idle_timeout = idle_timeout
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

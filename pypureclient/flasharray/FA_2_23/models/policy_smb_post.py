@@ -50,7 +50,7 @@ class PolicySmbPost(object):
         """
         Keyword args:
             enabled (bool): If set to `true`, enables the policy. If set to `false`, disables the policy.
-            access_based_enumeration_enabled (bool): If set to `true`, enables access based enumeration on the policy. When access based enumeration is enabled on a policy, files and folders within exports that are attached to the policy will be hidden from users who do not have permission to view them. If not specified, defaults to `false`.
+            access_based_enumeration_enabled (bool): If set to `true`, enables access based enumeration on the policy. When access based enumeration is enabled on a policy, files and folders within exports that are attached to the policy will be hidden from users who do not have permission to view them. If not specified, defaults to `false`. 
         """
         if enabled is not None:
             self.enabled = enabled

@@ -32,17 +32,17 @@ class AppNode(object):
     swagger_types = {
         'app': 'FixedReference',
         'index': 'int',
-        'status': 'str',
+        'vnc': 'list[str]',
         'version': 'str',
-        'vnc': 'list[str]'
+        'status': 'str'
     }
 
     attribute_map = {
         'app': 'app',
         'index': 'index',
-        'status': 'status',
+        'vnc': 'vnc',
         'version': 'version',
-        'vnc': 'vnc'
+        'status': 'status'
     }
 
     required_args = {
@@ -52,28 +52,28 @@ class AppNode(object):
         self,
         app=None,  # type: models.FixedReference
         index=None,  # type: int
-        status=None,  # type: str
-        version=None,  # type: str
         vnc=None,  # type: List[str]
+        version=None,  # type: str
+        status=None,  # type: str
     ):
         """
         Keyword args:
             app (FixedReference): A reference to the app of which this node is a part.
             index (int): An index that represents this node.
-            status (str): The node status. Possible values are `starting`, `healthy`, `unhealthy`, `critical`, `stopping`, and `disabled`.
+            vnc (list[str]): The VNC information used to access this node if VNC is enabled. 
             version (str): The node version.
-            vnc (list[str]): The VNC information used to access this node if VNC is enabled.
+            status (str): The node status. Possible values are `starting`, `healthy`, `unhealthy`, `critical`, `stopping`, and `disabled`. 
         """
         if app is not None:
             self.app = app
         if index is not None:
             self.index = index
-        if status is not None:
-            self.status = status
-        if version is not None:
-            self.version = version
         if vnc is not None:
             self.vnc = vnc
+        if version is not None:
+            self.version = version
+        if status is not None:
+            self.status = status
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

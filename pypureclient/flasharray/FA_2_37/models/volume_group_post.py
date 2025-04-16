@@ -30,25 +30,25 @@ class VolumeGroupPost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
-        'qos': 'Qos',
-        'priority_adjustment': 'PriorityAdjustment',
-        'space': 'Space',
+        'id': 'str',
         'time_remaining': 'int',
+        'destroyed': 'bool',
+        'qos': 'Qos',
         'volume_count': 'int',
-        'destroyed': 'bool'
+        'priority_adjustment': 'PriorityAdjustment',
+        'space': 'Space'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
-        'qos': 'qos',
-        'priority_adjustment': 'priority_adjustment',
-        'space': 'space',
+        'id': 'id',
         'time_remaining': 'time_remaining',
+        'destroyed': 'destroyed',
+        'qos': 'qos',
         'volume_count': 'volume_count',
-        'destroyed': 'destroyed'
+        'priority_adjustment': 'priority_adjustment',
+        'space': 'space'
     }
 
     required_args = {
@@ -56,42 +56,42 @@ class VolumeGroupPost(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
+        id=None,  # type: str
+        time_remaining=None,  # type: int
+        destroyed=None,  # type: bool
         qos=None,  # type: models.Qos
+        volume_count=None,  # type: int
         priority_adjustment=None,  # type: models.PriorityAdjustment
         space=None,  # type: models.Space
-        time_remaining=None,  # type: int
-        volume_count=None,  # type: int
-        destroyed=None,  # type: bool
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            name (str): A user-specified name. The name must be locally unique and can be changed.
+            name (str): A user-specified name. The name must be locally unique and can be changed. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource. 
+            time_remaining (int): The amount of time left until the destroyed volume group is permanently eradicated, measured in milliseconds. 
+            destroyed (bool): If set to `true`, destroys a volume group. If set to `false`, recovers a destroyed volume group. If not specified, defaults to `false`. 
             qos (Qos)
+            volume_count (int): The number of volumes in the volume group. 
             priority_adjustment (PriorityAdjustment)
             space (Space)
-            time_remaining (int): The amount of time left until the destroyed volume group is permanently eradicated, measured in milliseconds.
-            volume_count (int): The number of volumes in the volume group.
-            destroyed (bool): If set to `true`, destroys a volume group. If set to `false`, recovers a destroyed volume group. If not specified, defaults to `false`.
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
+        if time_remaining is not None:
+            self.time_remaining = time_remaining
+        if destroyed is not None:
+            self.destroyed = destroyed
         if qos is not None:
             self.qos = qos
+        if volume_count is not None:
+            self.volume_count = volume_count
         if priority_adjustment is not None:
             self.priority_adjustment = priority_adjustment
         if space is not None:
             self.space = space
-        if time_remaining is not None:
-            self.time_remaining = time_remaining
-        if volume_count is not None:
-            self.volume_count = volume_count
-        if destroyed is not None:
-            self.destroyed = destroyed
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

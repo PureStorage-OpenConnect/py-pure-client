@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.7, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.7, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.7
     
@@ -32,15 +32,15 @@ class AlertWatcher(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
-        'enabled': 'bool',
-        'minimum_notification_severity': 'str'
+        'minimum_notification_severity': 'str',
+        'enabled': 'bool'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
-        'enabled': 'enabled',
-        'minimum_notification_severity': 'minimum_notification_severity'
+        'minimum_notification_severity': 'minimum_notification_severity',
+        'enabled': 'enabled'
     }
 
     required_args = {
@@ -50,24 +50,24 @@ class AlertWatcher(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
-        enabled=None,  # type: bool
         minimum_notification_severity=None,  # type: str
+        enabled=None,  # type: bool
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            enabled (bool): Is email notification enabled? If not specified, defaults to `true`.
-            minimum_notification_severity (str): The minimum severity that an alert must have in order for emails to be sent to the watcher. Possible values include `info`, `warning`, and `critical`.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            minimum_notification_severity (str): The minimum severity that an alert must have in order for emails to be sent to the watcher. Possible values include `info`, `warning`, and `critical`. 
+            enabled (bool): Is email notification enabled? If not specified, defaults to `true`. 
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
-        if enabled is not None:
-            self.enabled = enabled
         if minimum_notification_severity is not None:
             self.minimum_notification_severity = minimum_notification_severity
+        if enabled is not None:
+            self.enabled = enabled
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

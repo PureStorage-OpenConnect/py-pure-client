@@ -46,7 +46,7 @@ class VchostCertificatePatch(object):
     ):
         """
         Keyword args:
-            endpoints (list[str]): The IPv4 or IPv6 addresses of the endpoints to configure for the vchost, over which the configured certificate will be presented.
+            endpoints (list[str]): The IPv4 or IPv6 addresses of the endpoints to configure for the vchost, over which the configured certificate will be presented. 
         """
         if endpoints is not None:
             self.endpoints = endpoints

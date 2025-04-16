@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.16
     
@@ -32,19 +32,19 @@ class Dns(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
-        'domain': 'str',
         'nameservers': 'list[str]',
-        'services': 'list[str]',
-        'sources': 'list[Reference]'
+        'sources': 'list[Reference]',
+        'domain': 'str',
+        'services': 'list[str]'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
-        'domain': 'domain',
         'nameservers': 'nameservers',
-        'services': 'services',
-        'sources': 'sources'
+        'sources': 'sources',
+        'domain': 'domain',
+        'services': 'services'
     }
 
     required_args = {
@@ -54,32 +54,32 @@ class Dns(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
-        domain=None,  # type: str
         nameservers=None,  # type: List[str]
-        services=None,  # type: List[str]
         sources=None,  # type: List[models.Reference]
+        domain=None,  # type: str
+        services=None,  # type: List[str]
     ):
         """
         Keyword args:
-            name (str): A name chosen by the user. Can be changed. Must be locally unique.
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            domain (str): Domain suffix to be appended by the appliance when performing DNS lookups.
+            name (str): A name chosen by the user. Can be changed. Must be locally unique. 
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
             nameservers (list[str]): List of DNS server IP addresses.
-            services (list[str]): The list of services utilizing the DNS configuration.
-            sources (list[Reference]): The network interfaces used for communication with the DNS server. The network interfaces must have the `services` value of `data`. Clear this by setting an empty list.
+            sources (list[Reference]): The network interfaces used for communication with the DNS server. The network interfaces must have the `services` value of `data`. Clear this by setting an empty list. 
+            domain (str): Domain suffix to be appended by the appliance when performing DNS lookups. 
+            services (list[str]): The list of services utilizing the DNS configuration. 
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
-        if domain is not None:
-            self.domain = domain
         if nameservers is not None:
             self.nameservers = nameservers
-        if services is not None:
-            self.services = services
         if sources is not None:
             self.sources = sources
+        if domain is not None:
+            self.domain = domain
+        if services is not None:
+            self.services = services
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

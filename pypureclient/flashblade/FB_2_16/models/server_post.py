@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.16
     
@@ -30,13 +30,13 @@ class ServerPost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'dns': 'list[Reference]',
-        'directory_services': 'list[Reference]'
+        'directory_services': 'list[Reference]',
+        'dns': 'list[Reference]'
     }
 
     attribute_map = {
-        'dns': 'dns',
-        'directory_services': 'directory_services'
+        'directory_services': 'directory_services',
+        'dns': 'dns'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class ServerPost(object):
 
     def __init__(
         self,
-        dns=None,  # type: List[models.Reference]
         directory_services=None,  # type: List[models.Reference]
+        dns=None,  # type: List[models.Reference]
     ):
         """
         Keyword args:
-            dns (list[Reference]): The DNS config to be used by this server.
-            directory_services (list[Reference]): The directory service config to be used by this server.
+            directory_services (list[Reference]): The directory service config to be used by this server. 
+            dns (list[Reference]): The DNS config to be used by this server. 
         """
-        if dns is not None:
-            self.dns = dns
         if directory_services is not None:
             self.directory_services = directory_services
+        if dns is not None:
+            self.dns = dns
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -46,7 +46,7 @@ class PodReplicaLinkMappingPolicyResponse(object):
     ):
         """
         Keyword args:
-            items (list[MappingPolicy]): A list of policy mappings.
+            items (list[MappingPolicy]): A list of policy mappings. 
         """
         if items is not None:
             self.items = items

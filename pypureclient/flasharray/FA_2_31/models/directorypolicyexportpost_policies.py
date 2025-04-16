@@ -30,13 +30,13 @@ class DirectorypolicyexportpostPolicies(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'policy': 'Reference',
-        'export_name': 'str'
+        'export_name': 'str',
+        'policy': 'Reference'
     }
 
     attribute_map = {
-        'policy': 'policy',
-        'export_name': 'export_name'
+        'export_name': 'export_name',
+        'policy': 'policy'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class DirectorypolicyexportpostPolicies(object):
 
     def __init__(
         self,
-        policy=None,  # type: models.Reference
         export_name=None,  # type: str
+        policy=None,  # type: models.Reference
     ):
         """
         Keyword args:
-            policy (Reference): Reference to the export policy to apply to the directory.
-            export_name (str): The name of the export to create when applying the export policy to the directory.
+            export_name (str): The name of the export to create when applying the export policy to the directory. 
+            policy (Reference): Reference to the export policy to apply to the directory. 
         """
-        if policy is not None:
-            self.policy = policy
         if export_name is not None:
             self.export_name = export_name
+        if policy is not None:
+            self.policy = policy
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

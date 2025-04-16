@@ -30,15 +30,15 @@ class SupportRemoteAssistSessionsPatch(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'active': 'bool',
         'duration': 'int',
-        'access_level_override': 'str'
+        'access_level_override': 'str',
+        'active': 'bool'
     }
 
     attribute_map = {
-        'active': 'active',
         'duration': 'duration',
-        'access_level_override': 'access_level_override'
+        'access_level_override': 'access_level_override',
+        'active': 'active'
     }
 
     required_args = {
@@ -46,22 +46,22 @@ class SupportRemoteAssistSessionsPatch(object):
 
     def __init__(
         self,
-        active=None,  # type: bool
         duration=None,  # type: int
         access_level_override=None,  # type: str
+        active=None,  # type: bool
     ):
         """
         Keyword args:
-            active (bool): The status of a remote assist session. If set to `true`, enables the remote assist session. If set to `false`, disables the remote assist session.
-            duration (int): Specifies the duration of the remote assist session in milliseconds. This parameter should only be provided when establishing a new session. This parameter determines the length of time the session will remain active after initiation. Defaults to 86400000 (24h) with a min of 14400000 (4h) and a max of 172800000 (48h).
-            access_level_override (str): Overrides the default access level for the remote assist session only. Values include `restricted` and `elevated`. If not provided, the remote assist session will use the default_access_level setting.
+            duration (int): Specifies the duration of the remote assist session in milliseconds. This parameter should only be provided when establishing a new session. This parameter determines the length of time the session will remain active after initiation. Defaults to 86400000 (24h) with a min of 14400000 (4h) and a max of 172800000 (48h). 
+            access_level_override (str): Overrides the default access level for the remote assist session only. Values include `restricted` and `elevated`. If not provided, the remote assist session will use the default_access_level setting. 
+            active (bool): The status of a remote assist session. If set to `true`, enables the remote assist session. If set to `false`, disables the remote assist session. 
         """
-        if active is not None:
-            self.active = active
         if duration is not None:
             self.duration = duration
         if access_level_override is not None:
             self.access_level_override = access_level_override
+        if active is not None:
+            self.active = active
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

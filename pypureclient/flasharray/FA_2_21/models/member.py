@@ -30,13 +30,13 @@ class Member(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'group': 'Reference',
-        'member': 'Reference'
+        'member': 'Reference',
+        'group': 'Reference'
     }
 
     attribute_map = {
-        'group': 'group',
-        'member': 'member'
+        'member': 'member',
+        'group': 'group'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class Member(object):
 
     def __init__(
         self,
-        group=None,  # type: models.Reference
         member=None,  # type: models.Reference
+        group=None,  # type: models.Reference
     ):
         """
         Keyword args:
-            group (Reference)
             member (Reference)
+            group (Reference)
         """
-        if group is not None:
-            self.group = group
         if member is not None:
             self.member = member
+        if group is not None:
+            self.group = group
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

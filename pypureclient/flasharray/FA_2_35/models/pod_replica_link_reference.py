@@ -31,16 +31,16 @@ class PodReplicaLinkReference(object):
     """
     swagger_types = {
         'id': 'str',
-        'local_pod': 'FixedReference',
         'remotes': 'list[FixedReference]',
-        'remote_pod': 'FixedReference'
+        'remote_pod': 'FixedReference',
+        'local_pod': 'FixedReference'
     }
 
     attribute_map = {
         'id': 'id',
-        'local_pod': 'local_pod',
         'remotes': 'remotes',
-        'remote_pod': 'remote_pod'
+        'remote_pod': 'remote_pod',
+        'local_pod': 'local_pod'
     }
 
     required_args = {
@@ -49,25 +49,25 @@ class PodReplicaLinkReference(object):
     def __init__(
         self,
         id=None,  # type: str
-        local_pod=None,  # type: models.FixedReference
         remotes=None,  # type: List[models.FixedReference]
         remote_pod=None,  # type: models.FixedReference
+        local_pod=None,  # type: models.FixedReference
     ):
         """
         Keyword args:
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            local_pod (FixedReference): Reference to a local pod.
-            remotes (list[FixedReference]): Reference to remote arrays.
-            remote_pod (FixedReference): Reference to a remote pod.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            remotes (list[FixedReference]): Reference to remote arrays. 
+            remote_pod (FixedReference): Reference to a remote pod. 
+            local_pod (FixedReference): Reference to a local pod. 
         """
         if id is not None:
             self.id = id
-        if local_pod is not None:
-            self.local_pod = local_pod
         if remotes is not None:
             self.remotes = remotes
         if remote_pod is not None:
             self.remote_pod = remote_pod
+        if local_pod is not None:
+            self.local_pod = local_pod
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

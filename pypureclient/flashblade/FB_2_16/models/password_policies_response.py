@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.16
     
@@ -46,7 +46,7 @@ class PasswordPoliciesResponse(object):
     ):
         """
         Keyword args:
-            items (list[PasswordPolicy]): Returns a list of all items after filtering. If applicable, the values are displayed for each name.
+            items (list[PasswordPolicy]): Returns a list of all items after filtering. If applicable, the values are displayed for each name. 
         """
         if items is not None:
             self.items = items

@@ -3,7 +3,7 @@
 """
     Pure1 Public REST API
 
-    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)  The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
+    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)   The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
 
     OpenAPI spec version: 1.0
     
@@ -31,24 +31,24 @@ class HardwareConnector(object):
     """
     swagger_types = {
         'as_of': 'int',
-        'id': 'str',
         'name': 'str',
+        'id': 'str',
         'arrays': 'list[FixedReference]',
-        'connector_type': 'str',
         'lane_speed': 'float',
-        'port_count': 'float',
-        'transceiver_type': 'str'
+        'transceiver_type': 'str',
+        'connector_type': 'str',
+        'port_count': 'float'
     }
 
     attribute_map = {
         'as_of': '_as_of',
-        'id': 'id',
         'name': 'name',
+        'id': 'id',
         'arrays': 'arrays',
-        'connector_type': 'connector_type',
         'lane_speed': 'lane_speed',
-        'port_count': 'port_count',
-        'transceiver_type': 'transceiver_type'
+        'transceiver_type': 'transceiver_type',
+        'connector_type': 'connector_type',
+        'port_count': 'port_count'
     }
 
     required_args = {
@@ -57,41 +57,41 @@ class HardwareConnector(object):
     def __init__(
         self,
         as_of=None,  # type: int
-        id=None,  # type: str
         name=None,  # type: str
+        id=None,  # type: str
         arrays=None,  # type: List[models.FixedReference]
-        connector_type=None,  # type: str
         lane_speed=None,  # type: float
-        port_count=None,  # type: float
         transceiver_type=None,  # type: str
+        connector_type=None,  # type: str
+        port_count=None,  # type: float
     ):
         """
         Keyword args:
             as_of (int): The freshness of the data (timestamp in millis since epoch).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
             name (str): A non-modifiable, locally unique name chosen by the system.
-            arrays (list[FixedReference]): The list of arrays where this resource exists. Many resources are on a single array, but some resources, such as pods, can be shared across multiple arrays.
-            connector_type (str): Form-factor of the interface. Values include `QSFP` and `RJ-45`.
+            id (str): A non-modifiable, globally unique ID chosen by the system.
+            arrays (list[FixedReference]): The list of arrays where this resource exists. Many resources are on a single array, but some resources, such as pods, can be shared across multiple arrays. 
             lane_speed (float): Configured speed of each lane in the connector in bits per second.
+            transceiver_type (str): Type of transceiver plugged into the connector port. If the type cannot be auto-detected and the internal user has not specified a type, the value will be `Unknown`.  If nothing is plugged into the QSFP port, the value will be `Unused`. Transceiver type is not applicable for RJ-45 connectors. 
+            connector_type (str): Form-factor of the interface. Values include `QSFP` and `RJ-45`.
             port_count (float): Configured number of ports in the connector.
-            transceiver_type (str): Type of transceiver plugged into the connector port. If the type cannot be auto-detected and the internal user has not specified a type, the value will be `Unknown`. If nothing is plugged into the QSFP port, the value will be `Unused`. Transceiver type is not applicable for RJ-45 connectors.
         """
         if as_of is not None:
             self.as_of = as_of
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
         if arrays is not None:
             self.arrays = arrays
-        if connector_type is not None:
-            self.connector_type = connector_type
         if lane_speed is not None:
             self.lane_speed = lane_speed
-        if port_count is not None:
-            self.port_count = port_count
         if transceiver_type is not None:
             self.transceiver_type = transceiver_type
+        if connector_type is not None:
+            self.connector_type = connector_type
+        if port_count is not None:
+            self.port_count = port_count
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

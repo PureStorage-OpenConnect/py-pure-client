@@ -3,7 +3,7 @@
 """
     Pure1 Public REST API
 
-    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)  The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
+    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)   The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
 
     OpenAPI spec version: 1.1
     
@@ -30,13 +30,13 @@ class TimeInterval(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'interval_start': 'int',
-        'interval_end': 'int'
+        'interval_end': 'int',
+        'interval_start': 'int'
     }
 
     attribute_map = {
-        'interval_start': '_interval_start',
-        'interval_end': '_interval_end'
+        'interval_end': '_interval_end',
+        'interval_start': '_interval_start'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class TimeInterval(object):
 
     def __init__(
         self,
-        interval_start=None,  # type: int
         interval_end=None,  # type: int
+        interval_start=None,  # type: int
     ):
         """
         Keyword args:
-            interval_start (int): The timestamp of the start of the time interval.
             interval_end (int): The timestamp of the end of the time interval.
+            interval_start (int): The timestamp of the start of the time interval.
         """
-        if interval_start is not None:
-            self.interval_start = interval_start
         if interval_end is not None:
             self.interval_end = interval_end
+        if interval_start is not None:
+            self.interval_start = interval_start
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

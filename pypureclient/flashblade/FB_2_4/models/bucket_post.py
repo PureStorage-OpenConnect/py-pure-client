@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.4, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.4, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.4
     
@@ -30,13 +30,13 @@ class BucketPost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'account': 'ReferenceWritable',
-        'bucket_type': 'str'
+        'bucket_type': 'str',
+        'account': 'ReferenceWritable'
     }
 
     attribute_map = {
-        'account': 'account',
-        'bucket_type': 'bucket_type'
+        'bucket_type': 'bucket_type',
+        'account': 'account'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class BucketPost(object):
 
     def __init__(
         self,
-        account=None,  # type: models.ReferenceWritable
         bucket_type=None,  # type: str
+        account=None,  # type: models.ReferenceWritable
     ):
         """
         Keyword args:
+            bucket_type (str): The bucket type for the bucket. 
             account (ReferenceWritable): The account name for bucket creation.
-            bucket_type (str): The bucket type for the bucket.
         """
-        if account is not None:
-            self.account = account
         if bucket_type is not None:
             self.bucket_type = bucket_type
+        if account is not None:
+            self.account = account
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

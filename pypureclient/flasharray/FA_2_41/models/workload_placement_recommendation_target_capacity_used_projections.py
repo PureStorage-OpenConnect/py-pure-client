@@ -30,13 +30,13 @@ class WorkloadPlacementRecommendationTargetCapacityUsedProjections(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'projection': 'WorkloadPlacementRecommendationProjection',
-        'days_until_full': 'int'
+        'days_until_full': 'int',
+        'projection': 'WorkloadPlacementRecommendationProjection'
     }
 
     attribute_map = {
-        'projection': 'projection',
-        'days_until_full': 'days_until_full'
+        'days_until_full': 'days_until_full',
+        'projection': 'projection'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class WorkloadPlacementRecommendationTargetCapacityUsedProjections(object):
 
     def __init__(
         self,
-        projection=None,  # type: models.WorkloadPlacementRecommendationProjection
         days_until_full=None,  # type: int
+        projection=None,  # type: models.WorkloadPlacementRecommendationProjection
     ):
         """
         Keyword args:
-            projection (WorkloadPlacementRecommendationProjection): The projection of the used capacity, assuming the workload is provisioned on this target.
-            days_until_full (int): The number of days until the target is at full capacity.
+            days_until_full (int): The number of days until the target is at full capacity. 
+            projection (WorkloadPlacementRecommendationProjection): The projection of the used capacity, assuming the workload is provisioned on this target. 
         """
-        if projection is not None:
-            self.projection = projection
         if days_until_full is not None:
             self.days_until_full = days_until_full
+        if projection is not None:
+            self.projection = projection
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

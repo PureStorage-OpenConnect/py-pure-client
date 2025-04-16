@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.11, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.11, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.11
     
@@ -51,7 +51,7 @@ class UserQuotaPatch(object):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            quota (int, required): The limit of the quota (in bytes) for the specified user, cannot be `0`. If specified, this value will override the file system's default user quota.
+            quota (int, required): The limit of the quota (in bytes) for the specified user, cannot be `0`. If specified, this value will override the file system's default user quota. 
         """
         if name is not None:
             self.name = name

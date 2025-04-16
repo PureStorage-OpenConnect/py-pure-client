@@ -30,23 +30,23 @@ class RemoteArray(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
+        'id': 'str',
         'fleet': 'RemoteArrayFleet',
         'os': 'str',
-        'version': 'str',
         'model': 'str',
-        'is_local': 'bool'
+        'is_local': 'bool',
+        'version': 'str'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
+        'id': 'id',
         'fleet': 'fleet',
         'os': 'os',
-        'version': 'version',
         'model': 'model',
-        'is_local': 'is_local'
+        'is_local': 'is_local',
+        'version': 'version'
     }
 
     required_args = {
@@ -54,38 +54,38 @@ class RemoteArray(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
+        id=None,  # type: str
         fleet=None,  # type: models.RemoteArrayFleet
         os=None,  # type: str
-        version=None,  # type: str
         model=None,  # type: str
         is_local=None,  # type: bool
+        version=None,  # type: str
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            name (str): A user-specified name. The name must be locally unique and can be changed.
+            name (str): A user-specified name. The name must be locally unique and can be changed. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource. 
             fleet (RemoteArrayFleet)
-            os (str): Specifies the operating system. Valid values are `Purity`, `Purity//FA`, and `Purity//FB`.
-            version (str): Specifies the operating system version.
-            model (str): Specifies the array model.
-            is_local (bool): If set to `true`, this array is the current array.
+            os (str): Specifies the operating system. Valid values are `Purity`, `Purity//FA`, and `Purity//FB`. 
+            model (str): Specifies the array model. 
+            is_local (bool): If set to `true`, this array is the current array. 
+            version (str): Specifies the operating system version. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
         if fleet is not None:
             self.fleet = fleet
         if os is not None:
             self.os = os
-        if version is not None:
-            self.version = version
         if model is not None:
             self.model = model
         if is_local is not None:
             self.is_local = is_local
+        if version is not None:
+            self.version = version
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

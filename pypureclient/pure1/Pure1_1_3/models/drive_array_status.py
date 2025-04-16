@@ -3,7 +3,7 @@
 """
     Pure1 Public REST API
 
-    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)  The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
+    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)   The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
 
     OpenAPI spec version: 1.3
     
@@ -30,21 +30,21 @@ class DriveArrayStatus(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
         'resource_type': 'str',
+        'id': 'str',
         'drive_count': 'int',
-        'total_capacity': 'int',
-        'fqdn': 'str'
+        'fqdn': 'str',
+        'total_capacity': 'int'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
         'resource_type': 'resource_type',
+        'id': 'id',
         'drive_count': 'drive_count',
-        'total_capacity': 'total_capacity',
-        'fqdn': 'fqdn'
+        'fqdn': 'fqdn',
+        'total_capacity': 'total_capacity'
     }
 
     required_args = {
@@ -52,34 +52,34 @@ class DriveArrayStatus(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
         resource_type=None,  # type: str
+        id=None,  # type: str
         drive_count=None,  # type: int
-        total_capacity=None,  # type: int
         fqdn=None,  # type: str
+        total_capacity=None,  # type: int
     ):
         """
         Keyword args:
-            id (str): The opaque and unique id of this resource.
             name (str): The name of this resource.
-            resource_type (str): The type of this resource represented by the name of its REST endpoint. For example, \"arrays\", \"network-interfaces\", and \"metrics\". The value may be `null` if the resource is not represented.
-            drive_count (int): Count of drives in the array.
-            total_capacity (int): The total capacity of all drives in the array.
-            fqdn (str): The fully qualified domain name of the appliance when `resource_type` is `arrays`, `null` otherwise.
+            resource_type (str): The type of this resource represented by the name of its REST endpoint. For example, \"arrays\", \"network-interfaces\", and \"metrics\". The value may be `null` if the resource is not represented. 
+            id (str): The opaque and unique id of this resource.
+            drive_count (int): Count of drives in the array. 
+            fqdn (str): The fully qualified domain name of the appliance when `resource_type` is `arrays`, `null` otherwise. 
+            total_capacity (int): The total capacity of all drives in the array. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
         if resource_type is not None:
             self.resource_type = resource_type
+        if id is not None:
+            self.id = id
         if drive_count is not None:
             self.drive_count = drive_count
-        if total_capacity is not None:
-            self.total_capacity = total_capacity
         if fqdn is not None:
             self.fqdn = fqdn
+        if total_capacity is not None:
+            self.total_capacity = total_capacity
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

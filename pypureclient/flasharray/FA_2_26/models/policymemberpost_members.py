@@ -46,7 +46,7 @@ class PolicymemberpostMembers(object):
     ):
         """
         Keyword args:
-            member (ReferenceWithType): Reference to the resource to which the policy may be applied. The `id` or `name` parameter is required, but they cannot be set together. If the `name` parameter is set, `resource_type` must also be set.
+            member (ReferenceWithType): Reference to the resource to which the policy may be applied. The `id` or `name` parameter is required, but they cannot be set together. If the `name` parameter is set, `resource_type` must also be set. 
         """
         if member is not None:
             self.member = member

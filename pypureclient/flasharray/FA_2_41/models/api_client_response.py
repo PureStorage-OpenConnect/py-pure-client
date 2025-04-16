@@ -46,7 +46,7 @@ class ApiClientResponse(object):
     ):
         """
         Keyword args:
-            items (list[ApiClient]): Returns a list of all items after filtering. The values are displayed for each name, where meaningful.
+            items (list[ApiClient]): Returns a list of all items after filtering. The values are displayed for each name, where meaningful. 
         """
         if items is not None:
             self.items = items

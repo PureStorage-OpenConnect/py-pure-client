@@ -3,7 +3,7 @@
 """
     FlashBlade REST API Client
 
-    A lightweight client for FlashBlade REST API 2.0, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.0, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.0
     
@@ -33,20 +33,20 @@ class LifecycleRule(object):
         'name': 'str',
         'id': 'str',
         'bucket': 'FixedReference',
-        'enabled': 'bool',
         'rule_id': 'str',
+        'prefix': 'str',
         'keep_previous_version_for': 'int',
-        'prefix': 'str'
+        'enabled': 'bool'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
         'bucket': 'bucket',
-        'enabled': 'enabled',
         'rule_id': 'rule_id',
+        'prefix': 'prefix',
         'keep_previous_version_for': 'keep_previous_version_for',
-        'prefix': 'prefix'
+        'enabled': 'enabled'
     }
 
     required_args = {
@@ -57,20 +57,20 @@ class LifecycleRule(object):
         name=None,  # type: str
         id=None,  # type: str
         bucket=None,  # type: models.FixedReference
-        enabled=None,  # type: bool
         rule_id=None,  # type: str
-        keep_previous_version_for=None,  # type: int
         prefix=None,  # type: str
+        keep_previous_version_for=None,  # type: int
+        enabled=None,  # type: bool
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            bucket (FixedReference): The bucket which this lifecycle rule is targeting.
-            enabled (bool): If set to `true`, this rule will be enabled.
-            rule_id (str): Unique identifier for the rule. Can have a maximum length of 255 characters.
-            keep_previous_version_for (int): Time after which previous versions will be marked expired. Measured in milliseconds. Must be a multiple of 86400000 to represent a whole number of days.
-            prefix (str): Object key prefix identifying one or more objects in the bucket. Can have a maximum length of 1024 characters.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            bucket (FixedReference): The bucket which this lifecycle rule is targeting. 
+            rule_id (str): Unique identifier for the rule. Can have a maximum length of 255 characters. 
+            prefix (str): Object key prefix identifying one or more objects in the bucket. Can have a maximum length of 1024 characters. 
+            keep_previous_version_for (int): Time after which previous versions will be marked expired. Measured in milliseconds. Must be a multiple of 86400000 to represent a whole number of days. 
+            enabled (bool): If set to `true`, this rule will be enabled. 
         """
         if name is not None:
             self.name = name
@@ -78,14 +78,14 @@ class LifecycleRule(object):
             self.id = id
         if bucket is not None:
             self.bucket = bucket
-        if enabled is not None:
-            self.enabled = enabled
         if rule_id is not None:
             self.rule_id = rule_id
-        if keep_previous_version_for is not None:
-            self.keep_previous_version_for = keep_previous_version_for
         if prefix is not None:
             self.prefix = prefix
+        if keep_previous_version_for is not None:
+            self.keep_previous_version_for = keep_previous_version_for
+        if enabled is not None:
+            self.enabled = enabled
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

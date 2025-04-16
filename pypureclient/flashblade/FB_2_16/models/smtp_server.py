@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.16
     
@@ -33,16 +33,16 @@ class SmtpServer(object):
         'name': 'str',
         'id': 'str',
         'relay_host': 'str',
-        'sender_domain': 'str',
-        'encryption_mode': 'str'
+        'encryption_mode': 'str',
+        'sender_domain': 'str'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
         'relay_host': 'relay_host',
-        'sender_domain': 'sender_domain',
-        'encryption_mode': 'encryption_mode'
+        'encryption_mode': 'encryption_mode',
+        'sender_domain': 'sender_domain'
     }
 
     required_args = {
@@ -53,16 +53,16 @@ class SmtpServer(object):
         name=None,  # type: str
         id=None,  # type: str
         relay_host=None,  # type: str
-        sender_domain=None,  # type: str
         encryption_mode=None,  # type: str
+        sender_domain=None,  # type: str
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            relay_host (str): Relay server used as a forwarding point for email sent from the array. Can be set as a hostname, IPv4 address, or IPv6 address, with optional port numbers. The expected format for IPv4 is `ddd.ddd.ddd.ddd:PORT`. The expected format for IPv6 is `xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx`, or if a port number is specified, `[xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx]:PORT`.
-            sender_domain (str): Domain name appended to alert email messages.
-            encryption_mode (str): Enforces an encryption mode when sending alert email messages. Valid values include `starttls`. Use \"\" to clear.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            relay_host (str): Relay server used as a forwarding point for email sent from the array. Can be set as a hostname, IPv4 address, or IPv6 address, with optional port numbers.  The expected format for IPv4 is `ddd.ddd.ddd.ddd:PORT`. The expected format for IPv6 is `xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx`, or if a port number is specified, `[xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx]:PORT`. 
+            encryption_mode (str): Enforces an encryption mode when sending alert email messages. Valid values include `starttls`. Use \"\" to clear. 
+            sender_domain (str): Domain name appended to alert email messages. 
         """
         if name is not None:
             self.name = name
@@ -70,10 +70,10 @@ class SmtpServer(object):
             self.id = id
         if relay_host is not None:
             self.relay_host = relay_host
-        if sender_domain is not None:
-            self.sender_domain = sender_domain
         if encryption_mode is not None:
             self.encryption_mode = encryption_mode
+        if sender_domain is not None:
+            self.sender_domain = sender_domain
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

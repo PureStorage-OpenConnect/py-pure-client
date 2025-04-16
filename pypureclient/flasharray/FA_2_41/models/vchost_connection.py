@@ -52,9 +52,9 @@ class VchostConnection(object):
     ):
         """
         Keyword args:
-            protocol_endpoint (FixedReference): A reference to the protocol endpoint, representing a storage container that vCenter can use.
-            vchost (FixedReference): For vchost-connections, a vchost represents a vCenter. By connecting to a protocol endpoint, the corresponding vCenter gets the access to the storage container represented by this protocol endpoint. The vchost name should be null if `all_vchosts` is set to `true`, which means the storage container is accessible to all vchosts.
-            all_vchosts (bool): If set to `true`, the storage container represented by the protocol endpoint is accessible to all vchosts. If set to `false`, the storage container represented by the protocol endpoint is only accesible to the vchosts that have explicit vchost-connections to this protocol endpoint. The default is `false`.
+            protocol_endpoint (FixedReference): A reference to the protocol endpoint, representing a storage container that vCenter can use. 
+            vchost (FixedReference): For vchost-connections, a vchost represents a vCenter. By connecting to a protocol endpoint, the corresponding vCenter gets the access to the storage container represented by this protocol endpoint. The vchost name should be null if `all_vchosts` is set to `true`, which means the storage container is accessible to all vchosts. 
+            all_vchosts (bool): If set to `true`, the storage container represented by the protocol endpoint is accessible to all vchosts. If set to `false`, the storage container represented by the protocol endpoint is only accesible to the vchosts that have explicit vchost-connections to this protocol endpoint. The default is `false`. 
         """
         if protocol_endpoint is not None:
             self.protocol_endpoint = protocol_endpoint

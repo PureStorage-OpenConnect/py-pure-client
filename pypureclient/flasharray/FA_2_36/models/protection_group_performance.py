@@ -30,15 +30,15 @@ class ProtectionGroupPerformance(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
+        'id': 'str',
         'bytes_per_sec': 'int',
         'time': 'int'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
+        'id': 'id',
         'bytes_per_sec': 'bytes_per_sec',
         'time': 'time'
     }
@@ -48,22 +48,22 @@ class ProtectionGroupPerformance(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
+        id=None,  # type: str
         bytes_per_sec=None,  # type: int
         time=None,  # type: int
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            name (str): A locally unique, system-generated name. The name cannot be modified.
+            name (str): A locally unique, system-generated name. The name cannot be modified. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource. 
             bytes_per_sec (int): The total number of bytes of replication data transmitted and received per second.
-            time (int): The time when the sample performance data was taken. Measured in milliseconds since the UNIX epoch.
+            time (int): The time when the sample performance data was taken. Measured in milliseconds since the UNIX epoch. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
         if bytes_per_sec is not None:
             self.bytes_per_sec = bytes_per_sec
         if time is not None:

@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.5, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.5, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.5
     
@@ -31,16 +31,16 @@ class EulaSignature(object):
     """
     swagger_types = {
         'name': 'str',
-        'title': 'str',
+        'accepted': 'int',
         'company': 'str',
-        'accepted': 'int'
+        'title': 'str'
     }
 
     attribute_map = {
         'name': 'name',
-        'title': 'title',
+        'accepted': 'accepted',
         'company': 'company',
-        'accepted': 'accepted'
+        'title': 'title'
     }
 
     required_args = {
@@ -49,25 +49,25 @@ class EulaSignature(object):
     def __init__(
         self,
         name=None,  # type: str
-        title=None,  # type: str
-        company=None,  # type: str
         accepted=None,  # type: int
+        company=None,  # type: str
+        title=None,  # type: str
     ):
         """
         Keyword args:
             name (str): Name of the person who accepted the End User Agreement.
-            title (str): Title of the person who accepted the End User Agreement.
-            company (str): Company of the person who accepted the End User Agreement.
             accepted (int): Accepted time in milliseconds since the UNIX epoch.
+            company (str): Company of the person who accepted the End User Agreement.
+            title (str): Title of the person who accepted the End User Agreement.
         """
         if name is not None:
             self.name = name
-        if title is not None:
-            self.title = title
-        if company is not None:
-            self.company = company
         if accepted is not None:
             self.accepted = accepted
+        if company is not None:
+            self.company = company
+        if title is not None:
+            self.title = title
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

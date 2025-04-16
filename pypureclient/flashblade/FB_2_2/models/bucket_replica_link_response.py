@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.2, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.2, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.2
     
@@ -30,13 +30,13 @@ class BucketReplicaLinkResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'items': 'list[BucketReplicaLink]',
-        'total': 'BucketReplicaLink'
+        'total': 'BucketReplicaLink',
+        'items': 'list[BucketReplicaLink]'
     }
 
     attribute_map = {
-        'items': 'items',
-        'total': 'total'
+        'total': 'total',
+        'items': 'items'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class BucketReplicaLinkResponse(object):
 
     def __init__(
         self,
-        items=None,  # type: List[models.BucketReplicaLink]
         total=None,  # type: models.BucketReplicaLink
+        items=None,  # type: List[models.BucketReplicaLink]
     ):
         """
         Keyword args:
+            total (BucketReplicaLink): If `total_only` query param is `true`, then it will be a total of all records after filtering and no items will be returned. If `total_only` is `false`, then it will be a total of all records on this page. 
             items (list[BucketReplicaLink]): A list of object store bucket replica link objects.
-            total (BucketReplicaLink): If `total_only` query param is `true`, then it will be a total of all records after filtering and no items will be returned. If `total_only` is `false`, then it will be a total of all records on this page.
         """
-        if items is not None:
-            self.items = items
         if total is not None:
             self.total = total
+        if items is not None:
+            self.items = items
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

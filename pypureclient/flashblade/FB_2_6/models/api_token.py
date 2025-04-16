@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.6, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.6, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.6
     
@@ -30,14 +30,14 @@ class ApiToken(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'created_at': 'int',
         'expires_at': 'int',
+        'created_at': 'int',
         'token': 'str'
     }
 
     attribute_map = {
-        'created_at': 'created_at',
         'expires_at': 'expires_at',
+        'created_at': 'created_at',
         'token': 'token'
     }
 
@@ -46,20 +46,20 @@ class ApiToken(object):
 
     def __init__(
         self,
-        created_at=None,  # type: int
         expires_at=None,  # type: int
+        created_at=None,  # type: int
         token=None,  # type: str
     ):
         """
         Keyword args:
-            created_at (int): Creation time in milliseconds since the UNIX epoch.
             expires_at (int): Expiration time in milliseconds since the UNIX epoch.
-            token (str): An Admin API token. A newly-created token is visible as the result of the POST operation which created it. An existing token is visible when `expose_api_token` is `true` and it is being requested by the user to whom it belongs. In all other cases, the token will be masked.
+            created_at (int): Creation time in milliseconds since the UNIX epoch.
+            token (str): An Admin API token. A newly-created token is visible as the result of the POST operation which created it. An existing token is visible when `expose_api_token` is `true` and it is being requested by the user to whom it belongs. In all other cases, the token will be masked. 
         """
-        if created_at is not None:
-            self.created_at = created_at
         if expires_at is not None:
             self.expires_at = expires_at
+        if created_at is not None:
+            self.created_at = created_at
         if token is not None:
             self.token = token
 

@@ -31,26 +31,26 @@ class SmtpServer(object):
     """
     swagger_types = {
         'name': 'str',
-        'password': 'str',
-        'relay_host': 'str',
-        'sender_domain': 'str',
-        'user_name': 'str',
         'sender_username': 'str',
         'subject_prefix': 'str',
+        'password': 'str',
+        'relay_host': 'str',
+        'user_name': 'str',
+        'encryption_mode': 'str',
         'body_prefix': 'str',
-        'encryption_mode': 'str'
+        'sender_domain': 'str'
     }
 
     attribute_map = {
         'name': 'name',
-        'password': 'password',
-        'relay_host': 'relay_host',
-        'sender_domain': 'sender_domain',
-        'user_name': 'user_name',
         'sender_username': 'sender_username',
         'subject_prefix': 'subject_prefix',
+        'password': 'password',
+        'relay_host': 'relay_host',
+        'user_name': 'user_name',
+        'encryption_mode': 'encryption_mode',
         'body_prefix': 'body_prefix',
-        'encryption_mode': 'encryption_mode'
+        'sender_domain': 'sender_domain'
     }
 
     required_args = {
@@ -59,45 +59,45 @@ class SmtpServer(object):
     def __init__(
         self,
         name=None,  # type: str
-        password=None,  # type: str
-        relay_host=None,  # type: str
-        sender_domain=None,  # type: str
-        user_name=None,  # type: str
         sender_username=None,  # type: str
         subject_prefix=None,  # type: str
-        body_prefix=None,  # type: str
+        password=None,  # type: str
+        relay_host=None,  # type: str
+        user_name=None,  # type: str
         encryption_mode=None,  # type: str
+        body_prefix=None,  # type: str
+        sender_domain=None,  # type: str
     ):
         """
         Keyword args:
-            name (str): A locally unique, system-generated name. The name cannot be modified.
-            password (str): Password for the relay host, if needed.
-            relay_host (str): Relay server used as a forwarding point for email sent from the array. Can be set as a hostname, IPv4 address, or IPv6 address, with optional port numbers. The expected format for IPv4 is `ddd.ddd.ddd.ddd:PORT`. The expected format for IPv6 is `xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx` or, if a port number is specified, `[xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx]:PORT`.
-            sender_domain (str): Domain name appended to alert email messages.
-            user_name (str): User name for the relay host, if needed.
-            sender_username (str): The local-part of the email address used when sending alert email messages.
-            subject_prefix (str): Optional string added to the beginning of the subject when sending alert email messages. HTML tags are not allowed.
-            body_prefix (str): Optional string added to the beginning of the email body when sending alert email messages. HTML tags are not allowed.
-            encryption_mode (str): Enforces an encryption mode when sending alert email messages. Valid values are `starttls`. Use \"\" to clear.
+            name (str): A locally unique, system-generated name. The name cannot be modified. 
+            sender_username (str): The local-part of the email address used when sending alert email messages. 
+            subject_prefix (str): Optional string added to the beginning of the subject when sending alert email messages. HTML tags are not allowed. 
+            password (str): Password for the relay host, if needed. 
+            relay_host (str): Relay server used as a forwarding point for email sent from the array. Can be set as a hostname, IPv4 address, or IPv6 address, with optional port numbers.  The expected format for IPv4 is `ddd.ddd.ddd.ddd:PORT`. The expected format for IPv6 is `xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx` or, if a port number is specified, `[xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx:xxxx]:PORT`. 
+            user_name (str): User name for the relay host, if needed. 
+            encryption_mode (str): Enforces an encryption mode when sending alert email messages. Valid values are `starttls`. Use \"\" to clear. 
+            body_prefix (str): Optional string added to the beginning of the email body when sending alert email messages. HTML tags are not allowed. 
+            sender_domain (str): Domain name appended to alert email messages. 
         """
         if name is not None:
             self.name = name
-        if password is not None:
-            self.password = password
-        if relay_host is not None:
-            self.relay_host = relay_host
-        if sender_domain is not None:
-            self.sender_domain = sender_domain
-        if user_name is not None:
-            self.user_name = user_name
         if sender_username is not None:
             self.sender_username = sender_username
         if subject_prefix is not None:
             self.subject_prefix = subject_prefix
-        if body_prefix is not None:
-            self.body_prefix = body_prefix
+        if password is not None:
+            self.password = password
+        if relay_host is not None:
+            self.relay_host = relay_host
+        if user_name is not None:
+            self.user_name = user_name
         if encryption_mode is not None:
             self.encryption_mode = encryption_mode
+        if body_prefix is not None:
+            self.body_prefix = body_prefix
+        if sender_domain is not None:
+            self.sender_domain = sender_domain
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -49,7 +49,7 @@ class AdminPost(object):
     ):
         """
         Keyword args:
-            password (str): Password associated with the account.
+            password (str): Password associated with the account. 
             role (AdminRole)
         """
         if password is not None:

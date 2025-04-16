@@ -49,8 +49,8 @@ class DirectoryServiceManagement(object):
     ):
         """
         Keyword args:
-            user_login_attribute (str): User login attribute in the structure of the configured LDAP servers. Typically the attribute field that holds the user's unique login name. Default value is `sAMAccountName` for Active Directory or `uid` for all other directory services.
-            user_object_class (str): Value of the object class for a management LDAP user. Defaults to `User` for Active Directory servers, `posixAccount` or `shadowAccount` for OpenLDAP servers dependent on the group type of the server, or `person` for all other directory servers.
+            user_login_attribute (str): User login attribute in the structure of the configured LDAP servers. Typically the attribute field that holds the user's unique login name. Default value is `sAMAccountName` for Active Directory or `uid` for all other directory services. 
+            user_object_class (str): Value of the object class for a management LDAP user. Defaults to `User` for Active Directory servers, `posixAccount` or `shadowAccount` for OpenLDAP servers dependent on the group type of the server, or `person` for all other directory servers. 
         """
         if user_login_attribute is not None:
             self.user_login_attribute = user_login_attribute

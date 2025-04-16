@@ -50,7 +50,7 @@ class PolicyNfsPost(object):
         """
         Keyword args:
             enabled (bool): If set to `true`, enables the policy. If set to `false`, disables the policy.
-            user_mapping_enabled (bool): If set to `true`, FlashArray queries the joined AD/OpenLDAP server to find the user corresponding to the incoming UID. If set to `false`, users are defined by UID/GID pair. If not specified, defaults to `true`.
+            user_mapping_enabled (bool): If set to `true`, FlashArray queries the joined AD/OpenLDAP server to find the user corresponding to the incoming UID. If set to `false`, users are defined by UID/GID pair. If not specified, defaults to `true`. 
         """
         if enabled is not None:
             self.enabled = enabled

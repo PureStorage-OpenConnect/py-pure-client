@@ -49,8 +49,8 @@ class SyslogServerSettings(object):
     ):
         """
         Keyword args:
-            ca_certificate (str): The certificate of the certificate authority (CA) that signed the certificate(s) of the directory server, which is used to validate the authenticity of the configured servers.
-            tls_audit_enabled (bool): Returns a value of `true` if messages that are necessary in order to audit TLS negotiations performed by the array are forwarded to the configured syslog servers.
+            ca_certificate (str): The certificate of the certificate authority (CA) that signed the certificate(s) of the directory server, which is used to validate the authenticity of the configured servers. 
+            tls_audit_enabled (bool): Returns a value of `true` if messages that are necessary in order to audit TLS negotiations performed by the array are forwarded to the configured syslog servers. 
         """
         if ca_certificate is not None:
             self.ca_certificate = ca_certificate

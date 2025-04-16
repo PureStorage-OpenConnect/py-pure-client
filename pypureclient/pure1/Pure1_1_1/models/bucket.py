@@ -3,7 +3,7 @@
 """
     Pure1 Public REST API
 
-    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)  The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
+    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)   The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
 
     OpenAPI spec version: 1.1
     
@@ -31,26 +31,26 @@ class Bucket(object):
     """
     swagger_types = {
         'as_of': 'int',
-        'id': 'str',
         'name': 'str',
+        'id': 'str',
         'arrays': 'list[FixedReferenceFqdn]',
-        'account': 'FixedReference',
-        'created': 'int',
         'destroyed': 'bool',
+        'versioning': 'str',
+        'created': 'int',
         'object_count': 'int',
-        'versioning': 'str'
+        'account': 'FixedReference'
     }
 
     attribute_map = {
         'as_of': '_as_of',
-        'id': 'id',
         'name': 'name',
+        'id': 'id',
         'arrays': 'arrays',
-        'account': 'account',
-        'created': 'created',
         'destroyed': 'destroyed',
+        'versioning': 'versioning',
+        'created': 'created',
         'object_count': 'object_count',
-        'versioning': 'versioning'
+        'account': 'account'
     }
 
     required_args = {
@@ -59,45 +59,45 @@ class Bucket(object):
     def __init__(
         self,
         as_of=None,  # type: int
-        id=None,  # type: str
         name=None,  # type: str
+        id=None,  # type: str
         arrays=None,  # type: List[models.FixedReferenceFqdn]
-        account=None,  # type: models.FixedReference
-        created=None,  # type: int
         destroyed=None,  # type: bool
-        object_count=None,  # type: int
         versioning=None,  # type: str
+        created=None,  # type: int
+        object_count=None,  # type: int
+        account=None,  # type: models.FixedReference
     ):
         """
         Keyword args:
             as_of (int): The freshness of the data (timestamp in millis since epoch).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
             name (str): A modifiable, locally unique name chosen by the user.
-            arrays (list[FixedReferenceFqdn]): The list of arrays where this resource exists. Many resources are on a single array, but some resources, such as pods, can be shared across multiple arrays.
-            account (FixedReference)
+            id (str): A non-modifiable, globally unique ID chosen by the system.
+            arrays (list[FixedReferenceFqdn]): The list of arrays where this resource exists. Many resources are on a single array, but some resources, such as pods, can be shared across multiple arrays. 
+            destroyed (bool): Returns a value of `true` if the bucket is destroyed, but not yet eradicated. 
+            versioning (str): The versioning state for objects within the bucket. Valid values are `none`, `enabled`, and `suspended`. 
             created (int): Creation time of the bucket, in milliseconds since Unix epoch.
-            destroyed (bool): Returns a value of `true` if the bucket is destroyed, but not yet eradicated.
             object_count (int): The number of objects contained within the bucket.
-            versioning (str): The versioning state for objects within the bucket. Valid values are `none`, `enabled`, and `suspended`.
+            account (FixedReference)
         """
         if as_of is not None:
             self.as_of = as_of
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
         if arrays is not None:
             self.arrays = arrays
-        if account is not None:
-            self.account = account
-        if created is not None:
-            self.created = created
         if destroyed is not None:
             self.destroyed = destroyed
-        if object_count is not None:
-            self.object_count = object_count
         if versioning is not None:
             self.versioning = versioning
+        if created is not None:
+            self.created = created
+        if object_count is not None:
+            self.object_count = object_count
+        if account is not None:
+            self.account = account
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

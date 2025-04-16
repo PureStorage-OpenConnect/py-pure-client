@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.16
     
@@ -30,15 +30,15 @@ class PolicyRuleObjectAccessCondition(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'source_ips': 'list[str]',
         's3_delimiters': 'list[str]',
-        's3_prefixes': 'list[str]'
+        's3_prefixes': 'list[str]',
+        'source_ips': 'list[str]'
     }
 
     attribute_map = {
-        'source_ips': 'source_ips',
         's3_delimiters': 's3_delimiters',
-        's3_prefixes': 's3_prefixes'
+        's3_prefixes': 's3_prefixes',
+        'source_ips': 'source_ips'
     }
 
     required_args = {
@@ -46,22 +46,22 @@ class PolicyRuleObjectAccessCondition(object):
 
     def __init__(
         self,
-        source_ips=None,  # type: List[str]
         s3_delimiters=None,  # type: List[str]
         s3_prefixes=None,  # type: List[str]
+        source_ips=None,  # type: List[str]
     ):
         """
         Keyword args:
-            source_ips (list[str]): If specified, the rule will apply only to requests matching at least one provided IP address or subnet. Each entry must be in standard CIDR format (including an IP address without an associated routing prefix). Can be used with any action.
-            s3_delimiters (list[str]): If specified, groups result objects by the specified delimiter. Only top-level groupings will be returned. Can be used with the `s3:ListBucket` and `s3:ListBucketVersions` actions.
-            s3_prefixes (list[str]): If specified, restricts access and results based on the prefix of the relevant objects. Can be used with the `s3:ListBucket` and `s3:ListBucketVersions` actions.
+            s3_delimiters (list[str]): If specified, groups result objects by the specified delimiter. Only top-level groupings will be returned. Can be used with the `s3:ListBucket` and `s3:ListBucketVersions` actions. 
+            s3_prefixes (list[str]): If specified, restricts access and results based on the prefix of the relevant objects. Can be used with the `s3:ListBucket` and `s3:ListBucketVersions` actions. 
+            source_ips (list[str]): If specified, the rule will apply only to requests matching at least one provided IP address or subnet. Each entry must be in standard CIDR format (including an IP address without an associated routing prefix). Can be used with any action. 
         """
-        if source_ips is not None:
-            self.source_ips = source_ips
         if s3_delimiters is not None:
             self.s3_delimiters = s3_delimiters
         if s3_prefixes is not None:
             self.s3_prefixes = s3_prefixes
+        if source_ips is not None:
+            self.source_ips = source_ips
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

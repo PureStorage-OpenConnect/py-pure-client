@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.16
     
@@ -33,18 +33,18 @@ class CertificatePatch(object):
         'name': 'str',
         'id': 'str',
         'certificate': 'str',
-        'intermediate_certificate': 'str',
         'passphrase': 'str',
-        'private_key': 'str'
+        'private_key': 'str',
+        'intermediate_certificate': 'str'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
         'certificate': 'certificate',
-        'intermediate_certificate': 'intermediate_certificate',
         'passphrase': 'passphrase',
-        'private_key': 'private_key'
+        'private_key': 'private_key',
+        'intermediate_certificate': 'intermediate_certificate'
     }
 
     required_args = {
@@ -55,18 +55,18 @@ class CertificatePatch(object):
         name=None,  # type: str
         id=None,  # type: str
         certificate=None,  # type: str
-        intermediate_certificate=None,  # type: str
         passphrase=None,  # type: str
         private_key=None,  # type: str
+        intermediate_certificate=None,  # type: str
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
             certificate (str): The text of the certificate.
-            intermediate_certificate (str): Intermediate certificate chains.
             passphrase (str): The passphrase used to encrypt `private_key`.
             private_key (str): The private key used to sign the certificate.
+            intermediate_certificate (str): Intermediate certificate chains.
         """
         if name is not None:
             self.name = name
@@ -74,12 +74,12 @@ class CertificatePatch(object):
             self.id = id
         if certificate is not None:
             self.certificate = certificate
-        if intermediate_certificate is not None:
-            self.intermediate_certificate = intermediate_certificate
         if passphrase is not None:
             self.passphrase = passphrase
         if private_key is not None:
             self.private_key = private_key
+        if intermediate_certificate is not None:
+            self.intermediate_certificate = intermediate_certificate
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

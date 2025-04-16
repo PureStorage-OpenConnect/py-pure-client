@@ -30,13 +30,13 @@ class SupportDiagnosticsSettings(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'version': 'str',
-        'last_updated': 'int'
+        'last_updated': 'int',
+        'version': 'str'
     }
 
     attribute_map = {
-        'version': 'version',
-        'last_updated': 'last_updated'
+        'last_updated': 'last_updated',
+        'version': 'version'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class SupportDiagnosticsSettings(object):
 
     def __init__(
         self,
-        version=None,  # type: str
         last_updated=None,  # type: int
+        version=None,  # type: str
     ):
         """
         Keyword args:
-            version (str): Version of the diagnostics tool.
-            last_updated (int): Date the diagnostics tool was last updated.
+            last_updated (int): Date the diagnostics tool was last updated. 
+            version (str): Version of the diagnostics tool. 
         """
-        if version is not None:
-            self.version = version
         if last_updated is not None:
             self.last_updated = last_updated
+        if version is not None:
+            self.version = version
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

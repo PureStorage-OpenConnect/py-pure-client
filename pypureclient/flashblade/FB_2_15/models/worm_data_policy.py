@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.15, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.15, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.15
     
@@ -32,28 +32,28 @@ class WormDataPolicy(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
-        'enabled': 'bool',
-        'is_local': 'bool',
-        'location': 'FixedReference',
         'policy_type': 'str',
+        'location': 'FixedReference',
+        'is_local': 'bool',
+        'enabled': 'bool',
         'mode': 'str',
-        'min_retention': 'int',
-        'max_retention': 'int',
         'default_retention': 'int',
+        'max_retention': 'int',
+        'min_retention': 'int',
         'retention_lock': 'str'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
-        'enabled': 'enabled',
-        'is_local': 'is_local',
-        'location': 'location',
         'policy_type': 'policy_type',
+        'location': 'location',
+        'is_local': 'is_local',
+        'enabled': 'enabled',
         'mode': 'mode',
-        'min_retention': 'min_retention',
-        'max_retention': 'max_retention',
         'default_retention': 'default_retention',
+        'max_retention': 'max_retention',
+        'min_retention': 'min_retention',
         'retention_lock': 'retention_lock'
     }
 
@@ -64,50 +64,50 @@ class WormDataPolicy(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
-        enabled=None,  # type: bool
-        is_local=None,  # type: bool
-        location=None,  # type: models.FixedReference
         policy_type=None,  # type: str
+        location=None,  # type: models.FixedReference
+        is_local=None,  # type: bool
+        enabled=None,  # type: bool
         mode=None,  # type: str
-        min_retention=None,  # type: int
-        max_retention=None,  # type: int
         default_retention=None,  # type: int
+        max_retention=None,  # type: int
+        min_retention=None,  # type: int
         retention_lock=None,  # type: str
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            enabled (bool): If `true`, the policy is enabled. If not specified, defaults to `true`.
-            is_local (bool): Whether the policy is defined on the local array.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            policy_type (str): Type of the policy. Valid values are `alert`, `audit`, `bucket-access`, `cross-origin-resource-sharing`, `network-access`, `nfs`, `object-access`, `smb-client`, `smb-share`, `snapshot`, `ssh-certificate-authority`, and `worm-data`. 
             location (FixedReference): Reference to the array where the policy is defined.
-            policy_type (str): Type of the policy. Valid values are `alert`, `audit`, `bucket-access`, `cross-origin-resource-sharing`, `network-access`, `nfs`, `object-access`, `smb-client`, `smb-share`, `snapshot`, `ssh-certificate-authority`, and `worm-data`.
-            mode (str): The type of the retention lock. Valid values is `compliance`.
-            min_retention (int): Minimum retention period, in milliseconds.
-            max_retention (int): Maximum retention period, in milliseconds.
-            default_retention (int): Default retention period, in milliseconds. If the access time is not specified when committing a file, then the default retention period is applied.
-            retention_lock (str): If set to `locked`, then the value of retention attributes or policy attributes are not allowed to change. If set to `unlocked`, then the value of the retention attributes and policy attributes are allowed to change. Valid values are `unlocked` and `locked`. It is always allowed to change from `unlocked` to `locked`. Contact Pure Technical Services to change from `locked` to `unlocked`.
+            is_local (bool): Whether the policy is defined on the local array.
+            enabled (bool): If `true`, the policy is enabled. If not specified, defaults to `true`. 
+            mode (str): The type of the retention lock. Valid values is `compliance`. 
+            default_retention (int): Default retention period, in milliseconds. If the access time is not specified when committing a file, then the default retention period is applied. 
+            max_retention (int): Maximum retention period, in milliseconds. 
+            min_retention (int): Minimum retention period, in milliseconds. 
+            retention_lock (str): If set to `locked`, then the value of retention attributes or policy attributes are not allowed to change. If set to `unlocked`, then the value of the retention attributes and policy attributes are allowed to change. Valid values are `unlocked` and `locked`. It is always allowed to change from `unlocked` to `locked`. Contact Pure Technical Services to change from `locked` to `unlocked`. 
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
-        if enabled is not None:
-            self.enabled = enabled
-        if is_local is not None:
-            self.is_local = is_local
-        if location is not None:
-            self.location = location
         if policy_type is not None:
             self.policy_type = policy_type
+        if location is not None:
+            self.location = location
+        if is_local is not None:
+            self.is_local = is_local
+        if enabled is not None:
+            self.enabled = enabled
         if mode is not None:
             self.mode = mode
-        if min_retention is not None:
-            self.min_retention = min_retention
-        if max_retention is not None:
-            self.max_retention = max_retention
         if default_retention is not None:
             self.default_retention = default_retention
+        if max_retention is not None:
+            self.max_retention = max_retention
+        if min_retention is not None:
+            self.min_retention = min_retention
         if retention_lock is not None:
             self.retention_lock = retention_lock
 

@@ -46,7 +46,7 @@ class SoftwareInstallationPatch(object):
     ):
         """
         Keyword args:
-            add_override_checks (list[OverrideCheck]): Adds the specified checks to the current list of override checks.
+            add_override_checks (list[OverrideCheck]): Adds the specified checks to the current list of override checks. 
         """
         if add_override_checks is not None:
             self.add_override_checks = add_override_checks

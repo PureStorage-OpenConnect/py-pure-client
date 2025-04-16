@@ -30,14 +30,14 @@ class Throttle(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'default_limit': 'int',
         'window': 'TimeWindow',
+        'default_limit': 'int',
         'window_limit': 'int'
     }
 
     attribute_map = {
-        'default_limit': 'default_limit',
         'window': 'window',
+        'default_limit': 'default_limit',
         'window_limit': 'window_limit'
     }
 
@@ -46,20 +46,20 @@ class Throttle(object):
 
     def __init__(
         self,
-        default_limit=None,  # type: int
         window=None,  # type: models.TimeWindow
+        default_limit=None,  # type: int
         window_limit=None,  # type: int
     ):
         """
         Keyword args:
-            default_limit (int): Default maximum bandwidth threshold for outbound traffic in bytes. Once exceeded, bandwidth throttling occurs.
             window (TimeWindow): The time during which the `window_limit` threshold is in effect.
-            window_limit (int): Maximum bandwidth threshold for outbound traffic during the specified `window_limit` time range in bytes. Once exceeded, bandwidth throttling occurs.
+            default_limit (int): Default maximum bandwidth threshold for outbound traffic in bytes. Once exceeded, bandwidth throttling occurs. 
+            window_limit (int): Maximum bandwidth threshold for outbound traffic during the specified `window_limit` time range in bytes. Once exceeded, bandwidth throttling occurs. 
         """
-        if default_limit is not None:
-            self.default_limit = default_limit
         if window is not None:
             self.window = window
+        if default_limit is not None:
+            self.default_limit = default_limit
         if window_limit is not None:
             self.window_limit = window_limit
 

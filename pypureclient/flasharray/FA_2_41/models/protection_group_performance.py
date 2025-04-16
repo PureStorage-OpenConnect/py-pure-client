@@ -30,16 +30,16 @@ class ProtectionGroupPerformance(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
+        'id': 'str',
         'bytes_per_sec': 'int',
         'context': 'FixedReference',
         'time': 'int'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
+        'id': 'id',
         'bytes_per_sec': 'bytes_per_sec',
         'context': 'context',
         'time': 'time'
@@ -50,24 +50,24 @@ class ProtectionGroupPerformance(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
+        id=None,  # type: str
         bytes_per_sec=None,  # type: int
         context=None,  # type: models.FixedReference
         time=None,  # type: int
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            name (str): A locally unique, system-generated name. The name cannot be modified.
+            name (str): A locally unique, system-generated name. The name cannot be modified. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource. 
             bytes_per_sec (int): The total number of bytes of replication data transmitted and received per second.
-            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
-            time (int): The time when the sample performance data was taken. Measured in milliseconds since the UNIX epoch.
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request.  Other parameters provided with the request, such as names of volumes or snapshots,  are resolved relative to the provided `context`. 
+            time (int): The time when the sample performance data was taken. Measured in milliseconds since the UNIX epoch. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
         if bytes_per_sec is not None:
             self.bytes_per_sec = bytes_per_sec
         if context is not None:

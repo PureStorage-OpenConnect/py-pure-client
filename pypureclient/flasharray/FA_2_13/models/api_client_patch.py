@@ -46,7 +46,7 @@ class ApiClientPatch(object):
     ):
         """
         Keyword args:
-            enabled (bool): Returns a value of `true` if the API client is permitted to exchange ID tokens for access tokens. API clients are disabled by default.
+            enabled (bool): Returns a value of `true` if the API client is permitted to exchange ID tokens for access tokens. API clients are disabled by default. 
         """
         if enabled is not None:
             self.enabled = enabled

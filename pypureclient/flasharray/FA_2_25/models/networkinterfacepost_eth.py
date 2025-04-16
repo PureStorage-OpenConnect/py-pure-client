@@ -30,17 +30,17 @@ class NetworkinterfacepostEth(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'address': 'str',
-        'subinterfaces': 'list[ReferenceNoId]',
         'subnet': 'ReferenceNoId',
-        'subtype': 'str'
+        'address': 'str',
+        'subtype': 'str',
+        'subinterfaces': 'list[ReferenceNoId]'
     }
 
     attribute_map = {
-        'address': 'address',
-        'subinterfaces': 'subinterfaces',
         'subnet': 'subnet',
-        'subtype': 'subtype'
+        'address': 'address',
+        'subtype': 'subtype',
+        'subinterfaces': 'subinterfaces'
     }
 
     required_args = {
@@ -48,26 +48,26 @@ class NetworkinterfacepostEth(object):
 
     def __init__(
         self,
-        address=None,  # type: str
-        subinterfaces=None,  # type: List[models.ReferenceNoId]
         subnet=None,  # type: models.ReferenceNoId
+        address=None,  # type: str
         subtype=None,  # type: str
+        subinterfaces=None,  # type: List[models.ReferenceNoId]
     ):
         """
         Keyword args:
-            address (str): The IPv4 or IPv6 address to be associated with the specified network interface.
-            subinterfaces (list[ReferenceNoId]): List of network interfaces configured to be a subinterface of the specified network interface.
-            subnet (ReferenceNoId): Subnet that is associated with the specified network interface.
-            subtype (str): The subtype of the specified network interface. Only interfaces of subtype `vif` and `lacp_bond` can be created. Configurable on POST only. Valid values are `failover_bond`, `lacp_bond`, `physical`, and `vif`. If the subtype is `vif`, the services parameter must not be set.
+            subnet (ReferenceNoId): Subnet that is associated with the specified network interface. 
+            address (str): The IPv4 or IPv6 address to be associated with the specified network interface. 
+            subtype (str): The subtype of the specified network interface. Only interfaces of subtype `vif` and `lacp_bond` can be created. Configurable on POST only. Valid values are `failover_bond`, `lacp_bond`, `physical`, and `vif`. If the subtype is `vif`, the services parameter must not be set. 
+            subinterfaces (list[ReferenceNoId]): List of network interfaces configured to be a subinterface of the specified network interface. 
         """
-        if address is not None:
-            self.address = address
-        if subinterfaces is not None:
-            self.subinterfaces = subinterfaces
         if subnet is not None:
             self.subnet = subnet
+        if address is not None:
+            self.address = address
         if subtype is not None:
             self.subtype = subtype
+        if subinterfaces is not None:
+            self.subinterfaces = subinterfaces
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

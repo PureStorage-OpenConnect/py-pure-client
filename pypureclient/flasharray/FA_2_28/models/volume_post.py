@@ -33,18 +33,18 @@ class VolumePost(object):
         'destroyed': 'bool',
         'provisioned': 'int',
         'qos': 'Qos',
-        'priority_adjustment': 'PriorityAdjustment',
+        'subtype': 'str',
         'source': 'Reference',
-        'subtype': 'str'
+        'priority_adjustment': 'PriorityAdjustment'
     }
 
     attribute_map = {
         'destroyed': 'destroyed',
         'provisioned': 'provisioned',
         'qos': 'qos',
-        'priority_adjustment': 'priority_adjustment',
+        'subtype': 'subtype',
         'source': 'source',
-        'subtype': 'subtype'
+        'priority_adjustment': 'priority_adjustment'
     }
 
     required_args = {
@@ -55,18 +55,18 @@ class VolumePost(object):
         destroyed=None,  # type: bool
         provisioned=None,  # type: int
         qos=None,  # type: models.Qos
-        priority_adjustment=None,  # type: models.PriorityAdjustment
-        source=None,  # type: models.Reference
         subtype=None,  # type: str
+        source=None,  # type: models.Reference
+        priority_adjustment=None,  # type: models.PriorityAdjustment
     ):
         """
         Keyword args:
-            destroyed (bool): If set to `true`, destroys a resource. Once set to `true`, the `time_remaining` value will display the amount of time left until the destroyed resource is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed resource can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the resource is permanently eradicated and can no longer be recovered.
-            provisioned (int): Sets the virtual size of the volume, measured in bytes.
+            destroyed (bool): If set to `true`, destroys a resource. Once set to `true`, the `time_remaining` value will display the amount of time left until the destroyed resource is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed resource can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed,  the resource is permanently eradicated and can no longer be recovered. 
+            provisioned (int): Sets the virtual size of the volume, measured in bytes. 
             qos (Qos): Sets QoS limits.
-            priority_adjustment (PriorityAdjustment): Adjusts volume priority.
+            subtype (str): The type of volume. Valid values are `protocol_endpoint` and `regular`. 
             source (Reference): The source volume of a volume copy.
-            subtype (str): The type of volume. Valid values are `protocol_endpoint` and `regular`.
+            priority_adjustment (PriorityAdjustment): Adjusts volume priority.
         """
         if destroyed is not None:
             self.destroyed = destroyed
@@ -74,12 +74,12 @@ class VolumePost(object):
             self.provisioned = provisioned
         if qos is not None:
             self.qos = qos
-        if priority_adjustment is not None:
-            self.priority_adjustment = priority_adjustment
-        if source is not None:
-            self.source = source
         if subtype is not None:
             self.subtype = subtype
+        if source is not None:
+            self.source = source
+        if priority_adjustment is not None:
+            self.priority_adjustment = priority_adjustment
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

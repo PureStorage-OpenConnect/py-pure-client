@@ -3,7 +3,7 @@
 """
     Pure1 Public REST API
 
-    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)  The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
+    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)   The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
 
     OpenAPI spec version: 1.2
     
@@ -31,22 +31,22 @@ class Metric(object):
     """
     swagger_types = {
         'as_of': 'int',
-        'id': 'str',
         'name': 'str',
+        'id': 'str',
+        'unit': 'str',
         'availabilities': 'list[MetricAvailability]',
         'description': 'str',
-        'resource_types': 'list[str]',
-        'unit': 'str'
+        'resource_types': 'list[str]'
     }
 
     attribute_map = {
         'as_of': '_as_of',
-        'id': 'id',
         'name': 'name',
+        'id': 'id',
+        'unit': 'unit',
         'availabilities': 'availabilities',
         'description': 'description',
-        'resource_types': 'resource_types',
-        'unit': 'unit'
+        'resource_types': 'resource_types'
     }
 
     required_args = {
@@ -55,37 +55,37 @@ class Metric(object):
     def __init__(
         self,
         as_of=None,  # type: int
-        id=None,  # type: str
         name=None,  # type: str
+        id=None,  # type: str
+        unit=None,  # type: str
         availabilities=None,  # type: List[models.MetricAvailability]
         description=None,  # type: str
         resource_types=None,  # type: List[str]
-        unit=None,  # type: str
     ):
         """
         Keyword args:
             as_of (int): The freshness of the data (timestamp in millis since epoch).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
             name (str): A non-modifiable, locally unique name chosen by the system.
-            availabilities (list[MetricAvailability]): The available resolutions, aggregations and retentions of this metric.
-            description (str): The additional description for the the metric.
-            resource_types (list[str]): The type of resource (as described by their endpoints) that this metric is available at. NOTE that a metric could be available for a combination of resource types, e.g. mirrored writes from \"arrays\" to \"pods\".
+            id (str): A non-modifiable, globally unique ID chosen by the system.
             unit (str): The unit of the metric.
+            availabilities (list[MetricAvailability]): The available resolutions, aggregations and retentions of this metric. 
+            description (str): The additional description for the the metric.
+            resource_types (list[str]): The type of resource (as described by their endpoints) that this metric is available at. NOTE that a metric could be available for a combination of resource types, e.g. mirrored writes from \"arrays\" to \"pods\". 
         """
         if as_of is not None:
             self.as_of = as_of
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
+        if unit is not None:
+            self.unit = unit
         if availabilities is not None:
             self.availabilities = availabilities
         if description is not None:
             self.description = description
         if resource_types is not None:
             self.resource_types = resource_types
-        if unit is not None:
-            self.unit = unit
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

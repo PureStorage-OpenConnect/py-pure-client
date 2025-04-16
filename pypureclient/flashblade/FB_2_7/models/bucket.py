@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.7, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.7, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.7
     
@@ -32,27 +32,27 @@ class Bucket(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
-        'account': 'FixedReference',
-        'created': 'int',
-        'destroyed': 'bool',
-        'object_count': 'int',
-        'space': 'Space',
         'time_remaining': 'int',
+        'destroyed': 'bool',
         'versioning': 'str',
-        'bucket_type': 'str'
+        'bucket_type': 'str',
+        'created': 'int',
+        'object_count': 'int',
+        'account': 'FixedReference',
+        'space': 'Space'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
-        'account': 'account',
-        'created': 'created',
-        'destroyed': 'destroyed',
-        'object_count': 'object_count',
-        'space': 'space',
         'time_remaining': 'time_remaining',
+        'destroyed': 'destroyed',
         'versioning': 'versioning',
-        'bucket_type': 'bucket_type'
+        'bucket_type': 'bucket_type',
+        'created': 'created',
+        'object_count': 'object_count',
+        'account': 'account',
+        'space': 'space'
     }
 
     required_args = {
@@ -62,48 +62,48 @@ class Bucket(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
-        account=None,  # type: models.FixedReference
-        created=None,  # type: int
-        destroyed=None,  # type: bool
-        object_count=None,  # type: int
-        space=None,  # type: models.Space
         time_remaining=None,  # type: int
+        destroyed=None,  # type: bool
         versioning=None,  # type: str
         bucket_type=None,  # type: str
+        created=None,  # type: int
+        object_count=None,  # type: int
+        account=None,  # type: models.FixedReference
+        space=None,  # type: models.Space
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            account (FixedReference)
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            time_remaining (int): Time in milliseconds before the bucket is eradicated. `null` if not destroyed. 
+            destroyed (bool): Is the bucket destroyed? 
+            versioning (str): The versioning state for objects within the bucket. Valid values are `none`, `enabled`, and `suspended`. 
+            bucket_type (str): The bucket type for the bucket. 
             created (int): Creation timestamp of the object.
-            destroyed (bool): Is the bucket destroyed?
             object_count (int): The count of objects within the bucket.
+            account (FixedReference)
             space (Space): The space specification of the file system.
-            time_remaining (int): Time in milliseconds before the bucket is eradicated. `null` if not destroyed.
-            versioning (str): The versioning state for objects within the bucket. Valid values are `none`, `enabled`, and `suspended`.
-            bucket_type (str): The bucket type for the bucket.
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
-        if account is not None:
-            self.account = account
-        if created is not None:
-            self.created = created
-        if destroyed is not None:
-            self.destroyed = destroyed
-        if object_count is not None:
-            self.object_count = object_count
-        if space is not None:
-            self.space = space
         if time_remaining is not None:
             self.time_remaining = time_remaining
+        if destroyed is not None:
+            self.destroyed = destroyed
         if versioning is not None:
             self.versioning = versioning
         if bucket_type is not None:
             self.bucket_type = bucket_type
+        if created is not None:
+            self.created = created
+        if object_count is not None:
+            self.object_count = object_count
+        if account is not None:
+            self.account = account
+        if space is not None:
+            self.space = space
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

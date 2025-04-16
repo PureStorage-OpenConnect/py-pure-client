@@ -30,23 +30,23 @@ class Support(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'phonehome_enabled': 'bool',
         'proxy': 'str',
+        'phonehome_enabled': 'bool',
         'remote_assist_active': 'bool',
-        'remote_assist_opened': 'int',
-        'remote_assist_expires': 'int',
+        'remote_assist_paths': 'list[SupportRemoteAssistPaths]',
         'remote_assist_status': 'str',
-        'remote_assist_paths': 'list[SupportRemoteAssistPaths]'
+        'remote_assist_opened': 'int',
+        'remote_assist_expires': 'int'
     }
 
     attribute_map = {
-        'phonehome_enabled': 'phonehome_enabled',
         'proxy': 'proxy',
+        'phonehome_enabled': 'phonehome_enabled',
         'remote_assist_active': 'remote_assist_active',
-        'remote_assist_opened': 'remote_assist_opened',
-        'remote_assist_expires': 'remote_assist_expires',
+        'remote_assist_paths': 'remote_assist_paths',
         'remote_assist_status': 'remote_assist_status',
-        'remote_assist_paths': 'remote_assist_paths'
+        'remote_assist_opened': 'remote_assist_opened',
+        'remote_assist_expires': 'remote_assist_expires'
     }
 
     required_args = {
@@ -54,38 +54,38 @@ class Support(object):
 
     def __init__(
         self,
-        phonehome_enabled=None,  # type: bool
         proxy=None,  # type: str
+        phonehome_enabled=None,  # type: bool
         remote_assist_active=None,  # type: bool
+        remote_assist_paths=None,  # type: List[models.SupportRemoteAssistPaths]
+        remote_assist_status=None,  # type: str
         remote_assist_opened=None,  # type: int
         remote_assist_expires=None,  # type: int
-        remote_assist_status=None,  # type: str
-        remote_assist_paths=None,  # type: List[models.SupportRemoteAssistPaths]
     ):
         """
         Keyword args:
-            phonehome_enabled (bool): The status of phonehome. If set to `true`, enables phonehome. If set to `false`, disables phonehome.
-            proxy (str): The value of the current proxy, which is used to connect to cloud services such as phonehome and remote assist. Specify the server name, including the scheme and proxy port number.
-            remote_assist_active (bool): The status of the remote assist session. If set to `true`, enables the remote assist session. If set to `false`, disables the remote assist session.
-            remote_assist_opened (int): The timestamp when the session opened, measured in milliseconds since the UNIX epoch.
-            remote_assist_expires (int): The timestamp when the session expires, measured in milliseconds since the UNIX epoch.
-            remote_assist_status (str): The status of the remote assist session. Values include `connected`, `connecting`, `disconnected`, and `session-active`.
+            proxy (str): The value of the current proxy, which is used to connect to cloud services such as phonehome and remote assist. Specify the server name, including the scheme and proxy port number. 
+            phonehome_enabled (bool): The status of phonehome. If set to `true`, enables phonehome. If set to `false`, disables phonehome. 
+            remote_assist_active (bool): The status of the remote assist session. If set to `true`, enables the remote assist session. If set to `false`, disables the remote assist session. 
             remote_assist_paths (list[SupportRemoteAssistPaths])
+            remote_assist_status (str): The status of the remote assist session. Values include `connected`, `connecting`, `disconnected`, and `session-active`. 
+            remote_assist_opened (int): The timestamp when the session opened, measured in milliseconds since the UNIX epoch. 
+            remote_assist_expires (int): The timestamp when the session expires, measured in milliseconds since the UNIX epoch. 
         """
-        if phonehome_enabled is not None:
-            self.phonehome_enabled = phonehome_enabled
         if proxy is not None:
             self.proxy = proxy
+        if phonehome_enabled is not None:
+            self.phonehome_enabled = phonehome_enabled
         if remote_assist_active is not None:
             self.remote_assist_active = remote_assist_active
+        if remote_assist_paths is not None:
+            self.remote_assist_paths = remote_assist_paths
+        if remote_assist_status is not None:
+            self.remote_assist_status = remote_assist_status
         if remote_assist_opened is not None:
             self.remote_assist_opened = remote_assist_opened
         if remote_assist_expires is not None:
             self.remote_assist_expires = remote_assist_expires
-        if remote_assist_status is not None:
-            self.remote_assist_status = remote_assist_status
-        if remote_assist_paths is not None:
-            self.remote_assist_paths = remote_assist_paths
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

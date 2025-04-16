@@ -31,14 +31,14 @@ class ProtectionGroupTarget(object):
     """
     swagger_types = {
         'protection_group': 'ReferenceNoId',
-        'target': 'ReferenceNoId',
-        'allowed': 'bool'
+        'allowed': 'bool',
+        'target': 'ReferenceNoId'
     }
 
     attribute_map = {
         'protection_group': 'protection_group',
-        'target': 'target',
-        'allowed': 'allowed'
+        'allowed': 'allowed',
+        'target': 'target'
     }
 
     required_args = {
@@ -47,21 +47,21 @@ class ProtectionGroupTarget(object):
     def __init__(
         self,
         protection_group=None,  # type: models.ReferenceNoId
-        target=None,  # type: models.ReferenceNoId
         allowed=None,  # type: bool
+        target=None,  # type: models.ReferenceNoId
     ):
         """
         Keyword args:
             protection_group (ReferenceNoId)
+            allowed (bool): If set to `true`, the target array has allowed the source array to replicate protection group data to the target array. If set to `false`, the target array has not allowed the source array to replicate protection group data to the target. 
             target (ReferenceNoId)
-            allowed (bool): If set to `true`, the target array has allowed the source array to replicate protection group data to the target array. If set to `false`, the target array has not allowed the source array to replicate protection group data to the target.
         """
         if protection_group is not None:
             self.protection_group = protection_group
-        if target is not None:
-            self.target = target
         if allowed is not None:
             self.allowed = allowed
+        if target is not None:
+            self.target = target
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.6, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.6, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.6
     
@@ -30,16 +30,16 @@ class AdminPatch(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'public_key': 'str',
         'old_password': 'str',
         'password': 'str',
-        'public_key': 'str',
         'locked': 'bool'
     }
 
     attribute_map = {
+        'public_key': 'public_key',
         'old_password': 'old_password',
         'password': 'password',
-        'public_key': 'public_key',
         'locked': 'locked'
     }
 
@@ -48,24 +48,24 @@ class AdminPatch(object):
 
     def __init__(
         self,
+        public_key=None,  # type: str
         old_password=None,  # type: str
         password=None,  # type: str
-        public_key=None,  # type: str
         locked=None,  # type: bool
     ):
         """
         Keyword args:
+            public_key (str): Public key for SSH access. Supported key types are `Ed25519` and `RSA`.
             old_password (str): Old user password.
             password (str): New user password.
-            public_key (str): Public key for SSH access. Supported key types are `Ed25519` and `RSA`.
-            locked (bool): If set to `false`, the specified user is unlocked. Setting to `true` is not allowed.
+            locked (bool): If set to `false`, the specified user is unlocked. Setting to `true` is not allowed. 
         """
+        if public_key is not None:
+            self.public_key = public_key
         if old_password is not None:
             self.old_password = old_password
         if password is not None:
             self.password = password
-        if public_key is not None:
-            self.public_key = public_key
         if locked is not None:
             self.locked = locked
 
