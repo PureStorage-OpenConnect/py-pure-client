@@ -30,18 +30,18 @@ class Kmip(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
+        'ca_certificate': 'str',
         'uris': 'list[str]',
         'certificate': 'KmipCertificate',
-        'ca_certificate': 'str',
+        'name': 'str',
         'kmip_objects': 'list[KmipObject]'
     }
 
     attribute_map = {
-        'name': 'name',
+        'ca_certificate': 'ca_certificate',
         'uris': 'uris',
         'certificate': 'certificate',
-        'ca_certificate': 'ca_certificate',
+        'name': 'name',
         'kmip_objects': 'kmip_objects'
     }
 
@@ -50,28 +50,28 @@ class Kmip(object):
 
     def __init__(
         self,
-        name=None,  # type: str
+        ca_certificate=None,  # type: str
         uris=None,  # type: List[str]
         certificate=None,  # type: models.KmipCertificate
-        ca_certificate=None,  # type: str
+        name=None,  # type: str
         kmip_objects=None,  # type: List[models.KmipObject]
     ):
         """
         Keyword args:
-            name (str): A locally unique, system-generated name. The name cannot be modified.
-            uris (list[str]): List of URIs for the configured KMIP servers.
-            certificate (KmipCertificate): The certificate used to verify FlashArray authenticity to the KMIP servers.
-            ca_certificate (str): CA certificate text for the KMIP server.
-            kmip_objects (list[KmipObject]): List of the name and UID of the KMIP objects.
+            ca_certificate (str): CA certificate text for the KMIP server. 
+            uris (list[str]): List of URIs for the configured KMIP servers. 
+            certificate (KmipCertificate): The certificate used to verify FlashArray authenticity to the KMIP servers. 
+            name (str): A locally unique, system-generated name. The name cannot be modified. 
+            kmip_objects (list[KmipObject]): List of the name and UID of the KMIP objects. 
         """
-        if name is not None:
-            self.name = name
+        if ca_certificate is not None:
+            self.ca_certificate = ca_certificate
         if uris is not None:
             self.uris = uris
         if certificate is not None:
             self.certificate = certificate
-        if ca_certificate is not None:
-            self.ca_certificate = ca_certificate
+        if name is not None:
+            self.name = name
         if kmip_objects is not None:
             self.kmip_objects = kmip_objects
 

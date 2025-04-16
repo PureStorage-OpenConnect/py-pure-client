@@ -49,8 +49,8 @@ class WorkloadPlacementRecommendationResult(object):
     ):
         """
         Keyword args:
-            score (str): The score of the recommendation from Pure1. Possible values include `optimal`, `optimal-with-warnings`, and `acceptable`.
-            placements (list[WorkloadPlacementRecommendationPlacement]): The placements of the preset.
+            score (str): The score of the recommendation from Pure1. Possible values include `optimal`, `optimal-with-warnings`, and `acceptable`. 
+            placements (list[WorkloadPlacementRecommendationPlacement]): The placements of the preset. 
         """
         if score is not None:
             self.score = score

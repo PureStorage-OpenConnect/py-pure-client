@@ -30,26 +30,26 @@ class Software(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
-        'details': 'str',
+        'id': 'str',
         'payload_id': 'str',
-        'progress': 'float',
-        'upgrade_hops': 'list[str]',
-        'version': 'str',
         'upgrade_plan': 'list[SoftwareUpgradePlan]',
+        'upgrade_hops': 'list[str]',
+        'progress': 'float',
+        'details': 'str',
+        'version': 'str',
         'status': 'str'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
-        'details': 'details',
+        'id': 'id',
         'payload_id': 'payload_id',
-        'progress': 'progress',
-        'upgrade_hops': 'upgrade_hops',
-        'version': 'version',
         'upgrade_plan': 'upgrade_plan',
+        'upgrade_hops': 'upgrade_hops',
+        'progress': 'progress',
+        'details': 'details',
+        'version': 'version',
         'status': 'status'
     }
 
@@ -58,44 +58,44 @@ class Software(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
-        details=None,  # type: str
+        id=None,  # type: str
         payload_id=None,  # type: str
-        progress=None,  # type: float
-        upgrade_hops=None,  # type: List[str]
-        version=None,  # type: str
         upgrade_plan=None,  # type: List[models.SoftwareUpgradePlan]
+        upgrade_hops=None,  # type: List[str]
+        progress=None,  # type: float
+        details=None,  # type: str
+        version=None,  # type: str
         status=None,  # type: str
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified.
-            name (str): Name of the resource. The name cannot be modified.
-            details (str): The detailed reason for the `status`.
-            payload_id (str): A checksum hash referring to the update bundle.
-            progress (float): The progress of the software upgrade. Displayed in decimal format.
-            upgrade_hops (list[str]): The plan by which the upgrade will be conducted. The first element is the current version, the last element is the destination version, and the elements in between are intermediate versions.
-            version (str): The version of the software package.
-            upgrade_plan (list[SoftwareUpgradePlan]): A list of steps that are planned to run during the upgrade in an optimal scenario (i.e., all upgrade checks pass, no step is retried, and the upgrade is not aborted). Steps are listed in the order that they should occur.
-            status (str): The status of the software package. Valid values are `available`, `downloaded`, `downloading`, `download_failed`, `checking`, `installing`, `new`, `paused`, `aborting`, `abort`, `canceled`, `partially_installed`, and `installed`. A status of `available` indicates that the package is available for download. This only applies if `automatic-download` is not enabled. A status of `downloaded` indicates that the package is downloaded and ready for installation. A status of `downloading` indicates that the package is currently downloading. A status of `download_failed` indicates that the download of the package failed. A status of `checking` indicates that the package is currently running in `check-only` mode. A status of `installing` indicates that the package is currently installing. A status of `new` indicates that Pure1 cloud is still building the package. A status of `paused` indicates that the upgrade is paused and waiting for user input to proceed. A status of `aborting` indicates that the upgrade is being aborted, due to an unrecoverable error or an `abort` command issued by the user. A status of `canceled` indicates that the upgrade has been canceled. A status of `partially_installed` indicates that the upgrade has been partially installed due to an `abort`. The array has been upgraded to an intermediate version and the `software` is no longer available for installation. A status of `installed` indicates that the upgrade has finished.
+            name (str): Name of the resource. The name cannot be modified. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified. 
+            payload_id (str): A checksum hash referring to the update bundle. 
+            upgrade_plan (list[SoftwareUpgradePlan]): A list of steps that are planned to run during the upgrade in an optimal scenario (i.e., all upgrade checks pass, no step is retried, and the upgrade is not aborted). Steps are listed in the order that they should occur. 
+            upgrade_hops (list[str]): The plan by which the upgrade will be conducted. The first element is the current version, the last element is the destination version, and the elements in  between are intermediate versions. 
+            progress (float): The progress of the software upgrade. Displayed in decimal format. 
+            details (str): The detailed reason for the `status`. 
+            version (str): The version of the software package. 
+            status (str): The status of the software package. Valid values are `available`, `downloaded`, `downloading`, `download_failed`, `checking`, `installing`, `new`, `paused`, `aborting`, `abort`, `canceled`, `partially_installed`, and `installed`. A status of `available` indicates that the package is available for download. This only applies if `automatic-download` is not enabled. A status of `downloaded` indicates that the package is downloaded and ready for installation. A status of `downloading` indicates that the package is currently downloading. A status of `download_failed` indicates that the download of the package failed. A status of `checking` indicates that the package is currently running in `check-only` mode. A status of `installing` indicates that the package is currently installing. A status of `new` indicates that Pure1 cloud is still building the package. A status of `paused` indicates that the upgrade is paused and waiting for user input to proceed. A status of `aborting` indicates that the upgrade is being aborted, due to an unrecoverable error or an `abort` command issued by the user. A status of `canceled` indicates that the upgrade has been canceled.  A status of `partially_installed` indicates that the upgrade has been partially installed due to an `abort`. The array has been upgraded to an intermediate version and the `software` is no longer available for installation. A status of `installed` indicates that the upgrade has finished. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
-        if details is not None:
-            self.details = details
+        if id is not None:
+            self.id = id
         if payload_id is not None:
             self.payload_id = payload_id
-        if progress is not None:
-            self.progress = progress
-        if upgrade_hops is not None:
-            self.upgrade_hops = upgrade_hops
-        if version is not None:
-            self.version = version
         if upgrade_plan is not None:
             self.upgrade_plan = upgrade_plan
+        if upgrade_hops is not None:
+            self.upgrade_hops = upgrade_hops
+        if progress is not None:
+            self.progress = progress
+        if details is not None:
+            self.details = details
+        if version is not None:
+            self.version = version
         if status is not None:
             self.status = status
 

@@ -30,46 +30,46 @@ class PresetWorkloadSnapshotRule(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'every': 'str',
+        'at': 'str',
         'keep_for': 'str',
-        'at': 'str'
+        'every': 'str'
     }
 
     attribute_map = {
-        'every': 'every',
+        'at': 'at',
         'keep_for': 'keep_for',
-        'at': 'at'
+        'every': 'every'
     }
 
     required_args = {
-        'every',
         'keep_for',
+        'every',
     }
 
     def __init__(
         self,
-        every,  # type: str
         keep_for,  # type: str
+        every,  # type: str
         at=None,  # type: str
     ):
         """
         Keyword args:
-            every (str, required): Specifies the interval between snapshots, in milliseconds. The `every` value for all rules must be multiples of one another. The `every` value must be between five minutes and 400 days for the first rule. The `every` value must be between five minutes and one day for the second rule.
-            keep_for (str, required): Specifies the period that snapshots are retained before they are eradicated, in milliseconds. The `keep_for` value must be between 10 minutes and 24855 days for the first rule, and a multiple of a second. The `keep_for` value must be between 10 minutes and 2147483647 days for the second rule, and must be greater than or equal to the `keep_for` value of the first rule.
-            at (str): Specifies the number of milliseconds since midnight at which to take a snapshot. The `at` value cannot be set if the `every` value is not measured in days. The `at` value can only be set on the first rule.
+            at (str): Specifies the number of milliseconds since midnight at which to take a snapshot. The `at` value cannot be set if the `every` value is not measured in days. The `at` value can only be set on the first rule. 
+            keep_for (str, required): Specifies the period that snapshots are retained before they are eradicated, in milliseconds. The `keep_for` value must be between 10 minutes and 24855 days for the first rule, and a multiple of a second. The `keep_for` value must be between 10 minutes and 2147483647 days for the second rule, and must be greater than or equal to the `keep_for` value of the first rule. 
+            every (str, required): Specifies the interval between snapshots, in milliseconds. The `every` value for all rules must be multiples of one another. The `every` value must be between five minutes and 400 days for the first rule. The `every` value must be between five minutes and one day for the second rule. 
         """
-        self.every = every
-        self.keep_for = keep_for
         if at is not None:
             self.at = at
+        self.keep_for = keep_for
+        self.every = every
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
             raise KeyError("Invalid key `{}` for `PresetWorkloadSnapshotRule`".format(key))
-        if key == "every" and value is None:
-            raise ValueError("Invalid value for `every`, must not be `None`")
         if key == "keep_for" and value is None:
             raise ValueError("Invalid value for `keep_for`, must not be `None`")
+        if key == "every" and value is None:
+            raise ValueError("Invalid value for `every`, must not be `None`")
         self.__dict__[key] = value
 
     def __getattribute__(self, item):

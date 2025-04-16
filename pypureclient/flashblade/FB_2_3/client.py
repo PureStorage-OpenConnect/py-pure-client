@@ -244,12 +244,12 @@ class Client(object):
 
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             local_only (bool, optional):
                 If specified as `true`, only delete the Active Directory configuration on the
                 local array, without deleting the computer account created in the Active
-                Directory domain. If not specified, defaults to `false`.
+                Directory domain.  If not specified, defaults to `false`.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
                 each of the elements of `names`, then an error is returned.
@@ -315,7 +315,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -386,7 +386,7 @@ class Client(object):
             active_directory (ActiveDirectoryPatch, required):
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -428,8 +428,8 @@ class Client(object):
         self,
         references=None,  # type: List[models.ReferenceType]
         active_directory=None,  # type: models.ActiveDirectoryPost
-        names=None,  # type: List[str]
         join_existing_account=None,  # type: bool
+        names=None,  # type: List[str]
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -445,9 +445,6 @@ class Client(object):
                 A list of references to query for. Overrides names keyword arguments.
 
             active_directory (ActiveDirectoryPost, required):
-            names (list[str], optional):
-                A list of resource names. If there is not at least one resource that matches
-                each of the elements of `names`, then an error is returned.
             join_existing_account (bool, optional):
                 If specified as `true`, the domain is searched for a pre-existing computer
                 account to join to, and no new account will be created within the domain. The
@@ -456,6 +453,9 @@ class Client(object):
                 `service_principal_names`, `encryption_types`, and `join_ou` will be read from
                 the pre-existing account and cannot be specified when joining to an existing
                 account. If not specified, defaults to `false`.
+            names (list[str], optional):
+                A list of resource names. If there is not at least one resource that matches
+                each of the elements of `names`, then an error is returned.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -477,8 +477,8 @@ class Client(object):
         """
         kwargs = dict(
             active_directory=active_directory,
-            names=names,
             join_existing_account=join_existing_account,
+            names=names,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
             _preload_content=_preload_content,
@@ -514,7 +514,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -782,7 +782,7 @@ class Client(object):
 
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -850,7 +850,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -935,7 +935,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -1007,7 +1007,7 @@ class Client(object):
             admin (AdminPatch, required):
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -1173,7 +1173,7 @@ class Client(object):
 
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -1239,7 +1239,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -1312,7 +1312,7 @@ class Client(object):
             alert_watcher (AlertWatcher, required):
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -1428,7 +1428,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -1498,7 +1498,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -1570,7 +1570,7 @@ class Client(object):
             alerts_settings (Alert, required):
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -1628,7 +1628,7 @@ class Client(object):
 
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -1694,7 +1694,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -1766,7 +1766,7 @@ class Client(object):
             api_clients (ApiClient, required):
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -1891,7 +1891,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -2007,7 +2007,7 @@ class Client(object):
 
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             remote_ids (list[str], optional):
                 A list of remote array IDs. If after filtering, there is not at least one
@@ -2084,7 +2084,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -2166,7 +2166,7 @@ class Client(object):
             array_connection (ArrayConnection, required):
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             remote_ids (list[str], optional):
                 A list of remote array IDs. If after filtering, there is not at least one
@@ -2244,7 +2244,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -2341,7 +2341,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -3282,7 +3282,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -3361,7 +3361,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -3447,7 +3447,7 @@ class Client(object):
 
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             local_bucket_ids (list[str], optional):
                 A list of local bucket IDs. If after filtering, there is not at least one
@@ -3550,7 +3550,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -3662,7 +3662,7 @@ class Client(object):
             bucket_replica_link (BucketReplicaLink, required):
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             local_bucket_ids (list[str], optional):
                 A list of local bucket IDs. If after filtering, there is not at least one
@@ -3729,11 +3729,11 @@ class Client(object):
         remote_buckets=None,  # type: List[models.ReferenceType]
         remote_credential=None,  # type: List[models.ReferenceType]
         bucket_replica_link=None,  # type: models.BucketReplicaLinkPost
-        local_bucket_names=None,  # type: List[str]
         local_bucket_ids=None,  # type: List[str]
+        local_bucket_names=None,  # type: List[str]
         remote_bucket_names=None,  # type: List[str]
-        remote_credentials_names=None,  # type: List[str]
         remote_credentials_ids=None,  # type: List[str]
+        remote_credentials_names=None,  # type: List[str]
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -3745,32 +3745,32 @@ class Client(object):
 
         Args:
             local_buckets (list[FixedReference], optional):
-                A list of local_buckets to query for. Overrides local_bucket_names and local_bucket_ids keyword arguments.
+                A list of local_buckets to query for. Overrides local_bucket_ids and local_bucket_names keyword arguments.
             remote_buckets (list[FixedReference], optional):
                 A list of remote_buckets to query for. Overrides remote_bucket_names keyword arguments.
             remote_credential (list[FixedReference], optional):
-                A list of remote_credential to query for. Overrides remote_credentials_names and remote_credentials_ids keyword arguments.
+                A list of remote_credential to query for. Overrides remote_credentials_ids and remote_credentials_names keyword arguments.
 
             bucket_replica_link (BucketReplicaLinkPost, required):
-            local_bucket_names (list[str], optional):
-                A list of local bucket names. If there is not at least one resource that matches
-                each of the elements, then an error is returned. This cannot be provided
-                together with `local_bucket_ids` query parameter.
             local_bucket_ids (list[str], optional):
                 A list of local bucket IDs. If after filtering, there is not at least one
                 resource that matches each of the elements, then an error is returned. This
                 cannot be provided together with the `local_bucket_names` query parameter.
+            local_bucket_names (list[str], optional):
+                A list of local bucket names. If there is not at least one resource that matches
+                each of the elements, then an error is returned. This cannot be provided
+                together with `local_bucket_ids` query parameter.
             remote_bucket_names (list[str], optional):
                 A list of remote bucket names. If there is not at least one resource that
                 matches each of the elements, then an error is returned.
-            remote_credentials_names (list[str], optional):
-                A list of remote credentials names. If there is not at least one resource that
-                matches each of the elements, then an error is returned. This cannot be provided
-                together with the `remote_credentials_ids` query parameter.
             remote_credentials_ids (list[str], optional):
                 A list of remote credentials IDs. If after filtering, there is not at least one
                 resource that matches each of the elements, then an error is returned. This
                 cannot be provided together with the `remote_credentials_names` query parameter.
+            remote_credentials_names (list[str], optional):
+                A list of remote credentials names. If there is not at least one resource that
+                matches each of the elements, then an error is returned. This cannot be provided
+                together with the `remote_credentials_ids` query parameter.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -3792,11 +3792,11 @@ class Client(object):
         """
         kwargs = dict(
             bucket_replica_link=bucket_replica_link,
-            local_bucket_names=local_bucket_names,
             local_bucket_ids=local_bucket_ids,
+            local_bucket_names=local_bucket_names,
             remote_bucket_names=remote_bucket_names,
-            remote_credentials_names=remote_credentials_names,
             remote_credentials_ids=remote_credentials_ids,
+            remote_credentials_names=remote_credentials_names,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
             _preload_content=_preload_content,
@@ -3804,9 +3804,9 @@ class Client(object):
         )
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._bucket_replica_links_api.api23_bucket_replica_links_post_with_http_info
-        _process_references(local_buckets, ['local_bucket_names', 'local_bucket_ids'], kwargs)
+        _process_references(local_buckets, ['local_bucket_ids', 'local_bucket_names'], kwargs)
         _process_references(remote_buckets, ['remote_bucket_names'], kwargs)
-        _process_references(remote_credential, ['remote_credentials_names', 'remote_credentials_ids'], kwargs)
+        _process_references(remote_credential, ['remote_credentials_ids', 'remote_credentials_names'], kwargs)
         return self._call_api(endpoint, kwargs)
 
     def delete_buckets(
@@ -3829,7 +3829,7 @@ class Client(object):
 
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -3906,7 +3906,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -3982,7 +3982,7 @@ class Client(object):
             bucket (Bucket, required):
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -4055,7 +4055,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -4205,7 +4205,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -4269,11 +4269,11 @@ class Client(object):
 
     def delete_certificate_groups_certificates(
         self,
-        certificates=None,  # type: List[models.ReferenceType]
         certificate_groups=None,  # type: List[models.ReferenceType]
-        certificate_ids=None,  # type: List[str]
+        certificates=None,  # type: List[models.ReferenceType]
         certificate_group_ids=None,  # type: List[str]
         certificate_group_names=None,  # type: List[str]
+        certificate_ids=None,  # type: List[str]
         certificate_names=None,  # type: List[str]
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
@@ -4285,15 +4285,11 @@ class Client(object):
         Delete one or more certificate groups.
 
         Args:
-            certificates (list[FixedReference], optional):
-                A list of certificates to query for. Overrides certificate_ids and certificate_names keyword arguments.
             certificate_groups (list[FixedReference], optional):
                 A list of certificate_groups to query for. Overrides certificate_group_ids and certificate_group_names keyword arguments.
+            certificates (list[FixedReference], optional):
+                A list of certificates to query for. Overrides certificate_ids and certificate_names keyword arguments.
 
-            certificate_ids (list[str], optional):
-                A list of certificate ids. If there is not at least one resource that matches
-                each of the elements of `certificate_ids`, then an error is returned. This
-                cannot be provided in conjunction with the `certificate_names` parameter.
             certificate_group_ids (list[str], optional):
                 A list of certificate group ids. If there is not at least one resource that
                 matches each of the elements of `certificate_group_ids`, then an error is
@@ -4304,9 +4300,13 @@ class Client(object):
                 matches each of the elements of `certificate_group_names`, then an error is
                 returned. This cannot be provided in conjunction with the
                 `certificate_group_ids` parameter.
+            certificate_ids (list[str], optional):
+                A list of certificate ids. If there is not at least one resource that matches
+                each of the elements of `certificate_ids`, then an error is returned.  This
+                cannot be provided in conjunction with the `certificate_names` parameter.
             certificate_names (list[str], optional):
                 A list of certificate names. If there is not at least one resource that matches
-                each of the elements of `certificate_names`, then an error is returned. This
+                each of the elements of `certificate_names`, then an error is returned.  This
                 cannot be provided in conjunction with the `certificate_ids` parameter.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -4328,9 +4328,9 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
-            certificate_ids=certificate_ids,
             certificate_group_ids=certificate_group_ids,
             certificate_group_names=certificate_group_names,
+            certificate_ids=certificate_ids,
             certificate_names=certificate_names,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
@@ -4339,19 +4339,19 @@ class Client(object):
         )
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._certificate_groups_api.api23_certificate_groups_certificates_delete_with_http_info
-        _process_references(certificates, ['certificate_ids', 'certificate_names'], kwargs)
         _process_references(certificate_groups, ['certificate_group_ids', 'certificate_group_names'], kwargs)
+        _process_references(certificates, ['certificate_ids', 'certificate_names'], kwargs)
         return self._call_api(endpoint, kwargs)
 
     def get_certificate_groups_certificates(
         self,
-        certificates=None,  # type: List[models.ReferenceType]
         certificate_groups=None,  # type: List[models.ReferenceType]
-        continuation_token=None,  # type: str
-        certificate_ids=None,  # type: List[str]
+        certificates=None,  # type: List[models.ReferenceType]
         certificate_group_ids=None,  # type: List[str]
         certificate_group_names=None,  # type: List[str]
+        certificate_ids=None,  # type: List[str]
         certificate_names=None,  # type: List[str]
+        continuation_token=None,  # type: str
         filter=None,  # type: str
         limit=None,  # type: int
         offset=None,  # type: int
@@ -4366,17 +4366,11 @@ class Client(object):
         List membership associations between groups and certificates on the array.
 
         Args:
-            certificates (list[FixedReference], optional):
-                A list of certificates to query for. Overrides certificate_ids and certificate_names keyword arguments.
             certificate_groups (list[FixedReference], optional):
                 A list of certificate_groups to query for. Overrides certificate_group_ids and certificate_group_names keyword arguments.
+            certificates (list[FixedReference], optional):
+                A list of certificates to query for. Overrides certificate_ids and certificate_names keyword arguments.
 
-            continuation_token (str, optional):
-                An opaque token to iterate over a collection of resources.
-            certificate_ids (list[str], optional):
-                A list of certificate ids. If there is not at least one resource that matches
-                each of the elements of `certificate_ids`, then an error is returned. This
-                cannot be provided in conjunction with the `certificate_names` parameter.
             certificate_group_ids (list[str], optional):
                 A list of certificate group ids. If there is not at least one resource that
                 matches each of the elements of `certificate_group_ids`, then an error is
@@ -4387,10 +4381,16 @@ class Client(object):
                 matches each of the elements of `certificate_group_names`, then an error is
                 returned. This cannot be provided in conjunction with the
                 `certificate_group_ids` parameter.
+            certificate_ids (list[str], optional):
+                A list of certificate ids. If there is not at least one resource that matches
+                each of the elements of `certificate_ids`, then an error is returned.  This
+                cannot be provided in conjunction with the `certificate_names` parameter.
             certificate_names (list[str], optional):
                 A list of certificate names. If there is not at least one resource that matches
-                each of the elements of `certificate_names`, then an error is returned. This
+                each of the elements of `certificate_names`, then an error is returned.  This
                 cannot be provided in conjunction with the `certificate_ids` parameter.
+            continuation_token (str, optional):
+                An opaque token to iterate over a collection of resources.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             limit (int, optional):
@@ -4420,11 +4420,11 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
-            continuation_token=continuation_token,
-            certificate_ids=certificate_ids,
             certificate_group_ids=certificate_group_ids,
             certificate_group_names=certificate_group_names,
+            certificate_ids=certificate_ids,
             certificate_names=certificate_names,
+            continuation_token=continuation_token,
             filter=filter,
             limit=limit,
             offset=offset,
@@ -4436,17 +4436,17 @@ class Client(object):
         )
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._certificate_groups_api.api23_certificate_groups_certificates_get_with_http_info
-        _process_references(certificates, ['certificate_ids', 'certificate_names'], kwargs)
         _process_references(certificate_groups, ['certificate_group_ids', 'certificate_group_names'], kwargs)
+        _process_references(certificates, ['certificate_ids', 'certificate_names'], kwargs)
         return self._call_api(endpoint, kwargs)
 
     def post_certificate_groups_certificates(
         self,
-        certificates=None,  # type: List[models.ReferenceType]
         certificate_groups=None,  # type: List[models.ReferenceType]
-        certificate_ids=None,  # type: List[str]
+        certificates=None,  # type: List[models.ReferenceType]
         certificate_group_ids=None,  # type: List[str]
         certificate_group_names=None,  # type: List[str]
+        certificate_ids=None,  # type: List[str]
         certificate_names=None,  # type: List[str]
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
@@ -4458,15 +4458,11 @@ class Client(object):
         Add one or more certificates to one or more certificate groups on the array.
 
         Args:
-            certificates (list[FixedReference], optional):
-                A list of certificates to query for. Overrides certificate_ids and certificate_names keyword arguments.
             certificate_groups (list[FixedReference], optional):
                 A list of certificate_groups to query for. Overrides certificate_group_ids and certificate_group_names keyword arguments.
+            certificates (list[FixedReference], optional):
+                A list of certificates to query for. Overrides certificate_ids and certificate_names keyword arguments.
 
-            certificate_ids (list[str], optional):
-                A list of certificate ids. If there is not at least one resource that matches
-                each of the elements of `certificate_ids`, then an error is returned. This
-                cannot be provided in conjunction with the `certificate_names` parameter.
             certificate_group_ids (list[str], optional):
                 A list of certificate group ids. If there is not at least one resource that
                 matches each of the elements of `certificate_group_ids`, then an error is
@@ -4477,9 +4473,13 @@ class Client(object):
                 matches each of the elements of `certificate_group_names`, then an error is
                 returned. This cannot be provided in conjunction with the
                 `certificate_group_ids` parameter.
+            certificate_ids (list[str], optional):
+                A list of certificate ids. If there is not at least one resource that matches
+                each of the elements of `certificate_ids`, then an error is returned.  This
+                cannot be provided in conjunction with the `certificate_names` parameter.
             certificate_names (list[str], optional):
                 A list of certificate names. If there is not at least one resource that matches
-                each of the elements of `certificate_names`, then an error is returned. This
+                each of the elements of `certificate_names`, then an error is returned.  This
                 cannot be provided in conjunction with the `certificate_ids` parameter.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -4501,9 +4501,9 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
-            certificate_ids=certificate_ids,
             certificate_group_ids=certificate_group_ids,
             certificate_group_names=certificate_group_names,
+            certificate_ids=certificate_ids,
             certificate_names=certificate_names,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
@@ -4512,8 +4512,8 @@ class Client(object):
         )
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._certificate_groups_api.api23_certificate_groups_certificates_post_with_http_info
-        _process_references(certificates, ['certificate_ids', 'certificate_names'], kwargs)
         _process_references(certificate_groups, ['certificate_group_ids', 'certificate_group_names'], kwargs)
+        _process_references(certificates, ['certificate_ids', 'certificate_names'], kwargs)
         return self._call_api(endpoint, kwargs)
 
     def delete_certificate_groups(
@@ -4536,7 +4536,7 @@ class Client(object):
 
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -4602,7 +4602,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -4731,7 +4731,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -4782,11 +4782,11 @@ class Client(object):
 
     def delete_certificates_certificate_groups(
         self,
-        certificates=None,  # type: List[models.ReferenceType]
         certificate_groups=None,  # type: List[models.ReferenceType]
-        certificate_ids=None,  # type: List[str]
+        certificates=None,  # type: List[models.ReferenceType]
         certificate_group_ids=None,  # type: List[str]
         certificate_group_names=None,  # type: List[str]
+        certificate_ids=None,  # type: List[str]
         certificate_names=None,  # type: List[str]
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
@@ -4798,15 +4798,11 @@ class Client(object):
         Remove one or more certificates from one or more certificate groups.
 
         Args:
-            certificates (list[FixedReference], optional):
-                A list of certificates to query for. Overrides certificate_ids and certificate_names keyword arguments.
             certificate_groups (list[FixedReference], optional):
                 A list of certificate_groups to query for. Overrides certificate_group_ids and certificate_group_names keyword arguments.
+            certificates (list[FixedReference], optional):
+                A list of certificates to query for. Overrides certificate_ids and certificate_names keyword arguments.
 
-            certificate_ids (list[str], optional):
-                A list of certificate ids. If there is not at least one resource that matches
-                each of the elements of `certificate_ids`, then an error is returned. This
-                cannot be provided in conjunction with the `certificate_names` parameter.
             certificate_group_ids (list[str], optional):
                 A list of certificate group ids. If there is not at least one resource that
                 matches each of the elements of `certificate_group_ids`, then an error is
@@ -4817,9 +4813,13 @@ class Client(object):
                 matches each of the elements of `certificate_group_names`, then an error is
                 returned. This cannot be provided in conjunction with the
                 `certificate_group_ids` parameter.
+            certificate_ids (list[str], optional):
+                A list of certificate ids. If there is not at least one resource that matches
+                each of the elements of `certificate_ids`, then an error is returned.  This
+                cannot be provided in conjunction with the `certificate_names` parameter.
             certificate_names (list[str], optional):
                 A list of certificate names. If there is not at least one resource that matches
-                each of the elements of `certificate_names`, then an error is returned. This
+                each of the elements of `certificate_names`, then an error is returned.  This
                 cannot be provided in conjunction with the `certificate_ids` parameter.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -4841,9 +4841,9 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
-            certificate_ids=certificate_ids,
             certificate_group_ids=certificate_group_ids,
             certificate_group_names=certificate_group_names,
+            certificate_ids=certificate_ids,
             certificate_names=certificate_names,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
@@ -4852,19 +4852,19 @@ class Client(object):
         )
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._certificates_api.api23_certificates_certificate_groups_delete_with_http_info
-        _process_references(certificates, ['certificate_ids', 'certificate_names'], kwargs)
         _process_references(certificate_groups, ['certificate_group_ids', 'certificate_group_names'], kwargs)
+        _process_references(certificates, ['certificate_ids', 'certificate_names'], kwargs)
         return self._call_api(endpoint, kwargs)
 
     def get_certificates_certificate_groups(
         self,
-        certificates=None,  # type: List[models.ReferenceType]
         certificate_groups=None,  # type: List[models.ReferenceType]
-        continuation_token=None,  # type: str
-        certificate_ids=None,  # type: List[str]
+        certificates=None,  # type: List[models.ReferenceType]
         certificate_group_ids=None,  # type: List[str]
         certificate_group_names=None,  # type: List[str]
+        certificate_ids=None,  # type: List[str]
         certificate_names=None,  # type: List[str]
+        continuation_token=None,  # type: str
         filter=None,  # type: str
         limit=None,  # type: int
         offset=None,  # type: int
@@ -4879,17 +4879,11 @@ class Client(object):
         List membership associations between groups and certificates.
 
         Args:
-            certificates (list[FixedReference], optional):
-                A list of certificates to query for. Overrides certificate_ids and certificate_names keyword arguments.
             certificate_groups (list[FixedReference], optional):
                 A list of certificate_groups to query for. Overrides certificate_group_ids and certificate_group_names keyword arguments.
+            certificates (list[FixedReference], optional):
+                A list of certificates to query for. Overrides certificate_ids and certificate_names keyword arguments.
 
-            continuation_token (str, optional):
-                An opaque token to iterate over a collection of resources.
-            certificate_ids (list[str], optional):
-                A list of certificate ids. If there is not at least one resource that matches
-                each of the elements of `certificate_ids`, then an error is returned. This
-                cannot be provided in conjunction with the `certificate_names` parameter.
             certificate_group_ids (list[str], optional):
                 A list of certificate group ids. If there is not at least one resource that
                 matches each of the elements of `certificate_group_ids`, then an error is
@@ -4900,10 +4894,16 @@ class Client(object):
                 matches each of the elements of `certificate_group_names`, then an error is
                 returned. This cannot be provided in conjunction with the
                 `certificate_group_ids` parameter.
+            certificate_ids (list[str], optional):
+                A list of certificate ids. If there is not at least one resource that matches
+                each of the elements of `certificate_ids`, then an error is returned.  This
+                cannot be provided in conjunction with the `certificate_names` parameter.
             certificate_names (list[str], optional):
                 A list of certificate names. If there is not at least one resource that matches
-                each of the elements of `certificate_names`, then an error is returned. This
+                each of the elements of `certificate_names`, then an error is returned.  This
                 cannot be provided in conjunction with the `certificate_ids` parameter.
+            continuation_token (str, optional):
+                An opaque token to iterate over a collection of resources.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             limit (int, optional):
@@ -4933,11 +4933,11 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
-            continuation_token=continuation_token,
-            certificate_ids=certificate_ids,
             certificate_group_ids=certificate_group_ids,
             certificate_group_names=certificate_group_names,
+            certificate_ids=certificate_ids,
             certificate_names=certificate_names,
+            continuation_token=continuation_token,
             filter=filter,
             limit=limit,
             offset=offset,
@@ -4949,17 +4949,17 @@ class Client(object):
         )
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._certificates_api.api23_certificates_certificate_groups_get_with_http_info
-        _process_references(certificates, ['certificate_ids', 'certificate_names'], kwargs)
         _process_references(certificate_groups, ['certificate_group_ids', 'certificate_group_names'], kwargs)
+        _process_references(certificates, ['certificate_ids', 'certificate_names'], kwargs)
         return self._call_api(endpoint, kwargs)
 
     def post_certificates_certificate_groups(
         self,
-        certificates=None,  # type: List[models.ReferenceType]
         certificate_groups=None,  # type: List[models.ReferenceType]
-        certificate_ids=None,  # type: List[str]
+        certificates=None,  # type: List[models.ReferenceType]
         certificate_group_ids=None,  # type: List[str]
         certificate_group_names=None,  # type: List[str]
+        certificate_ids=None,  # type: List[str]
         certificate_names=None,  # type: List[str]
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
@@ -4971,15 +4971,11 @@ class Client(object):
         Add one or more certificates to one or more certificate groups.
 
         Args:
-            certificates (list[FixedReference], optional):
-                A list of certificates to query for. Overrides certificate_ids and certificate_names keyword arguments.
             certificate_groups (list[FixedReference], optional):
                 A list of certificate_groups to query for. Overrides certificate_group_ids and certificate_group_names keyword arguments.
+            certificates (list[FixedReference], optional):
+                A list of certificates to query for. Overrides certificate_ids and certificate_names keyword arguments.
 
-            certificate_ids (list[str], optional):
-                A list of certificate ids. If there is not at least one resource that matches
-                each of the elements of `certificate_ids`, then an error is returned. This
-                cannot be provided in conjunction with the `certificate_names` parameter.
             certificate_group_ids (list[str], optional):
                 A list of certificate group ids. If there is not at least one resource that
                 matches each of the elements of `certificate_group_ids`, then an error is
@@ -4990,9 +4986,13 @@ class Client(object):
                 matches each of the elements of `certificate_group_names`, then an error is
                 returned. This cannot be provided in conjunction with the
                 `certificate_group_ids` parameter.
+            certificate_ids (list[str], optional):
+                A list of certificate ids. If there is not at least one resource that matches
+                each of the elements of `certificate_ids`, then an error is returned.  This
+                cannot be provided in conjunction with the `certificate_names` parameter.
             certificate_names (list[str], optional):
                 A list of certificate names. If there is not at least one resource that matches
-                each of the elements of `certificate_names`, then an error is returned. This
+                each of the elements of `certificate_names`, then an error is returned.  This
                 cannot be provided in conjunction with the `certificate_ids` parameter.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -5014,9 +5014,9 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
-            certificate_ids=certificate_ids,
             certificate_group_ids=certificate_group_ids,
             certificate_group_names=certificate_group_names,
+            certificate_ids=certificate_ids,
             certificate_names=certificate_names,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
@@ -5025,8 +5025,8 @@ class Client(object):
         )
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._certificates_api.api23_certificates_certificate_groups_post_with_http_info
-        _process_references(certificates, ['certificate_ids', 'certificate_names'], kwargs)
         _process_references(certificate_groups, ['certificate_group_ids', 'certificate_group_names'], kwargs)
+        _process_references(certificates, ['certificate_ids', 'certificate_names'], kwargs)
         return self._call_api(endpoint, kwargs)
 
     def delete_certificates(
@@ -5049,7 +5049,7 @@ class Client(object):
 
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -5115,7 +5115,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -5187,7 +5187,7 @@ class Client(object):
             certificate (CertificatePatch, required):
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -5308,7 +5308,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -5455,7 +5455,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -5526,7 +5526,7 @@ class Client(object):
             directory_service (DirectoryService, required):
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -5569,8 +5569,8 @@ class Client(object):
         references=None,  # type: List[models.ReferenceType]
         roles=None,  # type: List[models.ReferenceType]
         continuation_token=None,  # type: str
-        ids=None,  # type: List[str]
         filter=None,  # type: str
+        ids=None,  # type: List[str]
         limit=None,  # type: int
         offset=None,  # type: int
         role_ids=None,  # type: List[str]
@@ -5593,13 +5593,13 @@ class Client(object):
 
             continuation_token (str, optional):
                 An opaque token to iterate over a collection of resources.
-            ids (list[str], optional):
-                A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
-                cannot be provided together with the `role_names` or `role_ids` query
-                parameters.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
+            ids (list[str], optional):
+                A list of resource IDs. If after filtering, there is not at least one resource
+                that matches each of the elements of `ids`, then an error is returned.  This
+                cannot be provided together with the `role_names` or `role_ids` query
+                parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -5607,7 +5607,7 @@ class Client(object):
                 The offset of the first resource to return from a collection.
             role_ids (list[str], optional):
                 A list of role_ids. If after filtering, there is not at least one resource that
-                matches each of the elements of `role_ids`, then an error is returned. This
+                matches each of the elements of `role_ids`, then an error is returned.  This
                 cannot be provided together with the `ids` or `role_names` query parameters.
             role_names (list[str], optional):
                 A list of role_names. If there is not at least one resource that matches each of
@@ -5636,8 +5636,8 @@ class Client(object):
         """
         kwargs = dict(
             continuation_token=continuation_token,
-            ids=ids,
             filter=filter,
+            ids=ids,
             limit=limit,
             offset=offset,
             role_ids=role_ids,
@@ -5680,12 +5680,12 @@ class Client(object):
             directory_service_roles (DirectoryServiceRole, required):
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `role_names` or `role_ids` query
                 parameters.
             role_ids (list[str], optional):
                 A list of role_ids. If after filtering, there is not at least one resource that
-                matches each of the elements of `role_ids`, then an error is returned. This
+                matches each of the elements of `role_ids`, then an error is returned.  This
                 cannot be provided together with the `ids` or `role_names` query parameters.
             role_names (list[str], optional):
                 A list of role_names. If there is not at least one resource that matches each of
@@ -5751,7 +5751,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -5799,11 +5799,11 @@ class Client(object):
     def patch_directory_services_test(
         self,
         references=None,  # type: List[models.ReferenceType]
+        directory_service=None,  # type: models.DirectoryService
         filter=None,  # type: str
         ids=None,  # type: List[str]
         names=None,  # type: List[str]
         sort=None,  # type: List[str]
-        directory_service=None,  # type: models.DirectoryService
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -5819,21 +5819,21 @@ class Client(object):
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides ids and names keyword arguments.
 
+            directory_service (DirectoryService, optional):
+                An optional directory service configuration that, if provided, will be used to
+                overwrite aspects of the existing directory service objects when performing
+                tests.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
                 each of the elements of `names`, then an error is returned.
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
-            directory_service (DirectoryService, optional):
-                An optional directory service configuration that, if provided, will be used to
-                overwrite aspects of the existing directory service objects when performing
-                tests.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -5854,11 +5854,11 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
+            directory_service=directory_service,
             filter=filter,
             ids=ids,
             names=names,
             sort=sort,
-            directory_service=directory_service,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
             _preload_content=_preload_content,
@@ -5898,7 +5898,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -5969,7 +5969,7 @@ class Client(object):
             dns (Dns, required):
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -6050,7 +6050,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -6231,8 +6231,8 @@ class Client(object):
         local_file_systems=None,  # type: List[models.ReferenceType]
         members=None,  # type: List[models.ReferenceType]
         policies=None,  # type: List[models.ReferenceType]
-        remotes=None,  # type: List[models.ReferenceType]
         remote_file_systems=None,  # type: List[models.ReferenceType]
+        remotes=None,  # type: List[models.ReferenceType]
         continuation_token=None,  # type: str
         filter=None,  # type: str
         limit=None,  # type: int
@@ -6242,9 +6242,9 @@ class Client(object):
         offset=None,  # type: int
         policy_ids=None,  # type: List[str]
         policy_names=None,  # type: List[str]
-        remote_ids=None,  # type: List[str]
         remote_file_system_ids=None,  # type: List[str]
         remote_file_system_names=None,  # type: List[str]
+        remote_ids=None,  # type: List[str]
         remote_names=None,  # type: List[str]
         sort=None,  # type: List[str]
         async_req=False,  # type: bool
@@ -6263,10 +6263,10 @@ class Client(object):
                 A list of members to query for. Overrides member_ids keyword arguments.
             policies (list[FixedReference], optional):
                 A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
-            remotes (list[FixedReference], optional):
-                A list of remotes to query for. Overrides remote_ids and remote_names keyword arguments.
             remote_file_systems (list[FixedReference], optional):
                 A list of remote_file_systems to query for. Overrides remote_file_system_ids and remote_file_system_names keyword arguments.
+            remotes (list[FixedReference], optional):
+                A list of remotes to query for. Overrides remote_ids and remote_names keyword arguments.
 
             continuation_token (str, optional):
                 An opaque token to iterate over a collection of resources.
@@ -6295,10 +6295,6 @@ class Client(object):
                 This cannot be provided together with the `policy_names` query parameter.
             policy_names (list[str], optional):
                 A list of policy names.
-            remote_ids (list[str], optional):
-                A list of remote array IDs. If after filtering, there is not at least one
-                resource that matches each of the elements, then an error is returned. This
-                cannot be provided together with the `remote_names` query parameter.
             remote_file_system_ids (list[str], optional):
                 A list of remote file system IDs. If there is not at least one resource that
                 matches each of the elements, then an error is returned. This cannot be provided
@@ -6307,6 +6303,10 @@ class Client(object):
                 A list of remote file system names. If there is not at least one resource that
                 matches each of the elements, then an error is returned. This cannot be provided
                 together with the `remote_file_system_ids` query parameter.
+            remote_ids (list[str], optional):
+                A list of remote array IDs. If after filtering, there is not at least one
+                resource that matches each of the elements, then an error is returned. This
+                cannot be provided together with the `remote_names` query parameter.
             remote_names (list[str], optional):
                 A list of remote array names. If there is not at least one resource that matches
                 each of the elements, then an error is returned. This cannot be provided
@@ -6342,9 +6342,9 @@ class Client(object):
             offset=offset,
             policy_ids=policy_ids,
             policy_names=policy_names,
-            remote_ids=remote_ids,
             remote_file_system_ids=remote_file_system_ids,
             remote_file_system_names=remote_file_system_names,
+            remote_ids=remote_ids,
             remote_names=remote_names,
             sort=sort,
             async_req=async_req,
@@ -6357,8 +6357,8 @@ class Client(object):
         _process_references(local_file_systems, ['local_file_system_ids', 'local_file_system_names'], kwargs)
         _process_references(members, ['member_ids'], kwargs)
         _process_references(policies, ['policy_ids', 'policy_names'], kwargs)
-        _process_references(remotes, ['remote_ids', 'remote_names'], kwargs)
         _process_references(remote_file_systems, ['remote_file_system_ids', 'remote_file_system_names'], kwargs)
+        _process_references(remotes, ['remote_ids', 'remote_names'], kwargs)
         return self._call_api(endpoint, kwargs)
 
     def post_file_system_replica_links_policies(
@@ -6494,7 +6494,7 @@ class Client(object):
             file_system_replica_link (FileSystemReplicaLink, required):
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             local_file_system_ids (list[str], optional):
                 A list of local file system IDs. If after filtering, there is not at least one
@@ -6594,7 +6594,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -6679,7 +6679,7 @@ class Client(object):
 
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -6763,7 +6763,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -6848,7 +6848,7 @@ class Client(object):
             file_system_snapshot (FileSystemSnapshot, required):
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             latest_replica (bool, optional):
                 Used when destroying a snapshot. If not present or `false`, and the snapshot is
@@ -7055,11 +7055,11 @@ class Client(object):
     def post_file_system_snapshots(
         self,
         sources=None,  # type: List[models.ReferenceType]
+        file_system_snapshot=None,  # type: models.FileSystemSnapshotPost
+        send=None,  # type: bool
         source_ids=None,  # type: List[str]
         source_names=None,  # type: List[str]
-        send=None,  # type: bool
         targets=None,  # type: List[str]
-        file_system_snapshot=None,  # type: models.FileSystemSnapshotPost
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -7074,6 +7074,11 @@ class Client(object):
             sources (list[FixedReference], optional):
                 A list of sources to query for. Overrides source_ids and source_names keyword arguments.
 
+            file_system_snapshot (FileSystemSnapshotPost, optional):
+            send (bool, optional):
+                Whether to replicate created snapshots immediately to other arrays. If it's
+                `false`, created snapshots may still be replicated to other arrays according to
+                policy.
             source_ids (list[str], optional):
                 A list of source file system IDs. If after filtering, there is not at least one
                 resource that matches each of the elements of `source_ids`, then an error is
@@ -7083,14 +7088,9 @@ class Client(object):
                 A list of names for the source of the object. If there is not at least one
                 resource that matches each of the elements of `source_names`, an error is
                 returned.
-            send (bool, optional):
-                Whether to replicate created snapshots immediately to other arrays. If it's
-                `false`, created snapshots may still be replicated to other arrays according to
-                policy.
             targets (list[str], optional):
                 The target arrays to replicate created snapshots to. Only valid when `send` is
                 `true`.
-            file_system_snapshot (FileSystemSnapshotPost, optional):
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -7111,11 +7111,11 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
+            file_system_snapshot=file_system_snapshot,
+            send=send,
             source_ids=source_ids,
             source_names=source_names,
-            send=send,
             targets=targets,
-            file_system_snapshot=file_system_snapshot,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
             _preload_content=_preload_content,
@@ -7132,8 +7132,8 @@ class Client(object):
         remotes=None,  # type: List[models.ReferenceType]
         ids=None,  # type: List[str]
         names=None,  # type: List[str]
-        remote_names=None,  # type: List[str]
         remote_ids=None,  # type: List[str]
+        remote_names=None,  # type: List[str]
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -7147,23 +7147,23 @@ class Client(object):
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides ids and names keyword arguments.
             remotes (list[FixedReference], optional):
-                A list of remotes to query for. Overrides remote_names and remote_ids keyword arguments.
+                A list of remotes to query for. Overrides remote_ids and remote_names keyword arguments.
 
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
                 each of the elements of `names`, then an error is returned.
-            remote_names (list[str], optional):
-                A list of remote array names. If there is not at least one resource that matches
-                each of the elements, then an error is returned. This cannot be provided
-                together with `remote_ids` query parameter.
             remote_ids (list[str], optional):
                 A list of remote array IDs. If after filtering, there is not at least one
                 resource that matches each of the elements, then an error is returned. This
                 cannot be provided together with the `remote_names` query parameter.
+            remote_names (list[str], optional):
+                A list of remote array names. If there is not at least one resource that matches
+                each of the elements, then an error is returned. This cannot be provided
+                together with `remote_ids` query parameter.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -7186,8 +7186,8 @@ class Client(object):
         kwargs = dict(
             ids=ids,
             names=names,
-            remote_names=remote_names,
             remote_ids=remote_ids,
+            remote_names=remote_names,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
             _preload_content=_preload_content,
@@ -7196,7 +7196,7 @@ class Client(object):
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._file_system_snapshots_api.api23_file_system_snapshots_transfer_delete_with_http_info
         _process_references(references, ['ids', 'names'], kwargs)
-        _process_references(remotes, ['remote_names', 'remote_ids'], kwargs)
+        _process_references(remotes, ['remote_ids', 'remote_names'], kwargs)
         return self._call_api(endpoint, kwargs)
 
     def get_file_system_snapshots_transfer(
@@ -7232,7 +7232,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -7308,7 +7308,7 @@ class Client(object):
 
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -7385,7 +7385,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -7565,7 +7565,7 @@ class Client(object):
             delete_link_on_eradication (bool, optional):
                 If set to `true`, the file system can be destroyed, even if it has a replica
                 link. If set to `false`, the file system cannot be destroyed if it has a replica
-                link. Defaults to `false`.
+                link.  Defaults to `false`.
             discard_detailed_permissions (bool, optional):
                 This parameter must be set to `true` in order to change a file system's
                 `access_control_style` from a style that supports more detailed access control
@@ -7583,7 +7583,7 @@ class Client(object):
                 lost.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             ignore_usage (bool, optional):
                 Allow update operations that lead to a `hard_limit_enabled` file system with
@@ -7666,7 +7666,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -8059,8 +8059,8 @@ class Client(object):
     def post_file_systems(
         self,
         references=None,  # type: List[models.ReferenceType]
-        names=None,  # type: List[str]
         file_system=None,  # type: models.FileSystemPost
+        names=None,  # type: List[str]
         discard_non_snapshotted_data=None,  # type: bool
         overwrite=None,  # type: bool
         async_req=False,  # type: bool
@@ -8076,9 +8076,9 @@ class Client(object):
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides names keyword arguments.
 
+            file_system (FileSystemPost, required):
             names (list[str], required):
                 A list of resource names.
-            file_system (FileSystemPost, required):
             discard_non_snapshotted_data (bool, optional):
                 This parameter must be set to `true` in order to restore a file system from a
                 snapshot or to demote a file system (which restores the file system from the
@@ -8107,8 +8107,8 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
-            names=names,
             file_system=file_system,
+            names=names,
             discard_non_snapshotted_data=discard_non_snapshotted_data,
             overwrite=overwrite,
             async_req=async_req,
@@ -8223,11 +8223,11 @@ class Client(object):
     def get_hardware(
         self,
         references=None,  # type: List[models.ReferenceType]
-        ids=None,  # type: List[str]
-        names=None,  # type: List[str]
         continuation_token=None,  # type: str
         filter=None,  # type: str
+        ids=None,  # type: List[str]
         limit=None,  # type: int
+        names=None,  # type: List[str]
         offset=None,  # type: int
         sort=None,  # type: List[str]
         async_req=False,  # type: bool
@@ -8243,20 +8243,20 @@ class Client(object):
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides ids and names keyword arguments.
 
-            ids (list[str], optional):
-                A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
-                cannot be provided together with the `name` or `names` query parameters.
-            names (list[str], optional):
-                A list of resource names. If there is not at least one resource that matches
-                each of the elements of `names`, then an error is returned.
             continuation_token (str, optional):
                 An opaque token to iterate over a collection of resources.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
+            ids (list[str], optional):
+                A list of resource IDs. If after filtering, there is not at least one resource
+                that matches each of the elements of `ids`, then an error is returned.  This
+                cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
+            names (list[str], optional):
+                A list of resource names. If there is not at least one resource that matches
+                each of the elements of `names`, then an error is returned.
             offset (int, optional):
                 The offset of the first resource to return from a collection.
             sort (list[Property], optional):
@@ -8281,11 +8281,11 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
-            ids=ids,
-            names=names,
             continuation_token=continuation_token,
             filter=filter,
+            ids=ids,
             limit=limit,
+            names=names,
             offset=offset,
             sort=sort,
             async_req=async_req,
@@ -8320,7 +8320,7 @@ class Client(object):
             hardware (Hardware, required):
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -8361,11 +8361,11 @@ class Client(object):
     def get_hardware_connectors(
         self,
         references=None,  # type: List[models.ReferenceType]
-        ids=None,  # type: List[str]
-        names=None,  # type: List[str]
         continuation_token=None,  # type: str
         filter=None,  # type: str
+        ids=None,  # type: List[str]
         limit=None,  # type: int
+        names=None,  # type: List[str]
         offset=None,  # type: int
         sort=None,  # type: List[str]
         async_req=False,  # type: bool
@@ -8381,20 +8381,20 @@ class Client(object):
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides ids and names keyword arguments.
 
-            ids (list[str], optional):
-                A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
-                cannot be provided together with the `name` or `names` query parameters.
-            names (list[str], optional):
-                A list of resource names. If there is not at least one resource that matches
-                each of the elements of `names`, then an error is returned.
             continuation_token (str, optional):
                 An opaque token to iterate over a collection of resources.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
+            ids (list[str], optional):
+                A list of resource IDs. If after filtering, there is not at least one resource
+                that matches each of the elements of `ids`, then an error is returned.  This
+                cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
+            names (list[str], optional):
+                A list of resource names. If there is not at least one resource that matches
+                each of the elements of `names`, then an error is returned.
             offset (int, optional):
                 The offset of the first resource to return from a collection.
             sort (list[Property], optional):
@@ -8419,11 +8419,11 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
-            ids=ids,
-            names=names,
             continuation_token=continuation_token,
             filter=filter,
+            ids=ids,
             limit=limit,
+            names=names,
             offset=offset,
             sort=sort,
             async_req=async_req,
@@ -8458,7 +8458,7 @@ class Client(object):
             hardware_connector (HardwareConnector, required):
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -8529,7 +8529,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -8610,7 +8610,7 @@ class Client(object):
 
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -8735,7 +8735,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -8836,7 +8836,7 @@ class Client(object):
 
     def post_keytabs_upload(
         self,
-        keytab_file=None,  # type: str
+        error_unknown=None,  # type: str
         name_prefixes=None,  # type: str
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
@@ -8852,7 +8852,7 @@ class Client(object):
 
         Args:
 
-            keytab_file (str, required):
+            error_unknown (str, optional):
                 The keytab file to upload.
             name_prefixes (str, optional):
                 The prefix to use for the names of all Kerberos keytab objects that are being
@@ -8877,7 +8877,7 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
-            keytab_file=keytab_file,
+            error_unknown=error_unknown,
             name_prefixes=name_prefixes,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
@@ -8891,8 +8891,8 @@ class Client(object):
     def delete_kmip(
         self,
         references=None,  # type: List[models.ReferenceType]
-        names=None,  # type: List[str]
         ids=None,  # type: List[str]
+        names=None,  # type: List[str]
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -8905,15 +8905,15 @@ class Client(object):
 
         Args:
             references (list[FixedReference], optional):
-                A list of references to query for. Overrides names and ids keyword arguments.
+                A list of references to query for. Overrides ids and names keyword arguments.
 
+            ids (list[str], optional):
+                A list of resource IDs. If after filtering, there is not at least one resource
+                that matches each of the elements of `ids`, then an error is returned.  This
+                cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
                 each of the elements of `names`, then an error is returned.
-            ids (list[str], optional):
-                A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
-                cannot be provided together with the `name` or `names` query parameters.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -8934,8 +8934,8 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
-            names=names,
             ids=ids,
+            names=names,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
             _preload_content=_preload_content,
@@ -8943,19 +8943,19 @@ class Client(object):
         )
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._kmip_api.api23_kmip_delete_with_http_info
-        _process_references(references, ['names', 'ids'], kwargs)
+        _process_references(references, ['ids', 'names'], kwargs)
         return self._call_api(endpoint, kwargs)
 
     def get_kmip(
         self,
         references=None,  # type: List[models.ReferenceType]
-        names=None,  # type: List[str]
-        ids=None,  # type: List[str]
+        continuation_token=None,  # type: str
         filter=None,  # type: str
+        ids=None,  # type: List[str]
         limit=None,  # type: int
+        names=None,  # type: List[str]
         offset=None,  # type: int
         sort=None,  # type: List[str]
-        continuation_token=None,  # type: str
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -8967,26 +8967,26 @@ class Client(object):
 
         Args:
             references (list[FixedReference], optional):
-                A list of references to query for. Overrides names and ids keyword arguments.
+                A list of references to query for. Overrides ids and names keyword arguments.
 
-            names (list[str], optional):
-                A list of resource names. If there is not at least one resource that matches
-                each of the elements of `names`, then an error is returned.
-            ids (list[str], optional):
-                A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
-                cannot be provided together with the `name` or `names` query parameters.
+            continuation_token (str, optional):
+                An opaque token to iterate over a collection of resources.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
+            ids (list[str], optional):
+                A list of resource IDs. If after filtering, there is not at least one resource
+                that matches each of the elements of `ids`, then an error is returned.  This
+                cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
+            names (list[str], optional):
+                A list of resource names. If there is not at least one resource that matches
+                each of the elements of `names`, then an error is returned.
             offset (int, optional):
                 The offset of the first resource to return from a collection.
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
-            continuation_token (str, optional):
-                An opaque token to iterate over a collection of resources.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -9007,13 +9007,13 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
-            names=names,
-            ids=ids,
+            continuation_token=continuation_token,
             filter=filter,
+            ids=ids,
             limit=limit,
+            names=names,
             offset=offset,
             sort=sort,
-            continuation_token=continuation_token,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
             _preload_content=_preload_content,
@@ -9021,15 +9021,15 @@ class Client(object):
         )
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._kmip_api.api23_kmip_get_with_http_info
-        _process_references(references, ['names', 'ids'], kwargs)
+        _process_references(references, ['ids', 'names'], kwargs)
         return self._call_api(endpoint, kwargs)
 
     def patch_kmip(
         self,
         references=None,  # type: List[models.ReferenceType]
         kmip_server=None,  # type: models.KmipServer
-        names=None,  # type: List[str]
         ids=None,  # type: List[str]
+        names=None,  # type: List[str]
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -9041,16 +9041,16 @@ class Client(object):
 
         Args:
             references (list[FixedReference], optional):
-                A list of references to query for. Overrides names and ids keyword arguments.
+                A list of references to query for. Overrides ids and names keyword arguments.
 
             kmip_server (KmipServer, required):
+            ids (list[str], optional):
+                A list of resource IDs. If after filtering, there is not at least one resource
+                that matches each of the elements of `ids`, then an error is returned.  This
+                cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
                 each of the elements of `names`, then an error is returned.
-            ids (list[str], optional):
-                A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
-                cannot be provided together with the `name` or `names` query parameters.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -9072,8 +9072,8 @@ class Client(object):
         """
         kwargs = dict(
             kmip_server=kmip_server,
-            names=names,
             ids=ids,
+            names=names,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
             _preload_content=_preload_content,
@@ -9081,7 +9081,7 @@ class Client(object):
         )
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._kmip_api.api23_kmip_patch_with_http_info
-        _process_references(references, ['names', 'ids'], kwargs)
+        _process_references(references, ['ids', 'names'], kwargs)
         return self._call_api(endpoint, kwargs)
 
     def post_kmip(
@@ -9141,8 +9141,8 @@ class Client(object):
     def get_kmip_test(
         self,
         references=None,  # type: List[models.ReferenceType]
-        names=None,  # type: List[str]
         ids=None,  # type: List[str]
+        names=None,  # type: List[str]
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -9154,15 +9154,15 @@ class Client(object):
 
         Args:
             references (list[FixedReference], optional):
-                A list of references to query for. Overrides names and ids keyword arguments.
+                A list of references to query for. Overrides ids and names keyword arguments.
 
+            ids (list[str], optional):
+                A list of resource IDs. If after filtering, there is not at least one resource
+                that matches each of the elements of `ids`, then an error is returned.  This
+                cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
                 each of the elements of `names`, then an error is returned.
-            ids (list[str], optional):
-                A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
-                cannot be provided together with the `name` or `names` query parameters.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -9183,8 +9183,8 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
-            names=names,
             ids=ids,
+            names=names,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
             _preload_content=_preload_content,
@@ -9192,7 +9192,7 @@ class Client(object):
         )
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._kmip_api.api23_kmip_test_get_with_http_info
-        _process_references(references, ['names', 'ids'], kwargs)
+        _process_references(references, ['ids', 'names'], kwargs)
         return self._call_api(endpoint, kwargs)
 
     def delete_lifecycle_rules(
@@ -9233,7 +9233,7 @@ class Client(object):
                 with the `ids` query parameter but not with `names`.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -9320,7 +9320,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -9379,9 +9379,9 @@ class Client(object):
         lifecycle=None,  # type: models.LifecycleRulePatch
         bucket_ids=None,  # type: List[str]
         bucket_names=None,  # type: List[str]
+        confirm_date=None,  # type: bool
         ids=None,  # type: List[str]
         names=None,  # type: List[str]
-        confirm_date=None,  # type: bool
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -9409,16 +9409,16 @@ class Client(object):
                 of the elements of `bucket_names`, then an error is returned. This cannot be
                 provided together with the `bucket_ids` query parameter. This can be provided
                 with the `ids` query parameter but not with `names`.
+            confirm_date (bool, optional):
+                If set to `true`, then confirm the date of `keep_current_version_until` is
+                correct.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
                 each of the elements of `names`, then an error is returned.
-            confirm_date (bool, optional):
-                If set to `true`, then confirm the date of `keep_current_version_until` is
-                correct.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -9442,9 +9442,9 @@ class Client(object):
             lifecycle=lifecycle,
             bucket_ids=bucket_ids,
             bucket_names=bucket_names,
+            confirm_date=confirm_date,
             ids=ids,
             names=names,
-            confirm_date=confirm_date,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
             _preload_content=_preload_content,
@@ -9528,7 +9528,7 @@ class Client(object):
 
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -9595,7 +9595,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -9666,7 +9666,7 @@ class Client(object):
             link_aggregation_group (Linkaggregationgroup, required):
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -9829,7 +9829,7 @@ class Client(object):
 
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -9895,7 +9895,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -9966,7 +9966,7 @@ class Client(object):
             network_interface (NetworkInterfacePatch, required):
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -10183,8 +10183,8 @@ class Client(object):
     def patch_object_store_access_keys(
         self,
         references=None,  # type: List[models.ReferenceType]
-        names=None,  # type: List[str]
         object_store_access_key=None,  # type: models.ObjectStoreAccessKey
+        names=None,  # type: List[str]
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -10198,9 +10198,9 @@ class Client(object):
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides names keyword arguments.
 
+            object_store_access_key (ObjectStoreAccessKey, required):
             names (list[str], required):
                 A list of resource names.
-            object_store_access_key (ObjectStoreAccessKey, required):
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -10221,8 +10221,8 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
-            names=names,
             object_store_access_key=object_store_access_key,
+            names=names,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
             _preload_content=_preload_content,
@@ -10308,7 +10308,7 @@ class Client(object):
 
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -10375,7 +10375,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -10498,7 +10498,7 @@ class Client(object):
 
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -10565,7 +10565,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -10637,7 +10637,7 @@ class Client(object):
             remote_credentials (ObjectStoreRemoteCredentials, required):
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -10678,8 +10678,8 @@ class Client(object):
     def post_object_store_remote_credentials(
         self,
         references=None,  # type: List[models.ReferenceType]
-        names=None,  # type: List[str]
         remote_credentials=None,  # type: models.ObjectStoreRemoteCredentialsPost
+        names=None,  # type: List[str]
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -10694,9 +10694,9 @@ class Client(object):
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides names keyword arguments.
 
+            remote_credentials (ObjectStoreRemoteCredentialsPost, required):
             names (list[str], required):
                 A list of resource names.
-            remote_credentials (ObjectStoreRemoteCredentialsPost, required):
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -10717,8 +10717,8 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
-            names=names,
             remote_credentials=remote_credentials,
+            names=names,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
             _preload_content=_preload_content,
@@ -10749,7 +10749,7 @@ class Client(object):
 
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -10815,7 +10815,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -11172,7 +11172,7 @@ class Client(object):
 
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -11238,7 +11238,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -11362,7 +11362,7 @@ class Client(object):
 
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -11434,7 +11434,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -11506,7 +11506,7 @@ class Client(object):
             policy (NfsExportPolicy, required):
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -11625,7 +11625,7 @@ class Client(object):
 
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -11703,7 +11703,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -11796,7 +11796,7 @@ class Client(object):
                 together with the `before_rule_id` query parameter.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -11860,8 +11860,8 @@ class Client(object):
         """
         Add a NFS export policy rule. Rules are ordered in three groups; ip addresses,
         other and `*`. The new rule will be added at the end of the appropriate group if
-        neither `before_rule_id` and `before_rule_name` are specified. Rules can only be
-        inserted into the appropriate group. Either `policy_ids` or `policy_names`
+        neither  `before_rule_id` and `before_rule_name` are specified. Rules can only
+        be inserted into the appropriate group. Either `policy_ids` or `policy_names`
         parameter is required.
 
         Args:
@@ -11942,7 +11942,7 @@ class Client(object):
 
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -12008,7 +12008,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -12291,10 +12291,10 @@ class Client(object):
     def patch_object_store_access_policies(
         self,
         references=None,  # type: List[models.ReferenceType]
+        policy=None,  # type: models.ObjectStoreAccessPolicyPatch
         enforce_action_restrictions=None,  # type: bool
         ids=None,  # type: List[str]
         names=None,  # type: List[str]
-        policy=None,  # type: models.ObjectStoreAccessPolicyPatch
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -12308,6 +12308,7 @@ class Client(object):
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides ids and names keyword arguments.
 
+            policy (ObjectStoreAccessPolicyPatch, optional):
             enforce_action_restrictions (bool, optional):
                 Certain combinations of actions and other rule elements are inherently ignored
                 if specified together in a rule. If set to `true`, operations which attempt to
@@ -12315,12 +12316,11 @@ class Client(object):
                 instead be allowed. Defaults to `true`.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
                 each of the elements of `names`, then an error is returned.
-            policy (ObjectStoreAccessPolicyPatch, optional):
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -12341,10 +12341,10 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
+            policy=policy,
             enforce_action_restrictions=enforce_action_restrictions,
             ids=ids,
             names=names,
-            policy=policy,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
             _preload_content=_preload_content,
@@ -12359,8 +12359,8 @@ class Client(object):
         self,
         references=None,  # type: List[models.ReferenceType]
         names=None,  # type: List[str]
-        enforce_action_restrictions=None,  # type: bool
         policy=None,  # type: models.ObjectStoreAccessPolicyPost
+        enforce_action_restrictions=None,  # type: bool
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -12376,12 +12376,12 @@ class Client(object):
 
             names (list[str], required):
                 A list of resource names.
+            policy (ObjectStoreAccessPolicyPost, optional):
             enforce_action_restrictions (bool, optional):
                 Certain combinations of actions and other rule elements are inherently ignored
                 if specified together in a rule. If set to `true`, operations which attempt to
                 set these combinations will fail. If set to `false`, such operations will
                 instead be allowed. Defaults to `true`.
-            policy (ObjectStoreAccessPolicyPost, optional):
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -12403,8 +12403,8 @@ class Client(object):
         """
         kwargs = dict(
             names=names,
-            enforce_action_restrictions=enforce_action_restrictions,
             policy=policy,
+            enforce_action_restrictions=enforce_action_restrictions,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
             _preload_content=_preload_content,
@@ -12645,8 +12645,8 @@ class Client(object):
         self,
         references=None,  # type: List[models.ReferenceType]
         policies=None,  # type: List[models.ReferenceType]
-        names=None,  # type: List[str]
         rule=None,  # type: models.PolicyRuleObjectAccessPost
+        names=None,  # type: List[str]
         enforce_action_restrictions=None,  # type: bool
         policy_ids=None,  # type: List[str]
         policy_names=None,  # type: List[str]
@@ -12665,9 +12665,9 @@ class Client(object):
             policies (list[FixedReference], optional):
                 A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
 
+            rule (PolicyRuleObjectAccessPost, required):
             names (list[str], required):
                 A list of resource names.
-            rule (PolicyRuleObjectAccessPost, required):
             enforce_action_restrictions (bool, optional):
                 Certain combinations of actions and other rule elements are inherently ignored
                 if specified together in a rule. If set to `true`, operations which attempt to
@@ -12699,8 +12699,8 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
-            names=names,
             rule=rule,
+            names=names,
             enforce_action_restrictions=enforce_action_restrictions,
             policy_ids=policy_ids,
             policy_names=policy_names,
@@ -12810,7 +12810,7 @@ class Client(object):
 
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -12950,8 +12950,8 @@ class Client(object):
         local_file_systems=None,  # type: List[models.ReferenceType]
         members=None,  # type: List[models.ReferenceType]
         policies=None,  # type: List[models.ReferenceType]
-        remotes=None,  # type: List[models.ReferenceType]
         remote_file_systems=None,  # type: List[models.ReferenceType]
+        remotes=None,  # type: List[models.ReferenceType]
         continuation_token=None,  # type: str
         filter=None,  # type: str
         limit=None,  # type: int
@@ -12961,9 +12961,9 @@ class Client(object):
         offset=None,  # type: int
         policy_ids=None,  # type: List[str]
         policy_names=None,  # type: List[str]
-        remote_ids=None,  # type: List[str]
         remote_file_system_ids=None,  # type: List[str]
         remote_file_system_names=None,  # type: List[str]
+        remote_ids=None,  # type: List[str]
         remote_names=None,  # type: List[str]
         sort=None,  # type: List[str]
         async_req=False,  # type: bool
@@ -12982,10 +12982,10 @@ class Client(object):
                 A list of members to query for. Overrides member_ids keyword arguments.
             policies (list[FixedReference], optional):
                 A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
-            remotes (list[FixedReference], optional):
-                A list of remotes to query for. Overrides remote_ids and remote_names keyword arguments.
             remote_file_systems (list[FixedReference], optional):
                 A list of remote_file_systems to query for. Overrides remote_file_system_ids and remote_file_system_names keyword arguments.
+            remotes (list[FixedReference], optional):
+                A list of remotes to query for. Overrides remote_ids and remote_names keyword arguments.
 
             continuation_token (str, optional):
                 An opaque token to iterate over a collection of resources.
@@ -13014,10 +13014,6 @@ class Client(object):
                 This cannot be provided together with the `policy_names` query parameter.
             policy_names (list[str], optional):
                 A list of policy names.
-            remote_ids (list[str], optional):
-                A list of remote array IDs. If after filtering, there is not at least one
-                resource that matches each of the elements, then an error is returned. This
-                cannot be provided together with the `remote_names` query parameter.
             remote_file_system_ids (list[str], optional):
                 A list of remote file system IDs. If there is not at least one resource that
                 matches each of the elements, then an error is returned. This cannot be provided
@@ -13026,6 +13022,10 @@ class Client(object):
                 A list of remote file system names. If there is not at least one resource that
                 matches each of the elements, then an error is returned. This cannot be provided
                 together with the `remote_file_system_ids` query parameter.
+            remote_ids (list[str], optional):
+                A list of remote array IDs. If after filtering, there is not at least one
+                resource that matches each of the elements, then an error is returned. This
+                cannot be provided together with the `remote_names` query parameter.
             remote_names (list[str], optional):
                 A list of remote array names. If there is not at least one resource that matches
                 each of the elements, then an error is returned. This cannot be provided
@@ -13061,9 +13061,9 @@ class Client(object):
             offset=offset,
             policy_ids=policy_ids,
             policy_names=policy_names,
-            remote_ids=remote_ids,
             remote_file_system_ids=remote_file_system_ids,
             remote_file_system_names=remote_file_system_names,
+            remote_ids=remote_ids,
             remote_names=remote_names,
             sort=sort,
             async_req=async_req,
@@ -13076,8 +13076,8 @@ class Client(object):
         _process_references(local_file_systems, ['local_file_system_ids', 'local_file_system_names'], kwargs)
         _process_references(members, ['member_ids'], kwargs)
         _process_references(policies, ['policy_ids', 'policy_names'], kwargs)
-        _process_references(remotes, ['remote_ids', 'remote_names'], kwargs)
         _process_references(remote_file_systems, ['remote_file_system_ids', 'remote_file_system_names'], kwargs)
+        _process_references(remotes, ['remote_ids', 'remote_names'], kwargs)
         return self._call_api(endpoint, kwargs)
 
     def post_policies_file_system_replica_links(
@@ -13599,7 +13599,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -13653,8 +13653,8 @@ class Client(object):
         local_file_systems=None,  # type: List[models.ReferenceType]
         members=None,  # type: List[models.ReferenceType]
         policies=None,  # type: List[models.ReferenceType]
-        remotes=None,  # type: List[models.ReferenceType]
         remote_file_systems=None,  # type: List[models.ReferenceType]
+        remotes=None,  # type: List[models.ReferenceType]
         continuation_token=None,  # type: str
         filter=None,  # type: str
         limit=None,  # type: int
@@ -13666,9 +13666,9 @@ class Client(object):
         offset=None,  # type: int
         policy_ids=None,  # type: List[str]
         policy_names=None,  # type: List[str]
-        remote_ids=None,  # type: List[str]
         remote_file_system_ids=None,  # type: List[str]
         remote_file_system_names=None,  # type: List[str]
+        remote_ids=None,  # type: List[str]
         remote_names=None,  # type: List[str]
         sort=None,  # type: List[str]
         async_req=False,  # type: bool
@@ -13688,10 +13688,10 @@ class Client(object):
                 A list of members to query for. Overrides member_ids and member_names keyword arguments.
             policies (list[FixedReference], optional):
                 A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
-            remotes (list[FixedReference], optional):
-                A list of remotes to query for. Overrides remote_ids and remote_names keyword arguments.
             remote_file_systems (list[FixedReference], optional):
                 A list of remote_file_systems to query for. Overrides remote_file_system_ids and remote_file_system_names keyword arguments.
+            remotes (list[FixedReference], optional):
+                A list of remotes to query for. Overrides remote_ids and remote_names keyword arguments.
 
             continuation_token (str, optional):
                 An opaque token to iterate over a collection of resources.
@@ -13726,10 +13726,6 @@ class Client(object):
                 This cannot be provided together with the `policy_names` query parameter.
             policy_names (list[str], optional):
                 A list of policy names.
-            remote_ids (list[str], optional):
-                A list of remote array IDs. If after filtering, there is not at least one
-                resource that matches each of the elements, then an error is returned. This
-                cannot be provided together with the `remote_names` query parameter.
             remote_file_system_ids (list[str], optional):
                 A list of remote file system IDs. If there is not at least one resource that
                 matches each of the elements, then an error is returned. This cannot be provided
@@ -13738,6 +13734,10 @@ class Client(object):
                 A list of remote file system names. If there is not at least one resource that
                 matches each of the elements, then an error is returned. This cannot be provided
                 together with the `remote_file_system_ids` query parameter.
+            remote_ids (list[str], optional):
+                A list of remote array IDs. If after filtering, there is not at least one
+                resource that matches each of the elements, then an error is returned. This
+                cannot be provided together with the `remote_names` query parameter.
             remote_names (list[str], optional):
                 A list of remote array names. If there is not at least one resource that matches
                 each of the elements, then an error is returned. This cannot be provided
@@ -13775,9 +13775,9 @@ class Client(object):
             offset=offset,
             policy_ids=policy_ids,
             policy_names=policy_names,
-            remote_ids=remote_ids,
             remote_file_system_ids=remote_file_system_ids,
             remote_file_system_names=remote_file_system_names,
+            remote_ids=remote_ids,
             remote_names=remote_names,
             sort=sort,
             async_req=async_req,
@@ -13790,16 +13790,16 @@ class Client(object):
         _process_references(local_file_systems, ['local_file_system_ids', 'local_file_system_names'], kwargs)
         _process_references(members, ['member_ids', 'member_names'], kwargs)
         _process_references(policies, ['policy_ids', 'policy_names'], kwargs)
-        _process_references(remotes, ['remote_ids', 'remote_names'], kwargs)
         _process_references(remote_file_systems, ['remote_file_system_ids', 'remote_file_system_names'], kwargs)
+        _process_references(remotes, ['remote_ids', 'remote_names'], kwargs)
         return self._call_api(endpoint, kwargs)
 
     def patch_policies(
         self,
         references=None,  # type: List[models.ReferenceType]
         policy=None,  # type: models.PolicyPatch
-        ids=None,  # type: List[str]
         destroy_snapshots=None,  # type: bool
+        ids=None,  # type: List[str]
         names=None,  # type: List[str]
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
@@ -13816,13 +13816,13 @@ class Client(object):
                 A list of references to query for. Overrides ids and names keyword arguments.
 
             policy (PolicyPatch, required):
-            ids (list[str], optional):
-                A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
-                cannot be provided together with the `name` or `names` query parameters.
             destroy_snapshots (bool, optional):
                 This parameter must be set to `true` in order to modify a policy such that local
                 or remote snapshots would be destroyed.
+            ids (list[str], optional):
+                A list of resource IDs. If after filtering, there is not at least one resource
+                that matches each of the elements of `ids`, then an error is returned.  This
+                cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
                 each of the elements of `names`, then an error is returned.
@@ -13847,8 +13847,8 @@ class Client(object):
         """
         kwargs = dict(
             policy=policy,
-            ids=ids,
             destroy_snapshots=destroy_snapshots,
+            ids=ids,
             names=names,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
@@ -13944,7 +13944,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -13998,8 +13998,8 @@ class Client(object):
         local_file_systems=None,  # type: List[models.ReferenceType]
         members=None,  # type: List[models.ReferenceType]
         policies=None,  # type: List[models.ReferenceType]
-        remotes=None,  # type: List[models.ReferenceType]
         remote_file_systems=None,  # type: List[models.ReferenceType]
+        remotes=None,  # type: List[models.ReferenceType]
         continuation_token=None,  # type: str
         filter=None,  # type: str
         limit=None,  # type: int
@@ -14011,9 +14011,9 @@ class Client(object):
         offset=None,  # type: int
         policy_ids=None,  # type: List[str]
         policy_names=None,  # type: List[str]
-        remote_ids=None,  # type: List[str]
         remote_file_system_ids=None,  # type: List[str]
         remote_file_system_names=None,  # type: List[str]
+        remote_ids=None,  # type: List[str]
         remote_names=None,  # type: List[str]
         sort=None,  # type: List[str]
         async_req=False,  # type: bool
@@ -14033,10 +14033,10 @@ class Client(object):
                 A list of members to query for. Overrides member_ids and member_names keyword arguments.
             policies (list[FixedReference], optional):
                 A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
-            remotes (list[FixedReference], optional):
-                A list of remotes to query for. Overrides remote_ids and remote_names keyword arguments.
             remote_file_systems (list[FixedReference], optional):
                 A list of remote_file_systems to query for. Overrides remote_file_system_ids and remote_file_system_names keyword arguments.
+            remotes (list[FixedReference], optional):
+                A list of remotes to query for. Overrides remote_ids and remote_names keyword arguments.
 
             continuation_token (str, optional):
                 An opaque token to iterate over a collection of resources.
@@ -14071,10 +14071,6 @@ class Client(object):
                 This cannot be provided together with the `policy_names` query parameter.
             policy_names (list[str], optional):
                 A list of policy names.
-            remote_ids (list[str], optional):
-                A list of remote array IDs. If after filtering, there is not at least one
-                resource that matches each of the elements, then an error is returned. This
-                cannot be provided together with the `remote_names` query parameter.
             remote_file_system_ids (list[str], optional):
                 A list of remote file system IDs. If there is not at least one resource that
                 matches each of the elements, then an error is returned. This cannot be provided
@@ -14083,6 +14079,10 @@ class Client(object):
                 A list of remote file system names. If there is not at least one resource that
                 matches each of the elements, then an error is returned. This cannot be provided
                 together with the `remote_file_system_ids` query parameter.
+            remote_ids (list[str], optional):
+                A list of remote array IDs. If after filtering, there is not at least one
+                resource that matches each of the elements, then an error is returned. This
+                cannot be provided together with the `remote_names` query parameter.
             remote_names (list[str], optional):
                 A list of remote array names. If there is not at least one resource that matches
                 each of the elements, then an error is returned. This cannot be provided
@@ -14120,9 +14120,9 @@ class Client(object):
             offset=offset,
             policy_ids=policy_ids,
             policy_names=policy_names,
-            remote_ids=remote_ids,
             remote_file_system_ids=remote_file_system_ids,
             remote_file_system_names=remote_file_system_names,
+            remote_ids=remote_ids,
             remote_names=remote_names,
             sort=sort,
             async_req=async_req,
@@ -14135,8 +14135,8 @@ class Client(object):
         _process_references(local_file_systems, ['local_file_system_ids', 'local_file_system_names'], kwargs)
         _process_references(members, ['member_ids', 'member_names'], kwargs)
         _process_references(policies, ['policy_ids', 'policy_names'], kwargs)
-        _process_references(remotes, ['remote_ids', 'remote_names'], kwargs)
         _process_references(remote_file_systems, ['remote_file_system_ids', 'remote_file_system_names'], kwargs)
+        _process_references(remotes, ['remote_ids', 'remote_names'], kwargs)
         return self._call_api(endpoint, kwargs)
 
     def delete_quotas_groups(
@@ -14144,8 +14144,8 @@ class Client(object):
         file_systems=None,  # type: List[models.ReferenceType]
         groups=None,  # type: List[models.ReferenceType]
         references=None,  # type: List[models.ReferenceType]
-        file_system_names=None,  # type: List[str]
         file_system_ids=None,  # type: List[str]
+        file_system_names=None,  # type: List[str]
         gids=None,  # type: List[int]
         group_names=None,  # type: List[str]
         names=None,  # type: List[str]
@@ -14160,20 +14160,20 @@ class Client(object):
 
         Args:
             file_systems (list[FixedReference], optional):
-                A list of file_systems to query for. Overrides file_system_names and file_system_ids keyword arguments.
+                A list of file_systems to query for. Overrides file_system_ids and file_system_names keyword arguments.
             groups (list[FixedReference], optional):
                 A list of groups to query for. Overrides group_names keyword arguments.
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides names keyword arguments.
 
-            file_system_names (list[str], optional):
-                A list of file system names. If there is not at least one resource that matches
-                each of the elements of `file_system_names`, then an error is returned.
             file_system_ids (list[str], optional):
                 A list of file system IDs. If after filtering, there is not at least one
                 resource that matches each of the elements of `file_system_ids`, then an error
                 is returned. This cannot be provided together with the `file_system_names` query
                 parameter.
+            file_system_names (list[str], optional):
+                A list of file system names. If there is not at least one resource that matches
+                each of the elements of `file_system_names`, then an error is returned.
             gids (list[int], optional):
                 A list of group IDs. If there is not at least one resource that matches each of
                 the elements of `gids`, then an error is returned. This cannot be provided
@@ -14205,8 +14205,8 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
-            file_system_names=file_system_names,
             file_system_ids=file_system_ids,
+            file_system_names=file_system_names,
             gids=gids,
             group_names=group_names,
             names=names,
@@ -14217,7 +14217,7 @@ class Client(object):
         )
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._quotas_api.api23_quotas_groups_delete_with_http_info
-        _process_references(file_systems, ['file_system_names', 'file_system_ids'], kwargs)
+        _process_references(file_systems, ['file_system_ids', 'file_system_names'], kwargs)
         _process_references(groups, ['group_names'], kwargs)
         _process_references(references, ['names'], kwargs)
         return self._call_api(endpoint, kwargs)
@@ -14331,12 +14331,12 @@ class Client(object):
         file_systems=None,  # type: List[models.ReferenceType]
         groups=None,  # type: List[models.ReferenceType]
         references=None,  # type: List[models.ReferenceType]
-        file_system_names=None,  # type: List[str]
+        quota=None,  # type: models.GroupQuotaPatch
         file_system_ids=None,  # type: List[str]
+        file_system_names=None,  # type: List[str]
         gids=None,  # type: List[int]
         group_names=None,  # type: List[str]
         names=None,  # type: List[str]
-        quota=None,  # type: models.GroupQuotaPatch
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -14350,20 +14350,21 @@ class Client(object):
 
         Args:
             file_systems (list[FixedReference], optional):
-                A list of file_systems to query for. Overrides file_system_names and file_system_ids keyword arguments.
+                A list of file_systems to query for. Overrides file_system_ids and file_system_names keyword arguments.
             groups (list[FixedReference], optional):
                 A list of groups to query for. Overrides group_names keyword arguments.
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides names keyword arguments.
 
-            file_system_names (list[str], optional):
-                A list of file system names. If there is not at least one resource that matches
-                each of the elements of `file_system_names`, then an error is returned.
+            quota (GroupQuotaPatch, optional):
             file_system_ids (list[str], optional):
                 A list of file system IDs. If after filtering, there is not at least one
                 resource that matches each of the elements of `file_system_ids`, then an error
                 is returned. This cannot be provided together with the `file_system_names` query
                 parameter.
+            file_system_names (list[str], optional):
+                A list of file system names. If there is not at least one resource that matches
+                each of the elements of `file_system_names`, then an error is returned.
             gids (list[int], optional):
                 A list of group IDs. If there is not at least one resource that matches each of
                 the elements of `gids`, then an error is returned. This cannot be provided
@@ -14375,7 +14376,6 @@ class Client(object):
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
                 each of the elements of `names`, then an error is returned.
-            quota (GroupQuotaPatch, optional):
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -14396,12 +14396,12 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
-            file_system_names=file_system_names,
+            quota=quota,
             file_system_ids=file_system_ids,
+            file_system_names=file_system_names,
             gids=gids,
             group_names=group_names,
             names=names,
-            quota=quota,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
             _preload_content=_preload_content,
@@ -14409,7 +14409,7 @@ class Client(object):
         )
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._quotas_api.api23_quotas_groups_patch_with_http_info
-        _process_references(file_systems, ['file_system_names', 'file_system_ids'], kwargs)
+        _process_references(file_systems, ['file_system_ids', 'file_system_names'], kwargs)
         _process_references(groups, ['group_names'], kwargs)
         _process_references(references, ['names'], kwargs)
         return self._call_api(endpoint, kwargs)
@@ -14418,11 +14418,11 @@ class Client(object):
         self,
         file_systems=None,  # type: List[models.ReferenceType]
         groups=None,  # type: List[models.ReferenceType]
+        quota=None,  # type: models.GroupQuotaPost
         file_system_ids=None,  # type: List[str]
         file_system_names=None,  # type: List[str]
         gids=None,  # type: List[int]
         group_names=None,  # type: List[str]
-        quota=None,  # type: models.GroupQuotaPost
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -14438,6 +14438,7 @@ class Client(object):
             groups (list[FixedReference], optional):
                 A list of groups to query for. Overrides group_names keyword arguments.
 
+            quota (GroupQuotaPost, optional):
             file_system_ids (list[str], optional):
                 A list of file system IDs. If after filtering, there is not at least one
                 resource that matches each of the elements of `file_system_ids`, then an error
@@ -14454,7 +14455,6 @@ class Client(object):
                 A list of group names. If there is not at least one resource that matches each
                 of the elements of `group_names`, then an error is returned. This cannot be
                 provided together with `gids` query parameter.
-            quota (GroupQuotaPost, optional):
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -14475,11 +14475,11 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
+            quota=quota,
             file_system_ids=file_system_ids,
             file_system_names=file_system_names,
             gids=gids,
             group_names=group_names,
-            quota=quota,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
             _preload_content=_preload_content,
@@ -14511,7 +14511,7 @@ class Client(object):
 
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -14598,8 +14598,8 @@ class Client(object):
         file_systems=None,  # type: List[models.ReferenceType]
         references=None,  # type: List[models.ReferenceType]
         users=None,  # type: List[models.ReferenceType]
-        file_system_names=None,  # type: List[str]
         file_system_ids=None,  # type: List[str]
+        file_system_names=None,  # type: List[str]
         names=None,  # type: List[str]
         uids=None,  # type: List[int]
         user_names=None,  # type: List[str]
@@ -14614,20 +14614,20 @@ class Client(object):
 
         Args:
             file_systems (list[FixedReference], optional):
-                A list of file_systems to query for. Overrides file_system_names and file_system_ids keyword arguments.
+                A list of file_systems to query for. Overrides file_system_ids and file_system_names keyword arguments.
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides names keyword arguments.
             users (list[FixedReference], optional):
                 A list of users to query for. Overrides user_names keyword arguments.
 
-            file_system_names (list[str], optional):
-                A list of file system names. If there is not at least one resource that matches
-                each of the elements of `file_system_names`, then an error is returned.
             file_system_ids (list[str], optional):
                 A list of file system IDs. If after filtering, there is not at least one
                 resource that matches each of the elements of `file_system_ids`, then an error
                 is returned. This cannot be provided together with the `file_system_names` query
                 parameter.
+            file_system_names (list[str], optional):
+                A list of file system names. If there is not at least one resource that matches
+                each of the elements of `file_system_names`, then an error is returned.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
                 each of the elements of `names`, then an error is returned.
@@ -14659,8 +14659,8 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
-            file_system_names=file_system_names,
             file_system_ids=file_system_ids,
+            file_system_names=file_system_names,
             names=names,
             uids=uids,
             user_names=user_names,
@@ -14671,7 +14671,7 @@ class Client(object):
         )
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._quotas_api.api23_quotas_users_delete_with_http_info
-        _process_references(file_systems, ['file_system_names', 'file_system_ids'], kwargs)
+        _process_references(file_systems, ['file_system_ids', 'file_system_names'], kwargs)
         _process_references(references, ['names'], kwargs)
         _process_references(users, ['user_names'], kwargs)
         return self._call_api(endpoint, kwargs)
@@ -14785,12 +14785,12 @@ class Client(object):
         file_systems=None,  # type: List[models.ReferenceType]
         references=None,  # type: List[models.ReferenceType]
         users=None,  # type: List[models.ReferenceType]
-        file_system_names=None,  # type: List[str]
+        quota=None,  # type: models.UserQuotaPatch
         file_system_ids=None,  # type: List[str]
+        file_system_names=None,  # type: List[str]
         names=None,  # type: List[str]
         uids=None,  # type: List[int]
         user_names=None,  # type: List[str]
-        quota=None,  # type: models.UserQuotaPatch
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -14805,20 +14805,21 @@ class Client(object):
 
         Args:
             file_systems (list[FixedReference], optional):
-                A list of file_systems to query for. Overrides file_system_names and file_system_ids keyword arguments.
+                A list of file_systems to query for. Overrides file_system_ids and file_system_names keyword arguments.
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides names keyword arguments.
             users (list[FixedReference], optional):
                 A list of users to query for. Overrides user_names keyword arguments.
 
-            file_system_names (list[str], optional):
-                A list of file system names. If there is not at least one resource that matches
-                each of the elements of `file_system_names`, then an error is returned.
+            quota (UserQuotaPatch, optional):
             file_system_ids (list[str], optional):
                 A list of file system IDs. If after filtering, there is not at least one
                 resource that matches each of the elements of `file_system_ids`, then an error
                 is returned. This cannot be provided together with the `file_system_names` query
                 parameter.
+            file_system_names (list[str], optional):
+                A list of file system names. If there is not at least one resource that matches
+                each of the elements of `file_system_names`, then an error is returned.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
                 each of the elements of `names`, then an error is returned.
@@ -14830,7 +14831,6 @@ class Client(object):
                 A list of user names. If there is not at least one resource that matches each of
                 the elements of `user_names`, then an error is returned. This cannot be provided
                 together with `uids` query parameter.
-            quota (UserQuotaPatch, optional):
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -14851,12 +14851,12 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
-            file_system_names=file_system_names,
+            quota=quota,
             file_system_ids=file_system_ids,
+            file_system_names=file_system_names,
             names=names,
             uids=uids,
             user_names=user_names,
-            quota=quota,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
             _preload_content=_preload_content,
@@ -14864,7 +14864,7 @@ class Client(object):
         )
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._quotas_api.api23_quotas_users_patch_with_http_info
-        _process_references(file_systems, ['file_system_names', 'file_system_ids'], kwargs)
+        _process_references(file_systems, ['file_system_ids', 'file_system_names'], kwargs)
         _process_references(references, ['names'], kwargs)
         _process_references(users, ['user_names'], kwargs)
         return self._call_api(endpoint, kwargs)
@@ -14873,11 +14873,11 @@ class Client(object):
         self,
         file_systems=None,  # type: List[models.ReferenceType]
         users=None,  # type: List[models.ReferenceType]
+        quota=None,  # type: models.UserQuotaPost
         file_system_ids=None,  # type: List[str]
         file_system_names=None,  # type: List[str]
         uids=None,  # type: List[int]
         user_names=None,  # type: List[str]
-        quota=None,  # type: models.UserQuotaPost
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -14893,6 +14893,7 @@ class Client(object):
             users (list[FixedReference], optional):
                 A list of users to query for. Overrides user_names keyword arguments.
 
+            quota (UserQuotaPost, optional):
             file_system_ids (list[str], optional):
                 A list of file system IDs. If after filtering, there is not at least one
                 resource that matches each of the elements of `file_system_ids`, then an error
@@ -14909,7 +14910,6 @@ class Client(object):
                 A list of user names. If there is not at least one resource that matches each of
                 the elements of `user_names`, then an error is returned. This cannot be provided
                 together with `uids` query parameter.
-            quota (UserQuotaPost, optional):
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -14930,11 +14930,11 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
+            quota=quota,
             file_system_ids=file_system_ids,
             file_system_names=file_system_names,
             uids=uids,
             user_names=user_names,
-            quota=quota,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
             _preload_content=_preload_content,
@@ -15123,8 +15123,8 @@ class Client(object):
         self,
         references=None,  # type: List[models.ReferenceType]
         continuation_token=None,  # type: str
-        ids=None,  # type: List[str]
         filter=None,  # type: str
+        ids=None,  # type: List[str]
         limit=None,  # type: int
         names=None,  # type: List[str]
         offset=None,  # type: int
@@ -15144,12 +15144,12 @@ class Client(object):
 
             continuation_token (str, optional):
                 An opaque token to iterate over a collection of resources.
-            ids (list[str], optional):
-                A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
-                cannot be provided together with the `name` or `names` query parameters.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
+            ids (list[str], optional):
+                A list of resource IDs. If after filtering, there is not at least one resource
+                that matches each of the elements of `ids`, then an error is returned.  This
+                cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -15181,8 +15181,8 @@ class Client(object):
         """
         kwargs = dict(
             continuation_token=continuation_token,
-            ids=ids,
             filter=filter,
+            ids=ids,
             limit=limit,
             names=names,
             offset=offset,
@@ -15227,7 +15227,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -15305,7 +15305,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -15428,7 +15428,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -15584,7 +15584,7 @@ class Client(object):
 
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -15625,8 +15625,8 @@ class Client(object):
         self,
         references=None,  # type: List[models.ReferenceType]
         continuation_token=None,  # type: str
-        ids=None,  # type: List[str]
         filter=None,  # type: str
+        ids=None,  # type: List[str]
         limit=None,  # type: int
         names=None,  # type: List[str]
         offset=None,  # type: int
@@ -15646,12 +15646,12 @@ class Client(object):
 
             continuation_token (str, optional):
                 An opaque token to iterate over a collection of resources.
-            ids (list[str], optional):
-                A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
-                cannot be provided together with the `name` or `names` query parameters.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
+            ids (list[str], optional):
+                A list of resource IDs. If after filtering, there is not at least one resource
+                that matches each of the elements of `ids`, then an error is returned.  This
+                cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -15683,8 +15683,8 @@ class Client(object):
         """
         kwargs = dict(
             continuation_token=continuation_token,
-            ids=ids,
             filter=filter,
+            ids=ids,
             limit=limit,
             names=names,
             offset=offset,
@@ -15721,7 +15721,7 @@ class Client(object):
             snmp_manager (SnmpManager, required):
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -15816,8 +15816,8 @@ class Client(object):
         self,
         references=None,  # type: List[models.ReferenceType]
         continuation_token=None,  # type: str
-        ids=None,  # type: List[str]
         filter=None,  # type: str
+        ids=None,  # type: List[str]
         limit=None,  # type: int
         names=None,  # type: List[str]
         offset=None,  # type: int
@@ -15837,12 +15837,12 @@ class Client(object):
 
             continuation_token (str, optional):
                 An opaque token to iterate over a collection of resources.
-            ids (list[str], optional):
-                A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
-                cannot be provided together with the `name` or `names` query parameters.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
+            ids (list[str], optional):
+                A list of resource IDs. If after filtering, there is not at least one resource
+                that matches each of the elements of `ids`, then an error is returned.  This
+                cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -15874,8 +15874,8 @@ class Client(object):
         """
         kwargs = dict(
             continuation_token=continuation_token,
-            ids=ids,
             filter=filter,
+            ids=ids,
             limit=limit,
             names=names,
             offset=offset,
@@ -15910,7 +15910,7 @@ class Client(object):
 
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -15976,7 +15976,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -16047,7 +16047,7 @@ class Client(object):
             subnet (Subnet, required):
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -16158,7 +16158,7 @@ class Client(object):
 
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -16315,7 +16315,7 @@ class Client(object):
 
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
@@ -16381,7 +16381,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -16452,7 +16452,7 @@ class Client(object):
             syslog_server (SyslogServerPostOrPatch, required):
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
@@ -16574,7 +16574,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -16645,7 +16645,7 @@ class Client(object):
             syslog_server_settings (SyslogServerSettings, required):
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -16749,7 +16749,7 @@ class Client(object):
 
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -16815,7 +16815,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -16886,7 +16886,7 @@ class Client(object):
             target (Target, required):
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
@@ -16959,7 +16959,7 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 A list of resource IDs. If after filtering, there is not at least one resource
-                that matches each of the elements of `ids`, then an error is returned. This
+                that matches each of the elements of `ids`, then an error is returned.  This
                 cannot be provided together with the `name` or `names` query parameters.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
@@ -17024,8 +17024,8 @@ class Client(object):
     def post_targets(
         self,
         references=None,  # type: List[models.ReferenceType]
-        names=None,  # type: List[str]
         target=None,  # type: models.TargetPost
+        names=None,  # type: List[str]
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -17039,9 +17039,9 @@ class Client(object):
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides names keyword arguments.
 
+            target (TargetPost, required):
             names (list[str], required):
                 A list of resource names.
-            target (TargetPost, required):
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -17062,8 +17062,8 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
-            names=names,
             target=target,
+            names=names,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
             _preload_content=_preload_content,

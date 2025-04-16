@@ -30,17 +30,17 @@ class NetworkInterfaceNeighbor(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'initial_ttl_in_sec': 'int',
         'local_port': 'FixedReferenceNoId',
-        'neighbor_chassis': 'NetworkInterfaceNeighborNeighborChassis',
         'neighbor_port': 'NetworkInterfaceNeighborNeighborPort',
-        'initial_ttl_in_sec': 'int'
+        'neighbor_chassis': 'NetworkInterfaceNeighborNeighborChassis'
     }
 
     attribute_map = {
+        'initial_ttl_in_sec': 'initial_ttl_in_sec',
         'local_port': 'local_port',
-        'neighbor_chassis': 'neighbor_chassis',
         'neighbor_port': 'neighbor_port',
-        'initial_ttl_in_sec': 'initial_ttl_in_sec'
+        'neighbor_chassis': 'neighbor_chassis'
     }
 
     required_args = {
@@ -48,26 +48,26 @@ class NetworkInterfaceNeighbor(object):
 
     def __init__(
         self,
-        local_port=None,  # type: models.FixedReferenceNoId
-        neighbor_chassis=None,  # type: models.NetworkInterfaceNeighborNeighborChassis
-        neighbor_port=None,  # type: models.NetworkInterfaceNeighborNeighborPort
         initial_ttl_in_sec=None,  # type: int
+        local_port=None,  # type: models.FixedReferenceNoId
+        neighbor_port=None,  # type: models.NetworkInterfaceNeighborNeighborPort
+        neighbor_chassis=None,  # type: models.NetworkInterfaceNeighborNeighborChassis
     ):
         """
         Keyword args:
-            local_port (FixedReferenceNoId): A reference to the local network interface the neighbor is connected to.
-            neighbor_chassis (NetworkInterfaceNeighborNeighborChassis)
+            initial_ttl_in_sec (int): The initial time to live in seconds from when the local port received notice that the neighbor information is regarded as valid. The time is not measured from when this endpoint was queried. 
+            local_port (FixedReferenceNoId): A reference to the local network interface the neighbor is connected to. 
             neighbor_port (NetworkInterfaceNeighborNeighborPort)
-            initial_ttl_in_sec (int): The initial time to live in seconds from when the local port received notice that the neighbor information is regarded as valid. The time is not measured from when this endpoint was queried.
+            neighbor_chassis (NetworkInterfaceNeighborNeighborChassis)
         """
-        if local_port is not None:
-            self.local_port = local_port
-        if neighbor_chassis is not None:
-            self.neighbor_chassis = neighbor_chassis
-        if neighbor_port is not None:
-            self.neighbor_port = neighbor_port
         if initial_ttl_in_sec is not None:
             self.initial_ttl_in_sec = initial_ttl_in_sec
+        if local_port is not None:
+            self.local_port = local_port
+        if neighbor_port is not None:
+            self.neighbor_port = neighbor_port
+        if neighbor_chassis is not None:
+            self.neighbor_chassis = neighbor_chassis
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

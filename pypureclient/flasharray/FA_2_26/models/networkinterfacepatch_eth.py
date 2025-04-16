@@ -30,25 +30,25 @@ class NetworkinterfacepatchEth(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'address': 'str',
-        'gateway': 'str',
-        'mtu': 'int',
-        'netmask': 'str',
         'add_subinterfaces': 'list[ReferenceNoId]',
+        'subnet': 'ReferenceNoId',
+        'address': 'str',
+        'netmask': 'str',
         'remove_subinterfaces': 'list[ReferenceNoId]',
         'subinterfaces': 'list[ReferenceNoId]',
-        'subnet': 'ReferenceNoId'
+        'gateway': 'str',
+        'mtu': 'int'
     }
 
     attribute_map = {
-        'address': 'address',
-        'gateway': 'gateway',
-        'mtu': 'mtu',
-        'netmask': 'netmask',
         'add_subinterfaces': 'add_subinterfaces',
+        'subnet': 'subnet',
+        'address': 'address',
+        'netmask': 'netmask',
         'remove_subinterfaces': 'remove_subinterfaces',
         'subinterfaces': 'subinterfaces',
-        'subnet': 'subnet'
+        'gateway': 'gateway',
+        'mtu': 'mtu'
     }
 
     required_args = {
@@ -56,42 +56,42 @@ class NetworkinterfacepatchEth(object):
 
     def __init__(
         self,
-        address=None,  # type: str
-        gateway=None,  # type: str
-        mtu=None,  # type: int
-        netmask=None,  # type: str
         add_subinterfaces=None,  # type: List[models.ReferenceNoId]
+        subnet=None,  # type: models.ReferenceNoId
+        address=None,  # type: str
+        netmask=None,  # type: str
         remove_subinterfaces=None,  # type: List[models.ReferenceNoId]
         subinterfaces=None,  # type: List[models.ReferenceNoId]
-        subnet=None,  # type: models.ReferenceNoId
+        gateway=None,  # type: str
+        mtu=None,  # type: int
     ):
         """
         Keyword args:
-            address (str): The IPv4 or IPv6 address to be associated with the specified network interface.
-            gateway (str): The IPv4 or IPv6 address of the gateway through which the specified network interface is to communicate with the network.
-            mtu (int): Maximum message transfer unit (packet) size for the network interface in bytes. MTU setting cannot exceed the MTU of the corresponding physical interface.
-            netmask (str): Netmask of the specified network interface that, when combined with the address of the interface, determines the network address of the interface.
-            add_subinterfaces (list[ReferenceNoId]): Child devices to be added to the specified bond interface.
-            remove_subinterfaces (list[ReferenceNoId]): Child devices to be removed from the specified bond interface.
-            subinterfaces (list[ReferenceNoId]): Child devices to be added to the specified bond interface.
-            subnet (ReferenceNoId): Subnet that is associated with the specified network interface.
+            add_subinterfaces (list[ReferenceNoId]): Child devices to be added to the specified bond interface. 
+            subnet (ReferenceNoId): Subnet that is associated with the specified network interface. 
+            address (str): The IPv4 or IPv6 address to be associated with the specified network interface. 
+            netmask (str): Netmask of the specified network interface that, when combined with the address of the interface, determines the network address of the interface. 
+            remove_subinterfaces (list[ReferenceNoId]): Child devices to be removed from the specified bond interface. 
+            subinterfaces (list[ReferenceNoId]): Child devices to be added to the specified bond interface. 
+            gateway (str): The IPv4 or IPv6 address of the gateway through which the specified network interface is to communicate with the network. 
+            mtu (int): Maximum message transfer unit (packet) size for the network interface in bytes. MTU setting cannot exceed the MTU of the corresponding physical interface. 
         """
-        if address is not None:
-            self.address = address
-        if gateway is not None:
-            self.gateway = gateway
-        if mtu is not None:
-            self.mtu = mtu
-        if netmask is not None:
-            self.netmask = netmask
         if add_subinterfaces is not None:
             self.add_subinterfaces = add_subinterfaces
+        if subnet is not None:
+            self.subnet = subnet
+        if address is not None:
+            self.address = address
+        if netmask is not None:
+            self.netmask = netmask
         if remove_subinterfaces is not None:
             self.remove_subinterfaces = remove_subinterfaces
         if subinterfaces is not None:
             self.subinterfaces = subinterfaces
-        if subnet is not None:
-            self.subnet = subnet
+        if gateway is not None:
+            self.gateway = gateway
+        if mtu is not None:
+            self.mtu = mtu
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

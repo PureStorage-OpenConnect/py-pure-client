@@ -31,14 +31,14 @@ class SoftwareUpgradePlan(object):
     """
     swagger_types = {
         'step_name': 'str',
-        'description': 'str',
-        'hop_version': 'str'
+        'hop_version': 'str',
+        'description': 'str'
     }
 
     attribute_map = {
         'step_name': 'step_name',
-        'description': 'description',
-        'hop_version': 'hop_version'
+        'hop_version': 'hop_version',
+        'description': 'description'
     }
 
     required_args = {
@@ -47,21 +47,21 @@ class SoftwareUpgradePlan(object):
     def __init__(
         self,
         step_name=None,  # type: str
-        description=None,  # type: str
         hop_version=None,  # type: str
+        description=None,  # type: str
     ):
         """
         Keyword args:
             step_name (str): Name of the upgrade step.
-            description (str): Description of the upgrade step.
             hop_version (str): The version to which the step is upgrading.
+            description (str): Description of the upgrade step.
         """
         if step_name is not None:
             self.step_name = step_name
-        if description is not None:
-            self.description = description
         if hop_version is not None:
             self.hop_version = hop_version
+        if description is not None:
+            self.description = description
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

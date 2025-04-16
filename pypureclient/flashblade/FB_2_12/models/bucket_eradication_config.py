@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.12, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.12, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.12
     
@@ -49,8 +49,8 @@ class BucketEradicationConfig(object):
     ):
         """
         Keyword args:
-            eradication_delay (int): Eradication delay in milliseconds. Automatically eradicate destroyed buckets after the configured delay time passes.
-            manual_eradication (str): The manual eradication status of the bucket. If `disabled`, the bucket cannot be eradicated after it has been destroyed, unless it is empty. If `enabled`, the bucket can be eradicated. Valid values are `disabled` and `enabled`.
+            eradication_delay (int): Eradication delay in milliseconds. Automatically eradicate destroyed buckets after the configured delay time passes. 
+            manual_eradication (str): The manual eradication status of the bucket. If `disabled`, the bucket cannot be eradicated after it has been destroyed, unless it is empty. If `enabled`, the bucket can be eradicated. Valid values are `disabled` and `enabled`. 
         """
         if eradication_delay is not None:
             self.eradication_delay = eradication_delay

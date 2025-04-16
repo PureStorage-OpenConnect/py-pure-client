@@ -30,19 +30,19 @@ class AdminSettings(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'required_authentication_methods': 'AdminSettingsRequiredAuthenticationMethods',
         'lockout_duration': 'int',
-        'max_login_attempts': 'int',
-        'min_password_length': 'int',
         'single_sign_on_enabled': 'bool',
-        'required_authentication_methods': 'AdminSettingsRequiredAuthenticationMethods'
+        'min_password_length': 'int',
+        'max_login_attempts': 'int'
     }
 
     attribute_map = {
+        'required_authentication_methods': 'required_authentication_methods',
         'lockout_duration': 'lockout_duration',
-        'max_login_attempts': 'max_login_attempts',
-        'min_password_length': 'min_password_length',
         'single_sign_on_enabled': 'single_sign_on_enabled',
-        'required_authentication_methods': 'required_authentication_methods'
+        'min_password_length': 'min_password_length',
+        'max_login_attempts': 'max_login_attempts'
     }
 
     required_args = {
@@ -50,30 +50,30 @@ class AdminSettings(object):
 
     def __init__(
         self,
-        lockout_duration=None,  # type: int
-        max_login_attempts=None,  # type: int
-        min_password_length=None,  # type: int
-        single_sign_on_enabled=None,  # type: bool
         required_authentication_methods=None,  # type: models.AdminSettingsRequiredAuthenticationMethods
+        lockout_duration=None,  # type: int
+        single_sign_on_enabled=None,  # type: bool
+        min_password_length=None,  # type: int
+        max_login_attempts=None,  # type: int
     ):
         """
         Keyword args:
-            lockout_duration (int): The lockout duration, in milliseconds, if a user is locked out after reaching the maximum number of login attempts. Ranges from 1 second to 90 days.
-            max_login_attempts (int): Maximum number of failed login attempts allowed before the user is locked out.
-            min_password_length (int): Minimum password length. If not specified, defaults to 1.
-            single_sign_on_enabled (bool): If `true`, then single sign-on is enabled for the array.
             required_authentication_methods (AdminSettingsRequiredAuthenticationMethods)
+            lockout_duration (int): The lockout duration, in milliseconds, if a user is locked out after reaching the maximum number of login attempts. Ranges from 1 second to 90 days. 
+            single_sign_on_enabled (bool): If `true`, then single sign-on is enabled for the array. 
+            min_password_length (int): Minimum password length. If not specified, defaults to 1. 
+            max_login_attempts (int): Maximum number of failed login attempts allowed before the user is locked out. 
         """
-        if lockout_duration is not None:
-            self.lockout_duration = lockout_duration
-        if max_login_attempts is not None:
-            self.max_login_attempts = max_login_attempts
-        if min_password_length is not None:
-            self.min_password_length = min_password_length
-        if single_sign_on_enabled is not None:
-            self.single_sign_on_enabled = single_sign_on_enabled
         if required_authentication_methods is not None:
             self.required_authentication_methods = required_authentication_methods
+        if lockout_duration is not None:
+            self.lockout_duration = lockout_duration
+        if single_sign_on_enabled is not None:
+            self.single_sign_on_enabled = single_sign_on_enabled
+        if min_password_length is not None:
+            self.min_password_length = min_password_length
+        if max_login_attempts is not None:
+            self.max_login_attempts = max_login_attempts
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

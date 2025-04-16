@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.9, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.9, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.9
     
@@ -37,7 +37,7 @@ class RDLApi(object):
         # type: (...) -> models.RapidDataLockingResponse
         """Get the status of the Rapid Data Locking feature.
 
-        Displays the status of the Rapid Data Locking feature.
+        Displays the status of the Rapid Data Locking feature. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api29_rapid_data_locking_get_with_http_info(async_req=True)
@@ -113,7 +113,7 @@ class RDLApi(object):
         # type: (...) -> models.RapidDataLockingResponse
         """Modifies the Rapid Data Locking feature.
 
-        Modifies the Rapid Data Locking feature. Note that the feature can only be enabled if there are no file systems nor buckets created on the array. Once enabled, the feature cannot be modified.
+        Modifies the Rapid Data Locking feature. Note that the feature can only be enabled if there are no file systems nor buckets created on the array. Once enabled, the feature cannot be modified. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api29_rapid_data_locking_patch_with_http_info(rapid_data_locking, async_req=True)
@@ -194,7 +194,7 @@ class RDLApi(object):
         # type: (...) -> None
         """Rotates the external keys on the associated EKM appliance.
 
-        Rotates the external keys on the associated EKM appliance.
+        Rotates the external keys on the associated EKM appliance. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api29_rapid_data_locking_rotate_post_with_http_info(async_req=True)
@@ -231,10 +231,6 @@ class RDLApi(object):
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
-
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
@@ -269,7 +265,7 @@ class RDLApi(object):
         # type: (...) -> models.TestResultResponse
         """Displays Rapid Data Locking test results.
 
-        Displays a detailed result of a Rapid Data Locking test.
+        Displays a detailed result of a Rapid Data Locking test. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api29_rapid_data_locking_test_get_with_http_info(async_req=True)

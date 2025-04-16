@@ -30,13 +30,13 @@ class WorkloadPlacementRecommendationTargetLoadProjections(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'projection_avg': 'WorkloadPlacementRecommendationProjection',
-        'projection_blended_max': 'WorkloadPlacementRecommendationProjection'
+        'projection_blended_max': 'WorkloadPlacementRecommendationProjection',
+        'projection_avg': 'WorkloadPlacementRecommendationProjection'
     }
 
     attribute_map = {
-        'projection_avg': 'projection_avg',
-        'projection_blended_max': 'projection_blended_max'
+        'projection_blended_max': 'projection_blended_max',
+        'projection_avg': 'projection_avg'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class WorkloadPlacementRecommendationTargetLoadProjections(object):
 
     def __init__(
         self,
-        projection_avg=None,  # type: models.WorkloadPlacementRecommendationProjection
         projection_blended_max=None,  # type: models.WorkloadPlacementRecommendationProjection
+        projection_avg=None,  # type: models.WorkloadPlacementRecommendationProjection
     ):
         """
         Keyword args:
-            projection_avg (WorkloadPlacementRecommendationProjection): The projected average load on the target.
-            projection_blended_max (WorkloadPlacementRecommendationProjection): The projected blended maximum load on the target.
+            projection_blended_max (WorkloadPlacementRecommendationProjection): The projected blended maximum load on the target. 
+            projection_avg (WorkloadPlacementRecommendationProjection): The projected average load on the target. 
         """
-        if projection_avg is not None:
-            self.projection_avg = projection_avg
         if projection_blended_max is not None:
             self.projection_blended_max = projection_blended_max
+        if projection_avg is not None:
+            self.projection_avg = projection_avg
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

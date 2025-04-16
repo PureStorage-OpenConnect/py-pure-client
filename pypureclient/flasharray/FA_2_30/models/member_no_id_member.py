@@ -30,13 +30,13 @@ class MemberNoIdMember(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'group': 'Reference',
-        'member': 'ReferenceNoId'
+        'member': 'ReferenceNoId',
+        'group': 'Reference'
     }
 
     attribute_map = {
-        'group': 'group',
-        'member': 'member'
+        'member': 'member',
+        'group': 'group'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class MemberNoIdMember(object):
 
     def __init__(
         self,
-        group=None,  # type: models.Reference
         member=None,  # type: models.ReferenceNoId
+        group=None,  # type: models.Reference
     ):
         """
         Keyword args:
-            group (Reference): The resource in which the host, volume, or other item in the environment is a member.
-            member (ReferenceNoId): The member of the resource.
+            member (ReferenceNoId): The member of the resource. 
+            group (Reference): The resource in which the host, volume, or other item in the environment is a member. 
         """
-        if group is not None:
-            self.group = group
         if member is not None:
             self.member = member
+        if group is not None:
+            self.group = group
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -3,7 +3,7 @@
 """
     Pure1 Public REST API
 
-    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)  The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
+    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)   The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
 
     OpenAPI spec version: 1.3
     
@@ -32,26 +32,26 @@ class FileSystemReplicaLink(object):
     swagger_types = {
         'as_of': 'int',
         'id': 'str',
-        'lag': 'int',
         'paused': 'bool',
+        'lag': 'int',
         'recovery_point': 'int',
         'status': 'str',
-        'status_details': 'str',
-        'members': 'list[ResourceWithLocation]',
         'sources': 'list[ResourceWithLocation]',
+        'members': 'list[ResourceWithLocation]',
+        'status_details': 'str',
         'targets': 'list[ResourceWithLocation]'
     }
 
     attribute_map = {
         'as_of': '_as_of',
         'id': 'id',
-        'lag': 'lag',
         'paused': 'paused',
+        'lag': 'lag',
         'recovery_point': 'recovery_point',
         'status': 'status',
-        'status_details': 'status_details',
-        'members': 'members',
         'sources': 'sources',
+        'members': 'members',
+        'status_details': 'status_details',
         'targets': 'targets'
     }
 
@@ -62,46 +62,46 @@ class FileSystemReplicaLink(object):
         self,
         as_of=None,  # type: int
         id=None,  # type: str
-        lag=None,  # type: int
         paused=None,  # type: bool
+        lag=None,  # type: int
         recovery_point=None,  # type: int
         status=None,  # type: str
-        status_details=None,  # type: str
-        members=None,  # type: List[models.ResourceWithLocation]
         sources=None,  # type: List[models.ResourceWithLocation]
+        members=None,  # type: List[models.ResourceWithLocation]
+        status_details=None,  # type: str
         targets=None,  # type: List[models.ResourceWithLocation]
     ):
         """
         Keyword args:
             as_of (int): The freshness of the data (timestamp in millis since epoch).
             id (str): A non-modifiable, globally unique ID chosen by the system.
-            lag (int): Duration, in milliseconds, which represents how far behind the replication `target` is from the `source`.
-            paused (bool): Returns `true` if the replica link is paused.
-            recovery_point (int): Time when the last replicated snapshot was created, in milliseconds since the UNIX epoch. (i.e. the recovery point if the file system is promoted.)
-            status (str): Status of the replica link. Values include `replicating`, `idle`, and `unhealthy`.
-            status_details (str): Detailed information about the status of the replica link when it is `unhealthy`.
-            members (list[ResourceWithLocation]): The union of source and target file systems in the replica link.
+            paused (bool): Returns `true` if the replica link is paused. 
+            lag (int): Duration, in milliseconds, which represents how far behind the replication `target` is from the `source`. 
+            recovery_point (int): Time when the last replicated snapshot was created, in milliseconds since the UNIX epoch. (i.e. the recovery point if the file system is promoted.) 
+            status (str): Status of the replica link. Values include `replicating`, `idle`, and `unhealthy`. 
             sources (list[ResourceWithLocation]): The source file systems in the replica link.
+            members (list[ResourceWithLocation]): The union of source and target file systems in the replica link. 
+            status_details (str): Detailed information about the status of the replica link when it is `unhealthy`. 
             targets (list[ResourceWithLocation]): The target file systems in the replica link.
         """
         if as_of is not None:
             self.as_of = as_of
         if id is not None:
             self.id = id
-        if lag is not None:
-            self.lag = lag
         if paused is not None:
             self.paused = paused
+        if lag is not None:
+            self.lag = lag
         if recovery_point is not None:
             self.recovery_point = recovery_point
         if status is not None:
             self.status = status
-        if status_details is not None:
-            self.status_details = status_details
-        if members is not None:
-            self.members = members
         if sources is not None:
             self.sources = sources
+        if members is not None:
+            self.members = members
+        if status_details is not None:
+            self.status_details = status_details
         if targets is not None:
             self.targets = targets
 

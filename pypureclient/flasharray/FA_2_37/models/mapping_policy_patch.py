@@ -46,7 +46,7 @@ class MappingPolicyPatch(object):
     ):
         """
         Keyword args:
-            mapping (str): The mapping to set on this policy mapping. Valid values are `connected` and `disconnected`.
+            mapping (str): The mapping to set on this policy mapping. Valid values are `connected` and `disconnected`. 
         """
         if mapping is not None:
             self.mapping = mapping

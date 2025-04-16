@@ -30,18 +30,18 @@ class AlertRulesCatalog(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'allowed_values': 'str',
         'code': 'int',
         'subject': 'str',
         'parameter': 'str',
-        'allowed_values': 'str',
         'default_value': 'str'
     }
 
     attribute_map = {
+        'allowed_values': 'allowed_values',
         'code': 'code',
         'subject': 'subject',
         'parameter': 'parameter',
-        'allowed_values': 'allowed_values',
         'default_value': 'default_value'
     }
 
@@ -50,28 +50,28 @@ class AlertRulesCatalog(object):
 
     def __init__(
         self,
+        allowed_values=None,  # type: str
         code=None,  # type: int
         subject=None,  # type: str
         parameter=None,  # type: str
-        allowed_values=None,  # type: str
         default_value=None,  # type: str
     ):
         """
         Keyword args:
-            code (int): The alert code that the rule applies to.
-            subject (str): The alert code description.
-            parameter (str): The parameter of the custom alert rule.
-            allowed_values (str): The range of values allowed to set the custom alert rule to.
-            default_value (str): The system default values for the alert code and parameter.
+            allowed_values (str): The range of values allowed to set the custom alert rule to. 
+            code (int): The alert code that the rule applies to. 
+            subject (str): The alert code description. 
+            parameter (str): The parameter of the custom alert rule. 
+            default_value (str): The system default values for the alert code and parameter. 
         """
+        if allowed_values is not None:
+            self.allowed_values = allowed_values
         if code is not None:
             self.code = code
         if subject is not None:
             self.subject = subject
         if parameter is not None:
             self.parameter = parameter
-        if allowed_values is not None:
-            self.allowed_values = allowed_values
         if default_value is not None:
             self.default_value = default_value
 

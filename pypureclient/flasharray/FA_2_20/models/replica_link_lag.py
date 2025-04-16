@@ -49,8 +49,8 @@ class ReplicaLinkLag(object):
     ):
         """
         Keyword args:
-            avg (int): The average time difference between the current time and `recovery_point` for a period of time.
-            max (int): The maximum time difference between the current time and `recovery_point` for a period of time.
+            avg (int): The average time difference between the current time and `recovery_point` for a period of time. 
+            max (int): The maximum time difference between the current time and `recovery_point` for a period of time. 
         """
         if avg is not None:
             self.avg = avg

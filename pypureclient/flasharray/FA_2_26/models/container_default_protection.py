@@ -30,17 +30,17 @@ class ContainerDefaultProtection(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
+        'default_protections': 'list[DefaultProtectionReference]',
         'name': 'str',
-        'type': 'str',
-        'default_protections': 'list[DefaultProtectionReference]'
+        'id': 'str',
+        'type': 'str'
     }
 
     attribute_map = {
-        'id': 'id',
+        'default_protections': 'default_protections',
         'name': 'name',
-        'type': 'type',
-        'default_protections': 'default_protections'
+        'id': 'id',
+        'type': 'type'
     }
 
     required_args = {
@@ -48,26 +48,26 @@ class ContainerDefaultProtection(object):
 
     def __init__(
         self,
-        id=None,  # type: str
-        name=None,  # type: str
-        type=None,  # type: str
         default_protections=None,  # type: List[models.DefaultProtectionReference]
+        name=None,  # type: str
+        id=None,  # type: str
+        type=None,  # type: str
     ):
         """
         Keyword args:
-            id (str): The id of an administrative domain, a data container, and a namespace for volumes and protection groups. Values can be `pod id` or `null`. `Null` represents the local array id.
-            name (str): The name of an administrative domain, a data container, and a namespace for volumes and protection groups. Values can be `pod name` or `null`. `null` represents the local array name.
-            type (str): The type of an administrative domain, a data container, and a namespace for volumes and protection groups. Values can be `pod` or `null`. `null` represents the local array type.
-            default_protections (list[DefaultProtectionReference]): The default protection that is applied to newly created volumes. Volumes can opt out of the default protection at creation. The pod's `default_protections` defaults to the array's `default_protections` at pod creation. To clear the list of default protections, set to an empty list `[]`.
+            default_protections (list[DefaultProtectionReference]): The default protection that is applied to newly created volumes. Volumes can opt out of the default protection at creation. The pod's `default_protections` defaults to the array's `default_protections` at pod creation. To clear the list of default protections, set to an empty list `[]`. 
+            name (str): The name of an administrative domain, a data container, and a namespace for volumes and protection groups. Values can be `pod name` or `null`. `null` represents the local array name. 
+            id (str): The id of an administrative domain, a data container, and a namespace for volumes and protection groups. Values can be `pod id` or `null`. `Null` represents the local array id. 
+            type (str): The type of an administrative domain, a data container, and a namespace for volumes and protection groups. Values can be `pod` or `null`. `null` represents the local array type. 
         """
-        if id is not None:
-            self.id = id
-        if name is not None:
-            self.name = name
-        if type is not None:
-            self.type = type
         if default_protections is not None:
             self.default_protections = default_protections
+        if name is not None:
+            self.name = name
+        if id is not None:
+            self.id = id
+        if type is not None:
+            self.type = type
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

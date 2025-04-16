@@ -46,7 +46,7 @@ class DirectorySnapshotResponse(object):
     ):
         """
         Keyword args:
-            items (list[DirectorySnapshot]): Displays a list of all items after filtering. The values are displayed for each name, if applicable.
+            items (list[DirectorySnapshot]): Displays a list of all items after filtering. The values are displayed for each name, if applicable. 
         """
         if items is not None:
             self.items = items

@@ -2410,13 +2410,13 @@ class Client(object):
             offset (int, optional):
                 The offset of the first resource to return from a collection.
             remote_ids (list[str], optional):
-                A list of remote array IDs. If, after filtering, there is not at least one
+                A list of remote array IDs. If after filtering, there is not at least one
                 resource that matches each of the elements, then an error is returned. This
                 cannot be provided together with the `remote_names` query parameter.
             remote_names (list[str], optional):
-                A list of remote array names. If, after filtering, there is not at least one
-                resource that matches each of the elements, then an error is returned. This
-                cannot be provided together with the `remote_ids` query parameter.
+                A list of remote array names. If there is not at least one resource that matches
+                each of the elements, then an error is returned. This cannot be provided
+                together with `remote_ids` query parameter.
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
             async_req (bool, optional):
@@ -2613,13 +2613,13 @@ class Client(object):
             offset (int, optional):
                 The offset of the first resource to return from a collection.
             remote_ids (list[str], optional):
-                A list of remote array IDs. If, after filtering, there is not at least one
+                A list of remote array IDs. If after filtering, there is not at least one
                 resource that matches each of the elements, then an error is returned. This
                 cannot be provided together with the `remote_names` query parameter.
             remote_names (list[str], optional):
-                A list of remote array names. If, after filtering, there is not at least one
-                resource that matches each of the elements, then an error is returned. This
-                cannot be provided together with the `remote_ids` query parameter.
+                A list of remote array names. If there is not at least one resource that matches
+                each of the elements, then an error is returned. This cannot be provided
+                together with `remote_ids` query parameter.
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
             async_req (bool, optional):
@@ -2718,13 +2718,13 @@ class Client(object):
             offset (int, optional):
                 The offset of the first resource to return from a collection.
             remote_ids (list[str], optional):
-                A list of remote array IDs. If, after filtering, there is not at least one
+                A list of remote array IDs. If after filtering, there is not at least one
                 resource that matches each of the elements, then an error is returned. This
                 cannot be provided together with the `remote_names` query parameter.
             remote_names (list[str], optional):
-                A list of remote array names. If, after filtering, there is not at least one
-                resource that matches each of the elements, then an error is returned. This
-                cannot be provided together with the `remote_ids` query parameter.
+                A list of remote array names. If there is not at least one resource that matches
+                each of the elements, then an error is returned. This cannot be provided
+                together with `remote_ids` query parameter.
             resolution (int, optional):
                 The desired ms between samples. Available resolutions may depend on data type,
                 `start_time` and `end_time`. In general `1000`, `30000`, `300000`, `1800000`,
@@ -2734,10 +2734,8 @@ class Client(object):
             start_time (int, optional):
                 When the time window starts (in milliseconds since epoch).
             total_only (bool, optional):
-                If set to `true`, returns the aggregate value of all items after filtering.
-                Where it makes more sense, the average value is displayed instead. The values
-                are displayed for each name where meaningful. If `total_only=true`, the `items`
-                list will be empty.
+                Only return the total record for the specified items. The total record will be
+                the total of all items after filtering. The `items` list will be empty.
             type (str, optional):
                 Display the metric of a specified object type. Valid values are `all`, `file-
                 system`, and `object-store`. If not specified, defaults to `all`.
@@ -3801,10 +3799,8 @@ class Client(object):
             storage_class_names (list[str], optional):
                 A list of storage class names. Valid values include `S500X-S` and `S500X-A`.
             total_only (bool, optional):
-                If set to `true`, returns the aggregate value of all items after filtering.
-                Where it makes more sense, the average value is displayed instead. The values
-                are displayed for each name where meaningful. If `total_only=true`, the `items`
-                list will be empty.
+                Only return the total record for the specified items. The total record will be
+                the total of all items after filtering. The `items` list will be empty.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -4053,10 +4049,8 @@ class Client(object):
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
             total_only (bool, optional):
-                If set to `true`, returns the aggregate value of all items after filtering.
-                Where it makes more sense, the average value is displayed instead. The values
-                are displayed for each name where meaningful. If `total_only=true`, the `items`
-                list will be empty.
+                Only return the total record for the specified items. The total record will be
+                the total of all items after filtering. The `items` list will be empty.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -4157,13 +4151,13 @@ class Client(object):
                 A list of remote bucket names. If there is not at least one resource that
                 matches each of the elements, then an error is returned.
             remote_ids (list[str], optional):
-                A list of remote array IDs. If, after filtering, there is not at least one
+                A list of remote array IDs. If after filtering, there is not at least one
                 resource that matches each of the elements, then an error is returned. This
                 cannot be provided together with the `remote_names` query parameter.
             remote_names (list[str], optional):
-                A list of remote array names. If, after filtering, there is not at least one
-                resource that matches each of the elements, then an error is returned. This
-                cannot be provided together with the `remote_ids` query parameter.
+                A list of remote array names. If there is not at least one resource that matches
+                each of the elements, then an error is returned. This cannot be provided
+                together with `remote_ids` query parameter.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -4288,20 +4282,18 @@ class Client(object):
                 A list of remote bucket names. If there is not at least one resource that
                 matches each of the elements, then an error is returned.
             remote_ids (list[str], optional):
-                A list of remote array IDs. If, after filtering, there is not at least one
+                A list of remote array IDs. If after filtering, there is not at least one
                 resource that matches each of the elements, then an error is returned. This
                 cannot be provided together with the `remote_names` query parameter.
             remote_names (list[str], optional):
-                A list of remote array names. If, after filtering, there is not at least one
-                resource that matches each of the elements, then an error is returned. This
-                cannot be provided together with the `remote_ids` query parameter.
+                A list of remote array names. If there is not at least one resource that matches
+                each of the elements, then an error is returned. This cannot be provided
+                together with `remote_ids` query parameter.
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
             total_only (bool, optional):
-                If set to `true`, returns the aggregate value of all items after filtering.
-                Where it makes more sense, the average value is displayed instead. The values
-                are displayed for each name where meaningful. If `total_only=true`, the `items`
-                list will be empty.
+                Only return the total record for the specified items. The total record will be
+                the total of all items after filtering. The `items` list will be empty.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -4415,13 +4407,13 @@ class Client(object):
                 A list of remote bucket names. If there is not at least one resource that
                 matches each of the elements, then an error is returned.
             remote_ids (list[str], optional):
-                A list of remote array IDs. If, after filtering, there is not at least one
+                A list of remote array IDs. If after filtering, there is not at least one
                 resource that matches each of the elements, then an error is returned. This
                 cannot be provided together with the `remote_names` query parameter.
             remote_names (list[str], optional):
-                A list of remote array names. If, after filtering, there is not at least one
-                resource that matches each of the elements, then an error is returned. This
-                cannot be provided together with the `remote_ids` query parameter.
+                A list of remote array names. If there is not at least one resource that matches
+                each of the elements, then an error is returned. This cannot be provided
+                together with `remote_ids` query parameter.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -5913,10 +5905,8 @@ class Client(object):
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
             total_only (bool, optional):
-                If set to `true`, returns the aggregate value of all items after filtering.
-                Where it makes more sense, the average value is displayed instead. The values
-                are displayed for each name where meaningful. If `total_only=true`, the `items`
-                list will be empty.
+                Only return the total record for the specified items. The total record will be
+                the total of all items after filtering. The `items` list will be empty.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -6108,10 +6098,8 @@ class Client(object):
             start_time (int, optional):
                 When the time window starts (in milliseconds since epoch).
             total_only (bool, optional):
-                If set to `true`, returns the aggregate value of all items after filtering.
-                Where it makes more sense, the average value is displayed instead. The values
-                are displayed for each name where meaningful. If `total_only=true`, the `items`
-                list will be empty.
+                Only return the total record for the specified items. The total record will be
+                the total of all items after filtering. The `items` list will be empty.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -6282,10 +6270,8 @@ class Client(object):
             start_time (int, optional):
                 When the time window starts (in milliseconds since epoch).
             total_only (bool, optional):
-                If set to `true`, returns the aggregate value of all items after filtering.
-                Where it makes more sense, the average value is displayed instead. The values
-                are displayed for each name where meaningful. If `total_only=true`, the `items`
-                list will be empty.
+                Only return the total record for the specified items. The total record will be
+                the total of all items after filtering. The `items` list will be empty.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -6361,9 +6347,10 @@ class Client(object):
                 returned. This cannot be provided in conjunction with the
                 `certificate_group_names` parameter.
             certificate_group_names (list[str], optional):
-                A list of certificate group names. If no resource matches each of the elements
-                of `certificate_group_names`, then an error is returned. This cannot be provided
-                in conjunction with the `certificate_group_ids` parameter.
+                A list of certificate group names. If there is not at least one resource that
+                matches each of the elements of `certificate_group_names`, then an error is
+                returned. This cannot be provided in conjunction with the
+                `certificate_group_ids` parameter.
             certificate_ids (list[str], optional):
                 A list of certificate ids. If there is not at least one resource that matches
                 each of the elements of `certificate_ids`, then an error is returned.  This
@@ -6446,9 +6433,10 @@ class Client(object):
                 returned. This cannot be provided in conjunction with the
                 `certificate_group_names` parameter.
             certificate_group_names (list[str], optional):
-                A list of certificate group names. If no resource matches each of the elements
-                of `certificate_group_names`, then an error is returned. This cannot be provided
-                in conjunction with the `certificate_group_ids` parameter.
+                A list of certificate group names. If there is not at least one resource that
+                matches each of the elements of `certificate_group_names`, then an error is
+                returned. This cannot be provided in conjunction with the
+                `certificate_group_ids` parameter.
             certificate_ids (list[str], optional):
                 A list of certificate ids. If there is not at least one resource that matches
                 each of the elements of `certificate_ids`, then an error is returned.  This
@@ -6542,9 +6530,10 @@ class Client(object):
                 returned. This cannot be provided in conjunction with the
                 `certificate_group_names` parameter.
             certificate_group_names (list[str], optional):
-                A list of certificate group names. If no resource matches each of the elements
-                of `certificate_group_names`, then an error is returned. This cannot be provided
-                in conjunction with the `certificate_group_ids` parameter.
+                A list of certificate group names. If there is not at least one resource that
+                matches each of the elements of `certificate_group_names`, then an error is
+                returned. This cannot be provided in conjunction with the
+                `certificate_group_ids` parameter.
             certificate_ids (list[str], optional):
                 A list of certificate ids. If there is not at least one resource that matches
                 each of the elements of `certificate_ids`, then an error is returned.  This
@@ -6906,9 +6895,10 @@ class Client(object):
                 returned. This cannot be provided in conjunction with the
                 `certificate_group_names` parameter.
             certificate_group_names (list[str], optional):
-                A list of certificate group names. If no resource matches each of the elements
-                of `certificate_group_names`, then an error is returned. This cannot be provided
-                in conjunction with the `certificate_group_ids` parameter.
+                A list of certificate group names. If there is not at least one resource that
+                matches each of the elements of `certificate_group_names`, then an error is
+                returned. This cannot be provided in conjunction with the
+                `certificate_group_ids` parameter.
             certificate_ids (list[str], optional):
                 A list of certificate ids. If there is not at least one resource that matches
                 each of the elements of `certificate_ids`, then an error is returned.  This
@@ -6991,9 +6981,10 @@ class Client(object):
                 returned. This cannot be provided in conjunction with the
                 `certificate_group_names` parameter.
             certificate_group_names (list[str], optional):
-                A list of certificate group names. If no resource matches each of the elements
-                of `certificate_group_names`, then an error is returned. This cannot be provided
-                in conjunction with the `certificate_group_ids` parameter.
+                A list of certificate group names. If there is not at least one resource that
+                matches each of the elements of `certificate_group_names`, then an error is
+                returned. This cannot be provided in conjunction with the
+                `certificate_group_ids` parameter.
             certificate_ids (list[str], optional):
                 A list of certificate ids. If there is not at least one resource that matches
                 each of the elements of `certificate_ids`, then an error is returned.  This
@@ -7087,9 +7078,10 @@ class Client(object):
                 returned. This cannot be provided in conjunction with the
                 `certificate_group_names` parameter.
             certificate_group_names (list[str], optional):
-                A list of certificate group names. If no resource matches each of the elements
-                of `certificate_group_names`, then an error is returned. This cannot be provided
-                in conjunction with the `certificate_group_ids` parameter.
+                A list of certificate group names. If there is not at least one resource that
+                matches each of the elements of `certificate_group_names`, then an error is
+                returned. This cannot be provided in conjunction with the
+                `certificate_group_ids` parameter.
             certificate_ids (list[str], optional):
                 A list of certificate ids. If there is not at least one resource that matches
                 each of the elements of `certificate_ids`, then an error is returned.  This
@@ -7523,10 +7515,8 @@ class Client(object):
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
             total_only (bool, optional):
-                If set to `true`, returns the aggregate value of all items after filtering.
-                Where it makes more sense, the average value is displayed instead. The values
-                are displayed for each name where meaningful. If `total_only=true`, the `items`
-                list will be empty.
+                Only return the total record for the specified items. The total record will be
+                the total of all items after filtering. The `items` list will be empty.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -8506,10 +8496,8 @@ class Client(object):
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
             total_only (bool, optional):
-                If set to `true`, returns the aggregate value of all items after filtering.
-                Where it makes more sense, the average value is displayed instead. The values
-                are displayed for each name where meaningful. If `total_only=true`, the `items`
-                list will be empty.
+                Only return the total record for the specified items. The total record will be
+                the total of all items after filtering. The `items` list will be empty.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -8966,13 +8954,13 @@ class Client(object):
                 matches each of the elements, then an error is returned. This cannot be provided
                 together with the `remote_file_system_ids` query parameter.
             remote_ids (list[str], optional):
-                A list of remote array IDs. If, after filtering, there is not at least one
+                A list of remote array IDs. If after filtering, there is not at least one
                 resource that matches each of the elements, then an error is returned. This
                 cannot be provided together with the `remote_names` query parameter.
             remote_names (list[str], optional):
-                A list of remote array names. If, after filtering, there is not at least one
-                resource that matches each of the elements, then an error is returned. This
-                cannot be provided together with the `remote_ids` query parameter.
+                A list of remote array names. If there is not at least one resource that matches
+                each of the elements, then an error is returned. This cannot be provided
+                together with `remote_ids` query parameter.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -9104,13 +9092,13 @@ class Client(object):
                 matches each of the elements, then an error is returned. This cannot be provided
                 together with the `remote_file_system_ids` query parameter.
             remote_ids (list[str], optional):
-                A list of remote array IDs. If, after filtering, there is not at least one
+                A list of remote array IDs. If after filtering, there is not at least one
                 resource that matches each of the elements, then an error is returned. This
                 cannot be provided together with the `remote_names` query parameter.
             remote_names (list[str], optional):
-                A list of remote array names. If, after filtering, there is not at least one
-                resource that matches each of the elements, then an error is returned. This
-                cannot be provided together with the `remote_ids` query parameter.
+                A list of remote array names. If there is not at least one resource that matches
+                each of the elements, then an error is returned. This cannot be provided
+                together with `remote_ids` query parameter.
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
             async_req (bool, optional):
@@ -9217,13 +9205,13 @@ class Client(object):
                 matches each of the elements, then an error is returned. This cannot be provided
                 together with `local_file_system_ids` query parameter.
             remote_ids (list[str], optional):
-                A list of remote array IDs. If, after filtering, there is not at least one
+                A list of remote array IDs. If after filtering, there is not at least one
                 resource that matches each of the elements, then an error is returned. This
                 cannot be provided together with the `remote_names` query parameter.
             remote_names (list[str], optional):
-                A list of remote array names. If, after filtering, there is not at least one
-                resource that matches each of the elements, then an error is returned. This
-                cannot be provided together with the `remote_ids` query parameter.
+                A list of remote array names. If there is not at least one resource that matches
+                each of the elements, then an error is returned. This cannot be provided
+                together with `remote_ids` query parameter.
             replicate_now (bool, optional):
                 If set to `true`, replicates the contents to the specified targets. The
                 `replicate_now` parameters can only be `true` with the partial-replica file
@@ -9334,13 +9322,13 @@ class Client(object):
             policy_names (list[str], optional):
                 A list of policy names.
             remote_ids (list[str], optional):
-                A list of remote array IDs. If, after filtering, there is not at least one
+                A list of remote array IDs. If after filtering, there is not at least one
                 resource that matches each of the elements, then an error is returned. This
                 cannot be provided together with the `remote_names` query parameter.
             remote_names (list[str], optional):
-                A list of remote array names. If, after filtering, there is not at least one
-                resource that matches each of the elements, then an error is returned. This
-                cannot be provided together with the `remote_ids` query parameter.
+                A list of remote array names. If there is not at least one resource that matches
+                each of the elements, then an error is returned. This cannot be provided
+                together with `remote_ids` query parameter.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -9482,13 +9470,13 @@ class Client(object):
                 matches each of the elements, then an error is returned. This cannot be provided
                 together with the `remote_file_system_ids` query parameter.
             remote_ids (list[str], optional):
-                A list of remote array IDs. If, after filtering, there is not at least one
+                A list of remote array IDs. If after filtering, there is not at least one
                 resource that matches each of the elements, then an error is returned. This
                 cannot be provided together with the `remote_names` query parameter.
             remote_names (list[str], optional):
-                A list of remote array names. If, after filtering, there is not at least one
-                resource that matches each of the elements, then an error is returned. This
-                cannot be provided together with the `remote_ids` query parameter.
+                A list of remote array names. If there is not at least one resource that matches
+                each of the elements, then an error is returned. This cannot be provided
+                together with `remote_ids` query parameter.
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
             async_req (bool, optional):
@@ -9608,13 +9596,13 @@ class Client(object):
             policy_names (list[str], optional):
                 A list of policy names.
             remote_ids (list[str], optional):
-                A list of remote array IDs. If, after filtering, there is not at least one
+                A list of remote array IDs. If after filtering, there is not at least one
                 resource that matches each of the elements, then an error is returned. This
                 cannot be provided together with the `remote_names` query parameter.
             remote_names (list[str], optional):
-                A list of remote array names. If, after filtering, there is not at least one
-                resource that matches each of the elements, then an error is returned. This
-                cannot be provided together with the `remote_ids` query parameter.
+                A list of remote array names. If there is not at least one resource that matches
+                each of the elements, then an error is returned. This cannot be provided
+                together with `remote_ids` query parameter.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -9722,13 +9710,13 @@ class Client(object):
                 matches each of the elements, then an error is returned. This cannot be provided
                 together with the `remote_file_system_ids` query parameter.
             remote_ids (list[str], optional):
-                A list of remote array IDs. If, after filtering, there is not at least one
+                A list of remote array IDs. If after filtering, there is not at least one
                 resource that matches each of the elements, then an error is returned. This
                 cannot be provided together with the `remote_names` query parameter.
             remote_names (list[str], optional):
-                A list of remote array names. If, after filtering, there is not at least one
-                resource that matches each of the elements, then an error is returned. This
-                cannot be provided together with the `remote_ids` query parameter.
+                A list of remote array names. If there is not at least one resource that matches
+                each of the elements, then an error is returned. This cannot be provided
+                together with `remote_ids` query parameter.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -9841,20 +9829,18 @@ class Client(object):
             offset (int, optional):
                 The offset of the first resource to return from a collection.
             remote_ids (list[str], optional):
-                A list of remote array IDs. If, after filtering, there is not at least one
+                A list of remote array IDs. If after filtering, there is not at least one
                 resource that matches each of the elements, then an error is returned. This
                 cannot be provided together with the `remote_names` query parameter.
             remote_names (list[str], optional):
-                A list of remote array names. If, after filtering, there is not at least one
-                resource that matches each of the elements, then an error is returned. This
-                cannot be provided together with the `remote_ids` query parameter.
+                A list of remote array names. If there is not at least one resource that matches
+                each of the elements, then an error is returned. This cannot be provided
+                together with `remote_ids` query parameter.
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
             total_only (bool, optional):
-                If set to `true`, returns the aggregate value of all items after filtering.
-                Where it makes more sense, the average value is displayed instead. The values
-                are displayed for each name where meaningful. If `total_only=true`, the `items`
-                list will be empty.
+                Only return the total record for the specified items. The total record will be
+                the total of all items after filtering. The `items` list will be empty.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -10062,10 +10048,8 @@ class Client(object):
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
             total_only (bool, optional):
-                If set to `true`, returns the aggregate value of all items after filtering.
-                Where it makes more sense, the average value is displayed instead. The values
-                are displayed for each name where meaningful. If `total_only=true`, the `items`
-                list will be empty.
+                Only return the total record for the specified items. The total record will be
+                the total of all items after filtering. The `items` list will be empty.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -10535,13 +10519,13 @@ class Client(object):
                 A list of resource names. If there is not at least one resource that matches
                 each of the elements of `names`, then an error is returned.
             remote_ids (list[str], optional):
-                A list of remote array IDs. If, after filtering, there is not at least one
+                A list of remote array IDs. If after filtering, there is not at least one
                 resource that matches each of the elements, then an error is returned. This
                 cannot be provided together with the `remote_names` query parameter.
             remote_names (list[str], optional):
-                A list of remote array names. If, after filtering, there is not at least one
-                resource that matches each of the elements, then an error is returned. This
-                cannot be provided together with the `remote_ids` query parameter.
+                A list of remote array names. If there is not at least one resource that matches
+                each of the elements, then an error is returned. This cannot be provided
+                together with `remote_ids` query parameter.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -10648,10 +10632,8 @@ class Client(object):
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
             total_only (bool, optional):
-                If set to `true`, returns the aggregate value of all items after filtering.
-                Where it makes more sense, the average value is displayed instead. The values
-                are displayed for each name where meaningful. If `total_only=true`, the `items`
-                list will be empty.
+                Only return the total record for the specified items. The total record will be
+                the total of all items after filtering. The `items` list will be empty.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -11133,10 +11115,8 @@ class Client(object):
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
             total_only (bool, optional):
-                If set to `true`, returns the aggregate value of all items after filtering.
-                Where it makes more sense, the average value is displayed instead. The values
-                are displayed for each name where meaningful. If `total_only=true`, the `items`
-                list will be empty.
+                Only return the total record for the specified items. The total record will be
+                the total of all items after filtering. The `items` list will be empty.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -11240,10 +11220,8 @@ class Client(object):
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
             total_only (bool, optional):
-                If set to `true`, returns the aggregate value of all items after filtering.
-                Where it makes more sense, the average value is displayed instead. The values
-                are displayed for each name where meaningful. If `total_only=true`, the `items`
-                list will be empty.
+                Only return the total record for the specified items. The total record will be
+                the total of all items after filtering. The `items` list will be empty.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -11969,10 +11947,8 @@ class Client(object):
             start_time (int, optional):
                 When the time window starts (in milliseconds since epoch).
             total_only (bool, optional):
-                If set to `true`, returns the aggregate value of all items after filtering.
-                Where it makes more sense, the average value is displayed instead. The values
-                are displayed for each name where meaningful. If `total_only=true`, the `items`
-                list will be empty.
+                Only return the total record for the specified items. The total record will be
+                the total of all items after filtering. The `items` list will be empty.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -12767,10 +12743,8 @@ class Client(object):
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
             total_only (bool, optional):
-                If set to `true`, returns the aggregate value of all items after filtering.
-                Where it makes more sense, the average value is displayed instead. The values
-                are displayed for each name where meaningful. If `total_only=true`, the `items`
-                list will be empty.
+                Only return the total record for the specified items. The total record will be
+                the total of all items after filtering. The `items` list will be empty.
             uids (list[int], optional):
                 A list of user IDs. This cannot be provided together with `user_names` query
                 parameter.
@@ -12958,11 +12932,11 @@ class Client(object):
                 A header to provide to track the API call. Generated by the server if not
                 provided.
             ids (list[str], optional):
-                Performs the operation on the unique resource IDs specified. Only one value is
-                supported.
+                Performs the operation on the unique resource IDs specified. Supports exactly
+                one value.
             names (list[str], optional):
-                Performs the operation on the unique resource names specified. Only one value is
-                supported.
+                Performs the operation on the unique resource names specified. Supports exactly
+                one value.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -13032,10 +13006,8 @@ class Client(object):
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
             total_only (bool, optional):
-                If set to `true`, returns the aggregate value of all items after filtering.
-                Where it makes more sense, the average value is displayed instead. The values
-                are displayed for each name where meaningful. If `total_only=true`, the `items`
-                list will be empty.
+                Only return the total record for the specified items. The total record will be
+                the total of all items after filtering. The `items` list will be empty.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -13154,23 +13126,21 @@ class Client(object):
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
-                Performs the operation on the unique resource IDs specified. Only one value is
-                supported.
+                Performs the operation on the unique resource IDs specified. Supports exactly
+                one value.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
             names (list[str], optional):
-                Performs the operation on the unique resource names specified. Only one value is
-                supported.
+                Performs the operation on the unique resource names specified. Supports exactly
+                one value.
             offset (int, optional):
                 The offset of the first resource to return from a collection.
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
             total_only (bool, optional):
-                If set to `true`, returns the aggregate value of all items after filtering.
-                Where it makes more sense, the average value is displayed instead. The values
-                are displayed for each name where meaningful. If `total_only=true`, the `items`
-                list will be empty.
+                Only return the total record for the specified items. The total record will be
+                the total of all items after filtering. The `items` list will be empty.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -13337,10 +13307,8 @@ class Client(object):
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
             total_only (bool, optional):
-                If set to `true`, returns the aggregate value of all items after filtering.
-                Where it makes more sense, the average value is displayed instead. The values
-                are displayed for each name where meaningful. If `total_only=true`, the `items`
-                list will be empty.
+                Only return the total record for the specified items. The total record will be
+                the total of all items after filtering. The `items` list will be empty.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -13479,11 +13447,11 @@ class Client(object):
                 A header to provide to track the API call. Generated by the server if not
                 provided.
             ids (list[str], optional):
-                Performs the operation on the unique resource IDs specified. Only one value is
-                supported.
+                Performs the operation on the unique resource IDs specified. Supports exactly
+                one value.
             names (list[str], optional):
-                Performs the operation on the unique resource names specified. Only one value is
-                supported.
+                Performs the operation on the unique resource names specified. Supports exactly
+                one value.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -13541,8 +13509,8 @@ class Client(object):
                 A header to provide to track the API call. Generated by the server if not
                 provided.
             names (list[str], optional):
-                Performs the operation on the unique resource names specified. Only one value is
-                supported.
+                Performs the operation on the unique resource names specified. Supports exactly
+                one value.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -13930,10 +13898,8 @@ class Client(object):
             start_time (int, optional):
                 When the time window starts (in milliseconds since epoch).
             total_only (bool, optional):
-                If set to `true`, returns the aggregate value of all items after filtering.
-                Where it makes more sense, the average value is displayed instead. The values
-                are displayed for each name where meaningful. If `total_only=true`, the `items`
-                list will be empty.
+                Only return the total record for the specified items. The total record will be
+                the total of all items after filtering. The `items` list will be empty.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -16496,10 +16462,8 @@ class Client(object):
             start_time (int, optional):
                 When the time window starts (in milliseconds since epoch).
             total_only (bool, optional):
-                If set to `true`, returns the aggregate value of all items after filtering.
-                Where it makes more sense, the average value is displayed instead. The values
-                are displayed for each name where meaningful. If `total_only=true`, the `items`
-                list will be empty.
+                Only return the total record for the specified items. The total record will be
+                the total of all items after filtering. The `items` list will be empty.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -17506,10 +17470,8 @@ class Client(object):
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
             total_only (bool, optional):
-                If set to `true`, returns the aggregate value of all items after filtering.
-                Where it makes more sense, the average value is displayed instead. The values
-                are displayed for each name where meaningful. If `total_only=true`, the `items`
-                list will be empty.
+                Only return the total record for the specified items. The total record will be
+                the total of all items after filtering. The `items` list will be empty.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -25887,13 +25849,13 @@ class Client(object):
             policy_names (list[str], optional):
                 A list of policy names.
             remote_ids (list[str], optional):
-                A list of remote array IDs. If, after filtering, there is not at least one
+                A list of remote array IDs. If after filtering, there is not at least one
                 resource that matches each of the elements, then an error is returned. This
                 cannot be provided together with the `remote_names` query parameter.
             remote_names (list[str], optional):
-                A list of remote array names. If, after filtering, there is not at least one
-                resource that matches each of the elements, then an error is returned. This
-                cannot be provided together with the `remote_ids` query parameter.
+                A list of remote array names. If there is not at least one resource that matches
+                each of the elements, then an error is returned. This cannot be provided
+                together with `remote_ids` query parameter.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -26037,13 +25999,13 @@ class Client(object):
                 matches each of the elements, then an error is returned. This cannot be provided
                 together with the `remote_file_system_ids` query parameter.
             remote_ids (list[str], optional):
-                A list of remote array IDs. If, after filtering, there is not at least one
+                A list of remote array IDs. If after filtering, there is not at least one
                 resource that matches each of the elements, then an error is returned. This
                 cannot be provided together with the `remote_names` query parameter.
             remote_names (list[str], optional):
-                A list of remote array names. If, after filtering, there is not at least one
-                resource that matches each of the elements, then an error is returned. This
-                cannot be provided together with the `remote_ids` query parameter.
+                A list of remote array names. If there is not at least one resource that matches
+                each of the elements, then an error is returned. This cannot be provided
+                together with `remote_ids` query parameter.
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
             async_req (bool, optional):
@@ -26163,13 +26125,13 @@ class Client(object):
             policy_names (list[str], optional):
                 A list of policy names.
             remote_ids (list[str], optional):
-                A list of remote array IDs. If, after filtering, there is not at least one
+                A list of remote array IDs. If after filtering, there is not at least one
                 resource that matches each of the elements, then an error is returned. This
                 cannot be provided together with the `remote_names` query parameter.
             remote_names (list[str], optional):
-                A list of remote array names. If, after filtering, there is not at least one
-                resource that matches each of the elements, then an error is returned. This
-                cannot be provided together with the `remote_ids` query parameter.
+                A list of remote array names. If there is not at least one resource that matches
+                each of the elements, then an error is returned. This cannot be provided
+                together with `remote_ids` query parameter.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -26919,13 +26881,13 @@ class Client(object):
                 matches each of the elements, then an error is returned. This cannot be provided
                 together with the `remote_file_system_ids` query parameter.
             remote_ids (list[str], optional):
-                A list of remote array IDs. If, after filtering, there is not at least one
+                A list of remote array IDs. If after filtering, there is not at least one
                 resource that matches each of the elements, then an error is returned. This
                 cannot be provided together with the `remote_names` query parameter.
             remote_names (list[str], optional):
-                A list of remote array names. If, after filtering, there is not at least one
-                resource that matches each of the elements, then an error is returned. This
-                cannot be provided together with the `remote_ids` query parameter.
+                A list of remote array names. If there is not at least one resource that matches
+                each of the elements, then an error is returned. This cannot be provided
+                together with `remote_ids` query parameter.
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
             async_req (bool, optional):
@@ -30011,13 +29973,13 @@ class Client(object):
                 matches each of the elements, then an error is returned. This cannot be provided
                 together with the `remote_file_system_ids` query parameter.
             remote_ids (list[str], optional):
-                A list of remote array IDs. If, after filtering, there is not at least one
+                A list of remote array IDs. If after filtering, there is not at least one
                 resource that matches each of the elements, then an error is returned. This
                 cannot be provided together with the `remote_names` query parameter.
             remote_names (list[str], optional):
-                A list of remote array names. If, after filtering, there is not at least one
-                resource that matches each of the elements, then an error is returned. This
-                cannot be provided together with the `remote_ids` query parameter.
+                A list of remote array names. If there is not at least one resource that matches
+                each of the elements, then an error is returned. This cannot be provided
+                together with `remote_ids` query parameter.
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
             async_req (bool, optional):
@@ -31572,10 +31534,8 @@ class Client(object):
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
             total_only (bool, optional):
-                If set to `true`, returns the aggregate value of all items after filtering.
-                Where it makes more sense, the average value is displayed instead. The values
-                are displayed for each name where meaningful. If `total_only=true`, the `items`
-                list will be empty.
+                Only return the total record for the specified items. The total record will be
+                the total of all items after filtering. The `items` list will be empty.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -33714,7 +33674,7 @@ class Client(object):
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
             test_type (str, optional):
-                Specifies the type of test. Valid values are `all`, `phonehome`, and `remote-
+                Specify the type of test. Valid values are `all`, `phonehome` and `remote-
                 assist`. If not specified, defaults to `all`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -34747,10 +34707,8 @@ class Client(object):
             start_time (int, optional):
                 When the time window starts (in milliseconds since epoch).
             total_only (bool, optional):
-                If set to `true`, returns the aggregate value of all items after filtering.
-                Where it makes more sense, the average value is displayed instead. The values
-                are displayed for each name where meaningful. If `total_only=true`, the `items`
-                list will be empty.
+                Only return the total record for the specified items. The total record will be
+                the total of all items after filtering. The `items` list will be empty.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.

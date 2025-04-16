@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.15, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.15, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.15
     
@@ -49,8 +49,8 @@ class FileSystemEradicationConfig(object):
     ):
         """
         Keyword args:
-            eradication_mode (str): The eradication mode of the file system. If it's `permission-based` the file system can be eradicated based on user permissions. If it's `retention-based` the file system can not be eradicated until no files/inodes are locked or retained. Valid values are `permission-based` and `retention-based`.
-            manual_eradication (str): The manual eradication status of the file system. If `disabled`, the file system cannot be eradicated after it has been destroyed, unless it is empty. If `enabled`, the file system can be eradicated. Valid values are `disabled` and `enabled`.
+            eradication_mode (str): The eradication mode of the file system. If it's `permission-based` the file system can be eradicated based on user permissions. If it's `retention-based` the file system can not be eradicated until no files/inodes are locked or retained. Valid values are `permission-based` and `retention-based`. 
+            manual_eradication (str): The manual eradication status of the file system. If `disabled`, the file system cannot be eradicated after it has been destroyed, unless it is empty. If `enabled`, the file system can be eradicated. Valid values are `disabled` and `enabled`. 
         """
         if eradication_mode is not None:
             self.eradication_mode = eradication_mode

@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.12, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.12, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.12
     
@@ -32,17 +32,17 @@ class ObjectStoreAccessKey(object):
     swagger_types = {
         'name': 'str',
         'created': 'int',
-        'enabled': 'bool',
         'secret_access_key': 'str',
-        'user': 'FixedReference'
+        'user': 'FixedReference',
+        'enabled': 'bool'
     }
 
     attribute_map = {
         'name': 'name',
         'created': 'created',
-        'enabled': 'enabled',
         'secret_access_key': 'secret_access_key',
-        'user': 'user'
+        'user': 'user',
+        'enabled': 'enabled'
     }
 
     required_args = {
@@ -52,28 +52,28 @@ class ObjectStoreAccessKey(object):
         self,
         name=None,  # type: str
         created=None,  # type: int
-        enabled=None,  # type: bool
         secret_access_key=None,  # type: str
         user=None,  # type: models.FixedReference
+        enabled=None,  # type: bool
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
             created (int): Creation timestamp of the object.
-            enabled (bool): Is the access key enabled? If not specified, defaults to `false`.
-            secret_access_key (str): The secret access key, only populated on creation if it is not imported from another FlashBlade.
+            secret_access_key (str): The secret access key, only populated on creation if it is not imported from another FlashBlade. 
             user (FixedReference): Reference of the associated user.
+            enabled (bool): Is the access key enabled? If not specified, defaults to `false`. 
         """
         if name is not None:
             self.name = name
         if created is not None:
             self.created = created
-        if enabled is not None:
-            self.enabled = enabled
         if secret_access_key is not None:
             self.secret_access_key = secret_access_key
         if user is not None:
             self.user = user
+        if enabled is not None:
+            self.enabled = enabled
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

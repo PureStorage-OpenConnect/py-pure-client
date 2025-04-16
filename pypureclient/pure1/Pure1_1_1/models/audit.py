@@ -3,7 +3,7 @@
 """
     Pure1 Public REST API
 
-    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)  The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
+    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)   The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
 
     OpenAPI spec version: 1.1
     
@@ -31,28 +31,28 @@ class Audit(object):
     """
     swagger_types = {
         'as_of': 'int',
-        'id': 'str',
         'name': 'str',
+        'id': 'str',
         'arrays': 'list[FixedReferenceFqdn]',
-        'arguments': 'str',
-        'command': 'str',
-        'origin': 'str',
         'subcommand': 'str',
+        'origin': 'str',
+        'arguments': 'str',
         'time': 'int',
-        'user': 'str'
+        'user': 'str',
+        'command': 'str'
     }
 
     attribute_map = {
         'as_of': '_as_of',
-        'id': 'id',
         'name': 'name',
+        'id': 'id',
         'arrays': 'arrays',
-        'arguments': 'arguments',
-        'command': 'command',
-        'origin': 'origin',
         'subcommand': 'subcommand',
+        'origin': 'origin',
+        'arguments': 'arguments',
         'time': 'time',
-        'user': 'user'
+        'user': 'user',
+        'command': 'command'
     }
 
     required_args = {
@@ -61,49 +61,49 @@ class Audit(object):
     def __init__(
         self,
         as_of=None,  # type: int
-        id=None,  # type: str
         name=None,  # type: str
+        id=None,  # type: str
         arrays=None,  # type: List[models.FixedReferenceFqdn]
-        arguments=None,  # type: str
-        command=None,  # type: str
-        origin=None,  # type: str
         subcommand=None,  # type: str
+        origin=None,  # type: str
+        arguments=None,  # type: str
         time=None,  # type: int
         user=None,  # type: str
+        command=None,  # type: str
     ):
         """
         Keyword args:
             as_of (int): The freshness of the data (timestamp in millis since epoch).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
             name (str): A modifiable, locally unique name chosen by the user.
-            arrays (list[FixedReferenceFqdn]): The list of arrays where this resource exists. Many resources are on a single array, but some resources, such as pods, can be shared across multiple arrays.
-            arguments (str): Arguments provided to the command.
-            command (str): The command that was executed.
-            origin (str): Origin of the action. Valid values are `array` and `Pure1`.
+            id (str): A non-modifiable, globally unique ID chosen by the system.
+            arrays (list[FixedReferenceFqdn]): The list of arrays where this resource exists. Many resources are on a single array, but some resources, such as pods, can be shared across multiple arrays. 
             subcommand (str): The subcommand that was executed.
-            time (int): Time at which the command was run in milliseconds since UNIX epoch.
+            origin (str): Origin of the action. Valid values are `array` and `Pure1`.
+            arguments (str): Arguments provided to the command.
+            time (int): Time at which the command was run in milliseconds since UNIX epoch. 
             user (str): The user who ran the command.
+            command (str): The command that was executed.
         """
         if as_of is not None:
             self.as_of = as_of
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
         if arrays is not None:
             self.arrays = arrays
-        if arguments is not None:
-            self.arguments = arguments
-        if command is not None:
-            self.command = command
-        if origin is not None:
-            self.origin = origin
         if subcommand is not None:
             self.subcommand = subcommand
+        if origin is not None:
+            self.origin = origin
+        if arguments is not None:
+            self.arguments = arguments
         if time is not None:
             self.time = time
         if user is not None:
             self.user = user
+        if command is not None:
+            self.command = command
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

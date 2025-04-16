@@ -46,7 +46,7 @@ class PolicyRuleQuotaPatch(object):
     ):
         """
         Keyword args:
-            rules (list[PolicyrulequotapatchRules]): Accepts a single policy update object to apply to the specified name(s) of the rule. Will error out if the list contains more than one update object.
+            rules (list[PolicyrulequotapatchRules]): Accepts a single policy update object to apply to the specified name(s) of the rule. Will error out if the list contains more than one update object. 
         """
         if rules is not None:
             self.rules = rules

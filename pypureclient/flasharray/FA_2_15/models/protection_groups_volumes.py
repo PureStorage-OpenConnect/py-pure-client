@@ -30,13 +30,13 @@ class ProtectionGroupsVolumes(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'group': 'ReferenceNoId',
-        'member': 'ProtectionGroupsVolumesMember'
+        'member': 'ProtectionGroupsVolumesMember',
+        'group': 'ReferenceNoId'
     }
 
     attribute_map = {
-        'group': 'group',
-        'member': 'member'
+        'member': 'member',
+        'group': 'group'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class ProtectionGroupsVolumes(object):
 
     def __init__(
         self,
-        group=None,  # type: models.ReferenceNoId
         member=None,  # type: models.ProtectionGroupsVolumesMember
+        group=None,  # type: models.ReferenceNoId
     ):
         """
         Keyword args:
-            group (ReferenceNoId)
             member (ProtectionGroupsVolumesMember)
+            group (ReferenceNoId)
         """
-        if group is not None:
-            self.group = group
         if member is not None:
             self.member = member
+        if group is not None:
+            self.group = group
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

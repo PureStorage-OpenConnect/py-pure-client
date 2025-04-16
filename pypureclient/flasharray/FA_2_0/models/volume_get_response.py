@@ -55,10 +55,10 @@ class VolumeGetResponse(object):
     ):
         """
         Keyword args:
-            more_items_remaining (bool): Returns a value of `true` if subsequent items can be retrieved.
-            total_item_count (int): The total number of records after applying all filter query parameters. The `total_item_count` will be calculated if and only if the corresponding query parameter `total_item_count` is set to `true`. If this query parameter is not set or set to `false`, a value of `null` will be returned.
-            items (list[Volume]): Returns a list of all items after filtering. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.
-            total (list[Volume]): The aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each field where meaningful.
+            more_items_remaining (bool): Returns a value of `true` if subsequent items can be retrieved. 
+            total_item_count (int): The total number of records after applying all filter query parameters. The `total_item_count` will be calculated if and only if the corresponding query parameter `total_item_count` is set to `true`. If this query parameter is not set or set to `false`, a value of `null` will be returned. 
+            items (list[Volume]): Returns a list of all items after filtering. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty. 
+            total (list[Volume]): The aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each field where meaningful. 
         """
         if more_items_remaining is not None:
             self.more_items_remaining = more_items_remaining

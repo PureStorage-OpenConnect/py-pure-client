@@ -30,46 +30,46 @@ class Volume(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
-        'connection_count': 'int',
-        'created': 'int',
+        'id': 'str',
+        'time_remaining': 'int',
         'destroyed': 'bool',
         'host_encryption_key_status': 'str',
         'provisioned': 'int',
         'qos': 'Qos',
-        'priority_adjustment': 'PriorityAdjustment',
         'serial': 'str',
+        'created': 'int',
+        'connection_count': 'int',
+        'priority_adjustment': 'PriorityAdjustment',
         'space': 'VolumeSpaceCommon',
-        'time_remaining': 'int',
-        'pod': 'Reference',
-        'source': 'FixedReference',
-        'subtype': 'str',
-        'volume_group': 'Reference',
-        'requested_promotion_state': 'str',
         'promotion_status': 'str',
+        'pod': 'Reference',
+        'subtype': 'str',
+        'requested_promotion_state': 'str',
+        'source': 'FixedReference',
+        'volume_group': 'Reference',
         'priority': 'int'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
-        'connection_count': 'connection_count',
-        'created': 'created',
+        'id': 'id',
+        'time_remaining': 'time_remaining',
         'destroyed': 'destroyed',
         'host_encryption_key_status': 'host_encryption_key_status',
         'provisioned': 'provisioned',
         'qos': 'qos',
-        'priority_adjustment': 'priority_adjustment',
         'serial': 'serial',
+        'created': 'created',
+        'connection_count': 'connection_count',
+        'priority_adjustment': 'priority_adjustment',
         'space': 'space',
-        'time_remaining': 'time_remaining',
-        'pod': 'pod',
-        'source': 'source',
-        'subtype': 'subtype',
-        'volume_group': 'volume_group',
-        'requested_promotion_state': 'requested_promotion_state',
         'promotion_status': 'promotion_status',
+        'pod': 'pod',
+        'subtype': 'subtype',
+        'requested_promotion_state': 'requested_promotion_state',
+        'source': 'source',
+        'volume_group': 'volume_group',
         'priority': 'priority'
     }
 
@@ -78,56 +78,54 @@ class Volume(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
-        connection_count=None,  # type: int
-        created=None,  # type: int
+        id=None,  # type: str
+        time_remaining=None,  # type: int
         destroyed=None,  # type: bool
         host_encryption_key_status=None,  # type: str
         provisioned=None,  # type: int
         qos=None,  # type: models.Qos
-        priority_adjustment=None,  # type: models.PriorityAdjustment
         serial=None,  # type: str
+        created=None,  # type: int
+        connection_count=None,  # type: int
+        priority_adjustment=None,  # type: models.PriorityAdjustment
         space=None,  # type: models.VolumeSpaceCommon
-        time_remaining=None,  # type: int
-        pod=None,  # type: models.Reference
-        source=None,  # type: models.FixedReference
-        subtype=None,  # type: str
-        volume_group=None,  # type: models.Reference
-        requested_promotion_state=None,  # type: str
         promotion_status=None,  # type: str
+        pod=None,  # type: models.Reference
+        subtype=None,  # type: str
+        requested_promotion_state=None,  # type: str
+        source=None,  # type: models.FixedReference
+        volume_group=None,  # type: models.Reference
         priority=None,  # type: int
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            name (str): A user-specified name. The name must be locally unique and can be changed.
-            connection_count (int): The total number of hosts and host groups connected to the volume.
-            created (int): The volume creation time, measured in milliseconds since the UNIX epoch.
-            destroyed (bool): Returns a value of `true` if the volume has been destroyed and is pending eradication. The `time_remaining` value displays the amount of time left until the destroyed volume is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed volume can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the volume is permanently eradicated and can no longer be recovered.
-            host_encryption_key_status (str): The host encryption key status for this volume. Values include `none`, `detected`, and `fetched`.
-            provisioned (int): The virtual size of the volume as a multiple of 512, measured in bytes. The maximum size is 4503599627370496 (4PB).
-            qos (Qos): Displays QoS limit information.
-            priority_adjustment (PriorityAdjustment): Priority adjustment operator and value.
-            serial (str): A globally unique serial number generated by the FlashArray when the volume is created.
-            space (VolumeSpaceCommon): Displays size and space consumption information.
-            time_remaining (int): The amount of time left until the destroyed volume is permanently eradicated, measured in milliseconds. Before the `time_remaining` period has elapsed, the destroyed volume can be recovered by setting `destroyed=false`.
-            pod (Reference): A reference to the pod.
-            source (FixedReference): A reference to the originating volume as a result of a volume copy.
-            subtype (str): The type of volume. Values include `protocol_endpoint` and `regular`.
-            volume_group (Reference): A reference to the volume group.
-            requested_promotion_state (str): Values include `promoted` and `demoted`. Patch `requested_promotion_state` to `demoted` to demote the volume so that the volume stops accepting write requests. Patch `requested_promotion_state` to `promoted` to promote the volume so that the volume starts accepting write requests.
-            promotion_status (str): Current promotion status of a volume. Values include `promoted` and `demoted`. A status of `promoted` indicates that the volume has been promoted and can accept write requests from hosts. This is the default status for a volume when it is created. A status of `demoted` indicates that the volume has been demoted and no longer accepts write requests.
-            priority (int): The current priority value. Priority is calculated by combining all applicable relative `priority_adjustment` values or taking the exact value if the volume has an absolute `priority_adjustment` (specified by an `=` `priority_adjustment_operator`).
+            name (str): A user-specified name. The name must be locally unique and can be changed. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource. 
+            time_remaining (int): The amount of time left until the destroyed volume is permanently eradicated, measured in milliseconds. Before the `time_remaining` period has elapsed, the destroyed volume can be recovered by setting `destroyed=false`. 
+            destroyed (bool): Returns a value of `true` if the volume has been destroyed and is pending eradication. The `time_remaining` value displays the amount of time left until the destroyed volume is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed volume can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the volume is permanently eradicated and can no longer be recovered. 
+            host_encryption_key_status (str): The host encryption key status for this volume. Values include `none`, `detected`, and `fetched`. 
+            provisioned (int): The virtual size of the volume as a multiple of 512, measured in bytes. The maximum size is 4503599627370496 (4PB). 
+            qos (Qos): Displays QoS limit information. 
+            serial (str): A globally unique serial number generated by the FlashArray when the volume is created. 
+            created (int): The volume creation time, measured in milliseconds since the UNIX epoch. 
+            connection_count (int): The total number of hosts and host groups connected to the volume. 
+            priority_adjustment (PriorityAdjustment): Priority adjustment operator and value. 
+            space (VolumeSpaceCommon): Displays size and space consumption information. 
+            promotion_status (str): Current promotion status of a volume. Values include `promoted` and `demoted`. A status of `promoted` indicates that the volume has been promoted and can accept write requests from hosts. This is the default status for a volume when it is created. A status of `demoted` indicates that the volume has been demoted and no longer accepts write requests. 
+            pod (Reference): A reference to the pod. 
+            subtype (str): The type of volume. Values include `protocol_endpoint` and `regular`. 
+            requested_promotion_state (str): Values include `promoted` and `demoted`. Patch `requested_promotion_state` to `demoted` to demote the volume so that the volume stops accepting write requests.  Patch `requested_promotion_state` to `promoted` to promote the volume so that the volume starts accepting write requests. 
+            source (FixedReference): A reference to the originating volume as a result of a volume copy. 
+            volume_group (Reference): A reference to the volume group. 
+            priority (int): The current priority value. Priority is calculated by combining all applicable relative `priority_adjustment` values or taking the exact value if the volume has an absolute `priority_adjustment` (specified by an `=` `priority_adjustment_operator`). 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
-        if connection_count is not None:
-            self.connection_count = connection_count
-        if created is not None:
-            self.created = created
+        if id is not None:
+            self.id = id
+        if time_remaining is not None:
+            self.time_remaining = time_remaining
         if destroyed is not None:
             self.destroyed = destroyed
         if host_encryption_key_status is not None:
@@ -136,26 +134,28 @@ class Volume(object):
             self.provisioned = provisioned
         if qos is not None:
             self.qos = qos
-        if priority_adjustment is not None:
-            self.priority_adjustment = priority_adjustment
         if serial is not None:
             self.serial = serial
+        if created is not None:
+            self.created = created
+        if connection_count is not None:
+            self.connection_count = connection_count
+        if priority_adjustment is not None:
+            self.priority_adjustment = priority_adjustment
         if space is not None:
             self.space = space
-        if time_remaining is not None:
-            self.time_remaining = time_remaining
-        if pod is not None:
-            self.pod = pod
-        if source is not None:
-            self.source = source
-        if subtype is not None:
-            self.subtype = subtype
-        if volume_group is not None:
-            self.volume_group = volume_group
-        if requested_promotion_state is not None:
-            self.requested_promotion_state = requested_promotion_state
         if promotion_status is not None:
             self.promotion_status = promotion_status
+        if pod is not None:
+            self.pod = pod
+        if subtype is not None:
+            self.subtype = subtype
+        if requested_promotion_state is not None:
+            self.requested_promotion_state = requested_promotion_state
+        if source is not None:
+            self.source = source
+        if volume_group is not None:
+            self.volume_group = volume_group
         if priority is not None:
             self.priority = priority
 
