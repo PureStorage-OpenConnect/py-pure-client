@@ -30,13 +30,13 @@ class LocalGroupPost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'email': 'str',
-        'gid': 'int'
+        'gid': 'int',
+        'email': 'str'
     }
 
     attribute_map = {
-        'email': 'email',
-        'gid': 'gid'
+        'gid': 'gid',
+        'email': 'email'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class LocalGroupPost(object):
 
     def __init__(
         self,
-        email=None,  # type: str
         gid=None,  # type: int
+        email=None,  # type: str
     ):
         """
         Keyword args:
-            email (str): Optional field to set the email address of the local group.
-            gid (int): Optional field to set the GID of the local group.
+            gid (int): Optional field to set the GID of the local group. 
+            email (str): Optional field to set the email address of the local group. 
         """
-        if email is not None:
-            self.email = email
         if gid is not None:
             self.gid = gid
+        if email is not None:
+            self.email = email
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

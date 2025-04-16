@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.10, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.10, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.10
     
@@ -32,19 +32,19 @@ class SmbClientPolicyRuleBase(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
+        'policy_version': 'str',
         'client': 'str',
         'permission': 'str',
-        'policy': 'FixedReference',
-        'policy_version': 'str'
+        'policy': 'FixedReference'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
+        'policy_version': 'policy_version',
         'client': 'client',
         'permission': 'permission',
-        'policy': 'policy',
-        'policy_version': 'policy_version'
+        'policy': 'policy'
     }
 
     required_args = {
@@ -54,32 +54,32 @@ class SmbClientPolicyRuleBase(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
+        policy_version=None,  # type: str
         client=None,  # type: str
         permission=None,  # type: str
         policy=None,  # type: models.FixedReference
-        policy_version=None,  # type: str
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            client (str): Specifies the clients that will be permitted to access the export. Accepted notation is a single IP address, subnet in CIDR notation, or anonymous (`*`).
-            permission (str): Specifies which read-write client access permissions are allowed for the export. Valid values are `rw` and `ro`.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            policy_version (str): The policy's version. This can be used when updating the resource to ensure there aren't any updates to the policy since the resource was read. 
+            client (str): Specifies the clients that will be permitted to access the export. Accepted notation is a single IP address, subnet in CIDR notation, or anonymous (`*`). 
+            permission (str): Specifies which read-write client access permissions are allowed for the export. Valid values are `rw` and `ro`. 
             policy (FixedReference): The policy to which this rule belongs.
-            policy_version (str): The policy's version. This can be used when updating the resource to ensure there aren't any updates to the policy since the resource was read.
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
+        if policy_version is not None:
+            self.policy_version = policy_version
         if client is not None:
             self.client = client
         if permission is not None:
             self.permission = permission
         if policy is not None:
             self.policy = policy
-        if policy_version is not None:
-            self.policy_version = policy_version
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

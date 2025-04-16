@@ -46,7 +46,7 @@ class HostResponse(object):
     ):
         """
         Keyword args:
-            items (list[Host]): Returns a list of all items after filtering. The values are displayed for each name where meaningful.
+            items (list[Host]): Returns a list of all items after filtering. The values are displayed for each name where meaningful. 
         """
         if items is not None:
             self.items = items

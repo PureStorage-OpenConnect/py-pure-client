@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.10, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.10, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.10
     
@@ -32,9 +32,9 @@ class Blade(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
-        'details': 'str',
-        'progress': 'float',
         'raw_capacity': 'int',
+        'progress': 'float',
+        'details': 'str',
         'status': 'str',
         'target': 'str'
     }
@@ -42,9 +42,9 @@ class Blade(object):
     attribute_map = {
         'name': 'name',
         'id': 'id',
-        'details': 'details',
-        'progress': 'progress',
         'raw_capacity': 'raw_capacity',
+        'progress': 'progress',
+        'details': 'details',
         'status': 'status',
         'target': 'target'
     }
@@ -56,32 +56,32 @@ class Blade(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
-        details=None,  # type: str
-        progress=None,  # type: float
         raw_capacity=None,  # type: int
+        progress=None,  # type: float
+        details=None,  # type: str
         status=None,  # type: str
         target=None,  # type: str
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            details (str)
-            progress (float)
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
             raw_capacity (int)
-            status (str): Valid values are `critical`, `evacuated`, `evacuating`, `healthy`, `identifying`, `unhealthy`, `unknown`, and `unused`.
+            progress (float)
+            details (str)
+            status (str): Valid values are `critical`, `evacuated`, `evacuating`, `healthy`, `identifying`, `unhealthy`, `unknown`, and `unused`. 
             target (str)
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
-        if details is not None:
-            self.details = details
-        if progress is not None:
-            self.progress = progress
         if raw_capacity is not None:
             self.raw_capacity = raw_capacity
+        if progress is not None:
+            self.progress = progress
+        if details is not None:
+            self.details = details
         if status is not None:
             self.status = status
         if target is not None:

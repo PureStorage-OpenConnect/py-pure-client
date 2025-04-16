@@ -30,16 +30,16 @@ class Saml2SsoPatch(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'array_url': 'str',
-        'sp': 'Saml2SsoSpCredential',
         'idp': 'Saml2SsoIdp',
+        'sp': 'Saml2SsoSpCredential',
+        'array_url': 'str',
         'enabled': 'bool'
     }
 
     attribute_map = {
-        'array_url': 'array_url',
-        'sp': 'sp',
         'idp': 'idp',
+        'sp': 'sp',
+        'array_url': 'array_url',
         'enabled': 'enabled'
     }
 
@@ -48,24 +48,24 @@ class Saml2SsoPatch(object):
 
     def __init__(
         self,
-        array_url=None,  # type: str
-        sp=None,  # type: models.Saml2SsoSpCredential
         idp=None,  # type: models.Saml2SsoIdp
+        sp=None,  # type: models.Saml2SsoSpCredential
+        array_url=None,  # type: str
         enabled=None,  # type: bool
     ):
         """
         Keyword args:
-            array_url (str): The URL of the array.
-            sp (Saml2SsoSpCredential): Properties specific to the service provider.
             idp (Saml2SsoIdp)
-            enabled (bool): If set to `true`, the SAML2 SSO configuration is enabled.
+            sp (Saml2SsoSpCredential): Properties specific to the service provider. 
+            array_url (str): The URL of the array. 
+            enabled (bool): If set to `true`, the SAML2 SSO configuration is enabled. 
         """
-        if array_url is not None:
-            self.array_url = array_url
-        if sp is not None:
-            self.sp = sp
         if idp is not None:
             self.idp = idp
+        if sp is not None:
+            self.sp = sp
+        if array_url is not None:
+            self.array_url = array_url
         if enabled is not None:
             self.enabled = enabled
 

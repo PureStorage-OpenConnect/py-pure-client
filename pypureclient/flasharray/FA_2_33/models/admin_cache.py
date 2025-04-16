@@ -31,14 +31,14 @@ class AdminCache(object):
     """
     swagger_types = {
         'name': 'str',
-        'cached_at': 'int',
-        'role': 'AdminRole'
+        'role': 'AdminRole',
+        'cached_at': 'int'
     }
 
     attribute_map = {
         'name': 'name',
-        'cached_at': 'cached_at',
-        'role': 'role'
+        'role': 'role',
+        'cached_at': 'cached_at'
     }
 
     required_args = {
@@ -47,21 +47,21 @@ class AdminCache(object):
     def __init__(
         self,
         name=None,  # type: str
-        cached_at=None,  # type: int
         role=None,  # type: models.AdminRole
+        cached_at=None,  # type: int
     ):
         """
         Keyword args:
-            name (str): A user-specified name. The name must be locally unique and cannot be changed.
-            cached_at (int): Time when the entry was added to the cache, in milliseconds since the UNIX epoch.
+            name (str): A user-specified name. The name must be locally unique and cannot be changed. 
             role (AdminRole)
+            cached_at (int): Time when the entry was added to the cache, in milliseconds since the UNIX epoch. 
         """
         if name is not None:
             self.name = name
-        if cached_at is not None:
-            self.cached_at = cached_at
         if role is not None:
             self.role = role
+        if cached_at is not None:
+            self.cached_at = cached_at
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

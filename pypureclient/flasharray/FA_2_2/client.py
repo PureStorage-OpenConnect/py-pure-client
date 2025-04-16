@@ -287,7 +287,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -490,7 +490,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -697,7 +697,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -897,7 +897,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -1043,7 +1043,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -1141,7 +1141,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -1364,7 +1364,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -1582,7 +1582,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -1628,8 +1628,8 @@ class Client(object):
         apps=None,  # type: List[models.ReferenceType]
         authorization=None,  # type: str
         x_request_id=None,  # type: str
-        continuation_token=None,  # type: str
         app_names=None,  # type: List[str]
+        continuation_token=None,  # type: str
         filter=None,  # type: str
         limit=None,  # type: int
         offset=None,  # type: int
@@ -1651,10 +1651,10 @@ class Client(object):
             x_request_id (str, optional):
                 A header to provide to track the API call. Generated by the server if not
                 provided.
-            continuation_token (str, optional):
-                An opaque token to iterate over a collection of resources.
             app_names (list[str], optional):
                 The name of the installed app. Enter multiple names in comma-separated format.
+            continuation_token (str, optional):
+                An opaque token to iterate over a collection of resources.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
             limit (int, optional):
@@ -1668,7 +1668,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -1692,8 +1692,8 @@ class Client(object):
         kwargs = dict(
             authorization=authorization,
             x_request_id=x_request_id,
-            continuation_token=continuation_token,
             app_names=app_names,
+            continuation_token=continuation_token,
             filter=filter,
             limit=limit,
             offset=offset,
@@ -1712,8 +1712,8 @@ class Client(object):
     def patch_apps(
         self,
         references=None,  # type: List[models.ReferenceType]
-        names=None,  # type: List[str]
         app=None,  # type: models.App
+        names=None,  # type: List[str]
         authorization=None,  # type: str
         x_request_id=None,  # type: str
         async_req=False,  # type: bool
@@ -1730,10 +1730,10 @@ class Client(object):
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides names keyword arguments.
 
+            app (App, required):
             names (list[str], required):
                 Performs the operation on the unique name specified. For example, `name01`.
                 Enter multiple names in comma-separated format.
-            app (App, required):
             x_request_id (str, optional):
                 A header to provide to track the API call. Generated by the server if not
                 provided.
@@ -1757,8 +1757,8 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
-            names=names,
             app=app,
+            names=names,
             authorization=authorization,
             x_request_id=x_request_id,
             async_req=async_req,
@@ -1807,7 +1807,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -1933,7 +1933,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -2077,15 +2077,15 @@ class Client(object):
         self,
         authorization=None,  # type: str
         x_request_id=None,  # type: str
-        filter=None,  # type: str
         end_time=None,  # type: int
-        resolution=None,  # type: int
-        start_time=None,  # type: int
-        protocol=None,  # type: str
-        protocol_group=None,  # type: str
+        filter=None,  # type: str
         limit=None,  # type: int
         offset=None,  # type: int
+        protocol=None,  # type: str
+        protocol_group=None,  # type: str
+        resolution=None,  # type: int
         sort=None,  # type: List[str]
+        start_time=None,  # type: int
         total_item_count=None,  # type: bool
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
@@ -2102,8 +2102,6 @@ class Client(object):
             x_request_id (str, optional):
                 A header to provide to track the API call. Generated by the server if not
                 provided.
-            filter (Filter, optional):
-                A filter to include only resources that match the specified criteria.
             end_time (int, optional):
                 Displays historical performance data for the specified time window, where
                 `start_time` is the beginning of the time window, and `end_time` is the end of
@@ -2115,6 +2113,18 @@ class Client(object):
                 `resolution` parameter to display the performance data at the specified
                 resolution. If not specified, `resolution` defaults to the lowest valid
                 resolution.
+            filter (Filter, optional):
+                A filter to include only resources that match the specified criteria.
+            limit (int, optional):
+                Limit the number of resources in the response. If not specified, defaults to
+                1000.
+            offset (int, optional):
+                The starting position based on the results of the query in relation to the full
+                set of response objects returned.
+            protocol (str, optional):
+                Protocol type. Valid values are `nfs`, `smb`, and `all`.
+            protocol_group (str, optional):
+                Protocol group type. Valid values are `block`, `file`, and `all`.
             resolution (int, optional):
                 The number of milliseconds between samples of historical data. For array-wide
                 performance metrics (`/arrays/performance` endpoint), valid values are `1000` (1
@@ -2125,7 +2135,7 @@ class Client(object):
                 `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and
                 `86400000` (24 hours). For space metrics, (`<object name>/space` endpoint),
                 valid values are `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2
-                hours), `28800000` (8 hours), and `86400000` (24 hours). Include the
+                hours),  `28800000` (8 hours), and `86400000` (24 hours). Include the
                 `start_time` parameter to display the performance data starting at the specified
                 start time. If `start_time` is not specified, the start time will default to one
                 resolution before the end time, meaning that the most recent sample of
@@ -2134,6 +2144,8 @@ class Client(object):
                 specified, the end time will default to the current time. If the `resolution`
                 parameter is not specified but either the `start_time` or `end_time` parameter
                 is, then `resolution` will default to the lowest valid resolution.
+            sort (list[Property], optional):
+                Sort the response by the specified Properties. Can also be a single element.
             start_time (int, optional):
                 Displays historical performance data for the specified time window, where
                 `start_time` is the beginning of the time window, and `end_time` is the end of
@@ -2145,22 +2157,10 @@ class Client(object):
                 `resolution` parameter to display the performance data at the specified
                 resolution. If not specified, `resolution` defaults to the lowest valid
                 resolution.
-            protocol (str, optional):
-                Protocol type. Valid values are `nfs`, `smb`, and `all`.
-            protocol_group (str, optional):
-                Protocol group type. Valid values are `block`, `file`, and `all`.
-            limit (int, optional):
-                Limit the number of resources in the response. If not specified, defaults to
-                1000.
-            offset (int, optional):
-                The starting position based on the results of the query in relation to the full
-                set of response objects returned.
-            sort (list[Property], optional):
-                Sort the response by the specified Properties. Can also be a single element.
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -2184,15 +2184,15 @@ class Client(object):
         kwargs = dict(
             authorization=authorization,
             x_request_id=x_request_id,
-            filter=filter,
             end_time=end_time,
-            resolution=resolution,
-            start_time=start_time,
-            protocol=protocol,
-            protocol_group=protocol_group,
+            filter=filter,
             limit=limit,
             offset=offset,
+            protocol=protocol,
+            protocol_group=protocol_group,
+            resolution=resolution,
             sort=sort,
+            start_time=start_time,
             total_item_count=total_item_count,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
@@ -2207,13 +2207,13 @@ class Client(object):
         self,
         authorization=None,  # type: str
         x_request_id=None,  # type: str
-        filter=None,  # type: str
         end_time=None,  # type: int
-        resolution=None,  # type: int
-        start_time=None,  # type: int
+        filter=None,  # type: str
         limit=None,  # type: int
         offset=None,  # type: int
+        resolution=None,  # type: int
         sort=None,  # type: List[str]
+        start_time=None,  # type: int
         total_item_count=None,  # type: bool
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
@@ -2231,8 +2231,6 @@ class Client(object):
             x_request_id (str, optional):
                 A header to provide to track the API call. Generated by the server if not
                 provided.
-            filter (Filter, optional):
-                A filter to include only resources that match the specified criteria.
             end_time (int, optional):
                 Displays historical performance data for the specified time window, where
                 `start_time` is the beginning of the time window, and `end_time` is the end of
@@ -2244,6 +2242,14 @@ class Client(object):
                 `resolution` parameter to display the performance data at the specified
                 resolution. If not specified, `resolution` defaults to the lowest valid
                 resolution.
+            filter (Filter, optional):
+                A filter to include only resources that match the specified criteria.
+            limit (int, optional):
+                Limit the number of resources in the response. If not specified, defaults to
+                1000.
+            offset (int, optional):
+                The starting position based on the results of the query in relation to the full
+                set of response objects returned.
             resolution (int, optional):
                 The number of milliseconds between samples of historical data. For array-wide
                 performance metrics (`/arrays/performance` endpoint), valid values are `1000` (1
@@ -2254,7 +2260,7 @@ class Client(object):
                 `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and
                 `86400000` (24 hours). For space metrics, (`<object name>/space` endpoint),
                 valid values are `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2
-                hours), `28800000` (8 hours), and `86400000` (24 hours). Include the
+                hours),  `28800000` (8 hours), and `86400000` (24 hours). Include the
                 `start_time` parameter to display the performance data starting at the specified
                 start time. If `start_time` is not specified, the start time will default to one
                 resolution before the end time, meaning that the most recent sample of
@@ -2263,6 +2269,8 @@ class Client(object):
                 specified, the end time will default to the current time. If the `resolution`
                 parameter is not specified but either the `start_time` or `end_time` parameter
                 is, then `resolution` will default to the lowest valid resolution.
+            sort (list[Property], optional):
+                Sort the response by the specified Properties. Can also be a single element.
             start_time (int, optional):
                 Displays historical performance data for the specified time window, where
                 `start_time` is the beginning of the time window, and `end_time` is the end of
@@ -2274,18 +2282,10 @@ class Client(object):
                 `resolution` parameter to display the performance data at the specified
                 resolution. If not specified, `resolution` defaults to the lowest valid
                 resolution.
-            limit (int, optional):
-                Limit the number of resources in the response. If not specified, defaults to
-                1000.
-            offset (int, optional):
-                The starting position based on the results of the query in relation to the full
-                set of response objects returned.
-            sort (list[Property], optional):
-                Sort the response by the specified Properties. Can also be a single element.
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -2309,13 +2309,13 @@ class Client(object):
         kwargs = dict(
             authorization=authorization,
             x_request_id=x_request_id,
-            filter=filter,
             end_time=end_time,
-            resolution=resolution,
-            start_time=start_time,
+            filter=filter,
             limit=limit,
             offset=offset,
+            resolution=resolution,
             sort=sort,
+            start_time=start_time,
             total_item_count=total_item_count,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
@@ -2377,7 +2377,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -2582,7 +2582,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             volume_names (list[str], optional):
                 Performs the operation on the volume specified. Enter multiple names in comma-
@@ -2640,12 +2640,12 @@ class Client(object):
         host_groups=None,  # type: List[models.ReferenceType]
         hosts=None,  # type: List[models.ReferenceType]
         volumes=None,  # type: List[models.ReferenceType]
+        connection=None,  # type: models.ConnectionPost
         authorization=None,  # type: str
         x_request_id=None,  # type: str
         host_group_names=None,  # type: List[str]
         host_names=None,  # type: List[str]
         volume_names=None,  # type: List[str]
-        connection=None,  # type: models.ConnectionPost
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -2665,6 +2665,7 @@ class Client(object):
             volumes (list[FixedReference], optional):
                 A list of volumes to query for. Overrides volume_names keyword arguments.
 
+            connection (ConnectionPost, optional):
             x_request_id (str, optional):
                 A header to provide to track the API call. Generated by the server if not
                 provided.
@@ -2686,7 +2687,6 @@ class Client(object):
                 multiple objects with multiple names. For example, a request cannot include a
                 mix of multiple volume names and host names; instead, at least one of the
                 objects (e.g., `volume_names`) must be set to only one name (e.g., `vol01`).
-            connection (ConnectionPost, optional):
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -2707,12 +2707,12 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
+            connection=connection,
             authorization=authorization,
             x_request_id=x_request_id,
             host_group_names=host_group_names,
             host_names=host_names,
             volume_names=volume_names,
-            connection=connection,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
             _preload_content=_preload_content,
@@ -2772,7 +2772,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -2860,7 +2860,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -2904,8 +2904,8 @@ class Client(object):
     def patch_directory_services(
         self,
         references=None,  # type: List[models.ReferenceType]
-        names=None,  # type: List[str]
         directory_service=None,  # type: models.DirectoryService
+        names=None,  # type: List[str]
         authorization=None,  # type: str
         x_request_id=None,  # type: str
         async_req=False,  # type: bool
@@ -2921,10 +2921,10 @@ class Client(object):
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides names keyword arguments.
 
+            directory_service (DirectoryService, required):
             names (list[str], required):
                 Performs the operation on the unique name specified. For example, `name01`.
                 Enter multiple names in comma-separated format.
-            directory_service (DirectoryService, required):
             x_request_id (str, optional):
                 A header to provide to track the API call. Generated by the server if not
                 provided.
@@ -2948,8 +2948,8 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
-            names=names,
             directory_service=directory_service,
+            names=names,
             authorization=authorization,
             x_request_id=x_request_id,
             async_req=async_req,
@@ -3008,7 +3008,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -3052,8 +3052,8 @@ class Client(object):
     def patch_directory_services_roles(
         self,
         roles=None,  # type: List[models.ReferenceType]
-        role_names=None,  # type: List[str]
         directory_service_roles=None,  # type: models.DirectoryServiceRole
+        role_names=None,  # type: List[str]
         authorization=None,  # type: str
         x_request_id=None,  # type: str
         async_req=False,  # type: bool
@@ -3070,10 +3070,10 @@ class Client(object):
             roles (list[FixedReference], optional):
                 A list of roles to query for. Overrides role_names keyword arguments.
 
+            directory_service_roles (DirectoryServiceRole, required):
             role_names (list[str], required):
                 Performs the operation on the unique roles specified. For example,
                 `array_admin`. Enter multiple roles in comma-separated format.
-            directory_service_roles (DirectoryServiceRole, required):
             x_request_id (str, optional):
                 A header to provide to track the API call. Generated by the server if not
                 provided.
@@ -3097,8 +3097,8 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
-            role_names=role_names,
             directory_service_roles=directory_service_roles,
+            role_names=role_names,
             authorization=authorization,
             x_request_id=x_request_id,
             async_req=async_req,
@@ -3161,7 +3161,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -3239,7 +3239,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -3373,7 +3373,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -3579,7 +3579,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -3748,7 +3748,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -3810,8 +3810,8 @@ class Client(object):
         connects the host to all volumes associated with the group. Multiple hosts can
         be belong to a host group, but a host can only belong to one host group. Hosts
         can be added to host groups at any time. The `group_names` and `member_names`
-        parameters are required and must be set together, and only one host group can be
-        specified at a time.
+        parameters are required  and must be set together, and only one host group can
+        be specified at a time.
 
         Args:
             groups (list[FixedReference], optional):
@@ -3975,7 +3975,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             total_only (bool, optional):
                 If set to `true`, returns the aggregate value of all items after filtering.
@@ -4067,7 +4067,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             total_only (bool, optional):
                 If set to `true`, returns the aggregate value of all items after filtering.
@@ -4304,7 +4304,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -4466,7 +4466,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -4612,7 +4612,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -4781,7 +4781,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -4843,8 +4843,8 @@ class Client(object):
         connects the host to all volumes associated with the group. Multiple hosts can
         be belong to a host group, but a host can only belong to one host group. Hosts
         can be added to host groups at any time. The `group_names` and `member_names`
-        parameters are required and must be set together, and only one host group can be
-        specified at a time.
+        parameters are required  and must be set together, and only one host group can
+        be specified at a time.
 
         Args:
             groups (list[FixedReference], optional):
@@ -5009,7 +5009,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             total_only (bool, optional):
                 If set to `true`, returns the aggregate value of all items after filtering.
@@ -5101,7 +5101,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             total_only (bool, optional):
                 If set to `true`, returns the aggregate value of all items after filtering.
@@ -5229,7 +5229,7 @@ class Client(object):
         member from a protection group does not delete the member from the array, and
         the member can be added back to the protection group at any time. The
         `group_names` parameter represents the name of the protection group, and the
-        `member_names` parameter represents the name of the host. The `group_names` and
+        `member_names` parameter represents the name of the host.  The `group_names` and
         `member_names` parameters are required and must be set together.
 
         Args:
@@ -5339,7 +5339,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -5499,7 +5499,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -5643,7 +5643,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -5970,7 +5970,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -6179,7 +6179,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             total_only (bool, optional):
                 If set to `true`, returns the aggregate value of all items after filtering.
@@ -6483,7 +6483,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -6540,11 +6540,9 @@ class Client(object):
         remote_pods=None,  # type: List[models.ReferenceType]
         authorization=None,  # type: str
         x_request_id=None,  # type: str
+        end_time=None,  # type: int
         filter=None,  # type: str
         ids=None,  # type: List[str]
-        end_time=None,  # type: int
-        resolution=None,  # type: int
-        start_time=None,  # type: int
         limit=None,  # type: int
         local_pod_ids=None,  # type: List[str]
         local_pod_names=None,  # type: List[str]
@@ -6553,7 +6551,9 @@ class Client(object):
         remote_names=None,  # type: List[str]
         remote_pod_ids=None,  # type: List[str]
         remote_pod_names=None,  # type: List[str]
+        resolution=None,  # type: int
         sort=None,  # type: List[str]
+        start_time=None,  # type: int
         total_item_count=None,  # type: bool
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
@@ -6579,12 +6579,6 @@ class Client(object):
             x_request_id (str, optional):
                 A header to provide to track the API call. Generated by the server if not
                 provided.
-            filter (Filter, optional):
-                A filter to include only resources that match the specified criteria.
-            ids (list[str], optional):
-                Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` or `names` parameter is
-                required, but they cannot be set together.
             end_time (int, optional):
                 Displays historical performance data for the specified time window, where
                 `start_time` is the beginning of the time window, and `end_time` is the end of
@@ -6596,36 +6590,12 @@ class Client(object):
                 `resolution` parameter to display the performance data at the specified
                 resolution. If not specified, `resolution` defaults to the lowest valid
                 resolution.
-            resolution (int, optional):
-                The number of milliseconds between samples of historical data. For array-wide
-                performance metrics (`/arrays/performance` endpoint), valid values are `1000` (1
-                second), `30000` (30 seconds), `300000` (5 minutes), `1800000` (30 minutes),
-                `7200000` (2 hours), `28800000` (8 hours), and `86400000` (24 hours). For
-                performance metrics on storage objects (`<object name>/performance` endpoint),
-                such as volumes, valid values are `30000` (30 seconds), `300000` (5 minutes),
-                `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and
-                `86400000` (24 hours). For space metrics, (`<object name>/space` endpoint),
-                valid values are `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2
-                hours), `28800000` (8 hours), and `86400000` (24 hours). Include the
-                `start_time` parameter to display the performance data starting at the specified
-                start time. If `start_time` is not specified, the start time will default to one
-                resolution before the end time, meaning that the most recent sample of
-                performance data will be displayed. Include the `end_time` parameter to display
-                the performance data until the specified end time. If `end_time`is not
-                specified, the end time will default to the current time. If the `resolution`
-                parameter is not specified but either the `start_time` or `end_time` parameter
-                is, then `resolution` will default to the lowest valid resolution.
-            start_time (int, optional):
-                Displays historical performance data for the specified time window, where
-                `start_time` is the beginning of the time window, and `end_time` is the end of
-                the time window. The `start_time` and `end_time` parameters are specified in
-                milliseconds since the UNIX epoch. If `start_time` is not specified, the start
-                time will default to one resolution before the end time, meaning that the most
-                recent sample of performance data will be displayed. If `end_time`is not
-                specified, the end time will default to the current time. Include the
-                `resolution` parameter to display the performance data at the specified
-                resolution. If not specified, `resolution` defaults to the lowest valid
-                resolution.
+            filter (Filter, optional):
+                A filter to include only resources that match the specified criteria.
+            ids (list[str], optional):
+                Performs the operation on the unique resource IDs specified. Enter multiple
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -6656,12 +6626,42 @@ class Client(object):
                 A list of remote pod names. If, after filtering, there is not at least one
                 resource that matches each of the elements, then an error is returned. This
                 cannot be provided together with the `remote_pod_ids` query parameter.
+            resolution (int, optional):
+                The number of milliseconds between samples of historical data. For array-wide
+                performance metrics (`/arrays/performance` endpoint), valid values are `1000` (1
+                second), `30000` (30 seconds), `300000` (5 minutes), `1800000` (30 minutes),
+                `7200000` (2 hours), `28800000` (8 hours), and `86400000` (24 hours). For
+                performance metrics on storage objects (`<object name>/performance` endpoint),
+                such as volumes, valid values are `30000` (30 seconds), `300000` (5 minutes),
+                `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and
+                `86400000` (24 hours). For space metrics, (`<object name>/space` endpoint),
+                valid values are `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2
+                hours),  `28800000` (8 hours), and `86400000` (24 hours). Include the
+                `start_time` parameter to display the performance data starting at the specified
+                start time. If `start_time` is not specified, the start time will default to one
+                resolution before the end time, meaning that the most recent sample of
+                performance data will be displayed. Include the `end_time` parameter to display
+                the performance data until the specified end time. If `end_time`is not
+                specified, the end time will default to the current time. If the `resolution`
+                parameter is not specified but either the `start_time` or `end_time` parameter
+                is, then `resolution` will default to the lowest valid resolution.
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
+            start_time (int, optional):
+                Displays historical performance data for the specified time window, where
+                `start_time` is the beginning of the time window, and `end_time` is the end of
+                the time window. The `start_time` and `end_time` parameters are specified in
+                milliseconds since the UNIX epoch. If `start_time` is not specified, the start
+                time will default to one resolution before the end time, meaning that the most
+                recent sample of performance data will be displayed. If `end_time`is not
+                specified, the end time will default to the current time. Include the
+                `resolution` parameter to display the performance data at the specified
+                resolution. If not specified, `resolution` defaults to the lowest valid
+                resolution.
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -6685,11 +6685,9 @@ class Client(object):
         kwargs = dict(
             authorization=authorization,
             x_request_id=x_request_id,
+            end_time=end_time,
             filter=filter,
             ids=ids,
-            end_time=end_time,
-            resolution=resolution,
-            start_time=start_time,
             limit=limit,
             local_pod_ids=local_pod_ids,
             local_pod_names=local_pod_names,
@@ -6698,7 +6696,9 @@ class Client(object):
             remote_names=remote_names,
             remote_pod_ids=remote_pod_ids,
             remote_pod_names=remote_pod_names,
+            resolution=resolution,
             sort=sort,
+            start_time=start_time,
             total_item_count=total_item_count,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
@@ -6844,11 +6844,9 @@ class Client(object):
         remote_pods=None,  # type: List[models.ReferenceType]
         authorization=None,  # type: str
         x_request_id=None,  # type: str
+        end_time=None,  # type: int
         filter=None,  # type: str
         ids=None,  # type: List[str]
-        end_time=None,  # type: int
-        resolution=None,  # type: int
-        start_time=None,  # type: int
         limit=None,  # type: int
         local_pod_ids=None,  # type: List[str]
         local_pod_names=None,  # type: List[str]
@@ -6857,7 +6855,9 @@ class Client(object):
         remote_names=None,  # type: List[str]
         remote_pod_ids=None,  # type: List[str]
         remote_pod_names=None,  # type: List[str]
+        resolution=None,  # type: int
         sort=None,  # type: List[str]
+        start_time=None,  # type: int
         total_item_count=None,  # type: bool
         total_only=None,  # type: bool
         async_req=False,  # type: bool
@@ -6883,12 +6883,6 @@ class Client(object):
             x_request_id (str, optional):
                 A header to provide to track the API call. Generated by the server if not
                 provided.
-            filter (Filter, optional):
-                A filter to include only resources that match the specified criteria.
-            ids (list[str], optional):
-                Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` or `names` parameter is
-                required, but they cannot be set together.
             end_time (int, optional):
                 Displays historical performance data for the specified time window, where
                 `start_time` is the beginning of the time window, and `end_time` is the end of
@@ -6900,36 +6894,12 @@ class Client(object):
                 `resolution` parameter to display the performance data at the specified
                 resolution. If not specified, `resolution` defaults to the lowest valid
                 resolution.
-            resolution (int, optional):
-                The number of milliseconds between samples of historical data. For array-wide
-                performance metrics (`/arrays/performance` endpoint), valid values are `1000` (1
-                second), `30000` (30 seconds), `300000` (5 minutes), `1800000` (30 minutes),
-                `7200000` (2 hours), `28800000` (8 hours), and `86400000` (24 hours). For
-                performance metrics on storage objects (`<object name>/performance` endpoint),
-                such as volumes, valid values are `30000` (30 seconds), `300000` (5 minutes),
-                `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and
-                `86400000` (24 hours). For space metrics, (`<object name>/space` endpoint),
-                valid values are `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2
-                hours), `28800000` (8 hours), and `86400000` (24 hours). Include the
-                `start_time` parameter to display the performance data starting at the specified
-                start time. If `start_time` is not specified, the start time will default to one
-                resolution before the end time, meaning that the most recent sample of
-                performance data will be displayed. Include the `end_time` parameter to display
-                the performance data until the specified end time. If `end_time`is not
-                specified, the end time will default to the current time. If the `resolution`
-                parameter is not specified but either the `start_time` or `end_time` parameter
-                is, then `resolution` will default to the lowest valid resolution.
-            start_time (int, optional):
-                Displays historical performance data for the specified time window, where
-                `start_time` is the beginning of the time window, and `end_time` is the end of
-                the time window. The `start_time` and `end_time` parameters are specified in
-                milliseconds since the UNIX epoch. If `start_time` is not specified, the start
-                time will default to one resolution before the end time, meaning that the most
-                recent sample of performance data will be displayed. If `end_time`is not
-                specified, the end time will default to the current time. Include the
-                `resolution` parameter to display the performance data at the specified
-                resolution. If not specified, `resolution` defaults to the lowest valid
-                resolution.
+            filter (Filter, optional):
+                A filter to include only resources that match the specified criteria.
+            ids (list[str], optional):
+                Performs the operation on the unique resource IDs specified. Enter multiple
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -6960,12 +6930,42 @@ class Client(object):
                 A list of remote pod names. If, after filtering, there is not at least one
                 resource that matches each of the elements, then an error is returned. This
                 cannot be provided together with the `remote_pod_ids` query parameter.
+            resolution (int, optional):
+                The number of milliseconds between samples of historical data. For array-wide
+                performance metrics (`/arrays/performance` endpoint), valid values are `1000` (1
+                second), `30000` (30 seconds), `300000` (5 minutes), `1800000` (30 minutes),
+                `7200000` (2 hours), `28800000` (8 hours), and `86400000` (24 hours). For
+                performance metrics on storage objects (`<object name>/performance` endpoint),
+                such as volumes, valid values are `30000` (30 seconds), `300000` (5 minutes),
+                `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and
+                `86400000` (24 hours). For space metrics, (`<object name>/space` endpoint),
+                valid values are `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2
+                hours),  `28800000` (8 hours), and `86400000` (24 hours). Include the
+                `start_time` parameter to display the performance data starting at the specified
+                start time. If `start_time` is not specified, the start time will default to one
+                resolution before the end time, meaning that the most recent sample of
+                performance data will be displayed. Include the `end_time` parameter to display
+                the performance data until the specified end time. If `end_time`is not
+                specified, the end time will default to the current time. If the `resolution`
+                parameter is not specified but either the `start_time` or `end_time` parameter
+                is, then `resolution` will default to the lowest valid resolution.
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
+            start_time (int, optional):
+                Displays historical performance data for the specified time window, where
+                `start_time` is the beginning of the time window, and `end_time` is the end of
+                the time window. The `start_time` and `end_time` parameters are specified in
+                milliseconds since the UNIX epoch. If `start_time` is not specified, the start
+                time will default to one resolution before the end time, meaning that the most
+                recent sample of performance data will be displayed. If `end_time`is not
+                specified, the end time will default to the current time. Include the
+                `resolution` parameter to display the performance data at the specified
+                resolution. If not specified, `resolution` defaults to the lowest valid
+                resolution.
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             total_only (bool, optional):
                 If set to `true`, returns the aggregate value of all items after filtering.
@@ -6994,11 +6994,9 @@ class Client(object):
         kwargs = dict(
             authorization=authorization,
             x_request_id=x_request_id,
+            end_time=end_time,
             filter=filter,
             ids=ids,
-            end_time=end_time,
-            resolution=resolution,
-            start_time=start_time,
             limit=limit,
             local_pod_ids=local_pod_ids,
             local_pod_names=local_pod_names,
@@ -7007,7 +7005,9 @@ class Client(object):
             remote_names=remote_names,
             remote_pod_ids=remote_pod_ids,
             remote_pod_names=remote_pod_names,
+            resolution=resolution,
             sort=sort,
+            start_time=start_time,
             total_item_count=total_item_count,
             total_only=total_only,
             async_req=async_req,
@@ -7139,10 +7139,10 @@ class Client(object):
         members=None,  # type: List[models.ReferenceType]
         authorization=None,  # type: str
         x_request_id=None,  # type: str
-        group_names=None,  # type: List[str]
         group_ids=None,  # type: List[str]
-        member_names=None,  # type: List[str]
+        group_names=None,  # type: List[str]
         member_ids=None,  # type: List[str]
+        member_names=None,  # type: List[str]
         with_unknown=None,  # type: bool
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
@@ -7167,27 +7167,27 @@ class Client(object):
 
         Args:
             groups (list[FixedReference], optional):
-                A list of groups to query for. Overrides group_names and group_ids keyword arguments.
+                A list of groups to query for. Overrides group_ids and group_names keyword arguments.
             members (list[FixedReference], optional):
-                A list of members to query for. Overrides member_names and member_ids keyword arguments.
+                A list of members to query for. Overrides member_ids and member_names keyword arguments.
 
             x_request_id (str, optional):
                 A header to provide to track the API call. Generated by the server if not
                 provided.
+            group_ids (list[str], optional):
+                A list of group IDs.
             group_names (list[str], optional):
                 Performs the operation on the unique group name specified. Examples of groups
                 include host groups, pods, protection groups, and volume groups. Enter multiple
                 names in comma-separated format. For example, `hgroup01,hgroup02`.
-            group_ids (list[str], optional):
-                A list of group IDs.
-            member_names (list[str], optional):
-                Performs the operation on the unique member name specified. Examples of members
-                include volumes, hosts, host groups, and directories. Enter multiple names in
-                comma-separated format. For example, `vol01,vol02`.
             member_ids (list[str], optional):
                 Performs the operation on the unique member IDs specified. Enter multiple member
                 IDs in comma-separated format. The `member_ids` or `member_names` parameter is
                 required, but they cannot be set together.
+            member_names (list[str], optional):
+                Performs the operation on the unique member name specified. Examples of members
+                include volumes, hosts, host groups, and directories. Enter multiple names in
+                comma-separated format. For example, `vol01,vol02`.
             with_unknown (bool, optional):
                 If set to `true`, unstretches the specified pod from the specified array by
                 force. Use the `with_unknown` parameter in the following rare event&#58; the
@@ -7216,10 +7216,10 @@ class Client(object):
         kwargs = dict(
             authorization=authorization,
             x_request_id=x_request_id,
-            group_names=group_names,
             group_ids=group_ids,
-            member_names=member_names,
+            group_names=group_names,
             member_ids=member_ids,
+            member_names=member_names,
             with_unknown=with_unknown,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
@@ -7228,8 +7228,8 @@ class Client(object):
         )
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._pods_api.api22_pods_arrays_delete_with_http_info
-        _process_references(groups, ['group_names', 'group_ids'], kwargs)
-        _process_references(members, ['member_names', 'member_ids'], kwargs)
+        _process_references(groups, ['group_ids', 'group_names'], kwargs)
+        _process_references(members, ['member_ids', 'member_names'], kwargs)
         return self._call_api(endpoint, kwargs)
 
     def get_pods_arrays(
@@ -7239,11 +7239,11 @@ class Client(object):
         authorization=None,  # type: str
         x_request_id=None,  # type: str
         filter=None,  # type: str
-        group_names=None,  # type: List[str]
         group_ids=None,  # type: List[str]
+        group_names=None,  # type: List[str]
         limit=None,  # type: int
-        member_names=None,  # type: List[str]
         member_ids=None,  # type: List[str]
+        member_names=None,  # type: List[str]
         offset=None,  # type: int
         sort=None,  # type: List[str]
         total_item_count=None,  # type: bool
@@ -7261,32 +7261,32 @@ class Client(object):
 
         Args:
             groups (list[FixedReference], optional):
-                A list of groups to query for. Overrides group_names and group_ids keyword arguments.
+                A list of groups to query for. Overrides group_ids and group_names keyword arguments.
             members (list[FixedReference], optional):
-                A list of members to query for. Overrides member_names and member_ids keyword arguments.
+                A list of members to query for. Overrides member_ids and member_names keyword arguments.
 
             x_request_id (str, optional):
                 A header to provide to track the API call. Generated by the server if not
                 provided.
             filter (Filter, optional):
                 A filter to include only resources that match the specified criteria.
+            group_ids (list[str], optional):
+                A list of group IDs.
             group_names (list[str], optional):
                 Performs the operation on the unique group name specified. Examples of groups
                 include host groups, pods, protection groups, and volume groups. Enter multiple
                 names in comma-separated format. For example, `hgroup01,hgroup02`.
-            group_ids (list[str], optional):
-                A list of group IDs.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
-            member_names (list[str], optional):
-                Performs the operation on the unique member name specified. Examples of members
-                include volumes, hosts, host groups, and directories. Enter multiple names in
-                comma-separated format. For example, `vol01,vol02`.
             member_ids (list[str], optional):
                 Performs the operation on the unique member IDs specified. Enter multiple member
                 IDs in comma-separated format. The `member_ids` or `member_names` parameter is
                 required, but they cannot be set together.
+            member_names (list[str], optional):
+                Performs the operation on the unique member name specified. Examples of members
+                include volumes, hosts, host groups, and directories. Enter multiple names in
+                comma-separated format. For example, `vol01,vol02`.
             offset (int, optional):
                 The starting position based on the results of the query in relation to the full
                 set of response objects returned.
@@ -7295,7 +7295,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -7320,11 +7320,11 @@ class Client(object):
             authorization=authorization,
             x_request_id=x_request_id,
             filter=filter,
-            group_names=group_names,
             group_ids=group_ids,
+            group_names=group_names,
             limit=limit,
-            member_names=member_names,
             member_ids=member_ids,
+            member_names=member_names,
             offset=offset,
             sort=sort,
             total_item_count=total_item_count,
@@ -7335,8 +7335,8 @@ class Client(object):
         )
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._pods_api.api22_pods_arrays_get_with_http_info
-        _process_references(groups, ['group_names', 'group_ids'], kwargs)
-        _process_references(members, ['member_names', 'member_ids'], kwargs)
+        _process_references(groups, ['group_ids', 'group_names'], kwargs)
+        _process_references(members, ['member_ids', 'member_names'], kwargs)
         return self._call_api(endpoint, kwargs)
 
     def post_pods_arrays(
@@ -7345,10 +7345,10 @@ class Client(object):
         members=None,  # type: List[models.ReferenceType]
         authorization=None,  # type: str
         x_request_id=None,  # type: str
-        group_names=None,  # type: List[str]
         group_ids=None,  # type: List[str]
-        member_names=None,  # type: List[str]
+        group_names=None,  # type: List[str]
         member_ids=None,  # type: List[str]
+        member_names=None,  # type: List[str]
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -7365,27 +7365,27 @@ class Client(object):
 
         Args:
             groups (list[FixedReference], optional):
-                A list of groups to query for. Overrides group_names and group_ids keyword arguments.
+                A list of groups to query for. Overrides group_ids and group_names keyword arguments.
             members (list[FixedReference], optional):
-                A list of members to query for. Overrides member_names and member_ids keyword arguments.
+                A list of members to query for. Overrides member_ids and member_names keyword arguments.
 
             x_request_id (str, optional):
                 A header to provide to track the API call. Generated by the server if not
                 provided.
+            group_ids (list[str], optional):
+                A list of group IDs.
             group_names (list[str], optional):
                 Performs the operation on the unique group name specified. Examples of groups
                 include host groups, pods, protection groups, and volume groups. Enter multiple
                 names in comma-separated format. For example, `hgroup01,hgroup02`.
-            group_ids (list[str], optional):
-                A list of group IDs.
-            member_names (list[str], optional):
-                Performs the operation on the unique member name specified. Examples of members
-                include volumes, hosts, host groups, and directories. Enter multiple names in
-                comma-separated format. For example, `vol01,vol02`.
             member_ids (list[str], optional):
                 Performs the operation on the unique member IDs specified. Enter multiple member
                 IDs in comma-separated format. The `member_ids` or `member_names` parameter is
                 required, but they cannot be set together.
+            member_names (list[str], optional):
+                Performs the operation on the unique member name specified. Examples of members
+                include volumes, hosts, host groups, and directories. Enter multiple names in
+                comma-separated format. For example, `vol01,vol02`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -7408,10 +7408,10 @@ class Client(object):
         kwargs = dict(
             authorization=authorization,
             x_request_id=x_request_id,
-            group_names=group_names,
             group_ids=group_ids,
-            member_names=member_names,
+            group_names=group_names,
             member_ids=member_ids,
+            member_names=member_names,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
             _preload_content=_preload_content,
@@ -7419,8 +7419,8 @@ class Client(object):
         )
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._pods_api.api22_pods_arrays_post_with_http_info
-        _process_references(groups, ['group_names', 'group_ids'], kwargs)
-        _process_references(members, ['member_names', 'member_ids'], kwargs)
+        _process_references(groups, ['group_ids', 'group_names'], kwargs)
+        _process_references(members, ['member_ids', 'member_names'], kwargs)
         return self._call_api(endpoint, kwargs)
 
     def delete_pods(
@@ -7546,7 +7546,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             total_only (bool, optional):
                 If set to `true`, returns the aggregate value of all items after filtering.
@@ -7601,12 +7601,12 @@ class Client(object):
         pod=None,  # type: models.PodPatch
         authorization=None,  # type: str
         x_request_id=None,  # type: str
+        abort_quiesce=None,  # type: bool
         ids=None,  # type: List[str]
         names=None,  # type: List[str]
-        abort_quiesce=None,  # type: bool
+        promote_from=None,  # type: str
         quiesce=None,  # type: bool
         skip_quiesce=None,  # type: bool
-        promote_from=None,  # type: str
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -7624,6 +7624,10 @@ class Client(object):
             x_request_id (str, optional):
                 A header to provide to track the API call. Generated by the server if not
                 provided.
+            abort_quiesce (bool, optional):
+                Set to `true` to promote the pod when the `pod-replica-link` is in the
+                `quiescing` state and abort when waiting for the `pod-replica-link` to complete
+                the quiescing operation.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
                 resource IDs in comma-separated format. The `ids` or `names` parameter is
@@ -7631,10 +7635,10 @@ class Client(object):
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
-            abort_quiesce (bool, optional):
-                Set to `true` to promote the pod when the `pod-replica-link` is in the
-                `quiescing` state and abort when waiting for the `pod-replica-link` to complete
-                the quiescing operation.
+            promote_from (str, optional):
+                The `undo-demote` pod that should be used to promote the pod. After the pod has
+                been promoted, it will have the same data as the `undo-demote` pod and the
+                `undo-demote` pod will be eradicated.
             quiesce (bool, optional):
                 Set to `true` to demote the pod after the `pod-replica-link` goes into
                 `quiesced` state and allow the pod to become a target of the remote pod. This
@@ -7644,10 +7648,6 @@ class Client(object):
                 Set to `true` to demote the pod without quiescing the `pod-replica-link` and
                 allow the pod to become a target of the remote pod. This stops all pending
                 replication to the remote pod.
-            promote_from (str, optional):
-                The `undo-demote` pod that should be used to promote the pod. After the pod has
-                been promoted, it will have the same data as the `undo-demote` pod and the
-                `undo-demote` pod will be eradicated.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -7671,12 +7671,12 @@ class Client(object):
             pod=pod,
             authorization=authorization,
             x_request_id=x_request_id,
+            abort_quiesce=abort_quiesce,
             ids=ids,
             names=names,
-            abort_quiesce=abort_quiesce,
+            promote_from=promote_from,
             quiesce=quiesce,
             skip_quiesce=skip_quiesce,
-            promote_from=promote_from,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
             _preload_content=_preload_content,
@@ -7693,15 +7693,15 @@ class Client(object):
         authorization=None,  # type: str
         x_request_id=None,  # type: str
         destroyed=None,  # type: bool
-        filter=None,  # type: str
         end_time=None,  # type: int
-        resolution=None,  # type: int
-        start_time=None,  # type: int
+        filter=None,  # type: str
         ids=None,  # type: List[str]
         limit=None,  # type: int
         names=None,  # type: List[str]
         offset=None,  # type: int
+        resolution=None,  # type: int
         sort=None,  # type: List[str]
+        start_time=None,  # type: int
         total_item_count=None,  # type: bool
         total_only=None,  # type: bool
         async_req=False,  # type: bool
@@ -7726,8 +7726,6 @@ class Client(object):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
                 destroyed objects, the time remaining is displayed in milliseconds.
-            filter (Filter, optional):
-                A filter to include only resources that match the specified criteria.
             end_time (int, optional):
                 Displays historical performance data for the specified time window, where
                 `start_time` is the beginning of the time window, and `end_time` is the end of
@@ -7739,36 +7737,8 @@ class Client(object):
                 `resolution` parameter to display the performance data at the specified
                 resolution. If not specified, `resolution` defaults to the lowest valid
                 resolution.
-            resolution (int, optional):
-                The number of milliseconds between samples of historical data. For array-wide
-                performance metrics (`/arrays/performance` endpoint), valid values are `1000` (1
-                second), `30000` (30 seconds), `300000` (5 minutes), `1800000` (30 minutes),
-                `7200000` (2 hours), `28800000` (8 hours), and `86400000` (24 hours). For
-                performance metrics on storage objects (`<object name>/performance` endpoint),
-                such as volumes, valid values are `30000` (30 seconds), `300000` (5 minutes),
-                `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and
-                `86400000` (24 hours). For space metrics, (`<object name>/space` endpoint),
-                valid values are `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2
-                hours), `28800000` (8 hours), and `86400000` (24 hours). Include the
-                `start_time` parameter to display the performance data starting at the specified
-                start time. If `start_time` is not specified, the start time will default to one
-                resolution before the end time, meaning that the most recent sample of
-                performance data will be displayed. Include the `end_time` parameter to display
-                the performance data until the specified end time. If `end_time`is not
-                specified, the end time will default to the current time. If the `resolution`
-                parameter is not specified but either the `start_time` or `end_time` parameter
-                is, then `resolution` will default to the lowest valid resolution.
-            start_time (int, optional):
-                Displays historical performance data for the specified time window, where
-                `start_time` is the beginning of the time window, and `end_time` is the end of
-                the time window. The `start_time` and `end_time` parameters are specified in
-                milliseconds since the UNIX epoch. If `start_time` is not specified, the start
-                time will default to one resolution before the end time, meaning that the most
-                recent sample of performance data will be displayed. If `end_time`is not
-                specified, the end time will default to the current time. Include the
-                `resolution` parameter to display the performance data at the specified
-                resolution. If not specified, `resolution` defaults to the lowest valid
-                resolution.
+            filter (Filter, optional):
+                A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
                 resource IDs in comma-separated format. The `ids` or `names` parameter is
@@ -7782,12 +7752,42 @@ class Client(object):
             offset (int, optional):
                 The starting position based on the results of the query in relation to the full
                 set of response objects returned.
+            resolution (int, optional):
+                The number of milliseconds between samples of historical data. For array-wide
+                performance metrics (`/arrays/performance` endpoint), valid values are `1000` (1
+                second), `30000` (30 seconds), `300000` (5 minutes), `1800000` (30 minutes),
+                `7200000` (2 hours), `28800000` (8 hours), and `86400000` (24 hours). For
+                performance metrics on storage objects (`<object name>/performance` endpoint),
+                such as volumes, valid values are `30000` (30 seconds), `300000` (5 minutes),
+                `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and
+                `86400000` (24 hours). For space metrics, (`<object name>/space` endpoint),
+                valid values are `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2
+                hours),  `28800000` (8 hours), and `86400000` (24 hours). Include the
+                `start_time` parameter to display the performance data starting at the specified
+                start time. If `start_time` is not specified, the start time will default to one
+                resolution before the end time, meaning that the most recent sample of
+                performance data will be displayed. Include the `end_time` parameter to display
+                the performance data until the specified end time. If `end_time`is not
+                specified, the end time will default to the current time. If the `resolution`
+                parameter is not specified but either the `start_time` or `end_time` parameter
+                is, then `resolution` will default to the lowest valid resolution.
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
+            start_time (int, optional):
+                Displays historical performance data for the specified time window, where
+                `start_time` is the beginning of the time window, and `end_time` is the end of
+                the time window. The `start_time` and `end_time` parameters are specified in
+                milliseconds since the UNIX epoch. If `start_time` is not specified, the start
+                time will default to one resolution before the end time, meaning that the most
+                recent sample of performance data will be displayed. If `end_time`is not
+                specified, the end time will default to the current time. Include the
+                `resolution` parameter to display the performance data at the specified
+                resolution. If not specified, `resolution` defaults to the lowest valid
+                resolution.
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             total_only (bool, optional):
                 If set to `true`, returns the aggregate value of all items after filtering.
@@ -7817,15 +7817,15 @@ class Client(object):
             authorization=authorization,
             x_request_id=x_request_id,
             destroyed=destroyed,
-            filter=filter,
             end_time=end_time,
-            resolution=resolution,
-            start_time=start_time,
+            filter=filter,
             ids=ids,
             limit=limit,
             names=names,
             offset=offset,
+            resolution=resolution,
             sort=sort,
+            start_time=start_time,
             total_item_count=total_item_count,
             total_only=total_only,
             async_req=async_req,
@@ -7844,15 +7844,15 @@ class Client(object):
         authorization=None,  # type: str
         x_request_id=None,  # type: str
         destroyed=None,  # type: bool
-        filter=None,  # type: str
         end_time=None,  # type: int
-        resolution=None,  # type: int
-        start_time=None,  # type: int
+        filter=None,  # type: str
         ids=None,  # type: List[str]
         limit=None,  # type: int
         names=None,  # type: List[str]
         offset=None,  # type: int
+        resolution=None,  # type: int
         sort=None,  # type: List[str]
+        start_time=None,  # type: int
         total_item_count=None,  # type: bool
         total_only=None,  # type: bool
         async_req=False,  # type: bool
@@ -7877,8 +7877,6 @@ class Client(object):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
                 destroyed objects, the time remaining is displayed in milliseconds.
-            filter (Filter, optional):
-                A filter to include only resources that match the specified criteria.
             end_time (int, optional):
                 Displays historical performance data for the specified time window, where
                 `start_time` is the beginning of the time window, and `end_time` is the end of
@@ -7890,36 +7888,8 @@ class Client(object):
                 `resolution` parameter to display the performance data at the specified
                 resolution. If not specified, `resolution` defaults to the lowest valid
                 resolution.
-            resolution (int, optional):
-                The number of milliseconds between samples of historical data. For array-wide
-                performance metrics (`/arrays/performance` endpoint), valid values are `1000` (1
-                second), `30000` (30 seconds), `300000` (5 minutes), `1800000` (30 minutes),
-                `7200000` (2 hours), `28800000` (8 hours), and `86400000` (24 hours). For
-                performance metrics on storage objects (`<object name>/performance` endpoint),
-                such as volumes, valid values are `30000` (30 seconds), `300000` (5 minutes),
-                `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and
-                `86400000` (24 hours). For space metrics, (`<object name>/space` endpoint),
-                valid values are `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2
-                hours), `28800000` (8 hours), and `86400000` (24 hours). Include the
-                `start_time` parameter to display the performance data starting at the specified
-                start time. If `start_time` is not specified, the start time will default to one
-                resolution before the end time, meaning that the most recent sample of
-                performance data will be displayed. Include the `end_time` parameter to display
-                the performance data until the specified end time. If `end_time`is not
-                specified, the end time will default to the current time. If the `resolution`
-                parameter is not specified but either the `start_time` or `end_time` parameter
-                is, then `resolution` will default to the lowest valid resolution.
-            start_time (int, optional):
-                Displays historical performance data for the specified time window, where
-                `start_time` is the beginning of the time window, and `end_time` is the end of
-                the time window. The `start_time` and `end_time` parameters are specified in
-                milliseconds since the UNIX epoch. If `start_time` is not specified, the start
-                time will default to one resolution before the end time, meaning that the most
-                recent sample of performance data will be displayed. If `end_time`is not
-                specified, the end time will default to the current time. Include the
-                `resolution` parameter to display the performance data at the specified
-                resolution. If not specified, `resolution` defaults to the lowest valid
-                resolution.
+            filter (Filter, optional):
+                A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
                 resource IDs in comma-separated format. The `ids` or `names` parameter is
@@ -7933,12 +7903,42 @@ class Client(object):
             offset (int, optional):
                 The starting position based on the results of the query in relation to the full
                 set of response objects returned.
+            resolution (int, optional):
+                The number of milliseconds between samples of historical data. For array-wide
+                performance metrics (`/arrays/performance` endpoint), valid values are `1000` (1
+                second), `30000` (30 seconds), `300000` (5 minutes), `1800000` (30 minutes),
+                `7200000` (2 hours), `28800000` (8 hours), and `86400000` (24 hours). For
+                performance metrics on storage objects (`<object name>/performance` endpoint),
+                such as volumes, valid values are `30000` (30 seconds), `300000` (5 minutes),
+                `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and
+                `86400000` (24 hours). For space metrics, (`<object name>/space` endpoint),
+                valid values are `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2
+                hours),  `28800000` (8 hours), and `86400000` (24 hours). Include the
+                `start_time` parameter to display the performance data starting at the specified
+                start time. If `start_time` is not specified, the start time will default to one
+                resolution before the end time, meaning that the most recent sample of
+                performance data will be displayed. Include the `end_time` parameter to display
+                the performance data until the specified end time. If `end_time`is not
+                specified, the end time will default to the current time. If the `resolution`
+                parameter is not specified but either the `start_time` or `end_time` parameter
+                is, then `resolution` will default to the lowest valid resolution.
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
+            start_time (int, optional):
+                Displays historical performance data for the specified time window, where
+                `start_time` is the beginning of the time window, and `end_time` is the end of
+                the time window. The `start_time` and `end_time` parameters are specified in
+                milliseconds since the UNIX epoch. If `start_time` is not specified, the start
+                time will default to one resolution before the end time, meaning that the most
+                recent sample of performance data will be displayed. If `end_time`is not
+                specified, the end time will default to the current time. Include the
+                `resolution` parameter to display the performance data at the specified
+                resolution. If not specified, `resolution` defaults to the lowest valid
+                resolution.
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             total_only (bool, optional):
                 If set to `true`, returns the aggregate value of all items after filtering.
@@ -7968,15 +7968,15 @@ class Client(object):
             authorization=authorization,
             x_request_id=x_request_id,
             destroyed=destroyed,
-            filter=filter,
             end_time=end_time,
-            resolution=resolution,
-            start_time=start_time,
+            filter=filter,
             ids=ids,
             limit=limit,
             names=names,
             offset=offset,
+            resolution=resolution,
             sort=sort,
+            start_time=start_time,
             total_item_count=total_item_count,
             total_only=total_only,
             async_req=async_req,
@@ -7995,15 +7995,15 @@ class Client(object):
         authorization=None,  # type: str
         x_request_id=None,  # type: str
         destroyed=None,  # type: bool
-        filter=None,  # type: str
         end_time=None,  # type: int
-        resolution=None,  # type: int
-        start_time=None,  # type: int
+        filter=None,  # type: str
         ids=None,  # type: List[str]
         limit=None,  # type: int
         names=None,  # type: List[str]
         offset=None,  # type: int
+        resolution=None,  # type: int
         sort=None,  # type: List[str]
+        start_time=None,  # type: int
         total_item_count=None,  # type: bool
         total_only=None,  # type: bool
         async_req=False,  # type: bool
@@ -8028,8 +8028,6 @@ class Client(object):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
                 destroyed objects, the time remaining is displayed in milliseconds.
-            filter (Filter, optional):
-                A filter to include only resources that match the specified criteria.
             end_time (int, optional):
                 Displays historical performance data for the specified time window, where
                 `start_time` is the beginning of the time window, and `end_time` is the end of
@@ -8041,36 +8039,8 @@ class Client(object):
                 `resolution` parameter to display the performance data at the specified
                 resolution. If not specified, `resolution` defaults to the lowest valid
                 resolution.
-            resolution (int, optional):
-                The number of milliseconds between samples of historical data. For array-wide
-                performance metrics (`/arrays/performance` endpoint), valid values are `1000` (1
-                second), `30000` (30 seconds), `300000` (5 minutes), `1800000` (30 minutes),
-                `7200000` (2 hours), `28800000` (8 hours), and `86400000` (24 hours). For
-                performance metrics on storage objects (`<object name>/performance` endpoint),
-                such as volumes, valid values are `30000` (30 seconds), `300000` (5 minutes),
-                `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and
-                `86400000` (24 hours). For space metrics, (`<object name>/space` endpoint),
-                valid values are `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2
-                hours), `28800000` (8 hours), and `86400000` (24 hours). Include the
-                `start_time` parameter to display the performance data starting at the specified
-                start time. If `start_time` is not specified, the start time will default to one
-                resolution before the end time, meaning that the most recent sample of
-                performance data will be displayed. Include the `end_time` parameter to display
-                the performance data until the specified end time. If `end_time`is not
-                specified, the end time will default to the current time. If the `resolution`
-                parameter is not specified but either the `start_time` or `end_time` parameter
-                is, then `resolution` will default to the lowest valid resolution.
-            start_time (int, optional):
-                Displays historical performance data for the specified time window, where
-                `start_time` is the beginning of the time window, and `end_time` is the end of
-                the time window. The `start_time` and `end_time` parameters are specified in
-                milliseconds since the UNIX epoch. If `start_time` is not specified, the start
-                time will default to one resolution before the end time, meaning that the most
-                recent sample of performance data will be displayed. If `end_time`is not
-                specified, the end time will default to the current time. Include the
-                `resolution` parameter to display the performance data at the specified
-                resolution. If not specified, `resolution` defaults to the lowest valid
-                resolution.
+            filter (Filter, optional):
+                A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
                 resource IDs in comma-separated format. The `ids` or `names` parameter is
@@ -8084,12 +8054,42 @@ class Client(object):
             offset (int, optional):
                 The starting position based on the results of the query in relation to the full
                 set of response objects returned.
+            resolution (int, optional):
+                The number of milliseconds between samples of historical data. For array-wide
+                performance metrics (`/arrays/performance` endpoint), valid values are `1000` (1
+                second), `30000` (30 seconds), `300000` (5 minutes), `1800000` (30 minutes),
+                `7200000` (2 hours), `28800000` (8 hours), and `86400000` (24 hours). For
+                performance metrics on storage objects (`<object name>/performance` endpoint),
+                such as volumes, valid values are `30000` (30 seconds), `300000` (5 minutes),
+                `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and
+                `86400000` (24 hours). For space metrics, (`<object name>/space` endpoint),
+                valid values are `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2
+                hours),  `28800000` (8 hours), and `86400000` (24 hours). Include the
+                `start_time` parameter to display the performance data starting at the specified
+                start time. If `start_time` is not specified, the start time will default to one
+                resolution before the end time, meaning that the most recent sample of
+                performance data will be displayed. Include the `end_time` parameter to display
+                the performance data until the specified end time. If `end_time`is not
+                specified, the end time will default to the current time. If the `resolution`
+                parameter is not specified but either the `start_time` or `end_time` parameter
+                is, then `resolution` will default to the lowest valid resolution.
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
+            start_time (int, optional):
+                Displays historical performance data for the specified time window, where
+                `start_time` is the beginning of the time window, and `end_time` is the end of
+                the time window. The `start_time` and `end_time` parameters are specified in
+                milliseconds since the UNIX epoch. If `start_time` is not specified, the start
+                time will default to one resolution before the end time, meaning that the most
+                recent sample of performance data will be displayed. If `end_time`is not
+                specified, the end time will default to the current time. Include the
+                `resolution` parameter to display the performance data at the specified
+                resolution. If not specified, `resolution` defaults to the lowest valid
+                resolution.
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             total_only (bool, optional):
                 If set to `true`, returns the aggregate value of all items after filtering.
@@ -8119,15 +8119,15 @@ class Client(object):
             authorization=authorization,
             x_request_id=x_request_id,
             destroyed=destroyed,
-            filter=filter,
             end_time=end_time,
-            resolution=resolution,
-            start_time=start_time,
+            filter=filter,
             ids=ids,
             limit=limit,
             names=names,
             offset=offset,
+            resolution=resolution,
             sort=sort,
+            start_time=start_time,
             total_item_count=total_item_count,
             total_only=total_only,
             async_req=async_req,
@@ -8146,15 +8146,15 @@ class Client(object):
         authorization=None,  # type: str
         x_request_id=None,  # type: str
         destroyed=None,  # type: bool
-        filter=None,  # type: str
         end_time=None,  # type: int
-        resolution=None,  # type: int
-        start_time=None,  # type: int
+        filter=None,  # type: str
         ids=None,  # type: List[str]
         limit=None,  # type: int
         names=None,  # type: List[str]
         offset=None,  # type: int
+        resolution=None,  # type: int
         sort=None,  # type: List[str]
+        start_time=None,  # type: int
         total_item_count=None,  # type: bool
         total_only=None,  # type: bool
         async_req=False,  # type: bool
@@ -8179,8 +8179,6 @@ class Client(object):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
                 destroyed objects, the time remaining is displayed in milliseconds.
-            filter (Filter, optional):
-                A filter to include only resources that match the specified criteria.
             end_time (int, optional):
                 Displays historical performance data for the specified time window, where
                 `start_time` is the beginning of the time window, and `end_time` is the end of
@@ -8192,36 +8190,8 @@ class Client(object):
                 `resolution` parameter to display the performance data at the specified
                 resolution. If not specified, `resolution` defaults to the lowest valid
                 resolution.
-            resolution (int, optional):
-                The number of milliseconds between samples of historical data. For array-wide
-                performance metrics (`/arrays/performance` endpoint), valid values are `1000` (1
-                second), `30000` (30 seconds), `300000` (5 minutes), `1800000` (30 minutes),
-                `7200000` (2 hours), `28800000` (8 hours), and `86400000` (24 hours). For
-                performance metrics on storage objects (`<object name>/performance` endpoint),
-                such as volumes, valid values are `30000` (30 seconds), `300000` (5 minutes),
-                `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and
-                `86400000` (24 hours). For space metrics, (`<object name>/space` endpoint),
-                valid values are `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2
-                hours), `28800000` (8 hours), and `86400000` (24 hours). Include the
-                `start_time` parameter to display the performance data starting at the specified
-                start time. If `start_time` is not specified, the start time will default to one
-                resolution before the end time, meaning that the most recent sample of
-                performance data will be displayed. Include the `end_time` parameter to display
-                the performance data until the specified end time. If `end_time`is not
-                specified, the end time will default to the current time. If the `resolution`
-                parameter is not specified but either the `start_time` or `end_time` parameter
-                is, then `resolution` will default to the lowest valid resolution.
-            start_time (int, optional):
-                Displays historical performance data for the specified time window, where
-                `start_time` is the beginning of the time window, and `end_time` is the end of
-                the time window. The `start_time` and `end_time` parameters are specified in
-                milliseconds since the UNIX epoch. If `start_time` is not specified, the start
-                time will default to one resolution before the end time, meaning that the most
-                recent sample of performance data will be displayed. If `end_time`is not
-                specified, the end time will default to the current time. Include the
-                `resolution` parameter to display the performance data at the specified
-                resolution. If not specified, `resolution` defaults to the lowest valid
-                resolution.
+            filter (Filter, optional):
+                A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
                 resource IDs in comma-separated format. The `ids` or `names` parameter is
@@ -8235,12 +8205,42 @@ class Client(object):
             offset (int, optional):
                 The starting position based on the results of the query in relation to the full
                 set of response objects returned.
+            resolution (int, optional):
+                The number of milliseconds between samples of historical data. For array-wide
+                performance metrics (`/arrays/performance` endpoint), valid values are `1000` (1
+                second), `30000` (30 seconds), `300000` (5 minutes), `1800000` (30 minutes),
+                `7200000` (2 hours), `28800000` (8 hours), and `86400000` (24 hours). For
+                performance metrics on storage objects (`<object name>/performance` endpoint),
+                such as volumes, valid values are `30000` (30 seconds), `300000` (5 minutes),
+                `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and
+                `86400000` (24 hours). For space metrics, (`<object name>/space` endpoint),
+                valid values are `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2
+                hours),  `28800000` (8 hours), and `86400000` (24 hours). Include the
+                `start_time` parameter to display the performance data starting at the specified
+                start time. If `start_time` is not specified, the start time will default to one
+                resolution before the end time, meaning that the most recent sample of
+                performance data will be displayed. Include the `end_time` parameter to display
+                the performance data until the specified end time. If `end_time`is not
+                specified, the end time will default to the current time. If the `resolution`
+                parameter is not specified but either the `start_time` or `end_time` parameter
+                is, then `resolution` will default to the lowest valid resolution.
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
+            start_time (int, optional):
+                Displays historical performance data for the specified time window, where
+                `start_time` is the beginning of the time window, and `end_time` is the end of
+                the time window. The `start_time` and `end_time` parameters are specified in
+                milliseconds since the UNIX epoch. If `start_time` is not specified, the start
+                time will default to one resolution before the end time, meaning that the most
+                recent sample of performance data will be displayed. If `end_time`is not
+                specified, the end time will default to the current time. Include the
+                `resolution` parameter to display the performance data at the specified
+                resolution. If not specified, `resolution` defaults to the lowest valid
+                resolution.
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             total_only (bool, optional):
                 If set to `true`, returns the aggregate value of all items after filtering.
@@ -8270,15 +8270,15 @@ class Client(object):
             authorization=authorization,
             x_request_id=x_request_id,
             destroyed=destroyed,
-            filter=filter,
             end_time=end_time,
-            resolution=resolution,
-            start_time=start_time,
+            filter=filter,
             ids=ids,
             limit=limit,
             names=names,
             offset=offset,
+            resolution=resolution,
             sort=sort,
+            start_time=start_time,
             total_item_count=total_item_count,
             total_only=total_only,
             async_req=async_req,
@@ -8359,18 +8359,18 @@ class Client(object):
     def get_pods_space(
         self,
         references=None,  # type: List[models.ReferenceType]
-        names=None,  # type: List[str]
         authorization=None,  # type: str
         x_request_id=None,  # type: str
         destroyed=None,  # type: bool
-        filter=None,  # type: str
         end_time=None,  # type: int
-        resolution=None,  # type: int
-        start_time=None,  # type: int
+        filter=None,  # type: str
         ids=None,  # type: List[str]
         limit=None,  # type: int
+        names=None,  # type: List[str]
         offset=None,  # type: int
+        resolution=None,  # type: int
         sort=None,  # type: List[str]
+        start_time=None,  # type: int
         total_item_count=None,  # type: bool
         total_only=None,  # type: bool
         async_req=False,  # type: bool
@@ -8385,11 +8385,8 @@ class Client(object):
 
         Args:
             references (list[FixedReference], optional):
-                A list of references to query for. Overrides names and ids keyword arguments.
+                A list of references to query for. Overrides ids and names keyword arguments.
 
-            names (list[str], optional):
-                Performs the operation on the unique name specified. Enter multiple names in
-                comma-separated format. For example, `name01,name02`.
             x_request_id (str, optional):
                 A header to provide to track the API call. Generated by the server if not
                 provided.
@@ -8397,8 +8394,6 @@ class Client(object):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
                 destroyed objects, the time remaining is displayed in milliseconds.
-            filter (Filter, optional):
-                A filter to include only resources that match the specified criteria.
             end_time (int, optional):
                 Displays historical performance data for the specified time window, where
                 `start_time` is the beginning of the time window, and `end_time` is the end of
@@ -8410,6 +8405,21 @@ class Client(object):
                 `resolution` parameter to display the performance data at the specified
                 resolution. If not specified, `resolution` defaults to the lowest valid
                 resolution.
+            filter (Filter, optional):
+                A filter to include only resources that match the specified criteria.
+            ids (list[str], optional):
+                Performs the operation on the unique resource IDs specified. Enter multiple
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
+            limit (int, optional):
+                Limit the number of resources in the response. If not specified, defaults to
+                1000.
+            names (list[str], optional):
+                Performs the operation on the unique name specified. Enter multiple names in
+                comma-separated format. For example, `name01,name02`.
+            offset (int, optional):
+                The starting position based on the results of the query in relation to the full
+                set of response objects returned.
             resolution (int, optional):
                 The number of milliseconds between samples of historical data. For array-wide
                 performance metrics (`/arrays/performance` endpoint), valid values are `1000` (1
@@ -8420,7 +8430,7 @@ class Client(object):
                 `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and
                 `86400000` (24 hours). For space metrics, (`<object name>/space` endpoint),
                 valid values are `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2
-                hours), `28800000` (8 hours), and `86400000` (24 hours). Include the
+                hours),  `28800000` (8 hours), and `86400000` (24 hours). Include the
                 `start_time` parameter to display the performance data starting at the specified
                 start time. If `start_time` is not specified, the start time will default to one
                 resolution before the end time, meaning that the most recent sample of
@@ -8429,6 +8439,8 @@ class Client(object):
                 specified, the end time will default to the current time. If the `resolution`
                 parameter is not specified but either the `start_time` or `end_time` parameter
                 is, then `resolution` will default to the lowest valid resolution.
+            sort (list[Property], optional):
+                Sort the response by the specified Properties. Can also be a single element.
             start_time (int, optional):
                 Displays historical performance data for the specified time window, where
                 `start_time` is the beginning of the time window, and `end_time` is the end of
@@ -8440,22 +8452,10 @@ class Client(object):
                 `resolution` parameter to display the performance data at the specified
                 resolution. If not specified, `resolution` defaults to the lowest valid
                 resolution.
-            ids (list[str], optional):
-                Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` or `names` parameter is
-                required, but they cannot be set together.
-            limit (int, optional):
-                Limit the number of resources in the response. If not specified, defaults to
-                1000.
-            offset (int, optional):
-                The starting position based on the results of the query in relation to the full
-                set of response objects returned.
-            sort (list[Property], optional):
-                Sort the response by the specified Properties. Can also be a single element.
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             total_only (bool, optional):
                 If set to `true`, returns the aggregate value of all items after filtering.
@@ -8482,18 +8482,18 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
-            names=names,
             authorization=authorization,
             x_request_id=x_request_id,
             destroyed=destroyed,
-            filter=filter,
             end_time=end_time,
-            resolution=resolution,
-            start_time=start_time,
+            filter=filter,
             ids=ids,
             limit=limit,
+            names=names,
             offset=offset,
+            resolution=resolution,
             sort=sort,
+            start_time=start_time,
             total_item_count=total_item_count,
             total_only=total_only,
             async_req=async_req,
@@ -8503,7 +8503,7 @@ class Client(object):
         )
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._pods_api.api22_pods_space_get_with_http_info
-        _process_references(references, ['names', 'ids'], kwargs)
+        _process_references(references, ['ids', 'names'], kwargs)
         return self._call_api(endpoint, kwargs)
 
     def get_ports(
@@ -8552,7 +8552,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -8638,7 +8638,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -8800,7 +8800,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             total_only (bool, optional):
                 If set to `true`, returns the aggregate value of all items after filtering.
@@ -8916,11 +8916,11 @@ class Client(object):
     def post_protection_group_snapshots(
         self,
         sources=None,  # type: List[models.ReferenceType]
+        protection_group_snapshot=None,  # type: models.ProtectionGroupSnapshotPost
         authorization=None,  # type: str
         x_request_id=None,  # type: str
         apply_retention=None,  # type: bool
         source_names=None,  # type: List[str]
-        protection_group_snapshot=None,  # type: models.ProtectionGroupSnapshotPost
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -8935,6 +8935,7 @@ class Client(object):
             sources (list[FixedReference], optional):
                 A list of sources to query for. Overrides source_names keyword arguments.
 
+            protection_group_snapshot (ProtectionGroupSnapshotPost, optional):
             x_request_id (str, optional):
                 A header to provide to track the API call. Generated by the server if not
                 provided.
@@ -8943,7 +8944,6 @@ class Client(object):
             source_names (list[str], optional):
                 Performs the operation on the source name specified. Enter multiple source names
                 in comma-separated format. For example, `name01,name02`.
-            protection_group_snapshot (ProtectionGroupSnapshotPost, optional):
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -8964,11 +8964,11 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
+            protection_group_snapshot=protection_group_snapshot,
             authorization=authorization,
             x_request_id=x_request_id,
             apply_retention=apply_retention,
             source_names=source_names,
-            protection_group_snapshot=protection_group_snapshot,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
             _preload_content=_preload_content,
@@ -9035,7 +9035,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             total_only (bool, optional):
                 If set to `true`, returns the aggregate value of all items after filtering.
@@ -9170,7 +9170,7 @@ class Client(object):
         replication targets, hosts, host groups, and volumes. The list includes
         protection groups that were created on the local array to replicate snapshot
         data to other arrays or offload targets, created on a remote array and
-        replicated asynchronously to this array, or created inside a pod on a remote
+        replicated asynchronously to this array,  or created inside a pod on a remote
         array and stretched to the local array.
 
         Args:
@@ -9202,7 +9202,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             total_only (bool, optional):
                 If set to `true`, returns the aggregate value of all items after filtering.
@@ -9382,7 +9382,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -9630,7 +9630,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -9813,17 +9813,17 @@ class Client(object):
     def get_protection_groups_performance_replication_by_array(
         self,
         references=None,  # type: List[models.ReferenceType]
-        names=None,  # type: List[str]
         authorization=None,  # type: str
         x_request_id=None,  # type: str
         destroyed=None,  # type: bool
-        filter=None,  # type: str
         end_time=None,  # type: int
-        resolution=None,  # type: int
-        start_time=None,  # type: int
+        filter=None,  # type: str
         limit=None,  # type: int
+        names=None,  # type: List[str]
         offset=None,  # type: int
+        resolution=None,  # type: int
         sort=None,  # type: List[str]
+        start_time=None,  # type: int
         total_item_count=None,  # type: bool
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
@@ -9840,9 +9840,6 @@ class Client(object):
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides names keyword arguments.
 
-            names (list[str], optional):
-                Performs the operation on the unique name specified. Enter multiple names in
-                comma-separated format. For example, `name01,name02`.
             x_request_id (str, optional):
                 A header to provide to track the API call. Generated by the server if not
                 provided.
@@ -9850,8 +9847,6 @@ class Client(object):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
                 destroyed objects, the time remaining is displayed in milliseconds.
-            filter (Filter, optional):
-                A filter to include only resources that match the specified criteria.
             end_time (int, optional):
                 Displays historical performance data for the specified time window, where
                 `start_time` is the beginning of the time window, and `end_time` is the end of
@@ -9863,6 +9858,17 @@ class Client(object):
                 `resolution` parameter to display the performance data at the specified
                 resolution. If not specified, `resolution` defaults to the lowest valid
                 resolution.
+            filter (Filter, optional):
+                A filter to include only resources that match the specified criteria.
+            limit (int, optional):
+                Limit the number of resources in the response. If not specified, defaults to
+                1000.
+            names (list[str], optional):
+                Performs the operation on the unique name specified. Enter multiple names in
+                comma-separated format. For example, `name01,name02`.
+            offset (int, optional):
+                The starting position based on the results of the query in relation to the full
+                set of response objects returned.
             resolution (int, optional):
                 The number of milliseconds between samples of historical data. For array-wide
                 performance metrics (`/arrays/performance` endpoint), valid values are `1000` (1
@@ -9873,7 +9879,7 @@ class Client(object):
                 `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and
                 `86400000` (24 hours). For space metrics, (`<object name>/space` endpoint),
                 valid values are `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2
-                hours), `28800000` (8 hours), and `86400000` (24 hours). Include the
+                hours),  `28800000` (8 hours), and `86400000` (24 hours). Include the
                 `start_time` parameter to display the performance data starting at the specified
                 start time. If `start_time` is not specified, the start time will default to one
                 resolution before the end time, meaning that the most recent sample of
@@ -9882,6 +9888,8 @@ class Client(object):
                 specified, the end time will default to the current time. If the `resolution`
                 parameter is not specified but either the `start_time` or `end_time` parameter
                 is, then `resolution` will default to the lowest valid resolution.
+            sort (list[Property], optional):
+                Sort the response by the specified Properties. Can also be a single element.
             start_time (int, optional):
                 Displays historical performance data for the specified time window, where
                 `start_time` is the beginning of the time window, and `end_time` is the end of
@@ -9893,18 +9901,10 @@ class Client(object):
                 `resolution` parameter to display the performance data at the specified
                 resolution. If not specified, `resolution` defaults to the lowest valid
                 resolution.
-            limit (int, optional):
-                Limit the number of resources in the response. If not specified, defaults to
-                1000.
-            offset (int, optional):
-                The starting position based on the results of the query in relation to the full
-                set of response objects returned.
-            sort (list[Property], optional):
-                Sort the response by the specified Properties. Can also be a single element.
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -9926,17 +9926,17 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
-            names=names,
             authorization=authorization,
             x_request_id=x_request_id,
             destroyed=destroyed,
-            filter=filter,
             end_time=end_time,
-            resolution=resolution,
-            start_time=start_time,
+            filter=filter,
             limit=limit,
+            names=names,
             offset=offset,
+            resolution=resolution,
             sort=sort,
+            start_time=start_time,
             total_item_count=total_item_count,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
@@ -9951,17 +9951,17 @@ class Client(object):
     def get_protection_groups_performance_replication(
         self,
         references=None,  # type: List[models.ReferenceType]
-        names=None,  # type: List[str]
         authorization=None,  # type: str
         x_request_id=None,  # type: str
         destroyed=None,  # type: bool
-        filter=None,  # type: str
         end_time=None,  # type: int
-        resolution=None,  # type: int
-        start_time=None,  # type: int
+        filter=None,  # type: str
         limit=None,  # type: int
+        names=None,  # type: List[str]
         offset=None,  # type: int
+        resolution=None,  # type: int
         sort=None,  # type: List[str]
+        start_time=None,  # type: int
         total_item_count=None,  # type: bool
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
@@ -9977,9 +9977,6 @@ class Client(object):
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides names keyword arguments.
 
-            names (list[str], optional):
-                Performs the operation on the unique name specified. Enter multiple names in
-                comma-separated format. For example, `name01,name02`.
             x_request_id (str, optional):
                 A header to provide to track the API call. Generated by the server if not
                 provided.
@@ -9987,8 +9984,6 @@ class Client(object):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
                 destroyed objects, the time remaining is displayed in milliseconds.
-            filter (Filter, optional):
-                A filter to include only resources that match the specified criteria.
             end_time (int, optional):
                 Displays historical performance data for the specified time window, where
                 `start_time` is the beginning of the time window, and `end_time` is the end of
@@ -10000,6 +9995,17 @@ class Client(object):
                 `resolution` parameter to display the performance data at the specified
                 resolution. If not specified, `resolution` defaults to the lowest valid
                 resolution.
+            filter (Filter, optional):
+                A filter to include only resources that match the specified criteria.
+            limit (int, optional):
+                Limit the number of resources in the response. If not specified, defaults to
+                1000.
+            names (list[str], optional):
+                Performs the operation on the unique name specified. Enter multiple names in
+                comma-separated format. For example, `name01,name02`.
+            offset (int, optional):
+                The starting position based on the results of the query in relation to the full
+                set of response objects returned.
             resolution (int, optional):
                 The number of milliseconds between samples of historical data. For array-wide
                 performance metrics (`/arrays/performance` endpoint), valid values are `1000` (1
@@ -10010,7 +10016,7 @@ class Client(object):
                 `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and
                 `86400000` (24 hours). For space metrics, (`<object name>/space` endpoint),
                 valid values are `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2
-                hours), `28800000` (8 hours), and `86400000` (24 hours). Include the
+                hours),  `28800000` (8 hours), and `86400000` (24 hours). Include the
                 `start_time` parameter to display the performance data starting at the specified
                 start time. If `start_time` is not specified, the start time will default to one
                 resolution before the end time, meaning that the most recent sample of
@@ -10019,6 +10025,8 @@ class Client(object):
                 specified, the end time will default to the current time. If the `resolution`
                 parameter is not specified but either the `start_time` or `end_time` parameter
                 is, then `resolution` will default to the lowest valid resolution.
+            sort (list[Property], optional):
+                Sort the response by the specified Properties. Can also be a single element.
             start_time (int, optional):
                 Displays historical performance data for the specified time window, where
                 `start_time` is the beginning of the time window, and `end_time` is the end of
@@ -10030,18 +10038,10 @@ class Client(object):
                 `resolution` parameter to display the performance data at the specified
                 resolution. If not specified, `resolution` defaults to the lowest valid
                 resolution.
-            limit (int, optional):
-                Limit the number of resources in the response. If not specified, defaults to
-                1000.
-            offset (int, optional):
-                The starting position based on the results of the query in relation to the full
-                set of response objects returned.
-            sort (list[Property], optional):
-                Sort the response by the specified Properties. Can also be a single element.
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -10063,17 +10063,17 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
-            names=names,
             authorization=authorization,
             x_request_id=x_request_id,
             destroyed=destroyed,
-            filter=filter,
             end_time=end_time,
-            resolution=resolution,
-            start_time=start_time,
+            filter=filter,
             limit=limit,
+            names=names,
             offset=offset,
+            resolution=resolution,
             sort=sort,
+            start_time=start_time,
             total_item_count=total_item_count,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
@@ -10092,8 +10092,8 @@ class Client(object):
         authorization=None,  # type: str
         x_request_id=None,  # type: str
         names=None,  # type: List[str]
-        source_names=None,  # type: List[str]
         overwrite=None,  # type: bool
+        source_names=None,  # type: List[str]
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -10115,6 +10115,11 @@ class Client(object):
             names (list[str], optional):
                 Performs the operation on the unique name specified. Enter multiple names in
                 comma-separated format. For example, `name01,name02`.
+            overwrite (bool, optional):
+                If set to `true`, overwrites an existing object during an object copy operation.
+                If set to `false` or not set at all and the target name is an existing object,
+                the copy operation fails. Required if the `source` body parameter is set and the
+                source overwrites an existing object during the copy operation.
             source_names (list[str], optional):
                 The name of the protection group or protection group snapshot to be copied into
                 a new or existing protection group. If the destination protection group and all
@@ -10124,11 +10129,6 @@ class Client(object):
                 names of the volumes that are being restored. If the source is a protection
                 group, the latest snapshot of the protection group will be used as the source
                 during the copy operation.
-            overwrite (bool, optional):
-                If set to `true`, overwrites an existing object during an object copy operation.
-                If set to `false` or not set at all and the target name is an existing object,
-                the copy operation fails. Required if the `source` body parameter is set and the
-                source overwrites an existing object during the copy operation.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -10152,8 +10152,8 @@ class Client(object):
             authorization=authorization,
             x_request_id=x_request_id,
             names=names,
-            source_names=source_names,
             overwrite=overwrite,
+            source_names=source_names,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
             _preload_content=_preload_content,
@@ -10214,7 +10214,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -10383,7 +10383,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -10707,7 +10707,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -10877,7 +10877,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -10935,7 +10935,7 @@ class Client(object):
         """
         Eradicates a remote protection group snapshot that has been destroyed and is
         pending eradication. Eradicated remote protection group snapshots cannot be
-        recovered. Remote protection group snapshots are destroyed through the `PATCH`
+        recovered.  Remote protection group snapshots are destroyed through the `PATCH`
         method. The `names` parameter represents the name of the protection group
         snapshot. The `on` parameter represents the name of the offload target. The
         `names` and `on` parameters are required and must be used together.
@@ -11046,7 +11046,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -11162,12 +11162,12 @@ class Client(object):
         self,
         references=None,  # type: List[models.ReferenceType]
         sources=None,  # type: List[models.ReferenceType]
-        names=None,  # type: List[str]
         authorization=None,  # type: str
         x_request_id=None,  # type: str
         destroyed=None,  # type: bool
         filter=None,  # type: str
         limit=None,  # type: int
+        names=None,  # type: List[str]
         offset=None,  # type: int
         on=None,  # type: List[str]
         sort=None,  # type: List[str]
@@ -11189,9 +11189,6 @@ class Client(object):
             sources (list[FixedReference], optional):
                 A list of sources to query for. Overrides source_names keyword arguments.
 
-            names (list[str], optional):
-                Performs the operation on the unique name specified. Enter multiple names in
-                comma-separated format. For example, `name01,name02`.
             x_request_id (str, optional):
                 A header to provide to track the API call. Generated by the server if not
                 provided.
@@ -11204,6 +11201,9 @@ class Client(object):
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
+            names (list[str], optional):
+                Performs the operation on the unique name specified. Enter multiple names in
+                comma-separated format. For example, `name01,name02`.
             offset (int, optional):
                 The starting position based on the results of the query in relation to the full
                 set of response objects returned.
@@ -11218,7 +11218,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             total_only (bool, optional):
                 If set to `true`, returns the aggregate value of all items after filtering.
@@ -11245,12 +11245,12 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
-            names=names,
             authorization=authorization,
             x_request_id=x_request_id,
             destroyed=destroyed,
             filter=filter,
             limit=limit,
+            names=names,
             offset=offset,
             on=on,
             sort=sort,
@@ -11398,7 +11398,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -11461,7 +11461,7 @@ class Client(object):
         destroys a remote protection group from the offload target. Before the remote
         protection group can be destroyed, the offload target must first be removed from
         the protection group via the source array. The `on` parameter represents the
-        name of the offload target. The `ids` or `names` parameter and the `on`
+        name of the offload target.  The `ids` or `names` parameter and the `on`
         parameter are required and must be used together.
 
         Args:
@@ -11586,7 +11586,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -11636,13 +11636,13 @@ class Client(object):
         self,
         references=None,  # type: List[models.ReferenceType]
         sources=None,  # type: List[models.ReferenceType]
-        names=None,  # type: List[str]
         authorization=None,  # type: str
         x_request_id=None,  # type: str
         destroyed=None,  # type: bool
         filter=None,  # type: str
         ids=None,  # type: List[str]
         limit=None,  # type: int
+        names=None,  # type: List[str]
         offset=None,  # type: int
         on=None,  # type: List[str]
         sort=None,  # type: List[str]
@@ -11661,13 +11661,10 @@ class Client(object):
 
         Args:
             references (list[FixedReference], optional):
-                A list of references to query for. Overrides names and ids keyword arguments.
+                A list of references to query for. Overrides ids and names keyword arguments.
             sources (list[FixedReference], optional):
                 A list of sources to query for. Overrides source_ids and source_names keyword arguments.
 
-            names (list[str], optional):
-                Performs the operation on the unique name specified. Enter multiple names in
-                comma-separated format. For example, `name01,name02`.
             x_request_id (str, optional):
                 A header to provide to track the API call. Generated by the server if not
                 provided.
@@ -11684,6 +11681,9 @@ class Client(object):
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
+            names (list[str], optional):
+                Performs the operation on the unique name specified. Enter multiple names in
+                comma-separated format. For example, `name01,name02`.
             offset (int, optional):
                 The starting position based on the results of the query in relation to the full
                 set of response objects returned.
@@ -11701,7 +11701,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             total_only (bool, optional):
                 If set to `true`, returns the aggregate value of all items after filtering.
@@ -11728,13 +11728,13 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
-            names=names,
             authorization=authorization,
             x_request_id=x_request_id,
             destroyed=destroyed,
             filter=filter,
             ids=ids,
             limit=limit,
+            names=names,
             offset=offset,
             on=on,
             sort=sort,
@@ -11749,7 +11749,7 @@ class Client(object):
         )
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._remote_volume_snapshots_api.api22_remote_volume_snapshots_transfer_get_with_http_info
-        _process_references(references, ['names', 'ids'], kwargs)
+        _process_references(references, ['ids', 'names'], kwargs)
         _process_references(sources, ['source_ids', 'source_names'], kwargs)
         return self._call_api(endpoint, kwargs)
 
@@ -11789,7 +11789,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -11929,7 +11929,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             versions (list[str], optional):
                 A list of versions.
@@ -12027,7 +12027,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -12128,7 +12128,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -12176,9 +12176,9 @@ class Client(object):
         self,
         command=None,  # type: str
         current_step_id=None,  # type: str
+        software_installations=None,  # type: models.SoftwareInstallationPatch
         authorization=None,  # type: str
         x_request_id=None,  # type: str
-        software_installations=None,  # type: models.SoftwareInstallationPatch
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -12200,10 +12200,10 @@ class Client(object):
                 previous step. The `abort` command aborts the upgrade.
             current_step_id (str, required):
                 The current step `id` of the installation.
+            software_installations (SoftwareInstallationPatch, optional):
             x_request_id (str, optional):
                 A header to provide to track the API call. Generated by the server if not
                 provided.
-            software_installations (SoftwareInstallationPatch, optional):
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -12226,9 +12226,9 @@ class Client(object):
         kwargs = dict(
             command=command,
             current_step_id=current_step_id,
+            software_installations=software_installations,
             authorization=authorization,
             x_request_id=x_request_id,
-            software_installations=software_installations,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
             _preload_content=_preload_content,
@@ -12241,8 +12241,8 @@ class Client(object):
     def post_software_installations(
         self,
         softwares=None,  # type: List[models.ReferenceType]
-        software_ids=None,  # type: List[str]
         software_installations=None,  # type: models.SoftwareInstallationPost
+        software_ids=None,  # type: List[str]
         authorization=None,  # type: str
         x_request_id=None,  # type: str
         async_req=False,  # type: bool
@@ -12258,9 +12258,9 @@ class Client(object):
             softwares (list[FixedReference], optional):
                 A list of softwares to query for. Overrides software_ids keyword arguments.
 
+            software_installations (SoftwareInstallationPost, required):
             software_ids (list[str], required):
                 A list of software IDs.
-            software_installations (SoftwareInstallationPost, required):
             x_request_id (str, optional):
                 A header to provide to track the API call. Generated by the server if not
                 provided.
@@ -12284,8 +12284,8 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
-            software_ids=software_ids,
             software_installations=software_installations,
+            software_ids=software_ids,
             authorization=authorization,
             x_request_id=x_request_id,
             async_req=async_req,
@@ -12403,7 +12403,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -12508,8 +12508,8 @@ class Client(object):
     def post_subnets(
         self,
         references=None,  # type: List[models.ReferenceType]
-        names=None,  # type: List[str]
         subnet=None,  # type: models.SubnetPost
+        names=None,  # type: List[str]
         authorization=None,  # type: str
         x_request_id=None,  # type: str
         async_req=False,  # type: bool
@@ -12525,10 +12525,10 @@ class Client(object):
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides names keyword arguments.
 
+            subnet (SubnetPost, required):
             names (list[str], required):
                 Performs the operation on the unique name specified. For example, `name01`.
                 Enter multiple names in comma-separated format.
-            subnet (SubnetPost, required):
             x_request_id (str, optional):
                 A header to provide to track the API call. Generated by the server if not
                 provided.
@@ -12552,8 +12552,8 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
-            names=names,
             subnet=subnet,
+            names=names,
             authorization=authorization,
             x_request_id=x_request_id,
             async_req=async_req,
@@ -12605,7 +12605,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -12738,7 +12738,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -12901,7 +12901,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             total_only (bool, optional):
                 If set to `true`, returns the aggregate value of all items after filtering.
@@ -13028,15 +13028,15 @@ class Client(object):
         authorization=None,  # type: str
         x_request_id=None,  # type: str
         destroyed=None,  # type: bool
-        filter=None,  # type: str
         end_time=None,  # type: int
-        resolution=None,  # type: int
-        start_time=None,  # type: int
+        filter=None,  # type: str
         ids=None,  # type: List[str]
         limit=None,  # type: int
         names=None,  # type: List[str]
         offset=None,  # type: int
+        resolution=None,  # type: int
         sort=None,  # type: List[str]
+        start_time=None,  # type: int
         total_item_count=None,  # type: bool
         total_only=None,  # type: bool
         async_req=False,  # type: bool
@@ -13061,8 +13061,6 @@ class Client(object):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
                 destroyed objects, the time remaining is displayed in milliseconds.
-            filter (Filter, optional):
-                A filter to include only resources that match the specified criteria.
             end_time (int, optional):
                 Displays historical performance data for the specified time window, where
                 `start_time` is the beginning of the time window, and `end_time` is the end of
@@ -13074,36 +13072,8 @@ class Client(object):
                 `resolution` parameter to display the performance data at the specified
                 resolution. If not specified, `resolution` defaults to the lowest valid
                 resolution.
-            resolution (int, optional):
-                The number of milliseconds between samples of historical data. For array-wide
-                performance metrics (`/arrays/performance` endpoint), valid values are `1000` (1
-                second), `30000` (30 seconds), `300000` (5 minutes), `1800000` (30 minutes),
-                `7200000` (2 hours), `28800000` (8 hours), and `86400000` (24 hours). For
-                performance metrics on storage objects (`<object name>/performance` endpoint),
-                such as volumes, valid values are `30000` (30 seconds), `300000` (5 minutes),
-                `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and
-                `86400000` (24 hours). For space metrics, (`<object name>/space` endpoint),
-                valid values are `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2
-                hours), `28800000` (8 hours), and `86400000` (24 hours). Include the
-                `start_time` parameter to display the performance data starting at the specified
-                start time. If `start_time` is not specified, the start time will default to one
-                resolution before the end time, meaning that the most recent sample of
-                performance data will be displayed. Include the `end_time` parameter to display
-                the performance data until the specified end time. If `end_time`is not
-                specified, the end time will default to the current time. If the `resolution`
-                parameter is not specified but either the `start_time` or `end_time` parameter
-                is, then `resolution` will default to the lowest valid resolution.
-            start_time (int, optional):
-                Displays historical performance data for the specified time window, where
-                `start_time` is the beginning of the time window, and `end_time` is the end of
-                the time window. The `start_time` and `end_time` parameters are specified in
-                milliseconds since the UNIX epoch. If `start_time` is not specified, the start
-                time will default to one resolution before the end time, meaning that the most
-                recent sample of performance data will be displayed. If `end_time`is not
-                specified, the end time will default to the current time. Include the
-                `resolution` parameter to display the performance data at the specified
-                resolution. If not specified, `resolution` defaults to the lowest valid
-                resolution.
+            filter (Filter, optional):
+                A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
                 resource IDs in comma-separated format. The `ids` or `names` parameter is
@@ -13117,12 +13087,42 @@ class Client(object):
             offset (int, optional):
                 The starting position based on the results of the query in relation to the full
                 set of response objects returned.
+            resolution (int, optional):
+                The number of milliseconds between samples of historical data. For array-wide
+                performance metrics (`/arrays/performance` endpoint), valid values are `1000` (1
+                second), `30000` (30 seconds), `300000` (5 minutes), `1800000` (30 minutes),
+                `7200000` (2 hours), `28800000` (8 hours), and `86400000` (24 hours). For
+                performance metrics on storage objects (`<object name>/performance` endpoint),
+                such as volumes, valid values are `30000` (30 seconds), `300000` (5 minutes),
+                `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and
+                `86400000` (24 hours). For space metrics, (`<object name>/space` endpoint),
+                valid values are `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2
+                hours),  `28800000` (8 hours), and `86400000` (24 hours). Include the
+                `start_time` parameter to display the performance data starting at the specified
+                start time. If `start_time` is not specified, the start time will default to one
+                resolution before the end time, meaning that the most recent sample of
+                performance data will be displayed. Include the `end_time` parameter to display
+                the performance data until the specified end time. If `end_time`is not
+                specified, the end time will default to the current time. If the `resolution`
+                parameter is not specified but either the `start_time` or `end_time` parameter
+                is, then `resolution` will default to the lowest valid resolution.
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
+            start_time (int, optional):
+                Displays historical performance data for the specified time window, where
+                `start_time` is the beginning of the time window, and `end_time` is the end of
+                the time window. The `start_time` and `end_time` parameters are specified in
+                milliseconds since the UNIX epoch. If `start_time` is not specified, the start
+                time will default to one resolution before the end time, meaning that the most
+                recent sample of performance data will be displayed. If `end_time`is not
+                specified, the end time will default to the current time. Include the
+                `resolution` parameter to display the performance data at the specified
+                resolution. If not specified, `resolution` defaults to the lowest valid
+                resolution.
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             total_only (bool, optional):
                 If set to `true`, returns the aggregate value of all items after filtering.
@@ -13152,15 +13152,15 @@ class Client(object):
             authorization=authorization,
             x_request_id=x_request_id,
             destroyed=destroyed,
-            filter=filter,
             end_time=end_time,
-            resolution=resolution,
-            start_time=start_time,
+            filter=filter,
             ids=ids,
             limit=limit,
             names=names,
             offset=offset,
+            resolution=resolution,
             sort=sort,
+            start_time=start_time,
             total_item_count=total_item_count,
             total_only=total_only,
             async_req=async_req,
@@ -13240,18 +13240,18 @@ class Client(object):
     def get_volume_groups_space(
         self,
         references=None,  # type: List[models.ReferenceType]
-        names=None,  # type: List[str]
         authorization=None,  # type: str
         x_request_id=None,  # type: str
         destroyed=None,  # type: bool
-        filter=None,  # type: str
         end_time=None,  # type: int
-        resolution=None,  # type: int
-        start_time=None,  # type: int
+        filter=None,  # type: str
         ids=None,  # type: List[str]
         limit=None,  # type: int
+        names=None,  # type: List[str]
         offset=None,  # type: int
+        resolution=None,  # type: int
         sort=None,  # type: List[str]
+        start_time=None,  # type: int
         total_item_count=None,  # type: bool
         total_only=None,  # type: bool
         async_req=False,  # type: bool
@@ -13266,11 +13266,8 @@ class Client(object):
 
         Args:
             references (list[FixedReference], optional):
-                A list of references to query for. Overrides names and ids keyword arguments.
+                A list of references to query for. Overrides ids and names keyword arguments.
 
-            names (list[str], optional):
-                Performs the operation on the unique name specified. Enter multiple names in
-                comma-separated format. For example, `name01,name02`.
             x_request_id (str, optional):
                 A header to provide to track the API call. Generated by the server if not
                 provided.
@@ -13278,8 +13275,6 @@ class Client(object):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
                 destroyed objects, the time remaining is displayed in milliseconds.
-            filter (Filter, optional):
-                A filter to include only resources that match the specified criteria.
             end_time (int, optional):
                 Displays historical performance data for the specified time window, where
                 `start_time` is the beginning of the time window, and `end_time` is the end of
@@ -13291,6 +13286,21 @@ class Client(object):
                 `resolution` parameter to display the performance data at the specified
                 resolution. If not specified, `resolution` defaults to the lowest valid
                 resolution.
+            filter (Filter, optional):
+                A filter to include only resources that match the specified criteria.
+            ids (list[str], optional):
+                Performs the operation on the unique resource IDs specified. Enter multiple
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
+            limit (int, optional):
+                Limit the number of resources in the response. If not specified, defaults to
+                1000.
+            names (list[str], optional):
+                Performs the operation on the unique name specified. Enter multiple names in
+                comma-separated format. For example, `name01,name02`.
+            offset (int, optional):
+                The starting position based on the results of the query in relation to the full
+                set of response objects returned.
             resolution (int, optional):
                 The number of milliseconds between samples of historical data. For array-wide
                 performance metrics (`/arrays/performance` endpoint), valid values are `1000` (1
@@ -13301,7 +13311,7 @@ class Client(object):
                 `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and
                 `86400000` (24 hours). For space metrics, (`<object name>/space` endpoint),
                 valid values are `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2
-                hours), `28800000` (8 hours), and `86400000` (24 hours). Include the
+                hours),  `28800000` (8 hours), and `86400000` (24 hours). Include the
                 `start_time` parameter to display the performance data starting at the specified
                 start time. If `start_time` is not specified, the start time will default to one
                 resolution before the end time, meaning that the most recent sample of
@@ -13310,6 +13320,8 @@ class Client(object):
                 specified, the end time will default to the current time. If the `resolution`
                 parameter is not specified but either the `start_time` or `end_time` parameter
                 is, then `resolution` will default to the lowest valid resolution.
+            sort (list[Property], optional):
+                Sort the response by the specified Properties. Can also be a single element.
             start_time (int, optional):
                 Displays historical performance data for the specified time window, where
                 `start_time` is the beginning of the time window, and `end_time` is the end of
@@ -13321,22 +13333,10 @@ class Client(object):
                 `resolution` parameter to display the performance data at the specified
                 resolution. If not specified, `resolution` defaults to the lowest valid
                 resolution.
-            ids (list[str], optional):
-                Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` or `names` parameter is
-                required, but they cannot be set together.
-            limit (int, optional):
-                Limit the number of resources in the response. If not specified, defaults to
-                1000.
-            offset (int, optional):
-                The starting position based on the results of the query in relation to the full
-                set of response objects returned.
-            sort (list[Property], optional):
-                Sort the response by the specified Properties. Can also be a single element.
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             total_only (bool, optional):
                 If set to `true`, returns the aggregate value of all items after filtering.
@@ -13363,18 +13363,18 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
-            names=names,
             authorization=authorization,
             x_request_id=x_request_id,
             destroyed=destroyed,
-            filter=filter,
             end_time=end_time,
-            resolution=resolution,
-            start_time=start_time,
+            filter=filter,
             ids=ids,
             limit=limit,
+            names=names,
             offset=offset,
+            resolution=resolution,
             sort=sort,
+            start_time=start_time,
             total_item_count=total_item_count,
             total_only=total_only,
             async_req=async_req,
@@ -13384,22 +13384,22 @@ class Client(object):
         )
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._volume_groups_api.api22_volume_groups_space_get_with_http_info
-        _process_references(references, ['names', 'ids'], kwargs)
+        _process_references(references, ['ids', 'names'], kwargs)
         return self._call_api(endpoint, kwargs)
 
     def get_volume_groups_volumes(
         self,
         groups=None,  # type: List[models.ReferenceType]
         members=None,  # type: List[models.ReferenceType]
-        group_names=None,  # type: List[str]
-        member_names=None,  # type: List[str]
         authorization=None,  # type: str
         x_request_id=None,  # type: str
         continuation_token=None,  # type: str
         filter=None,  # type: str
         group_ids=None,  # type: List[str]
+        group_names=None,  # type: List[str]
         limit=None,  # type: int
         member_ids=None,  # type: List[str]
+        member_names=None,  # type: List[str]
         offset=None,  # type: int
         sort=None,  # type: List[str]
         total_item_count=None,  # type: bool
@@ -13414,18 +13414,10 @@ class Client(object):
 
         Args:
             groups (list[FixedReference], optional):
-                A list of groups to query for. Overrides group_names and group_ids keyword arguments.
+                A list of groups to query for. Overrides group_ids and group_names keyword arguments.
             members (list[FixedReference], optional):
-                A list of members to query for. Overrides member_names and member_ids keyword arguments.
+                A list of members to query for. Overrides member_ids and member_names keyword arguments.
 
-            group_names (list[str], optional):
-                Performs the operation on the unique group name specified. Examples of groups
-                include host groups, pods, protection groups, and volume groups. Enter multiple
-                names in comma-separated format. For example, `hgroup01,hgroup02`.
-            member_names (list[str], optional):
-                Performs the operation on the unique member name specified. Examples of members
-                include volumes, hosts, host groups, and directories. Enter multiple names in
-                comma-separated format. For example, `vol01,vol02`.
             x_request_id (str, optional):
                 A header to provide to track the API call. Generated by the server if not
                 provided.
@@ -13435,6 +13427,10 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             group_ids (list[str], optional):
                 A list of group IDs.
+            group_names (list[str], optional):
+                Performs the operation on the unique group name specified. Examples of groups
+                include host groups, pods, protection groups, and volume groups. Enter multiple
+                names in comma-separated format. For example, `hgroup01,hgroup02`.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -13442,6 +13438,10 @@ class Client(object):
                 Performs the operation on the unique member IDs specified. Enter multiple member
                 IDs in comma-separated format. The `member_ids` or `member_names` parameter is
                 required, but they cannot be set together.
+            member_names (list[str], optional):
+                Performs the operation on the unique member name specified. Examples of members
+                include volumes, hosts, host groups, and directories. Enter multiple names in
+                comma-separated format. For example, `vol01,vol02`.
             offset (int, optional):
                 The starting position based on the results of the query in relation to the full
                 set of response objects returned.
@@ -13450,7 +13450,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -13472,15 +13472,15 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
-            group_names=group_names,
-            member_names=member_names,
             authorization=authorization,
             x_request_id=x_request_id,
             continuation_token=continuation_token,
             filter=filter,
             group_ids=group_ids,
+            group_names=group_names,
             limit=limit,
             member_ids=member_ids,
+            member_names=member_names,
             offset=offset,
             sort=sort,
             total_item_count=total_item_count,
@@ -13491,8 +13491,8 @@ class Client(object):
         )
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._volume_groups_api.api22_volume_groups_volumes_get_with_http_info
-        _process_references(groups, ['group_names', 'group_ids'], kwargs)
-        _process_references(members, ['member_names', 'member_ids'], kwargs)
+        _process_references(groups, ['group_ids', 'group_names'], kwargs)
+        _process_references(members, ['member_ids', 'member_names'], kwargs)
         return self._call_api(endpoint, kwargs)
 
     def delete_volume_snapshots(
@@ -13630,7 +13630,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             total_only (bool, optional):
                 If set to `true`, returns the aggregate value of all items after filtering.
@@ -14002,7 +14002,7 @@ class Client(object):
             resource_destroyed (bool, optional):
                 If set to `true`, returns only objects from destroyed resources. Returns an
                 error if the name of a live resource is specified in the `resource_names` query
-                parameter. If set to `false`, returns only objects from live resources. Returns
+                parameter.  If set to `false`, returns only objects from live resources. Returns
                 an error if the name of a destroyed resource is specified in the
                 `resource_names` query parameter.
             resource_ids (list[str], optional):
@@ -14016,7 +14016,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -14062,13 +14062,13 @@ class Client(object):
         self,
         references=None,  # type: List[models.ReferenceType]
         sources=None,  # type: List[models.ReferenceType]
-        names=None,  # type: List[str]
         authorization=None,  # type: str
         x_request_id=None,  # type: str
         destroyed=None,  # type: bool
         filter=None,  # type: str
         ids=None,  # type: List[str]
         limit=None,  # type: int
+        names=None,  # type: List[str]
         offset=None,  # type: int
         sort=None,  # type: List[str]
         source_ids=None,  # type: List[str]
@@ -14086,13 +14086,10 @@ class Client(object):
 
         Args:
             references (list[FixedReference], optional):
-                A list of references to query for. Overrides names and ids keyword arguments.
+                A list of references to query for. Overrides ids and names keyword arguments.
             sources (list[FixedReference], optional):
                 A list of sources to query for. Overrides source_ids and source_names keyword arguments.
 
-            names (list[str], optional):
-                Performs the operation on the unique name specified. Enter multiple names in
-                comma-separated format. For example, `name01,name02`.
             x_request_id (str, optional):
                 A header to provide to track the API call. Generated by the server if not
                 provided.
@@ -14109,6 +14106,9 @@ class Client(object):
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
+            names (list[str], optional):
+                Performs the operation on the unique name specified. Enter multiple names in
+                comma-separated format. For example, `name01,name02`.
             offset (int, optional):
                 The starting position based on the results of the query in relation to the full
                 set of response objects returned.
@@ -14123,7 +14123,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             total_only (bool, optional):
                 If set to `true`, returns the aggregate value of all items after filtering.
@@ -14150,13 +14150,13 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
-            names=names,
             authorization=authorization,
             x_request_id=x_request_id,
             destroyed=destroyed,
             filter=filter,
             ids=ids,
             limit=limit,
+            names=names,
             offset=offset,
             sort=sort,
             source_ids=source_ids,
@@ -14170,7 +14170,7 @@ class Client(object):
         )
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._volume_snapshots_api.api22_volume_snapshots_transfer_get_with_http_info
-        _process_references(references, ['names', 'ids'], kwargs)
+        _process_references(references, ['ids', 'names'], kwargs)
         _process_references(sources, ['source_ids', 'source_names'], kwargs)
         return self._call_api(endpoint, kwargs)
 
@@ -14297,7 +14297,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             total_only (bool, optional):
                 If set to `true`, returns the aggregate value of all items after filtering.
@@ -14436,15 +14436,15 @@ class Client(object):
         authorization=None,  # type: str
         x_request_id=None,  # type: str
         destroyed=None,  # type: bool
-        filter=None,  # type: str
         end_time=None,  # type: int
-        resolution=None,  # type: int
-        start_time=None,  # type: int
+        filter=None,  # type: str
         ids=None,  # type: List[str]
         limit=None,  # type: int
         names=None,  # type: List[str]
         offset=None,  # type: int
+        resolution=None,  # type: int
         sort=None,  # type: List[str]
+        start_time=None,  # type: int
         total_item_count=None,  # type: bool
         total_only=None,  # type: bool
         async_req=False,  # type: bool
@@ -14471,8 +14471,6 @@ class Client(object):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
                 destroyed objects, the time remaining is displayed in milliseconds.
-            filter (Filter, optional):
-                A filter to include only resources that match the specified criteria.
             end_time (int, optional):
                 Displays historical performance data for the specified time window, where
                 `start_time` is the beginning of the time window, and `end_time` is the end of
@@ -14484,36 +14482,8 @@ class Client(object):
                 `resolution` parameter to display the performance data at the specified
                 resolution. If not specified, `resolution` defaults to the lowest valid
                 resolution.
-            resolution (int, optional):
-                The number of milliseconds between samples of historical data. For array-wide
-                performance metrics (`/arrays/performance` endpoint), valid values are `1000` (1
-                second), `30000` (30 seconds), `300000` (5 minutes), `1800000` (30 minutes),
-                `7200000` (2 hours), `28800000` (8 hours), and `86400000` (24 hours). For
-                performance metrics on storage objects (`<object name>/performance` endpoint),
-                such as volumes, valid values are `30000` (30 seconds), `300000` (5 minutes),
-                `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and
-                `86400000` (24 hours). For space metrics, (`<object name>/space` endpoint),
-                valid values are `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2
-                hours), `28800000` (8 hours), and `86400000` (24 hours). Include the
-                `start_time` parameter to display the performance data starting at the specified
-                start time. If `start_time` is not specified, the start time will default to one
-                resolution before the end time, meaning that the most recent sample of
-                performance data will be displayed. Include the `end_time` parameter to display
-                the performance data until the specified end time. If `end_time`is not
-                specified, the end time will default to the current time. If the `resolution`
-                parameter is not specified but either the `start_time` or `end_time` parameter
-                is, then `resolution` will default to the lowest valid resolution.
-            start_time (int, optional):
-                Displays historical performance data for the specified time window, where
-                `start_time` is the beginning of the time window, and `end_time` is the end of
-                the time window. The `start_time` and `end_time` parameters are specified in
-                milliseconds since the UNIX epoch. If `start_time` is not specified, the start
-                time will default to one resolution before the end time, meaning that the most
-                recent sample of performance data will be displayed. If `end_time`is not
-                specified, the end time will default to the current time. Include the
-                `resolution` parameter to display the performance data at the specified
-                resolution. If not specified, `resolution` defaults to the lowest valid
-                resolution.
+            filter (Filter, optional):
+                A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
                 resource IDs in comma-separated format. The `ids` or `names` parameter is
@@ -14527,12 +14497,42 @@ class Client(object):
             offset (int, optional):
                 The starting position based on the results of the query in relation to the full
                 set of response objects returned.
+            resolution (int, optional):
+                The number of milliseconds between samples of historical data. For array-wide
+                performance metrics (`/arrays/performance` endpoint), valid values are `1000` (1
+                second), `30000` (30 seconds), `300000` (5 minutes), `1800000` (30 minutes),
+                `7200000` (2 hours), `28800000` (8 hours), and `86400000` (24 hours). For
+                performance metrics on storage objects (`<object name>/performance` endpoint),
+                such as volumes, valid values are `30000` (30 seconds), `300000` (5 minutes),
+                `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and
+                `86400000` (24 hours). For space metrics, (`<object name>/space` endpoint),
+                valid values are `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2
+                hours),  `28800000` (8 hours), and `86400000` (24 hours). Include the
+                `start_time` parameter to display the performance data starting at the specified
+                start time. If `start_time` is not specified, the start time will default to one
+                resolution before the end time, meaning that the most recent sample of
+                performance data will be displayed. Include the `end_time` parameter to display
+                the performance data until the specified end time. If `end_time`is not
+                specified, the end time will default to the current time. If the `resolution`
+                parameter is not specified but either the `start_time` or `end_time` parameter
+                is, then `resolution` will default to the lowest valid resolution.
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
+            start_time (int, optional):
+                Displays historical performance data for the specified time window, where
+                `start_time` is the beginning of the time window, and `end_time` is the end of
+                the time window. The `start_time` and `end_time` parameters are specified in
+                milliseconds since the UNIX epoch. If `start_time` is not specified, the start
+                time will default to one resolution before the end time, meaning that the most
+                recent sample of performance data will be displayed. If `end_time`is not
+                specified, the end time will default to the current time. Include the
+                `resolution` parameter to display the performance data at the specified
+                resolution. If not specified, `resolution` defaults to the lowest valid
+                resolution.
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             total_only (bool, optional):
                 If set to `true`, returns the aggregate value of all items after filtering.
@@ -14562,15 +14562,15 @@ class Client(object):
             authorization=authorization,
             x_request_id=x_request_id,
             destroyed=destroyed,
-            filter=filter,
             end_time=end_time,
-            resolution=resolution,
-            start_time=start_time,
+            filter=filter,
             ids=ids,
             limit=limit,
             names=names,
             offset=offset,
+            resolution=resolution,
             sort=sort,
+            start_time=start_time,
             total_item_count=total_item_count,
             total_only=total_only,
             async_req=async_req,
@@ -14589,15 +14589,15 @@ class Client(object):
         authorization=None,  # type: str
         x_request_id=None,  # type: str
         destroyed=None,  # type: bool
-        filter=None,  # type: str
         end_time=None,  # type: int
-        resolution=None,  # type: int
-        start_time=None,  # type: int
+        filter=None,  # type: str
         ids=None,  # type: List[str]
         limit=None,  # type: int
         names=None,  # type: List[str]
         offset=None,  # type: int
+        resolution=None,  # type: int
         sort=None,  # type: List[str]
+        start_time=None,  # type: int
         total_item_count=None,  # type: bool
         total_only=None,  # type: bool
         async_req=False,  # type: bool
@@ -14622,8 +14622,6 @@ class Client(object):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
                 destroyed objects, the time remaining is displayed in milliseconds.
-            filter (Filter, optional):
-                A filter to include only resources that match the specified criteria.
             end_time (int, optional):
                 Displays historical performance data for the specified time window, where
                 `start_time` is the beginning of the time window, and `end_time` is the end of
@@ -14635,36 +14633,8 @@ class Client(object):
                 `resolution` parameter to display the performance data at the specified
                 resolution. If not specified, `resolution` defaults to the lowest valid
                 resolution.
-            resolution (int, optional):
-                The number of milliseconds between samples of historical data. For array-wide
-                performance metrics (`/arrays/performance` endpoint), valid values are `1000` (1
-                second), `30000` (30 seconds), `300000` (5 minutes), `1800000` (30 minutes),
-                `7200000` (2 hours), `28800000` (8 hours), and `86400000` (24 hours). For
-                performance metrics on storage objects (`<object name>/performance` endpoint),
-                such as volumes, valid values are `30000` (30 seconds), `300000` (5 minutes),
-                `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and
-                `86400000` (24 hours). For space metrics, (`<object name>/space` endpoint),
-                valid values are `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2
-                hours), `28800000` (8 hours), and `86400000` (24 hours). Include the
-                `start_time` parameter to display the performance data starting at the specified
-                start time. If `start_time` is not specified, the start time will default to one
-                resolution before the end time, meaning that the most recent sample of
-                performance data will be displayed. Include the `end_time` parameter to display
-                the performance data until the specified end time. If `end_time`is not
-                specified, the end time will default to the current time. If the `resolution`
-                parameter is not specified but either the `start_time` or `end_time` parameter
-                is, then `resolution` will default to the lowest valid resolution.
-            start_time (int, optional):
-                Displays historical performance data for the specified time window, where
-                `start_time` is the beginning of the time window, and `end_time` is the end of
-                the time window. The `start_time` and `end_time` parameters are specified in
-                milliseconds since the UNIX epoch. If `start_time` is not specified, the start
-                time will default to one resolution before the end time, meaning that the most
-                recent sample of performance data will be displayed. If `end_time`is not
-                specified, the end time will default to the current time. Include the
-                `resolution` parameter to display the performance data at the specified
-                resolution. If not specified, `resolution` defaults to the lowest valid
-                resolution.
+            filter (Filter, optional):
+                A filter to include only resources that match the specified criteria.
             ids (list[str], optional):
                 Performs the operation on the unique resource IDs specified. Enter multiple
                 resource IDs in comma-separated format. The `ids` or `names` parameter is
@@ -14678,12 +14648,42 @@ class Client(object):
             offset (int, optional):
                 The starting position based on the results of the query in relation to the full
                 set of response objects returned.
+            resolution (int, optional):
+                The number of milliseconds between samples of historical data. For array-wide
+                performance metrics (`/arrays/performance` endpoint), valid values are `1000` (1
+                second), `30000` (30 seconds), `300000` (5 minutes), `1800000` (30 minutes),
+                `7200000` (2 hours), `28800000` (8 hours), and `86400000` (24 hours). For
+                performance metrics on storage objects (`<object name>/performance` endpoint),
+                such as volumes, valid values are `30000` (30 seconds), `300000` (5 minutes),
+                `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and
+                `86400000` (24 hours). For space metrics, (`<object name>/space` endpoint),
+                valid values are `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2
+                hours),  `28800000` (8 hours), and `86400000` (24 hours). Include the
+                `start_time` parameter to display the performance data starting at the specified
+                start time. If `start_time` is not specified, the start time will default to one
+                resolution before the end time, meaning that the most recent sample of
+                performance data will be displayed. Include the `end_time` parameter to display
+                the performance data until the specified end time. If `end_time`is not
+                specified, the end time will default to the current time. If the `resolution`
+                parameter is not specified but either the `start_time` or `end_time` parameter
+                is, then `resolution` will default to the lowest valid resolution.
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
+            start_time (int, optional):
+                Displays historical performance data for the specified time window, where
+                `start_time` is the beginning of the time window, and `end_time` is the end of
+                the time window. The `start_time` and `end_time` parameters are specified in
+                milliseconds since the UNIX epoch. If `start_time` is not specified, the start
+                time will default to one resolution before the end time, meaning that the most
+                recent sample of performance data will be displayed. If `end_time`is not
+                specified, the end time will default to the current time. Include the
+                `resolution` parameter to display the performance data at the specified
+                resolution. If not specified, `resolution` defaults to the lowest valid
+                resolution.
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             total_only (bool, optional):
                 If set to `true`, returns the aggregate value of all items after filtering.
@@ -14713,15 +14713,15 @@ class Client(object):
             authorization=authorization,
             x_request_id=x_request_id,
             destroyed=destroyed,
-            filter=filter,
             end_time=end_time,
-            resolution=resolution,
-            start_time=start_time,
+            filter=filter,
             ids=ids,
             limit=limit,
             names=names,
             offset=offset,
+            resolution=resolution,
             sort=sort,
+            start_time=start_time,
             total_item_count=total_item_count,
             total_only=total_only,
             async_req=async_req,
@@ -14935,7 +14935,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -15055,18 +15055,18 @@ class Client(object):
     def get_volumes_space(
         self,
         references=None,  # type: List[models.ReferenceType]
-        names=None,  # type: List[str]
         authorization=None,  # type: str
         x_request_id=None,  # type: str
         destroyed=None,  # type: bool
-        filter=None,  # type: str
         end_time=None,  # type: int
-        resolution=None,  # type: int
-        start_time=None,  # type: int
+        filter=None,  # type: str
         ids=None,  # type: List[str]
         limit=None,  # type: int
+        names=None,  # type: List[str]
         offset=None,  # type: int
+        resolution=None,  # type: int
         sort=None,  # type: List[str]
+        start_time=None,  # type: int
         total_item_count=None,  # type: bool
         total_only=None,  # type: bool
         async_req=False,  # type: bool
@@ -15081,11 +15081,8 @@ class Client(object):
 
         Args:
             references (list[FixedReference], optional):
-                A list of references to query for. Overrides names and ids keyword arguments.
+                A list of references to query for. Overrides ids and names keyword arguments.
 
-            names (list[str], optional):
-                Performs the operation on the unique name specified. Enter multiple names in
-                comma-separated format. For example, `name01,name02`.
             x_request_id (str, optional):
                 A header to provide to track the API call. Generated by the server if not
                 provided.
@@ -15093,8 +15090,6 @@ class Client(object):
                 If set to `true`, lists only destroyed objects that are in the eradication
                 pending state. If set to `false`, lists only objects that are not destroyed. For
                 destroyed objects, the time remaining is displayed in milliseconds.
-            filter (Filter, optional):
-                A filter to include only resources that match the specified criteria.
             end_time (int, optional):
                 Displays historical performance data for the specified time window, where
                 `start_time` is the beginning of the time window, and `end_time` is the end of
@@ -15106,6 +15101,21 @@ class Client(object):
                 `resolution` parameter to display the performance data at the specified
                 resolution. If not specified, `resolution` defaults to the lowest valid
                 resolution.
+            filter (Filter, optional):
+                A filter to include only resources that match the specified criteria.
+            ids (list[str], optional):
+                Performs the operation on the unique resource IDs specified. Enter multiple
+                resource IDs in comma-separated format. The `ids` or `names` parameter is
+                required, but they cannot be set together.
+            limit (int, optional):
+                Limit the number of resources in the response. If not specified, defaults to
+                1000.
+            names (list[str], optional):
+                Performs the operation on the unique name specified. Enter multiple names in
+                comma-separated format. For example, `name01,name02`.
+            offset (int, optional):
+                The starting position based on the results of the query in relation to the full
+                set of response objects returned.
             resolution (int, optional):
                 The number of milliseconds between samples of historical data. For array-wide
                 performance metrics (`/arrays/performance` endpoint), valid values are `1000` (1
@@ -15116,7 +15126,7 @@ class Client(object):
                 `1800000` (30 minutes), `7200000` (2 hours), `28800000` (8 hours), and
                 `86400000` (24 hours). For space metrics, (`<object name>/space` endpoint),
                 valid values are `300000` (5 minutes), `1800000` (30 minutes), `7200000` (2
-                hours), `28800000` (8 hours), and `86400000` (24 hours). Include the
+                hours),  `28800000` (8 hours), and `86400000` (24 hours). Include the
                 `start_time` parameter to display the performance data starting at the specified
                 start time. If `start_time` is not specified, the start time will default to one
                 resolution before the end time, meaning that the most recent sample of
@@ -15125,6 +15135,8 @@ class Client(object):
                 specified, the end time will default to the current time. If the `resolution`
                 parameter is not specified but either the `start_time` or `end_time` parameter
                 is, then `resolution` will default to the lowest valid resolution.
+            sort (list[Property], optional):
+                Sort the response by the specified Properties. Can also be a single element.
             start_time (int, optional):
                 Displays historical performance data for the specified time window, where
                 `start_time` is the beginning of the time window, and `end_time` is the end of
@@ -15136,22 +15148,10 @@ class Client(object):
                 `resolution` parameter to display the performance data at the specified
                 resolution. If not specified, `resolution` defaults to the lowest valid
                 resolution.
-            ids (list[str], optional):
-                Performs the operation on the unique resource IDs specified. Enter multiple
-                resource IDs in comma-separated format. The `ids` or `names` parameter is
-                required, but they cannot be set together.
-            limit (int, optional):
-                Limit the number of resources in the response. If not specified, defaults to
-                1000.
-            offset (int, optional):
-                The starting position based on the results of the query in relation to the full
-                set of response objects returned.
-            sort (list[Property], optional):
-                Sort the response by the specified Properties. Can also be a single element.
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             total_only (bool, optional):
                 If set to `true`, returns the aggregate value of all items after filtering.
@@ -15178,18 +15178,18 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
-            names=names,
             authorization=authorization,
             x_request_id=x_request_id,
             destroyed=destroyed,
-            filter=filter,
             end_time=end_time,
-            resolution=resolution,
-            start_time=start_time,
+            filter=filter,
             ids=ids,
             limit=limit,
+            names=names,
             offset=offset,
+            resolution=resolution,
             sort=sort,
+            start_time=start_time,
             total_item_count=total_item_count,
             total_only=total_only,
             async_req=async_req,
@@ -15199,7 +15199,7 @@ class Client(object):
         )
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._volumes_api.api22_volumes_space_get_with_http_info
-        _process_references(references, ['names', 'ids'], kwargs)
+        _process_references(references, ['ids', 'names'], kwargs)
         return self._call_api(endpoint, kwargs)
 
     def put_volumes_tags_batch(
@@ -15380,7 +15380,7 @@ class Client(object):
             resource_destroyed (bool, optional):
                 If set to `true`, returns only objects from destroyed resources. Returns an
                 error if the name of a live resource is specified in the `resource_names` query
-                parameter. If set to `false`, returns only objects from live resources. Returns
+                parameter.  If set to `false`, returns only objects from live resources. Returns
                 an error if the name of a destroyed resource is specified in the
                 `resource_names` query parameter.
             resource_ids (list[str], optional):
@@ -15394,7 +15394,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -15440,15 +15440,15 @@ class Client(object):
         self,
         groups=None,  # type: List[models.ReferenceType]
         members=None,  # type: List[models.ReferenceType]
-        group_names=None,  # type: List[str]
-        member_names=None,  # type: List[str]
         authorization=None,  # type: str
         x_request_id=None,  # type: str
         continuation_token=None,  # type: str
         filter=None,  # type: str
         group_ids=None,  # type: List[str]
+        group_names=None,  # type: List[str]
         limit=None,  # type: int
         member_ids=None,  # type: List[str]
+        member_names=None,  # type: List[str]
         offset=None,  # type: int
         sort=None,  # type: List[str]
         total_item_count=None,  # type: bool
@@ -15463,18 +15463,10 @@ class Client(object):
 
         Args:
             groups (list[FixedReference], optional):
-                A list of groups to query for. Overrides group_names and group_ids keyword arguments.
+                A list of groups to query for. Overrides group_ids and group_names keyword arguments.
             members (list[FixedReference], optional):
-                A list of members to query for. Overrides member_names and member_ids keyword arguments.
+                A list of members to query for. Overrides member_ids and member_names keyword arguments.
 
-            group_names (list[str], optional):
-                Performs the operation on the unique group name specified. Examples of groups
-                include host groups, pods, protection groups, and volume groups. Enter multiple
-                names in comma-separated format. For example, `hgroup01,hgroup02`.
-            member_names (list[str], optional):
-                Performs the operation on the unique member name specified. Examples of members
-                include volumes, hosts, host groups, and directories. Enter multiple names in
-                comma-separated format. For example, `vol01,vol02`.
             x_request_id (str, optional):
                 A header to provide to track the API call. Generated by the server if not
                 provided.
@@ -15484,6 +15476,10 @@ class Client(object):
                 A filter to include only resources that match the specified criteria.
             group_ids (list[str], optional):
                 A list of group IDs.
+            group_names (list[str], optional):
+                Performs the operation on the unique group name specified. Examples of groups
+                include host groups, pods, protection groups, and volume groups. Enter multiple
+                names in comma-separated format. For example, `hgroup01,hgroup02`.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -15491,6 +15487,10 @@ class Client(object):
                 Performs the operation on the unique member IDs specified. Enter multiple member
                 IDs in comma-separated format. The `member_ids` or `member_names` parameter is
                 required, but they cannot be set together.
+            member_names (list[str], optional):
+                Performs the operation on the unique member name specified. Examples of members
+                include volumes, hosts, host groups, and directories. Enter multiple names in
+                comma-separated format. For example, `vol01,vol02`.
             offset (int, optional):
                 The starting position based on the results of the query in relation to the full
                 set of response objects returned.
@@ -15499,7 +15499,7 @@ class Client(object):
             total_item_count (bool, optional):
                 If set to `true`, the `total_item_count` matching the specified query parameters
                 is calculated and returned in the response. If set to `false`, the
-                `total_item_count` is `null` in the response. This may speed up queries where
+                `total_item_count`  is `null` in the response. This may speed up queries where
                 the `total_item_count` is large. If not specified, defaults to `false`.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
@@ -15521,15 +15521,15 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs = dict(
-            group_names=group_names,
-            member_names=member_names,
             authorization=authorization,
             x_request_id=x_request_id,
             continuation_token=continuation_token,
             filter=filter,
             group_ids=group_ids,
+            group_names=group_names,
             limit=limit,
             member_ids=member_ids,
+            member_names=member_names,
             offset=offset,
             sort=sort,
             total_item_count=total_item_count,
@@ -15540,8 +15540,8 @@ class Client(object):
         )
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._volumes_api.api22_volumes_volume_groups_get_with_http_info
-        _process_references(groups, ['group_names', 'group_ids'], kwargs)
-        _process_references(members, ['member_names', 'member_ids'], kwargs)
+        _process_references(groups, ['group_ids', 'group_names'], kwargs)
+        _process_references(members, ['member_ids', 'member_names'], kwargs)
         return self._call_api(endpoint, kwargs)
 
     def _get_base_url(self, target):

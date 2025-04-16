@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.13, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.13, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.13
     
@@ -50,7 +50,7 @@ class FileInfo(object):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            length (int): Length of the file (in bytes).
+            length (int): Length of the file (in bytes). 
         """
         if name is not None:
             self.name = name

@@ -30,19 +30,19 @@ class RealmSpaceGetResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'continuation_token': 'str',
         'more_items_remaining': 'bool',
         'total_item_count': 'int',
-        'continuation_token': 'str',
-        'items': 'list[ResourceRealmSpace]',
-        'total': 'list[ResourceRealmSpace]'
+        'total': 'list[ResourceRealmSpace]',
+        'items': 'list[ResourceRealmSpace]'
     }
 
     attribute_map = {
+        'continuation_token': 'continuation_token',
         'more_items_remaining': 'more_items_remaining',
         'total_item_count': 'total_item_count',
-        'continuation_token': 'continuation_token',
-        'items': 'items',
-        'total': 'total'
+        'total': 'total',
+        'items': 'items'
     }
 
     required_args = {
@@ -50,30 +50,30 @@ class RealmSpaceGetResponse(object):
 
     def __init__(
         self,
+        continuation_token=None,  # type: str
         more_items_remaining=None,  # type: bool
         total_item_count=None,  # type: int
-        continuation_token=None,  # type: str
-        items=None,  # type: List[models.ResourceRealmSpace]
         total=None,  # type: List[models.ResourceRealmSpace]
+        items=None,  # type: List[models.ResourceRealmSpace]
     ):
         """
         Keyword args:
-            more_items_remaining (bool): Returns a value of `true` if subsequent items can be retrieved.
-            total_item_count (int): The total number of records after applying all filter query parameters. The `total_item_count` will be calculated if and only if the corresponding query parameter `total_item_count` is set to `true`. If this query parameter is not set or set to `false`, a value of `null` will be returned.
-            continuation_token (str): Continuation token that can be provided in the `continuation_token` query param to get the next page of data. If you use the continuation token to page through data you are guaranteed to get all items exactly once regardless of how items are modified. If an item is added or deleted during the pagination then it may or may not be returned. The continuation token is generated if the limit is less than the remaining number of items, and the default sort is used (no sort is specified).
-            items (list[ResourceRealmSpace]): Displays a list of all items after filtering. If applicable, the values are displayed for each name. If `total_only=true`, the `items` list will be empty.
-            total (list[ResourceRealmSpace]): The aggregate value of all items after filtering. When applicable, the average value is displayed instead. The values are displayed for each field, if meaningful.
+            continuation_token (str): Continuation token that can be provided in the `continuation_token` query param to get the next page of data. If you use the continuation token to page through data you are guaranteed to get all items exactly once regardless of how items are modified. If an item is added or deleted during the pagination then it may or may not be returned. The continuation token is generated if the limit is less than the remaining number of items, and the default sort is used (no sort is specified). 
+            more_items_remaining (bool): Returns a value of `true` if subsequent items can be retrieved. 
+            total_item_count (int): The total number of records after applying all filter query parameters. The `total_item_count` will be calculated if and only if the corresponding query parameter `total_item_count` is set to `true`. If this query parameter is not set or set to `false`, a value of `null` will be returned. 
+            total (list[ResourceRealmSpace]): The aggregate value of all items after filtering. When applicable, the average value is displayed instead. The values are displayed for each field, if meaningful. 
+            items (list[ResourceRealmSpace]): Displays a list of all items after filtering. If applicable, the values are displayed for each name. If `total_only=true`, the `items` list will be empty. 
         """
+        if continuation_token is not None:
+            self.continuation_token = continuation_token
         if more_items_remaining is not None:
             self.more_items_remaining = more_items_remaining
         if total_item_count is not None:
             self.total_item_count = total_item_count
-        if continuation_token is not None:
-            self.continuation_token = continuation_token
-        if items is not None:
-            self.items = items
         if total is not None:
             self.total = total
+        if items is not None:
+            self.items = items
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -30,15 +30,15 @@ class VirtualMachine(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'vm_type': 'str',
-        'created': 'int'
+        'created': 'int',
+        'id': 'str'
     }
 
     attribute_map = {
-        'id': 'id',
         'vm_type': 'vm_type',
-        'created': 'created'
+        'created': 'created',
+        'id': 'id'
     }
 
     required_args = {
@@ -46,22 +46,22 @@ class VirtualMachine(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         vm_type=None,  # type: str
         created=None,  # type: int
+        id=None,  # type: str
     ):
         """
         Keyword args:
+            vm_type (str): The type of virtual machine. Currently, the only valid value is `vvol`. 
+            created (int): The virtual machine creation time, measured in milliseconds since the UNIX epoch. 
             id (str): The ID of the virtual machine.
-            vm_type (str): The type of virtual machine. Currently, the only valid value is `vvol`.
-            created (int): The virtual machine creation time, measured in milliseconds since the UNIX epoch.
         """
-        if id is not None:
-            self.id = id
         if vm_type is not None:
             self.vm_type = vm_type
         if created is not None:
             self.created = created
+        if id is not None:
+            self.id = id
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

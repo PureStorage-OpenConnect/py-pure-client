@@ -30,19 +30,19 @@ class Connection(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'host': 'ReferenceNoId',
+        'protocol_endpoint': 'Reference',
+        'volume': 'FixedReference',
         'host_group': 'ReferenceNoId',
         'lun': 'int',
-        'protocol_endpoint': 'Reference',
-        'volume': 'FixedReference'
+        'host': 'ReferenceNoId'
     }
 
     attribute_map = {
-        'host': 'host',
+        'protocol_endpoint': 'protocol_endpoint',
+        'volume': 'volume',
         'host_group': 'host_group',
         'lun': 'lun',
-        'protocol_endpoint': 'protocol_endpoint',
-        'volume': 'volume'
+        'host': 'host'
     }
 
     required_args = {
@@ -50,30 +50,30 @@ class Connection(object):
 
     def __init__(
         self,
-        host=None,  # type: models.ReferenceNoId
-        host_group=None,  # type: models.ReferenceNoId
-        lun=None,  # type: int
         protocol_endpoint=None,  # type: models.Reference
         volume=None,  # type: models.FixedReference
+        host_group=None,  # type: models.ReferenceNoId
+        lun=None,  # type: int
+        host=None,  # type: models.ReferenceNoId
     ):
         """
         Keyword args:
-            host (ReferenceNoId): The host computer that sends and receives I/O requests to and from volumes on the FlashArray array.
-            host_group (ReferenceNoId): A virtual collection of hosts with common connectivity to volumes.
-            lun (int): The logical unit number (LUN) by which the specified hosts are to address the specified volume. LUN can be in one of two formats: a simple LUN, or a LUN and Sublun with virtual volumes. A LUN and Sublun are integers in the range of 1 to 4095. The first format is simply the LUN number. The second format is a single int64 combining both ((LUN << 32) + Sublun) or (LUN * 4294967296 + Sublun). In the FA UI, a combined LUN and Sublun is represented as \"LUN:Sublun\". Example: LUN = 30, Sublun = 2, LUN:Sublun = 30:2 Combined: (30 * 4294967296 + 2) == 128849018882. In REST it will be returned as 128849018882. To automatically assign a LUN to a private connection, the system starts at LUN '1' and counts up to the maximum LUN '4095', assigning the first available LUN to the connection. For shared connections, the system starts at LUN '254' and counts down to the minimum LUN '1', assigning the first available LUN to the connection. If all LUNs in the '[1...254]' range are taken, the system starts at LUN '255' and counts up to the maximum LUN '4095', assigning the first available LUN to the connection. The maximum int64 LUN:Sublun value is 17587891081215.
             protocol_endpoint (Reference): A protocol endpoint (also known as a conglomerate volume) which acts as a proxy through which virtual volumes are created and then connected to VMware ESXi hosts or host groups. The protocol endpoint itself does not serve I/Os; instead, its job is to form connections between FlashArray volumes and ESXi hosts and host groups.
             volume (FixedReference): A container that manages the storage space on the array.
+            host_group (ReferenceNoId): A virtual collection of hosts with common connectivity to volumes.
+            lun (int): The logical unit number (LUN) by which the specified hosts are to address the specified volume. LUN can be in one of two formats: a simple LUN, or a LUN and Sublun with virtual volumes. A LUN and Sublun are integers in the range of 1 to 4095.  The first format is simply the LUN number. The second format is a single int64 combining both ((LUN << 32) + Sublun) or (LUN * 4294967296 + Sublun).  In the FA UI, a combined LUN and Sublun is represented as \"LUN:Sublun\". Example: LUN = 30, Sublun = 2, LUN:Sublun = 30:2 Combined: (30 * 4294967296 + 2) == 128849018882. In REST it will be returned as 128849018882.  To automatically assign a LUN to a private connection, the system starts at LUN '1' and counts up to the maximum LUN '4095', assigning the first available LUN to the connection. For shared connections, the system starts at LUN '254' and counts down to the minimum LUN '1', assigning the first available LUN to the connection. If all LUNs in the '[1...254]' range are taken, the system starts at LUN '255' and counts up to the maximum LUN '4095', assigning the first available LUN to the connection. The maximum int64 LUN:Sublun value is 17587891081215. 
+            host (ReferenceNoId): The host computer that sends and receives I/O requests to and from volumes on the FlashArray array.
         """
-        if host is not None:
-            self.host = host
-        if host_group is not None:
-            self.host_group = host_group
-        if lun is not None:
-            self.lun = lun
         if protocol_endpoint is not None:
             self.protocol_endpoint = protocol_endpoint
         if volume is not None:
             self.volume = volume
+        if host_group is not None:
+            self.host_group = host_group
+        if lun is not None:
+            self.lun = lun
+        if host is not None:
+            self.host = host
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -31,14 +31,14 @@ class TargetProtectionGroupPostPatch(object):
     """
     swagger_types = {
         'protection_group': 'FixedReferenceNoId',
-        'target': 'FixedReferenceNoId',
-        'allowed': 'bool'
+        'allowed': 'bool',
+        'target': 'FixedReferenceNoId'
     }
 
     attribute_map = {
         'protection_group': 'protection_group',
-        'target': 'target',
-        'allowed': 'allowed'
+        'allowed': 'allowed',
+        'target': 'target'
     }
 
     required_args = {
@@ -47,21 +47,21 @@ class TargetProtectionGroupPostPatch(object):
     def __init__(
         self,
         protection_group=None,  # type: models.FixedReferenceNoId
-        target=None,  # type: models.FixedReferenceNoId
         allowed=None,  # type: bool
+        target=None,  # type: models.FixedReferenceNoId
     ):
         """
         Keyword args:
             protection_group (FixedReferenceNoId)
+            allowed (bool): If set to `true`, the target array has allowed the source array to replicate protection group data to the target array. If set to `false`, the target array has not allowed the source array to replicate protection group data to the target. target-protection-group 
             target (FixedReferenceNoId)
-            allowed (bool): If set to `true`, the target array has allowed the source array to replicate protection group data to the target array. If set to `false`, the target array has not allowed the source array to replicate protection group data to the target. target-protection-group
         """
         if protection_group is not None:
             self.protection_group = protection_group
-        if target is not None:
-            self.target = target
         if allowed is not None:
             self.allowed = allowed
+        if target is not None:
+            self.target = target
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

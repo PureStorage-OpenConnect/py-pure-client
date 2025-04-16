@@ -54,7 +54,7 @@ class PolicyAuditFilePatch(object):
         Keyword args:
             name (str): The new name for the resource.
             enabled (bool): If set to `true`, enables the policy. If set to `false`, disables the policy.
-            log_targets (list[ReferenceNoIdWithType]): A list of targets to which audit logs will be sent. This list, if sent, overrides existing target list.
+            log_targets (list[ReferenceNoIdWithType]): A list of targets to which audit logs will be sent. This list, if sent, overrides existing target list. 
         """
         if name is not None:
             self.name = name

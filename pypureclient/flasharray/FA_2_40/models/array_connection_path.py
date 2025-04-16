@@ -31,34 +31,34 @@ class ArrayConnectionPath(object):
     """
     swagger_types = {
         'name': 'str',
+        'encryption': 'str',
         'local_port': 'str',
+        'replication_transport': 'str',
         'local_address': 'str',
         'remote_port': 'str',
-        'remote_address': 'str',
-        'status': 'str',
-        'replication_transport': 'str',
-        'encryption': 'str',
-        'encryption_mode': 'str',
         'id': 'str',
+        'remote_address': 'str',
+        'encryption_mode': 'str',
         'remote': 'ReferenceWithType',
+        'type': 'str',
         'status_details': 'str',
-        'type': 'str'
+        'status': 'str'
     }
 
     attribute_map = {
         'name': 'name',
+        'encryption': 'encryption',
         'local_port': 'local_port',
+        'replication_transport': 'replication_transport',
         'local_address': 'local_address',
         'remote_port': 'remote_port',
-        'remote_address': 'remote_address',
-        'status': 'status',
-        'replication_transport': 'replication_transport',
-        'encryption': 'encryption',
-        'encryption_mode': 'encryption_mode',
         'id': 'id',
+        'remote_address': 'remote_address',
+        'encryption_mode': 'encryption_mode',
         'remote': 'remote',
+        'type': 'type',
         'status_details': 'status_details',
-        'type': 'type'
+        'status': 'status'
     }
 
     required_args = {
@@ -67,61 +67,61 @@ class ArrayConnectionPath(object):
     def __init__(
         self,
         name=None,  # type: str
+        encryption=None,  # type: str
         local_port=None,  # type: str
+        replication_transport=None,  # type: str
         local_address=None,  # type: str
         remote_port=None,  # type: str
-        remote_address=None,  # type: str
-        status=None,  # type: str
-        replication_transport=None,  # type: str
-        encryption=None,  # type: str
-        encryption_mode=None,  # type: str
         id=None,  # type: str
+        remote_address=None,  # type: str
+        encryption_mode=None,  # type: str
         remote=None,  # type: models.ReferenceWithType
-        status_details=None,  # type: str
         type=None,  # type: str
+        status_details=None,  # type: str
+        status=None,  # type: str
     ):
         """
         Keyword args:
-            name (str): A locally unique, system-generated name. The name cannot be modified.
-            local_port (str): The local port of the path.
-            local_address (str): IP address or WWN of the local port.
-            remote_port (str): The remote port of the path.
-            remote_address (str): IP address or WWN of the remote port.
-            status (str): Status of the connection. Valid values are `connected`, `connecting`, and `quarantined`. A status of `connected` indicates that the arrays are communicating. A status of `connecting` indicates that the array is trying to establish a connection. A status of `quarantined` indicates that the path is unstable and has been temporarily embargoed for synchronous replication connections.
-            replication_transport (str): The protocol used to transport data between the local array and the remote array. Valid values are `ip` and `fc`.
-            encryption (str): If `encrypted`, all traffic over this array connection will be encrypted. If `unencrypted`, all traffic over this array connection will be unencrypted.
-            encryption_mode (str): Cryptographic protocol, trust model, and encryption algorithm information. Will be `null` if `encrypted` is `false`.
-            id (str): A globally unique, system-generated ID of an array connection.
-            remote (ReferenceWithType): The remote array.
-            status_details (str): Additional information describing any issues encountered when connecting, or `null` if the `status` is `connected`.
-            type (str): The type of path. Valid values include `async-replication`, `sync-replication`, and `fleet-management`.
+            name (str): A locally unique, system-generated name. The name cannot be modified. 
+            encryption (str): If `encrypted`, all traffic over this array connection will be encrypted. If `unencrypted`, all traffic over this array connection will be unencrypted. 
+            local_port (str): The local port of the path. 
+            replication_transport (str): The protocol used to transport data between the local array and the remote array. Valid values are `ip` and `fc`. 
+            local_address (str): IP address or WWN of the local port. 
+            remote_port (str): The remote port of the path. 
+            id (str): A globally unique, system-generated ID of an array connection. 
+            remote_address (str): IP address or WWN of the remote port. 
+            encryption_mode (str): Cryptographic protocol, trust model, and encryption algorithm information. Will be `null` if `encrypted` is `false`. 
+            remote (ReferenceWithType): The remote array. 
+            type (str): The type of path. Valid values include `async-replication`, `sync-replication`, and `fleet-management`. 
+            status_details (str): Additional information describing any issues encountered when connecting, or `null` if the `status` is `connected`. 
+            status (str): Status of the connection. Valid values are `connected`, `connecting`, and `quarantined`. A status of `connected` indicates that the arrays are communicating.  A status of `connecting` indicates that the array is trying to establish a connection. A status of `quarantined` indicates that the path is unstable and has been temporarily  embargoed for synchronous replication connections. 
         """
         if name is not None:
             self.name = name
+        if encryption is not None:
+            self.encryption = encryption
         if local_port is not None:
             self.local_port = local_port
+        if replication_transport is not None:
+            self.replication_transport = replication_transport
         if local_address is not None:
             self.local_address = local_address
         if remote_port is not None:
             self.remote_port = remote_port
-        if remote_address is not None:
-            self.remote_address = remote_address
-        if status is not None:
-            self.status = status
-        if replication_transport is not None:
-            self.replication_transport = replication_transport
-        if encryption is not None:
-            self.encryption = encryption
-        if encryption_mode is not None:
-            self.encryption_mode = encryption_mode
         if id is not None:
             self.id = id
+        if remote_address is not None:
+            self.remote_address = remote_address
+        if encryption_mode is not None:
+            self.encryption_mode = encryption_mode
         if remote is not None:
             self.remote = remote
-        if status_details is not None:
-            self.status_details = status_details
         if type is not None:
             self.type = type
+        if status_details is not None:
+            self.status_details = status_details
+        if status is not None:
+            self.status = status
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

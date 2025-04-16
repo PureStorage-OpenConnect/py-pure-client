@@ -3,7 +3,7 @@
 """
     FlashBlade REST API Client
 
-    A lightweight client for FlashBlade REST API 2.0, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.0, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.0
     
@@ -30,15 +30,15 @@ class Linkaggregationgroup(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'ports': 'list[FixedReference]',
+        'remove_ports': 'list[FixedReference]',
         'add_ports': 'list[FixedReference]',
-        'remove_ports': 'list[FixedReference]'
+        'ports': 'list[FixedReference]'
     }
 
     attribute_map = {
-        'ports': 'ports',
+        'remove_ports': 'remove_ports',
         'add_ports': 'add_ports',
-        'remove_ports': 'remove_ports'
+        'ports': 'ports'
     }
 
     required_args = {
@@ -46,22 +46,22 @@ class Linkaggregationgroup(object):
 
     def __init__(
         self,
-        ports=None,  # type: List[models.FixedReference]
-        add_ports=None,  # type: List[models.FixedReference]
         remove_ports=None,  # type: List[models.FixedReference]
+        add_ports=None,  # type: List[models.FixedReference]
+        ports=None,  # type: List[models.FixedReference]
     ):
         """
         Keyword args:
-            ports (list[FixedReference])
-            add_ports (list[FixedReference])
             remove_ports (list[FixedReference])
+            add_ports (list[FixedReference])
+            ports (list[FixedReference])
         """
-        if ports is not None:
-            self.ports = ports
-        if add_ports is not None:
-            self.add_ports = add_ports
         if remove_ports is not None:
             self.remove_ports = remove_ports
+        if add_ports is not None:
+            self.add_ports = add_ports
+        if ports is not None:
+            self.ports = ports
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

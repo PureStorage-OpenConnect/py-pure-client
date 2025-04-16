@@ -46,7 +46,7 @@ class FleetResponse(object):
     ):
         """
         Keyword args:
-            items (list[Fleet]): Returns a list of all items after filtering. If applicable, the values are displayed for each name.
+            items (list[Fleet]): Returns a list of all items after filtering. If applicable, the values are displayed for each name. 
         """
         if items is not None:
             self.items = items

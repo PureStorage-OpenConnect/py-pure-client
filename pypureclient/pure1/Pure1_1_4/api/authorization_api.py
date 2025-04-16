@@ -105,7 +105,7 @@ class AuthorizationApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
-            ['application/x-www-form-urlencoded', 'application/json'])
+            ['application/x-www-form-urlencoded'])
 
         # Authentication setting
         auth_settings = ['AuthorizationHeader']

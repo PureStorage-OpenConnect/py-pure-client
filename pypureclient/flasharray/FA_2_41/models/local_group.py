@@ -30,18 +30,18 @@ class LocalGroup(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'built_in': 'bool',
-        'email': 'str',
         'gid': 'int',
+        'built_in': 'bool',
         'name': 'str',
+        'email': 'str',
         'sid': 'str'
     }
 
     attribute_map = {
-        'built_in': 'built_in',
-        'email': 'email',
         'gid': 'gid',
+        'built_in': 'built_in',
         'name': 'name',
+        'email': 'email',
         'sid': 'sid'
     }
 
@@ -50,28 +50,28 @@ class LocalGroup(object):
 
     def __init__(
         self,
-        built_in=None,  # type: bool
-        email=None,  # type: str
         gid=None,  # type: int
+        built_in=None,  # type: bool
         name=None,  # type: str
+        email=None,  # type: str
         sid=None,  # type: str
     ):
         """
         Keyword args:
-            built_in (bool): Returns a value of `true` if the local group is built in. Returns a value of `false` if the group has been created manually.
-            email (str): The email address of the local group.
-            gid (int): The POSIX user ID of this object (group ID).
-            name (str): The local group name.
-            sid (str): The SID (security ID) of the local group.
+            gid (int): The POSIX user ID of this object (group ID). 
+            built_in (bool): Returns a value of `true` if the local group is built in. Returns a value of `false` if the group has been created manually. 
+            name (str): The local group name. 
+            email (str): The email address of the local group. 
+            sid (str): The SID (security ID) of the local group. 
         """
-        if built_in is not None:
-            self.built_in = built_in
-        if email is not None:
-            self.email = email
         if gid is not None:
             self.gid = gid
+        if built_in is not None:
+            self.built_in = built_in
         if name is not None:
             self.name = name
+        if email is not None:
+            self.email = email
         if sid is not None:
             self.sid = sid
 

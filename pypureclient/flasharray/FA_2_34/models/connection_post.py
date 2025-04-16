@@ -30,13 +30,13 @@ class ConnectionPost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'lun': 'int',
-        'protocol_endpoint': 'Reference'
+        'protocol_endpoint': 'Reference',
+        'lun': 'int'
     }
 
     attribute_map = {
-        'lun': 'lun',
-        'protocol_endpoint': 'protocol_endpoint'
+        'protocol_endpoint': 'protocol_endpoint',
+        'lun': 'lun'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class ConnectionPost(object):
 
     def __init__(
         self,
-        lun=None,  # type: int
         protocol_endpoint=None,  # type: models.Reference
+        lun=None,  # type: int
     ):
         """
         Keyword args:
-            lun (int): The logical unit number (LUN) by which the specified hosts are to address the specified volume. If the LUN is not specified, the system automatically assigns a LUN to the connection. To automatically assign a LUN to a private connection, the system starts at LUN `1` and counts up to the maximum LUN `4095`, assigning the first available LUN to the connection. For shared connections, the system starts at LUN `254` and counts down to the minimum LUN `1`, assigning the first available LUN to the connection. If all LUNs in the `[1...254]` range are taken, the system starts at LUN `255` and counts up to the maximum LUN `4095`, assigning the first available LUN to the connection. Should not be used together with an NVMe host or host group.
-            protocol_endpoint (Reference): A protocol endpoint (also known as a conglomerate volume) which acts as a proxy through which virtual volumes are created and then connected to VMware ESXi hosts or host groups. The protocol endpoint itself does not serve I/Os; instead, its job is to form connections between FlashArray volumes and ESXi hosts and host groups.
+            protocol_endpoint (Reference): A protocol endpoint (also known as a conglomerate volume) which acts as a proxy through which virtual volumes are created and then connected to VMware ESXi hosts or host groups. The protocol endpoint itself does not serve I/Os; instead, its job is to form connections between FlashArray volumes and ESXi hosts and host groups. 
+            lun (int): The logical unit number (LUN) by which the specified hosts are to address the specified volume. If the LUN is not specified, the system automatically assigns a LUN to the connection. To automatically assign a LUN to a private connection, the system starts at LUN `1` and counts up to the maximum LUN `4095`, assigning the first available LUN to the connection. For shared connections, the system starts at LUN `254` and counts down to the minimum LUN `1`, assigning the first available LUN to the connection. If all LUNs in the `[1...254]` range are taken, the system starts at LUN `255` and counts up to the maximum LUN `4095`, assigning the first available LUN to the connection. Should not be used together with an NVMe host or host group. 
         """
-        if lun is not None:
-            self.lun = lun
         if protocol_endpoint is not None:
             self.protocol_endpoint = protocol_endpoint
+        if lun is not None:
+            self.lun = lun
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

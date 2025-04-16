@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.1, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.1, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.1
     
@@ -32,17 +32,17 @@ class ObjectStoreUser(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
-        'account': 'FixedReference',
+        'created': 'int',
         'access_keys': 'list[FixedReference]',
-        'created': 'int'
+        'account': 'FixedReference'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
-        'account': 'account',
+        'created': 'created',
         'access_keys': 'access_keys',
-        'created': 'created'
+        'account': 'account'
     }
 
     required_args = {
@@ -52,28 +52,28 @@ class ObjectStoreUser(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
-        account=None,  # type: models.FixedReference
-        access_keys=None,  # type: List[models.FixedReference]
         created=None,  # type: int
+        access_keys=None,  # type: List[models.FixedReference]
+        account=None,  # type: models.FixedReference
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            account (FixedReference): Reference of the associated account.
-            access_keys (list[FixedReference]): References of the user's access keys.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
             created (int): Creation timestamp of the object.
+            access_keys (list[FixedReference]): References of the user's access keys.
+            account (FixedReference): Reference of the associated account.
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
-        if account is not None:
-            self.account = account
-        if access_keys is not None:
-            self.access_keys = access_keys
         if created is not None:
             self.created = created
+        if access_keys is not None:
+            self.access_keys = access_keys
+        if account is not None:
+            self.account = account
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

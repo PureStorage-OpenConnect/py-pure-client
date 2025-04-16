@@ -31,14 +31,14 @@ class DirectoryServiceManagement(object):
     """
     swagger_types = {
         'user_login_attribute': 'str',
-        'user_object_class': 'str',
-        'ssh_public_key_attribute': 'str'
+        'ssh_public_key_attribute': 'str',
+        'user_object_class': 'str'
     }
 
     attribute_map = {
         'user_login_attribute': 'user_login_attribute',
-        'user_object_class': 'user_object_class',
-        'ssh_public_key_attribute': 'ssh_public_key_attribute'
+        'ssh_public_key_attribute': 'ssh_public_key_attribute',
+        'user_object_class': 'user_object_class'
     }
 
     required_args = {
@@ -47,21 +47,21 @@ class DirectoryServiceManagement(object):
     def __init__(
         self,
         user_login_attribute=None,  # type: str
-        user_object_class=None,  # type: str
         ssh_public_key_attribute=None,  # type: str
+        user_object_class=None,  # type: str
     ):
         """
         Keyword args:
-            user_login_attribute (str): User login attribute in the structure of the configured LDAP servers. Typically the attribute field that holds the user's unique login name. Default value is `sAMAccountName` for Active Directory or `uid` for all other directory services.
-            user_object_class (str): Value of the object class for a management LDAP user. Defaults to `User` for Active Directory servers, `posixAccount` or `shadowAccount` for OpenLDAP servers dependent on the group type of the server, or `person` for all other directory servers.
-            ssh_public_key_attribute (str): SSH public key attribute in the structure of the configured LDAP servers. The attribute field that holds the user's SSH public key. This attribute can represent a single-valued or multi-valued field. If this attribute resolves to a multi-valued field, all valid SSH keys will be used. If the user has specified keys under Admin endpoints, these are used as well.
+            user_login_attribute (str): User login attribute in the structure of the configured LDAP servers. Typically the attribute field that holds the user's unique login name. Default value is `sAMAccountName` for Active Directory or `uid` for all other directory services. 
+            ssh_public_key_attribute (str): SSH public key attribute in the structure of the configured LDAP servers. The attribute field that holds the user's SSH public key. This attribute can represent a single-valued or multi-valued field. If this attribute resolves to a multi-valued field, all valid SSH keys will be used. If the user has specified keys under Admin endpoints, these are used as well. 
+            user_object_class (str): Value of the object class for a management LDAP user. Defaults to `User` for Active Directory servers, `posixAccount` or `shadowAccount` for OpenLDAP servers dependent on the group type of the server, or `person` for all other directory servers. 
         """
         if user_login_attribute is not None:
             self.user_login_attribute = user_login_attribute
-        if user_object_class is not None:
-            self.user_object_class = user_object_class
         if ssh_public_key_attribute is not None:
             self.ssh_public_key_attribute = ssh_public_key_attribute
+        if user_object_class is not None:
+            self.user_object_class = user_object_class
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

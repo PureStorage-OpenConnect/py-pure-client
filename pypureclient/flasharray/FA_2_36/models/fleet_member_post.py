@@ -46,7 +46,7 @@ class FleetMemberPost(object):
     ):
         """
         Keyword args:
-            members (list[FleetmemberpostMembers]): Details about the members being added to fleet.
+            members (list[FleetmemberpostMembers]): Details about the members being added to fleet. 
         """
         if members is not None:
             self.members = members

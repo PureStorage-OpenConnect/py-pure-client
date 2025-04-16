@@ -30,14 +30,14 @@ class ExportPolicyAttachmentMixin(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'enabled': 'bool',
         'export_name': 'str',
+        'enabled': 'bool',
         'status': 'str'
     }
 
     attribute_map = {
-        'enabled': 'enabled',
         'export_name': 'export_name',
+        'enabled': 'enabled',
         'status': 'status'
     }
 
@@ -46,20 +46,20 @@ class ExportPolicyAttachmentMixin(object):
 
     def __init__(
         self,
-        enabled=None,  # type: bool
         export_name=None,  # type: str
+        enabled=None,  # type: bool
         status=None,  # type: str
     ):
         """
         Keyword args:
-            enabled (bool): Returns a value of `true` if and only if the export policy that manages this export is enabled AND this export is enabled.
-            export_name (str): The export name for accessing this export.
-            status (str): Explains why `enabled` is `false`, or whether there is a name conflict with another export. Valid values include `policy_disabled`, `export_disabled`, and `name_conflict`.
+            export_name (str): The export name for accessing this export. 
+            enabled (bool): Returns a value of `true` if and only if the export policy that manages this export is enabled AND this export is enabled. 
+            status (str): Explains why `enabled` is `false`, or whether there is a name conflict with another export. Valid values include `policy_disabled`, `export_disabled`, and `name_conflict`. 
         """
-        if enabled is not None:
-            self.enabled = enabled
         if export_name is not None:
             self.export_name = export_name
+        if enabled is not None:
+            self.enabled = enabled
         if status is not None:
             self.status = status
 

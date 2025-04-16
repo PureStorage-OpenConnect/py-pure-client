@@ -3,7 +3,7 @@
 """
     Pure1 Public REST API
 
-    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)  The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
+    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)   The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
 
     OpenAPI spec version: 1.1
     
@@ -31,34 +31,34 @@ class NetworkInterface(object):
     """
     swagger_types = {
         'as_of': 'int',
-        'id': 'str',
         'name': 'str',
+        'id': 'str',
         'arrays': 'list[FixedReferenceFqdn]',
-        'address': 'str',
-        'enabled': 'bool',
-        'gateway': 'str',
         'hwaddr': 'str',
-        'mtu': 'int',
+        'address': 'str',
         'netmask': 'str',
         'services': 'list[str]',
+        'subinterfaces': 'list[str]',
+        'enabled': 'bool',
+        'gateway': 'str',
         'speed': 'int',
-        'subinterfaces': 'list[str]'
+        'mtu': 'int'
     }
 
     attribute_map = {
         'as_of': '_as_of',
-        'id': 'id',
         'name': 'name',
+        'id': 'id',
         'arrays': 'arrays',
-        'address': 'address',
-        'enabled': 'enabled',
-        'gateway': 'gateway',
         'hwaddr': 'hwaddr',
-        'mtu': 'mtu',
+        'address': 'address',
         'netmask': 'netmask',
         'services': 'services',
+        'subinterfaces': 'subinterfaces',
+        'enabled': 'enabled',
+        'gateway': 'gateway',
         'speed': 'speed',
-        'subinterfaces': 'subinterfaces'
+        'mtu': 'mtu'
     }
 
     required_args = {
@@ -67,61 +67,61 @@ class NetworkInterface(object):
     def __init__(
         self,
         as_of=None,  # type: int
-        id=None,  # type: str
         name=None,  # type: str
+        id=None,  # type: str
         arrays=None,  # type: List[models.FixedReferenceFqdn]
-        address=None,  # type: str
-        enabled=None,  # type: bool
-        gateway=None,  # type: str
         hwaddr=None,  # type: str
-        mtu=None,  # type: int
+        address=None,  # type: str
         netmask=None,  # type: str
         services=None,  # type: List[str]
-        speed=None,  # type: int
         subinterfaces=None,  # type: List[str]
+        enabled=None,  # type: bool
+        gateway=None,  # type: str
+        speed=None,  # type: int
+        mtu=None,  # type: int
     ):
         """
         Keyword args:
             as_of (int): The freshness of the data (timestamp in millis since epoch).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
             name (str): A non-modifiable, locally unique name chosen by the system.
-            arrays (list[FixedReferenceFqdn]): The list of arrays where this resource exists. Many resources are on a single array, but some resources, such as pods, can be shared across multiple arrays.
-            address (str): IP address of this network interface.
-            enabled (bool)
-            gateway (str)
+            id (str): A non-modifiable, globally unique ID chosen by the system.
+            arrays (list[FixedReferenceFqdn]): The list of arrays where this resource exists. Many resources are on a single array, but some resources, such as pods, can be shared across multiple arrays. 
             hwaddr (str): Hardware address.
-            mtu (int): Maximum transmission unit.
+            address (str): IP address of this network interface.
             netmask (str)
             services (list[str]): Services and protocols that are enabled on the interface.
-            speed (int): Speed in bytes per second.
             subinterfaces (list[str])
+            enabled (bool)
+            gateway (str)
+            speed (int): Speed in bytes per second.
+            mtu (int): Maximum transmission unit.
         """
         if as_of is not None:
             self.as_of = as_of
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
         if arrays is not None:
             self.arrays = arrays
-        if address is not None:
-            self.address = address
-        if enabled is not None:
-            self.enabled = enabled
-        if gateway is not None:
-            self.gateway = gateway
         if hwaddr is not None:
             self.hwaddr = hwaddr
-        if mtu is not None:
-            self.mtu = mtu
+        if address is not None:
+            self.address = address
         if netmask is not None:
             self.netmask = netmask
         if services is not None:
             self.services = services
-        if speed is not None:
-            self.speed = speed
         if subinterfaces is not None:
             self.subinterfaces = subinterfaces
+        if enabled is not None:
+            self.enabled = enabled
+        if gateway is not None:
+            self.gateway = gateway
+        if speed is not None:
+            self.speed = speed
+        if mtu is not None:
+            self.mtu = mtu
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -58,7 +58,7 @@ class OffloadNfs(object):
             address (str): The hostname or IP address of the NFS server to where the data will be offloaded. An array can be connected to one offload target at a time, while multiple arrays can be connected to the same offload target. If the protection group is in a stretched pod, for high availability, connect both arrays in the stretched pod to the offload target.
             mount_options (str): The custom mount options on the NFS server. Enter multiple mount options in comma-separated format. Valid values include `port`, `rsize`, `wsize`, `nfsvers`, and `tcp` or `udp`. These mount options are common to all NFS file systems.
             mount_point (str): The mount point of the NFS export on the NFS server. For example, `/mnt`. The `access_key_id`, `secret_access_key`, and `bucket` parameters must be set together.
-            profile (str): The offload target profile that will be selected for this target. This option allows more granular configuration for the target on top of the `protocol` parameter. Values include `nfs`, and `nfs-flashblade`.
+            profile (str): The offload target profile that will be selected for this target. This option allows more granular configuration for the target on top of the `protocol` parameter. Values include `nfs`, and `nfs-flashblade`. 
         """
         if address is not None:
             self.address = address

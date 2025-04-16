@@ -52,9 +52,9 @@ class PolicymemberexportpostMembers(object):
     ):
         """
         Keyword args:
-            export_enabled (bool): If set to `true`, the export is enabled. If not specified, defaults to `true`.
-            export_name (str): The name of the export to create when applying the export policy to the directory. Export names must be unique within the same protocol.
-            member (ReferenceWithType): Reference to the directory to which the export policy may be applied. The `id` or `name` parameter is required, but they cannot be set together. If the `name` parameter is set, `resource_type` must also be set.
+            export_enabled (bool): If set to `true`, the export is enabled. If not specified, defaults to `true`. 
+            export_name (str): The name of the export to create when applying the export policy to the directory. Export names must be unique within the same protocol. 
+            member (ReferenceWithType): Reference to the directory to which the export policy may be applied. The `id` or `name` parameter is required, but they cannot be set together. If the `name` parameter is set, `resource_type` must also be set. 
         """
         if export_enabled is not None:
             self.export_enabled = export_enabled

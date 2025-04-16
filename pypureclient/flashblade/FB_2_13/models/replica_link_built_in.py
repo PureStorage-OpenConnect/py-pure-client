@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.13, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.13, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.13
     
@@ -31,16 +31,16 @@ class ReplicaLinkBuiltIn(object):
     """
     swagger_types = {
         'id': 'str',
-        'direction': 'Direction',
         'lag': 'int',
-        'status_details': 'str'
+        'status_details': 'str',
+        'direction': 'Direction'
     }
 
     attribute_map = {
         'id': 'id',
-        'direction': 'direction',
         'lag': 'lag',
-        'status_details': 'status_details'
+        'status_details': 'status_details',
+        'direction': 'direction'
     }
 
     required_args = {
@@ -49,25 +49,25 @@ class ReplicaLinkBuiltIn(object):
     def __init__(
         self,
         id=None,  # type: str
-        direction=None,  # type: models.Direction
         lag=None,  # type: int
         status_details=None,  # type: str
+        direction=None,  # type: models.Direction
     ):
         """
         Keyword args:
-            id (str): A non-modifiable, globally unique ID chosen by the system.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            lag (int): Duration in milliseconds that represents how far behind the replication target is from the source. This is the time difference between current time and `recovery_point`. 
+            status_details (str): Detailed information about the status of the replica link when it is unhealthy. 
             direction (Direction)
-            lag (int): Duration in milliseconds that represents how far behind the replication target is from the source. This is the time difference between current time and `recovery_point`.
-            status_details (str): Detailed information about the status of the replica link when it is unhealthy.
         """
         if id is not None:
             self.id = id
-        if direction is not None:
-            self.direction = direction
         if lag is not None:
             self.lag = lag
         if status_details is not None:
             self.status_details = status_details
+        if direction is not None:
+            self.direction = direction
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

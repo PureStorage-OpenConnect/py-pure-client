@@ -30,14 +30,14 @@ class OverrideCheck(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
         'args': 'str',
+        'name': 'str',
         'persistent': 'bool'
     }
 
     attribute_map = {
-        'name': 'name',
         'args': 'args',
+        'name': 'name',
         'persistent': 'persistent'
     }
 
@@ -46,20 +46,20 @@ class OverrideCheck(object):
 
     def __init__(
         self,
-        name=None,  # type: str
         args=None,  # type: str
+        name=None,  # type: str
         persistent=None,  # type: bool
     ):
         """
         Keyword args:
-            name (str): The name of the upgrade check to be overridden so the software upgrade can continue if the check failed or is anticipated to fail during the upgrade process. Overriding the check forces the system to ignore the check failure and continue with the upgrade. If the check includes more specific checks that failed or are anticipated to fail, set them using the `args` parameter. For example, the HostIOCheck check may include a list of hosts that have failed or are anticipated to fail the upgrade check.
-            args (str): The name of the specific check within the override check to ignore so that the system can continue with the software upgrade. The `name` parameter of the override check must be specified with the `args` parameter. For example, if the HostIOCheck check fails on hosts host01 and host02, the system displays a list of these host names in the failed check. To override the HostIOCheck checks for host01 and host02, set `name=HostIOCheck`, and set `args=host01,host02`. Enter multiple `args` in comma-separated format. Note that not all checks have `args` values.
-            persistent (bool): If set to `true`, the system always ignores the failure of the specified upgrade check and continues with the upgrade process. If set to `false`, the system ignores the failure of the specified upgrade check until the upgrade check finishes and the upgrade process is continued. For example, the `continue` command is successfully issued in an `interactive` mode, or the first upgrade check step successfully finishes in a `one-click` mode.
+            args (str): The name of the specific check within the override check to ignore so that the system can continue with the software upgrade. The `name` parameter of the override check must be specified with the `args` parameter. For example, if the HostIOCheck check fails on hosts host01 and host02, the system displays a list of these host names in the failed check. To override the HostIOCheck checks for host01 and host02, set `name=HostIOCheck`, and set `args=host01,host02`. Enter multiple `args` in comma-separated format. Note that not all checks have `args` values. 
+            name (str): The name of the upgrade check to be overridden so the software upgrade can continue if the check failed or is anticipated to fail during the upgrade process. Overriding the check forces the system to ignore the check failure and continue with the upgrade. If the check includes more specific checks that failed or are anticipated to fail, set them using the `args` parameter. For example, the HostIOCheck check may include a list of hosts that have failed or are anticipated to fail the upgrade check. 
+            persistent (bool): If set to `true`, the system always ignores the failure of the specified upgrade check and continues with the upgrade process.  If set to `false`, the system ignores the failure of the specified upgrade check until the upgrade check finishes and the upgrade process is continued. For example, the `continue` command is successfully issued in an `interactive` mode, or the first upgrade check step successfully finishes in a `one-click` mode. 
         """
-        if name is not None:
-            self.name = name
         if args is not None:
             self.args = args
+        if name is not None:
+            self.name = name
         if persistent is not None:
             self.persistent = persistent
 
