@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.4, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.4, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.4
     
@@ -32,25 +32,25 @@ class Support(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
-        'phonehome_enabled': 'bool',
         'proxy': 'str',
-        'remote_assist_active': 'bool',
-        'remote_assist_opened': 'str',
-        'remote_assist_expires': 'str',
+        'phonehome_enabled': 'bool',
+        'remote_assist_paths': 'list[SupportRemoteAssistPaths]',
         'remote_assist_status': 'str',
-        'remote_assist_paths': 'list[SupportRemoteAssistPaths]'
+        'remote_assist_opened': 'str',
+        'remote_assist_active': 'bool',
+        'remote_assist_expires': 'str'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
-        'phonehome_enabled': 'phonehome_enabled',
         'proxy': 'proxy',
-        'remote_assist_active': 'remote_assist_active',
-        'remote_assist_opened': 'remote_assist_opened',
-        'remote_assist_expires': 'remote_assist_expires',
+        'phonehome_enabled': 'phonehome_enabled',
+        'remote_assist_paths': 'remote_assist_paths',
         'remote_assist_status': 'remote_assist_status',
-        'remote_assist_paths': 'remote_assist_paths'
+        'remote_assist_opened': 'remote_assist_opened',
+        'remote_assist_active': 'remote_assist_active',
+        'remote_assist_expires': 'remote_assist_expires'
     }
 
     required_args = {
@@ -60,44 +60,44 @@ class Support(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
-        phonehome_enabled=None,  # type: bool
         proxy=None,  # type: str
-        remote_assist_active=None,  # type: bool
-        remote_assist_opened=None,  # type: str
-        remote_assist_expires=None,  # type: str
-        remote_assist_status=None,  # type: str
+        phonehome_enabled=None,  # type: bool
         remote_assist_paths=None,  # type: List[models.SupportRemoteAssistPaths]
+        remote_assist_status=None,  # type: str
+        remote_assist_opened=None,  # type: str
+        remote_assist_active=None,  # type: bool
+        remote_assist_expires=None,  # type: str
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            phonehome_enabled (bool)
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
             proxy (str)
-            remote_assist_active (bool): The switch to open all remote-assist sessions.
-            remote_assist_opened (str): The time when the session opened.
-            remote_assist_expires (str): The time when the session expires.
-            remote_assist_status (str): The status of the remote-assist sessions. Valid values are `connected`, `partially_connected`, `reconnecting`, and `disconnected`.
+            phonehome_enabled (bool)
             remote_assist_paths (list[SupportRemoteAssistPaths])
+            remote_assist_status (str): The status of the remote-assist sessions. Valid values are `connected`, `partially_connected`, `reconnecting`, and `disconnected`. 
+            remote_assist_opened (str): The time when the session opened.
+            remote_assist_active (bool): The switch to open all remote-assist sessions.
+            remote_assist_expires (str): The time when the session expires.
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
-        if phonehome_enabled is not None:
-            self.phonehome_enabled = phonehome_enabled
         if proxy is not None:
             self.proxy = proxy
-        if remote_assist_active is not None:
-            self.remote_assist_active = remote_assist_active
-        if remote_assist_opened is not None:
-            self.remote_assist_opened = remote_assist_opened
-        if remote_assist_expires is not None:
-            self.remote_assist_expires = remote_assist_expires
-        if remote_assist_status is not None:
-            self.remote_assist_status = remote_assist_status
+        if phonehome_enabled is not None:
+            self.phonehome_enabled = phonehome_enabled
         if remote_assist_paths is not None:
             self.remote_assist_paths = remote_assist_paths
+        if remote_assist_status is not None:
+            self.remote_assist_status = remote_assist_status
+        if remote_assist_opened is not None:
+            self.remote_assist_opened = remote_assist_opened
+        if remote_assist_active is not None:
+            self.remote_assist_active = remote_assist_active
+        if remote_assist_expires is not None:
+            self.remote_assist_expires = remote_assist_expires
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

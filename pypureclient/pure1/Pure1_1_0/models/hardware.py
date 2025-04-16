@@ -3,7 +3,7 @@
 """
     Pure1 Public REST API
 
-    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)  The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
+    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)   The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
 
     OpenAPI spec version: 1.0
     
@@ -31,35 +31,35 @@ class Hardware(object):
     """
     swagger_types = {
         'as_of': 'int',
-        'id': 'str',
         'name': 'str',
+        'id': 'str',
         'arrays': 'list[FixedReference]',
-        'details': 'str',
         'identify_enabled': 'bool',
-        'model': 'str',
         'serial': 'str',
+        'temperature': 'int',
+        'details': 'str',
+        'model': 'str',
         'slot': 'int',
+        'type': 'str',
         'speed': 'int',
         'status': 'str',
-        'temperature': 'int',
-        'type': 'str',
         'voltage': 'int'
     }
 
     attribute_map = {
         'as_of': '_as_of',
-        'id': 'id',
         'name': 'name',
+        'id': 'id',
         'arrays': 'arrays',
-        'details': 'details',
         'identify_enabled': 'identify_enabled',
-        'model': 'model',
         'serial': 'serial',
+        'temperature': 'temperature',
+        'details': 'details',
+        'model': 'model',
         'slot': 'slot',
+        'type': 'type',
         'speed': 'speed',
         'status': 'status',
-        'temperature': 'temperature',
-        'type': 'type',
         'voltage': 'voltage'
     }
 
@@ -69,63 +69,63 @@ class Hardware(object):
     def __init__(
         self,
         as_of=None,  # type: int
-        id=None,  # type: str
         name=None,  # type: str
+        id=None,  # type: str
         arrays=None,  # type: List[models.FixedReference]
-        details=None,  # type: str
         identify_enabled=None,  # type: bool
-        model=None,  # type: str
         serial=None,  # type: str
+        temperature=None,  # type: int
+        details=None,  # type: str
+        model=None,  # type: str
         slot=None,  # type: int
+        type=None,  # type: str
         speed=None,  # type: int
         status=None,  # type: str
-        temperature=None,  # type: int
-        type=None,  # type: str
         voltage=None,  # type: int
     ):
         """
         Keyword args:
             as_of (int): The freshness of the data (timestamp in millis since epoch).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
             name (str): A non-modifiable, locally unique name chosen by the system.
-            arrays (list[FixedReference]): The list of arrays where this resource exists. Many resources are on a single array, but some resources, such as pods, can be shared across multiple arrays.
-            details (str): Details about the component if `status` is not `healthy`.
+            id (str): A non-modifiable, globally unique ID chosen by the system.
+            arrays (list[FixedReference]): The list of arrays where this resource exists. Many resources are on a single array, but some resources, such as pods, can be shared across multiple arrays. 
             identify_enabled (bool): If true, the ID light is lit to visually identify the component.
-            model (str): Model number of the hardware component.
-            serial (str): Serial number of the hardware component.
-            slot (int): Slot number occupied by the PCI Express card that hosts the component.
-            speed (int): Speed (in bytes per second) at which the component is operating.
-            status (str): Component status. Values include `critical`, `healthy`, `identifying`, `unhealthy`, `unclaimed`, `unknown`, `unrecognized`, and `unused`.
-            temperature (int): Temperature (in degrees Celsius) reported by the component.
-            type (str): Type of the hardware component. Values include `am`, `chassis`, `controller`, `cooling`, `drive_bay`, `eth_port`, `fan`, `fc_port`, `flash_blade`, `ib_port`, `mgmt_port`, `nvram_bay`, `power_supply`, `sas_module`, `sas_port`, `storage_shelf`, and `temp_sensor`.
-            voltage (int): Voltage (in Volts) reported by the component.
+            serial (str): Serial number of the hardware component. 
+            temperature (int): Temperature (in degrees Celsius) reported by the component. 
+            details (str): Details about the component if `status` is not `healthy`. 
+            model (str): Model number of the hardware component. 
+            slot (int): Slot number occupied by the PCI Express card that hosts the component. 
+            type (str): Type of the hardware component. Values include `am`, `chassis`, `controller`, `cooling`, `drive_bay`, `eth_port`, `fan`, `fc_port`, `flash_blade`, `ib_port`, `mgmt_port`, `nvram_bay`, `power_supply`, `sas_module`, `sas_port`, `storage_shelf`, and `temp_sensor`. 
+            speed (int): Speed (in bytes per second) at which the component is operating. 
+            status (str): Component status. Values include `critical`, `healthy`, `identifying`, `unhealthy`, `unclaimed`, `unknown`, `unrecognized`, and `unused`. 
+            voltage (int): Voltage (in Volts) reported by the component. 
         """
         if as_of is not None:
             self.as_of = as_of
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
         if arrays is not None:
             self.arrays = arrays
-        if details is not None:
-            self.details = details
         if identify_enabled is not None:
             self.identify_enabled = identify_enabled
-        if model is not None:
-            self.model = model
         if serial is not None:
             self.serial = serial
+        if temperature is not None:
+            self.temperature = temperature
+        if details is not None:
+            self.details = details
+        if model is not None:
+            self.model = model
         if slot is not None:
             self.slot = slot
+        if type is not None:
+            self.type = type
         if speed is not None:
             self.speed = speed
         if status is not None:
             self.status = status
-        if temperature is not None:
-            self.temperature = temperature
-        if type is not None:
-            self.type = type
         if voltage is not None:
             self.voltage = voltage
 

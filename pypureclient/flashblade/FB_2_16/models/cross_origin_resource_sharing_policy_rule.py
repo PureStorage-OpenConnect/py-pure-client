@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.16
     
@@ -31,16 +31,16 @@ class CrossOriginResourceSharingPolicyRule(object):
     """
     swagger_types = {
         'name': 'str',
-        'allowed_headers': 'list[str]',
         'allowed_methods': 'list[str]',
+        'allowed_headers': 'list[str]',
         'allowed_origins': 'list[str]',
         'policy': 'FixedReference'
     }
 
     attribute_map = {
         'name': 'name',
-        'allowed_headers': 'allowed_headers',
         'allowed_methods': 'allowed_methods',
+        'allowed_headers': 'allowed_headers',
         'allowed_origins': 'allowed_origins',
         'policy': 'policy'
     }
@@ -51,25 +51,25 @@ class CrossOriginResourceSharingPolicyRule(object):
     def __init__(
         self,
         name=None,  # type: str
-        allowed_headers=None,  # type: List[str]
         allowed_methods=None,  # type: List[str]
+        allowed_headers=None,  # type: List[str]
         allowed_origins=None,  # type: List[str]
         policy=None,  # type: models.FixedReference
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            allowed_headers (list[str]): A list of headers that are permitted to be included in cross-origin requests to access a bucket. The only currently supported allowed header is `*`.
-            allowed_methods (list[str]): A list of HTTP methods that are permitted for cross-origin requests to access a bucket. The only currently supported combination of allowed methods is all methods `[\"GET\", \"PUT\", \"HEAD\", \"POST\", \"DELETE\"]`.
-            allowed_origins (list[str]): A list of origins (domains) that are permitted to make cross-origin requests to access a bucket. The only currently supported allowed origin is `*`.
+            allowed_methods (list[str]): A list of HTTP methods that are permitted for cross-origin requests to access a bucket. The only currently supported combination of allowed methods is all methods `[\"GET\", \"PUT\", \"HEAD\", \"POST\", \"DELETE\"]`. 
+            allowed_headers (list[str]): A list of headers that are permitted to be included in cross-origin requests to access a bucket. The only currently supported allowed header is `*`. 
+            allowed_origins (list[str]): A list of origins (domains) that are permitted to make cross-origin requests to access a bucket. The only currently supported allowed origin is `*`. 
             policy (FixedReference): The policy to which this rule belongs.
         """
         if name is not None:
             self.name = name
-        if allowed_headers is not None:
-            self.allowed_headers = allowed_headers
         if allowed_methods is not None:
             self.allowed_methods = allowed_methods
+        if allowed_headers is not None:
+            self.allowed_headers = allowed_headers
         if allowed_origins is not None:
             self.allowed_origins = allowed_origins
         if policy is not None:

@@ -30,15 +30,15 @@ class AdminPost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'management_access_policies': 'list[ReferenceWithType]',
         'password': 'str',
-        'role': 'AdminRole',
-        'management_access_policies': 'list[ReferenceWithType]'
+        'role': 'AdminRole'
     }
 
     attribute_map = {
+        'management_access_policies': 'management_access_policies',
         'password': 'password',
-        'role': 'role',
-        'management_access_policies': 'management_access_policies'
+        'role': 'role'
     }
 
     required_args = {
@@ -46,22 +46,22 @@ class AdminPost(object):
 
     def __init__(
         self,
+        management_access_policies=None,  # type: List[models.ReferenceWithType]
         password=None,  # type: str
         role=None,  # type: models.AdminRole
-        management_access_policies=None,  # type: List[models.ReferenceWithType]
     ):
         """
         Keyword args:
-            password (str): Password associated with the account.
+            management_access_policies (list[ReferenceWithType]): List of management access policies to associate with the administrator. Policies can be specified by the `name` or `ID` parameter, but they cannot be set together. 
+            password (str): Password associated with the account. 
             role (AdminRole)
-            management_access_policies (list[ReferenceWithType]): List of management access policies to associate with the administrator. Policies can be specified by the `name` or `ID` parameter, but they cannot be set together.
         """
+        if management_access_policies is not None:
+            self.management_access_policies = management_access_policies
         if password is not None:
             self.password = password
         if role is not None:
             self.role = role
-        if management_access_policies is not None:
-            self.management_access_policies = management_access_policies
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

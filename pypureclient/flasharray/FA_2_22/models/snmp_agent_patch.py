@@ -58,11 +58,11 @@ class SnmpAgentPatch(object):
     ):
         """
         Keyword args:
-            name (str): A locally unique, system-generated name. The name cannot be modified.
-            engine_id (str): The administration domain unique name of an SNMP agent.
+            name (str): A locally unique, system-generated name. The name cannot be modified. 
+            engine_id (str): The administration domain unique name of an SNMP agent. 
             v2c (SnmpV2c)
             v3 (SnmpV3Patch)
-            version (str): Version of the SNMP protocol to be used by Purity//FA in communications with the specified manager. Valid values are `v2c` and `v3`.
+            version (str): Version of the SNMP protocol to be used by Purity//FA in communications with the specified manager. Valid values are `v2c` and `v3`. 
         """
         if name is not None:
             self.name = name

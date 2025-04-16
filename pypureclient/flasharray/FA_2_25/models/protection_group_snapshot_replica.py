@@ -31,26 +31,26 @@ class ProtectionGroupSnapshotReplica(object):
     """
     swagger_types = {
         'name': 'str',
-        'created': 'int',
+        'time_remaining': 'int',
         'destroyed': 'bool',
         'pod': 'FixedReference',
-        'space': 'Space',
+        'created': 'int',
+        'eradication_config': 'ProtectionGroupEradicationConfig',
         'source': 'FixedReference',
         'suffix': 'str',
-        'time_remaining': 'int',
-        'eradication_config': 'ProtectionGroupEradicationConfig'
+        'space': 'Space'
     }
 
     attribute_map = {
         'name': 'name',
-        'created': 'created',
+        'time_remaining': 'time_remaining',
         'destroyed': 'destroyed',
         'pod': 'pod',
-        'space': 'space',
+        'created': 'created',
+        'eradication_config': 'eradication_config',
         'source': 'source',
         'suffix': 'suffix',
-        'time_remaining': 'time_remaining',
-        'eradication_config': 'eradication_config'
+        'space': 'space'
     }
 
     required_args = {
@@ -59,45 +59,45 @@ class ProtectionGroupSnapshotReplica(object):
     def __init__(
         self,
         name=None,  # type: str
-        created=None,  # type: int
+        time_remaining=None,  # type: int
         destroyed=None,  # type: bool
         pod=None,  # type: models.FixedReference
-        space=None,  # type: models.Space
+        created=None,  # type: int
+        eradication_config=None,  # type: models.ProtectionGroupEradicationConfig
         source=None,  # type: models.FixedReference
         suffix=None,  # type: str
-        time_remaining=None,  # type: int
-        eradication_config=None,  # type: models.ProtectionGroupEradicationConfig
+        space=None,  # type: models.Space
     ):
         """
         Keyword args:
-            name (str): A user-specified name. The name must be locally unique and can be changed.
-            created (int): The snapshot creation time of the original snapshot source. Measured in milliseconds since the UNIX epoch.
-            destroyed (bool): Returns a value of `true` if the protection group snapshot has been destroyed and is pending eradication. The `time_remaining` value displays the amount of time left until the destroyed snapshot is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed snapshot can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the snapshot is permanently eradicated and can no longer be recovered.
+            name (str): A user-specified name. The name must be locally unique and can be changed. 
+            time_remaining (int): The amount of time left until the destroyed snapshot is permanently eradicated. Measured in milliseconds. Before the `time_remaining` period has elapsed, the destroyed snapshot can be recovered by setting `destroyed=false`. 
+            destroyed (bool): Returns a value of `true` if the protection group snapshot has been destroyed and is pending eradication. The `time_remaining` value displays the amount of time left until the destroyed snapshot is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed snapshot can be recovered by setting `destroyed=false`.  Once the `time_remaining` period has elapsed, the snapshot is permanently eradicated and can no longer be recovered. 
             pod (FixedReference): The pod in which the protection group of the protection group snapshot resides.
-            space (Space): Returns provisioned size and physical storage consumption data for each protection group.
-            source (FixedReference): The original protection group from which this snapshot was taken. For a replicated protection group snapshot being viewed on the target side, the `source` is the replica protection group.
-            suffix (str): The name suffix appended to the protection group name to make up the full protection group snapshot name in the form `PGROUP.SUFFIX`. If `suffix` is not specified, the protection group name is in the form `PGROUP.NNN`, where `NNN` is a unique monotonically increasing number. If multiple protection group snapshots are created at a time, the suffix name is appended to those snapshots.
-            time_remaining (int): The amount of time left until the destroyed snapshot is permanently eradicated. Measured in milliseconds. Before the `time_remaining` period has elapsed, the destroyed snapshot can be recovered by setting `destroyed=false`.
+            created (int): The snapshot creation time of the original snapshot source. Measured in milliseconds since the UNIX epoch. 
             eradication_config (ProtectionGroupEradicationConfig)
+            source (FixedReference): The original protection group from which this snapshot was taken. For a replicated protection group snapshot being viewed on the target side, the `source` is the replica protection group. 
+            suffix (str): The name suffix appended to the protection group name to make up the full protection group snapshot name in the form `PGROUP.SUFFIX`. If `suffix` is not specified,  the protection group name is in the form `PGROUP.NNN`, where `NNN` is a unique monotonically increasing number. If multiple protection group snapshots are created at a time, the suffix name is appended to those snapshots. 
+            space (Space): Returns provisioned size and physical storage consumption data for each protection group. 
         """
         if name is not None:
             self.name = name
-        if created is not None:
-            self.created = created
+        if time_remaining is not None:
+            self.time_remaining = time_remaining
         if destroyed is not None:
             self.destroyed = destroyed
         if pod is not None:
             self.pod = pod
-        if space is not None:
-            self.space = space
+        if created is not None:
+            self.created = created
+        if eradication_config is not None:
+            self.eradication_config = eradication_config
         if source is not None:
             self.source = source
         if suffix is not None:
             self.suffix = suffix
-        if time_remaining is not None:
-            self.time_remaining = time_remaining
-        if eradication_config is not None:
-            self.eradication_config = eradication_config
+        if space is not None:
+            self.space = space
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

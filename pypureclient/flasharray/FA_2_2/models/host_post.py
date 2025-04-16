@@ -30,21 +30,21 @@ class HostPost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'chap': 'Chap',
-        'iqns': 'list[str]',
-        'nqns': 'list[str]',
+        'wwns': 'list[str]',
         'personality': 'str',
-        'preferred_arrays': 'list[Reference]',
-        'wwns': 'list[str]'
+        'chap': 'Chap',
+        'nqns': 'list[str]',
+        'iqns': 'list[str]',
+        'preferred_arrays': 'list[Reference]'
     }
 
     attribute_map = {
-        'chap': 'chap',
-        'iqns': 'iqns',
-        'nqns': 'nqns',
+        'wwns': 'wwns',
         'personality': 'personality',
-        'preferred_arrays': 'preferred_arrays',
-        'wwns': 'wwns'
+        'chap': 'chap',
+        'nqns': 'nqns',
+        'iqns': 'iqns',
+        'preferred_arrays': 'preferred_arrays'
     }
 
     required_args = {
@@ -52,34 +52,34 @@ class HostPost(object):
 
     def __init__(
         self,
-        chap=None,  # type: models.Chap
-        iqns=None,  # type: List[str]
-        nqns=None,  # type: List[str]
-        personality=None,  # type: str
-        preferred_arrays=None,  # type: List[models.Reference]
         wwns=None,  # type: List[str]
+        personality=None,  # type: str
+        chap=None,  # type: models.Chap
+        nqns=None,  # type: List[str]
+        iqns=None,  # type: List[str]
+        preferred_arrays=None,  # type: List[models.Reference]
     ):
         """
         Keyword args:
-            chap (Chap)
-            iqns (list[str]): The iSCSI qualified name (IQN) associated with the host.
-            nqns (list[str]): The NVMe Qualified Name (NQN) associated with the host.
-            personality (str): Determines how the system tunes the array to ensure that it works optimally with the host. Set `personality` to the name of the host operating system or virtual memory system. Valid values are `aix`, `esxi`, `hitachi-vsp`, `hpux`, `oracle-vm-server`, `solaris`, and `vms`. If your system is not listed as one of the valid host personalities, do not set the option. By default, the personality is not set.
-            preferred_arrays (list[Reference]): For synchronous replication configurations, sets a host's preferred array to specify which array exposes active/optimized paths to that host. Enter multiple preferred arrays in comma-separated format. If a preferred array is set for a host, then the other arrays in the same pod will expose active/non-optimized paths to that host. If the host is in a host group, `preferred_arrays` cannot be set because host groups have their own preferred arrays. On a preferred array of a certain host, all the paths on all the ports (for both the primary and secondary controllers) are set up as A/O (active/optimized) paths, while on a non-preferred array, all the paths are A/N (Active/Non-optimized) paths.
             wwns (list[str]): The Fibre Channel World Wide Name (WWN) associated with the host.
+            personality (str): Determines how the system tunes the array to ensure that it works optimally with the host. Set `personality` to the name of the host operating system or virtual memory system. Valid values are `aix`, `esxi`, `hitachi-vsp`, `hpux`, `oracle-vm-server`, `solaris`, and `vms`. If your system is not listed as one of the valid host personalities, do not set the option. By default, the personality is not set. 
+            chap (Chap)
+            nqns (list[str]): The NVMe Qualified Name (NQN) associated with the host.
+            iqns (list[str]): The iSCSI qualified name (IQN) associated with the host. 
+            preferred_arrays (list[Reference]): For synchronous replication configurations, sets a host's preferred array to specify which array exposes active/optimized paths to that host. Enter multiple preferred arrays in comma-separated format. If a preferred array is set for a host, then the other arrays in the same pod will expose active/non-optimized paths to that host. If the host is in a host group, `preferred_arrays` cannot be set because host groups have their own preferred arrays. On a preferred array of a certain host, all the paths on all the ports (for both the primary and secondary controllers) are set up as A/O (active/optimized) paths, while on a non-preferred array, all the paths are A/N (Active/Non-optimized) paths. 
         """
-        if chap is not None:
-            self.chap = chap
-        if iqns is not None:
-            self.iqns = iqns
-        if nqns is not None:
-            self.nqns = nqns
-        if personality is not None:
-            self.personality = personality
-        if preferred_arrays is not None:
-            self.preferred_arrays = preferred_arrays
         if wwns is not None:
             self.wwns = wwns
+        if personality is not None:
+            self.personality = personality
+        if chap is not None:
+            self.chap = chap
+        if nqns is not None:
+            self.nqns = nqns
+        if iqns is not None:
+            self.iqns = iqns
+        if preferred_arrays is not None:
+            self.preferred_arrays = preferred_arrays
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

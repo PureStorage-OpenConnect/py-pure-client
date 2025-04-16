@@ -30,13 +30,13 @@ class ResourceFixedNonUniqueName(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
-        'name': 'str'
+        'name': 'str',
+        'id': 'str'
     }
 
     attribute_map = {
-        'id': 'id',
-        'name': 'name'
+        'name': 'name',
+        'id': 'id'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class ResourceFixedNonUniqueName(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
+        id=None,  # type: str
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified.
-            name (str): Name of the resource. The name cannot be modified.
+            name (str): Name of the resource. The name cannot be modified. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

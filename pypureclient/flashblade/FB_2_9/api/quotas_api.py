@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.9, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.9, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.9
     
@@ -29,8 +29,8 @@ class QuotasApi(object):
 
     def api29_quotas_groups_delete_with_http_info(
         self,
-        file_system_names=None,  # type: List[str]
         file_system_ids=None,  # type: List[str]
+        file_system_names=None,  # type: List[str]
         gids=None,  # type: List[int]
         group_names=None,  # type: List[str]
         names=None,  # type: List[str]
@@ -48,11 +48,11 @@ class QuotasApi(object):
         >>> thread = api.api29_quotas_groups_delete_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param list[str] file_system_names: A comma-separated list of file system names. If there is not at least one resource that matches each of the elements of `file_system_names`, then an error is returned.
-        :param list[str] file_system_ids: A comma-separated list of file system IDs. If after filtering, there is not at least one resource that matches each of the elements of `file_system_ids`, then an error is returned. This cannot be provided together with the `file_system_names` query parameter.
-        :param list[int] gids: A comma-separated list of group IDs. If there is not at least one resource that matches each of the elements of `gids`, then an error is returned. This cannot be provided together with `group_names` query parameter.
-        :param list[str] group_names: A comma-separated list of group names. If there is not at least one resource that matches each of the elements of `group_names`, then an error is returned. This cannot be provided together with `gids` query parameter.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
+        :param list[str] file_system_ids: A comma-separated list of file system IDs. If after filtering, there is not at least one resource that matches each of the elements of `file_system_ids`, then an error is returned. This cannot be provided together with the `file_system_names` query parameter. 
+        :param list[str] file_system_names: A comma-separated list of file system names. If there is not at least one resource that matches each of the elements of `file_system_names`, then an error is returned. 
+        :param list[int] gids: A comma-separated list of group IDs. If there is not at least one resource that matches each of the elements of `gids`, then an error is returned. This cannot be provided together with `group_names` query parameter. 
+        :param list[str] group_names: A comma-separated list of group names. If there is not at least one resource that matches each of the elements of `group_names`, then an error is returned. This cannot be provided together with `gids` query parameter. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -62,12 +62,12 @@ class QuotasApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        if file_system_names is not None:
-            if not isinstance(file_system_names, list):
-                file_system_names = [file_system_names]
         if file_system_ids is not None:
             if not isinstance(file_system_ids, list):
                 file_system_ids = [file_system_ids]
+        if file_system_names is not None:
+            if not isinstance(file_system_names, list):
+                file_system_names = [file_system_names]
         if gids is not None:
             if not isinstance(gids, list):
                 gids = [gids]
@@ -92,12 +92,12 @@ class QuotasApi(object):
         path_params = {}
 
         query_params = []
-        if 'file_system_names' in params:
-            query_params.append(('file_system_names', params['file_system_names']))
-            collection_formats['file_system_names'] = 'csv'
         if 'file_system_ids' in params:
             query_params.append(('file_system_ids', params['file_system_ids']))
             collection_formats['file_system_ids'] = 'csv'
+        if 'file_system_names' in params:
+            query_params.append(('file_system_names', params['file_system_names']))
+            collection_formats['file_system_names'] = 'csv'
         if 'gids' in params:
             query_params.append(('gids', params['gids']))
             collection_formats['gids'] = 'csv'
@@ -114,10 +114,6 @@ class QuotasApi(object):
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
-
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
@@ -168,16 +164,16 @@ class QuotasApi(object):
         >>> thread = api.api29_quotas_groups_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
-        :param list[str] file_system_ids: A comma-separated list of file system IDs. If after filtering, there is not at least one resource that matches each of the elements of `file_system_ids`, then an error is returned. This cannot be provided together with the `file_system_names` query parameter.
-        :param list[str] file_system_names: A comma-separated list of file system names. If there is not at least one resource that matches each of the elements of `file_system_names`, then an error is returned.
-        :param str filter: Exclude resources that don't match the specified criteria.
-        :param list[int] gids: A comma-separated list of group IDs. If there is not at least one resource that matches each of the elements of `gids`, then an error is returned. This cannot be provided together with `group_names` query parameter.
-        :param list[str] group_names: A comma-separated list of group names. If there is not at least one resource that matches each of the elements of `group_names`, then an error is returned. This cannot be provided together with `gids` query parameter.
-        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
-        :param int offset: The offset of the first resource to return from a collection.
-        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.
+        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result. 
+        :param list[str] file_system_ids: A comma-separated list of file system IDs. If after filtering, there is not at least one resource that matches each of the elements of `file_system_ids`, then an error is returned. This cannot be provided together with the `file_system_names` query parameter. 
+        :param list[str] file_system_names: A comma-separated list of file system names. If there is not at least one resource that matches each of the elements of `file_system_names`, then an error is returned. 
+        :param str filter: Exclude resources that don't match the specified criteria. 
+        :param list[int] gids: A comma-separated list of group IDs. If there is not at least one resource that matches each of the elements of `gids`, then an error is returned. This cannot be provided together with `group_names` query parameter. 
+        :param list[str] group_names: A comma-separated list of group names. If there is not at least one resource that matches each of the elements of `group_names`, then an error is returned. This cannot be provided together with `gids` query parameter. 
+        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
+        :param int offset: The offset of the first resource to return from a collection. 
+        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -287,12 +283,12 @@ class QuotasApi(object):
 
     def api29_quotas_groups_patch_with_http_info(
         self,
-        file_system_names=None,  # type: List[str]
+        quota=None,  # type: models.GroupQuotaPatch
         file_system_ids=None,  # type: List[str]
+        file_system_names=None,  # type: List[str]
         gids=None,  # type: List[int]
         group_names=None,  # type: List[str]
         names=None,  # type: List[str]
-        quota=None,  # type: models.GroupQuotaPatch
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -307,12 +303,12 @@ class QuotasApi(object):
         >>> thread = api.api29_quotas_groups_patch_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param list[str] file_system_names: A comma-separated list of file system names. If there is not at least one resource that matches each of the elements of `file_system_names`, then an error is returned.
-        :param list[str] file_system_ids: A comma-separated list of file system IDs. If after filtering, there is not at least one resource that matches each of the elements of `file_system_ids`, then an error is returned. This cannot be provided together with the `file_system_names` query parameter.
-        :param list[int] gids: A comma-separated list of group IDs. If there is not at least one resource that matches each of the elements of `gids`, then an error is returned. This cannot be provided together with `group_names` query parameter.
-        :param list[str] group_names: A comma-separated list of group names. If there is not at least one resource that matches each of the elements of `group_names`, then an error is returned. This cannot be provided together with `gids` query parameter.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
         :param GroupQuotaPatch quota:
+        :param list[str] file_system_ids: A comma-separated list of file system IDs. If after filtering, there is not at least one resource that matches each of the elements of `file_system_ids`, then an error is returned. This cannot be provided together with the `file_system_names` query parameter. 
+        :param list[str] file_system_names: A comma-separated list of file system names. If there is not at least one resource that matches each of the elements of `file_system_names`, then an error is returned. 
+        :param list[int] gids: A comma-separated list of group IDs. If there is not at least one resource that matches each of the elements of `gids`, then an error is returned. This cannot be provided together with `group_names` query parameter. 
+        :param list[str] group_names: A comma-separated list of group names. If there is not at least one resource that matches each of the elements of `group_names`, then an error is returned. This cannot be provided together with `gids` query parameter. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -322,12 +318,12 @@ class QuotasApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        if file_system_names is not None:
-            if not isinstance(file_system_names, list):
-                file_system_names = [file_system_names]
         if file_system_ids is not None:
             if not isinstance(file_system_ids, list):
                 file_system_ids = [file_system_ids]
+        if file_system_names is not None:
+            if not isinstance(file_system_names, list):
+                file_system_names = [file_system_names]
         if gids is not None:
             if not isinstance(gids, list):
                 gids = [gids]
@@ -352,12 +348,12 @@ class QuotasApi(object):
         path_params = {}
 
         query_params = []
-        if 'file_system_names' in params:
-            query_params.append(('file_system_names', params['file_system_names']))
-            collection_formats['file_system_names'] = 'csv'
         if 'file_system_ids' in params:
             query_params.append(('file_system_ids', params['file_system_ids']))
             collection_formats['file_system_ids'] = 'csv'
+        if 'file_system_names' in params:
+            query_params.append(('file_system_names', params['file_system_names']))
+            collection_formats['file_system_names'] = 'csv'
         if 'gids' in params:
             query_params.append(('gids', params['gids']))
             collection_formats['gids'] = 'csv'
@@ -406,11 +402,11 @@ class QuotasApi(object):
 
     def api29_quotas_groups_post_with_http_info(
         self,
+        quota=None,  # type: models.GroupQuotaPost
         file_system_ids=None,  # type: List[str]
         file_system_names=None,  # type: List[str]
         gids=None,  # type: List[int]
         group_names=None,  # type: List[str]
-        quota=None,  # type: models.GroupQuotaPost
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -425,11 +421,11 @@ class QuotasApi(object):
         >>> thread = api.api29_quotas_groups_post_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param list[str] file_system_ids: A comma-separated list of file system IDs. If after filtering, there is not at least one resource that matches each of the elements of `file_system_ids`, then an error is returned. This cannot be provided together with the `file_system_names` query parameter.
-        :param list[str] file_system_names: A comma-separated list of file system names. If there is not at least one resource that matches each of the elements of `file_system_names`, then an error is returned.
-        :param list[int] gids: A comma-separated list of group IDs. If there is not at least one resource that matches each of the elements of `gids`, then an error is returned. This cannot be provided together with `group_names` query parameter.
-        :param list[str] group_names: A comma-separated list of group names. If there is not at least one resource that matches each of the elements of `group_names`, then an error is returned. This cannot be provided together with `gids` query parameter.
         :param GroupQuotaPost quota:
+        :param list[str] file_system_ids: A comma-separated list of file system IDs. If after filtering, there is not at least one resource that matches each of the elements of `file_system_ids`, then an error is returned. This cannot be provided together with the `file_system_names` query parameter. 
+        :param list[str] file_system_names: A comma-separated list of file system names. If there is not at least one resource that matches each of the elements of `file_system_names`, then an error is returned. 
+        :param list[int] gids: A comma-separated list of group IDs. If there is not at least one resource that matches each of the elements of `gids`, then an error is returned. This cannot be provided together with `group_names` query parameter. 
+        :param list[str] group_names: A comma-separated list of group names. If there is not at least one resource that matches each of the elements of `group_names`, then an error is returned. This cannot be provided together with `gids` query parameter. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -533,8 +529,8 @@ class QuotasApi(object):
         >>> thread = api.api29_quotas_settings_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -690,8 +686,8 @@ class QuotasApi(object):
 
     def api29_quotas_users_delete_with_http_info(
         self,
-        file_system_names=None,  # type: List[str]
         file_system_ids=None,  # type: List[str]
+        file_system_names=None,  # type: List[str]
         names=None,  # type: List[str]
         uids=None,  # type: List[int]
         user_names=None,  # type: List[str]
@@ -709,11 +705,11 @@ class QuotasApi(object):
         >>> thread = api.api29_quotas_users_delete_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param list[str] file_system_names: A comma-separated list of file system names. If there is not at least one resource that matches each of the elements of `file_system_names`, then an error is returned.
-        :param list[str] file_system_ids: A comma-separated list of file system IDs. If after filtering, there is not at least one resource that matches each of the elements of `file_system_ids`, then an error is returned. This cannot be provided together with the `file_system_names` query parameter.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
-        :param list[int] uids: A comma-separated list of user IDs. If there is not at least one resource that matches each of the elements of `uids`, then an error is returned. This cannot be provided together with `user_names` query parameter.
-        :param list[str] user_names: A comma-separated list of user names. If there is not at least one resource that matches each of the elements of `user_names`, then an error is returned. This cannot be provided together with `uids` query parameter.
+        :param list[str] file_system_ids: A comma-separated list of file system IDs. If after filtering, there is not at least one resource that matches each of the elements of `file_system_ids`, then an error is returned. This cannot be provided together with the `file_system_names` query parameter. 
+        :param list[str] file_system_names: A comma-separated list of file system names. If there is not at least one resource that matches each of the elements of `file_system_names`, then an error is returned. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
+        :param list[int] uids: A comma-separated list of user IDs. If there is not at least one resource that matches each of the elements of `uids`, then an error is returned. This cannot be provided together with `user_names` query parameter. 
+        :param list[str] user_names: A comma-separated list of user names. If there is not at least one resource that matches each of the elements of `user_names`, then an error is returned. This cannot be provided together with `uids` query parameter. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -723,12 +719,12 @@ class QuotasApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        if file_system_names is not None:
-            if not isinstance(file_system_names, list):
-                file_system_names = [file_system_names]
         if file_system_ids is not None:
             if not isinstance(file_system_ids, list):
                 file_system_ids = [file_system_ids]
+        if file_system_names is not None:
+            if not isinstance(file_system_names, list):
+                file_system_names = [file_system_names]
         if names is not None:
             if not isinstance(names, list):
                 names = [names]
@@ -753,12 +749,12 @@ class QuotasApi(object):
         path_params = {}
 
         query_params = []
-        if 'file_system_names' in params:
-            query_params.append(('file_system_names', params['file_system_names']))
-            collection_formats['file_system_names'] = 'csv'
         if 'file_system_ids' in params:
             query_params.append(('file_system_ids', params['file_system_ids']))
             collection_formats['file_system_ids'] = 'csv'
+        if 'file_system_names' in params:
+            query_params.append(('file_system_names', params['file_system_names']))
+            collection_formats['file_system_names'] = 'csv'
         if 'names' in params:
             query_params.append(('names', params['names']))
             collection_formats['names'] = 'csv'
@@ -775,10 +771,6 @@ class QuotasApi(object):
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
-
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
@@ -829,16 +821,16 @@ class QuotasApi(object):
         >>> thread = api.api29_quotas_users_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
-        :param list[str] file_system_ids: A comma-separated list of file system IDs. If after filtering, there is not at least one resource that matches each of the elements of `file_system_ids`, then an error is returned. This cannot be provided together with the `file_system_names` query parameter.
-        :param list[str] file_system_names: A comma-separated list of file system names. If there is not at least one resource that matches each of the elements of `file_system_names`, then an error is returned.
-        :param str filter: Exclude resources that don't match the specified criteria.
-        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
-        :param int offset: The offset of the first resource to return from a collection.
-        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.
-        :param list[int] uids: A comma-separated list of user IDs. If there is not at least one resource that matches each of the elements of `uids`, then an error is returned. This cannot be provided together with `user_names` query parameter.
-        :param list[str] user_names: A comma-separated list of user names. If there is not at least one resource that matches each of the elements of `user_names`, then an error is returned. This cannot be provided together with `uids` query parameter.
+        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result. 
+        :param list[str] file_system_ids: A comma-separated list of file system IDs. If after filtering, there is not at least one resource that matches each of the elements of `file_system_ids`, then an error is returned. This cannot be provided together with the `file_system_names` query parameter. 
+        :param list[str] file_system_names: A comma-separated list of file system names. If there is not at least one resource that matches each of the elements of `file_system_names`, then an error is returned. 
+        :param str filter: Exclude resources that don't match the specified criteria. 
+        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
+        :param int offset: The offset of the first resource to return from a collection. 
+        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response. 
+        :param list[int] uids: A comma-separated list of user IDs. If there is not at least one resource that matches each of the elements of `uids`, then an error is returned. This cannot be provided together with `user_names` query parameter. 
+        :param list[str] user_names: A comma-separated list of user names. If there is not at least one resource that matches each of the elements of `user_names`, then an error is returned. This cannot be provided together with `uids` query parameter. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -948,12 +940,12 @@ class QuotasApi(object):
 
     def api29_quotas_users_patch_with_http_info(
         self,
-        file_system_names=None,  # type: List[str]
+        quota=None,  # type: models.UserQuotaPatch
         file_system_ids=None,  # type: List[str]
+        file_system_names=None,  # type: List[str]
         names=None,  # type: List[str]
         uids=None,  # type: List[int]
         user_names=None,  # type: List[str]
-        quota=None,  # type: models.UserQuotaPatch
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -968,12 +960,12 @@ class QuotasApi(object):
         >>> thread = api.api29_quotas_users_patch_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param list[str] file_system_names: A comma-separated list of file system names. If there is not at least one resource that matches each of the elements of `file_system_names`, then an error is returned.
-        :param list[str] file_system_ids: A comma-separated list of file system IDs. If after filtering, there is not at least one resource that matches each of the elements of `file_system_ids`, then an error is returned. This cannot be provided together with the `file_system_names` query parameter.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
-        :param list[int] uids: A comma-separated list of user IDs. If there is not at least one resource that matches each of the elements of `uids`, then an error is returned. This cannot be provided together with `user_names` query parameter.
-        :param list[str] user_names: A comma-separated list of user names. If there is not at least one resource that matches each of the elements of `user_names`, then an error is returned. This cannot be provided together with `uids` query parameter.
         :param UserQuotaPatch quota:
+        :param list[str] file_system_ids: A comma-separated list of file system IDs. If after filtering, there is not at least one resource that matches each of the elements of `file_system_ids`, then an error is returned. This cannot be provided together with the `file_system_names` query parameter. 
+        :param list[str] file_system_names: A comma-separated list of file system names. If there is not at least one resource that matches each of the elements of `file_system_names`, then an error is returned. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
+        :param list[int] uids: A comma-separated list of user IDs. If there is not at least one resource that matches each of the elements of `uids`, then an error is returned. This cannot be provided together with `user_names` query parameter. 
+        :param list[str] user_names: A comma-separated list of user names. If there is not at least one resource that matches each of the elements of `user_names`, then an error is returned. This cannot be provided together with `uids` query parameter. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -983,12 +975,12 @@ class QuotasApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        if file_system_names is not None:
-            if not isinstance(file_system_names, list):
-                file_system_names = [file_system_names]
         if file_system_ids is not None:
             if not isinstance(file_system_ids, list):
                 file_system_ids = [file_system_ids]
+        if file_system_names is not None:
+            if not isinstance(file_system_names, list):
+                file_system_names = [file_system_names]
         if names is not None:
             if not isinstance(names, list):
                 names = [names]
@@ -1013,12 +1005,12 @@ class QuotasApi(object):
         path_params = {}
 
         query_params = []
-        if 'file_system_names' in params:
-            query_params.append(('file_system_names', params['file_system_names']))
-            collection_formats['file_system_names'] = 'csv'
         if 'file_system_ids' in params:
             query_params.append(('file_system_ids', params['file_system_ids']))
             collection_formats['file_system_ids'] = 'csv'
+        if 'file_system_names' in params:
+            query_params.append(('file_system_names', params['file_system_names']))
+            collection_formats['file_system_names'] = 'csv'
         if 'names' in params:
             query_params.append(('names', params['names']))
             collection_formats['names'] = 'csv'
@@ -1067,11 +1059,11 @@ class QuotasApi(object):
 
     def api29_quotas_users_post_with_http_info(
         self,
+        quota=None,  # type: models.UserQuotaPost
         file_system_ids=None,  # type: List[str]
         file_system_names=None,  # type: List[str]
         uids=None,  # type: List[int]
         user_names=None,  # type: List[str]
-        quota=None,  # type: models.UserQuotaPost
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -1086,11 +1078,11 @@ class QuotasApi(object):
         >>> thread = api.api29_quotas_users_post_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param list[str] file_system_ids: A comma-separated list of file system IDs. If after filtering, there is not at least one resource that matches each of the elements of `file_system_ids`, then an error is returned. This cannot be provided together with the `file_system_names` query parameter.
-        :param list[str] file_system_names: A comma-separated list of file system names. If there is not at least one resource that matches each of the elements of `file_system_names`, then an error is returned.
-        :param list[int] uids: A comma-separated list of user IDs. If there is not at least one resource that matches each of the elements of `uids`, then an error is returned. This cannot be provided together with `user_names` query parameter.
-        :param list[str] user_names: A comma-separated list of user names. If there is not at least one resource that matches each of the elements of `user_names`, then an error is returned. This cannot be provided together with `uids` query parameter.
         :param UserQuotaPost quota:
+        :param list[str] file_system_ids: A comma-separated list of file system IDs. If after filtering, there is not at least one resource that matches each of the elements of `file_system_ids`, then an error is returned. This cannot be provided together with the `file_system_names` query parameter. 
+        :param list[str] file_system_names: A comma-separated list of file system names. If there is not at least one resource that matches each of the elements of `file_system_names`, then an error is returned. 
+        :param list[int] uids: A comma-separated list of user IDs. If there is not at least one resource that matches each of the elements of `uids`, then an error is returned. This cannot be provided together with `user_names` query parameter. 
+        :param list[str] user_names: A comma-separated list of user names. If there is not at least one resource that matches each of the elements of `user_names`, then an error is returned. This cannot be provided together with `uids` query parameter. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.

@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.16
     
@@ -32,27 +32,27 @@ class FileSystemExport(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
-        'enabled': 'bool',
+        'server': 'FixedReference',
+        'policy_type': 'str',
+        'share_policy': 'Reference',
         'export_name': 'str',
         'member': 'FixedReference',
+        'enabled': 'bool',
         'policy': 'Reference',
-        'server': 'FixedReference',
-        'share_policy': 'Reference',
-        'status': 'str',
-        'policy_type': 'str'
+        'status': 'str'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
-        'enabled': 'enabled',
+        'server': 'server',
+        'policy_type': 'policy_type',
+        'share_policy': 'share_policy',
         'export_name': 'export_name',
         'member': 'member',
+        'enabled': 'enabled',
         'policy': 'policy',
-        'server': 'server',
-        'share_policy': 'share_policy',
-        'status': 'status',
-        'policy_type': 'policy_type'
+        'status': 'status'
     }
 
     required_args = {
@@ -62,48 +62,48 @@ class FileSystemExport(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
-        enabled=None,  # type: bool
+        server=None,  # type: models.FixedReference
+        policy_type=None,  # type: str
+        share_policy=None,  # type: models.Reference
         export_name=None,  # type: str
         member=None,  # type: models.FixedReference
+        enabled=None,  # type: bool
         policy=None,  # type: models.Reference
-        server=None,  # type: models.FixedReference
-        share_policy=None,  # type: models.Reference
         status=None,  # type: str
-        policy_type=None,  # type: str
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            enabled (bool): Returns a value of `true` if and only if the export policy that manages this export is enabled AND the protocol is enabled on the file system.
-            export_name (str): The name of the export used by clients to mount the file system. Export names must be unique within the same protocol/server combination.
-            member (FixedReference): Reference to the file system the policy is applied to.
-            policy (Reference): Reference to the NFS export policy or SMB client policy.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
             server (FixedReference): Reference to the server the export will be visible on.
+            policy_type (str): Policy type attached to the export. It is either SMB or NFS. 
             share_policy (Reference): Reference to the SMB share policy (only used for SMB).
-            status (str): Explains why `enabled` is `false`. Valid values include `policy_disabled` and `protocol_disabled`.
-            policy_type (str): Policy type attached to the export. It is either SMB or NFS.
+            export_name (str): The name of the export used by clients to mount the file system. Export names must be unique within the same protocol/server combination. 
+            member (FixedReference): Reference to the file system the policy is applied to.
+            enabled (bool): Returns a value of `true` if and only if the export policy that manages this export is enabled AND the protocol is enabled on the file system. 
+            policy (Reference): Reference to the NFS export policy or SMB client policy.
+            status (str): Explains why `enabled` is `false`. Valid values include `policy_disabled` and `protocol_disabled`. 
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
-        if enabled is not None:
-            self.enabled = enabled
+        if server is not None:
+            self.server = server
+        if policy_type is not None:
+            self.policy_type = policy_type
+        if share_policy is not None:
+            self.share_policy = share_policy
         if export_name is not None:
             self.export_name = export_name
         if member is not None:
             self.member = member
+        if enabled is not None:
+            self.enabled = enabled
         if policy is not None:
             self.policy = policy
-        if server is not None:
-            self.server = server
-        if share_policy is not None:
-            self.share_policy = share_policy
         if status is not None:
             self.status = status
-        if policy_type is not None:
-            self.policy_type = policy_type
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

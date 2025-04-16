@@ -31,16 +31,16 @@ class PolicyMemberExport(object):
     """
     swagger_types = {
         'destroyed': 'bool',
-        'enabled': 'bool',
         'member': 'FixedReferenceWithType',
+        'enabled': 'bool',
         'policy': 'FixedReferenceWithType',
         'export_name': 'str'
     }
 
     attribute_map = {
         'destroyed': 'destroyed',
-        'enabled': 'enabled',
         'member': 'member',
+        'enabled': 'enabled',
         'policy': 'policy',
         'export_name': 'export_name'
     }
@@ -51,25 +51,25 @@ class PolicyMemberExport(object):
     def __init__(
         self,
         destroyed=None,  # type: bool
-        enabled=None,  # type: bool
         member=None,  # type: models.FixedReferenceWithType
+        enabled=None,  # type: bool
         policy=None,  # type: models.FixedReferenceWithType
         export_name=None,  # type: str
     ):
         """
         Keyword args:
-            destroyed (bool): Returns a value of `true` if the member is destroyed.
-            enabled (bool): Returns a value of `true` if the policy is enabled.
+            destroyed (bool): Returns a value of `true` if the member is destroyed. 
             member (FixedReferenceWithType): Reference to the resource that the policy is applied to.
+            enabled (bool): Returns a value of `true` if the policy is enabled. 
             policy (FixedReferenceWithType): Reference to the policy.
             export_name (str): The export name for accessing this export.
         """
         if destroyed is not None:
             self.destroyed = destroyed
-        if enabled is not None:
-            self.enabled = enabled
         if member is not None:
             self.member = member
+        if enabled is not None:
+            self.enabled = enabled
         if policy is not None:
             self.policy = policy
         if export_name is not None:

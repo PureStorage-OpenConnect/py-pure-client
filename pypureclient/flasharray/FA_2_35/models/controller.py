@@ -32,21 +32,21 @@ class Controller(object):
     swagger_types = {
         'name': 'str',
         'mode': 'str',
+        'mode_since': 'int',
         'model': 'str',
-        'status': 'str',
         'type': 'str',
         'version': 'str',
-        'mode_since': 'int'
+        'status': 'str'
     }
 
     attribute_map = {
         'name': 'name',
         'mode': 'mode',
+        'mode_since': 'mode_since',
         'model': 'model',
-        'status': 'status',
         'type': 'type',
         'version': 'version',
-        'mode_since': 'mode_since'
+        'status': 'status'
     }
 
     required_args = {
@@ -56,36 +56,36 @@ class Controller(object):
         self,
         name=None,  # type: str
         mode=None,  # type: str
+        mode_since=None,  # type: int
         model=None,  # type: str
-        status=None,  # type: str
         type=None,  # type: str
         version=None,  # type: str
-        mode_since=None,  # type: int
+        status=None,  # type: str
     ):
         """
         Keyword args:
-            name (str): A locally unique, system-generated name. The name cannot be modified.
-            mode (str): Mode of controller. Values include `not present`, `offline`, `primary`, and `secondary`.
+            name (str): A locally unique, system-generated name. The name cannot be modified. 
+            mode (str): Mode of controller. Values include `not present`, `offline`, `primary`, and `secondary`. 
+            mode_since (int): The time at which the current mode of the controller was last set. It is measured in milliseconds since the UNIX epoch. If the controller mode is `not present` or `offline`, this field will be null. 
             model (str)
-            status (str): Status of controller. Values include `not ready`, `ready`, `unknown`, and `updating`.
-            type (str): Type of controller. Values include `array_controller` and `shelf_controller`.
+            type (str): Type of controller. Values include `array_controller` and `shelf_controller`. 
             version (str)
-            mode_since (int): The time at which the current mode of the controller was last set. It is measured in milliseconds since the UNIX epoch. If the controller mode is `not present` or `offline`, this field will be null.
+            status (str): Status of controller. Values include `not ready`, `ready`, `unknown`, and `updating`. 
         """
         if name is not None:
             self.name = name
         if mode is not None:
             self.mode = mode
+        if mode_since is not None:
+            self.mode_since = mode_since
         if model is not None:
             self.model = model
-        if status is not None:
-            self.status = status
         if type is not None:
             self.type = type
         if version is not None:
             self.version = version
-        if mode_since is not None:
-            self.mode_since = mode_since
+        if status is not None:
+            self.status = status
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

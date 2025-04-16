@@ -31,14 +31,14 @@ class ResourceSpaceNoId(object):
     """
     swagger_types = {
         'name': 'str',
-        'space': 'Space',
-        'time': 'int'
+        'time': 'int',
+        'space': 'Space'
     }
 
     attribute_map = {
         'name': 'name',
-        'space': 'space',
-        'time': 'time'
+        'time': 'time',
+        'space': 'space'
     }
 
     required_args = {
@@ -47,21 +47,21 @@ class ResourceSpaceNoId(object):
     def __init__(
         self,
         name=None,  # type: str
-        space=None,  # type: models.Space
         time=None,  # type: int
+        space=None,  # type: models.Space
     ):
         """
         Keyword args:
-            name (str): A locally unique, system-generated name. The name cannot be modified.
-            space (Space): Displays size and space consumption information.
+            name (str): A locally unique, system-generated name. The name cannot be modified. 
             time (int)
+            space (Space): Displays size and space consumption information. 
         """
         if name is not None:
             self.name = name
-        if space is not None:
-            self.space = space
         if time is not None:
             self.time = time
+        if space is not None:
+            self.space = space
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

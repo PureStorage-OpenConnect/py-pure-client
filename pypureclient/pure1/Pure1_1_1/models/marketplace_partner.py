@@ -3,7 +3,7 @@
 """
     Pure1 Public REST API
 
-    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)  The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
+    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)   The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
 
     OpenAPI spec version: 1.1
     
@@ -30,13 +30,13 @@ class MarketplacePartner(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
-        'reference_id': 'str'
+        'reference_id': 'str',
+        'name': 'str'
     }
 
     attribute_map = {
-        'name': 'name',
-        'reference_id': 'reference_id'
+        'reference_id': 'reference_id',
+        'name': 'name'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class MarketplacePartner(object):
 
     def __init__(
         self,
-        name=None,  # type: str
         reference_id=None,  # type: str
+        name=None,  # type: str
     ):
         """
         Keyword args:
-            name (str): Name or identifier of the marketplace parter who owns the reference ID.
-            reference_id (str): External ID the marketplace partner knows to refer to this license.
+            reference_id (str): External ID the marketplace partner knows to refer to this license. 
+            name (str): Name or identifier of the marketplace parter who owns the reference ID. 
         """
-        if name is not None:
-            self.name = name
         if reference_id is not None:
             self.reference_id = reference_id
+        if name is not None:
+            self.name = name
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.11, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.11, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.11
     
@@ -32,31 +32,31 @@ class ObjectStoreAccessPolicy(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
-        'enabled': 'bool',
-        'is_local': 'bool',
-        'location': 'FixedReference',
         'policy_type': 'str',
-        'account': 'FixedReference',
-        'arn': 'str',
+        'location': 'FixedReference',
+        'is_local': 'bool',
+        'enabled': 'bool',
         'created': 'int',
         'description': 'str',
         'rules': 'list[PolicyRuleObjectAccess]',
-        'updated': 'int'
+        'arn': 'str',
+        'updated': 'int',
+        'account': 'FixedReference'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
-        'enabled': 'enabled',
-        'is_local': 'is_local',
-        'location': 'location',
         'policy_type': 'policy_type',
-        'account': 'account',
-        'arn': 'arn',
+        'location': 'location',
+        'is_local': 'is_local',
+        'enabled': 'enabled',
         'created': 'created',
         'description': 'description',
         'rules': 'rules',
-        'updated': 'updated'
+        'arn': 'arn',
+        'updated': 'updated',
+        'account': 'account'
     }
 
     required_args = {
@@ -66,56 +66,56 @@ class ObjectStoreAccessPolicy(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
-        enabled=None,  # type: bool
-        is_local=None,  # type: bool
-        location=None,  # type: models.FixedReference
         policy_type=None,  # type: str
-        account=None,  # type: models.FixedReference
-        arn=None,  # type: str
+        location=None,  # type: models.FixedReference
+        is_local=None,  # type: bool
+        enabled=None,  # type: bool
         created=None,  # type: int
         description=None,  # type: str
         rules=None,  # type: List[models.PolicyRuleObjectAccess]
+        arn=None,  # type: str
         updated=None,  # type: int
+        account=None,  # type: models.FixedReference
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            enabled (bool): If `true`, the policy is enabled. If not specified, defaults to `true`.
-            is_local (bool): Whether the policy is defined on the local array.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            policy_type (str): Type of the policy. Valid values are `nfs`, `object-access`, `smb-client`, `smb-share`, and `snapshot`. 
             location (FixedReference): Reference to the array where the policy is defined.
-            policy_type (str): Type of the policy. Valid values are `nfs`, `object-access`, `smb-client`, `smb-share`, and `snapshot`.
-            account (FixedReference): Reference of the associated account. If the policy is not associated with an account, all fields in the reference possess `null` values.
-            arn (str): Amazon Resource Name of the policy. Used when referencing the policy via S3 APIs.
+            is_local (bool): Whether the policy is defined on the local array.
+            enabled (bool): If `true`, the policy is enabled. If not specified, defaults to `true`. 
             created (int): Creation timestamp of the object.
-            description (str): A description of the policy, optionally specified when the policy is created. Cannot be modified for an existing policy.
+            description (str): A description of the policy, optionally specified when the policy is created. Cannot be modified for an existing policy. 
             rules (list[PolicyRuleObjectAccess])
+            arn (str): Amazon Resource Name of the policy. Used when referencing the policy via S3 APIs. 
             updated (int): The last updated timestamp of the object.
+            account (FixedReference): Reference of the associated account. If the policy is not associated with an account, all fields in the reference possess `null` values. 
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
-        if enabled is not None:
-            self.enabled = enabled
-        if is_local is not None:
-            self.is_local = is_local
-        if location is not None:
-            self.location = location
         if policy_type is not None:
             self.policy_type = policy_type
-        if account is not None:
-            self.account = account
-        if arn is not None:
-            self.arn = arn
+        if location is not None:
+            self.location = location
+        if is_local is not None:
+            self.is_local = is_local
+        if enabled is not None:
+            self.enabled = enabled
         if created is not None:
             self.created = created
         if description is not None:
             self.description = description
         if rules is not None:
             self.rules = rules
+        if arn is not None:
+            self.arn = arn
         if updated is not None:
             self.updated = updated
+        if account is not None:
+            self.account = account
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

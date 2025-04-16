@@ -30,27 +30,27 @@ class Workload(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
+        'id': 'str',
         'context': 'FixedReference',
-        'created': 'int',
+        'time_remaining': 'int',
         'destroyed': 'bool',
+        'created': 'int',
         'preset': 'WorkloadPreset',
-        'status': 'str',
         'status_details': 'list[str]',
-        'time_remaining': 'int'
+        'status': 'str'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
+        'id': 'id',
         'context': 'context',
-        'created': 'created',
+        'time_remaining': 'time_remaining',
         'destroyed': 'destroyed',
+        'created': 'created',
         'preset': 'preset',
-        'status': 'status',
         'status_details': 'status_details',
-        'time_remaining': 'time_remaining'
+        'status': 'status'
     }
 
     required_args = {
@@ -58,46 +58,46 @@ class Workload(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
+        id=None,  # type: str
         context=None,  # type: models.FixedReference
-        created=None,  # type: int
-        destroyed=None,  # type: bool
-        preset=None,  # type: models.WorkloadPreset
-        status=None,  # type: str
-        status_details=None,  # type: List[str]
         time_remaining=None,  # type: int
+        destroyed=None,  # type: bool
+        created=None,  # type: int
+        preset=None,  # type: models.WorkloadPreset
+        status_details=None,  # type: List[str]
+        status=None,  # type: str
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            name (str): A user-specified name. The name must be locally unique and can be changed.
-            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
+            name (str): A user-specified name. The name must be locally unique and can be changed. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource. 
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request.  Other parameters provided with the request, such as names of volumes or snapshots,  are resolved relative to the provided `context`. 
+            time_remaining (int): The amount of time left until the destroyed workload is permanently eradicated, measured in milliseconds. Before the `time_remaining` period has elapsed, the destroyed workload can be recovered by setting `destroyed=false`. 
+            destroyed (bool): Returns a value of `true` if the workload has been destroyed and is pending eradication. The `time_remaining` displays the amount of time left until the destroyed workload is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed workload can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the workload is permanently eradicated and can no longer be recovered. 
             created (int): The workload creation time, measured in milliseconds since the UNIX epoch.
-            destroyed (bool): Returns a value of `true` if the workload has been destroyed and is pending eradication. The `time_remaining` displays the amount of time left until the destroyed workload is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed workload can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the workload is permanently eradicated and can no longer be recovered.
-            preset (WorkloadPreset): A reference to the preset the workload was deployed from. If the preset has since been destroyed, `name` will be `null`.
-            status (str): The status of the workload. Supported values are `creating`, `ready`, `destroying`, `destroyed`, `eradicating` and `recovering`.
-            status_details (list[str]): Additional information about the workload status. For example, if the workload status is `creating`, status details might describe what resources are currently being created.
-            time_remaining (int): The amount of time left until the destroyed workload is permanently eradicated, measured in milliseconds. Before the `time_remaining` period has elapsed, the destroyed workload can be recovered by setting `destroyed=false`.
+            preset (WorkloadPreset): A reference to the preset the workload was deployed from. If the preset has since been destroyed, `name` will be `null`. 
+            status_details (list[str]): Additional information about the workload status. For example, if the workload status is `creating`, status details might describe what resources are currently being created. 
+            status (str): The status of the workload. Supported values are `creating`, `ready`, `destroying`, `destroyed`, `eradicating` and `recovering`. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
         if context is not None:
             self.context = context
-        if created is not None:
-            self.created = created
-        if destroyed is not None:
-            self.destroyed = destroyed
-        if preset is not None:
-            self.preset = preset
-        if status is not None:
-            self.status = status
-        if status_details is not None:
-            self.status_details = status_details
         if time_remaining is not None:
             self.time_remaining = time_remaining
+        if destroyed is not None:
+            self.destroyed = destroyed
+        if created is not None:
+            self.created = created
+        if preset is not None:
+            self.preset = preset
+        if status_details is not None:
+            self.status_details = status_details
+        if status is not None:
+            self.status = status
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

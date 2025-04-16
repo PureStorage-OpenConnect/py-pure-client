@@ -30,29 +30,29 @@ class DirectorySnapshot(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
-        'client_name': 'str',
-        'created': 'int',
+        'id': 'str',
+        'time_remaining': 'int',
         'destroyed': 'bool',
-        'policy': 'FixedReference',
+        'created': 'int',
         'source': 'FixedReference',
         'suffix': 'int',
-        'time_remaining': 'int',
-        'space': 'Space'
+        'client_name': 'str',
+        'space': 'Space',
+        'policy': 'FixedReference'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
-        'client_name': 'client_name',
-        'created': 'created',
+        'id': 'id',
+        'time_remaining': 'time_remaining',
         'destroyed': 'destroyed',
-        'policy': 'policy',
+        'created': 'created',
         'source': 'source',
         'suffix': 'suffix',
-        'time_remaining': 'time_remaining',
-        'space': 'space'
+        'client_name': 'client_name',
+        'space': 'space',
+        'policy': 'policy'
     }
 
     required_args = {
@@ -60,50 +60,50 @@ class DirectorySnapshot(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
-        client_name=None,  # type: str
-        created=None,  # type: int
+        id=None,  # type: str
+        time_remaining=None,  # type: int
         destroyed=None,  # type: bool
-        policy=None,  # type: models.FixedReference
+        created=None,  # type: int
         source=None,  # type: models.FixedReference
         suffix=None,  # type: int
-        time_remaining=None,  # type: int
+        client_name=None,  # type: str
         space=None,  # type: models.Space
+        policy=None,  # type: models.FixedReference
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            name (str): A user-specified name. The name must be locally unique and can be changed.
-            client_name (str): The customizable portion of the client-visible snapshot name. A full snapshot name is constructed in the form of `DIR.CLIENT_NAME.SUFFIX` where `DIR` is the full managed directory name, `CLIENT_NAME` is the client name, and `SUFFIX` is the suffix. The client-visible snapshot name is `CLIENT_NAME.SUFFIX`.
-            created (int): The snapshot creation time, measured in milliseconds since the UNIX epoch.
-            destroyed (bool): Returns a value of `true` if the snapshot has been destroyed and is pending eradication. The `time_remaining` value displays the amount of time left until the destroyed directory snapshot is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed directory snapshot can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the directory snapshot is permanently eradicated and can no longer be recovered.
-            policy (FixedReference): The snapshot policy that manages this snapshot, if applicable.
-            source (FixedReference): The directory from which this snapshot was taken.
-            suffix (int): The suffix that is appended to the `source_name` value and the `client_name` value to generate the full directory snapshot name in the form of `DIR.CLIENT_NAME.SUFFIX` where `DIR` is the managed directory name, `CLIENT_NAME` is the client name, and `SUFFIX` is the suffix. If the suffix is a string, this field returns `null`. See the `name` value for the full snapshot name including the suffix.
-            time_remaining (int): The amount of time left until the directory snapshot is permanently eradicated, measured in milliseconds. Before the `time_remaining` period has elapsed, the snapshot can be recovered by setting `destroyed=false` if it is destroyed, by setting `policy=\"\"` if it is managed by a snapshot policy, or by setting `keep_for=\"\"` if it is a manual snapshot.
-            space (Space): Displays size and space consumption details.
+            name (str): A user-specified name. The name must be locally unique and can be changed. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource. 
+            time_remaining (int): The amount of time left until the directory snapshot is permanently eradicated, measured in milliseconds. Before the `time_remaining` period has elapsed, the snapshot can be recovered by setting `destroyed=false` if it is destroyed, by setting `policy=\"\"` if it is managed by a snapshot policy, or by setting `keep_for=\"\" ` if it is a manual snapshot. 
+            destroyed (bool): Returns a value of `true` if the snapshot has been destroyed and is pending eradication. The `time_remaining` value displays the amount of time left until the destroyed directory snapshot is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed directory snapshot can be recovered by setting `destroyed=false`.  Once the `time_remaining` period has elapsed, the directory snapshot is permanently eradicated and can no longer be recovered. 
+            created (int): The snapshot creation time, measured in milliseconds since the UNIX epoch. 
+            source (FixedReference): The directory from which this snapshot was taken. 
+            suffix (int): The suffix that is appended to the `source_name` value and the `client_name` value to generate the full directory snapshot name in the form of `DIR.CLIENT_NAME.SUFFIX` where `DIR` is the managed directory name, `CLIENT_NAME` is the client name, and `SUFFIX` is the suffix. If the suffix is a string, this field returns `null`. See the `name` value for the full snapshot name including the suffix. 
+            client_name (str): The customizable portion of the client-visible snapshot name. A full snapshot name is constructed in the form of `DIR.CLIENT_NAME.SUFFIX` where `DIR` is the full managed directory name, `CLIENT_NAME` is the client name, and `SUFFIX` is the suffix. The client-visible snapshot name is `CLIENT_NAME.SUFFIX`. 
+            space (Space): Displays size and space consumption details. 
+            policy (FixedReference): The snapshot policy that manages this snapshot, if applicable. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
-        if client_name is not None:
-            self.client_name = client_name
-        if created is not None:
-            self.created = created
+        if id is not None:
+            self.id = id
+        if time_remaining is not None:
+            self.time_remaining = time_remaining
         if destroyed is not None:
             self.destroyed = destroyed
-        if policy is not None:
-            self.policy = policy
+        if created is not None:
+            self.created = created
         if source is not None:
             self.source = source
         if suffix is not None:
             self.suffix = suffix
-        if time_remaining is not None:
-            self.time_remaining = time_remaining
+        if client_name is not None:
+            self.client_name = client_name
         if space is not None:
             self.space = space
+        if policy is not None:
+            self.policy = policy
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

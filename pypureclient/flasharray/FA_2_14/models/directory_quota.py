@@ -30,27 +30,27 @@ class DirectoryQuota(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'quota_limit': 'int',
+        'enforced': 'bool',
+        'path': 'str',
+        'rule_name': 'str',
+        'percentage_used': 'float',
+        'usage': 'int',
         'directory': 'FixedReferenceWithType',
         'enabled': 'bool',
-        'enforced': 'bool',
-        'quota_limit': 'int',
-        'path': 'str',
-        'percentage_used': 'float',
-        'policy': 'FixedReferenceWithType',
-        'rule_name': 'str',
-        'usage': 'int'
+        'policy': 'FixedReferenceWithType'
     }
 
     attribute_map = {
+        'quota_limit': 'quota_limit',
+        'enforced': 'enforced',
+        'path': 'path',
+        'rule_name': 'rule_name',
+        'percentage_used': 'percentage_used',
+        'usage': 'usage',
         'directory': 'directory',
         'enabled': 'enabled',
-        'enforced': 'enforced',
-        'quota_limit': 'quota_limit',
-        'path': 'path',
-        'percentage_used': 'percentage_used',
-        'policy': 'policy',
-        'rule_name': 'rule_name',
-        'usage': 'usage'
+        'policy': 'policy'
     }
 
     required_args = {
@@ -58,46 +58,46 @@ class DirectoryQuota(object):
 
     def __init__(
         self,
+        quota_limit=None,  # type: int
+        enforced=None,  # type: bool
+        path=None,  # type: str
+        rule_name=None,  # type: str
+        percentage_used=None,  # type: float
+        usage=None,  # type: int
         directory=None,  # type: models.FixedReferenceWithType
         enabled=None,  # type: bool
-        enforced=None,  # type: bool
-        quota_limit=None,  # type: int
-        path=None,  # type: str
-        percentage_used=None,  # type: float
         policy=None,  # type: models.FixedReferenceWithType
-        rule_name=None,  # type: str
-        usage=None,  # type: int
     ):
         """
         Keyword args:
+            quota_limit (int): Effective quota limit imposed by the quota policy rule attached to the directory, measured in bytes. 
+            enforced (bool): Defines whether the quota rule is enforced or unenforced. If the quota rule is enforced and logical space usage exceeds the quota limit, any modification operations that result in a need for more space are blocked. If the quota rule is unenforced and logical space usage exceeds the quota limit, notification emails are sent to targets that are specified using the `notification` parameter. No client operations are blocked when an unenforced limit is exceeded. If set to `true`, the limit is enforced. If set to `false`, notification targets are informed when the usage exceeds 80 percent of the limit. 
+            path (str): Absolute path of the directory in the file system. 
+            rule_name (str): Name of the rule that results in this quota and behavior being applied to this directory. 
+            percentage_used (float): The percentage of the space used in the directory with respect to the quota limit. 
+            usage (int): The amount of logically written data for the directory, measured in bytes. 
             directory (FixedReferenceWithType): The directory to which the quota applies.
-            enabled (bool): Returns a value of `true` if the policy is enabled.
-            enforced (bool): Defines whether the quota rule is enforced or unenforced. If the quota rule is enforced and logical space usage exceeds the quota limit, any modification operations that result in a need for more space are blocked. If the quota rule is unenforced and logical space usage exceeds the quota limit, notification emails are sent to targets that are specified using the `notification` parameter. No client operations are blocked when an unenforced limit is exceeded. If set to `true`, the limit is enforced. If set to `false`, notification targets are informed when the usage exceeds 80 percent of the limit.
-            quota_limit (int): Effective quota limit imposed by the quota policy rule attached to the directory, measured in bytes.
-            path (str): Absolute path of the directory in the file system.
-            percentage_used (float): The percentage of the space used in the directory with respect to the quota limit.
-            policy (FixedReferenceWithType): The effective quota policy that imposes the limit. This is the policy with the lowest limit.
-            rule_name (str): Name of the rule that results in this quota and behavior being applied to this directory.
-            usage (int): The amount of logically written data for the directory, measured in bytes.
+            enabled (bool): Returns a value of `true` if the policy is enabled. 
+            policy (FixedReferenceWithType): The effective quota policy that imposes the limit. This is the policy with the lowest limit. 
         """
+        if quota_limit is not None:
+            self.quota_limit = quota_limit
+        if enforced is not None:
+            self.enforced = enforced
+        if path is not None:
+            self.path = path
+        if rule_name is not None:
+            self.rule_name = rule_name
+        if percentage_used is not None:
+            self.percentage_used = percentage_used
+        if usage is not None:
+            self.usage = usage
         if directory is not None:
             self.directory = directory
         if enabled is not None:
             self.enabled = enabled
-        if enforced is not None:
-            self.enforced = enforced
-        if quota_limit is not None:
-            self.quota_limit = quota_limit
-        if path is not None:
-            self.path = path
-        if percentage_used is not None:
-            self.percentage_used = percentage_used
         if policy is not None:
             self.policy = policy
-        if rule_name is not None:
-            self.rule_name = rule_name
-        if usage is not None:
-            self.usage = usage
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
@@ -106,8 +106,8 @@ class DirectoryQuota(object):
             if value < 0:
                 raise ValueError("Invalid value for `quota_limit`, must be a value greater than or equal to `0`")
         if key == "percentage_used" and value is not None:
-            if value < 0.0:
-                raise ValueError("Invalid value for `percentage_used`, must be a value greater than or equal to `0.0`")
+            if value < 0:
+                raise ValueError("Invalid value for `percentage_used`, must be a value greater than or equal to `0`")
         if key == "usage" and value is not None:
             if value < 0:
                 raise ValueError("Invalid value for `usage`, must be a value greater than or equal to `0`")

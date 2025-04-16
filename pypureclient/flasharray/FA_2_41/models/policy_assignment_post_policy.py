@@ -46,7 +46,7 @@ class PolicyAssignmentPostPolicy(object):
     ):
         """
         Keyword args:
-            policy (Reference): Reference to the policy to apply to the resource.
+            policy (Reference): Reference to the policy to apply to the resource. 
         """
         if policy is not None:
             self.policy = policy

@@ -30,24 +30,24 @@ class KmipTestResult(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'component_address': 'str',
+        'success': 'bool',
         'component_name': 'str',
-        'description': 'str',
         'destination': 'str',
+        'description': 'str',
+        'component_address': 'str',
         'enabled': 'bool',
         'result_details': 'str',
-        'success': 'bool',
         'test_type': 'str'
     }
 
     attribute_map = {
-        'component_address': 'component_address',
+        'success': 'success',
         'component_name': 'component_name',
-        'description': 'description',
         'destination': 'destination',
+        'description': 'description',
+        'component_address': 'component_address',
         'enabled': 'enabled',
         'result_details': 'result_details',
-        'success': 'success',
         'test_type': 'test_type'
     }
 
@@ -56,40 +56,40 @@ class KmipTestResult(object):
 
     def __init__(
         self,
-        component_address=None,  # type: str
+        success=None,  # type: bool
         component_name=None,  # type: str
-        description=None,  # type: str
         destination=None,  # type: str
+        description=None,  # type: str
+        component_address=None,  # type: str
         enabled=None,  # type: bool
         result_details=None,  # type: str
-        success=None,  # type: bool
         test_type=None,  # type: str
     ):
         """
         Keyword args:
-            component_address (str): Address of the component running the test.
+            success (bool): Expresses whether communication between the FlashArray and the KMIP server succeeded or not. 
             component_name (str): Name of the component running the test.
-            description (str): Description of what is being tested.
             destination (str): The URI of the target server being tested.
+            description (str): Description of what is being tested.
+            component_address (str): Address of the component running the test.
             enabled (bool): Expresses whether the service is enabled or not.
             result_details (str): Additional information about the test result.
-            success (bool): Expresses whether communication between the FlashArray and the KMIP server succeeded or not.
             test_type (str): Description of what is being tested.
         """
-        if component_address is not None:
-            self.component_address = component_address
+        if success is not None:
+            self.success = success
         if component_name is not None:
             self.component_name = component_name
-        if description is not None:
-            self.description = description
         if destination is not None:
             self.destination = destination
+        if description is not None:
+            self.description = description
+        if component_address is not None:
+            self.component_address = component_address
         if enabled is not None:
             self.enabled = enabled
         if result_details is not None:
             self.result_details = result_details
-        if success is not None:
-            self.success = success
         if test_type is not None:
             self.test_type = test_type
 
