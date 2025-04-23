@@ -30,17 +30,17 @@ class OffloadPost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'nfs': 'OffloadNfs',
         's3': 'OffloadS3',
-        'azure': 'OffloadAzure',
-        'google_cloud': 'OffloadGoogleCloud'
+        'google_cloud': 'OffloadGoogleCloud',
+        'nfs': 'OffloadNfs',
+        'azure': 'OffloadAzure'
     }
 
     attribute_map = {
-        'nfs': 'nfs',
         's3': 's3',
-        'azure': 'azure',
-        'google_cloud': 'google-cloud'
+        'google_cloud': 'google-cloud',
+        'nfs': 'nfs',
+        'azure': 'azure'
     }
 
     required_args = {
@@ -48,26 +48,26 @@ class OffloadPost(object):
 
     def __init__(
         self,
-        nfs=None,  # type: models.OffloadNfs
         s3=None,  # type: models.OffloadS3
-        azure=None,  # type: models.OffloadAzure
         google_cloud=None,  # type: models.OffloadGoogleCloud
+        nfs=None,  # type: models.OffloadNfs
+        azure=None,  # type: models.OffloadAzure
     ):
         """
         Keyword args:
-            nfs (OffloadNfs): NFS settings. Deprecated from version 6.6.0 onwards - Contact support for additional information.
             s3 (OffloadS3): S3 settings.
-            azure (OffloadAzure): Microsoft Azure Blob storage settings.
             google_cloud (OffloadGoogleCloud): Google Cloud Storage settings.
+            nfs (OffloadNfs): NFS settings. Deprecated from version 6.6.0 onwards - Contact support for additional information.
+            azure (OffloadAzure): Microsoft Azure Blob storage settings.
         """
-        if nfs is not None:
-            self.nfs = nfs
         if s3 is not None:
             self.s3 = s3
-        if azure is not None:
-            self.azure = azure
         if google_cloud is not None:
             self.google_cloud = google_cloud
+        if nfs is not None:
+            self.nfs = nfs
+        if azure is not None:
+            self.azure = azure
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

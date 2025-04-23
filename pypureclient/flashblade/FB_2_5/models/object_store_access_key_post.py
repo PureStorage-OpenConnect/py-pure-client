@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.5, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.5, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.5
     
@@ -30,13 +30,13 @@ class ObjectStoreAccessKeyPost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'user': 'object',
-        'secret_access_key': 'str'
+        'secret_access_key': 'str',
+        'user': 'object'
     }
 
     attribute_map = {
-        'user': 'user',
-        'secret_access_key': 'secret_access_key'
+        'secret_access_key': 'secret_access_key',
+        'user': 'user'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class ObjectStoreAccessKeyPost(object):
 
     def __init__(
         self,
-        user=None,  # type: object
         secret_access_key=None,  # type: str
+        user=None,  # type: object
     ):
         """
         Keyword args:
+            secret_access_key (str): The secret access key to import from another FlashBlade. To import a set of credentials, this field must be specified with the `names` query parameter. If both of these not specified, the system will generate a new set of credentials. 
             user (object)
-            secret_access_key (str): The secret access key to import from another FlashBlade. To import a set of credentials, this field must be specified with the `names` query parameter. If both of these not specified, the system will generate a new set of credentials.
         """
-        if user is not None:
-            self.user = user
         if secret_access_key is not None:
             self.secret_access_key = secret_access_key
+        if user is not None:
+            self.user = user
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

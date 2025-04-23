@@ -46,7 +46,7 @@ class MemberNoIdAllResponse(object):
     ):
         """
         Keyword args:
-            items (list[MemberNoIdAll]): Displays a list of all items after filtering. The values are displayed for each name where meaningful.
+            items (list[MemberNoIdAll]): Displays a list of all items after filtering. The values are displayed for each name where meaningful. 
         """
         if items is not None:
             self.items = items

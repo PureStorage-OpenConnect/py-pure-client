@@ -53,8 +53,8 @@ class SoftwareChecksChecks(object):
         """
         Keyword args:
             name (str): Name of the upgrade check.
-            details (str): Detailed result of the check used to diagnose check failures.
-            status (str): Status of the check. Valid values are `running`, `failed`, and `passed`. A status of `running` indicates that the check has not finished. A status of `failed` indicates that the check has failed. A status of `passed` indicates that the check has passed.
+            details (str): Detailed result of the check used to diagnose check failures. 
+            status (str): Status of the check. Valid values are `running`, `failed`, and `passed`. A status of `running` indicates that the check has not finished. A status of `failed` indicates that the check has failed. A status of `passed` indicates that the check has passed. 
         """
         if name is not None:
             self.name = name

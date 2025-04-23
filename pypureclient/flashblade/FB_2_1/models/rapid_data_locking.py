@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.1, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.1, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.1
     
@@ -30,13 +30,13 @@ class RapidDataLocking(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'enabled': 'bool',
-        'kmip_server': 'Reference'
+        'kmip_server': 'Reference',
+        'enabled': 'bool'
     }
 
     attribute_map = {
-        'enabled': 'enabled',
-        'kmip_server': 'kmip_server'
+        'kmip_server': 'kmip_server',
+        'enabled': 'enabled'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class RapidDataLocking(object):
 
     def __init__(
         self,
-        enabled=None,  # type: bool
         kmip_server=None,  # type: models.Reference
+        enabled=None,  # type: bool
     ):
         """
         Keyword args:
-            enabled (bool): `True` if the Rapid Data Locking feature is enabled.
-            kmip_server (Reference): The KMIP server configuration associated with RDL.
+            kmip_server (Reference): The KMIP server configuration associated with RDL. 
+            enabled (bool): `True` if the Rapid Data Locking feature is enabled. 
         """
-        if enabled is not None:
-            self.enabled = enabled
         if kmip_server is not None:
             self.kmip_server = kmip_server
+        if enabled is not None:
+            self.enabled = enabled
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

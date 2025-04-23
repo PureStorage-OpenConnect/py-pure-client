@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.3, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.3, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.3
     
@@ -45,8 +45,8 @@ class FileSystemSnapshotsApi(object):
         >>> thread = api.api23_file_system_snapshots_delete_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -90,10 +90,6 @@ class FileSystemSnapshotsApi(object):
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
-
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
@@ -144,16 +140,16 @@ class FileSystemSnapshotsApi(object):
         >>> thread = api.api23_file_system_snapshots_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
-        :param bool destroyed: If set to `true`, lists only destroyed objects that are in the eradication pending state. If set to `false`, lists only objects that are not destroyed. If not set, lists both objects that are destroyed and those that are not destroyed. If object name(s) are specified in the `names` parameter, then each object referenced must exist. If `destroyed` is set to `true`, then each object referenced must also be destroyed. If `destroyed` is set to `false`, then each object referenced must also not be destroyed. An error is returned if any of these conditions are not met.
-        :param str filter: Exclude resources that don't match the specified criteria.
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.
-        :param list[str] names_or_owner_names: A comma-separated list of resource names. Either the names of the snapshots or the owning file systems.
-        :param int offset: The offset of the first resource to return from a collection.
-        :param list[str] owner_ids: A comma-separated list of owning file system IDs. If after filtering, there is not at least one resource that matches each of the elements of owner IDs, then an error is returned. This cannot be provided together with the `ids`, `names_or_owner_names`, or `names_or_sources` query parameters.
-        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.
-        :param bool total_only: Only return the total record for the specified items. The total record will be the total of all items after filtering. The `items` list will be empty.
+        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result. 
+        :param bool destroyed: If set to `true`, lists only destroyed objects that are in the eradication pending state. If set to `false`, lists only objects that are not destroyed. If not set, lists both objects that are destroyed and those that are not destroyed.  If object name(s) are specified in the `names` parameter, then each object referenced must exist. If `destroyed` is set to `true`, then each object referenced must also be destroyed. If `destroyed` is set to `false`, then each object referenced must also not be destroyed. An error is returned if any of these conditions are not met. 
+        :param str filter: Exclude resources that don't match the specified criteria. 
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request. 
+        :param list[str] names_or_owner_names: A comma-separated list of resource names. Either the names of the snapshots or the owning file systems. 
+        :param int offset: The offset of the first resource to return from a collection. 
+        :param list[str] owner_ids: A comma-separated list of owning file system IDs. If after filtering, there is not at least one resource that matches each of the elements of owner IDs, then an error is returned. This cannot be provided together with the `ids`, `names_or_owner_names`, or `names_or_sources` query parameters. 
+        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response. 
+        :param bool total_only: Only return the total record for the specified items. The total record will be the total of all items after filtering. The `items` list will be empty. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -274,9 +270,9 @@ class FileSystemSnapshotsApi(object):
         >>> result = thread.get()
 
         :param FileSystemSnapshot file_system_snapshot: (required)
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param bool latest_replica: Used when destroying a snapshot. If not present or `false`, and the snapshot is the latest replicated snapshot, then destroy will fail. If `true` or the snapshot is not the latest replicated snapshot, then destroy will be successful.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param bool latest_replica: Used when destroying a snapshot. If not present or `false`, and the snapshot is the latest replicated snapshot, then destroy will fail. If `true` or the snapshot is not the latest replicated snapshot, then destroy will be successful. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -375,10 +371,10 @@ class FileSystemSnapshotsApi(object):
         >>> thread = api.api23_file_system_snapshots_policies_delete_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param list[str] member_ids: A comma-separated list of member IDs. If after filtering, there is not at least one resource that matches each of the elements of `member_ids`, then an error is returned. This cannot be provided together with the `member_names` query parameter.
-        :param list[str] member_names: A comma-separated list of member names.
-        :param list[str] policy_ids: A comma-separated list of policy IDs. If after filtering, there is not at least one resource that matches each of the elements of `policy_ids`, then an error is returned. This cannot be provided together with the `policy_names` query parameter.
-        :param list[str] policy_names: A comma-separated list of policy names.
+        :param list[str] member_ids: A comma-separated list of member IDs. If after filtering, there is not at least one resource that matches each of the elements of `member_ids`, then an error is returned.  This cannot be provided together with the `member_names` query parameter. 
+        :param list[str] member_names: A comma-separated list of member names. 
+        :param list[str] policy_ids: A comma-separated list of policy IDs. If after filtering, there is not at least one resource that matches each of the elements of `policy_ids`, then an error is returned.  This cannot be provided together with the `policy_names` query parameter. 
+        :param list[str] policy_names: A comma-separated list of policy names. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -434,10 +430,6 @@ class FileSystemSnapshotsApi(object):
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
-
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
@@ -487,15 +479,15 @@ class FileSystemSnapshotsApi(object):
         >>> thread = api.api23_file_system_snapshots_policies_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
-        :param str filter: Exclude resources that don't match the specified criteria.
-        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.
-        :param list[str] member_ids: A comma-separated list of member IDs. If after filtering, there is not at least one resource that matches each of the elements of `member_ids`, then an error is returned. This cannot be provided together with the `member_names` query parameter.
-        :param list[str] member_names: A comma-separated list of member names.
-        :param int offset: The offset of the first resource to return from a collection.
-        :param list[str] policy_ids: A comma-separated list of policy IDs. If after filtering, there is not at least one resource that matches each of the elements of `policy_ids`, then an error is returned. This cannot be provided together with the `policy_names` query parameter.
-        :param list[str] policy_names: A comma-separated list of policy names.
-        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.
+        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result. 
+        :param str filter: Exclude resources that don't match the specified criteria. 
+        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request. 
+        :param list[str] member_ids: A comma-separated list of member IDs. If after filtering, there is not at least one resource that matches each of the elements of `member_ids`, then an error is returned.  This cannot be provided together with the `member_names` query parameter. 
+        :param list[str] member_names: A comma-separated list of member names. 
+        :param int offset: The offset of the first resource to return from a collection. 
+        :param list[str] policy_ids: A comma-separated list of policy IDs. If after filtering, there is not at least one resource that matches each of the elements of `policy_ids`, then an error is returned.  This cannot be provided together with the `policy_names` query parameter. 
+        :param list[str] policy_names: A comma-separated list of policy names. 
+        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -599,11 +591,11 @@ class FileSystemSnapshotsApi(object):
 
     def api23_file_system_snapshots_post_with_http_info(
         self,
+        file_system_snapshot=None,  # type: models.FileSystemSnapshotPost
+        send=None,  # type: bool
         source_ids=None,  # type: List[str]
         source_names=None,  # type: List[str]
-        send=None,  # type: bool
         targets=None,  # type: List[str]
-        file_system_snapshot=None,  # type: models.FileSystemSnapshotPost
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -618,11 +610,11 @@ class FileSystemSnapshotsApi(object):
         >>> thread = api.api23_file_system_snapshots_post_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param list[str] source_ids: A comma-separated list of source file system IDs. If after filtering, there is not at least one resource that matches each of the elements of `source_ids`, then an error is returned. This cannot be provided together with the `names_or_sources` or `sources` query parameters.
-        :param list[str] source_names: A comma-separated list of names for the source of the object. If there is not at least one resource that matches each of the elements of `source_names`, an error is returned.
-        :param bool send: Whether to replicate created snapshots immediately to other arrays. If it's `false`, created snapshots may still be replicated to other arrays according to policy.
-        :param list[str] targets: The target arrays to replicate created snapshots to. Only valid when `send` is `true`.
         :param FileSystemSnapshotPost file_system_snapshot:
+        :param bool send: Whether to replicate created snapshots immediately to other arrays. If it's `false`, created snapshots may still be replicated to other arrays according to policy. 
+        :param list[str] source_ids: A comma-separated list of source file system IDs. If after filtering, there is not at least one resource that matches each of the elements of `source_ids`, then an error is returned. This cannot be provided together with the `names_or_sources` or `sources` query parameters. 
+        :param list[str] source_names: A comma-separated list of names for the source of the object. If there is not at least one resource that matches each of the elements of `source_names`, an error is returned. 
+        :param list[str] targets: The target arrays to replicate created snapshots to. Only valid when `send` is `true`. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -656,14 +648,14 @@ class FileSystemSnapshotsApi(object):
         path_params = {}
 
         query_params = []
+        if 'send' in params:
+            query_params.append(('send', params['send']))
         if 'source_ids' in params:
             query_params.append(('source_ids', params['source_ids']))
             collection_formats['source_ids'] = 'csv'
         if 'source_names' in params:
             query_params.append(('source_names', params['source_names']))
             collection_formats['source_names'] = 'csv'
-        if 'send' in params:
-            query_params.append(('send', params['send']))
         if 'targets' in params:
             query_params.append(('targets', params['targets']))
             collection_formats['targets'] = 'csv'
@@ -708,8 +700,8 @@ class FileSystemSnapshotsApi(object):
         self,
         ids=None,  # type: List[str]
         names=None,  # type: List[str]
-        remote_names=None,  # type: List[str]
         remote_ids=None,  # type: List[str]
+        remote_names=None,  # type: List[str]
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -724,10 +716,10 @@ class FileSystemSnapshotsApi(object):
         >>> thread = api.api23_file_system_snapshots_transfer_delete_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
-        :param list[str] remote_names: A comma-separated list of remote array names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `remote_ids` query parameter.
-        :param list[str] remote_ids: A comma-separated list of remote array IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `remote_names` query parameter.
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
+        :param list[str] remote_ids: A comma-separated list of remote array IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `remote_names` query parameter. 
+        :param list[str] remote_names: A comma-separated list of remote array names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `remote_ids` query parameter. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -743,12 +735,12 @@ class FileSystemSnapshotsApi(object):
         if names is not None:
             if not isinstance(names, list):
                 names = [names]
-        if remote_names is not None:
-            if not isinstance(remote_names, list):
-                remote_names = [remote_names]
         if remote_ids is not None:
             if not isinstance(remote_ids, list):
                 remote_ids = [remote_ids]
+        if remote_names is not None:
+            if not isinstance(remote_names, list):
+                remote_names = [remote_names]
         params = {k: v for k, v in six.iteritems(locals()) if v is not None}
 
         # Convert the filter into a string
@@ -770,12 +762,12 @@ class FileSystemSnapshotsApi(object):
         if 'names' in params:
             query_params.append(('names', params['names']))
             collection_formats['names'] = 'csv'
-        if 'remote_names' in params:
-            query_params.append(('remote_names', params['remote_names']))
-            collection_formats['remote_names'] = 'csv'
         if 'remote_ids' in params:
             query_params.append(('remote_ids', params['remote_ids']))
             collection_formats['remote_ids'] = 'csv'
+        if 'remote_names' in params:
+            query_params.append(('remote_names', params['remote_names']))
+            collection_formats['remote_names'] = 'csv'
 
         header_params = {}
 
@@ -783,10 +775,6 @@ class FileSystemSnapshotsApi(object):
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
-
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
@@ -835,14 +823,14 @@ class FileSystemSnapshotsApi(object):
         >>> thread = api.api23_file_system_snapshots_transfer_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
-        :param str filter: Exclude resources that don't match the specified criteria.
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.
-        :param list[str] names_or_owner_names: A comma-separated list of resource names. Either the names of the snapshots or the owning file systems.
-        :param int offset: The offset of the first resource to return from a collection.
-        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.
-        :param bool total_only: Only return the total record for the specified items. The total record will be the total of all items after filtering. The `items` list will be empty.
+        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result. 
+        :param str filter: Exclude resources that don't match the specified criteria. 
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request. 
+        :param list[str] names_or_owner_names: A comma-separated list of resource names. Either the names of the snapshots or the owning file systems. 
+        :param int offset: The offset of the first resource to return from a collection. 
+        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response. 
+        :param bool total_only: Only return the total record for the specified items. The total record will be the total of all items after filtering. The `items` list will be empty. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.

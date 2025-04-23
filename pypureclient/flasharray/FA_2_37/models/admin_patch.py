@@ -31,27 +31,27 @@ class AdminPatch(object):
     """
     swagger_types = {
         'name': 'str',
+        'management_access_policies': 'list[ReferenceWithType]',
+        'public_key': 'str',
+        'password': 'str',
+        'role': 'AdminRole',
         'api_token': 'ApiToken',
+        'lockout_remaining': 'int',
         'is_local': 'bool',
         'locked': 'bool',
-        'lockout_remaining': 'int',
-        'password': 'str',
-        'public_key': 'str',
-        'role': 'AdminRole',
-        'management_access_policies': 'list[ReferenceWithType]',
         'old_password': 'str'
     }
 
     attribute_map = {
         'name': 'name',
+        'management_access_policies': 'management_access_policies',
+        'public_key': 'public_key',
+        'password': 'password',
+        'role': 'role',
         'api_token': 'api_token',
+        'lockout_remaining': 'lockout_remaining',
         'is_local': 'is_local',
         'locked': 'locked',
-        'lockout_remaining': 'lockout_remaining',
-        'password': 'password',
-        'public_key': 'public_key',
-        'role': 'role',
-        'management_access_policies': 'management_access_policies',
         'old_password': 'old_password'
     }
 
@@ -61,47 +61,47 @@ class AdminPatch(object):
     def __init__(
         self,
         name=None,  # type: str
+        management_access_policies=None,  # type: List[models.ReferenceWithType]
+        public_key=None,  # type: str
+        password=None,  # type: str
+        role=None,  # type: models.AdminRole
         api_token=None,  # type: models.ApiToken
+        lockout_remaining=None,  # type: int
         is_local=None,  # type: bool
         locked=None,  # type: bool
-        lockout_remaining=None,  # type: int
-        password=None,  # type: str
-        public_key=None,  # type: str
-        role=None,  # type: models.AdminRole
-        management_access_policies=None,  # type: List[models.ReferenceWithType]
         old_password=None,  # type: str
     ):
         """
         Keyword args:
-            name (str): A user-specified name. The name must be locally unique and cannot be changed.
-            api_token (ApiToken)
-            is_local (bool): Returns a value of `true` if the user is local to the machine.
-            locked (bool): Returns a value of `true` if the user is currently locked out. otherwise `false`. Change to `false` to unlock a user. This field is only visible to `array_admin` roles. For all other users, the value is always `null`.
-            lockout_remaining (int): The remaining lockout period if the user is locked out, in milliseconds. This field is only visible to `array_admin` roles. For all other users, the value is always `null`.
-            password (str): Password associated with the account.
-            public_key (str): Public key for SSH access. Multiple public keys can be specified, separated by newlines.
+            name (str): A user-specified name. The name must be locally unique and cannot be changed. 
+            management_access_policies (list[ReferenceWithType]): List of management access policies associated with the administrator. 
+            public_key (str): Public key for SSH access. Multiple public keys can be specified, separated by newlines. 
+            password (str): Password associated with the account. 
             role (AdminRole)
-            management_access_policies (list[ReferenceWithType]): List of management access policies associated with the administrator.
-            old_password (str): The current password.
+            api_token (ApiToken)
+            lockout_remaining (int): The remaining lockout period if the user is locked out, in milliseconds. This field is only visible to `array_admin` roles. For all other users, the value is always `null`. 
+            is_local (bool): Returns a value of `true` if the user is local to the machine. 
+            locked (bool): Returns a value of `true` if the user is currently locked out. otherwise `false`. Change to `false` to unlock a user. This field is only visible to `array_admin` roles. For all other users, the value is always `null`. 
+            old_password (str): The current password. 
         """
         if name is not None:
             self.name = name
+        if management_access_policies is not None:
+            self.management_access_policies = management_access_policies
+        if public_key is not None:
+            self.public_key = public_key
+        if password is not None:
+            self.password = password
+        if role is not None:
+            self.role = role
         if api_token is not None:
             self.api_token = api_token
+        if lockout_remaining is not None:
+            self.lockout_remaining = lockout_remaining
         if is_local is not None:
             self.is_local = is_local
         if locked is not None:
             self.locked = locked
-        if lockout_remaining is not None:
-            self.lockout_remaining = lockout_remaining
-        if password is not None:
-            self.password = password
-        if public_key is not None:
-            self.public_key = public_key
-        if role is not None:
-            self.role = role
-        if management_access_policies is not None:
-            self.management_access_policies = management_access_policies
         if old_password is not None:
             self.old_password = old_password
 

@@ -57,8 +57,8 @@ class PolicyNfsPatch(object):
         Keyword args:
             name (str): The new name for the resource.
             enabled (bool): If set to `true`, enables the policy. If set to `false`, disables the policy.
-            user_mapping_enabled (bool): If set to `true`, FlashArray queries the joined AD/OpenLDAP server to find the user corresponding to the incoming UID. If set to `false`, users are defined by UID/GID pair.
-            nfs_version (list[str]): NFS protocol version allowed for the export to set for the policy. This operation updates all rules of the specified policy. Valid values are `nfsv3` and `nfsv4`.
+            user_mapping_enabled (bool): If set to `true`, FlashArray queries the joined AD/OpenLDAP server to find the user corresponding to the incoming UID. If set to `false`, users are defined by UID/GID pair. 
+            nfs_version (list[str]): NFS protocol version allowed for the export to set for the policy. This operation updates all rules of the specified policy. Valid values are `nfsv3` and `nfsv4`. 
         """
         if name is not None:
             self.name = name

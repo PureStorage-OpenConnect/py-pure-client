@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.8, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.8, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.8
     
@@ -49,8 +49,8 @@ class FileSystemLockNlmReclamation(object):
     ):
         """
         Keyword args:
-            start (int): Start time of the NLM reclamation in milliseconds since the UNIX epoch.
-            end (int): End time of the NLM reclamation in milliseconds since the UNIX epoch.
+            start (int): Start time of the NLM reclamation in milliseconds since the UNIX epoch. 
+            end (int): End time of the NLM reclamation in milliseconds since the UNIX epoch. 
         """
         if start is not None:
             self.start = start

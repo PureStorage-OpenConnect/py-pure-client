@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.16
     
@@ -30,13 +30,13 @@ class Saml2SsoSpCredential(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'signing_credential': 'ReferenceWritable',
-        'decryption_credential': 'ReferenceWritable'
+        'decryption_credential': 'ReferenceWritable',
+        'signing_credential': 'ReferenceWritable'
     }
 
     attribute_map = {
-        'signing_credential': 'signing_credential',
-        'decryption_credential': 'decryption_credential'
+        'decryption_credential': 'decryption_credential',
+        'signing_credential': 'signing_credential'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class Saml2SsoSpCredential(object):
 
     def __init__(
         self,
-        signing_credential=None,  # type: models.ReferenceWritable
         decryption_credential=None,  # type: models.ReferenceWritable
+        signing_credential=None,  # type: models.ReferenceWritable
     ):
         """
         Keyword args:
-            signing_credential (ReferenceWritable): The credential used by the service provider to sign SAML requests. The credential is managed by the `certificates` endpoint and `purecert` CLI commands.
-            decryption_credential (ReferenceWritable): The credential used by the service provider to decrypt encrypted SAML assertions from the identity provider. The credential is managed by the `certificates` endpoint and `purecert` CLI commands.
+            decryption_credential (ReferenceWritable): The credential used by the service provider to decrypt encrypted SAML assertions from the identity provider. The credential is managed by the `certificates` endpoint and `purecert` CLI commands. 
+            signing_credential (ReferenceWritable): The credential used by the service provider to sign SAML requests. The credential is managed by the `certificates` endpoint and `purecert` CLI commands. 
         """
-        if signing_credential is not None:
-            self.signing_credential = signing_credential
         if decryption_credential is not None:
             self.decryption_credential = decryption_credential
+        if signing_credential is not None:
+            self.signing_credential = signing_credential
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

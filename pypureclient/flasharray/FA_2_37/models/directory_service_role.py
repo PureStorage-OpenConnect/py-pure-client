@@ -31,18 +31,18 @@ class DirectoryServiceRole(object):
     """
     swagger_types = {
         'name': 'str',
-        'role': 'ReferenceNoId',
         'management_access_policies': 'list[FixedReferenceWithType]',
-        'group': 'str',
-        'group_base': 'str'
+        'role': 'ReferenceNoId',
+        'group_base': 'str',
+        'group': 'str'
     }
 
     attribute_map = {
         'name': 'name',
-        'role': 'role',
         'management_access_policies': 'management_access_policies',
-        'group': 'group',
-        'group_base': 'group_base'
+        'role': 'role',
+        'group_base': 'group_base',
+        'group': 'group'
     }
 
     required_args = {
@@ -51,29 +51,29 @@ class DirectoryServiceRole(object):
     def __init__(
         self,
         name=None,  # type: str
-        role=None,  # type: models.ReferenceNoId
         management_access_policies=None,  # type: List[models.FixedReferenceWithType]
-        group=None,  # type: str
+        role=None,  # type: models.ReferenceNoId
         group_base=None,  # type: str
+        group=None,  # type: str
     ):
         """
         Keyword args:
-            name (str): A user-specified name. The name must be locally unique and cannot be changed.
-            role (ReferenceNoId): This field has been deprecated. Predecessor to management access policies.
-            management_access_policies (list[FixedReferenceWithType]): List of management access policies associated with the group.
-            group (str): Group name that contains users with the abilities granted by the associated policies.
-            group_base (str): Specifies where the configured group is located in the directory tree.
+            name (str): A user-specified name. The name must be locally unique and cannot be changed. 
+            management_access_policies (list[FixedReferenceWithType]): List of management access policies associated with the group. 
+            role (ReferenceNoId): This field has been deprecated. Predecessor to management access policies. 
+            group_base (str): Specifies where the configured group is located in the directory tree. 
+            group (str): Group name that contains users with the abilities granted by the associated policies. 
         """
         if name is not None:
             self.name = name
-        if role is not None:
-            self.role = role
         if management_access_policies is not None:
             self.management_access_policies = management_access_policies
-        if group is not None:
-            self.group = group
+        if role is not None:
+            self.role = role
         if group_base is not None:
             self.group_base = group_base
+        if group is not None:
+            self.group = group
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

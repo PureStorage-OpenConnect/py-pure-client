@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.13, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.13, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.13
     
@@ -30,13 +30,13 @@ class InlineResponse401(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'error': 'str',
-        'error_description': 'str'
+        'error_description': 'str',
+        'error': 'str'
     }
 
     attribute_map = {
-        'error': 'error',
-        'error_description': 'error_description'
+        'error_description': 'error_description',
+        'error': 'error'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class InlineResponse401(object):
 
     def __init__(
         self,
-        error=None,  # type: str
         error_description=None,  # type: str
+        error=None,  # type: str
     ):
         """
         Keyword args:
-            error (str)
             error_description (str)
+            error (str)
         """
-        if error is not None:
-            self.error = error
         if error_description is not None:
             self.error_description = error_description
+        if error is not None:
+            self.error = error
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

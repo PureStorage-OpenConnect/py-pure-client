@@ -30,16 +30,16 @@ class PresetWorkloadConstraints(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'boolean': 'PresetWorkloadConstraintsBoolean',
         'string': 'PresetWorkloadConstraintsString',
         'integer': 'PresetWorkloadConstraintsInteger',
-        'boolean': 'PresetWorkloadConstraintsBoolean',
         'resource_reference': 'PresetWorkloadConstraintsResourceReference'
     }
 
     attribute_map = {
+        'boolean': 'boolean',
         'string': 'string',
         'integer': 'integer',
-        'boolean': 'boolean',
         'resource_reference': 'resource_reference'
     }
 
@@ -48,24 +48,24 @@ class PresetWorkloadConstraints(object):
 
     def __init__(
         self,
+        boolean=None,  # type: models.PresetWorkloadConstraintsBoolean
         string=None,  # type: models.PresetWorkloadConstraintsString
         integer=None,  # type: models.PresetWorkloadConstraintsInteger
-        boolean=None,  # type: models.PresetWorkloadConstraintsBoolean
         resource_reference=None,  # type: models.PresetWorkloadConstraintsResourceReference
     ):
         """
         Keyword args:
+            boolean (PresetWorkloadConstraintsBoolean)
             string (PresetWorkloadConstraintsString)
             integer (PresetWorkloadConstraintsInteger)
-            boolean (PresetWorkloadConstraintsBoolean)
             resource_reference (PresetWorkloadConstraintsResourceReference)
         """
+        if boolean is not None:
+            self.boolean = boolean
         if string is not None:
             self.string = string
         if integer is not None:
             self.integer = integer
-        if boolean is not None:
-            self.boolean = boolean
         if resource_reference is not None:
             self.resource_reference = resource_reference
 

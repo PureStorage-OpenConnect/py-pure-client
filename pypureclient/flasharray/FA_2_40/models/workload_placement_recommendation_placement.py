@@ -49,8 +49,8 @@ class WorkloadPlacementRecommendationPlacement(object):
     ):
         """
         Keyword args:
-            name (str): The name of the placement.
-            targets (list[WorkloadPlacementRecommendationTarget]): The targets for the placement.
+            name (str): The name of the placement. 
+            targets (list[WorkloadPlacementRecommendationTarget]): The targets for the placement. 
         """
         if name is not None:
             self.name = name

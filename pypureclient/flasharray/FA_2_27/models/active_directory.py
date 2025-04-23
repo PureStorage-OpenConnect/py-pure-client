@@ -31,19 +31,19 @@ class ActiveDirectory(object):
     """
     swagger_types = {
         'name': 'str',
+        'kerberos_servers': 'list[str]',
         'computer_name': 'str',
         'directory_servers': 'list[str]',
         'domain': 'str',
-        'kerberos_servers': 'list[str]',
         'tls': 'str'
     }
 
     attribute_map = {
         'name': 'name',
+        'kerberos_servers': 'kerberos_servers',
         'computer_name': 'computer_name',
         'directory_servers': 'directory_servers',
         'domain': 'domain',
-        'kerberos_servers': 'kerberos_servers',
         'tls': 'tls'
     }
 
@@ -53,31 +53,31 @@ class ActiveDirectory(object):
     def __init__(
         self,
         name=None,  # type: str
+        kerberos_servers=None,  # type: List[str]
         computer_name=None,  # type: str
         directory_servers=None,  # type: List[str]
         domain=None,  # type: str
-        kerberos_servers=None,  # type: List[str]
         tls=None,  # type: str
     ):
         """
         Keyword args:
-            name (str): A locally unique, system-generated name. The name cannot be modified.
-            computer_name (str): The name of the computer account in the Active Directory domain.
-            directory_servers (list[str]): A list of directory servers used for lookups related to user authorization. Servers must be specified in FQDN format. All specified servers must be registered to the domain appropriately in the configured DNS of the array and are only communicated with over the secure LDAP (LDAPS) protocol. If this field is `null`, the servers are resolved for the domain in DNS.
+            name (str): A locally unique, system-generated name. The name cannot be modified. 
+            kerberos_servers (list[str]): A list of key distribution servers to use for Kerberos protocol. Servers must be specified in FQDN format. All specified servers must be registered to the domain appropriately in the configured DNS of the array. If this field is `null`, the servers are resolved for the domain in DNS. 
+            computer_name (str): The name of the computer account in the Active Directory domain. 
+            directory_servers (list[str]): A list of directory servers used for lookups related to user authorization. Servers must be specified in FQDN format. All specified servers must be registered to the domain appropriately in the configured DNS of the array and are only communicated with over the secure LDAP (LDAPS) protocol. If this field is `null`, the servers are resolved for the domain in DNS. 
             domain (str): The Active Directory domain joined.
-            kerberos_servers (list[str]): A list of key distribution servers to use for Kerberos protocol. Servers must be specified in FQDN format. All specified servers must be registered to the domain appropriately in the configured DNS of the array. If this field is `null`, the servers are resolved for the domain in DNS.
-            tls (str): TLS mode for communication with domain controllers. Valid values are `required` and `optional`. `required` forces TLS communication with a domain controller. `optional` allows the use of non-TLS communication, TLS will still be preferred, if available. If not specified, defaults to `required`.
+            tls (str): TLS mode for communication with domain controllers. Valid values are `required` and `optional`. `required` forces TLS communication with a domain controller.  `optional` allows the use of non-TLS communication, TLS will still be preferred, if available. If not specified, defaults to `required`. 
         """
         if name is not None:
             self.name = name
+        if kerberos_servers is not None:
+            self.kerberos_servers = kerberos_servers
         if computer_name is not None:
             self.computer_name = computer_name
         if directory_servers is not None:
             self.directory_servers = directory_servers
         if domain is not None:
             self.domain = domain
-        if kerberos_servers is not None:
-            self.kerberos_servers = kerberos_servers
         if tls is not None:
             self.tls = tls
 

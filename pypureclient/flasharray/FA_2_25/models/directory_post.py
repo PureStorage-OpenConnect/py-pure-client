@@ -30,13 +30,13 @@ class DirectoryPost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'directory_name': 'str',
-        'path': 'str'
+        'path': 'str',
+        'directory_name': 'str'
     }
 
     attribute_map = {
-        'directory_name': 'directory_name',
-        'path': 'path'
+        'path': 'path',
+        'directory_name': 'directory_name'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class DirectoryPost(object):
 
     def __init__(
         self,
-        directory_name=None,  # type: str
         path=None,  # type: str
+        directory_name=None,  # type: str
     ):
         """
         Keyword args:
-            directory_name (str): The managed directory name without the file system name prefix. A full managed directory name is constructed in the form of `FILE_SYSTEM:DIR` where `FILE_SYSTEM` is the file system name and `DIR` is the value of this field. `directory_name` is required if `file_system_names` or `file_system_ids` is set. `directory_name` cannot be set if `names` is set.
-            path (str): Path of the managed directory in the file system.
+            path (str): Path of the managed directory in the file system. 
+            directory_name (str): The managed directory name without the file system name prefix. A full managed directory name is constructed in the form of `FILE_SYSTEM:DIR` where `FILE_SYSTEM` is the file system name and `DIR` is the value of this field. `directory_name` is required if `file_system_names` or `file_system_ids` is set. `directory_name` cannot be set if `names` is set. 
         """
-        if directory_name is not None:
-            self.directory_name = directory_name
         if path is not None:
             self.path = path
+        if directory_name is not None:
+            self.directory_name = directory_name
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

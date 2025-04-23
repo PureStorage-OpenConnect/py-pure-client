@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.10, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.10, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.10
     
@@ -45,8 +45,8 @@ class PoliciesObjectStoreAccessApi(object):
         >>> thread = api.api210_object_store_access_policies_delete_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -90,10 +90,6 @@ class PoliciesObjectStoreAccessApi(object):
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
-
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
@@ -142,14 +138,14 @@ class PoliciesObjectStoreAccessApi(object):
         >>> thread = api.api210_object_store_access_policies_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
-        :param bool exclude_rules: If true, the rules field in each policy will be null. If false, each returned policy will include its list of rules in the response. If not specified, defaults to `false`.
-        :param str filter: Exclude resources that don't match the specified criteria.
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
-        :param int offset: The offset of the first resource to return from a collection.
-        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.
+        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result. 
+        :param bool exclude_rules: If true, the rules field in each policy will be null. If false, each returned policy will include its list of rules in the response. If not specified, defaults to `false`. 
+        :param str filter: Exclude resources that don't match the specified criteria. 
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
+        :param int offset: The offset of the first resource to return from a collection. 
+        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -261,10 +257,10 @@ class PoliciesObjectStoreAccessApi(object):
         >>> thread = api.api210_object_store_access_policies_object_store_users_delete_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param list[str] member_ids: A comma-separated list of member IDs. If after filtering, there is not at least one resource that matches each of the elements of `member_ids`, then an error is returned. This cannot be provided together with the `member_names` query parameter.
-        :param list[str] member_names: A comma-separated list of member names.
-        :param list[str] policy_ids: A comma-separated list of policy IDs. If after filtering, there is not at least one resource that matches each of the elements of `policy_ids`, then an error is returned. This cannot be provided together with the `policy_names` query parameter.
-        :param list[str] policy_names: A comma-separated list of policy names.
+        :param list[str] member_ids: A comma-separated list of member IDs. If after filtering, there is not at least one resource that matches each of the elements of `member_ids`, then an error is returned.  This cannot be provided together with the `member_names` query parameter. 
+        :param list[str] member_names: A comma-separated list of member names. 
+        :param list[str] policy_ids: A comma-separated list of policy IDs. If after filtering, there is not at least one resource that matches each of the elements of `policy_ids`, then an error is returned.  This cannot be provided together with the `policy_names` query parameter. 
+        :param list[str] policy_names: A comma-separated list of policy names. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -320,10 +316,6 @@ class PoliciesObjectStoreAccessApi(object):
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
-
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
@@ -373,15 +365,15 @@ class PoliciesObjectStoreAccessApi(object):
         >>> thread = api.api210_object_store_access_policies_object_store_users_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
-        :param str filter: Exclude resources that don't match the specified criteria.
-        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.
-        :param list[str] member_ids: A comma-separated list of member IDs. If after filtering, there is not at least one resource that matches each of the elements of `member_ids`, then an error is returned. This cannot be provided together with the `member_names` query parameter.
-        :param list[str] member_names: A comma-separated list of member names.
-        :param int offset: The offset of the first resource to return from a collection.
-        :param list[str] policy_ids: A comma-separated list of policy IDs. If after filtering, there is not at least one resource that matches each of the elements of `policy_ids`, then an error is returned. This cannot be provided together with the `policy_names` query parameter.
-        :param list[str] policy_names: A comma-separated list of policy names.
-        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.
+        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result. 
+        :param str filter: Exclude resources that don't match the specified criteria. 
+        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request. 
+        :param list[str] member_ids: A comma-separated list of member IDs. If after filtering, there is not at least one resource that matches each of the elements of `member_ids`, then an error is returned.  This cannot be provided together with the `member_names` query parameter. 
+        :param list[str] member_names: A comma-separated list of member names. 
+        :param int offset: The offset of the first resource to return from a collection. 
+        :param list[str] policy_ids: A comma-separated list of policy IDs. If after filtering, there is not at least one resource that matches each of the elements of `policy_ids`, then an error is returned.  This cannot be provided together with the `policy_names` query parameter. 
+        :param list[str] policy_names: A comma-separated list of policy names. 
+        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -503,10 +495,10 @@ class PoliciesObjectStoreAccessApi(object):
         >>> thread = api.api210_object_store_access_policies_object_store_users_post_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param list[str] member_ids: A comma-separated list of member IDs. If after filtering, there is not at least one resource that matches each of the elements of `member_ids`, then an error is returned. This cannot be provided together with the `member_names` query parameter.
-        :param list[str] member_names: A comma-separated list of member names.
-        :param list[str] policy_ids: A comma-separated list of policy IDs. If after filtering, there is not at least one resource that matches each of the elements of `policy_ids`, then an error is returned. This cannot be provided together with the `policy_names` query parameter.
-        :param list[str] policy_names: A comma-separated list of policy names.
+        :param list[str] member_ids: A comma-separated list of member IDs. If after filtering, there is not at least one resource that matches each of the elements of `member_ids`, then an error is returned.  This cannot be provided together with the `member_names` query parameter. 
+        :param list[str] member_names: A comma-separated list of member names. 
+        :param list[str] policy_ids: A comma-separated list of policy IDs. If after filtering, there is not at least one resource that matches each of the elements of `policy_ids`, then an error is returned.  This cannot be provided together with the `policy_names` query parameter. 
+        :param list[str] policy_names: A comma-separated list of policy names. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -592,10 +584,10 @@ class PoliciesObjectStoreAccessApi(object):
 
     def api210_object_store_access_policies_patch_with_http_info(
         self,
+        policy=None,  # type: models.ObjectStoreAccessPolicyPatch
         enforce_action_restrictions=None,  # type: bool
         ids=None,  # type: List[str]
         names=None,  # type: List[str]
-        policy=None,  # type: models.ObjectStoreAccessPolicyPatch
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -610,10 +602,10 @@ class PoliciesObjectStoreAccessApi(object):
         >>> thread = api.api210_object_store_access_policies_patch_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param bool enforce_action_restrictions: Certain combinations of actions and other rule elements are inherently ignored if specified together in a rule. If set to `true`, operations which attempt to set these combinations will fail. If set to `false`, such operations will instead be allowed. Defaults to `true`.
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
         :param ObjectStoreAccessPolicyPatch policy:
+        :param bool enforce_action_restrictions: Certain combinations of actions and other rule elements are inherently ignored if specified together in a rule. If set to `true`, operations which attempt to set these combinations will fail. If set to `false`, such operations will instead be allowed. Defaults to `true`. 
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -692,8 +684,8 @@ class PoliciesObjectStoreAccessApi(object):
     def api210_object_store_access_policies_post_with_http_info(
         self,
         names=None,  # type: List[str]
-        enforce_action_restrictions=None,  # type: bool
         policy=None,  # type: models.ObjectStoreAccessPolicyPost
+        enforce_action_restrictions=None,  # type: bool
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -708,9 +700,9 @@ class PoliciesObjectStoreAccessApi(object):
         >>> thread = api.api210_object_store_access_policies_post_with_http_info(names, async_req=True)
         >>> result = thread.get()
 
-        :param list[str] names: A comma-separated list of resource names. (required)
-        :param bool enforce_action_restrictions: Certain combinations of actions and other rule elements are inherently ignored if specified together in a rule. If set to `true`, operations which attempt to set these combinations will fail. If set to `false`, such operations will instead be allowed. Defaults to `true`.
+        :param list[str] names: A comma-separated list of resource names.  (required)
         :param ObjectStoreAccessPolicyPost policy:
+        :param bool enforce_action_restrictions: Certain combinations of actions and other rule elements are inherently ignored if specified together in a rule. If set to `true`, operations which attempt to set these combinations will fail. If set to `false`, such operations will instead be allowed. Defaults to `true`. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -802,9 +794,9 @@ class PoliciesObjectStoreAccessApi(object):
         >>> thread = api.api210_object_store_access_policies_rules_delete_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
-        :param list[str] policy_ids: A comma-separated list of policy IDs. If after filtering, there is not at least one resource that matches each of the elements of `policy_ids`, then an error is returned. This cannot be provided together with the `policy_names` query parameter.
-        :param list[str] policy_names: A comma-separated list of policy names.
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
+        :param list[str] policy_ids: A comma-separated list of policy IDs. If after filtering, there is not at least one resource that matches each of the elements of `policy_ids`, then an error is returned.  This cannot be provided together with the `policy_names` query parameter. 
+        :param list[str] policy_names: A comma-separated list of policy names. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -854,10 +846,6 @@ class PoliciesObjectStoreAccessApi(object):
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
-
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
@@ -906,14 +894,14 @@ class PoliciesObjectStoreAccessApi(object):
         >>> thread = api.api210_object_store_access_policies_rules_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
-        :param str filter: Exclude resources that don't match the specified criteria.
-        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
-        :param int offset: The offset of the first resource to return from a collection.
-        :param list[str] policy_ids: A comma-separated list of policy IDs. If after filtering, there is not at least one resource that matches each of the elements of `policy_ids`, then an error is returned. This cannot be provided together with the `policy_names` query parameter.
-        :param list[str] policy_names: A comma-separated list of policy names.
-        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.
+        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result. 
+        :param str filter: Exclude resources that don't match the specified criteria. 
+        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
+        :param int offset: The offset of the first resource to return from a collection. 
+        :param list[str] policy_ids: A comma-separated list of policy IDs. If after filtering, there is not at least one resource that matches each of the elements of `policy_ids`, then an error is returned.  This cannot be provided together with the `policy_names` query parameter. 
+        :param list[str] policy_names: A comma-separated list of policy names. 
+        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -1031,10 +1019,10 @@ class PoliciesObjectStoreAccessApi(object):
         >>> result = thread.get()
 
         :param PolicyRuleObjectAccess rule: (required)
-        :param bool enforce_action_restrictions: Certain combinations of actions and other rule elements are inherently ignored if specified together in a rule. If set to `true`, operations which attempt to set these combinations will fail. If set to `false`, such operations will instead be allowed. Defaults to `true`.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
-        :param list[str] policy_ids: A comma-separated list of policy IDs. If after filtering, there is not at least one resource that matches each of the elements of `policy_ids`, then an error is returned. This cannot be provided together with the `policy_names` query parameter.
-        :param list[str] policy_names: A comma-separated list of policy names.
+        :param bool enforce_action_restrictions: Certain combinations of actions and other rule elements are inherently ignored if specified together in a rule. If set to `true`, operations which attempt to set these combinations will fail. If set to `false`, such operations will instead be allowed. Defaults to `true`. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
+        :param list[str] policy_ids: A comma-separated list of policy IDs. If after filtering, there is not at least one resource that matches each of the elements of `policy_ids`, then an error is returned.  This cannot be provided together with the `policy_names` query parameter. 
+        :param list[str] policy_names: A comma-separated list of policy names. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -1121,8 +1109,8 @@ class PoliciesObjectStoreAccessApi(object):
 
     def api210_object_store_access_policies_rules_post_with_http_info(
         self,
-        names=None,  # type: List[str]
         rule=None,  # type: models.PolicyRuleObjectAccessPost
+        names=None,  # type: List[str]
         enforce_action_restrictions=None,  # type: bool
         policy_ids=None,  # type: List[str]
         policy_names=None,  # type: List[str]
@@ -1137,14 +1125,14 @@ class PoliciesObjectStoreAccessApi(object):
         Create a new access policy rule.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.api210_object_store_access_policies_rules_post_with_http_info(names, rule, async_req=True)
+        >>> thread = api.api210_object_store_access_policies_rules_post_with_http_info(rule, names, async_req=True)
         >>> result = thread.get()
 
-        :param list[str] names: A comma-separated list of resource names. (required)
         :param PolicyRuleObjectAccessPost rule: (required)
-        :param bool enforce_action_restrictions: Certain combinations of actions and other rule elements are inherently ignored if specified together in a rule. If set to `true`, operations which attempt to set these combinations will fail. If set to `false`, such operations will instead be allowed. Defaults to `true`.
-        :param list[str] policy_ids: A comma-separated list of policy IDs. If after filtering, there is not at least one resource that matches each of the elements of `policy_ids`, then an error is returned. This cannot be provided together with the `policy_names` query parameter.
-        :param list[str] policy_names: A comma-separated list of policy names.
+        :param list[str] names: A comma-separated list of resource names.  (required)
+        :param bool enforce_action_restrictions: Certain combinations of actions and other rule elements are inherently ignored if specified together in a rule. If set to `true`, operations which attempt to set these combinations will fail. If set to `false`, such operations will instead be allowed. Defaults to `true`. 
+        :param list[str] policy_ids: A comma-separated list of policy IDs. If after filtering, there is not at least one resource that matches each of the elements of `policy_ids`, then an error is returned.  This cannot be provided together with the `policy_names` query parameter. 
+        :param list[str] policy_names: A comma-separated list of policy names. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -1173,12 +1161,12 @@ class PoliciesObjectStoreAccessApi(object):
         # Assign a value to X-Request-Id if it is not specified
         if params.get('x_request_id') is None:
             params['x_request_id'] = str(uuid.uuid4())
-        # verify the required parameter 'names' is set
-        if names is None:
-            raise TypeError("Missing the required parameter `names` when calling `api210_object_store_access_policies_rules_post`")
         # verify the required parameter 'rule' is set
         if rule is None:
             raise TypeError("Missing the required parameter `rule` when calling `api210_object_store_access_policies_rules_post`")
+        # verify the required parameter 'names' is set
+        if names is None:
+            raise TypeError("Missing the required parameter `names` when calling `api210_object_store_access_policies_rules_post`")
 
         collection_formats = {}
         path_params = {}
@@ -1248,18 +1236,18 @@ class PoliciesObjectStoreAccessApi(object):
         # type: (...) -> models.ObjectStoreAccessPolicyActionGetResponse
         """GET object-store-access-policy-actions
 
-        List valid actions for access policy rules. Each action is either a valid AWS S3 action (prefixed by `s3:`) or our special wildcard action (`s3:*`). Each action, when included in a rule, may restrict which other properties may be set for that rule.
+        List valid actions for access policy rules. Each action is either a valid AWS S3 action (prefixed by `s3:`) or our special wildcard action (`s3:*`). Each action, when included in a rule, may restrict which other properties may be set for that rule.  
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api210_object_store_access_policy_actions_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
-        :param str filter: Exclude resources that don't match the specified criteria.
-        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
-        :param int offset: The offset of the first resource to return from a collection.
-        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.
+        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result. 
+        :param str filter: Exclude resources that don't match the specified criteria. 
+        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
+        :param int offset: The offset of the first resource to return from a collection. 
+        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.

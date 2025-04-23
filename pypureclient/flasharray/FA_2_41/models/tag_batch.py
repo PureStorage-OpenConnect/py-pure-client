@@ -31,18 +31,18 @@ class TagBatch(object):
     """
     swagger_types = {
         'copyable': 'bool',
-        'key': 'str',
+        'resource': 'Reference',
         'namespace': 'str',
         'value': 'str',
-        'resource': 'Reference'
+        'key': 'str'
     }
 
     attribute_map = {
         'copyable': 'copyable',
-        'key': 'key',
+        'resource': 'resource',
         'namespace': 'namespace',
         'value': 'value',
-        'resource': 'resource'
+        'key': 'key'
     }
 
     required_args = {
@@ -51,29 +51,29 @@ class TagBatch(object):
     def __init__(
         self,
         copyable=None,  # type: bool
-        key=None,  # type: str
+        resource=None,  # type: models.Reference
         namespace=None,  # type: str
         value=None,  # type: str
-        resource=None,  # type: models.Reference
+        key=None,  # type: str
     ):
         """
         Keyword args:
-            copyable (bool): Specifies whether or not to include the tag when copying the parent resource. If set to `true`, the tag is included in resource copying. If set to `false`, the tag is not included. If not specified, defaults to `true`.
-            key (str): Key of the tag. Supports up to 64 Unicode characters.
-            namespace (str): Optional namespace of the tag. Namespace identifies the category of the tag. Omitting the namespace defaults to the namespace `default`. The `pure&#42;` namespaces are reserved for plugins and integration partners. It is recommended that customers avoid using reserved namespaces.
-            value (str): Value of the tag. Supports up to 256 Unicode characters.
-            resource (Reference): A reference to the parent object.
+            copyable (bool): Specifies whether or not to include the tag when copying the parent resource. If set to `true`, the tag is included in resource copying. If set to `false`, the tag is not included. If not specified, defaults to `true`. 
+            resource (Reference): A reference to the parent object. 
+            namespace (str): Optional namespace of the tag. Namespace identifies the category of the tag. Omitting the namespace defaults to the namespace `default`. The `pure&#42;` namespaces are reserved for plugins and integration partners. It is recommended that customers avoid using reserved namespaces. 
+            value (str): Value of the tag. Supports up to 256 Unicode characters. 
+            key (str): Key of the tag. Supports up to 64 Unicode characters. 
         """
         if copyable is not None:
             self.copyable = copyable
-        if key is not None:
-            self.key = key
+        if resource is not None:
+            self.resource = resource
         if namespace is not None:
             self.namespace = namespace
         if value is not None:
             self.value = value
-        if resource is not None:
-            self.resource = resource
+        if key is not None:
+            self.key = key
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

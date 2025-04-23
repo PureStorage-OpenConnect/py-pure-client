@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.14, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.14, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.14
     
@@ -31,28 +31,28 @@ class FileSession(object):
     """
     swagger_types = {
         'name': 'str',
-        'authentication': 'str',
-        'client': 'FixedReferenceNameOnly',
         'connection_time': 'int',
-        'idle_time': 'int',
-        'opens': 'int',
         'protocol': 'str',
         'port': 'int',
+        'client': 'FixedReferenceNameOnly',
+        'opens': 'int',
+        'idle_time': 'int',
         'time': 'int',
-        'user': 'UserNoId'
+        'user': 'UserNoId',
+        'authentication': 'str'
     }
 
     attribute_map = {
         'name': 'name',
-        'authentication': 'authentication',
-        'client': 'client',
         'connection_time': 'connection_time',
-        'idle_time': 'idle_time',
-        'opens': 'opens',
         'protocol': 'protocol',
         'port': 'port',
+        'client': 'client',
+        'opens': 'opens',
+        'idle_time': 'idle_time',
         'time': 'time',
-        'user': 'user'
+        'user': 'user',
+        'authentication': 'authentication'
     }
 
     required_args = {
@@ -61,49 +61,49 @@ class FileSession(object):
     def __init__(
         self,
         name=None,  # type: str
-        authentication=None,  # type: str
-        client=None,  # type: models.FixedReferenceNameOnly
         connection_time=None,  # type: int
-        idle_time=None,  # type: int
-        opens=None,  # type: int
         protocol=None,  # type: str
         port=None,  # type: int
+        client=None,  # type: models.FixedReferenceNameOnly
+        opens=None,  # type: int
+        idle_time=None,  # type: int
         time=None,  # type: int
         user=None,  # type: models.UserNoId
+        authentication=None,  # type: str
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            authentication (str): Describes how was the user authenticated. Valid values include `KRB` and `NTLMv2`.
-            client (FixedReferenceNameOnly): Client that holds the session.
             connection_time (int): Connection time in milliseconds since UNIX epoch.
-            idle_time (int): Duration in milliseconds that indicates how long the session has been idle.
-            opens (int): Number of opens for the given session.
-            protocol (str): The protocol utilized for obtaining and managing the session. Valid values include `nfs` and `smb`.
+            protocol (str): The protocol utilized for obtaining and managing the session. Valid values include `nfs` and `smb`. 
             port (int): Port number the client is connected from.
+            client (FixedReferenceNameOnly): Client that holds the session. 
+            opens (int): Number of opens for the given session.
+            idle_time (int): Duration in milliseconds that indicates how long the session has been idle. 
             time (int): Current time in milliseconds since UNIX epoch.
             user (UserNoId): The user who has created the session.
+            authentication (str): Describes how was the user authenticated. Valid values include `KRB` and `NTLMv2`. 
         """
         if name is not None:
             self.name = name
-        if authentication is not None:
-            self.authentication = authentication
-        if client is not None:
-            self.client = client
         if connection_time is not None:
             self.connection_time = connection_time
-        if idle_time is not None:
-            self.idle_time = idle_time
-        if opens is not None:
-            self.opens = opens
         if protocol is not None:
             self.protocol = protocol
         if port is not None:
             self.port = port
+        if client is not None:
+            self.client = client
+        if opens is not None:
+            self.opens = opens
+        if idle_time is not None:
+            self.idle_time = idle_time
         if time is not None:
             self.time = time
         if user is not None:
             self.user = user
+        if authentication is not None:
+            self.authentication = authentication
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

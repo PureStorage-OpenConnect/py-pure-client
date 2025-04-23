@@ -30,14 +30,14 @@ class SupportPatch(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'phonehome_enabled': 'bool',
         'proxy': 'str',
+        'phonehome_enabled': 'bool',
         'remote_assist_active': 'bool'
     }
 
     attribute_map = {
-        'phonehome_enabled': 'phonehome_enabled',
         'proxy': 'proxy',
+        'phonehome_enabled': 'phonehome_enabled',
         'remote_assist_active': 'remote_assist_active'
     }
 
@@ -46,20 +46,20 @@ class SupportPatch(object):
 
     def __init__(
         self,
-        phonehome_enabled=None,  # type: bool
         proxy=None,  # type: str
+        phonehome_enabled=None,  # type: bool
         remote_assist_active=None,  # type: bool
     ):
         """
         Keyword args:
-            phonehome_enabled (bool): The status of phonehome. If set to `true`, enable phonehome. If set to `false`, disable phonehome.
-            proxy (str): The value of the current proxy, which is used for connecting to cloud services such as phonehome, remote assist, etc. Specify the server name, including the scheme and proxy port number.
-            remote_assist_active (bool): The status of a remote assist session. If set to `true`, enable the remote assist session. If set to `false`, disable the remote assist session.
+            proxy (str): The value of the current proxy, which is used for connecting to cloud services such as phonehome, remote assist, etc. Specify the server name, including the scheme and proxy port number. 
+            phonehome_enabled (bool): The status of phonehome. If set to `true`, enable phonehome. If set to `false`, disable phonehome. 
+            remote_assist_active (bool): The status of a remote assist session. If set to `true`, enable the remote assist session. If set to `false`, disable the remote assist session. 
         """
-        if phonehome_enabled is not None:
-            self.phonehome_enabled = phonehome_enabled
         if proxy is not None:
             self.proxy = proxy
+        if phonehome_enabled is not None:
+            self.phonehome_enabled = phonehome_enabled
         if remote_assist_active is not None:
             self.remote_assist_active = remote_assist_active
 

@@ -49,8 +49,8 @@ class PolicyMemberClean(object):
     ):
         """
         Keyword args:
-            member (FixedReferenceWithType): Reference to the resource that the policy is applied to.
-            policy (FixedReferenceWithType): Reference to the policy.
+            member (FixedReferenceWithType): Reference to the resource that the policy is applied to. 
+            policy (FixedReferenceWithType): Reference to the policy. 
         """
         if member is not None:
             self.member = member

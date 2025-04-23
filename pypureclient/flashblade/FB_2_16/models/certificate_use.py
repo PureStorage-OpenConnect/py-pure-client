@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.16
     
@@ -32,15 +32,15 @@ class CertificateUse(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
-        'group': 'FixedReference',
-        'use': 'FixedReferenceWithRemote'
+        'use': 'FixedReferenceWithRemote',
+        'group': 'FixedReference'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
-        'group': 'group',
-        'use': 'use'
+        'use': 'use',
+        'group': 'group'
     }
 
     required_args = {
@@ -50,24 +50,24 @@ class CertificateUse(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
-        group=None,  # type: models.FixedReference
         use=None,  # type: models.FixedReferenceWithRemote
+        group=None,  # type: models.FixedReference
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            group (FixedReference): A reference to a certificate group that is being used, if any, where this certificate is a member of the certificate-group. This field is `null` if the referenced use object is not using a group, but is rather using this certificate directly.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
             use (FixedReferenceWithRemote): A reference to an object using this certificate.
+            group (FixedReference): A reference to a certificate group that is being used, if any, where this certificate is a member of the certificate-group. This field is `null` if the referenced use object is not using a group, but is rather using this certificate directly. 
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
-        if group is not None:
-            self.group = group
         if use is not None:
             self.use = use
+        if group is not None:
+            self.group = group
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

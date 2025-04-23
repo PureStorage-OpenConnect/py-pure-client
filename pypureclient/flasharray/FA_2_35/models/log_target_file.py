@@ -32,16 +32,16 @@ class LogTargetFile(object):
     swagger_types = {
         'name': 'str',
         'target_type': 'str',
-        'directory': 'ReferenceWithType',
         'keep_for': 'int',
+        'directory': 'ReferenceWithType',
         'keep_size': 'int'
     }
 
     attribute_map = {
         'name': 'name',
         'target_type': 'target_type',
-        'directory': 'directory',
         'keep_for': 'keep_for',
+        'directory': 'directory',
         'keep_size': 'keep_size'
     }
 
@@ -52,26 +52,26 @@ class LogTargetFile(object):
         self,
         name=None,  # type: str
         target_type=None,  # type: str
-        directory=None,  # type: models.ReferenceWithType
         keep_for=None,  # type: int
+        directory=None,  # type: models.ReferenceWithType
         keep_size=None,  # type: int
     ):
         """
         Keyword args:
-            name (str): A user-specified name. The name must be locally unique and cannot be changed.
-            target_type (str): The type of log target. Valid values include `file`, and `syslog`.
-            directory (ReferenceWithType): Directory name to be used as log target.
-            keep_for (int): Specifies the period that audit logs are retained before they are deleted, in milliseconds. If not specified, defaults to `null` which means size based retention does not apply. Use 0 to reset the value to `null`. At least one of the `keep_for` or `keep_size` parameters are required, and they can be set together.
-            keep_size (int): Specifies the maximum size of audit logs to be retained. Measured in bytes. When exceeded, older logs will be deleted. If not specified, defaults to `null` which means size based retention does not apply. Use 0 to reset the value to `null`.
+            name (str): A user-specified name. The name must be locally unique and cannot be changed. 
+            target_type (str): The type of log target. Valid values include `file`, and `syslog`. 
+            keep_for (int): Specifies the period that audit logs are retained before they are deleted, in milliseconds. If not specified, defaults to `null` which means size based retention does not apply. Use 0 to reset the value to `null`. At least one of the `keep_for` or `keep_size` parameters are required, and they can be set together. 
+            directory (ReferenceWithType): Directory name to be used as log target. 
+            keep_size (int): Specifies the maximum size of audit logs to be retained. Measured in bytes. When exceeded, older logs will be deleted. If not specified, defaults to `null` which means size based retention does not apply. Use 0 to reset the value to `null`. 
         """
         if name is not None:
             self.name = name
         if target_type is not None:
             self.target_type = target_type
-        if directory is not None:
-            self.directory = directory
         if keep_for is not None:
             self.keep_for = keep_for
+        if directory is not None:
+            self.directory = directory
         if keep_size is not None:
             self.keep_size = keep_size
 

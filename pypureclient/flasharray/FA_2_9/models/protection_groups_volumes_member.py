@@ -30,14 +30,14 @@ class ProtectionGroupsVolumesMember(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
+        'id': 'str',
         'destroyed': 'bool'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
+        'id': 'id',
         'destroyed': 'destroyed'
     }
 
@@ -46,20 +46,20 @@ class ProtectionGroupsVolumesMember(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
+        id=None,  # type: str
         destroyed=None,  # type: bool
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified.
-            name (str): The resource name, such as volume name, pod name, snapshot name, and so on.
-            destroyed (bool): Returns a value of `true` if the volume has been destroyed and is pending eradication. Through the `volumes` endpoint, the user can see `time_remaining` of the destroyed volume, recover, or eradicate the destroyed volume.
+            name (str): The resource name, such as volume name, pod name, snapshot name, and so on. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified. 
+            destroyed (bool): Returns a value of `true` if the volume has been destroyed and is pending eradication. Through the `volumes` endpoint, the user can see `time_remaining` of the destroyed volume, recover, or eradicate the destroyed volume. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
         if destroyed is not None:
             self.destroyed = destroyed
 

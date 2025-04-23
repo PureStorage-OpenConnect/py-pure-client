@@ -30,15 +30,15 @@ class TargetProtectionGroup(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'group': 'ReferenceNoId',
+        'allowed': 'bool',
         'member': 'ReferenceNoId',
-        'allowed': 'bool'
+        'group': 'ReferenceNoId'
     }
 
     attribute_map = {
-        'group': 'group',
+        'allowed': 'allowed',
         'member': 'member',
-        'allowed': 'allowed'
+        'group': 'group'
     }
 
     required_args = {
@@ -46,22 +46,22 @@ class TargetProtectionGroup(object):
 
     def __init__(
         self,
-        group=None,  # type: models.ReferenceNoId
-        member=None,  # type: models.ReferenceNoId
         allowed=None,  # type: bool
+        member=None,  # type: models.ReferenceNoId
+        group=None,  # type: models.ReferenceNoId
     ):
         """
         Keyword args:
-            group (ReferenceNoId)
+            allowed (bool): If set to `true`, the target array has allowed the source array to replicate protection group data to the target array. If set to `false`, the target array has not allowed the source array to replicate protection group data to the target. 
             member (ReferenceNoId)
-            allowed (bool): If set to `true`, the target array has allowed the source array to replicate protection group data to the target array. If set to `false`, the target array has not allowed the source array to replicate protection group data to the target.
+            group (ReferenceNoId)
         """
-        if group is not None:
-            self.group = group
-        if member is not None:
-            self.member = member
         if allowed is not None:
             self.allowed = allowed
+        if member is not None:
+            self.member = member
+        if group is not None:
+            self.group = group
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

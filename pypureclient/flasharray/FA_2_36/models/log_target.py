@@ -49,8 +49,8 @@ class LogTarget(object):
     ):
         """
         Keyword args:
-            name (str): A user-specified name. The name must be locally unique and cannot be changed.
-            target_type (str): The type of log target. Valid values include `file`, and `syslog`.
+            name (str): A user-specified name. The name must be locally unique and cannot be changed. 
+            target_type (str): The type of log target. Valid values include `file`, and `syslog`. 
         """
         if name is not None:
             self.name = name

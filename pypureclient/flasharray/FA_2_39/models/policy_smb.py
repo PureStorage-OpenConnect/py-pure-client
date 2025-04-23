@@ -30,29 +30,29 @@ class PolicySmb(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
+        'id': 'str',
         'context': 'FixedReference',
-        'destroyed': 'bool',
-        'enabled': 'bool',
-        'pod': 'Reference',
-        'policy_type': 'str',
         'time_remaining': 'int',
-        'access_based_enumeration_enabled': 'bool',
-        'policy_mapping': 'PolicyNfsPolicyMapping'
+        'destroyed': 'bool',
+        'policy_type': 'str',
+        'pod': 'Reference',
+        'enabled': 'bool',
+        'policy_mapping': 'PolicyNfsPolicyMapping',
+        'access_based_enumeration_enabled': 'bool'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
+        'id': 'id',
         'context': 'context',
-        'destroyed': 'destroyed',
-        'enabled': 'enabled',
-        'pod': 'pod',
-        'policy_type': 'policy_type',
         'time_remaining': 'time_remaining',
-        'access_based_enumeration_enabled': 'access_based_enumeration_enabled',
-        'policy_mapping': 'policy_mapping'
+        'destroyed': 'destroyed',
+        'policy_type': 'policy_type',
+        'pod': 'pod',
+        'enabled': 'enabled',
+        'policy_mapping': 'policy_mapping',
+        'access_based_enumeration_enabled': 'access_based_enumeration_enabled'
     }
 
     required_args = {
@@ -60,50 +60,50 @@ class PolicySmb(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
+        id=None,  # type: str
         context=None,  # type: models.FixedReference
-        destroyed=None,  # type: bool
-        enabled=None,  # type: bool
-        pod=None,  # type: models.Reference
-        policy_type=None,  # type: str
         time_remaining=None,  # type: int
-        access_based_enumeration_enabled=None,  # type: bool
+        destroyed=None,  # type: bool
+        policy_type=None,  # type: str
+        pod=None,  # type: models.Reference
+        enabled=None,  # type: bool
         policy_mapping=None,  # type: models.PolicyNfsPolicyMapping
+        access_based_enumeration_enabled=None,  # type: bool
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            name (str): A user-specified name. The name must be locally unique and can be changed.
-            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
-            destroyed (bool): Returns a value of `true` if the policy has been destroyed and is pending eradication. The `time_remaining` value displays the amount of time left until the destroyed policy is permanently eradicated. Once the `time_remaining` period has elapsed, the policy is permanently eradicated and can no longer be recovered.
-            enabled (bool): Returns a value of `true` if the policy is enabled.
-            pod (Reference): A reference to the pod.
-            policy_type (str): The type of policy. Valid values include `autodir`, `nfs`, `smb`, `snapshot`, and `quota`.
-            time_remaining (int): The amount of time left, measured in milliseconds, until the destroyed policy is permanently eradicated.
-            access_based_enumeration_enabled (bool): Returns a value of `true` if access based enumeration is enabled on the policy. When access based enumeration is enabled on a policy, files and folders within exports that are attached to the policy will be hidden from users who do not have permission to view them.
-            policy_mapping (PolicyNfsPolicyMapping): Specifies the mapping of this policy across a pod replica link. If this policy is not inside a pod of a pod replica link, mapping is `null`.
+            name (str): A user-specified name. The name must be locally unique and can be changed. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource. 
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request.  Other parameters provided with the request, such as names of volumes or snapshots,  are resolved relative to the provided `context`. 
+            time_remaining (int): The amount of time left, measured in milliseconds, until the destroyed policy is permanently eradicated. 
+            destroyed (bool): Returns a value of `true` if the policy has been destroyed and is pending eradication. The `time_remaining` value displays the amount of time left until the destroyed policy is permanently eradicated. Once the `time_remaining` period has elapsed, the policy is permanently eradicated and can no longer be recovered. 
+            policy_type (str): The type of policy. Valid values include `autodir`, `nfs`, `smb`, `snapshot`, and `quota`. 
+            pod (Reference): A reference to the pod. 
+            enabled (bool): Returns a value of `true` if the policy is enabled. 
+            policy_mapping (PolicyNfsPolicyMapping): Specifies the mapping of this policy across a pod replica link. If this policy is not inside a pod of a pod replica link, mapping is `null`. 
+            access_based_enumeration_enabled (bool): Returns a value of `true` if access based enumeration is enabled on the policy. When access based enumeration is enabled on a policy, files and folders within exports that are attached to the policy will be hidden from users who do not have permission to view them. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
         if context is not None:
             self.context = context
-        if destroyed is not None:
-            self.destroyed = destroyed
-        if enabled is not None:
-            self.enabled = enabled
-        if pod is not None:
-            self.pod = pod
-        if policy_type is not None:
-            self.policy_type = policy_type
         if time_remaining is not None:
             self.time_remaining = time_remaining
-        if access_based_enumeration_enabled is not None:
-            self.access_based_enumeration_enabled = access_based_enumeration_enabled
+        if destroyed is not None:
+            self.destroyed = destroyed
+        if policy_type is not None:
+            self.policy_type = policy_type
+        if pod is not None:
+            self.pod = pod
+        if enabled is not None:
+            self.enabled = enabled
         if policy_mapping is not None:
             self.policy_mapping = policy_mapping
+        if access_based_enumeration_enabled is not None:
+            self.access_based_enumeration_enabled = access_based_enumeration_enabled
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

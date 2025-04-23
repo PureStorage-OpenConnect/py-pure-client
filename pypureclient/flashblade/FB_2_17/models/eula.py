@@ -49,7 +49,7 @@ class Eula(object):
     ):
         """
         Keyword args:
-            agreement (str): The End User Agreement text.
+            agreement (str): End User Agreement text.
             signature (EulaSignature)
         """
         if agreement is not None:

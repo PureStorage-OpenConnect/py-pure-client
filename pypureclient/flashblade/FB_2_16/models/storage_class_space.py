@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.16
     
@@ -31,16 +31,16 @@ class StorageClassSpace(object):
     """
     swagger_types = {
         'name': 'str',
-        'capacity': 'int',
+        'time': 'int',
         'space': 'Space',
-        'time': 'int'
+        'capacity': 'int'
     }
 
     attribute_map = {
         'name': 'name',
-        'capacity': 'capacity',
+        'time': 'time',
         'space': 'space',
-        'time': 'time'
+        'capacity': 'capacity'
     }
 
     required_args = {
@@ -49,25 +49,25 @@ class StorageClassSpace(object):
     def __init__(
         self,
         name=None,  # type: str
-        capacity=None,  # type: int
-        space=None,  # type: models.Space
         time=None,  # type: int
+        space=None,  # type: models.Space
+        capacity=None,  # type: int
     ):
         """
         Keyword args:
             name (str)
-            capacity (int): Usable capacity in bytes.
-            space (Space)
             time (int): Sample time in milliseconds since UNIX epoch.
+            space (Space)
+            capacity (int): Usable capacity in bytes.
         """
         if name is not None:
             self.name = name
-        if capacity is not None:
-            self.capacity = capacity
-        if space is not None:
-            self.space = space
         if time is not None:
             self.time = time
+        if space is not None:
+            self.space = space
+        if capacity is not None:
+            self.capacity = capacity
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

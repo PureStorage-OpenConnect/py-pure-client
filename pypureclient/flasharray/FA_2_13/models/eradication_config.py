@@ -49,8 +49,8 @@ class EradicationConfig(object):
     ):
         """
         Keyword args:
-            eradication_delay (int): Eradication delay in milliseconds. Automatically eradicate destroyed items after the configured delay time passes. Valid values are `86400000` and any multiple of `86400000` in the range of `86400000` and `2592000000`. Any other values are rounded down to the nearest multiple of `86400000`.
-            manual_eradication (str): Manual eradication status applied on the array level. If status is `all-disabled`, you cannot eradicate objects, files, and directories. Values include `all-disabled` and `all-enabled`. If the user does not have sufficient access, this field will return `null`.
+            eradication_delay (int): Eradication delay in milliseconds. Automatically eradicate destroyed items after the configured delay time passes. Valid values are `86400000` and any multiple of `86400000` in the range of `86400000` and `2592000000`. Any other values are rounded down to the nearest multiple of `86400000`. 
+            manual_eradication (str): Manual eradication status applied on the array level. If status is `all-disabled`, you cannot eradicate objects, files, and directories. Values include `all-disabled` and `all-enabled`. If the user does not have sufficient access, this field will return `null`. 
         """
         if eradication_delay is not None:
             self.eradication_delay = eradication_delay

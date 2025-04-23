@@ -30,14 +30,14 @@ class SupportDiagnosticsDetails(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'test_name': 'str',
         'severity': 'str',
+        'test_name': 'str',
         'result_details': 'str'
     }
 
     attribute_map = {
-        'test_name': 'test_name',
         'severity': 'severity',
+        'test_name': 'test_name',
         'result_details': 'result_details'
     }
 
@@ -46,20 +46,20 @@ class SupportDiagnosticsDetails(object):
 
     def __init__(
         self,
-        test_name=None,  # type: str
         severity=None,  # type: str
+        test_name=None,  # type: str
         result_details=None,  # type: str
     ):
         """
         Keyword args:
-            test_name (str): Name of the test that was performed.
             severity (str): Severity level of the test. Valid values are `info`, `warning`, and `critical`.
-            result_details (str): Additional details related to the test. This field also provides remediation information.
+            test_name (str): Name of the test that was performed. 
+            result_details (str): Additional details related to the test. This field also provides remediation information. 
         """
-        if test_name is not None:
-            self.test_name = test_name
         if severity is not None:
             self.severity = severity
+        if test_name is not None:
+            self.test_name = test_name
         if result_details is not None:
             self.result_details = result_details
 
