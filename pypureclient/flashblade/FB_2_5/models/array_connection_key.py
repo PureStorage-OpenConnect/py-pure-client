@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.5, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.5, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.5
     
@@ -30,15 +30,15 @@ class ArrayConnectionKey(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'expires': 'int',
         'connection_key': 'str',
-        'created': 'int',
-        'expires': 'int'
+        'created': 'int'
     }
 
     attribute_map = {
+        'expires': 'expires',
         'connection_key': 'connection_key',
-        'created': 'created',
-        'expires': 'expires'
+        'created': 'created'
     }
 
     required_args = {
@@ -46,22 +46,22 @@ class ArrayConnectionKey(object):
 
     def __init__(
         self,
+        expires=None,  # type: int
         connection_key=None,  # type: str
         created=None,  # type: int
-        expires=None,  # type: int
     ):
         """
         Keyword args:
-            connection_key (str): Connection-key, used on another array to connect to this array. After creation, listing will only show ****.
-            created (int): Creation time in milliseconds since UNIX epoch.
             expires (int): Expiration time in milliseconds since UNIX epoch.
+            connection_key (str): Connection-key, used on another array to connect to this array. After creation, listing will only show ****. 
+            created (int): Creation time in milliseconds since UNIX epoch.
         """
+        if expires is not None:
+            self.expires = expires
         if connection_key is not None:
             self.connection_key = connection_key
         if created is not None:
             self.created = created
-        if expires is not None:
-            self.expires = expires
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

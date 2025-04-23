@@ -30,19 +30,19 @@ class SoftwareVersion(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'details': 'str',
-        'name': 'str',
-        'release_family': 'str',
         'upgrade_hops': 'list[str]',
-        'version': 'str'
+        'name': 'str',
+        'details': 'str',
+        'version': 'str',
+        'release_family': 'str'
     }
 
     attribute_map = {
-        'details': 'details',
-        'name': 'name',
-        'release_family': 'release_family',
         'upgrade_hops': 'upgrade_hops',
-        'version': 'version'
+        'name': 'name',
+        'details': 'details',
+        'version': 'version',
+        'release_family': 'release_family'
     }
 
     required_args = {
@@ -50,30 +50,30 @@ class SoftwareVersion(object):
 
     def __init__(
         self,
-        details=None,  # type: str
-        name=None,  # type: str
-        release_family=None,  # type: str
         upgrade_hops=None,  # type: List[str]
+        name=None,  # type: str
+        details=None,  # type: str
         version=None,  # type: str
+        release_family=None,  # type: str
     ):
         """
         Keyword args:
-            details (str): The description of the version.
-            name (str): The name of the software.
-            release_family (str): The major and minor release number of the version.
-            upgrade_hops (list[str]): The list of software versions the upgrade will go through.
-            version (str): The version of the software.
+            upgrade_hops (list[str]): The list of software versions the upgrade will go through. 
+            name (str): The name of the software. 
+            details (str): The description of the version. 
+            version (str): The version of the software. 
+            release_family (str): The major and minor release number of the version. 
         """
-        if details is not None:
-            self.details = details
-        if name is not None:
-            self.name = name
-        if release_family is not None:
-            self.release_family = release_family
         if upgrade_hops is not None:
             self.upgrade_hops = upgrade_hops
+        if name is not None:
+            self.name = name
+        if details is not None:
+            self.details = details
         if version is not None:
             self.version = version
+        if release_family is not None:
+            self.release_family = release_family
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

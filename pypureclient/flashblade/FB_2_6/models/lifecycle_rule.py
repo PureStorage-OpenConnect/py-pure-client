@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.6, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.6, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.6
     
@@ -32,28 +32,28 @@ class LifecycleRule(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
+        'keep_current_version_until': 'int',
         'abort_incomplete_multipart_uploads_after': 'int',
         'keep_current_version_for': 'int',
-        'keep_current_version_until': 'int',
         'bucket': 'FixedReference',
-        'enabled': 'bool',
         'rule_id': 'str',
-        'keep_previous_version_for': 'int',
         'prefix': 'str',
+        'keep_previous_version_for': 'int',
+        'enabled': 'bool',
         'cleanup_expired_object_delete_marker': 'bool'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
+        'keep_current_version_until': 'keep_current_version_until',
         'abort_incomplete_multipart_uploads_after': 'abort_incomplete_multipart_uploads_after',
         'keep_current_version_for': 'keep_current_version_for',
-        'keep_current_version_until': 'keep_current_version_until',
         'bucket': 'bucket',
-        'enabled': 'enabled',
         'rule_id': 'rule_id',
-        'keep_previous_version_for': 'keep_previous_version_for',
         'prefix': 'prefix',
+        'keep_previous_version_for': 'keep_previous_version_for',
+        'enabled': 'enabled',
         'cleanup_expired_object_delete_marker': 'cleanup_expired_object_delete_marker'
     }
 
@@ -64,50 +64,50 @@ class LifecycleRule(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
+        keep_current_version_until=None,  # type: int
         abort_incomplete_multipart_uploads_after=None,  # type: int
         keep_current_version_for=None,  # type: int
-        keep_current_version_until=None,  # type: int
         bucket=None,  # type: models.FixedReference
-        enabled=None,  # type: bool
         rule_id=None,  # type: str
-        keep_previous_version_for=None,  # type: int
         prefix=None,  # type: str
+        keep_previous_version_for=None,  # type: int
+        enabled=None,  # type: bool
         cleanup_expired_object_delete_marker=None,  # type: bool
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            abort_incomplete_multipart_uploads_after (int): Duration of time after which incomplete multipart uploads will be aborted. Measured in milliseconds. Must be a multiple of 86400000 to represent a whole number of days.
-            keep_current_version_for (int): Time after which current versions will be marked expired. Measured in milliseconds. Must be a multiple of 86400000 to represent a whole number of days.
-            keep_current_version_until (int): Time after which current versions will be marked expired. Measured in milliseconds, time since epoch. Must be a valid date, accurate to day.
-            bucket (FixedReference): The bucket which this lifecycle rule is targeting.
-            enabled (bool): If set to `true`, this rule will be enabled.
-            rule_id (str): Unique identifier for the rule. Can have a maximum length of 255 characters.
-            keep_previous_version_for (int): Time after which previous versions will be marked expired. Measured in milliseconds. Must be a multiple of 86400000 to represent a whole number of days.
-            prefix (str): Object key prefix identifying one or more objects in the bucket. Can have a maximum length of 1024 characters.
-            cleanup_expired_object_delete_marker (bool): Returns a value of `true` if the expired object delete markers will be removed.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            keep_current_version_until (int): Time after which current versions will be marked expired. Measured in milliseconds, time since epoch. Must be a valid date, accurate to day. 
+            abort_incomplete_multipart_uploads_after (int): Duration of time after which incomplete multipart uploads will be aborted. Measured in milliseconds. Must be a multiple of 86400000 to represent a whole number of days. 
+            keep_current_version_for (int): Time after which current versions will be marked expired. Measured in milliseconds. Must be a multiple of 86400000 to represent a whole number of days. 
+            bucket (FixedReference): The bucket which this lifecycle rule is targeting. 
+            rule_id (str): Unique identifier for the rule. Can have a maximum length of 255 characters. 
+            prefix (str): Object key prefix identifying one or more objects in the bucket. Can have a maximum length of 1024 characters. 
+            keep_previous_version_for (int): Time after which previous versions will be marked expired. Measured in milliseconds. Must be a multiple of 86400000 to represent a whole number of days. 
+            enabled (bool): If set to `true`, this rule will be enabled. 
+            cleanup_expired_object_delete_marker (bool): Returns a value of `true` if the expired object delete markers will be removed. 
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
+        if keep_current_version_until is not None:
+            self.keep_current_version_until = keep_current_version_until
         if abort_incomplete_multipart_uploads_after is not None:
             self.abort_incomplete_multipart_uploads_after = abort_incomplete_multipart_uploads_after
         if keep_current_version_for is not None:
             self.keep_current_version_for = keep_current_version_for
-        if keep_current_version_until is not None:
-            self.keep_current_version_until = keep_current_version_until
         if bucket is not None:
             self.bucket = bucket
-        if enabled is not None:
-            self.enabled = enabled
         if rule_id is not None:
             self.rule_id = rule_id
-        if keep_previous_version_for is not None:
-            self.keep_previous_version_for = keep_previous_version_for
         if prefix is not None:
             self.prefix = prefix
+        if keep_previous_version_for is not None:
+            self.keep_previous_version_for = keep_previous_version_for
+        if enabled is not None:
+            self.enabled = enabled
         if cleanup_expired_object_delete_marker is not None:
             self.cleanup_expired_object_delete_marker = cleanup_expired_object_delete_marker
 

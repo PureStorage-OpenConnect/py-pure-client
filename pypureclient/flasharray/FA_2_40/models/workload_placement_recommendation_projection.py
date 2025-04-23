@@ -49,8 +49,8 @@ class WorkloadPlacementRecommendationProjection(object):
     ):
         """
         Keyword args:
-            start (float): The projection for the start of the projection period (i.e., immediately after the creation of the workload on this target). The percentage is displayed as a decimal value, starting at 0.00 and ending at 1.00.
-            end (float): The projection for the end of the projection period. Length of the projection period is defined by 'projection_months'. The percentage is displayed as a decimal value, starting at 0.00 and ending at 1.00.
+            start (float): The projection for the start of the projection period (i.e., immediately after the creation of the workload on this target). The percentage is displayed as a decimal value, starting at 0.00 and ending at 1.00. 
+            end (float): The projection for the end of the projection period. Length of the projection period is defined by 'projection_months'. The percentage is displayed as a decimal value, starting at 0.00 and ending at 1.00. 
         """
         if start is not None:
             self.start = start

@@ -30,18 +30,18 @@ class ApiClientPost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'public_key': 'str',
         'max_role': 'str',
         'access_policies': 'list[ReferenceWithType]',
         'issuer': 'str',
-        'public_key': 'str',
         'access_token_ttl_in_ms': 'int'
     }
 
     attribute_map = {
+        'public_key': 'public_key',
         'max_role': 'max_role',
         'access_policies': 'access_policies',
         'issuer': 'issuer',
-        'public_key': 'public_key',
         'access_token_ttl_in_ms': 'access_token_ttl_in_ms'
     }
 
@@ -50,28 +50,28 @@ class ApiClientPost(object):
 
     def __init__(
         self,
+        public_key=None,  # type: str
         max_role=None,  # type: str
         access_policies=None,  # type: List[models.ReferenceWithType]
         issuer=None,  # type: str
-        public_key=None,  # type: str
         access_token_ttl_in_ms=None,  # type: int
     ):
         """
         Keyword args:
-            max_role (str): Deprecated. The maximum Admin Access Policy (previously 'role') allowed for ID Tokens issued by this API client. The bearer of an access token will be authorized to perform actions within the intersection of this policy and that of the array user specified as the JWT `sub` (subject) claim. `max_role` is deprecated in favor of `access_policies`, but remains for backwards compatibility. If `max_role` is the name of a valid legacy role, it will be interpreted as the corresponding access policy of the same name. Otherwise, it's invalid.
-            access_policies (list[ReferenceWithType]): The access policies allowed for ID Tokens issued by this API client. The bearer of an access token will be authorized to perform actions within the intersection of these policies and those of the array user specified as the JWT `sub` (subject) claim.
-            issuer (str): The name of the identity provider that will be issuing ID Tokens for this API client. The `iss` claim in the JWT issued must match this string. If not specified, defaults to the API client name.
-            public_key (str): The API client's PEM formatted (Base64 encoded) RSA public key. Include the `-----BEGIN PUBLIC KEY-----` and `-----END PUBLIC KEY-----` lines.
-            access_token_ttl_in_ms (int): The TTL (Time To Live) length of time for the exchanged access token. Measured in milliseconds. If not specified, defaults to `86400000`.
+            public_key (str): The API client's PEM formatted (Base64 encoded) RSA public key. Include the `-----BEGIN PUBLIC KEY-----` and `-----END PUBLIC KEY-----` lines. 
+            max_role (str): Deprecated. The maximum Admin Access Policy (previously 'role') allowed for ID Tokens issued by this API client. The bearer of an access token will be authorized to perform actions within the intersection of this policy and that of the array user specified as the JWT `sub` (subject) claim. `max_role` is deprecated in favor of `access_policies`, but remains for backwards compatibility. If `max_role` is the name of a valid legacy role, it will be interpreted as the corresponding access policy of the same name. Otherwise, it's invalid. 
+            access_policies (list[ReferenceWithType]): The access policies allowed for ID Tokens issued by this API client. The bearer of an access token will be authorized to perform actions within the intersection of these policies and those of the array user specified as the JWT `sub` (subject) claim. 
+            issuer (str): The name of the identity provider that will be issuing ID Tokens for this API client. The `iss` claim in the JWT issued must match this string. If not specified, defaults to the API client name. 
+            access_token_ttl_in_ms (int): The TTL (Time To Live) length of time for the exchanged access token. Measured in milliseconds. If not specified, defaults to `86400000`. 
         """
+        if public_key is not None:
+            self.public_key = public_key
         if max_role is not None:
             self.max_role = max_role
         if access_policies is not None:
             self.access_policies = access_policies
         if issuer is not None:
             self.issuer = issuer
-        if public_key is not None:
-            self.public_key = public_key
         if access_token_ttl_in_ms is not None:
             self.access_token_ttl_in_ms = access_token_ttl_in_ms
 

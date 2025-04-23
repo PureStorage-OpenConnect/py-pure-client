@@ -31,31 +31,31 @@ class Hardware(object):
     """
     swagger_types = {
         'name': 'str',
-        'details': 'str',
         'identify_enabled': 'bool',
-        'index': 'int',
-        'model': 'str',
         'serial': 'str',
+        'temperature': 'int',
+        'index': 'int',
+        'details': 'str',
+        'model': 'str',
         'slot': 'int',
+        'type': 'str',
         'speed': 'int',
         'status': 'str',
-        'temperature': 'int',
-        'type': 'str',
         'voltage': 'int'
     }
 
     attribute_map = {
         'name': 'name',
-        'details': 'details',
         'identify_enabled': 'identify_enabled',
-        'index': 'index',
-        'model': 'model',
         'serial': 'serial',
+        'temperature': 'temperature',
+        'index': 'index',
+        'details': 'details',
+        'model': 'model',
         'slot': 'slot',
+        'type': 'type',
         'speed': 'speed',
         'status': 'status',
-        'temperature': 'temperature',
-        'type': 'type',
         'voltage': 'voltage'
     }
 
@@ -65,55 +65,55 @@ class Hardware(object):
     def __init__(
         self,
         name=None,  # type: str
-        details=None,  # type: str
         identify_enabled=None,  # type: bool
-        index=None,  # type: int
-        model=None,  # type: str
         serial=None,  # type: str
+        temperature=None,  # type: int
+        index=None,  # type: int
+        details=None,  # type: str
+        model=None,  # type: str
         slot=None,  # type: int
+        type=None,  # type: str
         speed=None,  # type: int
         status=None,  # type: str
-        temperature=None,  # type: int
-        type=None,  # type: str
         voltage=None,  # type: int
     ):
         """
         Keyword args:
-            name (str): A locally unique, system-generated name. The name cannot be modified.
-            details (str): Details about the status of the component if not healthy.
-            identify_enabled (bool): If `true`, the ID LED is lit to visually identify the component.
-            index (int): Number that identifies the relative position of a hardware component within the array.
-            model (str): Model number of the hardware component.
-            serial (str): Serial number of the hardware component.
-            slot (int): Slot number occupied by the PCI Express card that hosts the component.
-            speed (int): Speed (in bytes per second) at which the component is operating.
-            status (str): Component status. Values include `critical`, `healthy`, `identifying`, `unhealthy`, `unknown`, and `unused`.
-            temperature (int): Temperature (in degrees Celsius) reported by the component.
-            type (str): Type of hardware component. Values include `bay`, `ct`, `ch`, `eth`, `fan`, `fb`, `fc`, `fm`, `ib`, `iom`, `nvb`, `pwr`, `sas`, `sh`, and `tmp`.
-            voltage (int): Voltage (in Volts) reported by the component.
+            name (str): A locally unique, system-generated name. The name cannot be modified. 
+            identify_enabled (bool): If `true`, the ID LED is lit to visually identify the component. 
+            serial (str): Serial number of the hardware component. 
+            temperature (int): Temperature (in degrees Celsius) reported by the component. 
+            index (int): Number that identifies the relative position of a hardware component within the array. 
+            details (str): Details about the status of the component if not healthy. 
+            model (str): Model number of the hardware component. 
+            slot (int): Slot number occupied by the PCI Express card that hosts the component. 
+            type (str): Type of hardware component. Values include `bay`, `ct`, `ch`, `eth`, `fan`, `fb`, `fc`, `fm`, `ib`, `iom`, `nvb`, `pwr`, `sas`, `sh`, and `tmp`. 
+            speed (int): Speed (in bytes per second) at which the component is operating. 
+            status (str): Component status. Values include `critical`, `healthy`, `identifying`, `unhealthy`, `unknown`, and `unused`. 
+            voltage (int): Voltage (in Volts) reported by the component. 
         """
         if name is not None:
             self.name = name
-        if details is not None:
-            self.details = details
         if identify_enabled is not None:
             self.identify_enabled = identify_enabled
-        if index is not None:
-            self.index = index
-        if model is not None:
-            self.model = model
         if serial is not None:
             self.serial = serial
+        if temperature is not None:
+            self.temperature = temperature
+        if index is not None:
+            self.index = index
+        if details is not None:
+            self.details = details
+        if model is not None:
+            self.model = model
         if slot is not None:
             self.slot = slot
+        if type is not None:
+            self.type = type
         if speed is not None:
             self.speed = speed
         if status is not None:
             self.status = status
-        if temperature is not None:
-            self.temperature = temperature
-        if type is not None:
-            self.type = type
         if voltage is not None:
             self.voltage = voltage
 

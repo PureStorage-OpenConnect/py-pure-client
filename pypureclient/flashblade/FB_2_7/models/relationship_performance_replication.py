@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.7, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.7, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.7
     
@@ -32,16 +32,16 @@ class RelationshipPerformanceReplication(object):
     swagger_types = {
         'id': 'str',
         'periodic': 'ReplicationPerformance',
-        'time': 'int',
         'continuous': 'ContinuousReplicationPerformance',
+        'time': 'int',
         'aggregate': 'ReplicationPerformance'
     }
 
     attribute_map = {
         'id': 'id',
         'periodic': 'periodic',
-        'time': 'time',
         'continuous': 'continuous',
+        'time': 'time',
         'aggregate': 'aggregate'
     }
 
@@ -52,26 +52,26 @@ class RelationshipPerformanceReplication(object):
         self,
         id=None,  # type: str
         periodic=None,  # type: models.ReplicationPerformance
-        time=None,  # type: int
         continuous=None,  # type: models.ContinuousReplicationPerformance
+        time=None,  # type: int
         aggregate=None,  # type: models.ReplicationPerformance
     ):
         """
         Keyword args:
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            periodic (ReplicationPerformance): Total bytes transmitted or received per second for periodic replication. Periodic replication includes file system replication, which is snapshot based.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            periodic (ReplicationPerformance): Total bytes transmitted or received per second for periodic replication. Periodic replication includes file system replication, which is snapshot based. 
+            continuous (ContinuousReplicationPerformance): Object backlog information and total bytes transmitted or received per second for continuous replication. Continuous replication includes object replication. 
             time (int): Sample time in milliseconds since UNIX epoch.
-            continuous (ContinuousReplicationPerformance): Object backlog information and total bytes transmitted or received per second for continuous replication. Continuous replication includes object replication.
-            aggregate (ReplicationPerformance): Total bytes transmitted or received per second for all types of replication.
+            aggregate (ReplicationPerformance): Total bytes transmitted or received per second for all types of replication. 
         """
         if id is not None:
             self.id = id
         if periodic is not None:
             self.periodic = periodic
-        if time is not None:
-            self.time = time
         if continuous is not None:
             self.continuous = continuous
+        if time is not None:
+            self.time = time
         if aggregate is not None:
             self.aggregate = aggregate
 

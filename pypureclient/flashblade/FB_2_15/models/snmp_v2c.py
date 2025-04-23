@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.15, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.15, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.15
     
@@ -46,7 +46,7 @@ class SnmpV2c(object):
     ):
         """
         Keyword args:
-            community (str): Manager community ID under which Purity is to communicate with the specified managers.
+            community (str): Manager community ID under which Purity is to communicate with the specified managers. 
         """
         if community is not None:
             self.community = community

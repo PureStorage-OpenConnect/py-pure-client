@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.10, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.10, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.10
     
@@ -32,25 +32,25 @@ class ActiveDirectory(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
+        'kerberos_servers': 'list[str]',
         'computer_name': 'str',
+        'join_ou': 'str',
         'directory_servers': 'list[str]',
         'domain': 'str',
-        'encryption_types': 'list[str]',
-        'join_ou': 'str',
-        'kerberos_servers': 'list[str]',
-        'service_principal_names': 'list[str]'
+        'service_principal_names': 'list[str]',
+        'encryption_types': 'list[str]'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
+        'kerberos_servers': 'kerberos_servers',
         'computer_name': 'computer_name',
+        'join_ou': 'join_ou',
         'directory_servers': 'directory_servers',
         'domain': 'domain',
-        'encryption_types': 'encryption_types',
-        'join_ou': 'join_ou',
-        'kerberos_servers': 'kerberos_servers',
-        'service_principal_names': 'service_principal_names'
+        'service_principal_names': 'service_principal_names',
+        'encryption_types': 'encryption_types'
     }
 
     required_args = {
@@ -60,44 +60,44 @@ class ActiveDirectory(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
+        kerberos_servers=None,  # type: List[str]
         computer_name=None,  # type: str
+        join_ou=None,  # type: str
         directory_servers=None,  # type: List[str]
         domain=None,  # type: str
-        encryption_types=None,  # type: List[str]
-        join_ou=None,  # type: str
-        kerberos_servers=None,  # type: List[str]
         service_principal_names=None,  # type: List[str]
+        encryption_types=None,  # type: List[str]
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            computer_name (str): The common name of the computer account to be created in the Active Directory domain. If not specified, defaults to the name of the Active Directory configuration.
-            directory_servers (list[str]): A list of directory servers that will be used for lookups related to user authorization. Accepted server formats are IP address and DNS name. All specified servers must be registered to the domain appropriately in the array's configured DNS and will only be communicated with over the secure LDAP (LDAPS) protocol.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            kerberos_servers (list[str]): A list of key distribution servers to use for Kerberos protocol. Accepted server formats are IP address and DNS name. All specified servers must be registered to the domain appropriately in the array's configured DNS. 
+            computer_name (str): The common name of the computer account to be created in the Active Directory domain. If not specified, defaults to the name of the Active Directory configuration. 
+            join_ou (str): The relative distinguished name of the organizational unit in which the computer account was created when joining the domain. 
+            directory_servers (list[str]): A list of directory servers that will be used for lookups related to user authorization. Accepted server formats are IP address and DNS name. All specified servers must be registered to the domain appropriately in the array's configured DNS and will only be communicated with over the secure LDAP (LDAPS) protocol. 
             domain (str): The Active Directory domain to join.
-            encryption_types (list[str]): The encryption types that are supported for use by clients for Kerberos authentication.
-            join_ou (str): The relative distinguished name of the organizational unit in which the computer account was created when joining the domain.
-            kerberos_servers (list[str]): A list of key distribution servers to use for Kerberos protocol. Accepted server formats are IP address and DNS name. All specified servers must be registered to the domain appropriately in the array's configured DNS.
-            service_principal_names (list[str]): A list of service principal names registered for the machine account, which can be used for the creation of keys for Kerberos authentication.
+            service_principal_names (list[str]): A list of service principal names registered for the machine account, which can be used for the creation of keys for Kerberos authentication. 
+            encryption_types (list[str]): The encryption types that are supported for use by clients for Kerberos authentication. 
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
+        if kerberos_servers is not None:
+            self.kerberos_servers = kerberos_servers
         if computer_name is not None:
             self.computer_name = computer_name
+        if join_ou is not None:
+            self.join_ou = join_ou
         if directory_servers is not None:
             self.directory_servers = directory_servers
         if domain is not None:
             self.domain = domain
-        if encryption_types is not None:
-            self.encryption_types = encryption_types
-        if join_ou is not None:
-            self.join_ou = join_ou
-        if kerberos_servers is not None:
-            self.kerberos_servers = kerberos_servers
         if service_principal_names is not None:
             self.service_principal_names = service_principal_names
+        if encryption_types is not None:
+            self.encryption_types = encryption_types
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

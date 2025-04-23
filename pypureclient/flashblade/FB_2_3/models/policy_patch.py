@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.3, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.3, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.3
     
@@ -32,10 +32,10 @@ class PolicyPatch(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
-        'enabled': 'bool',
-        'is_local': 'bool',
-        'location': 'FixedReference',
         'policy_type': 'str',
+        'location': 'FixedReference',
+        'is_local': 'bool',
+        'enabled': 'bool',
         'rules': 'list[PolicyRule]',
         'add_rules': 'list[PolicyRule]',
         'remove_rules': 'list[PolicyRule]'
@@ -44,10 +44,10 @@ class PolicyPatch(object):
     attribute_map = {
         'name': 'name',
         'id': 'id',
-        'enabled': 'enabled',
-        'is_local': 'is_local',
-        'location': 'location',
         'policy_type': 'policy_type',
+        'location': 'location',
+        'is_local': 'is_local',
+        'enabled': 'enabled',
         'rules': 'rules',
         'add_rules': 'add_rules',
         'remove_rules': 'remove_rules'
@@ -60,10 +60,10 @@ class PolicyPatch(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
-        enabled=None,  # type: bool
-        is_local=None,  # type: bool
-        location=None,  # type: models.FixedReference
         policy_type=None,  # type: str
+        location=None,  # type: models.FixedReference
+        is_local=None,  # type: bool
+        enabled=None,  # type: bool
         rules=None,  # type: List[models.PolicyRule]
         add_rules=None,  # type: List[models.PolicyRule]
         remove_rules=None,  # type: List[models.PolicyRule]
@@ -71,11 +71,11 @@ class PolicyPatch(object):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            enabled (bool): If `true`, the policy is enabled. If not specified, defaults to `true`.
-            is_local (bool): Whether the policy is defined on the local array.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            policy_type (str): Type of the policy. Valid values are `nfs`, `object-access`, and `snapshot`. 
             location (FixedReference): Reference to the array where the policy is defined.
-            policy_type (str): Type of the policy. Valid values are `nfs`, `object-access`, and `snapshot`.
+            is_local (bool): Whether the policy is defined on the local array.
+            enabled (bool): If `true`, the policy is enabled. If not specified, defaults to `true`. 
             rules (list[PolicyRule])
             add_rules (list[PolicyRule])
             remove_rules (list[PolicyRule])
@@ -84,14 +84,14 @@ class PolicyPatch(object):
             self.name = name
         if id is not None:
             self.id = id
-        if enabled is not None:
-            self.enabled = enabled
-        if is_local is not None:
-            self.is_local = is_local
-        if location is not None:
-            self.location = location
         if policy_type is not None:
             self.policy_type = policy_type
+        if location is not None:
+            self.location = location
+        if is_local is not None:
+            self.is_local = is_local
+        if enabled is not None:
+            self.enabled = enabled
         if rules is not None:
             self.rules = rules
         if add_rules is not None:

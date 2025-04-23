@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.4, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.4, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.4
     
@@ -50,7 +50,7 @@ class ObjectStoreAccessPolicyAction(object):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            description (str): A description of the action.
+            description (str): A description of the action. 
         """
         if name is not None:
             self.name = name

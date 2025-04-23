@@ -30,23 +30,23 @@ class PolicyManagementAccess(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
+        'id': 'str',
         'context': 'FixedReference',
-        'aggregation_strategy': 'str',
-        'enabled': 'bool',
         'policy_type': 'str',
-        'rules': 'list[PolicyrulemanagementaccessRules]'
+        'rules': 'list[PolicyrulemanagementaccessRules]',
+        'aggregation_strategy': 'str',
+        'enabled': 'bool'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
+        'id': 'id',
         'context': 'context',
-        'aggregation_strategy': 'aggregation_strategy',
-        'enabled': 'enabled',
         'policy_type': 'policy_type',
-        'rules': 'rules'
+        'rules': 'rules',
+        'aggregation_strategy': 'aggregation_strategy',
+        'enabled': 'enabled'
     }
 
     required_args = {
@@ -54,38 +54,38 @@ class PolicyManagementAccess(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
+        id=None,  # type: str
         context=None,  # type: models.FixedReference
-        aggregation_strategy=None,  # type: str
-        enabled=None,  # type: bool
         policy_type=None,  # type: str
         rules=None,  # type: List[models.PolicyrulemanagementaccessRules]
+        aggregation_strategy=None,  # type: str
+        enabled=None,  # type: bool
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            name (str): A user-specified name. The name must be locally unique and can be changed.
-            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
-            aggregation_strategy (str): When this is set to `least-common-permissions`, any users to whom this policy applies can receive no access rights exceeding those defined in this policy's rules. When this is set to `all-permissions`, any users to whom this policy applies are capable of receiving additional access rights from other policies that apply to them.
-            enabled (bool): Returns a value of `true` if the policy is enabled.
-            policy_type (str): The type of policy. Valid values include `management-access`, `autodir`, `nfs`, `smb`, `snapshot`, and `quota`.
-            rules (list[PolicyrulemanagementaccessRules]): List the rules that defines the scoped roles.
+            name (str): A user-specified name. The name must be locally unique and can be changed. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource. 
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request.  Other parameters provided with the request, such as names of volumes or snapshots,  are resolved relative to the provided `context`. 
+            policy_type (str): The type of policy. Valid values include `management-access`, `autodir`, `nfs`, `smb`, `snapshot`, and `quota`. 
+            rules (list[PolicyrulemanagementaccessRules]): List the rules that defines the scoped roles. 
+            aggregation_strategy (str): When this is set to `least-common-permissions`, any users to whom this policy applies can receive no access rights exceeding those defined in this policy's rules.  When this is set to `all-permissions`, any users to whom this policy applies are capable of receiving additional access rights from other policies that apply to them. 
+            enabled (bool): Returns a value of `true` if the policy is enabled. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
         if context is not None:
             self.context = context
-        if aggregation_strategy is not None:
-            self.aggregation_strategy = aggregation_strategy
-        if enabled is not None:
-            self.enabled = enabled
         if policy_type is not None:
             self.policy_type = policy_type
         if rules is not None:
             self.rules = rules
+        if aggregation_strategy is not None:
+            self.aggregation_strategy = aggregation_strategy
+        if enabled is not None:
+            self.enabled = enabled
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

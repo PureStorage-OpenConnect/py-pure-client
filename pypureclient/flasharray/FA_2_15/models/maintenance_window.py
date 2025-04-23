@@ -31,14 +31,14 @@ class MaintenanceWindow(object):
     """
     swagger_types = {
         'name': 'str',
-        'created': 'int',
-        'expires': 'int'
+        'expires': 'int',
+        'created': 'int'
     }
 
     attribute_map = {
         'name': 'name',
-        'created': 'created',
-        'expires': 'expires'
+        'expires': 'expires',
+        'created': 'created'
     }
 
     required_args = {
@@ -47,21 +47,21 @@ class MaintenanceWindow(object):
     def __init__(
         self,
         name=None,  # type: str
-        created=None,  # type: int
         expires=None,  # type: int
+        created=None,  # type: int
     ):
         """
         Keyword args:
-            name (str): A user-specified name. The name must be locally unique and can be changed.
-            created (int): The maintenance window start time, measured in milliseconds since the UNIX epoch.
-            expires (int): The maintenance window end time, measured in milliseconds since the UNIX epoch.
+            name (str): A user-specified name. The name must be locally unique and can be changed. 
+            expires (int): The maintenance window end time, measured in milliseconds since the UNIX epoch. 
+            created (int): The maintenance window start time, measured in milliseconds since the UNIX epoch. 
         """
         if name is not None:
             self.name = name
-        if created is not None:
-            self.created = created
         if expires is not None:
             self.expires = expires
+        if created is not None:
+            self.created = created
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -46,7 +46,7 @@ class PolicyRuleNfsClientPost(object):
     ):
         """
         Keyword args:
-            rules (list[PolicyrulenfsclientpostRules]): A list of NFS policy rules to create.
+            rules (list[PolicyrulenfsclientpostRules]): A list of NFS policy rules to create. 
         """
         if rules is not None:
             self.rules = rules

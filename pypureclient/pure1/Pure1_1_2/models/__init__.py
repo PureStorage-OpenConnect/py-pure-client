@@ -99,6 +99,7 @@ from .support_contract_response import SupportContractResponse
 from .sustainability_array_response import SustainabilityArrayResponse
 from .sustainability_insight_array_response import SustainabilityInsightArrayResponse
 from .tag import Tag
+from .tag_batch_required import TagBatchRequired
 from .tag_put import TagPut
 from .tag_response import TagResponse
 from .target_response import TargetResponse

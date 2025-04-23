@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.1, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.1, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.1
     
@@ -32,19 +32,19 @@ class Policy(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
-        'enabled': 'bool',
-        'is_local': 'bool',
         'location': 'FixedReference',
-        'rules': 'list[PolicyRule]'
+        'rules': 'list[PolicyRule]',
+        'is_local': 'bool',
+        'enabled': 'bool'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
-        'enabled': 'enabled',
-        'is_local': 'is_local',
         'location': 'location',
-        'rules': 'rules'
+        'rules': 'rules',
+        'is_local': 'is_local',
+        'enabled': 'enabled'
     }
 
     required_args = {
@@ -54,32 +54,32 @@ class Policy(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
-        enabled=None,  # type: bool
-        is_local=None,  # type: bool
         location=None,  # type: models.FixedReference
         rules=None,  # type: List[models.PolicyRule]
+        is_local=None,  # type: bool
+        enabled=None,  # type: bool
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            enabled (bool): Indicates if policy is enabled (`true`) or disabled (`false`). If not specified, defaults to `true`.
-            is_local (bool): Whether the policy is defined on the local array.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
             location (FixedReference): Reference to the array where the policy is defined.
             rules (list[PolicyRule])
+            is_local (bool): Whether the policy is defined on the local array.
+            enabled (bool): Indicates if policy is enabled (`true`) or disabled (`false`). If not specified, defaults to `true`. 
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
-        if enabled is not None:
-            self.enabled = enabled
-        if is_local is not None:
-            self.is_local = is_local
         if location is not None:
             self.location = location
         if rules is not None:
             self.rules = rules
+        if is_local is not None:
+            self.is_local = is_local
+        if enabled is not None:
+            self.enabled = enabled
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

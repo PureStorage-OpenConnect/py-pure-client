@@ -31,17 +31,17 @@ class NetworkInterfacePerformance(object):
     """
     swagger_types = {
         'name': 'str',
-        'interface_type': 'str',
-        'time': 'int',
         'eth': 'NetworkInterfacePerformanceEth',
+        'time': 'int',
+        'interface_type': 'str',
         'fc': 'NetworkInterfacePerformanceFc'
     }
 
     attribute_map = {
         'name': 'name',
-        'interface_type': 'interface_type',
-        'time': 'time',
         'eth': 'eth',
+        'time': 'time',
+        'interface_type': 'interface_type',
         'fc': 'fc'
     }
 
@@ -51,27 +51,27 @@ class NetworkInterfacePerformance(object):
     def __init__(
         self,
         name=None,  # type: str
-        interface_type=None,  # type: str
-        time=None,  # type: int
         eth=None,  # type: models.NetworkInterfacePerformanceEth
+        time=None,  # type: int
+        interface_type=None,  # type: str
         fc=None,  # type: models.NetworkInterfacePerformanceFc
     ):
         """
         Keyword args:
-            name (str): A user-specified name. The name must be locally unique and can be changed.
-            interface_type (str): The interface type. Valid values are `eth` and `fc`.
-            time (int): Sample time in milliseconds since UNIX epoch.
+            name (str): A user-specified name. The name must be locally unique and can be changed. 
             eth (NetworkInterfacePerformanceEth)
+            time (int): Sample time in milliseconds since UNIX epoch. 
+            interface_type (str): The interface type. Valid values are `eth` and `fc`. 
             fc (NetworkInterfacePerformanceFc)
         """
         if name is not None:
             self.name = name
-        if interface_type is not None:
-            self.interface_type = interface_type
-        if time is not None:
-            self.time = time
         if eth is not None:
             self.eth = eth
+        if time is not None:
+            self.time = time
+        if interface_type is not None:
+            self.interface_type = interface_type
         if fc is not None:
             self.fc = fc
 

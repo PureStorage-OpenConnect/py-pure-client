@@ -30,27 +30,27 @@ class Realm(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
-        'created': 'int',
-        'destroyed': 'bool',
-        'space': 'SpaceNoDeprecatedPhysicalOrEffective',
-        'time_remaining': 'int',
-        'eradication_config': 'ContainerEradicationConfig',
+        'id': 'str',
         'quota_limit': 'int',
-        'qos': 'ContainerQos'
+        'time_remaining': 'int',
+        'destroyed': 'bool',
+        'qos': 'ContainerQos',
+        'created': 'int',
+        'eradication_config': 'ContainerEradicationConfig',
+        'space': 'SpaceNoDeprecatedPhysicalOrEffective'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
-        'created': 'created',
-        'destroyed': 'destroyed',
-        'space': 'space',
-        'time_remaining': 'time_remaining',
-        'eradication_config': 'eradication_config',
+        'id': 'id',
         'quota_limit': 'quota_limit',
-        'qos': 'qos'
+        'time_remaining': 'time_remaining',
+        'destroyed': 'destroyed',
+        'qos': 'qos',
+        'created': 'created',
+        'eradication_config': 'eradication_config',
+        'space': 'space'
     }
 
     required_args = {
@@ -58,46 +58,46 @@ class Realm(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
-        created=None,  # type: int
-        destroyed=None,  # type: bool
-        space=None,  # type: models.SpaceNoDeprecatedPhysicalOrEffective
-        time_remaining=None,  # type: int
-        eradication_config=None,  # type: models.ContainerEradicationConfig
+        id=None,  # type: str
         quota_limit=None,  # type: int
+        time_remaining=None,  # type: int
+        destroyed=None,  # type: bool
         qos=None,  # type: models.ContainerQos
+        created=None,  # type: int
+        eradication_config=None,  # type: models.ContainerEradicationConfig
+        space=None,  # type: models.SpaceNoDeprecatedPhysicalOrEffective
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            name (str): A user-specified name. The name must be locally unique and can be changed.
-            created (int): Creation timestamp of the realm.
-            destroyed (bool): Returns a value of `true` if the realm has been destroyed and is pending eradication. The realm cannot be modified while it is in the destroyed state. The `time_remaining` value displays the amount of time left until the destroyed realm is permanently eradicated. Once eradication has begun, the realm can no longer be recovered. Before the `time_remaining` period has elapsed, the destroyed realm can be recovered through the PATCH method
-            space (SpaceNoDeprecatedPhysicalOrEffective): Displays provisioned size and physical storage consumption information for the realm.
-            time_remaining (int): Time in milliseconds before the realm is eradicated. `null` if not destroyed.
+            name (str): A user-specified name. The name must be locally unique and can be changed. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource. 
+            quota_limit (int): The logical quota limit of the realm, measured in bytes. 
+            time_remaining (int): Time in milliseconds before the realm is eradicated. `null` if not destroyed. 
+            destroyed (bool): Returns a value of `true` if the realm has been destroyed and is pending eradication. The realm cannot be modified while it is in the destroyed state. The `time_remaining` value displays the amount of time left until the destroyed realm is permanently eradicated. Once eradication has begun, the realm can no longer be recovered. Before the `time_remaining` period has elapsed, the destroyed realm can be recovered through the PATCH method 
+            qos (ContainerQos): Displays QoS limit information. 
+            created (int): Creation timestamp of the realm. 
             eradication_config (ContainerEradicationConfig)
-            quota_limit (int): The logical quota limit of the realm, measured in bytes.
-            qos (ContainerQos): Displays QoS limit information.
+            space (SpaceNoDeprecatedPhysicalOrEffective): Displays provisioned size and physical storage consumption information for the realm. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
-        if created is not None:
-            self.created = created
-        if destroyed is not None:
-            self.destroyed = destroyed
-        if space is not None:
-            self.space = space
-        if time_remaining is not None:
-            self.time_remaining = time_remaining
-        if eradication_config is not None:
-            self.eradication_config = eradication_config
+        if id is not None:
+            self.id = id
         if quota_limit is not None:
             self.quota_limit = quota_limit
+        if time_remaining is not None:
+            self.time_remaining = time_remaining
+        if destroyed is not None:
+            self.destroyed = destroyed
         if qos is not None:
             self.qos = qos
+        if created is not None:
+            self.created = created
+        if eradication_config is not None:
+            self.eradication_config = eradication_config
+        if space is not None:
+            self.space = space
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

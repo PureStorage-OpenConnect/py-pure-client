@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.4, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.4, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.4
     
@@ -56,9 +56,9 @@ class AdminCache(object):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            role (FixedReference): A reference to the `role` of this user.
-            time (int): Time the role was cached in milliseconds since UNIX epoch.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            role (FixedReference): A reference to the `role` of this user. 
+            time (int): Time the role was cached in milliseconds since UNIX epoch. 
         """
         if name is not None:
             self.name = name

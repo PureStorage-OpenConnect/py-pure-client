@@ -49,8 +49,8 @@ class SyslogServer(object):
     ):
         """
         Keyword args:
-            name (str): A user-specified name. The name must be locally unique and cannot be changed.
-            uri (str): The URI of the syslog server in the format `PROTOCOL://HOSTNAME:PORT`.
+            name (str): A user-specified name. The name must be locally unique and cannot be changed. 
+            uri (str): The URI of the syslog server in the format `PROTOCOL://HOSTNAME:PORT`. 
         """
         if name is not None:
             self.name = name

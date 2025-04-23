@@ -46,7 +46,7 @@ class SnmpV2c(object):
     ):
         """
         Keyword args:
-            community (str): Manager community ID under which Purity//FA is to communicate with the specified managers.
+            community (str): Manager community ID under which Purity//FA is to communicate with the specified managers. 
         """
         if community is not None:
             self.community = community

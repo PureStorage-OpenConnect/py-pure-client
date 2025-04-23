@@ -24,6 +24,7 @@ from .models.policy_rule import PolicyRule
 from .models.smb import Smb
 from .models.support_contract import SupportContract
 from .models.tag import Tag
+from .models.tag_batch_required import TagBatchRequired
 from .models.tag_put import TagPut
 from .models.tax import Tax
 from .models.time_interval import TimeInterval
@@ -98,6 +99,7 @@ CLASSES_TO_ADD_PROPS = [
     Smb,
     SupportContract,
     Tag,
+    TagBatchRequired,
     TagPut,
     Tax,
     TimeInterval,

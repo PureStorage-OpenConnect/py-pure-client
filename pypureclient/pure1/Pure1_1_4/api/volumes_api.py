@@ -133,7 +133,7 @@ class VolumesApi(object):
 
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
-            ['application/x-www-form-urlencoded', 'application/json'])
+            ['application/json'])
 
         # Authentication setting
         auth_settings = ['AuthorizationHeader']

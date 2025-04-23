@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.16
     
@@ -30,14 +30,18 @@ class Server(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'dns': 'list[Reference]',
+        'name': 'str',
+        'id': 'str',
         'directory_services': 'list[Reference]',
+        'dns': 'list[Reference]',
         'created': 'int'
     }
 
     attribute_map = {
-        'dns': 'dns',
+        'name': 'name',
+        'id': 'id',
         'directory_services': 'directory_services',
+        'dns': 'dns',
         'created': 'created'
     }
 
@@ -46,20 +50,28 @@ class Server(object):
 
     def __init__(
         self,
-        dns=None,  # type: List[models.Reference]
+        name=None,  # type: str
+        id=None,  # type: str
         directory_services=None,  # type: List[models.Reference]
+        dns=None,  # type: List[models.Reference]
         created=None,  # type: int
     ):
         """
         Keyword args:
-            dns (list[Reference]): The DNS config to be used by this server.
-            directory_services (list[Reference]): The directory service config to be used by this server.
+            name (str): A name chosen by the user. Can be changed. Must be locally unique. 
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            directory_services (list[Reference]): The directory service config to be used by this server. 
+            dns (list[Reference]): The DNS config to be used by this server. 
             created (int): Creation timestamp of the server.
         """
-        if dns is not None:
-            self.dns = dns
+        if name is not None:
+            self.name = name
+        if id is not None:
+            self.id = id
         if directory_services is not None:
             self.directory_services = directory_services
+        if dns is not None:
+            self.dns = dns
         if created is not None:
             self.created = created
 

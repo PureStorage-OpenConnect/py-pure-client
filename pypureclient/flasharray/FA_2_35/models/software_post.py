@@ -49,8 +49,8 @@ class SoftwarePost(object):
     ):
         """
         Keyword args:
-            name (str): The name of the software.
-            version (str): The version of the software.
+            name (str): The name of the software. 
+            version (str): The version of the software. 
         """
         if name is not None:
             self.name = name

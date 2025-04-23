@@ -30,13 +30,13 @@ class VchostCertificatePost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'certificate': 'ReferenceNoIdWithType',
-        'endpoints': 'list[str]'
+        'endpoints': 'list[str]',
+        'certificate': 'ReferenceNoIdWithType'
     }
 
     attribute_map = {
-        'certificate': 'certificate',
-        'endpoints': 'endpoints'
+        'endpoints': 'endpoints',
+        'certificate': 'certificate'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class VchostCertificatePost(object):
 
     def __init__(
         self,
-        certificate=None,  # type: models.ReferenceNoIdWithType
         endpoints=None,  # type: List[str]
+        certificate=None,  # type: models.ReferenceNoIdWithType
     ):
         """
         Keyword args:
-            certificate (ReferenceNoIdWithType): The certificate to be presented by the vchost over the configured endpoints.
-            endpoints (list[str]): The IPv4 or IPv6 addresses of the endpoints to configure for the vchost, over which the configured certificate will be presented.
+            endpoints (list[str]): The IPv4 or IPv6 addresses of the endpoints to configure for the vchost, over which the configured certificate will be presented. 
+            certificate (ReferenceNoIdWithType): The certificate to be presented by the vchost over the configured endpoints. 
         """
-        if certificate is not None:
-            self.certificate = certificate
         if endpoints is not None:
             self.endpoints = endpoints
+        if certificate is not None:
+            self.certificate = certificate
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

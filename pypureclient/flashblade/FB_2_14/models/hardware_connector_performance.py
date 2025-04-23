@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.14, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.14, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.14
     
@@ -33,34 +33,34 @@ class HardwareConnectorPerformance(object):
         'name': 'str',
         'id': 'str',
         'link_aggregation_group': 'FixedReference',
-        'other_errors_per_sec': 'int',
-        'received_bytes_per_sec': 'int',
         'received_crc_errors_per_sec': 'int',
+        'transmitted_dropped_errors_per_sec': 'int',
+        'transmitted_packets_per_sec': 'int',
+        'transmitted_carrier_errors_per_sec': 'int',
+        'transmitted_bytes_per_sec': 'int',
+        'received_bytes_per_sec': 'int',
         'received_frame_errors_per_sec': 'int',
-        'received_packets_per_sec': 'int',
+        'other_errors_per_sec': 'int',
         'time': 'int',
         'total_errors_per_sec': 'int',
-        'transmitted_bytes_per_sec': 'int',
-        'transmitted_carrier_errors_per_sec': 'int',
-        'transmitted_dropped_errors_per_sec': 'int',
-        'transmitted_packets_per_sec': 'int'
+        'received_packets_per_sec': 'int'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
         'link_aggregation_group': 'link_aggregation_group',
-        'other_errors_per_sec': 'other_errors_per_sec',
-        'received_bytes_per_sec': 'received_bytes_per_sec',
         'received_crc_errors_per_sec': 'received_crc_errors_per_sec',
+        'transmitted_dropped_errors_per_sec': 'transmitted_dropped_errors_per_sec',
+        'transmitted_packets_per_sec': 'transmitted_packets_per_sec',
+        'transmitted_carrier_errors_per_sec': 'transmitted_carrier_errors_per_sec',
+        'transmitted_bytes_per_sec': 'transmitted_bytes_per_sec',
+        'received_bytes_per_sec': 'received_bytes_per_sec',
         'received_frame_errors_per_sec': 'received_frame_errors_per_sec',
-        'received_packets_per_sec': 'received_packets_per_sec',
+        'other_errors_per_sec': 'other_errors_per_sec',
         'time': 'time',
         'total_errors_per_sec': 'total_errors_per_sec',
-        'transmitted_bytes_per_sec': 'transmitted_bytes_per_sec',
-        'transmitted_carrier_errors_per_sec': 'transmitted_carrier_errors_per_sec',
-        'transmitted_dropped_errors_per_sec': 'transmitted_dropped_errors_per_sec',
-        'transmitted_packets_per_sec': 'transmitted_packets_per_sec'
+        'received_packets_per_sec': 'received_packets_per_sec'
     }
 
     required_args = {
@@ -71,34 +71,34 @@ class HardwareConnectorPerformance(object):
         name=None,  # type: str
         id=None,  # type: str
         link_aggregation_group=None,  # type: models.FixedReference
-        other_errors_per_sec=None,  # type: int
-        received_bytes_per_sec=None,  # type: int
         received_crc_errors_per_sec=None,  # type: int
-        received_frame_errors_per_sec=None,  # type: int
-        received_packets_per_sec=None,  # type: int
-        time=None,  # type: int
-        total_errors_per_sec=None,  # type: int
-        transmitted_bytes_per_sec=None,  # type: int
-        transmitted_carrier_errors_per_sec=None,  # type: int
         transmitted_dropped_errors_per_sec=None,  # type: int
         transmitted_packets_per_sec=None,  # type: int
+        transmitted_carrier_errors_per_sec=None,  # type: int
+        transmitted_bytes_per_sec=None,  # type: int
+        received_bytes_per_sec=None,  # type: int
+        received_frame_errors_per_sec=None,  # type: int
+        other_errors_per_sec=None,  # type: int
+        time=None,  # type: int
+        total_errors_per_sec=None,  # type: int
+        received_packets_per_sec=None,  # type: int
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
             link_aggregation_group (FixedReference): The link aggregation group which this entity belongs to.
-            other_errors_per_sec (int): The sum of unspecified reception and transmission errors per second.
-            received_bytes_per_sec (int): Bytes received per second.
-            received_crc_errors_per_sec (int): Reception CRC errors per second.
-            received_frame_errors_per_sec (int): Received packet frame errors per second.
-            received_packets_per_sec (int): Packets received per second.
-            time (int): Sample time in milliseconds since UNIX epoch.
-            total_errors_per_sec (int): The sum of all reception and transmission errors per second.
-            transmitted_bytes_per_sec (int): Bytes transmitted per second.
-            transmitted_carrier_errors_per_sec (int): Transmission carrier errors per second.
-            transmitted_dropped_errors_per_sec (int): Transmitted packets dropped per second.
-            transmitted_packets_per_sec (int): Packets transmitted per second.
+            received_crc_errors_per_sec (int): Reception CRC errors per second. 
+            transmitted_dropped_errors_per_sec (int): Transmitted packets dropped per second. 
+            transmitted_packets_per_sec (int): Packets transmitted per second. 
+            transmitted_carrier_errors_per_sec (int): Transmission carrier errors per second. 
+            transmitted_bytes_per_sec (int): Bytes transmitted per second. 
+            received_bytes_per_sec (int): Bytes received per second. 
+            received_frame_errors_per_sec (int): Received packet frame errors per second. 
+            other_errors_per_sec (int): The sum of unspecified reception and transmission errors per second. 
+            time (int): Sample time in milliseconds since UNIX epoch. 
+            total_errors_per_sec (int): The sum of all reception and transmission errors per second. 
+            received_packets_per_sec (int): Packets received per second. 
         """
         if name is not None:
             self.name = name
@@ -106,62 +106,62 @@ class HardwareConnectorPerformance(object):
             self.id = id
         if link_aggregation_group is not None:
             self.link_aggregation_group = link_aggregation_group
-        if other_errors_per_sec is not None:
-            self.other_errors_per_sec = other_errors_per_sec
-        if received_bytes_per_sec is not None:
-            self.received_bytes_per_sec = received_bytes_per_sec
         if received_crc_errors_per_sec is not None:
             self.received_crc_errors_per_sec = received_crc_errors_per_sec
-        if received_frame_errors_per_sec is not None:
-            self.received_frame_errors_per_sec = received_frame_errors_per_sec
-        if received_packets_per_sec is not None:
-            self.received_packets_per_sec = received_packets_per_sec
-        if time is not None:
-            self.time = time
-        if total_errors_per_sec is not None:
-            self.total_errors_per_sec = total_errors_per_sec
-        if transmitted_bytes_per_sec is not None:
-            self.transmitted_bytes_per_sec = transmitted_bytes_per_sec
-        if transmitted_carrier_errors_per_sec is not None:
-            self.transmitted_carrier_errors_per_sec = transmitted_carrier_errors_per_sec
         if transmitted_dropped_errors_per_sec is not None:
             self.transmitted_dropped_errors_per_sec = transmitted_dropped_errors_per_sec
         if transmitted_packets_per_sec is not None:
             self.transmitted_packets_per_sec = transmitted_packets_per_sec
+        if transmitted_carrier_errors_per_sec is not None:
+            self.transmitted_carrier_errors_per_sec = transmitted_carrier_errors_per_sec
+        if transmitted_bytes_per_sec is not None:
+            self.transmitted_bytes_per_sec = transmitted_bytes_per_sec
+        if received_bytes_per_sec is not None:
+            self.received_bytes_per_sec = received_bytes_per_sec
+        if received_frame_errors_per_sec is not None:
+            self.received_frame_errors_per_sec = received_frame_errors_per_sec
+        if other_errors_per_sec is not None:
+            self.other_errors_per_sec = other_errors_per_sec
+        if time is not None:
+            self.time = time
+        if total_errors_per_sec is not None:
+            self.total_errors_per_sec = total_errors_per_sec
+        if received_packets_per_sec is not None:
+            self.received_packets_per_sec = received_packets_per_sec
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
             raise KeyError("Invalid key `{}` for `HardwareConnectorPerformance`".format(key))
-        if key == "other_errors_per_sec" and value is not None:
-            if value < 0:
-                raise ValueError("Invalid value for `other_errors_per_sec`, must be a value greater than or equal to `0`")
-        if key == "received_bytes_per_sec" and value is not None:
-            if value < 0:
-                raise ValueError("Invalid value for `received_bytes_per_sec`, must be a value greater than or equal to `0`")
         if key == "received_crc_errors_per_sec" and value is not None:
             if value < 0:
                 raise ValueError("Invalid value for `received_crc_errors_per_sec`, must be a value greater than or equal to `0`")
-        if key == "received_frame_errors_per_sec" and value is not None:
-            if value < 0:
-                raise ValueError("Invalid value for `received_frame_errors_per_sec`, must be a value greater than or equal to `0`")
-        if key == "received_packets_per_sec" and value is not None:
-            if value < 0:
-                raise ValueError("Invalid value for `received_packets_per_sec`, must be a value greater than or equal to `0`")
-        if key == "total_errors_per_sec" and value is not None:
-            if value < 0:
-                raise ValueError("Invalid value for `total_errors_per_sec`, must be a value greater than or equal to `0`")
-        if key == "transmitted_bytes_per_sec" and value is not None:
-            if value < 0:
-                raise ValueError("Invalid value for `transmitted_bytes_per_sec`, must be a value greater than or equal to `0`")
-        if key == "transmitted_carrier_errors_per_sec" and value is not None:
-            if value < 0:
-                raise ValueError("Invalid value for `transmitted_carrier_errors_per_sec`, must be a value greater than or equal to `0`")
         if key == "transmitted_dropped_errors_per_sec" and value is not None:
             if value < 0:
                 raise ValueError("Invalid value for `transmitted_dropped_errors_per_sec`, must be a value greater than or equal to `0`")
         if key == "transmitted_packets_per_sec" and value is not None:
             if value < 0:
                 raise ValueError("Invalid value for `transmitted_packets_per_sec`, must be a value greater than or equal to `0`")
+        if key == "transmitted_carrier_errors_per_sec" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `transmitted_carrier_errors_per_sec`, must be a value greater than or equal to `0`")
+        if key == "transmitted_bytes_per_sec" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `transmitted_bytes_per_sec`, must be a value greater than or equal to `0`")
+        if key == "received_bytes_per_sec" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `received_bytes_per_sec`, must be a value greater than or equal to `0`")
+        if key == "received_frame_errors_per_sec" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `received_frame_errors_per_sec`, must be a value greater than or equal to `0`")
+        if key == "other_errors_per_sec" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `other_errors_per_sec`, must be a value greater than or equal to `0`")
+        if key == "total_errors_per_sec" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `total_errors_per_sec`, must be a value greater than or equal to `0`")
+        if key == "received_packets_per_sec" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `received_packets_per_sec`, must be a value greater than or equal to `0`")
         self.__dict__[key] = value
 
     def __getattribute__(self, item):
