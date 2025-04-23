@@ -972,6 +972,14 @@ pypureclient.pure1.Pure1\_1\_1.models.tag module
    :undoc-members:
    :show-inheritance:
 
+pypureclient.pure1.Pure1\_1\_1.models.tag\_batch\_required module
+-----------------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_1.models.tag_batch_required
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 pypureclient.pure1.Pure1\_1\_1.models.tag\_get\_response module
 ---------------------------------------------------------------
 
