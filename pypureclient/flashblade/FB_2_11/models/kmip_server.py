@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.11, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.11, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.11
     
@@ -32,16 +32,16 @@ class KmipServer(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
-        'uris': 'list[str]',
         'ca_certificate': 'Reference',
+        'uris': 'list[str]',
         'ca_certificate_group': 'Reference'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
-        'uris': 'uris',
         'ca_certificate': 'ca_certificate',
+        'uris': 'uris',
         'ca_certificate_group': 'ca_certificate_group'
     }
 
@@ -52,26 +52,26 @@ class KmipServer(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
-        uris=None,  # type: List[str]
         ca_certificate=None,  # type: models.Reference
+        uris=None,  # type: List[str]
         ca_certificate_group=None,  # type: models.Reference
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            ca_certificate (Reference): CA certificate used to validate the authenticity of the configured servers. 
             uris (list[str]): List of URIs for the configured KMIP servers in the format [protocol://]hostname:port.
-            ca_certificate (Reference): CA certificate used to validate the authenticity of the configured servers.
-            ca_certificate_group (Reference): A certificate group containing CA certificates that can be used to validate the authenticity of the configured servers.
+            ca_certificate_group (Reference): A certificate group containing CA certificates that can be used to validate the authenticity of the configured servers. 
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
-        if uris is not None:
-            self.uris = uris
         if ca_certificate is not None:
             self.ca_certificate = ca_certificate
+        if uris is not None:
+            self.uris = uris
         if ca_certificate_group is not None:
             self.ca_certificate_group = ca_certificate_group
 

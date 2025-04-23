@@ -31,28 +31,28 @@ class DirectoryService(object):
     """
     swagger_types = {
         'name': 'str',
-        'base_dn': 'str',
-        'bind_password': 'str',
-        'bind_user': 'str',
         'ca_certificate': 'str',
         'check_peer': 'bool',
-        'enabled': 'bool',
-        'services': 'list[str]',
         'uris': 'list[str]',
-        'management': 'DirectoryServiceManagement'
+        'base_dn': 'str',
+        'bind_password': 'str',
+        'management': 'DirectoryServiceManagement',
+        'services': 'list[str]',
+        'bind_user': 'str',
+        'enabled': 'bool'
     }
 
     attribute_map = {
         'name': 'name',
-        'base_dn': 'base_dn',
-        'bind_password': 'bind_password',
-        'bind_user': 'bind_user',
         'ca_certificate': 'ca_certificate',
         'check_peer': 'check_peer',
-        'enabled': 'enabled',
-        'services': 'services',
         'uris': 'uris',
-        'management': 'management'
+        'base_dn': 'base_dn',
+        'bind_password': 'bind_password',
+        'management': 'management',
+        'services': 'services',
+        'bind_user': 'bind_user',
+        'enabled': 'enabled'
     }
 
     required_args = {
@@ -61,49 +61,49 @@ class DirectoryService(object):
     def __init__(
         self,
         name=None,  # type: str
-        base_dn=None,  # type: str
-        bind_password=None,  # type: str
-        bind_user=None,  # type: str
         ca_certificate=None,  # type: str
         check_peer=None,  # type: bool
-        enabled=None,  # type: bool
-        services=None,  # type: List[str]
         uris=None,  # type: List[str]
+        base_dn=None,  # type: str
+        bind_password=None,  # type: str
         management=None,  # type: models.DirectoryServiceManagement
+        services=None,  # type: List[str]
+        bind_user=None,  # type: str
+        enabled=None,  # type: bool
     ):
         """
         Keyword args:
-            name (str): A locally unique, system-generated name. The name cannot be modified.
-            base_dn (str): Base of the Distinguished Name (DN) of the directory service groups.
-            bind_password (str): Masked password used to query the directory.
-            bind_user (str): Username used to query the directory.
-            ca_certificate (str): The certificate of the Certificate Authority (CA) that signed the certificates of the directory servers, which is used to validate the authenticity of the configured servers.
-            check_peer (bool): Whether or not server authenticity is enforced when a certificate is provided.
-            enabled (bool): Whether or not the directory service is enabled.
-            services (list[str]): Services for which the directory service configuration is used.
+            name (str): A locally unique, system-generated name. The name cannot be modified. 
+            ca_certificate (str): The certificate of the Certificate Authority (CA) that signed the certificates of the directory servers, which is used to validate the authenticity of the configured servers. 
+            check_peer (bool): Whether or not server authenticity is enforced when a certificate is provided. 
             uris (list[str]): List of URIs for the configured directory servers.
+            base_dn (str): Base of the Distinguished Name (DN) of the directory service groups. 
+            bind_password (str): Masked password used to query the directory.
             management (DirectoryServiceManagement)
+            services (list[str]): Services for which the directory service configuration is used. 
+            bind_user (str): Username used to query the directory.
+            enabled (bool): Whether or not the directory service is enabled.
         """
         if name is not None:
             self.name = name
-        if base_dn is not None:
-            self.base_dn = base_dn
-        if bind_password is not None:
-            self.bind_password = bind_password
-        if bind_user is not None:
-            self.bind_user = bind_user
         if ca_certificate is not None:
             self.ca_certificate = ca_certificate
         if check_peer is not None:
             self.check_peer = check_peer
-        if enabled is not None:
-            self.enabled = enabled
-        if services is not None:
-            self.services = services
         if uris is not None:
             self.uris = uris
+        if base_dn is not None:
+            self.base_dn = base_dn
+        if bind_password is not None:
+            self.bind_password = bind_password
         if management is not None:
             self.management = management
+        if services is not None:
+            self.services = services
+        if bind_user is not None:
+            self.bind_user = bind_user
+        if enabled is not None:
+            self.enabled = enabled
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

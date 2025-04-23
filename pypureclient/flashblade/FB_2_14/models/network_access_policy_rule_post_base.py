@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.14, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.14, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.14
     
@@ -32,17 +32,17 @@ class NetworkAccessPolicyRulePostBase(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
+        'interfaces': 'list[str]',
         'effect': 'str',
-        'client': 'str',
-        'interfaces': 'list[str]'
+        'client': 'str'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
+        'interfaces': 'interfaces',
         'effect': 'effect',
-        'client': 'client',
-        'interfaces': 'interfaces'
+        'client': 'client'
     }
 
     required_args = {
@@ -52,28 +52,28 @@ class NetworkAccessPolicyRulePostBase(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
+        interfaces=None,  # type: List[str]
         effect=None,  # type: str
         client=None,  # type: str
-        interfaces=None,  # type: List[str]
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            effect (str): If set to `allow`, the specified client will be permitted to access the specified interfaces. If set to `deny`, the specified client will be denied access to them. Valid values include `allow` and `deny`. The default value is `allow` if not specified.
-            client (str): Specifies the clients that will be permitted or denied access to the interface. Accepted notations include a single IP address, subnet in CIDR notation, or all clients (specified as `*`). The default value is `*` if not specified.
-            interfaces (list[str]): Specifies which product interfaces this rule applies to, whether it is permitting or denying access. Valid values include `management-ssh`, `management-rest-api`, `management-web-ui`, `snmp`, and `local-network-superuser-password-access`.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            interfaces (list[str]): Specifies which product interfaces this rule applies to, whether it is permitting or denying access. Valid values include `management-ssh`, `management-rest-api`, `management-web-ui`, `snmp`, and `local-network-superuser-password-access`. 
+            effect (str): If set to `allow`, the specified client will be permitted to access the specified interfaces. If set to `deny`, the specified client will be denied access to them. Valid values include `allow` and `deny`. The default value is `allow` if not specified. 
+            client (str): Specifies the clients that will be permitted or denied access to the interface. Accepted notations include a single IP address, subnet in CIDR notation, or all clients (specified as `*`). The default value is `*` if not specified. 
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
+        if interfaces is not None:
+            self.interfaces = interfaces
         if effect is not None:
             self.effect = effect
         if client is not None:
             self.client = client
-        if interfaces is not None:
-            self.interfaces = interfaces
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

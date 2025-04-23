@@ -30,19 +30,19 @@ class ArrayConnectionPost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'management_address': 'str',
         'replication_addresses': 'list[str]',
-        'type': 'str',
+        'connection_key': 'str',
+        'management_address': 'str',
         'replication_transport': 'str',
-        'connection_key': 'str'
+        'type': 'str'
     }
 
     attribute_map = {
-        'management_address': 'management_address',
         'replication_addresses': 'replication_addresses',
-        'type': 'type',
+        'connection_key': 'connection_key',
+        'management_address': 'management_address',
         'replication_transport': 'replication_transport',
-        'connection_key': 'connection_key'
+        'type': 'type'
     }
 
     required_args = {
@@ -50,30 +50,30 @@ class ArrayConnectionPost(object):
 
     def __init__(
         self,
-        management_address=None,  # type: str
         replication_addresses=None,  # type: List[str]
-        type=None,  # type: str
-        replication_transport=None,  # type: str
         connection_key=None,  # type: str
+        management_address=None,  # type: str
+        replication_transport=None,  # type: str
+        type=None,  # type: str
     ):
         """
         Keyword args:
-            management_address (str): Management IP address of the target array.
-            replication_addresses (list[str]): IP addresses and FQDNs of the target arrays. Configurable only when `replication_transport` is set to `ip`. If not configured, will be set to all the replication addresses available on the target array at the time of the POST.
-            type (str): The type of replication. Valid values are `async-replication` and `sync-replication`.
-            replication_transport (str): The protocol used to transport data between the local array and the remote array. Valid values are `ip` and `fc`. The default is `ip`.
-            connection_key (str): The connection key of the target array.
+            replication_addresses (list[str]): IP addresses and FQDNs of the target arrays. Configurable only when `replication_transport` is set to `ip`. If not configured, will be set to all the replication addresses available on the target array at the time of the POST. 
+            connection_key (str): The connection key of the target array. 
+            management_address (str): Management IP address of the target array. 
+            replication_transport (str): The protocol used to transport data between the local array and the remote array. Valid values are `ip` and `fc`. The default is `ip`. 
+            type (str): The type of replication. Valid values are `async-replication` and `sync-replication`. 
         """
-        if management_address is not None:
-            self.management_address = management_address
         if replication_addresses is not None:
             self.replication_addresses = replication_addresses
-        if type is not None:
-            self.type = type
-        if replication_transport is not None:
-            self.replication_transport = replication_transport
         if connection_key is not None:
             self.connection_key = connection_key
+        if management_address is not None:
+            self.management_address = management_address
+        if replication_transport is not None:
+            self.replication_transport = replication_transport
+        if type is not None:
+            self.type = type
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

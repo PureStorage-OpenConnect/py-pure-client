@@ -3,7 +3,7 @@
 """
     Pure1 Public REST API
 
-    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)  The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
+    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)   The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
 
     OpenAPI spec version: 1.2
     
@@ -30,27 +30,27 @@ class InvoiceLine(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'end_date': 'int',
+        'amount': 'float',
+        'components': 'list[InvoiceLineComponent]',
         'item': 'str',
         'quantity': 'int',
         'description': 'str',
-        'start_date': 'int',
-        'end_date': 'int',
-        'components': 'list[InvoiceLineComponent]',
+        'tax': 'Tax',
         'unit_price': 'float',
-        'amount': 'float',
-        'tax': 'Tax'
+        'start_date': 'int'
     }
 
     attribute_map = {
+        'end_date': 'end_date',
+        'amount': 'amount',
+        'components': 'components',
         'item': 'item',
         'quantity': 'quantity',
         'description': 'description',
-        'start_date': 'start_date',
-        'end_date': 'end_date',
-        'components': 'components',
+        'tax': 'tax',
         'unit_price': 'unit_price',
-        'amount': 'amount',
-        'tax': 'tax'
+        'start_date': 'start_date'
     }
 
     required_args = {
@@ -58,46 +58,46 @@ class InvoiceLine(object):
 
     def __init__(
         self,
+        end_date=None,  # type: int
+        amount=None,  # type: float
+        components=None,  # type: List[models.InvoiceLineComponent]
         item=None,  # type: str
         quantity=None,  # type: int
         description=None,  # type: str
-        start_date=None,  # type: int
-        end_date=None,  # type: int
-        components=None,  # type: List[models.InvoiceLineComponent]
-        unit_price=None,  # type: float
-        amount=None,  # type: float
         tax=None,  # type: models.Tax
+        unit_price=None,  # type: float
+        start_date=None,  # type: int
     ):
         """
         Keyword args:
+            end_date (int): The invoice item end date. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch. 
+            amount (float): The total price of current invoice item, currency is specified in invoice currency.
+            components (list[InvoiceLineComponent]): The sub-components of current invoice item.
             item (str): The name of invoice item.
             quantity (int): The quantity of current invoice item.
             description (str)
-            start_date (int): The invoice item start date. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch.
-            end_date (int): The invoice item end date. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch.
-            components (list[InvoiceLineComponent]): The sub-components of current invoice item.
-            unit_price (float): The unit price of current invoice item, currency is specified in invoice currency.
-            amount (float): The total price of current invoice item, currency is specified in invoice currency.
             tax (Tax)
+            unit_price (float): The unit price of current invoice item, currency is specified in invoice currency.
+            start_date (int): The invoice item start date. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch. 
         """
+        if end_date is not None:
+            self.end_date = end_date
+        if amount is not None:
+            self.amount = amount
+        if components is not None:
+            self.components = components
         if item is not None:
             self.item = item
         if quantity is not None:
             self.quantity = quantity
         if description is not None:
             self.description = description
-        if start_date is not None:
-            self.start_date = start_date
-        if end_date is not None:
-            self.end_date = end_date
-        if components is not None:
-            self.components = components
-        if unit_price is not None:
-            self.unit_price = unit_price
-        if amount is not None:
-            self.amount = amount
         if tax is not None:
             self.tax = tax
+        if unit_price is not None:
+            self.unit_price = unit_price
+        if start_date is not None:
+            self.start_date = start_date
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

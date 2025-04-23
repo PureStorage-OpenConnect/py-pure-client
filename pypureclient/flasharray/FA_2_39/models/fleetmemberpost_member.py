@@ -30,15 +30,15 @@ class FleetmemberpostMember(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
-        'resource_type': 'str'
+        'resource_type': 'str',
+        'id': 'str'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
-        'resource_type': 'resource_type'
+        'resource_type': 'resource_type',
+        'id': 'id'
     }
 
     required_args = {
@@ -46,22 +46,22 @@ class FleetmemberpostMember(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
         resource_type=None,  # type: str
+        id=None,  # type: str
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified.
-            name (str): The resource name.
-            resource_type (str): Type of the object (e.g. remote-arrays)
+            name (str): The resource name. 
+            resource_type (str): Type of the object (e.g. remote-arrays) 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
         if resource_type is not None:
             self.resource_type = resource_type
+        if id is not None:
+            self.id = id
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

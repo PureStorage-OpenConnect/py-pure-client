@@ -30,29 +30,29 @@ class Directory(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
-        'created': 'int',
-        'destroyed': 'bool',
-        'directory_name': 'str',
-        'file_system': 'FixedReference',
-        'path': 'str',
-        'space': 'Space',
+        'id': 'str',
         'time_remaining': 'int',
-        'limited_by': 'LimitedBy'
+        'path': 'str',
+        'destroyed': 'bool',
+        'file_system': 'FixedReference',
+        'created': 'int',
+        'limited_by': 'LimitedBy',
+        'directory_name': 'str',
+        'space': 'Space'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
-        'created': 'created',
-        'destroyed': 'destroyed',
-        'directory_name': 'directory_name',
-        'file_system': 'file_system',
-        'path': 'path',
-        'space': 'space',
+        'id': 'id',
         'time_remaining': 'time_remaining',
-        'limited_by': 'limited_by'
+        'path': 'path',
+        'destroyed': 'destroyed',
+        'file_system': 'file_system',
+        'created': 'created',
+        'limited_by': 'limited_by',
+        'directory_name': 'directory_name',
+        'space': 'space'
     }
 
     required_args = {
@@ -60,50 +60,50 @@ class Directory(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
-        created=None,  # type: int
-        destroyed=None,  # type: bool
-        directory_name=None,  # type: str
-        file_system=None,  # type: models.FixedReference
-        path=None,  # type: str
-        space=None,  # type: models.Space
+        id=None,  # type: str
         time_remaining=None,  # type: int
+        path=None,  # type: str
+        destroyed=None,  # type: bool
+        file_system=None,  # type: models.FixedReference
+        created=None,  # type: int
         limited_by=None,  # type: models.LimitedBy
+        directory_name=None,  # type: str
+        space=None,  # type: models.Space
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            name (str): A user-specified name. The name must be locally unique and can be changed.
-            created (int): The managed directory creation time, measured in milliseconds since the UNIX epoch.
-            destroyed (bool): Returns a value of `true` if the managed directory has been destroyed and is pending eradication. The `time_remaining` value displays the amount of time left until the destroyed managed directory is permanently eradicated. Once the `time_remaining` period has elapsed, the managed directory is permanently eradicated and can no longer be recovered.
-            directory_name (str): The managed directory name without the file system name prefix. A full managed directory name is constructed in the form of `FILE_SYSTEM:DIR` where `FILE_SYSTEM` is the file system name and `DIR` is the value of this field.
-            file_system (FixedReference): The file system that this managed directory is in.
-            path (str): Absolute path of the managed directory in the file system.
-            space (Space): Displays size and space consumption details.
-            time_remaining (int): The amount of time left, measured in milliseconds until the destroyed managed directory is permanently eradicated.
-            limited_by (LimitedBy): The quota policy that is limiting usage on this managed directory. This policy defines the total amount of space provisioned to this managed directory and its descendants. The returned value contains two parts&#58; the name of the policy and the managed directory to which the policy is attached.
+            name (str): A user-specified name. The name must be locally unique and can be changed. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource. 
+            time_remaining (int): The amount of time left, measured in milliseconds until the destroyed managed directory is permanently eradicated. 
+            path (str): Absolute path of the managed directory in the file system. 
+            destroyed (bool): Returns a value of `true` if the managed directory has been destroyed and is pending eradication. The `time_remaining` value displays the amount of time left  until the destroyed managed directory is permanently eradicated. Once the `time_remaining` period has elapsed, the managed directory is permanently eradicated and can no longer be recovered. 
+            file_system (FixedReference): The file system that this managed directory is in. 
+            created (int): The managed directory creation time, measured in milliseconds since the UNIX epoch. 
+            limited_by (LimitedBy): The quota policy that is limiting usage on this managed directory. This policy defines the total amount of space provisioned to this managed directory and its descendants. The returned value contains two parts&#58; the name of the policy and the managed directory to which the policy is attached. 
+            directory_name (str): The managed directory name without the file system name prefix. A full managed directory name is constructed in the form of `FILE_SYSTEM:DIR` where `FILE_SYSTEM` is the file system name and `DIR` is the value of this field. 
+            space (Space): Displays size and space consumption details. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
-        if created is not None:
-            self.created = created
-        if destroyed is not None:
-            self.destroyed = destroyed
-        if directory_name is not None:
-            self.directory_name = directory_name
-        if file_system is not None:
-            self.file_system = file_system
-        if path is not None:
-            self.path = path
-        if space is not None:
-            self.space = space
+        if id is not None:
+            self.id = id
         if time_remaining is not None:
             self.time_remaining = time_remaining
+        if path is not None:
+            self.path = path
+        if destroyed is not None:
+            self.destroyed = destroyed
+        if file_system is not None:
+            self.file_system = file_system
+        if created is not None:
+            self.created = created
         if limited_by is not None:
             self.limited_by = limited_by
+        if directory_name is not None:
+            self.directory_name = directory_name
+        if space is not None:
+            self.space = space
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

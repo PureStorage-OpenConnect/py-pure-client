@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.16
     
@@ -49,8 +49,8 @@ class SupportDiagnosticsSeverityCount(object):
     ):
         """
         Keyword args:
-            severity (str): Severity level of the test. Valid values include `info`, `warning`, `critical`.
-            count (int): Count of the corresponding severity.
+            severity (str): Severity level of the test. Valid values include `info`, `warning`, `critical`. 
+            count (int): Count of the corresponding severity. 
         """
         if severity is not None:
             self.severity = severity

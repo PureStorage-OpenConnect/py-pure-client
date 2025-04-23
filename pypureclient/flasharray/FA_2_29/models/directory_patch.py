@@ -50,7 +50,7 @@ class DirectoryPatch(object):
         """
         Keyword args:
             name (str): The new name for the resource.
-            directory_name (str): The managed directory name without the file system name prefix. A full managed directory name is constructed in the form of `FILE_SYSTEM:DIR` where `FILE_SYSTEM` is the file system name and `DIR` is the value of this field.
+            directory_name (str): The managed directory name without the file system name prefix. A full managed directory name is constructed in the form of `FILE_SYSTEM:DIR` where `FILE_SYSTEM` is the file system name and `DIR` is the value of this field. 
         """
         if name is not None:
             self.name = name

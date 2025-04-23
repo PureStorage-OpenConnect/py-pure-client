@@ -30,17 +30,17 @@ class VolumeSpace(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
-        'space': 'VolumeSpaceCommon',
-        'time': 'int'
+        'id': 'str',
+        'time': 'int',
+        'space': 'VolumeSpaceCommon'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
-        'space': 'space',
-        'time': 'time'
+        'id': 'id',
+        'time': 'time',
+        'space': 'space'
     }
 
     required_args = {
@@ -48,26 +48,26 @@ class VolumeSpace(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
-        space=None,  # type: models.VolumeSpaceCommon
+        id=None,  # type: str
         time=None,  # type: int
+        space=None,  # type: models.VolumeSpaceCommon
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            name (str): A locally unique, system-generated name. The name cannot be modified.
-            space (VolumeSpaceCommon): Displays size and space consumption information.
-            time (int): The timestamp of when the data was taken, measured in milliseconds since the UNIX epoch.
+            name (str): A locally unique, system-generated name. The name cannot be modified. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource. 
+            time (int): The timestamp of when the data was taken, measured in milliseconds since the UNIX epoch. 
+            space (VolumeSpaceCommon): Displays size and space consumption information. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
-        if space is not None:
-            self.space = space
+        if id is not None:
+            self.id = id
         if time is not None:
             self.time = time
+        if space is not None:
+            self.space = space
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

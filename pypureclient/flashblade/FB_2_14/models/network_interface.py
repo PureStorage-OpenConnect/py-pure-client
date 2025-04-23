@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.14, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.14, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.14
     
@@ -32,29 +32,29 @@ class NetworkInterface(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
+        'subnet': 'object',
         'address': 'str',
-        'enabled': 'bool',
-        'gateway': 'str',
-        'mtu': 'int',
+        'vlan': 'int',
         'netmask': 'str',
         'services': 'list[str]',
-        'subnet': 'object',
         'type': 'str',
-        'vlan': 'int'
+        'enabled': 'bool',
+        'gateway': 'str',
+        'mtu': 'int'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
+        'subnet': 'subnet',
         'address': 'address',
-        'enabled': 'enabled',
-        'gateway': 'gateway',
-        'mtu': 'mtu',
+        'vlan': 'vlan',
         'netmask': 'netmask',
         'services': 'services',
-        'subnet': 'subnet',
         'type': 'type',
-        'vlan': 'vlan'
+        'enabled': 'enabled',
+        'gateway': 'gateway',
+        'mtu': 'mtu'
     }
 
     required_args = {
@@ -64,52 +64,52 @@ class NetworkInterface(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
+        subnet=None,  # type: object
         address=None,  # type: str
+        vlan=None,  # type: int
+        netmask=None,  # type: str
+        services=None,  # type: List[str]
+        type=None,  # type: str
         enabled=None,  # type: bool
         gateway=None,  # type: str
         mtu=None,  # type: int
-        netmask=None,  # type: str
-        services=None,  # type: List[str]
-        subnet=None,  # type: object
-        type=None,  # type: str
-        vlan=None,  # type: int
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            address (str): The IPv4 or IPv6 address to be associated with the specified network interface.
-            enabled (bool): Indicates if the specified network interface is enabled (`true`) or disabled (`false`). If not specified, defaults to `true`.
-            gateway (str): Derived from `subnet.gateway`.
-            mtu (int): Derived from `subnet.mtu`.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            subnet (object)
+            address (str): The IPv4 or IPv6 address to be associated with the specified network interface. 
+            vlan (int): Derived from `subnet.vlan`.
             netmask (str): Derived from `subnet.prefix`.
             services (list[str]): Services and protocols that are enabled on the interface.
-            subnet (object)
-            type (str): The only valid value is `vip`.
-            vlan (int): Derived from `subnet.vlan`.
+            type (str): The only valid value is `vip`. 
+            enabled (bool): Indicates if the specified network interface is enabled (`true`) or disabled (`false`). If not specified, defaults to `true`. 
+            gateway (str): Derived from `subnet.gateway`.
+            mtu (int): Derived from `subnet.mtu`.
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
+        if subnet is not None:
+            self.subnet = subnet
         if address is not None:
             self.address = address
+        if vlan is not None:
+            self.vlan = vlan
+        if netmask is not None:
+            self.netmask = netmask
+        if services is not None:
+            self.services = services
+        if type is not None:
+            self.type = type
         if enabled is not None:
             self.enabled = enabled
         if gateway is not None:
             self.gateway = gateway
         if mtu is not None:
             self.mtu = mtu
-        if netmask is not None:
-            self.netmask = netmask
-        if services is not None:
-            self.services = services
-        if subnet is not None:
-            self.subnet = subnet
-        if type is not None:
-            self.type = type
-        if vlan is not None:
-            self.vlan = vlan
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

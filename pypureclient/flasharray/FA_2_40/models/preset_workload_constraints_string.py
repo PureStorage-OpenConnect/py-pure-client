@@ -49,8 +49,8 @@ class PresetWorkloadConstraintsString(object):
     ):
         """
         Keyword args:
-            allowed_values (list[str]): The valid values that can be supplied to the parameter. A parameter that collects the name of the environment to which a workload will deploy might, for example, limit the allowed values to `production`, `testing` and `development`. Supports up to five values, with up to 64 unicode characters per value.
-            default (str): The default value to use if no value is provided. Must be present in `allowed_values`, if `allowed_values` is set. Supports up to 64 unicode characters.
+            allowed_values (list[str]): The valid values that can be supplied to the parameter. A parameter that collects the name of the environment to which a workload will deploy might, for example, limit the allowed values to `production`, `testing` and `development`. Supports up to five values, with up to 64 unicode characters per value. 
+            default (str): The default value to use if no value is provided. Must be present in `allowed_values`, if `allowed_values` is set. Supports up to 64 unicode characters. 
         """
         if allowed_values is not None:
             self.allowed_values = allowed_values

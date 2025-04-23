@@ -64,13 +64,13 @@ class Port(object):
     ):
         """
         Keyword args:
-            name (str): A locally unique, system-generated name. The name cannot be modified.
+            name (str): A locally unique, system-generated name. The name cannot be modified. 
             iqn (str): The iSCSI Qualified Name (or `null` if target is not iSCSI).
             nqn (str): NVMe Qualified Name (or `null` if target is not NVMeoF).
             portal (str): IP and port number (or `null` if target is not iSCSI).
-            wwn (str): Fibre Channel World Wide Name (or `null` if target is not Fibre Channel).
-            failover (str): If the array port has failed over, returns the name of the port to which this port has failed over.
-            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
+            wwn (str): Fibre Channel World Wide Name (or `null` if target is not Fibre Channel). 
+            failover (str): If the array port has failed over, returns the name of the port to which this port has failed over. 
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request.  Other parameters provided with the request, such as names of volumes or snapshots,  are resolved relative to the provided `context`. 
         """
         if name is not None:
             self.name = name

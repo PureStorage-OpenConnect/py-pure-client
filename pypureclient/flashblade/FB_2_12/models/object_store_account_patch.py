@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.12, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.12, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.12
     
@@ -30,16 +30,16 @@ class ObjectStoreAccountPatch(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'quota_limit': 'str',
         'bucket_defaults': 'BucketDefaults',
         'hard_limit_enabled': 'bool',
-        'quota_limit': 'str',
         'public_access_config': 'PublicAccessConfig'
     }
 
     attribute_map = {
+        'quota_limit': 'quota_limit',
         'bucket_defaults': 'bucket_defaults',
         'hard_limit_enabled': 'hard_limit_enabled',
-        'quota_limit': 'quota_limit',
         'public_access_config': 'public_access_config'
     }
 
@@ -48,24 +48,24 @@ class ObjectStoreAccountPatch(object):
 
     def __init__(
         self,
+        quota_limit=None,  # type: str
         bucket_defaults=None,  # type: models.BucketDefaults
         hard_limit_enabled=None,  # type: bool
-        quota_limit=None,  # type: str
         public_access_config=None,  # type: models.PublicAccessConfig
     ):
         """
         Keyword args:
-            bucket_defaults (BucketDefaults): Default settings to be applied to newly created buckets associated with this account. Values here will be used in bucket creation requests which do not specify their own values for corresponding fields.
-            hard_limit_enabled (bool): If set to `true`, the account's size, as defined by `quota_limit`, is used as a hard limit quota. If set to `false`, a hard limit quota will not be applied to the account, but soft quota alerts will still be sent if the account has a value set for `quota_limit`.
-            quota_limit (str): The effective quota limit to be applied against the size of the account, displayed in bytes. If set to an empty string (`\"\"`), the account is unlimited in size.
+            quota_limit (str): The effective quota limit to be applied against the size of the account, displayed in bytes. If set to an empty string (`\"\"`), the account is unlimited in size. 
+            bucket_defaults (BucketDefaults): Default settings to be applied to newly created buckets associated with this account. Values here will be used in bucket creation requests which do not specify their own values for corresponding fields. 
+            hard_limit_enabled (bool): If set to `true`, the account's size, as defined by `quota_limit`, is used as a hard limit quota. If set to `false`, a hard limit quota will not be applied to the account, but soft quota alerts will still be sent if the account has a value set for `quota_limit`. 
             public_access_config (PublicAccessConfig)
         """
+        if quota_limit is not None:
+            self.quota_limit = quota_limit
         if bucket_defaults is not None:
             self.bucket_defaults = bucket_defaults
         if hard_limit_enabled is not None:
             self.hard_limit_enabled = hard_limit_enabled
-        if quota_limit is not None:
-            self.quota_limit = quota_limit
         if public_access_config is not None:
             self.public_access_config = public_access_config
 

@@ -49,8 +49,8 @@ class Qos(object):
     ):
         """
         Keyword args:
-            bandwidth_limit (int): The maximum QoS bandwidth limit for the volume. Whenever throughput exceeds the bandwidth limit, throttling occurs. Measured in bytes per second. Maximum limit is 512 GB/s.
-            iops_limit (int): The QoS IOPs limit for the volume.
+            bandwidth_limit (int): The maximum QoS bandwidth limit for the volume. Whenever throughput exceeds the bandwidth limit, throttling occurs. Measured in bytes per second. Maximum limit is 512 GB/s. 
+            iops_limit (int): The QoS IOPs limit for the volume. 
         """
         if bandwidth_limit is not None:
             self.bandwidth_limit = bandwidth_limit

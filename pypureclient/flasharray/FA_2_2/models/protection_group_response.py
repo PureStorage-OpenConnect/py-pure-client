@@ -46,7 +46,7 @@ class ProtectionGroupResponse(object):
     ):
         """
         Keyword args:
-            items (list[ProtectionGroup]): Returns a list of all items after filtering. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.
+            items (list[ProtectionGroup]): Returns a list of all items after filtering. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty. 
         """
         if items is not None:
             self.items = items

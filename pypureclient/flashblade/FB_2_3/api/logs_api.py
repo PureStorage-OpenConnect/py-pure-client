@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.3, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.3, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.3
     
@@ -45,8 +45,8 @@ class LogsApi(object):
         >>> thread = api.api23_logs_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param int end_time: When the time window ends (in milliseconds since epoch).
-        :param int start_time: When the time window starts (in milliseconds since epoch).
+        :param int end_time: When the time window ends (in milliseconds since epoch). 
+        :param int start_time: When the time window starts (in milliseconds since epoch). 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.

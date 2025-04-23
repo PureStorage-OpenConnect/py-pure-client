@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.12, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.12, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.12
     
@@ -32,18 +32,18 @@ class SmbClientPolicyRulePost(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
+        'encryption': 'str',
         'client': 'str',
         'permission': 'str',
-        'encryption': 'str',
         'index': 'int'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
+        'encryption': 'encryption',
         'client': 'client',
         'permission': 'permission',
-        'encryption': 'encryption',
         'index': 'index'
     }
 
@@ -54,30 +54,30 @@ class SmbClientPolicyRulePost(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
+        encryption=None,  # type: str
         client=None,  # type: str
         permission=None,  # type: str
-        encryption=None,  # type: str
         index=None,  # type: int
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            client (str): Specifies the clients that will be permitted to access the export. Accepted notation is a single IP address, subnet in CIDR notation, or anonymous (`*`). The default is `*` if not specified.
-            permission (str): Specifies which read-write client access permissions are allowed for the export. Valid values are `rw` and `ro`. The default is `ro` if not specified.
-            encryption (str): Specifies whether the remote client is required to use SMB encryption. Valid values are `required`, `disabled`, and `optional`. If not specified, defaults to `optional`.
-            index (int): The index within the policy. The `index` indicates the order the rules are evaluated. NOTE: It is recommended to use the query param `before_rule_id` to do reordering to avoid concurrency issues, but changing `index` is also supported. `index` can not be changed if `before_rule_id` or `before_rule_name` are specified.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            encryption (str): Specifies whether the remote client is required to use SMB encryption. Valid values are `required`, `disabled`, and `optional`. If not specified, defaults to `optional`. 
+            client (str): Specifies the clients that will be permitted to access the export. Accepted notation is a single IP address, subnet in CIDR notation, or anonymous (`*`).  The default is `*` if not specified. 
+            permission (str): Specifies which read-write client access permissions are allowed for the export. Valid values are `rw` and `ro`. The default is `ro` if not specified. 
+            index (int): The index within the policy. The `index` indicates the order the rules are evaluated. NOTE: It is recommended to use the query param `before_rule_id` to do reordering to avoid concurrency issues, but changing `index` is also supported. `index` can not be changed if `before_rule_id` or `before_rule_name` are specified. 
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
+        if encryption is not None:
+            self.encryption = encryption
         if client is not None:
             self.client = client
         if permission is not None:
             self.permission = permission
-        if encryption is not None:
-            self.encryption = encryption
         if index is not None:
             self.index = index
 

@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.15, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.15, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.15
     
@@ -50,7 +50,7 @@ class FixedReferenceNoId(object):
         """
         Keyword args:
             name (str)
-            resource_type (str): Type of the object (full name of the endpoint). Valid values are the unique part of the resource's REST endpoint. For example, a reference to a file system would have a `resource_type` of `file-systems`.
+            resource_type (str): Type of the object (full name of the endpoint). Valid values are the unique part of the resource's REST endpoint. For example, a reference to a file system would have a `resource_type` of `file-systems`. 
         """
         if name is not None:
             self.name = name

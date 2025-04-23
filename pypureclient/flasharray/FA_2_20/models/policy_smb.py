@@ -30,24 +30,24 @@ class PolicySmb(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
-        'destroyed': 'bool',
-        'enabled': 'bool',
-        'pod': 'Reference',
-        'policy_type': 'str',
+        'id': 'str',
         'time_remaining': 'int',
+        'destroyed': 'bool',
+        'policy_type': 'str',
+        'pod': 'Reference',
+        'enabled': 'bool',
         'access_based_enumeration_enabled': 'bool'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
-        'destroyed': 'destroyed',
-        'enabled': 'enabled',
-        'pod': 'pod',
-        'policy_type': 'policy_type',
+        'id': 'id',
         'time_remaining': 'time_remaining',
+        'destroyed': 'destroyed',
+        'policy_type': 'policy_type',
+        'pod': 'pod',
+        'enabled': 'enabled',
         'access_based_enumeration_enabled': 'access_based_enumeration_enabled'
     }
 
@@ -56,40 +56,40 @@ class PolicySmb(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
-        destroyed=None,  # type: bool
-        enabled=None,  # type: bool
-        pod=None,  # type: models.Reference
-        policy_type=None,  # type: str
+        id=None,  # type: str
         time_remaining=None,  # type: int
+        destroyed=None,  # type: bool
+        policy_type=None,  # type: str
+        pod=None,  # type: models.Reference
+        enabled=None,  # type: bool
         access_based_enumeration_enabled=None,  # type: bool
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            name (str): A user-specified name. The name must be locally unique and can be changed.
-            destroyed (bool): Returns a value of `true` if the policy has been destroyed and is pending eradication. The `time_remaining` value displays the amount of time left until the destroyed policy is permanently eradicated. Once the `time_remaining` period has elapsed, the policy is permanently eradicated and can no longer be recovered.
-            enabled (bool): Returns a value of `true` if the policy is enabled.
-            pod (Reference): A reference to the pod.
-            policy_type (str): The type of policy. Valid values include `nfs`, `smb`, `snapshot`, and `quota`.
-            time_remaining (int): The amount of time left, measured in milliseconds, until the destroyed policy is permanently eradicated.
-            access_based_enumeration_enabled (bool): Returns a value of `true` if access based enumeration is enabled on the policy. When access based enumeration is enabled on a policy, files and folders within exports that are attached to the policy will be hidden from users who do not have permission to view them.
+            name (str): A user-specified name. The name must be locally unique and can be changed. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource. 
+            time_remaining (int): The amount of time left, measured in milliseconds, until the destroyed policy is permanently eradicated. 
+            destroyed (bool): Returns a value of `true` if the policy has been destroyed and is pending eradication. The `time_remaining` value displays the amount of time left until the destroyed policy is permanently eradicated. Once the `time_remaining` period has elapsed, the policy is permanently eradicated and can no longer be recovered. 
+            policy_type (str): The type of policy. Valid values include `nfs`, `smb`, `snapshot`, and `quota`. 
+            pod (Reference): A reference to the pod. 
+            enabled (bool): Returns a value of `true` if the policy is enabled. 
+            access_based_enumeration_enabled (bool): Returns a value of `true` if access based enumeration is enabled on the policy. When access based enumeration is enabled on a policy, files and folders within exports that are attached to the policy will be hidden from users who do not have permission to view them. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
-        if destroyed is not None:
-            self.destroyed = destroyed
-        if enabled is not None:
-            self.enabled = enabled
-        if pod is not None:
-            self.pod = pod
-        if policy_type is not None:
-            self.policy_type = policy_type
+        if id is not None:
+            self.id = id
         if time_remaining is not None:
             self.time_remaining = time_remaining
+        if destroyed is not None:
+            self.destroyed = destroyed
+        if policy_type is not None:
+            self.policy_type = policy_type
+        if pod is not None:
+            self.pod = pod
+        if enabled is not None:
+            self.enabled = enabled
         if access_based_enumeration_enabled is not None:
             self.access_based_enumeration_enabled = access_based_enumeration_enabled
 

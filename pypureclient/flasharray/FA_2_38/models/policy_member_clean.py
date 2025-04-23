@@ -52,9 +52,9 @@ class PolicyMemberClean(object):
     ):
         """
         Keyword args:
-            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
-            member (FixedReferenceWithType): Reference to the resource that the policy is applied to.
-            policy (FixedReferenceWithType): Reference to the policy.
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request.  Other parameters provided with the request, such as names of volumes or snapshots,  are resolved relative to the provided `context`. 
+            member (FixedReferenceWithType): Reference to the resource that the policy is applied to. 
+            policy (FixedReferenceWithType): Reference to the policy. 
         """
         if context is not None:
             self.context = context

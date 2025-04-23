@@ -52,9 +52,9 @@ class OffloadAzure(object):
     ):
         """
         Keyword args:
-            container_name (str): The name of the container in the Azure Blob storage account to where the data will be offloaded. The name must be a valid DNS name. If not specified, defaults to `offload`.
-            account_name (str): The name of the existing Azure Blob storage account.
-            secret_access_key (str): The secret access key that goes with the account name (`account_name`) of the Azure Blob storage account. The secret access key is only accepted when creating the connection between the array and the Azure Blob storage account. The `account_name` and `container_name`, and `secret_access_key` parameters must be set together.
+            container_name (str): The name of the container in the Azure Blob storage account to where the data will be offloaded. The name must be a valid DNS name. If not specified, defaults to `offload`. 
+            account_name (str): The name of the existing Azure Blob storage account. 
+            secret_access_key (str): The secret access key that goes with the account name (`account_name`) of the Azure Blob storage account. The secret access key is only accepted when creating the connection between the array and the Azure Blob storage account. The `account_name` and `container_name`, and `secret_access_key` parameters must be set together. 
         """
         if container_name is not None:
             self.container_name = container_name

@@ -30,15 +30,15 @@ class DirectorypolicyexportpostPolicies(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'policy': 'Reference',
         'export_enabled': 'bool',
-        'export_name': 'str'
+        'export_name': 'str',
+        'policy': 'Reference'
     }
 
     attribute_map = {
-        'policy': 'policy',
         'export_enabled': 'export_enabled',
-        'export_name': 'export_name'
+        'export_name': 'export_name',
+        'policy': 'policy'
     }
 
     required_args = {
@@ -46,22 +46,22 @@ class DirectorypolicyexportpostPolicies(object):
 
     def __init__(
         self,
-        policy=None,  # type: models.Reference
         export_enabled=None,  # type: bool
         export_name=None,  # type: str
+        policy=None,  # type: models.Reference
     ):
         """
         Keyword args:
-            policy (Reference): Reference to the export policy to apply to the directory.
-            export_enabled (bool): If set to `true`, the export is enabled. If not specified, defaults to `true`.
-            export_name (str): The name of the export to create when applying the export policy to the directory.
+            export_enabled (bool): If set to `true`, the export is enabled. If not specified, defaults to `true`. 
+            export_name (str): The name of the export to create when applying the export policy to the directory. 
+            policy (Reference): Reference to the export policy to apply to the directory. 
         """
-        if policy is not None:
-            self.policy = policy
         if export_enabled is not None:
             self.export_enabled = export_enabled
         if export_name is not None:
             self.export_name = export_name
+        if policy is not None:
+            self.policy = policy
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

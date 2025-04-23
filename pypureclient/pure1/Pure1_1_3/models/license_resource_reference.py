@@ -3,7 +3,7 @@
 """
     Pure1 Public REST API
 
-    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)  The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
+    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)   The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
 
     OpenAPI spec version: 1.3
     
@@ -30,21 +30,21 @@ class LicenseResourceReference(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
         'resource_type': 'str',
+        'id': 'str',
         'fqdn': 'str',
-        'activation_time': 'int',
-        'usage': 'CurrentMetric'
+        'usage': 'CurrentMetric',
+        'activation_time': 'int'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
         'resource_type': 'resource_type',
+        'id': 'id',
         'fqdn': 'fqdn',
-        'activation_time': 'activation_time',
-        'usage': 'usage'
+        'usage': 'usage',
+        'activation_time': 'activation_time'
     }
 
     required_args = {
@@ -52,34 +52,34 @@ class LicenseResourceReference(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
         resource_type=None,  # type: str
+        id=None,  # type: str
         fqdn=None,  # type: str
-        activation_time=None,  # type: int
         usage=None,  # type: models.CurrentMetric
+        activation_time=None,  # type: int
     ):
         """
         Keyword args:
-            id (str): The opaque and unique id of this resource.
             name (str): The name of this resource.
-            resource_type (str): The type of this resource represented by the name of its REST endpoint. For example, \"arrays\", \"network-interfaces\", and \"metrics\". The value may be `null` if the resource is not represented.
-            fqdn (str): The fully qualified domain name of the appliance when `resource_type` is `arrays`, `null` otherwise.
-            activation_time (int): Time when the resource is activated under the license, in milliseconds since UNIX epoch.
-            usage (CurrentMetric): Current usage of the resource under the license.
+            resource_type (str): The type of this resource represented by the name of its REST endpoint. For example, \"arrays\", \"network-interfaces\", and \"metrics\". The value may be `null` if the resource is not represented. 
+            id (str): The opaque and unique id of this resource.
+            fqdn (str): The fully qualified domain name of the appliance when `resource_type` is `arrays`, `null` otherwise. 
+            usage (CurrentMetric): Current usage of the resource under the license. 
+            activation_time (int): Time when the resource is activated under the license, in milliseconds since UNIX epoch. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
         if resource_type is not None:
             self.resource_type = resource_type
+        if id is not None:
+            self.id = id
         if fqdn is not None:
             self.fqdn = fqdn
-        if activation_time is not None:
-            self.activation_time = activation_time
         if usage is not None:
             self.usage = usage
+        if activation_time is not None:
+            self.activation_time = activation_time
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

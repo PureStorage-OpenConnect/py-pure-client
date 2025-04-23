@@ -3,7 +3,7 @@
 """
     Pure1 Public REST API
 
-    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)  The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
+    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)   The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
 
     OpenAPI spec version: 1.3
     
@@ -30,19 +30,19 @@ class SubscriptionAssetArray(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'version': 'str',
-        'model': 'str',
         'chassis_serial_number': 'str',
-        'space': 'AssetSpace',
-        'advanced_space': 'SubscriptionAssetArrayAdvancedSpace'
+        'model': 'str',
+        'advanced_space': 'SubscriptionAssetArrayAdvancedSpace',
+        'version': 'str',
+        'space': 'AssetSpace'
     }
 
     attribute_map = {
-        'version': 'version',
-        'model': 'model',
         'chassis_serial_number': 'chassis_serial_number',
-        'space': 'space',
-        'advanced_space': 'advanced_space'
+        'model': 'model',
+        'advanced_space': 'advanced_space',
+        'version': 'version',
+        'space': 'space'
     }
 
     required_args = {
@@ -50,30 +50,30 @@ class SubscriptionAssetArray(object):
 
     def __init__(
         self,
-        version=None,  # type: str
-        model=None,  # type: str
         chassis_serial_number=None,  # type: str
-        space=None,  # type: models.AssetSpace
+        model=None,  # type: str
         advanced_space=None,  # type: models.SubscriptionAssetArrayAdvancedSpace
+        version=None,  # type: str
+        space=None,  # type: models.AssetSpace
     ):
         """
         Keyword args:
-            version (str): The Purity version of the appliance.
-            model (str): The model of the appliance.
             chassis_serial_number (str): The chassis serial number of the appliance.
-            space (AssetSpace): Displays size and space consumption information. For Evergreen//One and Evergreen//Flex this is the effective space information. For Evergreen//Forever and Evergreen//Foundation this is the physical space information.
-            advanced_space (SubscriptionAssetArrayAdvancedSpace): The physical and effective space information. Only visible when the query parameter `advanced_space` is set to `true`.
+            model (str): The model of the appliance.
+            advanced_space (SubscriptionAssetArrayAdvancedSpace): The physical and effective space information. Only visible when the query parameter `advanced_space` is set to `true`. 
+            version (str): The Purity version of the appliance.
+            space (AssetSpace): Displays size and space consumption information. For Evergreen//One and Evergreen//Flex this is the effective space information. For Evergreen//Forever and Evergreen//Foundation this is the physical space information. 
         """
-        if version is not None:
-            self.version = version
-        if model is not None:
-            self.model = model
         if chassis_serial_number is not None:
             self.chassis_serial_number = chassis_serial_number
-        if space is not None:
-            self.space = space
+        if model is not None:
+            self.model = model
         if advanced_space is not None:
             self.advanced_space = advanced_space
+        if version is not None:
+            self.version = version
+        if space is not None:
+            self.space = space
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

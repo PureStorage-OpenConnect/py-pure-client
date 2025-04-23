@@ -30,45 +30,45 @@ class CertificateBase(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'certificate': 'str',
-        'common_name': 'str',
-        'certificate_type': 'str',
         'country': 'str',
-        'email': 'str',
-        'intermediate_certificate': 'str',
         'issued_by': 'str',
         'issued_to': 'str',
-        'locality': 'str',
-        'organization': 'str',
-        'organizational_unit': 'str',
-        'state': 'str',
-        'status': 'str',
         'subject_alternative_names': 'list[str]',
-        'key_algorithm': 'str',
-        'key_size': 'int',
+        'certificate': 'str',
+        'locality': 'str',
         'valid_from': 'int',
-        'valid_to': 'int'
+        'key_algorithm': 'str',
+        'intermediate_certificate': 'str',
+        'organization': 'str',
+        'valid_to': 'int',
+        'state': 'str',
+        'certificate_type': 'str',
+        'common_name': 'str',
+        'email': 'str',
+        'organizational_unit': 'str',
+        'key_size': 'int',
+        'status': 'str'
     }
 
     attribute_map = {
-        'certificate': 'certificate',
-        'common_name': 'common_name',
-        'certificate_type': 'certificate_type',
         'country': 'country',
-        'email': 'email',
-        'intermediate_certificate': 'intermediate_certificate',
         'issued_by': 'issued_by',
         'issued_to': 'issued_to',
-        'locality': 'locality',
-        'organization': 'organization',
-        'organizational_unit': 'organizational_unit',
-        'state': 'state',
-        'status': 'status',
         'subject_alternative_names': 'subject_alternative_names',
-        'key_algorithm': 'key_algorithm',
-        'key_size': 'key_size',
+        'certificate': 'certificate',
+        'locality': 'locality',
         'valid_from': 'valid_from',
-        'valid_to': 'valid_to'
+        'key_algorithm': 'key_algorithm',
+        'intermediate_certificate': 'intermediate_certificate',
+        'organization': 'organization',
+        'valid_to': 'valid_to',
+        'state': 'state',
+        'certificate_type': 'certificate_type',
+        'common_name': 'common_name',
+        'email': 'email',
+        'organizational_unit': 'organizational_unit',
+        'key_size': 'key_size',
+        'status': 'status'
     }
 
     required_args = {
@@ -76,82 +76,82 @@ class CertificateBase(object):
 
     def __init__(
         self,
-        certificate=None,  # type: str
-        common_name=None,  # type: str
-        certificate_type=None,  # type: str
         country=None,  # type: str
-        email=None,  # type: str
-        intermediate_certificate=None,  # type: str
         issued_by=None,  # type: str
         issued_to=None,  # type: str
-        locality=None,  # type: str
-        organization=None,  # type: str
-        organizational_unit=None,  # type: str
-        state=None,  # type: str
-        status=None,  # type: str
         subject_alternative_names=None,  # type: List[str]
-        key_algorithm=None,  # type: str
-        key_size=None,  # type: int
+        certificate=None,  # type: str
+        locality=None,  # type: str
         valid_from=None,  # type: int
+        key_algorithm=None,  # type: str
+        intermediate_certificate=None,  # type: str
+        organization=None,  # type: str
         valid_to=None,  # type: int
+        state=None,  # type: str
+        certificate_type=None,  # type: str
+        common_name=None,  # type: str
+        email=None,  # type: str
+        organizational_unit=None,  # type: str
+        key_size=None,  # type: int
+        status=None,  # type: str
     ):
         """
         Keyword args:
-            certificate (str): The text of the certificate.
-            common_name (str): The common name field listed in the certificate.
-            certificate_type (str): The type of certificate. Values include `appliance` and `external`. Certificates of type `appliance` are used by the array to verify its identity to clients. Certificates of type `external` are used by the array to identify external servers to which it is configured to communicate.
-            country (str): Two-letter country (ISO) code listed in the certificate.
-            email (str): The email field listed in the certificate.
-            intermediate_certificate (str): The text of the intermediate certificate chains.
-            issued_by (str): The party that issued the certificate.
-            issued_to (str): The party to whom the certificate is issued.
-            locality (str): The locality field listed in the certificate.
-            organization (str): The organization field listed in the certificate.
-            organizational_unit (str): The organizational unit field listed in the certificate.
-            state (str): The state/province field listed in the certificate.
-            status (str): The type of certificate. Valid values are `self-signed` and `imported`.
-            subject_alternative_names (list[str]): The alternative names that are secured by this certificate. Alternative names may be IP addresses, DNS names, or URIs.
-            key_algorithm (str): The key algorithm used to generate the certificate. This field can only be specified when creating a new self-signed certificate. Defaults to rsa if not specified. Valid values when creating a new self-signed certificate only include `rsa`, `ec`, `ed448` and `ed25519`.
-            key_size (int): The size (in bits) of the private key for the certificate. Default is 2048 bits for `rsa` key_algorithm, 256 for `ec` and `ed25519`. The `ed448` default key size is 456. This field can only be specified when creating a new self-signed certificate.
-            valid_from (int): The date when the certificate starts being valid.
-            valid_to (int): The date when the certificate stops being valid.
+            country (str): Two-letter country (ISO) code listed in the certificate. 
+            issued_by (str): The party that issued the certificate. 
+            issued_to (str): The party to whom the certificate is issued. 
+            subject_alternative_names (list[str]): The alternative names that are secured by this certificate. Alternative names may be IP addresses, DNS names, or URIs. 
+            certificate (str): The text of the certificate. 
+            locality (str): The locality field listed in the certificate. 
+            valid_from (int): The date when the certificate starts being valid. 
+            key_algorithm (str): The key algorithm used to generate the certificate. This field can only be specified when creating a new self-signed certificate. Defaults to rsa if not specified. Valid values when creating a new self-signed certificate only include `rsa`, `ec`, `ed448` and `ed25519`. 
+            intermediate_certificate (str): The text of the intermediate certificate chains. 
+            organization (str): The organization field listed in the certificate. 
+            valid_to (int): The date when the certificate stops being valid. 
+            state (str): The state/province field listed in the certificate. 
+            certificate_type (str): The type of certificate. Values include `appliance` and `external`. Certificates of type `appliance` are used by the array to verify its identity to clients. Certificates of type `external` are used by the array to identify external servers to which it is configured to communicate. 
+            common_name (str): The common name field listed in the certificate. 
+            email (str): The email field listed in the certificate. 
+            organizational_unit (str): The organizational unit field listed in the certificate. 
+            key_size (int): The size (in bits) of the private key for the certificate. Default is 2048 bits for `rsa` key_algorithm, 256 for `ec` and `ed25519`. The `ed448` default key  size is 456. This field can only be specified when creating a new self-signed certificate. 
+            status (str): The type of certificate. Valid values are `self-signed` and `imported`. 
         """
-        if certificate is not None:
-            self.certificate = certificate
-        if common_name is not None:
-            self.common_name = common_name
-        if certificate_type is not None:
-            self.certificate_type = certificate_type
         if country is not None:
             self.country = country
-        if email is not None:
-            self.email = email
-        if intermediate_certificate is not None:
-            self.intermediate_certificate = intermediate_certificate
         if issued_by is not None:
             self.issued_by = issued_by
         if issued_to is not None:
             self.issued_to = issued_to
-        if locality is not None:
-            self.locality = locality
-        if organization is not None:
-            self.organization = organization
-        if organizational_unit is not None:
-            self.organizational_unit = organizational_unit
-        if state is not None:
-            self.state = state
-        if status is not None:
-            self.status = status
         if subject_alternative_names is not None:
             self.subject_alternative_names = subject_alternative_names
-        if key_algorithm is not None:
-            self.key_algorithm = key_algorithm
-        if key_size is not None:
-            self.key_size = key_size
+        if certificate is not None:
+            self.certificate = certificate
+        if locality is not None:
+            self.locality = locality
         if valid_from is not None:
             self.valid_from = valid_from
+        if key_algorithm is not None:
+            self.key_algorithm = key_algorithm
+        if intermediate_certificate is not None:
+            self.intermediate_certificate = intermediate_certificate
+        if organization is not None:
+            self.organization = organization
         if valid_to is not None:
             self.valid_to = valid_to
+        if state is not None:
+            self.state = state
+        if certificate_type is not None:
+            self.certificate_type = certificate_type
+        if common_name is not None:
+            self.common_name = common_name
+        if email is not None:
+            self.email = email
+        if organizational_unit is not None:
+            self.organizational_unit = organizational_unit
+        if key_size is not None:
+            self.key_size = key_size
+        if status is not None:
+            self.status = status
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

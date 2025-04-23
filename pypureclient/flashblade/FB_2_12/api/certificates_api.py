@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.12, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.12, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.12
     
@@ -29,9 +29,9 @@ class CertificatesApi(object):
 
     def api212_certificates_certificate_groups_delete_with_http_info(
         self,
-        certificate_ids=None,  # type: List[str]
         certificate_group_ids=None,  # type: List[str]
         certificate_group_names=None,  # type: List[str]
+        certificate_ids=None,  # type: List[str]
         certificate_names=None,  # type: List[str]
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
@@ -47,10 +47,10 @@ class CertificatesApi(object):
         >>> thread = api.api212_certificates_certificate_groups_delete_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param list[str] certificate_ids: A comma-separated list of certificate ids. If there is not at least one resource that matches each of the elements of `certificate_ids`, then an error is returned. This cannot be provided in conjunction with the `certificate_names` parameter.
-        :param list[str] certificate_group_ids: A comma-separated list of certificate group ids. If there is not at least one resource that matches each of the elements of `certificate_group_ids`, then an error is returned. This cannot be provided in conjunction with the `certificate_group_names` parameter.
-        :param list[str] certificate_group_names: A comma-separated list of certificate group names. If there is not at least one resource that matches each of the elements of `certificate_group_names`, then an error is returned. This cannot be provided in conjunction with the `certificate_group_ids` parameter.
-        :param list[str] certificate_names: A comma-separated list of certificate names. If there is not at least one resource that matches each of the elements of `certificate_names`, then an error is returned. This cannot be provided in conjunction with the `certificate_ids` parameter.
+        :param list[str] certificate_group_ids: A comma-separated list of certificate group ids. If there is not at least one resource that matches each of the elements of `certificate_group_ids`, then an error is returned. This cannot be provided in conjunction with the `certificate_group_names` parameter. 
+        :param list[str] certificate_group_names: A comma-separated list of certificate group names. If there is not at least one resource that matches each of the elements of `certificate_group_names`, then an error is returned. This cannot be provided in conjunction with the `certificate_group_ids` parameter. 
+        :param list[str] certificate_ids: A comma-separated list of certificate ids. If there is not at least one resource that matches each of the elements of `certificate_ids`, then an error is returned.  This cannot be provided in conjunction with the `certificate_names` parameter. 
+        :param list[str] certificate_names: A comma-separated list of certificate names. If there is not at least one resource that matches each of the elements of `certificate_names`, then an error is returned.  This cannot be provided in conjunction with the `certificate_ids` parameter. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -60,15 +60,15 @@ class CertificatesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        if certificate_ids is not None:
-            if not isinstance(certificate_ids, list):
-                certificate_ids = [certificate_ids]
         if certificate_group_ids is not None:
             if not isinstance(certificate_group_ids, list):
                 certificate_group_ids = [certificate_group_ids]
         if certificate_group_names is not None:
             if not isinstance(certificate_group_names, list):
                 certificate_group_names = [certificate_group_names]
+        if certificate_ids is not None:
+            if not isinstance(certificate_ids, list):
+                certificate_ids = [certificate_ids]
         if certificate_names is not None:
             if not isinstance(certificate_names, list):
                 certificate_names = [certificate_names]
@@ -87,15 +87,15 @@ class CertificatesApi(object):
         path_params = {}
 
         query_params = []
-        if 'certificate_ids' in params:
-            query_params.append(('certificate_ids', params['certificate_ids']))
-            collection_formats['certificate_ids'] = 'csv'
         if 'certificate_group_ids' in params:
             query_params.append(('certificate_group_ids', params['certificate_group_ids']))
             collection_formats['certificate_group_ids'] = 'csv'
         if 'certificate_group_names' in params:
             query_params.append(('certificate_group_names', params['certificate_group_names']))
             collection_formats['certificate_group_names'] = 'csv'
+        if 'certificate_ids' in params:
+            query_params.append(('certificate_ids', params['certificate_ids']))
+            collection_formats['certificate_ids'] = 'csv'
         if 'certificate_names' in params:
             query_params.append(('certificate_names', params['certificate_names']))
             collection_formats['certificate_names'] = 'csv'
@@ -106,10 +106,6 @@ class CertificatesApi(object):
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
-
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
@@ -136,11 +132,11 @@ class CertificatesApi(object):
 
     def api212_certificates_certificate_groups_get_with_http_info(
         self,
-        continuation_token=None,  # type: str
-        certificate_ids=None,  # type: List[str]
         certificate_group_ids=None,  # type: List[str]
         certificate_group_names=None,  # type: List[str]
+        certificate_ids=None,  # type: List[str]
         certificate_names=None,  # type: List[str]
+        continuation_token=None,  # type: str
         filter=None,  # type: str
         limit=None,  # type: int
         offset=None,  # type: int
@@ -159,15 +155,15 @@ class CertificatesApi(object):
         >>> thread = api.api212_certificates_certificate_groups_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
-        :param list[str] certificate_ids: A comma-separated list of certificate ids. If there is not at least one resource that matches each of the elements of `certificate_ids`, then an error is returned. This cannot be provided in conjunction with the `certificate_names` parameter.
-        :param list[str] certificate_group_ids: A comma-separated list of certificate group ids. If there is not at least one resource that matches each of the elements of `certificate_group_ids`, then an error is returned. This cannot be provided in conjunction with the `certificate_group_names` parameter.
-        :param list[str] certificate_group_names: A comma-separated list of certificate group names. If there is not at least one resource that matches each of the elements of `certificate_group_names`, then an error is returned. This cannot be provided in conjunction with the `certificate_group_ids` parameter.
-        :param list[str] certificate_names: A comma-separated list of certificate names. If there is not at least one resource that matches each of the elements of `certificate_names`, then an error is returned. This cannot be provided in conjunction with the `certificate_ids` parameter.
-        :param str filter: Exclude resources that don't match the specified criteria.
-        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.
-        :param int offset: The offset of the first resource to return from a collection.
-        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.
+        :param list[str] certificate_group_ids: A comma-separated list of certificate group ids. If there is not at least one resource that matches each of the elements of `certificate_group_ids`, then an error is returned. This cannot be provided in conjunction with the `certificate_group_names` parameter. 
+        :param list[str] certificate_group_names: A comma-separated list of certificate group names. If there is not at least one resource that matches each of the elements of `certificate_group_names`, then an error is returned. This cannot be provided in conjunction with the `certificate_group_ids` parameter. 
+        :param list[str] certificate_ids: A comma-separated list of certificate ids. If there is not at least one resource that matches each of the elements of `certificate_ids`, then an error is returned.  This cannot be provided in conjunction with the `certificate_names` parameter. 
+        :param list[str] certificate_names: A comma-separated list of certificate names. If there is not at least one resource that matches each of the elements of `certificate_names`, then an error is returned.  This cannot be provided in conjunction with the `certificate_ids` parameter. 
+        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result. 
+        :param str filter: Exclude resources that don't match the specified criteria. 
+        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request. 
+        :param int offset: The offset of the first resource to return from a collection. 
+        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -177,15 +173,15 @@ class CertificatesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        if certificate_ids is not None:
-            if not isinstance(certificate_ids, list):
-                certificate_ids = [certificate_ids]
         if certificate_group_ids is not None:
             if not isinstance(certificate_group_ids, list):
                 certificate_group_ids = [certificate_group_ids]
         if certificate_group_names is not None:
             if not isinstance(certificate_group_names, list):
                 certificate_group_names = [certificate_group_names]
+        if certificate_ids is not None:
+            if not isinstance(certificate_ids, list):
+                certificate_ids = [certificate_ids]
         if certificate_names is not None:
             if not isinstance(certificate_names, list):
                 certificate_names = [certificate_names]
@@ -211,20 +207,20 @@ class CertificatesApi(object):
         path_params = {}
 
         query_params = []
-        if 'continuation_token' in params:
-            query_params.append(('continuation_token', params['continuation_token']))
-        if 'certificate_ids' in params:
-            query_params.append(('certificate_ids', params['certificate_ids']))
-            collection_formats['certificate_ids'] = 'csv'
         if 'certificate_group_ids' in params:
             query_params.append(('certificate_group_ids', params['certificate_group_ids']))
             collection_formats['certificate_group_ids'] = 'csv'
         if 'certificate_group_names' in params:
             query_params.append(('certificate_group_names', params['certificate_group_names']))
             collection_formats['certificate_group_names'] = 'csv'
+        if 'certificate_ids' in params:
+            query_params.append(('certificate_ids', params['certificate_ids']))
+            collection_formats['certificate_ids'] = 'csv'
         if 'certificate_names' in params:
             query_params.append(('certificate_names', params['certificate_names']))
             collection_formats['certificate_names'] = 'csv'
+        if 'continuation_token' in params:
+            query_params.append(('continuation_token', params['continuation_token']))
         if 'filter' in params:
             query_params.append(('filter', params['filter']))
         if 'limit' in params:
@@ -271,9 +267,9 @@ class CertificatesApi(object):
 
     def api212_certificates_certificate_groups_post_with_http_info(
         self,
-        certificate_ids=None,  # type: List[str]
         certificate_group_ids=None,  # type: List[str]
         certificate_group_names=None,  # type: List[str]
+        certificate_ids=None,  # type: List[str]
         certificate_names=None,  # type: List[str]
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
@@ -289,10 +285,10 @@ class CertificatesApi(object):
         >>> thread = api.api212_certificates_certificate_groups_post_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param list[str] certificate_ids: A comma-separated list of certificate ids. If there is not at least one resource that matches each of the elements of `certificate_ids`, then an error is returned. This cannot be provided in conjunction with the `certificate_names` parameter.
-        :param list[str] certificate_group_ids: A comma-separated list of certificate group ids. If there is not at least one resource that matches each of the elements of `certificate_group_ids`, then an error is returned. This cannot be provided in conjunction with the `certificate_group_names` parameter.
-        :param list[str] certificate_group_names: A comma-separated list of certificate group names. If there is not at least one resource that matches each of the elements of `certificate_group_names`, then an error is returned. This cannot be provided in conjunction with the `certificate_group_ids` parameter.
-        :param list[str] certificate_names: A comma-separated list of certificate names. If there is not at least one resource that matches each of the elements of `certificate_names`, then an error is returned. This cannot be provided in conjunction with the `certificate_ids` parameter.
+        :param list[str] certificate_group_ids: A comma-separated list of certificate group ids. If there is not at least one resource that matches each of the elements of `certificate_group_ids`, then an error is returned. This cannot be provided in conjunction with the `certificate_group_names` parameter. 
+        :param list[str] certificate_group_names: A comma-separated list of certificate group names. If there is not at least one resource that matches each of the elements of `certificate_group_names`, then an error is returned. This cannot be provided in conjunction with the `certificate_group_ids` parameter. 
+        :param list[str] certificate_ids: A comma-separated list of certificate ids. If there is not at least one resource that matches each of the elements of `certificate_ids`, then an error is returned.  This cannot be provided in conjunction with the `certificate_names` parameter. 
+        :param list[str] certificate_names: A comma-separated list of certificate names. If there is not at least one resource that matches each of the elements of `certificate_names`, then an error is returned.  This cannot be provided in conjunction with the `certificate_ids` parameter. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -302,15 +298,15 @@ class CertificatesApi(object):
                  If the method is called asynchronously,
                  returns the request thread.
         """
-        if certificate_ids is not None:
-            if not isinstance(certificate_ids, list):
-                certificate_ids = [certificate_ids]
         if certificate_group_ids is not None:
             if not isinstance(certificate_group_ids, list):
                 certificate_group_ids = [certificate_group_ids]
         if certificate_group_names is not None:
             if not isinstance(certificate_group_names, list):
                 certificate_group_names = [certificate_group_names]
+        if certificate_ids is not None:
+            if not isinstance(certificate_ids, list):
+                certificate_ids = [certificate_ids]
         if certificate_names is not None:
             if not isinstance(certificate_names, list):
                 certificate_names = [certificate_names]
@@ -329,15 +325,15 @@ class CertificatesApi(object):
         path_params = {}
 
         query_params = []
-        if 'certificate_ids' in params:
-            query_params.append(('certificate_ids', params['certificate_ids']))
-            collection_formats['certificate_ids'] = 'csv'
         if 'certificate_group_ids' in params:
             query_params.append(('certificate_group_ids', params['certificate_group_ids']))
             collection_formats['certificate_group_ids'] = 'csv'
         if 'certificate_group_names' in params:
             query_params.append(('certificate_group_names', params['certificate_group_names']))
             collection_formats['certificate_group_names'] = 'csv'
+        if 'certificate_ids' in params:
+            query_params.append(('certificate_ids', params['certificate_ids']))
+            collection_formats['certificate_ids'] = 'csv'
         if 'certificate_names' in params:
             query_params.append(('certificate_names', params['certificate_names']))
             collection_formats['certificate_names'] = 'csv'
@@ -394,8 +390,8 @@ class CertificatesApi(object):
         >>> thread = api.api212_certificates_delete_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -439,10 +435,6 @@ class CertificatesApi(object):
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
-
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
@@ -490,13 +482,13 @@ class CertificatesApi(object):
         >>> thread = api.api212_certificates_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
-        :param str filter: Exclude resources that don't match the specified criteria.
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
-        :param int offset: The offset of the first resource to return from a collection.
-        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.
+        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result. 
+        :param str filter: Exclude resources that don't match the specified criteria. 
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
+        :param int offset: The offset of the first resource to return from a collection. 
+        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -606,8 +598,8 @@ class CertificatesApi(object):
         >>> result = thread.get()
 
         :param CertificatePatch certificate: (required)
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -703,7 +695,7 @@ class CertificatesApi(object):
         >>> result = thread.get()
 
         :param CertificatePost certificate: (required)
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -797,13 +789,13 @@ class CertificatesApi(object):
         >>> thread = api.api212_certificates_uses_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
-        :param str filter: Exclude resources that don't match the specified criteria.
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
-        :param int offset: The offset of the first resource to return from a collection.
-        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.
+        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result. 
+        :param str filter: Exclude resources that don't match the specified criteria. 
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
+        :param int offset: The offset of the first resource to return from a collection. 
+        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.

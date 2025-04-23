@@ -30,19 +30,19 @@ class LocalUserPost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'enabled': 'bool',
-        'email': 'str',
         'uid': 'int',
         'password': 'str',
-        'primary_group': 'ReferenceWithType'
+        'primary_group': 'ReferenceWithType',
+        'email': 'str',
+        'enabled': 'bool'
     }
 
     attribute_map = {
-        'enabled': 'enabled',
-        'email': 'email',
         'uid': 'uid',
         'password': 'password',
-        'primary_group': 'primary_group'
+        'primary_group': 'primary_group',
+        'email': 'email',
+        'enabled': 'enabled'
     }
 
     required_args = {
@@ -50,30 +50,30 @@ class LocalUserPost(object):
 
     def __init__(
         self,
-        enabled=None,  # type: bool
-        email=None,  # type: str
         uid=None,  # type: int
         password=None,  # type: str
         primary_group=None,  # type: models.ReferenceWithType
+        email=None,  # type: str
+        enabled=None,  # type: bool
     ):
         """
         Keyword args:
-            enabled (bool): If this field is `false`, the local user will be disabled on creation. Otherwise, the local user will be enabled and functional.
-            email (str): Optional field to set the email of the local user.
             uid (int): Optional field to set the UID of the local user.
-            password (str): The password of the local user. This field is only required if the `enabled` field is `true`.
-            primary_group (ReferenceWithType): Local group that would be assigned as the primary group of the local user.
+            password (str): The password of the local user. This field is only required if the `enabled` field is `true`. 
+            primary_group (ReferenceWithType): Local group that would be assigned as the primary group of the local user. 
+            email (str): Optional field to set the email of the local user.
+            enabled (bool): If this field is `false`, the local user will be disabled on creation. Otherwise, the local user will be enabled and functional. 
         """
-        if enabled is not None:
-            self.enabled = enabled
-        if email is not None:
-            self.email = email
         if uid is not None:
             self.uid = uid
         if password is not None:
             self.password = password
         if primary_group is not None:
             self.primary_group = primary_group
+        if email is not None:
+            self.email = email
+        if enabled is not None:
+            self.enabled = enabled
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

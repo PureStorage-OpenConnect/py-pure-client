@@ -30,31 +30,31 @@ class Pod(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
-        'arrays': 'list[PodArrayStatus]',
+        'id': 'str',
+        'time_remaining': 'int',
         'destroyed': 'bool',
-        'failover_preferences': 'list[Reference]',
         'footprint': 'int',
-        'mediator': 'str',
-        'mediator_version': 'str',
+        'failover_preferences': 'list[Reference]',
+        'arrays': 'list[PodArrayStatus]',
         'source': 'FixedReference',
+        'mediator': 'str',
         'space': 'Space',
-        'time_remaining': 'int'
+        'mediator_version': 'str'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
-        'arrays': 'arrays',
+        'id': 'id',
+        'time_remaining': 'time_remaining',
         'destroyed': 'destroyed',
-        'failover_preferences': 'failover_preferences',
         'footprint': 'footprint',
-        'mediator': 'mediator',
-        'mediator_version': 'mediator_version',
+        'failover_preferences': 'failover_preferences',
+        'arrays': 'arrays',
         'source': 'source',
+        'mediator': 'mediator',
         'space': 'space',
-        'time_remaining': 'time_remaining'
+        'mediator_version': 'mediator_version'
     }
 
     required_args = {
@@ -62,54 +62,54 @@ class Pod(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
-        arrays=None,  # type: List[models.PodArrayStatus]
-        destroyed=None,  # type: bool
-        failover_preferences=None,  # type: List[models.Reference]
-        footprint=None,  # type: int
-        mediator=None,  # type: str
-        mediator_version=None,  # type: str
-        source=None,  # type: models.FixedReference
-        space=None,  # type: models.Space
+        id=None,  # type: str
         time_remaining=None,  # type: int
+        destroyed=None,  # type: bool
+        footprint=None,  # type: int
+        failover_preferences=None,  # type: List[models.Reference]
+        arrays=None,  # type: List[models.PodArrayStatus]
+        source=None,  # type: models.FixedReference
+        mediator=None,  # type: str
+        space=None,  # type: models.Space
+        mediator_version=None,  # type: str
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            name (str): A user-specified name. The name must be locally unique and can be changed.
-            arrays (list[PodArrayStatus]): A list of arrays over which the pod is stretched. If there are two or more arrays in the stretched pod, all data in the pod is synchronously replicated between all of the arrays within the pod.
-            destroyed (bool): Returns a value of `true` if the pod has been destroyed and is pending eradication. The `time_remaining` value displays the amount of time left until the destroyed pod is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed pod can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the pod is permanently eradicated and can no longer be recovered.
-            failover_preferences (list[Reference]): Determines which array within a stretched pod should be given priority to stay online should the arrays ever lose contact with each other. The current array and any peer arrays that are connected to the current array for synchronous replication can be added to a pod for failover preference. By default, `failover_preferences=null`, meaning no arrays have been configured for failover preference.
-            footprint (int): The maximum amount of physical space the pod would take up on any array, ignoring any data shared outside the pod. Measured in bytes. The footprint metric is mostly used for capacity planning.
-            mediator (str): The URL of the mediator for the pod. By default, the Pure1 Cloud Mediator (`purestorage`) serves as the mediator.
-            mediator_version (str): The mediator version.
+            name (str): A user-specified name. The name must be locally unique and can be changed. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource. 
+            time_remaining (int): The amount of time left until the destroyed pod is permanently eradicated. Measured in milliseconds. Before the `time_remaining` period has elapsed, the destroyed pod can be recovered by setting `destroyed=false`. 
+            destroyed (bool): Returns a value of `true` if the pod has been destroyed and is pending eradication. The `time_remaining` value displays the amount of time left until the destroyed pod is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed pod can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the pod is permanently eradicated and can no longer be recovered. 
+            footprint (int): The maximum amount of physical space the pod would take up on any array, ignoring any data shared outside the pod. Measured in bytes. The footprint metric is mostly used for capacity planning. 
+            failover_preferences (list[Reference]): Determines which array within a stretched pod should be given priority to stay online should the arrays ever lose contact with each other. The current array and any peer arrays that are connected to the current array for synchronous replication can be added to a pod for failover preference. By default, `failover_preferences=null`,  meaning no arrays have been configured for failover preference. 
+            arrays (list[PodArrayStatus]): A list of arrays over which the pod is stretched. If there are two or more arrays in the stretched pod, all data in the pod is synchronously replicated between all of the arrays within the pod. 
             source (FixedReference): The source pod from where data is cloned to create the new pod.
-            space (Space): Displays provisioned size and physical storage consumption information for the sum of all volumes connected to the specified host.
-            time_remaining (int): The amount of time left until the destroyed pod is permanently eradicated. Measured in milliseconds. Before the `time_remaining` period has elapsed, the destroyed pod can be recovered by setting `destroyed=false`.
+            mediator (str): The URL of the mediator for the pod. By default, the Pure1 Cloud Mediator (`purestorage`) serves as the mediator. 
+            space (Space): Displays provisioned size and physical storage consumption information for the sum of all volumes connected to the specified host. 
+            mediator_version (str): The mediator version.
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
-        if arrays is not None:
-            self.arrays = arrays
-        if destroyed is not None:
-            self.destroyed = destroyed
-        if failover_preferences is not None:
-            self.failover_preferences = failover_preferences
-        if footprint is not None:
-            self.footprint = footprint
-        if mediator is not None:
-            self.mediator = mediator
-        if mediator_version is not None:
-            self.mediator_version = mediator_version
-        if source is not None:
-            self.source = source
-        if space is not None:
-            self.space = space
+        if id is not None:
+            self.id = id
         if time_remaining is not None:
             self.time_remaining = time_remaining
+        if destroyed is not None:
+            self.destroyed = destroyed
+        if footprint is not None:
+            self.footprint = footprint
+        if failover_preferences is not None:
+            self.failover_preferences = failover_preferences
+        if arrays is not None:
+            self.arrays = arrays
+        if source is not None:
+            self.source = source
+        if mediator is not None:
+            self.mediator = mediator
+        if space is not None:
+            self.space = space
+        if mediator_version is not None:
+            self.mediator_version = mediator_version
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

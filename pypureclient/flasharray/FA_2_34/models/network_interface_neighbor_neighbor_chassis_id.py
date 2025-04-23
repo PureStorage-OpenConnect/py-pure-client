@@ -49,7 +49,7 @@ class NetworkInterfaceNeighborNeighborChassisId(object):
     ):
         """
         Keyword args:
-            type (str): The chassis ID subtype. Valid values are `ifname`, `ifalias`, `local`, `mac`, `ip`, and `unhandled`.
+            type (str): The chassis ID subtype. Valid values are `ifname`, `ifalias`, `local`, `mac`, `ip`, and `unhandled`. 
             value (str): The specific identifier for the particular chassis.
         """
         if type is not None:

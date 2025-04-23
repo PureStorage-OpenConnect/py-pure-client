@@ -30,29 +30,29 @@ class NetworkInterfacePerformanceEth(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'other_errors_per_sec': 'int',
-        'received_bytes_per_sec': 'int',
         'received_crc_errors_per_sec': 'int',
-        'received_frame_errors_per_sec': 'int',
-        'received_packets_per_sec': 'int',
-        'total_errors_per_sec': 'int',
-        'transmitted_bytes_per_sec': 'int',
-        'transmitted_carrier_errors_per_sec': 'int',
         'transmitted_dropped_errors_per_sec': 'int',
-        'transmitted_packets_per_sec': 'int'
+        'transmitted_packets_per_sec': 'int',
+        'transmitted_carrier_errors_per_sec': 'int',
+        'transmitted_bytes_per_sec': 'int',
+        'received_bytes_per_sec': 'int',
+        'received_frame_errors_per_sec': 'int',
+        'other_errors_per_sec': 'int',
+        'total_errors_per_sec': 'int',
+        'received_packets_per_sec': 'int'
     }
 
     attribute_map = {
-        'other_errors_per_sec': 'other_errors_per_sec',
-        'received_bytes_per_sec': 'received_bytes_per_sec',
         'received_crc_errors_per_sec': 'received_crc_errors_per_sec',
-        'received_frame_errors_per_sec': 'received_frame_errors_per_sec',
-        'received_packets_per_sec': 'received_packets_per_sec',
-        'total_errors_per_sec': 'total_errors_per_sec',
-        'transmitted_bytes_per_sec': 'transmitted_bytes_per_sec',
-        'transmitted_carrier_errors_per_sec': 'transmitted_carrier_errors_per_sec',
         'transmitted_dropped_errors_per_sec': 'transmitted_dropped_errors_per_sec',
-        'transmitted_packets_per_sec': 'transmitted_packets_per_sec'
+        'transmitted_packets_per_sec': 'transmitted_packets_per_sec',
+        'transmitted_carrier_errors_per_sec': 'transmitted_carrier_errors_per_sec',
+        'transmitted_bytes_per_sec': 'transmitted_bytes_per_sec',
+        'received_bytes_per_sec': 'received_bytes_per_sec',
+        'received_frame_errors_per_sec': 'received_frame_errors_per_sec',
+        'other_errors_per_sec': 'other_errors_per_sec',
+        'total_errors_per_sec': 'total_errors_per_sec',
+        'received_packets_per_sec': 'received_packets_per_sec'
     }
 
     required_args = {
@@ -60,84 +60,84 @@ class NetworkInterfacePerformanceEth(object):
 
     def __init__(
         self,
-        other_errors_per_sec=None,  # type: int
-        received_bytes_per_sec=None,  # type: int
         received_crc_errors_per_sec=None,  # type: int
-        received_frame_errors_per_sec=None,  # type: int
-        received_packets_per_sec=None,  # type: int
-        total_errors_per_sec=None,  # type: int
-        transmitted_bytes_per_sec=None,  # type: int
-        transmitted_carrier_errors_per_sec=None,  # type: int
         transmitted_dropped_errors_per_sec=None,  # type: int
         transmitted_packets_per_sec=None,  # type: int
+        transmitted_carrier_errors_per_sec=None,  # type: int
+        transmitted_bytes_per_sec=None,  # type: int
+        received_bytes_per_sec=None,  # type: int
+        received_frame_errors_per_sec=None,  # type: int
+        other_errors_per_sec=None,  # type: int
+        total_errors_per_sec=None,  # type: int
+        received_packets_per_sec=None,  # type: int
     ):
         """
         Keyword args:
-            other_errors_per_sec (int): This field has been deprecated. Since Purity version 6.6.8, this will always return `null`. The sum of unspecified reception and transmission errors per second.
-            received_bytes_per_sec (int): Bytes received per second.
-            received_crc_errors_per_sec (int): Reception CRC errors per second.
-            received_frame_errors_per_sec (int): Received packet frame errors per second.
-            received_packets_per_sec (int): Packets received per second.
-            total_errors_per_sec (int): The sum of all reception and transmission errors per second.
-            transmitted_bytes_per_sec (int): Bytes transmitted per second.
-            transmitted_carrier_errors_per_sec (int): Transmission carrier errors per second.
-            transmitted_dropped_errors_per_sec (int): Transmitted packets dropped per second.
-            transmitted_packets_per_sec (int): Packets transmitted per second.
+            received_crc_errors_per_sec (int): Reception CRC errors per second. 
+            transmitted_dropped_errors_per_sec (int): Transmitted packets dropped per second. 
+            transmitted_packets_per_sec (int): Packets transmitted per second. 
+            transmitted_carrier_errors_per_sec (int): Transmission carrier errors per second. 
+            transmitted_bytes_per_sec (int): Bytes transmitted per second. 
+            received_bytes_per_sec (int): Bytes received per second. 
+            received_frame_errors_per_sec (int): Received packet frame errors per second. 
+            other_errors_per_sec (int): This field has been deprecated. Since Purity version 6.6.8, this will always return `null`. The sum of unspecified reception and transmission errors per second. 
+            total_errors_per_sec (int): The sum of all reception and transmission errors per second. 
+            received_packets_per_sec (int): Packets received per second. 
         """
-        if other_errors_per_sec is not None:
-            self.other_errors_per_sec = other_errors_per_sec
-        if received_bytes_per_sec is not None:
-            self.received_bytes_per_sec = received_bytes_per_sec
         if received_crc_errors_per_sec is not None:
             self.received_crc_errors_per_sec = received_crc_errors_per_sec
-        if received_frame_errors_per_sec is not None:
-            self.received_frame_errors_per_sec = received_frame_errors_per_sec
-        if received_packets_per_sec is not None:
-            self.received_packets_per_sec = received_packets_per_sec
-        if total_errors_per_sec is not None:
-            self.total_errors_per_sec = total_errors_per_sec
-        if transmitted_bytes_per_sec is not None:
-            self.transmitted_bytes_per_sec = transmitted_bytes_per_sec
-        if transmitted_carrier_errors_per_sec is not None:
-            self.transmitted_carrier_errors_per_sec = transmitted_carrier_errors_per_sec
         if transmitted_dropped_errors_per_sec is not None:
             self.transmitted_dropped_errors_per_sec = transmitted_dropped_errors_per_sec
         if transmitted_packets_per_sec is not None:
             self.transmitted_packets_per_sec = transmitted_packets_per_sec
+        if transmitted_carrier_errors_per_sec is not None:
+            self.transmitted_carrier_errors_per_sec = transmitted_carrier_errors_per_sec
+        if transmitted_bytes_per_sec is not None:
+            self.transmitted_bytes_per_sec = transmitted_bytes_per_sec
+        if received_bytes_per_sec is not None:
+            self.received_bytes_per_sec = received_bytes_per_sec
+        if received_frame_errors_per_sec is not None:
+            self.received_frame_errors_per_sec = received_frame_errors_per_sec
+        if other_errors_per_sec is not None:
+            self.other_errors_per_sec = other_errors_per_sec
+        if total_errors_per_sec is not None:
+            self.total_errors_per_sec = total_errors_per_sec
+        if received_packets_per_sec is not None:
+            self.received_packets_per_sec = received_packets_per_sec
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
             raise KeyError("Invalid key `{}` for `NetworkInterfacePerformanceEth`".format(key))
-        if key == "other_errors_per_sec" and value is not None:
-            if value < 0:
-                raise ValueError("Invalid value for `other_errors_per_sec`, must be a value greater than or equal to `0`")
-        if key == "received_bytes_per_sec" and value is not None:
-            if value < 0:
-                raise ValueError("Invalid value for `received_bytes_per_sec`, must be a value greater than or equal to `0`")
         if key == "received_crc_errors_per_sec" and value is not None:
             if value < 0:
                 raise ValueError("Invalid value for `received_crc_errors_per_sec`, must be a value greater than or equal to `0`")
-        if key == "received_frame_errors_per_sec" and value is not None:
-            if value < 0:
-                raise ValueError("Invalid value for `received_frame_errors_per_sec`, must be a value greater than or equal to `0`")
-        if key == "received_packets_per_sec" and value is not None:
-            if value < 0:
-                raise ValueError("Invalid value for `received_packets_per_sec`, must be a value greater than or equal to `0`")
-        if key == "total_errors_per_sec" and value is not None:
-            if value < 0:
-                raise ValueError("Invalid value for `total_errors_per_sec`, must be a value greater than or equal to `0`")
-        if key == "transmitted_bytes_per_sec" and value is not None:
-            if value < 0:
-                raise ValueError("Invalid value for `transmitted_bytes_per_sec`, must be a value greater than or equal to `0`")
-        if key == "transmitted_carrier_errors_per_sec" and value is not None:
-            if value < 0:
-                raise ValueError("Invalid value for `transmitted_carrier_errors_per_sec`, must be a value greater than or equal to `0`")
         if key == "transmitted_dropped_errors_per_sec" and value is not None:
             if value < 0:
                 raise ValueError("Invalid value for `transmitted_dropped_errors_per_sec`, must be a value greater than or equal to `0`")
         if key == "transmitted_packets_per_sec" and value is not None:
             if value < 0:
                 raise ValueError("Invalid value for `transmitted_packets_per_sec`, must be a value greater than or equal to `0`")
+        if key == "transmitted_carrier_errors_per_sec" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `transmitted_carrier_errors_per_sec`, must be a value greater than or equal to `0`")
+        if key == "transmitted_bytes_per_sec" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `transmitted_bytes_per_sec`, must be a value greater than or equal to `0`")
+        if key == "received_bytes_per_sec" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `received_bytes_per_sec`, must be a value greater than or equal to `0`")
+        if key == "received_frame_errors_per_sec" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `received_frame_errors_per_sec`, must be a value greater than or equal to `0`")
+        if key == "other_errors_per_sec" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `other_errors_per_sec`, must be a value greater than or equal to `0`")
+        if key == "total_errors_per_sec" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `total_errors_per_sec`, must be a value greater than or equal to `0`")
+        if key == "received_packets_per_sec" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `received_packets_per_sec`, must be a value greater than or equal to `0`")
         self.__dict__[key] = value
 
     def __getattribute__(self, item):

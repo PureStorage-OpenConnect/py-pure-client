@@ -46,7 +46,7 @@ class DirectoryExportPost(object):
     ):
         """
         Keyword args:
-            export_name (str): The name of the export to create. Export names must be unique within the same protocol.
+            export_name (str): The name of the export to create. Export names must be unique within the same protocol. 
         """
         if export_name is not None:
             self.export_name = export_name

@@ -3,7 +3,7 @@
 """
     FlashBlade REST API Client
 
-    A lightweight client for FlashBlade REST API 2.0, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.0, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.0
     
@@ -56,8 +56,8 @@ class ResourcePerformanceReplication(object):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            periodic (ReplicationPerformance): Total bytes transmitted or received per second for periodic replication.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            periodic (ReplicationPerformance): Total bytes transmitted or received per second for periodic replication. 
             time (int): Sample time in milliseconds since UNIX epoch.
         """
         if name is not None:

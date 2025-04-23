@@ -33,28 +33,28 @@ class ProtectionGroupSnapshotPatch(object):
         'name': 'str',
         'id': 'str',
         'context': 'FixedReference',
-        'created': 'int',
+        'time_remaining': 'int',
         'destroyed': 'bool',
         'pod': 'FixedReference',
-        'space': 'Space',
+        'created': 'int',
+        'eradication_config': 'ProtectionGroupEradicationConfig',
         'source': 'FixedReference',
         'suffix': 'str',
-        'time_remaining': 'int',
-        'eradication_config': 'ProtectionGroupEradicationConfig'
+        'space': 'Space'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
         'context': 'context',
-        'created': 'created',
+        'time_remaining': 'time_remaining',
         'destroyed': 'destroyed',
         'pod': 'pod',
-        'space': 'space',
+        'created': 'created',
+        'eradication_config': 'eradication_config',
         'source': 'source',
         'suffix': 'suffix',
-        'time_remaining': 'time_remaining',
-        'eradication_config': 'eradication_config'
+        'space': 'space'
     }
 
     required_args = {
@@ -65,28 +65,28 @@ class ProtectionGroupSnapshotPatch(object):
         name=None,  # type: str
         id=None,  # type: str
         context=None,  # type: models.FixedReference
-        created=None,  # type: int
+        time_remaining=None,  # type: int
         destroyed=None,  # type: bool
         pod=None,  # type: models.FixedReference
-        space=None,  # type: models.Space
+        created=None,  # type: int
+        eradication_config=None,  # type: models.ProtectionGroupEradicationConfig
         source=None,  # type: models.FixedReference
         suffix=None,  # type: str
-        time_remaining=None,  # type: int
-        eradication_config=None,  # type: models.ProtectionGroupEradicationConfig
+        space=None,  # type: models.Space
     ):
         """
         Keyword args:
-            name (str): A user-specified name. The name must be locally unique and can be changed.
-            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
-            created (int): The snapshot creation time of the original snapshot source. Measured in milliseconds since the UNIX epoch.
-            destroyed (bool): Returns a value of `true` if the protection group snapshot has been destroyed and is pending eradication. The `time_remaining` value displays the amount of time left until the destroyed snapshot is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed snapshot can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the snapshot is permanently eradicated and can no longer be recovered.
+            name (str): A user-specified name. The name must be locally unique and can be changed. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource. 
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request.  Other parameters provided with the request, such as names of volumes or snapshots,  are resolved relative to the provided `context`. 
+            time_remaining (int): The amount of time left until the destroyed snapshot is permanently eradicated. Measured in milliseconds. Before the `time_remaining` period has elapsed, the destroyed snapshot can be recovered by setting `destroyed=false`. 
+            destroyed (bool): Returns a value of `true` if the protection group snapshot has been destroyed and is pending eradication. The `time_remaining` value displays the amount of time left until the destroyed snapshot is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed snapshot can be recovered by setting `destroyed=false`.  Once the `time_remaining` period has elapsed, the snapshot is permanently eradicated and can no longer be recovered. 
             pod (FixedReference): The pod in which the protection group of the protection group snapshot resides.
-            space (Space): Displays provisioned size and physical storage consumption data for each protection group.
-            source (FixedReference): The original protection group from which this snapshot was taken. For a replicated protection group snapshot being viewed on the target side, the `source` is the replica protection group.
-            suffix (str)
-            time_remaining (int): The amount of time left until the destroyed snapshot is permanently eradicated. Measured in milliseconds. Before the `time_remaining` period has elapsed, the destroyed snapshot can be recovered by setting `destroyed=false`.
+            created (int): The snapshot creation time of the original snapshot source. Measured in milliseconds since the UNIX epoch. 
             eradication_config (ProtectionGroupEradicationConfig)
+            source (FixedReference): The original protection group from which this snapshot was taken. For a replicated protection group snapshot being viewed on the target side, the `source` is the replica protection group. 
+            suffix (str)
+            space (Space): Displays provisioned size and physical storage consumption data for each protection group. 
         """
         if name is not None:
             self.name = name
@@ -94,22 +94,22 @@ class ProtectionGroupSnapshotPatch(object):
             self.id = id
         if context is not None:
             self.context = context
-        if created is not None:
-            self.created = created
+        if time_remaining is not None:
+            self.time_remaining = time_remaining
         if destroyed is not None:
             self.destroyed = destroyed
         if pod is not None:
             self.pod = pod
-        if space is not None:
-            self.space = space
+        if created is not None:
+            self.created = created
+        if eradication_config is not None:
+            self.eradication_config = eradication_config
         if source is not None:
             self.source = source
         if suffix is not None:
             self.suffix = suffix
-        if time_remaining is not None:
-            self.time_remaining = time_remaining
-        if eradication_config is not None:
-            self.eradication_config = eradication_config
+        if space is not None:
+            self.space = space
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
