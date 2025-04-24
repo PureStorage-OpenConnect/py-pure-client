@@ -21,6 +21,14 @@ pypureclient.flashblade.FB\_2\_15.api\_client module
    :undoc-members:
    :show-inheritance:
 
+pypureclient.flashblade.FB\_2\_15.api\_response module
+------------------------------------------------------
+
+.. automodule:: pypureclient.flashblade.FB_2_15.api_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 pypureclient.flashblade.FB\_2\_15.client module
 -----------------------------------------------
 
@@ -33,6 +41,14 @@ pypureclient.flashblade.FB\_2\_15.configuration module
 ------------------------------------------------------
 
 .. automodule:: pypureclient.flashblade.FB_2_15.configuration
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.flashblade.FB\_2\_15.exceptions module
+---------------------------------------------------
+
+.. automodule:: pypureclient.flashblade.FB_2_15.exceptions
    :members:
    :undoc-members:
    :show-inheritance:
