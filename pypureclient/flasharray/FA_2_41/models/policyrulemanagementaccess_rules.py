@@ -49,8 +49,8 @@ class PolicyrulemanagementaccessRules(object):
     ):
         """
         Keyword args:
-            role (ReferenceNoId): Role defines a set of permissions applicable in a scope. `viewer` grants users the ability to read a resource. `support` grants the ability to perform general support-related actions, as well as read resources. `storage` grants access to all storage operations on a resource. `admin` grants access to all operations.
-            scope (ReferenceWithType): Reference to the resource (e.g. arrays, realms) which specifies the scope that the role applies. The `id` or `name` parameter is required, but they cannot be set together. Also, `resource_type` must be set.
+            role (ReferenceNoId): Role defines a set of permissions applicable in a scope. `viewer` grants users the ability to read a resource. `support` grants the ability to perform general  support-related actions, as well as read resources. `storage` grants access to all storage operations on a resource. `admin` grants access to all operations. 
+            scope (ReferenceWithType): Reference to the resource (e.g. arrays, realms) which specifies the scope that the role applies. The `id` or `name` parameter is required, but they cannot be set together. Also, `resource_type` must be set. 
         """
         if role is not None:
             self.role = role

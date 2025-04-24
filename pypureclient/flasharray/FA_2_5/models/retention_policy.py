@@ -52,9 +52,9 @@ class RetentionPolicy(object):
     ):
         """
         Keyword args:
-            all_for_sec (int): The length of time to keep the specified snapshots. Measured in seconds. Prior to 6.8.2 the range of 60 to 34560000 is accepted. In 6.8.2 and onwards the range of 60 to 2147483647 is accepted.
-            days (int): The number of days to keep the snapshots after the `all_for_sec` period has passed. Prior to 6.6.4 the range of 0 to 4000 is accepted. In 6.6.4 and onwards the range of 0 to 2147483647 is accepted.
-            per_day (int): The number of snapshots to keep per day after the `all_for_sec` period has passed. Prior to 6.8.2 the range of 0 to 1440 is accepted. In 6.8.2 and onwards the range of 0 to 2147483647 is accepted.
+            all_for_sec (int): The length of time to keep the specified snapshots. Measured in seconds. Prior to 6.8.2 the range of 60 to 34560000 is accepted. In 6.8.2 and onwards the range of 60 to 2147483647 is accepted. 
+            days (int): The number of days to keep the snapshots after the `all_for_sec` period has passed. Prior to 6.6.4 the range of 0 to 4000 is accepted. In 6.6.4 and onwards the range of 0 to 2147483647 is accepted. 
+            per_day (int): The number of snapshots to keep per day after the `all_for_sec` period has passed. Prior to 6.8.2 the range of 0 to 1440 is accepted. In 6.8.2 and onwards the range of 0 to 2147483647 is accepted. 
         """
         if all_for_sec is not None:
             self.all_for_sec = all_for_sec

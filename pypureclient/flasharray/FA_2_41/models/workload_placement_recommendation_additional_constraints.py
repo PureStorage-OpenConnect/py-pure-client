@@ -30,13 +30,13 @@ class WorkloadPlacementRecommendationAdditionalConstraints(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'targets': 'list[ReferenceWithType]',
-        'required_resource_references': 'list[WorkloadPlacementRecommendationResourceReference]'
+        'required_resource_references': 'list[WorkloadPlacementRecommendationResourceReference]',
+        'targets': 'list[ReferenceWithType]'
     }
 
     attribute_map = {
-        'targets': 'targets',
-        'required_resource_references': 'required_resource_references'
+        'required_resource_references': 'required_resource_references',
+        'targets': 'targets'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class WorkloadPlacementRecommendationAdditionalConstraints(object):
 
     def __init__(
         self,
-        targets=None,  # type: List[models.ReferenceWithType]
         required_resource_references=None,  # type: List[models.WorkloadPlacementRecommendationResourceReference]
+        targets=None,  # type: List[models.ReferenceWithType]
     ):
         """
         Keyword args:
-            targets (list[ReferenceWithType]): If specified, only consider these targets when computing placement recommendations. If not specified, the whole fleet is used to compute the recommendation.
-            required_resource_references (list[WorkloadPlacementRecommendationResourceReference]): Defines a group of resources. At least one resource from each item should be present on this target for the target to be considered an acceptable candidate for workload placement
+            required_resource_references (list[WorkloadPlacementRecommendationResourceReference]): Defines a group of resources. At least one resource from each item should be present on this target for the target to be considered an acceptable candidate for workload placement 
+            targets (list[ReferenceWithType]): If specified, only consider these targets when computing placement recommendations. If not specified, the whole fleet is used to compute the recommendation. 
         """
-        if targets is not None:
-            self.targets = targets
         if required_resource_references is not None:
             self.required_resource_references = required_resource_references
+        if targets is not None:
+            self.targets = targets
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

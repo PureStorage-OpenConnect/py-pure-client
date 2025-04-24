@@ -31,15 +31,15 @@ class WorkloadParameterValue(object):
     """
     swagger_types = {
         'boolean': 'bool',
-        'integer': 'int',
         'string': 'str',
+        'integer': 'int',
         'resource_reference': 'WorkloadParameterValueResourceReference'
     }
 
     attribute_map = {
         'boolean': 'boolean',
-        'integer': 'integer',
         'string': 'string',
+        'integer': 'integer',
         'resource_reference': 'resource_reference'
     }
 
@@ -49,23 +49,23 @@ class WorkloadParameterValue(object):
     def __init__(
         self,
         boolean=None,  # type: bool
-        integer=None,  # type: int
         string=None,  # type: str
+        integer=None,  # type: int
         resource_reference=None,  # type: models.WorkloadParameterValueResourceReference
     ):
         """
         Keyword args:
             boolean (bool): The value for a boolean parameter.
-            integer (int): The value for an integer parameter.
             string (str): The value for a string parameter.
+            integer (int): The value for an integer parameter.
             resource_reference (WorkloadParameterValueResourceReference)
         """
         if boolean is not None:
             self.boolean = boolean
-        if integer is not None:
-            self.integer = integer
         if string is not None:
             self.string = string
+        if integer is not None:
+            self.integer = integer
         if resource_reference is not None:
             self.resource_reference = resource_reference
 

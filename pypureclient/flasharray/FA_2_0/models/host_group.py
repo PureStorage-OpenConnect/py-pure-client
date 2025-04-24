@@ -58,11 +58,11 @@ class HostGroup(object):
     ):
         """
         Keyword args:
-            name (str): A user-specified name. The name must be locally unique and can be changed.
+            name (str): A user-specified name. The name must be locally unique and can be changed. 
             connection_count (int): The number of volumes connected to the host group.
             host_count (int): The number of hosts in the host group.
             is_local (bool): Returns a value of `true` if the host or host group belongs to the current array. Returns a value of `false` if the host or host group belongs to a remote array.
-            space (Space): Displays size and space consumption information.
+            space (Space): Displays size and space consumption information. 
         """
         if name is not None:
             self.name = name

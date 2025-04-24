@@ -30,13 +30,13 @@ class PriorityAdjustment(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'priority_adjustment_operator': 'str',
-        'priority_adjustment_value': 'int'
+        'priority_adjustment_value': 'int',
+        'priority_adjustment_operator': 'str'
     }
 
     attribute_map = {
-        'priority_adjustment_operator': 'priority_adjustment_operator',
-        'priority_adjustment_value': 'priority_adjustment_value'
+        'priority_adjustment_value': 'priority_adjustment_value',
+        'priority_adjustment_operator': 'priority_adjustment_operator'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class PriorityAdjustment(object):
 
     def __init__(
         self,
-        priority_adjustment_operator=None,  # type: str
         priority_adjustment_value=None,  # type: int
+        priority_adjustment_operator=None,  # type: str
     ):
         """
         Keyword args:
-            priority_adjustment_operator (str): Valid values are `+`, `-`, and `=`. The values `+` and `-` may be applied to volumes and volume groups to reflect the relative importance of their workloads. Volumes and volume groups can be assigned a priority adjustment of -10, 0, or +10. In addition, volumes can be assigned values of =-10, =0, or =+10. Volumes with settings of -10, 0, +10 can be modified by the priority adjustment setting of a volume group that contains the volume. However, if a volume has a priority adjustment set with the `=` operator (for example, =+10), it retains that value and is unaffected by any volume group priority adjustment settings.
-            priority_adjustment_value (int): Adjust priority by the specified amount, using the `priority_adjustment_operator`. Valid values are 0 and +10 for `+` and `-` operators, -10, 0, and +10 for the `=` operator.
+            priority_adjustment_value (int): Adjust priority by the specified amount, using the `priority_adjustment_operator`. Valid values are 0 and +10 for `+` and `-` operators, -10, 0, and +10 for the `=` operator. 
+            priority_adjustment_operator (str): Valid values are `+`, `-`, and `=`. The values `+` and `-` may be applied to volumes and volume groups to reflect the relative importance of their workloads. Volumes and volume groups can be assigned a priority adjustment of -10, 0, or +10. In addition, volumes can be assigned values of =-10, =0, or =+10. Volumes with settings of -10, 0, +10 can be modified by the priority adjustment setting of a volume group that contains the volume. However, if a volume has a priority adjustment set with the `=` operator (for example, =+10), it retains that value and is unaffected by any volume group priority adjustment settings. 
         """
-        if priority_adjustment_operator is not None:
-            self.priority_adjustment_operator = priority_adjustment_operator
         if priority_adjustment_value is not None:
             self.priority_adjustment_value = priority_adjustment_value
+        if priority_adjustment_operator is not None:
+            self.priority_adjustment_operator = priority_adjustment_operator
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

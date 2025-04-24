@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.14, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.14, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.14
     
@@ -30,17 +30,17 @@ class Smb(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'enabled': 'bool',
-        'client_policy': 'ReferenceWritable',
+        'continuous_availability_enabled': 'bool',
         'share_policy': 'ReferenceWritable',
-        'continuous_availability_enabled': 'bool'
+        'client_policy': 'ReferenceWritable',
+        'enabled': 'bool'
     }
 
     attribute_map = {
-        'enabled': 'enabled',
-        'client_policy': 'client_policy',
+        'continuous_availability_enabled': 'continuous_availability_enabled',
         'share_policy': 'share_policy',
-        'continuous_availability_enabled': 'continuous_availability_enabled'
+        'client_policy': 'client_policy',
+        'enabled': 'enabled'
     }
 
     required_args = {
@@ -48,26 +48,26 @@ class Smb(object):
 
     def __init__(
         self,
-        enabled=None,  # type: bool
-        client_policy=None,  # type: models.ReferenceWritable
-        share_policy=None,  # type: models.ReferenceWritable
         continuous_availability_enabled=None,  # type: bool
+        share_policy=None,  # type: models.ReferenceWritable
+        client_policy=None,  # type: models.ReferenceWritable
+        enabled=None,  # type: bool
     ):
         """
         Keyword args:
-            enabled (bool): If set to `true`, enables access to the file system over the SMB protocol. If not specified, defaults to `false`.
-            client_policy (ReferenceWritable): The SMB Client policy for the file system. Setting a policy here grants access permissions (e.g. read-only or read-write) to the file system via SMB on a per-client basis. If no policy is set here, no client will have access. Use \"\" to clear.
-            share_policy (ReferenceWritable): The SMB Share policy for the file system. Setting a policy here grants access permissions (e.g. allow or deny Full Control, Change, and/or Read) to the file system via SMB on a per-user / per-group basis. If no policy is set here, no user or group will have access. Use \"\" to clear.
-            continuous_availability_enabled (bool): If set to `true`, the file system will be continuously available during disruptive scenarios such as network disruption, blades failover, etc. If not specified, defaults to `true`.
+            continuous_availability_enabled (bool): If set to `true`, the file system will be continuously available during disruptive scenarios such as network disruption, blades failover, etc. If not specified, defaults to `true`. 
+            share_policy (ReferenceWritable): The SMB Share policy for the file system. Setting a policy here grants access permissions (e.g. allow or deny Full Control, Change, and/or Read) to the file system via SMB on a per-user / per-group basis. If no policy is set here, no user or group will have access. Use \"\" to clear. 
+            client_policy (ReferenceWritable): The SMB Client policy for the file system. Setting a policy here grants access permissions (e.g. read-only or read-write) to the file system via SMB on a per-client basis. If no policy is set here, no client will have access. Use \"\" to clear. 
+            enabled (bool): If set to `true`, enables access to the file system over the SMB protocol. If not specified, defaults to `false`. 
         """
-        if enabled is not None:
-            self.enabled = enabled
-        if client_policy is not None:
-            self.client_policy = client_policy
-        if share_policy is not None:
-            self.share_policy = share_policy
         if continuous_availability_enabled is not None:
             self.continuous_availability_enabled = continuous_availability_enabled
+        if share_policy is not None:
+            self.share_policy = share_policy
+        if client_policy is not None:
+            self.client_policy = client_policy
+        if enabled is not None:
+            self.enabled = enabled
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

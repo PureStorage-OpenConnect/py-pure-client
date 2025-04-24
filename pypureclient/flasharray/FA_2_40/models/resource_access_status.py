@@ -54,7 +54,7 @@ class ResourceAccessStatus(object):
         Keyword args:
             resource (ReferenceWithType): Resource to which the scope has access.
             scope (ReferenceWithType): Scope which has access to the resource.
-            created_by (list[ResourceAccessStatusCreatedBy]): Reference the IDs of resource accesses that created this status.
+            created_by (list[ResourceAccessStatusCreatedBy]): Reference the IDs of resource accesses that created this status. 
         """
         if resource is not None:
             self.resource = resource

@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.3, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.3, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.3
     
@@ -32,19 +32,19 @@ class ArrayConnectionPath(object):
     swagger_types = {
         'id': 'str',
         'destination': 'str',
-        'remote': 'FixedReferenceNoResourceType',
         'source': 'str',
-        'status': 'str',
-        'status_details': 'str'
+        'remote': 'FixedReferenceNoResourceType',
+        'status_details': 'str',
+        'status': 'str'
     }
 
     attribute_map = {
         'id': 'id',
         'destination': 'destination',
-        'remote': 'remote',
         'source': 'source',
-        'status': 'status',
-        'status_details': 'status_details'
+        'remote': 'remote',
+        'status_details': 'status_details',
+        'status': 'status'
     }
 
     required_args = {
@@ -54,32 +54,32 @@ class ArrayConnectionPath(object):
         self,
         id=None,  # type: str
         destination=None,  # type: str
-        remote=None,  # type: models.FixedReferenceNoResourceType
         source=None,  # type: str
-        status=None,  # type: str
+        remote=None,  # type: models.FixedReferenceNoResourceType
         status_details=None,  # type: str
+        status=None,  # type: str
     ):
         """
         Keyword args:
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            destination (str): IP address with the port of the target array.
-            remote (FixedReferenceNoResourceType): The remote array.
-            source (str): IP address of the source array.
-            status (str): Status of the connection. Valid values are `connected` and `connecting`. `connected` - The connection is OK. `connecting` - No connection exists and the array is trying to reconnect.
-            status_details (str): Additional information describing any issues encountered when connecting, or `null` if the `status` is `connected`.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            destination (str): IP address with the port of the target array. 
+            source (str): IP address of the source array. 
+            remote (FixedReferenceNoResourceType): The remote array. 
+            status_details (str): Additional information describing any issues encountered when connecting, or `null` if the `status` is `connected`. 
+            status (str): Status of the connection. Valid values are `connected` and `connecting`. `connected` - The connection is OK. `connecting` - No connection exists and the array is trying to reconnect. 
         """
         if id is not None:
             self.id = id
         if destination is not None:
             self.destination = destination
-        if remote is not None:
-            self.remote = remote
         if source is not None:
             self.source = source
-        if status is not None:
-            self.status = status
+        if remote is not None:
+            self.remote = remote
         if status_details is not None:
             self.status_details = status_details
+        if status is not None:
+            self.status = status
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

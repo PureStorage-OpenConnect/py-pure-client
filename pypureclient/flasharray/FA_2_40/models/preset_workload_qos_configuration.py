@@ -31,14 +31,14 @@ class PresetWorkloadQosConfiguration(object):
     """
     swagger_types = {
         'name': 'str',
-        'iops_limit': 'str',
-        'bandwidth_limit': 'str'
+        'bandwidth_limit': 'str',
+        'iops_limit': 'str'
     }
 
     attribute_map = {
         'name': 'name',
-        'iops_limit': 'iops_limit',
-        'bandwidth_limit': 'bandwidth_limit'
+        'bandwidth_limit': 'bandwidth_limit',
+        'iops_limit': 'iops_limit'
     }
 
     required_args = {
@@ -48,20 +48,20 @@ class PresetWorkloadQosConfiguration(object):
     def __init__(
         self,
         name,  # type: str
-        iops_limit=None,  # type: str
         bandwidth_limit=None,  # type: str
+        iops_limit=None,  # type: str
     ):
         """
         Keyword args:
-            name (str, required): The name of the QoS configuration, by which other configuration objects in the preset can reference it. Name must be unique across all configuration objects in the preset.
-            iops_limit (str): The maximum QoS bandwidth limit shared across all volumes in the placement. Whenever throughput exceeds the bandwidth limit, throttling occurs. Measured in bytes per second. Between 1MB/s and 512 GB/s, inclusive. Supports parameterization.
-            bandwidth_limit (str): The QoS IOPs limit shared across all volumes in the placement. Between 100 and 100000000, inclusive. Supports parameterization.
+            name (str, required): The name of the QoS configuration, by which other configuration objects in the preset can reference it. Name must be unique across all configuration objects in the preset. 
+            bandwidth_limit (str): The QoS IOPs limit shared across all volumes in the placement. Between 100 and 100000000, inclusive. Supports parameterization. 
+            iops_limit (str): The maximum QoS bandwidth limit shared across all volumes in the placement. Whenever throughput exceeds the bandwidth limit, throttling occurs. Measured in bytes per second. Between 1MB/s and 512 GB/s, inclusive. Supports parameterization. 
         """
         self.name = name
-        if iops_limit is not None:
-            self.iops_limit = iops_limit
         if bandwidth_limit is not None:
             self.bandwidth_limit = bandwidth_limit
+        if iops_limit is not None:
+            self.iops_limit = iops_limit
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.14, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.14, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.14
     
@@ -31,18 +31,18 @@ class DirectoryServiceRole(object):
     """
     swagger_types = {
         'role': 'ReferenceWritable',
-        'id': 'str',
-        'group': 'str',
         'group_base': 'str',
-        'name': 'str'
+        'name': 'str',
+        'id': 'str',
+        'group': 'str'
     }
 
     attribute_map = {
         'role': 'role',
-        'id': 'id',
-        'group': 'group',
         'group_base': 'group_base',
-        'name': 'name'
+        'name': 'name',
+        'id': 'id',
+        'group': 'group'
     }
 
     required_args = {
@@ -51,29 +51,29 @@ class DirectoryServiceRole(object):
     def __init__(
         self,
         role=None,  # type: models.ReferenceWritable
-        id=None,  # type: str
-        group=None,  # type: str
         group_base=None,  # type: str
         name=None,  # type: str
+        id=None,  # type: str
+        group=None,  # type: str
     ):
         """
         Keyword args:
-            role (ReferenceWritable): A reference to the role; can be any role that exists on the system.
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            group (str): Common Name (CN) of the directory service group containing users with authority level of the specified role name.
-            group_base (str): Specifies where the configured group is located in the directory tree.
+            role (ReferenceWritable): A reference to the role; can be any role that exists on the system. 
+            group_base (str): Specifies where the configured group is located in the directory tree. 
             name (str): Name of the role mapping object.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            group (str): Common Name (CN) of the directory service group containing users with authority level of the specified role name. 
         """
         if role is not None:
             self.role = role
-        if id is not None:
-            self.id = id
-        if group is not None:
-            self.group = group
         if group_base is not None:
             self.group_base = group_base
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
+        if group is not None:
+            self.group = group
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

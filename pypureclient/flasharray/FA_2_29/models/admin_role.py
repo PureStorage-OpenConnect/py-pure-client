@@ -46,7 +46,7 @@ class AdminRole(object):
     ):
         """
         Keyword args:
-            name (str): The resource name, such as volume name, pod name, snapshot name, and so on.
+            name (str): The resource name, such as volume name, pod name, snapshot name, and so on. 
         """
         if name is not None:
             self.name = name

@@ -30,14 +30,14 @@ class Vchost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
+        'id': 'str',
         'vcuuid': 'str'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
+        'id': 'id',
         'vcuuid': 'vcuuid'
     }
 
@@ -46,20 +46,20 @@ class Vchost(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
+        id=None,  # type: str
         vcuuid=None,  # type: str
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            name (str): A user-specified name. The name must be locally unique and can be changed.
-            vcuuid (str): The vCenter Server uuid of the vchost.
+            name (str): A user-specified name. The name must be locally unique and can be changed. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource. 
+            vcuuid (str): The vCenter Server uuid of the vchost. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
         if vcuuid is not None:
             self.vcuuid = vcuuid
 

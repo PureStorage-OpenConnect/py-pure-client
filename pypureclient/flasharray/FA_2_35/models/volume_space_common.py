@@ -32,17 +32,17 @@ class VolumeSpaceCommon(object):
     swagger_types = {
         'data_reduction': 'float',
         'shared': 'int',
-        'snapshots': 'int',
-        'system': 'int',
-        'thin_provisioning': 'float',
-        'total_physical': 'int',
-        'total_provisioned': 'int',
-        'total_reduction': 'float',
-        'unique': 'int',
         'virtual': 'int',
         'used_provisioned': 'int',
+        'total_reduction': 'float',
         'total_used': 'int',
+        'thin_provisioning': 'float',
+        'snapshots': 'int',
+        'total_physical': 'int',
         'footprint': 'int',
+        'system': 'int',
+        'unique': 'int',
+        'total_provisioned': 'int',
         'snapshots_effective': 'int',
         'unique_effective': 'int',
         'total_effective': 'int'
@@ -51,17 +51,17 @@ class VolumeSpaceCommon(object):
     attribute_map = {
         'data_reduction': 'data_reduction',
         'shared': 'shared',
-        'snapshots': 'snapshots',
-        'system': 'system',
-        'thin_provisioning': 'thin_provisioning',
-        'total_physical': 'total_physical',
-        'total_provisioned': 'total_provisioned',
-        'total_reduction': 'total_reduction',
-        'unique': 'unique',
         'virtual': 'virtual',
         'used_provisioned': 'used_provisioned',
+        'total_reduction': 'total_reduction',
         'total_used': 'total_used',
+        'thin_provisioning': 'thin_provisioning',
+        'snapshots': 'snapshots',
+        'total_physical': 'total_physical',
         'footprint': 'footprint',
+        'system': 'system',
+        'unique': 'unique',
+        'total_provisioned': 'total_provisioned',
         'snapshots_effective': 'snapshots_effective',
         'unique_effective': 'unique_effective',
         'total_effective': 'total_effective'
@@ -74,66 +74,66 @@ class VolumeSpaceCommon(object):
         self,
         data_reduction=None,  # type: float
         shared=None,  # type: int
-        snapshots=None,  # type: int
-        system=None,  # type: int
-        thin_provisioning=None,  # type: float
-        total_physical=None,  # type: int
-        total_provisioned=None,  # type: int
-        total_reduction=None,  # type: float
-        unique=None,  # type: int
         virtual=None,  # type: int
         used_provisioned=None,  # type: int
+        total_reduction=None,  # type: float
         total_used=None,  # type: int
+        thin_provisioning=None,  # type: float
+        snapshots=None,  # type: int
+        total_physical=None,  # type: int
         footprint=None,  # type: int
+        system=None,  # type: int
+        unique=None,  # type: int
+        total_provisioned=None,  # type: int
         snapshots_effective=None,  # type: int
         unique_effective=None,  # type: int
         total_effective=None,  # type: int
     ):
         """
         Keyword args:
-            data_reduction (float): The ratio of mapped sectors within a volume versus the amount of physical space the data occupies after data compression and deduplication. The data reduction ratio does not include thin provisioning savings. For example, a data reduction ratio of 5&#58;1 means that for every 5 MB the host writes to the array, 1 MB is stored on the array's flash modules.
-            shared (int): The physical space occupied by deduplicated data, meaning that the space is shared with other volumes and snapshots as a result of data deduplication. Measured in bytes. On Evergreen//One arrays, this is the effective space contributed by data that is not unique to a specific volume, managed directory, or snapshot, measured in bytes.
-            snapshots (int): The physical space occupied by data unique to one or more snapshots. Measured in bytes. On Evergreen//One arrays, this is the effective space contributed by data unique to one or more snapshots, measured in bytes.
-            system (int): The physical space occupied by internal array metadata. Measured in bytes.
-            thin_provisioning (float): The percentage of volume sectors that do not contain host-written data because the hosts have not written data to them or the sectors have been explicitly trimmed.
-            total_physical (int): This field has been deprecated. Use the `total_used` field, as it contains the same information.
-            total_provisioned (int): The provisioned size of a volume for a single volume, host or host group, protocol endpoint, managed directory, and containers can be infinite or measured in bytes. Infinite is represented by `null`. The provisioned size for a host or host group, includes all volumes that are connected to the resource. The provisioned size for a protocol endpoint is `null'. The provisioned size for a managed directory is the quota limit if it or its parent has a managed directory configured, otherwise it defaults to `null`. The provisioned size for a container is the sum of the total_provisioned of the object it contains, capped by the container's quota limit (or the container's used_provisioned if current usage is above the quota limit), if any. Provisioned size represents the storage capacity reported to hosts.
-            total_reduction (float): The ratio of provisioned sectors within a volume versus the amount of physical space the data occupies after reduction via data compression and deduplication and with thin provisioning savings. Total reduction is data reduction with thin provisioning savings. For example, a total reduction ratio of 10&#58;1 means that for every 10 MB of provisioned space, 1 MB is stored on the array's flash modules.
-            unique (int): The unique physical space occupied by customer data. Unique physical space does not include shared space, snapshots, and internal array metadata. Measured in bytes. On Evergreen//One arrays, this is the effective space contributed by unique customer data, measured in bytes. Unique data does not include shared space, snapshots, and internal array metadata.
-            virtual (int): The amount of logically written data that a volume or a snapshot references. Measured in bytes.
-            used_provisioned (int): The amount of logical space a container has consumed, compared against the quota limit if the container has one configured. Used provisioned does not include destroyed objects inside the container. Used provisioned can include destroyed objects for a destroyed container and represents how much logical space it would take to recover the container.
-            total_used (int): The total space contributed by customer data, measured in bytes.
-            footprint (int): The maximum amount of physical space the container consumes on an array, ignoring any data shared outside the container, measured in bytes. On Evergreen//One arrays, this is the maximum amount of effective used space. The footprint metric is mostly used for capacity planning. This field will be null in non-container contexts.
-            snapshots_effective (int): This field has been deprecated. The effective space contributed by data unique to one or more snapshots, measured in bytes. Use the `snapshots` field in the future, as it contains the same information for Evergreen//One arrays.
-            unique_effective (int): This field has been deprecated. The effective space contributed by unique customer data. Unique data does not include shared space, snapshots, and internal array metadata, measured in bytes. Use the `unique` field in the future, as it contains the same information for Evergreen//One arrays.
-            total_effective (int): This field has been deprecated. The total effective space contributed by customer data, measured in bytes. Use the `total_physical` field in the future, as it contains the same information for Evergreen//One arrays.
+            data_reduction (float): The ratio of mapped sectors within a volume versus the amount of physical space the data occupies after data compression and deduplication. The data reduction ratio does not include thin provisioning savings. For example, a data reduction ratio of 5&#58;1 means that for every 5 MB the host writes to the array, 1 MB is stored on the array's flash modules. 
+            shared (int): The physical space occupied by deduplicated data, meaning that the space is shared with other volumes and snapshots as a result of data deduplication. Measured in bytes. On Evergreen//One arrays, this is the effective space contributed by data that is not unique to a specific volume, managed directory, or snapshot, measured in bytes. 
+            virtual (int): The amount of logically written data that a volume or a snapshot references. Measured in bytes. 
+            used_provisioned (int): The amount of logical space a container has consumed, compared against the quota limit if the container has one configured. Used provisioned does not include destroyed objects inside the container. Used provisioned can include destroyed objects for a destroyed container and represents how much logical space it would take to recover the container. 
+            total_reduction (float): The ratio of provisioned sectors within a volume versus the amount of physical space the data occupies after reduction via data compression and deduplication  and with thin provisioning savings. Total reduction is data reduction with thin provisioning savings. For example, a total reduction ratio of 10&#58;1 means that for every 10 MB of provisioned space, 1 MB is stored on the array's flash modules.  
+            total_used (int): The total space contributed by customer data, measured in bytes. 
+            thin_provisioning (float): The percentage of volume sectors that do not contain host-written data because the hosts have not written data to them or the sectors have been explicitly trimmed. 
+            snapshots (int): The physical space occupied by data unique to one or more snapshots. Measured in bytes. On Evergreen//One arrays, this is the effective space contributed by data unique to one or more snapshots, measured in bytes. 
+            total_physical (int): This field has been deprecated. Use the `total_used` field, as it contains the same information. 
+            footprint (int): The maximum amount of physical space the container consumes on an array, ignoring any data shared outside the container, measured in bytes. On Evergreen//One arrays, this is the maximum amount of effective used space. The footprint metric is mostly used for capacity planning. This field will be null in non-container contexts. 
+            system (int): The physical space occupied by internal array metadata. Measured in bytes. 
+            unique (int): The unique physical space occupied by customer data. Unique physical space does not include shared space, snapshots, and internal array metadata. Measured in bytes. On Evergreen//One arrays, this is the effective space contributed by unique customer data, measured in bytes. Unique data does not include shared space, snapshots, and internal array metadata. 
+            total_provisioned (int): The provisioned size of a volume for a single volume, host or host group, protocol endpoint, managed directory, and containers can be infinite or measured in bytes.  Infinite is represented by `null`. The provisioned size for a host or host group, includes all volumes that are connected to the resource. The provisioned size for a protocol endpoint is `null'. The provisioned size for a managed directory is the quota limit if it or its parent has a managed directory configured, otherwise it defaults to `null`.  The provisioned size for a container is the sum of the total_provisioned of the object it contains, capped by the container's quota limit (or the container's used_provisioned if current usage is above the quota limit), if any. Provisioned size represents the storage capacity reported to hosts. 
+            snapshots_effective (int): This field has been deprecated. The effective space contributed by data unique to one or more snapshots, measured in bytes. Use the `snapshots` field in the future, as it contains the same information for Evergreen//One arrays. 
+            unique_effective (int): This field has been deprecated. The effective space contributed by unique customer data. Unique data does not include shared space, snapshots, and internal array metadata, measured in bytes. Use the `unique` field in the future, as it contains the same information for Evergreen//One arrays. 
+            total_effective (int): This field has been deprecated. The total effective space contributed by customer data, measured in bytes. Use the `total_physical` field in the future, as it contains the same information for Evergreen//One arrays. 
         """
         if data_reduction is not None:
             self.data_reduction = data_reduction
         if shared is not None:
             self.shared = shared
-        if snapshots is not None:
-            self.snapshots = snapshots
-        if system is not None:
-            self.system = system
-        if thin_provisioning is not None:
-            self.thin_provisioning = thin_provisioning
-        if total_physical is not None:
-            self.total_physical = total_physical
-        if total_provisioned is not None:
-            self.total_provisioned = total_provisioned
-        if total_reduction is not None:
-            self.total_reduction = total_reduction
-        if unique is not None:
-            self.unique = unique
         if virtual is not None:
             self.virtual = virtual
         if used_provisioned is not None:
             self.used_provisioned = used_provisioned
+        if total_reduction is not None:
+            self.total_reduction = total_reduction
         if total_used is not None:
             self.total_used = total_used
+        if thin_provisioning is not None:
+            self.thin_provisioning = thin_provisioning
+        if snapshots is not None:
+            self.snapshots = snapshots
+        if total_physical is not None:
+            self.total_physical = total_physical
         if footprint is not None:
             self.footprint = footprint
+        if system is not None:
+            self.system = system
+        if unique is not None:
+            self.unique = unique
+        if total_provisioned is not None:
+            self.total_provisioned = total_provisioned
         if snapshots_effective is not None:
             self.snapshots_effective = snapshots_effective
         if unique_effective is not None:
@@ -147,26 +147,6 @@ class VolumeSpaceCommon(object):
         if key == "shared" and value is not None:
             if value < 0:
                 raise ValueError("Invalid value for `shared`, must be a value greater than or equal to `0`")
-        if key == "snapshots" and value is not None:
-            if value < 0:
-                raise ValueError("Invalid value for `snapshots`, must be a value greater than or equal to `0`")
-        if key == "system" and value is not None:
-            if value < 0:
-                raise ValueError("Invalid value for `system`, must be a value greater than or equal to `0`")
-        if key == "thin_provisioning" and value is not None:
-            if value > 1.0:
-                raise ValueError("Invalid value for `thin_provisioning`, value must be less than or equal to `1.0`")
-            if value < 0.0:
-                raise ValueError("Invalid value for `thin_provisioning`, must be a value greater than or equal to `0.0`")
-        if key == "total_physical" and value is not None:
-            if value < 0:
-                raise ValueError("Invalid value for `total_physical`, must be a value greater than or equal to `0`")
-        if key == "total_provisioned" and value is not None:
-            if value < 0:
-                raise ValueError("Invalid value for `total_provisioned`, must be a value greater than or equal to `0`")
-        if key == "unique" and value is not None:
-            if value < 0:
-                raise ValueError("Invalid value for `unique`, must be a value greater than or equal to `0`")
         if key == "virtual" and value is not None:
             if value < 0:
                 raise ValueError("Invalid value for `virtual`, must be a value greater than or equal to `0`")
@@ -176,9 +156,29 @@ class VolumeSpaceCommon(object):
         if key == "total_used" and value is not None:
             if value < 0:
                 raise ValueError("Invalid value for `total_used`, must be a value greater than or equal to `0`")
+        if key == "thin_provisioning" and value is not None:
+            if value > 1:
+                raise ValueError("Invalid value for `thin_provisioning`, value must be less than or equal to `1`")
+            if value < 0:
+                raise ValueError("Invalid value for `thin_provisioning`, must be a value greater than or equal to `0`")
+        if key == "snapshots" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `snapshots`, must be a value greater than or equal to `0`")
+        if key == "total_physical" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `total_physical`, must be a value greater than or equal to `0`")
         if key == "footprint" and value is not None:
             if value < 0:
                 raise ValueError("Invalid value for `footprint`, must be a value greater than or equal to `0`")
+        if key == "system" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `system`, must be a value greater than or equal to `0`")
+        if key == "unique" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `unique`, must be a value greater than or equal to `0`")
+        if key == "total_provisioned" and value is not None:
+            if value < 0:
+                raise ValueError("Invalid value for `total_provisioned`, must be a value greater than or equal to `0`")
         if key == "snapshots_effective" and value is not None:
             if value < 0:
                 raise ValueError("Invalid value for `snapshots_effective`, must be a value greater than or equal to `0`")

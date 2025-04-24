@@ -30,13 +30,13 @@ class DirectoryExportPost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'export_name': 'str',
-        'export_enabled': 'bool'
+        'export_enabled': 'bool',
+        'export_name': 'str'
     }
 
     attribute_map = {
-        'export_name': 'export_name',
-        'export_enabled': 'export_enabled'
+        'export_enabled': 'export_enabled',
+        'export_name': 'export_name'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class DirectoryExportPost(object):
 
     def __init__(
         self,
-        export_name=None,  # type: str
         export_enabled=None,  # type: bool
+        export_name=None,  # type: str
     ):
         """
         Keyword args:
-            export_name (str): The name of the export to create. Export names must be unique within the same protocol.
-            export_enabled (bool): If set to `true`, the export is enabled. If not specified, defaults to `true`.
+            export_enabled (bool): If set to `true`, the export is enabled. If not specified, defaults to `true`. 
+            export_name (str): The name of the export to create. Export names must be unique within the same protocol. 
         """
-        if export_name is not None:
-            self.export_name = export_name
         if export_enabled is not None:
             self.export_enabled = export_enabled
+        if export_name is not None:
+            self.export_name = export_name
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

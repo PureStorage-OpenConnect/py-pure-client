@@ -3,7 +3,7 @@
 """
     Pure1 Public REST API
 
-    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)  The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
+    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)   The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
 
     OpenAPI spec version: 1.1
     
@@ -31,16 +31,16 @@ class PolicyRule(object):
     """
     swagger_types = {
         'at': 'int',
-        'every': 'int',
         'keep_for': 'int',
-        'time_zone': 'str'
+        'time_zone': 'str',
+        'every': 'int'
     }
 
     attribute_map = {
         'at': 'at',
-        'every': 'every',
         'keep_for': 'keep_for',
-        'time_zone': 'time_zone'
+        'time_zone': 'time_zone',
+        'every': 'every'
     }
 
     required_args = {
@@ -49,25 +49,25 @@ class PolicyRule(object):
     def __init__(
         self,
         at=None,  # type: int
-        every=None,  # type: int
         keep_for=None,  # type: int
         time_zone=None,  # type: str
+        every=None,  # type: int
     ):
         """
         Keyword args:
-            at (int): Time of day to take the snapshot, in milliseconds since 00:00 in the specified `time_zone`. Only valid if `every` is set as whole days.
-            every (int): How often to take snapshots, in milliseconds.
+            at (int): Time of day to take the snapshot, in milliseconds since 00:00 in the specified `time_zone`. Only valid if `every` is set as whole days. 
             keep_for (int): How long to keep snapshots, in milliseconds.
             time_zone (str): The time zone in which the `at` rule is applied.
+            every (int): How often to take snapshots, in milliseconds.
         """
         if at is not None:
             self.at = at
-        if every is not None:
-            self.every = every
         if keep_for is not None:
             self.keep_for = keep_for
         if time_zone is not None:
             self.time_zone = time_zone
+        if every is not None:
+            self.every = every
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

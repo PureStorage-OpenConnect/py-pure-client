@@ -52,9 +52,9 @@ class LogTarget(object):
     ):
         """
         Keyword args:
-            name (str): A user-specified name. The name must be locally unique and cannot be changed.
-            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.
-            target_type (str): The type of log target. Valid values include `file`, and `syslog`.
+            name (str): A user-specified name. The name must be locally unique and cannot be changed. 
+            context (FixedReference): The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request.  Other parameters provided with the request, such as names of volumes or snapshots,  are resolved relative to the provided `context`. 
+            target_type (str): The type of log target. Valid values include `file`, and `syslog`. 
         """
         if name is not None:
             self.name = name

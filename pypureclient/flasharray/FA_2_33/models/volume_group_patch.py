@@ -30,8 +30,8 @@ class VolumeGroupPatch(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
+        'id': 'str',
         'destroyed': 'bool',
         'qos': 'Qos',
         'priority_adjustment': 'PriorityAdjustment',
@@ -39,8 +39,8 @@ class VolumeGroupPatch(object):
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
+        'id': 'id',
         'destroyed': 'destroyed',
         'qos': 'qos',
         'priority_adjustment': 'priority_adjustment',
@@ -52,8 +52,8 @@ class VolumeGroupPatch(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
+        id=None,  # type: str
         destroyed=None,  # type: bool
         qos=None,  # type: models.Qos
         priority_adjustment=None,  # type: models.PriorityAdjustment
@@ -61,17 +61,17 @@ class VolumeGroupPatch(object):
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            name (str): A user-specified name. The name must be locally unique and can be changed.
-            destroyed (bool): Returns a value of `true` if the volume group has been destroyed and is pending eradication. Before the `time_remaining` period has elapsed, the destroyed volume group can be recovered by setting `destroyed=false`. After the `time_remaining` period has elapsed, the volume group is permanently eradicated and cannot be recovered.
+            name (str): A user-specified name. The name must be locally unique and can be changed. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource. 
+            destroyed (bool): Returns a value of `true` if the volume group has been destroyed and is pending eradication. Before the `time_remaining` period has elapsed, the destroyed volume group can be recovered by setting `destroyed=false`. After the `time_remaining` period has elapsed, the volume group is permanently eradicated and cannot be recovered. 
             qos (Qos)
             priority_adjustment (PriorityAdjustment)
             space (Space)
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
         if destroyed is not None:
             self.destroyed = destroyed
         if qos is not None:

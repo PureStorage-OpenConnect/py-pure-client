@@ -46,7 +46,7 @@ class MaintenanceWindowPost(object):
     ):
         """
         Keyword args:
-            timeout (int): The specified length of time that alerts are suppressed during a maintenance window, measured in milliseconds. The maintenance window timeout value must be between `60000` (1 minute) and `86400000` (24 hours). The value entered is rounded down to the nearest minute. The `names` and `timeout` parameters must be set together, and the `names` parameter must be set to `environment`.
+            timeout (int): The specified length of time that alerts are suppressed during a maintenance window, measured in milliseconds. The maintenance window timeout value must be between `60000` (1 minute) and `86400000` (24 hours). The value entered is rounded down to the nearest minute. The `names` and `timeout` parameters must be set together, and the `names` parameter must be set to `environment`. 
         """
         if timeout is not None:
             self.timeout = timeout

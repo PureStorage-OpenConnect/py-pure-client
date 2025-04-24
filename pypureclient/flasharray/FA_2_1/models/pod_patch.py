@@ -30,16 +30,16 @@ class PodPatch(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
+        'id': 'str',
         'destroyed': 'bool',
         'failover_preferences': 'list[Reference]',
         'mediator': 'str'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
+        'id': 'id',
         'destroyed': 'destroyed',
         'failover_preferences': 'failover_preferences',
         'mediator': 'mediator'
@@ -50,24 +50,24 @@ class PodPatch(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
+        id=None,  # type: str
         destroyed=None,  # type: bool
         failover_preferences=None,  # type: List[models.Reference]
         mediator=None,  # type: str
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            name (str): A user-specified name. The name must be locally unique and can be changed.
-            destroyed (bool): If set to `true`, the pod has been destroyed and is pending eradication. The `time_remaining` value displays the amount of time left until the destroyed pod is permanently eradicated. A pod can only be destroyed if it is empty, so before destroying a pod, ensure all volumes and protection groups inside the pod have been either moved out of the pod or destroyed. A stretched pod cannot be destroyed unless you unstretch it first. Before the `time_remaining` period has elapsed, the destroyed pod can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the pod is permanently eradicated and can no longer be recovered.
-            failover_preferences (list[Reference]): Determines which array within a stretched pod should be given priority to stay online should the arrays ever lose contact with each other. The current array and any peer arrays that are connected to the current array for synchronous replication can be added to a pod for failover preference. By default, `failover_preferences=null`, meaning no arrays have been configured for failover preference. Enter multiple arrays in comma-separated format.
-            mediator (str): Sets the URL of the mediator for this pod, replacing the URL of the current mediator. By default, the Pure1 Cloud Mediator (`purestorage`) serves as the mediator.
+            name (str): A user-specified name. The name must be locally unique and can be changed. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource. 
+            destroyed (bool): If set to `true`, the pod has been destroyed and is pending eradication. The `time_remaining` value displays the amount of time left until the destroyed pod is permanently eradicated. A pod can only be destroyed if it is empty, so before destroying a pod, ensure all volumes and protection groups inside the pod have been either moved out of the pod or destroyed. A stretched pod cannot be destroyed unless you unstretch it first. Before the `time_remaining` period has elapsed, the destroyed pod can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the pod is permanently eradicated and can no longer be recovered. 
+            failover_preferences (list[Reference]): Determines which array within a stretched pod should be given priority to stay online should the arrays ever lose contact with each other. The current array and any peer arrays that are connected to the current array for synchronous replication can be added to a pod for failover preference. By default, `failover_preferences=null`,  meaning no arrays have been configured for failover preference. Enter multiple arrays in comma-separated format. 
+            mediator (str): Sets the URL of the mediator for this pod, replacing the URL of the current mediator. By default, the Pure1 Cloud Mediator (`purestorage`) serves as the mediator. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
         if destroyed is not None:
             self.destroyed = destroyed
         if failover_preferences is not None:

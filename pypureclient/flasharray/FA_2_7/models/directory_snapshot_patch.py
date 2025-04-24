@@ -52,9 +52,9 @@ class DirectorySnapshotPatch(object):
     ):
         """
         Keyword args:
-            destroyed (bool): If set to `true`, destroys a resource. Once set to `true`, the `time_remaining` value will display the amount of time left until the destroyed resource is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed resource can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the resource is permanently eradicated and can no longer be recovered.
-            keep_for (int): The amount of time to keep the snapshots, in milliseconds. Can only be set on snapshots that are not managed by any snapshot policy. Set to `\"\"` to clear the keep_for value.
-            policy (Reference): The snapshot policy that manages this snapshot. Set to `name` or `id` to `\"\"` to clear the policy.
+            destroyed (bool): If set to `true`, destroys a resource. Once set to `true`, the `time_remaining` value will display the amount of time left until the destroyed resource is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed resource can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed,  the resource is permanently eradicated and can no longer be recovered. 
+            keep_for (int): The amount of time to keep the snapshots, in milliseconds. Can only be set on snapshots that are not managed by any snapshot policy. Set to `\"\"` to clear the keep_for value. 
+            policy (Reference): The snapshot policy that manages this snapshot. Set to `name` or `id` to `\"\"` to clear the policy. 
         """
         if destroyed is not None:
             self.destroyed = destroyed

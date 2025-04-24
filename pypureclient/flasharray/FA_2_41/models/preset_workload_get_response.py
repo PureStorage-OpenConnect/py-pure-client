@@ -30,15 +30,15 @@ class PresetWorkloadGetResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'more_items_remaining': 'bool',
         'continuation_token': 'str',
+        'more_items_remaining': 'bool',
         'items': 'list[PresetWorkload]',
         'errors': 'list[ErrorcontextresponseErrors]'
     }
 
     attribute_map = {
-        'more_items_remaining': 'more_items_remaining',
         'continuation_token': 'continuation_token',
+        'more_items_remaining': 'more_items_remaining',
         'items': 'items',
         'errors': 'errors'
     }
@@ -48,22 +48,22 @@ class PresetWorkloadGetResponse(object):
 
     def __init__(
         self,
-        more_items_remaining=None,  # type: bool
         continuation_token=None,  # type: str
+        more_items_remaining=None,  # type: bool
         items=None,  # type: List[models.PresetWorkload]
         errors=None,  # type: List[models.ErrorcontextresponseErrors]
     ):
         """
         Keyword args:
-            more_items_remaining (bool): Displays a value of `true` if subsequent items can be retrieved.
-            continuation_token (str): Continuation token that can be provided in the `continuation_token` query parameter to get the next page of data. If you use the continuation token to page through data you are guaranteed to get all items exactly once regardless of how items are modified. If an item is added or deleted during the pagination, then it may or may not be returned. The continuation token is generated if the limit is less than the remaining number of items, and the default sort is used (no sort is specified).
-            items (list[PresetWorkload]): Displays a list of all items after filtering. If applicable, the values are displayed for each name.
+            continuation_token (str): Continuation token that can be provided in the `continuation_token` query parameter to get the next page of data. If you use the continuation token to page through data you are guaranteed to get all items exactly once regardless of how items are modified. If an item is added or deleted during the pagination, then it may or may not be returned. The continuation token is generated if the limit is less than the remaining number of items, and the default sort is used (no sort is specified). 
+            more_items_remaining (bool): Displays a value of `true` if subsequent items can be retrieved. 
+            items (list[PresetWorkload]): Displays a list of all items after filtering. If applicable, the values are displayed for each name. 
             errors (list[ErrorcontextresponseErrors]): The list of errors encountered when attempting to perform an operation.
         """
-        if more_items_remaining is not None:
-            self.more_items_remaining = more_items_remaining
         if continuation_token is not None:
             self.continuation_token = continuation_token
+        if more_items_remaining is not None:
+            self.more_items_remaining = more_items_remaining
         if items is not None:
             self.items = items
         if errors is not None:

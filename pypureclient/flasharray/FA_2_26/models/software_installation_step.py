@@ -30,27 +30,27 @@ class SoftwareInstallationStep(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
+        'id': 'str',
         'start_time': 'int',
         'end_time': 'int',
         'checks': 'list[SoftwareInstallationStepsChecks]',
-        'description': 'str',
         'hop_version': 'str',
         'installation': 'Reference',
+        'description': 'str',
         'details': 'str',
         'status': 'str'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
+        'id': 'id',
         'start_time': 'start_time',
         'end_time': 'end_time',
         'checks': 'checks',
-        'description': 'description',
         'hop_version': 'hop_version',
         'installation': 'installation',
+        'description': 'description',
         'details': 'details',
         'status': 'status'
     }
@@ -60,46 +60,46 @@ class SoftwareInstallationStep(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
+        id=None,  # type: str
         start_time=None,  # type: int
         end_time=None,  # type: int
         checks=None,  # type: List[models.SoftwareInstallationStepsChecks]
-        description=None,  # type: str
         hop_version=None,  # type: str
         installation=None,  # type: models.Reference
+        description=None,  # type: str
         details=None,  # type: str
         status=None,  # type: str
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified.
-            name (str): Name of the resource. The name cannot be modified.
+            name (str): Name of the resource. The name cannot be modified. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified. 
             start_time (int): Start time in milliseconds since the UNIX epoch.
             end_time (int): End time in milliseconds since the UNIX epoch.
-            checks (list[SoftwareInstallationStepsChecks]): A list of checks in this upgrade step.
-            description (str): Detailed description of the step.
+            checks (list[SoftwareInstallationStepsChecks]): A list of checks in this upgrade step. 
             hop_version (str): The version to which the current hop is upgrading.
-            installation (Reference): Referenced `software-installation` to which the step belongs.
-            details (str): Detailed result of the step used to diagnose step failures.
-            status (str): Status of the step. Valid values are `running` and `finished`. A status of `running` indicates that the step has not finished. A status of `finished` indicates that the check has finished.
+            installation (Reference): Referenced `software-installation` to which the step belongs. 
+            description (str): Detailed description of the step. 
+            details (str): Detailed result of the step used to diagnose step failures. 
+            status (str): Status of the step. Valid values are `running` and `finished`. A status of `running` indicates that the step has not finished. A status of `finished` indicates that the check has finished. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
         if start_time is not None:
             self.start_time = start_time
         if end_time is not None:
             self.end_time = end_time
         if checks is not None:
             self.checks = checks
-        if description is not None:
-            self.description = description
         if hop_version is not None:
             self.hop_version = hop_version
         if installation is not None:
             self.installation = installation
+        if description is not None:
+            self.description = description
         if details is not None:
             self.details = details
         if status is not None:

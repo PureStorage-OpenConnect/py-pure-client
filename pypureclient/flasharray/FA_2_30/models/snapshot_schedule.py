@@ -52,7 +52,7 @@ class SnapshotSchedule(object):
     ):
         """
         Keyword args:
-            at (int): The time of day the snapshot is scheduled to be taken and retained on the local array or immediately replicated to the target(s). Measured in seconds since midnight. The `at` value is only used if the `frequency` parameter is in days (e.g., `259200000`, which is equal to 3 days).
+            at (int): The time of day the snapshot is scheduled to be taken and retained on the local array or immediately replicated to the target(s). Measured in seconds since midnight.  The `at` value is only used if the `frequency` parameter is in days (e.g., `259200000`, which is equal to 3 days). 
             enabled (bool): If set to `true`, the policy is enabled.
             frequency (int): The frequency of the scheduled action. Measured in milliseconds.
         """

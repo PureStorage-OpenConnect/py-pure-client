@@ -30,13 +30,13 @@ class PodPerformanceReplicationByArrayResponse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'items': 'list[PodPerformanceReplicationByArray]',
-        'total': 'list[PodPerformanceReplicationByArray]'
+        'total': 'list[PodPerformanceReplicationByArray]',
+        'items': 'list[PodPerformanceReplicationByArray]'
     }
 
     attribute_map = {
-        'items': 'items',
-        'total': 'total'
+        'total': 'total',
+        'items': 'items'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class PodPerformanceReplicationByArrayResponse(object):
 
     def __init__(
         self,
-        items=None,  # type: List[models.PodPerformanceReplicationByArray]
         total=None,  # type: List[models.PodPerformanceReplicationByArray]
+        items=None,  # type: List[models.PodPerformanceReplicationByArray]
     ):
         """
         Keyword args:
+            total (list[PodPerformanceReplicationByArray]): The aggregate value of all items after filtering. When applicable, the average value is displayed instead. The values are displayed for each field if meaningful. 
             items (list[PodPerformanceReplicationByArray]): A list of pod performance replication objects, arranged by array.
-            total (list[PodPerformanceReplicationByArray]): The aggregate value of all items after filtering. When applicable, the average value is displayed instead. The values are displayed for each field if meaningful.
         """
-        if items is not None:
-            self.items = items
         if total is not None:
             self.total = total
+        if items is not None:
+            self.items = items
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -46,7 +46,7 @@ class SupportRemoteAssistSessionsSettings(object):
     ):
         """
         Keyword args:
-            default_access_level (str): The default access level that support will have when connecting to the array. Values include `restricted` and `elevated`.
+            default_access_level (str): The default access level that support will have when connecting to the array. Values include `restricted` and `elevated`. 
         """
         if default_access_level is not None:
             self.default_access_level = default_access_level

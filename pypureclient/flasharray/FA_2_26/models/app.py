@@ -31,22 +31,22 @@ class App(object):
     """
     swagger_types = {
         'name': 'str',
+        'vnc_enabled': 'bool',
         'description': 'str',
-        'enabled': 'bool',
-        'status': 'str',
-        'version': 'str',
         'details': 'str',
-        'vnc_enabled': 'bool'
+        'version': 'str',
+        'enabled': 'bool',
+        'status': 'str'
     }
 
     attribute_map = {
         'name': 'name',
+        'vnc_enabled': 'vnc_enabled',
         'description': 'description',
-        'enabled': 'enabled',
-        'status': 'status',
-        'version': 'version',
         'details': 'details',
-        'vnc_enabled': 'vnc_enabled'
+        'version': 'version',
+        'enabled': 'enabled',
+        'status': 'status'
     }
 
     required_args = {
@@ -55,37 +55,37 @@ class App(object):
     def __init__(
         self,
         name=None,  # type: str
+        vnc_enabled=None,  # type: bool
         description=None,  # type: str
+        details=None,  # type: str
+        version=None,  # type: str
         enabled=None,  # type: bool
         status=None,  # type: str
-        version=None,  # type: str
-        details=None,  # type: str
-        vnc_enabled=None,  # type: bool
     ):
         """
         Keyword args:
-            name (str): A locally unique, system-generated name. The name cannot be modified.
-            description (str): A description of the app.
-            enabled (bool): If set to `true`, the app is enabled. By default, apps are disabled.
-            status (str): The status of the app. Values include `healthy` and `unhealthy`. For cluster apps, this represents the aggregate status of the app. The aggregate status is only `healthy` if all nodes are `healthy`&#59; otherwise, it is `unhealthy`.
-            version (str): The app version. For cluster apps, this represents the node version if all nodes are of the same version. If the node versions differ, a value of `null` is returned.
-            details (str): Details of the status of the app.
-            vnc_enabled (bool): If set to `true`, VNC access is enabled. By default, VNC access is disabled.
+            name (str): A locally unique, system-generated name. The name cannot be modified. 
+            vnc_enabled (bool): If set to `true`, VNC access is enabled. By default, VNC access is disabled. 
+            description (str): A description of the app. 
+            details (str): Details of the status of the app. 
+            version (str): The app version. For cluster apps, this represents the node version if all nodes are of the same version. If the node versions differ, a value of `null` is returned. 
+            enabled (bool): If set to `true`, the app is enabled. By default, apps are disabled. 
+            status (str): The status of the app. Values include `healthy` and `unhealthy`. For cluster apps, this represents the aggregate status of the app. The aggregate status is only `healthy` if all nodes are `healthy`&#59; otherwise, it is `unhealthy`. 
         """
         if name is not None:
             self.name = name
+        if vnc_enabled is not None:
+            self.vnc_enabled = vnc_enabled
         if description is not None:
             self.description = description
+        if details is not None:
+            self.details = details
+        if version is not None:
+            self.version = version
         if enabled is not None:
             self.enabled = enabled
         if status is not None:
             self.status = status
-        if version is not None:
-            self.version = version
-        if details is not None:
-            self.details = details
-        if vnc_enabled is not None:
-            self.vnc_enabled = vnc_enabled
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

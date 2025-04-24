@@ -46,7 +46,7 @@ class PolicyMemberPost(object):
     ):
         """
         Keyword args:
-            members (list[PolicymemberpostMembers]): A list of resources to which the policy may be applied.
+            members (list[PolicymemberpostMembers]): A list of resources to which the policy may be applied. 
         """
         if members is not None:
             self.members = members

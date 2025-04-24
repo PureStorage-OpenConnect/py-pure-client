@@ -46,7 +46,7 @@ class ProtectionGroupSnapshotReplicaResponse(object):
     ):
         """
         Keyword args:
-            items (list[ProtectionGroupSnapshotReplica]): Returns a list of all items after the operation. If applicable, the values are displayed for each name.
+            items (list[ProtectionGroupSnapshotReplica]): Returns a list of all items after the operation. If applicable, the values are displayed for each name. 
         """
         if items is not None:
             self.items = items

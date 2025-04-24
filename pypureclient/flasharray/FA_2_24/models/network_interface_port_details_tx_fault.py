@@ -30,13 +30,13 @@ class NetworkInterfacePortDetailsTxFault(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'channel': 'int',
-        'flag': 'bool'
+        'flag': 'bool',
+        'channel': 'int'
     }
 
     attribute_map = {
-        'channel': 'channel',
-        'flag': 'flag'
+        'flag': 'flag',
+        'channel': 'channel'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class NetworkInterfacePortDetailsTxFault(object):
 
     def __init__(
         self,
-        channel=None,  # type: int
         flag=None,  # type: bool
+        channel=None,  # type: int
     ):
         """
         Keyword args:
-            channel (int): The channel number if the transceiver is a multilane transceiver. If not specified, defaults to `null`.
             flag (bool): A value of `true` indicates transmitter/laser fault.
+            channel (int): The channel number if the transceiver is a multilane transceiver. If not specified, defaults to `null`. 
         """
-        if channel is not None:
-            self.channel = channel
         if flag is not None:
             self.flag = flag
+        if channel is not None:
+            self.channel = channel
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -32,15 +32,15 @@ class ResourcePerformanceNoIdByArrayGetResponse(object):
     swagger_types = {
         'more_items_remaining': 'bool',
         'total_item_count': 'int',
-        'items': 'list[ResourcePerformanceNoIdByArray]',
-        'total': 'list[ResourcePerformanceNoIdByArray]'
+        'total': 'list[ResourcePerformanceNoIdByArray]',
+        'items': 'list[ResourcePerformanceNoIdByArray]'
     }
 
     attribute_map = {
         'more_items_remaining': 'more_items_remaining',
         'total_item_count': 'total_item_count',
-        'items': 'items',
-        'total': 'total'
+        'total': 'total',
+        'items': 'items'
     }
 
     required_args = {
@@ -50,24 +50,24 @@ class ResourcePerformanceNoIdByArrayGetResponse(object):
         self,
         more_items_remaining=None,  # type: bool
         total_item_count=None,  # type: int
-        items=None,  # type: List[models.ResourcePerformanceNoIdByArray]
         total=None,  # type: List[models.ResourcePerformanceNoIdByArray]
+        items=None,  # type: List[models.ResourcePerformanceNoIdByArray]
     ):
         """
         Keyword args:
-            more_items_remaining (bool): Returns a value of `true` if subsequent items can be retrieved.
-            total_item_count (int): The total number of records after applying all filter query parameters. The `total_item_count` will be calculated if and only if the corresponding query parameter `total_item_count` is set to `true`. If this query parameter is not set or set to `false`, a value of `null` will be returned.
-            items (list[ResourcePerformanceNoIdByArray]): Performance data, broken down by array. If `total_only=true`, the `items` list will be empty.
-            total (list[ResourcePerformanceNoIdByArray]): The aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each field where meaningful.
+            more_items_remaining (bool): Returns a value of `true` if subsequent items can be retrieved. 
+            total_item_count (int): The total number of records after applying all filter query parameters. The `total_item_count` will be calculated if and only if the corresponding query parameter `total_item_count` is set to `true`. If this query parameter is not set or set to `false`, a value of `null` will be returned. 
+            total (list[ResourcePerformanceNoIdByArray]): The aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each field where meaningful. 
+            items (list[ResourcePerformanceNoIdByArray]): Performance data, broken down by array. If `total_only=true`, the `items` list will be empty. 
         """
         if more_items_remaining is not None:
             self.more_items_remaining = more_items_remaining
         if total_item_count is not None:
             self.total_item_count = total_item_count
-        if items is not None:
-            self.items = items
         if total is not None:
             self.total = total
+        if items is not None:
+            self.items = items
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

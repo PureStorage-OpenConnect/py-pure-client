@@ -3,7 +3,7 @@
 """
     Pure1 Public REST API
 
-    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)  The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
+    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)   The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
 
     OpenAPI spec version: 1.2
     
@@ -31,32 +31,32 @@ class Subscription(object):
     """
     swagger_types = {
         'as_of': 'int',
-        'id': 'str',
         'name': 'str',
-        'expiration_date': 'int',
-        'service': 'str',
-        'start_date': 'int',
-        'status': 'str',
+        'id': 'str',
         'initial_name': 'str',
-        'organization': 'FixedReference',
         'partner_name': 'str',
+        'service': 'str',
+        'organization': 'FixedReference',
+        'subscription_term': 'int',
+        'expiration_date': 'int',
         'last_updated_date': 'int',
-        'subscription_term': 'int'
+        'start_date': 'int',
+        'status': 'str'
     }
 
     attribute_map = {
         'as_of': '_as_of',
-        'id': 'id',
         'name': 'name',
-        'expiration_date': 'expiration_date',
-        'service': 'service',
-        'start_date': 'start_date',
-        'status': 'status',
+        'id': 'id',
         'initial_name': 'initial_name',
-        'organization': 'organization',
         'partner_name': 'partner_name',
+        'service': 'service',
+        'organization': 'organization',
+        'subscription_term': 'subscription_term',
+        'expiration_date': 'expiration_date',
         'last_updated_date': 'last_updated_date',
-        'subscription_term': 'subscription_term'
+        'start_date': 'start_date',
+        'status': 'status'
     }
 
     required_args = {
@@ -65,57 +65,57 @@ class Subscription(object):
     def __init__(
         self,
         as_of=None,  # type: int
-        id=None,  # type: str
         name=None,  # type: str
-        expiration_date=None,  # type: int
+        id=None,  # type: str
+        initial_name=None,  # type: str
+        partner_name=None,  # type: str
         service=None,  # type: str
+        organization=None,  # type: models.FixedReference
+        subscription_term=None,  # type: int
+        expiration_date=None,  # type: int
+        last_updated_date=None,  # type: int
         start_date=None,  # type: int
         status=None,  # type: str
-        initial_name=None,  # type: str
-        organization=None,  # type: models.FixedReference
-        partner_name=None,  # type: str
-        last_updated_date=None,  # type: int
-        subscription_term=None,  # type: int
     ):
         """
         Keyword args:
             as_of (int): The freshness of the data (timestamp in millis since epoch).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
             name (str): A non-modifiable, locally unique name chosen by the system.
-            expiration_date (int): Date when the subscription expires. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch.
-            service (str): The service type of the subscription. Values include `Evergreen//One`, `Evergreen//Flex`, `FlashStack as a Service`, `Storage as a Service`, `PaaS (Block Storage Service)`, `PaaS (File and Object Storage Service)`, `PaaS (Data Protection Service)`, and `Pure1 Subscription`.
-            start_date (int): Date when the subscription starts. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch.
-            status (str): Current status of the subscription. Values include `active`, `terminated`, `poc-expired`, and `signed`.
-            initial_name (str): A non-modifiable, locally unique name that the subscription was started with, never changes.
-            organization (FixedReference): The Pure1 organization for the subscription.
+            id (str): A non-modifiable, globally unique ID chosen by the system.
+            initial_name (str): A non-modifiable, locally unique name that the subscription was started with, never changes. 
             partner_name (str): The partner who invoices for the subscription.
-            last_updated_date (int): The date of the last amendment to the current subscription. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch.
+            service (str): The service type of the subscription. Values include `Evergreen//One`, `Evergreen//Flex`, `FlashStack as a Service`, `Storage as a Service`, `PaaS (Block Storage Service)`, `PaaS (File and Object Storage Service)`, `PaaS (Data Protection Service)`, and `Pure1 Subscription`. 
+            organization (FixedReference): The Pure1 organization for the subscription.
             subscription_term (int): Length of the subscription in months.
+            expiration_date (int): Date when the subscription expires. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch. 
+            last_updated_date (int): The date of the last amendment to the current subscription. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch. 
+            start_date (int): Date when the subscription starts. Represented as a timestamp of 00:00 on that date in UTC, in milliseconds since UNIX epoch. 
+            status (str): Current status of the subscription. Values include `active`, `terminated`, `poc-expired`, and `signed`. 
         """
         if as_of is not None:
             self.as_of = as_of
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
-        if expiration_date is not None:
-            self.expiration_date = expiration_date
+        if id is not None:
+            self.id = id
+        if initial_name is not None:
+            self.initial_name = initial_name
+        if partner_name is not None:
+            self.partner_name = partner_name
         if service is not None:
             self.service = service
+        if organization is not None:
+            self.organization = organization
+        if subscription_term is not None:
+            self.subscription_term = subscription_term
+        if expiration_date is not None:
+            self.expiration_date = expiration_date
+        if last_updated_date is not None:
+            self.last_updated_date = last_updated_date
         if start_date is not None:
             self.start_date = start_date
         if status is not None:
             self.status = status
-        if initial_name is not None:
-            self.initial_name = initial_name
-        if organization is not None:
-            self.organization = organization
-        if partner_name is not None:
-            self.partner_name = partner_name
-        if last_updated_date is not None:
-            self.last_updated_date = last_updated_date
-        if subscription_term is not None:
-            self.subscription_term = subscription_term
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -30,19 +30,19 @@ class Transfer(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'started': 'int',
-        'progress': 'float',
-        'completed': 'int',
+        'physical_bytes_written': 'int',
         'data_transferred': 'int',
-        'physical_bytes_written': 'int'
+        'progress': 'float',
+        'started': 'int',
+        'completed': 'int'
     }
 
     attribute_map = {
-        'started': 'started',
-        'progress': 'progress',
-        'completed': 'completed',
+        'physical_bytes_written': 'physical_bytes_written',
         'data_transferred': 'data_transferred',
-        'physical_bytes_written': 'physical_bytes_written'
+        'progress': 'progress',
+        'started': 'started',
+        'completed': 'completed'
     }
 
     required_args = {
@@ -50,30 +50,30 @@ class Transfer(object):
 
     def __init__(
         self,
-        started=None,  # type: int
-        progress=None,  # type: float
-        completed=None,  # type: int
-        data_transferred=None,  # type: int
         physical_bytes_written=None,  # type: int
+        data_transferred=None,  # type: int
+        progress=None,  # type: float
+        started=None,  # type: int
+        completed=None,  # type: int
     ):
         """
         Keyword args:
-            started (int): The timestamp of when the snapshot replication process started. Measured in milliseconds since the UNIX epoch.
-            progress (float): The percentage progress of the snapshot transfer from the source array to the target. Displayed in decimal format.
-            completed (int): The timestamp of when the snapshot replication process completed. Measured in milliseconds since since the UNIX epoch.
-            data_transferred (int): The number of bytes transferred from the source array to the target as part of the replication process. The data transferred amount is calculated as the size difference between the current and previous snapshots after data reduction. Measured in bytes.
-            physical_bytes_written (int): The amount of data persisted on the target due to replication. Measured in bytes.
+            physical_bytes_written (int): The amount of data persisted on the target due to replication. Measured in bytes. 
+            data_transferred (int): The number of bytes transferred from the source array to the target as part of the replication process. The data transferred amount is calculated as the size difference between the current and previous snapshots after data reduction. Measured in bytes. 
+            progress (float): The percentage progress of the snapshot transfer from the source array to the target. Displayed in decimal format. 
+            started (int): The timestamp of when the snapshot replication process started. Measured in milliseconds since the UNIX epoch. 
+            completed (int): The timestamp of when the snapshot replication process completed. Measured in milliseconds since since the UNIX epoch. 
         """
-        if started is not None:
-            self.started = started
-        if progress is not None:
-            self.progress = progress
-        if completed is not None:
-            self.completed = completed
-        if data_transferred is not None:
-            self.data_transferred = data_transferred
         if physical_bytes_written is not None:
             self.physical_bytes_written = physical_bytes_written
+        if data_transferred is not None:
+            self.data_transferred = data_transferred
+        if progress is not None:
+            self.progress = progress
+        if started is not None:
+            self.started = started
+        if completed is not None:
+            self.completed = completed
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

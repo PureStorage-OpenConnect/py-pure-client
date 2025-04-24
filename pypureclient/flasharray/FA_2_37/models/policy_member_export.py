@@ -30,21 +30,21 @@ class PolicyMemberExport(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'destroyed': 'bool',
-        'enabled': 'bool',
-        'member': 'FixedReferenceWithType',
-        'policy': 'FixedReferenceWithType',
         'time_remaining': 'int',
+        'destroyed': 'bool',
+        'member': 'FixedReferenceWithType',
+        'enabled': 'bool',
+        'policy': 'FixedReferenceWithType',
         'export_name': 'str',
         'status': 'str'
     }
 
     attribute_map = {
-        'destroyed': 'destroyed',
-        'enabled': 'enabled',
-        'member': 'member',
-        'policy': 'policy',
         'time_remaining': 'time_remaining',
+        'destroyed': 'destroyed',
+        'member': 'member',
+        'enabled': 'enabled',
+        'policy': 'policy',
         'export_name': 'export_name',
         'status': 'status'
     }
@@ -54,34 +54,34 @@ class PolicyMemberExport(object):
 
     def __init__(
         self,
-        destroyed=None,  # type: bool
-        enabled=None,  # type: bool
-        member=None,  # type: models.FixedReferenceWithType
-        policy=None,  # type: models.FixedReferenceWithType
         time_remaining=None,  # type: int
+        destroyed=None,  # type: bool
+        member=None,  # type: models.FixedReferenceWithType
+        enabled=None,  # type: bool
+        policy=None,  # type: models.FixedReferenceWithType
         export_name=None,  # type: str
         status=None,  # type: str
     ):
         """
         Keyword args:
-            destroyed (bool): Returns a value of `true` if the member is destroyed.
-            enabled (bool): Returns a value of `true` if and only if the export policy that manages this export is enabled AND this export is enabled.
+            time_remaining (int): The amount of time left, in milliseconds, until the destroyed policy member is permanently eradicated. 
+            destroyed (bool): Returns a value of `true` if the member is destroyed. 
             member (FixedReferenceWithType): Reference to the resource that the policy is applied to.
+            enabled (bool): Returns a value of `true` if and only if the export policy that manages this export is enabled AND this export is enabled. 
             policy (FixedReferenceWithType): Reference to the policy.
-            time_remaining (int): The amount of time left, in milliseconds, until the destroyed policy member is permanently eradicated.
-            export_name (str): The export name for accessing this export.
-            status (str): Explains why `enabled` is `false`, or whether there is a name conflict with another export. Valid values include `policy_disabled`, `export_disabled`, and `name_conflict`.
+            export_name (str): The export name for accessing this export. 
+            status (str): Explains why `enabled` is `false`, or whether there is a name conflict with another export. Valid values include `policy_disabled`, `export_disabled`, and `name_conflict`. 
         """
-        if destroyed is not None:
-            self.destroyed = destroyed
-        if enabled is not None:
-            self.enabled = enabled
-        if member is not None:
-            self.member = member
-        if policy is not None:
-            self.policy = policy
         if time_remaining is not None:
             self.time_remaining = time_remaining
+        if destroyed is not None:
+            self.destroyed = destroyed
+        if member is not None:
+            self.member = member
+        if enabled is not None:
+            self.enabled = enabled
+        if policy is not None:
+            self.policy = policy
         if export_name is not None:
             self.export_name = export_name
         if status is not None:
