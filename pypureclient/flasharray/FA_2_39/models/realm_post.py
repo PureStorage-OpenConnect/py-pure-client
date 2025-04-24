@@ -52,9 +52,9 @@ class RealmPost(object):
     ):
         """
         Keyword args:
-            quota_limit (int): The logical quota limit of the realm, measured in bytes. Must be a multiple of 512.
+            quota_limit (int): The logical quota limit of the realm, measured in bytes. Must be a multiple of 512. 
             qos (ContainerQos): Sets QoS limits.
-            tags (list[NonCopyableTag]): The list of tags to be upserted with the object.
+            tags (list[NonCopyableTag]): The list of tags to be upserted with the object. 
         """
         if quota_limit is not None:
             self.quota_limit = quota_limit

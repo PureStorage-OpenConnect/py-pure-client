@@ -30,13 +30,13 @@ class ResourceAccessStatusCreatedBy(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
-        'implicit': 'bool'
+        'implicit': 'bool',
+        'id': 'str'
     }
 
     attribute_map = {
-        'id': 'id',
-        'implicit': 'implicit'
+        'implicit': 'implicit',
+        'id': 'id'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class ResourceAccessStatusCreatedBy(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         implicit=None,  # type: bool
+        id=None,  # type: str
     ):
         """
         Keyword args:
+            implicit (bool): Set to `true` when this resource access status was not explicitly created, but instead, its existence is implied by another resource access. Usually, this happens when a scope has access to a group of resources (e.g., a host group). Then this scope has access to each member of the group, individual hosts. Set to `false` when a resource access status reflects explicitly created resource access. Note that if there is both implicit and explicit access of an object to a scope, there will be only one entry in the response for that object and scope pair. The `created_by` field will contain both implicit and explicit resource access references.  
             id (str): ID of a Resource Access.
-            implicit (bool): Set to `true` when this resource access status was not explicitly created, but instead, its existence is implied by another resource access. Usually, this happens when a scope has access to a group of resources (e.g., a host group). Then this scope has access to each member of the group, individual hosts. Set to `false` when a resource access status reflects explicitly created resource access. Note that if there is both implicit and explicit access of an object to a scope, there will be only one entry in the response for that object and scope pair. The `created_by` field will contain both implicit and explicit resource access references.
         """
-        if id is not None:
-            self.id = id
         if implicit is not None:
             self.implicit = implicit
+        if id is not None:
+            self.id = id
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.13, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.13, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.13
     
@@ -30,37 +30,37 @@ class FileSystemPost(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'default_group_quota': 'int',
-        'default_user_quota': 'int',
-        'fast_remove_directory_enabled': 'bool',
-        'hard_limit_enabled': 'bool',
-        'http': 'Http',
+        'smb': 'SmbPost',
+        'source': 'Reference',
         'multi_protocol': 'MultiProtocolPost',
-        'nfs': 'Nfs',
+        'fast_remove_directory_enabled': 'bool',
+        'writable': 'bool',
+        'hard_limit_enabled': 'bool',
         'provisioned': 'int',
         'requested_promotion_state': 'str',
-        'smb': 'SmbPost',
-        'snapshot_directory_enabled': 'bool',
-        'source': 'Reference',
-        'writable': 'bool',
-        'group_ownership': 'str'
+        'default_user_quota': 'int',
+        'group_ownership': 'str',
+        'http': 'Http',
+        'nfs': 'Nfs',
+        'default_group_quota': 'int',
+        'snapshot_directory_enabled': 'bool'
     }
 
     attribute_map = {
-        'default_group_quota': 'default_group_quota',
-        'default_user_quota': 'default_user_quota',
-        'fast_remove_directory_enabled': 'fast_remove_directory_enabled',
-        'hard_limit_enabled': 'hard_limit_enabled',
-        'http': 'http',
+        'smb': 'smb',
+        'source': 'source',
         'multi_protocol': 'multi_protocol',
-        'nfs': 'nfs',
+        'fast_remove_directory_enabled': 'fast_remove_directory_enabled',
+        'writable': 'writable',
+        'hard_limit_enabled': 'hard_limit_enabled',
         'provisioned': 'provisioned',
         'requested_promotion_state': 'requested_promotion_state',
-        'smb': 'smb',
-        'snapshot_directory_enabled': 'snapshot_directory_enabled',
-        'source': 'source',
-        'writable': 'writable',
-        'group_ownership': 'group_ownership'
+        'default_user_quota': 'default_user_quota',
+        'group_ownership': 'group_ownership',
+        'http': 'http',
+        'nfs': 'nfs',
+        'default_group_quota': 'default_group_quota',
+        'snapshot_directory_enabled': 'snapshot_directory_enabled'
     }
 
     required_args = {
@@ -68,66 +68,66 @@ class FileSystemPost(object):
 
     def __init__(
         self,
-        default_group_quota=None,  # type: int
-        default_user_quota=None,  # type: int
-        fast_remove_directory_enabled=None,  # type: bool
-        hard_limit_enabled=None,  # type: bool
-        http=None,  # type: models.Http
+        smb=None,  # type: models.SmbPost
+        source=None,  # type: models.Reference
         multi_protocol=None,  # type: models.MultiProtocolPost
-        nfs=None,  # type: models.Nfs
+        fast_remove_directory_enabled=None,  # type: bool
+        writable=None,  # type: bool
+        hard_limit_enabled=None,  # type: bool
         provisioned=None,  # type: int
         requested_promotion_state=None,  # type: str
-        smb=None,  # type: models.SmbPost
-        snapshot_directory_enabled=None,  # type: bool
-        source=None,  # type: models.Reference
-        writable=None,  # type: bool
+        default_user_quota=None,  # type: int
         group_ownership=None,  # type: str
+        http=None,  # type: models.Http
+        nfs=None,  # type: models.Nfs
+        default_group_quota=None,  # type: int
+        snapshot_directory_enabled=None,  # type: bool
     ):
         """
         Keyword args:
-            default_group_quota (int): The default space quota for a group writing to this file system.
-            default_user_quota (int): The default space quota for a user writing to this file system.
-            fast_remove_directory_enabled (bool): If set to `true`, the file system, when mounted, will contain a directory that can be used for fast removal of other directories. Directories can be moved into the fast remove directory in order to have them deleted, and their space freed, more quickly than a normal removal operation. If not specified, defaults to `false`.
-            hard_limit_enabled (bool): If set to `true`, the file system's size, as defined by `provisioned`, is used as a hard limit quota. If not specified, defaults to `false`.
-            http (Http): HTTP configuration.
-            multi_protocol (MultiProtocolPost): Multi-protocol configuration.
-            nfs (Nfs): NFS configuration.
-            provisioned (int): The provisioned size of the file system, displayed in bytes. If set to an empty string (`\"\"`), the file system is unlimited in size. If not specified, defaults to unlimited.
-            requested_promotion_state (str): Possible values are `promoted` and `demoted`. The `demoted` state is used for replication targets and is only allowed to be set if the file system is in a replica-link relationship. The additional query param `discard-non-snapshotted-data` must be set to `true` when demoting a file system. The default for new file systems is `promoted`.
             smb (SmbPost): SMB configuration.
-            snapshot_directory_enabled (bool): If set to `true`, a hidden .snapshot directory will be present in each directory of the file system when it is mounted. The .snapshot directory allows clients read access to the contents of the snapshots that have been taken of a directory. If set to `false`, the .snapshot directory will not be present in any directories within a mounted file system. If not specified, defaults to `true`.
-            source (Reference): The source snapshot whose data is copied to the file system specified.
-            writable (bool): Whether the file system is writable or not. If `false`, this overrides any protocol or file permission settings and prevents changes. If `true`, then the protocol and file permission settings are evaluated. If not specified, defaults to `true`. Modifiable.
-            group_ownership (str): The group ownership for new files and directories in a file system. Possible values are `creator` and `parent-directory`. If `creator` is selected, the owning group of new files and directories is the primary group of the user who creates them. If `parent-directory` is selected, the owning group is the parent directory group. Note: Existing files and directories are unaffected by this change. If not specified, defaults to `creator`.
+            source (Reference): The source snapshot whose data is copied to the file system specified. 
+            multi_protocol (MultiProtocolPost): Multi-protocol configuration.
+            fast_remove_directory_enabled (bool): If set to `true`, the file system, when mounted, will contain a directory that can be used for fast removal of other directories. Directories can be moved into the fast remove directory in order to have them deleted, and their space freed, more quickly than a normal removal operation. If not specified, defaults to `false`. 
+            writable (bool): Whether the file system is writable or not. If `false`, this overrides any protocol or file permission settings and prevents changes. If `true`, then the protocol and file permission settings are evaluated. If not specified, defaults to `true`. Modifiable. 
+            hard_limit_enabled (bool): If set to `true`, the file system's size, as defined by `provisioned`, is used as a hard limit quota. If not specified, defaults to `false`. 
+            provisioned (int): The provisioned size of the file system, displayed in bytes. If set to an empty string (`\"\"`), the file system is unlimited in size. If not specified, defaults to unlimited. 
+            requested_promotion_state (str): Possible values are `promoted` and `demoted`. The `demoted` state is used for replication targets and is only allowed to be set if the file system is in a replica-link relationship. The additional query param `discard-non-snapshotted-data` must be set to `true` when demoting a file system. The default for new file systems is `promoted`. 
+            default_user_quota (int): The default space quota for a user writing to this file system.
+            group_ownership (str): The group ownership for new files and directories in a file system. Possible values are `creator` and `parent-directory`. If `creator` is selected, the owning group of new files and directories is the primary group of the user who creates them. If `parent-directory` is selected, the owning group is the parent directory group.  Note: Existing files and directories are unaffected by this change. If not specified, defaults to `creator`. 
+            http (Http): HTTP configuration.
+            nfs (Nfs): NFS configuration.
+            default_group_quota (int): The default space quota for a group writing to this file system.
+            snapshot_directory_enabled (bool): If set to `true`, a hidden .snapshot directory will be present in each directory of the file system when it is mounted. The .snapshot directory allows clients read access to the contents of the snapshots that have been taken of a directory. If set to `false`, the .snapshot directory will not be present in any directories within a mounted file system. If not specified, defaults to `true`. 
         """
-        if default_group_quota is not None:
-            self.default_group_quota = default_group_quota
-        if default_user_quota is not None:
-            self.default_user_quota = default_user_quota
-        if fast_remove_directory_enabled is not None:
-            self.fast_remove_directory_enabled = fast_remove_directory_enabled
-        if hard_limit_enabled is not None:
-            self.hard_limit_enabled = hard_limit_enabled
-        if http is not None:
-            self.http = http
+        if smb is not None:
+            self.smb = smb
+        if source is not None:
+            self.source = source
         if multi_protocol is not None:
             self.multi_protocol = multi_protocol
-        if nfs is not None:
-            self.nfs = nfs
+        if fast_remove_directory_enabled is not None:
+            self.fast_remove_directory_enabled = fast_remove_directory_enabled
+        if writable is not None:
+            self.writable = writable
+        if hard_limit_enabled is not None:
+            self.hard_limit_enabled = hard_limit_enabled
         if provisioned is not None:
             self.provisioned = provisioned
         if requested_promotion_state is not None:
             self.requested_promotion_state = requested_promotion_state
-        if smb is not None:
-            self.smb = smb
-        if snapshot_directory_enabled is not None:
-            self.snapshot_directory_enabled = snapshot_directory_enabled
-        if source is not None:
-            self.source = source
-        if writable is not None:
-            self.writable = writable
+        if default_user_quota is not None:
+            self.default_user_quota = default_user_quota
         if group_ownership is not None:
             self.group_ownership = group_ownership
+        if http is not None:
+            self.http = http
+        if nfs is not None:
+            self.nfs = nfs
+        if default_group_quota is not None:
+            self.default_group_quota = default_group_quota
+        if snapshot_directory_enabled is not None:
+            self.snapshot_directory_enabled = snapshot_directory_enabled
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

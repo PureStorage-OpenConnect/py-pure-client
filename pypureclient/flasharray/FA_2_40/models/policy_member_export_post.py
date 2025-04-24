@@ -46,7 +46,7 @@ class PolicyMemberExportPost(object):
     ):
         """
         Keyword args:
-            members (list[PolicymemberexportpostMembers]): A list of directories to which the export policy may be applied.
+            members (list[PolicymemberexportpostMembers]): A list of directories to which the export policy may be applied. 
         """
         if members is not None:
             self.members = members

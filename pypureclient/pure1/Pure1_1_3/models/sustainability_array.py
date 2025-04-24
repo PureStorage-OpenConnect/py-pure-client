@@ -3,7 +3,7 @@
 """
     Pure1 Public REST API
 
-    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)  The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
+    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)   The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
 
     OpenAPI spec version: 1.3
     
@@ -31,20 +31,20 @@ class SustainabilityArray(object):
     """
     swagger_types = {
         'as_of': 'int',
-        'id': 'str',
         'name': 'str',
-        'install_address': 'InstallAddress',
+        'id': 'str',
+        'assessment': 'SustainabilityAssessment',
         'reporting_status': 'str',
-        'assessment': 'SustainabilityAssessment'
+        'install_address': 'InstallAddress'
     }
 
     attribute_map = {
         'as_of': '_as_of',
-        'id': 'id',
         'name': 'name',
-        'install_address': 'install_address',
+        'id': 'id',
+        'assessment': 'assessment',
         'reporting_status': 'reporting_status',
-        'assessment': 'assessment'
+        'install_address': 'install_address'
     }
 
     required_args = {
@@ -53,33 +53,33 @@ class SustainabilityArray(object):
     def __init__(
         self,
         as_of=None,  # type: int
-        id=None,  # type: str
         name=None,  # type: str
-        install_address=None,  # type: models.InstallAddress
-        reporting_status=None,  # type: str
+        id=None,  # type: str
         assessment=None,  # type: models.SustainabilityAssessment
+        reporting_status=None,  # type: str
+        install_address=None,  # type: models.InstallAddress
     ):
         """
         Keyword args:
             as_of (int): The freshness of the data (timestamp in millis since epoch).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
             name (str): A non-modifiable, locally unique name chosen by the system.
-            install_address (InstallAddress): The address where the array is installed. This address is also where replacement parts will be shipped to.
-            reporting_status (str): Enum value that describes what is the status of the latest assessment. Valid values include: not_enough_data - There was not enough data   to calculate assessment level of the appliance. unsupported_purity_version - The appliance is running   an unsupported version of Purity operating system.   It is an old Purity version which does not provide   enough data for assessing the sustainability metrics. not_phoning_home - The appliance has not phoned home   for more than 7 days so the assessment level was not calculated assessment_ready - Assessment is ready and it is available under `assessment` field.
+            id (str): A non-modifiable, globally unique ID chosen by the system.
             assessment (SustainabilityAssessment)
+            reporting_status (str): Enum value that describes what is the status of the latest assessment. Valid values include: not_enough_data - There was not enough data   to calculate assessment level of the appliance. unsupported_purity_version - The appliance is running   an unsupported version of Purity operating system.   It is an old Purity version which does not provide   enough data for assessing the sustainability metrics. not_phoning_home - The appliance has not phoned home   for more than 7 days so the assessment level was not calculated assessment_ready - Assessment is ready and it is available under `assessment` field. 
+            install_address (InstallAddress): The address where the array is installed. This address is also where replacement parts will be shipped to. 
         """
         if as_of is not None:
             self.as_of = as_of
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
-        if install_address is not None:
-            self.install_address = install_address
-        if reporting_status is not None:
-            self.reporting_status = reporting_status
+        if id is not None:
+            self.id = id
         if assessment is not None:
             self.assessment = assessment
+        if reporting_status is not None:
+            self.reporting_status = reporting_status
+        if install_address is not None:
+            self.install_address = install_address
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

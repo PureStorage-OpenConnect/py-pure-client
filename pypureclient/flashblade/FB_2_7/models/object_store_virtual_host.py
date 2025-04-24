@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.7, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.7, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.7
     
@@ -49,8 +49,8 @@ class ObjectStoreVirtualHost(object):
     ):
         """
         Keyword args:
-            name (str): A hostname by which the array can be addressed for virtual hosted-style S3 requests.
-            id (str): A non-modifiable, globally unique ID chosen by the system.
+            name (str): A hostname by which the array can be addressed for virtual hosted-style S3 requests. 
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
         """
         if name is not None:
             self.name = name

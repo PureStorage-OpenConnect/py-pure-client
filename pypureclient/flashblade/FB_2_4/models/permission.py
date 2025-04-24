@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.4, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.4, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.4
     
@@ -30,13 +30,13 @@ class Permission(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'action': 'str',
-        'resource_type': 'str'
+        'resource_type': 'str',
+        'action': 'str'
     }
 
     attribute_map = {
-        'action': 'action',
-        'resource_type': 'resource_type'
+        'resource_type': 'resource_type',
+        'action': 'action'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class Permission(object):
 
     def __init__(
         self,
-        action=None,  # type: str
         resource_type=None,  # type: str
+        action=None,  # type: str
     ):
         """
         Keyword args:
-            action (str): The `action` that the user can perform on the `resource_type`. Typical values include `get`, `patch`, `post`, and `delete`. Values can also be finer grained.
             resource_type (str): The `resource_type` that this `permission` affects.
+            action (str): The `action` that the user can perform on the `resource_type`. Typical values include `get`, `patch`, `post`, and `delete`. Values can also be finer grained. 
         """
-        if action is not None:
-            self.action = action
         if resource_type is not None:
             self.resource_type = resource_type
+        if action is not None:
+            self.action = action
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

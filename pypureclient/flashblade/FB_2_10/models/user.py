@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.10, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.10, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.10
     
@@ -30,13 +30,13 @@ class User(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'int',
-        'name': 'str'
+        'name': 'str',
+        'id': 'int'
     }
 
     attribute_map = {
-        'id': 'id',
-        'name': 'name'
+        'name': 'name',
+        'id': 'id'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class User(object):
 
     def __init__(
         self,
-        id=None,  # type: int
         name=None,  # type: str
+        id=None,  # type: int
     ):
         """
         Keyword args:
+            name (str): The user name that represents the user's identity, and which resolves to the user's id in a configured directory service. 
             id (int): The numeric user id that represents the user's identity in a POSIX system.
-            name (str): The user name that represents the user's identity, and which resolves to the user's id in a configured directory service.
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

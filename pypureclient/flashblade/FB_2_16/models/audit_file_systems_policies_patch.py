@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.16
     
@@ -32,25 +32,25 @@ class AuditFileSystemsPoliciesPatch(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
-        'enabled': 'bool',
-        'is_local': 'bool',
-        'location': 'FixedReference',
         'policy_type': 'str',
+        'location': 'FixedReference',
+        'is_local': 'bool',
+        'enabled': 'bool',
         'log_targets': 'list[Reference]',
-        'add_log_targets': 'list[Reference]',
-        'remove_log_targets': 'list[Reference]'
+        'remove_log_targets': 'list[Reference]',
+        'add_log_targets': 'list[Reference]'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
-        'enabled': 'enabled',
-        'is_local': 'is_local',
-        'location': 'location',
         'policy_type': 'policy_type',
+        'location': 'location',
+        'is_local': 'is_local',
+        'enabled': 'enabled',
         'log_targets': 'log_targets',
-        'add_log_targets': 'add_log_targets',
-        'remove_log_targets': 'remove_log_targets'
+        'remove_log_targets': 'remove_log_targets',
+        'add_log_targets': 'add_log_targets'
     }
 
     required_args = {
@@ -60,44 +60,44 @@ class AuditFileSystemsPoliciesPatch(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
-        enabled=None,  # type: bool
-        is_local=None,  # type: bool
-        location=None,  # type: models.FixedReference
         policy_type=None,  # type: str
+        location=None,  # type: models.FixedReference
+        is_local=None,  # type: bool
+        enabled=None,  # type: bool
         log_targets=None,  # type: List[models.Reference]
-        add_log_targets=None,  # type: List[models.Reference]
         remove_log_targets=None,  # type: List[models.Reference]
+        add_log_targets=None,  # type: List[models.Reference]
     ):
         """
         Keyword args:
-            name (str): A name chosen by the user. Can be changed. Must be locally unique.
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            enabled (bool): If `true`, the policy is enabled. If not specified, defaults to `true`.
-            is_local (bool): Whether the policy is defined on the local array.
+            name (str): A name chosen by the user. Can be changed. Must be locally unique. 
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            policy_type (str): Type of the policy. Valid values include `alert`, `audit`, `bucket-access`, `cross-origin-resource-sharing`, `network-access`, `nfs`, `object-access`, `smb-client`, `smb-share`, `snapshot`, `ssh-certificate-authority`, and `worm-data`. 
             location (FixedReference): Reference to the array where the policy is defined.
-            policy_type (str): Type of the policy. Valid values include `alert`, `audit`, `bucket-access`, `cross-origin-resource-sharing`, `network-access`, `nfs`, `object-access`, `smb-client`, `smb-share`, `snapshot`, `ssh-certificate-authority`, and `worm-data`.
-            log_targets (list[Reference]): List of targets which will be utilized for audit log storage. These may either be file system targets or remote syslog server targets.
-            add_log_targets (list[Reference]): The log targets which will be added to the existing `log_targets` list for the audit policy. These new log targets will be appended to the end of the existing list. The `add_log_targets` field can not be used with `log_targets` field.
-            remove_log_targets (list[Reference]): The log targets which will be removed from the existing `log_targets` list for the audit policy. The `remove_log_targets` field can not be used with `log_targets` field.
+            is_local (bool): Whether the policy is defined on the local array.
+            enabled (bool): If `true`, the policy is enabled. If not specified, defaults to `true`. 
+            log_targets (list[Reference]): List of targets which will be utilized for audit log storage. These may either be file system targets or remote syslog server targets. 
+            remove_log_targets (list[Reference]): The log targets which will be removed from the existing `log_targets` list for the audit policy. The `remove_log_targets` field can not be used with `log_targets` field. 
+            add_log_targets (list[Reference]): The log targets which will be added to the existing `log_targets` list for the audit policy. These new log targets will be appended to the end of the existing list. The `add_log_targets` field can not be used with `log_targets` field. 
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
-        if enabled is not None:
-            self.enabled = enabled
-        if is_local is not None:
-            self.is_local = is_local
-        if location is not None:
-            self.location = location
         if policy_type is not None:
             self.policy_type = policy_type
+        if location is not None:
+            self.location = location
+        if is_local is not None:
+            self.is_local = is_local
+        if enabled is not None:
+            self.enabled = enabled
         if log_targets is not None:
             self.log_targets = log_targets
-        if add_log_targets is not None:
-            self.add_log_targets = add_log_targets
         if remove_log_targets is not None:
             self.remove_log_targets = remove_log_targets
+        if add_log_targets is not None:
+            self.add_log_targets = add_log_targets
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

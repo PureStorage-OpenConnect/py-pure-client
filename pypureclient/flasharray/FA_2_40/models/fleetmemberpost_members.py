@@ -50,7 +50,7 @@ class FleetmemberpostMembers(object):
         """
         Keyword args:
             member (FleetmemberpostMember)
-            key (str): Provide the `fleet key` generated from any array in the fleet.
+            key (str): Provide the `fleet key` generated from any array in the fleet. 
         """
         if member is not None:
             self.member = member

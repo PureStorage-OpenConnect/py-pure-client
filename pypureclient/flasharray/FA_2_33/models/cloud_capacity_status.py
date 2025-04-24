@@ -30,8 +30,8 @@ class CloudCapacityStatus(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
+        'id': 'str',
         'current_capacity': 'int',
         'details': 'str',
         'requested_capacity': 'int',
@@ -39,8 +39,8 @@ class CloudCapacityStatus(object):
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
+        'id': 'id',
         'current_capacity': 'current_capacity',
         'details': 'details',
         'requested_capacity': 'requested_capacity',
@@ -52,8 +52,8 @@ class CloudCapacityStatus(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
+        id=None,  # type: str
         current_capacity=None,  # type: int
         details=None,  # type: str
         requested_capacity=None,  # type: int
@@ -61,17 +61,17 @@ class CloudCapacityStatus(object):
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            name (str): A locally unique, system-generated name. The name cannot be modified.
-            current_capacity (int): The current raw capacity of the CBS array in bytes.
-            details (str): Details about the capacity update. This field can contain error details when status is `failed` or progress information when status is `expanding`. For status `idle` the value is null.
-            requested_capacity (int): The requested raw capacity of the CBS array in bytes. When the capacity update process finishes, it should be the same as `current_capacity`.
-            status (str): The status of the capacity update process. Can be one of `idle`, `failed`, `expanding`.
+            name (str): A locally unique, system-generated name. The name cannot be modified. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource. 
+            current_capacity (int): The current raw capacity of the CBS array in bytes. 
+            details (str): Details about the capacity update. This field can contain error details when status is `failed` or progress information when status is `expanding`. For status `idle` the value is null. 
+            requested_capacity (int): The requested raw capacity of the CBS array in bytes. When the capacity update process finishes, it should be the same as `current_capacity`. 
+            status (str): The status of the capacity update process. Can be one of `idle`, `failed`, `expanding`. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
+        if id is not None:
+            self.id = id
         if current_capacity is not None:
             self.current_capacity = current_capacity
         if details is not None:

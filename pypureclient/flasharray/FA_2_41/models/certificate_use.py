@@ -30,17 +30,17 @@ class CertificateUse(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'id': 'str',
         'name': 'str',
-        'group': 'FixedReferenceWithType',
-        'use': 'FixedReferenceWithType'
+        'id': 'str',
+        'use': 'FixedReferenceWithType',
+        'group': 'FixedReferenceWithType'
     }
 
     attribute_map = {
-        'id': 'id',
         'name': 'name',
-        'group': 'group',
-        'use': 'use'
+        'id': 'id',
+        'use': 'use',
+        'group': 'group'
     }
 
     required_args = {
@@ -48,26 +48,26 @@ class CertificateUse(object):
 
     def __init__(
         self,
-        id=None,  # type: str
         name=None,  # type: str
-        group=None,  # type: models.FixedReferenceWithType
+        id=None,  # type: str
         use=None,  # type: models.FixedReferenceWithType
+        group=None,  # type: models.FixedReferenceWithType
     ):
         """
         Keyword args:
-            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
-            name (str): A locally unique, system-generated name. The name cannot be modified.
-            group (FixedReferenceWithType): A reference to the certificate group that is being used, if any, where this certificate is a member of the certificate-group. Returns `null` if the referenced user object is not associated with a group and is directly using this certificate.
+            name (str): A locally unique, system-generated name. The name cannot be modified. 
+            id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource. 
             use (FixedReferenceWithType): A reference to an object using this certificate.
+            group (FixedReferenceWithType): A reference to the certificate group that is being used, if any, where this certificate is a member of the certificate-group. Returns `null` if the referenced user object is not associated with a group and is directly using this certificate. 
         """
-        if id is not None:
-            self.id = id
         if name is not None:
             self.name = name
-        if group is not None:
-            self.group = group
+        if id is not None:
+            self.id = id
         if use is not None:
             self.use = use
+        if group is not None:
+            self.group = group
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

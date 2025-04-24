@@ -46,7 +46,7 @@ class PolicynfspostPolicyMapping(object):
     ):
         """
         Keyword args:
-            mapping (str): The mapping of this policy. Valid values are `connected` and `disconnected`.
+            mapping (str): The mapping of this policy. Valid values are `connected` and `disconnected`. 
         """
         if mapping is not None:
             self.mapping = mapping

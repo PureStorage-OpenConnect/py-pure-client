@@ -50,7 +50,7 @@ class ArrayEncryption(object):
         """
         Keyword args:
             data_at_rest (ArrayencryptionDataAtRest)
-            module_version (str): The version of the Purity encryption module installed on the array. Security certifications are carried out on a per-version basis. On non-encrypt builds, an encryption module may be installed without being enabled. Values include `FA-1.0`, `FA-1.1`, `FA-1.2`, `FA-1.3`, and so on.
+            module_version (str): The version of the Purity encryption module installed on the array. Security certifications are carried out on a per-version basis. On non-encrypt builds, an encryption module may be installed without being enabled. Values include `FA-1.0`, `FA-1.1`, `FA-1.2`, `FA-1.3`, and so on. 
         """
         if data_at_rest is not None:
             self.data_at_rest = data_at_rest

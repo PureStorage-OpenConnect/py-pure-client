@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.6, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.6, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.6
     
@@ -32,26 +32,26 @@ class FileSystemSnapshotTransfer(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
-        'completed': 'int',
         'data_transferred': 'int',
-        'direction': 'Direction',
         'progress': 'float',
+        'started': 'int',
+        'completed': 'int',
         'remote': 'FixedReferenceNoResourceType',
         'remote_snapshot': 'FixedReferenceNoResourceType',
-        'started': 'int',
+        'direction': 'Direction',
         'status': 'str'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
-        'completed': 'completed',
         'data_transferred': 'data_transferred',
-        'direction': 'direction',
         'progress': 'progress',
+        'started': 'started',
+        'completed': 'completed',
         'remote': 'remote',
         'remote_snapshot': 'remote_snapshot',
-        'started': 'started',
+        'direction': 'direction',
         'status': 'status'
     }
 
@@ -62,46 +62,46 @@ class FileSystemSnapshotTransfer(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
-        completed=None,  # type: int
         data_transferred=None,  # type: int
-        direction=None,  # type: models.Direction
         progress=None,  # type: float
+        started=None,  # type: int
+        completed=None,  # type: int
         remote=None,  # type: models.FixedReferenceNoResourceType
         remote_snapshot=None,  # type: models.FixedReferenceNoResourceType
-        started=None,  # type: int
+        direction=None,  # type: models.Direction
         status=None,  # type: str
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            completed (int): A timestamp at which the replication of the snapshot completed.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
             data_transferred (int): The amount of data transferred to the target, in bytes.
+            progress (float): A percentage that indicates how much progress has been made on the transfer. 
+            started (int): A timestamp at which the replication of the snapshot started. 
+            completed (int): A timestamp at which the replication of the snapshot completed. 
+            remote (FixedReferenceNoResourceType): The array where the remote file system snapshot is located. 
+            remote_snapshot (FixedReferenceNoResourceType): A reference to the associated remote file system snapshot. 
             direction (Direction)
-            progress (float): A percentage that indicates how much progress has been made on the transfer.
-            remote (FixedReferenceNoResourceType): The array where the remote file system snapshot is located.
-            remote_snapshot (FixedReferenceNoResourceType): A reference to the associated remote file system snapshot.
-            started (int): A timestamp at which the replication of the snapshot started.
-            status (str): The status of current replication. Valid values are `completed`, `in-progress`, and `queued`.
+            status (str): The status of current replication. Valid values are `completed`, `in-progress`, and `queued`. 
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
-        if completed is not None:
-            self.completed = completed
         if data_transferred is not None:
             self.data_transferred = data_transferred
-        if direction is not None:
-            self.direction = direction
         if progress is not None:
             self.progress = progress
+        if started is not None:
+            self.started = started
+        if completed is not None:
+            self.completed = completed
         if remote is not None:
             self.remote = remote
         if remote_snapshot is not None:
             self.remote_snapshot = remote_snapshot
-        if started is not None:
-            self.started = started
+        if direction is not None:
+            self.direction = direction
         if status is not None:
             self.status = status
 

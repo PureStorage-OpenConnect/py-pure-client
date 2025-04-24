@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.14, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.14, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.14
     
@@ -30,13 +30,13 @@ class PublicAccessConfig(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'block_new_public_policies': 'bool',
-        'block_public_access': 'bool'
+        'block_public_access': 'bool',
+        'block_new_public_policies': 'bool'
     }
 
     attribute_map = {
-        'block_new_public_policies': 'block_new_public_policies',
-        'block_public_access': 'block_public_access'
+        'block_public_access': 'block_public_access',
+        'block_new_public_policies': 'block_new_public_policies'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class PublicAccessConfig(object):
 
     def __init__(
         self,
-        block_new_public_policies=None,  # type: bool
         block_public_access=None,  # type: bool
+        block_new_public_policies=None,  # type: bool
     ):
         """
         Keyword args:
-            block_new_public_policies (bool): If set to `true`, adding bucket policies that grant public access to a bucket is not allowed.
-            block_public_access (bool): If set to `true`, access to a bucket with a public policy is restricted to only authenticated users within the account that bucket belongs to.
+            block_public_access (bool): If set to `true`, access to a bucket with a public policy is restricted to only authenticated users within the account that bucket belongs to. 
+            block_new_public_policies (bool): If set to `true`, adding bucket policies that grant public access to a bucket is not allowed. 
         """
-        if block_new_public_policies is not None:
-            self.block_new_public_policies = block_new_public_policies
         if block_public_access is not None:
             self.block_public_access = block_public_access
+        if block_new_public_policies is not None:
+            self.block_new_public_policies = block_new_public_policies
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

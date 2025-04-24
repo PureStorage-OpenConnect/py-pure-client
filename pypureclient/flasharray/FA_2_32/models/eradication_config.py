@@ -30,15 +30,15 @@ class EradicationConfig(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'disabled_delay': 'int',
         'eradication_delay': 'int',
+        'disabled_delay': 'int',
         'enabled_delay': 'int',
         'manual_eradication': 'str'
     }
 
     attribute_map = {
-        'disabled_delay': 'disabled_delay',
         'eradication_delay': 'eradication_delay',
+        'disabled_delay': 'disabled_delay',
         'enabled_delay': 'enabled_delay',
         'manual_eradication': 'manual_eradication'
     }
@@ -48,22 +48,22 @@ class EradicationConfig(object):
 
     def __init__(
         self,
-        disabled_delay=None,  # type: int
         eradication_delay=None,  # type: int
+        disabled_delay=None,  # type: int
         enabled_delay=None,  # type: int
         manual_eradication=None,  # type: str
     ):
         """
         Keyword args:
-            disabled_delay (int): The eradication delay in milliseconds for destroyed objects that cannot be manually eradicated. Destroyed objects that cannot be manually eradicated will be automatically eradicated after the configured delay time passes. Valid values are `86400000` and any multiple of `86400000` in the range of `86400000` and `2592000000`. Any other values are rounded down to the nearest multiple of `86400000`.
-            eradication_delay (int): Eradication delay in milliseconds for all destroyed objects. Automatically eradicate destroyed objects after the configured delay time passes. Updating this field will update both `eradication_disabled_delay` and `eradication_enabled_delay` if both `eradication_disabled_delay` and `eradication_enabled_delay` have the same value. If `eradication_disabled_delay` and `eradication_enabled_delay` have different values, trying to configure `eradication_delay` will result in an error. This field has been deprecated and will be removed in a future REST version. Valid values are `86400000` and any multiple of `86400000` in the range of `86400000` and `2592000000`. Any other values are rounded down to the nearest multiple of `86400000`.
-            enabled_delay (int): The eradication delay in milliseconds for destroyed objects that can be manually eradicated. Destroyed objects that can be manually eradicated will be automatically eradicated after the configured delay time passes. Valid values are `86400000` and any multiple of `86400000` in the range of `86400000` and `2592000000`. Any other values are rounded down to the nearest multiple of `86400000`.
-            manual_eradication (str): Manual eradication status applied on the array level. If status is `all-disabled`, you cannot eradicate objects, files, and directories. If at least one local object has `manual_eradication` disabled, then the status will be `partially-disabled`. Values include `all-disabled`, `partially-disabled`, and `all-enabled`. If the user does not have sufficient access, this field will return `null`.
+            eradication_delay (int): Eradication delay in milliseconds for all destroyed objects. Automatically eradicate destroyed objects after the configured delay time passes. Updating this field will update both `eradication_disabled_delay` and `eradication_enabled_delay` if both `eradication_disabled_delay` and `eradication_enabled_delay` have the same value.  If `eradication_disabled_delay` and `eradication_enabled_delay` have different values, trying to configure `eradication_delay` will result in an error. This field has been deprecated and will be removed in a future REST version. Valid values are `86400000` and any multiple of `86400000` in the range of `86400000` and `2592000000`. Any other values are rounded down to the nearest multiple of `86400000`. 
+            disabled_delay (int): The eradication delay in milliseconds for destroyed objects that cannot be manually eradicated. Destroyed objects that cannot be manually eradicated will be automatically  eradicated after the configured delay time passes. Valid values are `86400000` and any multiple of `86400000` in the range of `86400000` and `2592000000`. Any other values are rounded down to the nearest multiple of `86400000`. 
+            enabled_delay (int): The eradication delay in milliseconds for destroyed objects that can be manually eradicated. Destroyed objects that can be manually eradicated will be automatically eradicated after the configured delay time passes. Valid values are `86400000` and any multiple of `86400000` in the range of `86400000` and `2592000000`. Any other values are rounded down to the nearest multiple of `86400000`. 
+            manual_eradication (str): Manual eradication status applied on the array level. If status is `all-disabled`, you cannot eradicate objects, files, and directories. If at least one local object has `manual_eradication` disabled, then the status will be `partially-disabled`. Values include `all-disabled`, `partially-disabled`, and `all-enabled`. If the user does not have sufficient access, this field will return `null`. 
         """
-        if disabled_delay is not None:
-            self.disabled_delay = disabled_delay
         if eradication_delay is not None:
             self.eradication_delay = eradication_delay
+        if disabled_delay is not None:
+            self.disabled_delay = disabled_delay
         if enabled_delay is not None:
             self.enabled_delay = enabled_delay
         if manual_eradication is not None:

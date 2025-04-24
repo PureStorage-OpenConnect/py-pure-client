@@ -31,16 +31,16 @@ class Dns(object):
     """
     swagger_types = {
         'name': 'str',
-        'domain': 'str',
         'nameservers': 'list[str]',
+        'domain': 'str',
         'services': 'list[str]',
         'source': 'ReferenceNoId'
     }
 
     attribute_map = {
         'name': 'name',
-        'domain': 'domain',
         'nameservers': 'nameservers',
+        'domain': 'domain',
         'services': 'services',
         'source': 'source'
     }
@@ -51,25 +51,25 @@ class Dns(object):
     def __init__(
         self,
         name=None,  # type: str
-        domain=None,  # type: str
         nameservers=None,  # type: List[str]
+        domain=None,  # type: str
         services=None,  # type: List[str]
         source=None,  # type: models.ReferenceNoId
     ):
         """
         Keyword args:
-            name (str): A user-specified name. The name must be locally unique and can be changed.
-            domain (str): The domain suffix to be appended by the appliance when performing DNS lookups.
-            nameservers (list[str]): The list of DNS server IP addresses.
-            services (list[str]): The list of services utilizing the DNS configuration.
-            source (ReferenceNoId): The network interface used for communication with the DNS server.
+            name (str): A user-specified name. The name must be locally unique and can be changed. 
+            nameservers (list[str]): The list of DNS server IP addresses. 
+            domain (str): The domain suffix to be appended by the appliance when performing DNS lookups. 
+            services (list[str]): The list of services utilizing the DNS configuration. 
+            source (ReferenceNoId): The network interface used for communication with the DNS server. 
         """
         if name is not None:
             self.name = name
-        if domain is not None:
-            self.domain = domain
         if nameservers is not None:
             self.nameservers = nameservers
+        if domain is not None:
+            self.domain = domain
         if services is not None:
             self.services = services
         if source is not None:

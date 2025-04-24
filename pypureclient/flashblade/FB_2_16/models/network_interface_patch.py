@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.16, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.16
     
@@ -30,15 +30,15 @@ class NetworkInterfacePatch(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'server': 'Reference',
         'address': 'str',
-        'services': 'list[str]',
-        'server': 'Reference'
+        'services': 'list[str]'
     }
 
     attribute_map = {
+        'server': 'server',
         'address': 'address',
-        'services': 'services',
-        'server': 'server'
+        'services': 'services'
     }
 
     required_args = {
@@ -46,22 +46,22 @@ class NetworkInterfacePatch(object):
 
     def __init__(
         self,
+        server=None,  # type: models.Reference
         address=None,  # type: str
         services=None,  # type: List[str]
-        server=None,  # type: models.Reference
     ):
         """
         Keyword args:
-            address (str): The IPv4 or IPv6 address to be associated with the specified network interface.
+            server (Reference): The server that is using this interface for data ingress. Will be null if `services` does not include `data`. Defaults to _array_server when `services` does include `data`. 
+            address (str): The IPv4 or IPv6 address to be associated with the specified network interface. 
             services (list[str]): Services and protocols that are enabled on the interface.
-            server (Reference): The server that is using this interface for data ingress. Will be null if `services` does not include `data`. Defaults to _array_server when `services` does include `data`.
         """
+        if server is not None:
+            self.server = server
         if address is not None:
             self.address = address
         if services is not None:
             self.services = services
-        if server is not None:
-            self.server = server
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

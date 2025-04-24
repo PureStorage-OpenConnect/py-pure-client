@@ -319,8 +319,8 @@ class Client(object):
         filter=None,  # type: str
         limit=None,  # type: int
         offset=None,  # type: int
-        resource_ids=None,  # type: List[str]
         resource_fqdns=None,  # type: List[str]
+        resource_ids=None,  # type: List[str]
         resource_names=None,  # type: List[str]
         sort=None,  # type: List[str]
         async_req=False,  # type: bool
@@ -348,12 +348,12 @@ class Client(object):
                 1000.
             offset (int, optional):
                 The offset of the first resource to return from a collection.
-            resource_ids (list[str], optional):
-                A list of resource IDs. If there is not at least one resource that matches each
-                `resource_id` element, an error is returned.
             resource_fqdns (list[str], optional):
                 A list of resource FQDNs. If there is not at least one resource that matches
                 each `resource_fqdn` element, an error is returned.
+            resource_ids (list[str], optional):
+                A list of resource IDs. If there is not at least one resource that matches each
+                `resource_id` element, an error is returned.
             resource_names (list[str], optional):
                 A list of resource names. If there is not at least one resource that matches
                 each `resource_name` element, an error is returned.
@@ -385,8 +385,8 @@ class Client(object):
             filter=filter,
             limit=limit,
             offset=offset,
-            resource_ids=resource_ids,
             resource_fqdns=resource_fqdns,
+            resource_ids=resource_ids,
             resource_names=resource_names,
             sort=sort,
             async_req=async_req,
@@ -1454,9 +1454,9 @@ class Client(object):
         limit=None,  # type: int
         member_ids=None,  # type: List[str]
         member_names=None,  # type: List[str]
+        offset=None,  # type: int
         policy_ids=None,  # type: List[str]
         policy_names=None,  # type: List[str]
-        offset=None,  # type: int
         sort=None,  # type: List[str]
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
@@ -1490,14 +1490,14 @@ class Client(object):
             member_names (list[str], optional):
                 A list of member names. If there is not at least one resource that matches each
                 `member_name` element, an error is returned.
+            offset (int, optional):
+                The offset of the first resource to return from a collection.
             policy_ids (list[str], optional):
                 A list of policy IDs. If there is not at least one resource that matches each
                 `policy_id` element, an error is returned.
             policy_names (list[str], optional):
                 A list of policy names. If there is not at least one resource that matches each
                 `policy_name` element, an error is returned.
-            offset (int, optional):
-                The offset of the first resource to return from a collection.
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
             async_req (bool, optional):
@@ -1527,9 +1527,9 @@ class Client(object):
             limit=limit,
             member_ids=member_ids,
             member_names=member_names,
+            offset=offset,
             policy_ids=policy_ids,
             policy_names=policy_names,
-            offset=offset,
             sort=sort,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
@@ -1651,9 +1651,9 @@ class Client(object):
         limit=None,  # type: int
         member_ids=None,  # type: List[str]
         member_names=None,  # type: List[str]
+        offset=None,  # type: int
         policy_ids=None,  # type: List[str]
         policy_names=None,  # type: List[str]
-        offset=None,  # type: int
         sort=None,  # type: List[str]
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
@@ -1686,14 +1686,14 @@ class Client(object):
             member_names (list[str], optional):
                 A list of member names. If there is not at least one resource that matches each
                 `member_name` element, an error is returned.
+            offset (int, optional):
+                The offset of the first resource to return from a collection.
             policy_ids (list[str], optional):
                 A list of policy IDs. If there is not at least one resource that matches each
                 `policy_id` element, an error is returned.
             policy_names (list[str], optional):
                 A list of policy names. If there is not at least one resource that matches each
                 `policy_name` element, an error is returned.
-            offset (int, optional):
-                The offset of the first resource to return from a collection.
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
             async_req (bool, optional):
@@ -1723,9 +1723,9 @@ class Client(object):
             limit=limit,
             member_ids=member_ids,
             member_names=member_names,
+            offset=offset,
             policy_ids=policy_ids,
             policy_names=policy_names,
-            offset=offset,
             sort=sort,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
@@ -1833,9 +1833,9 @@ class Client(object):
         limit=None,  # type: int
         member_ids=None,  # type: List[str]
         member_names=None,  # type: List[str]
+        offset=None,  # type: int
         policy_ids=None,  # type: List[str]
         policy_names=None,  # type: List[str]
-        offset=None,  # type: int
         sort=None,  # type: List[str]
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
@@ -1868,14 +1868,14 @@ class Client(object):
             member_names (list[str], optional):
                 A list of member names. If there is not at least one resource that matches each
                 `member_name` element, an error is returned.
+            offset (int, optional):
+                The offset of the first resource to return from a collection.
             policy_ids (list[str], optional):
                 A list of policy IDs. If there is not at least one resource that matches each
                 `policy_id` element, an error is returned.
             policy_names (list[str], optional):
                 A list of policy names. If there is not at least one resource that matches each
                 `policy_name` element, an error is returned.
-            offset (int, optional):
-                The offset of the first resource to return from a collection.
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
             async_req (bool, optional):
@@ -1905,9 +1905,9 @@ class Client(object):
             limit=limit,
             member_ids=member_ids,
             member_names=member_names,
+            offset=offset,
             policy_ids=policy_ids,
             policy_names=policy_names,
-            offset=offset,
             sort=sort,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
@@ -2099,8 +2099,8 @@ class Client(object):
         ids=None,  # type: List[str]
         limit=None,  # type: int
         offset=None,  # type: int
-        sort=None,  # type: List[str]
         partner_purchase_orders=None,  # type: List[str]
+        sort=None,  # type: List[str]
         subscription_ids=None,  # type: List[str]
         subscription_names=None,  # type: List[str]
         async_req=False,  # type: bool
@@ -2133,11 +2133,11 @@ class Client(object):
                 1000.
             offset (int, optional):
                 The offset of the first resource to return from a collection.
-            sort (list[Property], optional):
-                Sort the response by the specified Properties. Can also be a single element.
             partner_purchase_orders (list[str], optional):
                 A list of partner purchase order numbers. If there is not at least one resource
                 that matches each `partner_purchase_order` element, an error is returned.
+            sort (list[Property], optional):
+                Sort the response by the specified Properties. Can also be a single element.
             subscription_ids (list[str], optional):
                 A list of subscription IDs. If there is not at least one resource that matches
                 each `subscription.id` element, an error is returned.
@@ -2171,8 +2171,8 @@ class Client(object):
             ids=ids,
             limit=limit,
             offset=offset,
-            sort=sort,
             partner_purchase_orders=partner_purchase_orders,
+            sort=sort,
             subscription_ids=subscription_ids,
             subscription_names=subscription_names,
             async_req=async_req,
@@ -2788,9 +2788,9 @@ class Client(object):
         limit=None,  # type: int
         member_ids=None,  # type: List[str]
         member_names=None,  # type: List[str]
+        offset=None,  # type: int
         policy_ids=None,  # type: List[str]
         policy_names=None,  # type: List[str]
-        offset=None,  # type: int
         sort=None,  # type: List[str]
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
@@ -2824,14 +2824,14 @@ class Client(object):
             member_names (list[str], optional):
                 A list of member names. If there is not at least one resource that matches each
                 `member_name` element, an error is returned.
+            offset (int, optional):
+                The offset of the first resource to return from a collection.
             policy_ids (list[str], optional):
                 A list of policy IDs. If there is not at least one resource that matches each
                 `policy_id` element, an error is returned.
             policy_names (list[str], optional):
                 A list of policy names. If there is not at least one resource that matches each
                 `policy_name` element, an error is returned.
-            offset (int, optional):
-                The offset of the first resource to return from a collection.
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
             async_req (bool, optional):
@@ -2861,9 +2861,9 @@ class Client(object):
             limit=limit,
             member_ids=member_ids,
             member_names=member_names,
+            offset=offset,
             policy_ids=policy_ids,
             policy_names=policy_names,
-            offset=offset,
             sort=sort,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
@@ -2887,9 +2887,9 @@ class Client(object):
         limit=None,  # type: int
         member_ids=None,  # type: List[str]
         member_names=None,  # type: List[str]
+        offset=None,  # type: int
         policy_ids=None,  # type: List[str]
         policy_names=None,  # type: List[str]
-        offset=None,  # type: int
         sort=None,  # type: List[str]
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
@@ -2923,14 +2923,14 @@ class Client(object):
             member_names (list[str], optional):
                 A list of member names. If there is not at least one resource that matches each
                 `member_name` element, an error is returned.
+            offset (int, optional):
+                The offset of the first resource to return from a collection.
             policy_ids (list[str], optional):
                 A list of policy IDs. If there is not at least one resource that matches each
                 `policy_id` element, an error is returned.
             policy_names (list[str], optional):
                 A list of policy names. If there is not at least one resource that matches each
                 `policy_name` element, an error is returned.
-            offset (int, optional):
-                The offset of the first resource to return from a collection.
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
             async_req (bool, optional):
@@ -2960,9 +2960,9 @@ class Client(object):
             limit=limit,
             member_ids=member_ids,
             member_names=member_names,
+            offset=offset,
             policy_ids=policy_ids,
             policy_names=policy_names,
-            offset=offset,
             sort=sort,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
@@ -2986,9 +2986,9 @@ class Client(object):
         limit=None,  # type: int
         member_ids=None,  # type: List[str]
         member_names=None,  # type: List[str]
+        offset=None,  # type: int
         policy_ids=None,  # type: List[str]
         policy_names=None,  # type: List[str]
-        offset=None,  # type: int
         sort=None,  # type: List[str]
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
@@ -3021,14 +3021,14 @@ class Client(object):
             member_names (list[str], optional):
                 A list of member names. If there is not at least one resource that matches each
                 `member_name` element, an error is returned.
+            offset (int, optional):
+                The offset of the first resource to return from a collection.
             policy_ids (list[str], optional):
                 A list of policy IDs. If there is not at least one resource that matches each
                 `policy_id` element, an error is returned.
             policy_names (list[str], optional):
                 A list of policy names. If there is not at least one resource that matches each
                 `policy_name` element, an error is returned.
-            offset (int, optional):
-                The offset of the first resource to return from a collection.
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
             async_req (bool, optional):
@@ -3058,9 +3058,9 @@ class Client(object):
             limit=limit,
             member_ids=member_ids,
             member_names=member_names,
+            offset=offset,
             policy_ids=policy_ids,
             policy_names=policy_names,
-            offset=offset,
             sort=sort,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
@@ -3168,9 +3168,9 @@ class Client(object):
         limit=None,  # type: int
         member_ids=None,  # type: List[str]
         member_names=None,  # type: List[str]
+        offset=None,  # type: int
         policy_ids=None,  # type: List[str]
         policy_names=None,  # type: List[str]
-        offset=None,  # type: int
         sort=None,  # type: List[str]
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
@@ -3203,14 +3203,14 @@ class Client(object):
             member_names (list[str], optional):
                 A list of member names. If there is not at least one resource that matches each
                 `member_name` element, an error is returned.
+            offset (int, optional):
+                The offset of the first resource to return from a collection.
             policy_ids (list[str], optional):
                 A list of policy IDs. If there is not at least one resource that matches each
                 `policy_id` element, an error is returned.
             policy_names (list[str], optional):
                 A list of policy names. If there is not at least one resource that matches each
                 `policy_name` element, an error is returned.
-            offset (int, optional):
-                The offset of the first resource to return from a collection.
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
             async_req (bool, optional):
@@ -3240,9 +3240,9 @@ class Client(object):
             limit=limit,
             member_ids=member_ids,
             member_names=member_names,
+            offset=offset,
             policy_ids=policy_ids,
             policy_names=policy_names,
-            offset=offset,
             sort=sort,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
@@ -3342,22 +3342,22 @@ class Client(object):
     def get_subscription_assets(
         self,
         references=None,  # type: List[models.ReferenceType]
-        subscriptions=None,  # type: List[models.ReferenceType]
         licenses=None,  # type: List[models.ReferenceType]
+        subscriptions=None,  # type: List[models.ReferenceType]
         authorization=None,  # type: str
         x_request_id=None,  # type: str
+        advanced_space=None,  # type: bool
         continuation_token=None,  # type: str
         filter=None,  # type: str
         ids=None,  # type: List[str]
+        license_ids=None,  # type: List[str]
+        license_names=None,  # type: List[str]
         limit=None,  # type: int
         names=None,  # type: List[str]
         offset=None,  # type: int
         sort=None,  # type: List[str]
-        advanced_space=None,  # type: bool
         subscription_ids=None,  # type: List[str]
         subscription_names=None,  # type: List[str]
-        license_ids=None,  # type: List[str]
-        license_names=None,  # type: List[str]
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -3370,14 +3370,17 @@ class Client(object):
         Args:
             references (list[FixedReference], optional):
                 A list of references to query for. Overrides ids and names keyword arguments.
-            subscriptions (list[FixedReference], optional):
-                A list of subscriptions to query for. Overrides subscription_ids and subscription_names keyword arguments.
             licenses (list[FixedReference], optional):
                 A list of licenses to query for. Overrides license_ids and license_names keyword arguments.
+            subscriptions (list[FixedReference], optional):
+                A list of subscriptions to query for. Overrides subscription_ids and subscription_names keyword arguments.
 
             x_request_id (str, optional):
                 A header to provide to track the API call. Generated by the server if not
                 provided.
+            advanced_space (bool, optional):
+                If `true`, returns the `advanced_space` field containing physical and effective
+                space information.
             continuation_token (str, optional):
                 An opaque token to iterate over a collection of resources.
             filter (Filter, optional):
@@ -3385,6 +3388,12 @@ class Client(object):
             ids (list[str], optional):
                 A list of resource IDs. If there is not at least one resource that matches each
                 `id` element, an error is returned.
+            license_ids (list[str], optional):
+                A list of subscriptionLicense IDs. If there is not at least one resource that
+                matches each `license.id` element, an error is returned.
+            license_names (list[str], optional):
+                A list of subscriptionLicense names. If there is not at least one resource that
+                matches each `license.name` element, an error is returned.
             limit (int, optional):
                 Limit the number of resources in the response. If not specified, defaults to
                 1000.
@@ -3395,21 +3404,12 @@ class Client(object):
                 The offset of the first resource to return from a collection.
             sort (list[Property], optional):
                 Sort the response by the specified Properties. Can also be a single element.
-            advanced_space (bool, optional):
-                If `true`, returns the `advanced_space` field containing physical and effective
-                space information.
             subscription_ids (list[str], optional):
                 A list of subscription IDs. If there is not at least one resource that matches
                 each `subscription.id` element, an error is returned.
             subscription_names (list[str], optional):
                 A list of subscription names. If there is not at least one resource that matches
                 each `subscription.name` element, an error is returned.
-            license_ids (list[str], optional):
-                A list of subscriptionLicense IDs. If there is not at least one resource that
-                matches each `license.id` element, an error is returned.
-            license_names (list[str], optional):
-                A list of subscriptionLicense names. If there is not at least one resource that
-                matches each `license.name` element, an error is returned.
             async_req (bool, optional):
                 Request runs in separate thread and method returns
                 multiprocessing.pool.ApplyResult.
@@ -3432,18 +3432,18 @@ class Client(object):
         kwargs = dict(
             authorization=authorization,
             x_request_id=x_request_id,
+            advanced_space=advanced_space,
             continuation_token=continuation_token,
             filter=filter,
             ids=ids,
+            license_ids=license_ids,
+            license_names=license_names,
             limit=limit,
             names=names,
             offset=offset,
             sort=sort,
-            advanced_space=advanced_space,
             subscription_ids=subscription_ids,
             subscription_names=subscription_names,
-            license_ids=license_ids,
-            license_names=license_names,
             async_req=async_req,
             _return_http_data_only=_return_http_data_only,
             _preload_content=_preload_content,
@@ -3452,8 +3452,8 @@ class Client(object):
         kwargs = {k: v for k, v in kwargs.items() if v is not None}
         endpoint = self._subscriptions_api.api14_subscription_assets_get_with_http_info
         _process_references(references, ['ids', 'names'], kwargs)
-        _process_references(subscriptions, ['subscription_ids', 'subscription_names'], kwargs)
         _process_references(licenses, ['license_ids', 'license_names'], kwargs)
+        _process_references(subscriptions, ['subscription_ids', 'subscription_names'], kwargs)
         return self._call_api(endpoint, kwargs)
 
     def get_subscription_licenses(

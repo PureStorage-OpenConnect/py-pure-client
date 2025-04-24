@@ -3,7 +3,7 @@
 """
     Pure1 Public REST API
 
-    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)  The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
+    Pure1 Public REST API, developed by [Pure Storage, Inc.](https://www.purestorage.com)   The Pure1 REST API 2.0 offers one single form of authentication: OAuth 2.0 via the [Token Exchange protocol](https://datatracker.ietf.org/doc/draft-ietf-oauth-token-exchange).  OAuth 2.0 is an open protocol to allow secure authorization in a simple and standard method from web, mobile, desktop and background applications.  Note that the [Authentication](#section/Authentication) section below mentions 'API Key' as the security scheme type. This is solely for the purpose of allowing testing this API with [Swagger UI](https://static.pure1.purestorage.com/api-swagger/index.html).  [Knowledge base reference documentation](https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference)
 
     OpenAPI spec version: 1.2
     
@@ -30,13 +30,13 @@ class SubscriptionAssetArrayAdvancedSpace(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'physical': 'AssetSpace',
-        'effective': 'AssetSpace'
+        'effective': 'AssetSpace',
+        'physical': 'AssetSpace'
     }
 
     attribute_map = {
-        'physical': 'physical',
-        'effective': 'effective'
+        'effective': 'effective',
+        'physical': 'physical'
     }
 
     required_args = {
@@ -44,18 +44,18 @@ class SubscriptionAssetArrayAdvancedSpace(object):
 
     def __init__(
         self,
-        physical=None,  # type: models.AssetSpace
         effective=None,  # type: models.AssetSpace
+        physical=None,  # type: models.AssetSpace
     ):
         """
         Keyword args:
-            physical (AssetSpace): The physical space information of the appliance.
             effective (AssetSpace): The effective space information of the appliance.
+            physical (AssetSpace): The physical space information of the appliance.
         """
-        if physical is not None:
-            self.physical = physical
         if effective is not None:
             self.effective = effective
+        if physical is not None:
+            self.physical = physical
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

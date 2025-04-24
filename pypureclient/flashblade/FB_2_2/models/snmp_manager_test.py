@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.2, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.2, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.2
     
@@ -32,15 +32,15 @@ class SnmpManagerTest(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
-        'sent': 'bool',
-        'error': 'str'
+        'error': 'str',
+        'sent': 'bool'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
-        'sent': 'sent',
-        'error': 'error'
+        'error': 'error',
+        'sent': 'sent'
     }
 
     required_args = {
@@ -50,24 +50,24 @@ class SnmpManagerTest(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
-        sent=None,  # type: bool
         error=None,  # type: str
+        sent=None,  # type: bool
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            sent (bool): Is the test trap or inform sent?
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
             error (str): Error message (if failed).
+            sent (bool): Is the test trap or inform sent?
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
-        if sent is not None:
-            self.sent = sent
         if error is not None:
             self.error = error
+        if sent is not None:
+            self.sent = sent
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

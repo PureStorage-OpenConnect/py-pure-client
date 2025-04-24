@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.12, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.12, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.12
     
@@ -32,15 +32,15 @@ class QuotaSetting(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
-        'contact': 'str',
-        'direct_notifications_enabled': 'bool'
+        'direct_notifications_enabled': 'bool',
+        'contact': 'str'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
-        'contact': 'contact',
-        'direct_notifications_enabled': 'direct_notifications_enabled'
+        'direct_notifications_enabled': 'direct_notifications_enabled',
+        'contact': 'contact'
     }
 
     required_args = {
@@ -50,24 +50,24 @@ class QuotaSetting(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
-        contact=None,  # type: str
         direct_notifications_enabled=None,  # type: bool
+        contact=None,  # type: str
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            contact (str): The contact information that will be provided in any notifications sent directly to users and groups. This can be an email, a phone number, a name, or some other form of contact information.
-            direct_notifications_enabled (bool): Are notifications regarding space usage and quotas being sent directly to user and group emails?
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            direct_notifications_enabled (bool): Are notifications regarding space usage and quotas being sent directly to user and group emails? 
+            contact (str): The contact information that will be provided in any notifications sent directly to users and groups. This can be an email, a phone number, a name, or some other form of contact information. 
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
-        if contact is not None:
-            self.contact = contact
         if direct_notifications_enabled is not None:
             self.direct_notifications_enabled = direct_notifications_enabled
+        if contact is not None:
+            self.contact = contact
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

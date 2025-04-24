@@ -46,7 +46,7 @@ class EradicationConfig(object):
     ):
         """
         Keyword args:
-            eradication_delay (int): The eradication delay in milliseconds. Automatically eradicate destroyed items after the delay time. Valid values are `86400000` and any multiple of `86400000` in the range of `86400000` and `2592000000`. Any other values will be rounded down to the nearest multiple of `86400000`. If the user does not have sufficient access, this field will return `null`.
+            eradication_delay (int): The eradication delay in milliseconds. Automatically eradicate destroyed items after the delay time. Valid values are `86400000` and any multiple of `86400000`  in the range of `86400000` and `2592000000`. Any other values will be rounded down to the nearest multiple of `86400000`. If the user does not have sufficient access, this field will return `null`. 
         """
         if eradication_delay is not None:
             self.eradication_delay = eradication_delay

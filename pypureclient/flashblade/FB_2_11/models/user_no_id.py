@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.11, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.11, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.11
     
@@ -46,7 +46,7 @@ class UserNoId(object):
     ):
         """
         Keyword args:
-            name (str): The user name that represents the user's identity, and which resolves to the user's id in a configured directory service.
+            name (str): The user name that represents the user's identity, and which resolves to the user's id in a configured directory service. 
         """
         if name is not None:
             self.name = name

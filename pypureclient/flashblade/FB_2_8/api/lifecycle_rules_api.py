@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.8, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.8, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.8
     
@@ -41,16 +41,16 @@ class LifecycleRulesApi(object):
         # type: (...) -> None
         """DELETE lifecycle-rules
 
-        Deletes individual lifecycle rules by name or id, or deletes all rules for a bucket. If `ids` is specified, `bucket_names` or `bucket_ids` is also required. If `bucket_names` or `bucket_ids` are specified without `ids`, delete all the rules for the bucket.
+        Deletes individual lifecycle rules by name or id, or deletes all rules for a bucket. If `ids` is specified, `bucket_names` or `bucket_ids` is also required. If `bucket_names` or `bucket_ids` are specified without `ids`, delete all the rules for the bucket.  
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api28_lifecycle_rules_delete_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param list[str] bucket_ids: A comma-separated list of bucket IDs. If after filtering, there is not at least one resource that matches each of the elements of `bucket_ids`, then an error is returned. This cannot be provided together with the `bucket_names` query parameter. This can be provided with the `ids` query parameter but not with `names`.
-        :param list[str] bucket_names: A comma-separated list of bucket names. If there is not at least one resource that matches each of the elements of `bucket_names`, then an error is returned. This cannot be provided together with the `bucket_ids` query parameter. This can be provided with the `ids` query parameter but not with `names`.
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
+        :param list[str] bucket_ids: A comma-separated list of bucket IDs. If after filtering, there is not at least one resource that matches each of the elements of `bucket_ids`, then an error is returned.  This cannot be provided together with the `bucket_names` query parameter. This can be provided with the `ids` query parameter but not with `names`. 
+        :param list[str] bucket_names: A comma-separated list of bucket names. If there is not at least one resource that matches each of the elements of `bucket_names`, then an error is returned. This cannot be provided together with the `bucket_ids` query parameter. This can be provided with the `ids` query parameter but not with `names`. 
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -106,10 +106,6 @@ class LifecycleRulesApi(object):
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
-
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
@@ -153,21 +149,21 @@ class LifecycleRulesApi(object):
         # type: (...) -> models.LifecycleRuleGetResponse
         """GET lifecycle-rules
 
-        Returns a list of lifecycle rules. If `names` is specified, list the individual rules. If `ids` is specified, `bucket_names` or `bucket_ids` is also required. If `bucket_names` or `bucket_ids` are specified without `ids`, list all the rules for the bucket.
+        Returns a list of lifecycle rules. If `names` is specified, list the individual rules. If `ids` is specified, `bucket_names` or `bucket_ids` is also required.  If `bucket_names` or `bucket_ids` are specified without `ids`, list all the rules for the bucket.  
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api28_lifecycle_rules_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param list[str] bucket_ids: A comma-separated list of bucket IDs. If after filtering, there is not at least one resource that matches each of the elements of `bucket_ids`, then an error is returned. This cannot be provided together with the `bucket_names` query parameter. This can be provided with the `ids` query parameter but not with `names`.
-        :param list[str] bucket_names: A comma-separated list of bucket names. If there is not at least one resource that matches each of the elements of `bucket_names`, then an error is returned. This cannot be provided together with the `bucket_ids` query parameter. This can be provided with the `ids` query parameter but not with `names`.
-        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
-        :param str filter: Exclude resources that don't match the specified criteria.
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
-        :param int offset: The offset of the first resource to return from a collection.
-        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.
+        :param list[str] bucket_ids: A comma-separated list of bucket IDs. If after filtering, there is not at least one resource that matches each of the elements of `bucket_ids`, then an error is returned.  This cannot be provided together with the `bucket_names` query parameter. This can be provided with the `ids` query parameter but not with `names`. 
+        :param list[str] bucket_names: A comma-separated list of bucket names. If there is not at least one resource that matches each of the elements of `bucket_names`, then an error is returned. This cannot be provided together with the `bucket_ids` query parameter. This can be provided with the `ids` query parameter but not with `names`. 
+        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result. 
+        :param str filter: Exclude resources that don't match the specified criteria. 
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
+        :param int offset: The offset of the first resource to return from a collection. 
+        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -274,9 +270,9 @@ class LifecycleRulesApi(object):
         lifecycle=None,  # type: models.LifecycleRulePatch
         bucket_ids=None,  # type: List[str]
         bucket_names=None,  # type: List[str]
+        confirm_date=None,  # type: bool
         ids=None,  # type: List[str]
         names=None,  # type: List[str]
-        confirm_date=None,  # type: bool
         async_req=False,  # type: bool
         _return_http_data_only=False,  # type: bool
         _preload_content=True,  # type: bool
@@ -285,18 +281,18 @@ class LifecycleRulesApi(object):
         # type: (...) -> models.LifecycleRuleResponse
         """PATCH lifecycle-rules
 
-        Modify an existing lifecycle rule by name or id. If `ids` is specified, `bucket_names` or `bucket_ids` is also required.
+        Modify an existing lifecycle rule by name or id. If `ids` is specified, `bucket_names` or `bucket_ids` is also required.  
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api28_lifecycle_rules_patch_with_http_info(lifecycle, async_req=True)
         >>> result = thread.get()
 
         :param LifecycleRulePatch lifecycle: (required)
-        :param list[str] bucket_ids: A comma-separated list of bucket IDs. If after filtering, there is not at least one resource that matches each of the elements of `bucket_ids`, then an error is returned. This cannot be provided together with the `bucket_names` query parameter. This can be provided with the `ids` query parameter but not with `names`.
-        :param list[str] bucket_names: A comma-separated list of bucket names. If there is not at least one resource that matches each of the elements of `bucket_names`, then an error is returned. This cannot be provided together with the `bucket_ids` query parameter. This can be provided with the `ids` query parameter but not with `names`.
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
-        :param bool confirm_date: If set to `true`, then confirm the date of `keep_current_version_until` is correct.
+        :param list[str] bucket_ids: A comma-separated list of bucket IDs. If after filtering, there is not at least one resource that matches each of the elements of `bucket_ids`, then an error is returned.  This cannot be provided together with the `bucket_names` query parameter. This can be provided with the `ids` query parameter but not with `names`. 
+        :param list[str] bucket_names: A comma-separated list of bucket names. If there is not at least one resource that matches each of the elements of `bucket_names`, then an error is returned. This cannot be provided together with the `bucket_ids` query parameter. This can be provided with the `ids` query parameter but not with `names`. 
+        :param bool confirm_date: If set to `true`, then confirm the date of `keep_current_version_until` is correct. 
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -342,14 +338,14 @@ class LifecycleRulesApi(object):
         if 'bucket_names' in params:
             query_params.append(('bucket_names', params['bucket_names']))
             collection_formats['bucket_names'] = 'csv'
+        if 'confirm_date' in params:
+            query_params.append(('confirm_date', params['confirm_date']))
         if 'ids' in params:
             query_params.append(('ids', params['ids']))
             collection_formats['ids'] = 'csv'
         if 'names' in params:
             query_params.append(('names', params['names']))
             collection_formats['names'] = 'csv'
-        if 'confirm_date' in params:
-            query_params.append(('confirm_date', params['confirm_date']))
 
         header_params = {}
 
@@ -399,14 +395,14 @@ class LifecycleRulesApi(object):
         # type: (...) -> models.LifecycleRuleResponse
         """POST lifecycle-rules
 
-        Creates a lifecycle rule. `bucket` and `keep_previous_version_for` are required. If `rule_id` is not specified, it will be automatically generated in the format \"fbRuleIdX\".
+        Creates a lifecycle rule. `bucket` and `keep_previous_version_for` are required. If `rule_id` is not specified, it will be automatically generated in the format \"fbRuleIdX\".  
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api28_lifecycle_rules_post_with_http_info(rule, async_req=True)
         >>> result = thread.get()
 
         :param LifecycleRulePost rule: (required)
-        :param bool confirm_date: If set to `true`, then confirm the date of `keep_current_version_until` is correct.
+        :param bool confirm_date: If set to `true`, then confirm the date of `keep_current_version_until` is correct. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.

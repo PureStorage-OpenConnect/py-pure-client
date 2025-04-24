@@ -30,17 +30,17 @@ class NetworkInterfacePortDetailsStaticTemperatureThresholds(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'alarm_low': 'float',
         'warn_low': 'float',
         'warn_high': 'float',
-        'alarm_high': 'float'
+        'alarm_high': 'float',
+        'alarm_low': 'float'
     }
 
     attribute_map = {
-        'alarm_low': 'alarm_low',
         'warn_low': 'warn_low',
         'warn_high': 'warn_high',
-        'alarm_high': 'alarm_high'
+        'alarm_high': 'alarm_high',
+        'alarm_low': 'alarm_low'
     }
 
     required_args = {
@@ -48,26 +48,26 @@ class NetworkInterfacePortDetailsStaticTemperatureThresholds(object):
 
     def __init__(
         self,
-        alarm_low=None,  # type: float
         warn_low=None,  # type: float
         warn_high=None,  # type: float
         alarm_high=None,  # type: float
+        alarm_low=None,  # type: float
     ):
         """
         Keyword args:
-            alarm_low (float): The alarm low threshold for temperature in degrees Celsius.
             warn_low (float): The warn low threshold for temperature in degrees Celsius.
             warn_high (float): The warn high threshold for temperature in degrees Celsius.
             alarm_high (float): The alarm high threshold for temperature in degrees Celsius.
+            alarm_low (float): The alarm low threshold for temperature in degrees Celsius.
         """
-        if alarm_low is not None:
-            self.alarm_low = alarm_low
         if warn_low is not None:
             self.warn_low = warn_low
         if warn_high is not None:
             self.warn_high = warn_high
         if alarm_high is not None:
             self.alarm_high = alarm_high
+        if alarm_low is not None:
+            self.alarm_low = alarm_low
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

@@ -30,19 +30,19 @@ class LocalMember(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'group': 'FixedReferenceWithType',
+        'member_id': 'int',
         'group_gid': 'int',
-        'is_primary_group': 'bool',
         'member': 'FixedReferenceWithType',
-        'member_id': 'int'
+        'is_primary_group': 'bool',
+        'group': 'FixedReferenceWithType'
     }
 
     attribute_map = {
-        'group': 'group',
+        'member_id': 'member_id',
         'group_gid': 'group_gid',
-        'is_primary_group': 'is_primary_group',
         'member': 'member',
-        'member_id': 'member_id'
+        'is_primary_group': 'is_primary_group',
+        'group': 'group'
     }
 
     required_args = {
@@ -50,30 +50,30 @@ class LocalMember(object):
 
     def __init__(
         self,
-        group=None,  # type: models.FixedReferenceWithType
-        group_gid=None,  # type: int
-        is_primary_group=None,  # type: bool
-        member=None,  # type: models.FixedReferenceWithType
         member_id=None,  # type: int
+        group_gid=None,  # type: int
+        member=None,  # type: models.FixedReferenceWithType
+        is_primary_group=None,  # type: bool
+        group=None,  # type: models.FixedReferenceWithType
     ):
         """
         Keyword args:
-            group (FixedReferenceWithType): Reference to the group to which the member belongs.
-            group_gid (int): GID of the group to which the member belongs.
-            is_primary_group (bool): When a membership of `member_type` has the value `User`, this specifies whether this membership is a primary-group mapping or not. In any other case, this field will be `false`.
+            member_id (int): GID if the `member_type` is `Group` and UID if the `member_type` is `User`. 
+            group_gid (int): GID of the group to which the member belongs. 
             member (FixedReferenceWithType): Reference to the member of the group.
-            member_id (int): GID if the `member_type` is `Group` and UID if the `member_type` is `User`.
+            is_primary_group (bool): When a membership of `member_type` has the value `User`, this specifies whether this membership is a primary-group mapping or not. In any other case, this field will be `false`. 
+            group (FixedReferenceWithType): Reference to the group to which the member belongs.
         """
-        if group is not None:
-            self.group = group
-        if group_gid is not None:
-            self.group_gid = group_gid
-        if is_primary_group is not None:
-            self.is_primary_group = is_primary_group
-        if member is not None:
-            self.member = member
         if member_id is not None:
             self.member_id = member_id
+        if group_gid is not None:
+            self.group_gid = group_gid
+        if member is not None:
+            self.member = member
+        if is_primary_group is not None:
+            self.is_primary_group = is_primary_group
+        if group is not None:
+            self.group = group
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

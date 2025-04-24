@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.5, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.5, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.5
     
@@ -46,9 +46,9 @@ class PoliciesNFSApi(object):
         >>> thread = api.api25_nfs_export_policies_delete_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
-        :param list[str] versions: A comma-separated list of versions. This is an optional query param used for concurrency control. The ordering should match the names or ids query param. This will fail with a 412 Precondition failed if the resource was changed and the current version of the resource doesn't match the value in the query param.
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
+        :param list[str] versions: A comma-separated list of versions. This is an optional query param used for concurrency control. The ordering should match the names or ids query param. This will fail with a 412 Precondition failed if the resource was changed and the current version of the resource doesn't match the value in the query param. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -98,10 +98,6 @@ class PoliciesNFSApi(object):
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
-
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
@@ -149,13 +145,13 @@ class PoliciesNFSApi(object):
         >>> thread = api.api25_nfs_export_policies_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
-        :param str filter: Exclude resources that don't match the specified criteria.
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
-        :param int offset: The offset of the first resource to return from a collection.
-        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.
+        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result. 
+        :param str filter: Exclude resources that don't match the specified criteria. 
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
+        :param int offset: The offset of the first resource to return from a collection. 
+        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -266,9 +262,9 @@ class PoliciesNFSApi(object):
         >>> result = thread.get()
 
         :param NfsExportPolicy policy: (required)
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
-        :param list[str] versions: A comma-separated list of versions. This is an optional query param used for concurrency control. The ordering should match the names or ids query param. This will fail with a 412 Precondition failed if the resource was changed and the current version of the resource doesn't match the value in the query param.
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
+        :param list[str] versions: A comma-separated list of versions. This is an optional query param used for concurrency control. The ordering should match the names or ids query param. This will fail with a 412 Precondition failed if the resource was changed and the current version of the resource doesn't match the value in the query param. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -369,7 +365,7 @@ class PoliciesNFSApi(object):
         >>> thread = api.api25_nfs_export_policies_post_with_http_info(names, async_req=True)
         >>> result = thread.get()
 
-        :param list[str] names: A comma-separated list of resource names. (required)
+        :param list[str] names: A comma-separated list of resource names.  (required)
         :param NfsExportPolicyPost policy:
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
@@ -454,15 +450,15 @@ class PoliciesNFSApi(object):
         # type: (...) -> None
         """DELETE nfs-export-policies/rules
 
-        Delete one or more NFS export policy rules. One of the following is required: `ids` or `names`.
+        Delete one or more NFS export policy rules. One of the following is required: `ids` or `names`. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api25_nfs_export_policies_rules_delete_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
-        :param list[str] versions: A comma-separated list of versions. This is an optional query param used for concurrency control. The ordering should match the names or ids query param. This will fail with a 412 Precondition failed if the resource was changed and the current version of the resource doesn't match the value in the query param.
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
+        :param list[str] versions: A comma-separated list of versions. This is an optional query param used for concurrency control. The ordering should match the names or ids query param. This will fail with a 412 Precondition failed if the resource was changed and the current version of the resource doesn't match the value in the query param. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -512,10 +508,6 @@ class PoliciesNFSApi(object):
         local_var_files = {}
 
         body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])
-
         # HTTP header `Content-Type`
         header_params['Content-Type'] = self.api_client.select_header_content_type(
             ['application/json'])
@@ -559,21 +551,21 @@ class PoliciesNFSApi(object):
         # type: (...) -> models.NfsExportPolicyRuleGetResponse
         """GET nfs-export-policies/rules
 
-        Displays a list of NFS export policy rules. The default sort is by policy name, then index.
+        Displays a list of NFS export policy rules. The default sort is by policy name, then index. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api25_nfs_export_policies_rules_get_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
-        :param str filter: Exclude resources that don't match the specified criteria.
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
-        :param int offset: The offset of the first resource to return from a collection.
-        :param list[str] policy_ids: A comma-separated list of policy IDs. If after filtering, there is not at least one resource that matches each of the elements of `policy_ids`, then an error is returned. This cannot be provided together with the `policy_names` query parameter.
-        :param list[str] policy_names: A comma-separated list of policy names.
-        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.
+        :param str continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result. 
+        :param str filter: Exclude resources that don't match the specified criteria. 
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param int limit: Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
+        :param int offset: The offset of the first resource to return from a collection. 
+        :param list[str] policy_ids: A comma-separated list of policy IDs. If after filtering, there is not at least one resource that matches each of the elements of `policy_ids`, then an error is returned.  This cannot be provided together with the `policy_names` query parameter. 
+        :param list[str] policy_names: A comma-separated list of policy names. 
+        :param list[str] sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -691,18 +683,18 @@ class PoliciesNFSApi(object):
         # type: (...) -> models.NfsExportPolicyRuleResponse
         """PATCH nfs-export-policies/rules
 
-        Modify an existing NFS export policy rule. If `before_rule_id` or `before_rule_name` are specified, the rule will be moved before that rule. Rules are ordered in three groups; ip addresses, other and `*` and can only be moved within the appropriate group. One of the following is required: `ids` or `names`.
+        Modify an existing NFS export policy rule. If `before_rule_id` or `before_rule_name` are specified, the rule will be moved before that rule. Rules are ordered in three groups; ip addresses, other and `*` and can only be moved within the appropriate group. One of the following is required: `ids` or `names`. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api25_nfs_export_policies_rules_patch_with_http_info(rule, async_req=True)
         >>> result = thread.get()
 
         :param NfsExportPolicyRule rule: (required)
-        :param str before_rule_id: The id of the rule to insert or move a rule before. This cannot be provided together with the `before_rule_name` query parameter.
-        :param str before_rule_name: The name of the rule to insert or move a rule before. This cannot be provided together with the `before_rule_id` query parameter.
-        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
-        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
-        :param list[str] versions: A comma-separated list of versions. This is an optional query param used for concurrency control. The ordering should match the names or ids query param. This will fail with a 412 Precondition failed if the resource was changed and the current version of the resource doesn't match the value in the query param.
+        :param str before_rule_id: The id of the rule to insert or move a rule before. This cannot be provided together with the `before_rule_name` query parameter. 
+        :param str before_rule_name: The name of the rule to insert or move a rule before. This cannot be provided together with the `before_rule_id` query parameter. 
+        :param list[str] ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned.  This cannot be provided together with the `name` or `names` query parameters. 
+        :param list[str] names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned. 
+        :param list[str] versions: A comma-separated list of versions. This is an optional query param used for concurrency control. The ordering should match the names or ids query param. This will fail with a 412 Precondition failed if the resource was changed and the current version of the resource doesn't match the value in the query param. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.
@@ -805,18 +797,18 @@ class PoliciesNFSApi(object):
         # type: (...) -> models.NfsExportPolicyRuleResponse
         """POST nfs-export-policies/rules
 
-        Add a NFS export policy rule. Rules are ordered in three groups; ip addresses, other and `*`. The new rule will be added at the end of the appropriate group if neither `before_rule_id` and `before_rule_name` are specified. Rules can only be inserted into the appropriate group. Either `policy_ids` or `policy_names` parameter is required.
+        Add a NFS export policy rule. Rules are ordered in three groups; ip addresses, other and `*`. The new rule will be added at the end of the appropriate group if neither  `before_rule_id` and `before_rule_name` are specified. Rules can only be inserted into the appropriate group. Either `policy_ids` or `policy_names` parameter is required. 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.api25_nfs_export_policies_rules_post_with_http_info(rule, async_req=True)
         >>> result = thread.get()
 
         :param NfsExportPolicyRule rule: (required)
-        :param str before_rule_id: The id of the rule to insert or move a rule before. This cannot be provided together with the `before_rule_name` query parameter.
-        :param str before_rule_name: The name of the rule to insert or move a rule before. This cannot be provided together with the `before_rule_id` query parameter.
-        :param list[str] policy_ids: A comma-separated list of policy IDs. If after filtering, there is not at least one resource that matches each of the elements of `policy_ids`, then an error is returned. This cannot be provided together with the `policy_names` query parameter.
-        :param list[str] policy_names: A comma-separated list of policy names.
-        :param list[str] versions: A comma-separated list of versions. This is an optional query param used for concurrency control. The ordering should match the names or ids query param. This will fail with a 412 Precondition failed if the resource was changed and the current version of the resource doesn't match the value in the query param.
+        :param str before_rule_id: The id of the rule to insert or move a rule before. This cannot be provided together with the `before_rule_name` query parameter. 
+        :param str before_rule_name: The name of the rule to insert or move a rule before. This cannot be provided together with the `before_rule_id` query parameter. 
+        :param list[str] policy_ids: A comma-separated list of policy IDs. If after filtering, there is not at least one resource that matches each of the elements of `policy_ids`, then an error is returned.  This cannot be provided together with the `policy_names` query parameter. 
+        :param list[str] policy_names: A comma-separated list of policy names. 
+        :param list[str] versions: A comma-separated list of versions. This is an optional query param used for concurrency control. The ordering should match the names or ids query param. This will fail with a 412 Precondition failed if the resource was changed and the current version of the resource doesn't match the value in the query param. 
         :param bool async_req: Request runs in separate thread and method returns multiprocessing.pool.ApplyResult.
         :param bool _return_http_data_only: Returns only data field.
         :param bool _preload_content: Response is converted into objects.

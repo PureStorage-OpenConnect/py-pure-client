@@ -3,7 +3,7 @@
 """
     FlashBlade REST API
 
-    A lightweight client for FlashBlade REST API 2.12, developed by Pure Storage, Inc. (http://www.purestorage.com/).
+    A lightweight client for FlashBlade REST API 2.12, developed by Pure Storage, Inc. (http://www.purestorage.com/). 
 
     OpenAPI spec version: 2.12
     
@@ -32,21 +32,21 @@ class SmbSharePolicyRule(object):
     swagger_types = {
         'name': 'str',
         'id': 'str',
-        'change': 'str',
-        'full_control': 'str',
-        'policy': 'FixedReference',
         'principal': 'str',
-        'read': 'str'
+        'full_control': 'str',
+        'read': 'str',
+        'change': 'str',
+        'policy': 'FixedReference'
     }
 
     attribute_map = {
         'name': 'name',
         'id': 'id',
-        'change': 'change',
-        'full_control': 'full_control',
-        'policy': 'policy',
         'principal': 'principal',
-        'read': 'read'
+        'full_control': 'full_control',
+        'read': 'read',
+        'change': 'change',
+        'policy': 'policy'
     }
 
     required_args = {
@@ -56,36 +56,36 @@ class SmbSharePolicyRule(object):
         self,
         name=None,  # type: str
         id=None,  # type: str
-        change=None,  # type: str
-        full_control=None,  # type: str
-        policy=None,  # type: models.FixedReference
         principal=None,  # type: str
+        full_control=None,  # type: str
         read=None,  # type: str
+        change=None,  # type: str
+        policy=None,  # type: models.FixedReference
     ):
         """
         Keyword args:
             name (str): Name of the object (e.g., a file system or snapshot).
-            id (str): A non-modifiable, globally unique ID chosen by the system.
-            change (str): The state of the principal's Change access permission. Valid values are `allow` and `deny`. When not set, value is `null`. When allowed, includes all access granted by the Read permission. Users can also change data within files and add or delete files and folders. When denied, these operations are explicitly blocked. If not set for any applicable rule on any applicable policy, acts as an implicit deny. If set to `allow`, implicitly sets the Read permission to `allow`. This is incompatible with explicitly setting any permission to `deny`. If set to `deny`, implicitly sets the Read permission to `deny`, and clears the Full Control permission if it is currently `allow`. This is incompatible with explicitly setting any permission to `allow`. If set to an empty string (`\"\"`), the value (and implicitly the Full Control permission) will be cleared. This is incompatible with explicitly setting the Full Control permission to `allow` or `deny`.
-            full_control (str): The state of the principal's Full Control access permission. Valid values are `allow` and `deny`. When not set, value is `null`. When allowed, includes all access granted by the Change permission. Users can also change the permissions for files and folders. When denied, these operations are explicitly blocked. If not set for any applicable rule on any applicable policy, acts as an implicit deny. If set to `allow`, implicitly sets the Change and Read permissions to `allow`. This is incompatible with explicitly setting any permission to `deny`. If set to `deny`, implicitly sets the Change and Read permissions to `deny`. This is incompatible with explicitly setting any permission to `allow`. If set to an empty string (`\"\"`), the value will be cleared.
+            id (str): A non-modifiable, globally unique ID chosen by the system. 
+            principal (str): The user or group who is the subject of this rule, and their domain. If modifying this value, providing the domain is optional. If no domain is provided, it will be derived if possible. For example, `PURESTORAGE\\Administrator`, `samplegroup@PureStorage`, or `sampleuser`. 
+            full_control (str): The state of the principal's Full Control access permission. Valid values are `allow` and `deny`. When not set, value is `null`. When allowed, includes all access granted by the Change permission. Users can also change the permissions for files and folders. When denied, these operations are explicitly blocked. If not set for any applicable rule on any applicable policy, acts as an implicit deny. If set to `allow`, implicitly sets the Change and Read permissions to `allow`. This is incompatible with explicitly setting any permission to `deny`. If set to `deny`, implicitly sets the Change and Read permissions to `deny`. This is incompatible with explicitly setting any permission to `allow`. If set to an empty string (`\"\"`), the value will be cleared. 
+            read (str): The state of the principal's Read access permission. Valid values are `allow` and `deny`. When allowed, users can view file names, read the data in those files, and run some programs. When denied, these operations are explicitly blocked. If set to `allow`, implicitly clears the Full Control and Change permissions if they are currently `deny`. This is incompatible with explicitly setting any permission to `deny`. If set to `deny`, implicitly clears the Full Control and Change permissions if they are currently `allow`. This is incompatible with explicitly setting any permission to `allow`. 
+            change (str): The state of the principal's Change access permission. Valid values are `allow` and `deny`. When not set, value is `null`. When allowed, includes all access granted by the Read permission. Users can also change data within files and add or delete files and folders. When denied, these operations are explicitly blocked. If not set for any applicable rule on any applicable policy, acts as an implicit deny. If set to `allow`, implicitly sets the Read permission to `allow`. This is incompatible with explicitly setting any permission to `deny`. If set to `deny`, implicitly sets the Read permission to `deny`, and clears the Full Control permission if it is currently `allow`. This is incompatible with explicitly setting any permission to `allow`. If set to an empty string (`\"\"`), the value (and implicitly the Full Control permission) will be cleared. This is incompatible with explicitly setting the Full Control permission to `allow` or `deny`. 
             policy (FixedReference): The policy to which this rule belongs.
-            principal (str): The user or group who is the subject of this rule, and their domain. If modifying this value, providing the domain is optional. If no domain is provided, it will be derived if possible. For example, `PURESTORAGE\\Administrator`, `samplegroup@PureStorage`, or `sampleuser`.
-            read (str): The state of the principal's Read access permission. Valid values are `allow` and `deny`. When allowed, users can view file names, read the data in those files, and run some programs. When denied, these operations are explicitly blocked. If set to `allow`, implicitly clears the Full Control and Change permissions if they are currently `deny`. This is incompatible with explicitly setting any permission to `deny`. If set to `deny`, implicitly clears the Full Control and Change permissions if they are currently `allow`. This is incompatible with explicitly setting any permission to `allow`.
         """
         if name is not None:
             self.name = name
         if id is not None:
             self.id = id
-        if change is not None:
-            self.change = change
-        if full_control is not None:
-            self.full_control = full_control
-        if policy is not None:
-            self.policy = policy
         if principal is not None:
             self.principal = principal
+        if full_control is not None:
+            self.full_control = full_control
         if read is not None:
             self.read = read
+        if change is not None:
+            self.change = change
+        if policy is not None:
+            self.policy = policy
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:

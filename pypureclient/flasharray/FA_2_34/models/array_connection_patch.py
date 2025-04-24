@@ -30,27 +30,27 @@ class ArrayConnectionPatch(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'default_limit': 'int',
         'window': 'TimeWindow',
+        'default_limit': 'int',
         'window_limit': 'int',
-        'management_address': 'str',
         'replication_addresses': 'list[str]',
-        'type': 'str',
+        'throttle': 'Throttle',
         'connection_key': 'str',
         'encryption': 'str',
-        'throttle': 'Throttle'
+        'management_address': 'str',
+        'type': 'str'
     }
 
     attribute_map = {
-        'default_limit': 'default_limit',
         'window': 'window',
+        'default_limit': 'default_limit',
         'window_limit': 'window_limit',
-        'management_address': 'management_address',
         'replication_addresses': 'replication_addresses',
-        'type': 'type',
+        'throttle': 'throttle',
         'connection_key': 'connection_key',
         'encryption': 'encryption',
-        'throttle': 'throttle'
+        'management_address': 'management_address',
+        'type': 'type'
     }
 
     required_args = {
@@ -58,46 +58,46 @@ class ArrayConnectionPatch(object):
 
     def __init__(
         self,
-        default_limit=None,  # type: int
         window=None,  # type: models.TimeWindow
+        default_limit=None,  # type: int
         window_limit=None,  # type: int
-        management_address=None,  # type: str
         replication_addresses=None,  # type: List[str]
-        type=None,  # type: str
+        throttle=None,  # type: models.Throttle
         connection_key=None,  # type: str
         encryption=None,  # type: str
-        throttle=None,  # type: models.Throttle
+        management_address=None,  # type: str
+        type=None,  # type: str
     ):
         """
         Keyword args:
-            default_limit (int): Deprecated. Default maximum bandwidth threshold for outbound traffic in bytes. Once exceeded, bandwidth throttling occurs.
             window (TimeWindow): Deprecated. The time during which the `window_limit` threshold is in effect.
-            window_limit (int): Deprecated. Maximum bandwidth threshold for outbound traffic during the specified `window_limit` time range in bytes. Once exceeded, bandwidth throttling occurs.
-            management_address (str): Management IP address of the target array.
-            replication_addresses (list[str]): IP addresses and FQDNs of the target arrays. Configurable only when `replication_transport` is set to `ip`.
-            type (str): The type of replication. Valid values are `async-replication` and `sync-replication`.
-            connection_key (str): The connection key of the target array. It is only required when `encryption` is changed from `unencrypted` to `encrypted`, or when `type` is changed from `async-replication` to `sync-replication`.
-            encryption (str): If `encrypted`, encryption will be enabled for all traffic over this array connection. `connection_key` must be specified when encrypted is set to `true`. If `unencrypted`, encryption will be disabled for all traffic over this array connection. If not specified, the current encryption option for the array connection will remain unchanged.
+            default_limit (int): Deprecated. Default maximum bandwidth threshold for outbound traffic in bytes. Once exceeded, bandwidth throttling occurs. 
+            window_limit (int): Deprecated. Maximum bandwidth threshold for outbound traffic during the specified `window_limit` time range in bytes. Once exceeded, bandwidth throttling occurs. 
+            replication_addresses (list[str]): IP addresses and FQDNs of the target arrays. Configurable only when `replication_transport` is set to `ip`. 
             throttle (Throttle)
+            connection_key (str): The connection key of the target array. It is only required when `encryption` is changed from `unencrypted` to `encrypted`, or when `type` is changed from `async-replication` to `sync-replication`. 
+            encryption (str): If `encrypted`, encryption will be enabled for all traffic over this array connection. `connection_key` must be specified when encrypted is set to `true`.  If `unencrypted`, encryption will be disabled for all traffic over this array connection. If not specified, the current encryption option for the array connection will remain unchanged. 
+            management_address (str): Management IP address of the target array. 
+            type (str): The type of replication. Valid values are `async-replication` and `sync-replication`. 
         """
-        if default_limit is not None:
-            self.default_limit = default_limit
         if window is not None:
             self.window = window
+        if default_limit is not None:
+            self.default_limit = default_limit
         if window_limit is not None:
             self.window_limit = window_limit
-        if management_address is not None:
-            self.management_address = management_address
         if replication_addresses is not None:
             self.replication_addresses = replication_addresses
-        if type is not None:
-            self.type = type
+        if throttle is not None:
+            self.throttle = throttle
         if connection_key is not None:
             self.connection_key = connection_key
         if encryption is not None:
             self.encryption = encryption
-        if throttle is not None:
-            self.throttle = throttle
+        if management_address is not None:
+            self.management_address = management_address
+        if type is not None:
+            self.type = type
 
     def __setattr__(self, key, value):
         if key not in self.attribute_map:
