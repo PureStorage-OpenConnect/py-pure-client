@@ -10,7 +10,7 @@ For the current FlashArray REST 1.x Python SDK, [see here](https://github.com/Pu
 
 ## Requirements
 
-The library requires Python 3.5 or higher. Third-party libraries are also required.
+The library requires Python 3.8 or higher. Third-party libraries are also required.
 
 ## Installation
 
@@ -29,4 +29,4 @@ $ python setup.py install
 
 ## Documentation
 
-For full documentation, including a quick start guide and examples, see https://pure-storage-py-pure-client.readthedocs-hosted.com/en/latest/index.html.
+For full documentation, including a quick start guide and examples, see https://code.purestorage.com/py-pure-client
