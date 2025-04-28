@@ -15,23 +15,27 @@ Pure1 REST Client Factory Method
 
 Pure1 REST 1.0 Client
 ~~~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.Pure1_1_0.client.Client
+.. autoclass:: pypureclient.pure1.pypureclient.pure1.Pure1_1_0.client.Client
 
 Pure1 REST 1.1 Client
 ~~~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.Pure1_1_1.client.Client
+.. autoclass:: pypureclient.pure1.pypureclient.pure1.Pure1_1_1.client.Client
 
 Pure1 REST 1.2 Client
 ~~~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.Pure1_1_2.client.Client
+.. autoclass:: pypureclient.pure1.pypureclient.pure1.Pure1_1_2.client.Client
 
 Pure1 REST 1.3 Client
 ~~~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.Pure1_1_3.client.Client
+.. autoclass:: pypureclient.pure1.pypureclient.pure1.Pure1_1_3.client.Client
 
 Pure1 REST 1.4 Client
 ~~~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.Pure1_1_4.client.Client
+.. autoclass:: pypureclient.pure1.pypureclient.pure1.Pure1_1_4.client.Client
+
+Pure1 REST 1.5 Client
+~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.pypureclient.pure1.Pure1_1_5.client.Client
    :members:
 
 Properties
@@ -78,9 +82,44 @@ Alert
 .. autoclass:: pypureclient.pure1.Alert
    :members:
 
+AlertsGetResponse
+~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.AlertsGetResponse
+   :members:
+
+AlertsResponse
+~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.AlertsResponse
+   :members:
+
 Array
 ~~~~~
 .. autoclass:: pypureclient.pure1.Array
+   :members:
+
+ArrayGetResponse
+~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.ArrayGetResponse
+   :members:
+
+ArrayResponse
+~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.ArrayResponse
+   :members:
+
+Arrays
+~~~~~~
+.. autoclass:: pypureclient.pure1.Arrays
+   :members:
+
+ArraysBuiltIn
+~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.ArraysBuiltIn
+   :members:
+
+ArraysResource
+~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.ArraysResource
    :members:
 
 AssetAddress
@@ -113,6 +152,16 @@ Audit
 .. autoclass:: pypureclient.pure1.Audit
    :members:
 
+AuditsGetResponse
+~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.AuditsGetResponse
+   :members:
+
+AuditsResponse
+~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.AuditsResponse
+   :members:
+
 BaseAddress
 ~~~~~~~~~~~
 .. autoclass:: pypureclient.pure1.BaseAddress
@@ -128,9 +177,24 @@ BladeArrayStatus
 .. autoclass:: pypureclient.pure1.BladeArrayStatus
    :members:
 
+BladeGetResponse
+~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.BladeGetResponse
+   :members:
+
+BladeResponse
+~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.BladeResponse
+   :members:
+
 Bucket
 ~~~~~~
 .. autoclass:: pypureclient.pure1.Bucket
+   :members:
+
+BucketGetResponse
+~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.BucketGetResponse
    :members:
 
 BucketReplicaLink
@@ -138,9 +202,39 @@ BucketReplicaLink
 .. autoclass:: pypureclient.pure1.BucketReplicaLink
    :members:
 
+BucketReplicaLinkGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.BucketReplicaLinkGetResponse
+   :members:
+
+BucketReplicaLinkResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.BucketReplicaLinkResponse
+   :members:
+
+BucketResponse
+~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.BucketResponse
+   :members:
+
+BuiltInAsOf
+~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.BuiltInAsOf
+   :members:
+
 Controller
 ~~~~~~~~~~
 .. autoclass:: pypureclient.pure1.Controller
+   :members:
+
+ControllerGetResponse
+~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.ControllerGetResponse
+   :members:
+
+ControllerResponse
+~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.ControllerResponse
    :members:
 
 CurrentMetric
@@ -148,14 +242,19 @@ CurrentMetric
 .. autoclass:: pypureclient.pure1.CurrentMetric
    :members:
 
-DefaultDetails
-~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.DefaultDetails
-   :members:
-
 Directory
 ~~~~~~~~~
 .. autoclass:: pypureclient.pure1.Directory
+   :members:
+
+DirectoryGetResponse
+~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.DirectoryGetResponse
+   :members:
+
+DirectoryResponse
+~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.DirectoryResponse
    :members:
 
 Drive
@@ -166,6 +265,16 @@ Drive
 DriveArrayStatus
 ~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.pure1.DriveArrayStatus
+   :members:
+
+DriveGetResponse
+~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.DriveGetResponse
+   :members:
+
+DriveResponse
+~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.DriveResponse
    :members:
 
 Error
@@ -193,14 +302,44 @@ FileSystem
 .. autoclass:: pypureclient.pure1.FileSystem
    :members:
 
+FileSystemGetResponse
+~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.FileSystemGetResponse
+   :members:
+
 FileSystemReplicaLink
 ~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.pure1.FileSystemReplicaLink
    :members:
 
+FileSystemReplicaLinkGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.FileSystemReplicaLinkGetResponse
+   :members:
+
+FileSystemReplicaLinkResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.FileSystemReplicaLinkResponse
+   :members:
+
+FileSystemResponse
+~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.FileSystemResponse
+   :members:
+
 FileSystemSnapshot
 ~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.pure1.FileSystemSnapshot
+   :members:
+
+FileSystemSnapshotGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.FileSystemSnapshotGetResponse
+   :members:
+
+FileSystemSnapshotResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.FileSystemSnapshotResponse
    :members:
 
 FixedReference
@@ -228,6 +367,26 @@ HardwareConnector
 .. autoclass:: pypureclient.pure1.HardwareConnector
    :members:
 
+HardwareConnectorGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.HardwareConnectorGetResponse
+   :members:
+
+HardwareConnectorResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.HardwareConnectorResponse
+   :members:
+
+HardwareGetResponse
+~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.HardwareGetResponse
+   :members:
+
+HardwareResponse
+~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.HardwareResponse
+   :members:
+
 Http
 ~~~~
 .. autoclass:: pypureclient.pure1.Http
@@ -243,6 +402,11 @@ Invoice
 .. autoclass:: pypureclient.pure1.Invoice
    :members:
 
+InvoiceGetResponse
+~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.InvoiceGetResponse
+   :members:
+
 InvoiceLine
 ~~~~~~~~~~~
 .. autoclass:: pypureclient.pure1.InvoiceLine
@@ -251,6 +415,11 @@ InvoiceLine
 InvoiceLineComponent
 ~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.pure1.InvoiceLineComponent
+   :members:
+
+InvoiceResponse
+~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.InvoiceResponse
    :members:
 
 LicenseResourceReference
@@ -273,9 +442,29 @@ MetricAvailability
 .. autoclass:: pypureclient.pure1.MetricAvailability
    :members:
 
+MetricGetResponse
+~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.MetricGetResponse
+   :members:
+
 MetricHistory
 ~~~~~~~~~~~~~
 .. autoclass:: pypureclient.pure1.MetricHistory
+   :members:
+
+MetricHistoryGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.MetricHistoryGetResponse
+   :members:
+
+MetricHistoryResponse
+~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.MetricHistoryResponse
+   :members:
+
+MetricResponse
+~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.MetricResponse
    :members:
 
 NetworkInterface
@@ -283,9 +472,34 @@ NetworkInterface
 .. autoclass:: pypureclient.pure1.NetworkInterface
    :members:
 
+NetworkInterfaceGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.NetworkInterfaceGetResponse
+   :members:
+
+NetworkInterfaceResponse
+~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.NetworkInterfaceResponse
+   :members:
+
 Nfs
 ~~~
 .. autoclass:: pypureclient.pure1.Nfs
+   :members:
+
+Oauth210TokenPost400Response
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.Oauth210TokenPost400Response
+   :members:
+
+Oauth210TokenPost401Response
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.Oauth210TokenPost401Response
+   :members:
+
+OauthTokenResponse
+~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.OauthTokenResponse
    :members:
 
 ObjectStoreAccount
@@ -293,9 +507,29 @@ ObjectStoreAccount
 .. autoclass:: pypureclient.pure1.ObjectStoreAccount
    :members:
 
+ObjectStoreAccountGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.ObjectStoreAccountGetResponse
+   :members:
+
+ObjectStoreAccountResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.ObjectStoreAccountResponse
+   :members:
+
+PageInfo
+~~~~~~~~
+.. autoclass:: pypureclient.pure1.PageInfo
+   :members:
+
 Pod
 ~~~
 .. autoclass:: pypureclient.pure1.Pod
+   :members:
+
+PodGetResponse
+~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.PodGetResponse
    :members:
 
 PodReplicaLink
@@ -303,14 +537,49 @@ PodReplicaLink
 .. autoclass:: pypureclient.pure1.PodReplicaLink
    :members:
 
+PodReplicaLinkGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.PodReplicaLinkGetResponse
+   :members:
+
+PodReplicaLinkResponse
+~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.PodReplicaLinkResponse
+   :members:
+
+PodResponse
+~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.PodResponse
+   :members:
+
 Policy
 ~~~~~~
 .. autoclass:: pypureclient.pure1.Policy
    :members:
 
+PolicyGetResponse
+~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.PolicyGetResponse
+   :members:
+
 PolicyMember
 ~~~~~~~~~~~~
 .. autoclass:: pypureclient.pure1.PolicyMember
+   :members:
+
+PolicyMembersGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.PolicyMembersGetResponse
+   :members:
+
+PolicyMembersResponse
+~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.PolicyMembersResponse
+   :members:
+
+PolicyResponse
+~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.PolicyResponse
    :members:
 
 PolicyRule
@@ -321,6 +590,16 @@ PolicyRule
 Port
 ~~~~
 .. autoclass:: pypureclient.pure1.Port
+   :members:
+
+PortGetResponse
+~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.PortGetResponse
+   :members:
+
+PortResponse
+~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.PortResponse
    :members:
 
 ReplicaLink
@@ -358,6 +637,11 @@ Subscription
 .. autoclass:: pypureclient.pure1.Subscription
    :members:
 
+SubscriptionAllOfServiceDetails
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.SubscriptionAllOfServiceDetails
+   :members:
+
 SubscriptionAsset
 ~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.pure1.SubscriptionAsset
@@ -373,6 +657,21 @@ SubscriptionAssetArrayAdvancedSpace
 .. autoclass:: pypureclient.pure1.SubscriptionAssetArrayAdvancedSpace
    :members:
 
+SubscriptionAssetGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.SubscriptionAssetGetResponse
+   :members:
+
+SubscriptionAssetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.SubscriptionAssetResponse
+   :members:
+
+SubscriptionGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.SubscriptionGetResponse
+   :members:
+
 SubscriptionLicense
 ~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.pure1.SubscriptionLicense
@@ -383,9 +682,24 @@ SubscriptionLicenseAddOnSla
 .. autoclass:: pypureclient.pure1.SubscriptionLicenseAddOnSla
    :members:
 
+SubscriptionLicenseGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.SubscriptionLicenseGetResponse
+   :members:
+
 SubscriptionLicensePreRatio
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.pure1.SubscriptionLicensePreRatio
+   :members:
+
+SubscriptionLicenseResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.SubscriptionLicenseResponse
+   :members:
+
+SubscriptionResponse
+~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.SubscriptionResponse
    :members:
 
 SupportContract
@@ -393,9 +707,29 @@ SupportContract
 .. autoclass:: pypureclient.pure1.SupportContract
    :members:
 
+SupportContractGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.SupportContractGetResponse
+   :members:
+
+SupportContractResponse
+~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.SupportContractResponse
+   :members:
+
 SustainabilityArray
 ~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.pure1.SustainabilityArray
+   :members:
+
+SustainabilityArrayGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.SustainabilityArrayGetResponse
+   :members:
+
+SustainabilityArrayResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.SustainabilityArrayResponse
    :members:
 
 SustainabilityAssessment
@@ -408,14 +742,24 @@ SustainabilityInsightArray
 .. autoclass:: pypureclient.pure1.SustainabilityInsightArray
    :members:
 
+SustainabilityInsightArrayGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.SustainabilityInsightArrayGetResponse
+   :members:
+
+SustainabilityInsightArrayResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.SustainabilityInsightArrayResponse
+   :members:
+
 Tag
 ~~~
 .. autoclass:: pypureclient.pure1.Tag
    :members:
 
-TagBatchRequired
-~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.TagBatchRequired
+TagGetResponse
+~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.TagGetResponse
    :members:
 
 TagPut
@@ -423,14 +767,34 @@ TagPut
 .. autoclass:: pypureclient.pure1.TagPut
    :members:
 
+TagResponse
+~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.TagResponse
+   :members:
+
 Target
 ~~~~~~
 .. autoclass:: pypureclient.pure1.Target
    :members:
 
+TargetGetResponse
+~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.TargetGetResponse
+   :members:
+
+TargetResponse
+~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.TargetResponse
+   :members:
+
 Tax
 ~~~
 .. autoclass:: pypureclient.pure1.Tax
+   :members:
+
+TimeAware
+~~~~~~~~~
+.. autoclass:: pypureclient.pure1.TimeAware
    :members:
 
 TimeInterval
@@ -443,7 +807,27 @@ Volume
 .. autoclass:: pypureclient.pure1.Volume
    :members:
 
+VolumeGetResponse
+~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.VolumeGetResponse
+   :members:
+
+VolumeResponse
+~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.VolumeResponse
+   :members:
+
 VolumeSnapshot
 ~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.pure1.VolumeSnapshot
+   :members:
+
+VolumeSnapshotGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.VolumeSnapshotGetResponse
+   :members:
+
+VolumeSnapshotResponse
+~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.pure1.VolumeSnapshotResponse
    :members:

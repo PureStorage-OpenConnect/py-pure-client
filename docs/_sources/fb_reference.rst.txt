@@ -15,75 +15,75 @@ FlashBlade REST Client Factory Method
 
 FlashBlade REST 2.0 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.flashblade.FB_2_0.client.Client
+.. autoclass:: pypureclient.flashblade.pypureclient.flashblade.FB_2_0.client.Client
 
 FlashBlade REST 2.1 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.flashblade.FB_2_1.client.Client
+.. autoclass:: pypureclient.flashblade.pypureclient.flashblade.FB_2_1.client.Client
 
 FlashBlade REST 2.2 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.flashblade.FB_2_2.client.Client
+.. autoclass:: pypureclient.flashblade.pypureclient.flashblade.FB_2_2.client.Client
 
 FlashBlade REST 2.3 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.flashblade.FB_2_3.client.Client
+.. autoclass:: pypureclient.flashblade.pypureclient.flashblade.FB_2_3.client.Client
 
 FlashBlade REST 2.4 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.flashblade.FB_2_4.client.Client
+.. autoclass:: pypureclient.flashblade.pypureclient.flashblade.FB_2_4.client.Client
 
 FlashBlade REST 2.5 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.flashblade.FB_2_5.client.Client
+.. autoclass:: pypureclient.flashblade.pypureclient.flashblade.FB_2_5.client.Client
 
 FlashBlade REST 2.6 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.flashblade.FB_2_6.client.Client
+.. autoclass:: pypureclient.flashblade.pypureclient.flashblade.FB_2_6.client.Client
 
 FlashBlade REST 2.7 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.flashblade.FB_2_7.client.Client
+.. autoclass:: pypureclient.flashblade.pypureclient.flashblade.FB_2_7.client.Client
 
 FlashBlade REST 2.8 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.flashblade.FB_2_8.client.Client
+.. autoclass:: pypureclient.flashblade.pypureclient.flashblade.FB_2_8.client.Client
 
 FlashBlade REST 2.9 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.flashblade.FB_2_9.client.Client
+.. autoclass:: pypureclient.flashblade.pypureclient.flashblade.FB_2_9.client.Client
 
 FlashBlade REST 2.10 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.flashblade.FB_2_10.client.Client
+.. autoclass:: pypureclient.flashblade.pypureclient.flashblade.FB_2_10.client.Client
 
 FlashBlade REST 2.11 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.flashblade.FB_2_11.client.Client
+.. autoclass:: pypureclient.flashblade.pypureclient.flashblade.FB_2_11.client.Client
 
 FlashBlade REST 2.12 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.flashblade.FB_2_12.client.Client
+.. autoclass:: pypureclient.flashblade.pypureclient.flashblade.FB_2_12.client.Client
 
 FlashBlade REST 2.13 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.flashblade.FB_2_13.client.Client
+.. autoclass:: pypureclient.flashblade.pypureclient.flashblade.FB_2_13.client.Client
 
 FlashBlade REST 2.14 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.flashblade.FB_2_14.client.Client
+.. autoclass:: pypureclient.flashblade.pypureclient.flashblade.FB_2_14.client.Client
 
 FlashBlade REST 2.15 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.flashblade.FB_2_15.client.Client
+.. autoclass:: pypureclient.flashblade.pypureclient.flashblade.FB_2_15.client.Client
 
 FlashBlade REST 2.16 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.flashblade.FB_2_16.client.Client
+.. autoclass:: pypureclient.flashblade.pypureclient.flashblade.FB_2_16.client.Client
 
 FlashBlade REST 2.17 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.flashblade.FB_2_17.client.Client
+.. autoclass:: pypureclient.flashblade.pypureclient.flashblade.FB_2_17.client.Client
    :members:
 
 Properties
@@ -135,6 +135,11 @@ ActiveDirectoryDirectoryServers
 .. autoclass:: pypureclient.flashblade.ActiveDirectoryDirectoryServers
    :members:
 
+ActiveDirectoryGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ActiveDirectoryGetResponse
+   :members:
+
 ActiveDirectoryPatch
 ~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.ActiveDirectoryPatch
@@ -143,6 +148,11 @@ ActiveDirectoryPatch
 ActiveDirectoryPost
 ~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.ActiveDirectoryPost
+   :members:
+
+ActiveDirectoryResponse
+~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ActiveDirectoryResponse
    :members:
 
 Admin
@@ -155,9 +165,29 @@ AdminApiToken
 .. autoclass:: pypureclient.flashblade.AdminApiToken
    :members:
 
+AdminApiTokenGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.AdminApiTokenGetResponse
+   :members:
+
+AdminApiTokenResponse
+~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.AdminApiTokenResponse
+   :members:
+
 AdminCache
 ~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.AdminCache
+   :members:
+
+AdminCacheGetResponse
+~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.AdminCacheGetResponse
+   :members:
+
+AdminGetResponse
+~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.AdminGetResponse
    :members:
 
 AdminPatch
@@ -170,9 +200,24 @@ AdminPost
 .. autoclass:: pypureclient.flashblade.AdminPost
    :members:
 
+AdminResponse
+~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.AdminResponse
+   :members:
+
 AdminSetting
 ~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.AdminSetting
+   :members:
+
+AdminSettingsGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.AdminSettingsGetResponse
+   :members:
+
+AdminSettingsResponse
+~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.AdminSettingsResponse
    :members:
 
 Alert
@@ -180,14 +225,39 @@ Alert
 .. autoclass:: pypureclient.flashblade.Alert
    :members:
 
+AlertGetResponse
+~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.AlertGetResponse
+   :members:
+
+AlertResponse
+~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.AlertResponse
+   :members:
+
 AlertWatcher
 ~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.AlertWatcher
    :members:
 
+AlertWatcherGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.AlertWatcherGetResponse
+   :members:
+
 AlertWatcherPost
 ~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.AlertWatcherPost
+   :members:
+
+AlertWatcherResponse
+~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.AlertWatcherResponse
+   :members:
+
+Api217LinkAggregationGroupsPatchRequest
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.Api217LinkAggregationGroupsPatchRequest
    :members:
 
 ApiClient
@@ -198,6 +268,11 @@ ApiClient
 ApiClientsPost
 ~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.ApiClientsPost
+   :members:
+
+ApiClientsResponse
+~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ApiClientsResponse
    :members:
 
 ApiToken
@@ -220,9 +295,24 @@ ArrayConnection
 .. autoclass:: pypureclient.flashblade.ArrayConnection
    :members:
 
+ArrayConnectionGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ArrayConnectionGetResponse
+   :members:
+
 ArrayConnectionKey
 ~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.ArrayConnectionKey
+   :members:
+
+ArrayConnectionKeyGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ArrayConnectionKeyGetResponse
+   :members:
+
+ArrayConnectionKeyResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ArrayConnectionKeyResponse
    :members:
 
 ArrayConnectionPath
@@ -230,9 +320,19 @@ ArrayConnectionPath
 .. autoclass:: pypureclient.flashblade.ArrayConnectionPath
    :members:
 
+ArrayConnectionPathGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ArrayConnectionPathGetResponse
+   :members:
+
 ArrayConnectionPost
 ~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.ArrayConnectionPost
+   :members:
+
+ArrayConnectionResponse
+~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ArrayConnectionResponse
    :members:
 
 ArrayEncryption
@@ -253,6 +353,21 @@ ArrayEradicationConfig
 ArrayFactoryResetToken
 ~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.ArrayFactoryResetToken
+   :members:
+
+ArrayFactoryResetTokenGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ArrayFactoryResetTokenGetResponse
+   :members:
+
+ArrayFactoryResetTokenResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ArrayFactoryResetTokenResponse
+   :members:
+
+ArrayGetResponse
+~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ArrayGetResponse
    :members:
 
 ArrayHttpSpecificPerformance
@@ -280,9 +395,19 @@ ArrayPerformance
 .. autoclass:: pypureclient.flashblade.ArrayPerformance
    :members:
 
+ArrayPerformanceGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ArrayPerformanceGetResponse
+   :members:
+
 ArrayPerformanceReplicationGetResp
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.ArrayPerformanceReplicationGetResp
+   :members:
+
+ArrayResponse
+~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ArrayResponse
    :members:
 
 ArrayS3SpecificPerformance
@@ -300,9 +425,39 @@ ArraySpace
 .. autoclass:: pypureclient.flashblade.ArraySpace
    :members:
 
+ArraySpaceGetResponse
+~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ArraySpaceGetResponse
+   :members:
+
+ArraySpaceStorageClassGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ArraySpaceStorageClassGetResponse
+   :members:
+
+ArraysSupportedTimeZonesGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ArraysSupportedTimeZonesGetResponse
+   :members:
+
 Audit
 ~~~~~
 .. autoclass:: pypureclient.flashblade.Audit
+   :members:
+
+AuditFileSystemsPoliciesGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.AuditFileSystemsPoliciesGetResponse
+   :members:
+
+AuditFileSystemsPoliciesMembersGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.AuditFileSystemsPoliciesMembersGetResponse
+   :members:
+
+AuditFileSystemsPoliciesMembersResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.AuditFileSystemsPoliciesMembersResponse
    :members:
 
 AuditFileSystemsPoliciesPatch
@@ -315,6 +470,11 @@ AuditFileSystemsPoliciesPost
 .. autoclass:: pypureclient.flashblade.AuditFileSystemsPoliciesPost
    :members:
 
+AuditFileSystemsPoliciesResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.AuditFileSystemsPoliciesResponse
+   :members:
+
 AuditFileSystemsPolicy
 ~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.AuditFileSystemsPolicy
@@ -325,9 +485,24 @@ AuditFileSystemsPolicyNoContext
 .. autoclass:: pypureclient.flashblade.AuditFileSystemsPolicyNoContext
    :members:
 
+AuditGetResponse
+~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.AuditGetResponse
+   :members:
+
+AuditResponse
+~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.AuditResponse
+   :members:
+
 Blade
 ~~~~~
 .. autoclass:: pypureclient.flashblade.Blade
+   :members:
+
+BladeGetResponse
+~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.BladeGetResponse
    :members:
 
 Bucket
@@ -340,9 +515,19 @@ BucketAccessPolicy
 .. autoclass:: pypureclient.flashblade.BucketAccessPolicy
    :members:
 
+BucketAccessPolicyGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.BucketAccessPolicyGetResponse
+   :members:
+
 BucketAccessPolicyPost
 ~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.BucketAccessPolicyPost
+   :members:
+
+BucketAccessPolicyResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.BucketAccessPolicyResponse
    :members:
 
 BucketAccessPolicyRule
@@ -355,6 +540,11 @@ BucketAccessPolicyRuleBulkManage
 .. autoclass:: pypureclient.flashblade.BucketAccessPolicyRuleBulkManage
    :members:
 
+BucketAccessPolicyRuleGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.BucketAccessPolicyRuleGetResponse
+   :members:
+
 BucketAccessPolicyRulePost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.BucketAccessPolicyRulePost
@@ -363,6 +553,11 @@ BucketAccessPolicyRulePost
 BucketAccessPolicyRulePrincipal
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.BucketAccessPolicyRulePrincipal
+   :members:
+
+BucketAccessPolicyRuleResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.BucketAccessPolicyRuleResponse
    :members:
 
 BucketAccessPolicyRuleWithContext
@@ -385,6 +580,11 @@ BucketEradicationConfig
 .. autoclass:: pypureclient.flashblade.BucketEradicationConfig
    :members:
 
+BucketGetResponse
+~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.BucketGetResponse
+   :members:
+
 BucketPatch
 ~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.BucketPatch
@@ -393,6 +593,11 @@ BucketPatch
 BucketPerformance
 ~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.BucketPerformance
+   :members:
+
+BucketPerformanceGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.BucketPerformanceGetResponse
    :members:
 
 BucketPost
@@ -405,9 +610,24 @@ BucketReplicaLink
 .. autoclass:: pypureclient.flashblade.BucketReplicaLink
    :members:
 
+BucketReplicaLinkGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.BucketReplicaLinkGetResponse
+   :members:
+
 BucketReplicaLinkPost
 ~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.BucketReplicaLinkPost
+   :members:
+
+BucketReplicaLinkResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.BucketReplicaLinkResponse
+   :members:
+
+BucketResponse
+~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.BucketResponse
    :members:
 
 BucketS3SpecificPerformance
@@ -445,6 +665,16 @@ CertificateCertificateGroupGetResp
 .. autoclass:: pypureclient.flashblade.CertificateCertificateGroupGetResp
    :members:
 
+CertificateCertificateGroupResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.CertificateCertificateGroupResponse
+   :members:
+
+CertificateGetResponse
+~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.CertificateGetResponse
+   :members:
+
 CertificateGroup
 ~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.CertificateGroup
@@ -455,9 +685,29 @@ CertificateGroupCertificateGetResp
 .. autoclass:: pypureclient.flashblade.CertificateGroupCertificateGetResp
    :members:
 
+CertificateGroupCertificateResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.CertificateGroupCertificateResponse
+   :members:
+
+CertificateGroupGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.CertificateGroupGetResponse
+   :members:
+
+CertificateGroupResponse
+~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.CertificateGroupResponse
+   :members:
+
 CertificateGroupUse
 ~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.CertificateGroupUse
+   :members:
+
+CertificateGroupUseGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.CertificateGroupUseGetResponse
    :members:
 
 CertificatePatch
@@ -470,14 +720,29 @@ CertificatePost
 .. autoclass:: pypureclient.flashblade.CertificatePost
    :members:
 
+CertificateResponse
+~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.CertificateResponse
+   :members:
+
 CertificateUse
 ~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.CertificateUse
    :members:
 
+CertificateUseGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.CertificateUseGetResponse
+   :members:
+
 ClientPerformance
 ~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.ClientPerformance
+   :members:
+
+ClientPerformanceGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ClientPerformanceGetResponse
    :members:
 
 ConnectionRelationshipPerformanceReplication
@@ -505,9 +770,19 @@ CrossOriginResourceSharingPolicy
 .. autoclass:: pypureclient.flashblade.CrossOriginResourceSharingPolicy
    :members:
 
+CrossOriginResourceSharingPolicyGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.CrossOriginResourceSharingPolicyGetResponse
+   :members:
+
 CrossOriginResourceSharingPolicyPatch
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.CrossOriginResourceSharingPolicyPatch
+   :members:
+
+CrossOriginResourceSharingPolicyResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.CrossOriginResourceSharingPolicyResponse
    :members:
 
 CrossOriginResourceSharingPolicyRule
@@ -520,9 +795,19 @@ CrossOriginResourceSharingPolicyRuleBulkManage
 .. autoclass:: pypureclient.flashblade.CrossOriginResourceSharingPolicyRuleBulkManage
    :members:
 
+CrossOriginResourceSharingPolicyRuleGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.CrossOriginResourceSharingPolicyRuleGetResponse
+   :members:
+
 CrossOriginResourceSharingPolicyRulePost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.CrossOriginResourceSharingPolicyRulePost
+   :members:
+
+CrossOriginResourceSharingPolicyRuleResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.CrossOriginResourceSharingPolicyRuleResponse
    :members:
 
 CrossOriginResourceSharingPolicyRuleWithContext
@@ -530,14 +815,14 @@ CrossOriginResourceSharingPolicyRuleWithContext
 .. autoclass:: pypureclient.flashblade.CrossOriginResourceSharingPolicyRuleWithContext
    :members:
 
-Direction
-~~~~~~~~~
-.. autoclass:: pypureclient.flashblade.Direction
-   :members:
-
 DirectoryService
 ~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.DirectoryService
+   :members:
+
+DirectoryServiceGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.DirectoryServiceGetResponse
    :members:
 
 DirectoryServiceManagement
@@ -550,9 +835,24 @@ DirectoryServiceNfs
 .. autoclass:: pypureclient.flashblade.DirectoryServiceNfs
    :members:
 
+DirectoryServiceResponse
+~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.DirectoryServiceResponse
+   :members:
+
 DirectoryServiceRole
 ~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.DirectoryServiceRole
+   :members:
+
+DirectoryServiceRolesGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.DirectoryServiceRolesGetResponse
+   :members:
+
+DirectoryServiceRolesResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.DirectoryServiceRolesResponse
    :members:
 
 DirectoryServiceSmb
@@ -565,9 +865,19 @@ Dns
 .. autoclass:: pypureclient.flashblade.Dns
    :members:
 
+DnsGetResponse
+~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.DnsGetResponse
+   :members:
+
 DnsPost
 ~~~~~~~
 .. autoclass:: pypureclient.flashblade.DnsPost
+   :members:
+
+DnsResponse
+~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.DnsResponse
    :members:
 
 Drive
@@ -575,9 +885,34 @@ Drive
 .. autoclass:: pypureclient.flashblade.Drive
    :members:
 
+DriveGetResponse
+~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.DriveGetResponse
+   :members:
+
+ErrorContextResponse
+~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ErrorContextResponse
+   :members:
+
+ErrorContextResponseErrors
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ErrorContextResponseErrors
+   :members:
+
 Eula
 ~~~~
 .. autoclass:: pypureclient.flashblade.Eula
+   :members:
+
+EulaGetResponse
+~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.EulaGetResponse
+   :members:
+
+EulaResponse
+~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.EulaResponse
    :members:
 
 EulaSignature
@@ -595,14 +930,39 @@ FileLock
 .. autoclass:: pypureclient.flashblade.FileLock
    :members:
 
+FileLockGetResponse
+~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.FileLockGetResponse
+   :members:
+
+FileLockNlmReclamationResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.FileLockNlmReclamationResponse
+   :members:
+
 FileLockRange
 ~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.FileLockRange
    :members:
 
+FileLockResponse
+~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.FileLockResponse
+   :members:
+
 FileSession
 ~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.FileSession
+   :members:
+
+FileSessionGetResponse
+~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.FileSessionGetResponse
+   :members:
+
+FileSessionResponse
+~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.FileSessionResponse
    :members:
 
 FileSystem
@@ -615,6 +975,16 @@ FileSystemClient
 .. autoclass:: pypureclient.flashblade.FileSystemClient
    :members:
 
+FileSystemClientsGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.FileSystemClientsGetResponse
+   :members:
+
+FileSystemClientsResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.FileSystemClientsResponse
+   :members:
+
 FileSystemEradicationConfig
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.FileSystemEradicationConfig
@@ -625,14 +995,34 @@ FileSystemExport
 .. autoclass:: pypureclient.flashblade.FileSystemExport
    :members:
 
+FileSystemExportGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.FileSystemExportGetResponse
+   :members:
+
 FileSystemExportPost
 ~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.FileSystemExportPost
    :members:
 
+FileSystemExportResponse
+~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.FileSystemExportResponse
+   :members:
+
+FileSystemGetResponse
+~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.FileSystemGetResponse
+   :members:
+
 FileSystemGroupPerformance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.FileSystemGroupPerformance
+   :members:
+
+FileSystemGroupsPerformanceGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.FileSystemGroupsPerformanceGetResponse
    :members:
 
 FileSystemLockNlmReclamation
@@ -645,6 +1035,16 @@ FileSystemOpenFile
 .. autoclass:: pypureclient.flashblade.FileSystemOpenFile
    :members:
 
+FileSystemOpenFilesGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.FileSystemOpenFilesGetResponse
+   :members:
+
+FileSystemOpenFilesResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.FileSystemOpenFilesResponse
+   :members:
+
 FileSystemPatch
 ~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.FileSystemPatch
@@ -653,6 +1053,11 @@ FileSystemPatch
 FileSystemPerformance
 ~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.FileSystemPerformance
+   :members:
+
+FileSystemPerformanceGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.FileSystemPerformanceGetResponse
    :members:
 
 FileSystemPost
@@ -665,9 +1070,34 @@ FileSystemReplicaLink
 .. autoclass:: pypureclient.flashblade.FileSystemReplicaLink
    :members:
 
+FileSystemReplicaLinkGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.FileSystemReplicaLinkGetResponse
+   :members:
+
+FileSystemReplicaLinkResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.FileSystemReplicaLinkResponse
+   :members:
+
+FileSystemResponse
+~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.FileSystemResponse
+   :members:
+
 FileSystemSnapshot
 ~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.FileSystemSnapshot
+   :members:
+
+FileSystemSnapshotGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.FileSystemSnapshotGetResponse
+   :members:
+
+FileSystemSnapshotGetTransferResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.FileSystemSnapshotGetTransferResponse
    :members:
 
 FileSystemSnapshotPost
@@ -675,14 +1105,29 @@ FileSystemSnapshotPost
 .. autoclass:: pypureclient.flashblade.FileSystemSnapshotPost
    :members:
 
+FileSystemSnapshotResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.FileSystemSnapshotResponse
+   :members:
+
 FileSystemSnapshotTransfer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.FileSystemSnapshotTransfer
    :members:
 
+FileSystemSnapshotTransferResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.FileSystemSnapshotTransferResponse
+   :members:
+
 FileSystemUserPerformance
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.FileSystemUserPerformance
+   :members:
+
+FileSystemUsersPerformanceGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.FileSystemUsersPerformanceGetResponse
    :members:
 
 FixedLocationReference
@@ -730,14 +1175,34 @@ Fleet
 .. autoclass:: pypureclient.flashblade.Fleet
    :members:
 
+FleetGetResponse
+~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.FleetGetResponse
+   :members:
+
 FleetKey
 ~~~~~~~~
 .. autoclass:: pypureclient.flashblade.FleetKey
    :members:
 
+FleetKeyGetResponse
+~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.FleetKeyGetResponse
+   :members:
+
+FleetKeyResponse
+~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.FleetKeyResponse
+   :members:
+
 FleetMember
 ~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.FleetMember
+   :members:
+
+FleetMemberGetResponse
+~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.FleetMemberGetResponse
    :members:
 
 FleetMemberPost
@@ -755,9 +1220,19 @@ FleetMemberPostMembersMember
 .. autoclass:: pypureclient.flashblade.FleetMemberPostMembersMember
    :members:
 
+FleetMemberResponse
+~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.FleetMemberResponse
+   :members:
+
 FleetPatch
 ~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.FleetPatch
+   :members:
+
+FleetResponse
+~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.FleetResponse
    :members:
 
 Group
@@ -770,6 +1245,11 @@ GroupQuota
 .. autoclass:: pypureclient.flashblade.GroupQuota
    :members:
 
+GroupQuotaGetResponse
+~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.GroupQuotaGetResponse
+   :members:
+
 GroupQuotaPatch
 ~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.GroupQuotaPatch
@@ -778,6 +1258,11 @@ GroupQuotaPatch
 GroupQuotaPost
 ~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.GroupQuotaPost
+   :members:
+
+GroupQuotaResponse
+~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.GroupQuotaResponse
    :members:
 
 Hardware
@@ -790,9 +1275,34 @@ HardwareConnector
 .. autoclass:: pypureclient.flashblade.HardwareConnector
    :members:
 
+HardwareConnectorGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.HardwareConnectorGetResponse
+   :members:
+
 HardwareConnectorPerformance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.HardwareConnectorPerformance
+   :members:
+
+HardwareConnectorPerformanceGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.HardwareConnectorPerformanceGetResponse
+   :members:
+
+HardwareConnectorResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.HardwareConnectorResponse
+   :members:
+
+HardwareGetResponse
+~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.HardwareGetResponse
+   :members:
+
+HardwareResponse
+~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.HardwareResponse
    :members:
 
 Http
@@ -810,14 +1320,9 @@ Keytab
 .. autoclass:: pypureclient.flashblade.Keytab
    :members:
 
-KeytabFileBase64
-~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.flashblade.KeytabFileBase64
-   :members:
-
-KeytabFileBinary
-~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.flashblade.KeytabFileBinary
+KeytabGetResponse
+~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.KeytabGetResponse
    :members:
 
 KeytabPost
@@ -825,9 +1330,19 @@ KeytabPost
 .. autoclass:: pypureclient.flashblade.KeytabPost
    :members:
 
+KeytabResponse
+~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.KeytabResponse
+   :members:
+
 KmipServer
 ~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.KmipServer
+   :members:
+
+KmipServerResponse
+~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.KmipServerResponse
    :members:
 
 LegalHold
@@ -840,6 +1355,26 @@ LegalHoldHeldEntity
 .. autoclass:: pypureclient.flashblade.LegalHoldHeldEntity
    :members:
 
+LegalHoldsGetResponse
+~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.LegalHoldsGetResponse
+   :members:
+
+LegalHoldsHeldEntitiesGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.LegalHoldsHeldEntitiesGetResponse
+   :members:
+
+LegalHoldsHeldEntitiesResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.LegalHoldsHeldEntitiesResponse
+   :members:
+
+LegalHoldsResponse
+~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.LegalHoldsResponse
+   :members:
+
 LifecycleRule
 ~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.LifecycleRule
@@ -848,6 +1383,11 @@ LifecycleRule
 LifecycleRuleConfigExtension
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.LifecycleRuleConfigExtension
+   :members:
+
+LifecycleRuleGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.LifecycleRuleGetResponse
    :members:
 
 LifecycleRulePatch
@@ -860,14 +1400,24 @@ LifecycleRulePost
 .. autoclass:: pypureclient.flashblade.LifecycleRulePost
    :members:
 
+LifecycleRuleResponse
+~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.LifecycleRuleResponse
+   :members:
+
 LinkAggregationGroup
 ~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.LinkAggregationGroup
    :members:
 
-Linkaggregationgroup
-~~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.flashblade.Linkaggregationgroup
+LinkAggregationGroupGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.LinkAggregationGroupGetResponse
+   :members:
+
+LinkAggregationGroupResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.LinkAggregationGroupResponse
    :members:
 
 LocationReference
@@ -880,9 +1430,24 @@ Login
 .. autoclass:: pypureclient.flashblade.Login
    :members:
 
+LoginBannerGetResponse
+~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.LoginBannerGetResponse
+   :members:
+
 LogsAsync
 ~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.LogsAsync
+   :members:
+
+LogsAsyncGetResponse
+~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.LogsAsyncGetResponse
+   :members:
+
+LogsAsyncResponse
+~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.LogsAsyncResponse
    :members:
 
 MaintenanceWindow
@@ -893,6 +1458,16 @@ MaintenanceWindow
 MaintenanceWindowPost
 ~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.MaintenanceWindowPost
+   :members:
+
+MaintenanceWindowsGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.MaintenanceWindowsGetResponse
+   :members:
+
+MaintenanceWindowsResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.MaintenanceWindowsResponse
    :members:
 
 Member
@@ -920,6 +1495,16 @@ NetworkAccessPolicy
 .. autoclass:: pypureclient.flashblade.NetworkAccessPolicy
    :members:
 
+NetworkAccessPolicyGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.NetworkAccessPolicyGetResponse
+   :members:
+
+NetworkAccessPolicyResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.NetworkAccessPolicyResponse
+   :members:
+
 NetworkAccessPolicyRule
 ~~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.NetworkAccessPolicyRule
@@ -928,6 +1513,11 @@ NetworkAccessPolicyRule
 NetworkAccessPolicyRuleBase
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.NetworkAccessPolicyRuleBase
+   :members:
+
+NetworkAccessPolicyRuleGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.NetworkAccessPolicyRuleGetResponse
    :members:
 
 NetworkAccessPolicyRuleInPolicy
@@ -945,9 +1535,19 @@ NetworkAccessPolicyRulePostBase
 .. autoclass:: pypureclient.flashblade.NetworkAccessPolicyRulePostBase
    :members:
 
+NetworkAccessPolicyRuleResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.NetworkAccessPolicyRuleResponse
+   :members:
+
 NetworkInterface
 ~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.NetworkInterface
+   :members:
+
+NetworkInterfaceGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.NetworkInterfaceGetResponse
    :members:
 
 NetworkInterfacePatch
@@ -960,14 +1560,54 @@ NetworkInterfacePing
 .. autoclass:: pypureclient.flashblade.NetworkInterfacePing
    :members:
 
+NetworkInterfacePingGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.NetworkInterfacePingGetResponse
+   :members:
+
+NetworkInterfacePingResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.NetworkInterfacePingResponse
+   :members:
+
+NetworkInterfaceResponse
+~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.NetworkInterfaceResponse
+   :members:
+
 NetworkInterfaceTrace
 ~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.NetworkInterfaceTrace
    :members:
 
+NetworkInterfaceTraceGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.NetworkInterfaceTraceGetResponse
+   :members:
+
+NetworkInterfaceTraceResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.NetworkInterfaceTraceResponse
+   :members:
+
+NetworkInterfacesConnectorsGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.NetworkInterfacesConnectorsGetResponse
+   :members:
+
 NetworkInterfacesConnectorsPerformance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.NetworkInterfacesConnectorsPerformance
+   :members:
+
+NetworkInterfacesConnectorsPerformanceGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.NetworkInterfacesConnectorsPerformanceGetResponse
+   :members:
+
+NetworkInterfacesConnectorsResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.NetworkInterfacesConnectorsResponse
    :members:
 
 NetworkInterfacesConnectorsSetting
@@ -990,6 +1630,11 @@ NetworkInterfacesConnectorsSettingRocePfc
 .. autoclass:: pypureclient.flashblade.NetworkInterfacesConnectorsSettingRocePfc
    :members:
 
+NetworkInterfacesConnectorsSettingsGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.NetworkInterfacesConnectorsSettingsGetResponse
+   :members:
+
 Nfs
 ~~~
 .. autoclass:: pypureclient.flashblade.Nfs
@@ -1000,9 +1645,19 @@ NfsExportPolicy
 .. autoclass:: pypureclient.flashblade.NfsExportPolicy
    :members:
 
+NfsExportPolicyGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.NfsExportPolicyGetResponse
+   :members:
+
 NfsExportPolicyPost
 ~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.NfsExportPolicyPost
+   :members:
+
+NfsExportPolicyResponse
+~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.NfsExportPolicyResponse
    :members:
 
 NfsExportPolicyRule
@@ -1015,14 +1670,39 @@ NfsExportPolicyRuleBase
 .. autoclass:: pypureclient.flashblade.NfsExportPolicyRuleBase
    :members:
 
+NfsExportPolicyRuleGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.NfsExportPolicyRuleGetResponse
+   :members:
+
 NfsExportPolicyRuleInPolicy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.NfsExportPolicyRuleInPolicy
    :members:
 
+NfsExportPolicyRuleResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.NfsExportPolicyRuleResponse
+   :members:
+
 NfsPatch
 ~~~~~~~~
 .. autoclass:: pypureclient.flashblade.NfsPatch
+   :members:
+
+Oauth210TokenPost400Response
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.Oauth210TokenPost400Response
+   :members:
+
+Oauth210TokenPost401Response
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.Oauth210TokenPost401Response
+   :members:
+
+OauthTokenResponse
+~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.OauthTokenResponse
    :members:
 
 ObjectBacklog
@@ -1040,14 +1720,34 @@ ObjectLockConfigRequestBody
 .. autoclass:: pypureclient.flashblade.ObjectLockConfigRequestBody
    :members:
 
+ObjectLockConfigResponse
+~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ObjectLockConfigResponse
+   :members:
+
 ObjectStoreAccessKey
 ~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.ObjectStoreAccessKey
    :members:
 
+ObjectStoreAccessKeyGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ObjectStoreAccessKeyGetResponse
+   :members:
+
 ObjectStoreAccessKeyPost
 ~~~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.ObjectStoreAccessKeyPost
+   :members:
+
+ObjectStoreAccessKeyPostUser
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ObjectStoreAccessKeyPostUser
+   :members:
+
+ObjectStoreAccessKeyResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ObjectStoreAccessKeyResponse
    :members:
 
 ObjectStoreAccessPolicy
@@ -1060,6 +1760,21 @@ ObjectStoreAccessPolicyAction
 .. autoclass:: pypureclient.flashblade.ObjectStoreAccessPolicyAction
    :members:
 
+ObjectStoreAccessPolicyActionGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ObjectStoreAccessPolicyActionGetResponse
+   :members:
+
+ObjectStoreAccessPolicyActionResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ObjectStoreAccessPolicyActionResponse
+   :members:
+
+ObjectStoreAccessPolicyGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ObjectStoreAccessPolicyGetResponse
+   :members:
+
 ObjectStoreAccessPolicyPatch
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.ObjectStoreAccessPolicyPatch
@@ -1070,9 +1785,29 @@ ObjectStoreAccessPolicyPost
 .. autoclass:: pypureclient.flashblade.ObjectStoreAccessPolicyPost
    :members:
 
+ObjectStoreAccessPolicyResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ObjectStoreAccessPolicyResponse
+   :members:
+
+ObjectStoreAccessPolicyRuleGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ObjectStoreAccessPolicyRuleGetResponse
+   :members:
+
+ObjectStoreAccessPolicyRuleResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ObjectStoreAccessPolicyRuleResponse
+   :members:
+
 ObjectStoreAccount
 ~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.ObjectStoreAccount
+   :members:
+
+ObjectStoreAccountGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ObjectStoreAccountGetResponse
    :members:
 
 ObjectStoreAccountPatch
@@ -1083,6 +1818,11 @@ ObjectStoreAccountPatch
 ObjectStoreAccountPost
 ~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.ObjectStoreAccountPost
+   :members:
+
+ObjectStoreAccountResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ObjectStoreAccountResponse
    :members:
 
 ObjectStoreRemoteCredentialGetResp
@@ -1110,9 +1850,19 @@ ObjectStoreRole
 .. autoclass:: pypureclient.flashblade.ObjectStoreRole
    :members:
 
+ObjectStoreRoleGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ObjectStoreRoleGetResponse
+   :members:
+
 ObjectStoreRolePost
 ~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.ObjectStoreRolePost
+   :members:
+
+ObjectStoreRoleResponse
+~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ObjectStoreRoleResponse
    :members:
 
 ObjectStoreTrustPolicy
@@ -1120,9 +1870,24 @@ ObjectStoreTrustPolicy
 .. autoclass:: pypureclient.flashblade.ObjectStoreTrustPolicy
    :members:
 
-ObjectStoreTrustPolicyIam
-~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.flashblade.ObjectStoreTrustPolicyIam
+ObjectStoreTrustPolicyGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ObjectStoreTrustPolicyGetResponse
+   :members:
+
+ObjectStoreTrustPolicyResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ObjectStoreTrustPolicyResponse
+   :members:
+
+ObjectStoreTrustPolicyRuleGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ObjectStoreTrustPolicyRuleGetResponse
+   :members:
+
+ObjectStoreTrustPolicyRuleResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ObjectStoreTrustPolicyRuleResponse
    :members:
 
 ObjectStoreUser
@@ -1130,14 +1895,39 @@ ObjectStoreUser
 .. autoclass:: pypureclient.flashblade.ObjectStoreUser
    :members:
 
+ObjectStoreUserGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ObjectStoreUserGetResponse
+   :members:
+
+ObjectStoreUserResponse
+~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ObjectStoreUserResponse
+   :members:
+
 ObjectStoreVirtualHost
 ~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.ObjectStoreVirtualHost
    :members:
 
+ObjectStoreVirtualHostGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ObjectStoreVirtualHostGetResponse
+   :members:
+
+ObjectStoreVirtualHostResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ObjectStoreVirtualHostResponse
+   :members:
+
 OidcSso
 ~~~~~~~
 .. autoclass:: pypureclient.flashblade.OidcSso
+   :members:
+
+OidcSsoGetResponse
+~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.OidcSsoGetResponse
    :members:
 
 OidcSsoPatch
@@ -1155,9 +1945,24 @@ OidcSsoPostIdp
 .. autoclass:: pypureclient.flashblade.OidcSsoPostIdp
    :members:
 
+OidcSsoResponse
+~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.OidcSsoResponse
+   :members:
+
 PageInfo
 ~~~~~~~~
 .. autoclass:: pypureclient.flashblade.PageInfo
+   :members:
+
+PasswordPoliciesGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.PasswordPoliciesGetResponse
+   :members:
+
+PasswordPoliciesResponse
+~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.PasswordPoliciesResponse
    :members:
 
 PasswordPolicy
@@ -1185,14 +1990,39 @@ PolicyBaseContext
 .. autoclass:: pypureclient.flashblade.PolicyBaseContext
    :members:
 
+PolicyBaseGetResponse
+~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.PolicyBaseGetResponse
+   :members:
+
 PolicyBaseRenameable
 ~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.PolicyBaseRenameable
    :members:
 
+PolicyBaseResponse
+~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.PolicyBaseResponse
+   :members:
+
 PolicyFileSystemSnapshot
 ~~~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.PolicyFileSystemSnapshot
+   :members:
+
+PolicyFileSystemSnapshotGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.PolicyFileSystemSnapshotGetResponse
+   :members:
+
+PolicyFileSystemSnapshotResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.PolicyFileSystemSnapshotResponse
+   :members:
+
+PolicyGetResponse
+~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.PolicyGetResponse
    :members:
 
 PolicyMember
@@ -1205,14 +2035,49 @@ PolicyMemberContext
 .. autoclass:: pypureclient.flashblade.PolicyMemberContext
    :members:
 
+PolicyMemberContextGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.PolicyMemberContextGetResponse
+   :members:
+
+PolicyMemberContextResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.PolicyMemberContextResponse
+   :members:
+
+PolicyMemberGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.PolicyMemberGetResponse
+   :members:
+
+PolicyMemberResponse
+~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.PolicyMemberResponse
+   :members:
+
 PolicyMemberWithRemote
 ~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.PolicyMemberWithRemote
    :members:
 
+PolicyMemberWithRemoteGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.PolicyMemberWithRemoteGetResponse
+   :members:
+
+PolicyMemberWithRemoteResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.PolicyMemberWithRemoteResponse
+   :members:
+
 PolicyPatch
 ~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.PolicyPatch
+   :members:
+
+PolicyResponse
+~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.PolicyResponse
    :members:
 
 PolicyRule
@@ -1260,14 +2125,44 @@ PublicKey
 .. autoclass:: pypureclient.flashblade.PublicKey
    :members:
 
+PublicKeyGetResponse
+~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.PublicKeyGetResponse
+   :members:
+
 PublicKeyPost
 ~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.PublicKeyPost
    :members:
 
+PublicKeyResponse
+~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.PublicKeyResponse
+   :members:
+
 PublicKeyUse
 ~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.PublicKeyUse
+   :members:
+
+PublicKeyUseGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.PublicKeyUseGetResponse
+   :members:
+
+PublicKeyUseResponse
+~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.PublicKeyUseResponse
+   :members:
+
+QosPoliciesGetResponse
+~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.QosPoliciesGetResponse
+   :members:
+
+QosPoliciesResponse
+~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.QosPoliciesResponse
    :members:
 
 QosPolicy
@@ -1280,9 +2175,24 @@ QuotaSetting
 .. autoclass:: pypureclient.flashblade.QuotaSetting
    :members:
 
+QuotaSettingGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.QuotaSettingGetResponse
+   :members:
+
+QuotaSettingResponse
+~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.QuotaSettingResponse
+   :members:
+
 RapidDataLocking
 ~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.RapidDataLocking
+   :members:
+
+RapidDataLockingResponse
+~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.RapidDataLockingResponse
    :members:
 
 Reference
@@ -1310,6 +2220,11 @@ RemoteArray
 .. autoclass:: pypureclient.flashblade.RemoteArray
    :members:
 
+RemoteArraysResponse
+~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.RemoteArraysResponse
+   :members:
+
 ReplicaLinkBuiltIn
 ~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.ReplicaLinkBuiltIn
@@ -1335,14 +2250,29 @@ ResourcePerformanceReplication
 .. autoclass:: pypureclient.flashblade.ResourcePerformanceReplication
    :members:
 
+ResourcePerformanceReplicationGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ResourcePerformanceReplicationGetResponse
+   :members:
+
 Role
 ~~~~
 .. autoclass:: pypureclient.flashblade.Role
    :members:
 
+RoleGetResponse
+~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.RoleGetResponse
+   :members:
+
 Saml2Sso
 ~~~~~~~~
 .. autoclass:: pypureclient.flashblade.Saml2Sso
+   :members:
+
+Saml2SsoGetResponse
+~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.Saml2SsoGetResponse
    :members:
 
 Saml2SsoIdp
@@ -1353,6 +2283,11 @@ Saml2SsoIdp
 Saml2SsoPost
 ~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.Saml2SsoPost
+   :members:
+
+Saml2SsoResponse
+~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.Saml2SsoResponse
    :members:
 
 Saml2SsoSp
@@ -1375,14 +2310,34 @@ ServerContext
 .. autoclass:: pypureclient.flashblade.ServerContext
    :members:
 
+ServerGetResponse
+~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ServerGetResponse
+   :members:
+
 ServerPost
 ~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.ServerPost
    :members:
 
+ServerResponse
+~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ServerResponse
+   :members:
+
+ServerResponseContext
+~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.ServerResponseContext
+   :members:
+
 Session
 ~~~~~~~
 .. autoclass:: pypureclient.flashblade.Session
+   :members:
+
+SessionGetResponse
+~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.SessionGetResponse
    :members:
 
 Smb
@@ -1395,9 +2350,19 @@ SmbClientPolicy
 .. autoclass:: pypureclient.flashblade.SmbClientPolicy
    :members:
 
+SmbClientPolicyGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.SmbClientPolicyGetResponse
+   :members:
+
 SmbClientPolicyPost
 ~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.SmbClientPolicyPost
+   :members:
+
+SmbClientPolicyResponse
+~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.SmbClientPolicyResponse
    :members:
 
 SmbClientPolicyRule
@@ -1408,6 +2373,11 @@ SmbClientPolicyRule
 SmbClientPolicyRuleBase
 ~~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.SmbClientPolicyRuleBase
+   :members:
+
+SmbClientPolicyRuleGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.SmbClientPolicyRuleGetResponse
    :members:
 
 SmbClientPolicyRuleInPolicy
@@ -1430,6 +2400,11 @@ SmbClientPolicyRulePostInPolicy
 .. autoclass:: pypureclient.flashblade.SmbClientPolicyRulePostInPolicy
    :members:
 
+SmbClientPolicyRuleResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.SmbClientPolicyRuleResponse
+   :members:
+
 SmbPost
 ~~~~~~~
 .. autoclass:: pypureclient.flashblade.SmbPost
@@ -1440,9 +2415,19 @@ SmbSharePolicy
 .. autoclass:: pypureclient.flashblade.SmbSharePolicy
    :members:
 
+SmbSharePolicyGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.SmbSharePolicyGetResponse
+   :members:
+
 SmbSharePolicyPost
 ~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.SmbSharePolicyPost
+   :members:
+
+SmbSharePolicyResponse
+~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.SmbSharePolicyResponse
    :members:
 
 SmbSharePolicyRule
@@ -1450,9 +2435,19 @@ SmbSharePolicyRule
 .. autoclass:: pypureclient.flashblade.SmbSharePolicyRule
    :members:
 
+SmbSharePolicyRuleGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.SmbSharePolicyRuleGetResponse
+   :members:
+
 SmbSharePolicyRulePost
 ~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.SmbSharePolicyRulePost
+   :members:
+
+SmbSharePolicyRuleResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.SmbSharePolicyRuleResponse
    :members:
 
 SmbSharePolicyRuleWithContext
@@ -1465,9 +2460,24 @@ SmtpServer
 .. autoclass:: pypureclient.flashblade.SmtpServer
    :members:
 
+SmtpServerGetResponse
+~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.SmtpServerGetResponse
+   :members:
+
+SmtpServerResponse
+~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.SmtpServerResponse
+   :members:
+
 SnmpAgent
 ~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.SnmpAgent
+   :members:
+
+SnmpAgentGetResponse
+~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.SnmpAgentGetResponse
    :members:
 
 SnmpAgentMib
@@ -1475,14 +2485,34 @@ SnmpAgentMib
 .. autoclass:: pypureclient.flashblade.SnmpAgentMib
    :members:
 
+SnmpAgentMibResponse
+~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.SnmpAgentMibResponse
+   :members:
+
+SnmpAgentResponse
+~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.SnmpAgentResponse
+   :members:
+
 SnmpManager
 ~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.SnmpManager
    :members:
 
+SnmpManagerGetResponse
+~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.SnmpManagerGetResponse
+   :members:
+
 SnmpManagerPost
 ~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.SnmpManagerPost
+   :members:
+
+SnmpManagerResponse
+~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.SnmpManagerResponse
    :members:
 
 SnmpManagerTest
@@ -1515,6 +2545,16 @@ SoftwareChecksChecks
 .. autoclass:: pypureclient.flashblade.SoftwareChecksChecks
    :members:
 
+SoftwareChecksGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.SoftwareChecksGetResponse
+   :members:
+
+SoftwareChecksResponse
+~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.SoftwareChecksResponse
+   :members:
+
 Space
 ~~~~~
 .. autoclass:: pypureclient.flashblade.Space
@@ -1525,9 +2565,19 @@ SshCertificateAuthorityPolicy
 .. autoclass:: pypureclient.flashblade.SshCertificateAuthorityPolicy
    :members:
 
+SshCertificateAuthorityPolicyGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.SshCertificateAuthorityPolicyGetResponse
+   :members:
+
 SshCertificateAuthorityPolicyPost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.SshCertificateAuthorityPolicyPost
+   :members:
+
+SshCertificateAuthorityPolicyResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.SshCertificateAuthorityPolicyResponse
    :members:
 
 StartEndTime
@@ -1550,6 +2600,16 @@ Subnet
 .. autoclass:: pypureclient.flashblade.Subnet
    :members:
 
+SubnetGetResponse
+~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.SubnetGetResponse
+   :members:
+
+SubnetResponse
+~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.SubnetResponse
+   :members:
+
 Support
 ~~~~~~~
 .. autoclass:: pypureclient.flashblade.Support
@@ -1565,14 +2625,44 @@ SupportDiagnosticsDetails
 .. autoclass:: pypureclient.flashblade.SupportDiagnosticsDetails
    :members:
 
+SupportDiagnosticsDetailsGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.SupportDiagnosticsDetailsGetResponse
+   :members:
+
+SupportDiagnosticsDetailsResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.SupportDiagnosticsDetailsResponse
+   :members:
+
+SupportDiagnosticsGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.SupportDiagnosticsGetResponse
+   :members:
+
+SupportDiagnosticsResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.SupportDiagnosticsResponse
+   :members:
+
 SupportDiagnosticsSeverityCount
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.SupportDiagnosticsSeverityCount
    :members:
 
+SupportGetResponse
+~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.SupportGetResponse
+   :members:
+
 SupportRemoteAssistPaths
 ~~~~~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.SupportRemoteAssistPaths
+   :members:
+
+SupportResponse
+~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.SupportResponse
    :members:
 
 SyslogServer
@@ -1583,6 +2673,16 @@ SyslogServer
 SyslogServerContext
 ~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.SyslogServerContext
+   :members:
+
+SyslogServerContextResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.SyslogServerContextResponse
+   :members:
+
+SyslogServerGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.SyslogServerGetResponse
    :members:
 
 SyslogServerPatch
@@ -1600,9 +2700,24 @@ SyslogServerPostOrPatch
 .. autoclass:: pypureclient.flashblade.SyslogServerPostOrPatch
    :members:
 
+SyslogServerResponse
+~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.SyslogServerResponse
+   :members:
+
 SyslogServerSettings
 ~~~~~~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.SyslogServerSettings
+   :members:
+
+SyslogServerSettingsGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.SyslogServerSettingsGetResponse
+   :members:
+
+SyslogServerSettingsResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.SyslogServerSettingsResponse
    :members:
 
 Target
@@ -1610,9 +2725,24 @@ Target
 .. autoclass:: pypureclient.flashblade.Target
    :members:
 
+TargetGetResponse
+~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.TargetGetResponse
+   :members:
+
 TargetPost
 ~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.TargetPost
+   :members:
+
+TargetResponse
+~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.TargetResponse
+   :members:
+
+TargetResponseContext
+~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.TargetResponseContext
    :members:
 
 TargetWithContext
@@ -1623,6 +2753,16 @@ TargetWithContext
 TestResult
 ~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.TestResult
+   :members:
+
+TestResultGetResponse
+~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.TestResultGetResponse
+   :members:
+
+TestResultResponse
+~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.TestResultResponse
    :members:
 
 Throttle
@@ -1645,9 +2785,19 @@ TlsPolicy
 .. autoclass:: pypureclient.flashblade.TlsPolicy
    :members:
 
+TlsPolicyGetResponse
+~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.TlsPolicyGetResponse
+   :members:
+
 TlsPolicyPost
 ~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.TlsPolicyPost
+   :members:
+
+TlsPolicyResponse
+~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.TlsPolicyResponse
    :members:
 
 TrustPolicyRule
@@ -1685,6 +2835,11 @@ UserQuota
 .. autoclass:: pypureclient.flashblade.UserQuota
    :members:
 
+UserQuotaGetResponse
+~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.UserQuotaGetResponse
+   :members:
+
 UserQuotaPatch
 ~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.UserQuotaPatch
@@ -1695,9 +2850,19 @@ UserQuotaPost
 .. autoclass:: pypureclient.flashblade.UserQuotaPost
    :members:
 
+UserQuotaResponse
+~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.UserQuotaResponse
+   :members:
+
 VerificationKey
 ~~~~~~~~~~~~~~~
 .. autoclass:: pypureclient.flashblade.VerificationKey
+   :members:
+
+VerificationKeyGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.VerificationKeyGetResponse
    :members:
 
 VerificationKeyPatch
@@ -1705,9 +2870,34 @@ VerificationKeyPatch
 .. autoclass:: pypureclient.flashblade.VerificationKeyPatch
    :members:
 
+VerificationKeyResponse
+~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.VerificationKeyResponse
+   :members:
+
 Version
 ~~~~~~~
 .. autoclass:: pypureclient.flashblade.Version
+   :members:
+
+WormDataPoliciesGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.WormDataPoliciesGetResponse
+   :members:
+
+WormDataPoliciesMembersGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.WormDataPoliciesMembersGetResponse
+   :members:
+
+WormDataPoliciesMembersResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.WormDataPoliciesMembersResponse
+   :members:
+
+WormDataPoliciesResponse
+~~~~~~~~~~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.flashblade.WormDataPoliciesResponse
    :members:
 
 WormDataPolicy
@@ -1892,8 +3082,37 @@ in the errors field of the response. If set to *false*, the operation will fail 
     if type(res) == pypureclient.responses.ValidResponse:
         print(list(res.items))
 
-Active Directory
-~~~~~~~~~~~~~~~~
+Apiclientsap
+~~~~~~~~~~~~
+
+The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+delete_api_clients
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_api_clients.py
+    :language: python
+
+get_api_clients
+'''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_api_clients.py
+    :language: python
+
+patch_api_clients
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_api_clients.py
+    :language: python
+
+post_api_clients
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_api_clients.py
+    :language: python
+
+Activedirectoryap
+~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -1927,8 +3146,8 @@ get_active_directory_test
 .. literalinclude:: source/examples/FB2.0/get_active_directory_test.py
     :language: python
 
-Administrators
-~~~~~~~~~~~~~~
+Administratorsap
+~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -1998,8 +3217,8 @@ patch_admins_settings
 .. literalinclude:: source/examples/FB2.3/patch_admins_settings.py
     :language: python
 
-Alert Watchers
-~~~~~~~~~~~~~~
+Alertwatchersap
+~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2033,8 +3252,8 @@ get_alert_watchers_test
 .. literalinclude:: source/examples/FB2.0/get_alert_watchers_test.py
     :language: python
 
-Alerts
-~~~~~~
+Alertsap
+~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2050,37 +3269,8 @@ patch_alerts
 .. literalinclude:: source/examples/FB2.0/patch_alerts.py
     :language: python
 
-API Clients
-~~~~~~~~~~~
-
-The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
-
-delete_api_clients
-''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.0/delete_api_clients.py
-    :language: python
-
-get_api_clients
-'''''''''''''''
-
-.. literalinclude:: source/examples/FB2.0/get_api_clients.py
-    :language: python
-
-patch_api_clients
-'''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.0/patch_api_clients.py
-    :language: python
-
-post_api_clients
-''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.0/post_api_clients.py
-    :language: python
-
-Array Connections
-~~~~~~~~~~~~~~~~~
+Arrayconnectionsap
+~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2099,25 +3289,25 @@ post_array_connections_connection_key
 delete_array_connections
 ''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_array_connections.py
+.. literalinclude:: source/examples/FB2.0/delete_array_connections.py
     :language: python
 
 get_array_connections
 '''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_array_connections.py
+.. literalinclude:: source/examples/FB2.0/get_array_connections.py
     :language: python
 
 patch_array_connections
 '''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/patch_array_connections.py
+.. literalinclude:: source/examples/FB2.0/patch_array_connections.py
     :language: python
 
 get_array_connections_path
 ''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_array_connections_path.py
+.. literalinclude:: source/examples/FB2.0/get_array_connections_path.py
     :language: python
 
 get_array_connections_performance_replication
@@ -2129,11 +3319,11 @@ get_array_connections_performance_replication
 post_array_connections
 ''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_array_connections.py
+.. literalinclude:: source/examples/FB2.0/post_array_connections.py
     :language: python
 
-Arrays
-~~~~~~
+Arraysap
+~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2170,49 +3360,49 @@ post_arrays_factory_reset_token
 get_arrays
 ''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_arrays.py
+.. literalinclude:: source/examples/FB2.0/get_arrays.py
     :language: python
 
 get_arrays_http_specific_performance
 ''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_arrays_http_specific_performance.py
+.. literalinclude:: source/examples/FB2.0/get_arrays_http_specific_performance.py
     :language: python
 
 get_arrays_nfs_specific_performance
 '''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_arrays_nfs_specific_performance.py
+.. literalinclude:: source/examples/FB2.0/get_arrays_nfs_specific_performance.py
     :language: python
 
 patch_arrays
 ''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/patch_arrays.py
+.. literalinclude:: source/examples/FB2.0/patch_arrays.py
     :language: python
 
 get_arrays_performance
 ''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_arrays_performance.py
+.. literalinclude:: source/examples/FB2.0/get_arrays_performance.py
     :language: python
 
 get_arrays_performance_replication
 ''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_arrays_performance_replication.py
+.. literalinclude:: source/examples/FB2.0/get_arrays_performance_replication.py
     :language: python
 
 get_arrays_s3_specific_performance
 ''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_arrays_s3_specific_performance.py
+.. literalinclude:: source/examples/FB2.0/get_arrays_s3_specific_performance.py
     :language: python
 
 get_arrays_space
 ''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_arrays_space.py
+.. literalinclude:: source/examples/FB2.0/get_arrays_space.py
     :language: python
 
 get_arrays_space_storage_classes
@@ -2227,8 +3417,8 @@ get_arrays_supported_time_zones
 .. literalinclude:: source/examples/FB2.0/get_arrays_supported_time_zones.py
     :language: python
 
-Audits
-~~~~~~
+Auditsap
+~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2238,13 +3428,13 @@ get_audits
 .. literalinclude:: source/examples/FB2.0/get_audits.py
     :language: python
 
-Authorization
-~~~~~~~~~~~~~
+Authorizationap
+~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
-Blades
-~~~~~~
+Bladesap
+~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2254,7 +3444,7 @@ get_blades
 .. literalinclude:: source/examples/FB2.0/get_blades.py
     :language: python
 
-Bucket Replica Links
+Bucketreplicalinksap
 ~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -2262,120 +3452,120 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 delete_bucket_replica_links
 '''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_bucket_replica_links.py
+.. literalinclude:: source/examples/FB2.0/delete_bucket_replica_links.py
     :language: python
 
 get_bucket_replica_links
 ''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_bucket_replica_links.py
+.. literalinclude:: source/examples/FB2.2/get_bucket_replica_links.py
     :language: python
 
 patch_bucket_replica_links
 ''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/patch_bucket_replica_links.py
+.. literalinclude:: source/examples/FB2.0/patch_bucket_replica_links.py
     :language: python
 
 post_bucket_replica_links
 '''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_bucket_replica_links.py
+.. literalinclude:: source/examples/FB2.2/post_bucket_replica_links.py
     :language: python
 
-Buckets
-~~~~~~~
+Bucketsap
+~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
 delete_buckets_bucket_access_policies
 '''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_buckets_bucket_access_policies.py
+.. literalinclude:: source/examples/FB2.12/delete_buckets_bucket_access_policies.py
     :language: python
 
 get_buckets_bucket_access_policies
 ''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_buckets_bucket_access_policies.py
+.. literalinclude:: source/examples/FB2.12/get_buckets_bucket_access_policies.py
     :language: python
 
 post_buckets_bucket_access_policies
 '''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_buckets_bucket_access_policies.py
+.. literalinclude:: source/examples/FB2.12/post_buckets_bucket_access_policies.py
     :language: python
 
 delete_buckets_bucket_access_policies_rules
 '''''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_buckets_bucket_access_policies_rules.py
+.. literalinclude:: source/examples/FB2.12/delete_buckets_bucket_access_policies_rules.py
     :language: python
 
 get_buckets_bucket_access_policies_rules
 ''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_buckets_bucket_access_policies_rules.py
+.. literalinclude:: source/examples/FB2.12/get_buckets_bucket_access_policies_rules.py
     :language: python
 
 post_buckets_bucket_access_policies_rules
 '''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_buckets_bucket_access_policies_rules.py
+.. literalinclude:: source/examples/FB2.12/post_buckets_bucket_access_policies_rules.py
     :language: python
 
 delete_buckets_cross_origin_resource_sharing_policies
 '''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_buckets_cross_origin_resource_sharing_policies.py
+.. literalinclude:: source/examples/FB2.12/delete_buckets_cross_origin_resource_sharing_policies.py
     :language: python
 
 get_buckets_cross_origin_resource_sharing_policies
 ''''''''''''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_buckets_cross_origin_resource_sharing_policies.py
+.. literalinclude:: source/examples/FB2.12/get_buckets_cross_origin_resource_sharing_policies.py
     :language: python
 
 post_buckets_cross_origin_resource_sharing_policies
 '''''''''''''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_buckets_cross_origin_resource_sharing_policies.py
+.. literalinclude:: source/examples/FB2.12/post_buckets_cross_origin_resource_sharing_policies.py
     :language: python
 
 delete_buckets_cross_origin_resource_sharing_policies_rules
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_buckets_cross_origin_resource_sharing_policies_rules.py
+.. literalinclude:: source/examples/FB2.12/delete_buckets_cross_origin_resource_sharing_policies_rules.py
     :language: python
 
 get_buckets_cross_origin_resource_sharing_policies_rules
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_buckets_cross_origin_resource_sharing_policies_rules.py
+.. literalinclude:: source/examples/FB2.12/get_buckets_cross_origin_resource_sharing_policies_rules.py
     :language: python
 
 post_buckets_cross_origin_resource_sharing_policies_rules
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_buckets_cross_origin_resource_sharing_policies_rules.py
+.. literalinclude:: source/examples/FB2.12/post_buckets_cross_origin_resource_sharing_policies_rules.py
     :language: python
 
 delete_buckets
 ''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_buckets.py
+.. literalinclude:: source/examples/FB2.0/delete_buckets.py
     :language: python
 
 get_buckets
 '''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_buckets.py
+.. literalinclude:: source/examples/FB2.0/get_buckets.py
     :language: python
 
 patch_buckets
 '''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/patch_buckets.py
+.. literalinclude:: source/examples/FB2.13/patch_buckets.py
     :language: python
 
 get_buckets_performance
@@ -2387,7 +3577,7 @@ get_buckets_performance
 post_buckets
 ''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_buckets.py
+.. literalinclude:: source/examples/FB2.13/post_buckets.py
     :language: python
 
 get_buckets_s3_specific_performance
@@ -2396,8 +3586,8 @@ get_buckets_s3_specific_performance
 .. literalinclude:: source/examples/FB2.0/get_buckets_s3_specific_performance.py
     :language: python
 
-Certificate Groups
-~~~~~~~~~~~~~~~~~~
+Certificategroupsap
+~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2443,8 +3633,8 @@ get_certificate_groups_uses
 .. literalinclude:: source/examples/FB2.0/get_certificate_groups_uses.py
     :language: python
 
-Certificates
-~~~~~~~~~~~~
+Certificatesap
+~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2496,19 +3686,48 @@ get_certificates_uses
 .. literalinclude:: source/examples/FB2.0/get_certificates_uses.py
     :language: python
 
-Clients
-~~~~~~~
+Clientsap
+~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
 get_arrays_clients_performance
 ''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_arrays_clients_performance.py
+.. literalinclude:: source/examples/FB2.0/get_arrays_clients_performance.py
     :language: python
 
-Directory Services
-~~~~~~~~~~~~~~~~~~
+Dnsap
+~~~~~
+
+The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+delete_dns
+''''''''''
+
+.. literalinclude:: source/examples/FB2.16/delete_dns.py
+    :language: python
+
+get_dns
+'''''''
+
+.. literalinclude:: source/examples/FB2.0/get_dns.py
+    :language: python
+
+patch_dns
+'''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_dns.py
+    :language: python
+
+post_dns
+''''''''
+
+.. literalinclude:: source/examples/FB2.16/post_dns.py
+    :language: python
+
+Directoryservicesap
+~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2560,37 +3779,8 @@ patch_directory_services_test
 .. literalinclude:: source/examples/FB2.0/patch_directory_services_test.py
     :language: python
 
-DNS
-~~~
-
-The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
-
-delete_dns
-''''''''''
-
-.. literalinclude:: source/examples/FB2.16/delete_dns.py
-    :language: python
-
-get_dns
-'''''''
-
-.. literalinclude:: source/examples/FB2.0/get_dns.py
-    :language: python
-
-patch_dns
-'''''''''
-
-.. literalinclude:: source/examples/FB2.0/patch_dns.py
-    :language: python
-
-post_dns
-''''''''
-
-.. literalinclude:: source/examples/FB2.16/post_dns.py
-    :language: python
-
-Drives
-~~~~~~
+Drivesap
+~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2600,7 +3790,7 @@ get_drives
 .. literalinclude:: source/examples/FB2.4/get_drives.py
     :language: python
 
-File System Exports
+Filesystemexportsap
 ~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -2608,81 +3798,75 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 delete_file_system_exports
 ''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_file_system_exports.py
+.. literalinclude:: source/examples/FB2.16/delete_file_system_exports.py
     :language: python
 
 get_file_system_exports
 '''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_file_system_exports.py
+.. literalinclude:: source/examples/FB2.16/get_file_system_exports.py
     :language: python
 
 patch_file_system_exports
 '''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/patch_file_system_exports.py
+.. literalinclude:: source/examples/FB2.16/patch_file_system_exports.py
     :language: python
 
 post_file_system_exports
 ''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_file_system_exports.py
+.. literalinclude:: source/examples/FB2.16/post_file_system_exports.py
     :language: python
 
-File System Replica Links
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Filesystemreplicalinksap
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
 delete_file_system_replica_links
 ''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_file_system_replica_links.py
+.. literalinclude:: source/examples/FB2.10/delete_file_system_replica_links.py
     :language: python
 
 get_file_system_replica_links
 '''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_file_system_replica_links.py
-    :language: python
-
-patch_file_system_replica_links
-'''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/patch_file_system_replica_links.py
+.. literalinclude:: source/examples/FB2.0/get_file_system_replica_links.py
     :language: python
 
 delete_file_system_replica_links_policies
 '''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_file_system_replica_links_policies.py
+.. literalinclude:: source/examples/FB2.0/delete_file_system_replica_links_policies.py
     :language: python
 
 get_file_system_replica_links_policies
 ''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_file_system_replica_links_policies.py
+.. literalinclude:: source/examples/FB2.0/get_file_system_replica_links_policies.py
     :language: python
 
 post_file_system_replica_links_policies
 '''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_file_system_replica_links_policies.py
+.. literalinclude:: source/examples/FB2.0/post_file_system_replica_links_policies.py
     :language: python
 
 post_file_system_replica_links
 ''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_file_system_replica_links.py
+.. literalinclude:: source/examples/FB2.0/post_file_system_replica_links.py
     :language: python
 
 get_file_system_replica_links_transfer
 ''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_file_system_replica_links_transfer.py
+.. literalinclude:: source/examples/FB2.0/get_file_system_replica_links_transfer.py
     :language: python
 
-File System Snapshots
+Filesystemsnapshotsap
 ~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -2690,84 +3874,84 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 delete_file_system_snapshots
 ''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_file_system_snapshots.py
+.. literalinclude:: source/examples/FB2.0/delete_file_system_snapshots.py
     :language: python
 
 get_file_system_snapshots
 '''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_file_system_snapshots.py
+.. literalinclude:: source/examples/FB2.0/get_file_system_snapshots.py
     :language: python
 
 patch_file_system_snapshots
 '''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/patch_file_system_snapshots.py
+.. literalinclude:: source/examples/FB2.0/patch_file_system_snapshots.py
     :language: python
 
 delete_file_system_snapshots_policies
 '''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_file_system_snapshots_policies.py
+.. literalinclude:: source/examples/FB2.0/delete_file_system_snapshots_policies.py
     :language: python
 
 get_file_system_snapshots_policies
 ''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_file_system_snapshots_policies.py
+.. literalinclude:: source/examples/FB2.0/get_file_system_snapshots_policies.py
     :language: python
 
 post_file_system_snapshots
 ''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_file_system_snapshots.py
+.. literalinclude:: source/examples/FB2.0/post_file_system_snapshots.py
     :language: python
 
 delete_file_system_snapshots_transfer
 '''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_file_system_snapshots_transfer.py
+.. literalinclude:: source/examples/FB2.0/delete_file_system_snapshots_transfer.py
     :language: python
 
 get_file_system_snapshots_transfer
 ''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_file_system_snapshots_transfer.py
+.. literalinclude:: source/examples/FB2.0/get_file_system_snapshots_transfer.py
     :language: python
 
-File Systems
-~~~~~~~~~~~~
+Filesystemsap
+~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
 delete_file_systems_audit_policies
 ''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_file_systems_audit_policies.py
+.. literalinclude:: source/examples/FB2.14/delete_file_systems_audit_policies.py
     :language: python
 
 get_file_systems_audit_policies
 '''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_file_systems_audit_policies.py
+.. literalinclude:: source/examples/FB2.14/get_file_systems_audit_policies.py
     :language: python
 
 post_file_systems_audit_policies
 ''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_file_systems_audit_policies.py
+.. literalinclude:: source/examples/FB2.14/post_file_systems_audit_policies.py
     :language: python
 
 delete_file_systems
 '''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_file_systems.py
+.. literalinclude:: source/examples/FB2.0/delete_file_systems.py
     :language: python
 
 get_file_systems
 ''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_file_systems.py
+.. literalinclude:: source/examples/FB2.0/get_file_systems.py
     :language: python
 
 get_file_systems_groups_performance
@@ -2800,22 +3984,10 @@ post_file_systems_locks_nlm_reclamations
 .. literalinclude:: source/examples/FB2.8/post_file_systems_locks_nlm_reclamations.py
     :language: python
 
-delete_file_systems_open_files
-''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/delete_file_systems_open_files.py
-    :language: python
-
-get_file_systems_open_files
-'''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/get_file_systems_open_files.py
-    :language: python
-
 patch_file_systems
 ''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/patch_file_systems.py
+.. literalinclude:: source/examples/FB2.16/patch_file_systems.py
     :language: python
 
 get_file_systems_performance
@@ -2827,31 +3999,31 @@ get_file_systems_performance
 get_file_systems_policies_all
 '''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_file_systems_policies_all.py
+.. literalinclude:: source/examples/FB2.3/get_file_systems_policies_all.py
     :language: python
 
 delete_file_systems_policies
 ''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_file_systems_policies.py
+.. literalinclude:: source/examples/FB2.0/delete_file_systems_policies.py
     :language: python
 
 get_file_systems_policies
 '''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_file_systems_policies.py
+.. literalinclude:: source/examples/FB2.0/get_file_systems_policies.py
     :language: python
 
 post_file_systems_policies
 ''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_file_systems_policies.py
+.. literalinclude:: source/examples/FB2.0/post_file_systems_policies.py
     :language: python
 
 post_file_systems
 '''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_file_systems.py
+.. literalinclude:: source/examples/FB2.16/post_file_systems.py
     :language: python
 
 delete_file_systems_sessions
@@ -2875,70 +4047,16 @@ get_file_systems_users_performance
 get_file_systems_worm_data_policies
 '''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_file_systems_worm_data_policies.py
+.. literalinclude:: source/examples/FB2.15/get_file_systems_worm_data_policies.py
     :language: python
 
-Fleets
-~~~~~~
+Fleetsap
+~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
-delete_fleets
-'''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/delete_fleets.py
-    :language: python
-
-get_fleets_fleet_key
-''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/get_fleets_fleet_key.py
-    :language: python
-
-post_fleets_fleet_key
-'''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/post_fleets_fleet_key.py
-    :language: python
-
-get_fleets
-''''''''''
-
-.. literalinclude:: source/examples/FB2.17/get_fleets.py
-    :language: python
-
-delete_fleets_members
-'''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/delete_fleets_members.py
-    :language: python
-
-get_fleets_members
-''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/get_fleets_members.py
-    :language: python
-
-post_fleets_members
-'''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/post_fleets_members.py
-    :language: python
-
-patch_fleets
-''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/patch_fleets.py
-    :language: python
-
-post_fleets
-'''''''''''
-
-.. literalinclude:: source/examples/FB2.17/post_fleets.py
-    :language: python
-
-Hardware
-~~~~~~~~
+Hardwareap
+~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2954,8 +4072,8 @@ patch_hardware
 .. literalinclude:: source/examples/FB2.0/patch_hardware.py
     :language: python
 
-Hardware Connectors
-~~~~~~~~~~~~~~~~~~~
+Hardwareconnectorsap
+~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -2977,43 +4095,8 @@ get_hardware_connectors_performance
 .. literalinclude:: source/examples/FB2.3/get_hardware_connectors_performance.py
     :language: python
 
-Keytabs
-~~~~~~~
-
-The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
-
-delete_keytabs
-''''''''''''''
-
-.. literalinclude:: source/examples/FB2.0/delete_keytabs.py
-    :language: python
-
-get_keytabs_download
-''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.0/get_keytabs_download.py
-    :language: python
-
-get_keytabs
-'''''''''''
-
-.. literalinclude:: source/examples/FB2.0/get_keytabs.py
-    :language: python
-
-post_keytabs
-''''''''''''
-
-.. literalinclude:: source/examples/FB2.0/post_keytabs.py
-    :language: python
-
-post_keytabs_upload
-'''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.0/post_keytabs_upload.py
-    :language: python
-
-Kmip
-~~~~
+Kmipap
+~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -3047,83 +4130,76 @@ get_kmip_test
 .. literalinclude:: source/examples/FB2.1/get_kmip_test.py
     :language: python
 
-Legal Holds
-~~~~~~~~~~~
+Keytabsap
+~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
-delete_legal_holds
-''''''''''''''''''
+delete_keytabs
+''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_legal_holds.py
+.. literalinclude:: source/examples/FB2.0/delete_keytabs.py
     :language: python
 
-get_legal_holds
-'''''''''''''''
+get_keytabs_download
+''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_legal_holds.py
+.. literalinclude:: source/examples/FB2.0/get_keytabs_download.py
     :language: python
 
-get_legal_holds_held_entities
-'''''''''''''''''''''''''''''
+get_keytabs
+'''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_legal_holds_held_entities.py
+.. literalinclude:: source/examples/FB2.0/get_keytabs.py
     :language: python
 
-patch_legal_holds_held_entities
-'''''''''''''''''''''''''''''''
+post_keytabs
+''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/patch_legal_holds_held_entities.py
+.. literalinclude:: source/examples/FB2.0/post_keytabs.py
     :language: python
 
-post_legal_holds_held_entities
-''''''''''''''''''''''''''''''
+post_keytabs_upload
+'''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_legal_holds_held_entities.py
+.. literalinclude:: source/examples/FB2.0/post_keytabs_upload.py
     :language: python
 
-patch_legal_holds
-'''''''''''''''''
+Legalholdsap
+~~~~~~~~~~~~
 
-.. literalinclude:: source/examples/FB2.17/patch_legal_holds.py
-    :language: python
+The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
-post_legal_holds
-''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/post_legal_holds.py
-    :language: python
-
-Lifecycle Rules
-~~~~~~~~~~~~~~~
+Lifecyclerulesap
+~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
 delete_lifecycle_rules
 ''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_lifecycle_rules.py
+.. literalinclude:: source/examples/FB2.0/delete_lifecycle_rules.py
     :language: python
 
 get_lifecycle_rules
 '''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_lifecycle_rules.py
+.. literalinclude:: source/examples/FB2.0/get_lifecycle_rules.py
     :language: python
 
 patch_lifecycle_rules
 '''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/patch_lifecycle_rules.py
+.. literalinclude:: source/examples/FB2.1/patch_lifecycle_rules.py
     :language: python
 
 post_lifecycle_rules
 ''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_lifecycle_rules.py
+.. literalinclude:: source/examples/FB2.1/post_lifecycle_rules.py
     :language: python
 
-Link Aggregation Groups
+Linkaggregationgroupsap
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -3152,8 +4228,8 @@ post_link_aggregation_groups
 .. literalinclude:: source/examples/FB2.0/post_link_aggregation_groups.py
     :language: python
 
-Logs
-~~~~
+Logsap
+~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -3181,8 +4257,8 @@ get_logs
 .. literalinclude:: source/examples/FB2.0/get_logs.py
     :language: python
 
-Maintenance Windows
-~~~~~~~~~~~~~~~~~~~
+Maintenancewindowsap
+~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -3204,34 +4280,10 @@ post_maintenance_windows
 .. literalinclude:: source/examples/FB2.16/post_maintenance_windows.py
     :language: python
 
-Network Interfaces
-~~~~~~~~~~~~~~~~~~
+Networkinterfacesap
+~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
-
-get_network_interfaces_connectors
-'''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/get_network_interfaces_connectors.py
-    :language: python
-
-patch_network_interfaces_connectors
-'''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/patch_network_interfaces_connectors.py
-    :language: python
-
-get_network_interfaces_connectors_performance
-'''''''''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/get_network_interfaces_connectors_performance.py
-    :language: python
-
-get_network_interfaces_connectors_settings
-''''''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/get_network_interfaces_connectors_settings.py
-    :language: python
 
 delete_network_interfaces
 '''''''''''''''''''''''''
@@ -3269,36 +4321,41 @@ get_network_interfaces_trace
 .. literalinclude:: source/examples/FB2.6/get_network_interfaces_trace.py
     :language: python
 
-Object Store Access Keys
-~~~~~~~~~~~~~~~~~~~~~~~~
+Oidcssoap
+~~~~~~~~~
+
+The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+Objectstoreaccesskeysap
+~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
 delete_object_store_access_keys
 '''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_object_store_access_keys.py
+.. literalinclude:: source/examples/FB2.0/delete_object_store_access_keys.py
     :language: python
 
 get_object_store_access_keys
 ''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_object_store_access_keys.py
+.. literalinclude:: source/examples/FB2.0/get_object_store_access_keys.py
     :language: python
 
 patch_object_store_access_keys
 ''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/patch_object_store_access_keys.py
+.. literalinclude:: source/examples/FB2.0/patch_object_store_access_keys.py
     :language: python
 
 post_object_store_access_keys
 '''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_object_store_access_keys.py
+.. literalinclude:: source/examples/FB2.0/post_object_store_access_keys.py
     :language: python
 
-Object Store Accounts
+Objectstoreaccountsap
 ~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -3306,146 +4363,62 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 delete_object_store_accounts
 ''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_object_store_accounts.py
+.. literalinclude:: source/examples/FB2.0/delete_object_store_accounts.py
     :language: python
 
 get_object_store_accounts
 '''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_object_store_accounts.py
+.. literalinclude:: source/examples/FB2.0/get_object_store_accounts.py
     :language: python
 
 patch_object_store_accounts
 '''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/patch_object_store_accounts.py
+.. literalinclude:: source/examples/FB2.12/patch_object_store_accounts.py
     :language: python
 
 post_object_store_accounts
 ''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_object_store_accounts.py
+.. literalinclude:: source/examples/FB2.8/post_object_store_accounts.py
     :language: python
 
-Object Store Remote Credentials
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Objectstoreremotecredentialsap
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
 delete_object_store_remote_credentials
 ''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_object_store_remote_credentials.py
+.. literalinclude:: source/examples/FB2.0/delete_object_store_remote_credentials.py
     :language: python
 
 get_object_store_remote_credentials
 '''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_object_store_remote_credentials.py
+.. literalinclude:: source/examples/FB2.0/get_object_store_remote_credentials.py
     :language: python
 
 patch_object_store_remote_credentials
 '''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/patch_object_store_remote_credentials.py
+.. literalinclude:: source/examples/FB2.0/patch_object_store_remote_credentials.py
     :language: python
 
 post_object_store_remote_credentials
 ''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_object_store_remote_credentials.py
+.. literalinclude:: source/examples/FB2.0/post_object_store_remote_credentials.py
     :language: python
 
-Object Store Roles
+Objectstorerolesap
 ~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
-delete_object_store_roles
-'''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/delete_object_store_roles.py
-    :language: python
-
-get_object_store_roles
-''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/get_object_store_roles.py
-    :language: python
-
-delete_object_store_roles_object_store_access_policies
-''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/delete_object_store_roles_object_store_access_policies.py
-    :language: python
-
-get_object_store_roles_object_store_access_policies
-'''''''''''''''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/get_object_store_roles_object_store_access_policies.py
-    :language: python
-
-post_object_store_roles_object_store_access_policies
-''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/post_object_store_roles_object_store_access_policies.py
-    :language: python
-
-get_object_store_roles_object_store_trust_policies_download
-'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/get_object_store_roles_object_store_trust_policies_download.py
-    :language: python
-
-get_object_store_roles_object_store_trust_policies
-''''''''''''''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/get_object_store_roles_object_store_trust_policies.py
-    :language: python
-
-delete_object_store_roles_object_store_trust_policies_rules
-'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/delete_object_store_roles_object_store_trust_policies_rules.py
-    :language: python
-
-get_object_store_roles_object_store_trust_policies_rules
-''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/get_object_store_roles_object_store_trust_policies_rules.py
-    :language: python
-
-patch_object_store_roles_object_store_trust_policies_rules
-''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/patch_object_store_roles_object_store_trust_policies_rules.py
-    :language: python
-
-post_object_store_roles_object_store_trust_policies_rules
-'''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/post_object_store_roles_object_store_trust_policies_rules.py
-    :language: python
-
-patch_object_store_roles_object_store_trust_policies_upload
-'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/patch_object_store_roles_object_store_trust_policies_upload.py
-    :language: python
-
-patch_object_store_roles
-''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/patch_object_store_roles.py
-    :language: python
-
-post_object_store_roles
-'''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/post_object_store_roles.py
-    :language: python
-
-Object Store Users
+Objectstoreusersap
 ~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
@@ -3453,140 +4426,181 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 delete_object_store_users
 '''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_object_store_users.py
+.. literalinclude:: source/examples/FB2.0/delete_object_store_users.py
     :language: python
 
 get_object_store_users
 ''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_object_store_users.py
+.. literalinclude:: source/examples/FB2.0/get_object_store_users.py
     :language: python
 
 delete_object_store_users_object_store_access_policies
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_object_store_users_object_store_access_policies.py
+.. literalinclude:: source/examples/FB2.0/delete_object_store_users_object_store_access_policies.py
     :language: python
 
 get_object_store_users_object_store_access_policies
 '''''''''''''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_object_store_users_object_store_access_policies.py
+.. literalinclude:: source/examples/FB2.0/get_object_store_users_object_store_access_policies.py
     :language: python
 
 post_object_store_users_object_store_access_policies
 ''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_object_store_users_object_store_access_policies.py
+.. literalinclude:: source/examples/FB2.0/post_object_store_users_object_store_access_policies.py
     :language: python
 
 post_object_store_users
 '''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_object_store_users.py
+.. literalinclude:: source/examples/FB2.0/post_object_store_users.py
     :language: python
 
-Object Store Virtual Hosts
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Objectstorevirtualhostsap
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
 delete_object_store_virtual_hosts
 '''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_object_store_virtual_hosts.py
+.. literalinclude:: source/examples/FB2.0/delete_object_store_virtual_hosts.py
     :language: python
 
 get_object_store_virtual_hosts
 ''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_object_store_virtual_hosts.py
+.. literalinclude:: source/examples/FB2.0/get_object_store_virtual_hosts.py
     :language: python
 
 post_object_store_virtual_hosts
 '''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_object_store_virtual_hosts.py
+.. literalinclude:: source/examples/FB2.0/post_object_store_virtual_hosts.py
     :language: python
 
-Oidc Sso
-~~~~~~~~
+Policiesallap
+~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
-delete_sso_oidc_idps
-''''''''''''''''''''
+get_policies_all
+''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_sso_oidc_idps.py
+.. literalinclude:: source/examples/FB2.2/get_policies_all.py
     :language: python
 
-get_sso_oidc_idps
-'''''''''''''''''
+get_policies_all_members
+''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_sso_oidc_idps.py
+.. literalinclude:: source/examples/FB2.2/get_policies_all_members.py
     :language: python
 
-patch_sso_oidc_idps
-'''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/patch_sso_oidc_idps.py
-    :language: python
-
-post_sso_oidc_idps
-''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/post_sso_oidc_idps.py
-    :language: python
-
-Policies   Audit For File Systems
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Policiesauditforfilesystemsap
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
 delete_audit_file_systems_policies
 ''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_audit_file_systems_policies.py
+.. literalinclude:: source/examples/FB2.14/delete_audit_file_systems_policies.py
     :language: python
 
 get_audit_file_systems_policies
 '''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_audit_file_systems_policies.py
+.. literalinclude:: source/examples/FB2.14/get_audit_file_systems_policies.py
     :language: python
 
 delete_audit_file_systems_policies_members
 ''''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_audit_file_systems_policies_members.py
+.. literalinclude:: source/examples/FB2.14/delete_audit_file_systems_policies_members.py
     :language: python
 
 get_audit_file_systems_policies_members
 '''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_audit_file_systems_policies_members.py
+.. literalinclude:: source/examples/FB2.14/get_audit_file_systems_policies_members.py
     :language: python
 
 post_audit_file_systems_policies_members
 ''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_audit_file_systems_policies_members.py
+.. literalinclude:: source/examples/FB2.14/post_audit_file_systems_policies_members.py
     :language: python
 
 patch_audit_file_systems_policies
 '''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/patch_audit_file_systems_policies.py
+.. literalinclude:: source/examples/FB2.14/patch_audit_file_systems_policies.py
     :language: python
 
 post_audit_file_systems_policies
 ''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_audit_file_systems_policies.py
+.. literalinclude:: source/examples/FB2.14/post_audit_file_systems_policies.py
     :language: python
 
-Policies   Network Access
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Policiesnfsap
+~~~~~~~~~~~~~
+
+The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+delete_nfs_export_policies
+''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.3/delete_nfs_export_policies.py
+    :language: python
+
+get_nfs_export_policies
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.3/get_nfs_export_policies.py
+    :language: python
+
+patch_nfs_export_policies
+'''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.3/patch_nfs_export_policies.py
+    :language: python
+
+post_nfs_export_policies
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.3/post_nfs_export_policies.py
+    :language: python
+
+delete_nfs_export_policies_rules
+''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.3/delete_nfs_export_policies_rules.py
+    :language: python
+
+get_nfs_export_policies_rules
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.3/get_nfs_export_policies_rules.py
+    :language: python
+
+patch_nfs_export_policies_rules
+'''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.3/patch_nfs_export_policies_rules.py
+    :language: python
+
+post_nfs_export_policies_rules
+''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.3/post_nfs_export_policies_rules.py
+    :language: python
+
+Policiesnetworkaccessap
+~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -3632,156 +4646,85 @@ post_network_access_policies_rules
 .. literalinclude:: source/examples/FB2.13/post_network_access_policies_rules.py
     :language: python
 
-Policies   Nfs
-~~~~~~~~~~~~~~
-
-The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
-
-delete_nfs_export_policies
-''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/delete_nfs_export_policies.py
-    :language: python
-
-get_nfs_export_policies
-'''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/get_nfs_export_policies.py
-    :language: python
-
-patch_nfs_export_policies
-'''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/patch_nfs_export_policies.py
-    :language: python
-
-post_nfs_export_policies
-''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/post_nfs_export_policies.py
-    :language: python
-
-delete_nfs_export_policies_rules
-''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/delete_nfs_export_policies_rules.py
-    :language: python
-
-get_nfs_export_policies_rules
-'''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/get_nfs_export_policies_rules.py
-    :language: python
-
-patch_nfs_export_policies_rules
-'''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/patch_nfs_export_policies_rules.py
-    :language: python
-
-post_nfs_export_policies_rules
-''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/post_nfs_export_policies_rules.py
-    :language: python
-
-Policies   Object Store Access
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Policiesobjectstoreaccessap
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
 delete_object_store_access_policies
 '''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_object_store_access_policies.py
+.. literalinclude:: source/examples/FB2.2/delete_object_store_access_policies.py
     :language: python
 
 get_object_store_access_policies
 ''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_object_store_access_policies.py
-    :language: python
-
-delete_object_store_access_policies_object_store_roles
-''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/delete_object_store_access_policies_object_store_roles.py
-    :language: python
-
-get_object_store_access_policies_object_store_roles
-'''''''''''''''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/get_object_store_access_policies_object_store_roles.py
-    :language: python
-
-post_object_store_access_policies_object_store_roles
-''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/post_object_store_access_policies_object_store_roles.py
+.. literalinclude:: source/examples/FB2.0/get_object_store_access_policies.py
     :language: python
 
 delete_object_store_access_policies_object_store_users
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_object_store_access_policies_object_store_users.py
+.. literalinclude:: source/examples/FB2.0/delete_object_store_access_policies_object_store_users.py
     :language: python
 
 get_object_store_access_policies_object_store_users
 '''''''''''''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_object_store_access_policies_object_store_users.py
+.. literalinclude:: source/examples/FB2.0/get_object_store_access_policies_object_store_users.py
     :language: python
 
 post_object_store_access_policies_object_store_users
 ''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_object_store_access_policies_object_store_users.py
+.. literalinclude:: source/examples/FB2.0/post_object_store_access_policies_object_store_users.py
     :language: python
 
 patch_object_store_access_policies
 ''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/patch_object_store_access_policies.py
+.. literalinclude:: source/examples/FB2.11/patch_object_store_access_policies.py
     :language: python
 
 post_object_store_access_policies
 '''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_object_store_access_policies.py
+.. literalinclude:: source/examples/FB2.11/post_object_store_access_policies.py
     :language: python
 
 delete_object_store_access_policies_rules
 '''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_object_store_access_policies_rules.py
+.. literalinclude:: source/examples/FB2.2/delete_object_store_access_policies_rules.py
     :language: python
 
 get_object_store_access_policies_rules
 ''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_object_store_access_policies_rules.py
+.. literalinclude:: source/examples/FB2.2/get_object_store_access_policies_rules.py
     :language: python
 
 patch_object_store_access_policies_rules
 ''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/patch_object_store_access_policies_rules.py
+.. literalinclude:: source/examples/FB2.11/patch_object_store_access_policies_rules.py
     :language: python
 
 post_object_store_access_policies_rules
 '''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_object_store_access_policies_rules.py
+.. literalinclude:: source/examples/FB2.11/post_object_store_access_policies_rules.py
     :language: python
 
 get_object_store_access_policy_actions
 ''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_object_store_access_policy_actions.py
+.. literalinclude:: source/examples/FB2.2/get_object_store_access_policy_actions.py
     :language: python
 
-Policies   Password
-~~~~~~~~~~~~~~~~~~~
+Policiespasswordap
+~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -3797,238 +4740,119 @@ patch_password_policies
 .. literalinclude:: source/examples/FB2.16/patch_password_policies.py
     :language: python
 
-Policies   Qo S
-~~~~~~~~~~~~~~~
+Policiesqosap
+~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
-delete_qos_policies
-'''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/delete_qos_policies.py
-    :language: python
-
-get_qos_policies_file_systems
-'''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/get_qos_policies_file_systems.py
-    :language: python
-
-get_qos_policies
-''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/get_qos_policies.py
-    :language: python
-
-get_qos_policies_members
-''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/get_qos_policies_members.py
-    :language: python
-
-patch_qos_policies
-''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/patch_qos_policies.py
-    :language: python
-
-post_qos_policies
-'''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/post_qos_policies.py
-    :language: python
-
-Policies   Smb Client
-~~~~~~~~~~~~~~~~~~~~~
+Policiessmbclientap
+~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
 delete_smb_client_policies
 ''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_smb_client_policies.py
+.. literalinclude:: source/examples/FB2.10/delete_smb_client_policies.py
     :language: python
 
 get_smb_client_policies
 '''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_smb_client_policies.py
+.. literalinclude:: source/examples/FB2.10/get_smb_client_policies.py
     :language: python
 
 patch_smb_client_policies
 '''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/patch_smb_client_policies.py
+.. literalinclude:: source/examples/FB2.11/patch_smb_client_policies.py
     :language: python
 
 post_smb_client_policies
 ''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_smb_client_policies.py
+.. literalinclude:: source/examples/FB2.11/post_smb_client_policies.py
     :language: python
 
 delete_smb_client_policies_rules
 ''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_smb_client_policies_rules.py
+.. literalinclude:: source/examples/FB2.10/delete_smb_client_policies_rules.py
     :language: python
 
 get_smb_client_policies_rules
 '''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_smb_client_policies_rules.py
+.. literalinclude:: source/examples/FB2.10/get_smb_client_policies_rules.py
     :language: python
 
 patch_smb_client_policies_rules
 '''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/patch_smb_client_policies_rules.py
+.. literalinclude:: source/examples/FB2.11/patch_smb_client_policies_rules.py
     :language: python
 
 post_smb_client_policies_rules
 ''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_smb_client_policies_rules.py
+.. literalinclude:: source/examples/FB2.11/post_smb_client_policies_rules.py
     :language: python
 
-Policies   Smb Share
-~~~~~~~~~~~~~~~~~~~~
+Policiessmbshareap
+~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
 delete_smb_share_policies
 '''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_smb_share_policies.py
+.. literalinclude:: source/examples/FB2.10/delete_smb_share_policies.py
     :language: python
 
 get_smb_share_policies
 ''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_smb_share_policies.py
+.. literalinclude:: source/examples/FB2.10/get_smb_share_policies.py
     :language: python
 
 patch_smb_share_policies
 ''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/patch_smb_share_policies.py
+.. literalinclude:: source/examples/FB2.10/patch_smb_share_policies.py
     :language: python
 
 post_smb_share_policies
 '''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_smb_share_policies.py
+.. literalinclude:: source/examples/FB2.10/post_smb_share_policies.py
     :language: python
 
 delete_smb_share_policies_rules
 '''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_smb_share_policies_rules.py
+.. literalinclude:: source/examples/FB2.10/delete_smb_share_policies_rules.py
     :language: python
 
 get_smb_share_policies_rules
 ''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_smb_share_policies_rules.py
+.. literalinclude:: source/examples/FB2.10/get_smb_share_policies_rules.py
     :language: python
 
 patch_smb_share_policies_rules
 ''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/patch_smb_share_policies_rules.py
+.. literalinclude:: source/examples/FB2.10/patch_smb_share_policies_rules.py
     :language: python
 
 post_smb_share_policies_rules
 '''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_smb_share_policies_rules.py
+.. literalinclude:: source/examples/FB2.10/post_smb_share_policies_rules.py
     :language: python
 
-Policies   Snapshot
-~~~~~~~~~~~~~~~~~~~
-
-The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
-
-delete_policies
-'''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/delete_policies.py
-    :language: python
-
-delete_policies_file_system_replica_links
-'''''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/delete_policies_file_system_replica_links.py
-    :language: python
-
-get_policies_file_system_replica_links
-''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/get_policies_file_system_replica_links.py
-    :language: python
-
-post_policies_file_system_replica_links
-'''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/post_policies_file_system_replica_links.py
-    :language: python
-
-delete_policies_file_system_snapshots
-'''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/delete_policies_file_system_snapshots.py
-    :language: python
-
-get_policies_file_system_snapshots
-''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/get_policies_file_system_snapshots.py
-    :language: python
-
-delete_policies_file_systems
-''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/delete_policies_file_systems.py
-    :language: python
-
-get_policies_file_systems
-'''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/get_policies_file_systems.py
-    :language: python
-
-post_policies_file_systems
-''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/post_policies_file_systems.py
-    :language: python
-
-get_policies
-''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/get_policies.py
-    :language: python
-
-get_policies_members
-''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/get_policies_members.py
-    :language: python
-
-patch_policies
-''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/patch_policies.py
-    :language: python
-
-post_policies
-'''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/post_policies.py
-    :language: python
-
-Policies   Ssh Certificate Authority
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Policiessshcertificateauthorityap
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -4134,131 +4958,131 @@ post_ssh_certificate_authority_policies
 .. literalinclude:: source/examples/FB2.14/post_ssh_certificate_authority_policies.py
     :language: python
 
-Policies   Tls
-~~~~~~~~~~~~~~
+Policiessnapshotap
+~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
-delete_network_interfaces_tls_policies
+delete_policies
+'''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_policies.py
+    :language: python
+
+delete_policies_file_system_replica_links
+'''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_policies_file_system_replica_links.py
+    :language: python
+
+get_policies_file_system_replica_links
 ''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_network_interfaces_tls_policies.py
+.. literalinclude:: source/examples/FB2.0/get_policies_file_system_replica_links.py
     :language: python
 
-get_network_interfaces_tls_policies
-'''''''''''''''''''''''''''''''''''
+post_policies_file_system_replica_links
+'''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_network_interfaces_tls_policies.py
+.. literalinclude:: source/examples/FB2.0/post_policies_file_system_replica_links.py
     :language: python
 
-post_network_interfaces_tls_policies
-''''''''''''''''''''''''''''''''''''
+delete_policies_file_system_snapshots
+'''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_network_interfaces_tls_policies.py
+.. literalinclude:: source/examples/FB2.0/delete_policies_file_system_snapshots.py
     :language: python
 
-delete_tls_policies
-'''''''''''''''''''
+get_policies_file_system_snapshots
+''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_tls_policies.py
+.. literalinclude:: source/examples/FB2.0/get_policies_file_system_snapshots.py
     :language: python
 
-get_tls_policies
-''''''''''''''''
+delete_policies_file_systems
+''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_tls_policies.py
+.. literalinclude:: source/examples/FB2.0/delete_policies_file_systems.py
     :language: python
 
-get_tls_policies_members
-''''''''''''''''''''''''
+get_policies_file_systems
+'''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_tls_policies_members.py
+.. literalinclude:: source/examples/FB2.0/get_policies_file_systems.py
     :language: python
 
-delete_tls_policies_network_interfaces
-''''''''''''''''''''''''''''''''''''''
+post_policies_file_systems
+''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_tls_policies_network_interfaces.py
+.. literalinclude:: source/examples/FB2.0/post_policies_file_systems.py
     :language: python
 
-get_tls_policies_network_interfaces
-'''''''''''''''''''''''''''''''''''
+get_policies
+''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_tls_policies_network_interfaces.py
+.. literalinclude:: source/examples/FB2.0/get_policies.py
     :language: python
 
-post_tls_policies_network_interfaces
-''''''''''''''''''''''''''''''''''''
+get_policies_members
+''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_tls_policies_network_interfaces.py
+.. literalinclude:: source/examples/FB2.0/get_policies_members.py
     :language: python
 
-patch_tls_policies
-''''''''''''''''''
+patch_policies
+''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/patch_tls_policies.py
+.. literalinclude:: source/examples/FB2.0/patch_policies.py
     :language: python
 
-post_tls_policies
-'''''''''''''''''
+post_policies
+'''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_tls_policies.py
+.. literalinclude:: source/examples/FB2.0/post_policies.py
     :language: python
 
-Policies   Worm Data
-~~~~~~~~~~~~~~~~~~~~
+Policiestlsap
+~~~~~~~~~~~~~
+
+The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+Policieswormdataap
+~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
 delete_worm_data_policies
 '''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_worm_data_policies.py
+.. literalinclude:: source/examples/FB2.15/delete_worm_data_policies.py
     :language: python
 
 get_worm_data_policies
 ''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_worm_data_policies.py
+.. literalinclude:: source/examples/FB2.15/get_worm_data_policies.py
     :language: python
 
 get_worm_data_policies_members
 ''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_worm_data_policies_members.py
+.. literalinclude:: source/examples/FB2.15/get_worm_data_policies_members.py
     :language: python
 
 patch_worm_data_policies
 ''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/patch_worm_data_policies.py
+.. literalinclude:: source/examples/FB2.15/patch_worm_data_policies.py
     :language: python
 
 post_worm_data_policies
 '''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_worm_data_policies.py
+.. literalinclude:: source/examples/FB2.15/post_worm_data_policies.py
     :language: python
 
-Policies  All
-~~~~~~~~~~~~~
-
-The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
-
-get_policies_all
-''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/get_policies_all.py
-    :language: python
-
-get_policies_all_members
-''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/get_policies_all_members.py
-    :language: python
-
-Public Keys
-~~~~~~~~~~~
+Publickeysap
+~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -4286,33 +5110,33 @@ get_public_keys_uses
 .. literalinclude:: source/examples/FB2.14/get_public_keys_uses.py
     :language: python
 
-Quotas
-~~~~~~
+Quotasap
+~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
 delete_quotas_groups
 ''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_quotas_groups.py
+.. literalinclude:: source/examples/FB2.0/delete_quotas_groups.py
     :language: python
 
 get_quotas_groups
 '''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_quotas_groups.py
+.. literalinclude:: source/examples/FB2.0/get_quotas_groups.py
     :language: python
 
 patch_quotas_groups
 '''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/patch_quotas_groups.py
+.. literalinclude:: source/examples/FB2.0/patch_quotas_groups.py
     :language: python
 
 post_quotas_groups
 ''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_quotas_groups.py
+.. literalinclude:: source/examples/FB2.0/post_quotas_groups.py
     :language: python
 
 get_quotas_settings
@@ -4330,29 +5154,29 @@ patch_quotas_settings
 delete_quotas_users
 '''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_quotas_users.py
+.. literalinclude:: source/examples/FB2.0/delete_quotas_users.py
     :language: python
 
 get_quotas_users
 ''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_quotas_users.py
+.. literalinclude:: source/examples/FB2.0/get_quotas_users.py
     :language: python
 
 patch_quotas_users
 ''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/patch_quotas_users.py
+.. literalinclude:: source/examples/FB2.0/patch_quotas_users.py
     :language: python
 
 post_quotas_users
 '''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_quotas_users.py
+.. literalinclude:: source/examples/FB2.0/post_quotas_users.py
     :language: python
 
-Rdl
-~~~
+Rdlap
+~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -4380,19 +5204,13 @@ get_rapid_data_locking_test
 .. literalinclude:: source/examples/FB2.1/get_rapid_data_locking_test.py
     :language: python
 
-Remote Arrays
-~~~~~~~~~~~~~
+Remotearraysap
+~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
-get_remote_arrays
-'''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.17/get_remote_arrays.py
-    :language: python
-
-Roles
-~~~~~
+Rolesap
+~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -4402,8 +5220,8 @@ get_roles
 .. literalinclude:: source/examples/FB2.0/get_roles.py
     :language: python
 
-Saml2 Sso
-~~~~~~~~~
+Saml2ssoap
+~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -4422,13 +5240,13 @@ get_sso_saml2_idps
 patch_sso_saml2_idps
 ''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/patch_sso_saml2_idps.py
+.. literalinclude:: source/examples/FB2.15/patch_sso_saml2_idps.py
     :language: python
 
 post_sso_saml2_idps
 '''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_sso_saml2_idps.py
+.. literalinclude:: source/examples/FB2.15/post_sso_saml2_idps.py
     :language: python
 
 get_sso_saml2_idps_test
@@ -4443,48 +5261,8 @@ patch_sso_saml2_idps_test
 .. literalinclude:: source/examples/FB2.16/patch_sso_saml2_idps_test.py
     :language: python
 
-Servers
-~~~~~~~
-
-The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
-
-delete_servers
-''''''''''''''
-
-.. literalinclude:: source/examples/FB2.16/delete_servers.py
-    :language: python
-
-get_servers
-'''''''''''
-
-.. literalinclude:: source/examples/FB2.17/get_servers.py
-    :language: python
-
-patch_servers
-'''''''''''''
-
-.. literalinclude:: source/examples/FB2.16/patch_servers.py
-    :language: python
-
-post_servers
-''''''''''''
-
-.. literalinclude:: source/examples/FB2.16/post_servers.py
-    :language: python
-
-Sessions
-~~~~~~~~
-
-The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
-
-get_sessions
-''''''''''''
-
-.. literalinclude:: source/examples/FB2.3/get_sessions.py
-    :language: python
-
-SMTP
-~~~~
+Smtpap
+~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -4500,8 +5278,8 @@ patch_smtp_servers
 .. literalinclude:: source/examples/FB2.15/patch_smtp_servers.py
     :language: python
 
-SNMP Agents
-~~~~~~~~~~~
+Snmpagentsap
+~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -4523,8 +5301,8 @@ patch_snmp_agents
 .. literalinclude:: source/examples/FB2.0/patch_snmp_agents.py
     :language: python
 
-SNMP Managers
-~~~~~~~~~~~~~
+Snmpmanagersap
+~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -4558,8 +5336,48 @@ get_snmp_managers_test
 .. literalinclude:: source/examples/FB2.0/get_snmp_managers_test.py
     :language: python
 
-Software
-~~~~~~~~
+Serversap
+~~~~~~~~~
+
+The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+delete_servers
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/delete_servers.py
+    :language: python
+
+get_servers
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.16/get_servers.py
+    :language: python
+
+patch_servers
+'''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/patch_servers.py
+    :language: python
+
+post_servers
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/post_servers.py
+    :language: python
+
+Sessionsap
+~~~~~~~~~~
+
+The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+get_sessions
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.3/get_sessions.py
+    :language: python
+
+Softwareap
+~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -4575,8 +5393,8 @@ post_software_check
 .. literalinclude:: source/examples/FB2.16/post_software_check.py
     :language: python
 
-Subnets
-~~~~~~~
+Subnetsap
+~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -4604,8 +5422,8 @@ post_subnets
 .. literalinclude:: source/examples/FB2.0/post_subnets.py
     :language: python
 
-Support
-~~~~~~~
+Supportap
+~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -4627,8 +5445,8 @@ get_support_test
 .. literalinclude:: source/examples/FB2.0/get_support_test.py
     :language: python
 
-Support Diagnostics
-~~~~~~~~~~~~~~~~~~~
+Supportdiagnosticsap
+~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -4650,33 +5468,33 @@ post_support_diagnostics
 .. literalinclude:: source/examples/FB2.16/post_support_diagnostics.py
     :language: python
 
-Syslog
-~~~~~~
+Syslogap
+~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
 delete_syslog_servers
 '''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_syslog_servers.py
+.. literalinclude:: source/examples/FB2.0/delete_syslog_servers.py
     :language: python
 
 get_syslog_servers
 ''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_syslog_servers.py
+.. literalinclude:: source/examples/FB2.0/get_syslog_servers.py
     :language: python
 
 patch_syslog_servers
 ''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/patch_syslog_servers.py
+.. literalinclude:: source/examples/FB2.14/patch_syslog_servers.py
     :language: python
 
 post_syslog_servers
 '''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_syslog_servers.py
+.. literalinclude:: source/examples/FB2.14/post_syslog_servers.py
     :language: python
 
 get_syslog_servers_settings
@@ -4697,8 +5515,8 @@ get_syslog_servers_test
 .. literalinclude:: source/examples/FB2.0/get_syslog_servers_test.py
     :language: python
 
-Targets
-~~~~~~~
+Targetsap
+~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -4711,7 +5529,7 @@ delete_targets
 get_targets
 '''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_targets.py
+.. literalinclude:: source/examples/FB2.0/get_targets.py
     :language: python
 
 patch_targets
@@ -4732,25 +5550,25 @@ post_targets
 .. literalinclude:: source/examples/FB2.0/post_targets.py
     :language: python
 
-Usage
-~~~~~
+Usageap
+~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
 get_usage_groups
 ''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_usage_groups.py
+.. literalinclude:: source/examples/FB2.0/get_usage_groups.py
     :language: python
 
 get_usage_users
 '''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_usage_users.py
+.. literalinclude:: source/examples/FB2.0/get_usage_users.py
     :language: python
 
-Verification Keys
-~~~~~~~~~~~~~~~~~
+Verificationkeysap
+~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
