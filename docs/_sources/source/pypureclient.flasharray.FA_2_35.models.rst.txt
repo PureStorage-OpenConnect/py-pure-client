@@ -1492,22 +1492,6 @@ pypureclient.flasharray.FA\_2\_35.models.host\_response module
    :undoc-members:
    :show-inheritance:
 
-pypureclient.flasharray.FA\_2\_35.models.inline\_response400 module
--------------------------------------------------------------------
-
-.. automodule:: pypureclient.flasharray.FA_2_35.models.inline_response400
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-pypureclient.flasharray.FA\_2\_35.models.inline\_response401 module
--------------------------------------------------------------------
-
-.. automodule:: pypureclient.flasharray.FA_2_35.models.inline_response401
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 pypureclient.flasharray.FA\_2\_35.models.kmip module
 ----------------------------------------------------
 
@@ -2200,6 +2184,22 @@ pypureclient.flasharray.FA\_2\_35.models.non\_copyable\_tag module
 ------------------------------------------------------------------
 
 .. automodule:: pypureclient.flasharray.FA_2_35.models.non_copyable_tag
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.flasharray.FA\_2\_35.models.oauth210\_token\_post400\_response module
+----------------------------------------------------------------------------------
+
+.. automodule:: pypureclient.flasharray.FA_2_35.models.oauth210_token_post400_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.flasharray.FA\_2\_35.models.oauth210\_token\_post401\_response module
+----------------------------------------------------------------------------------
+
+.. automodule:: pypureclient.flasharray.FA_2_35.models.oauth210_token_post401_response
    :members:
    :undoc-members:
    :show-inheritance:
