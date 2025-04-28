@@ -1,27 +1,8 @@
 import importlib
 
-from ..client_settings import resolve_ssl_validation, get_target_versions
+from .__modules_dict import __modules_dict as fb_modules_dict
 
-fb_modules_dict = {
-    '2.0': 'FB_2_0',
-    '2.1': 'FB_2_1',
-    '2.2': 'FB_2_2',
-    '2.3': 'FB_2_3',
-    '2.4': 'FB_2_4',
-    '2.5': 'FB_2_5',
-    '2.6': 'FB_2_6',
-    '2.7': 'FB_2_7',
-    '2.8': 'FB_2_8',
-    '2.9': 'FB_2_9',
-    '2.10': 'FB_2_10',
-    '2.11': 'FB_2_11',
-    '2.12': 'FB_2_12',
-    '2.13': 'FB_2_13',
-    '2.14': 'FB_2_14',
-    '2.15': 'FB_2_15',
-    '2.16': 'FB_2_16',
-    '2.17': 'FB_2_17',
-}
+from ..client_settings import resolve_ssl_validation, get_target_versions
 
 fb_modules = {}
 
@@ -114,12 +95,16 @@ def choose_version(array_versions):
     for version in array_versions[::-1]:
         if version in client_versions:
             return version
-    raise ValueError("No compatible REST version found between the client SDK and the target array.")
+    raise ValueError(f"No compatible REST version found between the client SDK and the target array.\n"
+                     f"Client SDK versions: {[v for v in client_versions]}\n"
+                     f"Target array versions: {array_versions}")
 
 
 def version_to_module(version):
     if version not in set(fb_modules.keys()):
-        parent_module_name = '.'.join(__name__.split('.')[:-1])
-        fb_modules[version] = importlib.import_module("{}.{}".format(parent_module_name,fb_modules_dict[version]))
+        fb_modules[version] = importlib.import_module(fb_modules_dict[version])
     fb_module = fb_modules.get(version, None)
     return fb_module
+
+
+_attribute_error_on_none_value = False
