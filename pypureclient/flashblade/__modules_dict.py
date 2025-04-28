@@ -1,0 +1,20 @@
+__modules_dict = {
+    "2.0": "pypureclient.flashblade.FB_2_0",
+    "2.1": "pypureclient.flashblade.FB_2_1",
+    "2.2": "pypureclient.flashblade.FB_2_2",
+    "2.3": "pypureclient.flashblade.FB_2_3",
+    "2.4": "pypureclient.flashblade.FB_2_4",
+    "2.5": "pypureclient.flashblade.FB_2_5",
+    "2.6": "pypureclient.flashblade.FB_2_6",
+    "2.7": "pypureclient.flashblade.FB_2_7",
+    "2.8": "pypureclient.flashblade.FB_2_8",
+    "2.9": "pypureclient.flashblade.FB_2_9",
+    "2.10": "pypureclient.flashblade.FB_2_10",
+    "2.11": "pypureclient.flashblade.FB_2_11",
+    "2.12": "pypureclient.flashblade.FB_2_12",
+    "2.13": "pypureclient.flashblade.FB_2_13",
+    "2.14": "pypureclient.flashblade.FB_2_14",
+    "2.15": "pypureclient.flashblade.FB_2_15",
+    "2.16": "pypureclient.flashblade.FB_2_16",
+    "2.17": "pypureclient.flashblade.FB_2_17"
+}

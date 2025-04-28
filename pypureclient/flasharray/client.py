@@ -1,50 +1,7 @@
 import importlib
 
+from .__modules_dict import __modules_dict as fa_modules_dict
 from ..client_settings import resolve_ssl_validation, get_target_versions
-
-fa_modules_dict = {
-    '2.0': 'FA_2_0',
-    '2.1': 'FA_2_1',
-    '2.2': 'FA_2_2',
-    '2.3': 'FA_2_3',
-    '2.4': 'FA_2_4',
-    '2.5': 'FA_2_5',
-    '2.6': 'FA_2_6',
-    '2.7': 'FA_2_7',
-    '2.8': 'FA_2_8',
-    '2.9': 'FA_2_9',
-    '2.10': 'FA_2_10',
-    '2.11': 'FA_2_11',
-    '2.13': 'FA_2_13',
-    '2.14': 'FA_2_14',
-    '2.15': 'FA_2_15',
-    '2.16': 'FA_2_16',
-    '2.17': 'FA_2_17',
-    '2.19': 'FA_2_19',
-    '2.20': 'FA_2_20',
-    '2.21': 'FA_2_21',
-    '2.22': 'FA_2_22',
-    '2.23': 'FA_2_23',
-    '2.24': 'FA_2_24',
-    '2.25': 'FA_2_25',
-    '2.26': 'FA_2_26',
-    '2.27': 'FA_2_27',
-    '2.28': 'FA_2_28',
-    '2.29': 'FA_2_29',
-    '2.30': 'FA_2_30',
-    '2.31': 'FA_2_31',
-    '2.32': 'FA_2_32',
-    '2.33': 'FA_2_33',
-    '2.34': 'FA_2_34',
-    '2.35': 'FA_2_35',
-    '2.36': 'FA_2_36',
-    '2.37': 'FA_2_37',
-    '2.38': 'FA_2_38',
-    '2.39': 'FA_2_39',
-    '2.40': 'FA_2_40',
-    '2.41': 'FA_2_41',
-    '2.42': 'FA_2_42',
-}
 
 fa_modules = {}
 
@@ -57,7 +14,7 @@ DEFAULT_RETRIES = 5
 def Client(target, version=None, id_token=None, private_key_file=None, private_key_password=None,
            username=None, client_id=None, key_id=None, issuer=None, api_token=None,
            retries=DEFAULT_RETRIES, timeout=None, ssl_cert=None, user_agent=None,
-           verify_ssl=None):
+           verify_ssl=None, model_attribute_error_on_none: bool = True):
     """
     Initialize a FlashArray Client.
 
@@ -101,6 +58,10 @@ def Client(target, version=None, id_token=None, private_key_file=None, private_k
             `True` specifies that the server validation uses default trust anchors;
             `False` switches certificate validation off, **not safe!**;
             It also accepts string value for a path to directory with certificates.
+        model_attribute_error_on_none (bool, optional):
+            Controls model instance behaviour with regard to accessing attributes with None value.
+            raise an AttributeError if attribute value is None, otherwise returns None.
+            Defaults to True for backward compatibility with older versions of the SDK.
 
     Raises:
         PureError: If it could not create an ID or access token
@@ -112,6 +73,7 @@ def Client(target, version=None, id_token=None, private_key_file=None, private_k
         version = choose_version(array_versions)
 
     fa_module = version_to_module(version)
+    setattr(fa_module, '_attribute_error_on_none', model_attribute_error_on_none)
     client = fa_module.Client(target=target, id_token=id_token, private_key_file=private_key_file,
                               private_key_password=private_key_password, username=username, client_id=client_id,
                               key_id=key_id, issuer=issuer, api_token=api_token, retries=retries, timeout=timeout,
@@ -139,11 +101,12 @@ def choose_version(array_versions):
             version = CLIENT_DEV_VERSION
         if version in client_versions:
             return version
-    raise ValueError("No compatible REST version found between the client SDK and the target array.")
+    raise ValueError(f"No compatible REST version found between the client SDK and the target array.\n"
+                     f"Client SDK versions: {[v for v in client_versions]}\n"
+                     f"Target array versions: {array_versions}")
 
 def version_to_module(version):
     if version not in set(fa_modules.keys()):
-        parent_module_name = '.'.join(__name__.split('.')[:-1])
-        fa_modules[version] = importlib.import_module("{}.{}".format(parent_module_name,fa_modules_dict[version]))
+        fa_modules[version] = importlib.import_module(fa_modules_dict[version])
     fa_module = fa_modules.get(version, None)
     return fa_module
