@@ -268,14 +268,6 @@ pypureclient.pure1.Pure1\_1\_4.models.current\_metric module
    :undoc-members:
    :show-inheritance:
 
-pypureclient.pure1.Pure1\_1\_4.models.default\_details module
--------------------------------------------------------------
-
-.. automodule:: pypureclient.pure1.Pure1_1_4.models.default_details
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 pypureclient.pure1.Pure1\_1\_4.models.directory module
 ------------------------------------------------------
 
@@ -516,22 +508,6 @@ pypureclient.pure1.Pure1\_1\_4.models.http module
    :undoc-members:
    :show-inheritance:
 
-pypureclient.pure1.Pure1\_1\_4.models.inline\_response400 module
-----------------------------------------------------------------
-
-.. automodule:: pypureclient.pure1.Pure1_1_4.models.inline_response400
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-pypureclient.pure1.Pure1\_1\_4.models.inline\_response401 module
-----------------------------------------------------------------
-
-.. automodule:: pypureclient.pure1.Pure1_1_4.models.inline_response401
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 pypureclient.pure1.Pure1\_1\_4.models.install\_address module
 -------------------------------------------------------------
 
@@ -680,6 +656,22 @@ pypureclient.pure1.Pure1\_1\_4.models.nfs module
 ------------------------------------------------
 
 .. automodule:: pypureclient.pure1.Pure1_1_4.models.nfs
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.pure1.Pure1\_1\_4.models.oauth210\_token\_post400\_response module
+-------------------------------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_4.models.oauth210_token_post400_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.pure1.Pure1\_1\_4.models.oauth210\_token\_post401\_response module
+-------------------------------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_4.models.oauth210_token_post401_response
    :members:
    :undoc-members:
    :show-inheritance:
@@ -908,6 +900,14 @@ pypureclient.pure1.Pure1\_1\_4.models.subscription module
    :undoc-members:
    :show-inheritance:
 
+pypureclient.pure1.Pure1\_1\_4.models.subscription\_all\_of\_service\_details module
+------------------------------------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_4.models.subscription_all_of_service_details
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 pypureclient.pure1.Pure1\_1\_4.models.subscription\_asset module
 ----------------------------------------------------------------
 
@@ -1088,14 +1088,6 @@ pypureclient.pure1.Pure1\_1\_4.models.tag module
 ------------------------------------------------
 
 .. automodule:: pypureclient.pure1.Pure1_1_4.models.tag
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-pypureclient.pure1.Pure1\_1\_4.models.tag\_batch\_required module
------------------------------------------------------------------
-
-.. automodule:: pypureclient.pure1.Pure1_1_4.models.tag_batch_required
    :members:
    :undoc-members:
    :show-inheritance:
