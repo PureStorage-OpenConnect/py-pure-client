@@ -276,34 +276,34 @@ pypureclient.flashblade.FB\_2\_8.api.object\_store\_virtual\_hosts\_api module
    :undoc-members:
    :show-inheritance:
 
-pypureclient.flashblade.FB\_2\_8.api.policies\_\_\_nfs\_api module
-------------------------------------------------------------------
+pypureclient.flashblade.FB\_2\_8.api.policies\_all\_api module
+--------------------------------------------------------------
 
-.. automodule:: pypureclient.flashblade.FB_2_8.api.policies___nfs_api
+.. automodule:: pypureclient.flashblade.FB_2_8.api.policies_all_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-pypureclient.flashblade.FB\_2\_8.api.policies\_\_\_object\_store\_access\_api module
-------------------------------------------------------------------------------------
+pypureclient.flashblade.FB\_2\_8.api.policies\_nfs\_api module
+--------------------------------------------------------------
 
-.. automodule:: pypureclient.flashblade.FB_2_8.api.policies___object_store_access_api
+.. automodule:: pypureclient.flashblade.FB_2_8.api.policies_nfs_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-pypureclient.flashblade.FB\_2\_8.api.policies\_\_\_snapshot\_api module
------------------------------------------------------------------------
+pypureclient.flashblade.FB\_2\_8.api.policies\_object\_store\_access\_api module
+--------------------------------------------------------------------------------
 
-.. automodule:: pypureclient.flashblade.FB_2_8.api.policies___snapshot_api
+.. automodule:: pypureclient.flashblade.FB_2_8.api.policies_object_store_access_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-pypureclient.flashblade.FB\_2\_8.api.policies\_\_all\_api module
-----------------------------------------------------------------
+pypureclient.flashblade.FB\_2\_8.api.policies\_snapshot\_api module
+-------------------------------------------------------------------
 
-.. automodule:: pypureclient.flashblade.FB_2_8.api.policies__all_api
+.. automodule:: pypureclient.flashblade.FB_2_8.api.policies_snapshot_api
    :members:
    :undoc-members:
    :show-inheritance:
