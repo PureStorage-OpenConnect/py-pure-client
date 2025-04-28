@@ -21,6 +21,14 @@ pypureclient.pure1.Pure1\_1\_1.api\_client module
    :undoc-members:
    :show-inheritance:
 
+pypureclient.pure1.Pure1\_1\_1.api\_response module
+---------------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_1.api_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 pypureclient.pure1.Pure1\_1\_1.client module
 --------------------------------------------
 
@@ -33,6 +41,14 @@ pypureclient.pure1.Pure1\_1\_1.configuration module
 ---------------------------------------------------
 
 .. automodule:: pypureclient.pure1.Pure1_1_1.configuration
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.pure1.Pure1\_1\_1.exceptions module
+------------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_1.exceptions
    :members:
    :undoc-members:
    :show-inheritance:
