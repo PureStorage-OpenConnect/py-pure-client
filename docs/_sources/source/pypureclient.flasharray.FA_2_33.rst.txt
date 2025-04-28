@@ -21,6 +21,14 @@ pypureclient.flasharray.FA\_2\_33.api\_client module
    :undoc-members:
    :show-inheritance:
 
+pypureclient.flasharray.FA\_2\_33.api\_response module
+------------------------------------------------------
+
+.. automodule:: pypureclient.flasharray.FA_2_33.api_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 pypureclient.flasharray.FA\_2\_33.client module
 -----------------------------------------------
 
@@ -33,6 +41,14 @@ pypureclient.flasharray.FA\_2\_33.configuration module
 ------------------------------------------------------
 
 .. automodule:: pypureclient.flasharray.FA_2_33.configuration
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.flasharray.FA\_2\_33.exceptions module
+---------------------------------------------------
+
+.. automodule:: pypureclient.flasharray.FA_2_33.exceptions
    :members:
    :undoc-members:
    :show-inheritance:

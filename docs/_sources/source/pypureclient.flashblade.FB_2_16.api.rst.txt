@@ -292,90 +292,90 @@ pypureclient.flashblade.FB\_2\_16.api.object\_store\_virtual\_hosts\_api module
    :undoc-members:
    :show-inheritance:
 
-pypureclient.flashblade.FB\_2\_16.api.policies\_\_\_audit\_for\_file\_systems\_api module
------------------------------------------------------------------------------------------
+pypureclient.flashblade.FB\_2\_16.api.policies\_all\_api module
+---------------------------------------------------------------
 
-.. automodule:: pypureclient.flashblade.FB_2_16.api.policies___audit_for_file_systems_api
+.. automodule:: pypureclient.flashblade.FB_2_16.api.policies_all_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-pypureclient.flashblade.FB\_2\_16.api.policies\_\_\_network\_access\_api module
--------------------------------------------------------------------------------
-
-.. automodule:: pypureclient.flashblade.FB_2_16.api.policies___network_access_api
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-pypureclient.flashblade.FB\_2\_16.api.policies\_\_\_nfs\_api module
--------------------------------------------------------------------
-
-.. automodule:: pypureclient.flashblade.FB_2_16.api.policies___nfs_api
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-pypureclient.flashblade.FB\_2\_16.api.policies\_\_\_object\_store\_access\_api module
+pypureclient.flashblade.FB\_2\_16.api.policies\_audit\_for\_file\_systems\_api module
 -------------------------------------------------------------------------------------
 
-.. automodule:: pypureclient.flashblade.FB_2_16.api.policies___object_store_access_api
+.. automodule:: pypureclient.flashblade.FB_2_16.api.policies_audit_for_file_systems_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-pypureclient.flashblade.FB\_2\_16.api.policies\_\_\_password\_api module
-------------------------------------------------------------------------
-
-.. automodule:: pypureclient.flashblade.FB_2_16.api.policies___password_api
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-pypureclient.flashblade.FB\_2\_16.api.policies\_\_\_smb\_client\_api module
+pypureclient.flashblade.FB\_2\_16.api.policies\_network\_access\_api module
 ---------------------------------------------------------------------------
 
-.. automodule:: pypureclient.flashblade.FB_2_16.api.policies___smb_client_api
+.. automodule:: pypureclient.flashblade.FB_2_16.api.policies_network_access_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-pypureclient.flashblade.FB\_2\_16.api.policies\_\_\_smb\_share\_api module
---------------------------------------------------------------------------
+pypureclient.flashblade.FB\_2\_16.api.policies\_nfs\_api module
+---------------------------------------------------------------
 
-.. automodule:: pypureclient.flashblade.FB_2_16.api.policies___smb_share_api
+.. automodule:: pypureclient.flashblade.FB_2_16.api.policies_nfs_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-pypureclient.flashblade.FB\_2\_16.api.policies\_\_\_snapshot\_api module
-------------------------------------------------------------------------
+pypureclient.flashblade.FB\_2\_16.api.policies\_object\_store\_access\_api module
+---------------------------------------------------------------------------------
 
-.. automodule:: pypureclient.flashblade.FB_2_16.api.policies___snapshot_api
+.. automodule:: pypureclient.flashblade.FB_2_16.api.policies_object_store_access_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-pypureclient.flashblade.FB\_2\_16.api.policies\_\_\_ssh\_certificate\_authority\_api module
--------------------------------------------------------------------------------------------
+pypureclient.flashblade.FB\_2\_16.api.policies\_password\_api module
+--------------------------------------------------------------------
 
-.. automodule:: pypureclient.flashblade.FB_2_16.api.policies___ssh_certificate_authority_api
+.. automodule:: pypureclient.flashblade.FB_2_16.api.policies_password_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-pypureclient.flashblade.FB\_2\_16.api.policies\_\_\_worm\_data\_api module
---------------------------------------------------------------------------
+pypureclient.flashblade.FB\_2\_16.api.policies\_smb\_client\_api module
+-----------------------------------------------------------------------
 
-.. automodule:: pypureclient.flashblade.FB_2_16.api.policies___worm_data_api
+.. automodule:: pypureclient.flashblade.FB_2_16.api.policies_smb_client_api
    :members:
    :undoc-members:
    :show-inheritance:
 
-pypureclient.flashblade.FB\_2\_16.api.policies\_\_all\_api module
------------------------------------------------------------------
+pypureclient.flashblade.FB\_2\_16.api.policies\_smb\_share\_api module
+----------------------------------------------------------------------
 
-.. automodule:: pypureclient.flashblade.FB_2_16.api.policies__all_api
+.. automodule:: pypureclient.flashblade.FB_2_16.api.policies_smb_share_api
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.flashblade.FB\_2\_16.api.policies\_snapshot\_api module
+--------------------------------------------------------------------
+
+.. automodule:: pypureclient.flashblade.FB_2_16.api.policies_snapshot_api
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.flashblade.FB\_2\_16.api.policies\_ssh\_certificate\_authority\_api module
+---------------------------------------------------------------------------------------
+
+.. automodule:: pypureclient.flashblade.FB_2_16.api.policies_ssh_certificate_authority_api
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.flashblade.FB\_2\_16.api.policies\_worm\_data\_api module
+----------------------------------------------------------------------
+
+.. automodule:: pypureclient.flashblade.FB_2_16.api.policies_worm_data_api
    :members:
    :undoc-members:
    :show-inheritance:
