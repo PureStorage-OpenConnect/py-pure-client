@@ -380,10 +380,10 @@ pypureclient.flasharray.FA\_2\_39.api.sessions\_api module
    :undoc-members:
    :show-inheritance:
 
-pypureclient.flasharray.FA\_2\_39.api.smi\_s\_api module
---------------------------------------------------------
+pypureclient.flasharray.FA\_2\_39.api.smis\_api module
+------------------------------------------------------
 
-.. automodule:: pypureclient.flasharray.FA_2_39.api.smi_s_api
+.. automodule:: pypureclient.flasharray.FA_2_39.api.smis_api
    :members:
    :undoc-members:
    :show-inheritance:
