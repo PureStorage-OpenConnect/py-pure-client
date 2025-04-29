@@ -9,21 +9,19 @@ import sys
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = 'py-pure-client'
-VERSION = '1.66.0'
+VERSION = '1.67.0'
 
 REQUIRES = [
     'certifi >= 2024.07.04',
-    'six >=1.10',
-    'python_dateutil >=2.5.3',
+    'python_dateutil >=2.8.2',
     'setuptools >=70.0.0',
     'urllib3 >= 1.26.17',
     'paramiko >= 3.4.0',
     'pyjwt >=2.0.0',
     'requests >= 2.32.0',
-    ]
-
-if sys.version_info < (3, 5):
-    REQUIRES.append('typing >=3.7.4.1, <= 3.7.4.3')
+    'pydantic >= 1.10.5, < 2',
+    'aenum == 3.1.15'
+]
 
 readme = open('README.md', 'r')
 README_TEXT = readme.read()
@@ -36,7 +34,7 @@ setup(
     author='Pure Storage',
     author_email='openconnect@purestorage.com',
     url='https://github.com/PureStorage-OpenConnect/py-pure-client',
-    download_url='https://github.com/PureStorage-OpenConnect/py-pure-client/archive/1.66.0.tar.gz',
+    download_url='https://github.com/PureStorage-OpenConnect/py-pure-client/archive/1.67.0.tar.gz',
     keywords=['Swagger', 'Pure Storage', 'Python', 'clients', 'REST', 'API', 'FlashArray', 'FlashBlade', 'Pure1'],
     license='BSD 2-Clause',
     license_files = ('LICENSE.txt',),
@@ -44,5 +42,6 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     long_description=README_TEXT,
-    long_description_content_type='text/markdown'
+    long_description_content_type='text/markdown',
+    package_data={"": ["py.typed"]},
 )

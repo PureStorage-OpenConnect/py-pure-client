@@ -1,14 +1,13 @@
 import importlib
 
-pure1_modules_dict = {
-    '1.0': 'Pure1_1_0',
-    '1.1': 'Pure1_1_1',
-    '1.2': 'Pure1_1_2',
-    '1.3': 'Pure1_1_3',
-    '1.4': 'Pure1_1_4',
-}
+from .__modules_dict import __modules_dict as pure1_modules_dict
+from ..properties import Property
+
 
 pure1_modules = {}
+
+
+DEFAULT_VERSION = sorted(pure1_modules_dict.keys())[-1]
 
 VERSION_KEY = 'version'
 
@@ -35,14 +34,19 @@ def Client(**kwargs):
         timeout (float or (float, float), optional): The timeout
             duration in seconds, either in total time or (connect and read)
             times. Defaults to 15.0 total.
+        model_attribute_error_on_none (bool, optional):
+            Controls model instance behaviour with regard to accessing attributes with None value.
+            raise an AttributeError if attribute value is None, otherwise returns None.
+            Defaults to True for backward compatibility with older versions of the SDK.
 
     Raises:
         PureError: If it could not create an ID or access token
     """
     version = (kwargs.get(VERSION_KEY)
                 if VERSION_KEY in kwargs
-                else "1.4")
+                else DEFAULT_VERSION)
     pure1_module = version_to_module(version)
+    setattr(pure1_module, '_attribute_error_on_none', kwargs.get('model_attribute_error_on_none', True))
     client = pure1_module.Client(**kwargs)
     return client
 
@@ -52,7 +56,6 @@ def version_to_module(version):
         msg = "version {} not supported".format(version)
         raise ValueError(msg.format(version))
     if version not in set(pure1_modules.keys()):
-        parent_module_name = '.'.join(__name__.split('.')[:-1])
-        pure1_modules[version] = importlib.import_module("{}.{}".format(parent_module_name,pure1_modules_dict[version]))
+        pure1_modules[version] = importlib.import_module(pure1_modules_dict[version])
     pure1_module = pure1_modules.get(version, None)
     return pure1_module
