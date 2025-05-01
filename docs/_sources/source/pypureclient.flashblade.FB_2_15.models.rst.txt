@@ -212,14 +212,6 @@ pypureclient.flashblade.FB\_2\_15.models.alert\_watcher\_response module
    :undoc-members:
    :show-inheritance:
 
-pypureclient.flashblade.FB\_2\_15.models.api215\_link\_aggregation\_groups\_patch\_request module
--------------------------------------------------------------------------------------------------
-
-.. automodule:: pypureclient.flashblade.FB_2_15.models.api215_link_aggregation_groups_patch_request
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 pypureclient.flashblade.FB\_2\_15.models.api\_client module
 -----------------------------------------------------------
 
@@ -1068,6 +1060,14 @@ pypureclient.flashblade.FB\_2\_15.models.cross\_origin\_resource\_sharing\_polic
    :undoc-members:
    :show-inheritance:
 
+pypureclient.flashblade.FB\_2\_15.models.direction module
+---------------------------------------------------------
+
+.. automodule:: pypureclient.flashblade.FB_2_15.models.direction
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 pypureclient.flashblade.FB\_2\_15.models.directory\_service module
 ------------------------------------------------------------------
 
@@ -1660,10 +1660,50 @@ pypureclient.flashblade.FB\_2\_15.models.http module
    :undoc-members:
    :show-inheritance:
 
+pypureclient.flashblade.FB\_2\_15.models.inline\_response400 module
+-------------------------------------------------------------------
+
+.. automodule:: pypureclient.flashblade.FB_2_15.models.inline_response400
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.flashblade.FB\_2\_15.models.inline\_response401 module
+-------------------------------------------------------------------
+
+.. automodule:: pypureclient.flashblade.FB_2_15.models.inline_response401
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 pypureclient.flashblade.FB\_2\_15.models.keytab module
 ------------------------------------------------------
 
 .. automodule:: pypureclient.flashblade.FB_2_15.models.keytab
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.flashblade.FB\_2\_15.models.keytab\_file\_base64 module
+--------------------------------------------------------------------
+
+.. automodule:: pypureclient.flashblade.FB_2_15.models.keytab_file_base64
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.flashblade.FB\_2\_15.models.keytab\_file\_binary module
+--------------------------------------------------------------------
+
+.. automodule:: pypureclient.flashblade.FB_2_15.models.keytab_file_binary
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.flashblade.FB\_2\_15.models.keytab\_file\_response module
+----------------------------------------------------------------------
+
+.. automodule:: pypureclient.flashblade.FB_2_15.models.keytab_file_response
    :members:
    :undoc-members:
    :show-inheritance:
@@ -1776,6 +1816,14 @@ pypureclient.flashblade.FB\_2\_15.models.link\_aggregation\_group\_response modu
 ----------------------------------------------------------------------------------
 
 .. automodule:: pypureclient.flashblade.FB_2_15.models.link_aggregation_group_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.flashblade.FB\_2\_15.models.linkaggregationgroup module
+--------------------------------------------------------------------
+
+.. automodule:: pypureclient.flashblade.FB_2_15.models.linkaggregationgroup
    :members:
    :undoc-members:
    :show-inheritance:
@@ -2108,22 +2156,6 @@ pypureclient.flashblade.FB\_2\_15.models.nfs\_patch module
    :undoc-members:
    :show-inheritance:
 
-pypureclient.flashblade.FB\_2\_15.models.oauth210\_token\_post400\_response module
-----------------------------------------------------------------------------------
-
-.. automodule:: pypureclient.flashblade.FB_2_15.models.oauth210_token_post400_response
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-pypureclient.flashblade.FB\_2\_15.models.oauth210\_token\_post401\_response module
-----------------------------------------------------------------------------------
-
-.. automodule:: pypureclient.flashblade.FB_2_15.models.oauth210_token_post401_response
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 pypureclient.flashblade.FB\_2\_15.models.oauth\_token\_response module
 ----------------------------------------------------------------------
 
@@ -2184,14 +2216,6 @@ pypureclient.flashblade.FB\_2\_15.models.object\_store\_access\_key\_post module
 --------------------------------------------------------------------------------
 
 .. automodule:: pypureclient.flashblade.FB_2_15.models.object_store_access_key_post
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-pypureclient.flashblade.FB\_2\_15.models.object\_store\_access\_key\_post\_user module
---------------------------------------------------------------------------------------
-
-.. automodule:: pypureclient.flashblade.FB_2_15.models.object_store_access_key_post_user
    :members:
    :undoc-members:
    :show-inheritance:

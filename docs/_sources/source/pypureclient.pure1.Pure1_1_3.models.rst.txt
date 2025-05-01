@@ -492,6 +492,22 @@ pypureclient.pure1.Pure1\_1\_3.models.http module
    :undoc-members:
    :show-inheritance:
 
+pypureclient.pure1.Pure1\_1\_3.models.inline\_response400 module
+----------------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_3.models.inline_response400
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.pure1.Pure1\_1\_3.models.inline\_response401 module
+----------------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_3.models.inline_response401
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 pypureclient.pure1.Pure1\_1\_3.models.install\_address module
 -------------------------------------------------------------
 
@@ -640,22 +656,6 @@ pypureclient.pure1.Pure1\_1\_3.models.nfs module
 ------------------------------------------------
 
 .. automodule:: pypureclient.pure1.Pure1_1_3.models.nfs
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-pypureclient.pure1.Pure1\_1\_3.models.oauth210\_token\_post400\_response module
--------------------------------------------------------------------------------
-
-.. automodule:: pypureclient.pure1.Pure1_1_3.models.oauth210_token_post400_response
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-pypureclient.pure1.Pure1\_1\_3.models.oauth210\_token\_post401\_response module
--------------------------------------------------------------------------------
-
-.. automodule:: pypureclient.pure1.Pure1_1_3.models.oauth210_token_post401_response
    :members:
    :undoc-members:
    :show-inheritance:
@@ -1056,6 +1056,14 @@ pypureclient.pure1.Pure1\_1\_3.models.tag module
 ------------------------------------------------
 
 .. automodule:: pypureclient.pure1.Pure1_1_3.models.tag
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+pypureclient.pure1.Pure1\_1\_3.models.tag\_batch\_required module
+-----------------------------------------------------------------
+
+.. automodule:: pypureclient.pure1.Pure1_1_3.models.tag_batch_required
    :members:
    :undoc-members:
    :show-inheritance:

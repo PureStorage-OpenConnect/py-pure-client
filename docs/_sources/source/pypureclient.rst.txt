@@ -54,14 +54,6 @@ pypureclient.properties module
    :undoc-members:
    :show-inheritance:
 
-pypureclient.reference\_type module
------------------------------------
-
-.. automodule:: pypureclient.reference_type
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 pypureclient.responses module
 -----------------------------
 

@@ -40,7 +40,7 @@ This Python package provides clients that use the Pure1, FlashArray, and FlashBl
 Requirements
 ------------
 
-The library requires Python 3.8 or higher. Third-party libraries are also required.
+The library requires Python 2.7 and higher or Python 3.3 and higher. Third-party libraries are also required.
 
 Community
 ---------
