@@ -27,6 +27,7 @@ from pypureclient.flashblade.FB_2_1.models.network_interface import NetworkInter
 from pypureclient.flashblade.FB_2_1.models.network_interface_get_response import NetworkInterfaceGetResponse
 from pypureclient.flashblade.FB_2_1.models.network_interface_patch import NetworkInterfacePatch
 from pypureclient.flashblade.FB_2_1.models.network_interface_response import NetworkInterfaceResponse
+from typing import Optional
 from pypureclient.flashblade.FB_2_1.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_1.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_1.exceptions import (  # noqa: F401
@@ -51,14 +52,9 @@ class NetworkInterfacesApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE network-interfaces  # noqa: E501
+        """DELETE network-interfaces
 
-        Remove a data VIP. Once removed, any clients connected through the data VIP will lose their connection to the file system.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api21_network_interfaces_delete_with_http_info(ids, names, async_req=True)
-        >>> result = thread.get()
+        Remove a data VIP. Once removed, any clients connected through the data VIP will lose their connection to the file system.
 
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
         :type ids: List[str]
@@ -172,14 +168,9 @@ class NetworkInterfacesApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET network-interfaces  # noqa: E501
+        """GET network-interfaces
 
-        List network interfaces and their attributes.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api21_network_interfaces_get_with_http_info(continuation_token, filter, ids, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        List network interfaces and their attributes.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -326,14 +317,9 @@ class NetworkInterfacesApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH network-interfaces  # noqa: E501
+        """PATCH network-interfaces
 
-        Modify the attributes of a data VIP.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api21_network_interfaces_patch_with_http_info(network_interface, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modify the attributes of a data VIP.
 
         :param network_interface: (required)
         :type network_interface: NetworkInterfacePatch
@@ -461,14 +447,9 @@ class NetworkInterfacesApi:
         network_interface: NetworkInterface,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST network-interfaces  # noqa: E501
+        """POST network-interfaces
 
-        Create a data VIP to export a file system.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api21_network_interfaces_post_with_http_info(names, network_interface, async_req=True)
-        >>> result = thread.get()
+        Create a data VIP to export a file system.
 
         :param names: A comma-separated list of resource names. (required)
         :type names: List[str]

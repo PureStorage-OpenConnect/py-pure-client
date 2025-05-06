@@ -28,6 +28,7 @@ from pypureclient.flasharray.FA_2_30.models.remote_volume_snapshot_get_response 
 from pypureclient.flasharray.FA_2_30.models.remote_volume_snapshot_post import RemoteVolumeSnapshotPost
 from pypureclient.flasharray.FA_2_30.models.remote_volume_snapshot_response import RemoteVolumeSnapshotResponse
 from pypureclient.flasharray.FA_2_30.models.remote_volume_snapshot_transfer_get_response import RemoteVolumeSnapshotTransferGetResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_30.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_30.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_30.exceptions import (  # noqa: F401
@@ -55,14 +56,9 @@ class RemoteVolumeSnapshotsApi:
         replication_snapshot: Annotated[Optional[StrictBool], Field(description="If set to `true`, allow destruction/eradication of snapshots in use by replication. If set to `false`, allow destruction/eradication of snapshots not in use by replication. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete a remote volume snapshot  # noqa: E501
+        """Delete a remote volume snapshot
 
-        Deletes (eradicates) a remote volume snapshot that has been destroyed and is pending eradication. Eradicated remote volume snapshots cannot be recovered. Remote volume snapshots are destroyed through the `PATCH` method. The `names` parameter represents the name of the volume snapshot. The `on` parameter represents the name of the offload target. The `names` and `on` parameters are required and must be used together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api230_remote_volume_snapshots_delete_with_http_info(authorization, x_request_id, names, on, replication_snapshot, async_req=True)
-        >>> result = thread.get()
+        Deletes (eradicates) a remote volume snapshot that has been destroyed and is pending eradication. Eradicated remote volume snapshots cannot be recovered. Remote volume snapshots are destroyed through the `PATCH` method. The `names` parameter represents the name of the volume snapshot. The `on` parameter represents the name of the offload target. The `names` and `on` parameters are required and must be used together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -199,14 +195,9 @@ class RemoteVolumeSnapshotsApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List remote volume snapshots  # noqa: E501
+        """List remote volume snapshots
 
-        Displays a list of remote volume snapshots.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api230_remote_volume_snapshots_get_with_http_info(authorization, x_request_id, destroyed, filter, ids, limit, names, offset, on, sort, source_ids, source_names, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of remote volume snapshots.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -395,14 +386,9 @@ class RemoteVolumeSnapshotsApi:
         replication_snapshot: Annotated[Optional[StrictBool], Field(description="If set to `true`, allow destruction/eradication of snapshots in use by replication. If set to `false`, allow destruction/eradication of snapshots not in use by replication. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Modify a remote volume snapshot  # noqa: E501
+        """Modify a remote volume snapshot
 
-        Modifies a remote volume snapshot by destroying or recovering it from the offload target. The `on` parameter represents the name of the offload target. The `names` parameter and the `on` parameter are required and must be used together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api230_remote_volume_snapshots_patch_with_http_info(remote_volume_snapshot, authorization, x_request_id, names, on, replication_snapshot, async_req=True)
-        >>> result = thread.get()
+        Modifies a remote volume snapshot by destroying or recovering it from the offload target. The `on` parameter represents the name of the offload target. The `names` parameter and the `on` parameter are required and must be used together.
 
         :param remote_volume_snapshot: (required)
         :type remote_volume_snapshot: DestroyedPatchPost
@@ -551,14 +537,9 @@ class RemoteVolumeSnapshotsApi:
         source_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the source name specified. Enter multiple source names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create a volume snapshot on a connected remote target or offload target  # noqa: E501
+        """Create a volume snapshot on a connected remote target or offload target
 
-        Creates a volume snapshot on the specified connected remote target or offload target.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api230_remote_volume_snapshots_post_with_http_info(remote_volume_snapshot, authorization, x_request_id, on, source_ids, source_names, async_req=True)
-        >>> result = thread.get()
+        Creates a volume snapshot on the specified connected remote target or offload target.
 
         :param remote_volume_snapshot: (required)
         :type remote_volume_snapshot: RemoteVolumeSnapshotPost
@@ -716,14 +697,9 @@ class RemoteVolumeSnapshotsApi:
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List remote volume snapshots with transfer statistics  # noqa: E501
+        """List remote volume snapshots with transfer statistics
 
-        Returns a list of remote volume snapshots and their transfer statistics.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api230_remote_volume_snapshots_transfer_get_with_http_info(authorization, x_request_id, destroyed, filter, ids, limit, names, offset, on, sort, source_ids, source_names, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Returns a list of remote volume snapshots and their transfer statistics.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str

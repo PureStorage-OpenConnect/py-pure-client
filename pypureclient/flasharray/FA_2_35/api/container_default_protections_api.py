@@ -26,6 +26,7 @@ from typing import Optional
 from pypureclient.flasharray.FA_2_35.models.container_default_protection import ContainerDefaultProtection
 from pypureclient.flasharray.FA_2_35.models.container_default_protection_get_response import ContainerDefaultProtectionGetResponse
 from pypureclient.flasharray.FA_2_35.models.container_default_protection_response import ContainerDefaultProtectionResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_35.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_35.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_35.exceptions import (  # noqa: F401
@@ -59,14 +60,9 @@ class ContainerDefaultProtectionsApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List container default protections  # noqa: E501
+        """List container default protections
 
-        Displays a list of containers with its default protections.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api235_container_default_protections_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, ids, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of containers with its default protections.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -239,14 +235,9 @@ class ContainerDefaultProtectionsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique container name specified. Enter multiple names in comma-separated format. The `ids` or `names` parameter is required, but they cannot be set together. Specifying `ids` or `names` with no value will perform the operation on local array.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Modify a container's default protections  # noqa: E501
+        """Modify a container's default protections
 
-        Modifies a container's default protections. To modify, set `default_protections` to the new list.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api235_container_default_protections_patch_with_http_info(container_default_protection, authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modifies a container's default protections. To modify, set `default_protections` to the new list.
 
         :param container_default_protection: (required)
         :type container_default_protection: ContainerDefaultProtection

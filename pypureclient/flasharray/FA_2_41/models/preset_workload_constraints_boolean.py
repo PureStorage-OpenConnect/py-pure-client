@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictBool
 
 class PresetWorkloadConstraintsBoolean(BaseModel):
     """
-    Constraints to apply to boolean parameters.  # noqa: E501
+    Constraints to apply to boolean parameters.
     """
     default: Optional[StrictBool] = Field(default=None, description="The default value to use if no value is provided.")
     __properties = ["default"]

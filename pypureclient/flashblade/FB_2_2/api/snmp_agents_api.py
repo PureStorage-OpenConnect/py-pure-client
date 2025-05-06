@@ -27,6 +27,7 @@ from pypureclient.flashblade.FB_2_2.models.snmp_agent import SnmpAgent
 from pypureclient.flashblade.FB_2_2.models.snmp_agent_get_response import SnmpAgentGetResponse
 from pypureclient.flashblade.FB_2_2.models.snmp_agent_mib_response import SnmpAgentMibResponse
 from pypureclient.flashblade.FB_2_2.models.snmp_agent_response import SnmpAgentResponse
+from typing import Optional
 from pypureclient.flashblade.FB_2_2.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_2.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_2.exceptions import (  # noqa: F401
@@ -56,14 +57,9 @@ class SNMPAgentsApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET snmp-agents  # noqa: E501
+        """GET snmp-agents
 
-        List SNMP agent attributes.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api22_snmp_agents_get_with_http_info(continuation_token, filter, ids, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        List SNMP agent attributes.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -207,14 +203,9 @@ class SNMPAgentsApi:
         self,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET snmp-agents-mib  # noqa: E501
+        """GET snmp-agents-mib
 
-        List the SNMP MIB text.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api22_snmp_agents_mib_get_with_http_info(async_req=True)
-        >>> result = thread.get()
+        List the SNMP MIB text.
 
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -314,14 +305,9 @@ class SNMPAgentsApi:
         snmp_agent: SnmpAgent,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH snmp-agents  # noqa: E501
+        """PATCH snmp-agents
 
-        Modify SNMP agent attributes.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api22_snmp_agents_patch_with_http_info(snmp_agent, async_req=True)
-        >>> result = thread.get()
+        Modify SNMP agent attributes.
 
         :param snmp_agent: (required)
         :type snmp_agent: SnmpAgent

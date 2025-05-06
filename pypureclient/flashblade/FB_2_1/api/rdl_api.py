@@ -21,6 +21,7 @@ import warnings
 from pypureclient.flashblade.FB_2_1.models.rapid_data_locking import RapidDataLocking
 from pypureclient.flashblade.FB_2_1.models.rapid_data_locking_response import RapidDataLockingResponse
 from pypureclient.flashblade.FB_2_1.models.test_result_response import TestResultResponse
+from typing import Optional
 from pypureclient.flashblade.FB_2_1.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_1.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_1.exceptions import (  # noqa: F401
@@ -43,14 +44,9 @@ class RDLApi:
         self,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Get the status of the Rapid Data Locking feature.  # noqa: E501
+        """Get the status of the Rapid Data Locking feature.
 
-        Displays the status of the Rapid Data Locking feature.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api21_rapid_data_locking_get_with_http_info(async_req=True)
-        >>> result = thread.get()
+        Displays the status of the Rapid Data Locking feature.
 
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -150,14 +146,9 @@ class RDLApi:
         rapid_data_locking: RapidDataLocking,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Modifies the Rapid Data Locking feature.  # noqa: E501
+        """Modifies the Rapid Data Locking feature.
 
-        Modifies the Rapid Data Locking feature. Note that the feature can only be enabled if there are no file systems nor buckets created on the array. Once enabled, the feature cannot be modified.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api21_rapid_data_locking_patch_with_http_info(rapid_data_locking, async_req=True)
-        >>> result = thread.get()
+        Modifies the Rapid Data Locking feature. Note that the feature can only be enabled if there are no file systems nor buckets created on the array. Once enabled, the feature cannot be modified.
 
         :param rapid_data_locking: (required)
         :type rapid_data_locking: RapidDataLocking
@@ -269,14 +260,9 @@ class RDLApi:
         self,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Rotates the external keys on the associated EKM appliance.  # noqa: E501
+        """Rotates the external keys on the associated EKM appliance.
 
-        Rotates the external keys on the associated EKM appliance.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api21_rapid_data_locking_rotate_post_with_http_info(async_req=True)
-        >>> result = thread.get()
+        Rotates the external keys on the associated EKM appliance.
 
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -369,14 +355,9 @@ class RDLApi:
         self,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Displays Rapid Data Locking test results.  # noqa: E501
+        """Displays Rapid Data Locking test results.
 
-        Displays a detailed result of a Rapid Data Locking test.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api21_rapid_data_locking_test_get_with_http_info(async_req=True)
-        >>> result = thread.get()
+        Displays a detailed result of a Rapid Data Locking test.
 
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional

@@ -24,6 +24,7 @@ from pydantic import Field, StrictInt, StrictStr, conint, conlist, constr, valid
 from typing import Optional
 
 from pypureclient.pure1.Pure1_1_2.models.pod_replica_link_get_response import PodReplicaLinkGetResponse
+from typing import Optional
 from pypureclient.pure1.Pure1_1_2.api_client import ApiClient as _TransportApiClient
 from pypureclient.pure1.Pure1_1_2.api_response import ApiResponse
 from pypureclient.pure1.Pure1_1_2.exceptions import (  # noqa: F401
@@ -60,14 +61,9 @@ class PodReplicaLinksApi:
         target_names: Annotated[Optional[conlist(StrictStr)], Field(description="A list of target names. Target names separated by a `+` indicate that both targets must be present in each element. Target names separated by a `,` indicate that at least one target must be present in each element. If there is not at least one resource that matches each `target_name` element, an error is returned. Single quotes are required around all strings. When using Try it Out in Swagger, a list of target names separated by a `+` must be entered in the same item cell.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Get pod replica links  # noqa: E501
+        """Get pod replica links
 
-        Retrieves information about pod replica links.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api12_pod_replica_links_get_with_http_info(authorization, x_request_id, continuation_token, filter, ids, limit, member_ids, member_names, offset, sort, source_ids, source_names, target_ids, target_names, async_req=True)
-        >>> result = thread.get()
+        Retrieves information about pod replica links.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`)
         :type authorization: str

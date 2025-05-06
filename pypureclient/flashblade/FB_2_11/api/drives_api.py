@@ -24,6 +24,7 @@ from pydantic import Field, StrictBool, StrictStr, conint, conlist, constr, vali
 from typing import Optional
 
 from pypureclient.flashblade.FB_2_11.models.drive_get_response import DriveGetResponse
+from typing import Optional
 from pypureclient.flashblade.FB_2_11.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_11.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_11.exceptions import (  # noqa: F401
@@ -54,14 +55,9 @@ class DrivesApi:
         total_only: Annotated[Optional[StrictBool], Field(description="Only return the total record for the specified items. The total record will be the total of all items after filtering. The `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET drives  # noqa: E501
+        """GET drives
 
-        List array drive information.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api211_drives_get_with_http_info(continuation_token, filter, ids, limit, names, offset, sort, total_only, async_req=True)
-        >>> result = thread.get()
+        List array drive information.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str

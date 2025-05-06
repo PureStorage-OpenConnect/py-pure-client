@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictInt, conlist
 
 class PresetWorkloadConstraintsInteger(BaseModel):
     """
-    Constraints to apply to integer parameters.  # noqa: E501
+    Constraints to apply to integer parameters.
     """
     allowed_values: Optional[conlist(StrictInt)] = Field(default=None, description="The valid values that can be supplied to the parameter. A parameter that collects the number of volumes to provision might, for example, limit the allowed values to a few fixed options. Supports up to five values.")
     default: Optional[StrictInt] = Field(default=None, description="The default value to use if no value is provided. Must be present in `allowed_values`, if set. Must comply with `minimum`, if set. Must comply with `maximum`, if set.")

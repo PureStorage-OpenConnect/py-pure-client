@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictInt
 
 class NetworkInterfacesConnectorsSettingRocePfc(BaseModel):
     """
-    Default PFC(Priority Flow Control) configuration for network connectors.  # noqa: E501
+    Default PFC(Priority Flow Control) configuration for network connectors.
     """
     port_buffer: Optional[StrictInt] = Field(default=None, description="The buffer size in bytes reserved to absorb in-flight packets after XOFF threshold is reached.")
     xoff_threshold: Optional[StrictInt] = Field(default=None, description="The PFC XOFF threshold value in bytes. When the buffer for a particular traffic class reaches this threshold, the pause frame(XOFF) will be transimitted to the sender, requesting it to stop sending packets for that class.")

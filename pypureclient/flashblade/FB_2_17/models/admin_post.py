@@ -25,7 +25,7 @@ from pypureclient.flashblade.FB_2_17.models.reference_writable import ReferenceW
 
 class AdminPost(BaseModel):
     """
-    An administrative user, who has rights to login and manage the array in some capacity.  # noqa: E501
+    An administrative user, who has rights to login and manage the array in some capacity.
     """
     password: Optional[StrictStr] = Field(default=None, description="New user password.")
     public_key: Optional[StrictStr] = Field(default=None, description="Public key for SSH access. Supported key types include `Ed25519` and `RSA`.")

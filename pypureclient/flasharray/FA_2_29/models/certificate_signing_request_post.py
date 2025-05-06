@@ -25,7 +25,7 @@ from pypureclient.flasharray.FA_2_29.models.reference_no_id import ReferenceNoId
 
 class CertificateSigningRequestPost(BaseModel):
     """
-    SSL Certificate managed by Purity//FA.  # noqa: E501
+    SSL Certificate managed by Purity//FA.
     """
     certificate: Optional[ReferenceNoId] = None
     common_name: Optional[StrictStr] = Field(default=None, description="The common name field listed in the certificate.")

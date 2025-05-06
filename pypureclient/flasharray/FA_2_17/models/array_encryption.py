@@ -25,7 +25,7 @@ from pypureclient.flasharray.FA_2_17.models.arrayencryption_data_at_rest import 
 
 class ArrayEncryption(BaseModel):
     """
-    If the user does not have sufficient access, all fields will return `null`.  # noqa: E501
+    If the user does not have sufficient access, all fields will return `null`.
     """
     data_at_rest: Optional[ArrayencryptionDataAtRest] = None
     module_version: Optional[StrictStr] = Field(default=None, description="The version of the Purity encryption module installed on the array. Security certifications are carried out on a per-version basis. On non-encrypt builds, an encryption module may be installed without being enabled. Values include `FA-1.0`, `FA-1.1`, `FA-1.2`, `FA-1.3`, and so on.")

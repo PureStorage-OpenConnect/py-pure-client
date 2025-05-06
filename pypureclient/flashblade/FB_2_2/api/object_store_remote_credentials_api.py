@@ -27,6 +27,7 @@ from pypureclient.flashblade.FB_2_2.models.object_store_remote_credential_get_re
 from pypureclient.flashblade.FB_2_2.models.object_store_remote_credentials import ObjectStoreRemoteCredentials
 from pypureclient.flashblade.FB_2_2.models.object_store_remote_credentials_post import ObjectStoreRemoteCredentialsPost
 from pypureclient.flashblade.FB_2_2.models.object_store_remote_credentials_resp import ObjectStoreRemoteCredentialsResp
+from typing import Optional
 from pypureclient.flashblade.FB_2_2.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_2.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_2.exceptions import (  # noqa: F401
@@ -51,14 +52,9 @@ class ObjectStoreRemoteCredentialsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE object-store-remote-credentials  # noqa: E501
+        """DELETE object-store-remote-credentials
 
-        Delete object store remote credentials.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api22_object_store_remote_credentials_delete_with_http_info(ids, names, async_req=True)
-        >>> result = thread.get()
+        Delete object store remote credentials.
 
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
         :type ids: List[str]
@@ -172,14 +168,9 @@ class ObjectStoreRemoteCredentialsApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET object-store-remote-credentials  # noqa: E501
+        """GET object-store-remote-credentials
 
-        List object store remote credentials used by bucket replica links to access buckets on remote arrays or targets.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api22_object_store_remote_credentials_get_with_http_info(continuation_token, filter, ids, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        List object store remote credentials used by bucket replica links to access buckets on remote arrays or targets.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -326,14 +317,9 @@ class ObjectStoreRemoteCredentialsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH object-store-remote-credentials  # noqa: E501
+        """PATCH object-store-remote-credentials
 
-        Rename and/or change the access key/secret key pair for object store remote credentials.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api22_object_store_remote_credentials_patch_with_http_info(remote_credentials, ids, names, async_req=True)
-        >>> result = thread.get()
+        Rename and/or change the access key/secret key pair for object store remote credentials.
 
         :param remote_credentials: (required)
         :type remote_credentials: ObjectStoreRemoteCredentials
@@ -461,14 +447,9 @@ class ObjectStoreRemoteCredentialsApi:
         remote_credentials: ObjectStoreRemoteCredentialsPost,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST object-store-remote-credentials  # noqa: E501
+        """POST object-store-remote-credentials
 
-        Create object store remote credentials to set up bucket replicat links to a remote array or target.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api22_object_store_remote_credentials_post_with_http_info(names, remote_credentials, async_req=True)
-        >>> result = thread.get()
+        Create object store remote credentials to set up bucket replicat links to a remote array or target.
 
         :param names: A comma-separated list of resource names. (required)
         :type names: List[str]

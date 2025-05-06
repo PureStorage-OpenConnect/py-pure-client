@@ -171,14 +171,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete an API client  # noqa: E501
+        """Delete an API client
         
-        Deletes an API client. The `ids` or `names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_api_clients_delete_with_http_info(authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Deletes an API client. The `ids` or `names` parameter is required, but they cannot be set together.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -211,12 +206,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -251,14 +247,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List API clients  # noqa: E501
+        """List API clients
         
-        Returns a list of API clients.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_api_clients_get_with_http_info(authorization, x_request_id, filter, ids, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Returns a list of API clients.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -319,12 +310,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -360,17 +352,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Manage an API client  # noqa: E501
+        """Manage an API client
         
-        Enables or disables an API client. The `ids` or `names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_api_clients_patch_with_http_info(api_clients, authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Enables or disables an API client. The `ids` or `names` parameter is required, but they cannot be set together.
         
         :param api_clients: (required)
-        :type api_clients: models.ApiClientPatch
+        :type api_clients: ApiClientPatch
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -402,12 +389,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -438,17 +426,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create an API client  # noqa: E501
+        """Create an API client
         
-        Creates an API client. Newly created API clients are disabled by default. Enable an API client through the `PATCH` method. The `names`, `max_role`, `issuer`, and `public_key` parameters are required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_api_clients_post_with_http_info(api_clients, authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Creates an API client. Newly created API clients are disabled by default. Enable an API client through the `PATCH` method. The `names`, `max_role`, `issuer`, and `public_key` parameters are required.
         
         :param api_clients: (required)
-        :type api_clients: models.ApiClientPost
+        :type api_clients: ApiClientPost
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -476,12 +459,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -511,14 +495,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete Active Directory account  # noqa: E501
+        """Delete Active Directory account
         
-        Deletes one or more specified Active Directory accounts.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_active_directory_delete_with_http_info(names, authorization, x_request_id, local_only, async_req=True)
-        >>> result = thread.get()
+        Deletes one or more specified Active Directory accounts.
         
         :param names: Performs the operation on the unique name specified. For example, `name01`.
                     Enter multiple names in comma-separated format. (required)
@@ -551,12 +530,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -591,14 +571,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List Active Directory accounts  # noqa: E501
+        """List Active Directory accounts
         
-        Displays configured Active Directory accounts.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_active_directory_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays configured Active Directory accounts.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -662,12 +637,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -702,20 +678,15 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify Active Directory account  # noqa: E501
+        """Modify Active Directory account
         
-        Modifies specified Active Directory account.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_active_directory_patch_with_http_info(names, active_directory, authorization, x_request_id, async_req=True)
-        >>> result = thread.get()
+        Modifies specified Active Directory account.
         
         :param names: Performs the operation on the unique name specified. For example, `name01`.
                     Enter multiple names in comma-separated format. (required)
         :type names: List[str]
         :param active_directory: (required)
-        :type active_directory: models.ActiveDirectoryPatch
+        :type active_directory: ActiveDirectoryPatch
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -740,12 +711,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -776,20 +748,15 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create Active Directory account  # noqa: E501
+        """Create Active Directory account
         
-        Creates one or more Active Directory accounts. The `user` and `password` provided are used to join the array to the specified `domain`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_active_directory_post_with_http_info(names, active_directory, authorization, x_request_id, join_existing_account, async_req=True)
-        >>> result = thread.get()
+        Creates one or more Active Directory accounts. The `user` and `password` provided are used to join the array to the specified `domain`.
         
         :param names: Performs the operation on the unique name specified. For example, `name01`.
                     Enter multiple names in comma-separated format. (required)
         :type names: List[str]
         :param active_directory: (required)
-        :type active_directory: models.ActiveDirectoryPost
+        :type active_directory: ActiveDirectoryPost
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -822,12 +789,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -857,14 +825,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete API tokens  # noqa: E501
+        """Delete API tokens
         
-        Deletes the API tokens of the specified administrators.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_admins_api_tokens_delete_with_http_info(authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Deletes the API tokens of the specified administrators.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -893,12 +856,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -933,14 +897,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List API tokens  # noqa: E501
+        """List API tokens
         
-        Displays API tokens for the specified administrators.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_admins_api_tokens_get_with_http_info(authorization, x_request_id, continuation_token, expose_api_token, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays API tokens for the specified administrators.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -1006,12 +965,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -1047,14 +1007,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create API tokens  # noqa: E501
+        """Create API tokens
         
-        Creates API tokens for the specified administrators.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_admins_api_tokens_post_with_http_info(authorization, x_request_id, names, timeout, async_req=True)
-        >>> result = thread.get()
+        Creates API tokens for the specified administrators.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -1085,12 +1040,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -1118,14 +1074,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete cache entries  # noqa: E501
+        """Delete cache entries
         
-        Deletes all entries from the administrator cache.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_admins_cache_delete_with_http_info(remove_all_entries, authorization, x_request_id, async_req=True)
-        >>> result = thread.get()
+        Deletes all entries from the administrator cache.
         
         :param remove_all_entries: If set to `true`, removes all entries from the administrator cache. (required)
         :type remove_all_entries: bool
@@ -1151,12 +1102,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -1189,14 +1141,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List administrator cache entries  # noqa: E501
+        """List administrator cache entries
         
-        Displays entries in the administrator cache.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_admins_cache_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays entries in the administrator cache.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -1260,12 +1207,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -1299,14 +1247,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Update or refresh entries in the administrator cache  # noqa: E501
+        """Update or refresh entries in the administrator cache
         
-        Updates entries in the cache for administrators who currently do not have a cache entry, otherwise refreshes the existing entry.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_admins_cache_put_with_http_info(authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Updates entries in the cache for administrators who currently do not have a cache entry, otherwise refreshes the existing entry.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -1335,12 +1278,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -1368,14 +1312,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Deletes an administrator  # noqa: E501
+        """Deletes an administrator
         
-        Deletes the specified administrator.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_admins_delete_with_http_info(authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Deletes the specified administrator.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -1404,12 +1343,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -1444,14 +1384,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List administrators  # noqa: E501
+        """List administrators
         
-        Displays a list of administrators.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_admins_get_with_http_info(authorization, x_request_id, continuation_token, expose_api_token, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of administrators.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -1517,12 +1452,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -1558,17 +1494,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify an administrator  # noqa: E501
+        """Modify an administrator
         
-        Modifies properties for the specified administrator.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_admins_patch_with_http_info(admin, authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Modifies properties for the specified administrator.
         
         :param admin: (required)
-        :type admin: models.AdminPatch
+        :type admin: AdminPatch
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -1596,12 +1527,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -1631,17 +1563,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create an administrator  # noqa: E501
+        """Create an administrator
         
-        Creates an administrator.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_admins_post_with_http_info(admin, authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Creates an administrator.
         
         :param admin: (required)
-        :type admin: models.AdminPost
+        :type admin: AdminPost
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -1669,12 +1596,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -1706,14 +1634,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List administrator settings  # noqa: E501
+        """List administrator settings
         
-        Displays the global administrator settings for the array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_admins_settings_get_with_http_info(authorization, x_request_id, filter, limit, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays the global administrator settings for the array.
         
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
@@ -1765,12 +1688,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -1800,17 +1724,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify administrator settings  # noqa: E501
+        """Modify administrator settings
         
-        Modifies the global administrator settings for the array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_admins_settings_patch_with_http_info(admin_settings, authorization, x_request_id, async_req=True)
-        >>> result = thread.get()
+        Modifies the global administrator settings for the array.
         
         :param admin_settings: (required)
-        :type admin_settings: models.AdminSettings
+        :type admin_settings: AdminSettings
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
         :param x_request_id: Supplied by client during request or generated by server.
@@ -1833,12 +1752,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -1865,14 +1785,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete alert watcher  # noqa: E501
+        """Delete alert watcher
         
-        Delete alert watcher email address from the list of alert watchers.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_alert_watchers_delete_with_http_info(names, authorization, x_request_id, async_req=True)
-        >>> result = thread.get()
+        Delete alert watcher email address from the list of alert watchers.
         
         :param names: Performs the operation on the unique name specified. For example, `name01`.
                     Enter multiple names in comma-separated format. (required)
@@ -1901,12 +1816,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -1940,14 +1856,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List alert watchers  # noqa: E501
+        """List alert watchers
         
-        Displays alert watcher email addressess and indicates whether they are `enabled`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_alert_watchers_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays alert watcher email addressess and indicates whether they are `enabled`.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -2011,12 +1922,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -2051,20 +1963,15 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify alert watcher  # noqa: E501
+        """Modify alert watcher
         
-        Modify alert watcher email address by enabling or disabling it.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_alert_watchers_patch_with_http_info(names, alert_watcher, authorization, x_request_id, async_req=True)
-        >>> result = thread.get()
+        Modify alert watcher email address by enabling or disabling it.
         
         :param names: Performs the operation on the unique name specified. For example, `name01`.
                     Enter multiple names in comma-separated format. (required)
         :type names: List[str]
         :param alert_watcher: (required)
-        :type alert_watcher: models.AlertWatcherPatch
+        :type alert_watcher: AlertWatcherPatch
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -2089,12 +1996,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -2124,14 +2032,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create alert watcher  # noqa: E501
+        """Create alert watcher
         
-        Creates one or more alert watcher email addresses, adding them to the list of alert watchers.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_alert_watchers_post_with_http_info(names, authorization, x_request_id, alert_watcher, async_req=True)
-        >>> result = thread.get()
+        Creates one or more alert watcher email addresses, adding them to the list of alert watchers.
         
         :param names: Performs the operation on the unique name specified. For example, `name01`.
                     Enter multiple names in comma-separated format. (required)
@@ -2162,12 +2065,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -2201,14 +2105,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List alert watcher test  # noqa: E501
+        """List alert watcher test
         
-        Displays alert watcher email test results.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_alert_watchers_test_get_with_http_info(authorization, x_request_id, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays alert watcher email test results.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -2265,12 +2164,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -2311,14 +2211,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List alert events  # noqa: E501
+        """List alert events
         
-        Displays a list of alert events.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_alerts_events_get_with_http_info(authorization, x_request_id, continuation_token, filter, flagged, ids, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of alert events.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -2390,12 +2285,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -2439,14 +2335,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List alerts  # noqa: E501
+        """List alerts
         
-        Displays a list of alerts.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_alerts_get_with_http_info(authorization, x_request_id, continuation_token, filter, flagged, ids, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of alerts.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -2517,12 +2408,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -2560,17 +2452,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify flagged state  # noqa: E501
+        """Modify flagged state
         
-        Modifies one or more alerts and display updated information about these alerts.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_alerts_patch_with_http_info(alert, authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modifies one or more alerts and display updated information about these alerts.
         
         :param alert: (required)
-        :type alert: models.Alert
+        :type alert: Alert
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -2602,12 +2489,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -2641,14 +2529,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List available customizable alert codes  # noqa: E501
+        """List available customizable alert codes
         
-        Displays a list of available customizable alert codes.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_alerts_rules_catalog_get_with_http_info(authorization, x_request_id, code, filter, limit, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of available customizable alert codes.
         
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
@@ -2702,12 +2585,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -2739,14 +2623,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete a custom alert rule  # noqa: E501
+        """Delete a custom alert rule
         
-        Deletes a custom alert rule.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_alerts_rules_delete_with_http_info(code, parameter, authorization, x_request_id, async_req=True)
-        >>> result = thread.get()
+        Deletes a custom alert rule.
         
         :param code: The alert code that the rule applies to. Available alert codes for customization
                     can be found in the alert rules catalog. (required)
@@ -2777,12 +2656,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -2814,14 +2694,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List custom alert rules  # noqa: E501
+        """List custom alert rules
         
-        Displays a list of custom alert rules.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_alerts_rules_get_with_http_info(authorization, x_request_id, code, filter, limit, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of custom alert rules.
         
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
@@ -2875,12 +2750,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -2913,14 +2789,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify a custom alert rule  # noqa: E501
+        """Modify a custom alert rule
         
-        Modifies a custom alert rule to a new value.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_alerts_rules_patch_with_http_info(code, parameter, alert_rule, authorization, x_request_id, async_req=True)
-        >>> result = thread.get()
+        Modifies a custom alert rule to a new value.
         
         :param code: The alert code that the rule applies to. Available alert codes for customization
                     can be found in the alert rules catalog. (required)
@@ -2930,7 +2801,7 @@ class Client(object):
                         catalog. (required)
         :type parameter: str
         :param alert_rule: (required)
-        :type alert_rule: models.AlertRules
+        :type alert_rule: AlertRules
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
         :param x_request_id: Supplied by client during request or generated by server.
@@ -2953,12 +2824,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -2988,14 +2860,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create a custom alert rule  # noqa: E501
+        """Create a custom alert rule
         
-        Creates an alert rule with a custom value.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_alerts_rules_post_with_http_info(code, parameter, alert_rule, authorization, x_request_id, async_req=True)
-        >>> result = thread.get()
+        Creates an alert rule with a custom value.
         
         :param code: The alert code that the rule applies to. Available alert codes for customization
                     can be found in the alert rules catalog. (required)
@@ -3005,7 +2872,7 @@ class Client(object):
                         catalog. (required)
         :type parameter: str
         :param alert_rule: (required)
-        :type alert_rule: models.AlertRules
+        :type alert_rule: AlertRules
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
         :param x_request_id: Supplied by client during request or generated by server.
@@ -3028,12 +2895,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -3068,14 +2936,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List apps  # noqa: E501
+        """List apps
         
-        Displays a list of installed apps.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_apps_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of installed apps.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -3139,12 +3002,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -3184,14 +3048,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List app nodes  # noqa: E501
+        """List app nodes
         
-        Displays a list of installed apps and their nodes.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_apps_nodes_get_with_http_info(authorization, x_request_id, app_names, continuation_token, filter, limit, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of installed apps and their nodes.
         
         :param apps: A list of apps to query for. Overrides app_names keyword argument.
         :type apps: ReferenceType or List[ReferenceType], optional
@@ -3254,12 +3113,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -3294,20 +3154,15 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify app  # noqa: E501
+        """Modify app
         
-        Modifies an installed app or modifies Virtual Network Computing (VNC) access for apps that are being patched.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_apps_patch_with_http_info(names, app, authorization, x_request_id, async_req=True)
-        >>> result = thread.get()
+        Modifies an installed app or modifies Virtual Network Computing (VNC) access for apps that are being patched.
         
         :param names: Performs the operation on the unique name specified. For example, `name01`.
                     Enter multiple names in comma-separated format. (required)
         :type names: List[str]
         :param app: (required)
-        :type app: models.App
+        :type app: App
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -3332,12 +3187,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -3364,14 +3220,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List connection key  # noqa: E501
+        """List connection key
         
-        Displays the connection key for the array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_array_connections_connection_key_get_with_http_info(authorization, x_request_id, async_req=True)
-        >>> result = thread.get()
+        Displays the connection key for the array.
         
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
@@ -3395,12 +3246,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -3426,14 +3278,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete an array connection  # noqa: E501
+        """Delete an array connection
         
-        Deletes the connection to the current array from the specified array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_array_connections_delete_with_http_info(authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Deletes the connection to the current array from the specified array.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -3462,12 +3309,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -3501,14 +3349,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List connected arrays  # noqa: E501
+        """List connected arrays
         
-        Display a list of connected arrays.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_array_connections_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Display a list of connected arrays.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -3572,12 +3415,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -3612,17 +3456,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify an array connection  # noqa: E501
+        """Modify an array connection
         
-        Modifies the bandwidth throttling attributes for a connected array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_array_connections_patch_with_http_info(array_connection, authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Modifies the bandwidth throttling attributes for a connected array.
         
         :param array_connection: (required)
-        :type array_connection: models.Throttle
+        :type array_connection: Throttle
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -3650,12 +3489,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -3690,14 +3530,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List connection path  # noqa: E501
+        """List connection path
         
-        Displays the connection path from the array where the connection was made.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_array_connections_path_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays the connection path from the array where the connection was made.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -3761,12 +3596,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -3799,17 +3635,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create an array connection  # noqa: E501
+        """Create an array connection
         
-        Creates a connection between the current array and the specified array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_array_connections_post_with_http_info(array_connection, authorization, x_request_id, async_req=True)
-        >>> result = thread.get()
+        Creates a connection between the current array and the specified array.
         
         :param array_connection: (required)
-        :type array_connection: models.ArrayConnectionPost
+        :type array_connection: ArrayConnectionPost
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
         :param x_request_id: Supplied by client during request or generated by server.
@@ -3832,12 +3663,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -3863,17 +3695,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Update user tags on the cloud.  # noqa: E501
+        """Update user tags on the cloud.
         
-        Updates users tags to deployed cloud resources of a CBS array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_arrays_cloud_provider_tags_batch_put_with_http_info(tag, authorization, x_request_id, async_req=True)
-        >>> result = thread.get()
+        Updates users tags to deployed cloud resources of a CBS array.
         
         :param tag: A list of tags to be created or, if already existing, updated. (required)
-        :type tag: List[models.CloudProviderTag]
+        :type tag: List[CloudProviderTag]
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
         :param x_request_id: Supplied by client during request or generated by server.
@@ -3896,12 +3723,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -3927,14 +3755,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete user tags from the cloud.  # noqa: E501
+        """Delete user tags from the cloud.
         
-        Deletes user tags from deployed cloud resources of a CBS array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_arrays_cloud_provider_tags_delete_with_http_info(authorization, x_request_id, keys, async_req=True)
-        >>> result = thread.get()
+        Deletes user tags from deployed cloud resources of a CBS array.
         
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
@@ -3960,12 +3783,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -3996,14 +3820,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List user tags on the cloud.  # noqa: E501
+        """List user tags on the cloud.
         
-        Displays the list of user tags on deployed cloud resources of a CBS array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_arrays_cloud_provider_tags_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays the list of user tags on deployed cloud resources of a CBS array.
         
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
@@ -4062,12 +3881,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -4099,14 +3919,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete an array  # noqa: E501
+        """Delete an array
         
-        Deletes an array. For physical appliances, deleting an array restores the hardware to factory settings. This entails deleting all data, metadata, configuration, and logs. The array returns to the state it was in prior to any configuration changes being made. If the hardware is reused, it must be as a different array with a new ID. For virtual appliances, deleting an array puts it into an unusable state. Virtual resources (e.g., virtual machines) can later be freed, which deletes any remaining data, metadata, configuration, and logs. Prior to factory reset, an array must be manually prepared (e.g., all volumes and snapshots must be eradicated) and a factory reset token must be created.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_arrays_delete_with_http_info(authorization, x_request_id, eradicate_all_data, factory_reset_token, async_req=True)
-        >>> result = thread.get()
+        Deletes an array. For physical appliances, deleting an array restores the hardware to factory settings. This entails deleting all data, metadata, configuration, and logs. The array returns to the state it was in prior to any configuration changes being made. If the hardware is reused, it must be as a different array with a new ID. For virtual appliances, deleting an array puts it into an unusable state. Virtual resources (e.g., virtual machines) can later be freed, which deletes any remaining data, metadata, configuration, and logs. Prior to factory reset, an array must be manually prepared (e.g., all volumes and snapshots must be eradicated) and a factory reset token must be created.
         
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
@@ -4134,12 +3949,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -4170,14 +3986,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List End User Agreement and signature  # noqa: E501
+        """List End User Agreement and signature
         
-        Displays the End User Agreement and signature.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_arrays_eula_get_with_http_info(authorization, x_request_id, filter, limit, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays the End User Agreement and signature.
         
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
@@ -4229,12 +4040,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -4264,17 +4076,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify signature on the End User Agreement  # noqa: E501
+        """Modify signature on the End User Agreement
         
-        Modifies the signature on the End User Agreement.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_arrays_eula_patch_with_http_info(eula, authorization, x_request_id, async_req=True)
-        >>> result = thread.get()
+        Modifies the signature on the End User Agreement.
         
         :param eula: (required)
-        :type eula: models.Eula
+        :type eula: Eula
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
         :param x_request_id: Supplied by client during request or generated by server.
@@ -4297,12 +4104,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -4327,14 +4135,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete a factory reset token  # noqa: E501
+        """Delete a factory reset token
         
-        Deletes an existing token that could be used to perform a factory reset on the array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_arrays_factory_reset_token_delete_with_http_info(authorization, x_request_id, async_req=True)
-        >>> result = thread.get()
+        Deletes an existing token that could be used to perform a factory reset on the array.
         
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
@@ -4358,12 +4161,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -4392,14 +4196,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List factory reset tokens  # noqa: E501
+        """List factory reset tokens
         
-        Displays a list of tokens used to perform a factory reset on the array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_arrays_factory_reset_token_get_with_http_info(authorization, x_request_id, filter, limit, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of tokens used to perform a factory reset on the array.
         
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
@@ -4451,12 +4250,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -4485,14 +4285,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create a factory reset token  # noqa: E501
+        """Create a factory reset token
         
-        Creates a token that can be used to perform a factory reset on the array. Factory reset tokens can only be created after the array has been prepared for reset (e.g., all volumes and snapshots must first be eradicated). After a token has been created, operations that would take the array out of the prepared state are disabled (e.g., creating volumes) until all tokens have been deleted.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_arrays_factory_reset_token_post_with_http_info(authorization, x_request_id, async_req=True)
-        >>> result = thread.get()
+        Creates a token that can be used to perform a factory reset on the array. Factory reset tokens can only be created after the array has been prepared for reset (e.g., all volumes and snapshots must first be eradicated). After a token has been created, operations that would take the array out of the prepared state are disabled (e.g., creating volumes) until all tokens have been deleted.
         
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
@@ -4516,12 +4311,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -4550,14 +4346,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List arrays  # noqa: E501
+        """List arrays
         
-        Displays general array properties including the array name, login banner, idle timeout for management sessions, and NTP servers.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_arrays_get_with_http_info(authorization, x_request_id, filter, limit, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays general array properties including the array name, login banner, idle timeout for management sessions, and NTP servers.
         
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
@@ -4609,12 +4400,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -4643,14 +4435,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List NTP test results  # noqa: E501
+        """List NTP test results
         
-        Displays test results for configured NTP servers.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_arrays_ntp_test_get_with_http_info(authorization, x_request_id, async_req=True)
-        >>> result = thread.get()
+        Displays test results for configured NTP servers.
         
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
@@ -4674,12 +4461,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -4704,17 +4492,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify an array  # noqa: E501
+        """Modify an array
         
-        Modifies general array properties such as the array name, login banner, idle timeout for management sessions, and NTP servers.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_arrays_patch_with_http_info(array, authorization, x_request_id, async_req=True)
-        >>> result = thread.get()
+        Modifies general array properties such as the array name, login banner, idle timeout for management sessions, and NTP servers.
         
         :param array: (required)
-        :type array: models.Arrays
+        :type array: Arrays
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
         :param x_request_id: Supplied by client during request or generated by server.
@@ -4737,12 +4520,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -4775,14 +4559,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List array front-end IO performance data by link  # noqa: E501
+        """List array front-end IO performance data by link
         
-        Displays real-time and historical front-end performance data at the array level including latency, bandwidth, IOPS, average I/O size, and queue depth. Group output is shown by link. A link represents a set of arrays that an I/O operation depends on. For local-only I/Os, this is a local array. For mirrored I/Os, this is a set of synchronous replication peer arrays.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_arrays_performance_by_link_get_with_http_info(authorization, x_request_id, end_time, filter, limit, offset, resolution, sort, start_time, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays real-time and historical front-end performance data at the array level including latency, bandwidth, IOPS, average I/O size, and queue depth. Group output is shown by link. A link represents a set of arrays that an I/O operation depends on. For local-only I/Os, this is a local array. For mirrored I/Os, this is a set of synchronous replication peer arrays.
         
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
@@ -4876,12 +4655,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -4923,14 +4703,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List array front-end performance data  # noqa: E501
+        """List array front-end performance data
         
-        Displays real-time and historical front-end performance data at the array level including latency, bandwidth, IOPS, average I/O size, and queue depth.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_arrays_performance_get_with_http_info(authorization, x_request_id, end_time, filter, limit, offset, protocol, protocol_group, resolution, sort, start_time, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays real-time and historical front-end performance data at the array level including latency, bandwidth, IOPS, average I/O size, and queue depth.
         
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
@@ -5028,12 +4803,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -5075,14 +4851,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List array space information  # noqa: E501
+        """List array space information
         
-        Displays real-time and historical array space information including unique volume and snapshot space, shared space, data reduction, provisioned capacity, usable capacity, and parity.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_arrays_space_get_with_http_info(authorization, x_request_id, end_time, filter, limit, offset, resolution, sort, start_time, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays real-time and historical array space information including unique volume and snapshot space, shared space, data reduction, provisioned capacity, usable capacity, and parity.
         
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
@@ -5176,12 +4947,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -5222,14 +4994,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List audits  # noqa: E501
+        """List audits
         
-        Displays a list of audits.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_audits_get_with_http_info(authorization, x_request_id, continuation_token, filter, ids, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of audits.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -5297,12 +5064,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -5336,17 +5104,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create certificate signing request  # noqa: E501
+        """Create certificate signing request
         
-        Creates a certificate signing request based on the certificate type and parameters.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_certificates_certificate_signing_requests_post_with_http_info(certificate, authorization, x_request_id, async_req=True)
-        >>> result = thread.get()
+        Creates a certificate signing request based on the certificate type and parameters.
         
         :param certificate: (required)
-        :type certificate: models.CertificateSigningRequestPost
+        :type certificate: CertificateSigningRequestPost
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
         :param x_request_id: Supplied by client during request or generated by server.
@@ -5369,12 +5132,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -5401,14 +5165,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete certificate  # noqa: E501
+        """Delete certificate
         
-        Deletes a specific certificate object.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_certificates_delete_with_http_info(authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Deletes a specific certificate object.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -5437,12 +5196,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -5476,14 +5236,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List certificate attributes  # noqa: E501
+        """List certificate attributes
         
-        Displays certificate attributes.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_certificates_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays certificate attributes.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -5547,12 +5302,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -5588,17 +5344,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify certificates  # noqa: E501
+        """Modify certificates
         
-        Modifies certificate attributes. When you modify the attributes of a self-signed certificate, Purity//FA replaces the existing certificate with a new certificate, which is generated with the specified attributes.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_certificates_patch_with_http_info(certificate, authorization, x_request_id, generate_new_key, names, async_req=True)
-        >>> result = thread.get()
+        Modifies certificate attributes. When you modify the attributes of a self-signed certificate, Purity//FA replaces the existing certificate with a new certificate, which is generated with the specified attributes.
         
         :param certificate: (required)
-        :type certificate: models.CertificatePost
+        :type certificate: CertificatePost
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -5632,12 +5383,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -5668,17 +5420,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create certificate  # noqa: E501
+        """Create certificate
         
-        Creates a certificate object and specifies the valid time period and organization details of the certificate. A certificate can be imported or manually configured.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_certificates_post_with_http_info(certificate, authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Creates a certificate object and specifies the valid time period and organization details of the certificate. A certificate can be imported or manually configured.
         
         :param certificate: (required)
-        :type certificate: models.CertificatePost
+        :type certificate: CertificatePost
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -5706,12 +5453,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -5745,14 +5493,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete a connection between a volume and its host or host group  # noqa: E501
+        """Delete a connection between a volume and its host or host group
         
-        Deletes the connection between a volume and its associated host or host group. The `volume_names` or `volume_ids` and `host_names` or `host_group_names` query parameters are required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_connections_delete_with_http_info(authorization, x_request_id, host_group_names, host_names, volume_ids, volume_names, async_req=True)
-        >>> result = thread.get()
+        Deletes the connection between a volume and its associated host or host group. The `volume_names` or `volume_ids` and `host_names` or `host_group_names` query parameters are required.
         
         :param volumes: A list of volumes to query for. Overrides volume_ids and volume_names keyword arguments.
         :type volumes: ReferenceType or List[ReferenceType], optional
@@ -5811,12 +5554,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -5863,14 +5607,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List volume connections  # noqa: E501
+        """List volume connections
         
-        Displays a list of connections between a volume and its hosts and host groups, and the logical unit numbers (LUNs) used by the associated hosts to address these volumes.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_connections_get_with_http_info(authorization, x_request_id, continuation_token, filter, host_group_names, host_names, limit, offset, protocol_endpoint_ids, protocol_endpoint_names, sort, total_item_count, volume_ids, volume_names, async_req=True)
-        >>> result = thread.get()
+        Displays a list of connections between a volume and its hosts and host groups, and the logical unit numbers (LUNs) used by the associated hosts to address these volumes.
         
         :param volumes: A list of volumes to query for. Overrides volume_ids and volume_names keyword arguments.
         :type volumes: ReferenceType or List[ReferenceType], optional
@@ -5980,12 +5719,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -6033,14 +5773,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create a connection between a volume and host or host group  # noqa: E501
+        """Create a connection between a volume and host or host group
         
-        Creates a connection between a volume and a host or host group. The `volume_names` or `volume_ids` and `host_names` or `host_group_names` query parameters are required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_connections_post_with_http_info(authorization, x_request_id, host_group_names, host_names, volume_ids, volume_names, connection, async_req=True)
-        >>> result = thread.get()
+        Creates a connection between a volume and a host or host group. The `volume_names` or `volume_ids` and `host_names` or `host_group_names` query parameters are required.
         
         :param volumes: A list of volumes to query for. Overrides volume_ids and volume_names keyword arguments.
         :type volumes: ReferenceType or List[ReferenceType], optional
@@ -6101,12 +5836,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -6148,14 +5884,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List container default protections  # noqa: E501
+        """List container default protections
         
-        Displays a list of containers with its default protections.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_container_default_protections_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, ids, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of containers with its default protections.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -6230,12 +5961,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -6273,17 +6005,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify a container's default protections  # noqa: E501
+        """Modify a container's default protections
         
-        Modifies a container's default protections. To modify, set `default_protections` to the new list.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_container_default_protections_patch_with_http_info(container_default_protection, authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modifies a container's default protections. To modify, set `default_protections` to the new list.
         
         :param container_default_protection: (required)
-        :type container_default_protection: models.ContainerDefaultProtection
+        :type container_default_protection: ContainerDefaultProtection
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -6318,12 +6045,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -6359,14 +6087,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List controller information and status  # noqa: E501
+        """List controller information and status
         
-        Displays the name, mode, FlashArray model, Purity//FA software version, and status of each controller in the array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_controllers_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays the name, mode, FlashArray model, Purity//FA software version, and status of each controller in the array.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -6430,12 +6153,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -6469,14 +6193,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete DNS configuration  # noqa: E501
+        """Delete DNS configuration
         
-        Deletes DNS configuration identified by configuration name.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_dns_delete_with_http_info(authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Deletes DNS configuration identified by configuration name.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -6505,12 +6224,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -6544,14 +6264,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List DNS parameters  # noqa: E501
+        """List DNS parameters
         
-        Displays the current DNS configurations and their parameters including domain suffix, the list of DNS name server IP addresses, and the list of services that DNS parameters apply to.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_dns_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays the current DNS configurations and their parameters including domain suffix, the list of DNS name server IP addresses, and the list of services that DNS parameters apply to.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -6615,12 +6330,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -6655,17 +6371,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify DNS parameters  # noqa: E501
+        """Modify DNS parameters
         
-        Modifies the DNS parameters of an array, including the domain suffix, the list of DNS name server IP addresses, and the list of services that DNS parameters apply to. If there is no DNS configuration beforehand new DNS configuration with 'default' name is created. If more than one DNS configuration exists `name` has to be specified to identify the DNS configuration to be modified.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_dns_patch_with_http_info(dns, authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Modifies the DNS parameters of an array, including the domain suffix, the list of DNS name server IP addresses, and the list of services that DNS parameters apply to. If there is no DNS configuration beforehand new DNS configuration with 'default' name is created. If more than one DNS configuration exists `name` has to be specified to identify the DNS configuration to be modified.
         
         :param dns: (required)
-        :type dns: models.DnsPatch
+        :type dns: DnsPatch
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -6693,12 +6404,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -6728,17 +6440,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create DNS configuration  # noqa: E501
+        """Create DNS configuration
         
-        Creates new DNS configuration with parameters including the domain suffix, the list of DNS name server IP addresses, and the list of services that DNS parameters apply to.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_dns_post_with_http_info(dns, authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Creates new DNS configuration with parameters including the domain suffix, the list of DNS name server IP addresses, and the list of services that DNS parameters apply to.
         
         :param dns: (required)
-        :type dns: models.DnsPost
+        :type dns: DnsPost
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -6766,12 +6473,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -6801,14 +6509,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete managed directories  # noqa: E501
+        """Delete managed directories
         
-        Deletes one or more managed directories. To be deleted, a managed directory must be empty and not attached to any enabled export policies. Deleted managed directories cannot be recovered. The `ids` or `names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directories_delete_with_http_info(authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Deletes one or more managed directories. To be deleted, a managed directory must be empty and not attached to any enabled export policies. Deleted managed directories cannot be recovered. The `ids` or `names` parameter is required, but they cannot be set together.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -6841,12 +6544,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -6887,14 +6591,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List directories  # noqa: E501
+        """List directories
         
-        Displays a list of directories, including those pending eradication.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directories_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, file_system_ids, file_system_names, filter, ids, limit, names, offset, sort, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays a list of directories, including those pending eradication.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -6982,12 +6681,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -7024,14 +6724,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Initiate NLM reclamation.  # noqa: E501
+        """Initiate NLM reclamation.
         
-        NLM reclamation is a system-wide operation, affecting all clients, and so only one may be in progress at a time. Attempting to initiate reclamation while one is in progress will result in an error. When NLM reclamation is initiated, all NLM locks are deleted and client applications are notified that they can reacquire their locks within a grace period.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directories_locks_nlm_reclamations_post_with_http_info(x_request_id, async_req=True)
-        >>> result = thread.get()
+        NLM reclamation is a system-wide operation, affecting all clients, and so only one may be in progress at a time. Attempting to initiate reclamation while one is in progress will result in an error. When NLM reclamation is initiated, all NLM locks are deleted and client applications are notified that they can reacquire their locks within a grace period.
         
         :param x_request_id: Supplied by client during request or generated by server.
         :type x_request_id: str
@@ -7053,12 +6748,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -7085,17 +6781,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify a managed directory  # noqa: E501
+        """Modify a managed directory
         
-        Modifies a managed directory. To rename a managed directory, set `name` to the new name. The `ids` or `names` parameter is required, but cannot be set together. The `name` or `directory_name` parameter is required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directories_patch_with_http_info(directory, authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modifies a managed directory. To rename a managed directory, set `name` to the new name. The `ids` or `names` parameter is required, but cannot be set together. The `name` or `directory_name` parameter is required.
         
         :param directory: (required)
-        :type directory: models.DirectoryPatch
+        :type directory: DirectoryPatch
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -7127,12 +6818,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -7175,14 +6867,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List directory performance data  # noqa: E501
+        """List directory performance data
         
-        Displays real-time and historical performance data, real-time latency data, and average I/O sizes for each directory and as a total of all directories across the entire array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directories_performance_get_with_http_info(authorization, x_request_id, destroyed, end_time, filter, ids, limit, names, offset, protocol, protocol_group, resolution, sort, start_time, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays real-time and historical performance data, real-time latency data, and average I/O sizes for each directory and as a total of all directories across the entire array.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -7298,12 +6985,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -7355,14 +7043,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List policies  # noqa: E501
+        """List policies
         
-        Displays a list of policies that are attached to directories.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directories_policies_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, limit, member_ids, member_names, offset, policy_ids, policy_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of policies that are attached to directories.
         
         :param policies: A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
         :type policies: ReferenceType or List[ReferenceType], optional
@@ -7444,12 +7127,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -7492,14 +7176,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete a membership between a directory and one or more NFS policies  # noqa: E501
+        """Delete a membership between a directory and one or more NFS policies
         
-        Deletes a membership between a directory and one or more NFS policies. The `policy_ids` or `policy_names` parameter is required, but cannot be set together. The `member_ids` or `member_names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directories_policies_nfs_delete_with_http_info(authorization, x_request_id, member_ids, member_names, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Deletes a membership between a directory and one or more NFS policies. The `policy_ids` or `policy_names` parameter is required, but cannot be set together. The `member_ids` or `member_names` parameter is required, but cannot be set together.
         
         :param policies: A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
         :type policies: ReferenceType or List[ReferenceType], optional
@@ -7542,12 +7221,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -7590,14 +7270,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List NFS policies attached to a directory  # noqa: E501
+        """List NFS policies attached to a directory
         
-        Displays a list of NFS policies that are attached to directories.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directories_policies_nfs_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, limit, member_ids, member_names, offset, policy_ids, policy_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of NFS policies that are attached to directories.
         
         :param policies: A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
         :type policies: ReferenceType or List[ReferenceType], optional
@@ -7679,12 +7354,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -7725,17 +7401,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create a membership between a directory and one or more NFS policies  # noqa: E501
+        """Create a membership between a directory and one or more NFS policies
         
-        Creates a membership between a directory and one or more NFS policies. The `member_ids` or `member_names` parameter is required but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directories_policies_nfs_post_with_http_info(policies, authorization, x_request_id, member_ids, member_names, async_req=True)
-        >>> result = thread.get()
+        Creates a membership between a directory and one or more NFS policies. The `member_ids` or `member_names` parameter is required but cannot be set together.
         
         :param policies: (required)
-        :type policies: models.DirectoryPolicyExportPost
+        :type policies: DirectoryPolicyExportPost
         :param members: A list of members to query for. Overrides member_ids and member_names keyword arguments.
         :type members: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -7768,12 +7439,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -7807,14 +7479,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete a membership between a directory and one or more quota policies  # noqa: E501
+        """Delete a membership between a directory and one or more quota policies
         
-        Deletes a membership between a directory and one or more quota policies. The `policy_ids` or `policy_names` parameter is required, but cannot be set together. The `member_ids` or `member_names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directories_policies_quota_delete_with_http_info(authorization, x_request_id, member_ids, member_names, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Deletes a membership between a directory and one or more quota policies. The `policy_ids` or `policy_names` parameter is required, but cannot be set together. The `member_ids` or `member_names` parameter is required, but cannot be set together.
         
         :param policies: A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
         :type policies: ReferenceType or List[ReferenceType], optional
@@ -7857,12 +7524,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -7905,14 +7573,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List quota policies attached to a directory  # noqa: E501
+        """List quota policies attached to a directory
         
-        Displays a list of quota policies that are attached to directories.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directories_policies_quota_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, limit, member_ids, member_names, offset, policy_ids, policy_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of quota policies that are attached to directories.
         
         :param policies: A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
         :type policies: ReferenceType or List[ReferenceType], optional
@@ -7994,12 +7657,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -8041,17 +7705,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create a membership between a directory and one or more quota policies  # noqa: E501
+        """Create a membership between a directory and one or more quota policies
         
-        Creates a membership between a directory and one or more quota policies. The `member_ids` or `member_names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directories_policies_quota_post_with_http_info(policies, authorization, x_request_id, ignore_usage, member_ids, member_names, async_req=True)
-        >>> result = thread.get()
+        Creates a membership between a directory and one or more quota policies. The `member_ids` or `member_names` parameter is required, but cannot be set together.
         
         :param policies: (required)
-        :type policies: models.DirectoryPolicyPost
+        :type policies: DirectoryPolicyPost
         :param members: A list of members to query for. Overrides member_ids and member_names keyword arguments.
         :type members: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -8091,12 +7750,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -8131,14 +7791,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete a membership between a directory and one or more SMB policies  # noqa: E501
+        """Delete a membership between a directory and one or more SMB policies
         
-        Deletes a membership between a directory and one or more SMB policies. The `policy_ids` or `policy_names` parameter is required, but cannot be set together. The `member_ids` or `member_names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directories_policies_smb_delete_with_http_info(authorization, x_request_id, member_ids, member_names, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Deletes a membership between a directory and one or more SMB policies. The `policy_ids` or `policy_names` parameter is required, but cannot be set together. The `member_ids` or `member_names` parameter is required, but cannot be set together.
         
         :param policies: A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
         :type policies: ReferenceType or List[ReferenceType], optional
@@ -8181,12 +7836,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -8229,14 +7885,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List SMB policies attached to a directory  # noqa: E501
+        """List SMB policies attached to a directory
         
-        Displays a list of SMB policies that are attached to directories.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directories_policies_smb_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, limit, member_ids, member_names, offset, policy_ids, policy_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of SMB policies that are attached to directories.
         
         :param policies: A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
         :type policies: ReferenceType or List[ReferenceType], optional
@@ -8318,12 +7969,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -8364,17 +8016,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create a membership between a directory and one or more SMB policies  # noqa: E501
+        """Create a membership between a directory and one or more SMB policies
         
-        Creates a membership between a directory and one or more SMB policies. The `member_ids` or `member_names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directories_policies_smb_post_with_http_info(policies, authorization, x_request_id, member_ids, member_names, async_req=True)
-        >>> result = thread.get()
+        Creates a membership between a directory and one or more SMB policies. The `member_ids` or `member_names` parameter is required, but cannot be set together.
         
         :param policies: (required)
-        :type policies: models.DirectoryPolicyExportPost
+        :type policies: DirectoryPolicyExportPost
         :param members: A list of members to query for. Overrides member_ids and member_names keyword arguments.
         :type members: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -8407,12 +8054,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -8446,14 +8094,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete a membership between a directory and one or more snapshot policies  # noqa: E501
+        """Delete a membership between a directory and one or more snapshot policies
         
-        Deletes a membership between a directory and one or more snapshot policies. The `policy_ids` or `policy_names` parameter is required, but cannot be set together. The `member_ids` or `member_names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directories_policies_snapshot_delete_with_http_info(authorization, x_request_id, member_ids, member_names, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Deletes a membership between a directory and one or more snapshot policies. The `policy_ids` or `policy_names` parameter is required, but cannot be set together. The `member_ids` or `member_names` parameter is required, but cannot be set together.
         
         :param policies: A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
         :type policies: ReferenceType or List[ReferenceType], optional
@@ -8496,12 +8139,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -8544,14 +8188,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List snapshot policies attached to a directory  # noqa: E501
+        """List snapshot policies attached to a directory
         
-        Displays a list of snapshot policies that are attached to directories.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directories_policies_snapshot_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, limit, member_ids, member_names, offset, policy_ids, policy_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of snapshot policies that are attached to directories.
         
         :param policies: A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
         :type policies: ReferenceType or List[ReferenceType], optional
@@ -8633,12 +8272,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -8679,17 +8319,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create a membership between a directory with one or more snapshot policies  # noqa: E501
+        """Create a membership between a directory with one or more snapshot policies
         
-        Creates a membership between a directory with one or more snapshot policies. The `member_ids` or `member_names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directories_policies_snapshot_post_with_http_info(policies, authorization, x_request_id, member_ids, member_names, async_req=True)
-        >>> result = thread.get()
+        Creates a membership between a directory with one or more snapshot policies. The `member_ids` or `member_names` parameter is required, but cannot be set together.
         
         :param policies: (required)
-        :type policies: models.DirectoryPolicyPost
+        :type policies: DirectoryPolicyPost
         :param members: A list of members to query for. Overrides member_ids and member_names keyword arguments.
         :type members: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -8722,12 +8357,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -8761,17 +8397,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create directory  # noqa: E501
+        """Create directory
         
-        Creates a managed directory at the specified path. The managed directory name must consist of a file system name prefix and a managed directory name suffix (separated with '&#58;'). The suffix must be between 1 and 63 characters (alphanumeric and '-') in length and begin and end with a letter or number. The suffix must include at least one letter or '-'. Set `names` to create a managed directory with the specified full managed directory name, or set `file_system_names` or `file_system_ids` in the query parameters and `suffix` in the body parameters to create a managed directory in the specified file system with the specified suffix. These two options are exclusive.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directories_post_with_http_info(directory, authorization, x_request_id, file_system_ids, file_system_names, names, async_req=True)
-        >>> result = thread.get()
+        Creates a managed directory at the specified path. The managed directory name must consist of a file system name prefix and a managed directory name suffix (separated with '&#58;'). The suffix must be between 1 and 63 characters (alphanumeric and '-') in length and begin and end with a letter or number. The suffix must include at least one letter or '-'. Set `names` to create a managed directory with the specified full managed directory name, or set `file_system_names` or `file_system_ids` in the query parameters and `suffix` in the body parameters to create a managed directory in the specified file system with the specified suffix. These two options are exclusive.
         
         :param directory: (required)
-        :type directory: models.DirectoryPost
+        :type directory: DirectoryPost
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param file_systems: A list of file_systems to query for. Overrides file_system_ids and file_system_names keyword arguments.
@@ -8810,12 +8441,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -8858,14 +8490,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List directory space information  # noqa: E501
+        """List directory space information
         
-        Displays physical storage consumption data for each directory.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directories_space_get_with_http_info(authorization, x_request_id, destroyed, end_time, filter, ids, limit, names, offset, resolution, sort, start_time, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays physical storage consumption data for each directory.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -8977,12 +8604,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -9024,14 +8652,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete directory exports  # noqa: E501
+        """Delete directory exports
         
-        Deletes one or more directory exports. If any of the `export_names` is not unique across the system, `policy_ids` or `policy_names` must be specified to determine the exports.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directory_exports_delete_with_http_info(authorization, x_request_id, export_names, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Deletes one or more directory exports. If any of the `export_names` is not unique across the system, `policy_ids` or `policy_names` must be specified to determine the exports.
         
         :param policies: A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
         :type policies: ReferenceType or List[ReferenceType], optional
@@ -9069,12 +8692,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -9118,14 +8742,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List directory exports  # noqa: E501
+        """List directory exports
         
-        Displays a list of directory exports.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directory_exports_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, directory_ids, directory_names, export_names, filter, limit, offset, policy_ids, policy_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of directory exports.
         
         :param policies: A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
         :type policies: ReferenceType or List[ReferenceType], optional
@@ -9213,12 +8832,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -9264,17 +8884,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create directory exports  # noqa: E501
+        """Create directory exports
         
-        Creates an export of a managed directory. The `directory_ids` or `directory_names` parameter is required, but cannot be set together. The `policy_ids` or `policy_names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directory_exports_post_with_http_info(exports, authorization, x_request_id, directory_ids, directory_names, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Creates an export of a managed directory. The `directory_ids` or `directory_names` parameter is required, but cannot be set together. The `policy_ids` or `policy_names` parameter is required, but cannot be set together.
         
         :param exports: (required)
-        :type exports: models.DirectoryExportPost
+        :type exports: DirectoryExportPost
         :param policies: A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
         :type policies: ReferenceType or List[ReferenceType], optional
         :param directories: A list of directories to query for. Overrides directory_ids and directory_names keyword arguments.
@@ -9317,12 +8932,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -9365,14 +8981,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List directories with attached quota policies  # noqa: E501
+        """List directories with attached quota policies
         
-        Displays a list of directories and the quota policies attached to them. Directories with multiple policies are listed repeatedly (once per policy). The directories without a policy attached are not listed.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directory_quotas_get_with_http_info(authorization, x_request_id, continuation_token, directory_ids, directory_names, filter, limit, offset, policy_ids, policy_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of directories and the quota policies attached to them. Directories with multiple policies are listed repeatedly (once per policy). The directories without a policy attached are not listed.
         
         :param policies: A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
         :type policies: ReferenceType or List[ReferenceType], optional
@@ -9451,12 +9062,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -9500,14 +9112,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List directory services configuration  # noqa: E501
+        """List directory services configuration
         
-        Displays the role-based access control (RBAC) group configuration settings for manageability.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directory_services_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays the role-based access control (RBAC) group configuration settings for manageability.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -9571,12 +9178,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -9612,14 +9220,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete local groups  # noqa: E501
+        """Delete local groups
         
-        Deletes one or more local groups. The `gids`, `names`, or `sids` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directory_services_local_groups_delete_with_http_info(authorization, x_request_id, gids, names, sids, async_req=True)
-        >>> result = thread.get()
+        Deletes one or more local groups. The `gids`, `names`, or `sids` parameter is required, but cannot be set together.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -9655,12 +9258,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -9699,14 +9303,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List local groups  # noqa: E501
+        """List local groups
         
-        Displays a list of local groups.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directory_services_local_groups_get_with_http_info(authorization, x_request_id, continuation_token, filter, gids, ids, limit, names, offset, sids, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of local groups.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -9781,12 +9380,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -9830,14 +9430,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete local group membership  # noqa: E501
+        """Delete local group membership
         
-        Deletes one or more local group memberships. The `group_names`, `group_sids`, or `group_ids` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directory_services_local_groups_members_delete_with_http_info(authorization, x_request_id, group_gids, group_names, group_sids, member_ids, member_names, member_sids, member_types, async_req=True)
-        >>> result = thread.get()
+        Deletes one or more local group memberships. The `group_names`, `group_sids`, or `group_ids` parameter is required, but cannot be set together.
         
         :param members: A list of members to query for. Overrides member_ids and member_names keyword arguments.
         :type members: ReferenceType or List[ReferenceType], optional
@@ -9893,12 +9488,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -9946,14 +9542,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List local group memberships  # noqa: E501
+        """List local group memberships
         
-        Displays a list of local group memberships.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directory_services_local_groups_members_get_with_http_info(authorization, x_request_id, continuation_token, filter, group_gids, group_names, group_sids, limit, member_ids, member_names, member_sids, member_types, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of local group memberships.
         
         :param members: A list of members to query for. Overrides member_ids and member_names keyword arguments.
         :type members: ReferenceType or List[ReferenceType], optional
@@ -10044,12 +9635,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -10093,18 +9685,13 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create local group membership  # noqa: E501
+        """Create local group membership
         
-        Creates a local group membership with a group. The `group_names`, `group_sids`, or `group_ids` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directory_services_local_groups_members_post_with_http_info(local_membership, authorization, x_request_id, group_gids, group_names, group_sids, async_req=True)
-        >>> result = thread.get()
+        Creates a local group membership with a group. The `group_names`, `group_sids`, or `group_ids` parameter is required, but cannot be set together.
         
         :param local_membership: The `member_names`, `member_sids`, or `member_gids` parameter is required, but
                                 cannot be set together. (required)
-        :type local_membership: models.LocalGroupMembershipPost
+        :type local_membership: LocalGroupMembershipPost
         :param groups: A list of groups to query for. Overrides group_names keyword argument.
         :type groups: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -10139,12 +9726,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -10178,17 +9766,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify local groups  # noqa: E501
+        """Modify local groups
         
-        Modifies local groups.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directory_services_local_groups_patch_with_http_info(local_group, authorization, x_request_id, gids, names, sids, async_req=True)
-        >>> result = thread.get()
+        Modifies local groups.
         
         :param local_group: (required)
-        :type local_group: models.LocalGroup
+        :type local_group: LocalGroup
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -10223,12 +9806,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -10260,14 +9844,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create local group  # noqa: E501
+        """Create local group
         
-        Creates a local group.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directory_services_local_groups_post_with_http_info(names, authorization, x_request_id, local_group, async_req=True)
-        >>> result = thread.get()
+        Creates a local group.
         
         :param names: Performs the operation on the unique name specified. For example, `name01`.
                     Enter multiple names in comma-separated format. (required)
@@ -10298,12 +9877,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -10334,14 +9914,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete local users  # noqa: E501
+        """Delete local users
         
-        Deletes one or more local users. The `uids`, `names`, or `sids` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directory_services_local_users_delete_with_http_info(authorization, x_request_id, names, sids, uids, async_req=True)
-        >>> result = thread.get()
+        Deletes one or more local users. The `uids`, `names`, or `sids` parameter is required, but cannot be set together.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -10377,12 +9952,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -10421,14 +9997,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List local users  # noqa: E501
+        """List local users
         
-        Displays a list of local users.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directory_services_local_users_get_with_http_info(authorization, x_request_id, continuation_token, filter, ids, limit, names, offset, sids, sort, total_item_count, uids, async_req=True)
-        >>> result = thread.get()
+        Displays a list of local users.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -10503,12 +10074,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -10552,14 +10124,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete local user membership  # noqa: E501
+        """Delete local user membership
         
-        Deletes one or more local user memberships. The `member_names`, `member_sids`, or `member_ids` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directory_services_local_users_members_delete_with_http_info(authorization, x_request_id, group_gids, group_names, group_sids, member_ids, member_names, member_sids, member_types, async_req=True)
-        >>> result = thread.get()
+        Deletes one or more local user memberships. The `member_names`, `member_sids`, or `member_ids` parameter is required, but cannot be set together.
         
         :param members: A list of members to query for. Overrides member_ids and member_names keyword arguments.
         :type members: ReferenceType or List[ReferenceType], optional
@@ -10615,12 +10182,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -10667,14 +10235,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List local user memberships  # noqa: E501
+        """List local user memberships
         
-        Displays a list of local user memberships.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directory_services_local_users_members_get_with_http_info(authorization, x_request_id, continuation_token, filter, group_gids, group_names, group_sids, limit, member_ids, member_names, member_sids, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of local user memberships.
         
         :param members: A list of members to query for. Overrides member_ids and member_names keyword arguments.
         :type members: ReferenceType or List[ReferenceType], optional
@@ -10760,12 +10323,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -10808,18 +10372,13 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create local user membership  # noqa: E501
+        """Create local user membership
         
-        Creates a local user membership with a group. The `member_names` or `member_sids` or `member_ids` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directory_services_local_users_members_post_with_http_info(local_membership, authorization, x_request_id, member_ids, member_names, member_sids, async_req=True)
-        >>> result = thread.get()
+        Creates a local user membership with a group. The `member_names` or `member_sids` or `member_ids` parameter is required, but cannot be set together.
         
         :param local_membership: The `group_names`, `group_sids`, or `group_gids` parameter is required, but
                                 cannot be set together. (required)
-        :type local_membership: models.LocalUserMembershipPost
+        :type local_membership: LocalUserMembershipPost
         :param members: A list of members to query for. Overrides member_ids and member_names keyword arguments.
         :type members: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -10857,12 +10416,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -10897,17 +10457,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify local user  # noqa: E501
+        """Modify local user
         
-        Modifies a local user.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directory_services_local_users_patch_with_http_info(local_user, authorization, x_request_id, keep_open_sessions, names, sids, uids, async_req=True)
-        >>> result = thread.get()
+        Modifies a local user.
         
         :param local_user: (required)
-        :type local_user: models.LocalUserPatch
+        :type local_user: LocalUserPatch
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -10946,12 +10501,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -10984,14 +10540,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create local user  # noqa: E501
+        """Create local user
         
-        Creates a local user.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directory_services_local_users_post_with_http_info(names, authorization, x_request_id, local_user, async_req=True)
-        >>> result = thread.get()
+        Creates a local user.
         
         :param names: Performs the operation on the unique name specified. For example, `name01`.
                     Enter multiple names in comma-separated format. (required)
@@ -11022,12 +10573,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -11057,20 +10609,15 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify directory services configuration  # noqa: E501
+        """Modify directory services configuration
         
-        Modifies the directory service configuration.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directory_services_patch_with_http_info(names, directory_service, authorization, x_request_id, async_req=True)
-        >>> result = thread.get()
+        Modifies the directory service configuration.
         
         :param names: Performs the operation on the unique name specified. For example, `name01`.
                     Enter multiple names in comma-separated format. (required)
         :type names: List[str]
         :param directory_service: (required)
-        :type directory_service: models.DirectoryService
+        :type directory_service: DirectoryService
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -11095,12 +10642,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -11135,14 +10683,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List directory services roles  # noqa: E501
+        """List directory services roles
         
-        Displays the role-based access control (RBAC) group role settings.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directory_services_roles_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, offset, role_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays the role-based access control (RBAC) group role settings.
         
         :param roles: A list of roles to query for. Overrides role_names keyword argument.
         :type roles: ReferenceType or List[ReferenceType], optional
@@ -11206,12 +10749,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -11246,20 +10790,15 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify directory services roles  # noqa: E501
+        """Modify directory services roles
         
-        Modifies directory services roles, mapping them to their configured `group` and `group_base` in the directory service.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directory_services_roles_patch_with_http_info(role_names, directory_service_roles, authorization, x_request_id, async_req=True)
-        >>> result = thread.get()
+        Modifies directory services roles, mapping them to their configured `group` and `group_base` in the directory service.
         
         :param role_names: Performs the operation on the unique roles specified. For example,
                         `array_admin`. Enter multiple roles in comma-separated format. (required)
         :type role_names: List[str]
         :param directory_service_roles: (required)
-        :type directory_service_roles: models.DirectoryServiceRole
+        :type directory_service_roles: DirectoryServiceRole
         :param roles: A list of roles to query for. Overrides role_names keyword argument.
         :type roles: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -11284,12 +10823,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -11324,14 +10864,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List directory services test results  # noqa: E501
+        """List directory services test results
         
-        Displays the directory services test and displays the results. The test verifies that URIs can be resolved and that the array can bind and query the tree using the bind user credentials. The test also verifies that the array can find all configured groups to ensure the common names and group base are correctly configured.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directory_services_test_get_with_http_info(names, authorization, x_request_id, continuation_token, filter, limit, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays the directory services test and displays the results. The test verifies that URIs can be resolved and that the array can bind and query the tree using the bind user credentials. The test also verifies that the array can find all configured groups to ensure the common names and group base are correctly configured.
         
         :param names: Performs the operation on the unique name specified. For example, `name01`.
                     Enter multiple names in comma-separated format. (required)
@@ -11395,12 +10930,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -11435,14 +10971,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete directory snapshot  # noqa: E501
+        """Delete directory snapshot
         
-        Deletes a directory snapshot that has been destroyed and is pending eradication. Eradicated directory snapshots cannot be recovered. Directory snapshots are destroyed by using the PATCH method. The `ids` or `names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directory_snapshots_delete_with_http_info(authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Deletes a directory snapshot that has been destroyed and is pending eradication. Eradicated directory snapshots cannot be recovered. Directory snapshots are destroyed by using the PATCH method. The `ids` or `names` parameter is required, but they cannot be set together.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -11475,12 +11006,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -11521,14 +11053,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List directory snapshots  # noqa: E501
+        """List directory snapshots
         
-        Displays a list of directory snapshots, including those pending eradication.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directory_snapshots_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, ids, limit, names, offset, sort, source_ids, source_names, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays a list of directory snapshots, including those pending eradication.
         
         :param sources: A list of sources to query for. Overrides source_ids and source_names keyword arguments.
         :type sources: ReferenceType or List[ReferenceType], optional
@@ -11613,12 +11140,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -11660,17 +11188,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify directory snapshot  # noqa: E501
+        """Modify directory snapshot
         
-        Modifies a directory snapshot. You can destroy, recover, or update the policy or time remaining of a directory snapshot. To destroy a directory snapshot, set `destroyed=true`. To recover a directory snapshot that has been destroyed and is pending eradication, set `destroyed=false`. To rename a directory snapshot, set `name` to the new name. The `ids` or `names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directory_snapshots_patch_with_http_info(directory_snapshot, authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modifies a directory snapshot. You can destroy, recover, or update the policy or time remaining of a directory snapshot. To destroy a directory snapshot, set `destroyed=true`. To recover a directory snapshot that has been destroyed and is pending eradication, set `destroyed=false`. To rename a directory snapshot, set `name` to the new name. The `ids` or `names` parameter is required, but they cannot be set together.
         
         :param directory_snapshot: (required)
-        :type directory_snapshot: models.DirectorySnapshotPatch
+        :type directory_snapshot: DirectorySnapshotPatch
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -11702,12 +11225,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -11739,17 +11263,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create directory snapshot  # noqa: E501
+        """Create directory snapshot
         
-        Creates a snapshot of the contents of a directory. The `source_ids` or `source_names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_directory_snapshots_post_with_http_info(directory_snapshot, authorization, x_request_id, source_ids, source_names, async_req=True)
-        >>> result = thread.get()
+        Creates a snapshot of the contents of a directory. The `source_ids` or `source_names` parameter is required, but they cannot be set together.
         
         :param directory_snapshot: (required)
-        :type directory_snapshot: models.DirectorySnapshotPost
+        :type directory_snapshot: DirectorySnapshotPost
         :param sources: A list of sources to query for. Overrides source_ids and source_names keyword arguments.
         :type sources: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -11780,12 +11299,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -11821,14 +11341,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List flash, NVRAM, and cache modules  # noqa: E501
+        """List flash, NVRAM, and cache modules
         
-        Displays a list of flash, NVRAM, and cache modules that are installed in the array along with their attributes and status.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_drives_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of flash, NVRAM, and cache modules that are installed in the array along with their attributes and status.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -11892,12 +11407,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -11930,14 +11446,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify flash and NVRAM modules  # noqa: E501
+        """Modify flash and NVRAM modules
         
-        Modifies flash and NVRAM modules that have been added or connected but not yet admitted to the array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_drives_patch_with_http_info(authorization, x_request_id, admit, async_req=True)
-        >>> result = thread.get()
+        Modifies flash and NVRAM modules that have been added or connected but not yet admitted to the array.
         
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
@@ -11963,12 +11474,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -11996,14 +11508,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete file system  # noqa: E501
+        """Delete file system
         
-        Deletes a file system that has been destroyed and is pending eradication. Eradicated file systems cannot be recovered. File systems are destroyed using the PATCH method.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_file_systems_delete_with_http_info(authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Deletes a file system that has been destroyed and is pending eradication. Eradicated file systems cannot be recovered. File systems are destroyed using the PATCH method.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -12036,12 +11543,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -12078,14 +11586,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List file systems  # noqa: E501
+        """List file systems
         
-        Displays a list of file systems, including those pending eradication.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_file_systems_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, ids, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of file systems, including those pending eradication.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -12157,12 +11660,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -12200,17 +11704,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify a file system  # noqa: E501
+        """Modify a file system
         
-        Modifies a file system. You can rename, destroy, move, or recover a file system. To rename a file system, set `name` to the new name. To destroy a file system, set `destroyed=true`. To move a file system, set 'pod' to the destination pod reference. To recover a file system that has been destroyed and is pending eradication, set `destroyed=false`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_file_systems_patch_with_http_info(file_system, authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modifies a file system. You can rename, destroy, move, or recover a file system. To rename a file system, set `name` to the new name. To destroy a file system, set `destroyed=true`. To move a file system, set 'pod' to the destination pod reference. To recover a file system that has been destroyed and is pending eradication, set `destroyed=false`.
         
         :param file_system: (required)
-        :type file_system: models.FileSystemPatch
+        :type file_system: FileSystemPatch
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -12242,12 +11741,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -12277,14 +11777,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create file system  # noqa: E501
+        """Create file system
         
-        Creates one or more file systems.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_file_systems_post_with_http_info(names, authorization, x_request_id, async_req=True)
-        >>> result = thread.get()
+        Creates one or more file systems.
         
         :param names: Performs the operation on the unique name specified. For example, `name01`.
                     Enter multiple names in comma-separated format. (required)
@@ -12313,12 +11808,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -12351,14 +11847,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List hardware component information  # noqa: E501
+        """List hardware component information
         
-        Displays a list of hardware slots and bays and status of installed components.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_hardware_get_with_http_info(authorization, x_request_id, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of hardware slots and bays and status of installed components.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -12415,12 +11906,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -12454,17 +11946,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify visual identification  # noqa: E501
+        """Modify visual identification
         
-        Modifies the visual identification of a specified hardware component, and causing the ID LED to turn on or off.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_hardware_patch_with_http_info(hardware, authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Modifies the visual identification of a specified hardware component, and causing the ID LED to turn on or off.
         
         :param hardware: (required)
-        :type hardware: models.HardwarePatch
+        :type hardware: HardwarePatch
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -12492,12 +11979,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -12526,14 +12014,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete a host group  # noqa: E501
+        """Delete a host group
         
-        Deletes a host group. The `names` query parameter is required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_host_groups_delete_with_http_info(authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Deletes a host group. The `names` query parameter is required.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -12562,12 +12045,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -12601,14 +12085,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List host groups  # noqa: E501
+        """List host groups
         
-        Displays a list of host groups.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_host_groups_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of host groups.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -12672,12 +12151,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -12713,14 +12193,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Remove a host from a host group  # noqa: E501
+        """Remove a host from a host group
         
-        Removes a host from a host group. Removing a host from a host group automatically disconnects the host from all volumes associated with the group. Hosts can be removed from host groups at any time. The `group_names` and `member_names` parameters are required and must be set together, and only one host group can be specified at a time.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_host_groups_hosts_delete_with_http_info(authorization, x_request_id, group_names, member_names, async_req=True)
-        >>> result = thread.get()
+        Removes a host from a host group. Removing a host from a host group automatically disconnects the host from all volumes associated with the group. Hosts can be removed from host groups at any time. The `group_names` and `member_names` parameters are required and must be set together, and only one host group can be specified at a time.
         
         :param members: A list of members to query for. Overrides member_names keyword argument.
         :type members: ReferenceType or List[ReferenceType], optional
@@ -12756,12 +12231,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -12799,14 +12275,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List host groups that are associated with hosts  # noqa: E501
+        """List host groups that are associated with hosts
         
-        Returns a list of host groups that are associated with hosts.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_host_groups_hosts_get_with_http_info(authorization, x_request_id, continuation_token, filter, group_names, limit, member_names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Returns a list of host groups that are associated with hosts.
         
         :param members: A list of members to query for. Overrides member_names keyword argument.
         :type members: ReferenceType or List[ReferenceType], optional
@@ -12877,12 +12348,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -12920,14 +12392,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Add a host to a host group  # noqa: E501
+        """Add a host to a host group
         
-        Adds a host to a host group. Adding a host to a host group automatically connects the host to all volumes associated with the group. Multiple hosts can be belong to a host group, but a host can only belong to one host group. Hosts can be added to host groups at any time. The `group_names` and `member_names` parameters are required and must be set together, and only one host group can be specified at a time.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_host_groups_hosts_post_with_http_info(authorization, x_request_id, group_names, member_names, async_req=True)
-        >>> result = thread.get()
+        Adds a host to a host group. Adding a host to a host group automatically connects the host to all volumes associated with the group. Multiple hosts can be belong to a host group, but a host can only belong to one host group. Hosts can be added to host groups at any time. The `group_names` and `member_names` parameters are required and must be set together, and only one host group can be specified at a time.
         
         :param members: A list of members to query for. Overrides member_names keyword argument.
         :type members: ReferenceType or List[ReferenceType], optional
@@ -12963,12 +12430,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -12999,17 +12467,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify a host group  # noqa: E501
+        """Modify a host group
         
-        Modifies a host group. The `names` query parameter is required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_host_groups_patch_with_http_info(host_group, authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Modifies a host group. The `names` query parameter is required.
         
         :param host_group: (required)
-        :type host_group: models.HostGroupPatch
+        :type host_group: HostGroupPatch
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -13037,12 +12500,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -13080,14 +12544,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List host group performance data by array  # noqa: E501
+        """List host group performance data by array
         
-        Displays real-time and historical performance data, real-time latency data, and average I/O size data. The data is displayed by total size across all host groups on each array and by individual host group on each array. The displayed data represents the volumes that are connected to a host group on the current array and the volumes that are connected to a host group on any remote arrays that are visible to the current array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_host_groups_performance_by_array_get_with_http_info(authorization, x_request_id, end_time, filter, limit, names, offset, resolution, sort, start_time, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays real-time and historical performance data, real-time latency data, and average I/O size data. The data is displayed by total size across all host groups on each array and by individual host group on each array. The displayed data represents the volumes that are connected to a host group on the current array and the volumes that are connected to a host group on any remote arrays that are visible to the current array.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -13191,12 +12650,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -13242,14 +12702,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List host group performance data  # noqa: E501
+        """List host group performance data
         
-        Displays real-time and historical performance data, real-time latency data, and average I/O sizes of all host groups, displayed both by host group and by total size across all host groups. This data represents volumes that are connected to the host groups on the local array and stretched volumes connected to the host groups on arrays that are connected by synchronous replication.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_host_groups_performance_get_with_http_info(authorization, x_request_id, end_time, filter, limit, names, offset, resolution, sort, start_time, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays real-time and historical performance data, real-time latency data, and average I/O sizes of all host groups, displayed both by host group and by total size across all host groups. This data represents volumes that are connected to the host groups on the local array and stretched volumes connected to the host groups on arrays that are connected by synchronous replication.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -13353,12 +12808,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -13395,14 +12851,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create a host group  # noqa: E501
+        """Create a host group
         
-        Creates a host group. The `names` query parameter is required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_host_groups_post_with_http_info(authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Creates a host group. The `names` query parameter is required.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -13431,12 +12882,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -13466,14 +12918,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete a host group from a protection group  # noqa: E501
+        """Delete a host group from a protection group
         
-        Deletes a host group member from a protection group. After the member has been removed, it is no longer protected by the group. Any protection group snapshots that were taken before the member was removed are not affected. Removing a member from a protection group does not delete the member from the array, and the member can be added back to the protection group at any time. The `group_names` parameter represents the name of the protection group, and the `member_names` parameter represents the name of the host group. The `group_names` and `member_names` parameters are required and must be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_host_groups_protection_groups_delete_with_http_info(authorization, x_request_id, group_names, member_names, async_req=True)
-        >>> result = thread.get()
+        Deletes a host group member from a protection group. After the member has been removed, it is no longer protected by the group. Any protection group snapshots that were taken before the member was removed are not affected. Removing a member from a protection group does not delete the member from the array, and the member can be added back to the protection group at any time. The `group_names` parameter represents the name of the protection group, and the `member_names` parameter represents the name of the host group. The `group_names` and `member_names` parameters are required and must be set together.
         
         :param members: A list of members to query for. Overrides member_names keyword argument.
         :type members: ReferenceType or List[ReferenceType], optional
@@ -13509,12 +12956,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -13552,14 +13000,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List host groups that are members of protection groups  # noqa: E501
+        """List host groups that are members of protection groups
         
-        Displays a list of host group members that belong to one or more protection groups.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_host_groups_protection_groups_get_with_http_info(authorization, x_request_id, continuation_token, filter, group_names, limit, member_names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of host group members that belong to one or more protection groups.
         
         :param members: A list of members to query for. Overrides member_names keyword argument.
         :type members: ReferenceType or List[ReferenceType], optional
@@ -13630,12 +13073,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -13673,14 +13117,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create a host group  # noqa: E501
+        """Create a host group
         
-        Creates a host group member and assigns to a protection group. Members that are already in the protection group are not affected. For asynchronous replication, only members of the same type can belong to a protection group. The `group_names` parameter represents the name of the protection group, and the `member_names` parameter represents the name of the host group. The `group_names` and `member_names` parameters are required and must be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_host_groups_protection_groups_post_with_http_info(authorization, x_request_id, group_names, member_names, async_req=True)
-        >>> result = thread.get()
+        Creates a host group member and assigns to a protection group. Members that are already in the protection group are not affected. For asynchronous replication, only members of the same type can belong to a protection group. The `group_names` parameter represents the name of the protection group, and the `member_names` parameter represents the name of the host group. The `group_names` and `member_names` parameters are required and must be set together.
         
         :param members: A list of members to query for. Overrides member_names keyword argument.
         :type members: ReferenceType or List[ReferenceType], optional
@@ -13716,12 +13155,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -13756,14 +13196,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List host group space information  # noqa: E501
+        """List host group space information
         
-        Displays provisioned size and physical storage consumption data for each host group.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_host_groups_space_get_with_http_info(authorization, x_request_id, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays provisioned size and physical storage consumption data for each host group.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -13820,12 +13255,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -13858,14 +13294,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete a host  # noqa: E501
+        """Delete a host
         
-        Deletes an existing host. All volumes that are connected to the host, either through private or shared connections, must be disconnected from the host before the host can be deleted. The `names` query parameter is required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_hosts_delete_with_http_info(authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Deletes an existing host. All volumes that are connected to the host, either through private or shared connections, must be disconnected from the host before the host can be deleted. The `names` query parameter is required.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -13894,12 +13325,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -13933,14 +13365,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List hosts  # noqa: E501
+        """List hosts
         
-        Displays a list of hosts.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_hosts_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of hosts.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -14004,12 +13431,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -14045,14 +13473,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Remove a host from a host group  # noqa: E501
+        """Remove a host from a host group
         
-        Removes a host from a host group. Removing a host from a host group automatically disconnects the host from all volumes associated with the group. Hosts can be removed from host groups at any time. The `group_names` and `member_names` parameters are required and must be set together, and only one host group can be specified at a time.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_hosts_host_groups_delete_with_http_info(authorization, x_request_id, group_names, member_names, async_req=True)
-        >>> result = thread.get()
+        Removes a host from a host group. Removing a host from a host group automatically disconnects the host from all volumes associated with the group. Hosts can be removed from host groups at any time. The `group_names` and `member_names` parameters are required and must be set together, and only one host group can be specified at a time.
         
         :param members: A list of members to query for. Overrides member_names keyword argument.
         :type members: ReferenceType or List[ReferenceType], optional
@@ -14088,12 +13511,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -14131,14 +13555,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List hosts that are associated with host groups  # noqa: E501
+        """List hosts that are associated with host groups
         
-        Returns a list of hosts that are associated with host groups.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_hosts_host_groups_get_with_http_info(authorization, x_request_id, continuation_token, filter, group_names, limit, member_names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Returns a list of hosts that are associated with host groups.
         
         :param members: A list of members to query for. Overrides member_names keyword argument.
         :type members: ReferenceType or List[ReferenceType], optional
@@ -14209,12 +13628,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -14252,14 +13672,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Add a host to a host group  # noqa: E501
+        """Add a host to a host group
         
-        Adds a host to a host group. Adding a host to a host group automatically connects the host to all volumes associated with the group. Multiple hosts can be belong to a host group, but a host can only belong to one host group. Hosts can be added to host groups at any time. The `group_names` and `member_names` parameters are required and must be set together, and only one host group can be specified at a time.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_hosts_host_groups_post_with_http_info(authorization, x_request_id, group_names, member_names, async_req=True)
-        >>> result = thread.get()
+        Adds a host to a host group. Adding a host to a host group automatically connects the host to all volumes associated with the group. Multiple hosts can be belong to a host group, but a host can only belong to one host group. Hosts can be added to host groups at any time. The `group_names` and `member_names` parameters are required and must be set together, and only one host group can be specified at a time.
         
         :param members: A list of members to query for. Overrides member_names keyword argument.
         :type members: ReferenceType or List[ReferenceType], optional
@@ -14295,12 +13710,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -14331,17 +13747,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify a host  # noqa: E501
+        """Modify a host
         
-        Modifies an existing host, including its storage network addresses, CHAP, host personality, and preferred arrays, or associate a host to a host group. The `names` query parameter is required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_hosts_patch_with_http_info(host, authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Modifies an existing host, including its storage network addresses, CHAP, host personality, and preferred arrays, or associate a host to a host group. The `names` query parameter is required.
         
         :param host: (required)
-        :type host: models.HostPatch
+        :type host: HostPatch
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -14369,12 +13780,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -14408,14 +13820,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List host performance balance  # noqa: E501
+        """List host performance balance
         
-        Displays the I/O balance statistics for host paths.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_hosts_performance_balance_get_with_http_info(authorization, x_request_id, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays the I/O balance statistics for host paths.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -14472,12 +13879,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -14519,14 +13927,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List host performance data by array  # noqa: E501
+        """List host performance data by array
         
-        Displays real-time and historical performance data, real-time latency data, and average I/O size data. The data is displayed by total size across all hosts on each array and by individual host on each array. The displayed data represents the volumes that are connected to a host on the current array and the volumes that are connected to a host on any remote arrays that are visible to the current array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_hosts_performance_by_array_get_with_http_info(authorization, x_request_id, end_time, filter, limit, names, offset, resolution, sort, start_time, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays real-time and historical performance data, real-time latency data, and average I/O size data. The data is displayed by total size across all hosts on each array and by individual host on each array. The displayed data represents the volumes that are connected to a host on the current array and the volumes that are connected to a host on any remote arrays that are visible to the current array.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -14630,12 +14033,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -14681,14 +14085,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List host performance data  # noqa: E501
+        """List host performance data
         
-        Displays real-time and historical performance data, real-time latency data, and average I/O sizes across all hosts, displayed by host and by total size across all hosts. This data represents volumes that are connected to the hosts on the local array and stretched volumes connected to the hosts on any arrays that are connected by synchronous replication.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_hosts_performance_get_with_http_info(authorization, x_request_id, end_time, filter, limit, names, offset, resolution, sort, start_time, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays real-time and historical performance data, real-time latency data, and average I/O sizes across all hosts, displayed by host and by total size across all hosts. This data represents volumes that are connected to the hosts on the local array and stretched volumes connected to the hosts on any arrays that are connected by synchronous replication.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -14792,12 +14191,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -14835,17 +14235,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create a host  # noqa: E501
+        """Create a host
         
-        Creates a host. The `names` query parameter is required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_hosts_post_with_http_info(host, authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Creates a host. The `names` query parameter is required.
         
         :param host: (required)
-        :type host: models.HostPost
+        :type host: HostPost
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -14873,12 +14268,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -14909,14 +14305,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete a host from a protection group  # noqa: E501
+        """Delete a host from a protection group
         
-        Deletes a host member from a protection group. After the member has been removed, it is no longer protected by the group. Any protection group snapshots that were taken before the member was removed are not affected. Removing a member from a protection group does not delete the member from the array, and the member can be added back to the protection group at any time. The `group_names` parameter represents the name of the protection group, and the `member_names` parameter represents the name of the host. The `group_names` and `member_names` parameters are required and must be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_hosts_protection_groups_delete_with_http_info(authorization, x_request_id, group_names, member_names, async_req=True)
-        >>> result = thread.get()
+        Deletes a host member from a protection group. After the member has been removed, it is no longer protected by the group. Any protection group snapshots that were taken before the member was removed are not affected. Removing a member from a protection group does not delete the member from the array, and the member can be added back to the protection group at any time. The `group_names` parameter represents the name of the protection group, and the `member_names` parameter represents the name of the host. The `group_names` and `member_names` parameters are required and must be set together.
         
         :param members: A list of members to query for. Overrides member_names keyword argument.
         :type members: ReferenceType or List[ReferenceType], optional
@@ -14952,12 +14343,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -14995,14 +14387,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List hosts that are members of protection groups  # noqa: E501
+        """List hosts that are members of protection groups
         
-        Displays a list of host members that belong to one or more protection groups.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_hosts_protection_groups_get_with_http_info(authorization, x_request_id, continuation_token, filter, group_names, limit, member_names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of host members that belong to one or more protection groups.
         
         :param members: A list of members to query for. Overrides member_names keyword argument.
         :type members: ReferenceType or List[ReferenceType], optional
@@ -15073,12 +14460,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -15116,14 +14504,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create a host  # noqa: E501
+        """Create a host
         
-        Creates a host member and adds it to a protection group. Members that are already in the protection group are not affected. For asynchronous replication, only members of the same type can belong to a protection group. The `group_names` parameter represents the name of the protection group, and the `member_names` parameter represents the name of the host. The `group_names` and `member_names` parameters are required and must be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_hosts_protection_groups_post_with_http_info(authorization, x_request_id, group_names, member_names, async_req=True)
-        >>> result = thread.get()
+        Creates a host member and adds it to a protection group. Members that are already in the protection group are not affected. For asynchronous replication, only members of the same type can belong to a protection group. The `group_names` parameter represents the name of the protection group, and the `member_names` parameter represents the name of the host. The `group_names` and `member_names` parameters are required and must be set together.
         
         :param members: A list of members to query for. Overrides member_names keyword argument.
         :type members: ReferenceType or List[ReferenceType], optional
@@ -15159,12 +14542,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -15199,14 +14583,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List host space information  # noqa: E501
+        """List host space information
         
-        Displays provisioned size and physical storage consumption data for each host.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_hosts_space_get_with_http_info(authorization, x_request_id, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays provisioned size and physical storage consumption data for each host.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -15263,12 +14642,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -15301,14 +14681,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete KMIP server object  # noqa: E501
+        """Delete KMIP server object
         
-        Deletes KMIP server objects.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_kmip_delete_with_http_info(authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Deletes KMIP server objects.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -15337,12 +14712,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -15376,14 +14752,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List KMIP server objects  # noqa: E501
+        """List KMIP server objects
         
-        Displays the list of KMIP server objects.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_kmip_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays the list of KMIP server objects.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -15447,12 +14818,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -15487,17 +14859,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify KMIP attributes  # noqa: E501
+        """Modify KMIP attributes
         
-        Modifies one or more attributes of KMIP server objects.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_kmip_patch_with_http_info(kmip, authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Modifies one or more attributes of KMIP server objects.
         
         :param kmip: (required)
-        :type kmip: models.KmipPatch
+        :type kmip: KmipPatch
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -15525,12 +14892,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -15560,17 +14928,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create KMIP server object  # noqa: E501
+        """Create KMIP server object
         
-        Creates KMIP server objects.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_kmip_post_with_http_info(kmip, authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Creates KMIP server objects.
         
         :param kmip: (required)
-        :type kmip: models.KmipPost
+        :type kmip: KmipPost
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -15598,12 +14961,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -15632,14 +14996,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Lists KMIP connection tests  # noqa: E501
+        """Lists KMIP connection tests
         
-        Displays communication data between a FlashArray and KMIP server.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_kmip_test_get_with_http_info(names, authorization, x_request_id, async_req=True)
-        >>> result = thread.get()
+        Displays communication data between a FlashArray and KMIP server.
         
         :param names: Performs the operation on the unique name specified. For example, `name01`.
                     Enter multiple names in comma-separated format. (required)
@@ -15668,12 +15027,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -15701,14 +15061,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete maintenance window  # noqa: E501
+        """Delete maintenance window
         
-        Deletes an open maintenance window before its scheduled end (`expire`) time. The `names` parameter is required and must be set to `environment`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_maintenance_windows_delete_with_http_info(authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Deletes an open maintenance window before its scheduled end (`expire`) time. The `names` parameter is required and must be set to `environment`.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -15737,12 +15092,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -15776,14 +15132,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List maintenance window details  # noqa: E501
+        """List maintenance window details
         
-        Displays maintenance window details, including start time, end time, and maintenance type.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_maintenance_windows_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays maintenance window details, including start time, end time, and maintenance type.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -15847,12 +15198,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -15887,17 +15239,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create a maintenance window  # noqa: E501
+        """Create a maintenance window
         
-        Creates a maintenance window that suppresses alerts for a specified period of time. A maintenance window can be manually closed at any time. The `names` and `timeout` parameters are required. Set the `names` parameter to `environment`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_maintenance_windows_post_with_http_info(maintenance_window, authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Creates a maintenance window that suppresses alerts for a specified period of time. A maintenance window can be manually closed at any time. The `names` and `timeout` parameters are required. Set the `names` parameter to `environment`.
         
         :param maintenance_window: (required)
-        :type maintenance_window: models.MaintenanceWindowPost
+        :type maintenance_window: MaintenanceWindowPost
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -15925,12 +15272,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -15959,14 +15307,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete network interface  # noqa: E501
+        """Delete network interface
         
-        Deletes a network interface on a controller.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_network_interfaces_delete_with_http_info(authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Deletes a network interface on a controller.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -15995,12 +15338,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -16034,14 +15378,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List network interfaces  # noqa: E501
+        """List network interfaces
         
-        Displays all network interfaces for all controllers on the array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_network_interfaces_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays all network interfaces for all controllers on the array.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -16105,12 +15444,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -16148,14 +15488,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List network interface neighbors  # noqa: E501
+        """List network interface neighbors
         
-        Displays all neighbors for all network interfaces on the array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_network_interfaces_neighbors_get_with_http_info(authorization, x_request_id, filter, limit, local_port_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays all neighbors for all network interfaces on the array.
         
         :param local_ports: A list of local_ports to query for. Overrides local_port_names keyword argument.
         :type local_ports: ReferenceType or List[ReferenceType], optional
@@ -16209,12 +15544,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -16247,17 +15583,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify network interface  # noqa: E501
+        """Modify network interface
         
-        Modifies a network interface on a controller.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_network_interfaces_patch_with_http_info(network, authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Modifies a network interface on a controller.
         
         :param network: (required)
-        :type network: models.NetworkInterfacePatch
+        :type network: NetworkInterfacePatch
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -16285,12 +15616,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -16328,14 +15660,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List network performance statistics  # noqa: E501
+        """List network performance statistics
         
-        Displays network statistics, historical bandwidth, and error reporting for all specified network interfaces.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_network_interfaces_performance_get_with_http_info(authorization, x_request_id, end_time, filter, limit, names, offset, resolution, sort, start_time, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays network statistics, historical bandwidth, and error reporting for all specified network interfaces.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -16439,12 +15766,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -16486,14 +15814,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List SFP port details  # noqa: E501
+        """List SFP port details
         
-        Displays Ethernet and Fibre Channel SFP details.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_network_interfaces_port_details_get_with_http_info(authorization, x_request_id, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays Ethernet and Fibre Channel SFP details.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -16550,12 +15873,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -16589,17 +15913,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create network interface  # noqa: E501
+        """Create network interface
         
-        Creates a network interface on a controller on the array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_network_interfaces_post_with_http_info(network, authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Creates a network interface on a controller on the array.
         
         :param network: (required)
-        :type network: models.NetworkInterfacePost
+        :type network: NetworkInterfacePost
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -16627,12 +15946,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -16661,14 +15981,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete offload target  # noqa: E501
+        """Delete offload target
         
-        Deletes an offload target.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_offloads_delete_with_http_info(authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Deletes an offload target.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -16697,12 +16012,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -16737,14 +16053,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List offload targets  # noqa: E501
+        """List offload targets
         
-        Displays a list of offload targets that are connected to the array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_offloads_get_with_http_info(authorization, x_request_id, filter, limit, names, offset, protocol, sort, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays a list of offload targets that are connected to the array.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -16808,12 +16119,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -16850,17 +16162,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create offload target  # noqa: E501
+        """Create offload target
         
-        Creates an offload target, connecting it to an array. Before you can connect to, manage, and replicate to an offload target, the Purity Run app must be installed. For more information about Purity//FA apps, see the Apps section of this guide.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_offloads_post_with_http_info(offload, authorization, x_request_id, initialize, names, async_req=True)
-        >>> result = thread.get()
+        Creates an offload target, connecting it to an array. Before you can connect to, manage, and replicate to an offload target, the Purity Run app must be installed. For more information about Purity//FA apps, see the Apps section of this guide.
         
         :param offload: (required)
-        :type offload: models.OffloadPost
+        :type offload: OffloadPost
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -16892,12 +16199,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -16933,14 +16241,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete pod replica links  # noqa: E501
+        """Delete pod replica links
         
-        Deletes pod replica links. The `local_pod_names` and `remote_pod_names` are required. Valid values are `replicating`, `baselining`, `paused`, `unhealthy`, `quiescing`, and `quiesced`. A status of `replicating` indicates that the source array is replicating to the target array. A status of `baselining` indicates that the the initial version of the dataset is being sent. During this phase, you cannot promote the target pod. In addition, changing the link direction might trigger the `baselining` status to recur. A status of `paused ` indicates that data transfer between objects has stopped. A status of `unhealthy` indicates that the link is currently unhealthy and customers must perform some health checks to determine the cause. A status of `quiescing` indicates that the source pod is not accepting new write requests but the most recent changes to the source have not arrived on the target. A status of `quiesced` indicates that the source pod has been demoted and all changes have been replicated to the target pod.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_pod_replica_links_delete_with_http_info(authorization, x_request_id, ids, local_pod_ids, local_pod_names, remote_pod_ids, remote_pod_names, async_req=True)
-        >>> result = thread.get()
+        Deletes pod replica links. The `local_pod_names` and `remote_pod_names` are required. Valid values are `replicating`, `baselining`, `paused`, `unhealthy`, `quiescing`, and `quiesced`. A status of `replicating` indicates that the source array is replicating to the target array. A status of `baselining` indicates that the the initial version of the dataset is being sent. During this phase, you cannot promote the target pod. In addition, changing the link direction might trigger the `baselining` status to recur. A status of `paused ` indicates that data transfer between objects has stopped. A status of `unhealthy` indicates that the link is currently unhealthy and customers must perform some health checks to determine the cause. A status of `quiescing` indicates that the source pod is not accepting new write requests but the most recent changes to the source have not arrived on the target. A status of `quiesced` indicates that the source pod has been demoted and all changes have been replicated to the target pod.
         
         :param remote_pods: A list of remote_pods to query for. Overrides remote_pod_ids and remote_pod_names keyword arguments.
         :type remote_pods: ReferenceType or List[ReferenceType], optional
@@ -16994,12 +16297,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -17047,14 +16351,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List pod replica links  # noqa: E501
+        """List pod replica links
         
-        Displays the list of pod replica links that are configured between arrays.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_pod_replica_links_get_with_http_info(authorization, x_request_id, filter, ids, limit, local_pod_ids, local_pod_names, offset, remote_ids, remote_names, remote_pod_ids, remote_pod_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays the list of pod replica links that are configured between arrays.
         
         :param remote_pods: A list of remote_pods to query for. Overrides remote_pod_ids and remote_pod_names keyword arguments.
         :type remote_pods: ReferenceType or List[ReferenceType], optional
@@ -17148,12 +16447,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -17212,14 +16512,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List pod replica link lag  # noqa: E501
+        """List pod replica link lag
         
-        Displays the lag in milliseconds that the replication target is behind the source. This is the time difference between the current time and the recovery point.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_pod_replica_links_lag_get_with_http_info(authorization, x_request_id, end_time, filter, ids, limit, local_pod_ids, local_pod_names, offset, remote_ids, remote_names, remote_pod_ids, remote_pod_names, resolution, sort, start_time, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays the lag in milliseconds that the replication target is behind the source. This is the time difference between the current time and the recovery point.
         
         :param remote_pods: A list of remote_pods to query for. Overrides remote_pod_ids and remote_pod_names keyword arguments.
         :type remote_pods: ReferenceType or List[ReferenceType], optional
@@ -17355,12 +16650,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -17415,17 +16711,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify pod replica links  # noqa: E501
+        """Modify pod replica links
         
-        Modifies pod replica links. The `local_pod_names` and `remote_pod_names` are required. Valid values are `replicating`, `baselining`, `paused`, `unhealthy`, `quiescing`, and `quiesced`. A status of `replicating` indicates that the source array is replicating to the target array. A status of `baselining` indicates that the the initial version of the dataset is being sent. During this phase, you cannot promote the target pod. In addition, changing the link direction might trigger the `baselining` status to recur. A status of `paused ` indicates that data transfer between objects has stopped. A status of `unhealthy` indicates that the link is currently unhealthy and customers must perform some health checks to determine the cause. A status of `quiescing` indicates that the source pod is not accepting new write requests but the most recent changes to the source have not arrived on the target. A status of `quiesced` indicates that the source pod has been demoted and all changes have been replicated to the target pod.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_pod_replica_links_patch_with_http_info(pod_replica_link, authorization, x_request_id, ids, local_pod_ids, local_pod_names, remote_ids, remote_names, remote_pod_ids, remote_pod_names, async_req=True)
-        >>> result = thread.get()
+        Modifies pod replica links. The `local_pod_names` and `remote_pod_names` are required. Valid values are `replicating`, `baselining`, `paused`, `unhealthy`, `quiescing`, and `quiesced`. A status of `replicating` indicates that the source array is replicating to the target array. A status of `baselining` indicates that the the initial version of the dataset is being sent. During this phase, you cannot promote the target pod. In addition, changing the link direction might trigger the `baselining` status to recur. A status of `paused ` indicates that data transfer between objects has stopped. A status of `unhealthy` indicates that the link is currently unhealthy and customers must perform some health checks to determine the cause. A status of `quiescing` indicates that the source pod is not accepting new write requests but the most recent changes to the source have not arrived on the target. A status of `quiesced` indicates that the source pod has been demoted and all changes have been replicated to the target pod.
         
         :param pod_replica_link: (required)
-        :type pod_replica_link: models.PodReplicaLinkPatch
+        :type pod_replica_link: PodReplicaLinkPatch
         :param remote_pods: A list of remote_pods to query for. Overrides remote_pod_ids and remote_pod_names keyword arguments.
         :type remote_pods: ReferenceType or List[ReferenceType], optional
         :param remotes: A list of remotes to query for. Overrides remote_ids and remote_names keyword arguments.
@@ -17490,12 +16781,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -17551,13 +16843,8 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """api223_pod_replica_links_performance_replication_get  # noqa: E501
+        """api223_pod_replica_links_performance_replication_get
         
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_pod_replica_links_performance_replication_get_with_http_info(authorization, x_request_id, end_time, filter, ids, limit, local_pod_ids, local_pod_names, offset, remote_ids, remote_names, remote_pod_ids, remote_pod_names, resolution, sort, start_time, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
         
         :param remote_pods: A list of remote_pods to query for. Overrides remote_pod_ids and remote_pod_names keyword arguments.
         :type remote_pods: ReferenceType or List[ReferenceType], optional
@@ -17700,12 +16987,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -17758,14 +17046,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create pod replica links  # noqa: E501
+        """Create pod replica links
         
-        Creates pod replica links between two arrays. The `local_pod_names` and `remote_pod_names` are required. Valid values are `replicating`, `baselining`, `paused`, `unhealthy`, `quiescing`, and `quiesced`. A status of `replicating` indicates that the source array is replicating to the target array. A status of `baselining` indicates that the the initial version of the dataset is being sent. During this phase, you cannot promote the target pod. In addition, changing the link direction might trigger the `baselining` status to recur. A status of `paused ` indicates that data transfer between objects has stopped. A status of `unhealthy` indicates that the link is currently unhealthy and customers must perform some health checks to determine the cause. A status of `quiescing` indicates that the source pod is not accepting new write requests but the most recent changes to the source have not arrived on the target. A status of `quiesced` indicates that the source pod has been demoted and all changes have been replicated to the target pod.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_pod_replica_links_post_with_http_info(authorization, x_request_id, local_pod_ids, local_pod_names, remote_ids, remote_names, remote_pod_ids, remote_pod_names, async_req=True)
-        >>> result = thread.get()
+        Creates pod replica links between two arrays. The `local_pod_names` and `remote_pod_names` are required. Valid values are `replicating`, `baselining`, `paused`, `unhealthy`, `quiescing`, and `quiesced`. A status of `replicating` indicates that the source array is replicating to the target array. A status of `baselining` indicates that the the initial version of the dataset is being sent. During this phase, you cannot promote the target pod. In addition, changing the link direction might trigger the `baselining` status to recur. A status of `paused ` indicates that data transfer between objects has stopped. A status of `unhealthy` indicates that the link is currently unhealthy and customers must perform some health checks to determine the cause. A status of `quiescing` indicates that the source pod is not accepting new write requests but the most recent changes to the source have not arrived on the target. A status of `quiesced` indicates that the source pod has been demoted and all changes have been replicated to the target pod.
         
         :param remote_pods: A list of remote_pods to query for. Overrides remote_pod_ids and remote_pod_names keyword arguments.
         :type remote_pods: ReferenceType or List[ReferenceType], optional
@@ -17825,12 +17108,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -17870,14 +17154,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Unstretch a pod from an array  # noqa: E501
+        """Unstretch a pod from an array
         
-        Unstretches a pod from an array, collapsing the pod to a single array. Unstretch a pod from an array when the volumes within the stretched pod no longer need to be synchronously replicated between the two arrays. After a pod has been unstretched, synchronous replication stops. A destroyed version of the pod with "restretch" appended to the pod name is created on the array that no longer has the pod. The restretch pod represents a point-in-time snapshot of the pod, just before it was unstretched. The restretch pod enters an eradication pending period starting from the time that the pod was unstretched. A restretch can pod can be cloned or destroyed, but it cannot be explicitly recovered. The `group_names` parameter represents the name of the pod to be unstretched. The `member_names` parameter represents the name of the array from which the pod is to be unstretched. The `group_names` and `member_names` parameters are required and must be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_pods_arrays_delete_with_http_info(authorization, x_request_id, group_ids, group_names, member_ids, member_names, with_unknown, async_req=True)
-        >>> result = thread.get()
+        Unstretches a pod from an array, collapsing the pod to a single array. Unstretch a pod from an array when the volumes within the stretched pod no longer need to be synchronously replicated between the two arrays. After a pod has been unstretched, synchronous replication stops. A destroyed version of the pod with "restretch" appended to the pod name is created on the array that no longer has the pod. The restretch pod represents a point-in-time snapshot of the pod, just before it was unstretched. The restretch pod enters an eradication pending period starting from the time that the pod was unstretched. A restretch can pod can be cloned or destroyed, but it cannot be explicitly recovered. The `group_names` parameter represents the name of the pod to be unstretched. The `member_names` parameter represents the name of the array from which the pod is to be unstretched. The `group_names` and `member_names` parameters are required and must be set together.
         
         :param members: A list of members to query for. Overrides member_ids and member_names keyword arguments.
         :type members: ReferenceType or List[ReferenceType], optional
@@ -17925,12 +17204,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -17972,14 +17252,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List pods and their the array members  # noqa: E501
+        """List pods and their the array members
         
-        Returns a list of pods and the local and remote arrays over which the pods are stretched. The optional `group_names` parameter represents the name of the pod. The optional `member_names` parameter represents the name of the array over which the pod is stretched.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_pods_arrays_get_with_http_info(authorization, x_request_id, filter, group_ids, group_names, limit, member_ids, member_names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Returns a list of pods and the local and remote arrays over which the pods are stretched. The optional `group_names` parameter represents the name of the pod. The optional `member_names` parameter represents the name of the array over which the pod is stretched.
         
         :param members: A list of members to query for. Overrides member_ids and member_names keyword arguments.
         :type members: ReferenceType or List[ReferenceType], optional
@@ -18049,12 +17324,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -18095,14 +17371,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Stretch a pod to an array  # noqa: E501
+        """Stretch a pod to an array
         
-        Stretches a pod to an array. When a pod is stretched to an array, the data in the arrays over which the pod is stretched is synchronously replicated. The `group_names` parameter represents the name of the pod to be stretched. The `member_names` parameter represents the name of the array over which the pod is to be stretched. The `group_names` and `member_names` parameters are required and must be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_pods_arrays_post_with_http_info(authorization, x_request_id, group_ids, group_names, member_ids, member_names, async_req=True)
-        >>> result = thread.get()
+        Stretches a pod to an array. When a pod is stretched to an array, the data in the arrays over which the pod is stretched is synchronously replicated. The `group_names` parameter represents the name of the pod to be stretched. The `member_names` parameter represents the name of the array over which the pod is to be stretched. The `group_names` and `member_names` parameters are required and must be set together.
         
         :param members: A list of members to query for. Overrides member_ids and member_names keyword arguments.
         :type members: ReferenceType or List[ReferenceType], optional
@@ -18144,12 +17415,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -18183,14 +17455,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete a pod  # noqa: E501
+        """Delete a pod
         
-        Deletes a pod that has been destroyed and is pending eradication. Eradicated pods cannot be recovered. Pods are destroyed using the PATCH method. The `ids` or `names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_pods_delete_with_http_info(authorization, x_request_id, eradicate_contents, ids, names, async_req=True)
-        >>> result = thread.get()
+        Deletes a pod that has been destroyed and is pending eradication. Eradicated pods cannot be recovered. Pods are destroyed using the PATCH method. The `ids` or `names` parameter is required, but cannot be set together.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -18227,12 +17494,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -18271,14 +17539,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List pods  # noqa: E501
+        """List pods
         
-        Displays a list of pods that are stretched to this array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_pods_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, ids, limit, names, offset, sort, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays a list of pods that are stretched to this array.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -18355,12 +17618,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -18404,17 +17668,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify a pod  # noqa: E501
+        """Modify a pod
         
-        Modifies pod details.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_pods_patch_with_http_info(pod, authorization, x_request_id, abort_quiesce, destroy_contents, ids, names, promote_from, quiesce, skip_quiesce, async_req=True)
-        >>> result = thread.get()
+        Modifies pod details.
         
         :param pod: (required)
-        :type pod: models.PodPatch
+        :type pod: PodPatch
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -18467,12 +17726,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -18520,14 +17780,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List pod performance data by array  # noqa: E501
+        """List pod performance data by array
         
-        Displays real-time and historical performance data, real-time latency data, and average I/O size data. The data is displayed as a total across all pods on the local array and by individual pod.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_pods_performance_by_array_get_with_http_info(authorization, x_request_id, destroyed, end_time, filter, ids, limit, names, offset, protocol, protocol_group, resolution, sort, start_time, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays real-time and historical performance data, real-time latency data, and average I/O size data. The data is displayed as a total across all pods on the local array and by individual pod.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -18643,12 +17898,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -18702,14 +17958,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List pod performance data  # noqa: E501
+        """List pod performance data
         
-        Displays real-time and historical performance data, real-time latency data, and average I/O sizes across all pods, displayed both by pod and as a total across all pods.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_pods_performance_get_with_http_info(authorization, x_request_id, destroyed, end_time, filter, ids, limit, names, offset, protocol, protocol_group, resolution, sort, start_time, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays real-time and historical performance data, real-time latency data, and average I/O sizes across all pods, displayed both by pod and as a total across all pods.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -18825,12 +18076,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -18882,14 +18134,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List pod replication performance data by array  # noqa: E501
+        """List pod replication performance data by array
         
-        Displays pod replication performance data, organized by array. The data returned is the real-time and historical performance data for each replication type at the pod level. Values include `continuous`, `periodic`, `resync`, and `sync`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_pods_performance_replication_by_array_get_with_http_info(authorization, x_request_id, destroyed, end_time, filter, ids, limit, names, offset, resolution, sort, start_time, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays pod replication performance data, organized by array. The data returned is the real-time and historical performance data for each replication type at the pod level. Values include `continuous`, `periodic`, `resync`, and `sync`.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -19001,12 +18248,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -19056,14 +18304,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List pod replication performance data  # noqa: E501
+        """List pod replication performance data
         
-        Displays pod replication performance data. The data returned is the real-time and historical performance data for each replication type at the pod level. Values include `continuous`, `periodic`, `resync`, and `sync`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_pods_performance_replication_get_with_http_info(authorization, x_request_id, destroyed, end_time, filter, ids, limit, names, offset, resolution, sort, start_time, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays pod replication performance data. The data returned is the real-time and historical performance data for each replication type at the pod level. Values include `continuous`, `periodic`, `resync`, and `sync`.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -19177,12 +18420,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -19222,17 +18466,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create a pod  # noqa: E501
+        """Create a pod
         
-        Creates a pod on the local array. Each pod must be given a name that is unique across the arrays to which they are stretched, so a pod cannot be stretched to an array that already contains a pod with the same name. After a pod has been created, add volumes and protection groups to the pod, and then stretch the pod to another connected array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_pods_post_with_http_info(pod, authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Creates a pod on the local array. Each pod must be given a name that is unique across the arrays to which they are stretched, so a pod cannot be stretched to an array that already contains a pod with the same name. After a pod has been created, add volumes and protection groups to the pod, and then stretch the pod to another connected array.
         
         :param pod: (required)
-        :type pod: models.PodPost
+        :type pod: PodPost
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -19260,12 +18499,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -19305,14 +18545,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List pod space information  # noqa: E501
+        """List pod space information
         
-        Displays provisioned size and physical storage consumption data for each pod on the local array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_pods_space_get_with_http_info(authorization, x_request_id, destroyed, end_time, filter, ids, limit, names, offset, resolution, sort, start_time, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays provisioned size and physical storage consumption data for each pod on the local array.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -19424,12 +18659,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -19476,14 +18712,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List policies  # noqa: E501
+        """List policies
         
-        Displays a list of policies.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, ids, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of policies.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -19555,12 +18786,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -19608,14 +18840,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List policy members  # noqa: E501
+        """List policy members
         
-        Displays a list of policy members.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_members_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, limit, member_ids, member_names, member_types, offset, policy_ids, policy_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of policy members.
         
         :param policies: A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
         :type policies: ReferenceType or List[ReferenceType], optional
@@ -19702,12 +18929,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -19750,14 +18978,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete NFS client policy rules.  # noqa: E501
+        """Delete NFS client policy rules.
         
-        Deletes one or more NFS client policy rules. The `policy_ids` or `policy_names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_nfs_client_rules_delete_with_http_info(authorization, x_request_id, names, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Deletes one or more NFS client policy rules. The `policy_ids` or `policy_names` parameter is required, but cannot be set together.
         
         :param policies: A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
         :type policies: ReferenceType or List[ReferenceType], optional
@@ -19795,12 +19018,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -19841,14 +19065,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List NFS client policy rules  # noqa: E501
+        """List NFS client policy rules
         
-        Displays a list of NFS client policy rules.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_nfs_client_rules_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, limit, names, offset, policy_ids, policy_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of NFS client policy rules.
         
         :param policies: A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
         :type policies: ReferenceType or List[ReferenceType], optional
@@ -19925,12 +19144,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -19970,17 +19190,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create NFS client policy rules  # noqa: E501
+        """Create NFS client policy rules
         
-        Creates one or more NFS client policy rules. The `policy_ids` or `policy_names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_nfs_client_rules_post_with_http_info(rules, authorization, x_request_id, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Creates one or more NFS client policy rules. The `policy_ids` or `policy_names` parameter is required, but cannot be set together.
         
         :param rules: (required)
-        :type rules: models.PolicyRuleNfsClientPost
+        :type rules: PolicyRuleNfsClientPost
         :param policies: A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
         :type policies: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -20012,12 +19227,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -20048,14 +19264,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete NFS policies  # noqa: E501
+        """Delete NFS policies
         
-        Deletes one or more NFS policies. The `ids` or `names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_nfs_delete_with_http_info(authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Deletes one or more NFS policies. The `ids` or `names` parameter is required, but they cannot be set together.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -20088,12 +19299,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -20130,14 +19342,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List NFS policies  # noqa: E501
+        """List NFS policies
         
-        Displays a list of NFS policies.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_nfs_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, ids, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of NFS policies.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -20209,12 +19416,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -20255,14 +19463,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete NFS policies  # noqa: E501
+        """Delete NFS policies
         
-        Deletes one or more NFS policies from resources. The `policy_ids` or `policy_names` parameter is required, but cannot be set together. The `member_ids` or `member_names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_nfs_members_delete_with_http_info(authorization, x_request_id, member_ids, member_names, member_types, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Deletes one or more NFS policies from resources. The `policy_ids` or `policy_names` parameter is required, but cannot be set together. The `member_ids` or `member_names` parameter is required, but cannot be set together.
         
         :param policies: A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
         :type policies: ReferenceType or List[ReferenceType], optional
@@ -20310,12 +19513,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -20360,14 +19564,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List NFS policy members  # noqa: E501
+        """List NFS policy members
         
-        Displays a list of NFS policy members.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_nfs_members_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, limit, member_ids, member_names, member_types, offset, policy_ids, policy_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of NFS policy members.
         
         :param policies: A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
         :type policies: ReferenceType or List[ReferenceType], optional
@@ -20454,12 +19653,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -20501,17 +19701,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create NFS policies  # noqa: E501
+        """Create NFS policies
         
-        Creates a membership between one or more resources and an NFS policy. Applicable resources are directories. The `policy_ids` or `policy_names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_nfs_members_post_with_http_info(members, authorization, x_request_id, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Creates a membership between one or more resources and an NFS policy. Applicable resources are directories. The `policy_ids` or `policy_names` parameter is required, but cannot be set together.
         
         :param members: (required)
-        :type members: models.PolicyMemberExportPost
+        :type members: PolicyMemberExportPost
         :param policies: A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
         :type policies: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -20543,12 +19738,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -20580,17 +19776,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify NFS policies  # noqa: E501
+        """Modify NFS policies
         
-        Modifies one or more NFS policies. To enable a policy, set `enabled=true`. To disable a policy, set `enabled=false`. To rename a policy, set `name` to the new name. The `ids` or `names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_nfs_patch_with_http_info(policy, authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modifies one or more NFS policies. To enable a policy, set `enabled=true`. To disable a policy, set `enabled=false`. To rename a policy, set `name` to the new name. The `ids` or `names` parameter is required, but they cannot be set together.
         
         :param policy: (required)
-        :type policy: models.PolicyNfsPatch
+        :type policy: PolicyNfsPatch
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -20622,12 +19813,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -20661,14 +19853,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create NFS policies  # noqa: E501
+        """Create NFS policies
         
-        Creates one or more NFS policies or copies an existing policy. To copy a policy, the `source_names` or `source_ids` parameter is required, but they cannot be set together. To create a policy, policy body is required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_nfs_post_with_http_info(authorization, x_request_id, names, source_ids, source_names, policy, async_req=True)
-        >>> result = thread.get()
+        Creates one or more NFS policies or copies an existing policy. To copy a policy, the `source_names` or `source_ids` parameter is required, but they cannot be set together. To create a policy, policy body is required.
         
         :param sources: A list of sources to query for. Overrides source_ids and source_names keyword arguments.
         :type sources: ReferenceType or List[ReferenceType], optional
@@ -20707,12 +19894,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -20745,14 +19933,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete quota policies  # noqa: E501
+        """Delete quota policies
         
-        Deletes one or more quota policies. The `ids` or `names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_quota_delete_with_http_info(authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Deletes one or more quota policies. The `ids` or `names` parameter is required, but they cannot be set together.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -20785,12 +19968,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -20827,14 +20011,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List quota policies  # noqa: E501
+        """List quota policies
         
-        Displays a list of quota policies.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_quota_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, ids, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of quota policies.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -20906,12 +20085,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -20952,14 +20132,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete membership between quota policies and managed directories  # noqa: E501
+        """Delete membership between quota policies and managed directories
         
-        Deletes a membership between one or more quota policies and managed directories. The `policy_ids` or `policy_names` parameter is required, but cannot be set together. The `member_ids` or `member_names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_quota_members_delete_with_http_info(authorization, x_request_id, member_ids, member_names, member_types, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Deletes a membership between one or more quota policies and managed directories. The `policy_ids` or `policy_names` parameter is required, but cannot be set together. The `member_ids` or `member_names` parameter is required, but cannot be set together.
         
         :param policies: A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
         :type policies: ReferenceType or List[ReferenceType], optional
@@ -21007,12 +20182,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -21057,14 +20233,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List quota policy members  # noqa: E501
+        """List quota policy members
         
-        Displays a list of quota policy members.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_quota_members_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, limit, member_ids, member_names, member_types, offset, policy_ids, policy_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of quota policy members.
         
         :param policies: A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
         :type policies: ReferenceType or List[ReferenceType], optional
@@ -21151,12 +20322,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -21199,17 +20371,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create a membership between a managed directory and a quota policy  # noqa: E501
+        """Create a membership between a managed directory and a quota policy
         
-        Creates a membership between one or more managed directories and a quota policy. The `policy_ids` or `policy_names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_quota_members_post_with_http_info(members, authorization, x_request_id, ignore_usage, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Creates a membership between one or more managed directories and a quota policy. The `policy_ids` or `policy_names` parameter is required, but cannot be set together.
         
         :param members: (required)
-        :type members: models.PolicyMemberPost
+        :type members: PolicyMemberPost
         :param policies: A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
         :type policies: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -21248,12 +20415,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -21287,17 +20455,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify quota policies  # noqa: E501
+        """Modify quota policies
         
-        Modifies one or more quota policies. To enable a policy, set `enabled=true`. To disable a policy, set `enabled=false`. To rename a policy, set `name` to the new name. The `ids` or `names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_quota_patch_with_http_info(policy, authorization, x_request_id, ids, ignore_usage, names, async_req=True)
-        >>> result = thread.get()
+        Modifies one or more quota policies. To enable a policy, set `enabled=true`. To disable a policy, set `enabled=false`. To rename a policy, set `name` to the new name. The `ids` or `names` parameter is required, but they cannot be set together.
         
         :param policy: (required)
-        :type policy: models.PolicyPatch
+        :type policy: PolicyPatch
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -21336,12 +20499,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -21376,14 +20540,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create quota policies  # noqa: E501
+        """Create quota policies
         
-        Creates one or more quota policies. To copy a policy, the `source_names` or `source_ids` parameter is required, but they cannot be set together. To create a policy from scratch, policy body is required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_quota_post_with_http_info(authorization, x_request_id, names, source_ids, source_names, policy, async_req=True)
-        >>> result = thread.get()
+        Creates one or more quota policies. To copy a policy, the `source_names` or `source_ids` parameter is required, but they cannot be set together. To create a policy from scratch, policy body is required.
         
         :param sources: A list of sources to query for. Overrides source_ids and source_names keyword arguments.
         :type sources: ReferenceType or List[ReferenceType], optional
@@ -21422,12 +20581,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -21462,14 +20622,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete quota policy rules  # noqa: E501
+        """Delete quota policy rules
         
-        Deletes one or more quota policy rules. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_quota_rules_delete_with_http_info(authorization, x_request_id, names, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Deletes one or more quota policy rules. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together.
         
         :param policies: A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
         :type policies: ReferenceType or List[ReferenceType], optional
@@ -21507,12 +20662,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -21553,14 +20709,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List quota policy rules  # noqa: E501
+        """List quota policy rules
         
-        Displays a list of quota policy rules.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_quota_rules_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, limit, names, offset, policy_ids, policy_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of quota policy rules.
         
         :param policies: A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
         :type policies: ReferenceType or List[ReferenceType], optional
@@ -21637,12 +20788,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -21685,17 +20837,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify quota policy rules  # noqa: E501
+        """Modify quota policy rules
         
-        Modifies quota policy rules.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_quota_rules_patch_with_http_info(rules, authorization, x_request_id, ignore_usage, names, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Modifies quota policy rules.
         
         :param rules: (required)
-        :type rules: models.PolicyRuleQuotaPatch
+        :type rules: PolicyRuleQuotaPatch
         :param policies: A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
         :type policies: ReferenceType or List[ReferenceType], optional
         :param references: A list of references to query for. Overrides names keyword argument.
@@ -21739,12 +20886,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -21780,17 +20928,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create quota policy rules  # noqa: E501
+        """Create quota policy rules
         
-        Creates one or more quota policy rules. The `policy_ids` or `policy_names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_quota_rules_post_with_http_info(rules, authorization, x_request_id, ignore_usage, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Creates one or more quota policy rules. The `policy_ids` or `policy_names` parameter is required, but cannot be set together.
         
         :param rules: (required)
-        :type rules: models.PolicyRuleQuotaPost
+        :type rules: PolicyRuleQuotaPost
         :param policies: A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
         :type policies: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -21829,12 +20972,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -21868,14 +21012,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete SMB client policy rules.  # noqa: E501
+        """Delete SMB client policy rules.
         
-        Deletes one or more SMB client policy rules. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_smb_client_rules_delete_with_http_info(authorization, x_request_id, names, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Deletes one or more SMB client policy rules. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together.
         
         :param policies: A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
         :type policies: ReferenceType or List[ReferenceType], optional
@@ -21913,12 +21052,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -21959,14 +21099,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List SMB client policy rules  # noqa: E501
+        """List SMB client policy rules
         
-        Displays a list of SMB client policy rules.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_smb_client_rules_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, limit, names, offset, policy_ids, policy_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of SMB client policy rules.
         
         :param policies: A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
         :type policies: ReferenceType or List[ReferenceType], optional
@@ -22043,12 +21178,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -22088,17 +21224,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create SMB client policy rules  # noqa: E501
+        """Create SMB client policy rules
         
-        Creates one or more SMB client policy rules. The `policy_ids` or `policy_names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_smb_client_rules_post_with_http_info(rules, authorization, x_request_id, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Creates one or more SMB client policy rules. The `policy_ids` or `policy_names` parameter is required, but cannot be set together.
         
         :param rules: (required)
-        :type rules: models.PolicyRuleSmbClientPost
+        :type rules: PolicyRuleSmbClientPost
         :param policies: A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
         :type policies: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -22130,12 +21261,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -22166,14 +21298,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete SMB policies  # noqa: E501
+        """Delete SMB policies
         
-        Deletes one or more SMB policies. The `ids` or `names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_smb_delete_with_http_info(authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Deletes one or more SMB policies. The `ids` or `names` parameter is required, but they cannot be set together.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -22206,12 +21333,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -22248,14 +21376,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List SMB policies  # noqa: E501
+        """List SMB policies
         
-        Displays a list of SMB policies.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_smb_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, ids, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of SMB policies.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -22327,12 +21450,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -22373,14 +21497,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete SMB policies  # noqa: E501
+        """Delete SMB policies
         
-        Deletes one or more SMB policies from resources. The `policy_ids` or `policy_names` parameter is required, but cannot be set together. The `member_ids` or `member_names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_smb_members_delete_with_http_info(authorization, x_request_id, member_ids, member_names, member_types, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Deletes one or more SMB policies from resources. The `policy_ids` or `policy_names` parameter is required, but cannot be set together. The `member_ids` or `member_names` parameter is required, but cannot be set together.
         
         :param policies: A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
         :type policies: ReferenceType or List[ReferenceType], optional
@@ -22428,12 +21547,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -22478,14 +21598,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List SMB policy members  # noqa: E501
+        """List SMB policy members
         
-        Displays a list of SMB policy members.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_smb_members_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, limit, member_ids, member_names, member_types, offset, policy_ids, policy_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of SMB policy members.
         
         :param policies: A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
         :type policies: ReferenceType or List[ReferenceType], optional
@@ -22572,12 +21687,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -22619,17 +21735,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create SMB policies  # noqa: E501
+        """Create SMB policies
         
-        Creates a membership between one or more resources and an SMB policy. Applicable resources are directories. The `policy_ids` or `policy_names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_smb_members_post_with_http_info(members, authorization, x_request_id, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Creates a membership between one or more resources and an SMB policy. Applicable resources are directories. The `policy_ids` or `policy_names` parameter is required, but cannot be set together.
         
         :param members: (required)
-        :type members: models.PolicyMemberExportPost
+        :type members: PolicyMemberExportPost
         :param policies: A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
         :type policies: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -22661,12 +21772,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -22698,17 +21810,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify SMB policies  # noqa: E501
+        """Modify SMB policies
         
-        Modifies one or more SMB policies. To enable a policy, set `enabled=true`. To disable a policy, set `enabled=false`. To enable access based enumeration, set `access_based_enumeration_enabled=true`. To disable access based enumeration, set `access_based_enumeration_enabled=false`. To rename a policy, set `name` to the new name. The `ids` or `names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_smb_patch_with_http_info(policy, authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modifies one or more SMB policies. To enable a policy, set `enabled=true`. To disable a policy, set `enabled=false`. To enable access based enumeration, set `access_based_enumeration_enabled=true`. To disable access based enumeration, set `access_based_enumeration_enabled=false`. To rename a policy, set `name` to the new name. The `ids` or `names` parameter is required, but cannot be set together.
         
         :param policy: (required)
-        :type policy: models.PolicySmbPatch
+        :type policy: PolicySmbPatch
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -22740,12 +21847,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -22779,14 +21887,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create SMB policies  # noqa: E501
+        """Create SMB policies
         
-        Creates one or more SMB policies. To copy a policy, set one of either `source_names` or `source_ids`. Each policy can only have one entry. To create a policy from scratch, policy body is required. To create an SMB policy with access based enumeration enabled, set `access_based_enumeration_enabled=true`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_smb_post_with_http_info(authorization, x_request_id, names, source_ids, source_names, policy, async_req=True)
-        >>> result = thread.get()
+        Creates one or more SMB policies. To copy a policy, set one of either `source_names` or `source_ids`. Each policy can only have one entry. To create a policy from scratch, policy body is required. To create an SMB policy with access based enumeration enabled, set `access_based_enumeration_enabled=true`.
         
         :param sources: A list of sources to query for. Overrides source_ids and source_names keyword arguments.
         :type sources: ReferenceType or List[ReferenceType], optional
@@ -22825,12 +21928,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -22863,14 +21967,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete snapshot policies  # noqa: E501
+        """Delete snapshot policies
         
-        Deletes one or more snapshot policies. The `ids` or `names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_snapshot_delete_with_http_info(authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Deletes one or more snapshot policies. The `ids` or `names` parameter is required, but they cannot be set together.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -22903,12 +22002,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -22945,14 +22045,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List snapshot policies  # noqa: E501
+        """List snapshot policies
         
-        Displays a list of snapshot policies.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_snapshot_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, ids, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of snapshot policies.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -23024,12 +22119,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -23070,14 +22166,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete snapshot policies  # noqa: E501
+        """Delete snapshot policies
         
-        Deletes one or more snapshot policies from resources. The `policy_ids` or `policy_names` parameter is required, but cannot be set together. The `member_ids` or `member_names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_snapshot_members_delete_with_http_info(authorization, x_request_id, member_ids, member_names, member_types, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Deletes one or more snapshot policies from resources. The `policy_ids` or `policy_names` parameter is required, but cannot be set together. The `member_ids` or `member_names` parameter is required, but cannot be set together.
         
         :param policies: A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
         :type policies: ReferenceType or List[ReferenceType], optional
@@ -23125,12 +22216,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -23175,14 +22267,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List snapshot policy members  # noqa: E501
+        """List snapshot policy members
         
-        Displays a list of snapshot policy members.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_snapshot_members_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, limit, member_ids, member_names, member_types, offset, policy_ids, policy_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of snapshot policy members.
         
         :param policies: A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
         :type policies: ReferenceType or List[ReferenceType], optional
@@ -23269,12 +22356,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -23316,17 +22404,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create snapshot policies  # noqa: E501
+        """Create snapshot policies
         
-        Creates a membership between one or more resources and a snapshot policy. Applicable resources are directories. The `policy_ids` or `policy_names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_snapshot_members_post_with_http_info(members, authorization, x_request_id, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Creates a membership between one or more resources and a snapshot policy. Applicable resources are directories. The `policy_ids` or `policy_names` parameter is required, but cannot be set together.
         
         :param members: (required)
-        :type members: models.PolicyMemberPost
+        :type members: PolicyMemberPost
         :param policies: A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
         :type policies: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -23358,12 +22441,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -23395,17 +22479,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify snapshot policies  # noqa: E501
+        """Modify snapshot policies
         
-        Modifies one or more snapshot policies. To enable a policy, set `enabled=true`. To disable a policy, set `enabled=true`. To rename a policy, set `name` to the new name. The `ids` or `names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_snapshot_patch_with_http_info(policy, authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modifies one or more snapshot policies. To enable a policy, set `enabled=true`. To disable a policy, set `enabled=true`. To rename a policy, set `name` to the new name. The `ids` or `names` parameter is required, but they cannot be set together.
         
         :param policy: (required)
-        :type policy: models.PolicyPatch
+        :type policy: PolicyPatch
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -23437,12 +22516,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -23476,14 +22556,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create snapshot policies  # noqa: E501
+        """Create snapshot policies
         
-        Creates one or more snapshot policies. To copy a policy, set one of either `source_names` or `source_ids`. Each policy can only have one entry. To create a policy from scratch, policy body is required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_snapshot_post_with_http_info(authorization, x_request_id, names, source_ids, source_names, policy, async_req=True)
-        >>> result = thread.get()
+        Creates one or more snapshot policies. To copy a policy, set one of either `source_names` or `source_ids`. Each policy can only have one entry. To create a policy from scratch, policy body is required.
         
         :param sources: A list of sources to query for. Overrides source_ids and source_names keyword arguments.
         :type sources: ReferenceType or List[ReferenceType], optional
@@ -23522,12 +22597,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -23562,14 +22638,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete snapshot policy rules  # noqa: E501
+        """Delete snapshot policy rules
         
-        Deletes one or more snapshot policy rules. The `policy_ids` or `policy_names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_snapshot_rules_delete_with_http_info(authorization, x_request_id, names, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Deletes one or more snapshot policy rules. The `policy_ids` or `policy_names` parameter is required, but cannot be set together.
         
         :param policies: A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
         :type policies: ReferenceType or List[ReferenceType], optional
@@ -23607,12 +22678,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -23653,14 +22725,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List snapshot policy rules  # noqa: E501
+        """List snapshot policy rules
         
-        Displays a list of snapshot policy rules.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_snapshot_rules_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, limit, names, offset, policy_ids, policy_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of snapshot policy rules.
         
         :param policies: A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
         :type policies: ReferenceType or List[ReferenceType], optional
@@ -23737,12 +22804,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -23782,17 +22850,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create snapshot policy rules  # noqa: E501
+        """Create snapshot policy rules
         
-        Creates one or more snapshot policy rules. The `policy_ids` or `policy_names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_policies_snapshot_rules_post_with_http_info(rules, authorization, x_request_id, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Creates one or more snapshot policy rules. The `policy_ids` or `policy_names` parameter is required, but cannot be set together.
         
         :param rules: (required)
-        :type rules: models.PolicyRuleSnapshotPost
+        :type rules: PolicyRuleSnapshotPost
         :param policies: A list of policies to query for. Overrides policy_ids and policy_names keyword arguments.
         :type policies: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -23824,12 +22887,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -23864,14 +22928,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List ports  # noqa: E501
+        """List ports
         
-        Displays host name, iSCSI Qualified Names (IQNs), NVMe Qualified Names (NQNs), IPv4 address of the portal, Fibre Channel World Wide Names (WWNs), and failover ports, including those that were discovered by Purity//FA and those that have been manually assigned by system administrators.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_ports_get_with_http_info(authorization, x_request_id, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays host name, iSCSI Qualified Names (IQNs), NVMe Qualified Names (NQNs), IPv4 address of the portal, Fibre Channel World Wide Names (WWNs), and failover ports, including those that were discovered by Purity//FA and those that have been manually assigned by system administrators.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -23928,12 +22987,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -23971,14 +23031,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List port initiators  # noqa: E501
+        """List port initiators
         
-        Displays host iSCSI Qualified Names (IQNs), NVMe Qualified Names (NQNs), and Fibre Channel World Wide Names (WWNs), including those that were discovered by Purity//FA and those that have been manually assigned by system administrators, along with the array ports (targets) on which they are eligible to communicate.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_ports_initiators_get_with_http_info(authorization, x_request_id, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays host iSCSI Qualified Names (IQNs), NVMe Qualified Names (NQNs), and Fibre Channel World Wide Names (WWNs), including those that were discovered by Purity//FA and those that have been manually assigned by system administrators, along with the array ports (targets) on which they are eligible to communicate.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -24035,12 +23090,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -24073,14 +23129,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete a protection group snapshot  # noqa: E501
+        """Delete a protection group snapshot
         
-        Deletes a protection group snapshot that has been destroyed and is pending eradication. Eradicating a protection group snapshot eradicates all of its protection group snapshots and cannot be recovered. Protection group snapshots are destroyed through the `PATCH` method. The `names` parameter is required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_protection_group_snapshots_delete_with_http_info(authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Deletes a protection group snapshot that has been destroyed and is pending eradication. Eradicating a protection group snapshot eradicates all of its protection group snapshots and cannot be recovered. Protection group snapshots are destroyed through the `PATCH` method. The `names` parameter is required.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -24109,12 +23160,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -24152,14 +23204,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List protection group snapshots  # noqa: E501
+        """List protection group snapshots
         
-        Displays a list of protection group snapshots, including those pending eradication.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_protection_group_snapshots_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, limit, names, offset, sort, source_names, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays a list of protection group snapshots, including those pending eradication.
         
         :param sources: A list of sources to query for. Overrides source_names keyword argument.
         :type sources: ReferenceType or List[ReferenceType], optional
@@ -24237,12 +23284,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -24281,17 +23329,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify a protection group snapshot  # noqa: E501
+        """Modify a protection group snapshot
         
-        Modifies a protection group snapshot so that it can be destroyed. To destroy a volume, set `destroyed=true`. To recover a volume that has been destroyed and is pending eradication, set `destroyed=false`. The `names` parameter is required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_protection_group_snapshots_patch_with_http_info(protection_group_snapshot, authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Modifies a protection group snapshot so that it can be destroyed. To destroy a volume, set `destroyed=true`. To recover a volume that has been destroyed and is pending eradication, set `destroyed=false`. The `names` parameter is required.
         
         :param protection_group_snapshot: (required)
-        :type protection_group_snapshot: models.ProtectionGroupSnapshotPatch
+        :type protection_group_snapshot: ProtectionGroupSnapshotPatch
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -24319,12 +23362,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -24358,14 +23402,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create a protection group snapshot  # noqa: E501
+        """Create a protection group snapshot
         
-        Creates a point-in-time snapshot of the contents of a protection group. The `source_names` parameter is required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_protection_group_snapshots_post_with_http_info(authorization, x_request_id, apply_retention, for_replication, replicate, replicate_now, source_names, protection_group_snapshot, async_req=True)
-        >>> result = thread.get()
+        Creates a point-in-time snapshot of the contents of a protection group. The `source_names` parameter is required.
         
         :param sources: A list of sources to query for. Overrides source_names keyword argument.
         :type sources: ReferenceType or List[ReferenceType], optional
@@ -24408,12 +23447,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -24455,14 +23495,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List protection group snapshots with transfer statistics  # noqa: E501
+        """List protection group snapshots with transfer statistics
         
-        Returns a list of protection group snapshots and their transfer statistics.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_protection_group_snapshots_transfer_get_with_http_info(authorization, x_request_id, destroyed, filter, limit, names, offset, sort, source_names, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Returns a list of protection group snapshots and their transfer statistics.
         
         :param sources: A list of sources to query for. Overrides source_names keyword argument.
         :type sources: ReferenceType or List[ReferenceType], optional
@@ -24533,12 +23568,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -24575,14 +23611,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete a protection group  # noqa: E501
+        """Delete a protection group
         
-        Deletes a protection group that has been destroyed and is pending eradication. Eradicated protection groups cannot be recovered. Protection groups are destroyed through the `PATCH` method. The `names` parameter is required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_protection_groups_delete_with_http_info(authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Deletes a protection group that has been destroyed and is pending eradication. Eradicated protection groups cannot be recovered. Protection groups are destroyed through the `PATCH` method. The `names` parameter is required.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -24611,12 +23642,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -24652,14 +23684,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List protection groups  # noqa: E501
+        """List protection groups
         
-        Displays a list of protection groups, including their associated source arrays, replication targets, hosts, host groups, and volumes. The list includes protection groups that were created on the local array to replicate snapshot data to other arrays or offload targets, created on a remote array and replicated asynchronously to this array, or created inside a pod on a remote array and stretched to the local array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_protection_groups_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, limit, names, offset, sort, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays a list of protection groups, including their associated source arrays, replication targets, hosts, host groups, and volumes. The list includes protection groups that were created on the local array to replicate snapshot data to other arrays or offload targets, created on a remote array and replicated asynchronously to this array, or created inside a pod on a remote array and stretched to the local array.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -24732,12 +23759,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -24775,14 +23803,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Remove a host group from a protection group  # noqa: E501
+        """Remove a host group from a protection group
         
-        Removes a host group member from a protection group. After the member has been removed, it is no longer protected by the group. Any protection group snapshots that were taken before the member was removed will not be affected. Removing a member from a protection group does not delete the member from the array, and the member can be added back to the protection group at any time. The `group_names` parameter represents the name of the protection group, and the `member_names` parameter represents the name of the host group. The `group_names` and `member_names` parameters are required and must be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_protection_groups_host_groups_delete_with_http_info(authorization, x_request_id, group_names, member_names, async_req=True)
-        >>> result = thread.get()
+        Removes a host group member from a protection group. After the member has been removed, it is no longer protected by the group. Any protection group snapshots that were taken before the member was removed will not be affected. Removing a member from a protection group does not delete the member from the array, and the member can be added back to the protection group at any time. The `group_names` parameter represents the name of the protection group, and the `member_names` parameter represents the name of the host group. The `group_names` and `member_names` parameters are required and must be set together.
         
         :param members: A list of members to query for. Overrides member_names keyword argument.
         :type members: ReferenceType or List[ReferenceType], optional
@@ -24818,12 +23841,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -24861,14 +23885,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List protection groups with host group members  # noqa: E501
+        """List protection groups with host group members
         
-        Returns a list of protection groups that have host group members.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_protection_groups_host_groups_get_with_http_info(authorization, x_request_id, continuation_token, filter, group_names, limit, member_names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Returns a list of protection groups that have host group members.
         
         :param members: A list of members to query for. Overrides member_names keyword argument.
         :type members: ReferenceType or List[ReferenceType], optional
@@ -24939,12 +23958,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -24982,14 +24002,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Add a host group to a protection group  # noqa: E501
+        """Add a host group to a protection group
         
-        Adds a host group member to a protection group. Members that are already in the protection group are not affected. For asynchronous replication, only members of the same type can belong to a protection group. The `group_names` parameter represents the name of the protection group, and the `member_names` parameter represents the name of the host group. The `group_names` and `member_names` parameters are required and must be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_protection_groups_host_groups_post_with_http_info(authorization, x_request_id, group_names, member_names, async_req=True)
-        >>> result = thread.get()
+        Adds a host group member to a protection group. Members that are already in the protection group are not affected. For asynchronous replication, only members of the same type can belong to a protection group. The `group_names` parameter represents the name of the protection group, and the `member_names` parameter represents the name of the host group. The `group_names` and `member_names` parameters are required and must be set together.
         
         :param members: A list of members to query for. Overrides member_names keyword argument.
         :type members: ReferenceType or List[ReferenceType], optional
@@ -25025,12 +24040,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -25062,14 +24078,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Remove a host from a protection group  # noqa: E501
+        """Remove a host from a protection group
         
-        Removes a host member from a protection group. After the member has been removed, it is no longer protected by the group. Any protection group snapshots that were taken before the member was removed will not be affected. Removing a member from a protection group does not delete the member from the array, and the member can be added back to the protection group at any time. The `group_names` parameter represents the name of the protection group, and the `member_names` parameter represents the name of the host. The `group_names` and `member_names` parameters are required and must be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_protection_groups_hosts_delete_with_http_info(authorization, x_request_id, group_names, member_names, async_req=True)
-        >>> result = thread.get()
+        Removes a host member from a protection group. After the member has been removed, it is no longer protected by the group. Any protection group snapshots that were taken before the member was removed will not be affected. Removing a member from a protection group does not delete the member from the array, and the member can be added back to the protection group at any time. The `group_names` parameter represents the name of the protection group, and the `member_names` parameter represents the name of the host. The `group_names` and `member_names` parameters are required and must be set together.
         
         :param members: A list of members to query for. Overrides member_names keyword argument.
         :type members: ReferenceType or List[ReferenceType], optional
@@ -25105,12 +24116,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -25148,14 +24160,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List protection groups with host members  # noqa: E501
+        """List protection groups with host members
         
-        Returns a list of protection groups that have host members.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_protection_groups_hosts_get_with_http_info(authorization, x_request_id, continuation_token, filter, group_names, limit, member_names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Returns a list of protection groups that have host members.
         
         :param members: A list of members to query for. Overrides member_names keyword argument.
         :type members: ReferenceType or List[ReferenceType], optional
@@ -25226,12 +24233,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -25269,14 +24277,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Add a host to a protection group  # noqa: E501
+        """Add a host to a protection group
         
-        Adds a host member to a protection group. Members that are already in the protection group are not affected. For asynchronous replication, only members of the same type can belong to a protection group. The `group_names` parameter represents the name of the protection group, and the `member_names` parameter represents the name of the host. The `group_names` and `member_names` parameters are required and must be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_protection_groups_hosts_post_with_http_info(authorization, x_request_id, group_names, member_names, async_req=True)
-        >>> result = thread.get()
+        Adds a host member to a protection group. Members that are already in the protection group are not affected. For asynchronous replication, only members of the same type can belong to a protection group. The `group_names` parameter represents the name of the protection group, and the `member_names` parameter represents the name of the host. The `group_names` and `member_names` parameters are required and must be set together.
         
         :param members: A list of members to query for. Overrides member_names keyword argument.
         :type members: ReferenceType or List[ReferenceType], optional
@@ -25312,12 +24315,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -25348,17 +24352,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify a protection group  # noqa: E501
+        """Modify a protection group
         
-        Modifies the protection group schedules to generate and replicate snapshots to another array or to an external storage system. Renames or destroys a protection group.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_protection_groups_patch_with_http_info(protection_group, authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Modifies the protection group schedules to generate and replicate snapshots to another array or to an external storage system. Renames or destroys a protection group.
         
         :param protection_group: (required)
-        :type protection_group: models.ProtectionGroup
+        :type protection_group: ProtectionGroup
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -25386,12 +24385,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -25429,14 +24429,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List protection group replication performance data with array details  # noqa: E501
+        """List protection group replication performance data with array details
         
-        Returns the total number of bytes of replication data transmitted and received per second. The data is grouped by protection group and includes the names of the source array and targets for each protection group.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_protection_groups_performance_replication_by_array_get_with_http_info(authorization, x_request_id, destroyed, end_time, filter, limit, names, offset, resolution, sort, start_time, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Returns the total number of bytes of replication data transmitted and received per second. The data is grouped by protection group and includes the names of the source array and targets for each protection group.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -25539,12 +24534,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -25590,14 +24586,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List protection group replication performance data  # noqa: E501
+        """List protection group replication performance data
         
-        Returns the total number of bytes of replication data transmitted and received per second. The data is grouped by protection group.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_protection_groups_performance_replication_get_with_http_info(authorization, x_request_id, destroyed, end_time, filter, limit, names, offset, resolution, sort, start_time, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Returns the total number of bytes of replication data transmitted and received per second. The data is grouped by protection group.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -25700,12 +24691,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -25745,14 +24737,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create a protection group  # noqa: E501
+        """Create a protection group
         
-        Creates a protection group on the local array for asynchronous replication.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_protection_groups_post_with_http_info(authorization, x_request_id, names, overwrite, source_names, async_req=True)
-        >>> result = thread.get()
+        Creates a protection group on the local array for asynchronous replication.
         
         :param sources: A list of sources to query for. Overrides source_names keyword argument.
         :type sources: ReferenceType or List[ReferenceType], optional
@@ -25797,12 +24784,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -25839,14 +24827,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List protection group space information  # noqa: E501
+        """List protection group space information
         
-        Displays provisioned size and physical storage consumption data for each protection group.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_protection_groups_space_get_with_http_info(authorization, x_request_id, destroyed, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays provisioned size and physical storage consumption data for each protection group.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -25907,12 +24890,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -25948,14 +24932,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Removes a target from a protection group  # noqa: E501
+        """Removes a target from a protection group
         
-        Removes an array or offload target from a protection group. The `group_names` parameter represents the name of the protection group. The `member_names` parameter represents the name of the array or offload target that is being removed from the protection group. The `group_names` and `member_names` parameters are required and must be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_protection_groups_targets_delete_with_http_info(authorization, x_request_id, group_names, member_names, async_req=True)
-        >>> result = thread.get()
+        Removes an array or offload target from a protection group. The `group_names` parameter represents the name of the protection group. The `member_names` parameter represents the name of the array or offload target that is being removed from the protection group. The `group_names` and `member_names` parameters are required and must be set together.
         
         :param members: A list of members to query for. Overrides member_names keyword argument.
         :type members: ReferenceType or List[ReferenceType], optional
@@ -25991,12 +24970,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -26034,14 +25014,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List protection groups with targets  # noqa: E501
+        """List protection groups with targets
         
-        Returns a list of protection groups that have target arrays or offload targets.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_protection_groups_targets_get_with_http_info(authorization, x_request_id, continuation_token, filter, group_names, limit, member_names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Returns a list of protection groups that have target arrays or offload targets.
         
         :param members: A list of members to query for. Overrides member_names keyword argument.
         :type members: ReferenceType or List[ReferenceType], optional
@@ -26112,12 +25087,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -26156,17 +25132,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Manage a protection group target  # noqa: E501
+        """Manage a protection group target
         
-        Allows the source array to replicate protection group data to the target array, or disallows the source array from replicating protection group data to the target array. The `allowed` parameter must be set from the target array. The `group_names` parameter represents the name of the protection group. The `allowed` and `group_names` parameters are required and must be set together. Offload targets do not support the `allowed` parameter.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_protection_groups_targets_patch_with_http_info(target, authorization, x_request_id, group_names, member_names, async_req=True)
-        >>> result = thread.get()
+        Allows the source array to replicate protection group data to the target array, or disallows the source array from replicating protection group data to the target array. The `allowed` parameter must be set from the target array. The `group_names` parameter represents the name of the protection group. The `allowed` and `group_names` parameters are required and must be set together. Offload targets do not support the `allowed` parameter.
         
         :param target: (required)
-        :type target: models.TargetProtectionGroupPostPatch
+        :type target: TargetProtectionGroupPostPatch
         :param members: A list of members to query for. Overrides member_names keyword argument.
         :type members: ReferenceType or List[ReferenceType], optional
         :param groups: A list of groups to query for. Overrides group_names keyword argument.
@@ -26201,12 +25172,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -26239,14 +25211,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Add a target to a protection group  # noqa: E501
+        """Add a target to a protection group
         
-        Adds an array or offload target to a protection group. The `group_names` parameter represents the name of the protection group. The `member_names` parameter represents the name of the array or offload target that is being added to the protection group. The `group_names` and `member_names` parameters are required and must be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_protection_groups_targets_post_with_http_info(authorization, x_request_id, group_names, member_names, async_req=True)
-        >>> result = thread.get()
+        Adds an array or offload target to a protection group. The `group_names` parameter represents the name of the protection group. The `member_names` parameter represents the name of the array or offload target that is being added to the protection group. The `group_names` and `member_names` parameters are required and must be set together.
         
         :param members: A list of members to query for. Overrides member_names keyword argument.
         :type members: ReferenceType or List[ReferenceType], optional
@@ -26282,12 +25249,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -26320,14 +25288,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete a volume from a protection group  # noqa: E501
+        """Delete a volume from a protection group
         
-        Deletes a volume member from a protection group. After the member has been deleted, it is no longer protected by the group. Any protection group snapshots that were taken before the member was deleted are not affected. Deleting a member from a protection group does not delete the member from the array, and the member can be added back to the protection group at any time. The `group_names` parameter represents the name of the protection group, and the `member_names` and `member_ids` parameters represent the names or IDs of the volume. The `group_names` and only one of `member_names` or `member_ids` parameters are required and must be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_protection_groups_volumes_delete_with_http_info(authorization, x_request_id, group_names, member_ids, member_names, async_req=True)
-        >>> result = thread.get()
+        Deletes a volume member from a protection group. After the member has been deleted, it is no longer protected by the group. Any protection group snapshots that were taken before the member was deleted are not affected. Deleting a member from a protection group does not delete the member from the array, and the member can be added back to the protection group at any time. The `group_names` parameter represents the name of the protection group, and the `member_names` and `member_ids` parameters represent the names or IDs of the volume. The `group_names` and only one of `member_names` or `member_ids` parameters are required and must be set together.
         
         :param members: A list of members to query for. Overrides member_ids and member_names keyword arguments.
         :type members: ReferenceType or List[ReferenceType], optional
@@ -26367,12 +25330,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -26413,14 +25377,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List protection groups with volume members  # noqa: E501
+        """List protection groups with volume members
         
-        Displays a list of protection groups that have volume members.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_protection_groups_volumes_get_with_http_info(authorization, x_request_id, continuation_token, filter, group_names, limit, member_destroyed, member_ids, member_names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of protection groups that have volume members.
         
         :param members: A list of members to query for. Overrides member_ids and member_names keyword arguments.
         :type members: ReferenceType or List[ReferenceType], optional
@@ -26500,12 +25459,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -26546,14 +25506,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create a volume and add it to a protection group  # noqa: E501
+        """Create a volume and add it to a protection group
         
-        Creates a volume member and adds it to a protection group. Members that are already in the protection group are not affected. For asynchronous replication, only members of the same type can belong to a protection group. The `group_names` parameter represents the name of the protection group, and the `member_names` and `member_ids` parameters represent the names or IDs of the volume. The `group_names` and only one of `member_names` or `member_ids` parameters are required and must be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_protection_groups_volumes_post_with_http_info(authorization, x_request_id, group_names, member_ids, member_names, async_req=True)
-        >>> result = thread.get()
+        Creates a volume member and adds it to a protection group. Members that are already in the protection group are not affected. For asynchronous replication, only members of the same type can belong to a protection group. The `group_names` parameter represents the name of the protection group, and the `member_names` and `member_ids` parameters represent the names or IDs of the volume. The `group_names` and only one of `member_names` or `member_ids` parameters are required and must be set together.
         
         :param members: A list of members to query for. Overrides member_ids and member_names keyword arguments.
         :type members: ReferenceType or List[ReferenceType], optional
@@ -26593,12 +25548,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -26636,14 +25592,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List remote pods  # noqa: E501
+        """List remote pods
         
-        Returns a list of pods that that are on connected arrays but not stretched to this array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_remote_pods_get_with_http_info(authorization, x_request_id, filter, ids, limit, names, offset, on, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Returns a list of pods that that are on connected arrays but not stretched to this array.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -26707,12 +25658,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -26748,14 +25700,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete a remote protection group snapshot  # noqa: E501
+        """Delete a remote protection group snapshot
         
-        Deletes a remote protection group snapshot that has been destroyed and is pending eradication. Eradicated remote protection group snapshots cannot be recovered. Remote protection group snapshots are destroyed using the `PATCH` method. The `names` parameter represents the name of the protection group snapshot. The `on` parameter represents the name of the offload target. The `names` and `on` parameters are required and must be used together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_remote_protection_group_snapshots_delete_with_http_info(authorization, x_request_id, names, on, async_req=True)
-        >>> result = thread.get()
+        Deletes a remote protection group snapshot that has been destroyed and is pending eradication. Eradicated remote protection group snapshots cannot be recovered. Remote protection group snapshots are destroyed using the `PATCH` method. The `names` parameter represents the name of the protection group snapshot. The `on` parameter represents the name of the offload target. The `names` and `on` parameters are required and must be used together.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -26787,12 +25734,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -26830,14 +25778,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List remote protection group snapshots  # noqa: E501
+        """List remote protection group snapshots
         
-        Displays a list of remote protection group snapshots.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_remote_protection_group_snapshots_get_with_http_info(authorization, x_request_id, destroyed, filter, limit, names, offset, on, sort, source_names, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of remote protection group snapshots.
         
         :param sources: A list of sources to query for. Overrides source_names keyword argument.
         :type sources: ReferenceType or List[ReferenceType], optional
@@ -26906,12 +25849,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -26950,17 +25894,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify a remote protection group snapshot  # noqa: E501
+        """Modify a remote protection group snapshot
         
-        Modifies a remote protection group snapshot, removing it from the offload target and destroying the snapshot. The `on` parameter represents the name of the offload target. The `ids` or `names` parameter and the `on` parameter are required and must be used together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_remote_protection_group_snapshots_patch_with_http_info(remote_protection_group_snapshot, authorization, x_request_id, names, on, async_req=True)
-        >>> result = thread.get()
+        Modifies a remote protection group snapshot, removing it from the offload target and destroying the snapshot. The `on` parameter represents the name of the offload target. The `ids` or `names` parameter and the `on` parameter are required and must be used together.
         
         :param remote_protection_group_snapshot: (required)
-        :type remote_protection_group_snapshot: models.DestroyedPatchPost
+        :type remote_protection_group_snapshot: DestroyedPatchPost
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -26991,12 +25930,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -27035,14 +25975,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create remote protection group snapshot  # noqa: E501
+        """Create remote protection group snapshot
         
-        Creates remote protection group snapshots.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_remote_protection_group_snapshots_post_with_http_info(authorization, x_request_id, apply_retention, convert_source_to_baseline, for_replication, names, on, replicate, replicate_now, source_names, remote_protection_group_snapshot, async_req=True)
-        >>> result = thread.get()
+        Creates remote protection group snapshots.
         
         :param sources: A list of sources to query for. Overrides source_names keyword argument.
         :type sources: ReferenceType or List[ReferenceType], optional
@@ -27096,12 +26031,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -27148,14 +26084,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List remote protection groups with transfer statistics  # noqa: E501
+        """List remote protection groups with transfer statistics
         
-        Returns a list of remote protection groups and their transfer statistics.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_remote_protection_group_snapshots_transfer_get_with_http_info(authorization, x_request_id, destroyed, filter, limit, names, offset, on, sort, source_names, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Returns a list of remote protection groups and their transfer statistics.
         
         :param sources: A list of sources to query for. Overrides source_names keyword argument.
         :type sources: ReferenceType or List[ReferenceType], optional
@@ -27229,12 +26160,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -27274,14 +26206,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Eradicate a remote protection group  # noqa: E501
+        """Eradicate a remote protection group
         
-        Eradicates a remote protection group that has been destroyed and is pending eradication. Eradicated remote protection groups cannot be recovered. Remote protection groups are destroyed through the `PATCH` method. The `on` parameter represents the name of the offload target. The `ids` or `names` parameter and the `on` parameter are required and must be used together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_remote_protection_groups_delete_with_http_info(authorization, x_request_id, ids, names, on, async_req=True)
-        >>> result = thread.get()
+        Eradicates a remote protection group that has been destroyed and is pending eradication. Eradicated remote protection groups cannot be recovered. Remote protection groups are destroyed through the `PATCH` method. The `on` parameter represents the name of the offload target. The `ids` or `names` parameter and the `on` parameter are required and must be used together.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -27317,12 +26244,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -27360,14 +26288,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List remote protection groups  # noqa: E501
+        """List remote protection groups
         
-        Returns a list of remote protection groups.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_remote_protection_groups_get_with_http_info(authorization, x_request_id, destroyed, filter, ids, limit, names, offset, on, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Returns a list of remote protection groups.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -27435,12 +26358,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -27479,17 +26403,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Manage a remote protection group  # noqa: E501
+        """Manage a remote protection group
         
-        Configures the snapshot retention schedule of a remote protection group. Also destroys a remote protection group from the offload target. Before the remote protection group can be destroyed, the offload target must first be removed from the protection group via the source array. The `on` parameter represents the name of the offload target. The `ids` or `names` parameter and the `on` parameter are required and must be used together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_remote_protection_groups_patch_with_http_info(remote_protection_group, authorization, x_request_id, ids, names, on, async_req=True)
-        >>> result = thread.get()
+        Configures the snapshot retention schedule of a remote protection group. Also destroys a remote protection group from the offload target. Before the remote protection group can be destroyed, the offload target must first be removed from the protection group via the source array. The `on` parameter represents the name of the offload target. The `ids` or `names` parameter and the `on` parameter are required and must be used together.
         
         :param remote_protection_group: (required)
-        :type remote_protection_group: models.RemoteProtectionGroup
+        :type remote_protection_group: RemoteProtectionGroup
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -27524,12 +26443,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -27562,14 +26482,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Eradicate a remote volume snapshot  # noqa: E501
+        """Eradicate a remote volume snapshot
         
-        Eradicates a remote volume snapshot that has been destroyed and is pending eradication. Eradicated remote volume snapshots cannot be recovered. Remote volume snapshots are destroyed through the `PATCH` method. The `names` parameter represents the name of the volume snapshot. The `on` parameter represents the name of the offload target. The `names` and `on` parameters are required and must be used together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_remote_volume_snapshots_delete_with_http_info(authorization, x_request_id, names, on, replication_snapshot, async_req=True)
-        >>> result = thread.get()
+        Eradicates a remote volume snapshot that has been destroyed and is pending eradication. Eradicated remote volume snapshots cannot be recovered. Remote volume snapshots are destroyed through the `PATCH` method. The `names` parameter represents the name of the volume snapshot. The `on` parameter represents the name of the offload target. The `names` and `on` parameters are required and must be used together.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -27606,12 +26521,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -27652,14 +26568,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List remote volume snapshots  # noqa: E501
+        """List remote volume snapshots
         
-        Displays a list of remote volume snapshots.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_remote_volume_snapshots_get_with_http_info(authorization, x_request_id, destroyed, filter, ids, limit, names, offset, on, sort, source_ids, source_names, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of remote volume snapshots.
         
         :param sources: A list of sources to query for. Overrides source_ids and source_names keyword arguments.
         :type sources: ReferenceType or List[ReferenceType], optional
@@ -27735,12 +26646,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -27782,17 +26694,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Manage a remote volume snapshot  # noqa: E501
+        """Manage a remote volume snapshot
         
-        Destroy or recover a remote volume snapshot from the offload target. The `on` parameter represents the name of the offload target. The `names` parameter and the `on` parameter are required and must be used together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_remote_volume_snapshots_patch_with_http_info(remote_volume_snapshot, authorization, x_request_id, names, on, replication_snapshot, async_req=True)
-        >>> result = thread.get()
+        Destroy or recover a remote volume snapshot from the offload target. The `on` parameter represents the name of the offload target. The `names` parameter and the `on` parameter are required and must be used together.
         
         :param remote_volume_snapshot: (required)
-        :type remote_volume_snapshot: models.DestroyedPatchPost
+        :type remote_volume_snapshot: DestroyedPatchPost
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -27828,12 +26735,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -27866,14 +26774,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create a volume snapshot on a connected remote target or offload target  # noqa: E501
+        """Create a volume snapshot on a connected remote target or offload target
         
-        Creates a volume snapshot on the specified connected remote target or offload target.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_remote_volume_snapshots_post_with_http_info(authorization, x_request_id, on, source_ids, source_names, async_req=True)
-        >>> result = thread.get()
+        Creates a volume snapshot on the specified connected remote target or offload target.
         
         :param sources: A list of sources to query for. Overrides source_ids and source_names keyword arguments.
         :type sources: ReferenceType or List[ReferenceType], optional
@@ -27908,12 +26811,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -27955,14 +26859,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List remote volume snapshots with transfer statistics  # noqa: E501
+        """List remote volume snapshots with transfer statistics
         
-        Returns a list of remote volume snapshots and their transfer statistics.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_remote_volume_snapshots_transfer_get_with_http_info(authorization, x_request_id, destroyed, filter, ids, limit, names, offset, on, sort, source_ids, source_names, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Returns a list of remote volume snapshots and their transfer statistics.
         
         :param sources: A list of sources to query for. Overrides source_ids and source_names keyword arguments.
         :type sources: ReferenceType or List[ReferenceType], optional
@@ -28043,12 +26942,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -28089,14 +26989,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete SAML2 SSO configurations  # noqa: E501
+        """Delete SAML2 SSO configurations
         
-        Deletes SAML2 SSO configurations.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_sso_saml2_idps_delete_with_http_info(authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Deletes SAML2 SSO configurations.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -28129,12 +27024,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -28170,14 +27066,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List SAML2 SSO configurations  # noqa: E501
+        """List SAML2 SSO configurations
         
-        Displays the SAML2 SSO service provider and identity provider configuration settings in the array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_sso_saml2_idps_get_with_http_info(authorization, x_request_id, continuation_token, filter, ids, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays the SAML2 SSO service provider and identity provider configuration settings in the array.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -28245,12 +27136,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -28287,17 +27179,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify SAML2 SSO configurations  # noqa: E501
+        """Modify SAML2 SSO configurations
         
-        Modifies one or more attributes of SAML2 SSO configurations.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_sso_saml2_idps_patch_with_http_info(idp, authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modifies one or more attributes of SAML2 SSO configurations.
         
         :param idp: (required)
-        :type idp: models.Saml2SsoPatch
+        :type idp: Saml2SsoPatch
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -28329,12 +27216,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -28365,20 +27253,15 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create SAML2 SSO configurations  # noqa: E501
+        """Create SAML2 SSO configurations
         
-        Creates SAML2 SSO configurations.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_sso_saml2_idps_post_with_http_info(names, idp, authorization, x_request_id, async_req=True)
-        >>> result = thread.get()
+        Creates SAML2 SSO configurations.
         
         :param names: Performs the operation on the unique name specified. For example, `name01`.
                     Enter multiple names in comma-separated format. (required)
         :type names: List[str]
         :param idp: (required)
-        :type idp: models.Saml2SsoPost
+        :type idp: Saml2SsoPost
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -28403,12 +27286,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -28444,14 +27328,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List existing SAML2 SSO configurations  # noqa: E501
+        """List existing SAML2 SSO configurations
         
-        Displays the existing SAML2 SSO configurations in the array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_sso_saml2_idps_test_get_with_http_info(authorization, x_request_id, continuation_token, filter, ids, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays the existing SAML2 SSO configurations in the array.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -28519,12 +27398,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -28561,17 +27441,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify provided SAML2 SSO configurations  # noqa: E501
+        """Modify provided SAML2 SSO configurations
         
-        Modifies the provided SAML2 SSO configurations. If the configurations with the specified `ids` or `names` exist, the provided configurations will overwrite the existing configurations, but will not be persisted in the array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_sso_saml2_idps_test_patch_with_http_info(idp, authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modifies the provided SAML2 SSO configurations. If the configurations with the specified `ids` or `names` exist, the provided configurations will overwrite the existing configurations, but will not be persisted in the array.
         
         :param idp: (required)
-        :type idp: models.Saml2SsoPost
+        :type idp: Saml2SsoPost
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -28603,12 +27478,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -28641,14 +27517,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List SMI-S settings  # noqa: E501
+        """List SMI-S settings
         
-        Displays the SMI-S settings, including whether SLP and WBEM-HTTPS are enabled.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_smi_s_get_with_http_info(authorization, x_request_id, filter, limit, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays the SMI-S settings, including whether SLP and WBEM-HTTPS are enabled.
         
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
@@ -28700,12 +27571,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -28735,17 +27607,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify SLP and SMI-S  # noqa: E501
+        """Modify SLP and SMI-S
         
-        Modifies the Service Location Protocol (SLP) and the SMI-S provider, enabling or disabling them.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_smi_s_patch_with_http_info(smi_s, authorization, x_request_id, async_req=True)
-        >>> result = thread.get()
+        Modifies the Service Location Protocol (SLP) and the SMI-S provider, enabling or disabling them.
         
         :param smi_s: (required)
-        :type smi_s: models.Smis
+        :type smi_s: Smis
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
         :param x_request_id: Supplied by client during request or generated by server.
@@ -28768,12 +27635,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -28803,14 +27671,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List SMTP server attributes  # noqa: E501
+        """List SMTP server attributes
         
-        Displays SMTP server attributes. Values include `user_name`, `password`, `relay_host`, `sender_domain`, and `name`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_smtp_servers_get_with_http_info(authorization, x_request_id, filter, limit, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays SMTP server attributes. Values include `user_name`, `password`, `relay_host`, `sender_domain`, and `name`.
         
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
@@ -28862,12 +27725,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -28897,17 +27761,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify SMTP server attributes  # noqa: E501
+        """Modify SMTP server attributes
         
-        Modifies SMTP server attributes. Values include `user_name`, `password`, `relay_host`, `sender_domain`, and `name`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_smtp_servers_patch_with_http_info(smtp, authorization, x_request_id, async_req=True)
-        >>> result = thread.get()
+        Modifies SMTP server attributes. Values include `user_name`, `password`, `relay_host`, `sender_domain`, and `name`.
         
         :param smtp: (required)
-        :type smtp: models.SmtpServer
+        :type smtp: SmtpServer
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
         :param x_request_id: Supplied by client during request or generated by server.
@@ -28930,12 +27789,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -28965,14 +27825,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List SNMP agent  # noqa: E501
+        """List SNMP agent
         
-        Displays the SNMP agent name and protocol attributes.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_snmp_agents_get_with_http_info(authorization, x_request_id, filter, limit, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays the SNMP agent name and protocol attributes.
         
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
@@ -29024,12 +27879,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -29063,14 +27919,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List SNMP agent MIB text  # noqa: E501
+        """List SNMP agent MIB text
         
-        Displays the SNMP MIB text.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_snmp_agents_mib_get_with_http_info(authorization, x_request_id, filter, limit, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays the SNMP MIB text.
         
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
@@ -29122,12 +27973,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -29157,17 +28009,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify SNMP agent  # noqa: E501
+        """Modify SNMP agent
         
-        Modifies the name or the protocol attributes of the SNMP agent.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_snmp_agents_patch_with_http_info(snmp_agent, authorization, x_request_id, async_req=True)
-        >>> result = thread.get()
+        Modifies the name or the protocol attributes of the SNMP agent.
         
         :param snmp_agent: (required)
-        :type snmp_agent: models.SnmpAgentPatch
+        :type snmp_agent: SnmpAgentPatch
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
         :param x_request_id: Supplied by client during request or generated by server.
@@ -29190,12 +28037,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -29222,14 +28070,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete SNMP manager  # noqa: E501
+        """Delete SNMP manager
         
-        Deletes the SNMP manager object and stops communication with specified managers.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_snmp_managers_delete_with_http_info(authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Deletes the SNMP manager object and stops communication with specified managers.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -29258,12 +28101,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -29297,14 +28141,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List SNMP managers  # noqa: E501
+        """List SNMP managers
         
-        Displays designated SNMP managers and their communication and security attributes.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_snmp_managers_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays designated SNMP managers and their communication and security attributes.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -29368,12 +28207,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -29408,17 +28248,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify SNMP manager  # noqa: E501
+        """Modify SNMP manager
         
-        Modifies the name or the protocol attributes of the specified SNMP manager.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_snmp_managers_patch_with_http_info(snmp_manager, authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Modifies the name or the protocol attributes of the specified SNMP manager.
         
         :param snmp_manager: (required)
-        :type snmp_manager: models.SnmpManagerPatch
+        :type snmp_manager: SnmpManagerPatch
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -29446,12 +28281,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -29481,17 +28317,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create SNMP manager  # noqa: E501
+        """Create SNMP manager
         
-        Creates a Purity SNMP manager object that identifies a host (SNMP manager) and specifies the protocol attributes for communicating with it. Once a manager object is created, the transmission of SNMP traps is immediately enabled.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_snmp_managers_post_with_http_info(snmp_manager, authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Creates a Purity SNMP manager object that identifies a host (SNMP manager) and specifies the protocol attributes for communicating with it. Once a manager object is created, the transmission of SNMP traps is immediately enabled.
         
         :param snmp_manager: (required)
-        :type snmp_manager: models.SnmpManagerPost
+        :type snmp_manager: SnmpManagerPost
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -29519,12 +28350,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -29558,14 +28390,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List SNMP manager test results  # noqa: E501
+        """List SNMP manager test results
         
-        Displays SNMP manager test results (traps or informs).  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_snmp_managers_test_get_with_http_info(authorization, x_request_id, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays SNMP manager test results (traps or informs).
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -29622,12 +28449,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -29667,14 +28495,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List session data  # noqa: E501
+        """List session data
         
-        Displays session data for user login events performed in the Purity//FA GUI, CLI, and REST API.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_sessions_get_with_http_info(authorization, x_request_id, continuation_token, filter, ids, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays session data for user login events performed in the Purity//FA GUI, CLI, and REST API.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -29742,12 +28565,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -29786,14 +28610,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List software-bundle  # noqa: E501
+        """List software-bundle
         
-        Displays a list of software bundles.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_software_bundle_get_with_http_info(x_request_id, filter, ids, limit, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of software bundles.
         
         :param references: A list of references to query for. Overrides ids keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -29849,12 +28668,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -29884,17 +28704,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create software-bundle  # noqa: E501
+        """Create software-bundle
         
-        Creates and initiates a software bundle download.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_software_bundle_post_with_http_info(source, x_request_id, async_req=True)
-        >>> result = thread.get()
+        Creates and initiates a software bundle download.
         
         :param source: (required)
-        :type source: models.SoftwareBundlePost
+        :type source: SoftwareBundlePost
         :param x_request_id: Supplied by client during request or generated by server.
         :type x_request_id: str
         :param async_req: Whether to execute the request asynchronously.
@@ -29915,12 +28730,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -29947,14 +28763,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete a software check task  # noqa: E501
+        """Delete a software check task
         
-        Deletes a software check task specified by software name and version. The check task must be queued. If the check task is running or passed/failed then the task cannot be deleted.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_software_check_delete_with_http_info(authorization, x_request_id, software_names, software_versions, async_req=True)
-        >>> result = thread.get()
+        Deletes a software check task specified by software name and version. The check task must be queued. If the check task is running or passed/failed then the task cannot be deleted.
         
         :param softwares: A list of softwares to query for. Overrides software_names keyword argument.
         :type softwares: ReferenceType or List[ReferenceType], optional
@@ -29984,12 +28795,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -30027,14 +28839,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List software check tasks  # noqa: E501
+        """List software check tasks
         
-        Displays a list of software check tasks.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_software_check_get_with_http_info(authorization, x_request_id, filter, ids, limit, names, offset, software_names, software_versions, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of software check tasks.
         
         :param softwares: A list of softwares to query for. Overrides software_names keyword argument.
         :type softwares: ReferenceType or List[ReferenceType], optional
@@ -30101,12 +28908,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -30144,14 +28952,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create a software check task  # noqa: E501
+        """Create a software check task
         
-        Creates a software check task. If there are no previously queued or running software check tasks, the new task immediately starts. Otherwise, it is queued and starts once all previously queued or running software check tasks finish. To create a task, use a software name and version.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_software_check_post_with_http_info(authorization, x_request_id, software_names, software_versions, async_req=True)
-        >>> result = thread.get()
+        Creates a software check task. If there are no previously queued or running software check tasks, the new task immediately starts. Otherwise, it is queued and starts once all previously queued or running software check tasks finish. To create a task, use a software name and version.
         
         :param softwares: A list of softwares to query for. Overrides software_names keyword argument.
         :type softwares: ReferenceType or List[ReferenceType], optional
@@ -30181,12 +28984,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -30216,14 +29020,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete a software package  # noqa: E501
+        """Delete a software package
         
-        Deletes a software package specified by software name and version. A software package being used for an installation can be deleted if the installation is `downloading`, `downloaded`, `aborted`, or `finished`. If the software package is currently `downloading`, the download will be cancelled.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_software_delete_with_http_info(authorization, x_request_id, names, software_versions, async_req=True)
-        >>> result = thread.get()
+        Deletes a software package specified by software name and version. A software package being used for an installation can be deleted if the installation is `downloading`, `downloaded`, `aborted`, or `finished`. If the software package is currently `downloading`, the download will be cancelled.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -30254,12 +29053,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -30295,14 +29095,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List software packages  # noqa: E501
+        """List software packages
         
-        Displays a list of available software packages.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_software_get_with_http_info(authorization, x_request_id, filter, ids, limit, names, offset, sort, total_item_count, versions, async_req=True)
-        >>> result = thread.get()
+        Displays a list of available software packages.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -30365,12 +29160,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -30414,14 +29210,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List software upgrade steps  # noqa: E501
+        """List software upgrade steps
         
-        Displays a list of currently running and completed software upgrade steps.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_software_installation_steps_get_with_http_info(authorization, x_request_id, continuation_token, filter, ids, limit, names, offset, software_installation_ids, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of currently running and completed software upgrade steps.
         
         :param software_installations: A list of software_installations to query for. Overrides software_installation_ids keyword argument.
         :type software_installations: ReferenceType or List[ReferenceType], optional
@@ -30493,12 +29284,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -30545,14 +29337,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List software upgrades  # noqa: E501
+        """List software upgrades
         
-        Displays a list of software upgrades, including currently running and past upgrades.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_software_installations_get_with_http_info(authorization, x_request_id, continuation_token, filter, ids, limit, names, offset, software_ids, software_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of software upgrades, including currently running and past upgrades.
         
         :param softwares: A list of softwares to query for. Overrides software_ids and software_names keyword arguments.
         :type softwares: ReferenceType or List[ReferenceType], optional
@@ -30626,12 +29413,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -30670,14 +29458,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify software upgrade  # noqa: E501
+        """Modify software upgrade
         
-        Modifies a software upgrade by continuing, retrying, or aborting it. All `override_checks` are updated before the command being issued if `add_override_checks` is present. The `override_checks` parameter is valid when `command` is `continue` or `retry`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_software_installations_patch_with_http_info(command, current_step_id, authorization, x_request_id, software_installations, async_req=True)
-        >>> result = thread.get()
+        Modifies a software upgrade by continuing, retrying, or aborting it. All `override_checks` are updated before the command being issued if `add_override_checks` is present. The `override_checks` parameter is valid when `command` is `continue` or `retry`.
         
         :param command: A user command that interacts with the upgrade. Commands may only be issued when
                         the upgrade is paused. Valid values are `continue`, `retry`, and `abort`.
@@ -30711,12 +29494,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -30746,19 +29530,14 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create a software upgrade  # noqa: E501
+        """Create a software upgrade
         
-        Creates and initiates a software upgrade.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_software_installations_post_with_http_info(software_ids, software_installations, authorization, x_request_id, async_req=True)
-        >>> result = thread.get()
+        Creates and initiates a software upgrade.
         
         :param software_ids: A comma-separated list of software IDs. (required)
         :type software_ids: List[str]
         :param software_installations: (required)
-        :type software_installations: models.SoftwareInstallationPost
+        :type software_installations: SoftwareInstallationPost
         :param softwares: A list of softwares to query for. Overrides software_ids keyword argument.
         :type softwares: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -30783,12 +29562,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -30820,14 +29600,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List available software patches  # noqa: E501
+        """List available software patches
         
-        Displays a list of available software patches.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_software_patches_catalog_get_with_http_info(authorization, x_request_id, filter, limit, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of available software patches.
         
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
@@ -30879,12 +29654,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -30921,14 +29697,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List software patches  # noqa: E501
+        """List software patches
         
-        Displays a list of software patches.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_software_patches_get_with_http_info(authorization, x_request_id, filter, ids, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of software patches.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -30989,12 +29760,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -31027,14 +29799,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create a software patch  # noqa: E501
+        """Create a software patch
         
-        Creates software patch download and installation.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_software_patches_post_with_http_info(name, authorization, x_request_id, async_req=True)
-        >>> result = thread.get()
+        Creates software patch download and installation.
         
         :param name: Name of software patch to install (required)
         :type name: str
@@ -31060,12 +29827,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -31091,17 +29859,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create a software package  # noqa: E501
+        """Create a software package
         
-        Creates a software package download.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_software_post_with_http_info(software, authorization, x_request_id, async_req=True)
-        >>> result = thread.get()
+        Creates a software package download.
         
         :param software: (required)
-        :type software: models.SoftwarePost
+        :type software: SoftwarePost
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
         :param x_request_id: Supplied by client during request or generated by server.
@@ -31124,12 +29887,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -31159,14 +29923,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List software versions  # noqa: E501
+        """List software versions
         
-        Displays a list of software versions.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_software_versions_get_with_http_info(authorization, x_request_id, filter, limit, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of software versions.
         
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
@@ -31218,12 +29977,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -31254,14 +30014,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete subnet  # noqa: E501
+        """Delete subnet
         
-        Deletes subnets. A subnet can only be deleted if it has no interfaces. Interfaces must be removed by using the `network-interfaces` endpoint.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_subnets_delete_with_http_info(authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Deletes subnets. A subnet can only be deleted if it has no interfaces. Interfaces must be removed by using the `network-interfaces` endpoint.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -31290,12 +30045,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -31329,14 +30085,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List subnets  # noqa: E501
+        """List subnets
         
-        Displays a list of subnets with statuses and attributes.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_subnets_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of subnets with statuses and attributes.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -31400,12 +30151,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -31440,17 +30192,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify subnet  # noqa: E501
+        """Modify subnet
         
-        Modifies one or more specified subnet properties.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_subnets_patch_with_http_info(subnet, authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Modifies one or more specified subnet properties.
         
         :param subnet: (required)
-        :type subnet: models.SubnetPatch
+        :type subnet: SubnetPatch
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -31478,12 +30225,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -31513,20 +30261,15 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create subnet  # noqa: E501
+        """Create subnet
         
-        Creates a subnet with the specified parameters.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_subnets_post_with_http_info(names, subnet, authorization, x_request_id, async_req=True)
-        >>> result = thread.get()
+        Creates a subnet with the specified parameters.
         
         :param names: Performs the operation on the unique name specified. For example, `name01`.
                     Enter multiple names in comma-separated format. (required)
         :type names: List[str]
         :param subnet: (required)
-        :type subnet: models.SubnetPost
+        :type subnet: SubnetPost
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -31551,12 +30294,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -31589,14 +30333,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List connection paths  # noqa: E501
+        """List connection paths
         
-        Displays connection paths between the current array and each connected array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_support_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays connection paths between the current array and each connected array.
         
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
@@ -31655,12 +30394,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -31691,17 +30431,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create connection path  # noqa: E501
+        """Create connection path
         
-        Creates a connection path from the array to another array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_support_patch_with_http_info(support, authorization, x_request_id, async_req=True)
-        >>> result = thread.get()
+        Creates a connection path from the array to another array.
         
         :param support: (required)
-        :type support: models.SupportPatch
+        :type support: SupportPatch
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
         :param x_request_id: Supplied by client during request or generated by server.
@@ -31724,12 +30459,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -31760,14 +30496,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List Pure Storage Support connection data  # noqa: E501
+        """List Pure Storage Support connection data
         
-        Displays information about whether the array can connect to Pure Storage Support by establishing a secure shell or secure HTTP connection and verifies that messages can be exchanged.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_support_test_get_with_http_info(authorization, x_request_id, filter, limit, offset, sort, test_type, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays information about whether the array can connect to Pure Storage Support by establishing a secure shell or secure HTTP connection and verifies that messages can be exchanged.
         
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
@@ -31822,12 +30553,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -31859,14 +30591,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete syslog server  # noqa: E501
+        """Delete syslog server
         
-        Deletes a configured syslog server and stop forwarding syslog messages.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_syslog_servers_delete_with_http_info(authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Deletes a configured syslog server and stop forwarding syslog messages.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -31895,12 +30622,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -31934,14 +30662,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List syslog servers  # noqa: E501
+        """List syslog servers
         
-        Displays a list of configured syslog servers.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_syslog_servers_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of configured syslog servers.
         
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -32005,12 +30728,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -32045,17 +30769,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify syslog server  # noqa: E501
+        """Modify syslog server
         
-        Modifies the URI of a configured syslog server.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_syslog_servers_patch_with_http_info(syslog_server, authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Modifies the URI of a configured syslog server.
         
         :param syslog_server: (required)
-        :type syslog_server: models.SyslogServer
+        :type syslog_server: SyslogServer
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -32083,12 +30802,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -32118,17 +30838,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create syslog server  # noqa: E501
+        """Create syslog server
         
-        Creates a new syslog server. Transmission of syslog messages is enabled immediately.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_syslog_servers_post_with_http_info(syslog_server, authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Creates a new syslog server. Transmission of syslog messages is enabled immediately.
         
         :param syslog_server: (required)
-        :type syslog_server: models.SyslogServer
+        :type syslog_server: SyslogServer
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -32156,12 +30871,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -32193,14 +30909,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List syslog settings  # noqa: E501
+        """List syslog settings
         
-        Displays syslog settings. Values include `continuation_token`, `items`, `more_items_remaining`, and `total_item_count`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_syslog_servers_settings_get_with_http_info(authorization, x_request_id, filter, limit, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays syslog settings. Values include `continuation_token`, `items`, `more_items_remaining`, and `total_item_count`.
         
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
@@ -32252,12 +30963,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -32287,17 +30999,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify syslog settings  # noqa: E501
+        """Modify syslog settings
         
-        Modifies syslog settings. Values include `continuation_token`, `items`, `more_items_remaining`, and `total_item_count`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_syslog_servers_settings_patch_with_http_info(syslog_server_settings, authorization, x_request_id, async_req=True)
-        >>> result = thread.get()
+        Modifies syslog settings. Values include `continuation_token`, `items`, `more_items_remaining`, and `total_item_count`.
         
         :param syslog_server_settings: (required)
-        :type syslog_server_settings: models.SyslogServerSettings
+        :type syslog_server_settings: SyslogServerSettings
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
         :param x_request_id: Supplied by client during request or generated by server.
@@ -32320,12 +31027,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -32355,14 +31063,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List syslog server test results  # noqa: E501
+        """List syslog server test results
         
-        Displays syslog server test results, which indicate whether the syslog is working and configured correctly.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_syslog_servers_test_get_with_http_info(authorization, x_request_id, filter, limit, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays syslog server test results, which indicate whether the syslog is working and configured correctly.
         
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
@@ -32414,12 +31117,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -32458,14 +31162,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List Virtual Machine Snapshots  # noqa: E501
+        """List Virtual Machine Snapshots
         
-        Displays a list of virtual machine snapshots, including those pending eradication. If `vm_type` is `vvol`, the `recovery_context` in the response will represent a protection group snapshot containing the virtual machine. This must be used as the `source` in the `POST /virtual-machine` method when recovering or overwriting a virtual machine from a snapshot.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_virtual_machine_snapshots_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, limit, offset, sort, total_item_count, vm_ids, vm_type, async_req=True)
-        >>> result = thread.get()
+        Displays a list of virtual machine snapshots, including those pending eradication. If `vm_type` is `vvol`, the `recovery_context` in the response will represent a protection group snapshot containing the virtual machine. This must be used as the `source` in the `POST /virtual-machine` method when recovering or overwriting a virtual machine from a snapshot.
         
         :param vms: A list of vms to query for. Overrides vm_ids keyword argument.
         :type vms: ReferenceType or List[ReferenceType], optional
@@ -32535,12 +31234,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -32584,14 +31284,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List Virtual Machines  # noqa: E501
+        """List Virtual Machines
         
-        Displays a list of virtual machines, including those pending eradication. If `vm_type` is `vvol`, the `recovery_context` in the response will represent the most recent snapshot of the config vVol. This must be used as the `source` in the `PATCH` method when recovering a virtual machine from the destroyed state.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_virtual_machines_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, limit, offset, sort, total_item_count, vm_ids, vm_type, async_req=True)
-        >>> result = thread.get()
+        Displays a list of virtual machines, including those pending eradication. If `vm_type` is `vvol`, the `recovery_context` in the response will represent the most recent snapshot of the config vVol. This must be used as the `source` in the `PATCH` method when recovering a virtual machine from the destroyed state.
         
         :param vms: A list of vms to query for. Overrides vm_ids keyword argument.
         :type vms: ReferenceType or List[ReferenceType], optional
@@ -32661,12 +31356,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -32701,17 +31397,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Update a virtual machine  # noqa: E501
+        """Update a virtual machine
         
-        Updates a virtual machine, recovering it from the destroyed state. If the virtual machine is of type `vvol`, the `source` property of the request body must be a `recovery_context` value retrieved from the `GET /virtual-machines` endpoint. If recovering the virtual machine will cause a conflict with an existing virtual machine, the operation will fail.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_virtual_machines_patch_with_http_info(virtual_machine, authorization, x_request_id, async_req=True)
-        >>> result = thread.get()
+        Updates a virtual machine, recovering it from the destroyed state. If the virtual machine is of type `vvol`, the `source` property of the request body must be a `recovery_context` value retrieved from the `GET /virtual-machines` endpoint. If recovering the virtual machine will cause a conflict with an existing virtual machine, the operation will fail.
         
         :param virtual_machine: (required)
-        :type virtual_machine: models.VirtualMachinePost
+        :type virtual_machine: VirtualMachinePost
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
         :param x_request_id: Supplied by client during request or generated by server.
@@ -32734,12 +31425,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -32766,17 +31458,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create a virtual machine  # noqa: E501
+        """Create a virtual machine
         
-        Creates one or more virtual machines from a protection group snapshot. If the virtual machine is of type `vvol`, the `source` property of the request body must be a `recovery_context` value retrieved from the `GET /virtual-machine-snapshots` endpoint. If `overwrite` is specified, an existing virtual machine will have its volumes overwritten by the snapshot. Otherwise, a new virtual machine will be created from the snapshot. If creating the new virtual machine will cause a conflict with an existing virtual machine, the operation will fail.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_virtual_machines_post_with_http_info(virtual_machine, authorization, x_request_id, overwrite, async_req=True)
-        >>> result = thread.get()
+        Creates one or more virtual machines from a protection group snapshot. If the virtual machine is of type `vvol`, the `source` property of the request body must be a `recovery_context` value retrieved from the `GET /virtual-machine-snapshots` endpoint. If `overwrite` is specified, an existing virtual machine will have its volumes overwritten by the snapshot. Otherwise, a new virtual machine will be created from the snapshot. If creating the new virtual machine will cause a conflict with an existing virtual machine, the operation will fail.
         
         :param virtual_machine: (required)
-        :type virtual_machine: models.VirtualMachinePost
+        :type virtual_machine: VirtualMachinePost
         :param authorization: Deprecated. Please use Client level authorization
         :type authorization: str
         :param x_request_id: Supplied by client during request or generated by server.
@@ -32804,12 +31491,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -32839,14 +31527,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete a volume group  # noqa: E501
+        """Delete a volume group
         
-        Deletes a volume group that has been destroyed and is pending eradication. Eradicated volume groups cannot be recovered. Volume groups are destroyed through the PATCH method. The `ids` or `names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_volume_groups_delete_with_http_info(authorization, x_request_id, eradicate_contents, ids, names, async_req=True)
-        >>> result = thread.get()
+        Deletes a volume group that has been destroyed and is pending eradication. Eradicated volume groups cannot be recovered. Volume groups are destroyed through the PATCH method. The `ids` or `names` parameter is required, but they cannot be set together.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -32883,12 +31566,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -32927,14 +31611,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List volume groups  # noqa: E501
+        """List volume groups
         
-        Displays a list of volume groups, including those pending eradication.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_volume_groups_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, ids, limit, names, offset, sort, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays a list of volume groups, including those pending eradication.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -33011,12 +31690,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -33056,17 +31736,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify a volume group  # noqa: E501
+        """Modify a volume group
         
-        Modifies a volume group. You can rename, destroy, recover, or set QoS limits for a volume group. To rename a volume group, set `name` to the new name. To destroy a volume group, set `destroyed=true`. To recover a volume group that has been destroyed and is pending eradication, set `destroyed=false`. Sets the bandwidth and IOPs limits of a volume group through the respective `bandwidth_limit` and `iops_limit` parameter. The `ids` or `names` parameter is required, but they cannot be set together. Sets the priority adjustment for a volume group using the `priority_adjustment_operator` and `priority_adjustment_value` fields.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_volume_groups_patch_with_http_info(volume_group, authorization, x_request_id, destroy_contents, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modifies a volume group. You can rename, destroy, recover, or set QoS limits for a volume group. To rename a volume group, set `name` to the new name. To destroy a volume group, set `destroyed=true`. To recover a volume group that has been destroyed and is pending eradication, set `destroyed=false`. Sets the bandwidth and IOPs limits of a volume group through the respective `bandwidth_limit` and `iops_limit` parameter. The `ids` or `names` parameter is required, but they cannot be set together. Sets the priority adjustment for a volume group using the `priority_adjustment_operator` and `priority_adjustment_value` fields.
         
         :param volume_group: (required)
-        :type volume_group: models.VolumeGroupPatch
+        :type volume_group: VolumeGroupPatch
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -33102,12 +31777,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -33149,14 +31825,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List volume group performance data  # noqa: E501
+        """List volume group performance data
         
-        Returns real-time and historical performance data, real-time latency data, and average I/O sizes for each volume group and and as a total of all volume groups across the entire array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_volume_groups_performance_get_with_http_info(authorization, x_request_id, destroyed, end_time, filter, ids, limit, names, offset, resolution, sort, start_time, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Returns real-time and historical performance data, real-time latency data, and average I/O sizes for each volume group and and as a total of all volume groups across the entire array.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -33268,12 +31939,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -33313,17 +31985,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create a volume group  # noqa: E501
+        """Create a volume group
         
-        Creates a volume group. The volume group does not contain any meaningful content. The volume group acts as a container that is used to organize volumes. Once a volume group has been created, volumes can be created inside the volume group or moved into and out of the volume group.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_volume_groups_post_with_http_info(volume_group, authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Creates a volume group. The volume group does not contain any meaningful content. The volume group acts as a container that is used to organize volumes. Once a volume group has been created, volumes can be created inside the volume group or moved into and out of the volume group.
         
         :param volume_group: (required)
-        :type volume_group: models.VolumeGroupPost
+        :type volume_group: VolumeGroupPost
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -33351,12 +32018,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -33396,14 +32064,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List volume group space information  # noqa: E501
+        """List volume group space information
         
-        Displays the provisioned size and physical storage consumption data for each volume group.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_volume_groups_space_get_with_http_info(authorization, x_request_id, destroyed, end_time, filter, ids, limit, names, offset, resolution, sort, start_time, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays the provisioned size and physical storage consumption data for each volume group.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -33515,12 +32178,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -33569,14 +32233,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List volume groups with volumes  # noqa: E501
+        """List volume groups with volumes
         
-        Returns a list of volume groups that contain volumes.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_volume_groups_volumes_get_with_http_info(authorization, x_request_id, continuation_token, filter, group_ids, group_names, limit, member_ids, member_names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Returns a list of volume groups that contain volumes.
         
         :param members: A list of members to query for. Overrides member_ids and member_names keyword arguments.
         :type members: ReferenceType or List[ReferenceType], optional
@@ -33653,12 +32312,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -33698,14 +32358,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete a volume snapshot  # noqa: E501
+        """Delete a volume snapshot
         
-        Deletes a volume snapshot that has been destroyed and is pending eradication. Eradicated volume snapshots cannot be recovered. Volume snapshots are destroyed by using the `PATCH` method. The `ids` or `names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_volume_snapshots_delete_with_http_info(authorization, x_request_id, ids, names, replication_snapshot, async_req=True)
-        >>> result = thread.get()
+        Deletes a volume snapshot that has been destroyed and is pending eradication. Eradicated volume snapshots cannot be recovered. Volume snapshots are destroyed by using the `PATCH` method. The `ids` or `names` parameter is required, but they cannot be set together.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -33743,12 +32398,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -33790,14 +32446,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List volume snapshots  # noqa: E501
+        """List volume snapshots
         
-        Displays a list of volume snapshots, including those pending eradication.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_volume_snapshots_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, ids, limit, names, offset, sort, source_ids, source_names, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays a list of volume snapshots, including those pending eradication.
         
         :param sources: A list of sources to query for. Overrides source_ids and source_names keyword arguments.
         :type sources: ReferenceType or List[ReferenceType], optional
@@ -33882,12 +32533,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -33930,17 +32582,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify a volume snapshot  # noqa: E501
+        """Modify a volume snapshot
         
-        Modifies a volume snapshot by renaming, destroying, or recovering it. To rename the suffix of a volume snapshot, set `name` to the new suffix name. To recover a volume snapshot that has been destroyed and is pending eradication, set `destroyed=true`. The `ids` or `names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_volume_snapshots_patch_with_http_info(volume_snapshot, authorization, x_request_id, ids, names, replication_snapshot, async_req=True)
-        >>> result = thread.get()
+        Modifies a volume snapshot by renaming, destroying, or recovering it. To rename the suffix of a volume snapshot, set `name` to the new suffix name. To recover a volume snapshot that has been destroyed and is pending eradication, set `destroyed=true`. The `ids` or `names` parameter is required, but cannot be set together.
         
         :param volume_snapshot: (required)
-        :type volume_snapshot: models.VolumeSnapshotPatch
+        :type volume_snapshot: VolumeSnapshotPatch
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -33977,12 +32624,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -34016,17 +32664,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create a volume snapshot  # noqa: E501
+        """Create a volume snapshot
         
-        Creates a point-in-time snapshot of the contents of a volume. The `source_ids` or `source_names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_volume_snapshots_post_with_http_info(volume_snapshot, authorization, x_request_id, on, source_ids, source_names, async_req=True)
-        >>> result = thread.get()
+        Creates a point-in-time snapshot of the contents of a volume. The `source_ids` or `source_names` parameter is required, but they cannot be set together.
         
         :param volume_snapshot: (required)
-        :type volume_snapshot: models.VolumeSnapshotPost
+        :type volume_snapshot: VolumeSnapshotPost
         :param sources: A list of sources to query for. Overrides source_ids and source_names keyword arguments.
         :type sources: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -34060,12 +32703,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -34098,17 +32742,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Update tags  # noqa: E501
+        """Update tags
         
-        Updates tags.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_volume_snapshots_tags_batch_put_with_http_info(tag, authorization, x_request_id, resource_ids, resource_names, async_req=True)
-        >>> result = thread.get()
+        Updates tags.
         
         :param tag: A list of tags to be created or modified. (required)
-        :type tag: List[models.Tag]
+        :type tag: List[Tag]
         :param resources: A list of resources to query for. Overrides resource_ids and resource_names keyword arguments.
         :type resources: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -34139,12 +32778,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -34177,14 +32817,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete tags  # noqa: E501
+        """Delete tags
         
-        Deletes specified tags.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_volume_snapshots_tags_delete_with_http_info(authorization, x_request_id, keys, namespaces, resource_ids, resource_names, async_req=True)
-        >>> result = thread.get()
+        Deletes specified tags.
         
         :param resources: A list of resources to query for. Overrides resource_ids and resource_names keyword arguments.
         :type resources: ReferenceType or List[ReferenceType], optional
@@ -34221,12 +32856,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -34266,14 +32902,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List tags  # noqa: E501
+        """List tags
         
-        Displays the list of tags.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_volume_snapshots_tags_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, namespaces, offset, resource_destroyed, resource_ids, resource_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays the list of tags.
         
         :param resources: A list of resources to query for. Overrides resource_ids and resource_names keyword arguments.
         :type resources: ReferenceType or List[ReferenceType], optional
@@ -34348,12 +32979,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -34401,14 +33033,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List volume snapshots with transfer statistics  # noqa: E501
+        """List volume snapshots with transfer statistics
         
-        Returns a list of volume snapshots and their transfer statistics.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_volume_snapshots_transfer_get_with_http_info(authorization, x_request_id, destroyed, filter, ids, limit, names, offset, sort, source_ids, source_names, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Returns a list of volume snapshots and their transfer statistics.
         
         :param sources: A list of sources to query for. Overrides source_ids and source_names keyword arguments.
         :type sources: ReferenceType or List[ReferenceType], optional
@@ -34486,12 +33113,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -34531,14 +33159,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete a volume  # noqa: E501
+        """Delete a volume
         
-        Deletes a volume that has been destroyed and is pending eradication. Eradicated volumes cannot be recovered. Volumes are destroyed using the `PATCH` method. The `ids` or `names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_volumes_delete_with_http_info(authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Deletes a volume that has been destroyed and is pending eradication. Eradicated volumes cannot be recovered. Volumes are destroyed using the `PATCH` method. The `ids` or `names` parameter is required, but they cannot be set together.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -34571,12 +33194,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -34617,14 +33241,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List volume diffs  # noqa: E501
+        """List volume diffs
         
-        Displays block differences for the specified volumes.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_volumes_diff_get_with_http_info(block_size, segment_length, authorization, x_request_id, base_id, base_name, filter, ids, limit, names, next_allocated_block_hint, offset, segment_offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays block differences for the specified volumes.
         
         :param block_size: Granularity at which to compare, in bytes. Must be a multiple of 512. (required)
         :type block_size: int
@@ -34707,12 +33326,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -34761,14 +33381,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List volumes  # noqa: E501
+        """List volumes
         
-        Displays a list of volumes, including those pending eradication.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_volumes_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, ids, limit, names, offset, sort, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays a list of volumes, including those pending eradication.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -34845,12 +33460,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -34894,17 +33510,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Modify a volume  # noqa: E501
+        """Modify a volume
         
-        Modifies a volume by renaming, destroying, or resizing it. To rename a volume, set `name` to the new name. To destroy a volume, set `destroyed=true`. To recover a volume that has been destroyed and is pending eradication, set `destroyed=false`. Set the bandwidth and IOPs limits of a volume through the respective `bandwidth_limit` and `iops_limit` parameter. This moves the volume into a pod or volume group through the respective `pod` or `volume_group` parameter. The `ids` or `names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_volumes_patch_with_http_info(volume, authorization, x_request_id, add_to_protection_group_names, ids, names, remove_from_protection_group_names, truncate, async_req=True)
-        >>> result = thread.get()
+        Modifies a volume by renaming, destroying, or resizing it. To rename a volume, set `name` to the new name. To destroy a volume, set `destroyed=true`. To recover a volume that has been destroyed and is pending eradication, set `destroyed=false`. Set the bandwidth and IOPs limits of a volume through the respective `bandwidth_limit` and `iops_limit` parameter. This moves the volume into a pod or volume group through the respective `pod` or `volume_group` parameter. The `ids` or `names` parameter is required, but they cannot be set together.
         
         :param volume: (required)
-        :type volume: models.VolumePatch
+        :type volume: VolumePatch
         :param remove_from_protection_groups: A list of remove_from_protection_groups to query for. Overrides remove_from_protection_group_names keyword argument.
         :type remove_from_protection_groups: ReferenceType or List[ReferenceType], optional
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
@@ -34961,12 +33572,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -35012,14 +33624,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List volume performance data by array  # noqa: E501
+        """List volume performance data by array
         
-        Return real-time and historical performance data, real-time latency data, and average I/O size data. The data returned is for each volume on the current array and for each volume on any remote arrays that are visible to the current array. The data is grouped by individual volumes and as a total across all volumes on each array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_volumes_performance_by_array_get_with_http_info(authorization, x_request_id, destroyed, end_time, filter, ids, limit, names, offset, resolution, sort, start_time, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Return real-time and historical performance data, real-time latency data, and average I/O size data. The data returned is for each volume on the current array and for each volume on any remote arrays that are visible to the current array. The data is grouped by individual volumes and as a total across all volumes on each array.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -35131,12 +33738,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -35186,14 +33794,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List volume performance data  # noqa: E501
+        """List volume performance data
         
-        Returns real-time and historical performance data, real-time latency data, and average I/O sizes for each volume and and as a total of all volumes across the entire array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_volumes_performance_get_with_http_info(authorization, x_request_id, destroyed, end_time, filter, ids, limit, names, offset, resolution, sort, start_time, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Returns real-time and historical performance data, real-time latency data, and average I/O sizes for each volume and and as a total of all volumes across the entire array.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -35305,12 +33908,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -35354,17 +33958,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create a volume  # noqa: E501
+        """Create a volume
         
-        Creates one or more virtual storage volumes of the specified size. If `provisioned` is not specified, the size of the new volume defaults to 1 MB. The `names` query parameter is required. The `add_to_protection_group_names` query parameter specifies a list of protection group names that will compose the initial protection for the volume. The `with_default_protection` query parameter specifies whether to use the container default protection configuration for the volume. The `add_to_protection_group_names` and `with_default_protection` query parameters cannot be provided when `overwrite` is `true`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_volumes_post_with_http_info(volume, authorization, x_request_id, add_to_protection_group_names, names, overwrite, with_default_protection, async_req=True)
-        >>> result = thread.get()
+        Creates one or more virtual storage volumes of the specified size. If `provisioned` is not specified, the size of the new volume defaults to 1 MB. The `names` query parameter is required. The `add_to_protection_group_names` query parameter specifies a list of protection group names that will compose the initial protection for the volume. The `with_default_protection` query parameter specifies whether to use the container default protection configuration for the volume. The `add_to_protection_group_names` and `with_default_protection` query parameters cannot be provided when `overwrite` is `true`.
         
         :param volume: (required)
-        :type volume: models.VolumePost
+        :type volume: VolumePost
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param add_to_protection_groups: A list of add_to_protection_groups to query for. Overrides add_to_protection_group_names keyword argument.
@@ -35411,12 +34010,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -35452,14 +34052,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete a volume from a protection group  # noqa: E501
+        """Delete a volume from a protection group
         
-        Deletes a volume member from a protection group. After the member has been deleted, it is no longer protected by the group. Any protection group snapshots that were taken before the member was deleted are not affected. Deleting a member from a protection group does not delete the member from the array, and the member can be added back to the protection group at any time. The `group_names` parameter represents the name of the protection group, and the `member_names` and `member_ids` parameters represent the names or IDs of the volume. The `group_names` and only one of `member_names` or `member_ids` parameters are required and must be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_volumes_protection_groups_delete_with_http_info(authorization, x_request_id, group_names, member_ids, member_names, async_req=True)
-        >>> result = thread.get()
+        Deletes a volume member from a protection group. After the member has been deleted, it is no longer protected by the group. Any protection group snapshots that were taken before the member was deleted are not affected. Deleting a member from a protection group does not delete the member from the array, and the member can be added back to the protection group at any time. The `group_names` parameter represents the name of the protection group, and the `member_names` and `member_ids` parameters represent the names or IDs of the volume. The `group_names` and only one of `member_names` or `member_ids` parameters are required and must be set together.
         
         :param members: A list of members to query for. Overrides member_ids and member_names keyword arguments.
         :type members: ReferenceType or List[ReferenceType], optional
@@ -35499,12 +34094,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -35545,14 +34141,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List volumes that are members of protection groups  # noqa: E501
+        """List volumes that are members of protection groups
         
-        Displays a list of volume members that belong to one or more protection groups.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_volumes_protection_groups_get_with_http_info(authorization, x_request_id, continuation_token, filter, group_names, limit, member_destroyed, member_ids, member_names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of volume members that belong to one or more protection groups.
         
         :param members: A list of members to query for. Overrides member_ids and member_names keyword arguments.
         :type members: ReferenceType or List[ReferenceType], optional
@@ -35632,12 +34223,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -35678,14 +34270,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Create a volume and add it to a protection group  # noqa: E501
+        """Create a volume and add it to a protection group
         
-        Creates a volume member and adds it to a protection group. Members that are already in the protection group are not affected. For asynchronous replication, only members of the same type can belong to a protection group. The `group_names` parameter represents the name of the protection group, and the `member_names` and `member_ids` parameters represent the names or IDs of the volume. The `group_names` and only one of `member_names` or `member_ids` parameters are required and must be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_volumes_protection_groups_post_with_http_info(authorization, x_request_id, group_names, member_ids, member_names, async_req=True)
-        >>> result = thread.get()
+        Creates a volume member and adds it to a protection group. Members that are already in the protection group are not affected. For asynchronous replication, only members of the same type can belong to a protection group. The `group_names` parameter represents the name of the protection group, and the `member_names` and `member_ids` parameters represent the names or IDs of the volume. The `group_names` and only one of `member_names` or `member_ids` parameters are required and must be set together.
         
         :param members: A list of members to query for. Overrides member_ids and member_names keyword arguments.
         :type members: ReferenceType or List[ReferenceType], optional
@@ -35725,12 +34312,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -35772,14 +34360,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List volume space information  # noqa: E501
+        """List volume space information
         
-        Displays the provisioned size and physical storage consumption data for each volume.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_volumes_space_get_with_http_info(authorization, x_request_id, destroyed, end_time, filter, ids, limit, names, offset, resolution, sort, start_time, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays the provisioned size and physical storage consumption data for each volume.
         
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
@@ -35891,12 +34474,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -35937,17 +34521,12 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Update tags  # noqa: E501
+        """Update tags
         
-        Updates tags.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_volumes_tags_batch_put_with_http_info(tag, authorization, x_request_id, resource_ids, resource_names, async_req=True)
-        >>> result = thread.get()
+        Updates tags.
         
         :param tag: A list of tags to be created or, if already existing, updated. (required)
-        :type tag: List[models.Tag]
+        :type tag: List[Tag]
         :param resources: A list of resources to query for. Overrides resource_ids and resource_names keyword arguments.
         :type resources: ReferenceType or List[ReferenceType], optional
         :param authorization: Deprecated. Please use Client level authorization
@@ -35978,12 +34557,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -36016,14 +34596,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """Delete tags  # noqa: E501
+        """Delete tags
         
-        Deletes specified tags.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_volumes_tags_delete_with_http_info(authorization, x_request_id, keys, namespaces, resource_ids, resource_names, async_req=True)
-        >>> result = thread.get()
+        Deletes specified tags.
         
         :param resources: A list of resources to query for. Overrides resource_ids and resource_names keyword arguments.
         :type resources: ReferenceType or List[ReferenceType], optional
@@ -36060,12 +34635,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -36105,14 +34681,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List tags  # noqa: E501
+        """List tags
         
-        Displays the list of tags.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_volumes_tags_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, namespaces, offset, resource_destroyed, resource_ids, resource_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays the list of tags.
         
         :param resources: A list of resources to query for. Overrides resource_ids and resource_names keyword arguments.
         :type resources: ReferenceType or List[ReferenceType], optional
@@ -36187,12 +34758,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(
@@ -36239,14 +34811,9 @@ class Client(object):
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
     ) -> Union[ValidResponse, ErrorResponse]:
-        """List volumes that are in volume groups  # noqa: E501
+        """List volumes that are in volume groups
         
-        Returns a list of volumes that are in a volume group.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        
-        >>> thread = api.api223_volumes_volume_groups_get_with_http_info(authorization, x_request_id, continuation_token, filter, group_ids, group_names, limit, member_ids, member_names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Returns a list of volumes that are in a volume group.
         
         :param members: A list of members to query for. Overrides member_ids and member_names keyword arguments.
         :type members: ReferenceType or List[ReferenceType], optional
@@ -36323,12 +34890,13 @@ class Client(object):
                  (connection, read) timeouts.
         :type _request_timeout: int or (float, float), optional
         
-        :returns ValidResponse: If the call was successful.
+        :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
+        :rtype: [Union[ValidResponse, ErrorResponse]]
         
-        :raises PureError: If calling the API fails.
-        :raises ValueError: If a parameter is of an invalid type.
-        :raises TypeError: If invalid or missing parameters are used.
+        :raises: PureError: If calling the API fails.
+        :raises: ValueError: If a parameter is of an invalid type.
+        :raises: TypeError: If invalid or missing parameters are used.
         """ # noqa: E501
 
         kwargs = dict(

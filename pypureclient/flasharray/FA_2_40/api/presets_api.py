@@ -28,6 +28,7 @@ from pypureclient.flasharray.FA_2_40.models.preset_workload_get_response import 
 from pypureclient.flasharray.FA_2_40.models.preset_workload_patch import PresetWorkloadPatch
 from pypureclient.flasharray.FA_2_40.models.preset_workload_post import PresetWorkloadPost
 from pypureclient.flasharray.FA_2_40.models.preset_workload_response import PresetWorkloadResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_40.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_40.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_40.exceptions import (  # noqa: F401
@@ -55,14 +56,9 @@ class PresetsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique resource names specified. Only one value is supported.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete a workload preset  # noqa: E501
+        """Delete a workload preset
 
-        Deletes a workload preset permanently. The `ids` or `names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api240_presets_workload_delete_with_http_info(authorization, x_request_id, context_names, ids, names, async_req=True)
-        >>> result = thread.get()
+        Deletes a workload preset permanently. The `ids` or `names` parameter is required, but they cannot be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -193,14 +189,9 @@ class PresetsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List workload presets  # noqa: E501
+        """List workload presets
 
-        Displays a list of workload presets.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api240_presets_workload_get_with_http_info(authorization, x_request_id, context_names, ids, names, async_req=True)
-        >>> result = thread.get()
+        Displays a list of workload presets.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -338,14 +329,9 @@ class PresetsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique resource names specified. Only one value is supported.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Modify a workload preset  # noqa: E501
+        """Modify a workload preset
 
-        Modifies a workload preset by overriding the fields specified in `preset`. To rename a workload preset, set name to the new name.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api240_presets_workload_patch_with_http_info(preset, authorization, x_request_id, context_names, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modifies a workload preset by overriding the fields specified in `preset`. To rename a workload preset, set name to the new name.
 
         :param preset: (required)
         :type preset: PresetWorkloadPatch
@@ -495,14 +481,9 @@ class PresetsApi:
         context_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the context specified. If specified, the context names must be an array of size 1, and the single element must be the name of an array in the same fleet. If not specified, the context will default to the array that received this request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create a workload preset  # noqa: E501
+        """Create a workload preset
 
-        Creates one workload preset.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api240_presets_workload_post_with_http_info(names, preset, authorization, x_request_id, context_names, async_req=True)
-        >>> result = thread.get()
+        Creates one workload preset.
 
         :param names: Performs the operation on the unique resource names specified. Only one value is supported. (required)
         :type names: List[str]
@@ -646,14 +627,9 @@ class PresetsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique resource names specified. Only one value is supported.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Update a workload preset  # noqa: E501
+        """Update a workload preset
 
-        Updates a workload preset by replacing it with the new contents in `preset`. The `ids` or `names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api240_presets_workload_put_with_http_info(preset, authorization, x_request_id, context_names, ids, names, async_req=True)
-        >>> result = thread.get()
+        Updates a workload preset by replacing it with the new contents in `preset`. The `ids` or `names` parameter is required, but they cannot be set together.
 
         :param preset: (required)
         :type preset: PresetWorkload

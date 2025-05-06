@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictFloat, StrictInt
 
 class NetworkInterfacePortDetailsStaticVoltageThresholds(BaseModel):
     """
-    The alarm low, warn low, warn high, alarm high thresholds for supply voltage (in volts).  # noqa: E501
+    The alarm low, warn low, warn high, alarm high thresholds for supply voltage (in volts).
     """
     alarm_high: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The alarm high threshold for supply voltage in volts.")
     alarm_low: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The alarm low threshold for supply voltage in volts.")

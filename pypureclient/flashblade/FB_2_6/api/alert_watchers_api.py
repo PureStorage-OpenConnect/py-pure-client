@@ -28,6 +28,7 @@ from pypureclient.flashblade.FB_2_6.models.alert_watcher_get_response import Ale
 from pypureclient.flashblade.FB_2_6.models.alert_watcher_post import AlertWatcherPost
 from pypureclient.flashblade.FB_2_6.models.alert_watcher_response import AlertWatcherResponse
 from pypureclient.flashblade.FB_2_6.models.test_result_response import TestResultResponse
+from typing import Optional
 from pypureclient.flashblade.FB_2_6.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_6.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_6.exceptions import (  # noqa: F401
@@ -52,14 +53,9 @@ class AlertWatchersApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE alert-watchers  # noqa: E501
+        """DELETE alert-watchers
 
-        Delete an alert watcher.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api26_alert_watchers_delete_with_http_info(ids, names, async_req=True)
-        >>> result = thread.get()
+        Delete an alert watcher.
 
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
         :type ids: List[str]
@@ -173,14 +169,9 @@ class AlertWatchersApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET alert-watchers  # noqa: E501
+        """GET alert-watchers
 
-        List alert watchers that are configured to receive alert messages.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api26_alert_watchers_get_with_http_info(continuation_token, filter, ids, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        List alert watchers that are configured to receive alert messages.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -327,14 +318,9 @@ class AlertWatchersApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH alert-watchers  # noqa: E501
+        """PATCH alert-watchers
 
-        Modify an alert watcher’s configuration. Enable or disable an alert watcher privilege and select the level of alert notification of an alert watcher. Alert notification levels are `info`, `warning`, or `critical`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api26_alert_watchers_patch_with_http_info(alert_watcher, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modify an alert watcher’s configuration. Enable or disable an alert watcher privilege and select the level of alert notification of an alert watcher. Alert notification levels are `info`, `warning`, or `critical`.
 
         :param alert_watcher: (required)
         :type alert_watcher: AlertWatcher
@@ -462,14 +448,9 @@ class AlertWatchersApi:
         alert_watcher: Optional[AlertWatcherPost] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST alert-watchers  # noqa: E501
+        """POST alert-watchers
 
-        Create an alert watcher to receive array alert messages.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api26_alert_watchers_post_with_http_info(names, alert_watcher, async_req=True)
-        >>> result = thread.get()
+        Create an alert watcher to receive array alert messages.
 
         :param names: A comma-separated list of resource names. (required)
         :type names: List[str]
@@ -592,14 +573,9 @@ class AlertWatchersApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET alert-watchers/test  # noqa: E501
+        """GET alert-watchers/test
 
-        Test an alert watcher's contact information to verify alerts can be sent and received.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api26_alert_watchers_test_get_with_http_info(filter, ids, names, sort, async_req=True)
-        >>> result = thread.get()
+        Test an alert watcher's contact information to verify alerts can be sent and received.
 
         :param filter: Exclude resources that don't match the specified criteria.
         :type filter: str

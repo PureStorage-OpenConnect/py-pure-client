@@ -36,6 +36,7 @@ from pypureclient.flasharray.FA_2_33.models.protection_groups_volumes_get_respon
 from pypureclient.flasharray.FA_2_33.models.protection_groups_volumes_response import ProtectionGroupsVolumesResponse
 from pypureclient.flasharray.FA_2_33.models.resource_space_get_response import ResourceSpaceGetResponse
 from pypureclient.flasharray.FA_2_33.models.target_protection_group_post_patch import TargetProtectionGroupPostPatch
+from typing import Optional
 from pypureclient.flasharray.FA_2_33.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_33.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_33.exceptions import (  # noqa: F401
@@ -62,14 +63,9 @@ class ProtectionGroupsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete a protection group  # noqa: E501
+        """Delete a protection group
 
-        Deletes a protection group that has been destroyed and is pending eradication. Eradicated protection groups cannot be recovered. Protection groups are destroyed through the `PATCH` method. The `names` parameter is required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api233_protection_groups_delete_with_http_info(authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Deletes a protection group that has been destroyed and is pending eradication. Eradicated protection groups cannot be recovered. Protection groups are destroyed through the `PATCH` method. The `names` parameter is required.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -200,14 +196,9 @@ class ProtectionGroupsApi:
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List protection groups  # noqa: E501
+        """List protection groups
 
-        Displays a list of protection groups, including their associated source arrays, replication targets, hosts, host groups, and volumes. The list includes protection groups that were created on the local array to replicate snapshot data to other arrays or offload targets, created on a remote array and replicated asynchronously to this array, or created inside a pod on a remote array and stretched to the local array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api233_protection_groups_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, ids, limit, names, offset, sort, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays a list of protection groups, including their associated source arrays, replication targets, hosts, host groups, and volumes. The list includes protection groups that were created on the local array to replicate snapshot data to other arrays or offload targets, created on a remote array and replicated asynchronously to this array, or created inside a pod on a remote array and stretched to the local array.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -386,14 +377,9 @@ class ProtectionGroupsApi:
         member_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique member name specified. Examples of members include volumes, hosts, host groups, and directories. Enter multiple names in comma-separated format. For example, `vol01,vol02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete a host group from a protection group  # noqa: E501
+        """Delete a host group from a protection group
 
-        Deletes a host group member from a protection group. After the member has been removed, it is no longer protected by the group. Protection group snapshots taken before the member was removed will not be affected. Removing a member from a protection group does not delete the member from the array, and the member can be added back to the protection group at any time. The `group_names` parameter represents the name of the protection group, and the `member_names` parameter represents the name of the host group. The `group_names` and `member_names` parameters are required and must be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api233_protection_groups_host_groups_delete_with_http_info(authorization, x_request_id, group_ids, group_names, member_names, async_req=True)
-        >>> result = thread.get()
+        Deletes a host group member from a protection group. After the member has been removed, it is no longer protected by the group. Protection group snapshots taken before the member was removed will not be affected. Removing a member from a protection group does not delete the member from the array, and the member can be added back to the protection group at any time. The `group_names` parameter represents the name of the protection group, and the `member_names` parameter represents the name of the host group. The `group_names` and `member_names` parameters are required and must be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -530,14 +516,9 @@ class ProtectionGroupsApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List protection groups with host group members  # noqa: E501
+        """List protection groups with host group members
 
-        Displays a list of protection groups that have host group members.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api233_protection_groups_host_groups_get_with_http_info(authorization, x_request_id, continuation_token, filter, group_ids, group_names, limit, member_names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of protection groups that have host group members.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -711,14 +692,9 @@ class ProtectionGroupsApi:
         member_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique member name specified. Examples of members include volumes, hosts, host groups, and directories. Enter multiple names in comma-separated format. For example, `vol01,vol02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Creates an action to add a host group to a protection group  # noqa: E501
+        """Creates an action to add a host group to a protection group
 
-        Creates an action to add a host group member to a protection group. Members that are already in the protection group are not affected. For asynchronous replication, only members of the same type can belong to a protection group. The `group_names` parameter represents the name of the protection group, and the `member_names` parameter represents the name of the host group. The `group_names` and `member_names` parameters are required and must be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api233_protection_groups_host_groups_post_with_http_info(authorization, x_request_id, group_ids, group_names, member_names, async_req=True)
-        >>> result = thread.get()
+        Creates an action to add a host group member to a protection group. Members that are already in the protection group are not affected. For asynchronous replication, only members of the same type can belong to a protection group. The `group_names` parameter represents the name of the protection group, and the `member_names` parameter represents the name of the host group. The `group_names` and `member_names` parameters are required and must be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -855,14 +831,9 @@ class ProtectionGroupsApi:
         member_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique member name specified. Examples of members include volumes, hosts, host groups, and directories. Enter multiple names in comma-separated format. For example, `vol01,vol02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete a host from a protection group  # noqa: E501
+        """Delete a host from a protection group
 
-        Deletes a host member from a protection group. After the member has been removed, it is no longer protected by the group. Any protection group snapshots that were taken before the member was removed will not be affected. Removing a member from a protection group does not delete the member from the array, and the member can be added back to the protection group at any time. The `group_names` parameter represents the name of the protection group, and the `member_names` parameter represents the name of the host. The `group_names` and `member_names` parameters are required and must be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api233_protection_groups_hosts_delete_with_http_info(authorization, x_request_id, group_ids, group_names, member_names, async_req=True)
-        >>> result = thread.get()
+        Deletes a host member from a protection group. After the member has been removed, it is no longer protected by the group. Any protection group snapshots that were taken before the member was removed will not be affected. Removing a member from a protection group does not delete the member from the array, and the member can be added back to the protection group at any time. The `group_names` parameter represents the name of the protection group, and the `member_names` parameter represents the name of the host. The `group_names` and `member_names` parameters are required and must be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -999,14 +970,9 @@ class ProtectionGroupsApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List protection groups with host members  # noqa: E501
+        """List protection groups with host members
 
-        Displays a list of protection groups that have host members.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api233_protection_groups_hosts_get_with_http_info(authorization, x_request_id, continuation_token, filter, group_ids, group_names, limit, member_names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of protection groups that have host members.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -1180,14 +1146,9 @@ class ProtectionGroupsApi:
         member_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique member name specified. Examples of members include volumes, hosts, host groups, and directories. Enter multiple names in comma-separated format. For example, `vol01,vol02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create an action to add a host to a protection group  # noqa: E501
+        """Create an action to add a host to a protection group
 
-        Creates an action to add a host member to a protection group. Members that are already in the protection group are not affected. For asynchronous replication, only members of the same type can belong to a protection group. The `group_names` parameter represents the name of the protection group, and the `member_names` parameter represents the name of the host. The `group_names` and `member_names` parameters are required and must be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api233_protection_groups_hosts_post_with_http_info(authorization, x_request_id, group_ids, group_names, member_names, async_req=True)
-        >>> result = thread.get()
+        Creates an action to add a host member to a protection group. Members that are already in the protection group are not affected. For asynchronous replication, only members of the same type can belong to a protection group. The `group_names` parameter represents the name of the protection group, and the `member_names` parameter represents the name of the host. The `group_names` and `member_names` parameters are required and must be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -1324,14 +1285,9 @@ class ProtectionGroupsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Modify a protection group  # noqa: E501
+        """Modify a protection group
 
-        Modifies the protection group schedules to generate and replicate snapshots to another array or to an external storage system. Renames or destroys a protection group.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api233_protection_groups_patch_with_http_info(protection_group, authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modifies the protection group schedules to generate and replicate snapshots to another array or to an external storage system. Renames or destroys a protection group.
 
         :param protection_group: (required)
         :type protection_group: ProtectionGroup
@@ -1482,14 +1438,9 @@ class ProtectionGroupsApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List protection group replication performance data with array details  # noqa: E501
+        """List protection group replication performance data with array details
 
-        Displays the total number of bytes of replication data transmitted and received per second. The data is grouped by protection group and includes the names of the source array and targets for each protection group.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api233_protection_groups_performance_replication_by_array_get_with_http_info(authorization, x_request_id, destroyed, end_time, filter, ids, limit, names, offset, resolution, sort, start_time, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays the total number of bytes of replication data transmitted and received per second. The data is grouped by protection group and includes the names of the source array and targets for each protection group.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -1682,14 +1633,9 @@ class ProtectionGroupsApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List protection group replication performance data  # noqa: E501
+        """List protection group replication performance data
 
-        Displays the total number of bytes of replication data transmitted and received per second. The data is grouped by protection group.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api233_protection_groups_performance_replication_get_with_http_info(authorization, x_request_id, destroyed, end_time, filter, ids, limit, names, offset, resolution, sort, start_time, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays the total number of bytes of replication data transmitted and received per second. The data is grouped by protection group.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -1875,14 +1821,9 @@ class ProtectionGroupsApi:
         source_names: Annotated[Optional[conlist(StrictStr)], Field(description="The name of the protection group or protection group snapshot to be copied into a new or existing protection group. If the destination protection group and all of its volumes already exist, include the `overwrite` parameter to overwrite all of the existing volumes with the snapshot contents. If including the `overwrite` parameter, the names of the volumes that are being overwritten must match the names of the volumes that are being restored. If the source is a protection group, the latest snapshot of the protection group will be used as the source during the copy operation.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create a protection group  # noqa: E501
+        """Create a protection group
 
-        Creates a protection group on the local array for asynchronous replication.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api233_protection_groups_post_with_http_info(authorization, x_request_id, names, overwrite, source_ids, source_names, async_req=True)
-        >>> result = thread.get()
+        Creates a protection group on the local array for asynchronous replication.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -2031,14 +1972,9 @@ class ProtectionGroupsApi:
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List protection group space information  # noqa: E501
+        """List protection group space information
 
-        Displays provisioned size and physical storage consumption data for each protection group.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api233_protection_groups_space_get_with_http_info(authorization, x_request_id, destroyed, filter, ids, limit, names, offset, sort, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays provisioned size and physical storage consumption data for each protection group.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -2211,14 +2147,9 @@ class ProtectionGroupsApi:
         member_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique member name specified. Examples of members include volumes, hosts, host groups, and directories. Enter multiple names in comma-separated format. For example, `vol01,vol02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete a target from a protection group  # noqa: E501
+        """Delete a target from a protection group
 
-        Deletes an array or offload target from a protection group. The `group_names` parameter represents the name of the protection group. The `member_names` parameter represents the name of the array or offload target that is being removed from the protection group. The `group_names` and `member_names` parameters are required and must be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api233_protection_groups_targets_delete_with_http_info(authorization, x_request_id, group_ids, group_names, member_names, async_req=True)
-        >>> result = thread.get()
+        Deletes an array or offload target from a protection group. The `group_names` parameter represents the name of the protection group. The `member_names` parameter represents the name of the array or offload target that is being removed from the protection group. The `group_names` and `member_names` parameters are required and must be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -2355,14 +2286,9 @@ class ProtectionGroupsApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List protection groups with targets  # noqa: E501
+        """List protection groups with targets
 
-        Displays a list of protection groups that have target arrays or offload targets.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api233_protection_groups_targets_get_with_http_info(authorization, x_request_id, continuation_token, filter, group_ids, group_names, limit, member_names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of protection groups that have target arrays or offload targets.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -2537,14 +2463,9 @@ class ProtectionGroupsApi:
         member_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique member name specified. Examples of members include volumes, hosts, host groups, and directories. Enter multiple names in comma-separated format. For example, `vol01,vol02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Modify a protection group target  # noqa: E501
+        """Modify a protection group target
 
-        Modifies the source array to replicate protection group data to the target array, or disallows the source array from replicating protection group data to the target array. The `allowed` parameter must be set from the target array. The `group_names` parameter represents the name of the protection group. The `allowed` and `group_names` parameters are required and must be set together. Offload targets do not support the `allowed` parameter.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api233_protection_groups_targets_patch_with_http_info(target, authorization, x_request_id, group_ids, group_names, member_names, async_req=True)
-        >>> result = thread.get()
+        Modifies the source array to replicate protection group data to the target array, or disallows the source array from replicating protection group data to the target array. The `allowed` parameter must be set from the target array. The `group_names` parameter represents the name of the protection group. The `allowed` and `group_names` parameters are required and must be set together. Offload targets do not support the `allowed` parameter.
 
         :param target: (required)
         :type target: TargetProtectionGroupPostPatch
@@ -2694,14 +2615,9 @@ class ProtectionGroupsApi:
         member_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique member name specified. Examples of members include volumes, hosts, host groups, and directories. Enter multiple names in comma-separated format. For example, `vol01,vol02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create an action to add a target to a protection group  # noqa: E501
+        """Create an action to add a target to a protection group
 
-        Creates an action to add an array or offload target to a protection group. The `group_names` parameter represents the name of the protection group. The `member_names` parameter represents the name of the array or offload target that is being added to the protection group. The `group_names` and `member_names` parameters are required and must be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api233_protection_groups_targets_post_with_http_info(authorization, x_request_id, group_ids, group_names, member_names, async_req=True)
-        >>> result = thread.get()
+        Creates an action to add an array or offload target to a protection group. The `group_names` parameter represents the name of the protection group. The `member_names` parameter represents the name of the array or offload target that is being added to the protection group. The `group_names` and `member_names` parameters are required and must be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -2839,14 +2755,9 @@ class ProtectionGroupsApi:
         member_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique member name specified. Examples of members include volumes, hosts, host groups, and directories. Enter multiple names in comma-separated format. For example, `vol01,vol02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete a volume from a protection group  # noqa: E501
+        """Delete a volume from a protection group
 
-        Deletes a volume member from a protection group. After the member has been deleted, it is no longer protected by the group. Any protection group snapshots that were taken before the member was deleted are not affected. Deleting a member from a protection group does not delete the member from the array, and the member can be added back to the protection group at any time. The `group_names` parameter represents the name of the protection group, and the `member_names` and `member_ids` parameters represent the names or IDs of the volume. The `group_names` parameter, and either the `member_names` or `member_ids` parameters are required and must be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api233_protection_groups_volumes_delete_with_http_info(authorization, x_request_id, group_ids, group_names, member_ids, member_names, async_req=True)
-        >>> result = thread.get()
+        Deletes a volume member from a protection group. After the member has been deleted, it is no longer protected by the group. Any protection group snapshots that were taken before the member was deleted are not affected. Deleting a member from a protection group does not delete the member from the array, and the member can be added back to the protection group at any time. The `group_names` parameter represents the name of the protection group, and the `member_names` and `member_ids` parameters represent the names or IDs of the volume. The `group_names` parameter, and either the `member_names` or `member_ids` parameters are required and must be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -2992,14 +2903,9 @@ class ProtectionGroupsApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List protection groups with volume members  # noqa: E501
+        """List protection groups with volume members
 
-        Displays a list of protection groups that have volume members.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api233_protection_groups_volumes_get_with_http_info(authorization, x_request_id, continuation_token, filter, group_ids, group_names, limit, member_destroyed, member_ids, member_names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of protection groups that have volume members.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -3187,14 +3093,9 @@ class ProtectionGroupsApi:
         member_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique member name specified. Examples of members include volumes, hosts, host groups, and directories. Enter multiple names in comma-separated format. For example, `vol01,vol02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create a volume and add it to a protection group  # noqa: E501
+        """Create a volume and add it to a protection group
 
-        Creates a volume member and adds it to a protection group. Members that are already in the protection group are not affected. For asynchronous replication, only members of the same type can belong to a protection group. The `group_names` parameter represents the name of the protection group, and the `member_names` and `member_ids` parameters represent the names or IDs of the volume. The `group_names` parameter, and either the `member_names` or `member_ids` parameters are required and must be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api233_protection_groups_volumes_post_with_http_info(authorization, x_request_id, group_ids, group_names, member_ids, member_names, async_req=True)
-        >>> result = thread.get()
+        Creates a volume member and adds it to a protection group. Members that are already in the protection group are not affected. For asynchronous replication, only members of the same type can belong to a protection group. The `group_names` parameter represents the name of the protection group, and the `member_names` and `member_ids` parameters represent the names or IDs of the volume. The `group_names` parameter, and either the `member_names` or `member_ids` parameters are required and must be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str

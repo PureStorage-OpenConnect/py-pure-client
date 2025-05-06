@@ -28,6 +28,7 @@ from pypureclient.flasharray.FA_2_41.models.certificate_group_certificate_respon
 from pypureclient.flasharray.FA_2_41.models.certificate_group_get_response import CertificateGroupGetResponse
 from pypureclient.flasharray.FA_2_41.models.certificate_group_response import CertificateGroupResponse
 from pypureclient.flasharray.FA_2_41.models.certificate_group_use_get_response import CertificateGroupUseGetResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_41.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_41.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_41.exceptions import (  # noqa: F401
@@ -56,14 +57,9 @@ class CertificateGroupsApi:
         certificate_names: Annotated[Optional[conlist(StrictStr)], Field(description="The names of one or more certificates. Enter multiple names in comma-separated format. For example, `cert01,cert02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete certificate-groups or certificates  # noqa: E501
+        """Delete certificate-groups or certificates
 
-        Deletes one or more certificate groups.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api241_certificate_groups_certificates_delete_with_http_info(authorization, x_request_id, certificate_group_ids, certificate_group_names, certificate_ids, certificate_names, async_req=True)
-        >>> result = thread.get()
+        Deletes one or more certificate groups.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -208,14 +204,9 @@ class CertificateGroupsApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List  certificate-groups and certificates  # noqa: E501
+        """List  certificate-groups and certificates
 
-        Lists membership associations between groups and certificates on the array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api241_certificate_groups_certificates_get_with_http_info(authorization, x_request_id, certificate_group_ids, certificate_group_names, certificate_ids, certificate_names, continuation_token, filter, limit, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Lists membership associations between groups and certificates on the array.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -397,14 +388,9 @@ class CertificateGroupsApi:
         certificate_names: Annotated[Optional[conlist(StrictStr)], Field(description="The names of one or more certificates. Enter multiple names in comma-separated format. For example, `cert01,cert02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create certificate-groups/certificates  # noqa: E501
+        """Create certificate-groups/certificates
 
-        Creates one or more certificates to one or more certificate groups on the array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api241_certificate_groups_certificates_post_with_http_info(authorization, x_request_id, certificate_group_ids, certificate_group_names, certificate_ids, certificate_names, async_req=True)
-        >>> result = thread.get()
+        Creates one or more certificates to one or more certificate groups on the array.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -547,14 +533,9 @@ class CertificateGroupsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete certificate-groups  # noqa: E501
+        """Delete certificate-groups
 
-        Deletes one or more certificate groups from the array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api241_certificate_groups_delete_with_http_info(authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Deletes one or more certificate groups from the array.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -683,14 +664,9 @@ class CertificateGroupsApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List certificate-groups  # noqa: E501
+        """List certificate-groups
 
-        Display all array certificate groups.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api241_certificate_groups_get_with_http_info(authorization, x_request_id, continuation_token, filter, ids, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Display all array certificate groups.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -855,14 +831,9 @@ class CertificateGroupsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create certificate-groups  # noqa: E501
+        """Create certificate-groups
 
-        Creates one or more certificate groups on the array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api241_certificate_groups_post_with_http_info(authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Creates one or more certificate groups on the array.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -990,14 +961,9 @@ class CertificateGroupsApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List  certificate-groups/uses  # noqa: E501
+        """List  certificate-groups/uses
 
-        Lists how certificate groups are being used and by what.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api241_certificate_groups_uses_get_with_http_info(authorization, x_request_id, continuation_token, filter, ids, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Lists how certificate groups are being used and by what.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str

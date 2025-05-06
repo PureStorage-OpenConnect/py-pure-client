@@ -25,7 +25,7 @@ from pypureclient.flasharray.FA_2_40.models.workload_parameter_value import Work
 
 class WorkloadParameter(BaseModel):
     """
-    The name and value of a single parameter.  # noqa: E501
+    The name and value of a single parameter.
     """
     name: Optional[StrictStr] = Field(default=None, description="The name of the parameter.")
     value: Optional[WorkloadParameterValue] = None

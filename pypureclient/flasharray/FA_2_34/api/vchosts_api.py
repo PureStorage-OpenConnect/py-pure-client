@@ -35,6 +35,7 @@ from pypureclient.flasharray.FA_2_34.models.vchost_get_response import VchostGet
 from pypureclient.flasharray.FA_2_34.models.vchost_patch import VchostPatch
 from pypureclient.flasharray.FA_2_34.models.vchost_post import VchostPost
 from pypureclient.flasharray.FA_2_34.models.vchost_response import VchostResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_34.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_34.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_34.exceptions import (  # noqa: F401
@@ -63,14 +64,9 @@ class VchostsApi:
         vchost_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique vchost name specified. Enter multiple names in a comma-separated format. For example, `vchost01,vchost02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete a vchost certificate  # noqa: E501
+        """Delete a vchost certificate
 
-        Deletes an existing vchost certificate. The `ids` query parameter alone, or the `certificate_names` query parameter together with one of `vchost_names` or `vchost_ids`, is required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api234_vchosts_certificates_delete_with_http_info(authorization, x_request_id, certificate_names, ids, vchost_ids, vchost_names, async_req=True)
-        >>> result = thread.get()
+        Deletes an existing vchost certificate. The `ids` query parameter alone, or the `certificate_names` query parameter together with one of `vchost_names` or `vchost_ids`, is required.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -215,14 +211,9 @@ class VchostsApi:
         vchost_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique vchost name specified. Enter multiple names in a comma-separated format. For example, `vchost01,vchost02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List vchost certificates  # noqa: E501
+        """List vchost certificates
 
-        Displays certificates that are attached to configured vchosts on at least one endpoint.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api234_vchosts_certificates_get_with_http_info(authorization, x_request_id, certificate_names, continuation_token, filter, ids, limit, offset, sort, total_item_count, vchost_ids, vchost_names, async_req=True)
-        >>> result = thread.get()
+        Displays certificates that are attached to configured vchosts on at least one endpoint.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -405,14 +396,9 @@ class VchostsApi:
         vchost_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique vchost name specified. Enter multiple names in a comma-separated format. For example, `vchost01,vchost02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Modify a vchost certificate  # noqa: E501
+        """Modify a vchost certificate
 
-        Modifies an existing vchost certificate. The `ids` query parameter alone, or the `certificate_names` query parameter together with one of `vchost_names` or `vchost_ids`, is required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api234_vchosts_certificates_patch_with_http_info(certificate, authorization, x_request_id, certificate_names, ids, vchost_ids, vchost_names, async_req=True)
-        >>> result = thread.get()
+        Modifies an existing vchost certificate. The `ids` query parameter alone, or the `certificate_names` query parameter together with one of `vchost_names` or `vchost_ids`, is required.
 
         :param certificate: (required)
         :type certificate: VchostCertificatePatch
@@ -569,14 +555,9 @@ class VchostsApi:
         vchost_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique vchost name specified. Enter multiple names in a comma-separated format. For example, `vchost01,vchost02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create a vchost certificate  # noqa: E501
+        """Create a vchost certificate
 
-        Creates an association between a certificate and vchost on one or more endpoints. The `vchost_names` or `vchost_ids` query parameter is required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api234_vchosts_certificates_post_with_http_info(certificate, authorization, x_request_id, vchost_ids, vchost_names, async_req=True)
-        >>> result = thread.get()
+        Creates an association between a certificate and vchost on one or more endpoints. The `vchost_names` or `vchost_ids` query parameter is required.
 
         :param certificate: (required)
         :type certificate: VchostCertificatePost
@@ -718,14 +699,9 @@ class VchostsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete a vchost  # noqa: E501
+        """Delete a vchost
 
-        Deletes an existing vchost. The `names` or `ids` query parameter is required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api234_vchosts_delete_with_http_info(authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Deletes an existing vchost. The `names` or `ids` query parameter is required.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -850,14 +826,9 @@ class VchostsApi:
         vchost_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique vchost name specified. Enter multiple names in a comma-separated format. For example, `vchost01,vchost02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete a vchost endpoint  # noqa: E501
+        """Delete a vchost endpoint
 
-        Deletes an existing vchost endpoint The `ids` query parameter alone, or the `endpoints` query parameter together with one of `vchost_names` or `vchost_ids`, is required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api234_vchosts_endpoints_delete_with_http_info(authorization, x_request_id, endpoints, ids, vchost_ids, vchost_names, async_req=True)
-        >>> result = thread.get()
+        Deletes an existing vchost endpoint The `ids` query parameter alone, or the `endpoints` query parameter together with one of `vchost_names` or `vchost_ids`, is required.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -1002,14 +973,9 @@ class VchostsApi:
         vchost_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique vchost name specified. Enter multiple names in a comma-separated format. For example, `vchost01,vchost02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List vchost endpoints  # noqa: E501
+        """List vchost endpoints
 
-        Displays a list of vchost endpoints with their associated vchosts and certificates.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api234_vchosts_endpoints_get_with_http_info(authorization, x_request_id, continuation_token, endpoints, filter, ids, limit, offset, sort, total_item_count, vchost_ids, vchost_names, async_req=True)
-        >>> result = thread.get()
+        Displays a list of vchost endpoints with their associated vchosts and certificates.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -1192,14 +1158,9 @@ class VchostsApi:
         vchost_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique vchost name specified. Enter multiple names in a comma-separated format. For example, `vchost01,vchost02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Modify a vchost endpoint  # noqa: E501
+        """Modify a vchost endpoint
 
-        Modifies an existing vchost endpoint. The `ids` query parameter alone, or the `endpoints` query parameter together with one of `vchost_names` or `vchost_ids`, is required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api234_vchosts_endpoints_patch_with_http_info(endpoint, authorization, x_request_id, endpoints, ids, vchost_ids, vchost_names, async_req=True)
-        >>> result = thread.get()
+        Modifies an existing vchost endpoint. The `ids` query parameter alone, or the `endpoints` query parameter together with one of `vchost_names` or `vchost_ids`, is required.
 
         :param endpoint: (required)
         :type endpoint: VchostEndpointPatch
@@ -1356,14 +1317,9 @@ class VchostsApi:
         vchost_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique vchost name specified. Enter multiple names in a comma-separated format. For example, `vchost01,vchost02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create a vchost endpoint  # noqa: E501
+        """Create a vchost endpoint
 
-        Creates a vchost endpoint. Either the `vchost_names` or `vchost_ids` query parameter is required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api234_vchosts_endpoints_post_with_http_info(endpoint, authorization, x_request_id, vchost_ids, vchost_names, async_req=True)
-        >>> result = thread.get()
+        Creates a vchost endpoint. Either the `vchost_names` or `vchost_ids` query parameter is required.
 
         :param endpoint: (required)
         :type endpoint: VchostEndpointPost
@@ -1511,14 +1467,9 @@ class VchostsApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List vchosts  # noqa: E501
+        """List vchosts
 
-        Displays a list of vchosts.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api234_vchosts_get_with_http_info(authorization, x_request_id, continuation_token, filter, ids, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of vchosts.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -1685,14 +1636,9 @@ class VchostsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Modify a vchost  # noqa: E501
+        """Modify a vchost
 
-        Modifies an existing vchost. The `names` or `ids` query parameter is required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api234_vchosts_patch_with_http_info(vchost, authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modifies an existing vchost. The `names` or `ids` query parameter is required.
 
         :param vchost: (required)
         :type vchost: VchostPatch
@@ -1834,14 +1780,9 @@ class VchostsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create a vchost  # noqa: E501
+        """Create a vchost
 
-        Creates a vchost. The `names` query parameter is required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api234_vchosts_post_with_http_info(vchost, authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Creates a vchost. The `names` query parameter is required.
 
         :param vchost: (required)
         :type vchost: VchostPost

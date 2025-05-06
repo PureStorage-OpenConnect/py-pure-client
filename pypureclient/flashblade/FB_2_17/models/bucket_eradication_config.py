@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictInt, StrictStr
 
 class BucketEradicationConfig(BaseModel):
     """
-    Configuration settings related to bucket eradication.  # noqa: E501
+    Configuration settings related to bucket eradication.
     """
     eradication_delay: Optional[StrictInt] = Field(default=None, description="Minimum eradication delay in milliseconds. Automatically eradicate destroyed buckets after the delay time passes unless automatic eradication is delayed due to other configuration values.")
     eradication_mode: Optional[StrictStr] = Field(default=None, description="The eradication mode of the bucket. If it's `permission-based` the bucket can be eradicated based on user permissions. If it's `retention-based` the bucket can never be eradicated as long as there are locked objects still being retained. Valid values are `permission-based` and `retention-based`.")

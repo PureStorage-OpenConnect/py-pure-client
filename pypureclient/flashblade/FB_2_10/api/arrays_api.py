@@ -38,6 +38,7 @@ from pypureclient.flashblade.FB_2_10.models.arrays_supported_time_zones_get_resp
 from pypureclient.flashblade.FB_2_10.models.eula import Eula
 from pypureclient.flashblade.FB_2_10.models.eula_get_response import EulaGetResponse
 from pypureclient.flashblade.FB_2_10.models.eula_response import EulaResponse
+from typing import Optional
 from pypureclient.flashblade.FB_2_10.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_10.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_10.exceptions import (  # noqa: F401
@@ -65,14 +66,9 @@ class ArraysApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET arrays/eula  # noqa: E501
+        """GET arrays/eula
 
-        List the End User Agreement and signature.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api210_arrays_eula_get_with_http_info(continuation_token, filter, limit, offset, sort, async_req=True)
-        >>> result = thread.get()
+        List the End User Agreement and signature.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -203,14 +199,9 @@ class ArraysApi:
         eula: Eula,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH arrays/eula  # noqa: E501
+        """PATCH arrays/eula
 
-        Modifies the signature on the End User Agreement.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api210_arrays_eula_patch_with_http_info(eula, async_req=True)
-        >>> result = thread.get()
+        Modifies the signature on the End User Agreement.
 
         :param eula: (required)
         :type eula: Eula
@@ -322,14 +313,9 @@ class ArraysApi:
         self,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete a factory reset token  # noqa: E501
+        """Delete a factory reset token
 
-        Deletes any existing token that could be used to perform a factory reset on the array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api210_arrays_factory_reset_token_delete_with_http_info(async_req=True)
-        >>> result = thread.get()
+        Deletes any existing token that could be used to perform a factory reset on the array.
 
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -427,14 +413,9 @@ class ArraysApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List factory reset tokens  # noqa: E501
+        """List factory reset tokens
 
-        Displays a list of tokens used to perform a factory reset on the array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api210_arrays_factory_reset_token_get_with_http_info(continuation_token, filter, limit, offset, sort, async_req=True)
-        >>> result = thread.get()
+        Displays a list of tokens used to perform a factory reset on the array.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -564,14 +545,9 @@ class ArraysApi:
         self,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create a factory reset token  # noqa: E501
+        """Create a factory reset token
 
-        Creates a token that can be used to perform a factory reset on the array. Factory reset tokens can only be created after the array has been prepared for reset (e.g., all file systems, buckets, and snapshots must first be eradicated). After a token has been created, operations that would take the array out of the prepared state (e.g., creating file systems) are disabled until all tokens have been deleted.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api210_arrays_factory_reset_token_post_with_http_info(async_req=True)
-        >>> result = thread.get()
+        Creates a token that can be used to perform a factory reset on the array. Factory reset tokens can only be created after the array has been prepared for reset (e.g., all file systems, buckets, and snapshots must first be eradicated). After a token has been created, operations that would take the array out of the prepared state (e.g., creating file systems) are disabled until all tokens have been deleted.
 
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -675,14 +651,9 @@ class ArraysApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET arrays  # noqa: E501
+        """GET arrays
 
-        List array attributes such as the array name, ID, version, and NTP servers.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api210_arrays_get_with_http_info(continuation_token, filter, limit, offset, sort, async_req=True)
-        >>> result = thread.get()
+        List array attributes such as the array name, ID, version, and NTP servers.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -815,14 +786,9 @@ class ArraysApi:
         start_time: Annotated[Optional[conint(strict=True, ge=0)], Field(description="When the time window starts (in milliseconds since epoch).")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET arrays/http-specific-performance  # noqa: E501
+        """GET arrays/http-specific-performance
 
-        List the HTTP performance metrics of the array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api210_arrays_http_specific_performance_get_with_http_info(end_time, resolution, start_time, async_req=True)
-        >>> result = thread.get()
+        List the HTTP performance metrics of the array.
 
         :param end_time: When the time window ends (in milliseconds since epoch).
         :type end_time: int
@@ -942,14 +908,9 @@ class ArraysApi:
         start_time: Annotated[Optional[conint(strict=True, ge=0)], Field(description="When the time window starts (in milliseconds since epoch).")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET arrays/nfs-specific-performance  # noqa: E501
+        """GET arrays/nfs-specific-performance
 
-        List the NFS performance metrics of the array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api210_arrays_nfs_specific_performance_get_with_http_info(end_time, resolution, start_time, async_req=True)
-        >>> result = thread.get()
+        List the NFS performance metrics of the array.
 
         :param end_time: When the time window ends (in milliseconds since epoch).
         :type end_time: int
@@ -1067,14 +1028,9 @@ class ArraysApi:
         array: Array,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH arrays  # noqa: E501
+        """PATCH arrays
 
-        Modify the general configuration of the array including banner text, array name, NTP servers, and time zone.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api210_arrays_patch_with_http_info(array, async_req=True)
-        >>> result = thread.get()
+        Modify the general configuration of the array including banner text, array name, NTP servers, and time zone.
 
         :param array: (required)
         :type array: Array
@@ -1190,14 +1146,9 @@ class ArraysApi:
         start_time: Annotated[Optional[conint(strict=True, ge=0)], Field(description="When the time window starts (in milliseconds since epoch).")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET arrays/performance  # noqa: E501
+        """GET arrays/performance
 
-        Lists the overall performance metrics of the array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api210_arrays_performance_get_with_http_info(end_time, protocol, resolution, start_time, async_req=True)
-        >>> result = thread.get()
+        Lists the overall performance metrics of the array.
 
         :param end_time: When the time window ends (in milliseconds since epoch).
         :type end_time: int
@@ -1324,14 +1275,9 @@ class ArraysApi:
         type: Annotated[Optional[StrictStr], Field(description="Display the metric of a specified object type. Valid values are `all`, `file-system`, and `object-store`. If not specified, defaults to `all`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET arrays/performance/replication  # noqa: E501
+        """GET arrays/performance/replication
 
-        List replication performance metrics.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api210_arrays_performance_replication_get_with_http_info(end_time, resolution, start_time, type, async_req=True)
-        >>> result = thread.get()
+        List replication performance metrics.
 
         :param end_time: When the time window ends (in milliseconds since epoch).
         :type end_time: int
@@ -1457,14 +1403,9 @@ class ArraysApi:
         start_time: Annotated[Optional[conint(strict=True, ge=0)], Field(description="When the time window starts (in milliseconds since epoch).")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET arrays/s3-specific-performance  # noqa: E501
+        """GET arrays/s3-specific-performance
 
-        List the S3 performance metrics of the array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api210_arrays_s3_specific_performance_get_with_http_info(end_time, resolution, start_time, async_req=True)
-        >>> result = thread.get()
+        List the S3 performance metrics of the array.
 
         :param end_time: When the time window ends (in milliseconds since epoch).
         :type end_time: int
@@ -1585,14 +1526,9 @@ class ArraysApi:
         type: Annotated[Optional[StrictStr], Field(description="Display the metric of a specified object type. Valid values are `array`, `file-system`, and `object-store`. If not specified, defaults to `array`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET arrays/space  # noqa: E501
+        """GET arrays/space
 
-        List available and used storage space on the array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api210_arrays_space_get_with_http_info(end_time, resolution, start_time, type, async_req=True)
-        >>> result = thread.get()
+        List available and used storage space on the array.
 
         :param end_time: When the time window ends (in milliseconds since epoch).
         :type end_time: int
@@ -1721,14 +1657,9 @@ class ArraysApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET arrays/supported-time-zones  # noqa: E501
+        """GET arrays/supported-time-zones
 
-        List supported time zones for the array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api210_arrays_supported_time_zones_get_with_http_info(continuation_token, filter, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        List supported time zones for the array.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str

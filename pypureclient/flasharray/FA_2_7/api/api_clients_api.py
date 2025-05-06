@@ -27,6 +27,7 @@ from pypureclient.flasharray.FA_2_7.models.api_client_get_response import ApiCli
 from pypureclient.flasharray.FA_2_7.models.api_client_patch import ApiClientPatch
 from pypureclient.flasharray.FA_2_7.models.api_client_post import ApiClientPost
 from pypureclient.flasharray.FA_2_7.models.api_client_response import ApiClientResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_7.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_7.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_7.exceptions import (  # noqa: F401
@@ -53,14 +54,9 @@ class APIClientsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete an API client  # noqa: E501
+        """Delete an API client
 
-        Deletes an API client. The `ids` or `names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api27_api_clients_delete_with_http_info(authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Deletes an API client. The `ids` or `names` parameter is required, but they cannot be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -188,14 +184,9 @@ class APIClientsApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List API clients  # noqa: E501
+        """List API clients
 
-        Returns a list of API clients.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api27_api_clients_get_with_http_info(authorization, x_request_id, filter, ids, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Returns a list of API clients.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -356,14 +347,9 @@ class APIClientsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Manage an API client  # noqa: E501
+        """Manage an API client
 
-        Enables or disables an API client. The `ids` or `names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api27_api_clients_patch_with_http_info(api_clients, authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Enables or disables an API client. The `ids` or `names` parameter is required, but they cannot be set together.
 
         :param api_clients: (required)
         :type api_clients: ApiClientPatch
@@ -505,14 +491,9 @@ class APIClientsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create an API client  # noqa: E501
+        """Create an API client
 
-        Creates an API client. Newly created API clients are disabled by default. Enable an API client through the `PATCH` method. The `names`, `max_role`, `issuer`, and `public_key` parameters are required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api27_api_clients_post_with_http_info(api_clients, authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Creates an API client. Newly created API clients are disabled by default. Enable an API client through the `PATCH` method. The `names`, `max_role`, `issuer`, and `public_key` parameters are required.
 
         :param api_clients: (required)
         :type api_clients: ApiClientPost

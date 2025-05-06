@@ -25,7 +25,7 @@ from pypureclient.pure1.Pure1_1_0.models.drive_array_status import DriveArraySta
 
 class Drive(BaseModel):
     """
-    Information about a flash, NVRAM, or cache module.  # noqa: E501
+    Information about a flash, NVRAM, or cache module.
     """
     as_of: Optional[StrictInt] = Field(default=None, alias="_as_of", description="The freshness of the data (timestamp in millis since epoch).")
     id: Optional[StrictStr] = Field(default=None, description="A non-modifiable, globally unique ID chosen by the system.")

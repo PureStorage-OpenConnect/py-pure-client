@@ -25,7 +25,7 @@ from pypureclient.flashblade.FB_2_16.models.reference import Reference
 
 class LocationReference(BaseModel):
     """
-    Reference to a policy that is driving replication.  # noqa: E501
+    Reference to a policy that is driving replication.
     """
     id: Optional[StrictStr] = Field(default=None, description="A non-modifiable, globally unique ID chosen by the system.")
     name: Optional[StrictStr] = Field(default=None, description="A name chosen by the user. Can be changed. Must be locally unique.")

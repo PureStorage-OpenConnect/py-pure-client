@@ -23,6 +23,7 @@ from pydantic import Field, conint
 
 from typing import Optional, Union
 
+from typing import Optional
 from pypureclient.flashblade.FB_2_0.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_0.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_0.exceptions import (  # noqa: F401
@@ -47,14 +48,9 @@ class LogsApi:
         start_time: Annotated[Optional[conint(strict=True, ge=0)], Field(description="When the time window starts (in milliseconds since epoch).")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET logs  # noqa: E501
+        """GET logs
 
-        Download a history of log events from the array to provide to Pure Technical Services for analysis.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api20_logs_get_with_http_info(end_time, start_time, async_req=True)
-        >>> result = thread.get()
+        Download a history of log events from the array to provide to Pure Technical Services for analysis.
 
         :param end_time: When the time window ends (in milliseconds since epoch).
         :type end_time: int

@@ -25,7 +25,7 @@ from pypureclient.flasharray.FA_2_41.models.workload_placement_recommendation_pr
 
 class WorkloadPlacementRecommendationTargetLoadProjections(BaseModel):
     """
-    Load depicts the storage system utilization as a percentage from 0, when the system is completely idle, to 100, when the system is completely saturated.  # noqa: E501
+    Load depicts the storage system utilization as a percentage from 0, when the system is completely idle, to 100, when the system is completely saturated.
     """
     projection_avg: Optional[WorkloadPlacementRecommendationProjection] = Field(default=None, description="The projected average load on the target.")
     projection_blended_max: Optional[WorkloadPlacementRecommendationProjection] = Field(default=None, description="The projected blended maximum load on the target.")

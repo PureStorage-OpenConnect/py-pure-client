@@ -27,6 +27,7 @@ from pypureclient.flashblade.FB_2_5.models.hardware_connector import HardwareCon
 from pypureclient.flashblade.FB_2_5.models.hardware_connector_get_response import HardwareConnectorGetResponse
 from pypureclient.flashblade.FB_2_5.models.hardware_connector_performance_get_response import HardwareConnectorPerformanceGetResponse
 from pypureclient.flashblade.FB_2_5.models.hardware_connector_response import HardwareConnectorResponse
+from typing import Optional
 from pypureclient.flashblade.FB_2_5.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_5.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_5.exceptions import (  # noqa: F401
@@ -56,14 +57,9 @@ class HardwareConnectorsApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET hardware-connectors  # noqa: E501
+        """GET hardware-connectors
 
-        List array connection information.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api25_hardware_connectors_get_with_http_info(continuation_token, filter, ids, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        List array connection information.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -210,14 +206,9 @@ class HardwareConnectorsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH hardware-connectors  # noqa: E501
+        """PATCH hardware-connectors
 
-        Modify array connection information.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api25_hardware_connectors_patch_with_http_info(hardware_connector, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modify array connection information.
 
         :param hardware_connector: (required)
         :type hardware_connector: HardwareConnector
@@ -353,14 +344,9 @@ class HardwareConnectorsApi:
         total_only: Annotated[Optional[StrictBool], Field(description="Only return the total record for the specified items. The total record will be the total of all items after filtering. The `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET hardware-connectors/performance  # noqa: E501
+        """GET hardware-connectors/performance
 
-        Displays network statistics, historical bandwidth, and error reporting for all specified hardware connectors.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api25_hardware_connectors_performance_get_with_http_info(end_time, filter, ids, limit, names, offset, resolution, sort, start_time, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays network statistics, historical bandwidth, and error reporting for all specified hardware connectors.
 
         :param end_time: When the time window ends (in milliseconds since epoch).
         :type end_time: int

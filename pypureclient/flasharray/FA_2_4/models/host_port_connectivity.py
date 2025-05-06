@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictStr
 
 class HostPortConnectivity(BaseModel):
     """
-    The connectivity status between the host and the ports on each controller.  # noqa: E501
+    The connectivity status between the host and the ports on each controller.
     """
     details: Optional[StrictStr] = Field(default=None, description="The host connection status. Values include `Redundant`, `N/A`, `Redundant-Failover`, `Uneven`, `Unused Port`, `Single Controller`, `Single Controller-Failover`, and `None`.")
     status: Optional[StrictStr] = Field(default=None, description="The host connection health status. Values include `healthy`, `unhealthy`, and `critical`.")

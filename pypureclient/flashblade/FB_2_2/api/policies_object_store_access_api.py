@@ -34,6 +34,7 @@ from pypureclient.flashblade.FB_2_2.models.policy_member_get_response import Pol
 from pypureclient.flashblade.FB_2_2.models.policy_member_response import PolicyMemberResponse
 from pypureclient.flashblade.FB_2_2.models.policy_rule_object_access import PolicyRuleObjectAccess
 from pypureclient.flashblade.FB_2_2.models.policy_rule_object_access_post import PolicyRuleObjectAccessPost
+from typing import Optional
 from pypureclient.flashblade.FB_2_2.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_2.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_2.exceptions import (  # noqa: F401
@@ -58,14 +59,9 @@ class PoliciesObjectStoreAccessApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE object-store-access-policies  # noqa: E501
+        """DELETE object-store-access-policies
 
-        Delete one or more access policies.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api22_object_store_access_policies_delete_with_http_info(ids, names, async_req=True)
-        >>> result = thread.get()
+        Delete one or more access policies.
 
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
         :type ids: List[str]
@@ -179,14 +175,9 @@ class PoliciesObjectStoreAccessApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET object-store-access-policies  # noqa: E501
+        """GET object-store-access-policies
 
-        List access policies and their attributes.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api22_object_store_access_policies_get_with_http_info(continuation_token, filter, ids, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        List access policies and their attributes.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -334,14 +325,9 @@ class PoliciesObjectStoreAccessApi:
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of policy names.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE object-store-access-policies/object-store-users  # noqa: E501
+        """DELETE object-store-access-policies/object-store-users
 
-        Revokes an object store user's access policy.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api22_object_store_access_policies_object_store_users_delete_with_http_info(member_ids, member_names, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Revokes an object store user's access policy.
 
         :param member_ids: A comma-separated list of member IDs. If after filtering, there is not at least one resource that matches each of the elements of `member_ids`, then an error is returned. This cannot be provided together with the `member_names` query parameter.
         :type member_ids: List[str]
@@ -471,14 +457,9 @@ class PoliciesObjectStoreAccessApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET object-store-access-policies/object-store-users  # noqa: E501
+        """GET object-store-access-policies/object-store-users
 
-        List object store users and their access policies.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api22_object_store_access_policies_object_store_users_get_with_http_info(continuation_token, filter, limit, member_ids, member_names, offset, policy_ids, policy_names, sort, async_req=True)
-        >>> result = thread.get()
+        List object store users and their access policies.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -640,14 +621,9 @@ class PoliciesObjectStoreAccessApi:
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of policy names.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST object-store-access-policies/object-store-users  # noqa: E501
+        """POST object-store-access-policies/object-store-users
 
-        Grant access policies to an object store user.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api22_object_store_access_policies_object_store_users_post_with_http_info(member_ids, member_names, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Grant access policies to an object store user.
 
         :param member_ids: A comma-separated list of member IDs. If after filtering, there is not at least one resource that matches each of the elements of `member_ids`, then an error is returned. This cannot be provided together with the `member_names` query parameter.
         :type member_ids: List[str]
@@ -778,14 +754,9 @@ class PoliciesObjectStoreAccessApi:
         policy: Optional[ObjectStoreAccessPolicyPatch] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH object-store-access-policies  # noqa: E501
+        """PATCH object-store-access-policies
 
-        Modify the rules of an object store access policy.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api22_object_store_access_policies_patch_with_http_info(enforce_action_restrictions, ids, names, policy, async_req=True)
-        >>> result = thread.get()
+        Modify the rules of an object store access policy.
 
         :param enforce_action_restrictions: Certain combinations of actions and other rule elements are inherently ignored if specified together in a rule. If set to `true`, operations which attempt to set these combinations will fail. If set to `false`, such operations will instead be allowed. Defaults to `true`.
         :type enforce_action_restrictions: bool
@@ -920,14 +891,9 @@ class PoliciesObjectStoreAccessApi:
         policy: Optional[ObjectStoreAccessPolicyPost] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST object-store-access-policies  # noqa: E501
+        """POST object-store-access-policies
 
-        Create a new access policy.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api22_object_store_access_policies_post_with_http_info(names, enforce_action_restrictions, policy, async_req=True)
-        >>> result = thread.get()
+        Create a new access policy.
 
         :param names: A comma-separated list of resource names. (required)
         :type names: List[str]
@@ -1055,14 +1021,9 @@ class PoliciesObjectStoreAccessApi:
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of policy names.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE object-store-access-policies-rules  # noqa: E501
+        """DELETE object-store-access-policies-rules
 
-        Delete one or more access policy rules.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api22_object_store_access_policies_rules_delete_with_http_info(names, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Delete one or more access policy rules.
 
         :param names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
         :type names: List[str]
@@ -1184,14 +1145,9 @@ class PoliciesObjectStoreAccessApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET object-store-access-policies-rules  # noqa: E501
+        """GET object-store-access-policies-rules
 
-        List access policy rules and their attributes.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api22_object_store_access_policies_rules_get_with_http_info(continuation_token, filter, limit, names, offset, policy_ids, policy_names, sort, async_req=True)
-        >>> result = thread.get()
+        List access policy rules and their attributes.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -1347,14 +1303,9 @@ class PoliciesObjectStoreAccessApi:
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of policy names.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH object-store-access-policies-rules  # noqa: E501
+        """PATCH object-store-access-policies-rules
 
-        Modify an access policy rule's attributes.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api22_object_store_access_policies_rules_patch_with_http_info(rule, enforce_action_restrictions, names, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Modify an access policy rule's attributes.
 
         :param rule: (required)
         :type rule: PolicyRuleObjectAccess
@@ -1498,14 +1449,9 @@ class PoliciesObjectStoreAccessApi:
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of policy names.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST object-store-access-policies-rules  # noqa: E501
+        """POST object-store-access-policies-rules
 
-        Create a new access policy rule.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api22_object_store_access_policies_rules_post_with_http_info(names, rule, enforce_action_restrictions, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Create a new access policy rule.
 
         :param names: A comma-separated list of resource names. (required)
         :type names: List[str]
@@ -1650,14 +1596,9 @@ class PoliciesObjectStoreAccessApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET object-store-access-policy-actions  # noqa: E501
+        """GET object-store-access-policy-actions
 
-        List valid actions for access policy rules. Each action is either a valid AWS S3 action (prefixed by `s3:`) or our special wildcard action (`s3:*`). Each action, when included in a rule, may restrict which other properties may be set for that rule.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api22_object_store_access_policy_actions_get_with_http_info(continuation_token, filter, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        List valid actions for access policy rules. Each action is either a valid AWS S3 action (prefixed by `s3:`) or our special wildcard action (`s3:*`). Each action, when included in a rule, may restrict which other properties may be set for that rule.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str

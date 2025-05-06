@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictStr
 
 class DirectoryServiceManagement(BaseModel):
     """
-    Properties specific to the Management service.  # noqa: E501
+    Properties specific to the Management service.
     """
     user_login_attribute: Optional[StrictStr] = Field(default=None, description="User login attribute in the structure of the configured LDAP servers. Typically the attribute field that holds the user's unique login name. Defaults to `sAMAccountName` for Active Directory servers, or `uid` for all other directory server types.")
     user_object_class: Optional[StrictStr] = Field(default=None, description="Value of the object class for a management LDAP user. Defaults to `User` for Active Directory servers, `posixAccount` or `shadowAccount` for OpenLDAP servers dependent on the server's group type, or `person` for all other directory servers.")

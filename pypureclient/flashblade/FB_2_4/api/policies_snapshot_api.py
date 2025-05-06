@@ -32,6 +32,7 @@ from pypureclient.flashblade.FB_2_4.models.policy_member_with_remote_get_respons
 from pypureclient.flashblade.FB_2_4.models.policy_member_with_remote_response import PolicyMemberWithRemoteResponse
 from pypureclient.flashblade.FB_2_4.models.policy_patch import PolicyPatch
 from pypureclient.flashblade.FB_2_4.models.policy_response import PolicyResponse
+from typing import Optional
 from pypureclient.flashblade.FB_2_4.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_4.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_4.exceptions import (  # noqa: F401
@@ -56,14 +57,9 @@ class PoliciesSnapshotApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE policies  # noqa: E501
+        """DELETE policies
 
-        Delete one or more snapshot scheduling policies.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_delete_with_http_info(ids, names, async_req=True)
-        >>> result = thread.get()
+        Delete one or more snapshot scheduling policies.
 
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
         :type ids: List[str]
@@ -177,14 +173,9 @@ class PoliciesSnapshotApi:
         remote_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of remote array names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `remote_ids` query parameter.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE policies/file-system-replica-links  # noqa: E501
+        """DELETE policies/file-system-replica-links
 
-        Remove a snapshot scheduling policy mapped to a file system replica link.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_file_system_replica_links_delete_with_http_info(local_file_system_ids, local_file_system_names, member_ids, policy_ids, policy_names, remote_ids, remote_names, async_req=True)
-        >>> result = thread.get()
+        Remove a snapshot scheduling policy mapped to a file system replica link.
 
         :param local_file_system_ids: A comma-separated list of local file system IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `local_file_system_names` query parameter.
         :type local_file_system_ids: List[str]
@@ -340,14 +331,9 @@ class PoliciesSnapshotApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET policies/file-system-replica-links  # noqa: E501
+        """GET policies/file-system-replica-links
 
-        List snapshot scheduling policies for file system replica links.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_file_system_replica_links_get_with_http_info(continuation_token, filter, limit, local_file_system_ids, local_file_system_names, member_ids, offset, policy_ids, policy_names, remote_file_system_ids, remote_file_system_names, remote_ids, remote_names, sort, async_req=True)
-        >>> result = thread.get()
+        List snapshot scheduling policies for file system replica links.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -547,14 +533,9 @@ class PoliciesSnapshotApi:
         remote_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of remote array names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `remote_ids` query parameter.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST policies/file-system-replica-links  # noqa: E501
+        """POST policies/file-system-replica-links
 
-        Add a snapshot scheduling policy to a file system replica link.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_file_system_replica_links_post_with_http_info(local_file_system_ids, local_file_system_names, member_ids, policy_ids, policy_names, remote_ids, remote_names, async_req=True)
-        >>> result = thread.get()
+        Add a snapshot scheduling policy to a file system replica link.
 
         :param local_file_system_ids: A comma-separated list of local file system IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `local_file_system_names` query parameter.
         :type local_file_system_ids: List[str]
@@ -706,14 +687,9 @@ class PoliciesSnapshotApi:
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of policy names.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE policies/file-system-snapshots  # noqa: E501
+        """DELETE policies/file-system-snapshots
 
-        Remove the snapshot scheduling policy mapped to a file system.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_file_system_snapshots_delete_with_http_info(member_ids, member_names, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Remove the snapshot scheduling policy mapped to a file system.
 
         :param member_ids: A comma-separated list of member IDs. If after filtering, there is not at least one resource that matches each of the elements of `member_ids`, then an error is returned. This cannot be provided together with the `member_names` query parameter.
         :type member_ids: List[str]
@@ -843,14 +819,9 @@ class PoliciesSnapshotApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET policies/file-system-snapshots  # noqa: E501
+        """GET policies/file-system-snapshots
 
-        List file system snapshots mapped to a snapshot scheduling policy.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_file_system_snapshots_get_with_http_info(continuation_token, filter, limit, member_ids, member_names, offset, policy_ids, policy_names, sort, async_req=True)
-        >>> result = thread.get()
+        List file system snapshots mapped to a snapshot scheduling policy.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -1012,14 +983,9 @@ class PoliciesSnapshotApi:
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of policy names.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE policies/file-systems  # noqa: E501
+        """DELETE policies/file-systems
 
-        Remove the snapshot scheduling policy mapped to a file system.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_file_systems_delete_with_http_info(member_ids, member_names, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Remove the snapshot scheduling policy mapped to a file system.
 
         :param member_ids: A comma-separated list of member IDs. If after filtering, there is not at least one resource that matches each of the elements of `member_ids`, then an error is returned. This cannot be provided together with the `member_names` query parameter.
         :type member_ids: List[str]
@@ -1149,14 +1115,9 @@ class PoliciesSnapshotApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET policies/file-systems  # noqa: E501
+        """GET policies/file-systems
 
-        List file systems mapped to a snapshot scheduling policy.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_file_systems_get_with_http_info(continuation_token, filter, limit, member_ids, member_names, offset, policy_ids, policy_names, sort, async_req=True)
-        >>> result = thread.get()
+        List file systems mapped to a snapshot scheduling policy.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -1318,14 +1279,9 @@ class PoliciesSnapshotApi:
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of policy names.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST policies/file-systems  # noqa: E501
+        """POST policies/file-systems
 
-        Map a file system to a snapshot scheduling policy.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_file_systems_post_with_http_info(member_ids, member_names, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Map a file system to a snapshot scheduling policy.
 
         :param member_ids: A comma-separated list of member IDs. If after filtering, there is not at least one resource that matches each of the elements of `member_ids`, then an error is returned. This cannot be provided together with the `member_names` query parameter.
         :type member_ids: List[str]
@@ -1459,14 +1415,9 @@ class PoliciesSnapshotApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET policies  # noqa: E501
+        """GET policies
 
-        Display snapshot scheduling policies and their attributes.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_get_with_http_info(continuation_token, filter, ids, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        Display snapshot scheduling policies and their attributes.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -1626,14 +1577,9 @@ class PoliciesSnapshotApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET policies/members  # noqa: E501
+        """GET policies/members
 
-        List snapshot scheduling policies mapped to file systems, snapshots, and file system replica links.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_members_get_with_http_info(continuation_token, filter, limit, local_file_system_ids, local_file_system_names, member_ids, member_names, member_types, offset, policy_ids, policy_names, remote_file_system_ids, remote_file_system_names, remote_ids, remote_names, sort, async_req=True)
-        >>> result = thread.get()
+        List snapshot scheduling policies mapped to file systems, snapshots, and file system replica links.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -1844,14 +1790,9 @@ class PoliciesSnapshotApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH policies  # noqa: E501
+        """PATCH policies
 
-        Modify a snapshot scheduling policy’s attributes for when and how often snapshots are created and how long they are retained.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_patch_with_http_info(policy, destroy_snapshots, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modify a snapshot scheduling policy’s attributes for when and how often snapshots are created and how long they are retained.
 
         :param policy: (required)
         :type policy: PolicyPatch
@@ -1985,14 +1926,9 @@ class PoliciesSnapshotApi:
         policy: Optional[Policy] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST policies  # noqa: E501
+        """POST policies
 
-        Create a new snapshot scheduling policy with rule attributes to capture file system snapshots for a set period of time and frequency, as well as how long snapshots are retained before being destroyed and eradicated.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_post_with_http_info(names, policy, async_req=True)
-        >>> result = thread.get()
+        Create a new snapshot scheduling policy with rule attributes to capture file system snapshots for a set period of time and frequency, as well as how long snapshots are retained before being destroyed and eradicated.
 
         :param names: A comma-separated list of resource names. (required)
         :type names: List[str]

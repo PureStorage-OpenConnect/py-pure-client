@@ -32,7 +32,7 @@ from pypureclient.flasharray.FA_2_30.models.network_interface_port_details_volta
 
 class NetworkInterfacesPortDetails(BaseModel):
     """
-    Network interface SFP details.  # noqa: E501
+    Network interface SFP details.
     """
     name: Optional[StrictStr] = Field(default=None, description="A locally unique, system-generated name. The name cannot be modified.")
     interface_type: Optional[StrictStr] = Field(default=None, description="The interface type. Valid values are `eth` and `fc`.")

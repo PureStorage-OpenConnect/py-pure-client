@@ -25,7 +25,7 @@ from pypureclient.flasharray.FA_2_41.models.workload_placement_recommendation_ta
 
 class WorkloadPlacementRecommendationPlacement(BaseModel):
     """
-    Placement data in the recommendation result.  # noqa: E501
+    Placement data in the recommendation result.
     """
     name: Optional[StrictStr] = Field(default=None, description="The name of the placement.")
     targets: Optional[conlist(WorkloadPlacementRecommendationTarget)] = Field(default=None, description="The targets for the placement.")

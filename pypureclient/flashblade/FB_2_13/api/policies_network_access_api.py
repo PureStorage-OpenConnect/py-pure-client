@@ -31,6 +31,7 @@ from pypureclient.flashblade.FB_2_13.models.network_access_policy_rule_get_respo
 from pypureclient.flashblade.FB_2_13.models.network_access_policy_rule_post import NetworkAccessPolicyRulePost
 from pypureclient.flashblade.FB_2_13.models.network_access_policy_rule_response import NetworkAccessPolicyRuleResponse
 from pypureclient.flashblade.FB_2_13.models.policy_member_get_response import PolicyMemberGetResponse
+from typing import Optional
 from pypureclient.flashblade.FB_2_13.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_13.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_13.exceptions import (  # noqa: F401
@@ -60,14 +61,9 @@ class PoliciesNetworkAccessApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET network-access-policies  # noqa: E501
+        """GET network-access-policies
 
-        Displays a list of network access policies.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api213_network_access_policies_get_with_http_info(continuation_token, filter, ids, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        Displays a list of network access policies.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -220,14 +216,9 @@ class PoliciesNetworkAccessApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET network-access-policies/members  # noqa: E501
+        """GET network-access-policies/members
 
-        List network access policies mapped to different configurations on the array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api213_network_access_policies_members_get_with_http_info(continuation_token, filter, limit, member_ids, member_names, offset, policy_ids, policy_names, sort, async_req=True)
-        >>> result = thread.get()
+        List network access policies mapped to different configurations on the array.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -389,14 +380,9 @@ class PoliciesNetworkAccessApi:
         versions: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of versions. This is an optional query param used for concurrency control. The ordering should match the names or ids query param. This will fail with a 412 Precondition failed if the resource was changed and the current version of the resource doesn't match the value in the query param.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH network-access-policies  # noqa: E501
+        """PATCH network-access-policies
 
-        Modify an existing network access policy's attributes.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api213_network_access_policies_patch_with_http_info(policy, ids, names, versions, async_req=True)
-        >>> result = thread.get()
+        Modify an existing network access policy's attributes.
 
         :param policy: (required)
         :type policy: NetworkAccessPolicy
@@ -532,14 +518,9 @@ class PoliciesNetworkAccessApi:
         versions: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of versions. This is an optional query param used for concurrency control. The ordering should match the names or ids query param. This will fail with a 412 Precondition failed if the resource was changed and the current version of the resource doesn't match the value in the query param.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE network-access-policies/rules  # noqa: E501
+        """DELETE network-access-policies/rules
 
-        Delete one or more network access policy rules.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api213_network_access_policies_rules_delete_with_http_info(ids, names, versions, async_req=True)
-        >>> result = thread.get()
+        Delete one or more network access policy rules.
 
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
         :type ids: List[str]
@@ -662,14 +643,9 @@ class PoliciesNetworkAccessApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET network-access-policies/rules  # noqa: E501
+        """GET network-access-policies/rules
 
-        Displays a list of network access policy rules.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api213_network_access_policies_rules_get_with_http_info(continuation_token, filter, ids, limit, names, offset, policy_ids, policy_names, sort, async_req=True)
-        >>> result = thread.get()
+        Displays a list of network access policy rules.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -833,14 +809,9 @@ class PoliciesNetworkAccessApi:
         versions: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of versions. This is an optional query param used for concurrency control. The ordering should match the names or ids query param. This will fail with a 412 Precondition failed if the resource was changed and the current version of the resource doesn't match the value in the query param.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH network-access-policies/rules  # noqa: E501
+        """PATCH network-access-policies/rules
 
-        Modify an existing network access policy rule.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api213_network_access_policies_rules_patch_with_http_info(rule, before_rule_id, before_rule_name, ids, names, versions, async_req=True)
-        >>> result = thread.get()
+        Modify an existing network access policy rule.
 
         :param rule: (required)
         :type rule: NetworkAccessPolicyRule
@@ -991,14 +962,9 @@ class PoliciesNetworkAccessApi:
         versions: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of versions. This is an optional query param used for concurrency control. The ordering should match the names or ids query param. This will fail with a 412 Precondition failed if the resource was changed and the current version of the resource doesn't match the value in the query param.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST network-access-policies/rules  # noqa: E501
+        """POST network-access-policies/rules
 
-        Create a new network access policy rule. Either `policy_ids` or `policy_names` parameter is required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api213_network_access_policies_rules_post_with_http_info(rule, before_rule_id, before_rule_name, policy_ids, policy_names, versions, async_req=True)
-        >>> result = thread.get()
+        Create a new network access policy rule. Either `policy_ids` or `policy_names` parameter is required.
 
         :param rule: (required)
         :type rule: NetworkAccessPolicyRulePost

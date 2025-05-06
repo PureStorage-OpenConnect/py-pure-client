@@ -36,6 +36,7 @@ from pypureclient.flasharray.FA_2_42.models.policy_member_export_response import
 from pypureclient.flasharray.FA_2_42.models.policy_member_get_response import PolicyMemberGetResponse
 from pypureclient.flasharray.FA_2_42.models.policy_member_response import PolicyMemberResponse
 from pypureclient.flasharray.FA_2_42.models.resource_directory_space_get_response import ResourceDirectorySpaceGetResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_42.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_42.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_42.exceptions import (  # noqa: F401
@@ -63,14 +64,9 @@ class DirectoriesApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete managed directories  # noqa: E501
+        """Delete managed directories
 
-        Deletes one or more managed directories. To be deleted, a managed directory must be empty and not attached to any enabled export policies. Deleted managed directories cannot be recovered. The `ids` or `names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directories_delete_with_http_info(authorization, x_request_id, context_names, ids, names, async_req=True)
-        >>> result = thread.get()
+        Deletes one or more managed directories. To be deleted, a managed directory must be empty and not attached to any enabled export policies. Deleted managed directories cannot be recovered. The `ids` or `names` parameter is required, but cannot be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -212,14 +208,9 @@ class DirectoriesApi:
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List directories  # noqa: E501
+        """List directories
 
-        Displays a list of directories, including those pending eradication.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directories_get_with_http_info(authorization, x_request_id, allow_errors, context_names, continuation_token, destroyed, file_system_ids, file_system_names, filter, ids, limit, names, offset, sort, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays a list of directories, including those pending eradication.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -422,14 +413,9 @@ class DirectoriesApi:
         context_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the context specified. If specified, the context names must be an array of size 1, and the single element must be the name of an array in the same fleet. If not specified, the context will default to the array that received this request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create NLM reclamation  # noqa: E501
+        """Create NLM reclamation
 
-        Creates an NLM reclamation, which is a system-wide operation that affects all clients, so only one may be in progress at a time. Attempting to initiate reclamation while one is in progress will result in an error. When NLM reclamation is initiated, all NLM locks are deleted and client applications are notified that they can reacquire their locks within a grace period.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directories_locks_nlm_reclamations_post_with_http_info(x_request_id, context_names, async_req=True)
-        >>> result = thread.get()
+        Creates an NLM reclamation, which is a system-wide operation that affects all clients, so only one may be in progress at a time. Attempting to initiate reclamation while one is in progress will result in an error. When NLM reclamation is initiated, all NLM locks are deleted and client applications are notified that they can reacquire their locks within a grace period.
 
         :param x_request_id: Supplied by client during request or generated by server.
         :type x_request_id: str
@@ -547,14 +533,9 @@ class DirectoriesApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Modify a managed directory  # noqa: E501
+        """Modify a managed directory
 
-        Modifies a managed directory. To rename a managed directory, set `name` to the new name. The `ids` or `names` parameter is required, but cannot be set together. The `name` or `directory_name` parameter is required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directories_patch_with_http_info(directory, authorization, x_request_id, context_names, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modifies a managed directory. To rename a managed directory, set `name` to the new name. The `ids` or `names` parameter is required, but cannot be set together. The `name` or `directory_name` parameter is required.
 
         :param directory: (required)
         :type directory: DirectoryPatch
@@ -718,14 +699,9 @@ class DirectoriesApi:
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List directory performance data  # noqa: E501
+        """List directory performance data
 
-        Displays real-time and historical performance data, real-time latency data, and average I/O sizes for each directory and as a total of all directories across the entire array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directories_performance_get_with_http_info(authorization, x_request_id, allow_errors, context_names, continuation_token, destroyed, end_time, filter, ids, limit, names, offset, protocol, protocol_group, resolution, sort, start_time, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays real-time and historical performance data, real-time latency data, and average I/O sizes for each directory and as a total of all directories across the entire array.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -949,14 +925,9 @@ class DirectoriesApi:
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete a membership between a directory and one or more audit policies  # noqa: E501
+        """Delete a membership between a directory and one or more audit policies
 
-        Deletes a membership between a directory and one or more audit policies. Either the `policy_ids` or `policy_names` parameter is required, but they cannot be set together. Either the `member_ids` or `member_names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directories_policies_audit_file_delete_with_http_info(authorization, x_request_id, context_names, member_ids, member_names, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Deletes a membership between a directory and one or more audit policies. Either the `policy_ids` or `policy_names` parameter is required, but they cannot be set together. Either the `member_ids` or `member_names` parameter is required, but they cannot be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -1111,14 +1082,9 @@ class DirectoriesApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List audit policies attached to a directory  # noqa: E501
+        """List audit policies attached to a directory
 
-        Displays a list of audit policies that are attached to directories.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directories_policies_audit_file_get_with_http_info(authorization, x_request_id, allow_errors, context_names, continuation_token, destroyed, filter, limit, member_ids, member_names, offset, policy_ids, policy_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of audit policies that are attached to directories.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -1319,14 +1285,9 @@ class DirectoriesApi:
         member_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique member name specified. Examples of members include volumes, hosts, host groups, and directories. Enter multiple names in comma-separated format. For example, `vol01,vol02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create a membership between a directory and one or more audit policies  # noqa: E501
+        """Create a membership between a directory and one or more audit policies
 
-        Creates a membership between a directory and one or more audit policies. Either the `member_ids` or `member_names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directories_policies_audit_file_post_with_http_info(policies, authorization, x_request_id, context_names, member_ids, member_names, async_req=True)
-        >>> result = thread.get()
+        Creates a membership between a directory and one or more audit policies. Either the `member_ids` or `member_names` parameter is required, but they cannot be set together.
 
         :param policies: (required)
         :type policies: DirectoryPolicyPost
@@ -1478,14 +1439,9 @@ class DirectoriesApi:
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete a membership between a directory and one or more auto managed directory policies  # noqa: E501
+        """Delete a membership between a directory and one or more auto managed directory policies
 
-        Deletes a membership between a directory with one or more auto managed directory policies. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together. The `member_ids` or `member_names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directories_policies_autodir_delete_with_http_info(authorization, x_request_id, context_names, member_ids, member_names, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Deletes a membership between a directory with one or more auto managed directory policies. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together. The `member_ids` or `member_names` parameter is required, but they cannot be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -1640,14 +1596,9 @@ class DirectoriesApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List auto managed directory policies attached to a directory  # noqa: E501
+        """List auto managed directory policies attached to a directory
 
-        Displays a list of auto managed directory policies that are attached to directories.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directories_policies_autodir_get_with_http_info(authorization, x_request_id, allow_errors, context_names, continuation_token, destroyed, filter, limit, member_ids, member_names, offset, policy_ids, policy_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of auto managed directory policies that are attached to directories.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -1848,14 +1799,9 @@ class DirectoriesApi:
         member_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique member name specified. Examples of members include volumes, hosts, host groups, and directories. Enter multiple names in comma-separated format. For example, `vol01,vol02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create a membership between a directory with one or more auto managed directory policies  # noqa: E501
+        """Create a membership between a directory with one or more auto managed directory policies
 
-        Creates a membership between a directory with one or more auto managed directory policies. The `member_ids` or `member_names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directories_policies_autodir_post_with_http_info(policies, authorization, x_request_id, context_names, member_ids, member_names, async_req=True)
-        >>> result = thread.get()
+        Creates a membership between a directory with one or more auto managed directory policies. The `member_ids` or `member_names` parameter is required, but they cannot be set together.
 
         :param policies: (required)
         :type policies: DirectoryPolicyPost
@@ -2015,14 +1961,9 @@ class DirectoriesApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List policies  # noqa: E501
+        """List policies
 
-        Displays a list of policies that are attached to directories.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directories_policies_get_with_http_info(authorization, x_request_id, allow_errors, context_names, continuation_token, destroyed, filter, limit, member_ids, member_names, offset, policy_ids, policy_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of policies that are attached to directories.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -2224,14 +2165,9 @@ class DirectoriesApi:
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete a membership between a directory and one or more NFS policies  # noqa: E501
+        """Delete a membership between a directory and one or more NFS policies
 
-        Deletes a membership between a directory and one or more NFS policies. The `policy_ids` or `policy_names` parameter is required, but cannot be set together. The `member_ids` or `member_names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directories_policies_nfs_delete_with_http_info(authorization, x_request_id, context_names, member_ids, member_names, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Deletes a membership between a directory and one or more NFS policies. The `policy_ids` or `policy_names` parameter is required, but cannot be set together. The `member_ids` or `member_names` parameter is required, but cannot be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -2386,14 +2322,9 @@ class DirectoriesApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List NFS policies attached to a directory  # noqa: E501
+        """List NFS policies attached to a directory
 
-        Displays a list of NFS policies that are attached to directories.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directories_policies_nfs_get_with_http_info(authorization, x_request_id, allow_errors, context_names, continuation_token, destroyed, filter, limit, member_ids, member_names, offset, policy_ids, policy_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of NFS policies that are attached to directories.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -2594,14 +2525,9 @@ class DirectoriesApi:
         member_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique member name specified. Examples of members include volumes, hosts, host groups, and directories. Enter multiple names in comma-separated format. For example, `vol01,vol02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create a membership between a directory and one or more NFS policies  # noqa: E501
+        """Create a membership between a directory and one or more NFS policies
 
-        Creates a membership between a directory and one or more NFS policies. The `member_ids` or `member_names` parameter is required but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directories_policies_nfs_post_with_http_info(policies, authorization, x_request_id, context_names, member_ids, member_names, async_req=True)
-        >>> result = thread.get()
+        Creates a membership between a directory and one or more NFS policies. The `member_ids` or `member_names` parameter is required but cannot be set together.
 
         :param policies: (required)
         :type policies: DirectoryPolicyExportPost
@@ -2753,14 +2679,9 @@ class DirectoriesApi:
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete a membership between a directory and one or more quota policies  # noqa: E501
+        """Delete a membership between a directory and one or more quota policies
 
-        Deletes a membership between a directory and one or more quota policies. The `policy_ids` or `policy_names` parameter is required, but cannot be set together. The `member_ids` or `member_names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directories_policies_quota_delete_with_http_info(authorization, x_request_id, context_names, member_ids, member_names, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Deletes a membership between a directory and one or more quota policies. The `policy_ids` or `policy_names` parameter is required, but cannot be set together. The `member_ids` or `member_names` parameter is required, but cannot be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -2915,14 +2836,9 @@ class DirectoriesApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List quota policies attached to a directory  # noqa: E501
+        """List quota policies attached to a directory
 
-        Displays a list of quota policies that are attached to directories.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directories_policies_quota_get_with_http_info(authorization, x_request_id, allow_errors, context_names, continuation_token, destroyed, filter, limit, member_ids, member_names, offset, policy_ids, policy_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of quota policies that are attached to directories.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -3124,14 +3040,9 @@ class DirectoriesApi:
         member_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique member name specified. Examples of members include volumes, hosts, host groups, and directories. Enter multiple names in comma-separated format. For example, `vol01,vol02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create a membership between a directory and one or more quota policies  # noqa: E501
+        """Create a membership between a directory and one or more quota policies
 
-        Creates a membership between a directory and one or more quota policies. The `member_ids` or `member_names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directories_policies_quota_post_with_http_info(policies, authorization, x_request_id, context_names, ignore_usage, member_ids, member_names, async_req=True)
-        >>> result = thread.get()
+        Creates a membership between a directory and one or more quota policies. The `member_ids` or `member_names` parameter is required, but cannot be set together.
 
         :param policies: (required)
         :type policies: DirectoryPolicyPost
@@ -3289,14 +3200,9 @@ class DirectoriesApi:
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete a membership between a directory and one or more SMB policies  # noqa: E501
+        """Delete a membership between a directory and one or more SMB policies
 
-        Deletes a membership between a directory and one or more SMB policies. The `policy_ids` or `policy_names` parameter is required, but cannot be set together. The `member_ids` or `member_names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directories_policies_smb_delete_with_http_info(authorization, x_request_id, context_names, member_ids, member_names, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Deletes a membership between a directory and one or more SMB policies. The `policy_ids` or `policy_names` parameter is required, but cannot be set together. The `member_ids` or `member_names` parameter is required, but cannot be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -3451,14 +3357,9 @@ class DirectoriesApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List SMB policies attached to a directory  # noqa: E501
+        """List SMB policies attached to a directory
 
-        Displays a list of SMB policies that are attached to directories.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directories_policies_smb_get_with_http_info(authorization, x_request_id, allow_errors, context_names, continuation_token, destroyed, filter, limit, member_ids, member_names, offset, policy_ids, policy_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of SMB policies that are attached to directories.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -3659,14 +3560,9 @@ class DirectoriesApi:
         member_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique member name specified. Examples of members include volumes, hosts, host groups, and directories. Enter multiple names in comma-separated format. For example, `vol01,vol02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create a membership between a directory and one or more SMB policies  # noqa: E501
+        """Create a membership between a directory and one or more SMB policies
 
-        Creates a membership between a directory and one or more SMB policies. The `member_ids` or `member_names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directories_policies_smb_post_with_http_info(policies, authorization, x_request_id, context_names, member_ids, member_names, async_req=True)
-        >>> result = thread.get()
+        Creates a membership between a directory and one or more SMB policies. The `member_ids` or `member_names` parameter is required, but cannot be set together.
 
         :param policies: (required)
         :type policies: DirectoryPolicyExportPost
@@ -3818,14 +3714,9 @@ class DirectoriesApi:
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete a membership between a directory and one or more snapshot policies  # noqa: E501
+        """Delete a membership between a directory and one or more snapshot policies
 
-        Deletes a membership between a directory and one or more snapshot policies. The `policy_ids` or `policy_names` parameter is required, but cannot be set together. The `member_ids` or `member_names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directories_policies_snapshot_delete_with_http_info(authorization, x_request_id, context_names, member_ids, member_names, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Deletes a membership between a directory and one or more snapshot policies. The `policy_ids` or `policy_names` parameter is required, but cannot be set together. The `member_ids` or `member_names` parameter is required, but cannot be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -3980,14 +3871,9 @@ class DirectoriesApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List snapshot policies attached to a directory  # noqa: E501
+        """List snapshot policies attached to a directory
 
-        Displays a list of snapshot policies that are attached to directories.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directories_policies_snapshot_get_with_http_info(authorization, x_request_id, allow_errors, context_names, continuation_token, destroyed, filter, limit, member_ids, member_names, offset, policy_ids, policy_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of snapshot policies that are attached to directories.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -4188,14 +4074,9 @@ class DirectoriesApi:
         member_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique member name specified. Examples of members include volumes, hosts, host groups, and directories. Enter multiple names in comma-separated format. For example, `vol01,vol02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create a membership between a directory with one or more snapshot policies  # noqa: E501
+        """Create a membership between a directory with one or more snapshot policies
 
-        Creates a membership between a directory with one or more snapshot policies. The `member_ids` or `member_names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directories_policies_snapshot_post_with_http_info(policies, authorization, x_request_id, context_names, member_ids, member_names, async_req=True)
-        >>> result = thread.get()
+        Creates a membership between a directory with one or more snapshot policies. The `member_ids` or `member_names` parameter is required, but cannot be set together.
 
         :param policies: (required)
         :type policies: DirectoryPolicyPost
@@ -4347,14 +4228,9 @@ class DirectoriesApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create directory  # noqa: E501
+        """Create directory
 
-        Creates a managed directory at the specified path. The managed directory name must consist of a file system name prefix and a managed directory name suffix (separated with '&#58;'). The suffix must be between 1 and 63 characters (alphanumeric and '-') in length and begin and end with a letter or number. The suffix must include at least one letter or '-'. Set `names` to create a managed directory with the specified full managed directory name, or set `file_system_names` or `file_system_ids` in the query parameters and `suffix` in the body parameters to create a managed directory in the specified file system with the specified suffix. These two options are exclusive.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directories_post_with_http_info(directory, authorization, x_request_id, context_names, file_system_ids, file_system_names, names, async_req=True)
-        >>> result = thread.get()
+        Creates a managed directory at the specified path. The managed directory name must consist of a file system name prefix and a managed directory name suffix (separated with '&#58;'). The suffix must be between 1 and 63 characters (alphanumeric and '-') in length and begin and end with a letter or number. The suffix must include at least one letter or '-'. Set `names` to create a managed directory with the specified full managed directory name, or set `file_system_names` or `file_system_ids` in the query parameters and `suffix` in the body parameters to create a managed directory in the specified file system with the specified suffix. These two options are exclusive.
 
         :param directory: (required)
         :type directory: DirectoryPost
@@ -4523,14 +4399,9 @@ class DirectoriesApi:
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List directory space information  # noqa: E501
+        """List directory space information
 
-        Displays physical storage consumption data for each directory.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directories_space_get_with_http_info(authorization, x_request_id, allow_errors, context_names, continuation_token, destroyed, end_time, filter, ids, limit, names, offset, resolution, sort, start_time, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays physical storage consumption data for each directory.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str

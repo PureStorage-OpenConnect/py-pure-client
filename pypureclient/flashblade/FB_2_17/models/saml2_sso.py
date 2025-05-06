@@ -26,7 +26,7 @@ from pypureclient.flashblade.FB_2_17.models.saml2_sso_sp import Saml2SsoSp
 
 class Saml2Sso(BaseModel):
     """
-    Configuration information for SAML2-based SSO for FlashArray.  # noqa: E501
+    Configuration information for SAML2-based SSO for FlashArray.
     """
     id: Optional[StrictStr] = Field(default=None, description="A non-modifiable, globally unique ID chosen by the system.")
     name: Optional[StrictStr] = Field(default=None, description="A name chosen by the user. Can be changed. Must be locally unique.")

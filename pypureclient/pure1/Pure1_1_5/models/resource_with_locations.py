@@ -25,7 +25,7 @@ from pypureclient.pure1.Pure1_1_5.models.fixed_reference_fqdn import FixedRefere
 
 class ResourceWithLocations(BaseModel):
     """
-    A resource that may relate to multiple locations.  # noqa: E501
+    A resource that may relate to multiple locations.
     """
     id: Optional[StrictStr] = Field(default=None, description="The opaque and unique id of this resource.")
     name: Optional[StrictStr] = Field(default=None, description="The name of this resource.")

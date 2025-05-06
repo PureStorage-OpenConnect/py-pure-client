@@ -26,6 +26,7 @@ from typing import Optional
 from pypureclient.flasharray.FA_2_25.models.offload_get_response import OffloadGetResponse
 from pypureclient.flasharray.FA_2_25.models.offload_post import OffloadPost
 from pypureclient.flasharray.FA_2_25.models.offload_response import OffloadResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_25.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_25.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_25.exceptions import (  # noqa: F401
@@ -51,14 +52,9 @@ class OffloadsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete offload target  # noqa: E501
+        """Delete offload target
 
-        Deletes an offload target.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api225_offloads_delete_with_http_info(authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Deletes an offload target.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -180,14 +176,9 @@ class OffloadsApi:
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List offload targets  # noqa: E501
+        """List offload targets
 
-        Displays a list of offload targets that are connected to the array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api225_offloads_get_with_http_info(authorization, x_request_id, filter, limit, names, offset, protocol, sort, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays a list of offload targets that are connected to the array.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -353,14 +344,9 @@ class OffloadsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create offload target  # noqa: E501
+        """Create offload target
 
-        Creates an offload target, connecting it to an array. Before you can connect to, manage, and replicate to an offload target, the Purity Run app must be installed.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api225_offloads_post_with_http_info(offload, authorization, x_request_id, initialize, names, async_req=True)
-        >>> result = thread.get()
+        Creates an offload target, connecting it to an array. Before you can connect to, manage, and replicate to an offload target, the Purity Run app must be installed.
 
         :param offload: (required)
         :type offload: OffloadPost

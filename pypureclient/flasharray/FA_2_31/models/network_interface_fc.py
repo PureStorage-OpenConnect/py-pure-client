@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictStr
 
 class NetworkInterfaceFc(BaseModel):
     """
-    Fibre Channel port properties.  # noqa: E501
+    Fibre Channel port properties.
     """
     wwn: Optional[StrictStr] = Field(default=None, description="World Wide Name of the specified Fibre Channel port.")
     __properties = ["wwn"]

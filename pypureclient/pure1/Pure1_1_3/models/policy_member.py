@@ -25,7 +25,7 @@ from pypureclient.pure1.Pure1_1_3.models.fixed_reference import FixedReference
 
 class PolicyMember(BaseModel):
     """
-    An association between a policy and a member.  # noqa: E501
+    An association between a policy and a member.
     """
     as_of: Optional[StrictInt] = Field(default=None, alias="_as_of", description="The freshness of the data (timestamp in millis since epoch).")
     member: Optional[FixedReference] = None

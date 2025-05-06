@@ -26,7 +26,7 @@ from pypureclient.flasharray.FA_2_41.models.reference_with_type import Reference
 
 class DnsPost(BaseModel):
     """
-    Configuration information for the domain name servers.  # noqa: E501
+    Configuration information for the domain name servers.
     """
     ca_certificate: Optional[ReferenceWithType] = Field(default=None, description="A reference to the `certificate` to use for validating nameservers with HTTPS connections. This property is mutually exclusive with `ca_certificate_group` property and may only be configured when nameservers begin with HTTPS.")
     ca_certificate_group: Optional[ReferenceWithType] = Field(default=None, description="A reference to the `certificate group` to use for validating nameservers with HTTPS connections. This property is mutually exclusive with `ca_certificate` property and may only be configured when nameservers begin with HTTPS.")

@@ -35,6 +35,7 @@ from pypureclient.flashblade.FB_2_9.models.file_system_response import FileSyste
 from pypureclient.flashblade.FB_2_9.models.file_system_users_performance_get_response import FileSystemUsersPerformanceGetResponse
 from pypureclient.flashblade.FB_2_9.models.policy_member_get_response import PolicyMemberGetResponse
 from pypureclient.flashblade.FB_2_9.models.policy_member_response import PolicyMemberResponse
+from typing import Optional
 from pypureclient.flashblade.FB_2_9.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_9.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_9.exceptions import (  # noqa: F401
@@ -59,14 +60,9 @@ class FileSystemsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE file-systems  # noqa: E501
+        """DELETE file-systems
 
-        Deletes a file system. Deleting a file system is equivalent to eradication. A file system's `destroyed` parameter must be set to `true` before a file system can be deleted.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api29_file_systems_delete_with_http_info(ids, names, async_req=True)
-        >>> result = thread.get()
+        Deletes a file system. Deleting a file system is equivalent to eradication. A file system's `destroyed` parameter must be set to `true` before a file system can be deleted.
 
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
         :type ids: List[str]
@@ -182,14 +178,9 @@ class FileSystemsApi:
         total_only: Annotated[Optional[StrictBool], Field(description="Only return the total record for the specified items. The total record will be the total of all items after filtering. The `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET file-systems  # noqa: E501
+        """GET file-systems
 
-        List one or more file systems on the array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api29_file_systems_get_with_http_info(continuation_token, destroyed, filter, ids, limit, names, offset, sort, total_only, async_req=True)
-        >>> result = thread.get()
+        List one or more file systems on the array.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -354,14 +345,9 @@ class FileSystemsApi:
         total_only: Annotated[Optional[StrictBool], Field(description="Only return the total record for the specified items. The total record will be the total of all items after filtering. The `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET file-systems/groups/performance  # noqa: E501
+        """GET file-systems/groups/performance
 
-        List a group’s I/O performance metrics on a file system.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api29_file_systems_groups_performance_get_with_http_info(file_system_ids, file_system_names, filter, gids, group_names, limit, names, sort, total_only, async_req=True)
-        >>> result = thread.get()
+        List a group’s I/O performance metrics on a file system.
 
         :param file_system_ids: A comma-separated list of file system IDs. If after filtering, there is not at least one resource that matches each of the elements of `file_system_ids`, then an error is returned. This cannot be provided together with the `file_system_names` query parameter.
         :type file_system_ids: List[str]
@@ -523,14 +509,9 @@ class FileSystemsApi:
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Get a list of clients that hold active file locks  # noqa: E501
+        """Get a list of clients that hold active file locks
 
-        Lists all clients that hold active file locks.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api29_file_systems_locks_clients_get_with_http_info(continuation_token, filter, limit, async_req=True)
-        >>> result = thread.get()
+        Lists all clients that hold active file locks.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -649,14 +630,9 @@ class FileSystemsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Invalidate file locks  # noqa: E501
+        """Invalidate file locks
 
-        Invalidates file locks. Both parameters are exclusive. It can be used to either delete an individual lock by name or all locks held by a client.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api29_file_systems_locks_delete_with_http_info(client_names, names, async_req=True)
-        >>> result = thread.get()
+        Invalidates file locks. Both parameters are exclusive. It can be used to either delete an individual lock by name or all locks held by a client.
 
         :param client_names: A comma-separated list of ip addresses of clients that hold file locks. For IPv6 both the extended format (x:x:x:x:x:x:x:x) and the shortened format are supported.
         :type client_names: List[str]
@@ -772,14 +748,9 @@ class FileSystemsApi:
         paths: Annotated[Optional[conlist(StrictStr)], Field(description="Used for filtering file locks query by file paths. This may only be specified if `file_system_ids` or `file_system_names` is also specified. This cannot be provided together with the `inodes` query parameter.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Get a list of active file locks  # noqa: E501
+        """Get a list of active file locks
 
-        Lists all active file locks that satisfy the conditions specified by the parameters.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api29_file_systems_locks_get_with_http_info(client_names, continuation_token, file_system_ids, file_system_names, filter, inodes, limit, names, paths, async_req=True)
-        >>> result = thread.get()
+        Lists all active file locks that satisfy the conditions specified by the parameters.
 
         :param client_names: A comma-separated list of ip addresses of clients that hold file locks. For IPv6 both the extended format (x:x:x:x:x:x:x:x) and the shortened format are supported.
         :type client_names: List[str]
@@ -938,14 +909,9 @@ class FileSystemsApi:
         self,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Initiate NLM reclamation.  # noqa: E501
+        """Initiate NLM reclamation.
 
-        NLM reclamation is a system-wide operation, affecting all clients, and so only one may be in progress at a time. Attempting to initiate reclamation while one is in progress will result in an error. When NLM reclamation is initiated, all NLM locks are deleted and client applications are notified that they can reacquire their locks within a grace period.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api29_file_systems_locks_nlm_reclamations_post_with_http_info(async_req=True)
-        >>> result = thread.get()
+        NLM reclamation is a system-wide operation, affecting all clients, and so only one may be in progress at a time. Attempting to initiate reclamation while one is in progress will result in an error. When NLM reclamation is initiated, all NLM locks are deleted and client applications are notified that they can reacquire their locks within a grace period.
 
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -1051,14 +1017,9 @@ class FileSystemsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH file-systems  # noqa: E501
+        """PATCH file-systems
 
-        Modify a file system’s attributes including its export protocols and limits.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api29_file_systems_patch_with_http_info(file_system, delete_link_on_eradication, discard_detailed_permissions, discard_non_snapshotted_data, ids, ignore_usage, names, async_req=True)
-        >>> result = thread.get()
+        Modify a file system’s attributes including its export protocols and limits.
 
         :param file_system: (required)
         :type file_system: FileSystemPatch
@@ -1220,14 +1181,9 @@ class FileSystemsApi:
         total_only: Annotated[Optional[StrictBool], Field(description="Only return the total record for the specified items. The total record will be the total of all items after filtering. The `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET file-systems/performance  # noqa: E501
+        """GET file-systems/performance
 
-        Displays the performance metrics for a file system.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api29_file_systems_performance_get_with_http_info(continuation_token, end_time, filter, ids, limit, names, offset, protocol, resolution, sort, start_time, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays the performance metrics for a file system.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -1410,14 +1366,9 @@ class FileSystemsApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET file-systems/policies-all  # noqa: E501
+        """GET file-systems/policies-all
 
-        List file system policies.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api29_file_systems_policies_all_get_with_http_info(continuation_token, filter, limit, member_ids, member_names, offset, policy_ids, policy_names, sort, async_req=True)
-        >>> result = thread.get()
+        List file system policies.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -1579,14 +1530,9 @@ class FileSystemsApi:
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of policy names.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE file-systems/policies  # noqa: E501
+        """DELETE file-systems/policies
 
-        Remove a snapshot scheduling policy from a file system.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api29_file_systems_policies_delete_with_http_info(member_ids, member_names, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Remove a snapshot scheduling policy from a file system.
 
         :param member_ids: A comma-separated list of member IDs. If after filtering, there is not at least one resource that matches each of the elements of `member_ids`, then an error is returned. This cannot be provided together with the `member_names` query parameter.
         :type member_ids: List[str]
@@ -1716,14 +1662,9 @@ class FileSystemsApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET file-systems/policies  # noqa: E501
+        """GET file-systems/policies
 
-        List file system snapshot scheduling policies.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api29_file_systems_policies_get_with_http_info(continuation_token, filter, limit, member_ids, member_names, offset, policy_ids, policy_names, sort, async_req=True)
-        >>> result = thread.get()
+        List file system snapshot scheduling policies.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -1885,14 +1826,9 @@ class FileSystemsApi:
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of policy names.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST file-systems/policies  # noqa: E501
+        """POST file-systems/policies
 
-        Apply a snapshot scheduling policy to a file system. Only one file system can be mapped to a policy at a time.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api29_file_systems_policies_post_with_http_info(member_ids, member_names, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Apply a snapshot scheduling policy to a file system. Only one file system can be mapped to a policy at a time.
 
         :param member_ids: A comma-separated list of member IDs. If after filtering, there is not at least one resource that matches each of the elements of `member_ids`, then an error is returned. This cannot be provided together with the `member_names` query parameter.
         :type member_ids: List[str]
@@ -2023,14 +1959,9 @@ class FileSystemsApi:
         overwrite: Annotated[Optional[StrictBool], Field(description="When used for snapshot restore, overwrites (`true`) an existing file system.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST file-systems  # noqa: E501
+        """POST file-systems
 
-        Create a file system on the current array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api29_file_systems_post_with_http_info(names, file_system, discard_non_snapshotted_data, overwrite, async_req=True)
-        >>> result = thread.get()
+        Create a file system on the current array.
 
         :param names: A comma-separated list of resource names. (required)
         :type names: List[str]
@@ -2170,14 +2101,9 @@ class FileSystemsApi:
         user_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of user names. This cannot be provided together with `uids` query parameter.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET file-systems/users/performance  # noqa: E501
+        """GET file-systems/users/performance
 
-        List a user’s I/O performance metrics on a file system.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api29_file_systems_users_performance_get_with_http_info(file_system_ids, file_system_names, filter, limit, names, sort, total_only, uids, user_names, async_req=True)
-        >>> result = thread.get()
+        List a user’s I/O performance metrics on a file system.
 
         :param file_system_ids: A comma-separated list of file system IDs. If after filtering, there is not at least one resource that matches each of the elements of `file_system_ids`, then an error is returned. This cannot be provided together with the `file_system_names` query parameter.
         :type file_system_ids: List[str]

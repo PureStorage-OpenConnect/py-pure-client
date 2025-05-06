@@ -26,7 +26,7 @@ from pypureclient.pure1.Pure1_1_4.models.fixed_reference_fqdn import FixedRefere
 
 class Pod(BaseModel):
     """
-    An administrative domain, a data container, and a namespace for volumes and protection groups.  # noqa: E501
+    An administrative domain, a data container, and a namespace for volumes and protection groups.
     """
     as_of: Optional[StrictInt] = Field(default=None, alias="_as_of", description="The freshness of the data (timestamp in millis since epoch).")
     id: Optional[StrictStr] = Field(default=None, description="A non-modifiable, globally unique ID chosen by the system.")

@@ -27,6 +27,7 @@ from pypureclient.flashblade.FB_2_11.models.object_store_access_key import Objec
 from pypureclient.flashblade.FB_2_11.models.object_store_access_key_get_response import ObjectStoreAccessKeyGetResponse
 from pypureclient.flashblade.FB_2_11.models.object_store_access_key_post import ObjectStoreAccessKeyPost
 from pypureclient.flashblade.FB_2_11.models.object_store_access_key_response import ObjectStoreAccessKeyResponse
+from typing import Optional
 from pypureclient.flashblade.FB_2_11.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_11.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_11.exceptions import (  # noqa: F401
@@ -50,14 +51,9 @@ class ObjectStoreAccessKeysApi:
         names: Annotated[conlist(StrictStr), Field(..., description="A comma-separated list of resource names.")],
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE object-store-access-keys  # noqa: E501
+        """DELETE object-store-access-keys
 
-        Delete an object store access key. Once an access key has been deleted, it cannot be recovered.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api211_object_store_access_keys_delete_with_http_info(names, async_req=True)
-        >>> result = thread.get()
+        Delete an object store access key. Once an access key has been deleted, it cannot be recovered.
 
         :param names: A comma-separated list of resource names. (required)
         :type names: List[str]
@@ -163,14 +159,9 @@ class ObjectStoreAccessKeysApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET object-store-access-keys  # noqa: E501
+        """GET object-store-access-keys
 
-        List object store access keys.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api211_object_store_access_keys_get_with_http_info(continuation_token, filter, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        List object store access keys.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -309,14 +300,9 @@ class ObjectStoreAccessKeysApi:
         object_store_access_key: ObjectStoreAccessKey,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH object-store-access-keys  # noqa: E501
+        """PATCH object-store-access-keys
 
-        Enable or disable object store access keys.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api211_object_store_access_keys_patch_with_http_info(names, object_store_access_key, async_req=True)
-        >>> result = thread.get()
+        Enable or disable object store access keys.
 
         :param names: A comma-separated list of resource names. (required)
         :type names: List[str]
@@ -437,14 +423,9 @@ class ObjectStoreAccessKeysApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names to import. To import a set of credentials, this field must be specified with the `secret_access_key` body parameter. If both of these are not specified, the system will generate a new set of credentials.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST object-store-access-keys  # noqa: E501
+        """POST object-store-access-keys
 
-        Create or import object store access keys.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api211_object_store_access_keys_post_with_http_info(object_store_access_key, names, async_req=True)
-        >>> result = thread.get()
+        Create or import object store access keys.
 
         :param object_store_access_key: (required)
         :type object_store_access_key: ObjectStoreAccessKeyPost

@@ -28,7 +28,7 @@ from pypureclient.flasharray.FA_2_40.models.preset_workload_constraints_string i
 
 class PresetWorkloadConstraints(BaseModel):
     """
-    Constraints to apply to the parameter.  # noqa: E501
+    Constraints to apply to the parameter.
     """
     boolean: Optional[PresetWorkloadConstraintsBoolean] = None
     integer: Optional[PresetWorkloadConstraintsInteger] = None

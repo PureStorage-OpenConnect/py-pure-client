@@ -25,6 +25,7 @@ from typing import Optional
 
 from pypureclient.pure1.Pure1_1_4.models.policy_get_response import PolicyGetResponse
 from pypureclient.pure1.Pure1_1_4.models.policy_members_get_response import PolicyMembersGetResponse
+from typing import Optional
 from pypureclient.pure1.Pure1_1_4.api_client import ApiClient as _TransportApiClient
 from pypureclient.pure1.Pure1_1_4.api_response import ApiResponse
 from pypureclient.pure1.Pure1_1_4.exceptions import (  # noqa: F401
@@ -58,14 +59,9 @@ class PoliciesApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Get policy / FlashBlade file system replica link pairs  # noqa: E501
+        """Get policy / FlashBlade file system replica link pairs
 
-        Retrieves pairs of policy references and their FlashBlade file system replica link members.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api14_policies_file_system_replica_links_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, member_ids, member_names, offset, policy_ids, policy_names, sort, async_req=True)
-        >>> result = thread.get()
+        Retrieves pairs of policy references and their FlashBlade file system replica link members.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`)
         :type authorization: str
@@ -251,14 +247,9 @@ class PoliciesApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Get policy / FlashBlade file system snapshot pairs  # noqa: E501
+        """Get policy / FlashBlade file system snapshot pairs
 
-        Retrieves pairs of policy references and their FlashBlade file system snapshot members.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api14_policies_file_system_snapshots_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, member_ids, member_names, offset, policy_ids, policy_names, sort, async_req=True)
-        >>> result = thread.get()
+        Retrieves pairs of policy references and their FlashBlade file system snapshot members.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`)
         :type authorization: str
@@ -444,14 +435,9 @@ class PoliciesApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Get policy / FlashBlade file system pairs  # noqa: E501
+        """Get policy / FlashBlade file system pairs
 
-        Retrieves pairs of policy references and their FlashBlade file system members.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api14_policies_file_systems_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, member_ids, member_names, offset, policy_ids, policy_names, sort, async_req=True)
-        >>> result = thread.get()
+        Retrieves pairs of policy references and their FlashBlade file system members.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`)
         :type authorization: str
@@ -635,14 +621,9 @@ class PoliciesApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Get policies  # noqa: E501
+        """Get policies
 
-        Retrieves policies and their rules.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api14_policies_get_with_http_info(authorization, x_request_id, continuation_token, filter, ids, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        Retrieves policies and their rules.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`)
         :type authorization: str
@@ -814,14 +795,9 @@ class PoliciesApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Get policy / member pairs  # noqa: E501
+        """Get policy / member pairs
 
-        Retrieves pairs of policy references and their members.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api14_policies_members_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, member_ids, member_names, offset, policy_ids, policy_names, sort, async_req=True)
-        >>> result = thread.get()
+        Retrieves pairs of policy references and their members.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`)
         :type authorization: str

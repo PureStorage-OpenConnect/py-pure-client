@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictInt, StrictStr
 
 class EradicationConfig(BaseModel):
     """
-    The configuration of eradication feature.  # noqa: E501
+    The configuration of eradication feature.
     """
     eradication_delay: Optional[StrictInt] = Field(default=None, description="Eradication delay in milliseconds. Automatically eradicate destroyed items after the configured delay time passes. Valid values are `86400000` and any multiple of `86400000` in the range of `86400000` and `2592000000`. Any other values are rounded down to the nearest multiple of `86400000`.")
     manual_eradication: Optional[StrictStr] = Field(default=None, description="Manual eradication status applied on the array level. If status is `all-disabled`, you cannot eradicate objects, files, and directories. Values include `all-disabled` and `all-enabled`. If the user does not have sufficient access, this field will return `null`.")

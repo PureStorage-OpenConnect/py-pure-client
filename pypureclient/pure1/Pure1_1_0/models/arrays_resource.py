@@ -25,7 +25,7 @@ from pypureclient.pure1.Pure1_1_0.models.fixed_reference import FixedReference
 
 class ArraysResource(BaseModel):
     """
-    An ordinary (as opposed to built-in) resource that exists on one or multiple arrays and can be created, named, renamed or deleted by the user. This might be a virtual resource (e.g., a volume), or correspond to something in the environment, like a host or a server.  # noqa: E501
+    An ordinary (as opposed to built-in) resource that exists on one or multiple arrays and can be created, named, renamed or deleted by the user. This might be a virtual resource (e.g., a volume), or correspond to something in the environment, like a host or a server.
     """
     as_of: Optional[StrictInt] = Field(default=None, alias="_as_of", description="The freshness of the data (timestamp in millis since epoch).")
     id: Optional[StrictStr] = Field(default=None, description="A non-modifiable, globally unique ID chosen by the system.")

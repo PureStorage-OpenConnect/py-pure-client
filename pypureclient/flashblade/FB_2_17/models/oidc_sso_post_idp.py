@@ -25,7 +25,7 @@ from pypureclient.flashblade.FB_2_17.models.reference import Reference
 
 class OidcSsoPostIdp(BaseModel):
     """
-    Identity Provider  # noqa: E501
+    Identity Provider
     """
     provider_url: Optional[StrictStr] = Field(default=None, description="URL of the Identity Provider server")
     provider_url_ca_certificate: Optional[Reference] = Field(default=None, description="CA certificate used to validate the authenticity of the configured Identity Provider server.")

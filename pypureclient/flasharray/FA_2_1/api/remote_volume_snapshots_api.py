@@ -25,6 +25,7 @@ from typing import Optional
 
 from pypureclient.flasharray.FA_2_1.models.remote_volume_snapshot_get_response import RemoteVolumeSnapshotGetResponse
 from pypureclient.flasharray.FA_2_1.models.remote_volume_snapshot_transfer_get_response import RemoteVolumeSnapshotTransferGetResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_1.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_1.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_1.exceptions import (  # noqa: F401
@@ -60,14 +61,9 @@ class RemoteVolumeSnapshotsApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List remote volume snapshots  # noqa: E501
+        """List remote volume snapshots
 
-        Returns a list of remote volume snapshots.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api21_remote_volume_snapshots_get_with_http_info(authorization, x_request_id, destroyed, filter, ids, limit, names, offset, on, sort, source_ids, source_names, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Returns a list of remote volume snapshots.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -264,14 +260,9 @@ class RemoteVolumeSnapshotsApi:
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List remote volume snapshots with transfer statistics  # noqa: E501
+        """List remote volume snapshots with transfer statistics
 
-        Returns a list of remote volume snapshots and their transfer statistics.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api21_remote_volume_snapshots_transfer_get_with_http_info(authorization, x_request_id, destroyed, filter, ids, limit, names, offset, on, sort, source_ids, source_names, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Returns a list of remote volume snapshots and their transfer statistics.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str

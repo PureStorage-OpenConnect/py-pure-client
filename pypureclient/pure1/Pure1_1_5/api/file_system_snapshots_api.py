@@ -25,6 +25,7 @@ from typing import Optional
 
 from pypureclient.pure1.Pure1_1_5.models.file_system_snapshot_get_response import FileSystemSnapshotGetResponse
 from pypureclient.pure1.Pure1_1_5.models.policy_members_get_response import PolicyMembersGetResponse
+from typing import Optional
 from pypureclient.pure1.Pure1_1_5.api_client import ApiClient as _TransportApiClient
 from pypureclient.pure1.Pure1_1_5.api_response import ApiResponse
 from pypureclient.pure1.Pure1_1_5.exceptions import (  # noqa: F401
@@ -58,14 +59,9 @@ class FileSystemSnapshotsApi:
         source_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of names for the source of the object. If there is not at least one resource that matches each `source_name` element, an error is returned. Single quotes are required around all strings.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Get FlashBlade file system snapshots  # noqa: E501
+        """Get FlashBlade file system snapshots
 
-        Retrieves snapshots of FlashBlade file systems.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api15_file_system_snapshots_get_with_http_info(authorization, x_request_id, continuation_token, filter, ids, limit, names, offset, sort, source_ids, source_names, async_req=True)
-        >>> result = thread.get()
+        Retrieves snapshots of FlashBlade file systems.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`)
         :type authorization: str
@@ -251,14 +247,9 @@ class FileSystemSnapshotsApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Get FlashBlade file system snapshot / policy pairs  # noqa: E501
+        """Get FlashBlade file system snapshot / policy pairs
 
-        Retrieves pairs of FlashBlade file system snapshot members and their policies.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api15_file_system_snapshots_policies_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, member_ids, member_names, offset, policy_ids, policy_names, sort, async_req=True)
-        >>> result = thread.get()
+        Retrieves pairs of FlashBlade file system snapshot members and their policies.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`)
         :type authorization: str

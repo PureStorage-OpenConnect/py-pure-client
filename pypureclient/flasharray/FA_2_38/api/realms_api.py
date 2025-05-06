@@ -29,6 +29,7 @@ from pypureclient.flasharray.FA_2_38.models.realm_patch import RealmPatch
 from pypureclient.flasharray.FA_2_38.models.realm_post import RealmPost
 from pypureclient.flasharray.FA_2_38.models.realm_response import RealmResponse
 from pypureclient.flasharray.FA_2_38.models.realm_space_get_response import RealmSpaceGetResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_38.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_38.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_38.exceptions import (  # noqa: F401
@@ -56,14 +57,9 @@ class RealmsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete Realms  # noqa: E501
+        """Delete Realms
 
-        Deletes realms that have been destroyed and are pending eradication. Eradicated realms cannot be recovered. Realms are destroyed using the PATCH method.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api238_realms_delete_with_http_info(authorization, x_request_id, eradicate_contents, ids, names, async_req=True)
-        >>> result = thread.get()
+        Deletes realms that have been destroyed and are pending eradication. Eradicated realms cannot be recovered. Realms are destroyed using the PATCH method.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -200,14 +196,9 @@ class RealmsApi:
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List realms  # noqa: E501
+        """List realms
 
-        Displays a list of realms.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api238_realms_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, ids, limit, names, offset, sort, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays a list of realms.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -388,14 +379,9 @@ class RealmsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Modify realms  # noqa: E501
+        """Modify realms
 
-        Modifies realm details.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api238_realms_patch_with_http_info(realm, authorization, x_request_id, destroy_contents, ids, ignore_usage, names, async_req=True)
-        >>> result = thread.get()
+        Modifies realm details.
 
         :param realm: (required)
         :type realm: RealmPatch
@@ -562,14 +548,9 @@ class RealmsApi:
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List realm performance data  # noqa: E501
+        """List realm performance data
 
-        Displays real-time and historical performance data, real-time latency data, and average I/O sizes across all realms, displayed both by realm and as a total across all realms.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api238_realms_performance_get_with_http_info(authorization, x_request_id, allow_errors, context_names, continuation_token, destroyed, end_time, filter, ids, limit, names, offset, resolution, sort, start_time, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays real-time and historical performance data, real-time latency data, and average I/O sizes across all realms, displayed both by realm and as a total across all realms.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -778,14 +759,9 @@ class RealmsApi:
         realm: Optional[RealmPost] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create realms  # noqa: E501
+        """Create realms
 
-        Creates realms on the local array. Each realm must be given a name that is unique across the connected arrays.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api238_realms_post_with_http_info(names, authorization, x_request_id, realm, async_req=True)
-        >>> result = thread.get()
+        Creates realms on the local array. Each realm must be given a name that is unique across the connected arrays.
 
         :param names: Performs the operation on the unique name specified. For example, `name01`. Enter multiple names in comma-separated format. (required)
         :type names: List[str]
@@ -930,14 +906,9 @@ class RealmsApi:
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List realm space information  # noqa: E501
+        """List realm space information
 
-        Displays provisioned size and storage consumption data for each realm on the local array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api238_realms_space_get_with_http_info(authorization, x_request_id, destroyed, end_time, filter, ids, limit, names, offset, resolution, sort, start_time, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays provisioned size and storage consumption data for each realm on the local array.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str

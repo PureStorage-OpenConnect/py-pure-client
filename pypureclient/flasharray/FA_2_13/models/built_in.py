@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictStr
 
 class BuiltIn(BaseModel):
     """
-    A built-in resource. Many are singletons predefined by Purity (e.g., support settings). Some correspond to a piece of software, like an app, or hardware, like a controller. Others are created by the system in response to some event (e.g., alerts, audit records). Typically, a user can't create, delete or rename a built-in resource. A few can be created or deleted, but not renamed because the names are meaningful to Purity (e.g., VIFs).  # noqa: E501
+    A built-in resource. Many are singletons predefined by Purity (e.g., support settings). Some correspond to a piece of software, like an app, or hardware, like a controller. Others are created by the system in response to some event (e.g., alerts, audit records). Typically, a user can't create, delete or rename a built-in resource. A few can be created or deleted, but not renamed because the names are meaningful to Purity (e.g., VIFs).
     """
     id: Optional[StrictStr] = Field(default=None, description="A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.")
     name: Optional[StrictStr] = Field(default=None, description="A locally unique, system-generated name. The name cannot be modified.")

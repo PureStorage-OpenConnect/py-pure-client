@@ -31,6 +31,7 @@ from pypureclient.flashblade.FB_2_10.models.directory_service_roles_get_response
 from pypureclient.flashblade.FB_2_10.models.directory_service_roles_response import DirectoryServiceRolesResponse
 from pypureclient.flashblade.FB_2_10.models.test_result_get_response import TestResultGetResponse
 from pypureclient.flashblade.FB_2_10.models.test_result_response import TestResultResponse
+from typing import Optional
 from pypureclient.flashblade.FB_2_10.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_10.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_10.exceptions import (  # noqa: F401
@@ -60,14 +61,9 @@ class DirectoryServicesApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET directory-services  # noqa: E501
+        """GET directory-services
 
-        List directory service configuration information for the array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api210_directory_services_get_with_http_info(continuation_token, filter, ids, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        List directory service configuration information for the array.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -214,14 +210,9 @@ class DirectoryServicesApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH directory-services  # noqa: E501
+        """PATCH directory-services
 
-        Modifies and tests the directory service configuration.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api210_directory_services_patch_with_http_info(directory_service, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modifies and tests the directory service configuration.
 
         :param directory_service: (required)
         :type directory_service: DirectoryService
@@ -355,14 +346,9 @@ class DirectoryServicesApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET directory-service/roles  # noqa: E501
+        """GET directory-service/roles
 
-        Return array's RBAC group configuration settings for manageability.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api210_directory_services_roles_get_with_http_info(continuation_token, filter, ids, limit, offset, role_ids, role_names, sort, async_req=True)
-        >>> result = thread.get()
+        Return array's RBAC group configuration settings for manageability.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -517,14 +503,9 @@ class DirectoryServicesApi:
         role_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of role_names. If there is not at least one resource that matches each of the elements of `role_names`, then an error is returned. This cannot be provided together with the `ids` or `role_ids` query parameters.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH directory-service/roles  # noqa: E501
+        """PATCH directory-service/roles
 
-        Update an RBAC group configuration setting for manageability.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api210_directory_services_roles_patch_with_http_info(directory_service_roles, ids, role_ids, role_names, async_req=True)
-        >>> result = thread.get()
+        Update an RBAC group configuration setting for manageability.
 
         :param directory_service_roles: (required)
         :type directory_service_roles: DirectoryServiceRole
@@ -662,14 +643,9 @@ class DirectoryServicesApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET directory-services/test  # noqa: E501
+        """GET directory-services/test
 
-        Test the configured directory services on the array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api210_directory_services_test_get_with_http_info(filter, ids, limit, names, sort, async_req=True)
-        >>> result = thread.get()
+        Test the configured directory services on the array.
 
         :param filter: Exclude resources that don't match the specified criteria.
         :type filter: str
@@ -806,14 +782,9 @@ class DirectoryServicesApi:
         directory_service: Annotated[Optional[DirectoryService], Field(description="An optional directory service configuration that, if provided, will be used to overwrite aspects of the existing directory service objects when performing tests.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH directory-service/test  # noqa: E501
+        """PATCH directory-service/test
 
-        Test the configured directory services on the array. Optionally, provide modifications which will be used to perform the tests, but will not be applied to the current configuration.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api210_directory_services_test_patch_with_http_info(filter, ids, names, sort, directory_service, async_req=True)
-        >>> result = thread.get()
+        Test the configured directory services on the array. Optionally, provide modifications which will be used to perform the tests, but will not be applied to the current configuration.
 
         :param filter: Exclude resources that don't match the specified criteria.
         :type filter: str

@@ -25,7 +25,7 @@ from pypureclient.pure1.Pure1_1_4.models.fixed_reference import FixedReference
 
 class SubscriptionLicensePreRatio(BaseModel):
     """
-    The pre-reduced & encrypted ratio calculated at license level.  # noqa: E501
+    The pre-reduced & encrypted ratio calculated at license level.
     """
     data: Optional[Union[StrictFloat, StrictInt]] = None
     metric: Optional[FixedReference] = Field(default=None, description="A reference to the metric this data measures.")

@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, conint
 
 class NetworkInterfacePerformanceFc(BaseModel):
     """
-    Fibre Channel port statistics.  # noqa: E501
+    Fibre Channel port statistics.
     """
     received_bytes_per_sec: Optional[conint(strict=True, ge=0)] = Field(default=None, description="Bytes received per second.")
     received_crc_errors_per_sec: Optional[conint(strict=True, ge=0)] = Field(default=None, description="Fibre Channel frame CRC errors per second.")

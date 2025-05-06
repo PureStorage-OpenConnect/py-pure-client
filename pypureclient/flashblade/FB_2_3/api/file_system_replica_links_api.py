@@ -29,6 +29,7 @@ from pypureclient.flashblade.FB_2_3.models.file_system_replica_link_response imp
 from pypureclient.flashblade.FB_2_3.models.file_system_snapshot_get_transfer_response import FileSystemSnapshotGetTransferResponse
 from pypureclient.flashblade.FB_2_3.models.policy_member_with_remote_get_response import PolicyMemberWithRemoteGetResponse
 from pypureclient.flashblade.FB_2_3.models.policy_member_with_remote_response import PolicyMemberWithRemoteResponse
+from typing import Optional
 from pypureclient.flashblade.FB_2_3.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_3.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_3.exceptions import (  # noqa: F401
@@ -63,14 +64,9 @@ class FileSystemReplicaLinksApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET file-system-replica-links  # noqa: E501
+        """GET file-system-replica-links
 
-        List file system replication link.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api23_file_system_replica_links_get_with_http_info(continuation_token, filter, ids, limit, local_file_system_ids, local_file_system_names, offset, remote_file_system_ids, remote_file_system_names, remote_ids, remote_names, sort, async_req=True)
-        >>> result = thread.get()
+        List file system replication link.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -256,14 +252,9 @@ class FileSystemReplicaLinksApi:
         remote_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of remote array names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `remote_ids` query parameter.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE file-system-replica-links/policies  # noqa: E501
+        """DELETE file-system-replica-links/policies
 
-        Remove a policy from a file system replication link.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api23_file_system_replica_links_policies_delete_with_http_info(local_file_system_ids, local_file_system_names, member_ids, policy_ids, policy_names, remote_ids, remote_names, async_req=True)
-        >>> result = thread.get()
+        Remove a policy from a file system replication link.
 
         :param local_file_system_ids: A comma-separated list of local file system IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `local_file_system_names` query parameter.
         :type local_file_system_ids: List[str]
@@ -419,14 +410,9 @@ class FileSystemReplicaLinksApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET file-system-replica-links/policies  # noqa: E501
+        """GET file-system-replica-links/policies
 
-        List file system replication link policies.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api23_file_system_replica_links_policies_get_with_http_info(continuation_token, filter, limit, local_file_system_ids, local_file_system_names, member_ids, offset, policy_ids, policy_names, remote_file_system_ids, remote_file_system_names, remote_ids, remote_names, sort, async_req=True)
-        >>> result = thread.get()
+        List file system replication link policies.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -626,14 +612,9 @@ class FileSystemReplicaLinksApi:
         remote_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of remote array names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `remote_ids` query parameter.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST file-system-replica-links/policies  # noqa: E501
+        """POST file-system-replica-links/policies
 
-        Add a policy to a file system replication link.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api23_file_system_replica_links_policies_post_with_http_info(local_file_system_ids, local_file_system_names, member_ids, policy_ids, policy_names, remote_ids, remote_names, async_req=True)
-        >>> result = thread.get()
+        Add a policy to a file system replication link.
 
         :param local_file_system_ids: A comma-separated list of local file system IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `local_file_system_names` query parameter.
         :type local_file_system_ids: List[str]
@@ -788,14 +769,9 @@ class FileSystemReplicaLinksApi:
         remote_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of remote array names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `remote_ids` query parameter.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST file-system-replica-links  # noqa: E501
+        """POST file-system-replica-links
 
-        Create a file system replication link.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api23_file_system_replica_links_post_with_http_info(file_system_replica_link, ids, local_file_system_ids, local_file_system_names, remote_file_system_names, remote_ids, remote_names, async_req=True)
-        >>> result = thread.get()
+        Create a file system replication link.
 
         :param file_system_replica_link: (required)
         :type file_system_replica_link: FileSystemReplicaLink
@@ -959,14 +935,9 @@ class FileSystemReplicaLinksApi:
         total_only: Annotated[Optional[StrictBool], Field(description="Only return the total record for the specified items. The total record will be the total of all items after filtering. The `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET file-system-replica-links/transfer  # noqa: E501
+        """GET file-system-replica-links/transfer
 
-        List the transfer status details for file system replication.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api23_file_system_replica_links_transfer_get_with_http_info(continuation_token, filter, ids, limit, names_or_owner_names, offset, remote_ids, remote_names, sort, total_only, async_req=True)
-        >>> result = thread.get()
+        List the transfer status details for file system replication.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str

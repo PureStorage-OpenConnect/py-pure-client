@@ -24,6 +24,7 @@ from pydantic import Field, StrictStr, conint, conlist, constr, validator
 from typing import Optional
 
 from pypureclient.flashblade.FB_2_0.models.role_get_response import RoleGetResponse
+from typing import Optional
 from pypureclient.flashblade.FB_2_0.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_0.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_0.exceptions import (  # noqa: F401
@@ -53,14 +54,9 @@ class RolesApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET roles  # noqa: E501
+        """GET roles
 
-        List roles and permission attributes for role-based access control (RBAC).  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api20_roles_get_with_http_info(continuation_token, filter, ids, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        List roles and permission attributes for role-based access control (RBAC).
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str

@@ -26,6 +26,7 @@ from typing import Optional
 from pypureclient.flasharray.FA_2_1.models.connection_get_response import ConnectionGetResponse
 from pypureclient.flasharray.FA_2_1.models.connection_post import ConnectionPost
 from pypureclient.flasharray.FA_2_1.models.connection_response import ConnectionResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_1.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_1.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_1.exceptions import (  # noqa: F401
@@ -53,14 +54,9 @@ class ConnectionsApi:
         volume_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the volume specified. Enter multiple names in comma-separated format. For example, `vol01,vol02`. A request cannot include a mix of multiple objects with multiple names. For example, a request cannot include a mix of multiple volume names and host names; instead, at least one of the objects (e.g., `volume_names`) must be set to only one name (e.g., `vol01`).")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Break a connection between a volume and its host or host group  # noqa: E501
+        """Break a connection between a volume and its host or host group
 
-        Breaks the connection between a volume and its associated host or host group. The `volume_names` and `host_names` or `host_group_names` query parameters are required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api21_connections_delete_with_http_info(authorization, x_request_id, host_group_names, host_names, volume_names, async_req=True)
-        >>> result = thread.get()
+        Breaks the connection between a volume and its associated host or host group. The `volume_names` and `host_names` or `host_group_names` query parameters are required.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -198,14 +194,9 @@ class ConnectionsApi:
         volume_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the volume specified. Enter multiple names in comma-separated format. For example, `vol01,vol02`. A request cannot include a mix of multiple objects with multiple names. For example, a request cannot include a mix of multiple volume names and host names; instead, at least one of the objects (e.g., `volume_names`) must be set to only one name (e.g., `vol01`).")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List volume connections  # noqa: E501
+        """List volume connections
 
-        Returns a list of connections between a volume and its hosts and host groups, and the LUNs used by the associated hosts to address these volumes.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api21_connections_get_with_http_info(authorization, x_request_id, continuation_token, filter, host_group_names, host_names, limit, offset, protocol_endpoint_names, sort, total_item_count, volume_names, async_req=True)
-        >>> result = thread.get()
+        Returns a list of connections between a volume and its hosts and host groups, and the LUNs used by the associated hosts to address these volumes.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -387,14 +378,9 @@ class ConnectionsApi:
         connection: Optional[ConnectionPost] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create a connection between a volume and host or host group  # noqa: E501
+        """Create a connection between a volume and host or host group
 
-        Creates a connection between a volume and a host or host group. The `volume_names` and `host_names` or `host_group_names` query parameters are required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api21_connections_post_with_http_info(authorization, x_request_id, host_group_names, host_names, volume_names, connection, async_req=True)
-        >>> result = thread.get()
+        Creates a connection between a volume and a host or host group. The `volume_names` and `host_names` or `host_group_names` query parameters are required.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str

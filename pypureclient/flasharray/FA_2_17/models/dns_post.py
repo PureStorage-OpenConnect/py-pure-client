@@ -25,7 +25,7 @@ from pypureclient.flasharray.FA_2_17.models.reference_no_id import ReferenceNoId
 
 class DnsPost(BaseModel):
     """
-    Configuration information for the domain name servers.  # noqa: E501
+    Configuration information for the domain name servers.
     """
     domain: Optional[StrictStr] = Field(default=None, description="The domain suffix to be appended by the appliance when performing DNS lookups.")
     nameservers: Optional[conlist(StrictStr)] = Field(default=None, description="The list of DNS server IP addresses.")

@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictInt, StrictStr
 
 class ApiToken(BaseModel):
     """
-    API token  # noqa: E501
+    API token
     """
     created_at: Optional[StrictInt] = Field(default=None, description="Creation time in milliseconds since the UNIX epoch.")
     expires_at: Optional[StrictInt] = Field(default=None, description="Expiration time in milliseconds since the UNIX epoch.")

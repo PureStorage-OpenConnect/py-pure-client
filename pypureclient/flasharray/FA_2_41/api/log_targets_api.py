@@ -34,6 +34,7 @@ from pypureclient.flasharray.FA_2_41.models.syslog_server_settings import Syslog
 from pypureclient.flasharray.FA_2_41.models.syslog_server_settings_get_response import SyslogServerSettingsGetResponse
 from pypureclient.flasharray.FA_2_41.models.syslog_server_settings_response import SyslogServerSettingsResponse
 from pypureclient.flasharray.FA_2_41.models.test_result_with_resource_get_response import TestResultWithResourceGetResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_41.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_41.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_41.exceptions import (  # noqa: F401
@@ -60,14 +61,9 @@ class LogTargetsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete file log target  # noqa: E501
+        """Delete file log target
 
-        Deletes a configured file log target.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api241_log_targets_file_delete_with_http_info(authorization, x_request_id, context_names, names, async_req=True)
-        >>> result = thread.get()
+        Deletes a configured file log target.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -197,14 +193,9 @@ class LogTargetsApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List file log targets  # noqa: E501
+        """List file log targets
 
-        Displays a list of configured file log targets.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api241_log_targets_file_get_with_http_info(authorization, x_request_id, allow_errors, context_names, continuation_token, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of configured file log targets.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -377,14 +368,9 @@ class LogTargetsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Modify file log target  # noqa: E501
+        """Modify file log target
 
-        Modifies the URI of a configured file log target.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api241_log_targets_file_patch_with_http_info(log_target_file, authorization, x_request_id, context_names, names, async_req=True)
-        >>> result = thread.get()
+        Modifies the URI of a configured file log target.
 
         :param log_target_file: (required)
         :type log_target_file: LogTargetFile
@@ -527,14 +513,9 @@ class LogTargetsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create file log target  # noqa: E501
+        """Create file log target
 
-        Creates a new file log target.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api241_log_targets_file_post_with_http_info(log_target_file, authorization, x_request_id, context_names, names, async_req=True)
-        >>> result = thread.get()
+        Creates a new file log target.
 
         :param log_target_file: (required)
         :type log_target_file: LogTargetFile
@@ -683,14 +664,9 @@ class LogTargetsApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List log targets  # noqa: E501
+        """List log targets
 
-        Displays a list of configured log targets.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api241_log_targets_get_with_http_info(authorization, x_request_id, allow_errors, context_names, continuation_token, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of configured log targets.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -862,14 +838,9 @@ class LogTargetsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete syslog server  # noqa: E501
+        """Delete syslog server
 
-        Deletes a configured syslog server and stop forwarding syslog messages.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api241_log_targets_syslog_delete_with_http_info(authorization, x_request_id, context_names, names, async_req=True)
-        >>> result = thread.get()
+        Deletes a configured syslog server and stop forwarding syslog messages.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -999,14 +970,9 @@ class LogTargetsApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List syslog servers  # noqa: E501
+        """List syslog servers
 
-        Displays a list of configured syslog servers.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api241_log_targets_syslog_get_with_http_info(authorization, x_request_id, allow_errors, context_names, continuation_token, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of configured syslog servers.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -1179,14 +1145,9 @@ class LogTargetsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Modify syslog server  # noqa: E501
+        """Modify syslog server
 
-        Modifies the URI and services of a configured syslog server.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api241_log_targets_syslog_patch_with_http_info(syslog_server, authorization, x_request_id, context_names, names, async_req=True)
-        >>> result = thread.get()
+        Modifies the URI and services of a configured syslog server.
 
         :param syslog_server: (required)
         :type syslog_server: SyslogServer
@@ -1329,14 +1290,9 @@ class LogTargetsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create syslog server  # noqa: E501
+        """Create syslog server
 
-        Creates a new syslog server.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api241_log_targets_syslog_post_with_http_info(syslog_server, authorization, x_request_id, context_names, names, async_req=True)
-        >>> result = thread.get()
+        Creates a new syslog server.
 
         :param syslog_server: (required)
         :type syslog_server: SyslogServer
@@ -1484,14 +1440,9 @@ class LogTargetsApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List syslog settings  # noqa: E501
+        """List syslog settings
 
-        Displays syslog settings. Values include `continuation_token`, `items`, `more_items_remaining`, and `total_item_count`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api241_log_targets_syslog_settings_get_with_http_info(authorization, x_request_id, allow_errors, context_names, continuation_token, filter, limit, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays syslog settings. Values include `continuation_token`, `items`, `more_items_remaining`, and `total_item_count`.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -1656,14 +1607,9 @@ class LogTargetsApi:
         context_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the context specified. If specified, the context names must be an array of size 1, and the single element must be the name of an array in the same fleet. If not specified, the context will default to the array that received this request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Modify syslog settings  # noqa: E501
+        """Modify syslog settings
 
-        Modifies syslog settings. Values include `continuation_token`, `items`, `more_items_remaining`, and `total_item_count`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api241_log_targets_syslog_settings_patch_with_http_info(syslog_server_settings, authorization, x_request_id, context_names, async_req=True)
-        >>> result = thread.get()
+        Modifies syslog settings. Values include `continuation_token`, `items`, `more_items_remaining`, and `total_item_count`.
 
         :param syslog_server_settings: (required)
         :type syslog_server_settings: SyslogServerSettings
@@ -1804,14 +1750,9 @@ class LogTargetsApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List syslog server test results  # noqa: E501
+        """List syslog server test results
 
-        Displays syslog server test results, which indicate whether the syslog is working and configured correctly.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api241_log_targets_syslog_test_get_with_http_info(authorization, x_request_id, allow_errors, context_names, continuation_token, filter, limit, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays syslog server test results, which indicate whether the syslog is working and configured correctly.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str

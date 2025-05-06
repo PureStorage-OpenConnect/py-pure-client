@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictStr
 
 class CertificateSigningRequest(BaseModel):
     """
-    SSL certificate managed by Purity//FA.  # noqa: E501
+    SSL certificate managed by Purity//FA.
     """
     certificate_signing_request: Optional[StrictStr] = Field(default=None, description="The text of a new certificate signing request.")
     __properties = ["certificate_signing_request"]

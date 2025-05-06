@@ -25,6 +25,7 @@ from typing import Optional
 
 from pypureclient.pure1.Pure1_1_1.models.subscription_get_response import SubscriptionGetResponse
 from pypureclient.pure1.Pure1_1_1.models.subscription_license_get_response import SubscriptionLicenseGetResponse
+from typing import Optional
 from pypureclient.pure1.Pure1_1_1.api_client import ApiClient as _TransportApiClient
 from pypureclient.pure1.Pure1_1_1.api_response import ApiResponse
 from pypureclient.pure1.Pure1_1_1.exceptions import (  # noqa: F401
@@ -59,14 +60,9 @@ class SubscriptionsApi:
         subscription_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of subscription names. If there is not at least one resource that matches each `subscription.name` element, an error is returned. Single quotes are required around all strings.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Get subscription licenses  # noqa: E501
+        """Get subscription licenses
 
-        Retrieves information about Pure1 subscription licenses.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api11_subscription_licenses_get_with_http_info(authorization, x_request_id, continuation_token, filter, ids, limit, marketplace_partner_reference_ids, names, offset, sort, subscription_ids, subscription_names, async_req=True)
-        >>> result = thread.get()
+        Retrieves information about Pure1 subscription licenses.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`)
         :type authorization: str
@@ -257,14 +253,9 @@ class SubscriptionsApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Get subscriptions  # noqa: E501
+        """Get subscriptions
 
-        Retrieves information about Pure1 subscriptions.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api11_subscriptions_get_with_http_info(authorization, x_request_id, continuation_token, filter, ids, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        Retrieves information about Pure1 subscriptions.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`)
         :type authorization: str

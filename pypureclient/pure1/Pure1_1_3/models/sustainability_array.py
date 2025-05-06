@@ -26,7 +26,7 @@ from pypureclient.pure1.Pure1_1_3.models.sustainability_assessment import Sustai
 
 class SustainabilityArray(BaseModel):
     """
-    A single FlashArray/FlashBlade appliance Sustainability assessment information.  # noqa: E501
+    A single FlashArray/FlashBlade appliance Sustainability assessment information.
     """
     as_of: Optional[StrictInt] = Field(default=None, alias="_as_of", description="The freshness of the data (timestamp in millis since epoch).")
     id: Optional[StrictStr] = Field(default=None, description="A non-modifiable, globally unique ID chosen by the system.")

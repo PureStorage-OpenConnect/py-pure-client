@@ -31,6 +31,7 @@ from pypureclient.flashblade.FB_2_12.models.smb_share_policy_rule import SmbShar
 from pypureclient.flashblade.FB_2_12.models.smb_share_policy_rule_get_response import SmbSharePolicyRuleGetResponse
 from pypureclient.flashblade.FB_2_12.models.smb_share_policy_rule_post import SmbSharePolicyRulePost
 from pypureclient.flashblade.FB_2_12.models.smb_share_policy_rule_response import SmbSharePolicyRuleResponse
+from typing import Optional
 from pypureclient.flashblade.FB_2_12.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_12.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_12.exceptions import (  # noqa: F401
@@ -55,14 +56,9 @@ class PoliciesSMBShareApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE smb-share-policies  # noqa: E501
+        """DELETE smb-share-policies
 
-        Delete one or more SMB Share policies.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api212_smb_share_policies_delete_with_http_info(ids, names, async_req=True)
-        >>> result = thread.get()
+        Delete one or more SMB Share policies.
 
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
         :type ids: List[str]
@@ -176,14 +172,9 @@ class PoliciesSMBShareApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET smb-share-policies  # noqa: E501
+        """GET smb-share-policies
 
-        Display SMB Share policies and their attributes.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api212_smb_share_policies_get_with_http_info(continuation_token, filter, ids, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        Display SMB Share policies and their attributes.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -330,14 +321,9 @@ class PoliciesSMBShareApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH smb-share-policies  # noqa: E501
+        """PATCH smb-share-policies
 
-        Modify an existing SMB Share policy's attributes.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api212_smb_share_policies_patch_with_http_info(policy, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modify an existing SMB Share policy's attributes.
 
         :param policy: (required)
         :type policy: SmbSharePolicy
@@ -465,14 +451,9 @@ class PoliciesSMBShareApi:
         policy: Optional[SmbSharePolicyPost] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST smb-share-policies  # noqa: E501
+        """POST smb-share-policies
 
-        Create a new SMB Share policy.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api212_smb_share_policies_post_with_http_info(names, policy, async_req=True)
-        >>> result = thread.get()
+        Create a new SMB Share policy.
 
         :param names: A comma-separated list of resource names. (required)
         :type names: List[str]
@@ -595,14 +576,9 @@ class PoliciesSMBShareApi:
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of policy names.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE smb-share-policies/rules  # noqa: E501
+        """DELETE smb-share-policies/rules
 
-        Delete one or more SMB Share policy rules. One of the following is required: `ids` or `names`. If `names` is provided, the `policy_ids` or `policy_names` parameter is also required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api212_smb_share_policies_rules_delete_with_http_info(ids, names, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Delete one or more SMB Share policy rules. One of the following is required: `ids` or `names`. If `names` is provided, the `policy_ids` or `policy_names` parameter is also required.
 
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
         :type ids: List[str]
@@ -732,14 +708,9 @@ class PoliciesSMBShareApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET smb-share-policies/rules  # noqa: E501
+        """GET smb-share-policies/rules
 
-        Displays a list of SMB Share policy rules.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api212_smb_share_policies_rules_get_with_http_info(continuation_token, filter, ids, limit, names, offset, policy_ids, policy_names, sort, async_req=True)
-        >>> result = thread.get()
+        Displays a list of SMB Share policy rules.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -902,14 +873,9 @@ class PoliciesSMBShareApi:
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of policy names.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH smb-share-policies/rules  # noqa: E501
+        """PATCH smb-share-policies/rules
 
-        Modify an existing SMB Share policy rule. One of the following is required: `ids` or `names`. If `names` is provided, the `policy_ids` or `policy_names` parameter is also required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api212_smb_share_policies_rules_patch_with_http_info(rule, ids, names, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Modify an existing SMB Share policy rule. One of the following is required: `ids` or `names`. If `names` is provided, the `policy_ids` or `policy_names` parameter is also required.
 
         :param rule: (required)
         :type rule: SmbSharePolicyRule
@@ -1052,14 +1018,9 @@ class PoliciesSMBShareApi:
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of policy names.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST smb-share-policies/rules  # noqa: E501
+        """POST smb-share-policies/rules
 
-        Add an SMB Share policy rule. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api212_smb_share_policies_rules_post_with_http_info(rule, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Add an SMB Share policy rule. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together.
 
         :param rule: (required)
         :type rule: SmbSharePolicyRulePost

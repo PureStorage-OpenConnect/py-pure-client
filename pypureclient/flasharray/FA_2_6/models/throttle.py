@@ -25,7 +25,7 @@ from pypureclient.flasharray.FA_2_6.models.time_window import TimeWindow
 
 class Throttle(BaseModel):
     """
-    The bandwidth throttling for an array connection. Configurable on PATCH only.  # noqa: E501
+    The bandwidth throttling for an array connection. Configurable on PATCH only.
     """
     default_limit: Optional[StrictInt] = Field(default=None, description="Default maximum bandwidth threshold for outbound traffic in bytes. Once exceeded, bandwidth throttling occurs.")
     window: Optional[TimeWindow] = Field(default=None, description="The time during which the `window_limit` threshold is in effect.")

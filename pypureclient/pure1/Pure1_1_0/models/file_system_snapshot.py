@@ -25,7 +25,7 @@ from pypureclient.pure1.Pure1_1_0.models.fixed_reference import FixedReference
 
 class FileSystemSnapshot(BaseModel):
     """
-    A point-in-time image of the contents of a FlashBlade file system.  # noqa: E501
+    A point-in-time image of the contents of a FlashBlade file system.
     """
     as_of: Optional[StrictInt] = Field(default=None, alias="_as_of", description="The freshness of the data (timestamp in millis since epoch).")
     id: Optional[StrictStr] = Field(default=None, description="A non-modifiable, globally unique ID chosen by the system.")

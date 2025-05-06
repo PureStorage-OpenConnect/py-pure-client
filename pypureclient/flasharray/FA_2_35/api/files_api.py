@@ -24,6 +24,7 @@ from pydantic import Field, StrictBool, StrictStr, conlist
 from typing import Optional
 
 from pypureclient.flasharray.FA_2_35.models.file_post import FilePost
+from typing import Optional
 from pypureclient.flasharray.FA_2_35.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_35.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_35.exceptions import (  # noqa: F401
@@ -53,14 +54,9 @@ class FilesApi:
         paths: Annotated[Optional[conlist(StrictStr)], Field(description="Target file path relative to the target directory. Enter multiple target file path in a comma-separated format. For example, `/dir1/dir2/file1,/dir3/dir4/file2`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create a file copy  # noqa: E501
+        """Create a file copy
 
-        Creates a file copy from one path to another path. The `directory_ids`, `directory_names` or `paths` value must be specified. If the `directory_ids` or `directory_names` value is not specified, the file is copied to the source directory specified in the body params. The `paths` value refers to the path of the target file relative to the target directory. If `paths` value is not specified, the file will be copied to the relative path specified in `source_path` under the target directory. The `source_path` value refers to the path of the source file relative to the source directory. To overwrite an existing file, set the `overwrite` flag to `true`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api235_files_post_with_http_info(source_file, authorization, x_request_id, directory_ids, directory_names, overwrite, paths, async_req=True)
-        >>> result = thread.get()
+        Creates a file copy from one path to another path. The `directory_ids`, `directory_names` or `paths` value must be specified. If the `directory_ids` or `directory_names` value is not specified, the file is copied to the source directory specified in the body params. The `paths` value refers to the path of the target file relative to the target directory. If `paths` value is not specified, the file will be copied to the relative path specified in `source_path` under the target directory. The `source_path` value refers to the path of the source file relative to the source directory. To overwrite an existing file, set the `overwrite` flag to `true`.
 
         :param source_file: (required)
         :type source_file: FilePost

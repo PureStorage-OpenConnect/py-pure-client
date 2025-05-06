@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictStr, conlist
 
 class DirectoryServiceNfs(BaseModel):
     """
-    Properties specific to the NFS service.  # noqa: E501
+    Properties specific to the NFS service.
     """
     nis_domains: Optional[conlist(StrictStr)] = Field(default=None, description="NIS domains to search.")
     nis_servers: Optional[conlist(StrictStr)] = Field(default=None, description="A list of the IP addresses or hostnames of NIS servers to search.")

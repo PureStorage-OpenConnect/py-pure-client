@@ -29,7 +29,7 @@ from pypureclient.flasharray.FA_2_35.models.network_interface_port_details_stati
 
 class NetworkInterfacePortDetailsStatic(BaseModel):
     """
-    Static module identity and capabilities information for the specified network interface or Fibre Channel port.  # noqa: E501
+    Static module identity and capabilities information for the specified network interface or Fibre Channel port.
     """
     cable_technology: Optional[conlist(StrictStr)] = Field(default=None, description="The SFP+ cable technology supported by the transceiver.")
     connector_type: Optional[StrictStr] = Field(default=None, description="The media connector type of the transceiver.")

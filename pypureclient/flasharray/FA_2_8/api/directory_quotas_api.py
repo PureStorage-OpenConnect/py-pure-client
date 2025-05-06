@@ -24,6 +24,7 @@ from pydantic import Field, StrictBool, StrictStr, conint, conlist, constr, vali
 from typing import Optional
 
 from pypureclient.flasharray.FA_2_8.models.directory_quotas_get_response import DirectoryQuotasGetResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_8.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_8.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_8.exceptions import (  # noqa: F401
@@ -58,14 +59,9 @@ class DirectoryQuotasApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List directories with attached quota policies  # noqa: E501
+        """List directories with attached quota policies
 
-        Displays a list of directories and the quota policies attached to them. Directories with multiple policies are listed repeatedly (once per policy). The directories without a policy attached are not listed.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api28_directory_quotas_get_with_http_info(authorization, x_request_id, continuation_token, directory_ids, directory_names, filter, limit, offset, policy_ids, policy_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of directories and the quota policies attached to them. Directories with multiple policies are listed repeatedly (once per policy). The directories without a policy attached are not listed.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str

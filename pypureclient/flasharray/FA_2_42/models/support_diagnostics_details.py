@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictStr
 
 class SupportDiagnosticsDetails(BaseModel):
     """
-    Details of diagnostics tests tasks  # noqa: E501
+    Details of diagnostics tests tasks
     """
     result_details: Optional[StrictStr] = Field(default=None, description="Additional details related to the test. This field also provides remediation information.")
     severity: Optional[StrictStr] = Field(default=None, description="Severity level of the test. Valid values are `info`, `warning`, and `critical`.")

@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictStr
 
 class SyslogServerPostOrPatch(BaseModel):
     """
-    A syslog server  # noqa: E501
+    A syslog server
     """
     uri: Optional[StrictStr] = Field(default=None, description="The URI of the syslog server in the format PROTOCOL://HOSTNAME:PORT.")
     __properties = ["uri"]

@@ -25,7 +25,7 @@ from pypureclient.pure1.Pure1_1_1.models.fixed_reference_fqdn import FixedRefere
 
 class ResourceWithLocation(BaseModel):
     """
-    An ordinary resource that exists in one location.  # noqa: E501
+    An ordinary resource that exists in one location.
     """
     id: Optional[StrictStr] = Field(default=None, description="The opaque and unique id of this resource.")
     name: Optional[StrictStr] = Field(default=None, description="The name of this resource.")

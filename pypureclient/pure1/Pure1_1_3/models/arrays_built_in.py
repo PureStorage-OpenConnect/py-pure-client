@@ -25,7 +25,7 @@ from pypureclient.pure1.Pure1_1_3.models.fixed_reference_fqdn import FixedRefere
 
 class ArraysBuiltIn(BaseModel):
     """
-    A built-in resource that exists on one or multiple arrays.  # noqa: E501
+    A built-in resource that exists on one or multiple arrays.
     """
     as_of: Optional[StrictInt] = Field(default=None, alias="_as_of", description="The freshness of the data (timestamp in millis since epoch).")
     id: Optional[StrictStr] = Field(default=None, description="A non-modifiable, globally unique ID chosen by the system.")

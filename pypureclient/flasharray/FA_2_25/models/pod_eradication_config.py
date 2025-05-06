@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictStr
 
 class PodEradicationConfig(BaseModel):
     """
-    The status of the eradication functionality  # noqa: E501
+    The status of the eradication functionality
     """
     manual_eradication: Optional[StrictStr] = Field(default=None, description="The manual eradication status of pod. If `all-enabled`, the pod and its contents can be eradicated. If `partially-disabled`, the pod cannot be eradicated because the pod contains some non-empty protection groups that are retention-locked. If `all-disabled`, the pod and its contents cannot be eradicated. Values include `all-disabled`, `all-enabled`, and `partially-disabled`.")
     __properties = ["manual_eradication"]

@@ -24,6 +24,7 @@ from pydantic import Field, StrictBool, StrictStr, conint, conlist, constr, vali
 from typing import Optional
 
 from pypureclient.flasharray.FA_2_28.models.controller_get_response import ControllerGetResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_28.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_28.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_28.exceptions import (  # noqa: F401
@@ -55,14 +56,9 @@ class ControllersApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List controller information and status  # noqa: E501
+        """List controller information and status
 
-        Displays the name, mode, FlashArray model, Purity//FA software version, and status of each controller in the array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api228_controllers_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays the name, mode, FlashArray model, Purity//FA software version, and status of each controller in the array.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str

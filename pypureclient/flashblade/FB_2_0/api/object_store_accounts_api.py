@@ -25,6 +25,7 @@ from typing import Optional
 
 from pypureclient.flashblade.FB_2_0.models.object_store_account_get_response import ObjectStoreAccountGetResponse
 from pypureclient.flashblade.FB_2_0.models.object_store_account_response import ObjectStoreAccountResponse
+from typing import Optional
 from pypureclient.flashblade.FB_2_0.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_0.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_0.exceptions import (  # noqa: F401
@@ -49,14 +50,9 @@ class ObjectStoreAccountsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE object-store-accounts  # noqa: E501
+        """DELETE object-store-accounts
 
-        Delete an object store account.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api20_object_store_accounts_delete_with_http_info(ids, names, async_req=True)
-        >>> result = thread.get()
+        Delete an object store account.
 
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
         :type ids: List[str]
@@ -171,14 +167,9 @@ class ObjectStoreAccountsApi:
         total_only: Annotated[Optional[StrictBool], Field(description="Only return the total record for the specified items. The total record will be the total of all items after filtering. The `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET object-store-accounts  # noqa: E501
+        """GET object-store-accounts
 
-        List object store accounts and their attributes.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api20_object_store_accounts_get_with_http_info(continuation_token, filter, ids, limit, names, offset, sort, total_only, async_req=True)
-        >>> result = thread.get()
+        List object store accounts and their attributes.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -329,14 +320,9 @@ class ObjectStoreAccountsApi:
         names: Annotated[conlist(StrictStr), Field(..., description="A comma-separated list of resource names.")],
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST object-store-accounts  # noqa: E501
+        """POST object-store-accounts
 
-        Create an object store account.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api20_object_store_accounts_post_with_http_info(names, async_req=True)
-        >>> result = thread.get()
+        Create an object store account.
 
         :param names: A comma-separated list of resource names. (required)
         :type names: List[str]

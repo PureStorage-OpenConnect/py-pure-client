@@ -25,6 +25,7 @@ from typing import Optional
 
 from pypureclient.pure1.Pure1_1_0.models.file_system_replica_link_get_response import FileSystemReplicaLinkGetResponse
 from pypureclient.pure1.Pure1_1_0.models.policy_members_get_response import PolicyMembersGetResponse
+from typing import Optional
 from pypureclient.pure1.Pure1_1_0.api_client import ApiClient as _TransportApiClient
 from pypureclient.pure1.Pure1_1_0.api_response import ApiResponse
 from pypureclient.pure1.Pure1_1_0.exceptions import (  # noqa: F401
@@ -61,14 +62,9 @@ class FileSystemReplicaLinksApi:
         target_names: Annotated[Optional[conlist(StrictStr)], Field(description="A list of target names. Target names separated by a `+` indicate that both targets must be present in each element. Target names separated by a `,` indicate that at least one target must be present in each element. If there is not at least one resource that matches each `target_name` element, an error is returned. Single quotes are required around all strings. When using Try it Out in Swagger, a list of target names separated by a `+` must be entered in the same item cell.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Get FlashBlade file system replica links  # noqa: E501
+        """Get FlashBlade file system replica links
 
-        Retrieves information about FlashBlade file system replica links.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api10_file_system_replica_links_get_with_http_info(authorization, x_request_id, continuation_token, filter, ids, limit, member_ids, member_names, offset, sort, source_ids, source_names, target_ids, target_names, async_req=True)
-        >>> result = thread.get()
+        Retrieves information about FlashBlade file system replica links.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`)
         :type authorization: str
@@ -275,14 +271,9 @@ class FileSystemReplicaLinksApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Get FlashBlade file system replica link / policy pairs  # noqa: E501
+        """Get FlashBlade file system replica link / policy pairs
 
-        Retrieves pairs of FlashBlade file system replica link members and their policies.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api10_file_system_replica_links_policies_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, member_ids, member_names, offset, policy_ids, policy_names, sort, async_req=True)
-        >>> result = thread.get()
+        Retrieves pairs of FlashBlade file system replica link members and their policies.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`)
         :type authorization: str

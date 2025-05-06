@@ -26,6 +26,7 @@ from typing import Optional
 from pypureclient.flasharray.FA_2_26.models.hardware_get_response import HardwareGetResponse
 from pypureclient.flasharray.FA_2_26.models.hardware_patch import HardwarePatch
 from pypureclient.flasharray.FA_2_26.models.hardware_response import HardwareResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_26.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_26.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_26.exceptions import (  # noqa: F401
@@ -56,14 +57,9 @@ class HardwareApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List hardware component information  # noqa: E501
+        """List hardware component information
 
-        Displays a list of hardware slots and bays and status of installed components.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api226_hardware_get_with_http_info(authorization, x_request_id, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of hardware slots and bays and status of installed components.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -216,14 +212,9 @@ class HardwareApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Modify visual identification  # noqa: E501
+        """Modify visual identification
 
-        Modifies the visual identification of a specified hardware component, and causing the ID LED to turn on or off.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api226_hardware_patch_with_http_info(hardware, authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Modifies the visual identification of a specified hardware component, and causing the ID LED to turn on or off.
 
         :param hardware: (required)
         :type hardware: HardwarePatch

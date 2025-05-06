@@ -25,7 +25,7 @@ from pypureclient.flasharray.FA_2_41.models.network_interface_neighbor_neighbor_
 
 class NetworkInterfaceNeighborNeighborPort(BaseModel):
     """
-    The neighboring port connected to the FlashArray local port.  # noqa: E501
+    The neighboring port connected to the FlashArray local port.
     """
     description: Optional[StrictStr] = Field(default=None, description="A description of the neighbor port.")
     id: Optional[NetworkInterfaceNeighborNeighborPortId] = None

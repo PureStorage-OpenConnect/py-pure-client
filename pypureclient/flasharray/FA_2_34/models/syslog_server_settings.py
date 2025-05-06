@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictBool, StrictStr
 
 class SyslogServerSettings(BaseModel):
     """
-    Global settings for syslog servers.  # noqa: E501
+    Global settings for syslog servers.
     """
     ca_certificate: Optional[StrictStr] = Field(default=None, description="The certificate of the certificate authority (CA) that signed the directory servers' certificate(s), which is used to validate the authenticity of the configured servers.")
     logging_severity: Optional[StrictStr] = Field(default=None, description="Returns the configured logging severity threshold for which events will be forwarded to the configured syslog servers. Default configuration is info level severity. Valid values are `debug`, `info`, and `notice`.")

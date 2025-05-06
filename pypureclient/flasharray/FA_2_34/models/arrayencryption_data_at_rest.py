@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictBool, StrictStr
 
 class ArrayencryptionDataAtRest(BaseModel):
     """
-    Data at rest encryption properties.  # noqa: E501
+    Data at rest encryption properties.
     """
     algorithm: Optional[StrictStr] = Field(default=None, description="The algorithm used to encrypt data on the array. Values include `AES-256-CTR` and `null`.")
     enabled: Optional[StrictBool] = Field(default=None, description="Returns a value of `true` if data at rest encryption is enabled on the array.")

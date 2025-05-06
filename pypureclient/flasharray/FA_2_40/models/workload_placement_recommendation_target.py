@@ -27,7 +27,7 @@ from pypureclient.flasharray.FA_2_40.models.workload_placement_recommendation_wa
 
 class WorkloadPlacementRecommendationTarget(BaseModel):
     """
-    Data for a target in a workload placement recommendation. Target is a FlashArray, which may be used for workload placement.  # noqa: E501
+    Data for a target in a workload placement recommendation. Target is a FlashArray, which may be used for workload placement.
     """
     id: Optional[StrictStr] = Field(default=None, description="A globally unique, system-generated ID. The ID cannot be modified.")
     name: Optional[StrictStr] = Field(default=None, description="The resource name, such as volume name, pod name, snapshot name, and so on.")

@@ -28,6 +28,7 @@ from pypureclient.flasharray.FA_2_5.models.snmp_manager_patch import SnmpManager
 from pypureclient.flasharray.FA_2_5.models.snmp_manager_post import SnmpManagerPost
 from pypureclient.flasharray.FA_2_5.models.snmp_manager_response import SnmpManagerResponse
 from pypureclient.flasharray.FA_2_5.models.test_result_with_resource_get_response import TestResultWithResourceGetResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_5.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_5.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_5.exceptions import (  # noqa: F401
@@ -53,14 +54,9 @@ class SNMPManagersApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete SNMP manager  # noqa: E501
+        """Delete SNMP manager
 
-        Deletes the SNMP manager object and stops communication with specified managers.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api25_snmp_managers_delete_with_http_info(authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Deletes the SNMP manager object and stops communication with specified managers.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -181,14 +177,9 @@ class SNMPManagersApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List SNMP managers  # noqa: E501
+        """List SNMP managers
 
-        Displays designated SNMP managers and their communication and security attributes.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api25_snmp_managers_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays designated SNMP managers and their communication and security attributes.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -347,14 +338,9 @@ class SNMPManagersApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Modify SNMP manager  # noqa: E501
+        """Modify SNMP manager
 
-        Modifies the name or the protocol attributes of the specified SNMP manager.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api25_snmp_managers_patch_with_http_info(snmp_manager, authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Modifies the name or the protocol attributes of the specified SNMP manager.
 
         :param snmp_manager: (required)
         :type snmp_manager: SnmpManagerPatch
@@ -489,14 +475,9 @@ class SNMPManagersApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create SNMP manager  # noqa: E501
+        """Create SNMP manager
 
-        Creates a Purity SNMP manager object that identifies a host (SNMP manager) and specifies the protocol attributes for communicating with it. Once a manager object is created, the transmission of SNMP traps is immediately enabled.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api25_snmp_managers_post_with_http_info(snmp_manager, authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Creates a Purity SNMP manager object that identifies a host (SNMP manager) and specifies the protocol attributes for communicating with it. Once a manager object is created, the transmission of SNMP traps is immediately enabled.
 
         :param snmp_manager: (required)
         :type snmp_manager: SnmpManagerPost
@@ -635,14 +616,9 @@ class SNMPManagersApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List SNMP manager test results  # noqa: E501
+        """List SNMP manager test results
 
-        Displays SNMP manager test results (traps or informs).  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api25_snmp_managers_test_get_with_http_info(authorization, x_request_id, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays SNMP manager test results (traps or informs).
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str

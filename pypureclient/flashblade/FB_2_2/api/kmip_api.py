@@ -26,6 +26,7 @@ from typing import Optional
 from pypureclient.flashblade.FB_2_2.models.kmip_server import KmipServer
 from pypureclient.flashblade.FB_2_2.models.kmip_server_response import KmipServerResponse
 from pypureclient.flashblade.FB_2_2.models.test_result_response import TestResultResponse
+from typing import Optional
 from pypureclient.flashblade.FB_2_2.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_2.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_2.exceptions import (  # noqa: F401
@@ -50,14 +51,9 @@ class KMIPApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete a KMIP server configuration  # noqa: E501
+        """Delete a KMIP server configuration
 
-        Deletes a KMIP server configuration. A server can only be deleted when not in use by the array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api22_kmip_delete_with_http_info(ids, names, async_req=True)
-        >>> result = thread.get()
+        Deletes a KMIP server configuration. A server can only be deleted when not in use by the array.
 
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
         :type ids: List[str]
@@ -171,14 +167,9 @@ class KMIPApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List KMIP server configurations  # noqa: E501
+        """List KMIP server configurations
 
-        Displays a list of KMIP server configurations.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api22_kmip_get_with_http_info(continuation_token, filter, ids, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        Displays a list of KMIP server configurations.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -325,14 +316,9 @@ class KMIPApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Modify a KMIP server configuration  # noqa: E501
+        """Modify a KMIP server configuration
 
-        Modifies KMIP server properties - URI, certificate, certificate group.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api22_kmip_patch_with_http_info(kmip_server, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modifies KMIP server properties - URI, certificate, certificate group.
 
         :param kmip_server: (required)
         :type kmip_server: KmipServer
@@ -460,14 +446,9 @@ class KMIPApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create a KMIP server configuration  # noqa: E501
+        """Create a KMIP server configuration
 
-        Creates a KMIP server configuration.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api22_kmip_post_with_http_info(kmip_server, names, async_req=True)
-        >>> result = thread.get()
+        Creates a KMIP server configuration.
 
         :param kmip_server: (required)
         :type kmip_server: KmipServer
@@ -588,14 +569,9 @@ class KMIPApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Displays KMIP server test results  # noqa: E501
+        """Displays KMIP server test results
 
-        Displays a detailed result of of KMIP server test.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api22_kmip_test_get_with_http_info(ids, names, async_req=True)
-        >>> result = thread.get()
+        Displays a detailed result of of KMIP server test.
 
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
         :type ids: List[str]

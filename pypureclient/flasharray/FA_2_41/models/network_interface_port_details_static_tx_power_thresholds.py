@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictFloat, StrictInt
 
 class NetworkInterfacePortDetailsStaticTxPowerThresholds(BaseModel):
     """
-    The alarm low, warn low, warn high, alarm high thresholds for Tx output power in mW.  # noqa: E501
+    The alarm low, warn low, warn high, alarm high thresholds for Tx output power in mW.
     """
     alarm_high: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The alarm high threshold for Tx output power in mW.")
     alarm_low: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The alarm low threshold for Tx output power in mW.")

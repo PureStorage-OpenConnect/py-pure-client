@@ -25,7 +25,7 @@ from pypureclient.flasharray.FA_2_41.models.workload_parameter_value_resource_re
 
 class WorkloadParameterValue(BaseModel):
     """
-    The value of the parameter.  # noqa: E501
+    The value of the parameter.
     """
     boolean: Optional[StrictBool] = Field(default=None, description="The value for a boolean parameter.")
     integer: Optional[StrictInt] = Field(default=None, description="The value for an integer parameter.")

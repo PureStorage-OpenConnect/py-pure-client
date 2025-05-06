@@ -26,7 +26,7 @@ from pypureclient.flasharray.FA_2_33.models.reference_no_id import ReferenceNoId
 
 class NetworkInterfaceEth(BaseModel):
     """
-    Ethernet network interface properties.  # noqa: E501
+    Ethernet network interface properties.
     """
     address: Optional[StrictStr] = Field(default=None, description="The IPv4 or IPv6 address to be associated with the specified network interface.")
     gateway: Optional[StrictStr] = Field(default=None, description="The IPv4 or IPv6 address of the gateway through which the specified network interface is to communicate with the network.")

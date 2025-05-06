@@ -25,6 +25,7 @@ from typing import Optional
 
 from pypureclient.flasharray.FA_2_21.models.drive_get_response import DriveGetResponse
 from pypureclient.flasharray.FA_2_21.models.drive_response import DriveResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_21.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_21.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_21.exceptions import (  # noqa: F401
@@ -56,14 +57,9 @@ class DrivesApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List flash, NVRAM, and cache modules  # noqa: E501
+        """List flash, NVRAM, and cache modules
 
-        Displays a list of flash, NVRAM, and cache modules that are installed in the array along with their attributes and status.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api221_drives_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of flash, NVRAM, and cache modules that are installed in the array along with their attributes and status.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -221,14 +217,9 @@ class DrivesApi:
         admit: Annotated[Optional[StrictBool], Field(description="If `true`, admits any `unadmitted` drives into the system.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Modify flash and NVRAM modules  # noqa: E501
+        """Modify flash and NVRAM modules
 
-        Modifies flash and NVRAM modules that have been added or connected but not yet admitted to the array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api221_drives_patch_with_http_info(authorization, x_request_id, admit, async_req=True)
-        >>> result = thread.get()
+        Modifies flash and NVRAM modules that have been added or connected but not yet admitted to the array.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str

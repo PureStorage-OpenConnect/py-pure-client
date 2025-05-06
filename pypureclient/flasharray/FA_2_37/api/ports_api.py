@@ -25,6 +25,7 @@ from typing import Optional
 
 from pypureclient.flasharray.FA_2_37.models.port_get_response import PortGetResponse
 from pypureclient.flasharray.FA_2_37.models.port_initiators_get_response import PortInitiatorsGetResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_37.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_37.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_37.exceptions import (  # noqa: F401
@@ -55,14 +56,9 @@ class PortsApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List ports  # noqa: E501
+        """List ports
 
-        Displays host name, iSCSI Qualified Names (IQNs), NVMe Qualified Names (NQNs), IPv4 address of the portal, Fibre Channel World Wide Names (WWNs), and failover ports, including those that were discovered by Purity//FA and those that have been manually assigned by system administrators.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api237_ports_get_with_http_info(authorization, x_request_id, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays host name, iSCSI Qualified Names (IQNs), NVMe Qualified Names (NQNs), IPv4 address of the portal, Fibre Channel World Wide Names (WWNs), and failover ports, including those that were discovered by Purity//FA and those that have been manually assigned by system administrators.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -219,14 +215,9 @@ class PortsApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List port initiators  # noqa: E501
+        """List port initiators
 
-        Displays host iSCSI Qualified Names (IQNs), NVMe Qualified Names (NQNs), and Fibre Channel World Wide Names (WWNs), including those that were discovered by Purity//FA and those that have been manually assigned by system administrators, along with the array ports (targets) on which they are eligible to communicate.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api237_ports_initiators_get_with_http_info(authorization, x_request_id, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays host iSCSI Qualified Names (IQNs), NVMe Qualified Names (NQNs), and Fibre Channel World Wide Names (WWNs), including those that were discovered by Purity//FA and those that have been manually assigned by system administrators, along with the array ports (targets) on which they are eligible to communicate.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str

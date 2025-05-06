@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictInt, StrictStr
 
 class EradicationConfig(BaseModel):
     """
-    The configuration of eradication feature.  # noqa: E501
+    The configuration of eradication feature.
     """
     disabled_delay: Optional[StrictInt] = Field(default=None, description="The eradication delay in milliseconds for destroyed objects that cannot be manually eradicated. Destroyed objects that cannot be manually eradicated will be automatically eradicated after the configured delay time passes. Valid values are `86400000` and any multiple of `86400000` in the range of `86400000` and `2592000000`. Any other values are rounded down to the nearest multiple of `86400000`.")
     enabled_delay: Optional[StrictInt] = Field(default=None, description="The eradication delay in milliseconds for destroyed objects that can be manually eradicated. Destroyed objects that can be manually eradicated will be automatically eradicated after the configured delay time passes. Valid values are `86400000` and any multiple of `86400000` in the range of `86400000` and `2592000000`. Any other values are rounded down to the nearest multiple of `86400000`.")

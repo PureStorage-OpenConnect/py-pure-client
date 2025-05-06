@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, constr
 
 class PublicKeyPost(BaseModel):
     """
-    A public key configuration, defining a key used for cryptographic signature verification.  # noqa: E501
+    A public key configuration, defining a key used for cryptographic signature verification.
     """
     public_key: Optional[constr(strict=True, max_length=5400)] = Field(default=None, description="The text of the public key. May be PEM-formatted or OpenSSH-formatted at the time of input.")
     __properties = ["public_key"]

@@ -24,6 +24,7 @@ from pydantic import Field, StrictInt, StrictStr, conint, conlist, constr, valid
 from typing import Optional
 
 from pypureclient.pure1.Pure1_1_4.models.drive_get_response import DriveGetResponse
+from typing import Optional
 from pypureclient.pure1.Pure1_1_4.api_client import ApiClient as _TransportApiClient
 from pypureclient.pure1.Pure1_1_4.api_response import ApiResponse
 from pypureclient.pure1.Pure1_1_4.exceptions import (  # noqa: F401
@@ -55,14 +56,9 @@ class DrivesApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Get drives  # noqa: E501
+        """Get drives
 
-        Retrieves information about FlashArray drives.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api14_drives_get_with_http_info(authorization, x_request_id, continuation_token, filter, ids, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        Retrieves information about FlashArray drives.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`)
         :type authorization: str

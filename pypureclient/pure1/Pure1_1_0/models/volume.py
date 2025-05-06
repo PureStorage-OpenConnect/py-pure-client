@@ -25,7 +25,7 @@ from pypureclient.pure1.Pure1_1_0.models.fixed_reference import FixedReference
 
 class Volume(BaseModel):
     """
-    A disk-like random access virtual storage device that a FlashArray system exports to hosts via a logical unit number (LUN). For a host, a volume contains a number of 512-byte sectors in which data can be written and from which it can be read.  # noqa: E501
+    A disk-like random access virtual storage device that a FlashArray system exports to hosts via a logical unit number (LUN). For a host, a volume contains a number of 512-byte sectors in which data can be written and from which it can be read.
     """
     as_of: Optional[StrictInt] = Field(default=None, alias="_as_of", description="The freshness of the data (timestamp in millis since epoch).")
     id: Optional[StrictStr] = Field(default=None, description="A non-modifiable, globally unique ID chosen by the system.")

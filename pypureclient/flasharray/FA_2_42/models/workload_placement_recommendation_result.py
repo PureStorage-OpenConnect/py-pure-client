@@ -25,7 +25,7 @@ from pypureclient.flasharray.FA_2_42.models.workload_placement_recommendation_pl
 
 class WorkloadPlacementRecommendationResult(BaseModel):
     """
-    Single workload placement recommendation result.  # noqa: E501
+    Single workload placement recommendation result.
     """
     placements: Optional[conlist(WorkloadPlacementRecommendationPlacement)] = Field(default=None, description="The placements of the preset.")
     score: Optional[StrictStr] = Field(default=None, description="The score of the recommendation from Pure1. Possible values include `optimal`, `optimal-with-warnings`, and `acceptable`.")

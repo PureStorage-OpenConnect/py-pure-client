@@ -30,6 +30,7 @@ from pypureclient.flasharray.FA_2_28.models.protection_group_snapshot_replica_re
 from pypureclient.flasharray.FA_2_28.models.protection_group_snapshot_response import ProtectionGroupSnapshotResponse
 from pypureclient.flasharray.FA_2_28.models.protection_group_snapshot_transfer_get_response import ProtectionGroupSnapshotTransferGetResponse
 from pypureclient.flasharray.FA_2_28.models.test_result_with_resource_with_id_post_response import TestResultWithResourceWithIdPostResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_28.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_28.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_28.exceptions import (  # noqa: F401
@@ -56,14 +57,9 @@ class ProtectionGroupSnapshotsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete a protection group snapshot  # noqa: E501
+        """Delete a protection group snapshot
 
-        Deletes a protection group snapshot that has been destroyed and is pending eradication. Eradicating a protection group snapshot eradicates all of its protection group snapshots and cannot be recovered. Protection group snapshots are destroyed through the `PATCH` method. The `names` or `ids` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api228_protection_group_snapshots_delete_with_http_info(authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Deletes a protection group snapshot that has been destroyed and is pending eradication. Eradicating a protection group snapshot eradicates all of its protection group snapshots and cannot be recovered. Protection group snapshots are destroyed through the `PATCH` method. The `names` or `ids` parameter is required, but they cannot be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -196,14 +192,9 @@ class ProtectionGroupSnapshotsApi:
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List protection group snapshots  # noqa: E501
+        """List protection group snapshots
 
-        Displays a list of protection group snapshots, including those pending eradication.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api228_protection_group_snapshots_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, ids, limit, names, offset, sort, source_ids, source_names, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays a list of protection group snapshots, including those pending eradication.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -396,14 +387,9 @@ class ProtectionGroupSnapshotsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Modify a protection group snapshot  # noqa: E501
+        """Modify a protection group snapshot
 
-        Modifies a protection group snapshot so that it can be destroyed. To destroy a volume, set `destroyed=true`. To recover a volume that has been destroyed and is pending eradication, set `destroyed=false`. The `names` or `ids` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api228_protection_group_snapshots_patch_with_http_info(protection_group_snapshot, authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modifies a protection group snapshot so that it can be destroyed. To destroy a volume, set `destroyed=true`. To recover a volume that has been destroyed and is pending eradication, set `destroyed=false`. The `names` or `ids` parameter is required, but they cannot be set together.
 
         :param protection_group_snapshot: (required)
         :type protection_group_snapshot: ProtectionGroupSnapshotPatch
@@ -551,14 +537,9 @@ class ProtectionGroupSnapshotsApi:
         protection_group_snapshot: Optional[ProtectionGroupSnapshotPost] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create a protection group snapshot  # noqa: E501
+        """Create a protection group snapshot
 
-        Creates a point-in-time snapshot of the contents of a protection group. The `source_ids` or `source_names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api228_protection_group_snapshots_post_with_http_info(authorization, x_request_id, allow_throttle, apply_retention, for_replication, replicate, replicate_now, source_ids, source_names, protection_group_snapshot, async_req=True)
-        >>> result = thread.get()
+        Creates a point-in-time snapshot of the contents of a protection group. The `source_ids` or `source_names` parameter is required, but they cannot be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -732,14 +713,9 @@ class ProtectionGroupSnapshotsApi:
         on: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation locally with the target names specified as the destinations of the operation. Enter multiple target names in comma-separated format. For example, `targetName01,targetName02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create an action to send protection group snapshots  # noqa: E501
+        """Create an action to send protection group snapshots
 
-        Creates an action to send protection group snapshots to protection pgroup targets. When the `on` option is used, only specified targets will recieve the protection group snapshots.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api228_protection_group_snapshots_replica_post_with_http_info(authorization, x_request_id, convert_source_to_baseline, ids, names, on, async_req=True)
-        >>> result = thread.get()
+        Creates an action to send protection group snapshots to protection pgroup targets. When the `on` option is used, only specified targets will recieve the protection group snapshots.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -887,14 +863,9 @@ class ProtectionGroupSnapshotsApi:
         protection_group_snapshot: Optional[ProtectionGroupSnapshotPost] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create an attempt to take protection group snapshot  # noqa: E501
+        """Create an attempt to take protection group snapshot
 
-        Creates an attempt to take the protection group snapshot, without actually taking it, to test if the snapshot can be successfully taken.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api228_protection_group_snapshots_test_post_with_http_info(authorization, x_request_id, allow_throttle, apply_retention, for_replication, replicate, replicate_now, source_ids, source_names, protection_group_snapshot, async_req=True)
-        >>> result = thread.get()
+        Creates an attempt to take the protection group snapshot, without actually taking it, to test if the snapshot can be successfully taken.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -1075,14 +1046,9 @@ class ProtectionGroupSnapshotsApi:
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List protection group snapshots with transfer statistics  # noqa: E501
+        """List protection group snapshots with transfer statistics
 
-        Displays a list of protection group snapshots and corresponding transfer statistics.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api228_protection_group_snapshots_transfer_get_with_http_info(authorization, x_request_id, destroyed, filter, ids, limit, names, offset, sort, source_ids, source_names, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays a list of protection group snapshots and corresponding transfer statistics.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str

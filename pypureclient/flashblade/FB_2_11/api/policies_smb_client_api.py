@@ -31,6 +31,7 @@ from pypureclient.flashblade.FB_2_11.models.smb_client_policy_rule import SmbCli
 from pypureclient.flashblade.FB_2_11.models.smb_client_policy_rule_get_response import SmbClientPolicyRuleGetResponse
 from pypureclient.flashblade.FB_2_11.models.smb_client_policy_rule_post import SmbClientPolicyRulePost
 from pypureclient.flashblade.FB_2_11.models.smb_client_policy_rule_response import SmbClientPolicyRuleResponse
+from typing import Optional
 from pypureclient.flashblade.FB_2_11.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_11.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_11.exceptions import (  # noqa: F401
@@ -55,14 +56,9 @@ class PoliciesSMBClientApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE smb-client-policies  # noqa: E501
+        """DELETE smb-client-policies
 
-        Delete one or more SMB Client policies.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api211_smb_client_policies_delete_with_http_info(ids, names, async_req=True)
-        >>> result = thread.get()
+        Delete one or more SMB Client policies.
 
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
         :type ids: List[str]
@@ -176,14 +172,9 @@ class PoliciesSMBClientApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET smb-client-policies  # noqa: E501
+        """GET smb-client-policies
 
-        Display SMB Client policies and their attributes.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api211_smb_client_policies_get_with_http_info(continuation_token, filter, ids, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        Display SMB Client policies and their attributes.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -330,14 +321,9 @@ class PoliciesSMBClientApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH smb-client-policies  # noqa: E501
+        """PATCH smb-client-policies
 
-        Modify an existing SMB Client policy's attributes.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api211_smb_client_policies_patch_with_http_info(policy, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modify an existing SMB Client policy's attributes.
 
         :param policy: (required)
         :type policy: SmbClientPolicy
@@ -465,14 +451,9 @@ class PoliciesSMBClientApi:
         policy: Optional[SmbClientPolicyPost] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST smb-client-policies  # noqa: E501
+        """POST smb-client-policies
 
-        Create a new SMB Client policy.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api211_smb_client_policies_post_with_http_info(names, policy, async_req=True)
-        >>> result = thread.get()
+        Create a new SMB Client policy.
 
         :param names: A comma-separated list of resource names. (required)
         :type names: List[str]
@@ -594,14 +575,9 @@ class PoliciesSMBClientApi:
         versions: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of versions. This is an optional query param used for concurrency control. The ordering should match the names or ids query param. This will fail with a 412 Precondition failed if the resource was changed and the current version of the resource doesn't match the value in the query param.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE smb-client-policies/rules  # noqa: E501
+        """DELETE smb-client-policies/rules
 
-        Delete one or more SMB Client policy rules. One of the following is required: `ids` or `names`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api211_smb_client_policies_rules_delete_with_http_info(ids, names, versions, async_req=True)
-        >>> result = thread.get()
+        Delete one or more SMB Client policy rules. One of the following is required: `ids` or `names`.
 
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
         :type ids: List[str]
@@ -724,14 +700,9 @@ class PoliciesSMBClientApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET smb-client-policies/rules  # noqa: E501
+        """GET smb-client-policies/rules
 
-        Displays a list of SMB Client policy rules. The default sort is by policy name, then index.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api211_smb_client_policies_rules_get_with_http_info(continuation_token, filter, ids, limit, names, offset, policy_ids, policy_names, sort, async_req=True)
-        >>> result = thread.get()
+        Displays a list of SMB Client policy rules. The default sort is by policy name, then index.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -895,14 +866,9 @@ class PoliciesSMBClientApi:
         versions: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of versions. This is an optional query param used for concurrency control. The ordering should match the names or ids query param. This will fail with a 412 Precondition failed if the resource was changed and the current version of the resource doesn't match the value in the query param.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH smb-client-policies/rules  # noqa: E501
+        """PATCH smb-client-policies/rules
 
-        Modify an existing SMB Client policy rule. If `before_rule_id` or `before_rule_name` are specified, the rule will be moved before that rule. Rules are ordered in three groups; ip addresses, other and `*` and can only be moved within the appropriate group. One of the following is required: `ids` or `names`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api211_smb_client_policies_rules_patch_with_http_info(rule, before_rule_id, before_rule_name, ids, names, versions, async_req=True)
-        >>> result = thread.get()
+        Modify an existing SMB Client policy rule. If `before_rule_id` or `before_rule_name` are specified, the rule will be moved before that rule. Rules are ordered in three groups; ip addresses, other and `*` and can only be moved within the appropriate group. One of the following is required: `ids` or `names`.
 
         :param rule: (required)
         :type rule: SmbClientPolicyRule
@@ -1053,14 +1019,9 @@ class PoliciesSMBClientApi:
         versions: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of versions. This is an optional query param used for concurrency control. The ordering should match the names or ids query param. This will fail with a 412 Precondition failed if the resource was changed and the current version of the resource doesn't match the value in the query param.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST smb-client-policies/rules  # noqa: E501
+        """POST smb-client-policies/rules
 
-        Add an SMB Client policy rule. Rules are ordered in three groups; ip addresses, other and `*`. The new rule will be added at the end of the appropriate group if neither `before_rule_id` nor `before_rule_name` are specified. Rules can only be inserted into the appropriate group. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api211_smb_client_policies_rules_post_with_http_info(rule, before_rule_id, before_rule_name, policy_ids, policy_names, versions, async_req=True)
-        >>> result = thread.get()
+        Add an SMB Client policy rule. Rules are ordered in three groups; ip addresses, other and `*`. The new rule will be added at the end of the appropriate group if neither `before_rule_id` nor `before_rule_name` are specified. Rules can only be inserted into the appropriate group. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together.
 
         :param rule: (required)
         :type rule: SmbClientPolicyRulePost

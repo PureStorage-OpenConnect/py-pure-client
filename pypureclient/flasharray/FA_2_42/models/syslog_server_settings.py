@@ -25,7 +25,7 @@ from pypureclient.flasharray.FA_2_42.models.fixed_reference import FixedReferenc
 
 class SyslogServerSettings(BaseModel):
     """
-    Global settings for syslog servers.  # noqa: E501
+    Global settings for syslog servers.
     """
     context: Optional[FixedReference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     ca_certificate: Optional[StrictStr] = Field(default=None, description="The certificate of the certificate authority (CA) that signed the directory servers' certificate(s), which is used to validate the authenticity of the configured servers.")

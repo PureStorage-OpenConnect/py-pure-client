@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictBool
 
 class PublicAccessConfig(BaseModel):
     """
-    Configuration settings related to public access.  # noqa: E501
+    Configuration settings related to public access.
     """
     block_new_public_policies: Optional[StrictBool] = Field(default=None, description="If set to `true`, adding bucket policies that grant public access to a bucket is not allowed.")
     block_public_access: Optional[StrictBool] = Field(default=None, description="If set to `true`, access to a bucket with a public policy is restricted to only authenticated users within the account that bucket belongs to.")

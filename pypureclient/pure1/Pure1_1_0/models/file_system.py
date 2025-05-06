@@ -28,7 +28,7 @@ from pypureclient.pure1.Pure1_1_0.models.smb import Smb
 
 class FileSystem(BaseModel):
     """
-    A file system on an array, including both FlashArray and FlashBlade file systems.  # noqa: E501
+    A file system on an array, including both FlashArray and FlashBlade file systems.
     """
     as_of: Optional[StrictInt] = Field(default=None, alias="_as_of", description="The freshness of the data (timestamp in millis since epoch).")
     id: Optional[StrictStr] = Field(default=None, description="A non-modifiable, globally unique ID chosen by the system.")

@@ -46,6 +46,7 @@ from pypureclient.flasharray.FA_2_4.models.policy_smb_get_response import Policy
 from pypureclient.flasharray.FA_2_4.models.policy_smb_patch import PolicySmbPatch
 from pypureclient.flasharray.FA_2_4.models.policy_smb_post import PolicySmbPost
 from pypureclient.flasharray.FA_2_4.models.policy_smb_response import PolicySmbResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_4.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_4.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_4.exceptions import (  # noqa: F401
@@ -78,14 +79,9 @@ class PoliciesApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List policies  # noqa: E501
+        """List policies
 
-        Displays a list of policies.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_get_with_http_info(authorization, x_request_id, continuation_token, filter, ids, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of policies.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -261,14 +257,9 @@ class PoliciesApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List policy members  # noqa: E501
+        """List policy members
 
-        Displays a list of policy members.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_members_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, limit, member_ids, member_names, member_types, offset, policy_ids, policy_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of policy members.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -462,14 +453,9 @@ class PoliciesApi:
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete NFS client policy rules.  # noqa: E501
+        """Delete NFS client policy rules.
 
-        Delete one or more NFS client policy rules. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_nfs_client_rules_delete_with_http_info(authorization, x_request_id, names, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Delete one or more NFS client policy rules. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -606,14 +592,9 @@ class PoliciesApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List NFS client policy rules  # noqa: E501
+        """List NFS client policy rules
 
-        Displays a list of NFS client policy rules.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_nfs_client_rules_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, names, offset, policy_ids, policy_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of NFS client policy rules.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -787,14 +768,9 @@ class PoliciesApi:
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create NFS client policy rules  # noqa: E501
+        """Create NFS client policy rules
 
-        Creates one or more NFS client policy rules. The `policy_ids` or `policy_names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_nfs_client_rules_post_with_http_info(rules, authorization, x_request_id, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Creates one or more NFS client policy rules. The `policy_ids` or `policy_names` parameter is required, but cannot be set together.
 
         :param rules: (required)
         :type rules: PolicyRuleNfsClientPost
@@ -936,14 +912,9 @@ class PoliciesApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete NFS policies  # noqa: E501
+        """Delete NFS policies
 
-        Deletes one or more NFS policies. The `ids` or `names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_nfs_delete_with_http_info(authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Deletes one or more NFS policies. The `ids` or `names` parameter is required, but they cannot be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -1072,14 +1043,9 @@ class PoliciesApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List NFS policies  # noqa: E501
+        """List NFS policies
 
-        Displays a list of NFS policies.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_nfs_get_with_http_info(authorization, x_request_id, continuation_token, filter, ids, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of NFS policies.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -1248,14 +1214,9 @@ class PoliciesApi:
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete NFS policies  # noqa: E501
+        """Delete NFS policies
 
-        Deletes one or more NFS policies from resources. The `policy_ids` or `policy_names` parameter is required, but cannot be set together. The `member_ids` or `member_names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_nfs_members_delete_with_http_info(authorization, x_request_id, member_ids, member_names, member_types, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Deletes one or more NFS policies from resources. The `policy_ids` or `policy_names` parameter is required, but cannot be set together. The `member_ids` or `member_names` parameter is required, but cannot be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -1409,14 +1370,9 @@ class PoliciesApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List NFS policy members  # noqa: E501
+        """List NFS policy members
 
-        Displays a list of NFS policy members.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_nfs_members_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, limit, member_ids, member_names, member_types, offset, policy_ids, policy_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of NFS policy members.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -1610,14 +1566,9 @@ class PoliciesApi:
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create NFS policies  # noqa: E501
+        """Create NFS policies
 
-        Creates a membership between one or more resources with an NFS policy. Applicable resources are directories. The `policy_ids` or `policy_names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_nfs_members_post_with_http_info(members, authorization, x_request_id, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Creates a membership between one or more resources with an NFS policy. Applicable resources are directories. The `policy_ids` or `policy_names` parameter is required, but cannot be set together.
 
         :param members: (required)
         :type members: PolicyMemberExportPost
@@ -1760,14 +1711,9 @@ class PoliciesApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Modify NFS policies  # noqa: E501
+        """Modify NFS policies
 
-        Modifies one or more NFS policies. To enable a policy, set `enabled=true`. To disable a policy, set `enabled=false`. To rename a policy, set `name` to the new name. The `ids` or `names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_nfs_patch_with_http_info(policy, authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modifies one or more NFS policies. To enable a policy, set `enabled=true`. To disable a policy, set `enabled=false`. To rename a policy, set `name` to the new name. The `ids` or `names` parameter is required, but cannot be set together.
 
         :param policy: (required)
         :type policy: PolicyPatch
@@ -1909,14 +1855,9 @@ class PoliciesApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create NFS policies  # noqa: E501
+        """Create NFS policies
 
-        Creates one or more NFS policies.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_nfs_post_with_http_info(policy, authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Creates one or more NFS policies.
 
         :param policy: (required)
         :type policy: PolicyPost
@@ -2052,14 +1993,9 @@ class PoliciesApi:
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete SMB client policy rules.  # noqa: E501
+        """Delete SMB client policy rules.
 
-        Deletes one or more SMB client policy rules. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_smb_client_rules_delete_with_http_info(authorization, x_request_id, names, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Deletes one or more SMB client policy rules. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -2196,14 +2132,9 @@ class PoliciesApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List SMB client policy rules  # noqa: E501
+        """List SMB client policy rules
 
-        Displays a list of SMB client policy rules.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_smb_client_rules_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, names, offset, policy_ids, policy_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of SMB client policy rules.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -2377,14 +2308,9 @@ class PoliciesApi:
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create SMB client policy rules  # noqa: E501
+        """Create SMB client policy rules
 
-        Create one or more SMB client policy rules. The `policy_ids` or `policy_names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_smb_client_rules_post_with_http_info(rules, authorization, x_request_id, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Create one or more SMB client policy rules. The `policy_ids` or `policy_names` parameter is required, but cannot be set together.
 
         :param rules: (required)
         :type rules: PolicyRuleSmbClientPost
@@ -2526,14 +2452,9 @@ class PoliciesApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete SMB policies  # noqa: E501
+        """Delete SMB policies
 
-        Deletes one or more SMB policies. The `ids` or `names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_smb_delete_with_http_info(authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Deletes one or more SMB policies. The `ids` or `names` parameter is required, but they cannot be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -2662,14 +2583,9 @@ class PoliciesApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List SMB policies  # noqa: E501
+        """List SMB policies
 
-        Displays a list of SMB policies.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_smb_get_with_http_info(authorization, x_request_id, continuation_token, filter, ids, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of SMB policies.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -2838,14 +2754,9 @@ class PoliciesApi:
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete SMB policies  # noqa: E501
+        """Delete SMB policies
 
-        Deletes one or more SMB policies from resources. The `policy_ids` or `policy_names` parameter is required, but cannot be set together. The `member_ids` or `member_names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_smb_members_delete_with_http_info(authorization, x_request_id, member_ids, member_names, member_types, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Deletes one or more SMB policies from resources. The `policy_ids` or `policy_names` parameter is required, but cannot be set together. The `member_ids` or `member_names` parameter is required, but cannot be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -2999,14 +2910,9 @@ class PoliciesApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List SMB policy members  # noqa: E501
+        """List SMB policy members
 
-        Displays a list of SMB policy members.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_smb_members_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, limit, member_ids, member_names, member_types, offset, policy_ids, policy_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of SMB policy members.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -3200,14 +3106,9 @@ class PoliciesApi:
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create SMB policies  # noqa: E501
+        """Create SMB policies
 
-        Creates a membership between one or more resources with an SMB policy. Applicable resources are directories. The `policy_ids` or `policy_names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_smb_members_post_with_http_info(members, authorization, x_request_id, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Creates a membership between one or more resources with an SMB policy. Applicable resources are directories. The `policy_ids` or `policy_names` parameter is required, but cannot be set together.
 
         :param members: (required)
         :type members: PolicyMemberExportPost
@@ -3350,14 +3251,9 @@ class PoliciesApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Update SMB policies  # noqa: E501
+        """Update SMB policies
 
-        Updates one or more SMB policies. To enable a policy, set `enabled=true`. To disable a policy, set `enabled=false`. To enable access based enumeration, set `access_based_enumeration_enabled=true`. To disable access based enumeration, set `access_based_enumeration_enabled=false`. To rename a policy, set `name` to the new name. The `ids` or `names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_smb_patch_with_http_info(policy, authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Updates one or more SMB policies. To enable a policy, set `enabled=true`. To disable a policy, set `enabled=false`. To enable access based enumeration, set `access_based_enumeration_enabled=true`. To disable access based enumeration, set `access_based_enumeration_enabled=false`. To rename a policy, set `name` to the new name. The `ids` or `names` parameter is required, but cannot be set together.
 
         :param policy: (required)
         :type policy: PolicySmbPatch
@@ -3499,14 +3395,9 @@ class PoliciesApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create SMB policies  # noqa: E501
+        """Create SMB policies
 
-        Creates one or more SMB policies. To create an SMB policy with access based enumeration enabled, set `access_based_enumeration_enabled=true`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_smb_post_with_http_info(policy, authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Creates one or more SMB policies. To create an SMB policy with access based enumeration enabled, set `access_based_enumeration_enabled=true`.
 
         :param policy: (required)
         :type policy: PolicySmbPost
@@ -3641,14 +3532,9 @@ class PoliciesApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete snapshot policies  # noqa: E501
+        """Delete snapshot policies
 
-        Deletes one or more snapshot policies. The `ids` or `names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_snapshot_delete_with_http_info(authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Deletes one or more snapshot policies. The `ids` or `names` parameter is required, but they cannot be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -3777,14 +3663,9 @@ class PoliciesApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List snapshot policies  # noqa: E501
+        """List snapshot policies
 
-        Displays a list of snapshot policies.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_snapshot_get_with_http_info(authorization, x_request_id, continuation_token, filter, ids, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of snapshot policies.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -3953,14 +3834,9 @@ class PoliciesApi:
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete snapshot policies  # noqa: E501
+        """Delete snapshot policies
 
-        Deletes one or more snapshot policies from resources. The `policy_ids` or `policy_names` parameter is required, but cannot be set together. The `member_ids` or `member_names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_snapshot_members_delete_with_http_info(authorization, x_request_id, member_ids, member_names, member_types, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Deletes one or more snapshot policies from resources. The `policy_ids` or `policy_names` parameter is required, but cannot be set together. The `member_ids` or `member_names` parameter is required, but cannot be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -4114,14 +3990,9 @@ class PoliciesApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List snapshot policy members  # noqa: E501
+        """List snapshot policy members
 
-        Displays a list of snapshot policy members.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_snapshot_members_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, limit, member_ids, member_names, member_types, offset, policy_ids, policy_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of snapshot policy members.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -4315,14 +4186,9 @@ class PoliciesApi:
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create snapshot policies  # noqa: E501
+        """Create snapshot policies
 
-        Creates a membership between one or more resources with a snapshot policy. Applicable resources are directories. The `policy_ids` or `policy_names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_snapshot_members_post_with_http_info(members, authorization, x_request_id, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Creates a membership between one or more resources with a snapshot policy. Applicable resources are directories. The `policy_ids` or `policy_names` parameter is required, but cannot be set together.
 
         :param members: (required)
         :type members: PolicyMemberPost
@@ -4465,14 +4331,9 @@ class PoliciesApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Modify snapshot policies  # noqa: E501
+        """Modify snapshot policies
 
-        Modifies one or more snapshot policies. To enable a policy, set `enabled=true`. To disable a policy, set `enabled=true`. To rename a policy, set `name` to the new name. The `ids` or `names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_snapshot_patch_with_http_info(policy, authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modifies one or more snapshot policies. To enable a policy, set `enabled=true`. To disable a policy, set `enabled=true`. To rename a policy, set `name` to the new name. The `ids` or `names` parameter is required, but cannot be set together.
 
         :param policy: (required)
         :type policy: PolicyPatch
@@ -4614,14 +4475,9 @@ class PoliciesApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create snapshot policies  # noqa: E501
+        """Create snapshot policies
 
-        Creates one or more snapshot policies.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_snapshot_post_with_http_info(policy, authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Creates one or more snapshot policies.
 
         :param policy: (required)
         :type policy: PolicyPost
@@ -4757,14 +4613,9 @@ class PoliciesApi:
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete snapshot policy rules.  # noqa: E501
+        """Delete snapshot policy rules.
 
-        Deletes one or more snapshot policy rules. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_snapshot_rules_delete_with_http_info(authorization, x_request_id, names, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Deletes one or more snapshot policy rules. The `policy_ids` or `policy_names` parameter is required, but they cannot be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -4901,14 +4752,9 @@ class PoliciesApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List snapshot policy rules  # noqa: E501
+        """List snapshot policy rules
 
-        Displays a list of snapshot policy rules.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_snapshot_rules_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, names, offset, policy_ids, policy_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of snapshot policy rules.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -5082,14 +4928,9 @@ class PoliciesApi:
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create snapshot policy rules  # noqa: E501
+        """Create snapshot policy rules
 
-        Creates one or more snapshot policy rules. The `policy_ids` or `policy_names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_policies_snapshot_rules_post_with_http_info(rules, authorization, x_request_id, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Creates one or more snapshot policy rules. The `policy_ids` or `policy_names` parameter is required, but cannot be set together.
 
         :param rules: (required)
         :type rules: PolicyRuleSnapshotPost

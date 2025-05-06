@@ -25,6 +25,7 @@ from typing import Optional
 
 from pypureclient.pure1.Pure1_1_3.models.metric_get_response import MetricGetResponse
 from pypureclient.pure1.Pure1_1_3.models.metric_history_get_response import MetricHistoryGetResponse
+from typing import Optional
 from pypureclient.pure1.Pure1_1_3.api_client import ApiClient as _TransportApiClient
 from pypureclient.pure1.Pure1_1_3.api_response import ApiResponse
 from pypureclient.pure1.Pure1_1_3.exceptions import (  # noqa: F401
@@ -57,14 +58,9 @@ class MetricsApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Get metrics  # noqa: E501
+        """Get metrics
 
-        Retrieves information about metrics that can be queried for.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api13_metrics_get_with_http_info(authorization, x_request_id, continuation_token, filter, ids, limit, names, offset, resource_types, sort, async_req=True)
-        >>> result = thread.get()
+        Retrieves information about metrics that can be queried for.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`)
         :type authorization: str
@@ -242,14 +238,9 @@ class MetricsApi:
         resource_names: Annotated[Optional[conlist(StrictStr)], Field(description="REQUIRED: either `resource_ids` or `resource_names`. A comma-separated list of resource names. If there is not at least one resource that matches each `resource_name` element, an error is returned. Single quotes are required around all strings.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Get metrics history  # noqa: E501
+        """Get metrics history
 
-        Retrieves historical metric data for resources. This endpoint supports batching: Up to 32 time series can be retrieved in one call. It can be multiple metrics for one resource, (e.g., load and bandwidth for one array - 2 time series), one metric for multiple resource (e.g., load for arrayA and arrayB - 2 time series), or a combination of both, multiple metrics for multiple resources, (e.g., load and bandwidth for arrayA and arrayB - 4 time series).  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api13_metrics_history_get_with_http_info(aggregation, end_time, resolution, start_time, authorization, x_request_id, ids, names, resource_ids, resource_names, async_req=True)
-        >>> result = thread.get()
+        Retrieves historical metric data for resources. This endpoint supports batching: Up to 32 time series can be retrieved in one call. It can be multiple metrics for one resource, (e.g., load and bandwidth for one array - 2 time series), one metric for multiple resource (e.g., load for arrayA and arrayB - 2 time series), or a combination of both, multiple metrics for multiple resources, (e.g., load and bandwidth for arrayA and arrayB - 4 time series).
 
         :param aggregation: Aggregation needed on the metric data. Valid values are `avg` and `max`. Single quotes are required around all strings. Latency metrics averages are weighted by the IOPS. (required)
         :type aggregation: str

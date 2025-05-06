@@ -28,6 +28,7 @@ from pypureclient.flashblade.FB_2_12.models.snmp_manager_get_response import Snm
 from pypureclient.flashblade.FB_2_12.models.snmp_manager_post import SnmpManagerPost
 from pypureclient.flashblade.FB_2_12.models.snmp_manager_response import SnmpManagerResponse
 from pypureclient.flashblade.FB_2_12.models.test_result_get_response import TestResultGetResponse
+from typing import Optional
 from pypureclient.flashblade.FB_2_12.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_12.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_12.exceptions import (  # noqa: F401
@@ -52,14 +53,9 @@ class SNMPManagersApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE snmp-managers  # noqa: E501
+        """DELETE snmp-managers
 
-        Remove an SNMP manager.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api212_snmp_managers_delete_with_http_info(ids, names, async_req=True)
-        >>> result = thread.get()
+        Remove an SNMP manager.
 
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
         :type ids: List[str]
@@ -173,14 +169,9 @@ class SNMPManagersApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET snmp-managers  # noqa: E501
+        """GET snmp-managers
 
-        List SNMP managers and their attributes.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api212_snmp_managers_get_with_http_info(continuation_token, filter, ids, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        List SNMP managers and their attributes.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -327,14 +318,9 @@ class SNMPManagersApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH snmp-managers  # noqa: E501
+        """PATCH snmp-managers
 
-        Modify SNMP manager attributes such as versions.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api212_snmp_managers_patch_with_http_info(snmp_manager, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modify SNMP manager attributes such as versions.
 
         :param snmp_manager: (required)
         :type snmp_manager: SnmpManager
@@ -462,14 +448,9 @@ class SNMPManagersApi:
         snmp_manager: SnmpManagerPost,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST snmp-managers  # noqa: E501
+        """POST snmp-managers
 
-        Create an SNMP manager.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api212_snmp_managers_post_with_http_info(names, snmp_manager, async_req=True)
-        >>> result = thread.get()
+        Create an SNMP manager.
 
         :param names: A comma-separated list of resource names. (required)
         :type names: List[str]
@@ -595,14 +576,9 @@ class SNMPManagersApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET snmp-managers/test  # noqa: E501
+        """GET snmp-managers/test
 
-        Test if the configuration of an SNMP manager is valid.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api212_snmp_managers_test_get_with_http_info(continuation_token, filter, ids, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        Test if the configuration of an SNMP manager is valid.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str

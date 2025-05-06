@@ -25,7 +25,7 @@ from pypureclient.flasharray.FA_2_41.models.reference_with_type import Reference
 
 class WorkloadPlacementRecommendationResourceReference(BaseModel):
     """
-    Defines a group of resources. At least one of them should be present on this target to use it for computation of a recommendation. Currently only hosts or host groups could be used.  # noqa: E501
+    Defines a group of resources. At least one of them should be present on this target to use it for computation of a recommendation. Currently only hosts or host groups could be used.
     """
     allowed_values: conlist(ReferenceWithType) = Field(default=..., description="A list of allowed values for the resource reference. For hosts and host groups, each item does not define a specific object on some target, but defines a pattern which should be matched by the target. For example, { `type`: `host`, `name`: `host1` } will match all targets that have a host with name `host1`.")
     __properties = ["allowed_values"]

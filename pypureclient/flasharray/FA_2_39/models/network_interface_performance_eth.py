@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, conint
 
 class NetworkInterfacePerformanceEth(BaseModel):
     """
-    Ethernet network interface statistics.  # noqa: E501
+    Ethernet network interface statistics.
     """
     flow_control_received_congestion_packets_per_sec: Optional[conint(strict=True, ge=0)] = Field(default=None, description="Number of congestion control packets received per second.")
     flow_control_received_discarded_packets_per_sec: Optional[conint(strict=True, ge=0)] = Field(default=None, description="Number of received packets that were physically discarded by the NIC per second due to errors or other reasons.")
