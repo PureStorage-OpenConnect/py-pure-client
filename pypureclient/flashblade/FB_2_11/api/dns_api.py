@@ -26,6 +26,7 @@ from typing import Optional
 from pypureclient.flashblade.FB_2_11.models.dns import Dns
 from pypureclient.flashblade.FB_2_11.models.dns_get_response import DnsGetResponse
 from pypureclient.flashblade.FB_2_11.models.dns_response import DnsResponse
+from typing import Optional
 from pypureclient.flashblade.FB_2_11.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_11.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_11.exceptions import (  # noqa: F401
@@ -55,14 +56,9 @@ class DNSApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET dns  # noqa: E501
+        """GET dns
 
-        List DNS attributes for the array's administrative network.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api211_dns_get_with_http_info(continuation_token, filter, ids, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        List DNS attributes for the array's administrative network.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -209,14 +205,9 @@ class DNSApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH dns  # noqa: E501
+        """PATCH dns
 
-        Modify DNS attributes.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api211_dns_patch_with_http_info(dns, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modify DNS attributes.
 
         :param dns: (required)
         :type dns: Dns

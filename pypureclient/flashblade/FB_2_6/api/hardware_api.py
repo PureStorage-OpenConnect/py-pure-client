@@ -26,6 +26,7 @@ from typing import Optional
 from pypureclient.flashblade.FB_2_6.models.hardware import Hardware
 from pypureclient.flashblade.FB_2_6.models.hardware_get_response import HardwareGetResponse
 from pypureclient.flashblade.FB_2_6.models.hardware_response import HardwareResponse
+from typing import Optional
 from pypureclient.flashblade.FB_2_6.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_6.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_6.exceptions import (  # noqa: F401
@@ -55,14 +56,9 @@ class HardwareApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET hardware  # noqa: E501
+        """GET hardware
 
-        List hardware slots and bays and the status of installed components.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api26_hardware_get_with_http_info(continuation_token, filter, ids, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        List hardware slots and bays and the status of installed components.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -209,14 +205,9 @@ class HardwareApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH hardware  # noqa: E501
+        """PATCH hardware
 
-        Controls the visual identification light of the specified hardware component.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api26_hardware_patch_with_http_info(hardware, ids, names, async_req=True)
-        >>> result = thread.get()
+        Controls the visual identification light of the specified hardware component.
 
         :param hardware: (required)
         :type hardware: Hardware

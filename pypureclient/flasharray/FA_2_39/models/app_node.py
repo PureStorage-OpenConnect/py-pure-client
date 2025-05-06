@@ -25,7 +25,7 @@ from pypureclient.flasharray.FA_2_39.models.fixed_reference import FixedReferenc
 
 class AppNode(BaseModel):
     """
-    An individual node of a Purity app. Nodes are indexed starting at `0`.  # noqa: E501
+    An individual node of a Purity app. Nodes are indexed starting at `0`.
     """
     app: Optional[FixedReference] = Field(default=None, description="A reference to the app of which this node is a part.")
     index: Optional[StrictInt] = Field(default=None, description="An index that represents this node.")

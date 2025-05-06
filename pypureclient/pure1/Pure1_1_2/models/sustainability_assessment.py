@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictFloat, StrictInt, StrictStr
 
 class SustainabilityAssessment(BaseModel):
     """
-    A FlashArray or FlashBlade Sustainability assessment information. The _as_of is the time when the computation happened. Only the data from the given time interval was used for the aggregation. Typically the last week of data is used for the aggregation.  # noqa: E501
+    A FlashArray or FlashBlade Sustainability assessment information. The _as_of is the time when the computation happened. Only the data from the given time interval was used for the aggregation. Typically the last week of data is used for the aggregation.
     """
     as_of: Optional[StrictInt] = Field(default=None, alias="_as_of", description="The freshness of the data (timestamp in millis since epoch).")
     interval_end: Optional[StrictInt] = Field(default=None, alias="_interval_end", description="The timestamp of the end of the time interval.")

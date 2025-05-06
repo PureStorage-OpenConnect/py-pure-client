@@ -25,7 +25,7 @@ from pypureclient.flasharray.FA_2_9.models.reference_no_id import ReferenceNoId
 
 class NetworkinterfacepatchEth(BaseModel):
     """
-    Ethernet network interface properties.  # noqa: E501
+    Ethernet network interface properties.
     """
     add_subinterfaces: Optional[conlist(ReferenceNoId)] = Field(default=None, description="Child devices to be added to the specified bond interface.")
     address: Optional[StrictStr] = Field(default=None, description="The IPv4 or IPv6 address to be associated with the specified network interface.")

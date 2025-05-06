@@ -26,7 +26,7 @@ from pypureclient.flasharray.FA_2_41.models.network_interface_neighbor_neighbor_
 
 class NetworkInterfaceNeighborNeighborChassis(BaseModel):
     """
-    The neighboring physical component incorporating one or more IEEE 802 LAN stations and their associated application functionality.  # noqa: E501
+    The neighboring physical component incorporating one or more IEEE 802 LAN stations and their associated application functionality.
     """
     addresses: Optional[conlist(StrictStr)] = Field(default=None, description="Management IP addresses of the neighbor.")
     bridge: Optional[NetworkInterfaceNeighborCapability] = Field(default=None, description="Bridge capability of the neighbor system.")

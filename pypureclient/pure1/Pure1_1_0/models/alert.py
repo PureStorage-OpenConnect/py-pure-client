@@ -25,7 +25,7 @@ from pypureclient.pure1.Pure1_1_0.models.fixed_reference import FixedReference
 
 class Alert(BaseModel):
     """
-    An alert from an array.  # noqa: E501
+    An alert from an array.
     """
     as_of: Optional[StrictInt] = Field(default=None, alias="_as_of", description="The freshness of the data (timestamp in millis since epoch).")
     id: Optional[StrictStr] = Field(default=None, description="A non-modifiable, globally unique ID chosen by the system.")

@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictStr
 
 class DirectoryServiceManagement(BaseModel):
     """
-    Properties specific to the management service.  # noqa: E501
+    Properties specific to the management service.
     """
     ssh_public_key_attribute: Optional[StrictStr] = Field(default=None, description="SSH public key attribute in the structure of the configured LDAP servers. The attribute field that holds the user's SSH public key. This attribute can represent a single-valued or multi-valued field. If this attribute resolves to a multi-valued field, all valid SSH keys will be used. If the user has specified keys under Admin endpoints, these are used as well.")
     user_login_attribute: Optional[StrictStr] = Field(default=None, description="User login attribute in the structure of the configured LDAP servers. Typically the attribute field that holds the user's unique login name. Default value is `sAMAccountName` for Active Directory or `uid` for all other directory services.")

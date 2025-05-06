@@ -25,7 +25,7 @@ from pypureclient.pure1.Pure1_1_0.models.fixed_reference import FixedReference
 
 class NetworkInterface(BaseModel):
     """
-    A point of interconnection between the appliance and a private or public network. May be associated with a physical device or a representation of a virtual interface.  # noqa: E501
+    A point of interconnection between the appliance and a private or public network. May be associated with a physical device or a representation of a virtual interface.
     """
     as_of: Optional[StrictInt] = Field(default=None, alias="_as_of", description="The freshness of the data (timestamp in millis since epoch).")
     id: Optional[StrictStr] = Field(default=None, description="A non-modifiable, globally unique ID chosen by the system.")

@@ -29,6 +29,7 @@ from pypureclient.flasharray.FA_2_42.models.array_connection_patch import ArrayC
 from pypureclient.flasharray.FA_2_42.models.array_connection_path_get_response import ArrayConnectionPathGetResponse
 from pypureclient.flasharray.FA_2_42.models.array_connection_post import ArrayConnectionPost
 from pypureclient.flasharray.FA_2_42.models.array_connection_response import ArrayConnectionResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_42.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_42.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_42.exceptions import (  # noqa: F401
@@ -54,14 +55,9 @@ class ArrayConnectionsApi:
         encrypted: Annotated[Optional[StrictBool], Field(description="If `true`, the returned array connection key will encode an encryption key used to establish trust and secure replication traffic. If `false`, the returned array connection key will not encode an encryption key. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List connection key  # noqa: E501
+        """List connection key
 
-        Displays the connection key for the array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_array_connections_connection_key_get_with_http_info(authorization, x_request_id, encrypted, async_req=True)
-        >>> result = thread.get()
+        Displays the connection key for the array.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -183,14 +179,9 @@ class ArrayConnectionsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete an array connection  # noqa: E501
+        """Delete an array connection
 
-        Deletes the connection between this array and the specified array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_array_connections_delete_with_http_info(authorization, x_request_id, context_names, ids, names, async_req=True)
-        >>> result = thread.get()
+        Deletes the connection between this array and the specified array.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -330,14 +321,9 @@ class ArrayConnectionsApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List the connected arrays  # noqa: E501
+        """List the connected arrays
 
-        Displays a list of connected arrays.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_array_connections_get_with_http_info(authorization, x_request_id, allow_errors, context_names, continuation_token, filter, ids, limit, names, offset, remote_ids, remote_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of connected arrays.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -534,14 +520,9 @@ class ArrayConnectionsApi:
         array_connection: Optional[ArrayConnectionPatch] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Modify an array connection  # noqa: E501
+        """Modify an array connection
 
-        Modifies attributes for an array connection.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_array_connections_patch_with_http_info(authorization, x_request_id, context_names, ids, names, refresh, renew_encryption_key, array_connection, async_req=True)
-        >>> result = thread.get()
+        Modifies attributes for an array connection.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -710,14 +691,9 @@ class ArrayConnectionsApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List connection path  # noqa: E501
+        """List connection path
 
-        Displays the connection path from the array to which the connection was made.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_array_connections_path_get_with_http_info(authorization, x_request_id, continuation_token, filter, ids, limit, names, offset, remote_ids, remote_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays the connection path from the array to which the connection was made.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -897,14 +873,9 @@ class ArrayConnectionsApi:
         context_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the context specified. If specified, the context names must be an array of size 1, and the single element must be the name of an array in the same fleet. If not specified, the context will default to the array that received this request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create an array connection  # noqa: E501
+        """Create an array connection
 
-        Creates a connection between this array and the specified array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_array_connections_post_with_http_info(array_connection, authorization, x_request_id, context_names, async_req=True)
-        >>> result = thread.get()
+        Creates a connection between this array and the specified array.
 
         :param array_connection: (required)
         :type array_connection: ArrayConnectionPost

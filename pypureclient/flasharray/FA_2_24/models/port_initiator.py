@@ -26,7 +26,7 @@ from pypureclient.flasharray.FA_2_24.models.port_common import PortCommon
 
 class PortInitiator(BaseModel):
     """
-    Path from an initiator port to a target port.  # noqa: E501
+    Path from an initiator port to a target port.
     """
     initiator: Optional[PortCommon] = None
     target: Optional[Port] = None

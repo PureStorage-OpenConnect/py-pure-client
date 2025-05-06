@@ -25,7 +25,7 @@ from pypureclient.flasharray.FA_2_42.models.support_remote_assist_sessions_paths
 
 class SupportRemoteAssistSessions(BaseModel):
     """
-    Remote assist session settings.  # noqa: E501
+    Remote assist session settings.
     """
     access_level: Optional[StrictStr] = Field(default=None, description="The access level for this remote assist session. This is set to default_access_level unless access_level_override is provided. Values include `restricted` and `elevated`.")
     active: Optional[StrictBool] = Field(default=None, description="The status of a remote assist session. If set to `true`, enables the remote assist session. If set to `false`, disables the remote assist session.")

@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictInt, StrictStr, conlist
 
 class CertificateBase(BaseModel):
     """
-    SSL certificate managed by Purity.  # noqa: E501
+    SSL certificate managed by Purity.
     """
     certificate: Optional[StrictStr] = Field(default=None, description="The text of the certificate.")
     certificate_type: Optional[StrictStr] = Field(default=None, description="The type of certificate. Values include `appliance` and `external`. Certificates of type `appliance` are used by the array to verify its identity to clients. Certificates of type `external` are used by the array to identify external servers to which it is configured to communicate.")

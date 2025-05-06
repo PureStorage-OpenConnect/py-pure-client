@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictBool, StrictStr
 
 class SyslogServerSettings(BaseModel):
     """
-    Global settings for syslog servers.  # noqa: E501
+    Global settings for syslog servers.
     """
     ca_certificate: Optional[StrictStr] = Field(default=None, description="The certificate of the certificate authority (CA) that signed the certificate(s) of the directory server, which is used to validate the authenticity of the configured servers.")
     tls_audit_enabled: Optional[StrictBool] = Field(default=None, description="Returns a value of `true` if messages that are necessary in order to audit TLS negotiations performed by the array are forwarded to the configured syslog servers.")

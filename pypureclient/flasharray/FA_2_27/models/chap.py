@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictStr
 
 class Chap(BaseModel):
     """
-    Challenge-Handshake Authentication Protocol (CHAP).  # noqa: E501
+    Challenge-Handshake Authentication Protocol (CHAP).
     """
     host_password: Optional[StrictStr] = Field(default=None, description="The host password for CHAP authentication. The password must be between 12 and 255 characters (inclusive) and cannot be the same as the target password.")
     host_user: Optional[StrictStr] = Field(default=None, description="The host username for CHAP authentication.")

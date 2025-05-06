@@ -28,6 +28,7 @@ from pypureclient.flasharray.FA_2_9.models.network_interface_patch import Networ
 from pypureclient.flasharray.FA_2_9.models.network_interface_performance_get_response import NetworkInterfacePerformanceGetResponse
 from pypureclient.flasharray.FA_2_9.models.network_interface_post import NetworkInterfacePost
 from pypureclient.flasharray.FA_2_9.models.network_interface_response import NetworkInterfaceResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_9.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_9.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_9.exceptions import (  # noqa: F401
@@ -53,14 +54,9 @@ class NetworkInterfacesApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete network interface  # noqa: E501
+        """Delete network interface
 
-        Deletes a network interface on a controller.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api29_network_interfaces_delete_with_http_info(authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Deletes a network interface on a controller.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -181,14 +177,9 @@ class NetworkInterfacesApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List network interfaces  # noqa: E501
+        """List network interfaces
 
-        Displays all network interfaces for all controllers on the array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api29_network_interfaces_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays all network interfaces for all controllers on the array.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -347,14 +338,9 @@ class NetworkInterfacesApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Modify network interface  # noqa: E501
+        """Modify network interface
 
-        Modifies a network interface on a controller.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api29_network_interfaces_patch_with_http_info(network, authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Modifies a network interface on a controller.
 
         :param network: (required)
         :type network: NetworkInterfacePatch
@@ -497,14 +483,9 @@ class NetworkInterfacesApi:
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List network performance statistics  # noqa: E501
+        """List network performance statistics
 
-        Displays network statistics, historical bandwidth, and error reporting for all specified network interfaces.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api29_network_interfaces_performance_get_with_http_info(authorization, x_request_id, end_time, filter, limit, names, offset, resolution, sort, start_time, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays network statistics, historical bandwidth, and error reporting for all specified network interfaces.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -681,14 +662,9 @@ class NetworkInterfacesApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create network interface  # noqa: E501
+        """Create network interface
 
-        Creates a network interface on a controller on the array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api29_network_interfaces_post_with_http_info(network, authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Creates a network interface on a controller on the array.
 
         :param network: (required)
         :type network: NetworkInterfacePost

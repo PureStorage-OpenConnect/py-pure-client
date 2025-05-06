@@ -26,6 +26,7 @@ from typing import Any, Dict, Optional
 from pypureclient.flashblade.FB_2_2.models.keytab_get_response import KeytabGetResponse
 from pypureclient.flashblade.FB_2_2.models.keytab_post import KeytabPost
 from pypureclient.flashblade.FB_2_2.models.keytab_response import KeytabResponse
+from typing import Optional
 from pypureclient.flashblade.FB_2_2.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_2.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_2.exceptions import (  # noqa: F401
@@ -50,14 +51,9 @@ class KeytabsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE keytabs  # noqa: E501
+        """DELETE keytabs
 
-        Delete a Kerberos keytab file.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api22_keytabs_delete_with_http_info(ids, names, async_req=True)
-        >>> result = thread.get()
+        Delete a Kerberos keytab file.
 
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
         :type ids: List[str]
@@ -166,14 +162,9 @@ class KeytabsApi:
         keytab_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of keytab names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `keytab_ids` query parameter.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET keytabs/download  # noqa: E501
+        """GET keytabs/download
 
-        Download a Kerberos keytab file. The file can be downloaded in the native binary format or a base64 encoded format. If not specified, defaults to binary.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api22_keytabs_download_get_with_http_info(keytab_ids, keytab_names, async_req=True)
-        >>> result = thread.get()
+        Download a Kerberos keytab file. The file can be downloaded in the native binary format or a base64 encoded format. If not specified, defaults to binary.
 
         :param keytab_ids: A comma-separated list of keytab IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `keytab_names` query parameter.
         :type keytab_ids: List[str]
@@ -293,14 +284,9 @@ class KeytabsApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET keytabs  # noqa: E501
+        """GET keytabs
 
-        List a Kerberos keytab file and its configuration information.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api22_keytabs_get_with_http_info(continuation_token, filter, ids, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        List a Kerberos keytab file and its configuration information.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -446,14 +432,9 @@ class KeytabsApi:
         name_prefixes: Annotated[Optional[StrictStr], Field(description="The prefix to use for the names of all Kerberos keytab objects that are being created.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST keytabs  # noqa: E501
+        """POST keytabs
 
-        Import a Kerberos keytab file from a Key Distribution Center.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api22_keytabs_post_with_http_info(keytab, name_prefixes, async_req=True)
-        >>> result = thread.get()
+        Import a Kerberos keytab file from a Key Distribution Center.
 
         :param keytab: (required)
         :type keytab: KeytabPost
@@ -573,14 +554,9 @@ class KeytabsApi:
         name_prefixes: Annotated[Optional[StrictStr], Field(description="The prefix to use for the names of all Kerberos keytab objects that are being created.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST keytabs/upload  # noqa: E501
+        """POST keytabs/upload
 
-        Upload a Kerberos keytab file to the array. The file can be uploaded in the native binary format or a base64 encoded format. If not specified, defaults to binary. The procedure to upload a file may vary depending on the type of REST client.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api22_keytabs_upload_post_with_http_info(keytab_file, name_prefixes, async_req=True)
-        >>> result = thread.get()
+        Upload a Kerberos keytab file to the array. The file can be uploaded in the native binary format or a base64 encoded format. If not specified, defaults to binary. The procedure to upload a file may vary depending on the type of REST client.
 
         :param keytab_file: The keytab file to upload. (required)
         :type keytab_file: str

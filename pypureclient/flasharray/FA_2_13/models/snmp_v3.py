@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictStr
 
 class SnmpV3(BaseModel):
     """
-    The v3 configurations of SNMP.  # noqa: E501
+    The v3 configurations of SNMP.
     """
     auth_passphrase: Optional[StrictStr] = Field(default=None, description="Passphrase used by Purity//FA to authenticate the array with the specified managers.")
     auth_protocol: Optional[StrictStr] = Field(default=None, description="Hash algorithm used to validate the authentication passphrase. Valid values are `MD5` and `SHA`.")

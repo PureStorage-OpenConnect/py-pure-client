@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictStr
 
 class ResourceFixedNonUniqueName(BaseModel):
     """
-    A resource with a non-unique name.  # noqa: E501
+    A resource with a non-unique name.
     """
     id: Optional[StrictStr] = Field(default=None, description="A globally unique, system-generated ID. The ID cannot be modified.")
     name: Optional[StrictStr] = Field(default=None, description="Name of the resource. The name cannot be modified.")

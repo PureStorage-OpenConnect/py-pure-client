@@ -27,6 +27,7 @@ from pypureclient.flasharray.FA_2_41.models.dns_get_response import DnsGetRespon
 from pypureclient.flasharray.FA_2_41.models.dns_patch import DnsPatch
 from pypureclient.flasharray.FA_2_41.models.dns_post import DnsPost
 from pypureclient.flasharray.FA_2_41.models.dns_response import DnsResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_41.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_41.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_41.exceptions import (  # noqa: F401
@@ -52,14 +53,9 @@ class DNSApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete DNS configuration  # noqa: E501
+        """Delete DNS configuration
 
-        Deletes DNS configuration identified by configuration name.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api241_dns_delete_with_http_info(authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Deletes DNS configuration identified by configuration name.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -180,14 +176,9 @@ class DNSApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List DNS parameters  # noqa: E501
+        """List DNS parameters
 
-        Displays the current DNS configurations and their parameters including domain suffix, the list of DNS name server IP addresses, and the list of services that DNS parameters apply to.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api241_dns_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays the current DNS configurations and their parameters including domain suffix, the list of DNS name server IP addresses, and the list of services that DNS parameters apply to.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -346,14 +337,9 @@ class DNSApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Modify DNS parameters  # noqa: E501
+        """Modify DNS parameters
 
-        Modifies the DNS parameters of an array, including the domain suffix, the list of DNS name server IP addresses, and the list of services that DNS parameters apply to. If there is no DNS configuration beforehand new DNS configuration with 'default' name is created. If more than one DNS configuration exists, `name` has to be specified to identify the DNS configuration to be modified.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api241_dns_patch_with_http_info(dns, authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Modifies the DNS parameters of an array, including the domain suffix, the list of DNS name server IP addresses, and the list of services that DNS parameters apply to. If there is no DNS configuration beforehand new DNS configuration with 'default' name is created. If more than one DNS configuration exists, `name` has to be specified to identify the DNS configuration to be modified.
 
         :param dns: (required)
         :type dns: DnsPatch
@@ -488,14 +474,9 @@ class DNSApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create DNS configuration  # noqa: E501
+        """Create DNS configuration
 
-        Creates new DNS configuration with parameters including the domain suffix, the list of DNS name server IP addresses, and the list of services that DNS parameters apply to.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api241_dns_post_with_http_info(dns, authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Creates new DNS configuration with parameters including the domain suffix, the list of DNS name server IP addresses, and the list of services that DNS parameters apply to.
 
         :param dns: (required)
         :type dns: DnsPost

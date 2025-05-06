@@ -46,6 +46,7 @@ from pypureclient.flasharray.FA_2_42.models.policy_assignment_post import Policy
 from pypureclient.flasharray.FA_2_42.models.policy_member_clean_get_response import PolicyMemberCleanGetResponse
 from pypureclient.flasharray.FA_2_42.models.policy_member_clean_response import PolicyMemberCleanResponse
 from pypureclient.flasharray.FA_2_42.models.test_result_with_resource_response import TestResultWithResourceResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_42.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_42.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_42.exceptions import (  # noqa: F401
@@ -79,14 +80,9 @@ class DirectoryServicesApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List directory services configuration  # noqa: E501
+        """List directory services configuration
 
-        Displays the directory services configuration settings for manageability.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directory_services_get_with_http_info(authorization, x_request_id, allow_errors, context_names, continuation_token, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays the directory services configuration settings for manageability.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -259,14 +255,9 @@ class DirectoryServicesApi:
         sids: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the object SID specified. Enter multiple SIDs in comma-separated format. For example, `S-1-2-532-582374278-329482934,S-1-2-532-234235245-423425234`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete local groups  # noqa: E501
+        """Delete local groups
 
-        Deletes one or more local groups. The `gids`, `names`, or `sids` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directory_services_local_groups_delete_with_http_info(authorization, x_request_id, gids, names, sids, async_req=True)
-        >>> result = thread.get()
+        Deletes one or more local groups. The `gids`, `names`, or `sids` parameter is required, but cannot be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -404,14 +395,9 @@ class DirectoryServicesApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List local groups  # noqa: E501
+        """List local groups
 
-        Displays a list of local groups.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directory_services_local_groups_get_with_http_info(authorization, x_request_id, continuation_token, filter, gids, ids, limit, names, offset, sids, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of local groups.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -596,14 +582,9 @@ class DirectoryServicesApi:
         member_types: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the member types specified. The type of member is the full name of the resource endpoint. Valid values include `directories`. Enter multiple member types in comma-separated format. For example, `type01,type02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete local group membership  # noqa: E501
+        """Delete local group membership
 
-        Deletes one or more local group memberships. The `group_names`, `group_sids`, or `group_ids` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directory_services_local_groups_members_delete_with_http_info(authorization, x_request_id, group_gids, group_names, group_sids, member_ids, member_names, member_sids, member_types, async_req=True)
-        >>> result = thread.get()
+        Deletes one or more local group memberships. The `group_names`, `group_sids`, or `group_ids` parameter is required, but cannot be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -772,14 +753,9 @@ class DirectoryServicesApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List local group memberships  # noqa: E501
+        """List local group memberships
 
-        Displays a list of local group memberships.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directory_services_local_groups_members_get_with_http_info(authorization, x_request_id, continuation_token, filter, group_gids, group_names, group_sids, limit, member_ids, member_names, member_sids, member_types, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of local group memberships.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -982,14 +958,9 @@ class DirectoryServicesApi:
         group_sids: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the specified group SID. Enter multiple group SIDs in comma-separated format. For example, `S-1-2-532-582374278-329482934,S-1-2-532-234235245-423425234`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create local group membership  # noqa: E501
+        """Create local group membership
 
-        Creates a local group membership with a group. The `group_names`, `group_sids`, or `group_ids` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directory_services_local_groups_members_post_with_http_info(local_membership, authorization, x_request_id, group_gids, group_names, group_sids, async_req=True)
-        >>> result = thread.get()
+        Creates a local group membership with a group. The `group_names`, `group_sids`, or `group_ids` parameter is required, but cannot be set together.
 
         :param local_membership: The `member_names`, `member_sids`, or `member_gids` parameter is required, but cannot be set together. (required)
         :type local_membership: LocalGroupMembershipPost
@@ -1140,14 +1111,9 @@ class DirectoryServicesApi:
         sids: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the object SID specified. Enter multiple SIDs in comma-separated format. For example, `S-1-2-532-582374278-329482934,S-1-2-532-234235245-423425234`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Modify local groups  # noqa: E501
+        """Modify local groups
 
-        Modifies local groups.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directory_services_local_groups_patch_with_http_info(local_group, authorization, x_request_id, gids, names, sids, async_req=True)
-        >>> result = thread.get()
+        Modifies local groups.
 
         :param local_group: (required)
         :type local_group: LocalGroup
@@ -1296,14 +1262,9 @@ class DirectoryServicesApi:
         local_group: Optional[LocalGroupPost] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create local group  # noqa: E501
+        """Create local group
 
-        Creates a local group.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directory_services_local_groups_post_with_http_info(names, authorization, x_request_id, local_group, async_req=True)
-        >>> result = thread.get()
+        Creates a local group.
 
         :param names: Performs the operation on the unique name specified. For example, `name01`. Enter multiple names in comma-separated format. (required)
         :type names: List[str]
@@ -1439,14 +1400,9 @@ class DirectoryServicesApi:
         uids: Annotated[Optional[conlist(StrictInt)], Field(description="A comma-separated list of local user IDs (UIDs). Enter multiple local user IDs in comma-separated format. For example, `423,51234`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete local users  # noqa: E501
+        """Delete local users
 
-        Deletes one or more local users. The `uids`, `names`, or `sids` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directory_services_local_users_delete_with_http_info(authorization, x_request_id, names, sids, uids, async_req=True)
-        >>> result = thread.get()
+        Deletes one or more local users. The `uids`, `names`, or `sids` parameter is required, but cannot be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -1584,14 +1540,9 @@ class DirectoryServicesApi:
         uids: Annotated[Optional[conlist(StrictInt)], Field(description="A comma-separated list of local user IDs (UIDs). Enter multiple local user IDs in comma-separated format. For example, `423,51234`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List local users  # noqa: E501
+        """List local users
 
-        Displays a list of local users.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directory_services_local_users_get_with_http_info(authorization, x_request_id, continuation_token, filter, ids, limit, names, offset, sids, sort, total_item_count, uids, async_req=True)
-        >>> result = thread.get()
+        Displays a list of local users.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -1776,14 +1727,9 @@ class DirectoryServicesApi:
         member_types: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the member types specified. The type of member is the full name of the resource endpoint. Valid values include `directories`. Enter multiple member types in comma-separated format. For example, `type01,type02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete local user membership  # noqa: E501
+        """Delete local user membership
 
-        Deletes one or more local user memberships. The `member_names`, `member_sids`, or `member_ids` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directory_services_local_users_members_delete_with_http_info(authorization, x_request_id, group_gids, group_names, group_sids, member_ids, member_names, member_sids, member_types, async_req=True)
-        >>> result = thread.get()
+        Deletes one or more local user memberships. The `member_names`, `member_sids`, or `member_ids` parameter is required, but cannot be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -1951,14 +1897,9 @@ class DirectoryServicesApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List local user memberships  # noqa: E501
+        """List local user memberships
 
-        Displays a list of local user memberships.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directory_services_local_users_members_get_with_http_info(authorization, x_request_id, continuation_token, filter, group_gids, group_names, group_sids, limit, member_ids, member_names, member_sids, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of local user memberships.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -2154,14 +2095,9 @@ class DirectoryServicesApi:
         member_sids: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the specified member SID. Enter multiple member SIDs in comma-separated format. For example, `S-1-2-532-582374278-329482934,S-1-2-532-234235245-423425234`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create local user membership  # noqa: E501
+        """Create local user membership
 
-        Creates a local user membership with a group. The `member_names` or `member_sids` or `member_ids` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directory_services_local_users_members_post_with_http_info(local_membership, authorization, x_request_id, member_ids, member_names, member_sids, async_req=True)
-        >>> result = thread.get()
+        Creates a local user membership with a group. The `member_names` or `member_sids` or `member_ids` parameter is required, but cannot be set together.
 
         :param local_membership: The `group_names`, `group_sids`, or `group_gids` parameter is required, but cannot be set together. (required)
         :type local_membership: LocalUserMembershipPost
@@ -2313,14 +2249,9 @@ class DirectoryServicesApi:
         uids: Annotated[Optional[conlist(StrictInt)], Field(description="A comma-separated list of local user IDs (UIDs). Enter multiple local user IDs in comma-separated format. For example, `423,51234`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Modify local user  # noqa: E501
+        """Modify local user
 
-        Modifies a local user.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directory_services_local_users_patch_with_http_info(local_user, authorization, x_request_id, keep_open_sessions, names, sids, uids, async_req=True)
-        >>> result = thread.get()
+        Modifies a local user.
 
         :param local_user: (required)
         :type local_user: LocalUserPatch
@@ -2475,14 +2406,9 @@ class DirectoryServicesApi:
         local_user: Optional[LocalUserPost] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create local user  # noqa: E501
+        """Create local user
 
-        Creates a local user.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directory_services_local_users_post_with_http_info(names, authorization, x_request_id, local_user, async_req=True)
-        >>> result = thread.get()
+        Creates a local user.
 
         :param names: Performs the operation on the unique name specified. For example, `name01`. Enter multiple names in comma-separated format. (required)
         :type names: List[str]
@@ -2618,14 +2544,9 @@ class DirectoryServicesApi:
         context_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the context specified. If specified, the context names must be an array of size 1, and the single element must be the name of an array in the same fleet. If not specified, the context will default to the array that received this request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Modify directory services configuration  # noqa: E501
+        """Modify directory services configuration
 
-        Modifies the directory service configuration.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directory_services_patch_with_http_info(names, directory_service, authorization, x_request_id, context_names, async_req=True)
-        >>> result = thread.get()
+        Modifies the directory service configuration.
 
         :param names: Performs the operation on the unique name specified. For example, `name01`. Enter multiple names in comma-separated format. (required)
         :type names: List[str]
@@ -2767,14 +2688,9 @@ class DirectoryServicesApi:
         context_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the context specified. If specified, the context names must be an array of size 1, and the single element must be the name of an array in the same fleet. If not specified, the context will default to the array that received this request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete group to management access policy mappings  # noqa: E501
+        """Delete group to management access policy mappings
 
-        Deletes one or more group to management access policy mappings.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directory_services_roles_delete_with_http_info(names, authorization, x_request_id, context_names, async_req=True)
-        >>> result = thread.get()
+        Deletes one or more group to management access policy mappings.
 
         :param names: Performs the operation on the unique names specified. For example, `GroupRoleMappingName`. Enter multiple names in comma-separated format. (required)
         :type names: List[str]
@@ -2905,14 +2821,9 @@ class DirectoryServicesApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List group to management access policy mappings  # noqa: E501
+        """List group to management access policy mappings
 
-        Displays access control settings for remote groups.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directory_services_roles_get_with_http_info(authorization, x_request_id, allow_errors, context_names, continuation_token, filter, limit, names, offset, role_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays access control settings for remote groups.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -3093,14 +3004,9 @@ class DirectoryServicesApi:
         role_names: Annotated[Optional[conlist(StrictStr)], Field(description="This field has been deprecated.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Modify group to management access policy mappings  # noqa: E501
+        """Modify group to management access policy mappings
 
-        Modifies properties of one or more group to management access policy mappings. Modifying management access policies is done at `/directory-services/roles/policies/management-access` instead.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directory_services_roles_patch_with_http_info(names, directory_service_roles, authorization, x_request_id, context_names, role_names, async_req=True)
-        >>> result = thread.get()
+        Modifies properties of one or more group to management access policy mappings. Modifying management access policies is done at `/directory-services/roles/policies/management-access` instead.
 
         :param names: Performs the operation on the unique names specified. For example, `GroupRoleMappingName`. Enter multiple names in comma-separated format. (required)
         :type names: List[str]
@@ -3252,14 +3158,9 @@ class DirectoryServicesApi:
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete a membership between a group to management access policy mapping and one or more management access policies  # noqa: E501
+        """Delete a membership between a group to management access policy mapping and one or more management access policies
 
-        Deletes a membership between a group to management access policy mapping with one or more management access policies. One of `policy_ids` or `policy_names` is required, and one of `member_ids` or `member_names` is required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directory_services_roles_policies_management_access_delete_with_http_info(authorization, x_request_id, context_names, member_ids, member_names, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Deletes a membership between a group to management access policy mapping with one or more management access policies. One of `policy_ids` or `policy_names` is required, and one of `member_ids` or `member_names` is required.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -3413,14 +3314,9 @@ class DirectoryServicesApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List management access policies attached to a group to management access policy mapping  # noqa: E501
+        """List management access policies attached to a group to management access policy mapping
 
-        Displays a list of management access policies that are attached to a group to management access policy mappings.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directory_services_roles_policies_management_access_get_with_http_info(authorization, x_request_id, allow_errors, context_names, continuation_token, filter, limit, member_ids, member_names, offset, policy_ids, policy_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of management access policies that are attached to a group to management access policy mappings.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -3615,14 +3511,9 @@ class DirectoryServicesApi:
         member_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique member name specified. Examples of members include volumes, hosts, host groups, and directories. Enter multiple names in comma-separated format. For example, `vol01,vol02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create a membership between a group to management access policy mapping with one or more management access policies  # noqa: E501
+        """Create a membership between a group to management access policy mapping with one or more management access policies
 
-        Creates a membership between a group to management access policy mapping with one or more management access policies. One of `member_ids` or `member_names` parameter is required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directory_services_roles_policies_management_access_post_with_http_info(policies, authorization, x_request_id, context_names, member_ids, member_names, async_req=True)
-        >>> result = thread.get()
+        Creates a membership between a group to management access policy mapping with one or more management access policies. One of `member_ids` or `member_names` parameter is required.
 
         :param policies: (required)
         :type policies: PolicyAssignmentPost
@@ -3772,14 +3663,9 @@ class DirectoryServicesApi:
         context_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the context specified. If specified, the context names must be an array of size 1, and the single element must be the name of an array in the same fleet. If not specified, the context will default to the array that received this request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create a group in management access policy mappings  # noqa: E501
+        """Create a group in management access policy mappings
 
-        Creates one or more groups in management access policy mappings.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directory_services_roles_post_with_http_info(names, directory_service_roles, authorization, x_request_id, context_names, async_req=True)
-        >>> result = thread.get()
+        Creates one or more groups in management access policy mappings.
 
         :param names: Performs the operation on the unique names specified. For example, `GroupRoleMappingName`. Enter multiple names in comma-separated format. (required)
         :type names: List[str]
@@ -3928,14 +3814,9 @@ class DirectoryServicesApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List directory services test results  # noqa: E501
+        """List directory services test results
 
-        Displays the directory services test and displays the results. The test verifies that URIs can be resolved and that the array can bind and query the tree using the bind user credentials. The test also verifies that the array can find all configured groups to ensure the common names and group base are correctly configured.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directory_services_test_get_with_http_info(names, authorization, x_request_id, allow_errors, context_names, continuation_token, filter, limit, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays the directory services test and displays the results. The test verifies that URIs can be resolved and that the array can bind and query the tree using the bind user credentials. The test also verifies that the array can find all configured groups to ensure the common names and group base are correctly configured.
 
         :param names: Performs the operation on the unique name specified. For example, `name01`. Enter multiple names in comma-separated format. (required)
         :type names: List[str]

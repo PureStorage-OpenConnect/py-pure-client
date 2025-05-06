@@ -33,6 +33,7 @@ from pypureclient.flasharray.FA_2_42.models.workload_placement_recommendation_ge
 from pypureclient.flasharray.FA_2_42.models.workload_placement_recommendation_response import WorkloadPlacementRecommendationResponse
 from pypureclient.flasharray.FA_2_42.models.workload_post import WorkloadPost
 from pypureclient.flasharray.FA_2_42.models.workload_response import WorkloadResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_42.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_42.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_42.exceptions import (  # noqa: F401
@@ -60,14 +61,9 @@ class WorkloadsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique resource names specified. Only one value is supported.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete a workload  # noqa: E501
+        """Delete a workload
 
-        Deletes a workload that has been destroyed and is pending eradication. Eradicated workloads cannot be recovered. Workloads are destroyed using the `PATCH` method. The `ids` or `names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_workloads_delete_with_http_info(authorization, x_request_id, context_names, ids, names, async_req=True)
-        >>> result = thread.get()
+        Deletes a workload that has been destroyed and is pending eradication. Eradicated workloads cannot be recovered. Workloads are destroyed using the `PATCH` method. The `ids` or `names` parameter is required, but they cannot be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -202,14 +198,9 @@ class WorkloadsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List workloads  # noqa: E501
+        """List workloads
 
-        Displays a list of workloads.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_workloads_get_with_http_info(authorization, x_request_id, allow_errors, context_names, continuation_token, destroyed, ids, limit, names, async_req=True)
-        >>> result = thread.get()
+        Displays a list of workloads.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -371,14 +362,9 @@ class WorkloadsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique resource names specified. Only one value is supported.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Modify a workload  # noqa: E501
+        """Modify a workload
 
-        Modifies a workload by renaming or destroying it. To rename a workload, set `name` to the new name. To destroy a workload, set `destroyed=true`. To recover a workload that has been destroyed and is pending eradication, set `destroyed=false`. The `ids` or `names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_workloads_patch_with_http_info(workload, authorization, x_request_id, context_names, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modifies a workload by renaming or destroying it. To rename a workload, set `name` to the new name. To destroy a workload, set `destroyed=true`. To recover a workload that has been destroyed and is pending eradication, set `destroyed=false`. The `ids` or `names` parameter is required, but they cannot be set together.
 
         :param workload: (required)
         :type workload: WorkloadPatch
@@ -531,14 +517,9 @@ class WorkloadsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List workload placement recommendations  # noqa: E501
+        """List workload placement recommendations
 
-        Displays a list of placement recommendations for workloads.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_workloads_placement_recommendations_get_with_http_info(authorization, x_request_id, allow_errors, context_names, continuation_token, ids, limit, names, async_req=True)
-        >>> result = thread.get()
+        Displays a list of placement recommendations for workloads.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -695,14 +676,9 @@ class WorkloadsApi:
         preset_names: Annotated[Optional[conlist(StrictStr)], Field(description="Creates the workload placement recommendations using the presets specified by names. Only one preset can be specified. One of the `preset_ids` or `preset_names` parameters are required, but they cannot be set together.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create a request for a workload placement recommendation.  # noqa: E501
+        """Create a request for a workload placement recommendation.
 
-        Creates a recommendation for the placement of the specified workload. The computation might take a few minutes.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_workloads_placement_recommendations_post_with_http_info(inputs, authorization, x_request_id, context_names, placement_names, preset_ids, preset_names, async_req=True)
-        >>> result = thread.get()
+        Creates a recommendation for the placement of the specified workload. The computation might take a few minutes.
 
         :param inputs: (required)
         :type inputs: WorkloadPlacementRecommendation
@@ -861,14 +837,9 @@ class WorkloadsApi:
         preset_names: Annotated[Optional[conlist(StrictStr)], Field(description="Create the resource using the preset specified by name. Only one preset can be specified. One of the `preset_ids` or `preset_names` parameters are required, but they cannot be set together.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create a workload  # noqa: E501
+        """Create a workload
 
-        Creates one workload.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_workloads_post_with_http_info(names, workload, authorization, x_request_id, context_names, preset_ids, preset_names, async_req=True)
-        >>> result = thread.get()
+        Creates one workload.
 
         :param names: Performs the operation on the unique resource names specified. Only one value is supported. (required)
         :type names: List[str]
@@ -1026,14 +997,9 @@ class WorkloadsApi:
         resource_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. The `resource_ids` or `resource_names` parameter is required, but they cannot be set together.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Update tags  # noqa: E501
+        """Update tags
 
-        Updates or creates tags for all specified objects.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_workloads_tags_batch_put_with_http_info(tag, authorization, x_request_id, context_names, resource_ids, resource_names, async_req=True)
-        >>> result = thread.get()
+        Updates or creates tags for all specified objects.
 
         :param tag: A list of tags to be created or, if they already exist, updated. (required)
         :type tag: List[TagBatch]
@@ -1185,14 +1151,9 @@ class WorkloadsApi:
         resource_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. The `resource_ids` or `resource_names` parameter is required, but they cannot be set together.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete tags  # noqa: E501
+        """Delete tags
 
-        Deletes specified tags.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_workloads_tags_delete_with_http_info(authorization, x_request_id, context_names, keys, namespaces, resource_ids, resource_names, async_req=True)
-        >>> result = thread.get()
+        Deletes specified tags.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -1339,14 +1300,9 @@ class WorkloadsApi:
         resource_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. The `resource_ids` or `resource_names` parameter is required, but they cannot be set together.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List tags  # noqa: E501
+        """List tags
 
-        Displays the list of tags.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_workloads_tags_get_with_http_info(authorization, x_request_id, allow_errors, context_names, namespaces, resource_ids, resource_names, async_req=True)
-        >>> result = thread.get()
+        Displays the list of tags.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str

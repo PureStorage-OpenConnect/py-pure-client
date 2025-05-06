@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictInt, StrictStr
 
 class BuiltInAsOf(BaseModel):
     """
-    A built-in resource. Many are singletons predefined by Purity (e.g., support settings). Some correspond to a piece of software, like an app, or hardware, like a controller. Others are created by the system in response to some event (e.g., alerts, audit records). Typically, a user can't create, delete or rename a built-in resource. A few can be created or deleted, but not renamed because the names are meaningful to Purity (e.g., VIFs).  # noqa: E501
+    A built-in resource. Many are singletons predefined by Purity (e.g., support settings). Some correspond to a piece of software, like an app, or hardware, like a controller. Others are created by the system in response to some event (e.g., alerts, audit records). Typically, a user can't create, delete or rename a built-in resource. A few can be created or deleted, but not renamed because the names are meaningful to Purity (e.g., VIFs).
     """
     as_of: Optional[StrictInt] = Field(default=None, alias="_as_of", description="The freshness of the data (timestamp in millis since epoch).")
     id: Optional[StrictStr] = Field(default=None, description="A non-modifiable, globally unique ID chosen by the system.")

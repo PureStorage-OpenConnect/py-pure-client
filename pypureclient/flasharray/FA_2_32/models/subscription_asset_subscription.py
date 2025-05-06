@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictStr
 
 class SubscriptionAssetSubscription(BaseModel):
     """
-    A reference to which subscription this appliance belongs.  # noqa: E501
+    A reference to which subscription this appliance belongs.
     """
     id: Optional[StrictStr] = Field(default=None, description="A globally unique, system-generated ID. The ID cannot be modified.")
     __properties = ["id"]

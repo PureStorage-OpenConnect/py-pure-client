@@ -26,6 +26,7 @@ from typing import Optional
 from pypureclient.flasharray.FA_2_29.models.directory_export_get_response import DirectoryExportGetResponse
 from pypureclient.flasharray.FA_2_29.models.directory_export_post import DirectoryExportPost
 from pypureclient.flasharray.FA_2_29.models.directory_export_response import DirectoryExportResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_29.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_29.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_29.exceptions import (  # noqa: F401
@@ -53,14 +54,9 @@ class DirectoryExportsApi:
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete directory exports  # noqa: E501
+        """Delete directory exports
 
-        Deletes one or more directory exports. If any of the `export_names` is not unique across the system, `policy_ids` or `policy_names` must be specified to determine the exports.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api229_directory_exports_delete_with_http_info(authorization, x_request_id, export_names, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Deletes one or more directory exports. If any of the `export_names` is not unique across the system, `policy_ids` or `policy_names` must be specified to determine the exports.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -200,14 +196,9 @@ class DirectoryExportsApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List directory exports  # noqa: E501
+        """List directory exports
 
-        Displays a list of directory exports.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api229_directory_exports_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, directory_ids, directory_names, export_names, filter, limit, offset, policy_ids, policy_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of directory exports.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -403,14 +394,9 @@ class DirectoryExportsApi:
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the policy names specified. Enter multiple policy names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create directory exports  # noqa: E501
+        """Create directory exports
 
-        Creates an export of a managed directory. The `directory_ids` or `directory_names` parameter is required, but cannot be set together. The `policy_ids` or `policy_names` parameter is required, but cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api229_directory_exports_post_with_http_info(exports, authorization, x_request_id, directory_ids, directory_names, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Creates an export of a managed directory. The `directory_ids` or `directory_names` parameter is required, but cannot be set together. The `policy_ids` or `policy_names` parameter is required, but cannot be set together.
 
         :param exports: (required)
         :type exports: DirectoryExportPost

@@ -25,7 +25,7 @@ from pypureclient.flasharray.FA_2_42.models.workload_placement_recommendation_pr
 
 class WorkloadPlacementRecommendationTargetCapacityUsedProjections(BaseModel):
     """
-    Projections for the capacity consumed by customer data.  # noqa: E501
+    Projections for the capacity consumed by customer data.
     """
     days_until_full: Optional[StrictInt] = Field(default=None, description="The number of days until the target is at full capacity.")
     projection: Optional[WorkloadPlacementRecommendationProjection] = Field(default=None, description="The projection of the used capacity, assuming the workload is provisioned on this target.")

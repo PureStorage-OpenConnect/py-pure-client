@@ -26,7 +26,7 @@ from pypureclient.flasharray.FA_2_40.models.workload_placement_recommendation_re
 
 class WorkloadPlacementRecommendationAdditionalConstraints(BaseModel):
     """
-    The list of targets considered for workload placement must satisfy the requirements imposed by the preset. It is also possible to specify additional constraints to further restrict the list of targets for consideration.  # noqa: E501
+    The list of targets considered for workload placement must satisfy the requirements imposed by the preset. It is also possible to specify additional constraints to further restrict the list of targets for consideration.
     """
     required_resource_references: Optional[conlist(WorkloadPlacementRecommendationResourceReference)] = Field(default=None, description="Defines a group of resources. At least one resource from each item should be present on this target for the target to be considered an acceptable candidate for workload placement")
     targets: Optional[conlist(ReferenceWithType)] = Field(default=None, description="If specified, only consider these targets when computing placement recommendations. If not specified, the whole fleet is used to compute the recommendation.")

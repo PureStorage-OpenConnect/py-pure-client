@@ -26,6 +26,7 @@ from typing import Optional
 from pypureclient.flashblade.FB_2_9.models.api_client import ApiClient
 from pypureclient.flashblade.FB_2_9.models.api_clients_post import ApiClientsPost
 from pypureclient.flashblade.FB_2_9.models.api_clients_response import ApiClientsResponse
+from typing import Optional
 from pypureclient.flashblade.FB_2_9.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_9.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_9.exceptions import (  # noqa: F401
@@ -50,14 +51,9 @@ class APIClientsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE api-clients  # noqa: E501
+        """DELETE api-clients
 
-        Delete the API client.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api29_api_clients_delete_with_http_info(ids, names, async_req=True)
-        >>> result = thread.get()
+        Delete the API client.
 
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
         :type ids: List[str]
@@ -171,14 +167,9 @@ class APIClientsApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET api-clients  # noqa: E501
+        """GET api-clients
 
-        List an API client and its configuration attributes.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api29_api_clients_get_with_http_info(continuation_token, filter, ids, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        List an API client and its configuration attributes.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -325,14 +316,9 @@ class APIClientsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH api-clients  # noqa: E501
+        """PATCH api-clients
 
-        Modify an API client. Newly created API clients can be enabled by setting the `enabled` parameter to `true`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api29_api_clients_patch_with_http_info(api_clients, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modify an API client. Newly created API clients can be enabled by setting the `enabled` parameter to `true`.
 
         :param api_clients: (required)
         :type api_clients: ApiClient
@@ -460,14 +446,9 @@ class APIClientsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST api-clients  # noqa: E501
+        """POST api-clients
 
-        Create an API client to authorize Access Token or Bearer Tokens for use on the array. Required fields include `issuer`, `public_key`, and `access_token_ttl_in_ms`. After creating an API client, it can only be enabled by an authorized user.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api29_api_clients_post_with_http_info(api_client, names, async_req=True)
-        >>> result = thread.get()
+        Create an API client to authorize Access Token or Bearer Tokens for use on the array. Required fields include `issuer`, `public_key`, and `access_token_ttl_in_ms`. After creating an API client, it can only be enabled by an authorized user.
 
         :param api_client: (required)
         :type api_client: ApiClientsPost

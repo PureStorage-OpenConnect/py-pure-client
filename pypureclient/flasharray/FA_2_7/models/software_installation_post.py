@@ -25,7 +25,7 @@ from pypureclient.flasharray.FA_2_7.models.override_check import OverrideCheck
 
 class SoftwareInstallationPost(BaseModel):
     """
-    Software upgrade attempt.  # noqa: E501
+    Software upgrade attempt.
     """
     mode: Optional[StrictStr] = Field(default=None, description="Mode the upgrade is in. Valid values are `check-only`, `interactive`, `semi-interactive`, and `one-click`. In `check-only` mode, the upgrade only runs pre-upgrade checks and returns. In `interactive` mode, the upgrade process pauses at several points, at which users must enter certain commands to proceed. In `semi-interactive` mode, the upgrade pauses if there are any upgrade check failures and functions like `one-click` mode otherwise. In `one-click` mode, the upgrade proceeds automatically without pausing.")
     override_checks: Optional[conlist(OverrideCheck)] = Field(default=None, description="A list of upgrade checks whose failure is overridden during the upgrade. If any optional `args` are provided, they are validated later when the corresponding check script runs.")

@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictStr
 
 class SoftwarePost(BaseModel):
     """
-    Software to be installed on the array.  # noqa: E501
+    Software to be installed on the array.
     """
     name: Optional[StrictStr] = Field(default=None, description="The name of the software.")
     version: Optional[StrictStr] = Field(default=None, description="The version of the software.")

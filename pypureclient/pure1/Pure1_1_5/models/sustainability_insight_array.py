@@ -25,7 +25,7 @@ from pypureclient.pure1.Pure1_1_5.models.fixed_reference_fqdn import FixedRefere
 
 class SustainabilityInsightArray(BaseModel):
     """
-    A single FlashArray/FlashBlade appliance Sustainability assessment insights information. The _as_of is the time when the computation happened. Only the data from the given time interval was used for the computation of insight. Typically the last week of data is used for the computation of insights.  # noqa: E501
+    A single FlashArray/FlashBlade appliance Sustainability assessment insights information. The _as_of is the time when the computation happened. Only the data from the given time interval was used for the computation of insight. Typically the last week of data is used for the computation of insights.
     """
     as_of: Optional[StrictInt] = Field(default=None, alias="_as_of", description="The freshness of the data (timestamp in millis since epoch).")
     interval_end: Optional[StrictInt] = Field(default=None, alias="_interval_end", description="The timestamp of the end of the time interval.")

@@ -27,6 +27,7 @@ from pypureclient.flashblade.FB_2_4.models.object_store_user_get_response import
 from pypureclient.flashblade.FB_2_4.models.object_store_user_response import ObjectStoreUserResponse
 from pypureclient.flashblade.FB_2_4.models.policy_member_get_response import PolicyMemberGetResponse
 from pypureclient.flashblade.FB_2_4.models.policy_member_response import PolicyMemberResponse
+from typing import Optional
 from pypureclient.flashblade.FB_2_4.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_4.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_4.exceptions import (  # noqa: F401
@@ -51,14 +52,9 @@ class ObjectStoreUsersApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE object-store-users  # noqa: E501
+        """DELETE object-store-users
 
-        Delete an object store user.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_object_store_users_delete_with_http_info(ids, names, async_req=True)
-        >>> result = thread.get()
+        Delete an object store user.
 
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
         :type ids: List[str]
@@ -172,14 +168,9 @@ class ObjectStoreUsersApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET object-store-users  # noqa: E501
+        """GET object-store-users
 
-        List object store users and their attributes.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_object_store_users_get_with_http_info(continuation_token, filter, ids, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        List object store users and their attributes.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -327,14 +318,9 @@ class ObjectStoreUsersApi:
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of policy names.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE object-store-users/object-store-access-policies  # noqa: E501
+        """DELETE object-store-users/object-store-access-policies
 
-        Revoke an object store user’s access policy.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_object_store_users_object_store_access_policies_delete_with_http_info(member_ids, member_names, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Revoke an object store user’s access policy.
 
         :param member_ids: A comma-separated list of member IDs. If after filtering, there is not at least one resource that matches each of the elements of `member_ids`, then an error is returned. This cannot be provided together with the `member_names` query parameter.
         :type member_ids: List[str]
@@ -464,14 +450,9 @@ class ObjectStoreUsersApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET object-store-users/object-store-access-policies  # noqa: E501
+        """GET object-store-users/object-store-access-policies
 
-        List object store users and their access policies.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_object_store_users_object_store_access_policies_get_with_http_info(continuation_token, filter, limit, member_ids, member_names, offset, policy_ids, policy_names, sort, async_req=True)
-        >>> result = thread.get()
+        List object store users and their access policies.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -633,14 +614,9 @@ class ObjectStoreUsersApi:
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of policy names.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST object-store-users/object-store-access-policies  # noqa: E501
+        """POST object-store-users/object-store-access-policies
 
-        Grant access policies to an object store user.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_object_store_users_object_store_access_policies_post_with_http_info(member_ids, member_names, policy_ids, policy_names, async_req=True)
-        >>> result = thread.get()
+        Grant access policies to an object store user.
 
         :param member_ids: A comma-separated list of member IDs. If after filtering, there is not at least one resource that matches each of the elements of `member_ids`, then an error is returned. This cannot be provided together with the `member_names` query parameter.
         :type member_ids: List[str]
@@ -769,14 +745,9 @@ class ObjectStoreUsersApi:
         full_access: Annotated[Optional[StrictBool], Field(description="If set to `true`, creates an object store user with full permissions. If set to `false`, creates an object store user with no permission. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST object-store-users  # noqa: E501
+        """POST object-store-users
 
-        Create object store users to administer object storage for an object store account.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_object_store_users_post_with_http_info(names, full_access, async_req=True)
-        >>> result = thread.get()
+        Create object store users to administer object storage for an object store account.
 
         :param names: A comma-separated list of resource names. (required)
         :type names: List[str]

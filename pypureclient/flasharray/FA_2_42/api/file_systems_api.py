@@ -26,6 +26,7 @@ from typing import Optional
 from pypureclient.flasharray.FA_2_42.models.file_system_get_response import FileSystemGetResponse
 from pypureclient.flasharray.FA_2_42.models.file_system_patch import FileSystemPatch
 from pypureclient.flasharray.FA_2_42.models.file_system_response import FileSystemResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_42.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_42.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_42.exceptions import (  # noqa: F401
@@ -53,14 +54,9 @@ class FileSystemsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete file system  # noqa: E501
+        """Delete file system
 
-        Deletes a file system that has been destroyed and is pending eradication. Eradicated file systems cannot be recovered. File systems are destroyed using the PATCH method.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_file_systems_delete_with_http_info(authorization, x_request_id, context_names, ids, names, async_req=True)
-        >>> result = thread.get()
+        Deletes a file system that has been destroyed and is pending eradication. Eradicated file systems cannot be recovered. File systems are destroyed using the PATCH method.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -199,14 +195,9 @@ class FileSystemsApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List file systems  # noqa: E501
+        """List file systems
 
-        Displays a list of file systems, including those pending eradication.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_file_systems_get_with_http_info(authorization, x_request_id, allow_errors, context_names, continuation_token, destroyed, filter, ids, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of file systems, including those pending eradication.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -393,14 +384,9 @@ class FileSystemsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Modify a file system  # noqa: E501
+        """Modify a file system
 
-        Modifies a file system. You can rename, destroy, move, or recover a file system. To rename a file system, set `name` to the new name. To destroy a file system, set `destroyed=true`. To move a file system, set 'pod' to the destination pod reference. To recover a file system that has been destroyed and is pending eradication, set `destroyed=false`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_file_systems_patch_with_http_info(file_system, authorization, x_request_id, context_names, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modifies a file system. You can rename, destroy, move, or recover a file system. To rename a file system, set `name` to the new name. To destroy a file system, set `destroyed=true`. To move a file system, set 'pod' to the destination pod reference. To recover a file system that has been destroyed and is pending eradication, set `destroyed=false`.
 
         :param file_system: (required)
         :type file_system: FileSystemPatch
@@ -549,14 +535,9 @@ class FileSystemsApi:
         context_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the context specified. If specified, the context names must be an array of size 1, and the single element must be the name of an array in the same fleet. If not specified, the context will default to the array that received this request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create file system  # noqa: E501
+        """Create file system
 
-        Creates one or more file systems.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_file_systems_post_with_http_info(names, authorization, x_request_id, context_names, async_req=True)
-        >>> result = thread.get()
+        Creates one or more file systems.
 
         :param names: Performs the operation on the unique name specified. For example, `name01`. Enter multiple names in comma-separated format. (required)
         :type names: List[str]

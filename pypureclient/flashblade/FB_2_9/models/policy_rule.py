@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictInt, StrictStr
 
 class PolicyRule(BaseModel):
     """
-    Rule  # noqa: E501
+    Rule
     """
     at: Optional[StrictInt] = Field(default=None, description="Time during the day to take the snapshot (using array time zone), only valid if 'every' is in days.")
     every: Optional[StrictInt] = Field(default=None, description="How often to take snapshots.")

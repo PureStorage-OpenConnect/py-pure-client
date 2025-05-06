@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictStr
 
 class WorkloadParameterValueResourceReference(BaseModel):
     """
-    The value for a resource reference parameter.  # noqa: E501
+    The value for a resource reference parameter.
     """
     id: Optional[StrictStr] = Field(default=None, description="The id of the resource to reference. One of `id` or `name` must be set, but they cannot be set together.")
     name: Optional[StrictStr] = Field(default=None, description="The name of the resource to reference. One of `id` or `name` must be set, but they cannot be set together.")

@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictStr
 
 class SoftwareBundlePost(BaseModel):
     """
-    The source of the software bundle.  # noqa: E501
+    The source of the software bundle.
     """
     source: Optional[StrictStr] = Field(default=None, description="The source of the software bundle. Accepts HTTP, HTTPS or FTP, and paths.")
     __properties = ["source"]

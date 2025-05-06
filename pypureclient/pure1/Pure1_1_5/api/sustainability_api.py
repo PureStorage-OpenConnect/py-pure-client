@@ -25,6 +25,7 @@ from typing import Optional
 
 from pypureclient.pure1.Pure1_1_5.models.sustainability_array_get_response import SustainabilityArrayGetResponse
 from pypureclient.pure1.Pure1_1_5.models.sustainability_insight_array_get_response import SustainabilityInsightArrayGetResponse
+from typing import Optional
 from pypureclient.pure1.Pure1_1_5.api_client import ApiClient as _TransportApiClient
 from pypureclient.pure1.Pure1_1_5.api_response import ApiResponse
 from pypureclient.pure1.Pure1_1_5.exceptions import (  # noqa: F401
@@ -57,14 +58,9 @@ class SustainabilityApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Get appliance sustainability information.  # noqa: E501
+        """Get appliance sustainability information.
 
-        Retrieves information about FlashArray and FlashBlade size, power consumption, heat generation and its sustainability assessment.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api15_assessment_sustainability_arrays_get_with_http_info(authorization, x_request_id, continuation_token, filter, fqdns, ids, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        Retrieves information about FlashArray and FlashBlade size, power consumption, heat generation and its sustainability assessment.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`)
         :type authorization: str
@@ -239,14 +235,9 @@ class SustainabilityApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Get appliance sustainability insights information.  # noqa: E501
+        """Get appliance sustainability insights information.
 
-        Retrieves information about FlashArray and FlashBlade insights connected to sustainability assessment.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api15_assessment_sustainability_insights_arrays_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, offset, sort, async_req=True)
-        >>> result = thread.get()
+        Retrieves information about FlashArray and FlashBlade insights connected to sustainability assessment.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`)
         :type authorization: str

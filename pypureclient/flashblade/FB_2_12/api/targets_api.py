@@ -28,6 +28,7 @@ from pypureclient.flashblade.FB_2_12.models.target import Target
 from pypureclient.flashblade.FB_2_12.models.target_get_response import TargetGetResponse
 from pypureclient.flashblade.FB_2_12.models.target_post import TargetPost
 from pypureclient.flashblade.FB_2_12.models.target_response import TargetResponse
+from typing import Optional
 from pypureclient.flashblade.FB_2_12.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_12.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_12.exceptions import (  # noqa: F401
@@ -52,14 +53,9 @@ class TargetsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE targets  # noqa: E501
+        """DELETE targets
 
-        Delete the connection to the target for replication.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api212_targets_delete_with_http_info(ids, names, async_req=True)
-        >>> result = thread.get()
+        Delete the connection to the target for replication.
 
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
         :type ids: List[str]
@@ -173,14 +169,9 @@ class TargetsApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET targets  # noqa: E501
+        """GET targets
 
-        List targets used for replication.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api212_targets_get_with_http_info(continuation_token, filter, ids, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        List targets used for replication.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -327,14 +318,9 @@ class TargetsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH targets  # noqa: E501
+        """PATCH targets
 
-        Modify the target attributes for replication.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api212_targets_patch_with_http_info(target, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modify the target attributes for replication.
 
         :param target: (required)
         :type target: Target
@@ -471,14 +457,9 @@ class TargetsApi:
         total_only: Annotated[Optional[StrictBool], Field(description="Only return the total record for the specified items. The total record will be the total of all items after filtering. The `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET targets/performance/replication  # noqa: E501
+        """GET targets/performance/replication
 
-        List replication performance metrics for targets.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api212_targets_performance_replication_get_with_http_info(continuation_token, end_time, filter, ids, limit, names, offset, resolution, sort, start_time, total_only, async_req=True)
-        >>> result = thread.get()
+        List replication performance metrics for targets.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -648,14 +629,9 @@ class TargetsApi:
         target: TargetPost,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST targets  # noqa: E501
+        """POST targets
 
-        Add a target for replication.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api212_targets_post_with_http_info(names, target, async_req=True)
-        >>> result = thread.get()
+        Add a target for replication.
 
         :param names: A comma-separated list of resource names. (required)
         :type names: List[str]

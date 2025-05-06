@@ -31,6 +31,7 @@ from pypureclient.flasharray.FA_2_40.models.pod_replica_link_mapping_policy_resp
 from pypureclient.flasharray.FA_2_40.models.pod_replica_link_patch import PodReplicaLinkPatch
 from pypureclient.flasharray.FA_2_40.models.pod_replica_link_performance_replication_get_response import PodReplicaLinkPerformanceReplicationGetResponse
 from pypureclient.flasharray.FA_2_40.models.pod_replica_link_response import PodReplicaLinkResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_40.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_40.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_40.exceptions import (  # noqa: F401
@@ -61,14 +62,9 @@ class PodReplicaLinksApi:
         remote_pod_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of remote pod names. If, after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `remote_pod_ids` query parameter.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete pod replica links  # noqa: E501
+        """Delete pod replica links
 
-        Deletes pod replica links. The `local_pod_names` and `remote_pod_names` are required. Valid values are `replicating`, `baselining`, `paused`, `unhealthy`, `quiescing`, and `quiesced`. A status of `replicating` indicates that the source array is replicating to the target array. A status of `baselining` indicates that the the initial version of the dataset is being sent. During this phase, you cannot promote the target pod. In addition, changing the link direction might trigger the `baselining` status to recur. A status of `paused ` indicates that data transfer between objects has stopped. A status of `unhealthy` indicates that the link is currently unhealthy and customers must perform some health checks to determine the cause. A status of `quiescing` indicates that the source pod is not accepting new write requests but the most recent changes to the source have not arrived on the target. A status of `quiesced` indicates that the source pod has been demoted and all changes have been replicated to the target pod.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api240_pod_replica_links_delete_with_http_info(authorization, x_request_id, context_names, ids, local_pod_ids, local_pod_names, remote_pod_ids, remote_pod_names, async_req=True)
-        >>> result = thread.get()
+        Deletes pod replica links. The `local_pod_names` and `remote_pod_names` are required. Valid values are `replicating`, `baselining`, `paused`, `unhealthy`, `quiescing`, and `quiesced`. A status of `replicating` indicates that the source array is replicating to the target array. A status of `baselining` indicates that the the initial version of the dataset is being sent. During this phase, you cannot promote the target pod. In addition, changing the link direction might trigger the `baselining` status to recur. A status of `paused ` indicates that data transfer between objects has stopped. A status of `unhealthy` indicates that the link is currently unhealthy and customers must perform some health checks to determine the cause. A status of `quiescing` indicates that the source pod is not accepting new write requests but the most recent changes to the source have not arrived on the target. A status of `quiesced` indicates that the source pod has been demoted and all changes have been replicated to the target pod.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -232,14 +228,9 @@ class PodReplicaLinksApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List pod replica links  # noqa: E501
+        """List pod replica links
 
-        Displays the list of pod replica links that are configured between arrays.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api240_pod_replica_links_get_with_http_info(authorization, x_request_id, allow_errors, context_names, continuation_token, filter, ids, limit, local_pod_ids, local_pod_names, offset, remote_ids, remote_names, remote_pod_ids, remote_pod_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays the list of pod replica links that are configured between arrays.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -469,14 +460,9 @@ class PodReplicaLinksApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List pod replica link lag  # noqa: E501
+        """List pod replica link lag
 
-        Displays the lag in milliseconds that the replication target is behind the source. This is the time difference between the current time and the recovery point.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api240_pod_replica_links_lag_get_with_http_info(authorization, x_request_id, allow_errors, context_names, continuation_token, end_time, filter, ids, limit, local_pod_ids, local_pod_names, offset, remote_ids, remote_names, remote_pod_ids, remote_pod_names, resolution, sort, start_time, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays the lag in milliseconds that the replication target is behind the source. This is the time difference between the current time and the recovery point.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -722,14 +708,9 @@ class PodReplicaLinksApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List policy mappings  # noqa: E501
+        """List policy mappings
 
-        Displays a list of policy mappings.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api240_pod_replica_links_mappings_policies_get_with_http_info(authorization, x_request_id, allow_errors, context_names, continuation_token, filter, ids, limit, local_pod_ids, local_pod_names, offset, pod_replica_link_ids, remote_ids, remote_names, remote_pod_ids, remote_pod_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of policy mappings.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -960,14 +941,9 @@ class PodReplicaLinksApi:
         remote_policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of remote policy names. If, after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `remote_policy_ids` query parameter.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Modify policy mappings  # noqa: E501
+        """Modify policy mappings
 
-        Modifies policy mappings of a replica link. Valid `mapping` values are `connected` and `disconnected`. `connected` indicates that the source policy and its attachments will be mirrored on the target pod. `disconnected` indicates that the associated policy and its attachments are independent from any policy on the remote. This operation can only be performed on the target side of a pod replica link.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api240_pod_replica_links_mappings_policies_patch_with_http_info(mapping, authorization, x_request_id, context_names, ids, local_pod_ids, local_pod_names, pod_replica_link_ids, remote_ids, remote_names, remote_pod_ids, remote_pod_names, remote_policy_ids, remote_policy_names, async_req=True)
-        >>> result = thread.get()
+        Modifies policy mappings of a replica link. Valid `mapping` values are `connected` and `disconnected`. `connected` indicates that the source policy and its attachments will be mirrored on the target pod. `disconnected` indicates that the associated policy and its attachments are independent from any policy on the remote. This operation can only be performed on the target side of a pod replica link.
 
         :param mapping: (required)
         :type mapping: MappingPolicyPatch
@@ -1179,14 +1155,9 @@ class PodReplicaLinksApi:
         remote_pod_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of remote pod names. If, after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `remote_pod_ids` query parameter.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Modify pod replica links  # noqa: E501
+        """Modify pod replica links
 
-        Modifies pod replica links. The `local_pod_names` and `remote_pod_names` are required. Valid values are `replicating`, `baselining`, `paused`, `unhealthy`, `quiescing`, and `quiesced`. A status of `replicating` indicates that the source array is replicating to the target array. A status of `baselining` indicates that the the initial version of the dataset is being sent. During this phase, you cannot promote the target pod. In addition, changing the link direction might trigger the `baselining` status to recur. A status of `paused ` indicates that data transfer between objects has stopped. A status of `unhealthy` indicates that the link is currently unhealthy and customers must perform some health checks to determine the cause. A status of `quiescing` indicates that the source pod is not accepting new write requests but the most recent changes to the source have not arrived on the target. A status of `quiesced` indicates that the source pod has been demoted and all changes have been replicated to the target pod.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api240_pod_replica_links_patch_with_http_info(pod_replica_link, authorization, x_request_id, context_names, ids, local_pod_ids, local_pod_names, remote_ids, remote_names, remote_pod_ids, remote_pod_names, async_req=True)
-        >>> result = thread.get()
+        Modifies pod replica links. The `local_pod_names` and `remote_pod_names` are required. Valid values are `replicating`, `baselining`, `paused`, `unhealthy`, `quiescing`, and `quiesced`. A status of `replicating` indicates that the source array is replicating to the target array. A status of `baselining` indicates that the the initial version of the dataset is being sent. During this phase, you cannot promote the target pod. In addition, changing the link direction might trigger the `baselining` status to recur. A status of `paused ` indicates that data transfer between objects has stopped. A status of `unhealthy` indicates that the link is currently unhealthy and customers must perform some health checks to determine the cause. A status of `quiescing` indicates that the source pod is not accepting new write requests but the most recent changes to the source have not arrived on the target. A status of `quiesced` indicates that the source pod has been demoted and all changes have been replicated to the target pod.
 
         :param pod_replica_link: (required)
         :type pod_replica_link: PodReplicaLinkPatch
@@ -1387,13 +1358,8 @@ class PodReplicaLinksApi:
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, only return the aggregate value of all items after filtering. For real-time performance, the values are aggregated for the latest timestamp. For historical performance, the values are aggregated for each timestamp from `start_time` to `end_time`. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """api240_pod_replica_links_performance_replication_get  # noqa: E501
+        """api240_pod_replica_links_performance_replication_get
 
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api240_pod_replica_links_performance_replication_get_with_http_info(authorization, x_request_id, allow_errors, context_names, continuation_token, end_time, filter, ids, limit, local_pod_ids, local_pod_names, offset, remote_ids, remote_names, remote_pod_ids, remote_pod_names, resolution, sort, start_time, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -1636,14 +1602,9 @@ class PodReplicaLinksApi:
         remote_pod_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of remote pod names. If, after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `remote_pod_ids` query parameter.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create pod replica links  # noqa: E501
+        """Create pod replica links
 
-        Creates pod replica links between two arrays. The `local_pod_names` and `remote_pod_names` are required. Valid values are `replicating`, `baselining`, `paused`, `unhealthy`, `quiescing`, and `quiesced`. A status of `replicating` indicates that the source array is replicating to the target array. A status of `baselining` indicates that the the initial version of the dataset is being sent. During this phase, you cannot promote the target pod. In addition, changing the link direction might trigger the `baselining` status to recur. A status of `paused ` indicates that data transfer between objects has stopped. A status of `unhealthy` indicates that the link is currently unhealthy and customers must perform some health checks to determine the cause. A status of `quiescing` indicates that the source pod is not accepting new write requests but the most recent changes to the source have not arrived on the target. A status of `quiesced` indicates that the source pod has been demoted and all changes have been replicated to the target pod.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api240_pod_replica_links_post_with_http_info(authorization, x_request_id, context_names, local_pod_ids, local_pod_names, remote_ids, remote_names, remote_pod_ids, remote_pod_names, async_req=True)
-        >>> result = thread.get()
+        Creates pod replica links between two arrays. The `local_pod_names` and `remote_pod_names` are required. Valid values are `replicating`, `baselining`, `paused`, `unhealthy`, `quiescing`, and `quiesced`. A status of `replicating` indicates that the source array is replicating to the target array. A status of `baselining` indicates that the the initial version of the dataset is being sent. During this phase, you cannot promote the target pod. In addition, changing the link direction might trigger the `baselining` status to recur. A status of `paused ` indicates that data transfer between objects has stopped. A status of `unhealthy` indicates that the link is currently unhealthy and customers must perform some health checks to determine the cause. A status of `quiescing` indicates that the source pod is not accepting new write requests but the most recent changes to the source have not arrived on the target. A status of `quiesced` indicates that the source pod has been demoted and all changes have been replicated to the target pod.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str

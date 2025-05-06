@@ -24,6 +24,7 @@ from pydantic import Field, StrictBool, StrictStr, conint, conlist, constr, vali
 from typing import Optional
 
 from pypureclient.flasharray.FA_2_24.models.session_get_response import SessionGetResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_24.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_24.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_24.exceptions import (  # noqa: F401
@@ -56,14 +57,9 @@ class SessionsApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List session data  # noqa: E501
+        """List session data
 
-        Displays session data for user login events performed in the Purity//FA GUI, CLI, and REST API.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api224_sessions_get_with_http_info(authorization, x_request_id, continuation_token, filter, ids, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays session data for user login events performed in the Purity//FA GUI, CLI, and REST API.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str

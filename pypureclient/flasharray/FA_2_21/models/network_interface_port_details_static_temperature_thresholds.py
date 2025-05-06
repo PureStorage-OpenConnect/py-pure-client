@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictFloat, StrictInt
 
 class NetworkInterfacePortDetailsStaticTemperatureThresholds(BaseModel):
     """
-    The alarm low, warn low, warn high, alarm high thresholds for temperature in degrees Celsius.  # noqa: E501
+    The alarm low, warn low, warn high, alarm high thresholds for temperature in degrees Celsius.
     """
     alarm_high: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The alarm high threshold for temperature in degrees Celsius.")
     alarm_low: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The alarm low threshold for temperature in degrees Celsius.")

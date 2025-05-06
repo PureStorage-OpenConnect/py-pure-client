@@ -29,6 +29,7 @@ from pypureclient.flashblade.FB_2_1.models.admin_cache_get_response import Admin
 from pypureclient.flashblade.FB_2_1.models.admin_get_response import AdminGetResponse
 from pypureclient.flashblade.FB_2_1.models.admin_patch import AdminPatch
 from pypureclient.flashblade.FB_2_1.models.admin_response import AdminResponse
+from typing import Optional
 from pypureclient.flashblade.FB_2_1.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_1.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_1.exceptions import (  # noqa: F401
@@ -53,14 +54,9 @@ class AdministratorsApi:
         admin_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of admin names. If there is not at least one admin resource that matches each of the elements, then an error is returned. This cannot be provided together with `admin_ids` query parameter.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE admins/api-tokens  # noqa: E501
+        """DELETE admins/api-tokens
 
-        Deletes the API tokens of the specified administrators.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api21_admins_api_tokens_delete_with_http_info(admin_ids, admin_names, async_req=True)
-        >>> result = thread.get()
+        Deletes the API tokens of the specified administrators.
 
         :param admin_ids: A comma-separated list of admin IDs. If after filtering, there is not at least one admin resource that matches each of the elements, then an error is returned. This cannot be provided together with the `admin_names` query parameter.
         :type admin_ids: List[str]
@@ -175,14 +171,9 @@ class AdministratorsApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET admins/api-tokens  # noqa: E501
+        """GET admins/api-tokens
 
-        Displays API tokens for the specified administrators.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api21_admins_api_tokens_get_with_http_info(admin_ids, admin_names, continuation_token, expose_api_token, filter, limit, offset, sort, async_req=True)
-        >>> result = thread.get()
+        Displays API tokens for the specified administrators.
 
         :param admin_ids: A comma-separated list of admin IDs. If after filtering, there is not at least one admin resource that matches each of the elements, then an error is returned. This cannot be provided together with the `admin_names` query parameter.
         :type admin_ids: List[str]
@@ -335,14 +326,9 @@ class AdministratorsApi:
         timeout: Annotated[Optional[StrictInt], Field(description="The duration of API token validity, in milliseconds.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST admins/api-tokens  # noqa: E501
+        """POST admins/api-tokens
 
-        Creates API tokens for the specified administrators.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api21_admins_api_tokens_post_with_http_info(admin_ids, admin_names, timeout, async_req=True)
-        >>> result = thread.get()
+        Creates API tokens for the specified administrators.
 
         :param admin_ids: A comma-separated list of admin IDs. If after filtering, there is not at least one admin resource that matches each of the elements, then an error is returned. This cannot be provided together with the `admin_names` query parameter.
         :type admin_ids: List[str]
@@ -463,14 +449,9 @@ class AdministratorsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE admins/cache  # noqa: E501
+        """DELETE admins/cache
 
-        Delete cached administrator role information by name or ID.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api21_admins_cache_delete_with_http_info(ids, names, async_req=True)
-        >>> result = thread.get()
+        Delete cached administrator role information by name or ID.
 
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
         :type ids: List[str]
@@ -585,14 +566,9 @@ class AdministratorsApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET admins/cache  # noqa: E501
+        """GET admins/cache
 
-        List cached administrator information used to determine role based access control privileges.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api21_admins_cache_get_with_http_info(continuation_token, filter, ids, limit, names, offset, refresh, sort, async_req=True)
-        >>> result = thread.get()
+        List cached administrator information used to determine role based access control privileges.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -750,14 +726,9 @@ class AdministratorsApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET admins  # noqa: E501
+        """GET admins
 
-        List the administrator's attributes, including the API token and public key.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api21_admins_get_with_http_info(continuation_token, expose_api_token, filter, ids, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        List the administrator's attributes, including the API token and public key.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -910,14 +881,9 @@ class AdministratorsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH admins  # noqa: E501
+        """PATCH admins
 
-        Modify the attributes of the administrator.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api21_admins_patch_with_http_info(admin, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modify the attributes of the administrator.
 
         :param admin: (required)
         :type admin: AdminPatch

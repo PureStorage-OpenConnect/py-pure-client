@@ -31,6 +31,7 @@ from pypureclient.flashblade.FB_2_0.models.array_connection_path_get_response im
 from pypureclient.flashblade.FB_2_0.models.array_connection_post import ArrayConnectionPost
 from pypureclient.flashblade.FB_2_0.models.array_connection_response import ArrayConnectionResponse
 from pypureclient.flashblade.FB_2_0.models.connection_relationship_performance_replication_get_resp import ConnectionRelationshipPerformanceReplicationGetResp
+from typing import Optional
 from pypureclient.flashblade.FB_2_0.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_0.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_0.exceptions import (  # noqa: F401
@@ -60,14 +61,9 @@ class ArrayConnectionsApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET array-connections/connection-key  # noqa: E501
+        """GET array-connections/connection-key
 
-        List connection keys used to authenticate the connection from one array to another.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api20_array_connections_connection_key_get_with_http_info(continuation_token, filter, ids, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        List connection keys used to authenticate the connection from one array to another.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -211,14 +207,9 @@ class ArrayConnectionsApi:
         self,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST array-connections/connection-key  # noqa: E501
+        """POST array-connections/connection-key
 
-        Create an array connection key allowing one array to connect to another for replication.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api20_array_connections_connection_key_post_with_http_info(async_req=True)
-        >>> result = thread.get()
+        Create an array connection key allowing one array to connect to another for replication.
 
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
@@ -320,14 +311,9 @@ class ArrayConnectionsApi:
         remote_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of remote array names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `remote_ids` query parameter.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE array-connections  # noqa: E501
+        """DELETE array-connections
 
-        Delete a connection to an array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api20_array_connections_delete_with_http_info(ids, remote_ids, remote_names, async_req=True)
-        >>> result = thread.get()
+        Delete a connection to an array.
 
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
         :type ids: List[str]
@@ -449,14 +435,9 @@ class ArrayConnectionsApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET array-connections  # noqa: E501
+        """GET array-connections
 
-        List connected arrays for replication.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api20_array_connections_get_with_http_info(continuation_token, filter, ids, limit, offset, remote_ids, remote_names, sort, async_req=True)
-        >>> result = thread.get()
+        List connected arrays for replication.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -611,14 +592,9 @@ class ArrayConnectionsApi:
         remote_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of remote array names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `remote_ids` query parameter.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH array-connections  # noqa: E501
+        """PATCH array-connections
 
-        Modify the configuration of a connected array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api20_array_connections_patch_with_http_info(array_connection, ids, remote_ids, remote_names, async_req=True)
-        >>> result = thread.get()
+        Modify the configuration of a connected array.
 
         :param array_connection: (required)
         :type array_connection: ArrayConnection
@@ -759,14 +735,9 @@ class ArrayConnectionsApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET array-connections/path  # noqa: E501
+        """GET array-connections/path
 
-        List network path details of connected arrays.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api20_array_connections_path_get_with_http_info(continuation_token, filter, ids, limit, offset, remote_ids, remote_names, sort, async_req=True)
-        >>> result = thread.get()
+        List network path details of connected arrays.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -930,14 +901,9 @@ class ArrayConnectionsApi:
         type: Annotated[Optional[StrictStr], Field(description="Display the metric of a specified object type. Valid values are `all`, `file-system`, and `object-store`. If not specified, defaults to `all`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET array-connections/performance/replication  # noqa: E501
+        """GET array-connections/performance/replication
 
-        List performance metrics of file systems or objects being replicated from one array to another.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api20_array_connections_performance_replication_get_with_http_info(continuation_token, end_time, filter, ids, limit, offset, remote_ids, remote_names, resolution, sort, start_time, total_only, type, async_req=True)
-        >>> result = thread.get()
+        List performance metrics of file systems or objects being replicated from one array to another.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -1119,14 +1085,9 @@ class ArrayConnectionsApi:
         array_connection: ArrayConnectionPost,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST array-connections  # noqa: E501
+        """POST array-connections
 
-        Create a connection to an array for replication and configure network settings.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api20_array_connections_post_with_http_info(array_connection, async_req=True)
-        >>> result = thread.get()
+        Create a connection to an array for replication and configure network settings.
 
         :param array_connection: (required)
         :type array_connection: ArrayConnectionPost

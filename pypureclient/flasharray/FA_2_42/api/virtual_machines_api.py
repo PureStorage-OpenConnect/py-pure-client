@@ -27,6 +27,7 @@ from pypureclient.flasharray.FA_2_42.models.virtual_machine_get_response import 
 from pypureclient.flasharray.FA_2_42.models.virtual_machine_post import VirtualMachinePost
 from pypureclient.flasharray.FA_2_42.models.virtual_machine_response import VirtualMachineResponse
 from pypureclient.flasharray.FA_2_42.models.virtual_machine_volume_snapshot_response import VirtualMachineVolumeSnapshotResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_42.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_42.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_42.exceptions import (  # noqa: F401
@@ -60,14 +61,9 @@ class VirtualMachinesApi:
         vm_type: Annotated[Optional[StrictStr], Field(description="The type of virtual machine. The only valid value is `vvol`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List Virtual Machine Snapshots  # noqa: E501
+        """List Virtual Machine Snapshots
 
-        Displays a list of virtual machine snapshots, including those pending eradication. If `vm_type` is `vvol`, the `recovery_context` in the response will represent a protection group snapshot containing the virtual machine. This must be used as the `source` in the `POST /virtual-machine` method when recovering or overwriting a virtual machine from a snapshot.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_virtual_machine_snapshots_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, limit, offset, sort, total_item_count, vm_ids, vm_type, async_req=True)
-        >>> result = thread.get()
+        Displays a list of virtual machine snapshots, including those pending eradication. If `vm_type` is `vvol`, the `recovery_context` in the response will represent a protection group snapshot containing the virtual machine. This must be used as the `source` in the `POST /virtual-machine` method when recovering or overwriting a virtual machine from a snapshot.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -245,14 +241,9 @@ class VirtualMachinesApi:
         vm_type: Annotated[Optional[StrictStr], Field(description="The type of virtual machine. The only valid value is `vvol`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List Virtual Machine Volume Snapshots  # noqa: E501
+        """List Virtual Machine Volume Snapshots
 
-        Displays a list of virtual machine volume snapshots, including those pending eradication. If `vm_type` is `vvol`, the `recover_context` in the response will represent a protection group snapshot containing the virtual machine volume.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_virtual_machine_volume_snapshots_get_with_http_info(vm_ids, authorization, x_request_id, continuation_token, destroyed, filter, limit, offset, sort, total_item_count, vm_type, async_req=True)
-        >>> result = thread.get()
+        Displays a list of virtual machine volume snapshots, including those pending eradication. If `vm_type` is `vvol`, the `recover_context` in the response will represent a protection group snapshot containing the virtual machine volume.
 
         :param vm_ids: Performs the operation on the unique virtual machine IDs specified. Enter multiple resource IDs in a comma-separated format. (required)
         :type vm_ids: List[str]
@@ -430,14 +421,9 @@ class VirtualMachinesApi:
         vm_type: Annotated[Optional[StrictStr], Field(description="The type of virtual machine. The only valid value is `vvol`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List Virtual Machines  # noqa: E501
+        """List Virtual Machines
 
-        Displays a list of virtual machines, including those pending eradication. If `vm_type` is `vvol`, the `recovery_context` in the response will represent the most recent snapshot of the config vVol. This must be used as the `source` in the `PATCH` method when recovering a virtual machine from the destroyed state.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_virtual_machines_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, limit, offset, sort, total_item_count, vm_ids, vm_type, async_req=True)
-        >>> result = thread.get()
+        Displays a list of virtual machines, including those pending eradication. If `vm_type` is `vvol`, the `recovery_context` in the response will represent the most recent snapshot of the config vVol. This must be used as the `source` in the `PATCH` method when recovering a virtual machine from the destroyed state.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -607,14 +593,9 @@ class VirtualMachinesApi:
         x_request_id: Annotated[Optional[StrictStr], Field(description="Supplied by client during request or generated by server.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Update a virtual machine  # noqa: E501
+        """Update a virtual machine
 
-        Updates a virtual machine, recovering it from the destroyed state. If the virtual machine is of type `vvol`, the `source` property of the request body must be a `recovery_context` value retrieved from the `GET /virtual-machines` endpoint. If recovering the virtual machine will cause a conflict with an existing virtual machine, the operation will fail.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_virtual_machines_patch_with_http_info(virtual_machine, authorization, x_request_id, async_req=True)
-        >>> result = thread.get()
+        Updates a virtual machine, recovering it from the destroyed state. If the virtual machine is of type `vvol`, the `source` property of the request body must be a `recovery_context` value retrieved from the `GET /virtual-machines` endpoint. If recovering the virtual machine will cause a conflict with an existing virtual machine, the operation will fail.
 
         :param virtual_machine: (required)
         :type virtual_machine: VirtualMachinePost
@@ -742,14 +723,9 @@ class VirtualMachinesApi:
         overwrite: Annotated[Optional[StrictBool], Field(description="If set to `true`, overwrites an existing object during an object copy operation. If set to `false` or not set at all and the target name is an existing object, the copy operation fails. Required if the `source` body parameter is set and the source overwrites an existing object during the copy operation.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create a virtual machine  # noqa: E501
+        """Create a virtual machine
 
-        Creates one or more virtual machines from a protection group snapshot. If the virtual machine is of type `vvol`, the `source` property of the request body must be a `recovery_context` value retrieved from the `GET /virtual-machine-snapshots` endpoint. If `overwrite` is specified, an existing virtual machine will have its volumes overwritten by the snapshot. Otherwise, a new virtual machine will be created from the snapshot. If creating the new virtual machine will cause a conflict with an existing virtual machine, the operation will fail.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_virtual_machines_post_with_http_info(virtual_machine, authorization, x_request_id, overwrite, async_req=True)
-        >>> result = thread.get()
+        Creates one or more virtual machines from a protection group snapshot. If the virtual machine is of type `vvol`, the `source` property of the request body must be a `recovery_context` value retrieved from the `GET /virtual-machine-snapshots` endpoint. If `overwrite` is specified, an existing virtual machine will have its volumes overwritten by the snapshot. Otherwise, a new virtual machine will be created from the snapshot. If creating the new virtual machine will cause a conflict with an existing virtual machine, the operation will fail.
 
         :param virtual_machine: (required)
         :type virtual_machine: VirtualMachinePost

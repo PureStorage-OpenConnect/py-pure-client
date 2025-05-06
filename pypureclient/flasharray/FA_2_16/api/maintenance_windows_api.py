@@ -26,6 +26,7 @@ from typing import Optional
 from pypureclient.flasharray.FA_2_16.models.maintenance_window_post import MaintenanceWindowPost
 from pypureclient.flasharray.FA_2_16.models.maintenance_windows_get_response import MaintenanceWindowsGetResponse
 from pypureclient.flasharray.FA_2_16.models.maintenance_windows_response import MaintenanceWindowsResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_16.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_16.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_16.exceptions import (  # noqa: F401
@@ -51,14 +52,9 @@ class MaintenanceWindowsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete maintenance window  # noqa: E501
+        """Delete maintenance window
 
-        Deletes an open maintenance window before its scheduled end (`expire`) time. The `names` parameter is required and must be set to `environment`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api216_maintenance_windows_delete_with_http_info(authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Deletes an open maintenance window before its scheduled end (`expire`) time. The `names` parameter is required and must be set to `environment`.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -179,14 +175,9 @@ class MaintenanceWindowsApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List maintenance window details  # noqa: E501
+        """List maintenance window details
 
-        Displays maintenance window details, including start time, end time, and maintenance type.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api216_maintenance_windows_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays maintenance window details, including start time, end time, and maintenance type.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -345,14 +336,9 @@ class MaintenanceWindowsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create a maintenance window  # noqa: E501
+        """Create a maintenance window
 
-        Creates a maintenance window that suppresses alerts for a specified period of time. A maintenance window can be manually closed at any time. The `names` and `timeout` parameters are required. Set the `names` parameter to `environment`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api216_maintenance_windows_post_with_http_info(maintenance_window, authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Creates a maintenance window that suppresses alerts for a specified period of time. A maintenance window can be manually closed at any time. The `names` and `timeout` parameters are required. Set the `names` parameter to `environment`.
 
         :param maintenance_window: (required)
         :type maintenance_window: MaintenanceWindowPost

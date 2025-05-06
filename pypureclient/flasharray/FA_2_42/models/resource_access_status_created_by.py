@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictBool, StrictStr
 
 class ResourceAccessStatusCreatedBy(BaseModel):
     """
-    Each Resource Access Status has a reference to the resource accesses that explain its existence.  # noqa: E501
+    Each Resource Access Status has a reference to the resource accesses that explain its existence.
     """
     id: Optional[StrictStr] = Field(default=None, description="ID of a Resource Access.")
     implicit: Optional[StrictBool] = Field(default=None, description="Set to `true` when this resource access status was not explicitly created, but instead, its existence is implied by another resource access. Usually, this happens when a scope has access to a group of resources (e.g., a host group). Then this scope has access to each member of the group, individual hosts. Set to `false` when a resource access status reflects explicitly created resource access. Note that if there is both implicit and explicit access of an object to a scope, there will be only one entry in the response for that object and scope pair. The `created_by` field will contain both implicit and explicit resource access references.")

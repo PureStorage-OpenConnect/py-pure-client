@@ -27,6 +27,7 @@ from pypureclient.flasharray.FA_2_42.models.directory_snapshot_get_response impo
 from pypureclient.flasharray.FA_2_42.models.directory_snapshot_patch import DirectorySnapshotPatch
 from pypureclient.flasharray.FA_2_42.models.directory_snapshot_post import DirectorySnapshotPost
 from pypureclient.flasharray.FA_2_42.models.directory_snapshot_response import DirectorySnapshotResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_42.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_42.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_42.exceptions import (  # noqa: F401
@@ -54,14 +55,9 @@ class DirectorySnapshotsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete directory snapshot  # noqa: E501
+        """Delete directory snapshot
 
-        Deletes a directory snapshot that has been destroyed and is pending eradication. Eradicated directory snapshots cannot be recovered. Directory snapshots are destroyed by using the PATCH method. The `ids` or `names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directory_snapshots_delete_with_http_info(authorization, x_request_id, context_names, ids, names, async_req=True)
-        >>> result = thread.get()
+        Deletes a directory snapshot that has been destroyed and is pending eradication. Eradicated directory snapshots cannot be recovered. Directory snapshots are destroyed by using the PATCH method. The `ids` or `names` parameter is required, but they cannot be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -203,14 +199,9 @@ class DirectorySnapshotsApi:
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List directory snapshots  # noqa: E501
+        """List directory snapshots
 
-        Displays a list of directory snapshots, including those pending eradication.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directory_snapshots_get_with_http_info(authorization, x_request_id, allow_errors, context_names, continuation_token, destroyed, filter, ids, limit, names, offset, sort, source_ids, source_names, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays a list of directory snapshots, including those pending eradication.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -417,14 +408,9 @@ class DirectorySnapshotsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Modify directory snapshot  # noqa: E501
+        """Modify directory snapshot
 
-        Modifies a directory snapshot. You can destroy, recover, or update the policy or time remaining of a directory snapshot. To destroy a directory snapshot, set `destroyed=true`. To recover a directory snapshot that has been destroyed and is pending eradication, set `destroyed=false`. To rename a directory snapshot, set `name` to the new name. The `ids` or `names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directory_snapshots_patch_with_http_info(directory_snapshot, authorization, x_request_id, context_names, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modifies a directory snapshot. You can destroy, recover, or update the policy or time remaining of a directory snapshot. To destroy a directory snapshot, set `destroyed=true`. To recover a directory snapshot that has been destroyed and is pending eradication, set `destroyed=false`. To rename a directory snapshot, set `name` to the new name. The `ids` or `names` parameter is required, but they cannot be set together.
 
         :param directory_snapshot: (required)
         :type directory_snapshot: DirectorySnapshotPatch
@@ -575,14 +561,9 @@ class DirectorySnapshotsApi:
         source_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the source name specified. Enter multiple source names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create directory snapshot  # noqa: E501
+        """Create directory snapshot
 
-        Creates a snapshot of the contents of a directory. The `source_ids` or `source_names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api242_directory_snapshots_post_with_http_info(directory_snapshot, authorization, x_request_id, context_names, source_ids, source_names, async_req=True)
-        >>> result = thread.get()
+        Creates a snapshot of the contents of a directory. The `source_ids` or `source_names` parameter is required, but they cannot be set together.
 
         :param directory_snapshot: (required)
         :type directory_snapshot: DirectorySnapshotPost

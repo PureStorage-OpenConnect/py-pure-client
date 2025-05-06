@@ -34,6 +34,7 @@ from pypureclient.flashblade.FB_2_0.models.user_quota_get_response import UserQu
 from pypureclient.flashblade.FB_2_0.models.user_quota_patch import UserQuotaPatch
 from pypureclient.flashblade.FB_2_0.models.user_quota_post import UserQuotaPost
 from pypureclient.flashblade.FB_2_0.models.user_quota_response import UserQuotaResponse
+from typing import Optional
 from pypureclient.flashblade.FB_2_0.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_0.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_0.exceptions import (  # noqa: F401
@@ -61,14 +62,9 @@ class QuotasApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE quotas/groups  # noqa: E501
+        """DELETE quotas/groups
 
-        Delete a hard limit quota for a group.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api20_quotas_groups_delete_with_http_info(file_system_ids, file_system_names, gids, group_names, names, async_req=True)
-        >>> result = thread.get()
+        Delete a hard limit quota for a group.
 
         :param file_system_ids: A comma-separated list of file system IDs. If after filtering, there is not at least one resource that matches each of the elements of `file_system_ids`, then an error is returned. This cannot be provided together with the `file_system_names` query parameter.
         :type file_system_ids: List[str]
@@ -206,14 +202,9 @@ class QuotasApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET quotas/groups  # noqa: E501
+        """GET quotas/groups
 
-        List groups with hard limit quotas.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api20_quotas_groups_get_with_http_info(continuation_token, file_system_ids, file_system_names, filter, gids, group_names, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        List groups with hard limit quotas.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -384,14 +375,9 @@ class QuotasApi:
         quota: Optional[GroupQuotaPatch] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH quotas/groups  # noqa: E501
+        """PATCH quotas/groups
 
-        Modify a quota for a group. Note that if you modify a group's quota to a lower value and that group's usage has already exceeded the new value, writes will automatically halt until usage decreases below the new quota setting.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api20_quotas_groups_patch_with_http_info(file_system_ids, file_system_names, gids, group_names, names, quota, async_req=True)
-        >>> result = thread.get()
+        Modify a quota for a group. Note that if you modify a group's quota to a lower value and that group's usage has already exceeded the new value, writes will automatically halt until usage decreases below the new quota setting.
 
         :param file_system_ids: A comma-separated list of file system IDs. If after filtering, there is not at least one resource that matches each of the elements of `file_system_ids`, then an error is returned. This cannot be provided together with the `file_system_names` query parameter.
         :type file_system_ids: List[str]
@@ -543,14 +529,9 @@ class QuotasApi:
         quota: Optional[GroupQuotaPost] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST quotas/groups  # noqa: E501
+        """POST quotas/groups
 
-        Create a hard limit quota for a group.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api20_quotas_groups_post_with_http_info(file_system_ids, file_system_names, gids, group_names, quota, async_req=True)
-        >>> result = thread.get()
+        Create a hard limit quota for a group.
 
         :param file_system_ids: A comma-separated list of file system IDs. If after filtering, there is not at least one resource that matches each of the elements of `file_system_ids`, then an error is returned. This cannot be provided together with the `file_system_names` query parameter.
         :type file_system_ids: List[str]
@@ -692,14 +673,9 @@ class QuotasApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET quotas-settings  # noqa: E501
+        """GET quotas-settings
 
-        List notification attributes of a group or user quota.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api20_quotas_settings_get_with_http_info(ids, names, async_req=True)
-        >>> result = thread.get()
+        List notification attributes of a group or user quota.
 
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
         :type ids: List[str]
@@ -813,14 +789,9 @@ class QuotasApi:
         quota_setting: QuotaSetting,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH quotas-settings  # noqa: E501
+        """PATCH quotas-settings
 
-        Modify the notification attributes of a group or user quota.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api20_quotas_settings_patch_with_http_info(quota_setting, async_req=True)
-        >>> result = thread.get()
+        Modify the notification attributes of a group or user quota.
 
         :param quota_setting: (required)
         :type quota_setting: QuotaSetting
@@ -937,14 +908,9 @@ class QuotasApi:
         user_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of user names. If there is not at least one resource that matches each of the elements of `user_names`, then an error is returned. This cannot be provided together with `uids` query parameter.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE quotas/users  # noqa: E501
+        """DELETE quotas/users
 
-        Delete a hard limit file system quota for a user.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api20_quotas_users_delete_with_http_info(file_system_ids, file_system_names, names, uids, user_names, async_req=True)
-        >>> result = thread.get()
+        Delete a hard limit file system quota for a user.
 
         :param file_system_ids: A comma-separated list of file system IDs. If after filtering, there is not at least one resource that matches each of the elements of `file_system_ids`, then an error is returned. This cannot be provided together with the `file_system_names` query parameter.
         :type file_system_ids: List[str]
@@ -1082,14 +1048,9 @@ class QuotasApi:
         user_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of user names. If there is not at least one resource that matches each of the elements of `user_names`, then an error is returned. This cannot be provided together with `uids` query parameter.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET quotas/users  # noqa: E501
+        """GET quotas/users
 
-        List users with hard limit file system quotas.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api20_quotas_users_get_with_http_info(continuation_token, file_system_ids, file_system_names, filter, limit, names, offset, sort, uids, user_names, async_req=True)
-        >>> result = thread.get()
+        List users with hard limit file system quotas.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -1260,14 +1221,9 @@ class QuotasApi:
         quota: Optional[UserQuotaPatch] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH quotas/users  # noqa: E501
+        """PATCH quotas/users
 
-        Modify the attributes of a hard limit file system quota. Note that if you modify a user's quota to a lower value and that user’s usage has already exceeded the new value, writes will automatically halt until usage decreases below the new quota setting.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api20_quotas_users_patch_with_http_info(file_system_ids, file_system_names, names, uids, user_names, quota, async_req=True)
-        >>> result = thread.get()
+        Modify the attributes of a hard limit file system quota. Note that if you modify a user's quota to a lower value and that user’s usage has already exceeded the new value, writes will automatically halt until usage decreases below the new quota setting.
 
         :param file_system_ids: A comma-separated list of file system IDs. If after filtering, there is not at least one resource that matches each of the elements of `file_system_ids`, then an error is returned. This cannot be provided together with the `file_system_names` query parameter.
         :type file_system_ids: List[str]
@@ -1419,14 +1375,9 @@ class QuotasApi:
         quota: Optional[UserQuotaPost] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST quotas/users  # noqa: E501
+        """POST quotas/users
 
-        Create a hard limit file system quota for a user.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api20_quotas_users_post_with_http_info(file_system_ids, file_system_names, uids, user_names, quota, async_req=True)
-        >>> result = thread.get()
+        Create a hard limit file system quota for a user.
 
         :param file_system_ids: A comma-separated list of file system IDs. If after filtering, there is not at least one resource that matches each of the elements of `file_system_ids`, then an error is returned. This cannot be provided together with the `file_system_names` query parameter.
         :type file_system_ids: List[str]

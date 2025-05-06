@@ -25,7 +25,7 @@ from pypureclient.pure1.Pure1_1_2.models.fixed_reference import FixedReference
 
 class AssetSpaceTotalUsedRatio(BaseModel):
     """
-    The ratio of `total_used` to the `capacity`. This represents how full the appliance is.  # noqa: E501
+    The ratio of `total_used` to the `capacity`. This represents how full the appliance is.
     """
     data: Optional[Union[confloat(le=1, ge=0, strict=True), conint(le=1, ge=0, strict=True)]] = None
     metric: Optional[FixedReference] = Field(default=None, description="A reference to the metric this data measures.")

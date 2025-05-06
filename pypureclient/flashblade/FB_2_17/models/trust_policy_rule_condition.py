@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictStr, conlist
 
 class TrustPolicyRuleCondition(BaseModel):
     """
-    Identity-provider-specific condition that specifies who can assume the role.  # noqa: E501
+    Identity-provider-specific condition that specifies who can assume the role.
     """
     key: Optional[StrictStr] = Field(default=None, description="Key from the context of the role assuming request that will have its value compared based on the operator specified in this condition to the values provided in this condition.")
     operator: Optional[StrictStr] = Field(default=None, description="Operator specifying the comparison to be done between the values from the request context and the values provided in this condition. Valid values: `StringEquals`.")

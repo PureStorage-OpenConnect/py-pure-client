@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictStr, conlist
 
 class SoftwareVersion(BaseModel):
     """
-    Version candidates for software upgrade.  # noqa: E501
+    Version candidates for software upgrade.
     """
     details: Optional[StrictStr] = Field(default=None, description="The description of the version.")
     name: Optional[StrictStr] = Field(default=None, description="The name of the software.")

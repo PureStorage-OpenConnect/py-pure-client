@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictStr
 
 class ProtectionGroupEradicationConfig(BaseModel):
     """
-    The configuration of the eradication feature.  # noqa: E501
+    The configuration of the eradication feature.
     """
     manual_eradication: Optional[StrictStr] = Field(default=None, description="Manual eradication status of objects like protection group and protection group snapshots. If manual_eradication is `disabled`, you cannot eradicate objects. Values include `disabled` and `enabled`.")
     __properties = ["manual_eradication"]

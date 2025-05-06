@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictStr, conlist
 
 class PresetWorkloadConstraintsString(BaseModel):
     """
-    Constraints to apply to string parameters.  # noqa: E501
+    Constraints to apply to string parameters.
     """
     allowed_values: Optional[conlist(StrictStr)] = Field(default=None, description="The valid values that can be supplied to the parameter. A parameter that collects the name of the environment to which a workload will deploy might, for example, limit the allowed values to `production`, `testing` and `development`. Supports up to five values, with up to 64 unicode characters per value.")
     default: Optional[StrictStr] = Field(default=None, description="The default value to use if no value is provided. Must be present in `allowed_values`, if `allowed_values` is set. Supports up to 64 unicode characters.")

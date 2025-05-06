@@ -31,7 +31,7 @@ from pypureclient.flasharray.FA_2_41.models.preset_workload_workload_tag import 
 
 class PresetWorkloadBase(BaseModel):
     """
-    Workload presets are reusable templates that provision workloads.  # noqa: E501
+    Workload presets are reusable templates that provision workloads.
     """
     description: Optional[StrictStr] = Field(default=None, description="A brief description of the workload the preset will configure. Supports up to 1KB of unicode characters.")
     parameters: Optional[conlist(PresetWorkloadParameter)] = Field(default=None, description="The parameters to prompt the user when they deploy workloads from the preset.")

@@ -30,6 +30,7 @@ from pypureclient.flashblade.FB_2_13.models.nfs_export_policy_response import Nf
 from pypureclient.flashblade.FB_2_13.models.nfs_export_policy_rule import NfsExportPolicyRule
 from pypureclient.flashblade.FB_2_13.models.nfs_export_policy_rule_get_response import NfsExportPolicyRuleGetResponse
 from pypureclient.flashblade.FB_2_13.models.nfs_export_policy_rule_response import NfsExportPolicyRuleResponse
+from typing import Optional
 from pypureclient.flashblade.FB_2_13.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_13.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_13.exceptions import (  # noqa: F401
@@ -55,14 +56,9 @@ class PoliciesNFSApi:
         versions: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of versions. This is an optional query param used for concurrency control. The ordering should match the names or ids query param. This will fail with a 412 Precondition failed if the resource was changed and the current version of the resource doesn't match the value in the query param.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE nfs-export-policies  # noqa: E501
+        """DELETE nfs-export-policies
 
-        Delete one or more NFS export policies.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api213_nfs_export_policies_delete_with_http_info(ids, names, versions, async_req=True)
-        >>> result = thread.get()
+        Delete one or more NFS export policies.
 
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
         :type ids: List[str]
@@ -183,14 +179,9 @@ class PoliciesNFSApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET nfs-export-policies  # noqa: E501
+        """GET nfs-export-policies
 
-        Displays a list of NFS export policies.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api213_nfs_export_policies_get_with_http_info(continuation_token, filter, ids, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        Displays a list of NFS export policies.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -338,14 +329,9 @@ class PoliciesNFSApi:
         versions: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of versions. This is an optional query param used for concurrency control. The ordering should match the names or ids query param. This will fail with a 412 Precondition failed if the resource was changed and the current version of the resource doesn't match the value in the query param.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH nfs-export-policies  # noqa: E501
+        """PATCH nfs-export-policies
 
-        Modify an existing NFS export policy's attributes.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api213_nfs_export_policies_patch_with_http_info(policy, ids, names, versions, async_req=True)
-        >>> result = thread.get()
+        Modify an existing NFS export policy's attributes.
 
         :param policy: (required)
         :type policy: NfsExportPolicy
@@ -480,14 +466,9 @@ class PoliciesNFSApi:
         policy: Optional[NfsExportPolicyPost] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST nfs-export-policies  # noqa: E501
+        """POST nfs-export-policies
 
-        Create a new NFS export policy.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api213_nfs_export_policies_post_with_http_info(names, policy, async_req=True)
-        >>> result = thread.get()
+        Create a new NFS export policy.
 
         :param names: A comma-separated list of resource names. (required)
         :type names: List[str]
@@ -609,14 +590,9 @@ class PoliciesNFSApi:
         versions: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of versions. This is an optional query param used for concurrency control. The ordering should match the names or ids query param. This will fail with a 412 Precondition failed if the resource was changed and the current version of the resource doesn't match the value in the query param.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE nfs-export-policies/rules  # noqa: E501
+        """DELETE nfs-export-policies/rules
 
-        Delete one or more NFS export policy rules. One of the following is required: `ids` or `names`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api213_nfs_export_policies_rules_delete_with_http_info(ids, names, versions, async_req=True)
-        >>> result = thread.get()
+        Delete one or more NFS export policy rules. One of the following is required: `ids` or `names`.
 
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
         :type ids: List[str]
@@ -739,14 +715,9 @@ class PoliciesNFSApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET nfs-export-policies/rules  # noqa: E501
+        """GET nfs-export-policies/rules
 
-        Displays a list of NFS export policy rules. The default sort is by policy name, then index.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api213_nfs_export_policies_rules_get_with_http_info(continuation_token, filter, ids, limit, names, offset, policy_ids, policy_names, sort, async_req=True)
-        >>> result = thread.get()
+        Displays a list of NFS export policy rules. The default sort is by policy name, then index.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -910,14 +881,9 @@ class PoliciesNFSApi:
         versions: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of versions. This is an optional query param used for concurrency control. The ordering should match the names or ids query param. This will fail with a 412 Precondition failed if the resource was changed and the current version of the resource doesn't match the value in the query param.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH nfs-export-policies/rules  # noqa: E501
+        """PATCH nfs-export-policies/rules
 
-        Modify an existing NFS export policy rule. If `before_rule_id` or `before_rule_name` are specified, the rule will be moved before that rule. Rules are ordered in three groups; ip addresses, other and `*` and can only be moved within the appropriate group. One of the following is required: `ids` or `names`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api213_nfs_export_policies_rules_patch_with_http_info(rule, before_rule_id, before_rule_name, ids, names, versions, async_req=True)
-        >>> result = thread.get()
+        Modify an existing NFS export policy rule. If `before_rule_id` or `before_rule_name` are specified, the rule will be moved before that rule. Rules are ordered in three groups; ip addresses, other and `*` and can only be moved within the appropriate group. One of the following is required: `ids` or `names`.
 
         :param rule: (required)
         :type rule: NfsExportPolicyRule
@@ -1068,14 +1034,9 @@ class PoliciesNFSApi:
         versions: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of versions. This is an optional query param used for concurrency control. The ordering should match the names or ids query param. This will fail with a 412 Precondition failed if the resource was changed and the current version of the resource doesn't match the value in the query param.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST nfs-export-policies/rules  # noqa: E501
+        """POST nfs-export-policies/rules
 
-        Add a NFS export policy rule. Rules are ordered in three groups; ip addresses, other and `*`. The new rule will be added at the end of the appropriate group if neither `before_rule_id` and `before_rule_name` are specified. Rules can only be inserted into the appropriate group. Either `policy_ids` or `policy_names` parameter is required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api213_nfs_export_policies_rules_post_with_http_info(rule, before_rule_id, before_rule_name, policy_ids, policy_names, versions, async_req=True)
-        >>> result = thread.get()
+        Add a NFS export policy rule. Rules are ordered in three groups; ip addresses, other and `*`. The new rule will be added at the end of the appropriate group if neither `before_rule_id` and `before_rule_name` are specified. Rules can only be inserted into the appropriate group. Either `policy_ids` or `policy_names` parameter is required.
 
         :param rule: (required)
         :type rule: NfsExportPolicyRule

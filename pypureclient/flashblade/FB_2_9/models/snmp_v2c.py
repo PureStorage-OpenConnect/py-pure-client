@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, constr
 
 class SnmpV2c(BaseModel):
     """
-    The v2c configurations of SNMP.  # noqa: E501
+    The v2c configurations of SNMP.
     """
     community: Optional[constr(strict=True, max_length=32)] = Field(default=None, description="Manager community ID under which Purity is to communicate with the specified managers.")
     __properties = ["community"]

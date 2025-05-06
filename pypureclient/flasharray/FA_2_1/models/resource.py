@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictStr
 
 class Resource(BaseModel):
     """
-    An ordinary (as opposed to built-in) resource that can be created, named, renamed or deleted by the user. This might be a virtual resource (e.g., a volume), or correspond to something in the environment, like a host or a server.  # noqa: E501
+    An ordinary (as opposed to built-in) resource that can be created, named, renamed or deleted by the user. This might be a virtual resource (e.g., a volume), or correspond to something in the environment, like a host or a server.
     """
     id: Optional[StrictStr] = Field(default=None, description="A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.")
     name: Optional[StrictStr] = Field(default=None, description="A user-specified name. The name must be locally unique and can be changed.")

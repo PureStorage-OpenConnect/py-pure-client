@@ -32,6 +32,7 @@ from pypureclient.flasharray.FA_2_1.models.pod_response import PodResponse
 from pypureclient.flasharray.FA_2_1.models.resource_performance_by_array_get_response import ResourcePerformanceByArrayGetResponse
 from pypureclient.flasharray.FA_2_1.models.resource_performance_get_response import ResourcePerformanceGetResponse
 from pypureclient.flasharray.FA_2_1.models.resource_space_get_response import ResourceSpaceGetResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_1.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_1.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_1.exceptions import (  # noqa: F401
@@ -61,14 +62,9 @@ class PodsApi:
         with_unknown: Annotated[Optional[StrictBool], Field(description="If set to `true`, unstretches the specified pod from the specified array by force. Use the `with_unknown` parameter in the following rare event&#58; the local array goes offline while the pod is still stretched across two arrays, the status of the remote array becomes unknown, and there is no guarantee that the pod is online elsewhere.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Unstretch a pod from an array  # noqa: E501
+        """Unstretch a pod from an array
 
-        Unstretches a pod from an array, collapsing the pod to a single array. Unstretch a pod from an array when the volumes within the stretched pod no longer need to be synchronously replicated between the two arrays. After a pod has been unstretched, synchronous replication stops. A destroyed version of the pod with \"restretch\" appended to the pod name is created on the array that no longer has the pod. The restretch pod represents a point-in-time snapshot of the pod, just before it was unstretched. The restretch pod enters an eradication pending period starting from the time that the pod was unstretched. A restretch can pod can be cloned or destroyed, but it cannot be explicitly recovered. The `group_names` parameter represents the name of the pod to be unstretched. The `member_names` parameter represents the name of the array from which the pod is to be unstretched. The `group_names` and `member_names` parameters are required and must be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api21_pods_arrays_delete_with_http_info(authorization, x_request_id, group_ids, group_names, member_ids, member_names, with_unknown, async_req=True)
-        >>> result = thread.get()
+        Unstretches a pod from an array, collapsing the pod to a single array. Unstretch a pod from an array when the volumes within the stretched pod no longer need to be synchronously replicated between the two arrays. After a pod has been unstretched, synchronous replication stops. A destroyed version of the pod with \"restretch\" appended to the pod name is created on the array that no longer has the pod. The restretch pod represents a point-in-time snapshot of the pod, just before it was unstretched. The restretch pod enters an eradication pending period starting from the time that the pod was unstretched. A restretch can pod can be cloned or destroyed, but it cannot be explicitly recovered. The `group_names` parameter represents the name of the pod to be unstretched. The `member_names` parameter represents the name of the array from which the pod is to be unstretched. The `group_names` and `member_names` parameters are required and must be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -218,14 +214,9 @@ class PodsApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List pods and their the array members  # noqa: E501
+        """List pods and their the array members
 
-        Returns a list of pods and the local and remote arrays over which the pods are stretched. The optional `group_names` parameter represents the name of the pod. The optional `member_names` parameter represents the name of the array over which the pod is stretched.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api21_pods_arrays_get_with_http_info(authorization, x_request_id, filter, group_ids, group_names, limit, member_ids, member_names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Returns a list of pods and the local and remote arrays over which the pods are stretched. The optional `group_names` parameter represents the name of the pod. The optional `member_names` parameter represents the name of the array over which the pod is stretched.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -401,14 +392,9 @@ class PodsApi:
         member_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique member name specified. Examples of members include volumes, hosts, host groups, and directories. Enter multiple names in comma-separated format. For example, `vol01,vol02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Stretch a pod to an array  # noqa: E501
+        """Stretch a pod to an array
 
-        Stretches a pod to an array. When a pod is stretched to an array, the data in the arrays over which the pod is stretched is synchronously replicated. The `group_names` parameter represents the name of the pod to be stretched. The `member_names` parameter represents the name of the array over which the pod is to be stretched. The `group_names` and `member_names` parameters are required and must be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api21_pods_arrays_post_with_http_info(authorization, x_request_id, group_ids, group_names, member_ids, member_names, async_req=True)
-        >>> result = thread.get()
+        Stretches a pod to an array. When a pod is stretched to an array, the data in the arrays over which the pod is stretched is synchronously replicated. The `group_names` parameter represents the name of the pod to be stretched. The `member_names` parameter represents the name of the array over which the pod is to be stretched. The `group_names` and `member_names` parameters are required and must be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -551,14 +537,9 @@ class PodsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Eradicate a pod  # noqa: E501
+        """Eradicate a pod
 
-        Eradicates a pod that has been destroyed and is pending eradication. Eradicated pods cannot be recovered. Pods are destroyed through the PATCH method. The `ids` or `names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api21_pods_delete_with_http_info(authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Eradicates a pod that has been destroyed and is pending eradication. Eradicated pods cannot be recovered. Pods are destroyed through the PATCH method. The `ids` or `names` parameter is required, but they cannot be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -689,14 +670,9 @@ class PodsApi:
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List pods  # noqa: E501
+        """List pods
 
-        Returns a list of pods that are stretched to this array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api21_pods_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, ids, limit, names, offset, sort, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Returns a list of pods that are stretched to this array.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -875,14 +851,9 @@ class PodsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Manage a pod  # noqa: E501
+        """Manage a pod
 
-        Manages the details of a pod.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api21_pods_patch_with_http_info(pod, authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Manages the details of a pod.
 
         :param pod: (required)
         :type pod: PodPatch
@@ -1034,14 +1005,9 @@ class PodsApi:
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List pod performance data by array  # noqa: E501
+        """List pod performance data by array
 
-        Returns real-time and historical performance data, real-time latency data, and average I/O size data. The data is displayed as a total across all pods on the local array and by individual pod.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api21_pods_performance_by_array_get_with_http_info(authorization, x_request_id, destroyed, end_time, filter, ids, limit, names, offset, resolution, sort, start_time, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Returns real-time and historical performance data, real-time latency data, and average I/O size data. The data is displayed as a total across all pods on the local array and by individual pod.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -1241,14 +1207,9 @@ class PodsApi:
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List pod performance data  # noqa: E501
+        """List pod performance data
 
-        Returns real-time and historical performance data, real-time latency data, and average I/O sizes across all pods, displayed both by pod and as a total across all pods.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api21_pods_performance_get_with_http_info(authorization, x_request_id, destroyed, end_time, filter, ids, limit, names, offset, resolution, sort, start_time, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Returns real-time and historical performance data, real-time latency data, and average I/O sizes across all pods, displayed both by pod and as a total across all pods.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -1438,14 +1399,9 @@ class PodsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create a pod  # noqa: E501
+        """Create a pod
 
-        Creates a pod on the local array. Each pod must be given a name that is unique across the arrays to which they are stretched, so a pod cannot be stretched to an array that already contains a pod with the same name. After a pod has been created, add volumes and protection groups to the pod, and then stretch the pod to another (connected) array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api21_pods_post_with_http_info(pod, authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Creates a pod on the local array. Each pod must be given a name that is unique across the arrays to which they are stretched, so a pod cannot be stretched to an array that already contains a pod with the same name. After a pod has been created, add volumes and protection groups to the pod, and then stretch the pod to another (connected) array.
 
         :param pod: (required)
         :type pod: PodPost
@@ -1590,14 +1546,9 @@ class PodsApi:
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List pod space information  # noqa: E501
+        """List pod space information
 
-        Returns provisioned size and physical storage consumption data for each pod on the local array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api21_pods_space_get_with_http_info(authorization, x_request_id, destroyed, end_time, filter, ids, limit, names, offset, resolution, sort, start_time, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Returns provisioned size and physical storage consumption data for each pod on the local array.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str

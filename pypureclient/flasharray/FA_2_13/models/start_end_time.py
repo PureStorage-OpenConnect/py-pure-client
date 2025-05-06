@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictInt
 
 class StartEndTime(BaseModel):
     """
-    A resource with a start time and end time.  # noqa: E501
+    A resource with a start time and end time.
     """
     end_time: Optional[StrictInt] = Field(default=None, description="End time in milliseconds since the UNIX epoch.")
     start_time: Optional[StrictInt] = Field(default=None, description="Start time in milliseconds since the UNIX epoch.")

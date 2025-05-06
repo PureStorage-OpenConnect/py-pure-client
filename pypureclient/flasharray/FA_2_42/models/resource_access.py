@@ -25,7 +25,7 @@ from pypureclient.flasharray.FA_2_42.models.reference_with_type import Reference
 
 class ResourceAccess(BaseModel):
     """
-    A resource access captures configuration of sharing a resource to a scope. For example, resource access can specify that an array host is accessible from a realm.  # noqa: E501
+    A resource access captures configuration of sharing a resource to a scope. For example, resource access can specify that an array host is accessible from a realm.
     """
     id: Optional[StrictStr] = Field(default=None, description="ID of a resource access object.")
     resource: Optional[ReferenceWithType] = Field(default=None, description="Resource to which the scope has access.")

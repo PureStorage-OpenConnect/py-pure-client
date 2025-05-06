@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictStr, conlist
 
 class AdminSettingsRequiredAuthenticationMethods(BaseModel):
     """
-    Authentication methods that are required for the array on specific user interfaces.  # noqa: E501
+    Authentication methods that are required for the array on specific user interfaces.
     """
     ssh: Optional[conlist(StrictStr)] = Field(default=None, description="List of authentication methods that are required for SSH. Possible values include `password`, `key`, and `default`. `securid-am` is a possible value, but it cannot be changed through PATCH. If not specified, defaults to `default`. Specify `password` and `key` authentication methods to set up local multi-factor authentication for SSH.")
     web_ui: Optional[conlist(StrictStr)] = Field(default=None, description="List of authentication methods that are required for the web UI. Possible values include `password`, `webauthn`, and `default`. Other possible values include `saml2` and `securid-am` but these cannot be changed through PATCH. If not specified, defaults to `default`. Specify `password` and `webauthn` authentication methods to set up local multi-factor authentication for web UI. External multi-factor authentication is configured through SAML2 SSO endpoints.")

@@ -27,6 +27,7 @@ from pypureclient.flashblade.FB_2_6.models.bucket_replica_link import BucketRepl
 from pypureclient.flashblade.FB_2_6.models.bucket_replica_link_get_response import BucketReplicaLinkGetResponse
 from pypureclient.flashblade.FB_2_6.models.bucket_replica_link_post import BucketReplicaLinkPost
 from pypureclient.flashblade.FB_2_6.models.bucket_replica_link_response import BucketReplicaLinkResponse
+from typing import Optional
 from pypureclient.flashblade.FB_2_6.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_6.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_6.exceptions import (  # noqa: F401
@@ -55,14 +56,9 @@ class BucketReplicaLinksApi:
         remote_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of remote array names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `remote_ids` query parameter.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE bucket-replica-links  # noqa: E501
+        """DELETE bucket-replica-links
 
-        Delete a bucket replica link.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api26_bucket_replica_links_delete_with_http_info(ids, local_bucket_ids, local_bucket_names, remote_bucket_names, remote_ids, remote_names, async_req=True)
-        >>> result = thread.get()
+        Delete a bucket replica link.
 
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
         :type ids: List[str]
@@ -209,14 +205,9 @@ class BucketReplicaLinksApi:
         total_only: Annotated[Optional[StrictBool], Field(description="Only return the total record for the specified items. The total record will be the total of all items after filtering. The `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET bucket-replica-links  # noqa: E501
+        """GET bucket-replica-links
 
-        List bucket replica links for object replication.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api26_bucket_replica_links_get_with_http_info(continuation_token, filter, ids, limit, local_bucket_ids, local_bucket_names, offset, remote_bucket_names, remote_ids, remote_names, sort, total_only, async_req=True)
-        >>> result = thread.get()
+        List bucket replica links for object replication.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -401,14 +392,9 @@ class BucketReplicaLinksApi:
         remote_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of remote array names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `remote_ids` query parameter.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH bucket-replica-links  # noqa: E501
+        """PATCH bucket-replica-links
 
-        Modify the configuration of a bucket replica link including whether the link is paused and the object store remote credentials used.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api26_bucket_replica_links_patch_with_http_info(bucket_replica_link, ids, local_bucket_ids, local_bucket_names, remote_bucket_names, remote_ids, remote_names, async_req=True)
-        >>> result = thread.get()
+        Modify the configuration of a bucket replica link including whether the link is paused and the object store remote credentials used.
 
         :param bucket_replica_link: (required)
         :type bucket_replica_link: BucketReplicaLink
@@ -568,14 +554,9 @@ class BucketReplicaLinksApi:
         remote_credentials_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of remote credentials names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `remote_credentials_ids` query parameter.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST bucket-replica-links  # noqa: E501
+        """POST bucket-replica-links
 
-        Create a bucket replica link for object replication.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api26_bucket_replica_links_post_with_http_info(bucket_replica_link, local_bucket_ids, local_bucket_names, remote_bucket_names, remote_credentials_ids, remote_credentials_names, async_req=True)
-        >>> result = thread.get()
+        Create a bucket replica link for object replication.
 
         :param bucket_replica_link: (required)
         :type bucket_replica_link: BucketReplicaLinkPost

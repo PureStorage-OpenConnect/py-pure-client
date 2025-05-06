@@ -26,6 +26,7 @@ from typing import Optional, Union
 from pypureclient.flashblade.FB_2_7.models.logs_async import LogsAsync
 from pypureclient.flashblade.FB_2_7.models.logs_async_get_response import LogsAsyncGetResponse
 from pypureclient.flashblade.FB_2_7.models.logs_async_response import LogsAsyncResponse
+from typing import Optional
 from pypureclient.flashblade.FB_2_7.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_7.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_7.exceptions import (  # noqa: F401
@@ -49,14 +50,9 @@ class LogsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET logs-async/download  # noqa: E501
+        """GET logs-async/download
 
-        Download the files which contain a history of log events from the array to provide to Pure Technical Services for analysis.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api27_logs_async_download_get_with_http_info(names, async_req=True)
-        >>> result = thread.get()
+        Download the files which contain a history of log events from the array to provide to Pure Technical Services for analysis.
 
         :param names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
         :type names: List[str]
@@ -169,14 +165,9 @@ class LogsApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET logs-async  # noqa: E501
+        """GET logs-async
 
-        List the attributes and status of preparation for a history of log events from the array to provide to Pure Technical Services for analysis.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api27_logs_async_get_with_http_info(continuation_token, filter, ids, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        List the attributes and status of preparation for a history of log events from the array to provide to Pure Technical Services for analysis.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -321,14 +312,9 @@ class LogsApi:
         logs_async: LogsAsync,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH logs-async  # noqa: E501
+        """PATCH logs-async
 
-        Start the preparation for a history of log events from the array to provide to Pure Technical Services for analysis.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api27_logs_async_patch_with_http_info(logs_async, async_req=True)
-        >>> result = thread.get()
+        Start the preparation for a history of log events from the array to provide to Pure Technical Services for analysis.
 
         :param logs_async: (required)
         :type logs_async: LogsAsync
@@ -442,14 +428,9 @@ class LogsApi:
         start_time: Annotated[Optional[conint(strict=True, ge=0)], Field(description="When the time window starts (in milliseconds since epoch).")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET logs  # noqa: E501
+        """GET logs
 
-        Download a history of log events from the array to provide to Pure Technical Services for analysis.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api27_logs_get_with_http_info(end_time, start_time, async_req=True)
-        >>> result = thread.get()
+        Download a history of log events from the array to provide to Pure Technical Services for analysis.
 
         :param end_time: When the time window ends (in milliseconds since epoch).
         :type end_time: int

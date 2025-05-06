@@ -30,6 +30,7 @@ from pypureclient.flasharray.FA_2_0.models.volume_get_response import VolumeGetR
 from pypureclient.flasharray.FA_2_0.models.volume_patch import VolumePatch
 from pypureclient.flasharray.FA_2_0.models.volume_post import VolumePost
 from pypureclient.flasharray.FA_2_0.models.volume_response import VolumeResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_0.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_0.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_0.exceptions import (  # noqa: F401
@@ -56,14 +57,9 @@ class VolumesApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Eradicate a volume  # noqa: E501
+        """Eradicate a volume
 
-        Eradicate a volume that has been destroyed and is pending eradication. Eradicated volumes cannot be recovered. Volumes are destroyed through the `PATCH` method. The `ids` or `names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api20_volumes_delete_with_http_info(authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Eradicate a volume that has been destroyed and is pending eradication. Eradicated volumes cannot be recovered. Volumes are destroyed through the `PATCH` method. The `ids` or `names` parameter is required, but they cannot be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -193,14 +189,9 @@ class VolumesApi:
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List volumes  # noqa: E501
+        """List volumes
 
-        Return a list of volumes, including those pending eradication.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api20_volumes_get_with_http_info(authorization, x_request_id, destroyed, filter, ids, limit, names, offset, sort, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Return a list of volumes, including those pending eradication.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -374,14 +365,9 @@ class VolumesApi:
         truncate: Annotated[Optional[StrictBool], Field(description="If set to `true`, reduces the size of a volume during a volume resize operation. When a volume is truncated, Purity automatically takes an undo snapshot, providing a 24-hour window during which the previous contents can be retrieved. After truncating a volume, its provisioned size can be subsequently increased, but the data in truncated sectors cannot be retrieved. If set to `false` or not set at all and the volume is being reduced in size, the volume copy operation fails. Required if the `provisioned` parameter is set to a volume size that is smaller than the original size.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Manage a volume  # noqa: E501
+        """Manage a volume
 
-        Renames or destroys a volume. To rename a volume, set `name` to the new name. To move a volume, set the `pod` or `volume group` parameters. To destroy a volume, set `destroyed=true`. To recover a volume that has been destroyed and is pending eradication, set `destroyed=false`. Sets the bandwidth and IOPs limits of a volume group. The `ids` or `names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api20_volumes_patch_with_http_info(volume, authorization, x_request_id, ids, names, truncate, async_req=True)
-        >>> result = thread.get()
+        Renames or destroys a volume. To rename a volume, set `name` to the new name. To move a volume, set the `pod` or `volume group` parameters. To destroy a volume, set `destroyed=true`. To recover a volume that has been destroyed and is pending eradication, set `destroyed=false`. Sets the bandwidth and IOPs limits of a volume group. The `ids` or `names` parameter is required, but they cannot be set together.
 
         :param volume: (required)
         :type volume: VolumePatch
@@ -539,14 +525,9 @@ class VolumesApi:
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List volume performance data by array  # noqa: E501
+        """List volume performance data by array
 
-        Returns real-time and historical performance data, real-time latency data, and average I/O size data. The data returned is for each volume on the current array and for each volume on any remote arrays that are visible to the current array. The data is grouped by individual volumes and as a total across all volumes on each array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api20_volumes_performance_by_array_get_with_http_info(authorization, x_request_id, destroyed, end_time, filter, ids, limit, names, offset, resolution, sort, start_time, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Returns real-time and historical performance data, real-time latency data, and average I/O size data. The data returned is for each volume on the current array and for each volume on any remote arrays that are visible to the current array. The data is grouped by individual volumes and as a total across all volumes on each array.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -746,14 +727,9 @@ class VolumesApi:
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List volume performance data  # noqa: E501
+        """List volume performance data
 
-        Returns real-time and historical performance data, real-time latency data, and average I/O sizes for each volume and and as a total of all volumes across the entire array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api20_volumes_performance_get_with_http_info(authorization, x_request_id, destroyed, end_time, filter, ids, limit, names, offset, resolution, sort, start_time, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Returns real-time and historical performance data, real-time latency data, and average I/O sizes for each volume and and as a total of all volumes across the entire array.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -944,14 +920,9 @@ class VolumesApi:
         overwrite: Annotated[Optional[StrictBool], Field(description="If set to `true`, overwrites an existing object during an object copy operation. If set to `false` or not set at all and the target name is an existing object, the copy operation fails. Required if the `source` body parameter is set and the source overwrites an existing object during the copy operation.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create a volume  # noqa: E501
+        """Create a volume
 
-        Create one or more virtual storage volumes of the specified size. If `provisioned` is not specified, the size of the new volume defaults to 1 MB in size. The `names` query parameter is required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api20_volumes_post_with_http_info(volume, authorization, x_request_id, names, overwrite, async_req=True)
-        >>> result = thread.get()
+        Create one or more virtual storage volumes of the specified size. If `provisioned` is not specified, the size of the new volume defaults to 1 MB in size. The `names` query parameter is required.
 
         :param volume: (required)
         :type volume: VolumePost
@@ -1102,14 +1073,9 @@ class VolumesApi:
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List volume space information  # noqa: E501
+        """List volume space information
 
-        Return provisioned size and physical storage consumption data for each volume.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api20_volumes_space_get_with_http_info(authorization, x_request_id, destroyed, end_time, filter, ids, limit, names, offset, resolution, sort, start_time, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Return provisioned size and physical storage consumption data for each volume.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str

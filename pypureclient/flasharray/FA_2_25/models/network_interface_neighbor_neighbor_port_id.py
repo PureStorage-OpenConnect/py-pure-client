@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictStr
 
 class NetworkInterfaceNeighborNeighborPortId(BaseModel):
     """
-    An administratively assigned identifier of the particular neighboring port.  # noqa: E501
+    An administratively assigned identifier of the particular neighboring port.
     """
     type: Optional[StrictStr] = Field(default=None, description="The port ID subtype. Valid values are `ifname`, `ifalias`, `local`, `mac`, `ip`, and `unhandled`.")
     value: Optional[StrictStr] = Field(default=None, description="The specific identifier for the particular port.")

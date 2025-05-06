@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictStr, conlist
 
 class DnsPatch(BaseModel):
     """
-    Configuration information for the domain name servers.  # noqa: E501
+    Configuration information for the domain name servers.
     """
     domain: Optional[StrictStr] = Field(default=None, description="Domain suffix to be appended by the appliance when performing DNS lookups.")
     nameservers: Optional[conlist(StrictStr)] = Field(default=None, description="List of DNS server IP addresses.")

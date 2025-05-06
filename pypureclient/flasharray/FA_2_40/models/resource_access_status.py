@@ -26,7 +26,7 @@ from pypureclient.flasharray.FA_2_40.models.resource_access_status_created_by im
 
 class ResourceAccessStatus(BaseModel):
     """
-    A resource access status realizes the configuration of resource accesses. For instance, if there is a resource access for a host group to a realm, resource access status would include the explicit host group resource access as well as an implicit resource access for each host in that host group.  # noqa: E501
+    A resource access status realizes the configuration of resource accesses. For instance, if there is a resource access for a host group to a realm, resource access status would include the explicit host group resource access as well as an implicit resource access for each host in that host group.
     """
     created_by: Optional[conlist(ResourceAccessStatusCreatedBy)] = Field(default=None, description="Reference the IDs of resource accesses that created this status.")
     resource: Optional[ReferenceWithType] = Field(default=None, description="Resource to which the scope has access.")

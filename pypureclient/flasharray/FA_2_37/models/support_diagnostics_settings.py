@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictInt, StrictStr
 
 class SupportDiagnosticsSettings(BaseModel):
     """
-    Diagnostics tools  # noqa: E501
+    Diagnostics tools
     """
     last_updated: Optional[StrictInt] = Field(default=None, description="Date the diagnostics tool was last updated.")
     version: Optional[StrictStr] = Field(default=None, description="Version of the diagnostics tool.")

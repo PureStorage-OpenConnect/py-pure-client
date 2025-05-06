@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictInt, StrictStr
 
 class ResourceNoName(BaseModel):
     """
-    An ordinary (as opposed to built-in) resource that can be created or deleted by the user. This might be a virtual resource (e.g., a volume), or correspond to something in the physical environment, like a host or a server.  # noqa: E501
+    An ordinary (as opposed to built-in) resource that can be created or deleted by the user. This might be a virtual resource (e.g., a volume), or correspond to something in the physical environment, like a host or a server.
     """
     as_of: Optional[StrictInt] = Field(default=None, alias="_as_of", description="The freshness of the data (timestamp in millis since epoch).")
     id: Optional[StrictStr] = Field(default=None, description="A non-modifiable, globally unique ID chosen by the system.")

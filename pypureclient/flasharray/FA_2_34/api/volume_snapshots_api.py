@@ -32,6 +32,7 @@ from pypureclient.flasharray.FA_2_34.models.volume_snapshot_patch import VolumeS
 from pypureclient.flasharray.FA_2_34.models.volume_snapshot_post import VolumeSnapshotPost
 from pypureclient.flasharray.FA_2_34.models.volume_snapshot_response import VolumeSnapshotResponse
 from pypureclient.flasharray.FA_2_34.models.volume_snapshot_transfer_get_response import VolumeSnapshotTransferGetResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_34.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_34.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_34.exceptions import (  # noqa: F401
@@ -59,14 +60,9 @@ class VolumeSnapshotsApi:
         replication_snapshot: Annotated[Optional[StrictBool], Field(description="If set to `true`, allow destruction/eradication of snapshots in use by replication. If set to `false`, allow destruction/eradication of snapshots not in use by replication. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete a volume snapshot  # noqa: E501
+        """Delete a volume snapshot
 
-        Deletes a volume snapshot that has been destroyed and is pending eradication. Eradicated volume snapshots cannot be recovered. Volume snapshots are destroyed by using the `PATCH` method. The `ids` or `names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api234_volume_snapshots_delete_with_http_info(authorization, x_request_id, ids, names, replication_snapshot, async_req=True)
-        >>> result = thread.get()
+        Deletes a volume snapshot that has been destroyed and is pending eradication. Eradicated volume snapshots cannot be recovered. Volume snapshots are destroyed by using the `PATCH` method. The `ids` or `names` parameter is required, but they cannot be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -205,14 +201,9 @@ class VolumeSnapshotsApi:
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List volume snapshots  # noqa: E501
+        """List volume snapshots
 
-        Displays a list of volume snapshots, including those pending eradication.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api234_volume_snapshots_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, ids, limit, names, offset, sort, source_ids, source_names, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays a list of volume snapshots, including those pending eradication.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -406,14 +397,9 @@ class VolumeSnapshotsApi:
         replication_snapshot: Annotated[Optional[StrictBool], Field(description="If set to `true`, allow destruction/eradication of snapshots in use by replication. If set to `false`, allow destruction/eradication of snapshots not in use by replication. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Modify a volume snapshot  # noqa: E501
+        """Modify a volume snapshot
 
-        Modifies a volume snapshot by renaming, destroying, or recovering it. To rename the suffix of a volume snapshot, set `name` to the new suffix name. To recover a volume snapshot that has been destroyed and is pending eradication, set `destroyed=true`. The `ids` or `names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api234_volume_snapshots_patch_with_http_info(volume_snapshot, authorization, x_request_id, ids, names, replication_snapshot, async_req=True)
-        >>> result = thread.get()
+        Modifies a volume snapshot by renaming, destroying, or recovering it. To rename the suffix of a volume snapshot, set `name` to the new suffix name. To recover a volume snapshot that has been destroyed and is pending eradication, set `destroyed=true`. The `ids` or `names` parameter is required, but they cannot be set together.
 
         :param volume_snapshot: (required)
         :type volume_snapshot: VolumeSnapshotPatch
@@ -564,14 +550,9 @@ class VolumeSnapshotsApi:
         source_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the source name specified. Enter multiple source names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create a volume snapshot  # noqa: E501
+        """Create a volume snapshot
 
-        Creates a point-in-time snapshot of the contents of a volume. The `source_ids` or `source_names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api234_volume_snapshots_post_with_http_info(volume_snapshot, authorization, x_request_id, allow_throttle, on, source_ids, source_names, async_req=True)
-        >>> result = thread.get()
+        Creates a point-in-time snapshot of the contents of a volume. The `source_ids` or `source_names` parameter is required, but they cannot be set together.
 
         :param volume_snapshot: (required)
         :type volume_snapshot: VolumeSnapshotPost
@@ -726,14 +707,9 @@ class VolumeSnapshotsApi:
         resource_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. The `resource_ids` or `resource_names` parameter is required, but they cannot be set together.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Update tags  # noqa: E501
+        """Update tags
 
-        Updates tags.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api234_volume_snapshots_tags_batch_put_with_http_info(tag, authorization, x_request_id, resource_ids, resource_names, async_req=True)
-        >>> result = thread.get()
+        Updates tags.
 
         :param tag: A list of tags to be created or modified. (required)
         :type tag: List[Tag]
@@ -877,14 +853,9 @@ class VolumeSnapshotsApi:
         resource_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. The `resource_ids` or `resource_names` parameter is required, but they cannot be set together.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete tags  # noqa: E501
+        """Delete tags
 
-        Deletes specified tags.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api234_volume_snapshots_tags_delete_with_http_info(authorization, x_request_id, keys, namespaces, resource_ids, resource_names, async_req=True)
-        >>> result = thread.get()
+        Deletes specified tags.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -1029,14 +1000,9 @@ class VolumeSnapshotsApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List tags  # noqa: E501
+        """List tags
 
-        Displays the list of tags.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api234_volume_snapshots_tags_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, namespaces, offset, resource_destroyed, resource_ids, resource_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays the list of tags.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -1218,14 +1184,9 @@ class VolumeSnapshotsApi:
         source_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the source name specified. Enter multiple source names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create the volume snapshot path  # noqa: E501
+        """Create the volume snapshot path
 
-        Creates the volume snapshot path without actually taking a volume snapshot.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api234_volume_snapshots_test_post_with_http_info(volume_snapshot, authorization, x_request_id, allow_throttle, on, source_ids, source_names, async_req=True)
-        >>> result = thread.get()
+        Creates the volume snapshot path without actually taking a volume snapshot.
 
         :param volume_snapshot: (required)
         :type volume_snapshot: VolumeSnapshotPost
@@ -1389,14 +1350,9 @@ class VolumeSnapshotsApi:
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List volume snapshots with transfer statistics  # noqa: E501
+        """List volume snapshots with transfer statistics
 
-        Displays a list of volume snapshots and their transfer statistics.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api234_volume_snapshots_transfer_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, ids, limit, names, offset, sort, source_ids, source_names, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays a list of volume snapshots and their transfer statistics.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str

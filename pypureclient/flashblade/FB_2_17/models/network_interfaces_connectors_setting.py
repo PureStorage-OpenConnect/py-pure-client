@@ -25,7 +25,7 @@ from pypureclient.flashblade.FB_2_17.models.network_interfaces_connectors_settin
 
 class NetworkInterfacesConnectorsSetting(BaseModel):
     """
-    The global network setting for all network connectors.  # noqa: E501
+    The global network setting for all network connectors.
     """
     id: Optional[StrictStr] = Field(default=None, description="A non-modifiable, globally unique ID chosen by the system.")
     name: Optional[StrictStr] = Field(default=None, description="Name of the object (e.g., a file system or snapshot).")

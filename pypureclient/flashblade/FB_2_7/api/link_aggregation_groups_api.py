@@ -27,6 +27,7 @@ from pypureclient.flashblade.FB_2_7.models.api27_link_aggregation_groups_patch_r
 from pypureclient.flashblade.FB_2_7.models.link_aggregation_group import LinkAggregationGroup
 from pypureclient.flashblade.FB_2_7.models.link_aggregation_group_get_response import LinkAggregationGroupGetResponse
 from pypureclient.flashblade.FB_2_7.models.link_aggregation_group_response import LinkAggregationGroupResponse
+from typing import Optional
 from pypureclient.flashblade.FB_2_7.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_7.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_7.exceptions import (  # noqa: F401
@@ -51,14 +52,9 @@ class LinkAggregationGroupsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE link-aggregation-groups  # noqa: E501
+        """DELETE link-aggregation-groups
 
-        Remove a link aggregation group to unbind the ports.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api27_link_aggregation_groups_delete_with_http_info(ids, names, async_req=True)
-        >>> result = thread.get()
+        Remove a link aggregation group to unbind the ports.
 
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
         :type ids: List[str]
@@ -172,14 +168,9 @@ class LinkAggregationGroupsApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET link-aggregation-groups  # noqa: E501
+        """GET link-aggregation-groups
 
-        List the status and attributes of the Ethernet ports in the configured link aggregation groups.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api27_link_aggregation_groups_get_with_http_info(continuation_token, filter, ids, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        List the status and attributes of the Ethernet ports in the configured link aggregation groups.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -326,14 +317,9 @@ class LinkAggregationGroupsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH link-aggregation-groups  # noqa: E501
+        """PATCH link-aggregation-groups
 
-        Modify link aggregation groups by adding and removing Ethernet ports.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api27_link_aggregation_groups_patch_with_http_info(link_aggregation_group, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modify link aggregation groups by adding and removing Ethernet ports.
 
         :param link_aggregation_group: (required)
         :type link_aggregation_group: Api27LinkAggregationGroupsPatchRequest
@@ -461,14 +447,9 @@ class LinkAggregationGroupsApi:
         link_aggregation_group: LinkAggregationGroup,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST link-aggregation-groups  # noqa: E501
+        """POST link-aggregation-groups
 
-        Create a link aggregation group of Ethernet ports on the array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api27_link_aggregation_groups_post_with_http_info(names, link_aggregation_group, async_req=True)
-        >>> result = thread.get()
+        Create a link aggregation group of Ethernet ports on the array.
 
         :param names: A comma-separated list of resource names. (required)
         :type names: List[str]

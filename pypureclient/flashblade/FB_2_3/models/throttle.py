@@ -25,7 +25,7 @@ from pypureclient.flashblade.FB_2_3.models.time_window import TimeWindow
 
 class Throttle(BaseModel):
     """
-    The bandwidth throttling for an array connection.  # noqa: E501
+    The bandwidth throttling for an array connection.
     """
     default_limit: Optional[StrictInt] = Field(default=None, description="Default maximum bandwidth threshold for outbound traffic in bytes. Once exceeded, bandwidth throttling occurs.")
     window: Optional[TimeWindow] = Field(default=None, description="The time during which the window_limit threshold is in effect.")

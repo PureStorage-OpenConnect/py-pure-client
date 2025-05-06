@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictStr
 
 class DirectoryServiceSmb(BaseModel):
     """
-    Properties specific to the SMB service.  # noqa: E501
+    Properties specific to the SMB service.
     """
     join_ou: Optional[StrictStr] = Field(default=None, description="Optional organizational unit where the machine account for the directory service will be created.")
     __properties = ["join_ou"]

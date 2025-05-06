@@ -25,6 +25,7 @@ from typing import Optional
 
 from pypureclient.flashblade.FB_2_8.models.object_store_virtual_host_get_response import ObjectStoreVirtualHostGetResponse
 from pypureclient.flashblade.FB_2_8.models.object_store_virtual_host_response import ObjectStoreVirtualHostResponse
+from typing import Optional
 from pypureclient.flashblade.FB_2_8.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_8.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_8.exceptions import (  # noqa: F401
@@ -49,14 +50,9 @@ class ObjectStoreVirtualHostsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE object-store-virtual-hosts  # noqa: E501
+        """DELETE object-store-virtual-hosts
 
-        Delete an object store virtual host.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api28_object_store_virtual_hosts_delete_with_http_info(ids, names, async_req=True)
-        >>> result = thread.get()
+        Delete an object store virtual host.
 
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
         :type ids: List[str]
@@ -170,14 +166,9 @@ class ObjectStoreVirtualHostsApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET object-store-virtual-hosts  # noqa: E501
+        """GET object-store-virtual-hosts
 
-        List object store virtual hosts.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api28_object_store_virtual_hosts_get_with_http_info(continuation_token, filter, ids, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        List object store virtual hosts.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -322,14 +313,9 @@ class ObjectStoreVirtualHostsApi:
         names: Annotated[conlist(StrictStr), Field(..., description="A comma-separated list of resource names.")],
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST object-store-virtual-hosts  # noqa: E501
+        """POST object-store-virtual-hosts
 
-        Create an object store virtual host. An example of a hostname is buckethost.example.com. A hostname cannot exceed 255 characters in length, it cannot be an IP address, only 10 hostnames are supported, supersets or subsets of existing hostnames with the same root are not allowed. The default hostname is s3.amazonaws.com and it cannot be deleted.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api28_object_store_virtual_hosts_post_with_http_info(names, async_req=True)
-        >>> result = thread.get()
+        Create an object store virtual host. An example of a hostname is buckethost.example.com. A hostname cannot exceed 255 characters in length, it cannot be an IP address, only 10 hostnames are supported, supersets or subsets of existing hostnames with the same root are not allowed. The default hostname is s3.amazonaws.com and it cannot be deleted.
 
         :param names: A comma-separated list of resource names. (required)
         :type names: List[str]

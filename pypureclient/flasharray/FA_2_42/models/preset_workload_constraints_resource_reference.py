@@ -26,7 +26,7 @@ from pypureclient.flasharray.FA_2_42.models.reference_with_type import Reference
 
 class PresetWorkloadConstraintsResourceReference(BaseModel):
     """
-    Constraints to apply to resource reference parameters  # noqa: E501
+    Constraints to apply to resource reference parameters
     """
     allowed_values: conlist(PresetWorkloadConstraintsResourceReferenceAllowedValues) = Field(default=..., description="The valid values that can be supplied to the parameter. Exactly one value must be specified.")
     default: Optional[ReferenceWithType] = Field(default=None, description="The default value to use if no value is provided. Must match the `resource_type` set in `allowed_values`. One of `id` or `name` must be set, but they cannot be set together.")

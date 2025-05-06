@@ -30,6 +30,7 @@ from pypureclient.flashblade.FB_2_2.models.syslog_server_settings import SyslogS
 from pypureclient.flashblade.FB_2_2.models.syslog_server_settings_get_response import SyslogServerSettingsGetResponse
 from pypureclient.flashblade.FB_2_2.models.syslog_server_settings_response import SyslogServerSettingsResponse
 from pypureclient.flashblade.FB_2_2.models.test_result_get_response import TestResultGetResponse
+from typing import Optional
 from pypureclient.flashblade.FB_2_2.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_2.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_2.exceptions import (  # noqa: F401
@@ -54,14 +55,9 @@ class SyslogApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE syslog-servers  # noqa: E501
+        """DELETE syslog-servers
 
-        Delete a configured syslog server and stop forwarding syslog messages.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api22_syslog_servers_delete_with_http_info(ids, names, async_req=True)
-        >>> result = thread.get()
+        Delete a configured syslog server and stop forwarding syslog messages.
 
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
         :type ids: List[str]
@@ -175,14 +171,9 @@ class SyslogApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET syslog-servers  # noqa: E501
+        """GET syslog-servers
 
-        Return a list of configured syslog servers.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api22_syslog_servers_get_with_http_info(continuation_token, filter, ids, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        Return a list of configured syslog servers.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -329,14 +320,9 @@ class SyslogApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH syslog-servers  # noqa: E501
+        """PATCH syslog-servers
 
-        Modify the URI of a configured syslog server.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api22_syslog_servers_patch_with_http_info(syslog_server, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modify the URI of a configured syslog server.
 
         :param syslog_server: (required)
         :type syslog_server: SyslogServerPostOrPatch
@@ -464,14 +450,9 @@ class SyslogApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST syslog-servers  # noqa: E501
+        """POST syslog-servers
 
-        Configure a new syslog server. Transmission of syslog messages is enabled immediately.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api22_syslog_servers_post_with_http_info(syslog_server, names, async_req=True)
-        >>> result = thread.get()
+        Configure a new syslog server. Transmission of syslog messages is enabled immediately.
 
         :param syslog_server: (required)
         :type syslog_server: SyslogServerPostOrPatch
@@ -597,14 +578,9 @@ class SyslogApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET syslog-servers/settings  # noqa: E501
+        """GET syslog-servers/settings
 
-        List the certificate or certificate group associated with the syslog servers.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api22_syslog_servers_settings_get_with_http_info(continuation_token, filter, ids, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        List the certificate or certificate group associated with the syslog servers.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -751,14 +727,9 @@ class SyslogApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH syslog-servers/settings  # noqa: E501
+        """PATCH syslog-servers/settings
 
-        Modify the certificate or certificate group associated with the syslog servers.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api22_syslog_servers_settings_patch_with_http_info(syslog_server_settings, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modify the certificate or certificate group associated with the syslog servers.
 
         :param syslog_server_settings: (required)
         :type syslog_server_settings: SyslogServerSettings
@@ -885,14 +856,9 @@ class SyslogApi:
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET syslog-servers/test  # noqa: E501
+        """GET syslog-servers/test
 
-        Send test messages to conifgured remote syslog servers.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api22_syslog_servers_test_get_with_http_info(continuation_token, async_req=True)
-        >>> result = thread.get()
+        Send test messages to conifgured remote syslog servers.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str

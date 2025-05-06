@@ -25,7 +25,7 @@ from pypureclient.flasharray.FA_2_37.models.admin_settings_required_authenticati
 
 class AdminSettings(BaseModel):
     """
-    Global settings for administrative accounts.  # noqa: E501
+    Global settings for administrative accounts.
     """
     lockout_duration: Optional[conint(strict=True, le=7776000000, ge=1000)] = Field(default=None, description="The lockout duration, in milliseconds, if a user is locked out after reaching the maximum number of login attempts. Ranges from 1 second to 90 days.")
     max_login_attempts: Optional[conint(strict=True, le=20, ge=1)] = Field(default=None, description="Maximum number of failed login attempts allowed before the user is locked out.")

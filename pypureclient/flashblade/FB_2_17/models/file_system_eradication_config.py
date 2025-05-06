@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictStr
 
 class FileSystemEradicationConfig(BaseModel):
     """
-    Configuration settings related to file system eradication.  # noqa: E501
+    Configuration settings related to file system eradication.
     """
     eradication_mode: Optional[StrictStr] = Field(default=None, description="The eradication mode of the file system. If it's `permission-based` the file system can be eradicated based on user permissions. If it's `retention-based` the file system can not be eradicated until no files/inodes are locked or retained. Valid values are `permission-based` and `retention-based`.")
     manual_eradication: Optional[StrictStr] = Field(default=None, description="The manual eradication status of the file system. If `disabled`, the file system cannot be eradicated after it has been destroyed, unless it is empty. If `enabled`, the file system can be eradicated. Valid values are `disabled` and `enabled`.")

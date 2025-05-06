@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictInt
 
 class RetentionPolicy(BaseModel):
     """
-    The snapshot retention policy.  # noqa: E501
+    The snapshot retention policy.
     """
     all_for_sec: Optional[StrictInt] = Field(default=None, description="The length of time to keep the specified snapshots. Measured in seconds. Prior to 6.8.2 the range of 60 to 34560000 is accepted. In 6.8.2 and onwards the range of 60 to 2147483647 is accepted.")
     days: Optional[StrictInt] = Field(default=None, description="The number of days to keep the snapshots after the `all_for_sec` period has passed. Prior to 6.6.4 the range of 0 to 4000 is accepted. In 6.6.4 and onwards the range of 0 to 2147483647 is accepted.")

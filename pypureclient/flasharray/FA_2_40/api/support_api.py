@@ -30,6 +30,7 @@ from pypureclient.flasharray.FA_2_40.models.support_get_response import SupportG
 from pypureclient.flasharray.FA_2_40.models.support_patch import SupportPatch
 from pypureclient.flasharray.FA_2_40.models.support_response import SupportResponse
 from pypureclient.flasharray.FA_2_40.models.test_result_get_response import TestResultGetResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_40.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_40.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_40.exceptions import (  # noqa: F401
@@ -60,14 +61,9 @@ class SupportApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List diagnostics details  # noqa: E501
+        """List diagnostics details
 
-        Displays the diagnostics tests details.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api240_support_diagnostics_details_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays the diagnostics tests details.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -223,14 +219,9 @@ class SupportApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List diagnostics tools version and last updated date  # noqa: E501
+        """List diagnostics tools version and last updated date
 
-        Displays diagnostics tools version and last updated date.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api240_support_diagnostics_settings_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays diagnostics tools version and last updated date.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -381,14 +372,9 @@ class SupportApi:
         purity_default: Annotated[Optional[StrictBool], Field(description="Set diagnostics tool to default version.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Update diagnostics tools  # noqa: E501
+        """Update diagnostics tools
 
-        Update diagnostics tools from downloaded bundle.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api240_support_diagnostics_settings_patch_with_http_info(authorization, x_request_id, purity_default, async_req=True)
-        >>> result = thread.get()
+        Update diagnostics tools from downloaded bundle.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -513,14 +499,9 @@ class SupportApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List connection paths  # noqa: E501
+        """List connection paths
 
-        Displays connection paths between the current array and each connected array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api240_support_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays connection paths between the current array and each connected array.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -671,14 +652,9 @@ class SupportApi:
         x_request_id: Annotated[Optional[StrictStr], Field(description="Supplied by client during request or generated by server.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create connection path  # noqa: E501
+        """Create connection path
 
-        Creates a connection path from the array to another array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api240_support_patch_with_http_info(support, authorization, x_request_id, async_req=True)
-        >>> result = thread.get()
+        Creates a connection path from the array to another array.
 
         :param support: (required)
         :type support: SupportPatch
@@ -810,14 +786,9 @@ class SupportApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List Pure Storage Support connection data  # noqa: E501
+        """List Pure Storage Support connection data
 
-        Displays information about whether the array can connect to Pure Storage Support by establishing a secure shell or secure HTTP connection and verifies that messages can be exchanged.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api240_support_test_get_with_http_info(authorization, x_request_id, filter, limit, offset, sort, test_type, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays information about whether the array can connect to Pure Storage Support by establishing a secure shell or secure HTTP connection and verifies that messages can be exchanged.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str

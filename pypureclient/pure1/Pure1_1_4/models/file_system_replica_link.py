@@ -25,7 +25,7 @@ from pypureclient.pure1.Pure1_1_4.models.resource_with_location import ResourceW
 
 class FileSystemReplicaLink(BaseModel):
     """
-    A replica link between two FlashBlade file systems.  # noqa: E501
+    A replica link between two FlashBlade file systems.
     """
     as_of: Optional[StrictInt] = Field(default=None, alias="_as_of", description="The freshness of the data (timestamp in millis since epoch).")
     id: Optional[StrictStr] = Field(default=None, description="A non-modifiable, globally unique ID chosen by the system.")

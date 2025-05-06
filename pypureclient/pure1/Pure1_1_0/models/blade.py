@@ -25,7 +25,7 @@ from pypureclient.pure1.Pure1_1_0.models.blade_array_status import BladeArraySta
 
 class Blade(BaseModel):
     """
-    A FlashBlade blade.  # noqa: E501
+    A FlashBlade blade.
     """
     as_of: Optional[StrictInt] = Field(default=None, alias="_as_of", description="The freshness of the data (timestamp in millis since epoch).")
     id: Optional[StrictStr] = Field(default=None, description="A non-modifiable, globally unique ID chosen by the system.")

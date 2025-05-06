@@ -25,6 +25,7 @@ from typing import Optional
 
 from pypureclient.flasharray.FA_2_35.models.vchost_connection_get_response import VchostConnectionGetResponse
 from pypureclient.flasharray.FA_2_35.models.vchost_connection_response import VchostConnectionResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_35.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_35.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_35.exceptions import (  # noqa: F401
@@ -54,14 +55,9 @@ class VchostConnectionsApi:
         vchost_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of vchost names. Performs the operation on the vchosts specified. For example, `vchost01,vchost02`. Cannot be used in conjunction with `vchost_ids`. If the list contains more than one value, then `protocol_endpoint_ids` or `protocol_endpoint_names` must have exactly one value.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete the vchost-connection between a protocol endpoint and its vchost  # noqa: E501
+        """Delete the vchost-connection between a protocol endpoint and its vchost
 
-        Deletes the vchost-connection between a protocol endpoint and its vchost. The storage container represented by the protocol endpoint will no longer be visible to the vCenter represented by the vchost. One of the `protocol_endpoint_names` or `protocol_endpoint_ids` query parameters, and one of the `vchost_names` or `vchost_ids` query parameters are required. But if `all_vchosts` is set to `true`, `vchost_names` and `vchost_ids` should not be specified.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api235_vchost_connections_delete_with_http_info(authorization, x_request_id, all_vchosts, protocol_endpoint_ids, protocol_endpoint_names, vchost_ids, vchost_names, async_req=True)
-        >>> result = thread.get()
+        Deletes the vchost-connection between a protocol endpoint and its vchost. The storage container represented by the protocol endpoint will no longer be visible to the vCenter represented by the vchost. One of the `protocol_endpoint_names` or `protocol_endpoint_ids` query parameters, and one of the `vchost_names` or `vchost_ids` query parameters are required. But if `all_vchosts` is set to `true`, `vchost_names` and `vchost_ids` should not be specified.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -213,14 +209,9 @@ class VchostConnectionsApi:
         vchost_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of vchost names. Performs the operation on the vchosts specified. For example, `vchost01,vchost02`. Cannot be used in conjunction with `vchost_ids`. If the list contains more than one value, then `protocol_endpoint_ids` or `protocol_endpoint_names` must have exactly one value.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List the vchost-connections between protocol endpoint and vchost.  # noqa: E501
+        """List the vchost-connections between protocol endpoint and vchost.
 
-        Displays a list of vchost-connections between the protocol endpoint and vchost.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api235_vchost_connections_get_with_http_info(authorization, x_request_id, all_vchosts, continuation_token, filter, limit, offset, protocol_endpoint_ids, protocol_endpoint_names, sort, total_item_count, vchost_ids, vchost_names, async_req=True)
-        >>> result = thread.get()
+        Displays a list of vchost-connections between the protocol endpoint and vchost.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -410,14 +401,9 @@ class VchostConnectionsApi:
         vchost_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of vchost names. Performs the operation on the vchosts specified. For example, `vchost01,vchost02`. Cannot be used in conjunction with `vchost_ids`. If the list contains more than one value, then `protocol_endpoint_ids` or `protocol_endpoint_names` must have exactly one value.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create a vchost-connection between protocol endpoint and vchost.  # noqa: E501
+        """Create a vchost-connection between protocol endpoint and vchost.
 
-        Creates a vchost-connection between protocol endpoint and vchost. Each vchost is associated with a vCenter. Each protocol endpoint is associated with a storage container. A vchost-connection makes the storage container accessible to the vCenter when the vCenter attempts to mount the container. One of `protocol_endpoint_names` or `protocol_endpoint_ids` query parameters and one of `vchost_names` or `vchost_ids` query parameters are required. But if `all_vchosts` is set to `true`, `vchost_names` and `vchost_ids` should not be specified.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api235_vchost_connections_post_with_http_info(authorization, x_request_id, all_vchosts, allow_stretched_multi_vchost, protocol_endpoint_ids, protocol_endpoint_names, vchost_ids, vchost_names, async_req=True)
-        >>> result = thread.get()
+        Creates a vchost-connection between protocol endpoint and vchost. Each vchost is associated with a vCenter. Each protocol endpoint is associated with a storage container. A vchost-connection makes the storage container accessible to the vCenter when the vCenter attempts to mount the container. One of `protocol_endpoint_names` or `protocol_endpoint_ids` query parameters and one of `vchost_names` or `vchost_ids` query parameters are required. But if `all_vchosts` is set to `true`, `vchost_names` and `vchost_ids` should not be specified.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str

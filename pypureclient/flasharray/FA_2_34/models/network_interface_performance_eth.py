@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, conint
 
 class NetworkInterfacePerformanceEth(BaseModel):
     """
-    Ethernet network interface statistics.  # noqa: E501
+    Ethernet network interface statistics.
     """
     other_errors_per_sec: Optional[conint(strict=True, ge=0)] = Field(default=None, description="This field has been deprecated. Since Purity version 6.6.8, this will always return `null`. The sum of unspecified reception and transmission errors per second.")
     received_bytes_per_sec: Optional[conint(strict=True, ge=0)] = Field(default=None, description="Bytes received per second.")

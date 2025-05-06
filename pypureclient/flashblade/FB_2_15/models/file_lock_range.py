@@ -24,7 +24,7 @@ from pydantic import BaseModel, StrictInt
 
 class FileLockRange(BaseModel):
     """
-    The range in bytes (`offset`, `length`) the lock covers within a file. If the lock reaches the end of the file, the `length` will be `null`. If the lock is set for the entire file, both `offset` and `length` will be `null`.  # noqa: E501
+    The range in bytes (`offset`, `length`) the lock covers within a file. If the lock reaches the end of the file, the `length` will be `null`. If the lock is set for the entire file, both `offset` and `length` will be `null`.
     """
     length: Optional[StrictInt] = None
     offset: Optional[StrictInt] = None

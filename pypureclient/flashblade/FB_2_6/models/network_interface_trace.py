@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictStr
 
 class NetworkInterfaceTrace(BaseModel):
     """
-    Output from running the linux command 'traceroute' directly on the array with start and end location information.  # noqa: E501
+    Output from running the linux command 'traceroute' directly on the array with start and end location information.
     """
     component_name: Optional[StrictStr] = Field(default=None, description="Name of the component running the check.")
     destination: Optional[StrictStr] = Field(default=None, description="The destination address or hostname provided in the request that the operation is run against.")

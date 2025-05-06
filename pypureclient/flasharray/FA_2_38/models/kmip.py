@@ -26,7 +26,7 @@ from pypureclient.flasharray.FA_2_38.models.kmip_object import KmipObject
 
 class Kmip(BaseModel):
     """
-    A built-in resource. Many are singletons predefined by Purity (e.g., support settings). Some correspond to a piece of software, like an app, or hardware, like a controller. Others are created by the system in response to some event (e.g., alerts, audit records). Typically, a user can't create, delete or rename a built-in resource. A few can be created or deleted, but not renamed because the names are meaningful to Purity (e.g., VIFs, file systems, file system snapshots, volume snapshot).  # noqa: E501
+    A built-in resource. Many are singletons predefined by Purity (e.g., support settings). Some correspond to a piece of software, like an app, or hardware, like a controller. Others are created by the system in response to some event (e.g., alerts, audit records). Typically, a user can't create, delete or rename a built-in resource. A few can be created or deleted, but not renamed because the names are meaningful to Purity (e.g., VIFs, file systems, file system snapshots, volume snapshot).
     """
     ca_certificate: Optional[constr(strict=True, max_length=3000)] = Field(default=None, description="CA certificate text for the KMIP server.")
     certificate: Optional[KmipCertificate] = Field(default=None, description="The certificate used to verify FlashArray authenticity to the KMIP servers.")

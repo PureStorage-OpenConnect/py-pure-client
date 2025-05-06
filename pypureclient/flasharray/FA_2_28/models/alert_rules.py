@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictInt, StrictStr
 
 class AlertRules(BaseModel):
     """
-    Custom rules for alerts.  # noqa: E501
+    Custom rules for alerts.
     """
     code: Optional[StrictInt] = Field(default=None, description="The alert code that the rule applies to. Available alert codes for customization can be found in the alert rules catalog.")
     parameter: Optional[StrictStr] = Field(default=None, description="The parameter of the custom alert rule to modify. Values include `info` and `warning`. Available parameter values can be found in the alert rules catalog.")

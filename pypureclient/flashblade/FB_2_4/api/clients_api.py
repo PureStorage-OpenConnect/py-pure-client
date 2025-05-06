@@ -24,6 +24,7 @@ from pydantic import Field, StrictBool, StrictStr, conint, conlist, constr, vali
 from typing import Optional
 
 from pypureclient.flashblade.FB_2_4.models.client_performance_get_response import ClientPerformanceGetResponse
+from typing import Optional
 from pypureclient.flashblade.FB_2_4.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_4.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_4.exceptions import (  # noqa: F401
@@ -51,14 +52,9 @@ class ClientsApi:
         total_only: Annotated[Optional[StrictBool], Field(description="Only return the total record for the specified items. The total record will be the total of all items after filtering. The `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET clients-performance  # noqa: E501
+        """GET clients-performance
 
-        List NFS client I/O performance metrics.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api24_arrays_clients_performance_get_with_http_info(filter, limit, names, sort, total_only, async_req=True)
-        >>> result = thread.get()
+        List NFS client I/O performance metrics.
 
         :param filter: Exclude resources that don't match the specified criteria.
         :type filter: str

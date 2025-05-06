@@ -37,6 +37,7 @@ from pypureclient.flasharray.FA_2_25.models.volume_post import VolumePost
 from pypureclient.flasharray.FA_2_25.models.volume_response import VolumeResponse
 from pypureclient.flasharray.FA_2_25.models.volume_space_get_response import VolumeSpaceGetResponse
 from pypureclient.flasharray.FA_2_25.models.volumes_diff_get_response import VolumesDiffGetResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_25.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_25.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_25.exceptions import (  # noqa: F401
@@ -63,14 +64,9 @@ class VolumesApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete a volume  # noqa: E501
+        """Delete a volume
 
-        Deletes a volume that has been destroyed and is pending eradication. Eradicated volumes cannot be recovered. Volumes are destroyed using the `PATCH` method. The `ids` or `names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api225_volumes_delete_with_http_info(authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Deletes a volume that has been destroyed and is pending eradication. Eradicated volumes cannot be recovered. Volumes are destroyed using the `PATCH` method. The `ids` or `names` parameter is required, but they cannot be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -204,14 +200,9 @@ class VolumesApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List volume diffs  # noqa: E501
+        """List volume diffs
 
-        Displays block differences for the specified volumes.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api225_volumes_diff_get_with_http_info(block_size, segment_length, authorization, x_request_id, base_id, base_name, filter, ids, limit, names, next_allocated_block_hint, offset, segment_offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays block differences for the specified volumes.
 
         :param block_size: Granularity at which to compare, in bytes. Must be a multiple of 512. (required)
         :type block_size: int
@@ -415,14 +406,9 @@ class VolumesApi:
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List volumes  # noqa: E501
+        """List volumes
 
-        Displays a list of volumes, including those pending eradication.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api225_volumes_get_with_http_info(authorization, x_request_id, continuation_token, destroyed, filter, ids, limit, names, offset, sort, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays a list of volumes, including those pending eradication.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -604,14 +590,9 @@ class VolumesApi:
         truncate: Annotated[Optional[StrictBool], Field(description="If set to `true`, reduces the size of a volume during a volume resize operation. When a volume is truncated, Purity automatically takes an undo snapshot, providing a 24-hour window during which the previous contents can be retrieved. After truncating a volume, its provisioned size can be subsequently increased, but the data in truncated sectors cannot be retrieved. If set to `false` or not set at all and the volume is being reduced in size, the volume copy operation fails. Required if the `provisioned` parameter is set to a volume size that is smaller than the original size.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Modify a volume  # noqa: E501
+        """Modify a volume
 
-        Modifies a volume by renaming, destroying, or resizing it. To rename a volume, set `name` to the new name. To destroy a volume, set `destroyed=true`. To recover a volume that has been destroyed and is pending eradication, set `destroyed=false`. Set the bandwidth and IOPs limits of a volume through the respective `bandwidth_limit` and `iops_limit` parameter. This moves the volume into a pod or volume group through the respective `pod` or `volume_group` parameter. The `ids` or `names` parameter is required, but they cannot be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api225_volumes_patch_with_http_info(volume, authorization, x_request_id, add_to_protection_group_names, ids, names, remove_from_protection_group_names, truncate, async_req=True)
-        >>> result = thread.get()
+        Modifies a volume by renaming, destroying, or resizing it. To rename a volume, set `name` to the new name. To destroy a volume, set `destroyed=true`. To recover a volume that has been destroyed and is pending eradication, set `destroyed=false`. Set the bandwidth and IOPs limits of a volume through the respective `bandwidth_limit` and `iops_limit` parameter. This moves the volume into a pod or volume group through the respective `pod` or `volume_group` parameter. The `ids` or `names` parameter is required, but they cannot be set together.
 
         :param volume: (required)
         :type volume: VolumePatch
@@ -783,14 +764,9 @@ class VolumesApi:
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List volume performance data by array  # noqa: E501
+        """List volume performance data by array
 
-        Return real-time and historical performance data, real-time latency data, and average I/O size data. The data returned is for each volume on the current array and for each volume on any remote arrays that are visible to the current array. The data is grouped by individual volumes and as a total across all volumes on each array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api225_volumes_performance_by_array_get_with_http_info(authorization, x_request_id, destroyed, end_time, filter, ids, limit, names, offset, resolution, sort, start_time, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Return real-time and historical performance data, real-time latency data, and average I/O size data. The data returned is for each volume on the current array and for each volume on any remote arrays that are visible to the current array. The data is grouped by individual volumes and as a total across all volumes on each array.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -990,14 +966,9 @@ class VolumesApi:
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List volume performance data  # noqa: E501
+        """List volume performance data
 
-        Returns real-time and historical performance data, real-time latency data, and average I/O sizes for each volume and and as a total of all volumes across the entire array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api225_volumes_performance_get_with_http_info(authorization, x_request_id, destroyed, end_time, filter, ids, limit, names, offset, resolution, sort, start_time, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Returns real-time and historical performance data, real-time latency data, and average I/O sizes for each volume and and as a total of all volumes across the entire array.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -1190,14 +1161,9 @@ class VolumesApi:
         with_default_protection: Annotated[Optional[StrictBool], Field(description="If specified as `true`, the initial protection of the newly created volumes will be the union of the container default protection configuration and `add_to_protection_group_names`. If specified as `false`, the default protection of the container will not be applied automatically. The initial protection of the newly created volumes will be configured by `add_to_protection_group_names`. If not specified, defaults to `true`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create a volume  # noqa: E501
+        """Create a volume
 
-        Creates one or more virtual storage volumes of the specified size. If `provisioned` is not specified, the size of the new volume defaults to 1 MB. The `names` query parameter is required. The `add_to_protection_group_names` query parameter specifies a list of protection group names that will compose the initial protection for the volume. The `with_default_protection` query parameter specifies whether to use the container default protection configuration for the volume. The `add_to_protection_group_names` and `with_default_protection` query parameters cannot be provided when `overwrite` is `true`.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api225_volumes_post_with_http_info(volume, authorization, x_request_id, add_to_protection_group_names, names, overwrite, with_default_protection, async_req=True)
-        >>> result = thread.get()
+        Creates one or more virtual storage volumes of the specified size. If `provisioned` is not specified, the size of the new volume defaults to 1 MB. The `names` query parameter is required. The `add_to_protection_group_names` query parameter specifies a list of protection group names that will compose the initial protection for the volume. The `with_default_protection` query parameter specifies whether to use the container default protection configuration for the volume. The `add_to_protection_group_names` and `with_default_protection` query parameters cannot be provided when `overwrite` is `true`.
 
         :param volume: (required)
         :type volume: VolumePost
@@ -1352,14 +1318,9 @@ class VolumesApi:
         member_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique member name specified. Examples of members include volumes, hosts, host groups, and directories. Enter multiple names in comma-separated format. For example, `vol01,vol02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete a volume from a protection group  # noqa: E501
+        """Delete a volume from a protection group
 
-        Deletes a volume member from a protection group. After the member has been deleted, it is no longer protected by the group. Any protection group snapshots that were taken before the member was deleted are not affected. Deleting a member from a protection group does not delete the member from the array, and the member can be added back to the protection group at any time. The `group_names` parameter represents the name of the protection group, and the `member_names` and `member_ids` parameters represent the names or IDs of the volume. The `group_names` and only one of `member_names` or `member_ids` parameters are required and must be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api225_volumes_protection_groups_delete_with_http_info(authorization, x_request_id, group_names, member_ids, member_names, async_req=True)
-        >>> result = thread.get()
+        Deletes a volume member from a protection group. After the member has been deleted, it is no longer protected by the group. Any protection group snapshots that were taken before the member was deleted are not affected. Deleting a member from a protection group does not delete the member from the array, and the member can be added back to the protection group at any time. The `group_names` parameter represents the name of the protection group, and the `member_names` and `member_ids` parameters represent the names or IDs of the volume. The `group_names` and only one of `member_names` or `member_ids` parameters are required and must be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -1497,14 +1458,9 @@ class VolumesApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List volumes that are members of protection groups  # noqa: E501
+        """List volumes that are members of protection groups
 
-        Displays a list of volume members that belong to one or more protection groups.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api225_volumes_protection_groups_get_with_http_info(authorization, x_request_id, continuation_token, filter, group_names, limit, member_destroyed, member_ids, member_names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of volume members that belong to one or more protection groups.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -1684,14 +1640,9 @@ class VolumesApi:
         member_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique member name specified. Examples of members include volumes, hosts, host groups, and directories. Enter multiple names in comma-separated format. For example, `vol01,vol02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create a volume and add it to a protection group  # noqa: E501
+        """Create a volume and add it to a protection group
 
-        Creates a volume member and adds it to a protection group. Members that are already in the protection group are not affected. For asynchronous replication, only members of the same type can belong to a protection group. The `group_names` parameter represents the name of the protection group, and the `member_names` and `member_ids` parameters represent the names or IDs of the volume. The `group_names` and only one of `member_names` or `member_ids` parameters are required and must be set together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api225_volumes_protection_groups_post_with_http_info(authorization, x_request_id, group_names, member_ids, member_names, async_req=True)
-        >>> result = thread.get()
+        Creates a volume member and adds it to a protection group. Members that are already in the protection group are not affected. For asynchronous replication, only members of the same type can belong to a protection group. The `group_names` parameter represents the name of the protection group, and the `member_names` and `member_ids` parameters represent the names or IDs of the volume. The `group_names` and only one of `member_names` or `member_ids` parameters are required and must be set together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -1837,14 +1788,9 @@ class VolumesApi:
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List volume space information  # noqa: E501
+        """List volume space information
 
-        Displays the provisioned size and physical storage consumption data for each volume.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api225_volumes_space_get_with_http_info(authorization, x_request_id, destroyed, end_time, filter, ids, limit, names, offset, resolution, sort, start_time, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Displays the provisioned size and physical storage consumption data for each volume.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -2035,14 +1981,9 @@ class VolumesApi:
         resource_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. The `resource_ids` or `resource_names` parameter is required, but they cannot be set together.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Update tags  # noqa: E501
+        """Update tags
 
-        Updates tags.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api225_volumes_tags_batch_put_with_http_info(tag, authorization, x_request_id, resource_ids, resource_names, async_req=True)
-        >>> result = thread.get()
+        Updates tags.
 
         :param tag: A list of tags to be created or, if already existing, updated. (required)
         :type tag: List[Tag]
@@ -2186,14 +2127,9 @@ class VolumesApi:
         resource_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. The `resource_ids` or `resource_names` parameter is required, but they cannot be set together.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete tags  # noqa: E501
+        """Delete tags
 
-        Deletes specified tags.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api225_volumes_tags_delete_with_http_info(authorization, x_request_id, keys, namespaces, resource_ids, resource_names, async_req=True)
-        >>> result = thread.get()
+        Deletes specified tags.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -2338,14 +2274,9 @@ class VolumesApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List tags  # noqa: E501
+        """List tags
 
-        Displays the list of tags.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api225_volumes_tags_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, namespaces, offset, resource_destroyed, resource_ids, resource_names, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays the list of tags.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -2532,14 +2463,9 @@ class VolumesApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List volumes that are in volume groups  # noqa: E501
+        """List volumes that are in volume groups
 
-        Returns a list of volumes that are in a volume group.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api225_volumes_volume_groups_get_with_http_info(authorization, x_request_id, continuation_token, filter, group_ids, group_names, limit, member_ids, member_names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Returns a list of volumes that are in a volume group.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str

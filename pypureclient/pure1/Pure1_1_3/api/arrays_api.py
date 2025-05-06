@@ -28,6 +28,7 @@ from pypureclient.pure1.Pure1_1_3.models.support_contract_get_response import Su
 from pypureclient.pure1.Pure1_1_3.models.tag_get_response import TagGetResponse
 from pypureclient.pure1.Pure1_1_3.models.tag_put import TagPut
 from pypureclient.pure1.Pure1_1_3.models.tag_response import TagResponse
+from typing import Optional
 from pypureclient.pure1.Pure1_1_3.api_client import ApiClient as _TransportApiClient
 from pypureclient.pure1.Pure1_1_3.api_response import ApiResponse
 from pypureclient.pure1.Pure1_1_3.exceptions import (  # noqa: F401
@@ -60,14 +61,9 @@ class ArraysApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Get arrays  # noqa: E501
+        """Get arrays
 
-        Retrieves information about FlashArray and FlashBlade storage appliances.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api13_arrays_get_with_http_info(authorization, x_request_id, continuation_token, filter, fqdns, ids, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        Retrieves information about FlashArray and FlashBlade storage appliances.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`)
         :type authorization: str
@@ -245,14 +241,9 @@ class ArraysApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Get array support contracts  # noqa: E501
+        """Get array support contracts
 
-        Retrieves the support contracts associated with arrays.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api13_arrays_support_contracts_get_with_http_info(authorization, x_request_id, continuation_token, filter, limit, offset, resource_fqdns, resource_ids, resource_names, sort, async_req=True)
-        >>> result = thread.get()
+        Retrieves the support contracts associated with arrays.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`)
         :type authorization: str
@@ -426,14 +417,9 @@ class ArraysApi:
         resource_names: Annotated[Optional[conlist(StrictStr)], Field(description="REQUIRED: either `resource_ids` or `resource_names`. A comma-separated list of resource names. If there is not at least one resource that matches each `resource_name` element, an error is returned. Single quotes are required around all strings.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create or update array tags  # noqa: E501
+        """Create or update array tags
 
-        Creates or updates array tags contextual to Pure1 only.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api13_arrays_tags_batch_put_with_http_info(tag_put, authorization, x_request_id, namespaces, resource_ids, resource_names, async_req=True)
-        >>> result = thread.get()
+        Creates or updates array tags contextual to Pure1 only.
 
         :param tag_put: (required)
         :type tag_put: List[TagPut]
@@ -589,14 +575,9 @@ class ArraysApi:
         resource_names: Annotated[Optional[conlist(StrictStr)], Field(description="REQUIRED: either `resource_ids` or `resource_names`. A comma-separated list of resource names. If there is not at least one resource that matches each `resource_name` element, an error is returned. Single quotes are required around all strings.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete array tags  # noqa: E501
+        """Delete array tags
 
-        Deletes array tags from Pure1.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api13_arrays_tags_delete_with_http_info(authorization, x_request_id, keys, namespaces, resource_ids, resource_names, async_req=True)
-        >>> result = thread.get()
+        Deletes array tags from Pure1.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`)
         :type authorization: str
@@ -743,14 +724,9 @@ class ArraysApi:
         resource_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each `resource_name` element, an error is returned. Single quotes are required around all strings.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Get array tags  # noqa: E501
+        """Get array tags
 
-        Retrieves the tags associated with specified arrays.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api13_arrays_tags_get_with_http_info(authorization, x_request_id, continuation_token, filter, keys, limit, namespaces, offset, resource_ids, resource_names, async_req=True)
-        >>> result = thread.get()
+        Retrieves the tags associated with specified arrays.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`)
         :type authorization: str

@@ -31,6 +31,7 @@ from pypureclient.flasharray.FA_2_36.models.alert_rules import AlertRules
 from pypureclient.flasharray.FA_2_36.models.alert_rules_catalog_get_response import AlertRulesCatalogGetResponse
 from pypureclient.flasharray.FA_2_36.models.alert_rules_get_response import AlertRulesGetResponse
 from pypureclient.flasharray.FA_2_36.models.alert_rules_response import AlertRulesResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_36.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_36.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_36.exceptions import (  # noqa: F401
@@ -64,14 +65,9 @@ class AlertsApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List alert events  # noqa: E501
+        """List alert events
 
-        Displays a list of alert events.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api236_alerts_events_get_with_http_info(authorization, x_request_id, continuation_token, filter, flagged, ids, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of alert events.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -250,14 +246,9 @@ class AlertsApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List alerts  # noqa: E501
+        """List alerts
 
-        Displays a list of alerts.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api236_alerts_get_with_http_info(authorization, x_request_id, continuation_token, filter, flagged, ids, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of alerts.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -430,14 +421,9 @@ class AlertsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Modify flagged state  # noqa: E501
+        """Modify flagged state
 
-        Modifies one or more alerts and display updated information about these alerts.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api236_alerts_patch_with_http_info(alert, authorization, x_request_id, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modifies one or more alerts and display updated information about these alerts.
 
         :param alert: (required)
         :type alert: Alert
@@ -583,14 +569,9 @@ class AlertsApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List available customizable alert codes  # noqa: E501
+        """List available customizable alert codes
 
-        Displays a list of available customizable alert codes.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api236_alerts_rules_catalog_get_with_http_info(authorization, x_request_id, code, filter, limit, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of available customizable alert codes.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -742,14 +723,9 @@ class AlertsApi:
         x_request_id: Annotated[Optional[StrictStr], Field(description="Supplied by client during request or generated by server.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete a custom alert rule  # noqa: E501
+        """Delete a custom alert rule
 
-        Deletes a custom alert rule.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api236_alerts_rules_delete_with_http_info(code, parameter, authorization, x_request_id, async_req=True)
-        >>> result = thread.get()
+        Deletes a custom alert rule.
 
         :param code: The alert code that the rule applies to. Available alert codes for customization can be found in the alert rules catalog. (required)
         :type code: int
@@ -874,14 +850,9 @@ class AlertsApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List custom alert rules  # noqa: E501
+        """List custom alert rules
 
-        Displays a list of custom alert rules.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api236_alerts_rules_get_with_http_info(authorization, x_request_id, code, filter, limit, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of custom alert rules.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -1034,14 +1005,9 @@ class AlertsApi:
         x_request_id: Annotated[Optional[StrictStr], Field(description="Supplied by client during request or generated by server.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Modify a custom alert rule  # noqa: E501
+        """Modify a custom alert rule
 
-        Modifies a custom alert rule to a new value.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api236_alerts_rules_patch_with_http_info(code, parameter, alert_rule, authorization, x_request_id, async_req=True)
-        >>> result = thread.get()
+        Modifies a custom alert rule to a new value.
 
         :param code: The alert code that the rule applies to. Available alert codes for customization can be found in the alert rules catalog. (required)
         :type code: int
@@ -1182,14 +1148,9 @@ class AlertsApi:
         x_request_id: Annotated[Optional[StrictStr], Field(description="Supplied by client during request or generated by server.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create a custom alert rule  # noqa: E501
+        """Create a custom alert rule
 
-        Creates an alert rule with a custom value.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api236_alerts_rules_post_with_http_info(code, parameter, alert_rule, authorization, x_request_id, async_req=True)
-        >>> result = thread.get()
+        Creates an alert rule with a custom value.
 
         :param code: The alert code that the rule applies to. Available alert codes for customization can be found in the alert rules catalog. (required)
         :type code: int

@@ -29,6 +29,7 @@ from pypureclient.flashblade.FB_2_11.models.bucket_performance_get_response impo
 from pypureclient.flashblade.FB_2_11.models.bucket_post import BucketPost
 from pypureclient.flashblade.FB_2_11.models.bucket_response import BucketResponse
 from pypureclient.flashblade.FB_2_11.models.bucket_s3_specific_performance_get_resp import BucketS3SpecificPerformanceGetResp
+from typing import Optional
 from pypureclient.flashblade.FB_2_11.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_11.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_11.exceptions import (  # noqa: F401
@@ -53,14 +54,9 @@ class BucketsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE buckets  # noqa: E501
+        """DELETE buckets
 
-        Delete object store buckets.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api211_buckets_delete_with_http_info(ids, names, async_req=True)
-        >>> result = thread.get()
+        Delete object store buckets.
 
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
         :type ids: List[str]
@@ -176,14 +172,9 @@ class BucketsApi:
         total_only: Annotated[Optional[StrictBool], Field(description="Only return the total record for the specified items. The total record will be the total of all items after filtering. The `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET buckets  # noqa: E501
+        """GET buckets
 
-        List object store bucket attributes such as creation time and space usage.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api211_buckets_get_with_http_info(continuation_token, destroyed, filter, ids, limit, names, offset, sort, total_only, async_req=True)
-        >>> result = thread.get()
+        List object store bucket attributes such as creation time and space usage.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -343,14 +334,9 @@ class BucketsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH buckets  # noqa: E501
+        """PATCH buckets
 
-        Modify object store bucket attributes such as destroyed and versioning.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api211_buckets_patch_with_http_info(bucket, ids, ignore_usage, names, async_req=True)
-        >>> result = thread.get()
+        Modify object store bucket attributes such as destroyed and versioning.
 
         :param bucket: (required)
         :type bucket: BucketPatch
@@ -493,14 +479,9 @@ class BucketsApi:
         total_only: Annotated[Optional[StrictBool], Field(description="Only return the total record for the specified items. The total record will be the total of all items after filtering. The `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET buckets/performance  # noqa: E501
+        """GET buckets/performance
 
-        List performance metrics for a bucket.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api211_buckets_performance_get_with_http_info(continuation_token, end_time, filter, ids, limit, names, offset, resolution, sort, start_time, total_only, async_req=True)
-        >>> result = thread.get()
+        List performance metrics for a bucket.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -670,14 +651,9 @@ class BucketsApi:
         bucket: BucketPost,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST buckets  # noqa: E501
+        """POST buckets
 
-        Create a new object store bucket.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api211_buckets_post_with_http_info(names, bucket, async_req=True)
-        >>> result = thread.get()
+        Create a new object store bucket.
 
         :param names: A comma-separated list of resource names. (required)
         :type names: List[str]
@@ -807,14 +783,9 @@ class BucketsApi:
         total_only: Annotated[Optional[StrictBool], Field(description="Only return the total record for the specified items. The total record will be the total of all items after filtering. The `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET buckets/s3-specific-performance  # noqa: E501
+        """GET buckets/s3-specific-performance
 
-        List performance metrics specific to S3 operations for a bucket.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api211_buckets_s3_specific_performance_get_with_http_info(continuation_token, end_time, filter, ids, limit, names, offset, resolution, sort, start_time, total_only, async_req=True)
-        >>> result = thread.get()
+        List performance metrics specific to S3 operations for a bucket.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str

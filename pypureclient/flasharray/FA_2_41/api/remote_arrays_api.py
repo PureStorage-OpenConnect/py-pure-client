@@ -24,6 +24,7 @@ from pydantic import Field, StrictBool, StrictStr, conint, conlist, constr, vali
 from typing import Optional
 
 from pypureclient.flasharray.FA_2_41.models.remote_arrays_response import RemoteArraysResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_41.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_41.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_41.exceptions import (  # noqa: F401
@@ -57,14 +58,9 @@ class RemoteArraysApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List remote arrays  # noqa: E501
+        """List remote arrays
 
-        Dispalys arrays in the current fleet, as well as arrays that the current array has existing replication connections to.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api241_remote_arrays_get_with_http_info(authorization, x_request_id, continuation_token, current_fleet_only, filter, ids, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Dispalys arrays in the current fleet, as well as arrays that the current array has existing replication connections to.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str

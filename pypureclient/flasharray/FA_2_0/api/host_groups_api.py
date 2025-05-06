@@ -29,6 +29,7 @@ from pypureclient.flasharray.FA_2_0.models.host_group_response import HostGroupR
 from pypureclient.flasharray.FA_2_0.models.member_no_id_all_get_response import MemberNoIdAllGetResponse
 from pypureclient.flasharray.FA_2_0.models.resource_performance_no_id_by_array_get_response import ResourcePerformanceNoIdByArrayGetResponse
 from pypureclient.flasharray.FA_2_0.models.resource_performance_no_id_get_response import ResourcePerformanceNoIdGetResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_0.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_0.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_0.exceptions import (  # noqa: F401
@@ -54,14 +55,9 @@ class HostGroupsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete a host group  # noqa: E501
+        """Delete a host group
 
-        Delete a host group. The `names` query parameter is required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api20_host_groups_delete_with_http_info(authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Delete a host group. The `names` query parameter is required.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -181,14 +177,9 @@ class HostGroupsApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List host groups  # noqa: E501
+        """List host groups
 
-        Return a list of host groups.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api20_host_groups_get_with_http_info(authorization, x_request_id, filter, limit, names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Return a list of host groups.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -346,14 +337,9 @@ class HostGroupsApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List host groups associated with hosts  # noqa: E501
+        """List host groups associated with hosts
 
-        Returns a list of host groups that are associated with hosts.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api20_host_groups_hosts_get_with_http_info(authorization, x_request_id, filter, group_names, limit, member_names, offset, sort, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Returns a list of host groups that are associated with hosts.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -513,14 +499,9 @@ class HostGroupsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Manage a host group  # noqa: E501
+        """Manage a host group
 
-        Manage a host group. The `names` query parameter is required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api20_host_groups_patch_with_http_info(host_group, authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Manage a host group. The `names` query parameter is required.
 
         :param host_group: (required)
         :type host_group: HostGroupPatch
@@ -660,14 +641,9 @@ class HostGroupsApi:
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List host group performance data by array  # noqa: E501
+        """List host group performance data by array
 
-        Return real-time and historical performance data, real-time latency data, and average I/O size data. The data returned is for each volume that is connected to a host group on the current array and for each volume that is connected to a host group on any remote arrays that are visible to the current array. The data is displayed as a total across all host groups on each array and by individual host group.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api20_host_groups_performance_by_array_get_with_http_info(authorization, x_request_id, filter, limit, names, offset, sort, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Return real-time and historical performance data, real-time latency data, and average I/O size data. The data returned is for each volume that is connected to a host group on the current array and for each volume that is connected to a host group on any remote arrays that are visible to the current array. The data is displayed as a total across all host groups on each array and by individual host group.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -831,14 +807,9 @@ class HostGroupsApi:
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List host group performance data  # noqa: E501
+        """List host group performance data
 
-        Return real-time and historical performance data, real-time latency data, and average I/O sizes across all volumes, displayed both by host group and as a total across all host groups.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api20_host_groups_performance_get_with_http_info(authorization, x_request_id, filter, limit, names, offset, sort, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Return real-time and historical performance data, real-time latency data, and average I/O sizes across all volumes, displayed both by host group and as a total across all host groups.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -996,14 +967,9 @@ class HostGroupsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create a host group  # noqa: E501
+        """Create a host group
 
-        Create a host group. The `names` query parameter is required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api20_host_groups_post_with_http_info(authorization, x_request_id, names, async_req=True)
-        >>> result = thread.get()
+        Create a host group. The `names` query parameter is required.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str

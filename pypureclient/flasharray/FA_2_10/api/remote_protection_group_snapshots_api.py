@@ -28,6 +28,7 @@ from pypureclient.flasharray.FA_2_10.models.remote_protection_group_snapshot_get
 from pypureclient.flasharray.FA_2_10.models.remote_protection_group_snapshot_post import RemoteProtectionGroupSnapshotPost
 from pypureclient.flasharray.FA_2_10.models.remote_protection_group_snapshot_response import RemoteProtectionGroupSnapshotResponse
 from pypureclient.flasharray.FA_2_10.models.remote_protection_group_snapshot_transfer_get_response import RemoteProtectionGroupSnapshotTransferGetResponse
+from typing import Optional
 from pypureclient.flasharray.FA_2_10.api_client import ApiClient as _TransportApiClient
 from pypureclient.flasharray.FA_2_10.api_response import ApiResponse
 from pypureclient.flasharray.FA_2_10.exceptions import (  # noqa: F401
@@ -54,14 +55,9 @@ class RemoteProtectionGroupSnapshotsApi:
         on: Annotated[Optional[StrictStr], Field(description="Performs the operation on the target name specified. For example, `targetName01`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Delete a remote protection group snapshot  # noqa: E501
+        """Delete a remote protection group snapshot
 
-        Deletes a remote protection group snapshot that has been destroyed and is pending eradication. Eradicated remote protection group snapshots cannot be recovered. Remote protection group snapshots are destroyed using the `PATCH` method. The `names` parameter represents the name of the protection group snapshot. The `on` parameter represents the name of the offload target. The `names` and `on` parameters are required and must be used together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api210_remote_protection_group_snapshots_delete_with_http_info(authorization, x_request_id, names, on, async_req=True)
-        >>> result = thread.get()
+        Deletes a remote protection group snapshot that has been destroyed and is pending eradication. Eradicated remote protection group snapshots cannot be recovered. Remote protection group snapshots are destroyed using the `PATCH` method. The `names` parameter represents the name of the protection group snapshot. The `on` parameter represents the name of the offload target. The `names` and `on` parameters are required and must be used together.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -190,14 +186,9 @@ class RemoteProtectionGroupSnapshotsApi:
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List remote protection group snapshots  # noqa: E501
+        """List remote protection group snapshots
 
-        Displays a list of remote protection group snapshots.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api210_remote_protection_group_snapshots_get_with_http_info(authorization, x_request_id, destroyed, filter, limit, names, offset, on, sort, source_names, total_item_count, async_req=True)
-        >>> result = thread.get()
+        Displays a list of remote protection group snapshots.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -371,14 +362,9 @@ class RemoteProtectionGroupSnapshotsApi:
         on: Annotated[Optional[StrictStr], Field(description="Performs the operation on the target name specified. For example, `targetName01`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Modify a remote protection group snapshot  # noqa: E501
+        """Modify a remote protection group snapshot
 
-        Modifies a remote protection group snapshot, removing it from the offload target and destroying the snapshot. The `on` parameter represents the name of the offload target. The `ids` or `names` parameter and the `on` parameter are required and must be used together.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api210_remote_protection_group_snapshots_patch_with_http_info(remote_protection_group_snapshot, authorization, x_request_id, names, on, async_req=True)
-        >>> result = thread.get()
+        Modifies a remote protection group snapshot, removing it from the offload target and destroying the snapshot. The `on` parameter represents the name of the offload target. The `ids` or `names` parameter and the `on` parameter are required and must be used together.
 
         :param remote_protection_group_snapshot: (required)
         :type remote_protection_group_snapshot: DestroyedPatchPost
@@ -526,14 +512,9 @@ class RemoteProtectionGroupSnapshotsApi:
         remote_protection_group_snapshot: Optional[RemoteProtectionGroupSnapshotPost] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """Create remote protection group snapshot  # noqa: E501
+        """Create remote protection group snapshot
 
-        Creates remote protection group snapshots.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api210_remote_protection_group_snapshots_post_with_http_info(authorization, x_request_id, apply_retention, convert_source_to_baseline, for_replication, names, on, replicate, replicate_now, source_names, remote_protection_group_snapshot, async_req=True)
-        >>> result = thread.get()
+        Creates remote protection group snapshots.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str
@@ -719,14 +700,9 @@ class RemoteProtectionGroupSnapshotsApi:
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """List remote protection groups with transfer statistics  # noqa: E501
+        """List remote protection groups with transfer statistics
 
-        Returns a list of remote protection groups and their transfer statistics.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api210_remote_protection_group_snapshots_transfer_get_with_http_info(authorization, x_request_id, destroyed, filter, limit, names, offset, on, sort, source_names, total_item_count, total_only, async_req=True)
-        >>> result = thread.get()
+        Returns a list of remote protection groups and their transfer statistics.
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str

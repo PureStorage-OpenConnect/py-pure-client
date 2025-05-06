@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictFloat, StrictInt
 
 class NetworkInterfacesConnectorsSettingRoceEcn(BaseModel):
     """
-    Default ECN(Explicit Network Notification) configuration for network connectors.  # noqa: E501
+    Default ECN(Explicit Network Notification) configuration for network connectors.
     """
     marking_probability: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The ECN marking probability when min ECN marked threshold is reached.")
     max_ecn_marked_threshold: Optional[StrictInt] = Field(default=None, description="The maximum threshold value in bytes at which the packets start being marked with ECN at the highest probability or dropped.")

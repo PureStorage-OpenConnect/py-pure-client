@@ -26,7 +26,7 @@ from pypureclient.flashblade.FB_2_17.models.network_interfaces_connectors_settin
 
 class NetworkInterfacesConnectorsSettingRoce(BaseModel):
     """
-    RoCE(RDMA over Converged Ethernet) configuration for network connectors.  # noqa: E501
+    RoCE(RDMA over Converged Ethernet) configuration for network connectors.
     """
     default_ecn: Optional[NetworkInterfacesConnectorsSettingRoceEcn] = Field(default=None, description="The default ECN(Explicit Congestion Notification) setting for network connectors.")
     default_pfc: Optional[NetworkInterfacesConnectorsSettingRocePfc] = Field(default=None, description="The default PFC(Priority Flow Control) setting for network connectors.")

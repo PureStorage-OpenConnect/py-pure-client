@@ -26,6 +26,7 @@ from typing import Optional
 from pypureclient.flashblade.FB_2_1.models.subnet import Subnet
 from pypureclient.flashblade.FB_2_1.models.subnet_get_response import SubnetGetResponse
 from pypureclient.flashblade.FB_2_1.models.subnet_response import SubnetResponse
+from typing import Optional
 from pypureclient.flashblade.FB_2_1.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_1.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_1.exceptions import (  # noqa: F401
@@ -50,14 +51,9 @@ class SubnetsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE subnets  # noqa: E501
+        """DELETE subnets
 
-        Remove an array subnet.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api21_subnets_delete_with_http_info(ids, names, async_req=True)
-        >>> result = thread.get()
+        Remove an array subnet.
 
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
         :type ids: List[str]
@@ -171,14 +167,9 @@ class SubnetsApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET subnets  # noqa: E501
+        """GET subnets
 
-        List the array’s subnets.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api21_subnets_get_with_http_info(continuation_token, filter, ids, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        List the array’s subnets.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -325,14 +316,9 @@ class SubnetsApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH subnets  # noqa: E501
+        """PATCH subnets
 
-        Modify array subnet attributes.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api21_subnets_patch_with_http_info(subnet, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modify array subnet attributes.
 
         :param subnet: (required)
         :type subnet: Subnet
@@ -460,14 +446,9 @@ class SubnetsApi:
         subnet: Subnet,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST subnets  # noqa: E501
+        """POST subnets
 
-        Create an array subnet.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api21_subnets_post_with_http_info(names, subnet, async_req=True)
-        >>> result = thread.get()
+        Create an array subnet.
 
         :param names: A comma-separated list of resource names. (required)
         :type names: List[str]

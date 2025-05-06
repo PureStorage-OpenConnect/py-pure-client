@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictStr
 
 class PolicynfspostPolicyMapping(BaseModel):
     """
-    If set specifies the initial mapping of the policy upon its creation across a pod replica link. Policy being created must be in a source pod of a replica-link.  # noqa: E501
+    If set specifies the initial mapping of the policy upon its creation across a pod replica link. Policy being created must be in a source pod of a replica-link.
     """
     mapping: Optional[StrictStr] = Field(default=None, description="The mapping of this policy. Valid values are `connected` and `disconnected`.")
     __properties = ["mapping"]

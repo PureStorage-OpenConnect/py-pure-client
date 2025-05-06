@@ -27,6 +27,7 @@ from pypureclient.flashblade.FB_2_10.models.support import Support
 from pypureclient.flashblade.FB_2_10.models.support_get_response import SupportGetResponse
 from pypureclient.flashblade.FB_2_10.models.support_response import SupportResponse
 from pypureclient.flashblade.FB_2_10.models.test_result_get_response import TestResultGetResponse
+from typing import Optional
 from pypureclient.flashblade.FB_2_10.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_10.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_10.exceptions import (  # noqa: F401
@@ -51,14 +52,9 @@ class SupportApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET support  # noqa: E501
+        """GET support
 
-        List Phone Home and Remote Assistance settings.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api210_support_get_with_http_info(ids, names, async_req=True)
-        >>> result = thread.get()
+        List Phone Home and Remote Assistance settings.
 
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
         :type ids: List[str]
@@ -172,14 +168,9 @@ class SupportApi:
         support: Support,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH support  # noqa: E501
+        """PATCH support
 
-        Modify Phone Home and Remote Assistance settings.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api210_support_patch_with_http_info(support, async_req=True)
-        >>> result = thread.get()
+        Modify Phone Home and Remote Assistance settings.
 
         :param support: (required)
         :type support: Support
@@ -294,14 +285,9 @@ class SupportApi:
         test_type: Annotated[Optional[StrictStr], Field(description="Specify the type of test. Valid values are `all`, `phonehome` and `remote-assist`. If not specified, defaults to `all`.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET support-test  # noqa: E501
+        """GET support-test
 
-        Test if the Phone Home and Remote Assistance settings are functioning properly.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api210_support_test_get_with_http_info(filter, sort, test_type, async_req=True)
-        >>> result = thread.get()
+        Test if the Phone Home and Remote Assistance settings are functioning properly.
 
         :param filter: Exclude resources that don't match the specified criteria.
         :type filter: str

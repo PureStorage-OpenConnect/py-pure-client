@@ -30,6 +30,7 @@ from pypureclient.flashblade.FB_2_13.models.certificate_patch import Certificate
 from pypureclient.flashblade.FB_2_13.models.certificate_post import CertificatePost
 from pypureclient.flashblade.FB_2_13.models.certificate_response import CertificateResponse
 from pypureclient.flashblade.FB_2_13.models.certificate_use_get_response import CertificateUseGetResponse
+from typing import Optional
 from pypureclient.flashblade.FB_2_13.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_13.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_13.exceptions import (  # noqa: F401
@@ -56,14 +57,9 @@ class CertificatesApi:
         certificate_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of certificate names. If there is not at least one resource that matches each of the elements of `certificate_names`, then an error is returned. This cannot be provided in conjunction with the `certificate_ids` parameter.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE certificates/certificate-groups  # noqa: E501
+        """DELETE certificates/certificate-groups
 
-        Remove one or more certificates from one or more certificate groups.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api213_certificates_certificate_groups_delete_with_http_info(certificate_group_ids, certificate_group_names, certificate_ids, certificate_names, async_req=True)
-        >>> result = thread.get()
+        Remove one or more certificates from one or more certificate groups.
 
         :param certificate_group_ids: A comma-separated list of certificate group ids. If there is not at least one resource that matches each of the elements of `certificate_group_ids`, then an error is returned. This cannot be provided in conjunction with the `certificate_group_names` parameter.
         :type certificate_group_ids: List[str]
@@ -193,14 +189,9 @@ class CertificatesApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET certificates/certificate-groups  # noqa: E501
+        """GET certificates/certificate-groups
 
-        List membership associations between groups and certificates.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api213_certificates_certificate_groups_get_with_http_info(certificate_group_ids, certificate_group_names, certificate_ids, certificate_names, continuation_token, filter, limit, offset, sort, async_req=True)
-        >>> result = thread.get()
+        List membership associations between groups and certificates.
 
         :param certificate_group_ids: A comma-separated list of certificate group ids. If there is not at least one resource that matches each of the elements of `certificate_group_ids`, then an error is returned. This cannot be provided in conjunction with the `certificate_group_names` parameter.
         :type certificate_group_ids: List[str]
@@ -362,14 +353,9 @@ class CertificatesApi:
         certificate_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of certificate names. If there is not at least one resource that matches each of the elements of `certificate_names`, then an error is returned. This cannot be provided in conjunction with the `certificate_ids` parameter.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST certificates/certificate-groups  # noqa: E501
+        """POST certificates/certificate-groups
 
-        Add one or more certificates to one or more certificate groups.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api213_certificates_certificate_groups_post_with_http_info(certificate_group_ids, certificate_group_names, certificate_ids, certificate_names, async_req=True)
-        >>> result = thread.get()
+        Add one or more certificates to one or more certificate groups.
 
         :param certificate_group_ids: A comma-separated list of certificate group ids. If there is not at least one resource that matches each of the elements of `certificate_group_ids`, then an error is returned. This cannot be provided in conjunction with the `certificate_group_names` parameter.
         :type certificate_group_ids: List[str]
@@ -498,14 +484,9 @@ class CertificatesApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE certificates  # noqa: E501
+        """DELETE certificates
 
-        Delete a CA certificate from the array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api213_certificates_delete_with_http_info(ids, names, async_req=True)
-        >>> result = thread.get()
+        Delete a CA certificate from the array.
 
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
         :type ids: List[str]
@@ -619,14 +600,9 @@ class CertificatesApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET certificates  # noqa: E501
+        """GET certificates
 
-        List array certificates and their attributes.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api213_certificates_get_with_http_info(continuation_token, filter, ids, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        List array certificates and their attributes.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
@@ -773,14 +749,9 @@ class CertificatesApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH certificates  # noqa: E501
+        """PATCH certificates
 
-        Modify SSL certificate attributes such as passphrases and intermediate certificates.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api213_certificates_patch_with_http_info(certificate, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modify SSL certificate attributes such as passphrases and intermediate certificates.
 
         :param certificate: (required)
         :type certificate: CertificatePatch
@@ -908,14 +879,9 @@ class CertificatesApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST certificates  # noqa: E501
+        """POST certificates
 
-        Upload a CA certificate to the array.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api213_certificates_post_with_http_info(certificate, names, async_req=True)
-        >>> result = thread.get()
+        Upload a CA certificate to the array.
 
         :param certificate: (required)
         :type certificate: CertificatePost
@@ -1041,14 +1007,9 @@ class CertificatesApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET certificates/uses  # noqa: E501
+        """GET certificates/uses
 
-        List how certificates are being used and by what.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api213_certificates_uses_get_with_http_info(continuation_token, filter, ids, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        List how certificates are being used and by what.
 
         :param continuation_token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :type continuation_token: str

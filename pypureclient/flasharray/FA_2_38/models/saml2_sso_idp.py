@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictBool, StrictStr
 
 class Saml2SsoIdp(BaseModel):
     """
-    Properties specific to the identity provider.  # noqa: E501
+    Properties specific to the identity provider.
     """
     encrypt_assertion_enabled: Optional[StrictBool] = Field(default=None, description="If set to `true`, SAML assertions will be encrypted by the identity provider.")
     entity_id: Optional[StrictStr] = Field(default=None, description="A globally unique name for the identity provider.")

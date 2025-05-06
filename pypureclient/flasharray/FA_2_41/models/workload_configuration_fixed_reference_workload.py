@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictStr
 
 class WorkloadConfigurationFixedReferenceWorkload(BaseModel):
     """
-    A reference to the workload that is managing this resource. The `name` parameter might show as an empty string briefly after controller failover.  # noqa: E501
+    A reference to the workload that is managing this resource. The `name` parameter might show as an empty string briefly after controller failover.
     """
     id: Optional[StrictStr] = Field(default=None, description="A globally unique, system-generated ID. The ID cannot be modified.")
     name: Optional[StrictStr] = Field(default=None, description="The resource name, such as volume name, pod name, snapshot name, and so on.")

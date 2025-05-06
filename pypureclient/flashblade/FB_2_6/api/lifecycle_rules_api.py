@@ -27,6 +27,7 @@ from pypureclient.flashblade.FB_2_6.models.lifecycle_rule_get_response import Li
 from pypureclient.flashblade.FB_2_6.models.lifecycle_rule_patch import LifecycleRulePatch
 from pypureclient.flashblade.FB_2_6.models.lifecycle_rule_post import LifecycleRulePost
 from pypureclient.flashblade.FB_2_6.models.lifecycle_rule_response import LifecycleRuleResponse
+from typing import Optional
 from pypureclient.flashblade.FB_2_6.api_client import ApiClient as _TransportApiClient
 from pypureclient.flashblade.FB_2_6.api_response import ApiResponse
 from pypureclient.flashblade.FB_2_6.exceptions import (  # noqa: F401
@@ -53,14 +54,9 @@ class LifecycleRulesApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """DELETE lifecycle-rules  # noqa: E501
+        """DELETE lifecycle-rules
 
-        Deletes individual lifecycle rules by name or id, or deletes all rules for a bucket. If `ids` is specified, `bucket_names` or `bucket_ids` is also required. If `bucket_names` or `bucket_ids` are specified without `ids`, delete all the rules for the bucket.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api26_lifecycle_rules_delete_with_http_info(bucket_ids, bucket_names, ids, names, async_req=True)
-        >>> result = thread.get()
+        Deletes individual lifecycle rules by name or id, or deletes all rules for a bucket. If `ids` is specified, `bucket_names` or `bucket_ids` is also required. If `bucket_names` or `bucket_ids` are specified without `ids`, delete all the rules for the bucket.
 
         :param bucket_ids: A comma-separated list of bucket IDs. If after filtering, there is not at least one resource that matches each of the elements of `bucket_ids`, then an error is returned. This cannot be provided together with the `bucket_names` query parameter. This can be provided with the `ids` query parameter but not with `names`.
         :type bucket_ids: List[str]
@@ -190,14 +186,9 @@ class LifecycleRulesApi:
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """GET lifecycle-rules  # noqa: E501
+        """GET lifecycle-rules
 
-        Returns a list of lifecycle rules. If `names` is specified, list the individual rules. If `ids` is specified, `bucket_names` or `bucket_ids` is also required. If `bucket_names` or `bucket_ids` are specified without `ids`, list all the rules for the bucket.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api26_lifecycle_rules_get_with_http_info(bucket_ids, bucket_names, continuation_token, filter, ids, limit, names, offset, sort, async_req=True)
-        >>> result = thread.get()
+        Returns a list of lifecycle rules. If `names` is specified, list the individual rules. If `ids` is specified, `bucket_names` or `bucket_ids` is also required. If `bucket_names` or `bucket_ids` are specified without `ids`, list all the rules for the bucket.
 
         :param bucket_ids: A comma-separated list of bucket IDs. If after filtering, there is not at least one resource that matches each of the elements of `bucket_ids`, then an error is returned. This cannot be provided together with the `bucket_names` query parameter. This can be provided with the `ids` query parameter but not with `names`.
         :type bucket_ids: List[str]
@@ -361,14 +352,9 @@ class LifecycleRulesApi:
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """PATCH lifecycle-rules  # noqa: E501
+        """PATCH lifecycle-rules
 
-        Modify an existing lifecycle rule by name or id. If `ids` is specified, `bucket_names` or `bucket_ids` is also required.  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api26_lifecycle_rules_patch_with_http_info(lifecycle, bucket_ids, bucket_names, confirm_date, ids, names, async_req=True)
-        >>> result = thread.get()
+        Modify an existing lifecycle rule by name or id. If `ids` is specified, `bucket_names` or `bucket_ids` is also required.
 
         :param lifecycle: (required)
         :type lifecycle: LifecycleRulePatch
@@ -516,14 +502,9 @@ class LifecycleRulesApi:
         confirm_date: Annotated[Optional[StrictBool], Field(description="If set to `true`, then confirm the date of `keep_current_version_until` is correct.")] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
-        """POST lifecycle-rules  # noqa: E501
+        """POST lifecycle-rules
 
-        Creates a lifecycle rule. `bucket` and `keep_previous_version_for` are required. If `rule_id` is not specified, it will be automatically generated in the format \"fbRuleIdX\".  # noqa: E501
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-
-        >>> thread = api.api26_lifecycle_rules_post_with_http_info(rule, confirm_date, async_req=True)
-        >>> result = thread.get()
+        Creates a lifecycle rule. `bucket` and `keep_previous_version_for` are required. If `rule_id` is not specified, it will be automatically generated in the format \"fbRuleIdX\".
 
         :param rule: (required)
         :type rule: LifecycleRulePost

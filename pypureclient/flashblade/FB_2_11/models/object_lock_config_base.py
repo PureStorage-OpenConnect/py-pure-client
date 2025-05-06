@@ -24,7 +24,7 @@ from pydantic import BaseModel, Field, StrictBool, StrictStr
 
 class ObjectLockConfigBase(BaseModel):
     """
-    Configuration settings related to object lock.  # noqa: E501
+    Configuration settings related to object lock.
     """
     default_retention_mode: Optional[StrictStr] = Field(default=None, description="The retention mode used to apply locks on new objects if none is specified by the S3 client. Valid values include `compliance` and `governance`. If there is no default, this value is `null`. Use \"\" to clear.")
     enabled: Optional[StrictBool] = Field(default=None, description="If set to `true`, then S3 APIs relating to object lock may be used.")

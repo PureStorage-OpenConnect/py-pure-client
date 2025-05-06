@@ -25,7 +25,7 @@ from pypureclient.pure1.Pure1_1_0.models.metric_availability import MetricAvaila
 
 class Metric(BaseModel):
     """
-    A type of measurement recorded on a resource.  # noqa: E501
+    A type of measurement recorded on a resource.
     """
     as_of: Optional[StrictInt] = Field(default=None, alias="_as_of", description="The freshness of the data (timestamp in millis since epoch).")
     id: Optional[StrictStr] = Field(default=None, description="A non-modifiable, globally unique ID chosen by the system.")
