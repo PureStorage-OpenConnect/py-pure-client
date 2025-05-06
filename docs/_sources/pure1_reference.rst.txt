@@ -8,30 +8,48 @@ Client
 
 Pure1 REST Client Factory Method
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Importable as
+
+
+.. code-block:: python
+
+
+  from pypureclient.pure1 import Client
+
+
 .. autofunction:: pypureclient.pure1.client.Client
-   Importable as
-   .. code-block:: python
-      from pypureclient.pure1 import Client
+.. module:: pypureclient.pure1
 
 Pure1 REST 1.0 Client
 ~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.pure1.Pure1_1_0
 .. autoclass:: pypureclient.pure1.Pure1_1_0.client.Client
 
 Pure1 REST 1.1 Client
 ~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.pure1.Pure1_1_1
 .. autoclass:: pypureclient.pure1.Pure1_1_1.client.Client
 
 Pure1 REST 1.2 Client
 ~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.pure1.Pure1_1_2
 .. autoclass:: pypureclient.pure1.Pure1_1_2.client.Client
 
 Pure1 REST 1.3 Client
 ~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.pure1.Pure1_1_3
 .. autoclass:: pypureclient.pure1.Pure1_1_3.client.Client
 
 Pure1 REST 1.4 Client
 ~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.pure1.Pure1_1_4
 .. autoclass:: pypureclient.pure1.Pure1_1_4.client.Client
+
+Pure1 REST 1.5 Client
+~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.pure1.Pure1_1_5
+.. autoclass:: pypureclient.pure1.Pure1_1_5.client.Client
    :members:
 
 Properties
@@ -73,377 +91,1826 @@ ErrorResponse
 Models
 ------
 
+ReferenceType
+~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.ReferenceType
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
 Alert
 ~~~~~
-.. autoclass:: pypureclient.pure1.Alert
-   :members:
+.. autopydantic_model:: pypureclient.pure1.Alert
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+AlertsGetResponse
+~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.AlertsGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+AlertsResponse
+~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.AlertsResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 Array
 ~~~~~
-.. autoclass:: pypureclient.pure1.Array
-   :members:
+.. autopydantic_model:: pypureclient.pure1.Array
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+ArrayGetResponse
+~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.ArrayGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+ArrayResponse
+~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.ArrayResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+Arrays
+~~~~~~
+.. autopydantic_model:: pypureclient.pure1.Arrays
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+ArraysBuiltIn
+~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.ArraysBuiltIn
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+ArraysResource
+~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.ArraysResource
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 AssetAddress
 ~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.AssetAddress
-   :members:
+.. autopydantic_model:: pypureclient.pure1.AssetAddress
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 AssetOrg
 ~~~~~~~~
-.. autoclass:: pypureclient.pure1.AssetOrg
-   :members:
+.. autopydantic_model:: pypureclient.pure1.AssetOrg
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 AssetSpace
 ~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.AssetSpace
-   :members:
+.. autopydantic_model:: pypureclient.pure1.AssetSpace
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 AssetSpaceTotalUsedRatio
 ~~~~~~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.AssetSpaceTotalUsedRatio
-   :members:
+.. autopydantic_model:: pypureclient.pure1.AssetSpaceTotalUsedRatio
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 AssetUpgradeDetails
 ~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.AssetUpgradeDetails
-   :members:
+.. autopydantic_model:: pypureclient.pure1.AssetUpgradeDetails
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 Audit
 ~~~~~
-.. autoclass:: pypureclient.pure1.Audit
-   :members:
+.. autopydantic_model:: pypureclient.pure1.Audit
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+AuditsGetResponse
+~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.AuditsGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+AuditsResponse
+~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.AuditsResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 BaseAddress
 ~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.BaseAddress
-   :members:
+.. autopydantic_model:: pypureclient.pure1.BaseAddress
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 Blade
 ~~~~~
-.. autoclass:: pypureclient.pure1.Blade
-   :members:
+.. autopydantic_model:: pypureclient.pure1.Blade
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 BladeArrayStatus
 ~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.BladeArrayStatus
-   :members:
+.. autopydantic_model:: pypureclient.pure1.BladeArrayStatus
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+BladeGetResponse
+~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.BladeGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+BladeResponse
+~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.BladeResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 Bucket
 ~~~~~~
-.. autoclass:: pypureclient.pure1.Bucket
-   :members:
+.. autopydantic_model:: pypureclient.pure1.Bucket
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+BucketGetResponse
+~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.BucketGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 BucketReplicaLink
 ~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.BucketReplicaLink
-   :members:
+.. autopydantic_model:: pypureclient.pure1.BucketReplicaLink
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+BucketReplicaLinkGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.BucketReplicaLinkGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+BucketReplicaLinkResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.BucketReplicaLinkResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+BucketResponse
+~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.BucketResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+BuiltInAsOf
+~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.BuiltInAsOf
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 Controller
 ~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.Controller
-   :members:
+.. autopydantic_model:: pypureclient.pure1.Controller
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+ControllerGetResponse
+~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.ControllerGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+ControllerResponse
+~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.ControllerResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 CurrentMetric
 ~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.CurrentMetric
-   :members:
-
-DefaultDetails
-~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.DefaultDetails
-   :members:
+.. autopydantic_model:: pypureclient.pure1.CurrentMetric
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 Directory
 ~~~~~~~~~
-.. autoclass:: pypureclient.pure1.Directory
-   :members:
+.. autopydantic_model:: pypureclient.pure1.Directory
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+DirectoryGetResponse
+~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.DirectoryGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+DirectoryResponse
+~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.DirectoryResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 Drive
 ~~~~~
-.. autoclass:: pypureclient.pure1.Drive
-   :members:
+.. autopydantic_model:: pypureclient.pure1.Drive
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 DriveArrayStatus
 ~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.DriveArrayStatus
-   :members:
+.. autopydantic_model:: pypureclient.pure1.DriveArrayStatus
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+DriveGetResponse
+~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.DriveGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+DriveResponse
+~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.DriveResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 Error
 ~~~~~
-.. autoclass:: pypureclient.pure1.Error
-   :members:
+.. autopydantic_model:: pypureclient.pure1.Error
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 ErrorErrors
 ~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.ErrorErrors
-   :members:
+.. autopydantic_model:: pypureclient.pure1.ErrorErrors
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 ErrorNoContext
 ~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.ErrorNoContext
-   :members:
+.. autopydantic_model:: pypureclient.pure1.ErrorNoContext
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 EvergreenForeverAndFoundationDetails
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.EvergreenForeverAndFoundationDetails
-   :members:
+.. autopydantic_model:: pypureclient.pure1.EvergreenForeverAndFoundationDetails
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 FileSystem
 ~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.FileSystem
-   :members:
+.. autopydantic_model:: pypureclient.pure1.FileSystem
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+FileSystemGetResponse
+~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.FileSystemGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 FileSystemReplicaLink
 ~~~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.FileSystemReplicaLink
-   :members:
+.. autopydantic_model:: pypureclient.pure1.FileSystemReplicaLink
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+FileSystemReplicaLinkGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.FileSystemReplicaLinkGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+FileSystemReplicaLinkResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.FileSystemReplicaLinkResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+FileSystemResponse
+~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.FileSystemResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 FileSystemSnapshot
 ~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.FileSystemSnapshot
-   :members:
+.. autopydantic_model:: pypureclient.pure1.FileSystemSnapshot
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+FileSystemSnapshotGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.FileSystemSnapshotGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+FileSystemSnapshotResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.FileSystemSnapshotResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 FixedReference
 ~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.FixedReference
-   :members:
+.. autopydantic_model:: pypureclient.pure1.FixedReference
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 FixedReferenceFqdn
 ~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.FixedReferenceFqdn
-   :members:
+.. autopydantic_model:: pypureclient.pure1.FixedReferenceFqdn
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 Geolocation
 ~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.Geolocation
-   :members:
+.. autopydantic_model:: pypureclient.pure1.Geolocation
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 Hardware
 ~~~~~~~~
-.. autoclass:: pypureclient.pure1.Hardware
-   :members:
+.. autopydantic_model:: pypureclient.pure1.Hardware
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 HardwareConnector
 ~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.HardwareConnector
-   :members:
+.. autopydantic_model:: pypureclient.pure1.HardwareConnector
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+HardwareConnectorGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.HardwareConnectorGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+HardwareConnectorResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.HardwareConnectorResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+HardwareGetResponse
+~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.HardwareGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+HardwareResponse
+~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.HardwareResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 Http
 ~~~~
-.. autoclass:: pypureclient.pure1.Http
-   :members:
+.. autopydantic_model:: pypureclient.pure1.Http
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 InstallAddress
 ~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.InstallAddress
-   :members:
+.. autopydantic_model:: pypureclient.pure1.InstallAddress
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 Invoice
 ~~~~~~~
-.. autoclass:: pypureclient.pure1.Invoice
-   :members:
+.. autopydantic_model:: pypureclient.pure1.Invoice
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+InvoiceGetResponse
+~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.InvoiceGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 InvoiceLine
 ~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.InvoiceLine
-   :members:
+.. autopydantic_model:: pypureclient.pure1.InvoiceLine
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 InvoiceLineComponent
 ~~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.InvoiceLineComponent
-   :members:
+.. autopydantic_model:: pypureclient.pure1.InvoiceLineComponent
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+InvoiceResponse
+~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.InvoiceResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 LicenseResourceReference
 ~~~~~~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.LicenseResourceReference
-   :members:
+.. autopydantic_model:: pypureclient.pure1.LicenseResourceReference
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 MarketplacePartner
 ~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.MarketplacePartner
-   :members:
+.. autopydantic_model:: pypureclient.pure1.MarketplacePartner
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 Metric
 ~~~~~~
-.. autoclass:: pypureclient.pure1.Metric
-   :members:
+.. autopydantic_model:: pypureclient.pure1.Metric
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 MetricAvailability
 ~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.MetricAvailability
-   :members:
+.. autopydantic_model:: pypureclient.pure1.MetricAvailability
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+MetricGetResponse
+~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.MetricGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 MetricHistory
 ~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.MetricHistory
-   :members:
+.. autopydantic_model:: pypureclient.pure1.MetricHistory
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+MetricHistoryGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.MetricHistoryGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+MetricHistoryResponse
+~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.MetricHistoryResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+MetricResponse
+~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.MetricResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 NetworkInterface
 ~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.NetworkInterface
-   :members:
+.. autopydantic_model:: pypureclient.pure1.NetworkInterface
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+NetworkInterfaceGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.NetworkInterfaceGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+NetworkInterfaceResponse
+~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.NetworkInterfaceResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 Nfs
 ~~~
-.. autoclass:: pypureclient.pure1.Nfs
-   :members:
+.. autopydantic_model:: pypureclient.pure1.Nfs
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+Oauth210TokenPost400Response
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.Oauth210TokenPost400Response
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+Oauth210TokenPost401Response
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.Oauth210TokenPost401Response
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+OauthTokenResponse
+~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.OauthTokenResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 ObjectStoreAccount
 ~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.ObjectStoreAccount
-   :members:
+.. autopydantic_model:: pypureclient.pure1.ObjectStoreAccount
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+ObjectStoreAccountGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.ObjectStoreAccountGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+ObjectStoreAccountResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.ObjectStoreAccountResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PageInfo
+~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.PageInfo
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 Pod
 ~~~
-.. autoclass:: pypureclient.pure1.Pod
-   :members:
+.. autopydantic_model:: pypureclient.pure1.Pod
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PodGetResponse
+~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.PodGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 PodReplicaLink
 ~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.PodReplicaLink
-   :members:
+.. autopydantic_model:: pypureclient.pure1.PodReplicaLink
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PodReplicaLinkGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.PodReplicaLinkGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PodReplicaLinkResponse
+~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.PodReplicaLinkResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PodResponse
+~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.PodResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 Policy
 ~~~~~~
-.. autoclass:: pypureclient.pure1.Policy
-   :members:
+.. autopydantic_model:: pypureclient.pure1.Policy
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PolicyGetResponse
+~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.PolicyGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 PolicyMember
 ~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.PolicyMember
-   :members:
+.. autopydantic_model:: pypureclient.pure1.PolicyMember
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PolicyMembersGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.PolicyMembersGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PolicyMembersResponse
+~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.PolicyMembersResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PolicyResponse
+~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.PolicyResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 PolicyRule
 ~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.PolicyRule
-   :members:
+.. autopydantic_model:: pypureclient.pure1.PolicyRule
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 Port
 ~~~~
-.. autoclass:: pypureclient.pure1.Port
-   :members:
+.. autopydantic_model:: pypureclient.pure1.Port
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PortGetResponse
+~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.PortGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PortResponse
+~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.PortResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 ReplicaLink
 ~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.ReplicaLink
-   :members:
+.. autopydantic_model:: pypureclient.pure1.ReplicaLink
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 Resource
 ~~~~~~~~
-.. autoclass:: pypureclient.pure1.Resource
-   :members:
+.. autopydantic_model:: pypureclient.pure1.Resource
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 ResourceNoName
 ~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.ResourceNoName
-   :members:
+.. autopydantic_model:: pypureclient.pure1.ResourceNoName
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 ResourceWithLocation
 ~~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.ResourceWithLocation
-   :members:
+.. autopydantic_model:: pypureclient.pure1.ResourceWithLocation
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 ResourceWithLocations
 ~~~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.ResourceWithLocations
-   :members:
+.. autopydantic_model:: pypureclient.pure1.ResourceWithLocations
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 Smb
 ~~~
-.. autoclass:: pypureclient.pure1.Smb
-   :members:
+.. autopydantic_model:: pypureclient.pure1.Smb
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 Subscription
 ~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.Subscription
-   :members:
+.. autopydantic_model:: pypureclient.pure1.Subscription
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+SubscriptionAllOfServiceDetails
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.SubscriptionAllOfServiceDetails
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 SubscriptionAsset
 ~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.SubscriptionAsset
-   :members:
+.. autopydantic_model:: pypureclient.pure1.SubscriptionAsset
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 SubscriptionAssetArray
 ~~~~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.SubscriptionAssetArray
-   :members:
+.. autopydantic_model:: pypureclient.pure1.SubscriptionAssetArray
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 SubscriptionAssetArrayAdvancedSpace
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.SubscriptionAssetArrayAdvancedSpace
-   :members:
+.. autopydantic_model:: pypureclient.pure1.SubscriptionAssetArrayAdvancedSpace
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+SubscriptionAssetGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.SubscriptionAssetGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+SubscriptionAssetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.SubscriptionAssetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+SubscriptionGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.SubscriptionGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 SubscriptionLicense
 ~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.SubscriptionLicense
-   :members:
+.. autopydantic_model:: pypureclient.pure1.SubscriptionLicense
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 SubscriptionLicenseAddOnSla
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.SubscriptionLicenseAddOnSla
-   :members:
+.. autopydantic_model:: pypureclient.pure1.SubscriptionLicenseAddOnSla
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+SubscriptionLicenseGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.SubscriptionLicenseGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 SubscriptionLicensePreRatio
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.SubscriptionLicensePreRatio
-   :members:
+.. autopydantic_model:: pypureclient.pure1.SubscriptionLicensePreRatio
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+SubscriptionLicenseResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.SubscriptionLicenseResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+SubscriptionResponse
+~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.SubscriptionResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 SupportContract
 ~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.SupportContract
-   :members:
+.. autopydantic_model:: pypureclient.pure1.SupportContract
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+SupportContractGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.SupportContractGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+SupportContractResponse
+~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.SupportContractResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 SustainabilityArray
 ~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.SustainabilityArray
-   :members:
+.. autopydantic_model:: pypureclient.pure1.SustainabilityArray
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+SustainabilityArrayGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.SustainabilityArrayGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+SustainabilityArrayResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.SustainabilityArrayResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 SustainabilityAssessment
 ~~~~~~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.SustainabilityAssessment
-   :members:
+.. autopydantic_model:: pypureclient.pure1.SustainabilityAssessment
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 SustainabilityInsightArray
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.SustainabilityInsightArray
-   :members:
+.. autopydantic_model:: pypureclient.pure1.SustainabilityInsightArray
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+SustainabilityInsightArrayGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.SustainabilityInsightArrayGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+SustainabilityInsightArrayResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.SustainabilityInsightArrayResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 Tag
 ~~~
-.. autoclass:: pypureclient.pure1.Tag
-   :members:
+.. autopydantic_model:: pypureclient.pure1.Tag
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
-TagBatchRequired
-~~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.TagBatchRequired
-   :members:
+TagGetResponse
+~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.TagGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 TagPut
 ~~~~~~
-.. autoclass:: pypureclient.pure1.TagPut
-   :members:
+.. autopydantic_model:: pypureclient.pure1.TagPut
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+TagResponse
+~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.TagResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 Target
 ~~~~~~
-.. autoclass:: pypureclient.pure1.Target
-   :members:
+.. autopydantic_model:: pypureclient.pure1.Target
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+TargetGetResponse
+~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.TargetGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+TargetResponse
+~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.TargetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 Tax
 ~~~
-.. autoclass:: pypureclient.pure1.Tax
-   :members:
+.. autopydantic_model:: pypureclient.pure1.Tax
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+TimeAware
+~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.TimeAware
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 TimeInterval
 ~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.TimeInterval
-   :members:
+.. autopydantic_model:: pypureclient.pure1.TimeInterval
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 Volume
 ~~~~~~
-.. autoclass:: pypureclient.pure1.Volume
-   :members:
+.. autopydantic_model:: pypureclient.pure1.Volume
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+VolumeGetResponse
+~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.VolumeGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+VolumeResponse
+~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.VolumeResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
 VolumeSnapshot
 ~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.VolumeSnapshot
-   :members:
+.. autopydantic_model:: pypureclient.pure1.VolumeSnapshot
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+VolumeSnapshotGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.VolumeSnapshotGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+VolumeSnapshotResponse
+~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1.VolumeSnapshotResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
