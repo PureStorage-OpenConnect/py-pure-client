@@ -6,6 +6,7 @@ A log of changes by version and date.
 ======= ========== =====
 Version Date       Notes
 ======= ========== =====
+1.67.2  05/07/2025 don't generate x-request-id if not defined api function
 1.67.1  05/06/2025 Bug fix for client and documentation generation
 1.66.0  04/11/2025 Added FlashArray 2.42 client
 1.65.0  03/25/2025 Added Pure1 1.4 client
