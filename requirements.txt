@@ -1,5 +1,5 @@
 certifi >= 2024.07.04
-setuptools >=70.0.0
+setuptools >=70.0.0, <=75.6.0
 paramiko >= 3.4.0
 pyjwt >=2.0.0
 requests >= 2.32.0
