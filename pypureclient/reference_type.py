@@ -11,7 +11,7 @@
 
 
 from pydantic import BaseModel, Field, StrictStr
-from typing import List, Optional
+from typing import List, Optional, Union
 
 class ReferenceType(BaseModel):
     """
@@ -55,3 +55,7 @@ def quoteStrings(s):
     if s is None:
         return None
     return [quoteString(x) for x in s]
+
+
+def quote_string_parameter(input: Union[str, List[str]]) -> Union[str, List[str]]:
+    return quoteStrings(input) if isinstance(input, list) else quoteString(input)

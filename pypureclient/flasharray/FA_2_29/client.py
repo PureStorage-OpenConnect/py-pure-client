@@ -38410,7 +38410,13 @@ class Client(object):
         try:
             body = json.loads(error.body)
         except Exception:
-            body = {}
+            errors = [ApiError(None, "Response is not a valid JSON")]
+            return ErrorResponse(status, errors, headers=error.headers)
+
+        if not isinstance(body, dict):
+            errors = [ApiError(None, "Response is not an Error object")]
+            return ErrorResponse(status, errors, headers=error.headers)
+
         if status in [403, 429]:
             # Parse differently if the error message came from kong
             errors = [ApiError(None, body.get(Responses.message, None), None)]
@@ -38418,7 +38424,7 @@ class Client(object):
             errors = [ApiError(err.get(Responses.context, None),
                                err.get(Responses.message, None),
                                err.get(Responses.location_context, None))
-                      for err in body.get(Responses.errors, {})]
+                      for err in body.get(Responses.errors, [])]
         return ErrorResponse(status, errors, headers=error.headers)
 
 
@@ -38480,3 +38486,4 @@ def _fixup_list_type_params(
             _param_type = type(_value).__name__.replace("'", '')
             warnings.warn(f"'{_param}' parameter, invalid type: expected List[{_param_type}] but received {_param_type}, converting to list. Please revisit code.", SyntaxWarning)
             kwargs[_param] = [_value]
+
