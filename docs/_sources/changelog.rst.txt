@@ -6,6 +6,7 @@ A log of changes by version and date.
 ======= ========== =====
 Version Date       Notes
 ======= ========== =====
+1.67.4  05/16/2025 fixing issues in 
 1.67.3  05/14/2025 fixing broken single parameter auto-quotation 
 1.67.2  05/07/2025 don't generate x-request-id if not defined api function
 1.67.1  05/06/2025 Bug fix for client and documentation generation
