@@ -327,23 +327,26 @@ class ItemIterator(object):
         if self._x_request_id is not None:
             self._kwargs[Parameters.x_request_id] = self._x_request_id
         # Call the API again and update internal state
+        body = None
         try:
             response = self._api_endpoint(**self._kwargs)
-            body, status, headers = response
-            if body is None:
-                raise StopIteration
-            continuation_token = getattr(body, "continuation_token", None)
-            total_item_count = getattr(body, "total_item_count", None)
-            # *-get-response models have "continuation_token" attribute. Other models don't have them.
-            if continuation_token is not None:
-                self._more_items_remaining = True
-            else:
-                # Only GET responses are paged.
-                self._more_items_remaining = False
-
-            self._continuation_token = continuation_token
-            self._total_item_count = total_item_count
-            self._items = body.items
+            body = response.data
         except Exception as e:
             # Generic errors for pagination
             raise PureError('Failed to collect more items: {}'.format(e))
+
+        if body is None:
+            raise StopIteration
+
+        continuation_token = getattr(body, "continuation_token", None)
+        total_item_count = getattr(body, "total_item_count", None)
+        # *-get-response models have "continuation_token" attribute. Other models don't have them.
+        if continuation_token is not None:
+            self._more_items_remaining = True
+        else:
+            # Only GET responses are paged.
+            self._more_items_remaining = False
+
+        self._continuation_token = continuation_token
+        self._total_item_count = total_item_count
+        self._items = body.items
