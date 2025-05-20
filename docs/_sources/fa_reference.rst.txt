@@ -225,6 +225,11 @@ FlashArray REST 2.42 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. module:: pypureclient.flasharray.FA_2_42
 .. autoclass:: pypureclient.flasharray.FA_2_42.client.Client
+
+FlashArray REST 2.43 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_43
+.. autoclass:: pypureclient.flasharray.FA_2_43.client.Client
    :members:
 
 Properties
@@ -4097,6 +4102,18 @@ NewName
 NonCopyableTag
 ~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flasharray.NonCopyableTag
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+NonCopyableTagBatch
+~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray.NonCopyableTagBatch
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
