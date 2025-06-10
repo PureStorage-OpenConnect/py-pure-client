@@ -18,94 +18,46 @@ Importable as
   from pypureclient.pure1 import Client
 
 
-.. autofunction:: pypureclient.pure1.client.Client
-.. module:: pypureclient.pure1
+.. module:: pypureclient.pure1.client
+.. autofunction:: pypureclient.pure1.client::Client
 
 Pure1 REST 1.0 Client
 ~~~~~~~~~~~~~~~~~~~~~
-.. module:: pypureclient.pure1.Pure1_1_0
-.. autoclass:: pypureclient.pure1.Pure1_1_0.client.Client
+.. module:: pypureclient.pure1.Pure1_1_0.client
+.. autoclass:: pypureclient.pure1.Pure1_1_0.client::Client
 
 Pure1 REST 1.1 Client
 ~~~~~~~~~~~~~~~~~~~~~
-.. module:: pypureclient.pure1.Pure1_1_1
-.. autoclass:: pypureclient.pure1.Pure1_1_1.client.Client
+.. module:: pypureclient.pure1.Pure1_1_1.client
+.. autoclass:: pypureclient.pure1.Pure1_1_1.client::Client
 
 Pure1 REST 1.2 Client
 ~~~~~~~~~~~~~~~~~~~~~
-.. module:: pypureclient.pure1.Pure1_1_2
-.. autoclass:: pypureclient.pure1.Pure1_1_2.client.Client
+.. module:: pypureclient.pure1.Pure1_1_2.client
+.. autoclass:: pypureclient.pure1.Pure1_1_2.client::Client
 
 Pure1 REST 1.3 Client
 ~~~~~~~~~~~~~~~~~~~~~
-.. module:: pypureclient.pure1.Pure1_1_3
-.. autoclass:: pypureclient.pure1.Pure1_1_3.client.Client
+.. module:: pypureclient.pure1.Pure1_1_3.client
+.. autoclass:: pypureclient.pure1.Pure1_1_3.client::Client
 
 Pure1 REST 1.4 Client
 ~~~~~~~~~~~~~~~~~~~~~
-.. module:: pypureclient.pure1.Pure1_1_4
-.. autoclass:: pypureclient.pure1.Pure1_1_4.client.Client
+.. module:: pypureclient.pure1.Pure1_1_4.client
+.. autoclass:: pypureclient.pure1.Pure1_1_4.client::Client
 
 Pure1 REST 1.5 Client
 ~~~~~~~~~~~~~~~~~~~~~
-.. module:: pypureclient.pure1.Pure1_1_5
-.. autoclass:: pypureclient.pure1.Pure1_1_5.client.Client
-   :members:
-
-Properties
-----------
-
-Property
-~~~~~~~~
-.. autoclass:: pypureclient.pure1.Property
-   :members:
-
-Filter
-~~~~~~
-.. autoclass:: pypureclient.pure1.Filter
-   :members:
-
-Responses
----------
-
-ResponseHeaders
-~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.ResponseHeaders
-   :members:
-
-ValidResponse
-~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.ValidResponse
-   :members:
-
-ApiError
-~~~~~~~~
-.. autoclass:: pypureclient.pure1.ApiError
-   :members:
-
-ErrorResponse
-~~~~~~~~~~~~~
-.. autoclass:: pypureclient.pure1.ErrorResponse
+.. module:: pypureclient.pure1.Pure1_1_5.client
+.. autoclass:: pypureclient.pure1.Pure1_1_5.client::Client
    :members:
 
 Models
 ------
 
-ReferenceType
-~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.ReferenceType
-   :model-show-json: False
-   :model-show-field-summary: False
-   :model-show-config-summary: False
-   :model-show-validator-summary: True
-   :model-show-validator-members: True
-   :undoc-members: True
-   :model-hide-paramlist: False
-   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
-
 Alert
 ~~~~~
-.. autopydantic_model:: pypureclient.pure1.Alert
+.. autopydantic_model:: pypureclient.pure1::Alert
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -117,7 +69,7 @@ Alert
 
 AlertsGetResponse
 ~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.AlertsGetResponse
+.. autopydantic_model:: pypureclient.pure1::AlertsGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -129,7 +81,7 @@ AlertsGetResponse
 
 AlertsResponse
 ~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.AlertsResponse
+.. autopydantic_model:: pypureclient.pure1::AlertsResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -141,7 +93,7 @@ AlertsResponse
 
 Array
 ~~~~~
-.. autopydantic_model:: pypureclient.pure1.Array
+.. autopydantic_model:: pypureclient.pure1::Array
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -153,7 +105,7 @@ Array
 
 ArrayGetResponse
 ~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.ArrayGetResponse
+.. autopydantic_model:: pypureclient.pure1::ArrayGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -165,7 +117,7 @@ ArrayGetResponse
 
 ArrayResponse
 ~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.ArrayResponse
+.. autopydantic_model:: pypureclient.pure1::ArrayResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -177,7 +129,7 @@ ArrayResponse
 
 Arrays
 ~~~~~~
-.. autopydantic_model:: pypureclient.pure1.Arrays
+.. autopydantic_model:: pypureclient.pure1::Arrays
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -189,7 +141,7 @@ Arrays
 
 ArraysBuiltIn
 ~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.ArraysBuiltIn
+.. autopydantic_model:: pypureclient.pure1::ArraysBuiltIn
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -201,7 +153,7 @@ ArraysBuiltIn
 
 ArraysResource
 ~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.ArraysResource
+.. autopydantic_model:: pypureclient.pure1::ArraysResource
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -213,7 +165,7 @@ ArraysResource
 
 AssetAddress
 ~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.AssetAddress
+.. autopydantic_model:: pypureclient.pure1::AssetAddress
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -225,7 +177,7 @@ AssetAddress
 
 AssetOrg
 ~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.AssetOrg
+.. autopydantic_model:: pypureclient.pure1::AssetOrg
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -237,7 +189,7 @@ AssetOrg
 
 AssetSpace
 ~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.AssetSpace
+.. autopydantic_model:: pypureclient.pure1::AssetSpace
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -249,7 +201,7 @@ AssetSpace
 
 AssetSpaceTotalUsedRatio
 ~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.AssetSpaceTotalUsedRatio
+.. autopydantic_model:: pypureclient.pure1::AssetSpaceTotalUsedRatio
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -261,7 +213,7 @@ AssetSpaceTotalUsedRatio
 
 AssetUpgradeDetails
 ~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.AssetUpgradeDetails
+.. autopydantic_model:: pypureclient.pure1::AssetUpgradeDetails
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -273,7 +225,7 @@ AssetUpgradeDetails
 
 Audit
 ~~~~~
-.. autopydantic_model:: pypureclient.pure1.Audit
+.. autopydantic_model:: pypureclient.pure1::Audit
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -285,7 +237,7 @@ Audit
 
 AuditsGetResponse
 ~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.AuditsGetResponse
+.. autopydantic_model:: pypureclient.pure1::AuditsGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -297,7 +249,7 @@ AuditsGetResponse
 
 AuditsResponse
 ~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.AuditsResponse
+.. autopydantic_model:: pypureclient.pure1::AuditsResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -309,7 +261,7 @@ AuditsResponse
 
 BaseAddress
 ~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.BaseAddress
+.. autopydantic_model:: pypureclient.pure1::BaseAddress
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -321,7 +273,7 @@ BaseAddress
 
 Blade
 ~~~~~
-.. autopydantic_model:: pypureclient.pure1.Blade
+.. autopydantic_model:: pypureclient.pure1::Blade
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -333,7 +285,7 @@ Blade
 
 BladeArrayStatus
 ~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.BladeArrayStatus
+.. autopydantic_model:: pypureclient.pure1::BladeArrayStatus
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -345,7 +297,7 @@ BladeArrayStatus
 
 BladeGetResponse
 ~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.BladeGetResponse
+.. autopydantic_model:: pypureclient.pure1::BladeGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -357,7 +309,7 @@ BladeGetResponse
 
 BladeResponse
 ~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.BladeResponse
+.. autopydantic_model:: pypureclient.pure1::BladeResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -369,7 +321,7 @@ BladeResponse
 
 Bucket
 ~~~~~~
-.. autopydantic_model:: pypureclient.pure1.Bucket
+.. autopydantic_model:: pypureclient.pure1::Bucket
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -381,7 +333,7 @@ Bucket
 
 BucketGetResponse
 ~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.BucketGetResponse
+.. autopydantic_model:: pypureclient.pure1::BucketGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -393,7 +345,7 @@ BucketGetResponse
 
 BucketReplicaLink
 ~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.BucketReplicaLink
+.. autopydantic_model:: pypureclient.pure1::BucketReplicaLink
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -405,7 +357,7 @@ BucketReplicaLink
 
 BucketReplicaLinkGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.BucketReplicaLinkGetResponse
+.. autopydantic_model:: pypureclient.pure1::BucketReplicaLinkGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -417,7 +369,7 @@ BucketReplicaLinkGetResponse
 
 BucketReplicaLinkResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.BucketReplicaLinkResponse
+.. autopydantic_model:: pypureclient.pure1::BucketReplicaLinkResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -429,7 +381,7 @@ BucketReplicaLinkResponse
 
 BucketResponse
 ~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.BucketResponse
+.. autopydantic_model:: pypureclient.pure1::BucketResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -441,7 +393,7 @@ BucketResponse
 
 BuiltInAsOf
 ~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.BuiltInAsOf
+.. autopydantic_model:: pypureclient.pure1::BuiltInAsOf
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -453,7 +405,7 @@ BuiltInAsOf
 
 Controller
 ~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.Controller
+.. autopydantic_model:: pypureclient.pure1::Controller
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -465,7 +417,7 @@ Controller
 
 ControllerGetResponse
 ~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.ControllerGetResponse
+.. autopydantic_model:: pypureclient.pure1::ControllerGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -477,7 +429,7 @@ ControllerGetResponse
 
 ControllerResponse
 ~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.ControllerResponse
+.. autopydantic_model:: pypureclient.pure1::ControllerResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -489,7 +441,7 @@ ControllerResponse
 
 CurrentMetric
 ~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.CurrentMetric
+.. autopydantic_model:: pypureclient.pure1::CurrentMetric
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -501,7 +453,7 @@ CurrentMetric
 
 Directory
 ~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.Directory
+.. autopydantic_model:: pypureclient.pure1::Directory
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -513,7 +465,7 @@ Directory
 
 DirectoryGetResponse
 ~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.DirectoryGetResponse
+.. autopydantic_model:: pypureclient.pure1::DirectoryGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -525,7 +477,7 @@ DirectoryGetResponse
 
 DirectoryResponse
 ~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.DirectoryResponse
+.. autopydantic_model:: pypureclient.pure1::DirectoryResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -537,7 +489,7 @@ DirectoryResponse
 
 Drive
 ~~~~~
-.. autopydantic_model:: pypureclient.pure1.Drive
+.. autopydantic_model:: pypureclient.pure1::Drive
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -549,7 +501,7 @@ Drive
 
 DriveArrayStatus
 ~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.DriveArrayStatus
+.. autopydantic_model:: pypureclient.pure1::DriveArrayStatus
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -561,7 +513,7 @@ DriveArrayStatus
 
 DriveGetResponse
 ~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.DriveGetResponse
+.. autopydantic_model:: pypureclient.pure1::DriveGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -573,7 +525,7 @@ DriveGetResponse
 
 DriveResponse
 ~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.DriveResponse
+.. autopydantic_model:: pypureclient.pure1::DriveResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -585,7 +537,7 @@ DriveResponse
 
 Error
 ~~~~~
-.. autopydantic_model:: pypureclient.pure1.Error
+.. autopydantic_model:: pypureclient.pure1::Error
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -597,7 +549,7 @@ Error
 
 ErrorErrors
 ~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.ErrorErrors
+.. autopydantic_model:: pypureclient.pure1::ErrorErrors
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -609,7 +561,7 @@ ErrorErrors
 
 ErrorNoContext
 ~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.ErrorNoContext
+.. autopydantic_model:: pypureclient.pure1::ErrorNoContext
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -621,7 +573,7 @@ ErrorNoContext
 
 EvergreenForeverAndFoundationDetails
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.EvergreenForeverAndFoundationDetails
+.. autopydantic_model:: pypureclient.pure1::EvergreenForeverAndFoundationDetails
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -633,7 +585,7 @@ EvergreenForeverAndFoundationDetails
 
 FileSystem
 ~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.FileSystem
+.. autopydantic_model:: pypureclient.pure1::FileSystem
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -645,7 +597,7 @@ FileSystem
 
 FileSystemGetResponse
 ~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.FileSystemGetResponse
+.. autopydantic_model:: pypureclient.pure1::FileSystemGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -657,7 +609,7 @@ FileSystemGetResponse
 
 FileSystemReplicaLink
 ~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.FileSystemReplicaLink
+.. autopydantic_model:: pypureclient.pure1::FileSystemReplicaLink
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -669,7 +621,7 @@ FileSystemReplicaLink
 
 FileSystemReplicaLinkGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.FileSystemReplicaLinkGetResponse
+.. autopydantic_model:: pypureclient.pure1::FileSystemReplicaLinkGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -681,7 +633,7 @@ FileSystemReplicaLinkGetResponse
 
 FileSystemReplicaLinkResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.FileSystemReplicaLinkResponse
+.. autopydantic_model:: pypureclient.pure1::FileSystemReplicaLinkResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -693,7 +645,7 @@ FileSystemReplicaLinkResponse
 
 FileSystemResponse
 ~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.FileSystemResponse
+.. autopydantic_model:: pypureclient.pure1::FileSystemResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -705,7 +657,7 @@ FileSystemResponse
 
 FileSystemSnapshot
 ~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.FileSystemSnapshot
+.. autopydantic_model:: pypureclient.pure1::FileSystemSnapshot
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -717,7 +669,7 @@ FileSystemSnapshot
 
 FileSystemSnapshotGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.FileSystemSnapshotGetResponse
+.. autopydantic_model:: pypureclient.pure1::FileSystemSnapshotGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -729,7 +681,7 @@ FileSystemSnapshotGetResponse
 
 FileSystemSnapshotResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.FileSystemSnapshotResponse
+.. autopydantic_model:: pypureclient.pure1::FileSystemSnapshotResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -741,7 +693,7 @@ FileSystemSnapshotResponse
 
 FixedReference
 ~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.FixedReference
+.. autopydantic_model:: pypureclient.pure1::FixedReference
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -753,7 +705,7 @@ FixedReference
 
 FixedReferenceFqdn
 ~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.FixedReferenceFqdn
+.. autopydantic_model:: pypureclient.pure1::FixedReferenceFqdn
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -765,7 +717,7 @@ FixedReferenceFqdn
 
 Geolocation
 ~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.Geolocation
+.. autopydantic_model:: pypureclient.pure1::Geolocation
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -777,7 +729,7 @@ Geolocation
 
 Hardware
 ~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.Hardware
+.. autopydantic_model:: pypureclient.pure1::Hardware
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -789,7 +741,7 @@ Hardware
 
 HardwareConnector
 ~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.HardwareConnector
+.. autopydantic_model:: pypureclient.pure1::HardwareConnector
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -801,7 +753,7 @@ HardwareConnector
 
 HardwareConnectorGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.HardwareConnectorGetResponse
+.. autopydantic_model:: pypureclient.pure1::HardwareConnectorGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -813,7 +765,7 @@ HardwareConnectorGetResponse
 
 HardwareConnectorResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.HardwareConnectorResponse
+.. autopydantic_model:: pypureclient.pure1::HardwareConnectorResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -825,7 +777,7 @@ HardwareConnectorResponse
 
 HardwareGetResponse
 ~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.HardwareGetResponse
+.. autopydantic_model:: pypureclient.pure1::HardwareGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -837,7 +789,7 @@ HardwareGetResponse
 
 HardwareResponse
 ~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.HardwareResponse
+.. autopydantic_model:: pypureclient.pure1::HardwareResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -849,7 +801,7 @@ HardwareResponse
 
 Http
 ~~~~
-.. autopydantic_model:: pypureclient.pure1.Http
+.. autopydantic_model:: pypureclient.pure1::Http
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -861,7 +813,7 @@ Http
 
 InstallAddress
 ~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.InstallAddress
+.. autopydantic_model:: pypureclient.pure1::InstallAddress
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -873,7 +825,7 @@ InstallAddress
 
 Invoice
 ~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.Invoice
+.. autopydantic_model:: pypureclient.pure1::Invoice
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -885,7 +837,7 @@ Invoice
 
 InvoiceGetResponse
 ~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.InvoiceGetResponse
+.. autopydantic_model:: pypureclient.pure1::InvoiceGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -897,7 +849,7 @@ InvoiceGetResponse
 
 InvoiceLine
 ~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.InvoiceLine
+.. autopydantic_model:: pypureclient.pure1::InvoiceLine
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -909,7 +861,7 @@ InvoiceLine
 
 InvoiceLineComponent
 ~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.InvoiceLineComponent
+.. autopydantic_model:: pypureclient.pure1::InvoiceLineComponent
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -921,7 +873,7 @@ InvoiceLineComponent
 
 InvoiceResponse
 ~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.InvoiceResponse
+.. autopydantic_model:: pypureclient.pure1::InvoiceResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -933,7 +885,7 @@ InvoiceResponse
 
 LicenseResourceReference
 ~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.LicenseResourceReference
+.. autopydantic_model:: pypureclient.pure1::LicenseResourceReference
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -945,7 +897,7 @@ LicenseResourceReference
 
 MarketplacePartner
 ~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.MarketplacePartner
+.. autopydantic_model:: pypureclient.pure1::MarketplacePartner
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -957,7 +909,7 @@ MarketplacePartner
 
 Metric
 ~~~~~~
-.. autopydantic_model:: pypureclient.pure1.Metric
+.. autopydantic_model:: pypureclient.pure1::Metric
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -969,7 +921,7 @@ Metric
 
 MetricAvailability
 ~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.MetricAvailability
+.. autopydantic_model:: pypureclient.pure1::MetricAvailability
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -981,7 +933,7 @@ MetricAvailability
 
 MetricGetResponse
 ~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.MetricGetResponse
+.. autopydantic_model:: pypureclient.pure1::MetricGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -993,7 +945,7 @@ MetricGetResponse
 
 MetricHistory
 ~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.MetricHistory
+.. autopydantic_model:: pypureclient.pure1::MetricHistory
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1005,7 +957,7 @@ MetricHistory
 
 MetricHistoryGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.MetricHistoryGetResponse
+.. autopydantic_model:: pypureclient.pure1::MetricHistoryGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1017,7 +969,7 @@ MetricHistoryGetResponse
 
 MetricHistoryResponse
 ~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.MetricHistoryResponse
+.. autopydantic_model:: pypureclient.pure1::MetricHistoryResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1029,7 +981,7 @@ MetricHistoryResponse
 
 MetricResponse
 ~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.MetricResponse
+.. autopydantic_model:: pypureclient.pure1::MetricResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1041,7 +993,7 @@ MetricResponse
 
 NetworkInterface
 ~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.NetworkInterface
+.. autopydantic_model:: pypureclient.pure1::NetworkInterface
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1053,7 +1005,7 @@ NetworkInterface
 
 NetworkInterfaceGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.NetworkInterfaceGetResponse
+.. autopydantic_model:: pypureclient.pure1::NetworkInterfaceGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1065,7 +1017,7 @@ NetworkInterfaceGetResponse
 
 NetworkInterfaceResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.NetworkInterfaceResponse
+.. autopydantic_model:: pypureclient.pure1::NetworkInterfaceResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1077,7 +1029,7 @@ NetworkInterfaceResponse
 
 Nfs
 ~~~
-.. autopydantic_model:: pypureclient.pure1.Nfs
+.. autopydantic_model:: pypureclient.pure1::Nfs
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1089,7 +1041,7 @@ Nfs
 
 Oauth210TokenPost400Response
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.Oauth210TokenPost400Response
+.. autopydantic_model:: pypureclient.pure1::Oauth210TokenPost400Response
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1101,7 +1053,7 @@ Oauth210TokenPost400Response
 
 Oauth210TokenPost401Response
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.Oauth210TokenPost401Response
+.. autopydantic_model:: pypureclient.pure1::Oauth210TokenPost401Response
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1113,7 +1065,7 @@ Oauth210TokenPost401Response
 
 OauthTokenResponse
 ~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.OauthTokenResponse
+.. autopydantic_model:: pypureclient.pure1::OauthTokenResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1125,7 +1077,7 @@ OauthTokenResponse
 
 ObjectStoreAccount
 ~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.ObjectStoreAccount
+.. autopydantic_model:: pypureclient.pure1::ObjectStoreAccount
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1137,7 +1089,7 @@ ObjectStoreAccount
 
 ObjectStoreAccountGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.ObjectStoreAccountGetResponse
+.. autopydantic_model:: pypureclient.pure1::ObjectStoreAccountGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1149,7 +1101,7 @@ ObjectStoreAccountGetResponse
 
 ObjectStoreAccountResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.ObjectStoreAccountResponse
+.. autopydantic_model:: pypureclient.pure1::ObjectStoreAccountResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1161,7 +1113,7 @@ ObjectStoreAccountResponse
 
 PageInfo
 ~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.PageInfo
+.. autopydantic_model:: pypureclient.pure1::PageInfo
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1173,7 +1125,7 @@ PageInfo
 
 Pod
 ~~~
-.. autopydantic_model:: pypureclient.pure1.Pod
+.. autopydantic_model:: pypureclient.pure1::Pod
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1185,7 +1137,7 @@ Pod
 
 PodGetResponse
 ~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.PodGetResponse
+.. autopydantic_model:: pypureclient.pure1::PodGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1197,7 +1149,7 @@ PodGetResponse
 
 PodReplicaLink
 ~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.PodReplicaLink
+.. autopydantic_model:: pypureclient.pure1::PodReplicaLink
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1209,7 +1161,7 @@ PodReplicaLink
 
 PodReplicaLinkGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.PodReplicaLinkGetResponse
+.. autopydantic_model:: pypureclient.pure1::PodReplicaLinkGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1221,7 +1173,7 @@ PodReplicaLinkGetResponse
 
 PodReplicaLinkResponse
 ~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.PodReplicaLinkResponse
+.. autopydantic_model:: pypureclient.pure1::PodReplicaLinkResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1233,7 +1185,7 @@ PodReplicaLinkResponse
 
 PodResponse
 ~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.PodResponse
+.. autopydantic_model:: pypureclient.pure1::PodResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1245,7 +1197,7 @@ PodResponse
 
 Policy
 ~~~~~~
-.. autopydantic_model:: pypureclient.pure1.Policy
+.. autopydantic_model:: pypureclient.pure1::Policy
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1257,7 +1209,7 @@ Policy
 
 PolicyGetResponse
 ~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.PolicyGetResponse
+.. autopydantic_model:: pypureclient.pure1::PolicyGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1269,7 +1221,7 @@ PolicyGetResponse
 
 PolicyMember
 ~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.PolicyMember
+.. autopydantic_model:: pypureclient.pure1::PolicyMember
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1281,7 +1233,7 @@ PolicyMember
 
 PolicyMembersGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.PolicyMembersGetResponse
+.. autopydantic_model:: pypureclient.pure1::PolicyMembersGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1293,7 +1245,7 @@ PolicyMembersGetResponse
 
 PolicyMembersResponse
 ~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.PolicyMembersResponse
+.. autopydantic_model:: pypureclient.pure1::PolicyMembersResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1305,7 +1257,7 @@ PolicyMembersResponse
 
 PolicyResponse
 ~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.PolicyResponse
+.. autopydantic_model:: pypureclient.pure1::PolicyResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1317,7 +1269,7 @@ PolicyResponse
 
 PolicyRule
 ~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.PolicyRule
+.. autopydantic_model:: pypureclient.pure1::PolicyRule
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1329,7 +1281,7 @@ PolicyRule
 
 Port
 ~~~~
-.. autopydantic_model:: pypureclient.pure1.Port
+.. autopydantic_model:: pypureclient.pure1::Port
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1341,7 +1293,7 @@ Port
 
 PortGetResponse
 ~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.PortGetResponse
+.. autopydantic_model:: pypureclient.pure1::PortGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1353,7 +1305,7 @@ PortGetResponse
 
 PortResponse
 ~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.PortResponse
+.. autopydantic_model:: pypureclient.pure1::PortResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1365,7 +1317,7 @@ PortResponse
 
 ReplicaLink
 ~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.ReplicaLink
+.. autopydantic_model:: pypureclient.pure1::ReplicaLink
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1377,7 +1329,7 @@ ReplicaLink
 
 Resource
 ~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.Resource
+.. autopydantic_model:: pypureclient.pure1::Resource
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1389,7 +1341,7 @@ Resource
 
 ResourceNoName
 ~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.ResourceNoName
+.. autopydantic_model:: pypureclient.pure1::ResourceNoName
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1401,7 +1353,7 @@ ResourceNoName
 
 ResourceWithLocation
 ~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.ResourceWithLocation
+.. autopydantic_model:: pypureclient.pure1::ResourceWithLocation
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1413,7 +1365,7 @@ ResourceWithLocation
 
 ResourceWithLocations
 ~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.ResourceWithLocations
+.. autopydantic_model:: pypureclient.pure1::ResourceWithLocations
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1425,7 +1377,7 @@ ResourceWithLocations
 
 Smb
 ~~~
-.. autopydantic_model:: pypureclient.pure1.Smb
+.. autopydantic_model:: pypureclient.pure1::Smb
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1437,7 +1389,7 @@ Smb
 
 Subscription
 ~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.Subscription
+.. autopydantic_model:: pypureclient.pure1::Subscription
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1449,7 +1401,7 @@ Subscription
 
 SubscriptionAllOfServiceDetails
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.SubscriptionAllOfServiceDetails
+.. autopydantic_model:: pypureclient.pure1::SubscriptionAllOfServiceDetails
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1461,7 +1413,7 @@ SubscriptionAllOfServiceDetails
 
 SubscriptionAsset
 ~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.SubscriptionAsset
+.. autopydantic_model:: pypureclient.pure1::SubscriptionAsset
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1473,7 +1425,7 @@ SubscriptionAsset
 
 SubscriptionAssetArray
 ~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.SubscriptionAssetArray
+.. autopydantic_model:: pypureclient.pure1::SubscriptionAssetArray
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1485,7 +1437,7 @@ SubscriptionAssetArray
 
 SubscriptionAssetArrayAdvancedSpace
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.SubscriptionAssetArrayAdvancedSpace
+.. autopydantic_model:: pypureclient.pure1::SubscriptionAssetArrayAdvancedSpace
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1497,7 +1449,7 @@ SubscriptionAssetArrayAdvancedSpace
 
 SubscriptionAssetGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.SubscriptionAssetGetResponse
+.. autopydantic_model:: pypureclient.pure1::SubscriptionAssetGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1509,7 +1461,7 @@ SubscriptionAssetGetResponse
 
 SubscriptionAssetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.SubscriptionAssetResponse
+.. autopydantic_model:: pypureclient.pure1::SubscriptionAssetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1521,7 +1473,7 @@ SubscriptionAssetResponse
 
 SubscriptionGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.SubscriptionGetResponse
+.. autopydantic_model:: pypureclient.pure1::SubscriptionGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1533,7 +1485,7 @@ SubscriptionGetResponse
 
 SubscriptionLicense
 ~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.SubscriptionLicense
+.. autopydantic_model:: pypureclient.pure1::SubscriptionLicense
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1545,7 +1497,7 @@ SubscriptionLicense
 
 SubscriptionLicenseAddOnSla
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.SubscriptionLicenseAddOnSla
+.. autopydantic_model:: pypureclient.pure1::SubscriptionLicenseAddOnSla
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1557,7 +1509,7 @@ SubscriptionLicenseAddOnSla
 
 SubscriptionLicenseGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.SubscriptionLicenseGetResponse
+.. autopydantic_model:: pypureclient.pure1::SubscriptionLicenseGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1569,7 +1521,7 @@ SubscriptionLicenseGetResponse
 
 SubscriptionLicensePreRatio
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.SubscriptionLicensePreRatio
+.. autopydantic_model:: pypureclient.pure1::SubscriptionLicensePreRatio
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1581,7 +1533,7 @@ SubscriptionLicensePreRatio
 
 SubscriptionLicenseResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.SubscriptionLicenseResponse
+.. autopydantic_model:: pypureclient.pure1::SubscriptionLicenseResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1593,7 +1545,7 @@ SubscriptionLicenseResponse
 
 SubscriptionResponse
 ~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.SubscriptionResponse
+.. autopydantic_model:: pypureclient.pure1::SubscriptionResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1605,7 +1557,7 @@ SubscriptionResponse
 
 SupportContract
 ~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.SupportContract
+.. autopydantic_model:: pypureclient.pure1::SupportContract
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1617,7 +1569,7 @@ SupportContract
 
 SupportContractGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.SupportContractGetResponse
+.. autopydantic_model:: pypureclient.pure1::SupportContractGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1629,7 +1581,7 @@ SupportContractGetResponse
 
 SupportContractResponse
 ~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.SupportContractResponse
+.. autopydantic_model:: pypureclient.pure1::SupportContractResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1641,7 +1593,7 @@ SupportContractResponse
 
 SustainabilityArray
 ~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.SustainabilityArray
+.. autopydantic_model:: pypureclient.pure1::SustainabilityArray
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1653,7 +1605,7 @@ SustainabilityArray
 
 SustainabilityArrayGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.SustainabilityArrayGetResponse
+.. autopydantic_model:: pypureclient.pure1::SustainabilityArrayGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1665,7 +1617,7 @@ SustainabilityArrayGetResponse
 
 SustainabilityArrayResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.SustainabilityArrayResponse
+.. autopydantic_model:: pypureclient.pure1::SustainabilityArrayResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1677,7 +1629,7 @@ SustainabilityArrayResponse
 
 SustainabilityAssessment
 ~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.SustainabilityAssessment
+.. autopydantic_model:: pypureclient.pure1::SustainabilityAssessment
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1689,7 +1641,7 @@ SustainabilityAssessment
 
 SustainabilityInsightArray
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.SustainabilityInsightArray
+.. autopydantic_model:: pypureclient.pure1::SustainabilityInsightArray
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1701,7 +1653,7 @@ SustainabilityInsightArray
 
 SustainabilityInsightArrayGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.SustainabilityInsightArrayGetResponse
+.. autopydantic_model:: pypureclient.pure1::SustainabilityInsightArrayGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1713,7 +1665,7 @@ SustainabilityInsightArrayGetResponse
 
 SustainabilityInsightArrayResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.SustainabilityInsightArrayResponse
+.. autopydantic_model:: pypureclient.pure1::SustainabilityInsightArrayResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1725,7 +1677,7 @@ SustainabilityInsightArrayResponse
 
 Tag
 ~~~
-.. autopydantic_model:: pypureclient.pure1.Tag
+.. autopydantic_model:: pypureclient.pure1::Tag
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1737,7 +1689,7 @@ Tag
 
 TagGetResponse
 ~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.TagGetResponse
+.. autopydantic_model:: pypureclient.pure1::TagGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1749,7 +1701,7 @@ TagGetResponse
 
 TagPut
 ~~~~~~
-.. autopydantic_model:: pypureclient.pure1.TagPut
+.. autopydantic_model:: pypureclient.pure1::TagPut
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1761,7 +1713,7 @@ TagPut
 
 TagResponse
 ~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.TagResponse
+.. autopydantic_model:: pypureclient.pure1::TagResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1773,7 +1725,7 @@ TagResponse
 
 Target
 ~~~~~~
-.. autopydantic_model:: pypureclient.pure1.Target
+.. autopydantic_model:: pypureclient.pure1::Target
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1785,7 +1737,7 @@ Target
 
 TargetGetResponse
 ~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.TargetGetResponse
+.. autopydantic_model:: pypureclient.pure1::TargetGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1797,7 +1749,7 @@ TargetGetResponse
 
 TargetResponse
 ~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.TargetResponse
+.. autopydantic_model:: pypureclient.pure1::TargetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1809,7 +1761,7 @@ TargetResponse
 
 Tax
 ~~~
-.. autopydantic_model:: pypureclient.pure1.Tax
+.. autopydantic_model:: pypureclient.pure1::Tax
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1821,7 +1773,7 @@ Tax
 
 TimeAware
 ~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.TimeAware
+.. autopydantic_model:: pypureclient.pure1::TimeAware
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1833,7 +1785,7 @@ TimeAware
 
 TimeInterval
 ~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.TimeInterval
+.. autopydantic_model:: pypureclient.pure1::TimeInterval
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1845,7 +1797,7 @@ TimeInterval
 
 Volume
 ~~~~~~
-.. autopydantic_model:: pypureclient.pure1.Volume
+.. autopydantic_model:: pypureclient.pure1::Volume
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1857,7 +1809,7 @@ Volume
 
 VolumeGetResponse
 ~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.VolumeGetResponse
+.. autopydantic_model:: pypureclient.pure1::VolumeGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1869,7 +1821,7 @@ VolumeGetResponse
 
 VolumeResponse
 ~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.VolumeResponse
+.. autopydantic_model:: pypureclient.pure1::VolumeResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1881,7 +1833,7 @@ VolumeResponse
 
 VolumeSnapshot
 ~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.VolumeSnapshot
+.. autopydantic_model:: pypureclient.pure1::VolumeSnapshot
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1893,7 +1845,7 @@ VolumeSnapshot
 
 VolumeSnapshotGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.VolumeSnapshotGetResponse
+.. autopydantic_model:: pypureclient.pure1::VolumeSnapshotGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1905,7 +1857,7 @@ VolumeSnapshotGetResponse
 
 VolumeSnapshotResponse
 ~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.pure1.VolumeSnapshotResponse
+.. autopydantic_model:: pypureclient.pure1::VolumeSnapshotResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False

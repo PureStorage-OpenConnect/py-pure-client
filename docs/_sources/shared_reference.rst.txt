@@ -1,0 +1,55 @@
+Shared References
+=================
+.. toctree::
+   :maxdepth: 4
+
+Properties
+----------
+
+Property
+~~~~~~~~
+.. autoclass:: pypureclient.properties.Property
+   :members:
+
+Filter
+~~~~~~
+.. autoclass:: pypureclient.properties.Filter
+   :members:
+
+Responses
+---------
+
+ResponseHeaders
+~~~~~~~~~~~~~~~
+.. autoclass:: pypureclient.responses.ResponseHeaders
+   :members:
+
+ValidResponse
+~~~~~~~~~~~~~
+.. autoclass:: pypureclient.responses.ValidResponse
+   :members:
+
+ApiError
+~~~~~~~~
+.. autoclass:: pypureclient.responses.ApiError
+   :members:
+
+ErrorResponse
+~~~~~~~~~~~~~
+.. autoclass:: pypureclient.responses.ErrorResponse
+   :members:
+
+References
+----------
+
+ReferenceType
+~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.reference_type::ReferenceType
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
