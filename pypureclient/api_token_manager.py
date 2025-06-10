@@ -12,7 +12,7 @@ class APITokenManager(object):
     A valid session token is stored in memory.
     """
 
-    def __init__(self, token_endpoint, api_token, verify_ssl=True, token_dispose_endpoint=None, user_agent=None):
+    def __init__(self, token_endpoint, api_token, verify_ssl=True, token_dispose_endpoint=None, user_agent=None, timeout=None):
         """
         Initialize a APITokenManager. Should be treated as a static object.
 
@@ -30,6 +30,7 @@ class APITokenManager(object):
         self._verify_ssl = verify_ssl
         self._session_token = None
         self._user_agent = user_agent
+        self._timeout = timeout
         self.get_session_token(refresh=True)
         # Register a function to close the session when the program exits
         atexit.register(self.close_session)
@@ -68,7 +69,7 @@ class APITokenManager(object):
             Headers.user_agent: self._user_agent,
             Headers.x_request_id: str(uuid.uuid4())
         }
-        response = requests.post(self._token_endpoint, headers=post_headers, verify=self._verify_ssl)
+        response = requests.post(self._token_endpoint, headers=post_headers, verify=self._verify_ssl, timeout=self._timeout)
         if response.status_code == requests.codes.ok:
             return str(response.headers[Headers.x_auth_token])
         else:
@@ -86,7 +87,7 @@ class APITokenManager(object):
                 Headers.user_agent: self._user_agent,
                 Headers.x_request_id: str(uuid.uuid4())
             }
-            requests.post(self._token_dispose_endpoint, headers=delete_headers, verify=self._verify_ssl)
+            requests.post(self._token_dispose_endpoint, headers=delete_headers, verify=self._verify_ssl, timeout=self._timeout)
             self._session_token = None
         except:
             pass
