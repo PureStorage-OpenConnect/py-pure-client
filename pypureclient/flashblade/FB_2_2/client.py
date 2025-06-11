@@ -103,7 +103,8 @@ class Client(object):
                 api_token,
                 verify_ssl=config.verify_ssl,
                 token_dispose_endpoint=api_token_dispose_endpoint,
-                user_agent=effective_user_agent
+                user_agent=effective_user_agent,
+                timeout=timeout
             )
         else:
             auth_endpoint = 'https://{}/oauth2/1.0/token'.format(target)
@@ -116,7 +117,8 @@ class Client(object):
                 'sub': username,
             }
             self._token_man = TokenManager(auth_endpoint, id_token, private_key_file, private_key_password,
-                                           payload=payload, headers=headers, verify_ssl=config.verify_ssl)
+                                           payload=payload, headers=headers, verify_ssl=config.verify_ssl,
+                                           timeout=timeout)
 
         self._api_client = ApiClient(configuration=config)
         self._api_client.user_agent = effective_user_agent
@@ -217,7 +219,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -241,7 +243,7 @@ class Client(object):
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -262,7 +264,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -302,7 +304,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -311,7 +313,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -374,7 +376,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -436,7 +438,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -505,7 +507,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -530,7 +532,7 @@ class Client(object):
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -551,7 +553,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -591,7 +593,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -600,7 +602,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -663,7 +665,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -735,7 +737,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -759,7 +761,7 @@ class Client(object):
     def get_active_directory_test(
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -776,7 +778,7 @@ class Client(object):
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -814,7 +816,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -822,7 +824,7 @@ class Client(object):
         """ # noqa: E501
 
         kwargs = dict(
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -882,7 +884,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -909,7 +911,7 @@ class Client(object):
         admin_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of admin names. If there is not at least one admin resource that matches each of the elements, then an error is returned. This cannot be provided together with `admin_ids` query parameter.")] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
         expose_api_token: Annotated[Optional[StrictBool], Field(description="If `true`, exposes the API token of the current user.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The offset of the first resource to return from a collection.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
@@ -939,7 +941,7 @@ class Client(object):
         :param expose_api_token: If `true`, exposes the API token of the current user.
         :type expose_api_token: bool
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param limit: Limit the size of the response to the specified number of resources. A `limit`
                     of `0` can be used to get the number of resources without getting all of the
                     resources. It will be returned in the `total_item_count` field. If a client
@@ -971,7 +973,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -983,7 +985,7 @@ class Client(object):
             admin_names=admin_names,
             continuation_token=continuation_token,
             expose_api_token=expose_api_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             limit=limit,
             offset=offset,
             sort=sort,
@@ -1045,7 +1047,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -1110,7 +1112,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -1134,7 +1136,7 @@ class Client(object):
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -1156,7 +1158,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -1199,7 +1201,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -1208,7 +1210,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -1230,7 +1232,7 @@ class Client(object):
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
         expose_api_token: Annotated[Optional[StrictBool], Field(description="If `true`, exposes the API token of the current user.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -1253,7 +1255,7 @@ class Client(object):
         :param expose_api_token: If `true`, exposes the API token of the current user.
         :type expose_api_token: bool
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -1293,7 +1295,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -1303,7 +1305,7 @@ class Client(object):
         kwargs = dict(
             continuation_token=continuation_token,
             expose_api_token=expose_api_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -1366,7 +1368,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -1431,7 +1433,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -1455,7 +1457,7 @@ class Client(object):
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -1476,7 +1478,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -1516,7 +1518,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -1525,7 +1527,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -1588,7 +1590,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -1649,7 +1651,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -1672,7 +1674,7 @@ class Client(object):
     def get_alert_watchers_test(
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
@@ -1688,7 +1690,7 @@ class Client(object):
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -1719,7 +1721,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -1727,7 +1729,7 @@ class Client(object):
         """ # noqa: E501
 
         kwargs = dict(
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             names=names,
             sort=sort,
@@ -1745,7 +1747,7 @@ class Client(object):
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -1766,7 +1768,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -1806,7 +1808,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -1815,7 +1817,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -1878,7 +1880,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -1903,7 +1905,7 @@ class Client(object):
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -1924,7 +1926,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -1964,7 +1966,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -1973,7 +1975,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -2020,7 +2022,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -2091,7 +2093,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -2118,7 +2120,7 @@ class Client(object):
         remotes: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The offset of the first resource to return from a collection.")] = None,
@@ -2142,7 +2144,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -2188,7 +2190,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -2197,7 +2199,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             offset=offset,
@@ -2272,7 +2274,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -2300,7 +2302,7 @@ class Client(object):
         remotes: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The offset of the first resource to return from a collection.")] = None,
@@ -2324,7 +2326,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -2370,7 +2372,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -2379,7 +2381,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             offset=offset,
@@ -2403,7 +2405,7 @@ class Client(object):
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
         end_time: Annotated[Optional[conint(strict=True, ge=0)], Field(description="When the time window ends (in milliseconds since epoch).")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The offset of the first resource to return from a collection.")] = None,
@@ -2433,7 +2435,7 @@ class Client(object):
         :param end_time: When the time window ends (in milliseconds since epoch).
         :type end_time: int
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -2491,7 +2493,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -2501,7 +2503,7 @@ class Client(object):
         kwargs = dict(
             continuation_token=continuation_token,
             end_time=end_time,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             offset=offset,
@@ -2557,7 +2559,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -2578,7 +2580,7 @@ class Client(object):
     def get_arrays_eula(
         self,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The offset of the first resource to return from a collection.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
@@ -2595,7 +2597,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param limit: Limit the size of the response to the specified number of resources. A `limit`
                     of `0` can be used to get the number of resources without getting all of the
                     resources. It will be returned in the `total_item_count` field. If a client
@@ -2627,7 +2629,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -2636,7 +2638,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             limit=limit,
             offset=offset,
             sort=sort,
@@ -2683,7 +2685,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -2732,7 +2734,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -2752,7 +2754,7 @@ class Client(object):
     def get_arrays_factory_reset_token(
         self,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The offset of the first resource to return from a collection.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
@@ -2769,7 +2771,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param limit: Limit the size of the response to the specified number of resources. A `limit`
                     of `0` can be used to get the number of resources without getting all of the
                     resources. It will be returned in the `total_item_count` field. If a client
@@ -2801,7 +2803,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -2810,7 +2812,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             limit=limit,
             offset=offset,
             sort=sort,
@@ -2854,7 +2856,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -2874,7 +2876,7 @@ class Client(object):
     def get_arrays(
         self,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The offset of the first resource to return from a collection.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
@@ -2891,7 +2893,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param limit: Limit the size of the response to the specified number of resources. A `limit`
                     of `0` can be used to get the number of resources without getting all of the
                     resources. It will be returned in the `total_item_count` field. If a client
@@ -2923,7 +2925,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -2932,7 +2934,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             limit=limit,
             offset=offset,
             sort=sort,
@@ -2987,7 +2989,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -3049,7 +3051,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -3103,7 +3105,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -3168,7 +3170,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -3235,7 +3237,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -3298,7 +3300,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -3364,7 +3366,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -3389,7 +3391,7 @@ class Client(object):
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The offset of the first resource to return from a collection.")] = None,
@@ -3409,7 +3411,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param limit: Limit the size of the response to the specified number of resources. A `limit`
                     of `0` can be used to get the number of resources without getting all of the
                     resources. It will be returned in the `total_item_count` field. If a client
@@ -3444,7 +3446,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -3453,7 +3455,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             limit=limit,
             names=names,
             offset=offset,
@@ -3472,7 +3474,7 @@ class Client(object):
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -3493,7 +3495,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -3533,7 +3535,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -3542,7 +3544,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -3562,7 +3564,7 @@ class Client(object):
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -3584,7 +3586,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -3627,7 +3629,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -3636,7 +3638,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -3728,7 +3730,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -3762,7 +3764,7 @@ class Client(object):
         local_buckets: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         local_bucket_ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of local bucket IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `local_bucket_names` query parameter.")] = None,
@@ -3794,7 +3796,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -3855,7 +3857,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -3864,7 +3866,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             local_bucket_ids=local_bucket_ids,
@@ -3966,7 +3968,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -4064,7 +4066,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -4134,7 +4136,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -4159,7 +4161,7 @@ class Client(object):
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
         destroyed: Annotated[Optional[StrictBool], Field(description="If set to `true`, lists only destroyed objects that are in the eradication pending state. If set to `false`, lists only objects that are not destroyed. If not set, lists both objects that are destroyed and those that are not destroyed. If object name(s) are specified in the `names` parameter, then each object referenced must exist. If `destroyed` is set to `true`, then each object referenced must also be destroyed. If `destroyed` is set to `false`, then each object referenced must also not be destroyed. An error is returned if any of these conditions are not met.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -4190,7 +4192,7 @@ class Client(object):
                         returned if any of these conditions are not met.
         :type destroyed: bool
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -4233,7 +4235,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -4243,7 +4245,7 @@ class Client(object):
         kwargs = dict(
             continuation_token=continuation_token,
             destroyed=destroyed,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -4307,7 +4309,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -4333,7 +4335,7 @@ class Client(object):
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
         end_time: Annotated[Optional[conint(strict=True, ge=0)], Field(description="When the time window ends (in milliseconds since epoch).")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -4359,7 +4361,7 @@ class Client(object):
         :param end_time: When the time window ends (in milliseconds since epoch).
         :type end_time: int
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -4408,7 +4410,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -4418,7 +4420,7 @@ class Client(object):
         kwargs = dict(
             continuation_token=continuation_token,
             end_time=end_time,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -4477,7 +4479,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -4502,7 +4504,7 @@ class Client(object):
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
         end_time: Annotated[Optional[conint(strict=True, ge=0)], Field(description="When the time window ends (in milliseconds since epoch).")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -4528,7 +4530,7 @@ class Client(object):
         :param end_time: When the time window ends (in milliseconds since epoch).
         :type end_time: int
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -4577,7 +4579,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -4587,7 +4589,7 @@ class Client(object):
         kwargs = dict(
             continuation_token=continuation_token,
             end_time=end_time,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -4667,7 +4669,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -4699,7 +4701,7 @@ class Client(object):
         certificate_ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of certificate ids. If there is not at least one resource that matches each of the elements of `certificate_ids`, then an error is returned. This cannot be provided in conjunction with the `certificate_names` parameter.")] = None,
         certificate_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of certificate names. If there is not at least one resource that matches each of the elements of `certificate_names`, then an error is returned. This cannot be provided in conjunction with the `certificate_ids` parameter.")] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The offset of the first resource to return from a collection.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
@@ -4740,7 +4742,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param limit: Limit the size of the response to the specified number of resources. A `limit`
                     of `0` can be used to get the number of resources without getting all of the
                     resources. It will be returned in the `total_item_count` field. If a client
@@ -4772,7 +4774,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -4785,7 +4787,7 @@ class Client(object):
             certificate_ids=certificate_ids,
             certificate_names=certificate_names,
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             limit=limit,
             offset=offset,
             sort=sort,
@@ -4861,7 +4863,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -4928,7 +4930,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -4952,7 +4954,7 @@ class Client(object):
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -4973,7 +4975,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -5013,7 +5015,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -5022,7 +5024,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -5076,7 +5078,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -5099,7 +5101,7 @@ class Client(object):
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -5120,7 +5122,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -5160,7 +5162,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -5169,7 +5171,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -5246,7 +5248,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -5278,7 +5280,7 @@ class Client(object):
         certificate_ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of certificate ids. If there is not at least one resource that matches each of the elements of `certificate_ids`, then an error is returned. This cannot be provided in conjunction with the `certificate_names` parameter.")] = None,
         certificate_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of certificate names. If there is not at least one resource that matches each of the elements of `certificate_names`, then an error is returned. This cannot be provided in conjunction with the `certificate_ids` parameter.")] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The offset of the first resource to return from a collection.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
@@ -5319,7 +5321,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param limit: Limit the size of the response to the specified number of resources. A `limit`
                     of `0` can be used to get the number of resources without getting all of the
                     resources. It will be returned in the `total_item_count` field. If a client
@@ -5351,7 +5353,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -5364,7 +5366,7 @@ class Client(object):
             certificate_ids=certificate_ids,
             certificate_names=certificate_names,
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             limit=limit,
             offset=offset,
             sort=sort,
@@ -5440,7 +5442,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -5507,7 +5509,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -5531,7 +5533,7 @@ class Client(object):
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -5552,7 +5554,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -5592,7 +5594,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -5601,7 +5603,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -5664,7 +5666,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -5726,7 +5728,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -5750,7 +5752,7 @@ class Client(object):
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -5771,7 +5773,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -5811,7 +5813,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -5820,7 +5822,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -5839,7 +5841,7 @@ class Client(object):
     def get_arrays_clients_performance(
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
@@ -5856,7 +5858,7 @@ class Client(object):
         :param references: A list of references to query for. Overrides names keyword argument.
         :type references: ReferenceType or List[ReferenceType], optional
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param limit: Limit the size of the response to the specified number of resources. A `limit`
                     of `0` can be used to get the number of resources without getting all of the
                     resources. It will be returned in the `total_item_count` field. If a client
@@ -5892,7 +5894,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -5900,7 +5902,7 @@ class Client(object):
         """ # noqa: E501
 
         kwargs = dict(
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             limit=limit,
             names=names,
             sort=sort,
@@ -5919,7 +5921,7 @@ class Client(object):
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -5940,7 +5942,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -5980,7 +5982,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -5989,7 +5991,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -6052,7 +6054,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -6077,7 +6079,7 @@ class Client(object):
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -6098,7 +6100,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -6138,7 +6140,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -6147,7 +6149,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -6210,7 +6212,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -6236,7 +6238,7 @@ class Client(object):
         roles: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `role_names` or `role_ids` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The offset of the first resource to return from a collection.")] = None,
@@ -6260,7 +6262,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `role_names` or
@@ -6307,7 +6309,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -6316,7 +6318,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             offset=offset,
@@ -6392,7 +6394,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -6418,7 +6420,7 @@ class Client(object):
     def get_directory_services_test(
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -6435,7 +6437,7 @@ class Client(object):
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -6473,7 +6475,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -6481,7 +6483,7 @@ class Client(object):
         """ # noqa: E501
 
         kwargs = dict(
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -6499,7 +6501,7 @@ class Client(object):
     def patch_directory_services_test(
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
@@ -6516,7 +6518,7 @@ class Client(object):
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -6551,7 +6553,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -6559,7 +6561,7 @@ class Client(object):
         """ # noqa: E501
 
         kwargs = dict(
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             names=names,
             sort=sort,
@@ -6581,7 +6583,7 @@ class Client(object):
         local_file_systems: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         local_file_system_ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of local file system IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `local_file_system_names` query parameter.")] = None,
@@ -6613,7 +6615,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -6679,7 +6681,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -6688,7 +6690,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             local_file_system_ids=local_file_system_ids,
@@ -6793,7 +6795,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -6829,7 +6831,7 @@ class Client(object):
         members: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         local_file_systems: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         local_file_system_ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of local file system IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `local_file_system_names` query parameter.")] = None,
         local_file_system_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of local file system names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `local_file_system_ids` query parameter.")] = None,
@@ -6865,7 +6867,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param limit: Limit the size of the response to the specified number of resources. A `limit`
                     of `0` can be used to get the number of resources without getting all of the
                     resources. It will be returned in the `total_item_count` field. If a client
@@ -6938,7 +6940,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -6947,7 +6949,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             limit=limit,
             local_file_system_ids=local_file_system_ids,
             local_file_system_names=local_file_system_names,
@@ -7055,7 +7057,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -7164,7 +7166,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -7198,7 +7200,7 @@ class Client(object):
         names_or_owners: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names_or_owner_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. Either the names of the snapshots or the owning file systems.")] = None,
@@ -7226,7 +7228,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -7278,7 +7280,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -7287,7 +7289,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names_or_owner_names=names_or_owner_names,
@@ -7352,7 +7354,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -7379,7 +7381,7 @@ class Client(object):
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
         destroyed: Annotated[Optional[StrictBool], Field(description="If set to `true`, lists only destroyed objects that are in the eradication pending state. If set to `false`, lists only objects that are not destroyed. If not set, lists both objects that are destroyed and those that are not destroyed. If object name(s) are specified in the `names` parameter, then each object referenced must exist. If `destroyed` is set to `true`, then each object referenced must also be destroyed. If `destroyed` is set to `false`, then each object referenced must also not be destroyed. An error is returned if any of these conditions are not met.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names_or_owner_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. Either the names of the snapshots or the owning file systems.")] = None,
@@ -7415,7 +7417,7 @@ class Client(object):
                         returned if any of these conditions are not met.
         :type destroyed: bool
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -7463,7 +7465,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -7473,7 +7475,7 @@ class Client(object):
         kwargs = dict(
             continuation_token=continuation_token,
             destroyed=destroyed,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names_or_owner_names=names_or_owner_names,
@@ -7546,7 +7548,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -7623,7 +7625,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -7651,7 +7653,7 @@ class Client(object):
         policies: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         members: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         member_ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of member IDs. If after filtering, there is not at least one resource that matches each of the elements of `member_ids`, then an error is returned. This cannot be provided together with the `member_names` query parameter.")] = None,
         member_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of member names.")] = None,
@@ -7676,7 +7678,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param limit: Limit the size of the response to the specified number of resources. A `limit`
                     of `0` can be used to get the number of resources without getting all of the
                     resources. It will be returned in the `total_item_count` field. If a client
@@ -7722,7 +7724,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -7731,7 +7733,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             limit=limit,
             member_ids=member_ids,
             member_names=member_names,
@@ -7807,7 +7809,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -7888,7 +7890,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -7916,7 +7918,7 @@ class Client(object):
         names_or_owners: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names_or_owner_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. Either the names of the snapshots or the owning file systems.")] = None,
@@ -7940,7 +7942,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -7983,7 +7985,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -7992,7 +7994,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names_or_owner_names=names_or_owner_names,
@@ -8054,7 +8056,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -8079,7 +8081,7 @@ class Client(object):
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
         destroyed: Annotated[Optional[StrictBool], Field(description="If set to `true`, lists only destroyed objects that are in the eradication pending state. If set to `false`, lists only objects that are not destroyed. If not set, lists both objects that are destroyed and those that are not destroyed. If object name(s) are specified in the `names` parameter, then each object referenced must exist. If `destroyed` is set to `true`, then each object referenced must also be destroyed. If `destroyed` is set to `false`, then each object referenced must also not be destroyed. An error is returned if any of these conditions are not met.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -8110,7 +8112,7 @@ class Client(object):
                         returned if any of these conditions are not met.
         :type destroyed: bool
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -8153,7 +8155,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -8163,7 +8165,7 @@ class Client(object):
         kwargs = dict(
             continuation_token=continuation_token,
             destroyed=destroyed,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -8187,7 +8189,7 @@ class Client(object):
         file_systems: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         file_system_ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of file system IDs. If after filtering, there is not at least one resource that matches each of the elements of `file_system_ids`, then an error is returned. This cannot be provided together with the `file_system_names` query parameter.")] = None,
         file_system_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of file system names. If there is not at least one resource that matches each of the elements of `file_system_names`, then an error is returned.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         gids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of group IDs. This cannot be provided together with `group_names` query parameter.")] = None,
         group_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of group names. This cannot be provided together with `gids` query parameter.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
@@ -8219,7 +8221,7 @@ class Client(object):
                                 error is returned.
         :type file_system_names: List[str]
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param gids: A comma-separated list of group IDs. This cannot be provided together with
                     `group_names` query parameter.
         :type gids: List[str]
@@ -8261,7 +8263,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -8271,7 +8273,7 @@ class Client(object):
         kwargs = dict(
             file_system_ids=file_system_ids,
             file_system_names=file_system_names,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             gids=gids,
             group_names=group_names,
             limit=limit,
@@ -8366,7 +8368,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -8396,7 +8398,7 @@ class Client(object):
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
         end_time: Annotated[Optional[conint(strict=True, ge=0)], Field(description="When the time window ends (in milliseconds since epoch).")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -8423,7 +8425,7 @@ class Client(object):
         :param end_time: When the time window ends (in milliseconds since epoch).
         :type end_time: int
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -8476,7 +8478,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -8486,7 +8488,7 @@ class Client(object):
         kwargs = dict(
             continuation_token=continuation_token,
             end_time=end_time,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -8561,7 +8563,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -8589,7 +8591,7 @@ class Client(object):
         policies: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         members: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         member_ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of member IDs. If after filtering, there is not at least one resource that matches each of the elements of `member_ids`, then an error is returned. This cannot be provided together with the `member_names` query parameter.")] = None,
         member_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of member names.")] = None,
@@ -8614,7 +8616,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param limit: Limit the size of the response to the specified number of resources. A `limit`
                     of `0` can be used to get the number of resources without getting all of the
                     resources. It will be returned in the `total_item_count` field. If a client
@@ -8660,7 +8662,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -8669,7 +8671,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             limit=limit,
             member_ids=member_ids,
             member_names=member_names,
@@ -8743,7 +8745,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -8816,7 +8818,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -8845,7 +8847,7 @@ class Client(object):
         file_systems: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         file_system_ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of file system IDs. If after filtering, there is not at least one resource that matches each of the elements of `file_system_ids`, then an error is returned. This cannot be provided together with the `file_system_names` query parameter.")] = None,
         file_system_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of file system names. If there is not at least one resource that matches each of the elements of `file_system_names`, then an error is returned.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
@@ -8877,7 +8879,7 @@ class Client(object):
                                 error is returned.
         :type file_system_names: List[str]
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param limit: Limit the size of the response to the specified number of resources. A `limit`
                     of `0` can be used to get the number of resources without getting all of the
                     resources. It will be returned in the `total_item_count` field. If a client
@@ -8919,7 +8921,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -8929,7 +8931,7 @@ class Client(object):
         kwargs = dict(
             file_system_ids=file_system_ids,
             file_system_names=file_system_names,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             limit=limit,
             names=names,
             sort=sort,
@@ -8952,7 +8954,7 @@ class Client(object):
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -8973,7 +8975,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -9013,7 +9015,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -9022,7 +9024,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -9085,7 +9087,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -9110,7 +9112,7 @@ class Client(object):
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -9131,7 +9133,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -9171,7 +9173,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -9180,7 +9182,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -9243,7 +9245,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -9308,7 +9310,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -9332,7 +9334,7 @@ class Client(object):
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -9353,7 +9355,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -9393,7 +9395,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -9402,7 +9404,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -9465,7 +9467,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -9527,7 +9529,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -9591,7 +9593,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -9655,7 +9657,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -9719,7 +9721,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -9743,7 +9745,7 @@ class Client(object):
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -9764,7 +9766,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -9804,7 +9806,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -9813,7 +9815,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -9867,7 +9869,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -9924,7 +9926,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -10004,7 +10006,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -10034,7 +10036,7 @@ class Client(object):
         bucket_ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of bucket IDs. If after filtering, there is not at least one resource that matches each of the elements of `bucket_ids`, then an error is returned. This cannot be provided together with the `bucket_names` query parameter. This can be provided with the `ids` query parameter but not with `names`.")] = None,
         bucket_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of bucket names. If there is not at least one resource that matches each of the elements of `bucket_names`, then an error is returned. This cannot be provided together with the `bucket_ids` query parameter. This can be provided with the `ids` query parameter but not with `names`.")] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -10069,7 +10071,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -10109,7 +10111,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -10120,7 +10122,7 @@ class Client(object):
             bucket_ids=bucket_ids,
             bucket_names=bucket_names,
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -10205,7 +10207,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -10268,7 +10270,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -10331,7 +10333,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -10355,7 +10357,7 @@ class Client(object):
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -10376,7 +10378,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -10416,7 +10418,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -10425,7 +10427,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -10488,7 +10490,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -10549,7 +10551,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -10606,7 +10608,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -10669,7 +10671,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -10693,7 +10695,7 @@ class Client(object):
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -10714,7 +10716,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -10754,7 +10756,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -10763,7 +10765,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -10826,7 +10828,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -10887,7 +10889,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -10944,7 +10946,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -10967,7 +10969,7 @@ class Client(object):
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The offset of the first resource to return from a collection.")] = None,
@@ -10987,7 +10989,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param limit: Limit the size of the response to the specified number of resources. A `limit`
                     of `0` can be used to get the number of resources without getting all of the
                     resources. It will be returned in the `total_item_count` field. If a client
@@ -11022,7 +11024,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -11031,7 +11033,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             limit=limit,
             names=names,
             offset=offset,
@@ -11086,7 +11088,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -11149,7 +11151,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -11213,7 +11215,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -11237,7 +11239,7 @@ class Client(object):
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -11259,7 +11261,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -11302,7 +11304,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -11311,7 +11313,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -11365,7 +11367,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -11428,7 +11430,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -11452,7 +11454,7 @@ class Client(object):
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -11473,7 +11475,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -11513,7 +11515,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -11522,7 +11524,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -11585,7 +11587,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -11646,7 +11648,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -11710,7 +11712,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -11734,7 +11736,7 @@ class Client(object):
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -11755,7 +11757,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -11795,7 +11797,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -11804,7 +11806,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -11875,7 +11877,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -11903,7 +11905,7 @@ class Client(object):
         policies: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         members: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         member_ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of member IDs. If after filtering, there is not at least one resource that matches each of the elements of `member_ids`, then an error is returned. This cannot be provided together with the `member_names` query parameter.")] = None,
         member_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of member names.")] = None,
@@ -11928,7 +11930,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param limit: Limit the size of the response to the specified number of resources. A `limit`
                     of `0` can be used to get the number of resources without getting all of the
                     resources. It will be returned in the `total_item_count` field. If a client
@@ -11974,7 +11976,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -11983,7 +11985,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             limit=limit,
             member_ids=member_ids,
             member_names=member_names,
@@ -12057,7 +12059,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -12122,7 +12124,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -12186,7 +12188,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -12210,7 +12212,7 @@ class Client(object):
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -12231,7 +12233,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -12271,7 +12273,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -12280,7 +12282,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -12333,7 +12335,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -12356,7 +12358,7 @@ class Client(object):
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -12377,7 +12379,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -12417,7 +12419,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -12426,7 +12428,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -12450,7 +12452,7 @@ class Client(object):
         members: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         local_file_systems: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         local_file_system_ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of local file system IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `local_file_system_names` query parameter.")] = None,
         local_file_system_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of local file system names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `local_file_system_ids` query parameter.")] = None,
@@ -12488,7 +12490,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param limit: Limit the size of the response to the specified number of resources. A `limit`
                     of `0` can be used to get the number of resources without getting all of the
                     resources. It will be returned in the `total_item_count` field. If a client
@@ -12567,7 +12569,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -12576,7 +12578,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             limit=limit,
             local_file_system_ids=local_file_system_ids,
             local_file_system_names=local_file_system_names,
@@ -12649,7 +12651,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -12673,7 +12675,7 @@ class Client(object):
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -12694,7 +12696,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -12734,7 +12736,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -12743,7 +12745,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -12814,7 +12816,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -12842,7 +12844,7 @@ class Client(object):
         policies: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         members: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         member_ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of member IDs. If after filtering, there is not at least one resource that matches each of the elements of `member_ids`, then an error is returned. This cannot be provided together with the `member_names` query parameter.")] = None,
         member_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of member names.")] = None,
@@ -12867,7 +12869,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param limit: Limit the size of the response to the specified number of resources. A `limit`
                     of `0` can be used to get the number of resources without getting all of the
                     resources. It will be returned in the `total_item_count` field. If a client
@@ -12913,7 +12915,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -12922,7 +12924,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             limit=limit,
             member_ids=member_ids,
             member_names=member_names,
@@ -12996,7 +12998,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -13072,7 +13074,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -13140,7 +13142,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -13211,7 +13213,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -13238,7 +13240,7 @@ class Client(object):
         policies: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The offset of the first resource to return from a collection.")] = None,
@@ -13262,7 +13264,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param limit: Limit the size of the response to the specified number of resources. A `limit`
                     of `0` can be used to get the number of resources without getting all of the
                     resources. It will be returned in the `total_item_count` field. If a client
@@ -13304,7 +13306,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -13313,7 +13315,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             limit=limit,
             names=names,
             offset=offset,
@@ -13390,7 +13392,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -13472,7 +13474,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -13500,7 +13502,7 @@ class Client(object):
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The offset of the first resource to return from a collection.")] = None,
@@ -13520,7 +13522,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param limit: Limit the size of the response to the specified number of resources. A `limit`
                     of `0` can be used to get the number of resources without getting all of the
                     resources. It will be returned in the `total_item_count` field. If a client
@@ -13555,7 +13557,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -13564,7 +13566,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             limit=limit,
             names=names,
             offset=offset,
@@ -13623,7 +13625,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -13724,7 +13726,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -13760,7 +13762,7 @@ class Client(object):
         members: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         local_file_systems: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         local_file_system_ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of local file system IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `local_file_system_names` query parameter.")] = None,
         local_file_system_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of local file system names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `local_file_system_ids` query parameter.")] = None,
@@ -13796,7 +13798,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param limit: Limit the size of the response to the specified number of resources. A `limit`
                     of `0` can be used to get the number of resources without getting all of the
                     resources. It will be returned in the `total_item_count` field. If a client
@@ -13869,7 +13871,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -13878,7 +13880,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             limit=limit,
             local_file_system_ids=local_file_system_ids,
             local_file_system_names=local_file_system_names,
@@ -13986,7 +13988,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -14069,7 +14071,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -14097,7 +14099,7 @@ class Client(object):
         policies: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         members: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         member_ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of member IDs. If after filtering, there is not at least one resource that matches each of the elements of `member_ids`, then an error is returned. This cannot be provided together with the `member_names` query parameter.")] = None,
         member_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of member names.")] = None,
@@ -14122,7 +14124,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param limit: Limit the size of the response to the specified number of resources. A `limit`
                     of `0` can be used to get the number of resources without getting all of the
                     resources. It will be returned in the `total_item_count` field. If a client
@@ -14168,7 +14170,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -14177,7 +14179,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             limit=limit,
             member_ids=member_ids,
             member_names=member_names,
@@ -14251,7 +14253,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -14279,7 +14281,7 @@ class Client(object):
         policies: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         members: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         member_ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of member IDs. If after filtering, there is not at least one resource that matches each of the elements of `member_ids`, then an error is returned. This cannot be provided together with the `member_names` query parameter.")] = None,
         member_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of member names.")] = None,
@@ -14304,7 +14306,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param limit: Limit the size of the response to the specified number of resources. A `limit`
                     of `0` can be used to get the number of resources without getting all of the
                     resources. It will be returned in the `total_item_count` field. If a client
@@ -14350,7 +14352,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -14359,7 +14361,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             limit=limit,
             member_ids=member_ids,
             member_names=member_names,
@@ -14433,7 +14435,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -14460,7 +14462,7 @@ class Client(object):
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -14481,7 +14483,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -14521,7 +14523,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -14530,7 +14532,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -14554,7 +14556,7 @@ class Client(object):
         members: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         local_file_systems: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         local_file_system_ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of local file system IDs. If after filtering, there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with the `local_file_system_names` query parameter.")] = None,
         local_file_system_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of local file system names. If there is not at least one resource that matches each of the elements, then an error is returned. This cannot be provided together with `local_file_system_ids` query parameter.")] = None,
@@ -14592,7 +14594,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param limit: Limit the size of the response to the specified number of resources. A `limit`
                     of `0` can be used to get the number of resources without getting all of the
                     resources. It will be returned in the `total_item_count` field. If a client
@@ -14671,7 +14673,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -14680,7 +14682,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             limit=limit,
             local_file_system_ids=local_file_system_ids,
             local_file_system_names=local_file_system_names,
@@ -14760,7 +14762,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -14822,7 +14824,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -14907,7 +14909,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -14940,7 +14942,7 @@ class Client(object):
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
         file_system_ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of file system IDs. If after filtering, there is not at least one resource that matches each of the elements of `file_system_ids`, then an error is returned. This cannot be provided together with the `file_system_names` query parameter.")] = None,
         file_system_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of file system names. If there is not at least one resource that matches each of the elements of `file_system_names`, then an error is returned.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         gids: Annotated[Optional[conlist(StrictInt)], Field(description="A comma-separated list of group IDs. If there is not at least one resource that matches each of the elements of `gids`, then an error is returned. This cannot be provided together with `group_names` query parameter.")] = None,
         group_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of group names. If there is not at least one resource that matches each of the elements of `group_names`, then an error is returned. This cannot be provided together with `gids` query parameter.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
@@ -14975,7 +14977,7 @@ class Client(object):
                                 error is returned.
         :type file_system_names: List[str]
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param gids: A comma-separated list of group IDs. If there is not at least one resource that
                     matches each of the elements of `gids`, then an error is returned. This
                     cannot be provided together with `group_names` query parameter.
@@ -15018,7 +15020,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -15029,7 +15031,7 @@ class Client(object):
             continuation_token=continuation_token,
             file_system_ids=file_system_ids,
             file_system_names=file_system_names,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             gids=gids,
             group_names=group_names,
             limit=limit,
@@ -15116,7 +15118,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -15203,7 +15205,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -15271,7 +15273,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -15325,7 +15327,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -15408,7 +15410,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -15441,7 +15443,7 @@ class Client(object):
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
         file_system_ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of file system IDs. If after filtering, there is not at least one resource that matches each of the elements of `file_system_ids`, then an error is returned. This cannot be provided together with the `file_system_names` query parameter.")] = None,
         file_system_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of file system names. If there is not at least one resource that matches each of the elements of `file_system_names`, then an error is returned.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The offset of the first resource to return from a collection.")] = None,
@@ -15476,7 +15478,7 @@ class Client(object):
                                 error is returned.
         :type file_system_names: List[str]
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param limit: Limit the size of the response to the specified number of resources. A `limit`
                     of `0` can be used to get the number of resources without getting all of the
                     resources. It will be returned in the `total_item_count` field. If a client
@@ -15519,7 +15521,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -15530,7 +15532,7 @@ class Client(object):
             continuation_token=continuation_token,
             file_system_ids=file_system_ids,
             file_system_names=file_system_names,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             limit=limit,
             names=names,
             offset=offset,
@@ -15617,7 +15619,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -15704,7 +15706,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -15759,7 +15761,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -15810,7 +15812,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -15859,7 +15861,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -15907,7 +15909,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -15928,7 +15930,7 @@ class Client(object):
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -15949,7 +15951,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -15989,7 +15991,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -15998,7 +16000,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -16018,7 +16020,7 @@ class Client(object):
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -16039,7 +16041,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -16079,7 +16081,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -16088,7 +16090,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -16138,7 +16140,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -16160,7 +16162,7 @@ class Client(object):
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -16181,7 +16183,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -16221,7 +16223,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -16230,7 +16232,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -16277,7 +16279,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -16328,7 +16330,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -16390,7 +16392,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -16414,7 +16416,7 @@ class Client(object):
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -16435,7 +16437,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -16475,7 +16477,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -16484,7 +16486,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -16547,7 +16549,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -16608,7 +16610,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -16632,7 +16634,7 @@ class Client(object):
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -16653,7 +16655,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -16693,7 +16695,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -16702,7 +16704,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -16762,7 +16764,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -16786,7 +16788,7 @@ class Client(object):
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -16807,7 +16809,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -16847,7 +16849,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -16856,7 +16858,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -16919,7 +16921,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -16980,7 +16982,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -17044,7 +17046,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -17098,7 +17100,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -17118,7 +17120,7 @@ class Client(object):
 
     def get_support_test(
         self,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
         test_type: Annotated[Optional[StrictStr], Field(description="Specify the type of test. Valid values are `all`, `phonehome` and `remote-assist`. If not specified, defaults to `all`.")] = None,
         async_req: Optional[bool] = None,
@@ -17131,7 +17133,7 @@ class Client(object):
         Test if the Phone Home and Remote Assistance settings are functioning properly.
         
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.
         :type sort: List[str]
         :param test_type: Specify the type of test. Valid values are `all`, `phonehome` and `remote-
@@ -17157,7 +17159,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -17165,7 +17167,7 @@ class Client(object):
         """ # noqa: E501
 
         kwargs = dict(
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             sort=sort,
             test_type=test_type,
             async_req=async_req,
@@ -17221,7 +17223,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -17245,7 +17247,7 @@ class Client(object):
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
@@ -17266,7 +17268,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -17306,7 +17308,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -17315,7 +17317,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -17378,7 +17380,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -17440,7 +17442,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -17464,7 +17466,7 @@ class Client(object):
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -17485,7 +17487,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -17525,7 +17527,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -17534,7 +17536,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -17597,7 +17599,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -17653,7 +17655,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -17715,7 +17717,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -17739,7 +17741,7 @@ class Client(object):
         self,
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -17760,7 +17762,7 @@ class Client(object):
                                 request is returned in the `continuation_token` field of the result.
         :type continuation_token: str
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -17800,7 +17802,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -17809,7 +17811,7 @@ class Client(object):
 
         kwargs = dict(
             continuation_token=continuation_token,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -17872,7 +17874,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -17898,7 +17900,7 @@ class Client(object):
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
         end_time: Annotated[Optional[conint(strict=True, ge=0)], Field(description="When the time window ends (in milliseconds since epoch).")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
@@ -17924,7 +17926,7 @@ class Client(object):
         :param end_time: When the time window ends (in milliseconds since epoch).
         :type end_time: int
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
                     least one resource that matches each of the elements of `ids`, then an error
                     is returned. This cannot be provided together with the `name` or `names`
@@ -17973,7 +17975,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -17983,7 +17985,7 @@ class Client(object):
         kwargs = dict(
             continuation_token=continuation_token,
             end_time=end_time,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             ids=ids,
             limit=limit,
             names=names,
@@ -18042,7 +18044,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -18069,7 +18071,7 @@ class Client(object):
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
         file_system_ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of file system IDs. If after filtering, there is not at least one resource that matches each of the elements of `file_system_ids`, then an error is returned. This cannot be provided together with the `file_system_names` query parameter.")] = None,
         file_system_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of file system names. If there is not at least one resource that matches each of the elements of `file_system_names`, then an error is returned.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         gids: Annotated[Optional[conlist(StrictInt)], Field(description="A comma-separated list of group IDs. If there is not at least one resource that matches each of the elements of `gids`, then an error is returned. This cannot be provided together with `group_names` query parameter.")] = None,
         group_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of group names. If there is not at least one resource that matches each of the elements of `group_names`, then an error is returned. This cannot be provided together with `gids` query parameter.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
@@ -18101,7 +18103,7 @@ class Client(object):
                                 error is returned.
         :type file_system_names: List[str]
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param gids: A comma-separated list of group IDs. If there is not at least one resource that
                     matches each of the elements of `gids`, then an error is returned. This
                     cannot be provided together with `group_names` query parameter.
@@ -18141,7 +18143,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -18152,7 +18154,7 @@ class Client(object):
             continuation_token=continuation_token,
             file_system_ids=file_system_ids,
             file_system_names=file_system_names,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             gids=gids,
             group_names=group_names,
             limit=limit,
@@ -18176,7 +18178,7 @@ class Client(object):
         continuation_token: Annotated[Optional[StrictStr], Field(description="An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.")] = None,
         file_system_ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of file system IDs. If after filtering, there is not at least one resource that matches each of the elements of `file_system_ids`, then an error is returned. This cannot be provided together with the `file_system_names` query parameter.")] = None,
         file_system_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of file system names. If there is not at least one resource that matches each of the elements of `file_system_names`, then an error is returned.")] = None,
-        filter: Annotated[Optional[StrictStr], Field(description="Exclude resources that don't match the specified criteria.")] = None,
+        filter: Annotated[Optional[Union[StrictStr, Filter]], Field(description="Exclude resources that don't match the specified criteria.")] = None,
         limit: Annotated[Optional[conint(strict=True, ge=0)], Field(description="Limit the size of the response to the specified number of resources. A `limit` of `0` can be used to get the number of resources without getting all of the resources. It will be returned in the `total_item_count` field. If a client asks for a page size larger than the available number, the request is still valid. In that case the server just returns the available number of items, disregarding the client's page size request.")] = None,
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The offset of the first resource to return from a collection.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). NOTE: If you provide a sort you will not get a `continuation_token` in the response.")] = None,
@@ -18208,7 +18210,7 @@ class Client(object):
                                 error is returned.
         :type file_system_names: List[str]
         :param filter: Exclude resources that don't match the specified criteria.
-        :type filter: str
+        :type filter: Union[str, Filter]
         :param limit: Limit the size of the response to the specified number of resources. A `limit`
                     of `0` can be used to get the number of resources without getting all of the
                     resources. It will be returned in the `total_item_count` field. If a client
@@ -18248,7 +18250,7 @@ class Client(object):
         
         :return: ValidResponse: If the call was successful.
                  ErrorResponse: If the call was not successful.
-        :rtype: [Union[ValidResponse, ErrorResponse]]
+        :rtype: Union[ValidResponse, ErrorResponse]
         
         :raises: PureError: If calling the API fails.
         :raises: ValueError: If a parameter is of an invalid type.
@@ -18259,7 +18261,7 @@ class Client(object):
             continuation_token=continuation_token,
             file_system_ids=file_system_ids,
             file_system_names=file_system_names,
-            filter=filter,
+            filter=str(filter) if isinstance(filter, Filter) else filter,
             limit=limit,
             offset=offset,
             sort=sort,

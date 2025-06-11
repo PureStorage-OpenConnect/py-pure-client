@@ -1,7 +1,7 @@
 import importlib
+from typing import Union, Tuple
 
 from .__modules_dict import __modules_dict as fb_modules_dict
-
 from ..client_settings import resolve_ssl_validation, get_target_versions
 
 fb_modules = {}
@@ -62,7 +62,7 @@ def Client(target, version=None, id_token=None, private_key_file=None, private_k
     Raises:
         PureError: If it could not create an ID or access token
     """
-    array_versions = get_array_versions(target, verify_ssl)
+    array_versions = get_array_versions(target, verify_ssl, timeout)
     if version is not None:
         validate_version(array_versions, version)
     else:
@@ -75,8 +75,8 @@ def Client(target, version=None, id_token=None, private_key_file=None, private_k
     return client
 
 
-def get_array_versions(target, verify_ssl=None):
-    return get_target_versions(target, 'flashblade', 'versions', verify_ssl)
+def get_array_versions(target, verify_ssl=None, timeout: Union[int, Tuple[float, float]]=None):
+    return get_target_versions(target, 'flashblade', 'versions', verify_ssl, timeout)
 
 
 def validate_version(array_versions, version):

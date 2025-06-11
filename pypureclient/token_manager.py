@@ -22,7 +22,7 @@ class TokenManager(object):
     EXP_TIME_IN_SECONDS = 315360000  # 10 years
 
     def __init__(self, token_endpoint, id_token=None, private_key_file=None,
-                 private_key_password=None, payload=None, headers=None, verify_ssl=True):
+                 private_key_password=None, payload=None, headers=None, verify_ssl=True, timeout=None):
         """
         Initialize a TokenManager. Should be treated as a static object.
 
@@ -51,6 +51,7 @@ class TokenManager(object):
                                    .format(self._token_endpoint.replace('/', '')))
         self._access_token = None
         self._verify_ssl = verify_ssl
+        self._timeout = timeout
         # If we already have an ID token, just use that
         if id_token is not None:
             self._id_token = id_token
@@ -166,7 +167,7 @@ class TokenManager(object):
             Headers.user_agent: __default_user_agent__,
             Headers.x_request_id: str(uuid.uuid4())
         }
-        response = requests.post(self._token_endpoint, data=post_data, verify=self._verify_ssl, headers=headers)
+        response = requests.post(self._token_endpoint, data=post_data, verify=self._verify_ssl, headers=headers, timeout=self._timeout)
         if response:
             try:
                 return str(response.json()['access_token'])
