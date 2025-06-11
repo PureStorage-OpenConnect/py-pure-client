@@ -18,154 +18,106 @@ Importable as
   from pypureclient.flashblade import Client
 
 
-.. autofunction:: pypureclient.flashblade.client.Client
-.. module:: pypureclient.flashblade
+.. module:: pypureclient.flashblade.client
+.. autofunction:: pypureclient.flashblade.client::Client
 
 FlashBlade REST 2.0 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. module:: pypureclient.flashblade.FB_2_0
-.. autoclass:: pypureclient.flashblade.FB_2_0.client.Client
+.. module:: pypureclient.flashblade.FB_2_0.client
+.. autoclass:: pypureclient.flashblade.FB_2_0.client::Client
 
 FlashBlade REST 2.1 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. module:: pypureclient.flashblade.FB_2_1
-.. autoclass:: pypureclient.flashblade.FB_2_1.client.Client
+.. module:: pypureclient.flashblade.FB_2_1.client
+.. autoclass:: pypureclient.flashblade.FB_2_1.client::Client
 
 FlashBlade REST 2.2 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. module:: pypureclient.flashblade.FB_2_2
-.. autoclass:: pypureclient.flashblade.FB_2_2.client.Client
+.. module:: pypureclient.flashblade.FB_2_2.client
+.. autoclass:: pypureclient.flashblade.FB_2_2.client::Client
 
 FlashBlade REST 2.3 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. module:: pypureclient.flashblade.FB_2_3
-.. autoclass:: pypureclient.flashblade.FB_2_3.client.Client
+.. module:: pypureclient.flashblade.FB_2_3.client
+.. autoclass:: pypureclient.flashblade.FB_2_3.client::Client
 
 FlashBlade REST 2.4 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. module:: pypureclient.flashblade.FB_2_4
-.. autoclass:: pypureclient.flashblade.FB_2_4.client.Client
+.. module:: pypureclient.flashblade.FB_2_4.client
+.. autoclass:: pypureclient.flashblade.FB_2_4.client::Client
 
 FlashBlade REST 2.5 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. module:: pypureclient.flashblade.FB_2_5
-.. autoclass:: pypureclient.flashblade.FB_2_5.client.Client
+.. module:: pypureclient.flashblade.FB_2_5.client
+.. autoclass:: pypureclient.flashblade.FB_2_5.client::Client
 
 FlashBlade REST 2.6 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. module:: pypureclient.flashblade.FB_2_6
-.. autoclass:: pypureclient.flashblade.FB_2_6.client.Client
+.. module:: pypureclient.flashblade.FB_2_6.client
+.. autoclass:: pypureclient.flashblade.FB_2_6.client::Client
 
 FlashBlade REST 2.7 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. module:: pypureclient.flashblade.FB_2_7
-.. autoclass:: pypureclient.flashblade.FB_2_7.client.Client
+.. module:: pypureclient.flashblade.FB_2_7.client
+.. autoclass:: pypureclient.flashblade.FB_2_7.client::Client
 
 FlashBlade REST 2.8 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. module:: pypureclient.flashblade.FB_2_8
-.. autoclass:: pypureclient.flashblade.FB_2_8.client.Client
+.. module:: pypureclient.flashblade.FB_2_8.client
+.. autoclass:: pypureclient.flashblade.FB_2_8.client::Client
 
 FlashBlade REST 2.9 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. module:: pypureclient.flashblade.FB_2_9
-.. autoclass:: pypureclient.flashblade.FB_2_9.client.Client
+.. module:: pypureclient.flashblade.FB_2_9.client
+.. autoclass:: pypureclient.flashblade.FB_2_9.client::Client
 
 FlashBlade REST 2.10 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. module:: pypureclient.flashblade.FB_2_10
-.. autoclass:: pypureclient.flashblade.FB_2_10.client.Client
+.. module:: pypureclient.flashblade.FB_2_10.client
+.. autoclass:: pypureclient.flashblade.FB_2_10.client::Client
 
 FlashBlade REST 2.11 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. module:: pypureclient.flashblade.FB_2_11
-.. autoclass:: pypureclient.flashblade.FB_2_11.client.Client
+.. module:: pypureclient.flashblade.FB_2_11.client
+.. autoclass:: pypureclient.flashblade.FB_2_11.client::Client
 
 FlashBlade REST 2.12 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. module:: pypureclient.flashblade.FB_2_12
-.. autoclass:: pypureclient.flashblade.FB_2_12.client.Client
+.. module:: pypureclient.flashblade.FB_2_12.client
+.. autoclass:: pypureclient.flashblade.FB_2_12.client::Client
 
 FlashBlade REST 2.13 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. module:: pypureclient.flashblade.FB_2_13
-.. autoclass:: pypureclient.flashblade.FB_2_13.client.Client
+.. module:: pypureclient.flashblade.FB_2_13.client
+.. autoclass:: pypureclient.flashblade.FB_2_13.client::Client
 
 FlashBlade REST 2.14 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. module:: pypureclient.flashblade.FB_2_14
-.. autoclass:: pypureclient.flashblade.FB_2_14.client.Client
+.. module:: pypureclient.flashblade.FB_2_14.client
+.. autoclass:: pypureclient.flashblade.FB_2_14.client::Client
 
 FlashBlade REST 2.15 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. module:: pypureclient.flashblade.FB_2_15
-.. autoclass:: pypureclient.flashblade.FB_2_15.client.Client
+.. module:: pypureclient.flashblade.FB_2_15.client
+.. autoclass:: pypureclient.flashblade.FB_2_15.client::Client
 
 FlashBlade REST 2.16 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. module:: pypureclient.flashblade.FB_2_16
-.. autoclass:: pypureclient.flashblade.FB_2_16.client.Client
+.. module:: pypureclient.flashblade.FB_2_16.client
+.. autoclass:: pypureclient.flashblade.FB_2_16.client::Client
 
 FlashBlade REST 2.17 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. module:: pypureclient.flashblade.FB_2_17
-.. autoclass:: pypureclient.flashblade.FB_2_17.client.Client
-   :members:
-
-Properties
-----------
-
-Property
-~~~~~~~~
-.. autoclass:: pypureclient.flashblade.Property
-   :members:
-
-Filter
-~~~~~~
-.. autoclass:: pypureclient.flashblade.Filter
-   :members:
-
-Responses
----------
-
-ResponseHeaders
-~~~~~~~~~~~~~~~
-.. autoclass:: pypureclient.flashblade.ResponseHeaders
-   :members:
-
-ValidResponse
-~~~~~~~~~~~~~
-.. autoclass:: pypureclient.flashblade.ValidResponse
-   :members:
-
-ApiError
-~~~~~~~~
-.. autoclass:: pypureclient.flashblade.ApiError
-   :members:
-
-ErrorResponse
-~~~~~~~~~~~~~
-.. autoclass:: pypureclient.flashblade.ErrorResponse
+.. module:: pypureclient.flashblade.FB_2_17.client
+.. autoclass:: pypureclient.flashblade.FB_2_17.client::Client
    :members:
 
 Models
 ------
 
-ReferenceType
-~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ReferenceType
-   :model-show-json: False
-   :model-show-field-summary: False
-   :model-show-config-summary: False
-   :model-show-validator-summary: True
-   :model-show-validator-members: True
-   :undoc-members: True
-   :model-hide-paramlist: False
-   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
-
 ActiveDirectory
 ~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ActiveDirectory
+.. autopydantic_model:: pypureclient.flashblade::ActiveDirectory
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -177,7 +129,7 @@ ActiveDirectory
 
 ActiveDirectoryDirectoryServers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ActiveDirectoryDirectoryServers
+.. autopydantic_model:: pypureclient.flashblade::ActiveDirectoryDirectoryServers
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -189,7 +141,7 @@ ActiveDirectoryDirectoryServers
 
 ActiveDirectoryGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ActiveDirectoryGetResponse
+.. autopydantic_model:: pypureclient.flashblade::ActiveDirectoryGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -201,7 +153,7 @@ ActiveDirectoryGetResponse
 
 ActiveDirectoryPatch
 ~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ActiveDirectoryPatch
+.. autopydantic_model:: pypureclient.flashblade::ActiveDirectoryPatch
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -213,7 +165,7 @@ ActiveDirectoryPatch
 
 ActiveDirectoryPost
 ~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ActiveDirectoryPost
+.. autopydantic_model:: pypureclient.flashblade::ActiveDirectoryPost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -225,7 +177,7 @@ ActiveDirectoryPost
 
 ActiveDirectoryResponse
 ~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ActiveDirectoryResponse
+.. autopydantic_model:: pypureclient.flashblade::ActiveDirectoryResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -237,7 +189,7 @@ ActiveDirectoryResponse
 
 Admin
 ~~~~~
-.. autopydantic_model:: pypureclient.flashblade.Admin
+.. autopydantic_model:: pypureclient.flashblade::Admin
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -249,7 +201,7 @@ Admin
 
 AdminApiToken
 ~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.AdminApiToken
+.. autopydantic_model:: pypureclient.flashblade::AdminApiToken
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -261,7 +213,7 @@ AdminApiToken
 
 AdminApiTokenGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.AdminApiTokenGetResponse
+.. autopydantic_model:: pypureclient.flashblade::AdminApiTokenGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -273,7 +225,7 @@ AdminApiTokenGetResponse
 
 AdminApiTokenResponse
 ~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.AdminApiTokenResponse
+.. autopydantic_model:: pypureclient.flashblade::AdminApiTokenResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -285,7 +237,7 @@ AdminApiTokenResponse
 
 AdminCache
 ~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.AdminCache
+.. autopydantic_model:: pypureclient.flashblade::AdminCache
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -297,7 +249,7 @@ AdminCache
 
 AdminCacheGetResponse
 ~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.AdminCacheGetResponse
+.. autopydantic_model:: pypureclient.flashblade::AdminCacheGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -309,7 +261,7 @@ AdminCacheGetResponse
 
 AdminGetResponse
 ~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.AdminGetResponse
+.. autopydantic_model:: pypureclient.flashblade::AdminGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -321,7 +273,7 @@ AdminGetResponse
 
 AdminPatch
 ~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.AdminPatch
+.. autopydantic_model:: pypureclient.flashblade::AdminPatch
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -333,7 +285,7 @@ AdminPatch
 
 AdminPost
 ~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.AdminPost
+.. autopydantic_model:: pypureclient.flashblade::AdminPost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -345,7 +297,7 @@ AdminPost
 
 AdminResponse
 ~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.AdminResponse
+.. autopydantic_model:: pypureclient.flashblade::AdminResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -357,7 +309,7 @@ AdminResponse
 
 AdminSetting
 ~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.AdminSetting
+.. autopydantic_model:: pypureclient.flashblade::AdminSetting
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -369,7 +321,7 @@ AdminSetting
 
 AdminSettingsGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.AdminSettingsGetResponse
+.. autopydantic_model:: pypureclient.flashblade::AdminSettingsGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -381,7 +333,7 @@ AdminSettingsGetResponse
 
 AdminSettingsResponse
 ~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.AdminSettingsResponse
+.. autopydantic_model:: pypureclient.flashblade::AdminSettingsResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -393,7 +345,7 @@ AdminSettingsResponse
 
 Alert
 ~~~~~
-.. autopydantic_model:: pypureclient.flashblade.Alert
+.. autopydantic_model:: pypureclient.flashblade::Alert
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -405,7 +357,7 @@ Alert
 
 AlertGetResponse
 ~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.AlertGetResponse
+.. autopydantic_model:: pypureclient.flashblade::AlertGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -417,7 +369,7 @@ AlertGetResponse
 
 AlertResponse
 ~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.AlertResponse
+.. autopydantic_model:: pypureclient.flashblade::AlertResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -429,7 +381,7 @@ AlertResponse
 
 AlertWatcher
 ~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.AlertWatcher
+.. autopydantic_model:: pypureclient.flashblade::AlertWatcher
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -441,7 +393,7 @@ AlertWatcher
 
 AlertWatcherGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.AlertWatcherGetResponse
+.. autopydantic_model:: pypureclient.flashblade::AlertWatcherGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -453,7 +405,7 @@ AlertWatcherGetResponse
 
 AlertWatcherPost
 ~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.AlertWatcherPost
+.. autopydantic_model:: pypureclient.flashblade::AlertWatcherPost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -465,7 +417,7 @@ AlertWatcherPost
 
 AlertWatcherResponse
 ~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.AlertWatcherResponse
+.. autopydantic_model:: pypureclient.flashblade::AlertWatcherResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -477,7 +429,7 @@ AlertWatcherResponse
 
 Api217LinkAggregationGroupsPatchRequest
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.Api217LinkAggregationGroupsPatchRequest
+.. autopydantic_model:: pypureclient.flashblade::Api217LinkAggregationGroupsPatchRequest
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -489,7 +441,7 @@ Api217LinkAggregationGroupsPatchRequest
 
 ApiClient
 ~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ApiClient
+.. autopydantic_model:: pypureclient.flashblade::ApiClient
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -501,7 +453,7 @@ ApiClient
 
 ApiClientsPost
 ~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ApiClientsPost
+.. autopydantic_model:: pypureclient.flashblade::ApiClientsPost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -513,7 +465,7 @@ ApiClientsPost
 
 ApiClientsResponse
 ~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ApiClientsResponse
+.. autopydantic_model:: pypureclient.flashblade::ApiClientsResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -525,7 +477,7 @@ ApiClientsResponse
 
 ApiToken
 ~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ApiToken
+.. autopydantic_model:: pypureclient.flashblade::ApiToken
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -537,7 +489,7 @@ ApiToken
 
 ApiVersion
 ~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ApiVersion
+.. autopydantic_model:: pypureclient.flashblade::ApiVersion
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -549,7 +501,7 @@ ApiVersion
 
 Array
 ~~~~~
-.. autopydantic_model:: pypureclient.flashblade.Array
+.. autopydantic_model:: pypureclient.flashblade::Array
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -561,7 +513,7 @@ Array
 
 ArrayConnection
 ~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ArrayConnection
+.. autopydantic_model:: pypureclient.flashblade::ArrayConnection
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -573,7 +525,7 @@ ArrayConnection
 
 ArrayConnectionGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ArrayConnectionGetResponse
+.. autopydantic_model:: pypureclient.flashblade::ArrayConnectionGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -585,7 +537,7 @@ ArrayConnectionGetResponse
 
 ArrayConnectionKey
 ~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ArrayConnectionKey
+.. autopydantic_model:: pypureclient.flashblade::ArrayConnectionKey
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -597,7 +549,7 @@ ArrayConnectionKey
 
 ArrayConnectionKeyGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ArrayConnectionKeyGetResponse
+.. autopydantic_model:: pypureclient.flashblade::ArrayConnectionKeyGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -609,7 +561,7 @@ ArrayConnectionKeyGetResponse
 
 ArrayConnectionKeyResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ArrayConnectionKeyResponse
+.. autopydantic_model:: pypureclient.flashblade::ArrayConnectionKeyResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -621,7 +573,7 @@ ArrayConnectionKeyResponse
 
 ArrayConnectionPath
 ~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ArrayConnectionPath
+.. autopydantic_model:: pypureclient.flashblade::ArrayConnectionPath
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -633,7 +585,7 @@ ArrayConnectionPath
 
 ArrayConnectionPathGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ArrayConnectionPathGetResponse
+.. autopydantic_model:: pypureclient.flashblade::ArrayConnectionPathGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -645,7 +597,7 @@ ArrayConnectionPathGetResponse
 
 ArrayConnectionPost
 ~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ArrayConnectionPost
+.. autopydantic_model:: pypureclient.flashblade::ArrayConnectionPost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -657,7 +609,7 @@ ArrayConnectionPost
 
 ArrayConnectionResponse
 ~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ArrayConnectionResponse
+.. autopydantic_model:: pypureclient.flashblade::ArrayConnectionResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -669,7 +621,7 @@ ArrayConnectionResponse
 
 ArrayEncryption
 ~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ArrayEncryption
+.. autopydantic_model:: pypureclient.flashblade::ArrayEncryption
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -681,7 +633,7 @@ ArrayEncryption
 
 ArrayEncryptionDataAtRest
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ArrayEncryptionDataAtRest
+.. autopydantic_model:: pypureclient.flashblade::ArrayEncryptionDataAtRest
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -693,7 +645,7 @@ ArrayEncryptionDataAtRest
 
 ArrayEradicationConfig
 ~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ArrayEradicationConfig
+.. autopydantic_model:: pypureclient.flashblade::ArrayEradicationConfig
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -705,7 +657,7 @@ ArrayEradicationConfig
 
 ArrayFactoryResetToken
 ~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ArrayFactoryResetToken
+.. autopydantic_model:: pypureclient.flashblade::ArrayFactoryResetToken
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -717,7 +669,7 @@ ArrayFactoryResetToken
 
 ArrayFactoryResetTokenGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ArrayFactoryResetTokenGetResponse
+.. autopydantic_model:: pypureclient.flashblade::ArrayFactoryResetTokenGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -729,7 +681,7 @@ ArrayFactoryResetTokenGetResponse
 
 ArrayFactoryResetTokenResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ArrayFactoryResetTokenResponse
+.. autopydantic_model:: pypureclient.flashblade::ArrayFactoryResetTokenResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -741,7 +693,7 @@ ArrayFactoryResetTokenResponse
 
 ArrayGetResponse
 ~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ArrayGetResponse
+.. autopydantic_model:: pypureclient.flashblade::ArrayGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -753,7 +705,7 @@ ArrayGetResponse
 
 ArrayHttpSpecificPerformance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ArrayHttpSpecificPerformance
+.. autopydantic_model:: pypureclient.flashblade::ArrayHttpSpecificPerformance
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -765,7 +717,7 @@ ArrayHttpSpecificPerformance
 
 ArrayHttpSpecificPerformanceGet
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ArrayHttpSpecificPerformanceGet
+.. autopydantic_model:: pypureclient.flashblade::ArrayHttpSpecificPerformanceGet
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -777,7 +729,7 @@ ArrayHttpSpecificPerformanceGet
 
 ArrayNfsSpecificPerformance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ArrayNfsSpecificPerformance
+.. autopydantic_model:: pypureclient.flashblade::ArrayNfsSpecificPerformance
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -789,7 +741,7 @@ ArrayNfsSpecificPerformance
 
 ArrayNfsSpecificPerformanceGet
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ArrayNfsSpecificPerformanceGet
+.. autopydantic_model:: pypureclient.flashblade::ArrayNfsSpecificPerformanceGet
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -801,7 +753,7 @@ ArrayNfsSpecificPerformanceGet
 
 ArrayPerformance
 ~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ArrayPerformance
+.. autopydantic_model:: pypureclient.flashblade::ArrayPerformance
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -813,7 +765,7 @@ ArrayPerformance
 
 ArrayPerformanceGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ArrayPerformanceGetResponse
+.. autopydantic_model:: pypureclient.flashblade::ArrayPerformanceGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -825,7 +777,7 @@ ArrayPerformanceGetResponse
 
 ArrayPerformanceReplicationGetResp
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ArrayPerformanceReplicationGetResp
+.. autopydantic_model:: pypureclient.flashblade::ArrayPerformanceReplicationGetResp
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -837,7 +789,7 @@ ArrayPerformanceReplicationGetResp
 
 ArrayResponse
 ~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ArrayResponse
+.. autopydantic_model:: pypureclient.flashblade::ArrayResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -849,7 +801,7 @@ ArrayResponse
 
 ArrayS3SpecificPerformance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ArrayS3SpecificPerformance
+.. autopydantic_model:: pypureclient.flashblade::ArrayS3SpecificPerformance
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -861,7 +813,7 @@ ArrayS3SpecificPerformance
 
 ArrayS3SpecificPerformanceGetResp
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ArrayS3SpecificPerformanceGetResp
+.. autopydantic_model:: pypureclient.flashblade::ArrayS3SpecificPerformanceGetResp
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -873,7 +825,7 @@ ArrayS3SpecificPerformanceGetResp
 
 ArraySpace
 ~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ArraySpace
+.. autopydantic_model:: pypureclient.flashblade::ArraySpace
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -885,7 +837,7 @@ ArraySpace
 
 ArraySpaceGetResponse
 ~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ArraySpaceGetResponse
+.. autopydantic_model:: pypureclient.flashblade::ArraySpaceGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -897,7 +849,7 @@ ArraySpaceGetResponse
 
 ArraySpaceStorageClassGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ArraySpaceStorageClassGetResponse
+.. autopydantic_model:: pypureclient.flashblade::ArraySpaceStorageClassGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -909,7 +861,7 @@ ArraySpaceStorageClassGetResponse
 
 ArraysSupportedTimeZonesGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ArraysSupportedTimeZonesGetResponse
+.. autopydantic_model:: pypureclient.flashblade::ArraysSupportedTimeZonesGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -921,7 +873,7 @@ ArraysSupportedTimeZonesGetResponse
 
 Audit
 ~~~~~
-.. autopydantic_model:: pypureclient.flashblade.Audit
+.. autopydantic_model:: pypureclient.flashblade::Audit
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -933,7 +885,7 @@ Audit
 
 AuditFileSystemsPoliciesGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.AuditFileSystemsPoliciesGetResponse
+.. autopydantic_model:: pypureclient.flashblade::AuditFileSystemsPoliciesGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -945,7 +897,7 @@ AuditFileSystemsPoliciesGetResponse
 
 AuditFileSystemsPoliciesMembersGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.AuditFileSystemsPoliciesMembersGetResponse
+.. autopydantic_model:: pypureclient.flashblade::AuditFileSystemsPoliciesMembersGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -957,7 +909,7 @@ AuditFileSystemsPoliciesMembersGetResponse
 
 AuditFileSystemsPoliciesMembersResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.AuditFileSystemsPoliciesMembersResponse
+.. autopydantic_model:: pypureclient.flashblade::AuditFileSystemsPoliciesMembersResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -969,7 +921,7 @@ AuditFileSystemsPoliciesMembersResponse
 
 AuditFileSystemsPoliciesPatch
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.AuditFileSystemsPoliciesPatch
+.. autopydantic_model:: pypureclient.flashblade::AuditFileSystemsPoliciesPatch
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -981,7 +933,7 @@ AuditFileSystemsPoliciesPatch
 
 AuditFileSystemsPoliciesPost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.AuditFileSystemsPoliciesPost
+.. autopydantic_model:: pypureclient.flashblade::AuditFileSystemsPoliciesPost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -993,7 +945,7 @@ AuditFileSystemsPoliciesPost
 
 AuditFileSystemsPoliciesResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.AuditFileSystemsPoliciesResponse
+.. autopydantic_model:: pypureclient.flashblade::AuditFileSystemsPoliciesResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1005,7 +957,7 @@ AuditFileSystemsPoliciesResponse
 
 AuditFileSystemsPolicy
 ~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.AuditFileSystemsPolicy
+.. autopydantic_model:: pypureclient.flashblade::AuditFileSystemsPolicy
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1017,7 +969,7 @@ AuditFileSystemsPolicy
 
 AuditFileSystemsPolicyNoContext
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.AuditFileSystemsPolicyNoContext
+.. autopydantic_model:: pypureclient.flashblade::AuditFileSystemsPolicyNoContext
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1029,7 +981,7 @@ AuditFileSystemsPolicyNoContext
 
 AuditGetResponse
 ~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.AuditGetResponse
+.. autopydantic_model:: pypureclient.flashblade::AuditGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1041,7 +993,7 @@ AuditGetResponse
 
 AuditResponse
 ~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.AuditResponse
+.. autopydantic_model:: pypureclient.flashblade::AuditResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1053,7 +1005,7 @@ AuditResponse
 
 Blade
 ~~~~~
-.. autopydantic_model:: pypureclient.flashblade.Blade
+.. autopydantic_model:: pypureclient.flashblade::Blade
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1065,7 +1017,7 @@ Blade
 
 BladeGetResponse
 ~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.BladeGetResponse
+.. autopydantic_model:: pypureclient.flashblade::BladeGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1077,7 +1029,7 @@ BladeGetResponse
 
 Bucket
 ~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.Bucket
+.. autopydantic_model:: pypureclient.flashblade::Bucket
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1089,7 +1041,7 @@ Bucket
 
 BucketAccessPolicy
 ~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.BucketAccessPolicy
+.. autopydantic_model:: pypureclient.flashblade::BucketAccessPolicy
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1101,7 +1053,7 @@ BucketAccessPolicy
 
 BucketAccessPolicyGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.BucketAccessPolicyGetResponse
+.. autopydantic_model:: pypureclient.flashblade::BucketAccessPolicyGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1113,7 +1065,7 @@ BucketAccessPolicyGetResponse
 
 BucketAccessPolicyPost
 ~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.BucketAccessPolicyPost
+.. autopydantic_model:: pypureclient.flashblade::BucketAccessPolicyPost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1125,7 +1077,7 @@ BucketAccessPolicyPost
 
 BucketAccessPolicyResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.BucketAccessPolicyResponse
+.. autopydantic_model:: pypureclient.flashblade::BucketAccessPolicyResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1137,7 +1089,7 @@ BucketAccessPolicyResponse
 
 BucketAccessPolicyRule
 ~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.BucketAccessPolicyRule
+.. autopydantic_model:: pypureclient.flashblade::BucketAccessPolicyRule
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1149,7 +1101,7 @@ BucketAccessPolicyRule
 
 BucketAccessPolicyRuleBulkManage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.BucketAccessPolicyRuleBulkManage
+.. autopydantic_model:: pypureclient.flashblade::BucketAccessPolicyRuleBulkManage
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1161,7 +1113,7 @@ BucketAccessPolicyRuleBulkManage
 
 BucketAccessPolicyRuleGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.BucketAccessPolicyRuleGetResponse
+.. autopydantic_model:: pypureclient.flashblade::BucketAccessPolicyRuleGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1173,7 +1125,7 @@ BucketAccessPolicyRuleGetResponse
 
 BucketAccessPolicyRulePost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.BucketAccessPolicyRulePost
+.. autopydantic_model:: pypureclient.flashblade::BucketAccessPolicyRulePost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1185,7 +1137,7 @@ BucketAccessPolicyRulePost
 
 BucketAccessPolicyRulePrincipal
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.BucketAccessPolicyRulePrincipal
+.. autopydantic_model:: pypureclient.flashblade::BucketAccessPolicyRulePrincipal
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1197,7 +1149,7 @@ BucketAccessPolicyRulePrincipal
 
 BucketAccessPolicyRuleResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.BucketAccessPolicyRuleResponse
+.. autopydantic_model:: pypureclient.flashblade::BucketAccessPolicyRuleResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1209,7 +1161,7 @@ BucketAccessPolicyRuleResponse
 
 BucketAccessPolicyRuleWithContext
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.BucketAccessPolicyRuleWithContext
+.. autopydantic_model:: pypureclient.flashblade::BucketAccessPolicyRuleWithContext
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1221,7 +1173,7 @@ BucketAccessPolicyRuleWithContext
 
 BucketDefaults
 ~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.BucketDefaults
+.. autopydantic_model:: pypureclient.flashblade::BucketDefaults
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1233,7 +1185,7 @@ BucketDefaults
 
 BucketDefaultsReadonly
 ~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.BucketDefaultsReadonly
+.. autopydantic_model:: pypureclient.flashblade::BucketDefaultsReadonly
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1245,7 +1197,7 @@ BucketDefaultsReadonly
 
 BucketEradicationConfig
 ~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.BucketEradicationConfig
+.. autopydantic_model:: pypureclient.flashblade::BucketEradicationConfig
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1257,7 +1209,7 @@ BucketEradicationConfig
 
 BucketGetResponse
 ~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.BucketGetResponse
+.. autopydantic_model:: pypureclient.flashblade::BucketGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1269,7 +1221,7 @@ BucketGetResponse
 
 BucketPatch
 ~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.BucketPatch
+.. autopydantic_model:: pypureclient.flashblade::BucketPatch
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1281,7 +1233,7 @@ BucketPatch
 
 BucketPerformance
 ~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.BucketPerformance
+.. autopydantic_model:: pypureclient.flashblade::BucketPerformance
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1293,7 +1245,7 @@ BucketPerformance
 
 BucketPerformanceGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.BucketPerformanceGetResponse
+.. autopydantic_model:: pypureclient.flashblade::BucketPerformanceGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1305,7 +1257,7 @@ BucketPerformanceGetResponse
 
 BucketPost
 ~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.BucketPost
+.. autopydantic_model:: pypureclient.flashblade::BucketPost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1317,7 +1269,7 @@ BucketPost
 
 BucketReplicaLink
 ~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.BucketReplicaLink
+.. autopydantic_model:: pypureclient.flashblade::BucketReplicaLink
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1329,7 +1281,7 @@ BucketReplicaLink
 
 BucketReplicaLinkGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.BucketReplicaLinkGetResponse
+.. autopydantic_model:: pypureclient.flashblade::BucketReplicaLinkGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1341,7 +1293,7 @@ BucketReplicaLinkGetResponse
 
 BucketReplicaLinkPost
 ~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.BucketReplicaLinkPost
+.. autopydantic_model:: pypureclient.flashblade::BucketReplicaLinkPost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1353,7 +1305,7 @@ BucketReplicaLinkPost
 
 BucketReplicaLinkResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.BucketReplicaLinkResponse
+.. autopydantic_model:: pypureclient.flashblade::BucketReplicaLinkResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1365,7 +1317,7 @@ BucketReplicaLinkResponse
 
 BucketResponse
 ~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.BucketResponse
+.. autopydantic_model:: pypureclient.flashblade::BucketResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1377,7 +1329,7 @@ BucketResponse
 
 BucketS3SpecificPerformance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.BucketS3SpecificPerformance
+.. autopydantic_model:: pypureclient.flashblade::BucketS3SpecificPerformance
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1389,7 +1341,7 @@ BucketS3SpecificPerformance
 
 BucketS3SpecificPerformanceGetResp
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.BucketS3SpecificPerformanceGetResp
+.. autopydantic_model:: pypureclient.flashblade::BucketS3SpecificPerformanceGetResp
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1401,7 +1353,7 @@ BucketS3SpecificPerformanceGetResp
 
 BuiltIn
 ~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.BuiltIn
+.. autopydantic_model:: pypureclient.flashblade::BuiltIn
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1413,7 +1365,7 @@ BuiltIn
 
 BuiltInNoId
 ~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.BuiltInNoId
+.. autopydantic_model:: pypureclient.flashblade::BuiltInNoId
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1425,7 +1377,7 @@ BuiltInNoId
 
 BuiltInRelationship
 ~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.BuiltInRelationship
+.. autopydantic_model:: pypureclient.flashblade::BuiltInRelationship
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1437,7 +1389,7 @@ BuiltInRelationship
 
 Certificate
 ~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.Certificate
+.. autopydantic_model:: pypureclient.flashblade::Certificate
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1449,7 +1401,7 @@ Certificate
 
 CertificateCertificateGroupGetResp
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.CertificateCertificateGroupGetResp
+.. autopydantic_model:: pypureclient.flashblade::CertificateCertificateGroupGetResp
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1461,7 +1413,7 @@ CertificateCertificateGroupGetResp
 
 CertificateCertificateGroupResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.CertificateCertificateGroupResponse
+.. autopydantic_model:: pypureclient.flashblade::CertificateCertificateGroupResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1473,7 +1425,7 @@ CertificateCertificateGroupResponse
 
 CertificateGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.CertificateGetResponse
+.. autopydantic_model:: pypureclient.flashblade::CertificateGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1485,7 +1437,7 @@ CertificateGetResponse
 
 CertificateGroup
 ~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.CertificateGroup
+.. autopydantic_model:: pypureclient.flashblade::CertificateGroup
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1497,7 +1449,7 @@ CertificateGroup
 
 CertificateGroupCertificateGetResp
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.CertificateGroupCertificateGetResp
+.. autopydantic_model:: pypureclient.flashblade::CertificateGroupCertificateGetResp
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1509,7 +1461,7 @@ CertificateGroupCertificateGetResp
 
 CertificateGroupCertificateResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.CertificateGroupCertificateResponse
+.. autopydantic_model:: pypureclient.flashblade::CertificateGroupCertificateResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1521,7 +1473,7 @@ CertificateGroupCertificateResponse
 
 CertificateGroupGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.CertificateGroupGetResponse
+.. autopydantic_model:: pypureclient.flashblade::CertificateGroupGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1533,7 +1485,7 @@ CertificateGroupGetResponse
 
 CertificateGroupResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.CertificateGroupResponse
+.. autopydantic_model:: pypureclient.flashblade::CertificateGroupResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1545,7 +1497,7 @@ CertificateGroupResponse
 
 CertificateGroupUse
 ~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.CertificateGroupUse
+.. autopydantic_model:: pypureclient.flashblade::CertificateGroupUse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1557,7 +1509,7 @@ CertificateGroupUse
 
 CertificateGroupUseGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.CertificateGroupUseGetResponse
+.. autopydantic_model:: pypureclient.flashblade::CertificateGroupUseGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1569,7 +1521,7 @@ CertificateGroupUseGetResponse
 
 CertificatePatch
 ~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.CertificatePatch
+.. autopydantic_model:: pypureclient.flashblade::CertificatePatch
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1581,7 +1533,7 @@ CertificatePatch
 
 CertificatePost
 ~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.CertificatePost
+.. autopydantic_model:: pypureclient.flashblade::CertificatePost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1593,7 +1545,7 @@ CertificatePost
 
 CertificateResponse
 ~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.CertificateResponse
+.. autopydantic_model:: pypureclient.flashblade::CertificateResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1605,7 +1557,7 @@ CertificateResponse
 
 CertificateUse
 ~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.CertificateUse
+.. autopydantic_model:: pypureclient.flashblade::CertificateUse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1617,7 +1569,7 @@ CertificateUse
 
 CertificateUseGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.CertificateUseGetResponse
+.. autopydantic_model:: pypureclient.flashblade::CertificateUseGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1629,7 +1581,7 @@ CertificateUseGetResponse
 
 ClientPerformance
 ~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ClientPerformance
+.. autopydantic_model:: pypureclient.flashblade::ClientPerformance
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1641,7 +1593,7 @@ ClientPerformance
 
 ClientPerformanceGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ClientPerformanceGetResponse
+.. autopydantic_model:: pypureclient.flashblade::ClientPerformanceGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1653,7 +1605,7 @@ ClientPerformanceGetResponse
 
 ConnectionRelationshipPerformanceReplication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ConnectionRelationshipPerformanceReplication
+.. autopydantic_model:: pypureclient.flashblade::ConnectionRelationshipPerformanceReplication
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1665,7 +1617,7 @@ ConnectionRelationshipPerformanceReplication
 
 ConnectionRelationshipPerformanceReplicationGetResp
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ConnectionRelationshipPerformanceReplicationGetResp
+.. autopydantic_model:: pypureclient.flashblade::ConnectionRelationshipPerformanceReplicationGetResp
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1677,7 +1629,7 @@ ConnectionRelationshipPerformanceReplicationGetResp
 
 Context
 ~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.Context
+.. autopydantic_model:: pypureclient.flashblade::Context
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1689,7 +1641,7 @@ Context
 
 ContinuousReplicationPerformance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ContinuousReplicationPerformance
+.. autopydantic_model:: pypureclient.flashblade::ContinuousReplicationPerformance
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1701,7 +1653,7 @@ ContinuousReplicationPerformance
 
 CrossOriginResourceSharingPolicy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.CrossOriginResourceSharingPolicy
+.. autopydantic_model:: pypureclient.flashblade::CrossOriginResourceSharingPolicy
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1713,7 +1665,7 @@ CrossOriginResourceSharingPolicy
 
 CrossOriginResourceSharingPolicyGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.CrossOriginResourceSharingPolicyGetResponse
+.. autopydantic_model:: pypureclient.flashblade::CrossOriginResourceSharingPolicyGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1725,7 +1677,7 @@ CrossOriginResourceSharingPolicyGetResponse
 
 CrossOriginResourceSharingPolicyPatch
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.CrossOriginResourceSharingPolicyPatch
+.. autopydantic_model:: pypureclient.flashblade::CrossOriginResourceSharingPolicyPatch
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1737,7 +1689,7 @@ CrossOriginResourceSharingPolicyPatch
 
 CrossOriginResourceSharingPolicyResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.CrossOriginResourceSharingPolicyResponse
+.. autopydantic_model:: pypureclient.flashblade::CrossOriginResourceSharingPolicyResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1749,7 +1701,7 @@ CrossOriginResourceSharingPolicyResponse
 
 CrossOriginResourceSharingPolicyRule
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.CrossOriginResourceSharingPolicyRule
+.. autopydantic_model:: pypureclient.flashblade::CrossOriginResourceSharingPolicyRule
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1761,7 +1713,7 @@ CrossOriginResourceSharingPolicyRule
 
 CrossOriginResourceSharingPolicyRuleBulkManage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.CrossOriginResourceSharingPolicyRuleBulkManage
+.. autopydantic_model:: pypureclient.flashblade::CrossOriginResourceSharingPolicyRuleBulkManage
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1773,7 +1725,7 @@ CrossOriginResourceSharingPolicyRuleBulkManage
 
 CrossOriginResourceSharingPolicyRuleGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.CrossOriginResourceSharingPolicyRuleGetResponse
+.. autopydantic_model:: pypureclient.flashblade::CrossOriginResourceSharingPolicyRuleGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1785,7 +1737,7 @@ CrossOriginResourceSharingPolicyRuleGetResponse
 
 CrossOriginResourceSharingPolicyRulePost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.CrossOriginResourceSharingPolicyRulePost
+.. autopydantic_model:: pypureclient.flashblade::CrossOriginResourceSharingPolicyRulePost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1797,7 +1749,7 @@ CrossOriginResourceSharingPolicyRulePost
 
 CrossOriginResourceSharingPolicyRuleResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.CrossOriginResourceSharingPolicyRuleResponse
+.. autopydantic_model:: pypureclient.flashblade::CrossOriginResourceSharingPolicyRuleResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1809,7 +1761,7 @@ CrossOriginResourceSharingPolicyRuleResponse
 
 CrossOriginResourceSharingPolicyRuleWithContext
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.CrossOriginResourceSharingPolicyRuleWithContext
+.. autopydantic_model:: pypureclient.flashblade::CrossOriginResourceSharingPolicyRuleWithContext
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1821,7 +1773,7 @@ CrossOriginResourceSharingPolicyRuleWithContext
 
 DirectoryService
 ~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.DirectoryService
+.. autopydantic_model:: pypureclient.flashblade::DirectoryService
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1833,7 +1785,7 @@ DirectoryService
 
 DirectoryServiceGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.DirectoryServiceGetResponse
+.. autopydantic_model:: pypureclient.flashblade::DirectoryServiceGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1845,7 +1797,7 @@ DirectoryServiceGetResponse
 
 DirectoryServiceManagement
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.DirectoryServiceManagement
+.. autopydantic_model:: pypureclient.flashblade::DirectoryServiceManagement
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1857,7 +1809,7 @@ DirectoryServiceManagement
 
 DirectoryServiceNfs
 ~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.DirectoryServiceNfs
+.. autopydantic_model:: pypureclient.flashblade::DirectoryServiceNfs
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1869,7 +1821,7 @@ DirectoryServiceNfs
 
 DirectoryServiceResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.DirectoryServiceResponse
+.. autopydantic_model:: pypureclient.flashblade::DirectoryServiceResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1881,7 +1833,7 @@ DirectoryServiceResponse
 
 DirectoryServiceRole
 ~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.DirectoryServiceRole
+.. autopydantic_model:: pypureclient.flashblade::DirectoryServiceRole
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1893,7 +1845,7 @@ DirectoryServiceRole
 
 DirectoryServiceRolesGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.DirectoryServiceRolesGetResponse
+.. autopydantic_model:: pypureclient.flashblade::DirectoryServiceRolesGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1905,7 +1857,7 @@ DirectoryServiceRolesGetResponse
 
 DirectoryServiceRolesResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.DirectoryServiceRolesResponse
+.. autopydantic_model:: pypureclient.flashblade::DirectoryServiceRolesResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1917,7 +1869,7 @@ DirectoryServiceRolesResponse
 
 DirectoryServiceSmb
 ~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.DirectoryServiceSmb
+.. autopydantic_model:: pypureclient.flashblade::DirectoryServiceSmb
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1929,7 +1881,7 @@ DirectoryServiceSmb
 
 Dns
 ~~~
-.. autopydantic_model:: pypureclient.flashblade.Dns
+.. autopydantic_model:: pypureclient.flashblade::Dns
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1941,7 +1893,7 @@ Dns
 
 DnsGetResponse
 ~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.DnsGetResponse
+.. autopydantic_model:: pypureclient.flashblade::DnsGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1953,7 +1905,7 @@ DnsGetResponse
 
 DnsPost
 ~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.DnsPost
+.. autopydantic_model:: pypureclient.flashblade::DnsPost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1965,7 +1917,7 @@ DnsPost
 
 DnsResponse
 ~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.DnsResponse
+.. autopydantic_model:: pypureclient.flashblade::DnsResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1977,7 +1929,7 @@ DnsResponse
 
 Drive
 ~~~~~
-.. autopydantic_model:: pypureclient.flashblade.Drive
+.. autopydantic_model:: pypureclient.flashblade::Drive
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1989,7 +1941,7 @@ Drive
 
 DriveGetResponse
 ~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.DriveGetResponse
+.. autopydantic_model:: pypureclient.flashblade::DriveGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2001,7 +1953,7 @@ DriveGetResponse
 
 ErrorContextResponse
 ~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ErrorContextResponse
+.. autopydantic_model:: pypureclient.flashblade::ErrorContextResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2013,7 +1965,7 @@ ErrorContextResponse
 
 ErrorContextResponseErrors
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ErrorContextResponseErrors
+.. autopydantic_model:: pypureclient.flashblade::ErrorContextResponseErrors
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2025,7 +1977,7 @@ ErrorContextResponseErrors
 
 Eula
 ~~~~
-.. autopydantic_model:: pypureclient.flashblade.Eula
+.. autopydantic_model:: pypureclient.flashblade::Eula
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2037,7 +1989,7 @@ Eula
 
 EulaGetResponse
 ~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.EulaGetResponse
+.. autopydantic_model:: pypureclient.flashblade::EulaGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2049,7 +2001,7 @@ EulaGetResponse
 
 EulaResponse
 ~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.EulaResponse
+.. autopydantic_model:: pypureclient.flashblade::EulaResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2061,7 +2013,7 @@ EulaResponse
 
 EulaSignature
 ~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.EulaSignature
+.. autopydantic_model:: pypureclient.flashblade::EulaSignature
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2073,7 +2025,7 @@ EulaSignature
 
 FileInfo
 ~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileInfo
+.. autopydantic_model:: pypureclient.flashblade::FileInfo
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2085,7 +2037,7 @@ FileInfo
 
 FileLock
 ~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileLock
+.. autopydantic_model:: pypureclient.flashblade::FileLock
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2097,7 +2049,7 @@ FileLock
 
 FileLockGetResponse
 ~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileLockGetResponse
+.. autopydantic_model:: pypureclient.flashblade::FileLockGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2109,7 +2061,7 @@ FileLockGetResponse
 
 FileLockNlmReclamationResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileLockNlmReclamationResponse
+.. autopydantic_model:: pypureclient.flashblade::FileLockNlmReclamationResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2121,7 +2073,7 @@ FileLockNlmReclamationResponse
 
 FileLockRange
 ~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileLockRange
+.. autopydantic_model:: pypureclient.flashblade::FileLockRange
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2133,7 +2085,7 @@ FileLockRange
 
 FileLockResponse
 ~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileLockResponse
+.. autopydantic_model:: pypureclient.flashblade::FileLockResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2145,7 +2097,7 @@ FileLockResponse
 
 FileSession
 ~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileSession
+.. autopydantic_model:: pypureclient.flashblade::FileSession
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2157,7 +2109,7 @@ FileSession
 
 FileSessionGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileSessionGetResponse
+.. autopydantic_model:: pypureclient.flashblade::FileSessionGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2169,7 +2121,7 @@ FileSessionGetResponse
 
 FileSessionResponse
 ~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileSessionResponse
+.. autopydantic_model:: pypureclient.flashblade::FileSessionResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2181,7 +2133,7 @@ FileSessionResponse
 
 FileSystem
 ~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileSystem
+.. autopydantic_model:: pypureclient.flashblade::FileSystem
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2193,7 +2145,7 @@ FileSystem
 
 FileSystemClient
 ~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileSystemClient
+.. autopydantic_model:: pypureclient.flashblade::FileSystemClient
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2205,7 +2157,7 @@ FileSystemClient
 
 FileSystemClientsGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileSystemClientsGetResponse
+.. autopydantic_model:: pypureclient.flashblade::FileSystemClientsGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2217,7 +2169,7 @@ FileSystemClientsGetResponse
 
 FileSystemClientsResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileSystemClientsResponse
+.. autopydantic_model:: pypureclient.flashblade::FileSystemClientsResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2229,7 +2181,7 @@ FileSystemClientsResponse
 
 FileSystemEradicationConfig
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileSystemEradicationConfig
+.. autopydantic_model:: pypureclient.flashblade::FileSystemEradicationConfig
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2241,7 +2193,7 @@ FileSystemEradicationConfig
 
 FileSystemExport
 ~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileSystemExport
+.. autopydantic_model:: pypureclient.flashblade::FileSystemExport
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2253,7 +2205,7 @@ FileSystemExport
 
 FileSystemExportGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileSystemExportGetResponse
+.. autopydantic_model:: pypureclient.flashblade::FileSystemExportGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2265,7 +2217,7 @@ FileSystemExportGetResponse
 
 FileSystemExportPost
 ~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileSystemExportPost
+.. autopydantic_model:: pypureclient.flashblade::FileSystemExportPost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2277,7 +2229,7 @@ FileSystemExportPost
 
 FileSystemExportResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileSystemExportResponse
+.. autopydantic_model:: pypureclient.flashblade::FileSystemExportResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2289,7 +2241,7 @@ FileSystemExportResponse
 
 FileSystemGetResponse
 ~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileSystemGetResponse
+.. autopydantic_model:: pypureclient.flashblade::FileSystemGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2301,7 +2253,7 @@ FileSystemGetResponse
 
 FileSystemGroupPerformance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileSystemGroupPerformance
+.. autopydantic_model:: pypureclient.flashblade::FileSystemGroupPerformance
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2313,7 +2265,7 @@ FileSystemGroupPerformance
 
 FileSystemGroupsPerformanceGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileSystemGroupsPerformanceGetResponse
+.. autopydantic_model:: pypureclient.flashblade::FileSystemGroupsPerformanceGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2325,7 +2277,7 @@ FileSystemGroupsPerformanceGetResponse
 
 FileSystemLockNlmReclamation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileSystemLockNlmReclamation
+.. autopydantic_model:: pypureclient.flashblade::FileSystemLockNlmReclamation
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2337,7 +2289,7 @@ FileSystemLockNlmReclamation
 
 FileSystemOpenFile
 ~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileSystemOpenFile
+.. autopydantic_model:: pypureclient.flashblade::FileSystemOpenFile
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2349,7 +2301,7 @@ FileSystemOpenFile
 
 FileSystemOpenFilesGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileSystemOpenFilesGetResponse
+.. autopydantic_model:: pypureclient.flashblade::FileSystemOpenFilesGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2361,7 +2313,7 @@ FileSystemOpenFilesGetResponse
 
 FileSystemOpenFilesResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileSystemOpenFilesResponse
+.. autopydantic_model:: pypureclient.flashblade::FileSystemOpenFilesResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2373,7 +2325,7 @@ FileSystemOpenFilesResponse
 
 FileSystemPatch
 ~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileSystemPatch
+.. autopydantic_model:: pypureclient.flashblade::FileSystemPatch
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2385,7 +2337,7 @@ FileSystemPatch
 
 FileSystemPerformance
 ~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileSystemPerformance
+.. autopydantic_model:: pypureclient.flashblade::FileSystemPerformance
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2397,7 +2349,7 @@ FileSystemPerformance
 
 FileSystemPerformanceGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileSystemPerformanceGetResponse
+.. autopydantic_model:: pypureclient.flashblade::FileSystemPerformanceGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2409,7 +2361,7 @@ FileSystemPerformanceGetResponse
 
 FileSystemPost
 ~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileSystemPost
+.. autopydantic_model:: pypureclient.flashblade::FileSystemPost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2421,7 +2373,7 @@ FileSystemPost
 
 FileSystemReplicaLink
 ~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileSystemReplicaLink
+.. autopydantic_model:: pypureclient.flashblade::FileSystemReplicaLink
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2433,7 +2385,7 @@ FileSystemReplicaLink
 
 FileSystemReplicaLinkGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileSystemReplicaLinkGetResponse
+.. autopydantic_model:: pypureclient.flashblade::FileSystemReplicaLinkGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2445,7 +2397,7 @@ FileSystemReplicaLinkGetResponse
 
 FileSystemReplicaLinkResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileSystemReplicaLinkResponse
+.. autopydantic_model:: pypureclient.flashblade::FileSystemReplicaLinkResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2457,7 +2409,7 @@ FileSystemReplicaLinkResponse
 
 FileSystemResponse
 ~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileSystemResponse
+.. autopydantic_model:: pypureclient.flashblade::FileSystemResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2469,7 +2421,7 @@ FileSystemResponse
 
 FileSystemSnapshot
 ~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileSystemSnapshot
+.. autopydantic_model:: pypureclient.flashblade::FileSystemSnapshot
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2481,7 +2433,7 @@ FileSystemSnapshot
 
 FileSystemSnapshotGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileSystemSnapshotGetResponse
+.. autopydantic_model:: pypureclient.flashblade::FileSystemSnapshotGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2493,7 +2445,7 @@ FileSystemSnapshotGetResponse
 
 FileSystemSnapshotGetTransferResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileSystemSnapshotGetTransferResponse
+.. autopydantic_model:: pypureclient.flashblade::FileSystemSnapshotGetTransferResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2505,7 +2457,7 @@ FileSystemSnapshotGetTransferResponse
 
 FileSystemSnapshotPost
 ~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileSystemSnapshotPost
+.. autopydantic_model:: pypureclient.flashblade::FileSystemSnapshotPost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2517,7 +2469,7 @@ FileSystemSnapshotPost
 
 FileSystemSnapshotResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileSystemSnapshotResponse
+.. autopydantic_model:: pypureclient.flashblade::FileSystemSnapshotResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2529,7 +2481,7 @@ FileSystemSnapshotResponse
 
 FileSystemSnapshotTransfer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileSystemSnapshotTransfer
+.. autopydantic_model:: pypureclient.flashblade::FileSystemSnapshotTransfer
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2541,7 +2493,7 @@ FileSystemSnapshotTransfer
 
 FileSystemSnapshotTransferResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileSystemSnapshotTransferResponse
+.. autopydantic_model:: pypureclient.flashblade::FileSystemSnapshotTransferResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2553,7 +2505,7 @@ FileSystemSnapshotTransferResponse
 
 FileSystemUserPerformance
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileSystemUserPerformance
+.. autopydantic_model:: pypureclient.flashblade::FileSystemUserPerformance
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2565,7 +2517,7 @@ FileSystemUserPerformance
 
 FileSystemUsersPerformanceGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FileSystemUsersPerformanceGetResponse
+.. autopydantic_model:: pypureclient.flashblade::FileSystemUsersPerformanceGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2577,7 +2529,7 @@ FileSystemUsersPerformanceGetResponse
 
 FixedLocationReference
 ~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FixedLocationReference
+.. autopydantic_model:: pypureclient.flashblade::FixedLocationReference
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2589,7 +2541,7 @@ FixedLocationReference
 
 FixedReference
 ~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FixedReference
+.. autopydantic_model:: pypureclient.flashblade::FixedReference
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2601,7 +2553,7 @@ FixedReference
 
 FixedReferenceNameOnly
 ~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FixedReferenceNameOnly
+.. autopydantic_model:: pypureclient.flashblade::FixedReferenceNameOnly
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2613,7 +2565,7 @@ FixedReferenceNameOnly
 
 FixedReferenceNoId
 ~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FixedReferenceNoId
+.. autopydantic_model:: pypureclient.flashblade::FixedReferenceNoId
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2625,7 +2577,7 @@ FixedReferenceNoId
 
 FixedReferenceNoResourceType
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FixedReferenceNoResourceType
+.. autopydantic_model:: pypureclient.flashblade::FixedReferenceNoResourceType
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2637,7 +2589,7 @@ FixedReferenceNoResourceType
 
 FixedReferenceWithIsLocal
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FixedReferenceWithIsLocal
+.. autopydantic_model:: pypureclient.flashblade::FixedReferenceWithIsLocal
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2649,7 +2601,7 @@ FixedReferenceWithIsLocal
 
 FixedReferenceWithRemote
 ~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FixedReferenceWithRemote
+.. autopydantic_model:: pypureclient.flashblade::FixedReferenceWithRemote
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2661,7 +2613,7 @@ FixedReferenceWithRemote
 
 FixedReferenceWithType
 ~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FixedReferenceWithType
+.. autopydantic_model:: pypureclient.flashblade::FixedReferenceWithType
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2673,7 +2625,7 @@ FixedReferenceWithType
 
 Fleet
 ~~~~~
-.. autopydantic_model:: pypureclient.flashblade.Fleet
+.. autopydantic_model:: pypureclient.flashblade::Fleet
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2685,7 +2637,7 @@ Fleet
 
 FleetGetResponse
 ~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FleetGetResponse
+.. autopydantic_model:: pypureclient.flashblade::FleetGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2697,7 +2649,7 @@ FleetGetResponse
 
 FleetKey
 ~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FleetKey
+.. autopydantic_model:: pypureclient.flashblade::FleetKey
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2709,7 +2661,7 @@ FleetKey
 
 FleetKeyGetResponse
 ~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FleetKeyGetResponse
+.. autopydantic_model:: pypureclient.flashblade::FleetKeyGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2721,7 +2673,7 @@ FleetKeyGetResponse
 
 FleetKeyResponse
 ~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FleetKeyResponse
+.. autopydantic_model:: pypureclient.flashblade::FleetKeyResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2733,7 +2685,7 @@ FleetKeyResponse
 
 FleetMember
 ~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FleetMember
+.. autopydantic_model:: pypureclient.flashblade::FleetMember
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2745,7 +2697,7 @@ FleetMember
 
 FleetMemberGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FleetMemberGetResponse
+.. autopydantic_model:: pypureclient.flashblade::FleetMemberGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2757,7 +2709,7 @@ FleetMemberGetResponse
 
 FleetMemberPost
 ~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FleetMemberPost
+.. autopydantic_model:: pypureclient.flashblade::FleetMemberPost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2769,7 +2721,7 @@ FleetMemberPost
 
 FleetMemberPostMembers
 ~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FleetMemberPostMembers
+.. autopydantic_model:: pypureclient.flashblade::FleetMemberPostMembers
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2781,7 +2733,7 @@ FleetMemberPostMembers
 
 FleetMemberPostMembersMember
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FleetMemberPostMembersMember
+.. autopydantic_model:: pypureclient.flashblade::FleetMemberPostMembersMember
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2793,7 +2745,7 @@ FleetMemberPostMembersMember
 
 FleetMemberResponse
 ~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FleetMemberResponse
+.. autopydantic_model:: pypureclient.flashblade::FleetMemberResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2805,7 +2757,7 @@ FleetMemberResponse
 
 FleetPatch
 ~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FleetPatch
+.. autopydantic_model:: pypureclient.flashblade::FleetPatch
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2817,7 +2769,7 @@ FleetPatch
 
 FleetResponse
 ~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.FleetResponse
+.. autopydantic_model:: pypureclient.flashblade::FleetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2829,7 +2781,7 @@ FleetResponse
 
 Group
 ~~~~~
-.. autopydantic_model:: pypureclient.flashblade.Group
+.. autopydantic_model:: pypureclient.flashblade::Group
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2841,7 +2793,7 @@ Group
 
 GroupQuota
 ~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.GroupQuota
+.. autopydantic_model:: pypureclient.flashblade::GroupQuota
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2853,7 +2805,7 @@ GroupQuota
 
 GroupQuotaGetResponse
 ~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.GroupQuotaGetResponse
+.. autopydantic_model:: pypureclient.flashblade::GroupQuotaGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2865,7 +2817,7 @@ GroupQuotaGetResponse
 
 GroupQuotaPatch
 ~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.GroupQuotaPatch
+.. autopydantic_model:: pypureclient.flashblade::GroupQuotaPatch
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2877,7 +2829,7 @@ GroupQuotaPatch
 
 GroupQuotaPost
 ~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.GroupQuotaPost
+.. autopydantic_model:: pypureclient.flashblade::GroupQuotaPost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2889,7 +2841,7 @@ GroupQuotaPost
 
 GroupQuotaResponse
 ~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.GroupQuotaResponse
+.. autopydantic_model:: pypureclient.flashblade::GroupQuotaResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2901,7 +2853,7 @@ GroupQuotaResponse
 
 Hardware
 ~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.Hardware
+.. autopydantic_model:: pypureclient.flashblade::Hardware
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2913,7 +2865,7 @@ Hardware
 
 HardwareConnector
 ~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.HardwareConnector
+.. autopydantic_model:: pypureclient.flashblade::HardwareConnector
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2925,7 +2877,7 @@ HardwareConnector
 
 HardwareConnectorGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.HardwareConnectorGetResponse
+.. autopydantic_model:: pypureclient.flashblade::HardwareConnectorGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2937,7 +2889,7 @@ HardwareConnectorGetResponse
 
 HardwareConnectorPerformance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.HardwareConnectorPerformance
+.. autopydantic_model:: pypureclient.flashblade::HardwareConnectorPerformance
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2949,7 +2901,7 @@ HardwareConnectorPerformance
 
 HardwareConnectorPerformanceGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.HardwareConnectorPerformanceGetResponse
+.. autopydantic_model:: pypureclient.flashblade::HardwareConnectorPerformanceGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2961,7 +2913,7 @@ HardwareConnectorPerformanceGetResponse
 
 HardwareConnectorResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.HardwareConnectorResponse
+.. autopydantic_model:: pypureclient.flashblade::HardwareConnectorResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2973,7 +2925,7 @@ HardwareConnectorResponse
 
 HardwareGetResponse
 ~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.HardwareGetResponse
+.. autopydantic_model:: pypureclient.flashblade::HardwareGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2985,7 +2937,7 @@ HardwareGetResponse
 
 HardwareResponse
 ~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.HardwareResponse
+.. autopydantic_model:: pypureclient.flashblade::HardwareResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2997,7 +2949,7 @@ HardwareResponse
 
 Http
 ~~~~
-.. autopydantic_model:: pypureclient.flashblade.Http
+.. autopydantic_model:: pypureclient.flashblade::Http
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3009,7 +2961,7 @@ Http
 
 Index
 ~~~~~
-.. autopydantic_model:: pypureclient.flashblade.Index
+.. autopydantic_model:: pypureclient.flashblade::Index
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3021,7 +2973,7 @@ Index
 
 Keytab
 ~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.Keytab
+.. autopydantic_model:: pypureclient.flashblade::Keytab
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3033,7 +2985,7 @@ Keytab
 
 KeytabGetResponse
 ~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.KeytabGetResponse
+.. autopydantic_model:: pypureclient.flashblade::KeytabGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3045,7 +2997,7 @@ KeytabGetResponse
 
 KeytabPost
 ~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.KeytabPost
+.. autopydantic_model:: pypureclient.flashblade::KeytabPost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3057,7 +3009,7 @@ KeytabPost
 
 KeytabResponse
 ~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.KeytabResponse
+.. autopydantic_model:: pypureclient.flashblade::KeytabResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3069,7 +3021,7 @@ KeytabResponse
 
 KmipServer
 ~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.KmipServer
+.. autopydantic_model:: pypureclient.flashblade::KmipServer
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3081,7 +3033,7 @@ KmipServer
 
 KmipServerResponse
 ~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.KmipServerResponse
+.. autopydantic_model:: pypureclient.flashblade::KmipServerResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3093,7 +3045,7 @@ KmipServerResponse
 
 LegalHold
 ~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.LegalHold
+.. autopydantic_model:: pypureclient.flashblade::LegalHold
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3105,7 +3057,7 @@ LegalHold
 
 LegalHoldHeldEntity
 ~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.LegalHoldHeldEntity
+.. autopydantic_model:: pypureclient.flashblade::LegalHoldHeldEntity
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3117,7 +3069,7 @@ LegalHoldHeldEntity
 
 LegalHoldsGetResponse
 ~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.LegalHoldsGetResponse
+.. autopydantic_model:: pypureclient.flashblade::LegalHoldsGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3129,7 +3081,7 @@ LegalHoldsGetResponse
 
 LegalHoldsHeldEntitiesGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.LegalHoldsHeldEntitiesGetResponse
+.. autopydantic_model:: pypureclient.flashblade::LegalHoldsHeldEntitiesGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3141,7 +3093,7 @@ LegalHoldsHeldEntitiesGetResponse
 
 LegalHoldsHeldEntitiesResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.LegalHoldsHeldEntitiesResponse
+.. autopydantic_model:: pypureclient.flashblade::LegalHoldsHeldEntitiesResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3153,7 +3105,7 @@ LegalHoldsHeldEntitiesResponse
 
 LegalHoldsResponse
 ~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.LegalHoldsResponse
+.. autopydantic_model:: pypureclient.flashblade::LegalHoldsResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3165,7 +3117,7 @@ LegalHoldsResponse
 
 LifecycleRule
 ~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.LifecycleRule
+.. autopydantic_model:: pypureclient.flashblade::LifecycleRule
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3177,7 +3129,7 @@ LifecycleRule
 
 LifecycleRuleConfigExtension
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.LifecycleRuleConfigExtension
+.. autopydantic_model:: pypureclient.flashblade::LifecycleRuleConfigExtension
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3189,7 +3141,7 @@ LifecycleRuleConfigExtension
 
 LifecycleRuleGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.LifecycleRuleGetResponse
+.. autopydantic_model:: pypureclient.flashblade::LifecycleRuleGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3201,7 +3153,7 @@ LifecycleRuleGetResponse
 
 LifecycleRulePatch
 ~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.LifecycleRulePatch
+.. autopydantic_model:: pypureclient.flashblade::LifecycleRulePatch
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3213,7 +3165,7 @@ LifecycleRulePatch
 
 LifecycleRulePost
 ~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.LifecycleRulePost
+.. autopydantic_model:: pypureclient.flashblade::LifecycleRulePost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3225,7 +3177,7 @@ LifecycleRulePost
 
 LifecycleRuleResponse
 ~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.LifecycleRuleResponse
+.. autopydantic_model:: pypureclient.flashblade::LifecycleRuleResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3237,7 +3189,7 @@ LifecycleRuleResponse
 
 LinkAggregationGroup
 ~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.LinkAggregationGroup
+.. autopydantic_model:: pypureclient.flashblade::LinkAggregationGroup
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3249,7 +3201,7 @@ LinkAggregationGroup
 
 LinkAggregationGroupGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.LinkAggregationGroupGetResponse
+.. autopydantic_model:: pypureclient.flashblade::LinkAggregationGroupGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3261,7 +3213,7 @@ LinkAggregationGroupGetResponse
 
 LinkAggregationGroupResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.LinkAggregationGroupResponse
+.. autopydantic_model:: pypureclient.flashblade::LinkAggregationGroupResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3273,7 +3225,7 @@ LinkAggregationGroupResponse
 
 LocationReference
 ~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.LocationReference
+.. autopydantic_model:: pypureclient.flashblade::LocationReference
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3285,7 +3237,7 @@ LocationReference
 
 Login
 ~~~~~
-.. autopydantic_model:: pypureclient.flashblade.Login
+.. autopydantic_model:: pypureclient.flashblade::Login
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3297,7 +3249,7 @@ Login
 
 LoginBannerGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.LoginBannerGetResponse
+.. autopydantic_model:: pypureclient.flashblade::LoginBannerGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3309,7 +3261,7 @@ LoginBannerGetResponse
 
 LogsAsync
 ~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.LogsAsync
+.. autopydantic_model:: pypureclient.flashblade::LogsAsync
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3321,7 +3273,7 @@ LogsAsync
 
 LogsAsyncGetResponse
 ~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.LogsAsyncGetResponse
+.. autopydantic_model:: pypureclient.flashblade::LogsAsyncGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3333,7 +3285,7 @@ LogsAsyncGetResponse
 
 LogsAsyncResponse
 ~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.LogsAsyncResponse
+.. autopydantic_model:: pypureclient.flashblade::LogsAsyncResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3345,7 +3297,7 @@ LogsAsyncResponse
 
 MaintenanceWindow
 ~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.MaintenanceWindow
+.. autopydantic_model:: pypureclient.flashblade::MaintenanceWindow
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3357,7 +3309,7 @@ MaintenanceWindow
 
 MaintenanceWindowPost
 ~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.MaintenanceWindowPost
+.. autopydantic_model:: pypureclient.flashblade::MaintenanceWindowPost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3369,7 +3321,7 @@ MaintenanceWindowPost
 
 MaintenanceWindowsGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.MaintenanceWindowsGetResponse
+.. autopydantic_model:: pypureclient.flashblade::MaintenanceWindowsGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3381,7 +3333,7 @@ MaintenanceWindowsGetResponse
 
 MaintenanceWindowsResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.MaintenanceWindowsResponse
+.. autopydantic_model:: pypureclient.flashblade::MaintenanceWindowsResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3393,7 +3345,7 @@ MaintenanceWindowsResponse
 
 Member
 ~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.Member
+.. autopydantic_model:: pypureclient.flashblade::Member
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3405,7 +3357,7 @@ Member
 
 MemberLink
 ~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.MemberLink
+.. autopydantic_model:: pypureclient.flashblade::MemberLink
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3417,7 +3369,7 @@ MemberLink
 
 MultiProtocol
 ~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.MultiProtocol
+.. autopydantic_model:: pypureclient.flashblade::MultiProtocol
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3429,7 +3381,7 @@ MultiProtocol
 
 MultiProtocolPost
 ~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.MultiProtocolPost
+.. autopydantic_model:: pypureclient.flashblade::MultiProtocolPost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3441,7 +3393,7 @@ MultiProtocolPost
 
 NetworkAccessPolicy
 ~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.NetworkAccessPolicy
+.. autopydantic_model:: pypureclient.flashblade::NetworkAccessPolicy
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3453,7 +3405,7 @@ NetworkAccessPolicy
 
 NetworkAccessPolicyGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.NetworkAccessPolicyGetResponse
+.. autopydantic_model:: pypureclient.flashblade::NetworkAccessPolicyGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3465,7 +3417,7 @@ NetworkAccessPolicyGetResponse
 
 NetworkAccessPolicyResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.NetworkAccessPolicyResponse
+.. autopydantic_model:: pypureclient.flashblade::NetworkAccessPolicyResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3477,7 +3429,7 @@ NetworkAccessPolicyResponse
 
 NetworkAccessPolicyRule
 ~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.NetworkAccessPolicyRule
+.. autopydantic_model:: pypureclient.flashblade::NetworkAccessPolicyRule
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3489,7 +3441,7 @@ NetworkAccessPolicyRule
 
 NetworkAccessPolicyRuleBase
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.NetworkAccessPolicyRuleBase
+.. autopydantic_model:: pypureclient.flashblade::NetworkAccessPolicyRuleBase
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3501,7 +3453,7 @@ NetworkAccessPolicyRuleBase
 
 NetworkAccessPolicyRuleGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.NetworkAccessPolicyRuleGetResponse
+.. autopydantic_model:: pypureclient.flashblade::NetworkAccessPolicyRuleGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3513,7 +3465,7 @@ NetworkAccessPolicyRuleGetResponse
 
 NetworkAccessPolicyRuleInPolicy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.NetworkAccessPolicyRuleInPolicy
+.. autopydantic_model:: pypureclient.flashblade::NetworkAccessPolicyRuleInPolicy
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3525,7 +3477,7 @@ NetworkAccessPolicyRuleInPolicy
 
 NetworkAccessPolicyRulePost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.NetworkAccessPolicyRulePost
+.. autopydantic_model:: pypureclient.flashblade::NetworkAccessPolicyRulePost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3537,7 +3489,7 @@ NetworkAccessPolicyRulePost
 
 NetworkAccessPolicyRulePostBase
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.NetworkAccessPolicyRulePostBase
+.. autopydantic_model:: pypureclient.flashblade::NetworkAccessPolicyRulePostBase
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3549,7 +3501,7 @@ NetworkAccessPolicyRulePostBase
 
 NetworkAccessPolicyRuleResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.NetworkAccessPolicyRuleResponse
+.. autopydantic_model:: pypureclient.flashblade::NetworkAccessPolicyRuleResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3561,7 +3513,7 @@ NetworkAccessPolicyRuleResponse
 
 NetworkInterface
 ~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.NetworkInterface
+.. autopydantic_model:: pypureclient.flashblade::NetworkInterface
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3573,7 +3525,7 @@ NetworkInterface
 
 NetworkInterfaceGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.NetworkInterfaceGetResponse
+.. autopydantic_model:: pypureclient.flashblade::NetworkInterfaceGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3585,7 +3537,7 @@ NetworkInterfaceGetResponse
 
 NetworkInterfacePatch
 ~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.NetworkInterfacePatch
+.. autopydantic_model:: pypureclient.flashblade::NetworkInterfacePatch
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3597,7 +3549,7 @@ NetworkInterfacePatch
 
 NetworkInterfacePing
 ~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.NetworkInterfacePing
+.. autopydantic_model:: pypureclient.flashblade::NetworkInterfacePing
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3609,7 +3561,7 @@ NetworkInterfacePing
 
 NetworkInterfacePingGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.NetworkInterfacePingGetResponse
+.. autopydantic_model:: pypureclient.flashblade::NetworkInterfacePingGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3621,7 +3573,7 @@ NetworkInterfacePingGetResponse
 
 NetworkInterfacePingResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.NetworkInterfacePingResponse
+.. autopydantic_model:: pypureclient.flashblade::NetworkInterfacePingResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3633,7 +3585,7 @@ NetworkInterfacePingResponse
 
 NetworkInterfaceResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.NetworkInterfaceResponse
+.. autopydantic_model:: pypureclient.flashblade::NetworkInterfaceResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3645,7 +3597,7 @@ NetworkInterfaceResponse
 
 NetworkInterfaceTrace
 ~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.NetworkInterfaceTrace
+.. autopydantic_model:: pypureclient.flashblade::NetworkInterfaceTrace
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3657,7 +3609,7 @@ NetworkInterfaceTrace
 
 NetworkInterfaceTraceGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.NetworkInterfaceTraceGetResponse
+.. autopydantic_model:: pypureclient.flashblade::NetworkInterfaceTraceGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3669,7 +3621,7 @@ NetworkInterfaceTraceGetResponse
 
 NetworkInterfaceTraceResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.NetworkInterfaceTraceResponse
+.. autopydantic_model:: pypureclient.flashblade::NetworkInterfaceTraceResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3681,7 +3633,7 @@ NetworkInterfaceTraceResponse
 
 NetworkInterfacesConnectorsGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.NetworkInterfacesConnectorsGetResponse
+.. autopydantic_model:: pypureclient.flashblade::NetworkInterfacesConnectorsGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3693,7 +3645,7 @@ NetworkInterfacesConnectorsGetResponse
 
 NetworkInterfacesConnectorsPerformance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.NetworkInterfacesConnectorsPerformance
+.. autopydantic_model:: pypureclient.flashblade::NetworkInterfacesConnectorsPerformance
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3705,7 +3657,7 @@ NetworkInterfacesConnectorsPerformance
 
 NetworkInterfacesConnectorsPerformanceGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.NetworkInterfacesConnectorsPerformanceGetResponse
+.. autopydantic_model:: pypureclient.flashblade::NetworkInterfacesConnectorsPerformanceGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3717,7 +3669,7 @@ NetworkInterfacesConnectorsPerformanceGetResponse
 
 NetworkInterfacesConnectorsResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.NetworkInterfacesConnectorsResponse
+.. autopydantic_model:: pypureclient.flashblade::NetworkInterfacesConnectorsResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3729,7 +3681,7 @@ NetworkInterfacesConnectorsResponse
 
 NetworkInterfacesConnectorsSetting
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.NetworkInterfacesConnectorsSetting
+.. autopydantic_model:: pypureclient.flashblade::NetworkInterfacesConnectorsSetting
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3741,7 +3693,7 @@ NetworkInterfacesConnectorsSetting
 
 NetworkInterfacesConnectorsSettingRoce
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.NetworkInterfacesConnectorsSettingRoce
+.. autopydantic_model:: pypureclient.flashblade::NetworkInterfacesConnectorsSettingRoce
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3753,7 +3705,7 @@ NetworkInterfacesConnectorsSettingRoce
 
 NetworkInterfacesConnectorsSettingRoceEcn
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.NetworkInterfacesConnectorsSettingRoceEcn
+.. autopydantic_model:: pypureclient.flashblade::NetworkInterfacesConnectorsSettingRoceEcn
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3765,7 +3717,7 @@ NetworkInterfacesConnectorsSettingRoceEcn
 
 NetworkInterfacesConnectorsSettingRocePfc
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.NetworkInterfacesConnectorsSettingRocePfc
+.. autopydantic_model:: pypureclient.flashblade::NetworkInterfacesConnectorsSettingRocePfc
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3777,7 +3729,7 @@ NetworkInterfacesConnectorsSettingRocePfc
 
 NetworkInterfacesConnectorsSettingsGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.NetworkInterfacesConnectorsSettingsGetResponse
+.. autopydantic_model:: pypureclient.flashblade::NetworkInterfacesConnectorsSettingsGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3789,7 +3741,7 @@ NetworkInterfacesConnectorsSettingsGetResponse
 
 Nfs
 ~~~
-.. autopydantic_model:: pypureclient.flashblade.Nfs
+.. autopydantic_model:: pypureclient.flashblade::Nfs
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3801,7 +3753,7 @@ Nfs
 
 NfsExportPolicy
 ~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.NfsExportPolicy
+.. autopydantic_model:: pypureclient.flashblade::NfsExportPolicy
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3813,7 +3765,7 @@ NfsExportPolicy
 
 NfsExportPolicyGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.NfsExportPolicyGetResponse
+.. autopydantic_model:: pypureclient.flashblade::NfsExportPolicyGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3825,7 +3777,7 @@ NfsExportPolicyGetResponse
 
 NfsExportPolicyPost
 ~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.NfsExportPolicyPost
+.. autopydantic_model:: pypureclient.flashblade::NfsExportPolicyPost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3837,7 +3789,7 @@ NfsExportPolicyPost
 
 NfsExportPolicyResponse
 ~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.NfsExportPolicyResponse
+.. autopydantic_model:: pypureclient.flashblade::NfsExportPolicyResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3849,7 +3801,7 @@ NfsExportPolicyResponse
 
 NfsExportPolicyRule
 ~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.NfsExportPolicyRule
+.. autopydantic_model:: pypureclient.flashblade::NfsExportPolicyRule
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3861,7 +3813,7 @@ NfsExportPolicyRule
 
 NfsExportPolicyRuleBase
 ~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.NfsExportPolicyRuleBase
+.. autopydantic_model:: pypureclient.flashblade::NfsExportPolicyRuleBase
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3873,7 +3825,7 @@ NfsExportPolicyRuleBase
 
 NfsExportPolicyRuleGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.NfsExportPolicyRuleGetResponse
+.. autopydantic_model:: pypureclient.flashblade::NfsExportPolicyRuleGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3885,7 +3837,7 @@ NfsExportPolicyRuleGetResponse
 
 NfsExportPolicyRuleInPolicy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.NfsExportPolicyRuleInPolicy
+.. autopydantic_model:: pypureclient.flashblade::NfsExportPolicyRuleInPolicy
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3897,7 +3849,7 @@ NfsExportPolicyRuleInPolicy
 
 NfsExportPolicyRuleResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.NfsExportPolicyRuleResponse
+.. autopydantic_model:: pypureclient.flashblade::NfsExportPolicyRuleResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3909,7 +3861,7 @@ NfsExportPolicyRuleResponse
 
 NfsPatch
 ~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.NfsPatch
+.. autopydantic_model:: pypureclient.flashblade::NfsPatch
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3921,7 +3873,7 @@ NfsPatch
 
 Oauth210TokenPost400Response
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.Oauth210TokenPost400Response
+.. autopydantic_model:: pypureclient.flashblade::Oauth210TokenPost400Response
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3933,7 +3885,7 @@ Oauth210TokenPost400Response
 
 Oauth210TokenPost401Response
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.Oauth210TokenPost401Response
+.. autopydantic_model:: pypureclient.flashblade::Oauth210TokenPost401Response
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3945,7 +3897,7 @@ Oauth210TokenPost401Response
 
 OauthTokenResponse
 ~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.OauthTokenResponse
+.. autopydantic_model:: pypureclient.flashblade::OauthTokenResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3957,7 +3909,7 @@ OauthTokenResponse
 
 ObjectBacklog
 ~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectBacklog
+.. autopydantic_model:: pypureclient.flashblade::ObjectBacklog
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3969,7 +3921,7 @@ ObjectBacklog
 
 ObjectLockConfigBase
 ~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectLockConfigBase
+.. autopydantic_model:: pypureclient.flashblade::ObjectLockConfigBase
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3981,7 +3933,7 @@ ObjectLockConfigBase
 
 ObjectLockConfigRequestBody
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectLockConfigRequestBody
+.. autopydantic_model:: pypureclient.flashblade::ObjectLockConfigRequestBody
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3993,7 +3945,7 @@ ObjectLockConfigRequestBody
 
 ObjectLockConfigResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectLockConfigResponse
+.. autopydantic_model:: pypureclient.flashblade::ObjectLockConfigResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4005,7 +3957,7 @@ ObjectLockConfigResponse
 
 ObjectStoreAccessKey
 ~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectStoreAccessKey
+.. autopydantic_model:: pypureclient.flashblade::ObjectStoreAccessKey
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4017,7 +3969,7 @@ ObjectStoreAccessKey
 
 ObjectStoreAccessKeyGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectStoreAccessKeyGetResponse
+.. autopydantic_model:: pypureclient.flashblade::ObjectStoreAccessKeyGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4029,7 +3981,7 @@ ObjectStoreAccessKeyGetResponse
 
 ObjectStoreAccessKeyPost
 ~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectStoreAccessKeyPost
+.. autopydantic_model:: pypureclient.flashblade::ObjectStoreAccessKeyPost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4041,7 +3993,7 @@ ObjectStoreAccessKeyPost
 
 ObjectStoreAccessKeyPostUser
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectStoreAccessKeyPostUser
+.. autopydantic_model:: pypureclient.flashblade::ObjectStoreAccessKeyPostUser
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4053,7 +4005,7 @@ ObjectStoreAccessKeyPostUser
 
 ObjectStoreAccessKeyResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectStoreAccessKeyResponse
+.. autopydantic_model:: pypureclient.flashblade::ObjectStoreAccessKeyResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4065,7 +4017,7 @@ ObjectStoreAccessKeyResponse
 
 ObjectStoreAccessPolicy
 ~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectStoreAccessPolicy
+.. autopydantic_model:: pypureclient.flashblade::ObjectStoreAccessPolicy
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4077,7 +4029,7 @@ ObjectStoreAccessPolicy
 
 ObjectStoreAccessPolicyAction
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectStoreAccessPolicyAction
+.. autopydantic_model:: pypureclient.flashblade::ObjectStoreAccessPolicyAction
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4089,7 +4041,7 @@ ObjectStoreAccessPolicyAction
 
 ObjectStoreAccessPolicyActionGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectStoreAccessPolicyActionGetResponse
+.. autopydantic_model:: pypureclient.flashblade::ObjectStoreAccessPolicyActionGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4101,7 +4053,7 @@ ObjectStoreAccessPolicyActionGetResponse
 
 ObjectStoreAccessPolicyActionResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectStoreAccessPolicyActionResponse
+.. autopydantic_model:: pypureclient.flashblade::ObjectStoreAccessPolicyActionResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4113,7 +4065,7 @@ ObjectStoreAccessPolicyActionResponse
 
 ObjectStoreAccessPolicyGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectStoreAccessPolicyGetResponse
+.. autopydantic_model:: pypureclient.flashblade::ObjectStoreAccessPolicyGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4125,7 +4077,7 @@ ObjectStoreAccessPolicyGetResponse
 
 ObjectStoreAccessPolicyPatch
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectStoreAccessPolicyPatch
+.. autopydantic_model:: pypureclient.flashblade::ObjectStoreAccessPolicyPatch
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4137,7 +4089,7 @@ ObjectStoreAccessPolicyPatch
 
 ObjectStoreAccessPolicyPost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectStoreAccessPolicyPost
+.. autopydantic_model:: pypureclient.flashblade::ObjectStoreAccessPolicyPost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4149,7 +4101,7 @@ ObjectStoreAccessPolicyPost
 
 ObjectStoreAccessPolicyResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectStoreAccessPolicyResponse
+.. autopydantic_model:: pypureclient.flashblade::ObjectStoreAccessPolicyResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4161,7 +4113,7 @@ ObjectStoreAccessPolicyResponse
 
 ObjectStoreAccessPolicyRuleGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectStoreAccessPolicyRuleGetResponse
+.. autopydantic_model:: pypureclient.flashblade::ObjectStoreAccessPolicyRuleGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4173,7 +4125,7 @@ ObjectStoreAccessPolicyRuleGetResponse
 
 ObjectStoreAccessPolicyRuleResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectStoreAccessPolicyRuleResponse
+.. autopydantic_model:: pypureclient.flashblade::ObjectStoreAccessPolicyRuleResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4185,7 +4137,7 @@ ObjectStoreAccessPolicyRuleResponse
 
 ObjectStoreAccount
 ~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectStoreAccount
+.. autopydantic_model:: pypureclient.flashblade::ObjectStoreAccount
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4197,7 +4149,7 @@ ObjectStoreAccount
 
 ObjectStoreAccountGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectStoreAccountGetResponse
+.. autopydantic_model:: pypureclient.flashblade::ObjectStoreAccountGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4209,7 +4161,7 @@ ObjectStoreAccountGetResponse
 
 ObjectStoreAccountPatch
 ~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectStoreAccountPatch
+.. autopydantic_model:: pypureclient.flashblade::ObjectStoreAccountPatch
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4221,7 +4173,7 @@ ObjectStoreAccountPatch
 
 ObjectStoreAccountPost
 ~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectStoreAccountPost
+.. autopydantic_model:: pypureclient.flashblade::ObjectStoreAccountPost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4233,7 +4185,7 @@ ObjectStoreAccountPost
 
 ObjectStoreAccountResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectStoreAccountResponse
+.. autopydantic_model:: pypureclient.flashblade::ObjectStoreAccountResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4245,7 +4197,7 @@ ObjectStoreAccountResponse
 
 ObjectStoreRemoteCredentialGetResp
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectStoreRemoteCredentialGetResp
+.. autopydantic_model:: pypureclient.flashblade::ObjectStoreRemoteCredentialGetResp
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4257,7 +4209,7 @@ ObjectStoreRemoteCredentialGetResp
 
 ObjectStoreRemoteCredentials
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectStoreRemoteCredentials
+.. autopydantic_model:: pypureclient.flashblade::ObjectStoreRemoteCredentials
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4269,7 +4221,7 @@ ObjectStoreRemoteCredentials
 
 ObjectStoreRemoteCredentialsPost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectStoreRemoteCredentialsPost
+.. autopydantic_model:: pypureclient.flashblade::ObjectStoreRemoteCredentialsPost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4281,7 +4233,7 @@ ObjectStoreRemoteCredentialsPost
 
 ObjectStoreRemoteCredentialsResp
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectStoreRemoteCredentialsResp
+.. autopydantic_model:: pypureclient.flashblade::ObjectStoreRemoteCredentialsResp
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4293,7 +4245,7 @@ ObjectStoreRemoteCredentialsResp
 
 ObjectStoreRole
 ~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectStoreRole
+.. autopydantic_model:: pypureclient.flashblade::ObjectStoreRole
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4305,7 +4257,7 @@ ObjectStoreRole
 
 ObjectStoreRoleGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectStoreRoleGetResponse
+.. autopydantic_model:: pypureclient.flashblade::ObjectStoreRoleGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4317,7 +4269,7 @@ ObjectStoreRoleGetResponse
 
 ObjectStoreRolePost
 ~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectStoreRolePost
+.. autopydantic_model:: pypureclient.flashblade::ObjectStoreRolePost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4329,7 +4281,7 @@ ObjectStoreRolePost
 
 ObjectStoreRoleResponse
 ~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectStoreRoleResponse
+.. autopydantic_model:: pypureclient.flashblade::ObjectStoreRoleResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4341,7 +4293,7 @@ ObjectStoreRoleResponse
 
 ObjectStoreTrustPolicy
 ~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectStoreTrustPolicy
+.. autopydantic_model:: pypureclient.flashblade::ObjectStoreTrustPolicy
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4353,7 +4305,7 @@ ObjectStoreTrustPolicy
 
 ObjectStoreTrustPolicyGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectStoreTrustPolicyGetResponse
+.. autopydantic_model:: pypureclient.flashblade::ObjectStoreTrustPolicyGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4365,7 +4317,7 @@ ObjectStoreTrustPolicyGetResponse
 
 ObjectStoreTrustPolicyResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectStoreTrustPolicyResponse
+.. autopydantic_model:: pypureclient.flashblade::ObjectStoreTrustPolicyResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4377,7 +4329,7 @@ ObjectStoreTrustPolicyResponse
 
 ObjectStoreTrustPolicyRuleGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectStoreTrustPolicyRuleGetResponse
+.. autopydantic_model:: pypureclient.flashblade::ObjectStoreTrustPolicyRuleGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4389,7 +4341,7 @@ ObjectStoreTrustPolicyRuleGetResponse
 
 ObjectStoreTrustPolicyRuleResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectStoreTrustPolicyRuleResponse
+.. autopydantic_model:: pypureclient.flashblade::ObjectStoreTrustPolicyRuleResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4401,7 +4353,7 @@ ObjectStoreTrustPolicyRuleResponse
 
 ObjectStoreUser
 ~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectStoreUser
+.. autopydantic_model:: pypureclient.flashblade::ObjectStoreUser
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4413,7 +4365,7 @@ ObjectStoreUser
 
 ObjectStoreUserGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectStoreUserGetResponse
+.. autopydantic_model:: pypureclient.flashblade::ObjectStoreUserGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4425,7 +4377,7 @@ ObjectStoreUserGetResponse
 
 ObjectStoreUserResponse
 ~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectStoreUserResponse
+.. autopydantic_model:: pypureclient.flashblade::ObjectStoreUserResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4437,7 +4389,7 @@ ObjectStoreUserResponse
 
 ObjectStoreVirtualHost
 ~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectStoreVirtualHost
+.. autopydantic_model:: pypureclient.flashblade::ObjectStoreVirtualHost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4449,7 +4401,7 @@ ObjectStoreVirtualHost
 
 ObjectStoreVirtualHostGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectStoreVirtualHostGetResponse
+.. autopydantic_model:: pypureclient.flashblade::ObjectStoreVirtualHostGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4461,7 +4413,7 @@ ObjectStoreVirtualHostGetResponse
 
 ObjectStoreVirtualHostResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ObjectStoreVirtualHostResponse
+.. autopydantic_model:: pypureclient.flashblade::ObjectStoreVirtualHostResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4473,7 +4425,7 @@ ObjectStoreVirtualHostResponse
 
 OidcSso
 ~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.OidcSso
+.. autopydantic_model:: pypureclient.flashblade::OidcSso
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4485,7 +4437,7 @@ OidcSso
 
 OidcSsoGetResponse
 ~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.OidcSsoGetResponse
+.. autopydantic_model:: pypureclient.flashblade::OidcSsoGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4497,7 +4449,7 @@ OidcSsoGetResponse
 
 OidcSsoPatch
 ~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.OidcSsoPatch
+.. autopydantic_model:: pypureclient.flashblade::OidcSsoPatch
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4509,7 +4461,7 @@ OidcSsoPatch
 
 OidcSsoPost
 ~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.OidcSsoPost
+.. autopydantic_model:: pypureclient.flashblade::OidcSsoPost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4521,7 +4473,7 @@ OidcSsoPost
 
 OidcSsoPostIdp
 ~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.OidcSsoPostIdp
+.. autopydantic_model:: pypureclient.flashblade::OidcSsoPostIdp
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4533,7 +4485,7 @@ OidcSsoPostIdp
 
 OidcSsoResponse
 ~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.OidcSsoResponse
+.. autopydantic_model:: pypureclient.flashblade::OidcSsoResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4545,7 +4497,7 @@ OidcSsoResponse
 
 PageInfo
 ~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.PageInfo
+.. autopydantic_model:: pypureclient.flashblade::PageInfo
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4557,7 +4509,7 @@ PageInfo
 
 PasswordPoliciesGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.PasswordPoliciesGetResponse
+.. autopydantic_model:: pypureclient.flashblade::PasswordPoliciesGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4569,7 +4521,7 @@ PasswordPoliciesGetResponse
 
 PasswordPoliciesResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.PasswordPoliciesResponse
+.. autopydantic_model:: pypureclient.flashblade::PasswordPoliciesResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4581,7 +4533,7 @@ PasswordPoliciesResponse
 
 PasswordPolicy
 ~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.PasswordPolicy
+.. autopydantic_model:: pypureclient.flashblade::PasswordPolicy
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4593,7 +4545,7 @@ PasswordPolicy
 
 Permission
 ~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.Permission
+.. autopydantic_model:: pypureclient.flashblade::Permission
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4605,7 +4557,7 @@ Permission
 
 Policy
 ~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.Policy
+.. autopydantic_model:: pypureclient.flashblade::Policy
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4617,7 +4569,7 @@ Policy
 
 PolicyBase
 ~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.PolicyBase
+.. autopydantic_model:: pypureclient.flashblade::PolicyBase
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4629,7 +4581,7 @@ PolicyBase
 
 PolicyBaseContext
 ~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.PolicyBaseContext
+.. autopydantic_model:: pypureclient.flashblade::PolicyBaseContext
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4641,7 +4593,7 @@ PolicyBaseContext
 
 PolicyBaseGetResponse
 ~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.PolicyBaseGetResponse
+.. autopydantic_model:: pypureclient.flashblade::PolicyBaseGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4653,7 +4605,7 @@ PolicyBaseGetResponse
 
 PolicyBaseRenameable
 ~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.PolicyBaseRenameable
+.. autopydantic_model:: pypureclient.flashblade::PolicyBaseRenameable
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4665,7 +4617,7 @@ PolicyBaseRenameable
 
 PolicyBaseResponse
 ~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.PolicyBaseResponse
+.. autopydantic_model:: pypureclient.flashblade::PolicyBaseResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4677,7 +4629,7 @@ PolicyBaseResponse
 
 PolicyFileSystemSnapshot
 ~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.PolicyFileSystemSnapshot
+.. autopydantic_model:: pypureclient.flashblade::PolicyFileSystemSnapshot
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4689,7 +4641,7 @@ PolicyFileSystemSnapshot
 
 PolicyFileSystemSnapshotGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.PolicyFileSystemSnapshotGetResponse
+.. autopydantic_model:: pypureclient.flashblade::PolicyFileSystemSnapshotGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4701,7 +4653,7 @@ PolicyFileSystemSnapshotGetResponse
 
 PolicyFileSystemSnapshotResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.PolicyFileSystemSnapshotResponse
+.. autopydantic_model:: pypureclient.flashblade::PolicyFileSystemSnapshotResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4713,7 +4665,7 @@ PolicyFileSystemSnapshotResponse
 
 PolicyGetResponse
 ~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.PolicyGetResponse
+.. autopydantic_model:: pypureclient.flashblade::PolicyGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4725,7 +4677,7 @@ PolicyGetResponse
 
 PolicyMember
 ~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.PolicyMember
+.. autopydantic_model:: pypureclient.flashblade::PolicyMember
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4737,7 +4689,7 @@ PolicyMember
 
 PolicyMemberContext
 ~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.PolicyMemberContext
+.. autopydantic_model:: pypureclient.flashblade::PolicyMemberContext
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4749,7 +4701,7 @@ PolicyMemberContext
 
 PolicyMemberContextGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.PolicyMemberContextGetResponse
+.. autopydantic_model:: pypureclient.flashblade::PolicyMemberContextGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4761,7 +4713,7 @@ PolicyMemberContextGetResponse
 
 PolicyMemberContextResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.PolicyMemberContextResponse
+.. autopydantic_model:: pypureclient.flashblade::PolicyMemberContextResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4773,7 +4725,7 @@ PolicyMemberContextResponse
 
 PolicyMemberGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.PolicyMemberGetResponse
+.. autopydantic_model:: pypureclient.flashblade::PolicyMemberGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4785,7 +4737,7 @@ PolicyMemberGetResponse
 
 PolicyMemberResponse
 ~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.PolicyMemberResponse
+.. autopydantic_model:: pypureclient.flashblade::PolicyMemberResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4797,7 +4749,7 @@ PolicyMemberResponse
 
 PolicyMemberWithRemote
 ~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.PolicyMemberWithRemote
+.. autopydantic_model:: pypureclient.flashblade::PolicyMemberWithRemote
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4809,7 +4761,7 @@ PolicyMemberWithRemote
 
 PolicyMemberWithRemoteGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.PolicyMemberWithRemoteGetResponse
+.. autopydantic_model:: pypureclient.flashblade::PolicyMemberWithRemoteGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4821,7 +4773,7 @@ PolicyMemberWithRemoteGetResponse
 
 PolicyMemberWithRemoteResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.PolicyMemberWithRemoteResponse
+.. autopydantic_model:: pypureclient.flashblade::PolicyMemberWithRemoteResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4833,7 +4785,7 @@ PolicyMemberWithRemoteResponse
 
 PolicyPatch
 ~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.PolicyPatch
+.. autopydantic_model:: pypureclient.flashblade::PolicyPatch
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4845,7 +4797,7 @@ PolicyPatch
 
 PolicyResponse
 ~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.PolicyResponse
+.. autopydantic_model:: pypureclient.flashblade::PolicyResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4857,7 +4809,7 @@ PolicyResponse
 
 PolicyRule
 ~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.PolicyRule
+.. autopydantic_model:: pypureclient.flashblade::PolicyRule
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4869,7 +4821,7 @@ PolicyRule
 
 PolicyRuleIndex
 ~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.PolicyRuleIndex
+.. autopydantic_model:: pypureclient.flashblade::PolicyRuleIndex
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4881,7 +4833,7 @@ PolicyRuleIndex
 
 PolicyRuleIndexInPolicy
 ~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.PolicyRuleIndexInPolicy
+.. autopydantic_model:: pypureclient.flashblade::PolicyRuleIndexInPolicy
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4893,7 +4845,7 @@ PolicyRuleIndexInPolicy
 
 PolicyRuleObjectAccess
 ~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.PolicyRuleObjectAccess
+.. autopydantic_model:: pypureclient.flashblade::PolicyRuleObjectAccess
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4905,7 +4857,7 @@ PolicyRuleObjectAccess
 
 PolicyRuleObjectAccessBulkManage
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.PolicyRuleObjectAccessBulkManage
+.. autopydantic_model:: pypureclient.flashblade::PolicyRuleObjectAccessBulkManage
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4917,7 +4869,7 @@ PolicyRuleObjectAccessBulkManage
 
 PolicyRuleObjectAccessCondition
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.PolicyRuleObjectAccessCondition
+.. autopydantic_model:: pypureclient.flashblade::PolicyRuleObjectAccessCondition
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4929,7 +4881,7 @@ PolicyRuleObjectAccessCondition
 
 PolicyRuleObjectAccessPost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.PolicyRuleObjectAccessPost
+.. autopydantic_model:: pypureclient.flashblade::PolicyRuleObjectAccessPost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4941,7 +4893,7 @@ PolicyRuleObjectAccessPost
 
 PublicAccessConfig
 ~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.PublicAccessConfig
+.. autopydantic_model:: pypureclient.flashblade::PublicAccessConfig
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4953,7 +4905,7 @@ PublicAccessConfig
 
 PublicKey
 ~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.PublicKey
+.. autopydantic_model:: pypureclient.flashblade::PublicKey
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4965,7 +4917,7 @@ PublicKey
 
 PublicKeyGetResponse
 ~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.PublicKeyGetResponse
+.. autopydantic_model:: pypureclient.flashblade::PublicKeyGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4977,7 +4929,7 @@ PublicKeyGetResponse
 
 PublicKeyPost
 ~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.PublicKeyPost
+.. autopydantic_model:: pypureclient.flashblade::PublicKeyPost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4989,7 +4941,7 @@ PublicKeyPost
 
 PublicKeyResponse
 ~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.PublicKeyResponse
+.. autopydantic_model:: pypureclient.flashblade::PublicKeyResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5001,7 +4953,7 @@ PublicKeyResponse
 
 PublicKeyUse
 ~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.PublicKeyUse
+.. autopydantic_model:: pypureclient.flashblade::PublicKeyUse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5013,7 +4965,7 @@ PublicKeyUse
 
 PublicKeyUseGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.PublicKeyUseGetResponse
+.. autopydantic_model:: pypureclient.flashblade::PublicKeyUseGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5025,7 +4977,7 @@ PublicKeyUseGetResponse
 
 PublicKeyUseResponse
 ~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.PublicKeyUseResponse
+.. autopydantic_model:: pypureclient.flashblade::PublicKeyUseResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5037,7 +4989,7 @@ PublicKeyUseResponse
 
 QosPoliciesGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.QosPoliciesGetResponse
+.. autopydantic_model:: pypureclient.flashblade::QosPoliciesGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5049,7 +5001,7 @@ QosPoliciesGetResponse
 
 QosPoliciesResponse
 ~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.QosPoliciesResponse
+.. autopydantic_model:: pypureclient.flashblade::QosPoliciesResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5061,7 +5013,7 @@ QosPoliciesResponse
 
 QosPolicy
 ~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.QosPolicy
+.. autopydantic_model:: pypureclient.flashblade::QosPolicy
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5073,7 +5025,7 @@ QosPolicy
 
 QuotaSetting
 ~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.QuotaSetting
+.. autopydantic_model:: pypureclient.flashblade::QuotaSetting
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5085,7 +5037,7 @@ QuotaSetting
 
 QuotaSettingGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.QuotaSettingGetResponse
+.. autopydantic_model:: pypureclient.flashblade::QuotaSettingGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5097,7 +5049,7 @@ QuotaSettingGetResponse
 
 QuotaSettingResponse
 ~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.QuotaSettingResponse
+.. autopydantic_model:: pypureclient.flashblade::QuotaSettingResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5109,7 +5061,7 @@ QuotaSettingResponse
 
 RapidDataLocking
 ~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.RapidDataLocking
+.. autopydantic_model:: pypureclient.flashblade::RapidDataLocking
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5121,7 +5073,7 @@ RapidDataLocking
 
 RapidDataLockingResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.RapidDataLockingResponse
+.. autopydantic_model:: pypureclient.flashblade::RapidDataLockingResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5133,7 +5085,7 @@ RapidDataLockingResponse
 
 Reference
 ~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.Reference
+.. autopydantic_model:: pypureclient.flashblade::Reference
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5145,7 +5097,7 @@ Reference
 
 ReferenceNameOnly
 ~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ReferenceNameOnly
+.. autopydantic_model:: pypureclient.flashblade::ReferenceNameOnly
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5157,7 +5109,7 @@ ReferenceNameOnly
 
 ReferenceWritable
 ~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ReferenceWritable
+.. autopydantic_model:: pypureclient.flashblade::ReferenceWritable
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5169,7 +5121,7 @@ ReferenceWritable
 
 RelationshipPerformanceReplication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.RelationshipPerformanceReplication
+.. autopydantic_model:: pypureclient.flashblade::RelationshipPerformanceReplication
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5181,7 +5133,7 @@ RelationshipPerformanceReplication
 
 RemoteArray
 ~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.RemoteArray
+.. autopydantic_model:: pypureclient.flashblade::RemoteArray
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5193,7 +5145,7 @@ RemoteArray
 
 RemoteArraysResponse
 ~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.RemoteArraysResponse
+.. autopydantic_model:: pypureclient.flashblade::RemoteArraysResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5205,7 +5157,7 @@ RemoteArraysResponse
 
 ReplicaLinkBuiltIn
 ~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ReplicaLinkBuiltIn
+.. autopydantic_model:: pypureclient.flashblade::ReplicaLinkBuiltIn
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5217,7 +5169,7 @@ ReplicaLinkBuiltIn
 
 ReplicationPerformance
 ~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ReplicationPerformance
+.. autopydantic_model:: pypureclient.flashblade::ReplicationPerformance
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5229,7 +5181,7 @@ ReplicationPerformance
 
 Resource
 ~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.Resource
+.. autopydantic_model:: pypureclient.flashblade::Resource
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5241,7 +5193,7 @@ Resource
 
 ResourceFixedNonUniqueName
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ResourceFixedNonUniqueName
+.. autopydantic_model:: pypureclient.flashblade::ResourceFixedNonUniqueName
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5253,7 +5205,7 @@ ResourceFixedNonUniqueName
 
 ResourcePerformanceReplication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ResourcePerformanceReplication
+.. autopydantic_model:: pypureclient.flashblade::ResourcePerformanceReplication
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5265,7 +5217,7 @@ ResourcePerformanceReplication
 
 ResourcePerformanceReplicationGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ResourcePerformanceReplicationGetResponse
+.. autopydantic_model:: pypureclient.flashblade::ResourcePerformanceReplicationGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5277,7 +5229,7 @@ ResourcePerformanceReplicationGetResponse
 
 Role
 ~~~~
-.. autopydantic_model:: pypureclient.flashblade.Role
+.. autopydantic_model:: pypureclient.flashblade::Role
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5289,7 +5241,7 @@ Role
 
 RoleGetResponse
 ~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.RoleGetResponse
+.. autopydantic_model:: pypureclient.flashblade::RoleGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5301,7 +5253,7 @@ RoleGetResponse
 
 Saml2Sso
 ~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.Saml2Sso
+.. autopydantic_model:: pypureclient.flashblade::Saml2Sso
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5313,7 +5265,7 @@ Saml2Sso
 
 Saml2SsoGetResponse
 ~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.Saml2SsoGetResponse
+.. autopydantic_model:: pypureclient.flashblade::Saml2SsoGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5325,7 +5277,7 @@ Saml2SsoGetResponse
 
 Saml2SsoIdp
 ~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.Saml2SsoIdp
+.. autopydantic_model:: pypureclient.flashblade::Saml2SsoIdp
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5337,7 +5289,7 @@ Saml2SsoIdp
 
 Saml2SsoPost
 ~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.Saml2SsoPost
+.. autopydantic_model:: pypureclient.flashblade::Saml2SsoPost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5349,7 +5301,7 @@ Saml2SsoPost
 
 Saml2SsoResponse
 ~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.Saml2SsoResponse
+.. autopydantic_model:: pypureclient.flashblade::Saml2SsoResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5361,7 +5313,7 @@ Saml2SsoResponse
 
 Saml2SsoSp
 ~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.Saml2SsoSp
+.. autopydantic_model:: pypureclient.flashblade::Saml2SsoSp
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5373,7 +5325,7 @@ Saml2SsoSp
 
 Saml2SsoSpCredential
 ~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.Saml2SsoSpCredential
+.. autopydantic_model:: pypureclient.flashblade::Saml2SsoSpCredential
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5385,7 +5337,7 @@ Saml2SsoSpCredential
 
 Server
 ~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.Server
+.. autopydantic_model:: pypureclient.flashblade::Server
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5397,7 +5349,7 @@ Server
 
 ServerContext
 ~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ServerContext
+.. autopydantic_model:: pypureclient.flashblade::ServerContext
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5409,7 +5361,7 @@ ServerContext
 
 ServerGetResponse
 ~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ServerGetResponse
+.. autopydantic_model:: pypureclient.flashblade::ServerGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5421,7 +5373,7 @@ ServerGetResponse
 
 ServerPost
 ~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ServerPost
+.. autopydantic_model:: pypureclient.flashblade::ServerPost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5433,7 +5385,7 @@ ServerPost
 
 ServerResponse
 ~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ServerResponse
+.. autopydantic_model:: pypureclient.flashblade::ServerResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5445,7 +5397,7 @@ ServerResponse
 
 ServerResponseContext
 ~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.ServerResponseContext
+.. autopydantic_model:: pypureclient.flashblade::ServerResponseContext
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5457,7 +5409,7 @@ ServerResponseContext
 
 Session
 ~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.Session
+.. autopydantic_model:: pypureclient.flashblade::Session
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5469,7 +5421,7 @@ Session
 
 SessionGetResponse
 ~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SessionGetResponse
+.. autopydantic_model:: pypureclient.flashblade::SessionGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5481,7 +5433,7 @@ SessionGetResponse
 
 Smb
 ~~~
-.. autopydantic_model:: pypureclient.flashblade.Smb
+.. autopydantic_model:: pypureclient.flashblade::Smb
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5493,7 +5445,7 @@ Smb
 
 SmbClientPolicy
 ~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SmbClientPolicy
+.. autopydantic_model:: pypureclient.flashblade::SmbClientPolicy
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5505,7 +5457,7 @@ SmbClientPolicy
 
 SmbClientPolicyGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SmbClientPolicyGetResponse
+.. autopydantic_model:: pypureclient.flashblade::SmbClientPolicyGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5517,7 +5469,7 @@ SmbClientPolicyGetResponse
 
 SmbClientPolicyPost
 ~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SmbClientPolicyPost
+.. autopydantic_model:: pypureclient.flashblade::SmbClientPolicyPost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5529,7 +5481,7 @@ SmbClientPolicyPost
 
 SmbClientPolicyResponse
 ~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SmbClientPolicyResponse
+.. autopydantic_model:: pypureclient.flashblade::SmbClientPolicyResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5541,7 +5493,7 @@ SmbClientPolicyResponse
 
 SmbClientPolicyRule
 ~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SmbClientPolicyRule
+.. autopydantic_model:: pypureclient.flashblade::SmbClientPolicyRule
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5553,7 +5505,7 @@ SmbClientPolicyRule
 
 SmbClientPolicyRuleBase
 ~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SmbClientPolicyRuleBase
+.. autopydantic_model:: pypureclient.flashblade::SmbClientPolicyRuleBase
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5565,7 +5517,7 @@ SmbClientPolicyRuleBase
 
 SmbClientPolicyRuleGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SmbClientPolicyRuleGetResponse
+.. autopydantic_model:: pypureclient.flashblade::SmbClientPolicyRuleGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5577,7 +5529,7 @@ SmbClientPolicyRuleGetResponse
 
 SmbClientPolicyRuleInPolicy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SmbClientPolicyRuleInPolicy
+.. autopydantic_model:: pypureclient.flashblade::SmbClientPolicyRuleInPolicy
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5589,7 +5541,7 @@ SmbClientPolicyRuleInPolicy
 
 SmbClientPolicyRulePost
 ~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SmbClientPolicyRulePost
+.. autopydantic_model:: pypureclient.flashblade::SmbClientPolicyRulePost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5601,7 +5553,7 @@ SmbClientPolicyRulePost
 
 SmbClientPolicyRulePostBase
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SmbClientPolicyRulePostBase
+.. autopydantic_model:: pypureclient.flashblade::SmbClientPolicyRulePostBase
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5613,7 +5565,7 @@ SmbClientPolicyRulePostBase
 
 SmbClientPolicyRulePostInPolicy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SmbClientPolicyRulePostInPolicy
+.. autopydantic_model:: pypureclient.flashblade::SmbClientPolicyRulePostInPolicy
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5625,7 +5577,7 @@ SmbClientPolicyRulePostInPolicy
 
 SmbClientPolicyRuleResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SmbClientPolicyRuleResponse
+.. autopydantic_model:: pypureclient.flashblade::SmbClientPolicyRuleResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5637,7 +5589,7 @@ SmbClientPolicyRuleResponse
 
 SmbPost
 ~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SmbPost
+.. autopydantic_model:: pypureclient.flashblade::SmbPost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5649,7 +5601,7 @@ SmbPost
 
 SmbSharePolicy
 ~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SmbSharePolicy
+.. autopydantic_model:: pypureclient.flashblade::SmbSharePolicy
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5661,7 +5613,7 @@ SmbSharePolicy
 
 SmbSharePolicyGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SmbSharePolicyGetResponse
+.. autopydantic_model:: pypureclient.flashblade::SmbSharePolicyGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5673,7 +5625,7 @@ SmbSharePolicyGetResponse
 
 SmbSharePolicyPost
 ~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SmbSharePolicyPost
+.. autopydantic_model:: pypureclient.flashblade::SmbSharePolicyPost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5685,7 +5637,7 @@ SmbSharePolicyPost
 
 SmbSharePolicyResponse
 ~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SmbSharePolicyResponse
+.. autopydantic_model:: pypureclient.flashblade::SmbSharePolicyResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5697,7 +5649,7 @@ SmbSharePolicyResponse
 
 SmbSharePolicyRule
 ~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SmbSharePolicyRule
+.. autopydantic_model:: pypureclient.flashblade::SmbSharePolicyRule
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5709,7 +5661,7 @@ SmbSharePolicyRule
 
 SmbSharePolicyRuleGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SmbSharePolicyRuleGetResponse
+.. autopydantic_model:: pypureclient.flashblade::SmbSharePolicyRuleGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5721,7 +5673,7 @@ SmbSharePolicyRuleGetResponse
 
 SmbSharePolicyRulePost
 ~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SmbSharePolicyRulePost
+.. autopydantic_model:: pypureclient.flashblade::SmbSharePolicyRulePost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5733,7 +5685,7 @@ SmbSharePolicyRulePost
 
 SmbSharePolicyRuleResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SmbSharePolicyRuleResponse
+.. autopydantic_model:: pypureclient.flashblade::SmbSharePolicyRuleResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5745,7 +5697,7 @@ SmbSharePolicyRuleResponse
 
 SmbSharePolicyRuleWithContext
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SmbSharePolicyRuleWithContext
+.. autopydantic_model:: pypureclient.flashblade::SmbSharePolicyRuleWithContext
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5757,7 +5709,7 @@ SmbSharePolicyRuleWithContext
 
 SmtpServer
 ~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SmtpServer
+.. autopydantic_model:: pypureclient.flashblade::SmtpServer
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5769,7 +5721,7 @@ SmtpServer
 
 SmtpServerGetResponse
 ~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SmtpServerGetResponse
+.. autopydantic_model:: pypureclient.flashblade::SmtpServerGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5781,7 +5733,7 @@ SmtpServerGetResponse
 
 SmtpServerResponse
 ~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SmtpServerResponse
+.. autopydantic_model:: pypureclient.flashblade::SmtpServerResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5793,7 +5745,7 @@ SmtpServerResponse
 
 SnmpAgent
 ~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SnmpAgent
+.. autopydantic_model:: pypureclient.flashblade::SnmpAgent
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5805,7 +5757,7 @@ SnmpAgent
 
 SnmpAgentGetResponse
 ~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SnmpAgentGetResponse
+.. autopydantic_model:: pypureclient.flashblade::SnmpAgentGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5817,7 +5769,7 @@ SnmpAgentGetResponse
 
 SnmpAgentMib
 ~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SnmpAgentMib
+.. autopydantic_model:: pypureclient.flashblade::SnmpAgentMib
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5829,7 +5781,7 @@ SnmpAgentMib
 
 SnmpAgentMibResponse
 ~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SnmpAgentMibResponse
+.. autopydantic_model:: pypureclient.flashblade::SnmpAgentMibResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5841,7 +5793,7 @@ SnmpAgentMibResponse
 
 SnmpAgentResponse
 ~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SnmpAgentResponse
+.. autopydantic_model:: pypureclient.flashblade::SnmpAgentResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5853,7 +5805,7 @@ SnmpAgentResponse
 
 SnmpManager
 ~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SnmpManager
+.. autopydantic_model:: pypureclient.flashblade::SnmpManager
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5865,7 +5817,7 @@ SnmpManager
 
 SnmpManagerGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SnmpManagerGetResponse
+.. autopydantic_model:: pypureclient.flashblade::SnmpManagerGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5877,7 +5829,7 @@ SnmpManagerGetResponse
 
 SnmpManagerPost
 ~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SnmpManagerPost
+.. autopydantic_model:: pypureclient.flashblade::SnmpManagerPost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5889,7 +5841,7 @@ SnmpManagerPost
 
 SnmpManagerResponse
 ~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SnmpManagerResponse
+.. autopydantic_model:: pypureclient.flashblade::SnmpManagerResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5901,7 +5853,7 @@ SnmpManagerResponse
 
 SnmpManagerTest
 ~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SnmpManagerTest
+.. autopydantic_model:: pypureclient.flashblade::SnmpManagerTest
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5913,7 +5865,7 @@ SnmpManagerTest
 
 SnmpV2c
 ~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SnmpV2c
+.. autopydantic_model:: pypureclient.flashblade::SnmpV2c
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5925,7 +5877,7 @@ SnmpV2c
 
 SnmpV3
 ~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SnmpV3
+.. autopydantic_model:: pypureclient.flashblade::SnmpV3
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5937,7 +5889,7 @@ SnmpV3
 
 SnmpV3Post
 ~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SnmpV3Post
+.. autopydantic_model:: pypureclient.flashblade::SnmpV3Post
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5949,7 +5901,7 @@ SnmpV3Post
 
 SoftwareCheck
 ~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SoftwareCheck
+.. autopydantic_model:: pypureclient.flashblade::SoftwareCheck
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5961,7 +5913,7 @@ SoftwareCheck
 
 SoftwareChecksChecks
 ~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SoftwareChecksChecks
+.. autopydantic_model:: pypureclient.flashblade::SoftwareChecksChecks
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5973,7 +5925,7 @@ SoftwareChecksChecks
 
 SoftwareChecksGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SoftwareChecksGetResponse
+.. autopydantic_model:: pypureclient.flashblade::SoftwareChecksGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5985,7 +5937,7 @@ SoftwareChecksGetResponse
 
 SoftwareChecksResponse
 ~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SoftwareChecksResponse
+.. autopydantic_model:: pypureclient.flashblade::SoftwareChecksResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5997,7 +5949,7 @@ SoftwareChecksResponse
 
 Space
 ~~~~~
-.. autopydantic_model:: pypureclient.flashblade.Space
+.. autopydantic_model:: pypureclient.flashblade::Space
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6009,7 +5961,7 @@ Space
 
 SshCertificateAuthorityPolicy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SshCertificateAuthorityPolicy
+.. autopydantic_model:: pypureclient.flashblade::SshCertificateAuthorityPolicy
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6021,7 +5973,7 @@ SshCertificateAuthorityPolicy
 
 SshCertificateAuthorityPolicyGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SshCertificateAuthorityPolicyGetResponse
+.. autopydantic_model:: pypureclient.flashblade::SshCertificateAuthorityPolicyGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6033,7 +5985,7 @@ SshCertificateAuthorityPolicyGetResponse
 
 SshCertificateAuthorityPolicyPost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SshCertificateAuthorityPolicyPost
+.. autopydantic_model:: pypureclient.flashblade::SshCertificateAuthorityPolicyPost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6045,7 +5997,7 @@ SshCertificateAuthorityPolicyPost
 
 SshCertificateAuthorityPolicyResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SshCertificateAuthorityPolicyResponse
+.. autopydantic_model:: pypureclient.flashblade::SshCertificateAuthorityPolicyResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6057,7 +6009,7 @@ SshCertificateAuthorityPolicyResponse
 
 StartEndTime
 ~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.StartEndTime
+.. autopydantic_model:: pypureclient.flashblade::StartEndTime
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6069,7 +6021,7 @@ StartEndTime
 
 StorageClassInfo
 ~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.StorageClassInfo
+.. autopydantic_model:: pypureclient.flashblade::StorageClassInfo
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6081,7 +6033,7 @@ StorageClassInfo
 
 StorageClassSpace
 ~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.StorageClassSpace
+.. autopydantic_model:: pypureclient.flashblade::StorageClassSpace
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6093,7 +6045,7 @@ StorageClassSpace
 
 Subnet
 ~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.Subnet
+.. autopydantic_model:: pypureclient.flashblade::Subnet
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6105,7 +6057,7 @@ Subnet
 
 SubnetGetResponse
 ~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SubnetGetResponse
+.. autopydantic_model:: pypureclient.flashblade::SubnetGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6117,7 +6069,7 @@ SubnetGetResponse
 
 SubnetResponse
 ~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SubnetResponse
+.. autopydantic_model:: pypureclient.flashblade::SubnetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6129,7 +6081,7 @@ SubnetResponse
 
 Support
 ~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.Support
+.. autopydantic_model:: pypureclient.flashblade::Support
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6141,7 +6093,7 @@ Support
 
 SupportDiagnostics
 ~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SupportDiagnostics
+.. autopydantic_model:: pypureclient.flashblade::SupportDiagnostics
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6153,7 +6105,7 @@ SupportDiagnostics
 
 SupportDiagnosticsDetails
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SupportDiagnosticsDetails
+.. autopydantic_model:: pypureclient.flashblade::SupportDiagnosticsDetails
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6165,7 +6117,7 @@ SupportDiagnosticsDetails
 
 SupportDiagnosticsDetailsGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SupportDiagnosticsDetailsGetResponse
+.. autopydantic_model:: pypureclient.flashblade::SupportDiagnosticsDetailsGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6177,7 +6129,7 @@ SupportDiagnosticsDetailsGetResponse
 
 SupportDiagnosticsDetailsResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SupportDiagnosticsDetailsResponse
+.. autopydantic_model:: pypureclient.flashblade::SupportDiagnosticsDetailsResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6189,7 +6141,7 @@ SupportDiagnosticsDetailsResponse
 
 SupportDiagnosticsGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SupportDiagnosticsGetResponse
+.. autopydantic_model:: pypureclient.flashblade::SupportDiagnosticsGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6201,7 +6153,7 @@ SupportDiagnosticsGetResponse
 
 SupportDiagnosticsResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SupportDiagnosticsResponse
+.. autopydantic_model:: pypureclient.flashblade::SupportDiagnosticsResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6213,7 +6165,7 @@ SupportDiagnosticsResponse
 
 SupportDiagnosticsSeverityCount
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SupportDiagnosticsSeverityCount
+.. autopydantic_model:: pypureclient.flashblade::SupportDiagnosticsSeverityCount
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6225,7 +6177,7 @@ SupportDiagnosticsSeverityCount
 
 SupportGetResponse
 ~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SupportGetResponse
+.. autopydantic_model:: pypureclient.flashblade::SupportGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6237,7 +6189,7 @@ SupportGetResponse
 
 SupportRemoteAssistPaths
 ~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SupportRemoteAssistPaths
+.. autopydantic_model:: pypureclient.flashblade::SupportRemoteAssistPaths
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6249,7 +6201,7 @@ SupportRemoteAssistPaths
 
 SupportResponse
 ~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SupportResponse
+.. autopydantic_model:: pypureclient.flashblade::SupportResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6261,7 +6213,7 @@ SupportResponse
 
 SyslogServer
 ~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SyslogServer
+.. autopydantic_model:: pypureclient.flashblade::SyslogServer
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6273,7 +6225,7 @@ SyslogServer
 
 SyslogServerContext
 ~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SyslogServerContext
+.. autopydantic_model:: pypureclient.flashblade::SyslogServerContext
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6285,7 +6237,7 @@ SyslogServerContext
 
 SyslogServerContextResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SyslogServerContextResponse
+.. autopydantic_model:: pypureclient.flashblade::SyslogServerContextResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6297,7 +6249,7 @@ SyslogServerContextResponse
 
 SyslogServerGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SyslogServerGetResponse
+.. autopydantic_model:: pypureclient.flashblade::SyslogServerGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6309,7 +6261,7 @@ SyslogServerGetResponse
 
 SyslogServerPatch
 ~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SyslogServerPatch
+.. autopydantic_model:: pypureclient.flashblade::SyslogServerPatch
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6321,7 +6273,7 @@ SyslogServerPatch
 
 SyslogServerPost
 ~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SyslogServerPost
+.. autopydantic_model:: pypureclient.flashblade::SyslogServerPost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6333,7 +6285,7 @@ SyslogServerPost
 
 SyslogServerPostOrPatch
 ~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SyslogServerPostOrPatch
+.. autopydantic_model:: pypureclient.flashblade::SyslogServerPostOrPatch
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6345,7 +6297,7 @@ SyslogServerPostOrPatch
 
 SyslogServerResponse
 ~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SyslogServerResponse
+.. autopydantic_model:: pypureclient.flashblade::SyslogServerResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6357,7 +6309,7 @@ SyslogServerResponse
 
 SyslogServerSettings
 ~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SyslogServerSettings
+.. autopydantic_model:: pypureclient.flashblade::SyslogServerSettings
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6369,7 +6321,7 @@ SyslogServerSettings
 
 SyslogServerSettingsGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SyslogServerSettingsGetResponse
+.. autopydantic_model:: pypureclient.flashblade::SyslogServerSettingsGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6381,7 +6333,7 @@ SyslogServerSettingsGetResponse
 
 SyslogServerSettingsResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.SyslogServerSettingsResponse
+.. autopydantic_model:: pypureclient.flashblade::SyslogServerSettingsResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6393,7 +6345,7 @@ SyslogServerSettingsResponse
 
 Target
 ~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.Target
+.. autopydantic_model:: pypureclient.flashblade::Target
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6405,7 +6357,7 @@ Target
 
 TargetGetResponse
 ~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.TargetGetResponse
+.. autopydantic_model:: pypureclient.flashblade::TargetGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6417,7 +6369,7 @@ TargetGetResponse
 
 TargetPost
 ~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.TargetPost
+.. autopydantic_model:: pypureclient.flashblade::TargetPost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6429,7 +6381,7 @@ TargetPost
 
 TargetResponse
 ~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.TargetResponse
+.. autopydantic_model:: pypureclient.flashblade::TargetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6441,7 +6393,7 @@ TargetResponse
 
 TargetResponseContext
 ~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.TargetResponseContext
+.. autopydantic_model:: pypureclient.flashblade::TargetResponseContext
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6453,7 +6405,7 @@ TargetResponseContext
 
 TargetWithContext
 ~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.TargetWithContext
+.. autopydantic_model:: pypureclient.flashblade::TargetWithContext
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6465,7 +6417,7 @@ TargetWithContext
 
 TestResult
 ~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.TestResult
+.. autopydantic_model:: pypureclient.flashblade::TestResult
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6477,7 +6429,7 @@ TestResult
 
 TestResultGetResponse
 ~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.TestResultGetResponse
+.. autopydantic_model:: pypureclient.flashblade::TestResultGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6489,7 +6441,7 @@ TestResultGetResponse
 
 TestResultResponse
 ~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.TestResultResponse
+.. autopydantic_model:: pypureclient.flashblade::TestResultResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6501,7 +6453,7 @@ TestResultResponse
 
 Throttle
 ~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.Throttle
+.. autopydantic_model:: pypureclient.flashblade::Throttle
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6513,7 +6465,7 @@ Throttle
 
 TimeWindow
 ~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.TimeWindow
+.. autopydantic_model:: pypureclient.flashblade::TimeWindow
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6525,7 +6477,7 @@ TimeWindow
 
 TimeZone
 ~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.TimeZone
+.. autopydantic_model:: pypureclient.flashblade::TimeZone
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6537,7 +6489,7 @@ TimeZone
 
 TlsPolicy
 ~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.TlsPolicy
+.. autopydantic_model:: pypureclient.flashblade::TlsPolicy
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6549,7 +6501,7 @@ TlsPolicy
 
 TlsPolicyGetResponse
 ~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.TlsPolicyGetResponse
+.. autopydantic_model:: pypureclient.flashblade::TlsPolicyGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6561,7 +6513,7 @@ TlsPolicyGetResponse
 
 TlsPolicyPost
 ~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.TlsPolicyPost
+.. autopydantic_model:: pypureclient.flashblade::TlsPolicyPost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6573,7 +6525,7 @@ TlsPolicyPost
 
 TlsPolicyResponse
 ~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.TlsPolicyResponse
+.. autopydantic_model:: pypureclient.flashblade::TlsPolicyResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6585,7 +6537,7 @@ TlsPolicyResponse
 
 TrustPolicyRule
 ~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.TrustPolicyRule
+.. autopydantic_model:: pypureclient.flashblade::TrustPolicyRule
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6597,7 +6549,7 @@ TrustPolicyRule
 
 TrustPolicyRuleCondition
 ~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.TrustPolicyRuleCondition
+.. autopydantic_model:: pypureclient.flashblade::TrustPolicyRuleCondition
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6609,7 +6561,7 @@ TrustPolicyRuleCondition
 
 TrustPolicyRulePost
 ~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.TrustPolicyRulePost
+.. autopydantic_model:: pypureclient.flashblade::TrustPolicyRulePost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6621,7 +6573,7 @@ TrustPolicyRulePost
 
 TrustPolicyRuleWithContext
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.TrustPolicyRuleWithContext
+.. autopydantic_model:: pypureclient.flashblade::TrustPolicyRuleWithContext
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6633,7 +6585,7 @@ TrustPolicyRuleWithContext
 
 User
 ~~~~
-.. autopydantic_model:: pypureclient.flashblade.User
+.. autopydantic_model:: pypureclient.flashblade::User
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6645,7 +6597,7 @@ User
 
 UserNoId
 ~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.UserNoId
+.. autopydantic_model:: pypureclient.flashblade::UserNoId
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6657,7 +6609,7 @@ UserNoId
 
 UserQuota
 ~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.UserQuota
+.. autopydantic_model:: pypureclient.flashblade::UserQuota
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6669,7 +6621,7 @@ UserQuota
 
 UserQuotaGetResponse
 ~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.UserQuotaGetResponse
+.. autopydantic_model:: pypureclient.flashblade::UserQuotaGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6681,7 +6633,7 @@ UserQuotaGetResponse
 
 UserQuotaPatch
 ~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.UserQuotaPatch
+.. autopydantic_model:: pypureclient.flashblade::UserQuotaPatch
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6693,7 +6645,7 @@ UserQuotaPatch
 
 UserQuotaPost
 ~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.UserQuotaPost
+.. autopydantic_model:: pypureclient.flashblade::UserQuotaPost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6705,7 +6657,7 @@ UserQuotaPost
 
 UserQuotaResponse
 ~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.UserQuotaResponse
+.. autopydantic_model:: pypureclient.flashblade::UserQuotaResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6717,7 +6669,7 @@ UserQuotaResponse
 
 VerificationKey
 ~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.VerificationKey
+.. autopydantic_model:: pypureclient.flashblade::VerificationKey
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6729,7 +6681,7 @@ VerificationKey
 
 VerificationKeyGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.VerificationKeyGetResponse
+.. autopydantic_model:: pypureclient.flashblade::VerificationKeyGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6741,7 +6693,7 @@ VerificationKeyGetResponse
 
 VerificationKeyPatch
 ~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.VerificationKeyPatch
+.. autopydantic_model:: pypureclient.flashblade::VerificationKeyPatch
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6753,7 +6705,7 @@ VerificationKeyPatch
 
 VerificationKeyResponse
 ~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.VerificationKeyResponse
+.. autopydantic_model:: pypureclient.flashblade::VerificationKeyResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6765,7 +6717,7 @@ VerificationKeyResponse
 
 Version
 ~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.Version
+.. autopydantic_model:: pypureclient.flashblade::Version
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6777,7 +6729,7 @@ Version
 
 WormDataPoliciesGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.WormDataPoliciesGetResponse
+.. autopydantic_model:: pypureclient.flashblade::WormDataPoliciesGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6789,7 +6741,7 @@ WormDataPoliciesGetResponse
 
 WormDataPoliciesMembersGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.WormDataPoliciesMembersGetResponse
+.. autopydantic_model:: pypureclient.flashblade::WormDataPoliciesMembersGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6801,7 +6753,7 @@ WormDataPoliciesMembersGetResponse
 
 WormDataPoliciesMembersResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.WormDataPoliciesMembersResponse
+.. autopydantic_model:: pypureclient.flashblade::WormDataPoliciesMembersResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6813,7 +6765,7 @@ WormDataPoliciesMembersResponse
 
 WormDataPoliciesResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.WormDataPoliciesResponse
+.. autopydantic_model:: pypureclient.flashblade::WormDataPoliciesResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6825,7 +6777,7 @@ WormDataPoliciesResponse
 
 WormDataPolicy
 ~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.WormDataPolicy
+.. autopydantic_model:: pypureclient.flashblade::WormDataPolicy
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6837,7 +6789,7 @@ WormDataPolicy
 
 WormDataPolicyRetentionConfig
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade.WormDataPolicyRetentionConfig
+.. autopydantic_model:: pypureclient.flashblade::WormDataPolicyRetentionConfig
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False

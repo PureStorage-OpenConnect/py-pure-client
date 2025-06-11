@@ -15,6 +15,7 @@ py-pure-client Documentation
    fb_reference
    pure1_reference
    changelog
+   shared_reference
 
 Overview
 --------
@@ -35,7 +36,6 @@ This Python package provides clients that use the Pure1, FlashArray, and FlashBl
 
 :doc:`pure1_reference`
   A glossary of all interfaces and models used by the Pure1 client.
-
 
 Requirements
 ------------
