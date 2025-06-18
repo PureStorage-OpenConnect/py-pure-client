@@ -60,7 +60,6 @@ class SmbSharePolicyRule(BaseModel):
             excluded_fields.update([
                 "id",
                 "name",
-                "principal",
             ])
         none_fields: Set[str] = set()
         for _field in self.__fields__.keys():

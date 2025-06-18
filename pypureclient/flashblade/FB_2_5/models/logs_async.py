@@ -21,7 +21,7 @@ from typing import Set, Dict, Any
 from typing import List, Optional, Union
 from pydantic import BaseModel, Field, StrictBool, StrictFloat, StrictInt, StrictStr, conint, conlist
 from pypureclient.flashblade.FB_2_5.models.file_info import FileInfo
-from pypureclient.flashblade.FB_2_5.models.fixed_reference import FixedReference
+from pypureclient.flashblade.FB_2_5.models.reference import Reference
 
 
 class LogsAsync(BaseModel):
@@ -32,7 +32,7 @@ class LogsAsync(BaseModel):
     name: Optional[StrictStr] = Field(default=None, description="Name of the object (e.g., a file system or snapshot).")
     available_files: Optional[conlist(FileInfo)] = Field(default=None, description="All of the available files ready for download.")
     end_time: Optional[conint(strict=True, ge=0)] = Field(default=None, description="When the time window ends (in milliseconds since epoch). start_time and end_time determine the number of hours for which the logs are prepared for. At most 6 hours of logs can be prepared in one request. start_time and end_time are truncated to hour boundaries.")
-    hardware_components: Optional[conlist(FixedReference)] = Field(default=None, description="All of the hardware components for which logs are being processed.")
+    hardware_components: Optional[conlist(Reference)] = Field(default=None, description="All of the hardware components for which logs are being processed.")
     last_request_time: Optional[conint(strict=True, ge=0)] = Field(default=None, description="The last time log preparation was requested (in milliseconds since epoch).")
     processing: Optional[StrictBool] = Field(default=None, description="Returns a value of `true` if the logs are being prepared.")
     progress: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="A representation of log preparation progress. Ranges from 0 to 1.0.")
@@ -130,7 +130,7 @@ class LogsAsync(BaseModel):
             "name": obj.get("name"),
             "available_files": [FileInfo.from_dict(_item) for _item in obj.get("available_files")] if obj.get("available_files") is not None else None,
             "end_time": obj.get("end_time"),
-            "hardware_components": [FixedReference.from_dict(_item) for _item in obj.get("hardware_components")] if obj.get("hardware_components") is not None else None,
+            "hardware_components": [Reference.from_dict(_item) for _item in obj.get("hardware_components")] if obj.get("hardware_components") is not None else None,
             "last_request_time": obj.get("last_request_time"),
             "processing": obj.get("processing"),
             "progress": obj.get("progress"),

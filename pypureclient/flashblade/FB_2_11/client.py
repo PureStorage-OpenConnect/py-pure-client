@@ -4,6 +4,9 @@ import time
 import urllib3
 import uuid
 import warnings
+import os
+import re
+import tempfile
 
 from typing import Any, Dict, List, Optional, Tuple, Union
 from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr, conint, conlist, constr, validator
@@ -83,10 +86,10 @@ class Client(object):
             PureError: If it could not create an ID or access token
         """
         urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-        config = Configuration()
-        config.verify_ssl = resolve_ssl_validation(verify_ssl)
-        config.ssl_ca_cert = ssl_cert
-        config.host = self._get_base_url(target)
+        self.config = Configuration()
+        self.config.verify_ssl = resolve_ssl_validation(verify_ssl)
+        self.config.ssl_ca_cert = ssl_cert
+        self.config.host = self._get_base_url(target)
 
         effective_user_agent = user_agent or self.USER_AGENT
 
@@ -101,7 +104,7 @@ class Client(object):
             self._token_man = APITokenManager(
                 api_token_auth_endpoint,
                 api_token,
-                verify_ssl=config.verify_ssl,
+                verify_ssl=self.config.verify_ssl,
                 token_dispose_endpoint=api_token_dispose_endpoint,
                 user_agent=effective_user_agent,
                 timeout=timeout
@@ -117,10 +120,10 @@ class Client(object):
                 'sub': username,
             }
             self._token_man = TokenManager(auth_endpoint, id_token, private_key_file, private_key_password,
-                                           payload=payload, headers=headers, verify_ssl=config.verify_ssl,
+                                           payload=payload, headers=headers, verify_ssl=self.config.verify_ssl,
                                            timeout=timeout)
 
-        self._api_client = ApiClient(configuration=config)
+        self._api_client = ApiClient(configuration=self.config)
         self._api_client.user_agent = effective_user_agent
         self._set_agent_header()
         self._set_auth_header()
@@ -22143,7 +22146,10 @@ class Client(object):
         Returns:
             ValidResponse
         """
-        body = response.data
+        if response.headers and "content-type" in response.headers.keys() and response.headers["content-type"] in ["application/octet-stream", "text/plain"]:
+            body = self._create_file(response)
+        else:
+            body = response.data
         headers = response.headers
 
         continuation_token = getattr(body, "continuation_token", None)
@@ -22163,6 +22169,19 @@ class Client(object):
         return ValidResponse(response.status_code, continuation_token, total_item_count,
                              items, headers, total, more_items_remaining)
 
+    def _create_file(self, response):
+        path = tempfile.mkdtemp(dir=self.config.temp_folder_path)
+
+        content_disposition = response.headers["Content-Disposition"]
+        if content_disposition:
+            filename = re.search(r'filename=[\'"]?([^\'"\s]+)[\'"]?',
+                                 content_disposition).group(1)
+            path = os.path.join(os.path.dirname(path), filename)
+
+        with open(path, "wb") as f:
+            f.write(response.data)
+
+        return path
 
     def _create_api_versions_response(self, response: ApiResponse, endpoint, kwargs):
         """
