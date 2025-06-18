@@ -62,7 +62,6 @@ class SmbSharePolicyRuleWithContext(BaseModel):
             excluded_fields.update([
                 "id",
                 "name",
-                "principal",
                 "context",
             ])
         none_fields: Set[str] = set()
