@@ -19,10 +19,18 @@ import pprint
 import re  # noqa: F401
 
 from typing import Any, Dict, List, Optional
-from pydantic import BaseModel, Field, StrictStr, ValidationError, validator
+try:
+    from pydantic.v1 import BaseModel, Field, StrictStr, ValidationError, validator
+except ModuleNotFoundError:
+    from pydantic import BaseModel, Field, StrictStr, ValidationError, validator
+
 from pypureclient.pure1.Pure1_1_4.models.evergreen_forever_and_foundation_details import EvergreenForeverAndFoundationDetails
 from typing import Union, Any, List, TYPE_CHECKING
-from pydantic import StrictStr, Field
+try:
+    from pydantic.v1 import StrictStr, Field
+except ModuleNotFoundError:
+    from pydantic import StrictStr, Field
+
 
 SUBSCRIPTIONALLOFSERVICEDETAILS_ONE_OF_SCHEMAS = ["EvergreenForeverAndFoundationDetails", "object"]
 

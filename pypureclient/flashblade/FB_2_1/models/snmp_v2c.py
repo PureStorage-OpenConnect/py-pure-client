@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import Optional
-from pydantic import BaseModel, Field, constr
+
+try:
+    from pydantic.v1 import BaseModel, Field, constr
+except ModuleNotFoundError:
+    from pydantic import BaseModel, Field, constr
 
 
 class SnmpV2c(BaseModel):

@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import List, Optional
-from pydantic import BaseModel, Field, StrictStr, conlist, constr
+
+try:
+    from pydantic.v1 import BaseModel, Field, StrictStr, conlist, constr
+except ModuleNotFoundError:
+    from pydantic import BaseModel, Field, StrictStr, conlist, constr
 from pypureclient.flasharray.FA_2_21.models.network_interface_port_details_static_rx_power_thresholds import NetworkInterfacePortDetailsStaticRxPowerThresholds
 from pypureclient.flasharray.FA_2_21.models.network_interface_port_details_static_temperature_thresholds import NetworkInterfacePortDetailsStaticTemperatureThresholds
 from pypureclient.flasharray.FA_2_21.models.network_interface_port_details_static_tx_bias_thresholds import NetworkInterfacePortDetailsStaticTxBiasThresholds

@@ -9,8 +9,13 @@ import re
 import tempfile
 
 from typing import Any, Dict, List, Optional, Tuple, Union
-from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr, conint, conlist, constr, validator
 from typing_extensions import Annotated
+
+try:
+    from pydantic.v1 import Field, StrictBool, StrictFloat, StrictInt, StrictStr, conint, conlist, constr, validator
+except ModuleNotFoundError:
+    from pydantic import Field, StrictBool, StrictFloat, StrictInt, StrictStr, conint, conlist, constr, validator
+
 
 from pypureclient.reference_type import ReferenceType
 from pypureclient._version import __default_user_agent__ as DEFAULT_USER_AGENT
@@ -20590,7 +20595,10 @@ class Client(object):
             path = os.path.join(os.path.dirname(path), filename)
 
         with open(path, "wb") as f:
-            f.write(response.data)
+            response_data = response.data
+            if type(response_data) == str:
+                response_data = response_data.encode('utf-8')
+            f.write(response_data)
 
         return path
 

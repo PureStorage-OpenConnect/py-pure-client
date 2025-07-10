@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import List, Optional
-from pydantic import BaseModel, Field, StrictInt, StrictStr, conlist
+
+try:
+    from pydantic.v1 import BaseModel, Field, StrictInt, StrictStr, conlist
+except ModuleNotFoundError:
+    from pydantic import BaseModel, Field, StrictInt, StrictStr, conlist
 from pypureclient.pure1.Pure1_1_3.models.base_address import BaseAddress
 from pypureclient.pure1.Pure1_1_3.models.current_metric import CurrentMetric
 from pypureclient.pure1.Pure1_1_3.models.fixed_reference import FixedReference

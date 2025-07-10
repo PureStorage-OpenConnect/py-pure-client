@@ -1,6 +1,6 @@
 [project]
 name = "py-pure-client"
-version = "1.70.0"
+version = "1.70.1"
 description = "Pure Storage Python clients for FlashArray, FlashBlade, and Pure1 APIs"
 authors = [
     { name = "Pure Storage", email = "support@purestorage.com" }
@@ -21,7 +21,7 @@ dependencies = [
     'paramiko >= 3.4.0',
     'pyjwt >=2.0.0',
     'requests >= 2.32.0',
-    'pydantic >= 1.10.5, < 2',
+    'pydantic >= 1.10.14',
     'aenum == 3.1.15'
 ]
 

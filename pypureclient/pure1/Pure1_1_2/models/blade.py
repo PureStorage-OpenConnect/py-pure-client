@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import List, Optional, Union
-from pydantic import BaseModel, Field, StrictFloat, StrictInt, StrictStr, conlist
+
+try:
+    from pydantic.v1 import BaseModel, Field, StrictFloat, StrictInt, StrictStr, conlist
+except ModuleNotFoundError:
+    from pydantic import BaseModel, Field, StrictFloat, StrictInt, StrictStr, conlist
 from pypureclient.pure1.Pure1_1_2.models.blade_array_status import BladeArrayStatus
 
 

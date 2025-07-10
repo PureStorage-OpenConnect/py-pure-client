@@ -5,8 +5,13 @@ import uuid
 import warnings
 
 from typing import Any, Dict, List, Optional, Tuple, Union
-from pydantic import Field, StrictFloat, StrictInt, StrictStr, conint, conlist, constr, validator
 from typing_extensions import Annotated
+
+try:
+    from pydantic.v1 import Field, StrictFloat, StrictInt, StrictStr, conint, conlist, constr, validator
+except ModuleNotFoundError:
+    from pydantic import Field, StrictFloat, StrictInt, StrictStr, conint, conlist, constr, validator
+
 
 from pypureclient.reference_type import ReferenceType
 from pypureclient._version import __default_user_agent__ as DEFAULT_USER_AGENT

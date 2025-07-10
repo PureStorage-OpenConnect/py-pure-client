@@ -19,7 +19,11 @@ import warnings
 
 
 from typing_extensions import Annotated
-from pydantic import Field, conint
+try:
+    from pydantic.v1 import Field, conint
+except ModuleNotFoundError:
+    from pydantic import Field, conint
+
 
 from typing import Optional, Union
 

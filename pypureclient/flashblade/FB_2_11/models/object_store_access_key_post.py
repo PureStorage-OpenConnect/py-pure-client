@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import Optional
-from pydantic import BaseModel, Field, StrictStr
+
+try:
+    from pydantic.v1 import BaseModel, Field, StrictStr
+except ModuleNotFoundError:
+    from pydantic import BaseModel, Field, StrictStr
 from pypureclient.flashblade.FB_2_11.models.object_store_access_key_post_user import ObjectStoreAccessKeyPostUser
 
 

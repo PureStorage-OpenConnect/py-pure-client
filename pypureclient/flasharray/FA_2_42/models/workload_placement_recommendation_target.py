@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import List, Optional
-from pydantic import BaseModel, Field, StrictInt, StrictStr, conlist
+
+try:
+    from pydantic.v1 import BaseModel, Field, StrictInt, StrictStr, conlist
+except ModuleNotFoundError:
+    from pydantic import BaseModel, Field, StrictInt, StrictStr, conlist
 from pypureclient.flasharray.FA_2_42.models.workload_placement_recommendation_target_capacity_used_projections import WorkloadPlacementRecommendationTargetCapacityUsedProjections
 from pypureclient.flasharray.FA_2_42.models.workload_placement_recommendation_target_load_projections import WorkloadPlacementRecommendationTargetLoadProjections
 from pypureclient.flasharray.FA_2_42.models.workload_placement_recommendation_warning import WorkloadPlacementRecommendationWarning

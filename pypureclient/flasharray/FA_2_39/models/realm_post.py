@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import List, Optional
-from pydantic import BaseModel, Field, conint, conlist
+
+try:
+    from pydantic.v1 import BaseModel, Field, conint, conlist
+except ModuleNotFoundError:
+    from pydantic import BaseModel, Field, conint, conlist
 from pypureclient.flasharray.FA_2_39.models.container_qos import ContainerQos
 from pypureclient.flasharray.FA_2_39.models.non_copyable_tag import NonCopyableTag
 

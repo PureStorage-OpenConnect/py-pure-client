@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import Optional
-from pydantic import BaseModel
+
+try:
+    from pydantic.v1 import BaseModel
+except ModuleNotFoundError:
+    from pydantic import BaseModel
 from pypureclient.flasharray.FA_2_42.models.preset_workload_constraints_boolean import PresetWorkloadConstraintsBoolean
 from pypureclient.flasharray.FA_2_42.models.preset_workload_constraints_integer import PresetWorkloadConstraintsInteger
 from pypureclient.flasharray.FA_2_42.models.preset_workload_constraints_resource_reference import PresetWorkloadConstraintsResourceReference

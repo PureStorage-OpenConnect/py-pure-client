@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import Optional
-from pydantic import BaseModel
+
+try:
+    from pydantic.v1 import BaseModel
+except ModuleNotFoundError:
+    from pydantic import BaseModel
 from pypureclient.flasharray.FA_2_31.models.port import Port
 from pypureclient.flasharray.FA_2_31.models.port_common import PortCommon
 

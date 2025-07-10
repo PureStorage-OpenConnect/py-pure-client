@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import List, Optional, Union
-from pydantic import BaseModel, Field, StrictFloat, StrictInt, StrictStr, conint, conlist
+
+try:
+    from pydantic.v1 import BaseModel, Field, StrictFloat, StrictInt, StrictStr, conint, conlist
+except ModuleNotFoundError:
+    from pydantic import BaseModel, Field, StrictFloat, StrictInt, StrictStr, conint, conlist
 from pypureclient.pure1.Pure1_1_4.models.invoice_line_component import InvoiceLineComponent
 from pypureclient.pure1.Pure1_1_4.models.tax import Tax
 

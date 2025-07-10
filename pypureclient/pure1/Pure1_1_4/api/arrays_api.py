@@ -19,7 +19,11 @@ import warnings
 
 
 from typing_extensions import Annotated
-from pydantic import Field, StrictInt, StrictStr, conint, conlist, constr, validator
+try:
+    from pydantic.v1 import Field, StrictInt, StrictStr, conint, conlist, constr, validator
+except ModuleNotFoundError:
+    from pydantic import Field, StrictInt, StrictStr, conint, conlist, constr, validator
+
 
 from typing import Optional
 

@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import Optional
-from pydantic import BaseModel, Field, StrictStr
+
+try:
+    from pydantic.v1 import BaseModel, Field, StrictStr
+except ModuleNotFoundError:
+    from pydantic import BaseModel, Field, StrictStr
 from pypureclient.flasharray.FA_2_38.models.fixed_reference import FixedReference
 from pypureclient.flasharray.FA_2_38.models.pod_replica_link_reference import PodReplicaLinkReference
 from pypureclient.flasharray.FA_2_38.models.reference_with_type import ReferenceWithType

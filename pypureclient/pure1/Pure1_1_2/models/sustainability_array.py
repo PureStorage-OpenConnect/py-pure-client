@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import Optional
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+
+try:
+    from pydantic.v1 import BaseModel, Field, StrictInt, StrictStr
+except ModuleNotFoundError:
+    from pydantic import BaseModel, Field, StrictInt, StrictStr
 from pypureclient.pure1.Pure1_1_2.models.install_address import InstallAddress
 from pypureclient.pure1.Pure1_1_2.models.sustainability_assessment import SustainabilityAssessment
 

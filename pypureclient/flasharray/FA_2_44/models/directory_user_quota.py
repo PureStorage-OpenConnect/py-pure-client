@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import Optional, Union
-from pydantic import BaseModel, Field, StrictFloat, StrictInt, StrictStr
+
+try:
+    from pydantic.v1 import BaseModel, Field, StrictFloat, StrictInt, StrictStr
+except ModuleNotFoundError:
+    from pydantic import BaseModel, Field, StrictFloat, StrictInt, StrictStr
 from pypureclient.flasharray.FA_2_44.models.directory_user_quota_rule import DirectoryUserQuotaRule
 from pypureclient.flasharray.FA_2_44.models.fixed_reference import FixedReference
 from pypureclient.flasharray.FA_2_44.models.fixed_reference_with_type import FixedReferenceWithType

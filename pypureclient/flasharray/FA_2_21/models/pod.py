@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import Any, Dict, List, Optional
-from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr, conint, conlist
+
+try:
+    from pydantic.v1 import BaseModel, Field, StrictBool, StrictInt, StrictStr, conint, conlist
+except ModuleNotFoundError:
+    from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr, conint, conlist
 from pypureclient.flasharray.FA_2_21.models.fixed_reference import FixedReference
 from pypureclient.flasharray.FA_2_21.models.pod_array_status import PodArrayStatus
 from pypureclient.flasharray.FA_2_21.models.pod_eradication_config import PodEradicationConfig

@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import Optional
-from pydantic import BaseModel, Field, StrictInt, StrictStr, conint
+
+try:
+    from pydantic.v1 import BaseModel, Field, StrictInt, StrictStr, conint
+except ModuleNotFoundError:
+    from pydantic import BaseModel, Field, StrictInt, StrictStr, conint
 from pypureclient.flasharray.FA_2_3.models.resource import Resource
 
 
