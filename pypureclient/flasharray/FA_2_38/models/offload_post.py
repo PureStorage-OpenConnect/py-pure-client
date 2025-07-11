@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import Optional
-from pydantic import BaseModel, Field
+
+try:
+    from pydantic.v1 import BaseModel, Field
+except ModuleNotFoundError:
+    from pydantic import BaseModel, Field
 from pypureclient.flasharray.FA_2_38.models.offload_azure import OffloadAzure
 from pypureclient.flasharray.FA_2_38.models.offload_google_cloud import OffloadGoogleCloud
 from pypureclient.flasharray.FA_2_38.models.offload_nfs import OffloadNfs

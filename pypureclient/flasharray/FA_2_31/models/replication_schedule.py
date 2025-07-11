@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import Optional
-from pydantic import BaseModel, Field, StrictBool, StrictInt
+
+try:
+    from pydantic.v1 import BaseModel, Field, StrictBool, StrictInt
+except ModuleNotFoundError:
+    from pydantic import BaseModel, Field, StrictBool, StrictInt
 from pypureclient.flasharray.FA_2_31.models.time_window import TimeWindow
 
 

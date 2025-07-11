@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import List, Optional
-from pydantic import BaseModel, Field, StrictInt, StrictStr, conlist
+
+try:
+    from pydantic.v1 import BaseModel, Field, StrictInt, StrictStr, conlist
+except ModuleNotFoundError:
+    from pydantic import BaseModel, Field, StrictInt, StrictStr, conlist
 from pypureclient.flasharray.FA_2_40.models.admin_role import AdminRole
 from pypureclient.flasharray.FA_2_40.models.fixed_reference_with_type import FixedReferenceWithType
 

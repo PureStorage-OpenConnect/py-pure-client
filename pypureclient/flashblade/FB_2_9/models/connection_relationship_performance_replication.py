@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import Optional
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+
+try:
+    from pydantic.v1 import BaseModel, Field, StrictInt, StrictStr
+except ModuleNotFoundError:
+    from pydantic import BaseModel, Field, StrictInt, StrictStr
 from pypureclient.flashblade.FB_2_9.models.continuous_replication_performance import ContinuousReplicationPerformance
 from pypureclient.flashblade.FB_2_9.models.fixed_reference_no_resource_type import FixedReferenceNoResourceType
 from pypureclient.flashblade.FB_2_9.models.replication_performance import ReplicationPerformance

@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import List
-from pydantic import BaseModel, Field, StrictStr, conlist
+
+try:
+    from pydantic.v1 import BaseModel, Field, StrictStr, conlist
+except ModuleNotFoundError:
+    from pydantic import BaseModel, Field, StrictStr, conlist
 from pypureclient.flasharray.FA_2_44.models.preset_workload_snapshot_rule import PresetWorkloadSnapshotRule
 from pypureclient.flasharray.FA_2_44.models.reference_with_type import ReferenceWithType
 

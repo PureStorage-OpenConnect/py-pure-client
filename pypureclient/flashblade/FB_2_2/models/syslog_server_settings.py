@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import Any, Dict, Optional
-from pydantic import BaseModel, Field, StrictStr
+
+try:
+    from pydantic.v1 import BaseModel, Field, StrictStr
+except ModuleNotFoundError:
+    from pydantic import BaseModel, Field, StrictStr
 
 
 class SyslogServerSettings(BaseModel):

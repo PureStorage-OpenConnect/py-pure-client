@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import Optional
-from pydantic import BaseModel, Field, StrictInt, StrictStr, constr
+
+try:
+    from pydantic.v1 import BaseModel, Field, StrictInt, StrictStr, constr
+except ModuleNotFoundError:
+    from pydantic import BaseModel, Field, StrictInt, StrictStr, constr
 
 
 class PublicKey(BaseModel):

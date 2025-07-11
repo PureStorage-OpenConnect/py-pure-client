@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import Optional
-from pydantic import BaseModel, Field, StrictStr
+
+try:
+    from pydantic.v1 import BaseModel, Field, StrictStr
+except ModuleNotFoundError:
+    from pydantic import BaseModel, Field, StrictStr
 from pypureclient.pure1.Pure1_1_2.models.asset_space import AssetSpace
 from pypureclient.pure1.Pure1_1_2.models.subscription_asset_array_advanced_space import SubscriptionAssetArrayAdvancedSpace
 

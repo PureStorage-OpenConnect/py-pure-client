@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import Optional
-from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr
+
+try:
+    from pydantic.v1 import BaseModel, Field, StrictBool, StrictInt, StrictStr
+except ModuleNotFoundError:
+    from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr
 from pypureclient.flashblade.FB_2_8.models.http import Http
 from pypureclient.flashblade.FB_2_8.models.multi_protocol_post import MultiProtocolPost
 from pypureclient.flashblade.FB_2_8.models.nfs import Nfs

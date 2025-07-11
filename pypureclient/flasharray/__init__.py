@@ -10,7 +10,10 @@
 """  # noqa: E501
 
 import os
-from pydantic import BaseModel
+try:
+    from pydantic.v1 import BaseModel
+except ModuleNotFoundError:
+    from pydantic import BaseModel
 
 
 

@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import Optional
-from pydantic import BaseModel
+
+try:
+    from pydantic.v1 import BaseModel
+except ModuleNotFoundError:
+    from pydantic import BaseModel
 from pypureclient.flasharray.FA_2_24.models.protection_groups_volumes_member import ProtectionGroupsVolumesMember
 from pypureclient.flasharray.FA_2_24.models.reference_no_id import ReferenceNoId
 

@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import Optional
-from pydantic import BaseModel, Field, StrictInt
+
+try:
+    from pydantic.v1 import BaseModel, Field, StrictInt
+except ModuleNotFoundError:
+    from pydantic import BaseModel, Field, StrictInt
 
 
 class RetentionPolicy(BaseModel):

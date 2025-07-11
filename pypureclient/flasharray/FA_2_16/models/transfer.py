@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import Optional, Union
-from pydantic import BaseModel, Field, StrictBool, StrictFloat, StrictInt
+
+try:
+    from pydantic.v1 import BaseModel, Field, StrictBool, StrictFloat, StrictInt
+except ModuleNotFoundError:
+    from pydantic import BaseModel, Field, StrictBool, StrictFloat, StrictInt
 
 
 class Transfer(BaseModel):

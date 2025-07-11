@@ -23,7 +23,11 @@ import re
 import tempfile
 
 from urllib.parse import quote
-from pydantic import SecretStr
+try:
+    from pydantic.v1 import SecretStr
+except ModuleNotFoundError:
+    from pydantic import SecretStr
+
 
 from pypureclient.pure1.Pure1_1_0.configuration import Configuration
 from pypureclient.pure1.Pure1_1_0.api_response import ApiResponse
@@ -234,7 +238,7 @@ class ApiClient:
               # if not found, look for '1XX', '2XX', etc.
               response_type = response_types_map.get(str(response_data.status)[0] + "XX", None)
 
-          if response_type == "bytearray":
+          if response_type == "bytearray" or 'application/octet-stream' == response_data.getheader('content-type'):
               response_data.data = response_data.data
           else:
               match = None

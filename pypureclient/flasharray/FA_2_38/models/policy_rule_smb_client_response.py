@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import List, Optional
-from pydantic import BaseModel, Field, conlist
+
+try:
+    from pydantic.v1 import BaseModel, Field, conlist
+except ModuleNotFoundError:
+    from pydantic import BaseModel, Field, conlist
 from pypureclient.flasharray.FA_2_38.models.policy_rule_smb_client import PolicyRuleSmbClient
 
 

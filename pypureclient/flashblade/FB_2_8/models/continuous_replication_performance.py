@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import Optional, Union
-from pydantic import BaseModel, Field, confloat, conint
+
+try:
+    from pydantic.v1 import BaseModel, Field, confloat, conint
+except ModuleNotFoundError:
+    from pydantic import BaseModel, Field, confloat, conint
 from pypureclient.flashblade.FB_2_8.models.object_backlog import ObjectBacklog
 
 

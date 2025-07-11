@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import Optional
-from pydantic import BaseModel, StrictStr
+
+try:
+    from pydantic.v1 import BaseModel, StrictStr
+except ModuleNotFoundError:
+    from pydantic import BaseModel, StrictStr
 
 
 class FixedReferenceNameOnly(BaseModel):

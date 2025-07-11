@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import Optional
-from pydantic import BaseModel
+
+try:
+    from pydantic.v1 import BaseModel
+except ModuleNotFoundError:
+    from pydantic import BaseModel
 from pypureclient.flashblade.FB_2_17.models.array_encryption_data_at_rest import ArrayEncryptionDataAtRest
 
 

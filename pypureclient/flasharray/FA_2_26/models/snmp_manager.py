@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import Optional
-from pydantic import BaseModel, Field, StrictStr
+
+try:
+    from pydantic.v1 import BaseModel, Field, StrictStr
+except ModuleNotFoundError:
+    from pydantic import BaseModel, Field, StrictStr
 from pypureclient.flasharray.FA_2_26.models.snmp_v2c import SnmpV2c
 from pypureclient.flasharray.FA_2_26.models.snmp_v3 import SnmpV3
 

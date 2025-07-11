@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import Optional
-from pydantic import BaseModel, Field
+
+try:
+    from pydantic.v1 import BaseModel, Field
+except ModuleNotFoundError:
+    from pydantic import BaseModel, Field
 from pypureclient.flashblade.FB_2_3.models.fixed_reference import FixedReference
 from pypureclient.flashblade.FB_2_3.models.location_reference import LocationReference
 

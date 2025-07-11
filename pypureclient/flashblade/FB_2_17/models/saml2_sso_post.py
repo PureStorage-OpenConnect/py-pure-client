@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import List, Optional
-from pydantic import BaseModel, Field, StrictBool, StrictStr, conlist
+
+try:
+    from pydantic.v1 import BaseModel, Field, StrictBool, StrictStr, conlist
+except ModuleNotFoundError:
+    from pydantic import BaseModel, Field, StrictBool, StrictStr, conlist
 from pypureclient.flashblade.FB_2_17.models.saml2_sso_idp import Saml2SsoIdp
 from pypureclient.flashblade.FB_2_17.models.saml2_sso_sp import Saml2SsoSp
 

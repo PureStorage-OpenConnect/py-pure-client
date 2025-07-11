@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import Optional
-from pydantic import BaseModel, Field, StrictStr, constr
+
+try:
+    from pydantic.v1 import BaseModel, Field, StrictStr, constr
+except ModuleNotFoundError:
+    from pydantic import BaseModel, Field, StrictStr, constr
 from pypureclient.flashblade.FB_2_11.models.snmp_v2c import SnmpV2c
 from pypureclient.flashblade.FB_2_11.models.snmp_v3 import SnmpV3
 

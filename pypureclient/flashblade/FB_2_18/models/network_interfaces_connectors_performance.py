@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import Optional
-from pydantic import BaseModel, Field, StrictInt, StrictStr, conint
+
+try:
+    from pydantic.v1 import BaseModel, Field, StrictInt, StrictStr, conint
+except ModuleNotFoundError:
+    from pydantic import BaseModel, Field, StrictInt, StrictStr, conint
 from pypureclient.flashblade.FB_2_18.models.fixed_reference import FixedReference
 
 

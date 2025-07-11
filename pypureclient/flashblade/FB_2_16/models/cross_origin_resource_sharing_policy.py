@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import List, Optional
-from pydantic import BaseModel, Field, StrictBool, StrictStr, conlist
+
+try:
+    from pydantic.v1 import BaseModel, Field, StrictBool, StrictStr, conlist
+except ModuleNotFoundError:
+    from pydantic import BaseModel, Field, StrictBool, StrictStr, conlist
 from pypureclient.flashblade.FB_2_16.models.cross_origin_resource_sharing_policy_rule import CrossOriginResourceSharingPolicyRule
 from pypureclient.flashblade.FB_2_16.models.fixed_reference import FixedReference
 

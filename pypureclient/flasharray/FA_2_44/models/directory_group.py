@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import Optional
-from pydantic import BaseModel, Field, StrictStr
+
+try:
+    from pydantic.v1 import BaseModel, Field, StrictStr
+except ModuleNotFoundError:
+    from pydantic import BaseModel, Field, StrictStr
 from pypureclient.flasharray.FA_2_44.models.fixed_reference import FixedReference
 from pypureclient.flasharray.FA_2_44.models.user_group import UserGroup
 from pypureclient.flasharray.FA_2_44.models.user_group_quota_limited_by import UserGroupQuotaLimitedBy

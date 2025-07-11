@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import Optional, Union
-from pydantic import BaseModel, Field, StrictFloat, StrictInt, conint
+
+try:
+    from pydantic.v1 import BaseModel, Field, StrictFloat, StrictInt, conint
+except ModuleNotFoundError:
+    from pydantic import BaseModel, Field, StrictFloat, StrictInt, conint
 
 
 class SpaceExtended(BaseModel):

@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import Optional
-from pydantic import BaseModel, Field, StrictInt, StrictStr
+
+try:
+    from pydantic.v1 import BaseModel, Field, StrictInt, StrictStr
+except ModuleNotFoundError:
+    from pydantic import BaseModel, Field, StrictInt, StrictStr
 from pypureclient.flasharray.FA_2_29.models.network_interface_performance_eth import NetworkInterfacePerformanceEth
 from pypureclient.flasharray.FA_2_29.models.network_interface_performance_fc import NetworkInterfacePerformanceFc
 

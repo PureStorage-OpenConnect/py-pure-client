@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import List, Optional
-from pydantic import BaseModel, conlist
+
+try:
+    from pydantic.v1 import BaseModel, conlist
+except ModuleNotFoundError:
+    from pydantic import BaseModel, conlist
 from pypureclient.flasharray.FA_2_4.models.smis import Smis
 
 

@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import Optional
-from pydantic import BaseModel, Field
+
+try:
+    from pydantic.v1 import BaseModel, Field
+except ModuleNotFoundError:
+    from pydantic import BaseModel, Field
 from pypureclient.flasharray.FA_2_41.models.reference_no_id import ReferenceNoId
 from pypureclient.flasharray.FA_2_41.models.reference_with_type import ReferenceWithType
 

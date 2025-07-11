@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import Optional
-from pydantic import BaseModel, Field, StrictBool, StrictStr
+
+try:
+    from pydantic.v1 import BaseModel, Field, StrictBool, StrictStr
+except ModuleNotFoundError:
+    from pydantic import BaseModel, Field, StrictBool, StrictStr
 from pypureclient.flashblade.FB_2_14.models.bucket_eradication_config import BucketEradicationConfig
 from pypureclient.flashblade.FB_2_14.models.object_lock_config_request_body import ObjectLockConfigRequestBody
 from pypureclient.flashblade.FB_2_14.models.public_access_config import PublicAccessConfig

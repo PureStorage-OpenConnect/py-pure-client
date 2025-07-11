@@ -19,7 +19,11 @@ import json
 from typing import Set, Dict, Any
 
 from typing import List, Optional
-from pydantic import BaseModel, Field, StrictStr, conlist
+
+try:
+    from pydantic.v1 import BaseModel, Field, StrictStr, conlist
+except ModuleNotFoundError:
+    from pydantic import BaseModel, Field, StrictStr, conlist
 from pypureclient.flashblade.FB_2_4.models.policy_rule_object_access_condition import PolicyRuleObjectAccessCondition
 
 

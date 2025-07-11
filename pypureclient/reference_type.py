@@ -1,4 +1,8 @@
-from pydantic import BaseModel, Field, StrictStr
+try:
+    from pydantic.v1 import BaseModel, Field, StrictStr
+except ModuleNotFoundError:
+    from pydantic import BaseModel, Field, StrictStr
+
 from typing import List, Optional, Union
 
 class ReferenceType(BaseModel):
