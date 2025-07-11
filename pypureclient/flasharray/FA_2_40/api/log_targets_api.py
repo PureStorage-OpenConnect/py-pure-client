@@ -39,9 +39,9 @@ from pypureclient.flasharray.FA_2_40.models.syslog_server_settings_get_response 
 from pypureclient.flasharray.FA_2_40.models.syslog_server_settings_response import SyslogServerSettingsResponse
 from pypureclient.flasharray.FA_2_40.models.test_result_with_resource_get_response import TestResultWithResourceGetResponse
 from typing import Optional
-from pypureclient.flasharray.FA_2_40.api_client import ApiClient as _TransportApiClient
-from pypureclient.flasharray.FA_2_40.api_response import ApiResponse
-from pypureclient.flasharray.FA_2_40.exceptions import (  # noqa: F401
+from pypureclient._transport.api_client import ApiClient as _TransportApiClient
+from pypureclient._transport.api_response import ApiResponse
+from pypureclient._transport.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

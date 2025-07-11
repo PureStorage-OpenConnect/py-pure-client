@@ -32,9 +32,9 @@ from pypureclient.flasharray.FA_2_11.models.directory_snapshot_patch import Dire
 from pypureclient.flasharray.FA_2_11.models.directory_snapshot_post import DirectorySnapshotPost
 from pypureclient.flasharray.FA_2_11.models.directory_snapshot_response import DirectorySnapshotResponse
 from typing import Optional
-from pypureclient.flasharray.FA_2_11.api_client import ApiClient as _TransportApiClient
-from pypureclient.flasharray.FA_2_11.api_response import ApiResponse
-from pypureclient.flasharray.FA_2_11.exceptions import (  # noqa: F401
+from pypureclient._transport.api_client import ApiClient as _TransportApiClient
+from pypureclient._transport.api_response import ApiResponse
+from pypureclient._transport.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

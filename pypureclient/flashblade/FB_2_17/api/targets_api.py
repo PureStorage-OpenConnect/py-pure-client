@@ -33,9 +33,9 @@ from pypureclient.flashblade.FB_2_17.models.target_get_response import TargetGet
 from pypureclient.flashblade.FB_2_17.models.target_post import TargetPost
 from pypureclient.flashblade.FB_2_17.models.target_response import TargetResponse
 from typing import Optional
-from pypureclient.flashblade.FB_2_17.api_client import ApiClient as _TransportApiClient
-from pypureclient.flashblade.FB_2_17.api_response import ApiResponse
-from pypureclient.flashblade.FB_2_17.exceptions import (  # noqa: F401
+from pypureclient._transport.api_client import ApiClient as _TransportApiClient
+from pypureclient._transport.api_response import ApiResponse
+from pypureclient._transport.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

@@ -31,9 +31,9 @@ from pypureclient.flasharray.FA_2_13.models.smis import Smis
 from pypureclient.flasharray.FA_2_13.models.smis_get_response import SmisGetResponse
 from pypureclient.flasharray.FA_2_13.models.smis_response import SmisResponse
 from typing import Optional
-from pypureclient.flasharray.FA_2_13.api_client import ApiClient as _TransportApiClient
-from pypureclient.flasharray.FA_2_13.api_response import ApiResponse
-from pypureclient.flasharray.FA_2_13.exceptions import (  # noqa: F401
+from pypureclient._transport.api_client import ApiClient as _TransportApiClient
+from pypureclient._transport.api_response import ApiResponse
+from pypureclient._transport.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

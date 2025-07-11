@@ -32,9 +32,9 @@ from pypureclient.flashblade.FB_2_11.models.hardware_connector_get_response impo
 from pypureclient.flashblade.FB_2_11.models.hardware_connector_performance_get_response import HardwareConnectorPerformanceGetResponse
 from pypureclient.flashblade.FB_2_11.models.hardware_connector_response import HardwareConnectorResponse
 from typing import Optional
-from pypureclient.flashblade.FB_2_11.api_client import ApiClient as _TransportApiClient
-from pypureclient.flashblade.FB_2_11.api_response import ApiResponse
-from pypureclient.flashblade.FB_2_11.exceptions import (  # noqa: F401
+from pypureclient._transport.api_client import ApiClient as _TransportApiClient
+from pypureclient._transport.api_response import ApiResponse
+from pypureclient._transport.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

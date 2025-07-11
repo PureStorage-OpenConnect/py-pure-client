@@ -32,9 +32,9 @@ from pypureclient.flashblade.FB_2_15.models.saml2_sso_get_response import Saml2S
 from pypureclient.flashblade.FB_2_15.models.saml2_sso_post import Saml2SsoPost
 from pypureclient.flashblade.FB_2_15.models.saml2_sso_response import Saml2SsoResponse
 from typing import Optional
-from pypureclient.flashblade.FB_2_15.api_client import ApiClient as _TransportApiClient
-from pypureclient.flashblade.FB_2_15.api_response import ApiResponse
-from pypureclient.flashblade.FB_2_15.exceptions import (  # noqa: F401
+from pypureclient._transport.api_client import ApiClient as _TransportApiClient
+from pypureclient._transport.api_response import ApiResponse
+from pypureclient._transport.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )
