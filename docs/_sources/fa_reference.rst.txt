@@ -235,11 +235,6 @@ FlashArray REST 2.44 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. module:: pypureclient.flasharray.FA_2_44.client
 .. autoclass:: pypureclient.flasharray.FA_2_44.client::Client
-
-FlashArray REST 2.45 Client
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. module:: pypureclient.flasharray.FA_2_45.client
-.. autoclass:: pypureclient.flasharray.FA_2_45.client::Client
    :members:
 
 Models
