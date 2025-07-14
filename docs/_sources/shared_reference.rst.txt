@@ -3,14 +3,6 @@ Shared References
 .. toctree::
    :maxdepth: 4
 
-Configuration
--------------
-
-Configuration
-~~~~~~~~~~~~~
-.. autoclass:: pypureclient.configuration.Configuration
-   :members:
-
 Properties
 ----------
 
@@ -61,11 +53,3 @@ ReferenceType
    :undoc-members: True
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
-
-Errors
-------
-
-PureError
-~~~~~~~~~
-.. autoclass:: pypureclient.exceptions.PureError
-   :members:
