@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shared References &mdash; py-pure-client 1.70.1 documentation</title>
+  <title>Shared References &mdash; py-pure-client 1.71.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/autodoc_pydantic.css" type="text/css" />
@@ -32,7 +32,7 @@
             <a href="index.html" class="icon icon-home"> py-pure-client
           </a>
               <div class="version">
-                1.70
+                1.71
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -50,6 +50,13 @@
 <li class="toctree-l1"><a class="reference internal" href="pure1_reference.html">Pure1 Reference</a></li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Shared References</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Configuration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pypureclient.configuration.Configuration"><code class="docutils literal notranslate"><span class="pre">Configuration</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#properties">Properties</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#property">Property</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#pypureclient.properties.Property"><code class="docutils literal notranslate"><span class="pre">Property</span></code></a></li>
@@ -87,6 +94,13 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#errors">Errors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pureerror">PureError</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pypureclient.exceptions.PureError"><code class="docutils literal notranslate"><span class="pre">PureError</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -119,6 +133,163 @@
 <h1>Shared References<a class="headerlink" href="#shared-references" title="Permalink to this heading"></a></h1>
 <div class="toctree-wrapper compound">
 </div>
+<section id="configuration">
+<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
+<section id="id1">
+<h3>Configuration<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="pypureclient.configuration.Configuration">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypureclient.configuration.</span></span><span class="sig-name descname"><span class="pre">Configuration</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ssl_ca_cert</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypureclient.configuration.Configuration" title="Permalink to this definition"></a></dt>
+<dd><p>This class contains various settings of the API client.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ssl_ca_cert</strong> – str - the path to a file of concatenated CA certificates
+in PEM format.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="pypureclient.configuration.Configuration.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ssl_ca_cert</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pypureclient.configuration.Configuration.__init__" title="Permalink to this definition"></a></dt>
+<dd><p>Constructor</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pypureclient.configuration.Configuration.assert_hostname">
+<span class="sig-name descname"><span class="pre">assert_hostname</span></span><a class="headerlink" href="#pypureclient.configuration.Configuration.assert_hostname" title="Permalink to this definition"></a></dt>
+<dd><p>Set this to True/False to enable/disable SSL hostname verification.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pypureclient.configuration.Configuration.cert_file">
+<span class="sig-name descname"><span class="pre">cert_file</span></span><a class="headerlink" href="#pypureclient.configuration.Configuration.cert_file" title="Permalink to this definition"></a></dt>
+<dd><p>client certificate file</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pypureclient.configuration.Configuration.connection_pool_maxsize">
+<span class="sig-name descname"><span class="pre">connection_pool_maxsize</span></span><a class="headerlink" href="#pypureclient.configuration.Configuration.connection_pool_maxsize" title="Permalink to this definition"></a></dt>
+<dd><p>urllib3 connection pool’s maximum number of connections saved
+per pool. urllib3 uses 1 connection as default value, but this is
+not the best value when you are making a lot of possibly parallel
+requests to the same host, which is often the case here.
+cpu_count * 5 is used as default value to increase performance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pypureclient.configuration.Configuration.date_format">
+<span class="sig-name descname"><span class="pre">date_format</span></span><a class="headerlink" href="#pypureclient.configuration.Configuration.date_format" title="Permalink to this definition"></a></dt>
+<dd><p>date format</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pypureclient.configuration.Configuration.datetime_format">
+<span class="sig-name descname"><span class="pre">datetime_format</span></span><a class="headerlink" href="#pypureclient.configuration.Configuration.datetime_format" title="Permalink to this definition"></a></dt>
+<dd><p>datetime format</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pypureclient.configuration.Configuration.debug">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">debug</span></span><a class="headerlink" href="#pypureclient.configuration.Configuration.debug" title="Permalink to this definition"></a></dt>
+<dd><p>Debug switch</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pypureclient.configuration.Configuration.key_file">
+<span class="sig-name descname"><span class="pre">key_file</span></span><a class="headerlink" href="#pypureclient.configuration.Configuration.key_file" title="Permalink to this definition"></a></dt>
+<dd><p>client key file</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pypureclient.configuration.Configuration.logger">
+<span class="sig-name descname"><span class="pre">logger</span></span><a class="headerlink" href="#pypureclient.configuration.Configuration.logger" title="Permalink to this definition"></a></dt>
+<dd><p>Logging Settings</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pypureclient.configuration.Configuration.logger_file">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">logger_file</span></span><a class="headerlink" href="#pypureclient.configuration.Configuration.logger_file" title="Permalink to this definition"></a></dt>
+<dd><p>Debug file location</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pypureclient.configuration.Configuration.logger_file_handler">
+<span class="sig-name descname"><span class="pre">logger_file_handler</span></span><a class="headerlink" href="#pypureclient.configuration.Configuration.logger_file_handler" title="Permalink to this definition"></a></dt>
+<dd><p>Log file handler</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pypureclient.configuration.Configuration.logger_format">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">logger_format</span></span><a class="headerlink" href="#pypureclient.configuration.Configuration.logger_format" title="Permalink to this definition"></a></dt>
+<dd><p>Log format</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pypureclient.configuration.Configuration.logger_stream_handler">
+<span class="sig-name descname"><span class="pre">logger_stream_handler</span></span><a class="headerlink" href="#pypureclient.configuration.Configuration.logger_stream_handler" title="Permalink to this definition"></a></dt>
+<dd><p>Log stream handler</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pypureclient.configuration.Configuration.proxy">
+<span class="sig-name descname"><span class="pre">proxy</span></span><a class="headerlink" href="#pypureclient.configuration.Configuration.proxy" title="Permalink to this definition"></a></dt>
+<dd><p>Proxy URL</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pypureclient.configuration.Configuration.proxy_headers">
+<span class="sig-name descname"><span class="pre">proxy_headers</span></span><a class="headerlink" href="#pypureclient.configuration.Configuration.proxy_headers" title="Permalink to this definition"></a></dt>
+<dd><p>Proxy headers</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pypureclient.configuration.Configuration.retries">
+<span class="sig-name descname"><span class="pre">retries</span></span><a class="headerlink" href="#pypureclient.configuration.Configuration.retries" title="Permalink to this definition"></a></dt>
+<dd><p>Adding retries to override urllib3 default value 3</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pypureclient.configuration.Configuration.safe_chars_for_path_param">
+<span class="sig-name descname"><span class="pre">safe_chars_for_path_param</span></span><a class="headerlink" href="#pypureclient.configuration.Configuration.safe_chars_for_path_param" title="Permalink to this definition"></a></dt>
+<dd><p>Safe chars for path_param</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pypureclient.configuration.Configuration.socket_options">
+<span class="sig-name descname"><span class="pre">socket_options</span></span><a class="headerlink" href="#pypureclient.configuration.Configuration.socket_options" title="Permalink to this definition"></a></dt>
+<dd><p>Options to pass down to the underlying urllib3 socket</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pypureclient.configuration.Configuration.ssl_ca_cert">
+<span class="sig-name descname"><span class="pre">ssl_ca_cert</span></span><a class="headerlink" href="#pypureclient.configuration.Configuration.ssl_ca_cert" title="Permalink to this definition"></a></dt>
+<dd><p>Set this to customize the certificate file to verify the peer.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pypureclient.configuration.Configuration.temp_folder_path">
+<span class="sig-name descname"><span class="pre">temp_folder_path</span></span><a class="headerlink" href="#pypureclient.configuration.Configuration.temp_folder_path" title="Permalink to this definition"></a></dt>
+<dd><p>Temp file folder for downloading files</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pypureclient.configuration.Configuration.tls_server_name">
+<span class="sig-name descname"><span class="pre">tls_server_name</span></span><a class="headerlink" href="#pypureclient.configuration.Configuration.tls_server_name" title="Permalink to this definition"></a></dt>
+<dd><p>SSL/TLS Server Name Indication (SNI)
+Set this to the SNI value expected by the server.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pypureclient.configuration.Configuration.verify_ssl">
+<span class="sig-name descname"><span class="pre">verify_ssl</span></span><a class="headerlink" href="#pypureclient.configuration.Configuration.verify_ssl" title="Permalink to this definition"></a></dt>
+<dd><p>SSL/TLS verification
+Set this to false to skip verifying SSL certificate when calling API
+from https server.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
 <section id="properties">
 <h2>Properties<a class="headerlink" href="#properties" title="Permalink to this heading"></a></h2>
 <section id="property">
@@ -142,7 +313,7 @@ Property.</p>
 <dd class="field-even"><p>Property</p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>PureError</strong> – If other is not of the proper type.</p>
+<dd class="field-odd"><p><a class="reference internal" href="#pypureclient.exceptions.PureError" title="pypureclient.exceptions.PureError"><strong>PureError</strong></a> – If other is not of the proper type.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -159,7 +330,7 @@ Property.</p>
 <dd class="field-even"><p>Filter</p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>PureError</strong> – If other is not of the proper type.</p>
+<dd class="field-odd"><p><a class="reference internal" href="#pypureclient.exceptions.PureError" title="pypureclient.exceptions.PureError"><strong>PureError</strong></a> – If other is not of the proper type.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -176,7 +347,7 @@ Property.</p>
 <dd class="field-even"><p>Filter</p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>PureError</strong> – If other is not of the proper type.</p>
+<dd class="field-odd"><p><a class="reference internal" href="#pypureclient.exceptions.PureError" title="pypureclient.exceptions.PureError"><strong>PureError</strong></a> – If other is not of the proper type.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -193,7 +364,7 @@ Property.</p>
 <dd class="field-even"><p>Property</p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>PureError</strong> – If index is not “all” or “any”.</p>
+<dd class="field-odd"><p><a class="reference internal" href="#pypureclient.exceptions.PureError" title="pypureclient.exceptions.PureError"><strong>PureError</strong></a> – If index is not “all” or “any”.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -210,7 +381,7 @@ Property.</p>
 <dd class="field-even"><p>Filter</p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>PureError</strong> – If other is not of the proper type.</p>
+<dd class="field-odd"><p><a class="reference internal" href="#pypureclient.exceptions.PureError" title="pypureclient.exceptions.PureError"><strong>PureError</strong></a> – If other is not of the proper type.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -238,7 +409,7 @@ Property.</p>
 <dd class="field-even"><p>Filter</p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>PureError</strong> – If other is not of the proper type.</p>
+<dd class="field-odd"><p><a class="reference internal" href="#pypureclient.exceptions.PureError" title="pypureclient.exceptions.PureError"><strong>PureError</strong></a> – If other is not of the proper type.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -255,7 +426,7 @@ Property.</p>
 <dd class="field-even"><p>Filter</p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>PureError</strong> – If other is not of the proper type.</p>
+<dd class="field-odd"><p><a class="reference internal" href="#pypureclient.exceptions.PureError" title="pypureclient.exceptions.PureError"><strong>PureError</strong></a> – If other is not of the proper type.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -272,7 +443,7 @@ Property.</p>
 <dd class="field-even"><p>Filter</p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>PureError</strong> – If other is not of the proper type.</p>
+<dd class="field-odd"><p><a class="reference internal" href="#pypureclient.exceptions.PureError" title="pypureclient.exceptions.PureError"><strong>PureError</strong></a> – If other is not of the proper type.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -356,7 +527,7 @@ Property.</p>
 <dd class="field-even"><p>Property</p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>PureError</strong> – If other is not of the proper type.</p>
+<dd class="field-odd"><p><a class="reference internal" href="#pypureclient.exceptions.PureError" title="pypureclient.exceptions.PureError"><strong>PureError</strong></a> – If other is not of the proper type.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -384,7 +555,7 @@ when calling any API and can also be replaced by a string.</p>
 <dd class="field-even"><p>Filter</p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>PureError</strong> – If other is not of the proper type.</p>
+<dd class="field-odd"><p><a class="reference internal" href="#pypureclient.exceptions.PureError" title="pypureclient.exceptions.PureError"><strong>PureError</strong></a> – If other is not of the proper type.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -429,7 +600,7 @@ binary. Defaults to None.</p></li>
 <dd class="field-even"><p>Filter</p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>PureError</strong> – If other is not of the proper type.</p>
+<dd class="field-odd"><p><a class="reference internal" href="#pypureclient.exceptions.PureError" title="pypureclient.exceptions.PureError"><strong>PureError</strong></a> – If other is not of the proper type.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -460,7 +631,7 @@ binary. Defaults to None.</p></li>
 <dd class="field-even"><p>Filter</p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>PureError</strong> – If either operand is not of the proper type.</p>
+<dd class="field-odd"><p><a class="reference internal" href="#pypureclient.exceptions.PureError" title="pypureclient.exceptions.PureError"><strong>PureError</strong></a> – If either operand is not of the proper type.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -480,7 +651,7 @@ binary. Defaults to None.</p></li>
 <dd class="field-even"><p>Filter</p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>PureError</strong> – If either operand is not of the proper type.</p>
+<dd class="field-odd"><p><a class="reference internal" href="#pypureclient.exceptions.PureError" title="pypureclient.exceptions.PureError"><strong>PureError</strong></a> – If either operand is not of the proper type.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -500,7 +671,7 @@ binary. Defaults to None.</p></li>
 <dd class="field-even"><p>Filter</p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>PureError</strong> – If either operand is not of the proper type.</p>
+<dd class="field-odd"><p><a class="reference internal" href="#pypureclient.exceptions.PureError" title="pypureclient.exceptions.PureError"><strong>PureError</strong></a> – If either operand is not of the proper type.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -517,7 +688,7 @@ binary. Defaults to None.</p></li>
 <dd class="field-even"><p>Filter</p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>PureError</strong> – If the operand is not of the proper type.</p>
+<dd class="field-odd"><p><a class="reference internal" href="#pypureclient.exceptions.PureError" title="pypureclient.exceptions.PureError"><strong>PureError</strong></a> – If the operand is not of the proper type.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -537,7 +708,7 @@ binary. Defaults to None.</p></li>
 <dd class="field-even"><p>Filter</p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>PureError</strong> – If either operand is not of the proper type.</p>
+<dd class="field-odd"><p><a class="reference internal" href="#pypureclient.exceptions.PureError" title="pypureclient.exceptions.PureError"><strong>PureError</strong></a> – If either operand is not of the proper type.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -557,7 +728,7 @@ binary. Defaults to None.</p></li>
 <dd class="field-even"><p>Filter</p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>PureError</strong> – If either operand is not of the proper type.</p>
+<dd class="field-odd"><p><a class="reference internal" href="#pypureclient.exceptions.PureError" title="pypureclient.exceptions.PureError"><strong>PureError</strong></a> – If either operand is not of the proper type.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -577,7 +748,7 @@ binary. Defaults to None.</p></li>
 <dd class="field-even"><p>Filter</p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>PureError</strong> – If either operand is not of the proper type.</p>
+<dd class="field-odd"><p><a class="reference internal" href="#pypureclient.exceptions.PureError" title="pypureclient.exceptions.PureError"><strong>PureError</strong></a> – If either operand is not of the proper type.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -597,7 +768,7 @@ binary. Defaults to None.</p></li>
 <dd class="field-even"><p>Filter</p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>PureError</strong> – If either operand is not of the proper type.</p>
+<dd class="field-odd"><p><a class="reference internal" href="#pypureclient.exceptions.PureError" title="pypureclient.exceptions.PureError"><strong>PureError</strong></a> – If either operand is not of the proper type.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -617,7 +788,7 @@ binary. Defaults to None.</p></li>
 <dd class="field-even"><p>Filter</p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>PureError</strong> – If either operand is not of the proper type.</p>
+<dd class="field-odd"><p><a class="reference internal" href="#pypureclient.exceptions.PureError" title="pypureclient.exceptions.PureError"><strong>PureError</strong></a> – If either operand is not of the proper type.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -637,7 +808,7 @@ binary. Defaults to None.</p></li>
 <dd class="field-even"><p>Filter</p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>PureError</strong> – If either operand is not of the proper type.</p>
+<dd class="field-odd"><p><a class="reference internal" href="#pypureclient.exceptions.PureError" title="pypureclient.exceptions.PureError"><strong>PureError</strong></a> – If either operand is not of the proper type.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -654,7 +825,7 @@ binary. Defaults to None.</p></li>
 <dd class="field-even"><p>Filter</p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>PureError</strong> – If the operand is not of the proper type.</p>
+<dd class="field-odd"><p><a class="reference internal" href="#pypureclient.exceptions.PureError" title="pypureclient.exceptions.PureError"><strong>PureError</strong></a> – If the operand is not of the proper type.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -674,7 +845,7 @@ binary. Defaults to None.</p></li>
 <dd class="field-even"><p>Filter</p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>PureError</strong> – If either operand is not of the proper type.</p>
+<dd class="field-odd"><p><a class="reference internal" href="#pypureclient.exceptions.PureError" title="pypureclient.exceptions.PureError"><strong>PureError</strong></a> – If either operand is not of the proper type.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -694,7 +865,7 @@ binary. Defaults to None.</p></li>
 <dd class="field-even"><p>Filter</p>
 </dd>
 <dt class="field-odd">Raises</dt>
-<dd class="field-odd"><p><strong>PureError</strong> – If either operand is not of the proper type.</p>
+<dd class="field-odd"><p><a class="reference internal" href="#pypureclient.exceptions.PureError" title="pypureclient.exceptions.PureError"><strong>PureError</strong></a> – If either operand is not of the proper type.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -928,6 +1099,18 @@ to the method without transforming them to ids or names.</p>
 <dd><p>The resource name, such as volume name, pod name, snapshot name, and so on.</p>
 </dd></dl>
 
+</dd></dl>
+
+</section>
+</section>
+<section id="errors">
+<h2>Errors<a class="headerlink" href="#errors" title="Permalink to this heading"></a></h2>
+<section id="pureerror">
+<h3>PureError<a class="headerlink" href="#pureerror" title="Permalink to this heading"></a></h3>
+<dl class="py class">
+<dt class="sig sig-object py" id="pypureclient.exceptions.PureError">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypureclient.exceptions.</span></span><span class="sig-name descname"><span class="pre">PureError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reason</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypureclient.exceptions.PureError" title="Permalink to this definition"></a></dt>
+<dd><p>Exception type raised by Pure Storage code.</p>
 </dd></dl>
 
 </section>
