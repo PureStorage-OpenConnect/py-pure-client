@@ -45,9 +45,9 @@ from pypureclient.flasharray.FA_2_44.models.tag_get_response import TagGetRespon
 from pypureclient.flasharray.FA_2_44.models.tag_response import TagResponse
 from pypureclient.flasharray.FA_2_44.models.test_result_with_resource_with_id_post_response import TestResultWithResourceWithIdPostResponse
 from typing import Optional
-from pypureclient.flasharray.FA_2_44.api_client import ApiClient as _TransportApiClient
-from pypureclient.flasharray.FA_2_44.api_response import ApiResponse
-from pypureclient.flasharray.FA_2_44.exceptions import (  # noqa: F401
+from pypureclient._transport.api_client import ApiClient as _TransportApiClient
+from pypureclient._transport.api_response import ApiResponse
+from pypureclient._transport.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

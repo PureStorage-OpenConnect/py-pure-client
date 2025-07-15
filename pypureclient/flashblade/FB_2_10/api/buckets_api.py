@@ -34,9 +34,9 @@ from pypureclient.flashblade.FB_2_10.models.bucket_post import BucketPost
 from pypureclient.flashblade.FB_2_10.models.bucket_response import BucketResponse
 from pypureclient.flashblade.FB_2_10.models.bucket_s3_specific_performance_get_resp import BucketS3SpecificPerformanceGetResp
 from typing import Optional
-from pypureclient.flashblade.FB_2_10.api_client import ApiClient as _TransportApiClient
-from pypureclient.flashblade.FB_2_10.api_response import ApiResponse
-from pypureclient.flashblade.FB_2_10.exceptions import (  # noqa: F401
+from pypureclient._transport.api_client import ApiClient as _TransportApiClient
+from pypureclient._transport.api_response import ApiResponse
+from pypureclient._transport.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

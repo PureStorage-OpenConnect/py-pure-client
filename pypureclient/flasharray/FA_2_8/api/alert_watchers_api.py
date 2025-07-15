@@ -33,9 +33,9 @@ from pypureclient.flasharray.FA_2_8.models.alert_watcher_post import AlertWatche
 from pypureclient.flasharray.FA_2_8.models.alert_watcher_response import AlertWatcherResponse
 from pypureclient.flasharray.FA_2_8.models.test_result_with_resource_get_response import TestResultWithResourceGetResponse
 from typing import Optional
-from pypureclient.flasharray.FA_2_8.api_client import ApiClient as _TransportApiClient
-from pypureclient.flasharray.FA_2_8.api_response import ApiResponse
-from pypureclient.flasharray.FA_2_8.exceptions import (  # noqa: F401
+from pypureclient._transport.api_client import ApiClient as _TransportApiClient
+from pypureclient._transport.api_response import ApiResponse
+from pypureclient._transport.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

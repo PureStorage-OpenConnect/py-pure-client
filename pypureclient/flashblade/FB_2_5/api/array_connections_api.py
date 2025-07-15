@@ -36,9 +36,9 @@ from pypureclient.flashblade.FB_2_5.models.array_connection_post import ArrayCon
 from pypureclient.flashblade.FB_2_5.models.array_connection_response import ArrayConnectionResponse
 from pypureclient.flashblade.FB_2_5.models.connection_relationship_performance_replication_get_resp import ConnectionRelationshipPerformanceReplicationGetResp
 from typing import Optional
-from pypureclient.flashblade.FB_2_5.api_client import ApiClient as _TransportApiClient
-from pypureclient.flashblade.FB_2_5.api_response import ApiResponse
-from pypureclient.flashblade.FB_2_5.exceptions import (  # noqa: F401
+from pypureclient._transport.api_client import ApiClient as _TransportApiClient
+from pypureclient._transport.api_response import ApiResponse
+from pypureclient._transport.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

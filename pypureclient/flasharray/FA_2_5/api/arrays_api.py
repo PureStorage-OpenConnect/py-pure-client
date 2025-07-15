@@ -39,9 +39,9 @@ from pypureclient.flasharray.FA_2_5.models.eula_get_response import EulaGetRespo
 from pypureclient.flasharray.FA_2_5.models.eula_response import EulaResponse
 from pypureclient.flasharray.FA_2_5.models.test_result_get_response import TestResultGetResponse
 from typing import Optional
-from pypureclient.flasharray.FA_2_5.api_client import ApiClient as _TransportApiClient
-from pypureclient.flasharray.FA_2_5.api_response import ApiResponse
-from pypureclient.flasharray.FA_2_5.exceptions import (  # noqa: F401
+from pypureclient._transport.api_client import ApiClient as _TransportApiClient
+from pypureclient._transport.api_response import ApiResponse
+from pypureclient._transport.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

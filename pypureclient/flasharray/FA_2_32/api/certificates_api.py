@@ -33,9 +33,9 @@ from pypureclient.flasharray.FA_2_32.models.certificate_response import Certific
 from pypureclient.flasharray.FA_2_32.models.certificate_signing_request_post import CertificateSigningRequestPost
 from pypureclient.flasharray.FA_2_32.models.certificate_signing_request_response import CertificateSigningRequestResponse
 from typing import Optional
-from pypureclient.flasharray.FA_2_32.api_client import ApiClient as _TransportApiClient
-from pypureclient.flasharray.FA_2_32.api_response import ApiResponse
-from pypureclient.flasharray.FA_2_32.exceptions import (  # noqa: F401
+from pypureclient._transport.api_client import ApiClient as _TransportApiClient
+from pypureclient._transport.api_response import ApiResponse
+from pypureclient._transport.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

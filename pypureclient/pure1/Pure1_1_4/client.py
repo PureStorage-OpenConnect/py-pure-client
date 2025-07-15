@@ -4,6 +4,8 @@ import time
 import uuid
 import warnings
 
+from typing import Union, Tuple
+
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
@@ -14,19 +16,19 @@ except ModuleNotFoundError:
 
 
 from pypureclient.reference_type import ReferenceType
-from pypureclient._version import __default_user_agent__ as DEFAULT_USER_AGENT
 from pypureclient.api_token_manager import APITokenManager
-from pypureclient.client_settings import resolve_ssl_validation
 from pypureclient.exceptions import PureError
 from pypureclient.keywords import Headers, Responses
 from pypureclient.properties import Property, Filter
 from pypureclient.responses import ValidResponse, ErrorResponse, ApiError, ItemIterator, ResponseHeaders
 from pypureclient.token_manager import TokenManager
 
-from .api_client import ApiClient
-from .api_response import ApiResponse
-from .rest import ApiException
-from .configuration import Configuration
+from pypureclient._helpers import create_api_client
+
+from pypureclient._transport.api_client import ApiClient
+from pypureclient._transport.api_response import ApiResponse
+from pypureclient._transport.rest import ApiException
+from pypureclient._transport.configuration import Configuration
 
 from . import api
 from . import models
@@ -35,77 +37,70 @@ class Client(object):
     """
     A client for making REST API calls to Pure1.
     """
-    APP_ID_KEY = 'app_id'
-    APP_ID_ENV = 'PURE1_APP_ID'
-    ID_TOKEN_KEY = 'id_token'
-    ID_TOKEN_ENV = 'PURE1_ID_TOKEN'
-    PRIVATE_KEY_FILE_KEY = 'private_key_file'
-    PRIVATE_KEY_FILE_ENV = 'PURE1_PRIVATE_KEY_FILE'
-    PRIVATE_KEY_PASSWORD_KEY = 'private_key_password'
-    PRIVATE_KEY_PASSWORD_ENV = 'PURE1_PRIVATE_KEY_PASSWORD'
-    RETRIES_KEY = 'retries'
-    RETRIES_DEFAULT = 5
-    TOKEN_ENDPOINT = 'https://api.pure1.purestorage.com/oauth2/1.0/token'
-    TIMEOUT_KEY = 'timeout'
-    TIMEOUT_DEFAULT = 15.0
-    USER_AGENT = DEFAULT_USER_AGENT
 
-    def __init__(self, **kwargs):
+    def __init__(self,
+                 configuration: Configuration,
+                 app_id: str = None,
+                 id_token: str = None,
+                 private_key_file: str = None,
+                 private_key_password: str = None,
+                 retries: int = None,
+                 timeout: Union[int, Tuple[float, float]] = None,
+                 user_agent=None):
         """
         Initialize a Pure1 Client.
 
-        Keyword args:
-            app_id (str, optional): The registered App ID for Pure1 to use.
-                Defaults to the set environment variable under PURE1_APP_ID.
-            id_token (str, optional): The ID token to use. Overrides given
-                App ID and private key. Defaults to environment variable set
-                under PURE1_ID_TOKEN.
-            private_key_file (str, optional): The path of the private key to
-                use. Defaults to the set environment variable under
-                PURE1_PRIVATE_KEY_FILE.
-            private_key_password (str, optional): The password of the private
-                key, if encrypted. Defaults to the set environment variable
-                under PURE1_PRIVATE_KEY_FILE. Defaults to None.
-            retries (int, optional): The number of times to retry an API call if
-                it failed for a non-blocking reason. Defaults to 5.
-            timeout (float or (float, float), optional): The timeout
-                duration in seconds, either in total time or (connect and read)
-                times. Defaults to 15.0 total.
+        :param configuration: configuration object
+        :type configuration: Configuration
 
-        Raises:
-            PureError: If it could not create an ID or access token
+        :param app_id: The registered App ID for Pure1 to use.
+            Defaults to the set environment variable under PURE1_APP_ID.
+        :type app_id: str, optional
+
+        :param id_token: The ID token to use. Overrides given
+            App ID and private key. Defaults to environment variable set
+            under PURE1_ID_TOKEN.
+        :type id_token: str, optional
+
+        :param private_key_file: The path of the private key to
+            use. Defaults to the set environment variable under
+            PURE1_PRIVATE_KEY_FILE.
+        :type private_key_file: str, optional
+
+        :param private_key_password: The password of the private
+            key, if encrypted. Defaults to the set environment variable
+            under PURE1_PRIVATE_KEY_PASSWORD. Defaults to None.
+        :type private_key_password: str, optional
+
+        :param retries: The number of times to retry an API call if
+            it failed for a non-blocking reason. Defaults to 5.
+        :type retries: int, optional
+
+        :param timeout: The timeout
+            duration in seconds, either in total time or (connect and read)
+            times. Defaults to 15.0 total.
+        :type timeout: float or (float, float), optional
+
+        :param user_agent: User-Agent request header to use.
+        :type user_agent: str, optional
+
+        :raises PureError: If it could not create an ID or access token
         """
-        app_id = (kwargs.get(self.APP_ID_KEY)
-                  if self.APP_ID_KEY in kwargs
-                  else os.getenv(self.APP_ID_ENV))
-        private_key_file = (kwargs.get(self.PRIVATE_KEY_FILE_KEY)
-                            if self.PRIVATE_KEY_FILE_KEY in kwargs
-                            else os.getenv(self.PRIVATE_KEY_FILE_ENV))
-        private_key_password = (kwargs.get(self.PRIVATE_KEY_PASSWORD_KEY)
-                                if self.PRIVATE_KEY_PASSWORD_KEY in kwargs
-                                else os.getenv(self.PRIVATE_KEY_PASSWORD_ENV))
-        id_token = (kwargs.get(self.ID_TOKEN_KEY)
-                    if self.ID_TOKEN_KEY in kwargs
-                    else os.getenv(self.ID_TOKEN_ENV))
-        self._timeout = (kwargs.get(self.TIMEOUT_KEY)
-                         if (self.TIMEOUT_KEY in kwargs and
-                             isinstance(kwargs.get(self.TIMEOUT_KEY), (tuple, float)))
-                         else self.TIMEOUT_DEFAULT)
-        self._token_man = TokenManager(self.TOKEN_ENDPOINT,
+
+        self._token_man = TokenManager(configuration=configuration,
                                        id_token=id_token,
                                        private_key_file=private_key_file,
                                        private_key_password=private_key_password,
                                        payload={'iss': app_id},
-                                       timeout=self._timeout)
-        # Read timeout and retries from kwargs
-        self._retries = (kwargs.get(self.RETRIES_KEY)
-                         if self.RETRIES_KEY in kwargs
-                         else self.RETRIES_DEFAULT)
+                                       timeout=timeout,
+                                       user_agent=user_agent)
+
         # Instantiate the client and authorize it
-        self._api_client = ApiClient()
-        self._api_client.configuration.host = "https://api.pure1.purestorage.com"
-        self._set_agent_header()
+        self._api_client = create_api_client(configuration=configuration, user_agent=user_agent, _models_package=models)
         self._set_auth_header()
+
+        self._retries = retries
+        self._timeout = timeout
         self.__apis_instances = {}
 
     def __del__(self):

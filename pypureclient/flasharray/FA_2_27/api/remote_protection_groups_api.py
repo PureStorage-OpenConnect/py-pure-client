@@ -31,9 +31,9 @@ from pypureclient.flasharray.FA_2_27.models.remote_protection_group import Remot
 from pypureclient.flasharray.FA_2_27.models.remote_protection_group_get_response import RemoteProtectionGroupGetResponse
 from pypureclient.flasharray.FA_2_27.models.remote_protection_group_response import RemoteProtectionGroupResponse
 from typing import Optional
-from pypureclient.flasharray.FA_2_27.api_client import ApiClient as _TransportApiClient
-from pypureclient.flasharray.FA_2_27.api_response import ApiResponse
-from pypureclient.flasharray.FA_2_27.exceptions import (  # noqa: F401
+from pypureclient._transport.api_client import ApiClient as _TransportApiClient
+from pypureclient._transport.api_response import ApiResponse
+from pypureclient._transport.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )
