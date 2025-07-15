@@ -39,9 +39,9 @@ from pypureclient.flasharray.FA_2_2.models.resource_performance_by_array_get_res
 from pypureclient.flasharray.FA_2_2.models.resource_performance_get_response import ResourcePerformanceGetResponse
 from pypureclient.flasharray.FA_2_2.models.resource_pod_space_get_response import ResourcePodSpaceGetResponse
 from typing import Optional
-from pypureclient.flasharray.FA_2_2.api_client import ApiClient as _TransportApiClient
-from pypureclient.flasharray.FA_2_2.api_response import ApiResponse
-from pypureclient.flasharray.FA_2_2.exceptions import (  # noqa: F401
+from pypureclient._transport.api_client import ApiClient as _TransportApiClient
+from pypureclient._transport.api_response import ApiResponse
+from pypureclient._transport.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

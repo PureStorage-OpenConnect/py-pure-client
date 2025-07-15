@@ -39,9 +39,9 @@ from pypureclient.flashblade.FB_2_9.models.user_quota_patch import UserQuotaPatc
 from pypureclient.flashblade.FB_2_9.models.user_quota_post import UserQuotaPost
 from pypureclient.flashblade.FB_2_9.models.user_quota_response import UserQuotaResponse
 from typing import Optional
-from pypureclient.flashblade.FB_2_9.api_client import ApiClient as _TransportApiClient
-from pypureclient.flashblade.FB_2_9.api_response import ApiResponse
-from pypureclient.flashblade.FB_2_9.exceptions import (  # noqa: F401
+from pypureclient._transport.api_client import ApiClient as _TransportApiClient
+from pypureclient._transport.api_response import ApiResponse
+from pypureclient._transport.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

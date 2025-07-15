@@ -32,9 +32,9 @@ from pypureclient.flasharray.FA_2_5.models.snmp_agent_mib_get_response import Sn
 from pypureclient.flasharray.FA_2_5.models.snmp_agent_patch import SnmpAgentPatch
 from pypureclient.flasharray.FA_2_5.models.snmp_agent_response import SnmpAgentResponse
 from typing import Optional
-from pypureclient.flasharray.FA_2_5.api_client import ApiClient as _TransportApiClient
-from pypureclient.flasharray.FA_2_5.api_response import ApiResponse
-from pypureclient.flasharray.FA_2_5.exceptions import (  # noqa: F401
+from pypureclient._transport.api_client import ApiClient as _TransportApiClient
+from pypureclient._transport.api_response import ApiResponse
+from pypureclient._transport.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )
