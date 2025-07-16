@@ -6,6 +6,7 @@ A log of changes by version and date.
 ======= ========== =====
 Version Date       Notes
 ======= ========== =====
+1.71.0  07/15/2025 Added FlashArray 2.45 client
 1.70.2  07/14/2025 relax setuptools and urllib3 upper bounds
 1.70.1  07/10/2025 relax pydantic upper bound requirement
 1.70.0  06/18/2025 Added FlashBlade 2.18 client
