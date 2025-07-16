@@ -42,9 +42,9 @@ from pypureclient.flasharray.FA_2_16.models.volume_response import VolumeRespons
 from pypureclient.flasharray.FA_2_16.models.volume_space_get_response import VolumeSpaceGetResponse
 from pypureclient.flasharray.FA_2_16.models.volumes_diff_get_response import VolumesDiffGetResponse
 from typing import Optional
-from pypureclient.flasharray.FA_2_16.api_client import ApiClient as _TransportApiClient
-from pypureclient.flasharray.FA_2_16.api_response import ApiResponse
-from pypureclient.flasharray.FA_2_16.exceptions import (  # noqa: F401
+from pypureclient._transport.api_client import ApiClient as _TransportApiClient
+from pypureclient._transport.api_response import ApiResponse
+from pypureclient._transport.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

@@ -33,9 +33,9 @@ from pypureclient.flasharray.FA_2_21.models.kmip_post import KmipPost
 from pypureclient.flasharray.FA_2_21.models.kmip_response import KmipResponse
 from pypureclient.flasharray.FA_2_21.models.kmip_test_result_get_response import KmipTestResultGetResponse
 from typing import Optional
-from pypureclient.flasharray.FA_2_21.api_client import ApiClient as _TransportApiClient
-from pypureclient.flasharray.FA_2_21.api_response import ApiResponse
-from pypureclient.flasharray.FA_2_21.exceptions import (  # noqa: F401
+from pypureclient._transport.api_client import ApiClient as _TransportApiClient
+from pypureclient._transport.api_response import ApiResponse
+from pypureclient._transport.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

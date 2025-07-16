@@ -35,9 +35,9 @@ from pypureclient.flashblade.FB_2_14.models.nfs_export_policy_rule import NfsExp
 from pypureclient.flashblade.FB_2_14.models.nfs_export_policy_rule_get_response import NfsExportPolicyRuleGetResponse
 from pypureclient.flashblade.FB_2_14.models.nfs_export_policy_rule_response import NfsExportPolicyRuleResponse
 from typing import Optional
-from pypureclient.flashblade.FB_2_14.api_client import ApiClient as _TransportApiClient
-from pypureclient.flashblade.FB_2_14.api_response import ApiResponse
-from pypureclient.flashblade.FB_2_14.exceptions import (  # noqa: F401
+from pypureclient._transport.api_client import ApiClient as _TransportApiClient
+from pypureclient._transport.api_response import ApiResponse
+from pypureclient._transport.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

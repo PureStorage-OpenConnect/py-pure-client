@@ -32,9 +32,9 @@ from pypureclient.flashblade.FB_2_17.models.object_store_user_response import Ob
 from pypureclient.flashblade.FB_2_17.models.policy_member_context_get_response import PolicyMemberContextGetResponse
 from pypureclient.flashblade.FB_2_17.models.policy_member_context_response import PolicyMemberContextResponse
 from typing import Optional
-from pypureclient.flashblade.FB_2_17.api_client import ApiClient as _TransportApiClient
-from pypureclient.flashblade.FB_2_17.api_response import ApiResponse
-from pypureclient.flashblade.FB_2_17.exceptions import (  # noqa: F401
+from pypureclient._transport.api_client import ApiClient as _TransportApiClient
+from pypureclient._transport.api_response import ApiResponse
+from pypureclient._transport.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

@@ -30,9 +30,9 @@ from typing import Optional
 from pypureclient.flasharray.FA_2_10.models.port_get_response import PortGetResponse
 from pypureclient.flasharray.FA_2_10.models.port_initiators_get_response import PortInitiatorsGetResponse
 from typing import Optional
-from pypureclient.flasharray.FA_2_10.api_client import ApiClient as _TransportApiClient
-from pypureclient.flasharray.FA_2_10.api_response import ApiResponse
-from pypureclient.flasharray.FA_2_10.exceptions import (  # noqa: F401
+from pypureclient._transport.api_client import ApiClient as _TransportApiClient
+from pypureclient._transport.api_response import ApiResponse
+from pypureclient._transport.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

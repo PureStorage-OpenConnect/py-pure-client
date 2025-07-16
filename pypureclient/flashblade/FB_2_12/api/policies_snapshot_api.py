@@ -37,9 +37,9 @@ from pypureclient.flashblade.FB_2_12.models.policy_member_with_remote_response i
 from pypureclient.flashblade.FB_2_12.models.policy_patch import PolicyPatch
 from pypureclient.flashblade.FB_2_12.models.policy_response import PolicyResponse
 from typing import Optional
-from pypureclient.flashblade.FB_2_12.api_client import ApiClient as _TransportApiClient
-from pypureclient.flashblade.FB_2_12.api_response import ApiResponse
-from pypureclient.flashblade.FB_2_12.exceptions import (  # noqa: F401
+from pypureclient._transport.api_client import ApiClient as _TransportApiClient
+from pypureclient._transport.api_response import ApiResponse
+from pypureclient._transport.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

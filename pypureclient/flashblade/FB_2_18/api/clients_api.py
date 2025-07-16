@@ -30,9 +30,9 @@ from typing import Optional
 from pypureclient.flashblade.FB_2_18.models.clients_performance_get_response import ClientsPerformanceGetResponse
 from pypureclient.flashblade.FB_2_18.models.clients_s3_specific_performance_get_response import ClientsS3SpecificPerformanceGetResponse
 from typing import Optional
-from pypureclient.flashblade.FB_2_18.api_client import ApiClient as _TransportApiClient
-from pypureclient.flashblade.FB_2_18.api_response import ApiResponse
-from pypureclient.flashblade.FB_2_18.exceptions import (  # noqa: F401
+from pypureclient._transport.api_client import ApiClient as _TransportApiClient
+from pypureclient._transport.api_response import ApiResponse
+from pypureclient._transport.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )
