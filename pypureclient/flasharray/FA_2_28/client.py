@@ -34,6 +34,8 @@ from . import models
 
 class Client(object):
 
+    __REST_API_VERSON = '2.28'
+
     def __init__(self,
                  configuration: Configuration,
                  id_token: str = None,
@@ -103,9 +105,8 @@ class Client(object):
             raise PureError("id_token is generated based on app ID and private key info. Please use either id_token or api_token and try again!")
         elif api_token:
             self._token_man = APITokenManager(
-                '/api/2.28/login',
-                api_token,
-                token_dispose_endpoint='/api/2.28/logout',
+                api_token=api_token,
+                version=Client.__REST_API_VERSON,
                 user_agent=user_agent,
                 timeout=timeout,
                 configuration=configuration,
@@ -149,7 +150,7 @@ class Client(object):
             str
 
         """
-        return '2.28'
+        return Client.__REST_API_VERSON
 
     def get_access_token(self, refresh=False):
         """

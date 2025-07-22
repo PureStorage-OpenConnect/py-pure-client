@@ -17,7 +17,7 @@ class APITokenManager(object):
     A valid session token is stored in memory.
     """
 
-    def __init__(self, token_endpoint, api_token, configuration: Configuration, user_agent: str = None, token_dispose_endpoint=None, timeout=None):
+    def __init__(self, api_token, configuration: Configuration, version: str = None, user_agent: str = None, timeout=None):
         """
         Initialize a APITokenManager. Should be treated as a static object.
 
@@ -29,10 +29,13 @@ class APITokenManager(object):
         Raises:
             PureError: If there was any issue retrieving an session token.
         """
-        self._token_endpoint = token_endpoint
-        self._token_dispose_endpoint = token_dispose_endpoint
+        _base_url = '/api'
+        if version:
+            _base_url = f'{_base_url}/{version}'
+        self._token_endpoint = f'{_base_url}/login'
+        self._token_dispose_endpoint = f'{_base_url}/logout'
         self._api_token = api_token
-        self.configuration = configuration
+        self._configuration = configuration
         self._user_agent = user_agent
         self._session_token = None
         self._timeout = timeout
@@ -90,7 +93,7 @@ class APITokenManager(object):
 
     def __call_endpoint(self, endpoint: str, headers: dict) -> ApiResponse:
         _result = None
-        with create_api_client(self.configuration, self._user_agent) as api_client:
+        with create_api_client(self._configuration, self._user_agent) as api_client:
             _result = api_client.call_api(
                         endpoint,
                         "POST",

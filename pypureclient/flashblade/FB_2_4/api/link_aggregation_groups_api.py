@@ -27,9 +27,9 @@ except ModuleNotFoundError:
 
 from typing import Optional
 
-from pypureclient.flashblade.FB_2_4.models.api24_link_aggregation_groups_patch_request import Api24LinkAggregationGroupsPatchRequest
 from pypureclient.flashblade.FB_2_4.models.link_aggregation_group import LinkAggregationGroup
 from pypureclient.flashblade.FB_2_4.models.link_aggregation_group_get_response import LinkAggregationGroupGetResponse
+from pypureclient.flashblade.FB_2_4.models.link_aggregation_group_patch import LinkAggregationGroupPatch
 from pypureclient.flashblade.FB_2_4.models.link_aggregation_group_response import LinkAggregationGroupResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
@@ -316,21 +316,21 @@ class LinkAggregationGroupsApi:
 
     def api24_link_aggregation_groups_patch_with_http_info(
         self,
-        link_aggregation_group: Api24LinkAggregationGroupsPatchRequest,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
+        link_aggregation_group: Optional[LinkAggregationGroupPatch] = None,
         **kwargs
     ) -> ApiResponse:  # noqa: E501
         """PATCH link-aggregation-groups
 
         Modify link aggregation groups by adding and removing Ethernet ports.
 
-        :param link_aggregation_group: (required)
-        :type link_aggregation_group: Api24LinkAggregationGroupsPatchRequest
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.
         :type ids: List[str]
         :param names: A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.
         :type names: List[str]
+        :param link_aggregation_group:
+        :type link_aggregation_group: LinkAggregationGroupPatch
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
@@ -359,9 +359,9 @@ class LinkAggregationGroupsApi:
         _params = locals()
 
         _all_params = [
-            'link_aggregation_group',
             'ids',
-            'names'
+            'names',
+            'link_aggregation_group'
         ]
         _all_params.extend(
             [

@@ -107,9 +107,7 @@ class Client(object):
             raise PureError("id_token is generated based on app ID and private key info. Please use either id_token or api_token and try again!")
         elif api_token:
             self._token_man = APITokenManager(
-                '/api/login',
-                api_token,
-                token_dispose_endpoint='/api/logout',
+                api_token=api_token,
                 user_agent=user_agent,
                 timeout=timeout,
                 configuration=configuration
@@ -12603,10 +12601,10 @@ class Client(object):
 
     def patch_link_aggregation_groups(
         self,
-        link_aggregation_group: 'models.Api212LinkAggregationGroupsPatchRequest',
         references: Optional[Union[ReferenceType, List[ReferenceType]]] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If after filtering, there is not at least one resource that matches each of the elements of `ids`, then an error is returned. This cannot be provided together with the `name` or `names` query parameters.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each of the elements of `names`, then an error is returned.")] = None,
+        link_aggregation_group: Optional['models.LinkAggregationGroupPatch'] = None,
         async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
@@ -12616,8 +12614,6 @@ class Client(object):
         
         Modify link aggregation groups by adding and removing Ethernet ports.
         
-        :param link_aggregation_group: (required)
-        :type link_aggregation_group: Api212LinkAggregationGroupsPatchRequest
         :param references: A list of references to query for. Overrides ids and names keyword arguments.
         :type references: ReferenceType or List[ReferenceType], optional
         :param ids: A comma-separated list of resource IDs. If after filtering, there is not at
@@ -12628,6 +12624,8 @@ class Client(object):
         :param names: A comma-separated list of resource names. If there is not at least one resource
                     that matches each of the elements of `names`, then an error is returned.
         :type names: List[str]
+        :param link_aggregation_group:
+        :type link_aggregation_group: LinkAggregationGroupPatch
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param async_req: Whether to execute the request asynchronously.
@@ -12656,9 +12654,9 @@ class Client(object):
         """ # noqa: E501
 
         kwargs = dict(
-            link_aggregation_group=link_aggregation_group,
             ids=ids,
             names=names,
+            link_aggregation_group=link_aggregation_group,
             async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,

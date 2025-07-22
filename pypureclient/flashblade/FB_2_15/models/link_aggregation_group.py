@@ -24,7 +24,7 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictInt, StrictStr, conlist, constr, validator
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictInt, StrictStr, conlist, constr, validator
-from pypureclient.flashblade.FB_2_15.models.fixed_reference import FixedReference
+from pypureclient.flashblade.FB_2_15.models.reference import Reference
 
 
 class LinkAggregationGroup(BaseModel):
@@ -36,7 +36,7 @@ class LinkAggregationGroup(BaseModel):
     lag_speed: Optional[StrictInt] = Field(default=None, description="Combined speed of all ports in the LAG in bits-per-second.")
     mac_address: Optional[constr(strict=True)] = Field(default=None, description="Unique MAC address assigned to the LAG.")
     port_speed: Optional[StrictInt] = Field(default=None, description="Configured speed of each port in the LAG in bits-per-second.")
-    ports: Optional[conlist(FixedReference)] = Field(default=None, description="Ports associated with the LAG.")
+    ports: Optional[conlist(Reference)] = Field(default=None, description="Ports associated with the LAG.")
     status: Optional[StrictStr] = Field(default=None, description="Health status of the LAG. Valid values are `critical`, `healthy`, `identifying`, `unclaimed`, `unhealthy`, `unrecognized`, and `unused`.")
     __properties = ["id", "name", "lag_speed", "mac_address", "port_speed", "ports", "status"]
 
@@ -135,7 +135,7 @@ class LinkAggregationGroup(BaseModel):
             "lag_speed": obj.get("lag_speed"),
             "mac_address": obj.get("mac_address"),
             "port_speed": obj.get("port_speed"),
-            "ports": [FixedReference.from_dict(_item) for _item in obj.get("ports")] if obj.get("ports") is not None else None,
+            "ports": [Reference.from_dict(_item) for _item in obj.get("ports")] if obj.get("ports") is not None else None,
             "status": obj.get("status")
         })
         return _obj
