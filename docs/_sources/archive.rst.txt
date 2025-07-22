@@ -1,0 +1,9 @@
+Archive
+=======
+
+Documentation for previous releases could be found below
+
+.. toctree::
+   :maxdepth: 1
+
+    1.71.0 <archive/1.71.0/index.rst>
