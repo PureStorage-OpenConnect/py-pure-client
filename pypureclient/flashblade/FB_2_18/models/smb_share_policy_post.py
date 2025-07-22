@@ -33,7 +33,7 @@ class SmbSharePolicyPost(BaseModel):
     SmbSharePolicyPost
     """
     id: Optional[StrictStr] = Field(default=None, description="A non-modifiable, globally unique ID chosen by the system.")
-    name: Optional[StrictStr] = Field(default=None, description="Name of the object (e.g., a file system or snapshot).")
+    name: Optional[StrictStr] = Field(default=None, description="A name chosen by the user. Can be changed. Must be locally unique.")
     enabled: Optional[StrictBool] = Field(default=None, description="If `true`, the policy is enabled. If not specified, defaults to `true`.")
     is_local: Optional[StrictBool] = Field(default=None, description="Whether the policy is defined on the local array.")
     location: Optional[FixedReference] = Field(default=None, description="Reference to the array where the policy is defined.")
@@ -64,7 +64,6 @@ class SmbSharePolicyPost(BaseModel):
         if not include_readonly:
             excluded_fields.update([
                 "id",
-                "name",
                 "is_local",
                 "policy_type",
             ])
