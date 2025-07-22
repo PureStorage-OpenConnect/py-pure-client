@@ -14,8 +14,9 @@ py-pure-client Documentation
    fa_reference
    fb_reference
    pure1_reference
-   changelog
    shared_reference
+   changelog
+   archive.rst
 
 Overview
 --------
