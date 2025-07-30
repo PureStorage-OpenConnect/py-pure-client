@@ -21,10 +21,10 @@ Importable as
 .. module:: pypureclient.flasharray.client
 .. autofunction:: pypureclient.flasharray.client::Client
 
-FlashArray REST 2.45 Client
+FlashArray REST 2.46 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. module:: pypureclient.flasharray.FA_2_45.client
-.. autoclass:: pypureclient.flasharray.FA_2_45.client::Client
+.. module:: pypureclient.flasharray.FA_2_46.client
+.. autoclass:: pypureclient.flasharray.FA_2_46.client::Client
    :members:
 
 Models
