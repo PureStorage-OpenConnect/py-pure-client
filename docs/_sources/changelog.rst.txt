@@ -6,6 +6,7 @@ A log of changes by version and date.
 ======= ========== =====
 Version Date       Notes
 ======= ========== =====
+1.73.0  07/29/2025 Added FlashArray 2.46 client
 1.72.0  07/22/2025 Added FlashBlade 2.19 client
 1.71.0  07/15/2025 Added FlashArray 2.45 client
 1.70.2  07/14/2025 relax setuptools and urllib3 upper bounds
