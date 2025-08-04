@@ -177,18 +177,9 @@ class Configuration(_ExposedConfiguration):
             auth['AuthorizationHeader'] = {
                 'type': 'api_key',
                 'in': 'header',
-                'key': 'x-auth-token',
+                'key': 'Authorization',
                 'value': self.get_api_key_with_prefix(
                     'AuthorizationHeader',
-                ),
-            }
-        if 'ApiToken' in self.api_key:
-            auth['ApiToken'] = {
-                'type': 'api_key',
-                'in': 'header',
-                'key': 'api-token',
-                'value': self.get_api_key_with_prefix(
-                    'ApiToken',
                 ),
             }
         return auth
@@ -199,11 +190,7 @@ class Configuration(_ExposedConfiguration):
         """
         return [
             {
-                'url': "http://[array]",
-                'description': "No description provided",
-            },
-            {
-                'url': "https://[array]",
+                'url': "https://api-staging.pure1.purestorage.com",
                 'description': "No description provided",
             }
         ]
