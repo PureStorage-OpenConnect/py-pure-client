@@ -182,7 +182,9 @@ class TokenManager(object):
                      'subject_token_type': 'urn:ietf:params:oauth:token-type:jwt',
                      'subject_token': self._id_token}
         headers = {
-            Headers.x_request_id: str(uuid.uuid4())
+            Headers.x_request_id: str(uuid.uuid4()),
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'accept': 'application/json',
         }
         try:
             with create_api_client(self._configuration, self._user_agent) as api_client:
@@ -190,7 +192,7 @@ class TokenManager(object):
                                     resource_path=self._token_endpoint,
                                     method="POST",
                                     header_params=headers,
-                                    body=post_data,
+                                    post_params=post_data,
                                     response_types_map = {'200': "bytearray"},
                                     _return_http_data_only=True,
                                     _request_timeout=self._timeout
