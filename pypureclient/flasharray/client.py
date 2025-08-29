@@ -1,5 +1,5 @@
 import importlib
-from typing import Union, Tuple
+from typing import Union, Tuple, Optional
 
 from .__modules_dict import __modules_dict as fa_modules_dict
 from .._helpers import create_transport_config, get_target_versions
@@ -30,7 +30,8 @@ def Client(
     user_agent: str = None,
     verify_ssl: bool = None,
     configuration: Configuration = None,
-    model_attribute_error_on_none: bool = True):
+    model_attribute_error_on_none: bool = True,
+    auto_pagination_limit: Optional[int] = None):
     """
     Initialize a FlashArray Client.
 
@@ -100,6 +101,11 @@ def Client(
         Defaults to True for backward compatibility with older versions of the SDK.
     :type model_attribute_error_on_none: bool, optional
 
+    :param auto_pagination_limit: GET requests will be executed in N batches if not None.
+        Controls the maximum number of items returned per single batch request.
+        Ignored if None, or `limit` parameter is used.
+    :type auto_pagination_limit: int, optional
+
     :raises PureError: If it could not create an ID or access token
     """
     _transport_cfg = create_transport_config(target=target, configuration=configuration, ssl_cert=ssl_cert, verify_ssl=verify_ssl)
@@ -115,7 +121,7 @@ def Client(
     client = fa_module.Client(configuration=_transport_cfg, id_token=id_token, private_key_file=private_key_file,
                               private_key_password=private_key_password, username=username, client_id=client_id,
                               key_id=key_id, issuer=issuer, api_token=api_token, retries=retries, timeout=timeout,
-                              user_agent=user_agent)
+                              user_agent=user_agent, auto_pagination_limit=auto_pagination_limit)
     return client
 
 
