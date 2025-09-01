@@ -21,10 +21,10 @@ Importable as
 .. module:: pypureclient.flasharray.client
 .. autofunction:: pypureclient.flasharray.client::Client
 
-FlashArray REST 2.46 Client
+FlashArray REST 2.47 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. module:: pypureclient.flasharray.FA_2_46.client
-.. autoclass:: pypureclient.flasharray.FA_2_46.client::Client
+.. module:: pypureclient.flasharray.FA_2_47.client
+.. autoclass:: pypureclient.flasharray.FA_2_47.client::Client
    :members:
 
 Models
@@ -1665,6 +1665,18 @@ ContainerPerformanceGetResponse
 ContainerQos
 ~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flasharray::ContainerQos
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+ContainerQosCeilings
+~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::ContainerQosCeilings
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3465,6 +3477,18 @@ LogTargetsGetResponse
 LogTargetsResponse
 ~~~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flasharray::LogTargetsResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+LoginPost
+~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::LoginPost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
