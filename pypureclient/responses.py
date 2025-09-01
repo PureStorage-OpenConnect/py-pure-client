@@ -231,13 +231,12 @@ class ItemIterator(object):
     An iterator for items of a collection returned by the server.
     """
 
-    def __init__(self, client, api_endpoint, kwargs,  continuation_token,
-                 total_item_count, items, x_request_id, more_items_remaining=None):
+    def __init__(self, api_endpoint, kwargs,  continuation_token,
+                 total_item_count, items, x_request_id, more_items_remaining=None, stop_on_limit=True):
         """
         Initialize an ItemIterator.
 
         Args:
-            client (Client): A Pure1 Client that can call the API.
             api_endpoint (function): The function that corresponds to the
                 internal API call.
             kwargs (dict): The kwargs of the initial call.
@@ -248,7 +247,6 @@ class ItemIterator(object):
             items (list[object]): The items returned from the initial response.
             x_request_id (str): The X-Request-ID to use for all subsequent calls.
         """
-        self._client = client
         self._api_endpoint = api_endpoint
         self._kwargs = kwargs
         self._continuation_token = continuation_token
@@ -256,7 +254,9 @@ class ItemIterator(object):
         self._more_items_remaining = more_items_remaining
         self._items = items
         self._x_request_id = x_request_id
-        self._index = 0
+        self.__stop_on_limit = stop_on_limit
+        self.__index = 0
+        self.__page = 0   # helps to calculate offset properly
 
     def __iter__(self):
         """
@@ -280,21 +280,22 @@ class ItemIterator(object):
                 was an error calling the API.
         """
         # If we've reached the end of the desired limit, stop
-        if Parameters.limit in self._kwargs and self._kwargs.get(Parameters.limit) <= self._index:
+        if self._kwargs.get(Parameters.limit, None) is not None and self.__stop_on_limit and self._kwargs.get(Parameters.limit, None) <= self.__index:
             raise StopIteration
         # If we've reached the end of all possible items, stop
-        if self._total_item_count is not None and self._total_item_count <= self._index:
+        if self._total_item_count is not None and self._total_item_count <= self.__index:
             raise StopIteration
         # If we've reached the end of the current collection, get more data
-        if self._index == len(self._items):
+        if self.__index == len(self._items):
             if self._more_items_remaining is False:
                 raise StopIteration
             self._refresh_data()
-            self._index = 0
+            self.__index = 0
+            self.__page += 1
         # Return the next item in the current list if possible
-        if self._index < len(self._items):
-            to_return = self._items[self._index]
-            self._index += 1
+        if self.__index < len(self._items):
+            to_return = self._items[self.__index]
+            self.__index += 1
             return to_return
         # If no new data was given, just stop
         raise StopIteration
@@ -323,7 +324,7 @@ class ItemIterator(object):
         if self._continuation_token is not None:
             self._kwargs[Parameters.continuation_token] = self._continuation_token
         else: # Use offset otherwise (no continuation token with sorts)
-            self._kwargs[Parameters.offset] = len(self._items)
+            self._kwargs[Parameters.offset] = len(self._items) * (self.__page + 1)
         if self._x_request_id is not None:
             self._kwargs[Parameters.x_request_id] = self._x_request_id
         # Call the API again and update internal state
@@ -338,15 +339,10 @@ class ItemIterator(object):
         if body is None:
             raise StopIteration
 
-        continuation_token = getattr(body, "continuation_token", None)
-        total_item_count = getattr(body, "total_item_count", None)
         # *-get-response models have "continuation_token" attribute. Other models don't have them.
-        if continuation_token is not None:
-            self._more_items_remaining = True
-        else:
-            # Only GET responses are paged.
-            self._more_items_remaining = False
+        self._continuation_token = getattr(body, "continuation_token", None)
+        self._more_items_remaining = getattr(body, "more_items_remaining", None)
+        if self._more_items_remaining is None:
+            self._more_items_remaining = self._continuation_token is not None
 
-        self._continuation_token = continuation_token
-        self._total_item_count = total_item_count
         self._items = body.items

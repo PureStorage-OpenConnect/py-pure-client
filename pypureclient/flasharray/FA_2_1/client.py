@@ -16,7 +16,7 @@ except ModuleNotFoundError:
 from pypureclient.reference_type import ReferenceType
 from pypureclient.api_token_manager import APITokenManager
 from pypureclient.exceptions import PureError
-from pypureclient.keywords import Headers, Responses
+from pypureclient.keywords import Headers, Responses, Parameters
 from pypureclient.properties import Property, Filter
 from pypureclient.responses import ValidResponse, ErrorResponse, ApiError, ItemIterator, ResponseHeaders
 from pypureclient.token_manager import TokenManager
@@ -48,7 +48,8 @@ class Client(object):
                  api_token: str = None,
                  retries: int = None,
                  timeout: Union[int, Tuple[float, float]] = None,
-                 user_agent: str = None):
+                 user_agent: str = None,
+                 auto_pagination_limit: int = None):
         """
         Initialize a FlashArray Client. id_token is generated based on app ID and private
         key info. Either id_token or api_token could be used for authentication. Only one
@@ -95,6 +96,11 @@ class Client(object):
         :param user_agent: User-Agent request header to use.
         :type user_agent: str, optional
 
+        :param auto_pagination_limit: GET requests will be executed in N batches if not None.
+            Controls the maximum number of items returned per single batch request.
+            Ignored if None, or `limit` parameter is used.
+        :type auto_pagination_limit: int, optional
+
         :raises PureError: If it could not create an ID or access token
         """
 
@@ -135,6 +141,9 @@ class Client(object):
         # Read timeout and retries
         self._retries = retries
         self._timeout = timeout
+
+        self.__auto_pagination_limit = auto_pagination_limit
+
         self.__apis_instances = {}
 
     def __del__(self):
@@ -234,7 +243,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['ids', 'names'], kwargs)
         _fixup_list_type_params(['ids', 'names'], kwargs)
         return self._call_api('APIClientsApi', 'api21_api_clients_delete_with_http_info', kwargs)
@@ -343,7 +352,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['ids', 'names'], kwargs)
         _fixup_list_type_params(['ids', 'names', 'sort'], kwargs)
         return self._call_api('APIClientsApi', 'api21_api_clients_get_with_http_info', kwargs)
@@ -418,7 +427,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['ids', 'names'], kwargs)
         _fixup_list_type_params(['ids', 'names'], kwargs)
         return self._call_api('APIClientsApi', 'api21_api_clients_patch_with_http_info', kwargs)
@@ -487,7 +496,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['names'], kwargs)
         _fixup_list_type_params(['names'], kwargs)
         return self._call_api('APIClientsApi', 'api21_api_clients_post_with_http_info', kwargs)
@@ -580,7 +589,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(host_groups, ['host_group_names'], kwargs)
         _process_references(hosts, ['host_names'], kwargs)
         _process_references(volumes, ['volume_names'], kwargs)
@@ -734,7 +743,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(host_groups, ['host_group_names'], kwargs)
         _process_references(hosts, ['host_names'], kwargs)
         _process_references(protocol_endpoints, ['protocol_endpoint_names'], kwargs)
@@ -834,7 +843,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(host_groups, ['host_group_names'], kwargs)
         _process_references(hosts, ['host_names'], kwargs)
         _process_references(volumes, ['volume_names'], kwargs)
@@ -901,7 +910,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['names'], kwargs)
         _fixup_list_type_params(['names'], kwargs)
         return self._call_api('HostGroupsApi', 'api21_host_groups_delete_with_http_info', kwargs)
@@ -1013,7 +1022,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['names'], kwargs)
         _fixup_list_type_params(['names', 'sort'], kwargs)
         return self._call_api('HostGroupsApi', 'api21_host_groups_get_with_http_info', kwargs)
@@ -1088,7 +1097,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(groups, ['group_names'], kwargs)
         _process_references(members, ['member_names'], kwargs)
         _fixup_list_type_params(['group_names', 'member_names'], kwargs)
@@ -1211,7 +1220,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(groups, ['group_names'], kwargs)
         _process_references(members, ['member_names'], kwargs)
         _fixup_list_type_params(['group_names', 'member_names', 'sort'], kwargs)
@@ -1287,7 +1296,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(groups, ['group_names'], kwargs)
         _process_references(members, ['member_names'], kwargs)
         _fixup_list_type_params(['group_names', 'member_names'], kwargs)
@@ -1357,7 +1366,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['names'], kwargs)
         _fixup_list_type_params(['names'], kwargs)
         return self._call_api('HostGroupsApi', 'api21_host_groups_patch_with_http_info', kwargs)
@@ -1467,7 +1476,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['names'], kwargs)
         _fixup_list_type_params(['names', 'sort'], kwargs)
         return self._call_api('HostGroupsApi', 'api21_host_groups_performance_by_array_get_with_http_info', kwargs)
@@ -1577,7 +1586,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['names'], kwargs)
         _fixup_list_type_params(['names', 'sort'], kwargs)
         return self._call_api('HostGroupsApi', 'api21_host_groups_performance_get_with_http_info', kwargs)
@@ -1642,7 +1651,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['names'], kwargs)
         _fixup_list_type_params(['names'], kwargs)
         return self._call_api('HostGroupsApi', 'api21_host_groups_post_with_http_info', kwargs)
@@ -1717,7 +1726,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(groups, ['group_names'], kwargs)
         _process_references(members, ['member_names'], kwargs)
         _fixup_list_type_params(['group_names', 'member_names'], kwargs)
@@ -1840,7 +1849,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(groups, ['group_names'], kwargs)
         _process_references(members, ['member_names'], kwargs)
         _fixup_list_type_params(['group_names', 'member_names', 'sort'], kwargs)
@@ -1916,7 +1925,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(groups, ['group_names'], kwargs)
         _process_references(members, ['member_names'], kwargs)
         _fixup_list_type_params(['group_names', 'member_names'], kwargs)
@@ -2020,7 +2029,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['names'], kwargs)
         _fixup_list_type_params(['names', 'sort'], kwargs)
         return self._call_api('HostGroupsApi', 'api21_host_groups_space_get_with_http_info', kwargs)
@@ -2085,7 +2094,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['names'], kwargs)
         _fixup_list_type_params(['names'], kwargs)
         return self._call_api('HostsApi', 'api21_hosts_delete_with_http_info', kwargs)
@@ -2197,7 +2206,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['names'], kwargs)
         _fixup_list_type_params(['names', 'sort'], kwargs)
         return self._call_api('HostsApi', 'api21_hosts_get_with_http_info', kwargs)
@@ -2272,7 +2281,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(groups, ['group_names'], kwargs)
         _process_references(members, ['member_names'], kwargs)
         _fixup_list_type_params(['group_names', 'member_names'], kwargs)
@@ -2395,7 +2404,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(groups, ['group_names'], kwargs)
         _process_references(members, ['member_names'], kwargs)
         _fixup_list_type_params(['group_names', 'member_names', 'sort'], kwargs)
@@ -2471,7 +2480,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(groups, ['group_names'], kwargs)
         _process_references(members, ['member_names'], kwargs)
         _fixup_list_type_params(['group_names', 'member_names'], kwargs)
@@ -2541,7 +2550,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['names'], kwargs)
         _fixup_list_type_params(['names'], kwargs)
         return self._call_api('HostsApi', 'api21_hosts_patch_with_http_info', kwargs)
@@ -2651,7 +2660,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['names'], kwargs)
         _fixup_list_type_params(['names', 'sort'], kwargs)
         return self._call_api('HostsApi', 'api21_hosts_performance_by_array_get_with_http_info', kwargs)
@@ -2761,7 +2770,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['names'], kwargs)
         _fixup_list_type_params(['names', 'sort'], kwargs)
         return self._call_api('HostsApi', 'api21_hosts_performance_get_with_http_info', kwargs)
@@ -2830,7 +2839,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['names'], kwargs)
         _fixup_list_type_params(['names'], kwargs)
         return self._call_api('HostsApi', 'api21_hosts_post_with_http_info', kwargs)
@@ -2905,7 +2914,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(groups, ['group_names'], kwargs)
         _process_references(members, ['member_names'], kwargs)
         _fixup_list_type_params(['group_names', 'member_names'], kwargs)
@@ -3028,7 +3037,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(groups, ['group_names'], kwargs)
         _process_references(members, ['member_names'], kwargs)
         _fixup_list_type_params(['group_names', 'member_names', 'sort'], kwargs)
@@ -3104,7 +3113,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(groups, ['group_names'], kwargs)
         _process_references(members, ['member_names'], kwargs)
         _fixup_list_type_params(['group_names', 'member_names'], kwargs)
@@ -3208,7 +3217,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['names'], kwargs)
         _fixup_list_type_params(['names', 'sort'], kwargs)
         return self._call_api('HostsApi', 'api21_hosts_space_get_with_http_info', kwargs)
@@ -3273,7 +3282,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['names'], kwargs)
         _fixup_list_type_params(['names'], kwargs)
         return self._call_api('OffloadsApi', 'api21_offloads_delete_with_http_info', kwargs)
@@ -3387,7 +3396,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['names'], kwargs)
         _fixup_list_type_params(['names', 'sort'], kwargs)
         return self._call_api('OffloadsApi', 'api21_offloads_get_with_http_info', kwargs)
@@ -3462,7 +3471,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['names'], kwargs)
         _fixup_list_type_params(['names'], kwargs)
         return self._call_api('OffloadsApi', 'api21_offloads_post_with_http_info', kwargs)
@@ -3555,7 +3564,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(groups, ['group_ids', 'group_names'], kwargs)
         _process_references(members, ['member_ids', 'member_names'], kwargs)
         _fixup_list_type_params(['group_ids', 'group_names', 'member_ids', 'member_names'], kwargs)
@@ -3679,7 +3688,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(groups, ['group_ids', 'group_names'], kwargs)
         _process_references(members, ['member_ids', 'member_names'], kwargs)
         _fixup_list_type_params(['group_ids', 'group_names', 'member_ids', 'member_names', 'sort'], kwargs)
@@ -3765,7 +3774,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(groups, ['group_ids', 'group_names'], kwargs)
         _process_references(members, ['member_ids', 'member_names'], kwargs)
         _fixup_list_type_params(['group_ids', 'group_names', 'member_ids', 'member_names'], kwargs)
@@ -3837,7 +3846,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['ids', 'names'], kwargs)
         _fixup_list_type_params(['ids', 'names'], kwargs)
         return self._call_api('PodsApi', 'api21_pods_delete_with_http_info', kwargs)
@@ -3968,7 +3977,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['ids', 'names'], kwargs)
         _fixup_list_type_params(['ids', 'names', 'sort'], kwargs)
         return self._call_api('PodsApi', 'api21_pods_get_with_http_info', kwargs)
@@ -4043,7 +4052,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['ids', 'names'], kwargs)
         _fixup_list_type_params(['ids', 'names'], kwargs)
         return self._call_api('PodsApi', 'api21_pods_patch_with_http_info', kwargs)
@@ -4213,7 +4222,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['ids', 'names'], kwargs)
         _fixup_list_type_params(['ids', 'names', 'sort'], kwargs)
         return self._call_api('PodsApi', 'api21_pods_performance_by_array_get_with_http_info', kwargs)
@@ -4383,7 +4392,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['ids', 'names'], kwargs)
         _fixup_list_type_params(['ids', 'names', 'sort'], kwargs)
         return self._call_api('PodsApi', 'api21_pods_performance_get_with_http_info', kwargs)
@@ -4452,7 +4461,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['names'], kwargs)
         _fixup_list_type_params(['names'], kwargs)
         return self._call_api('PodsApi', 'api21_pods_post_with_http_info', kwargs)
@@ -4622,7 +4631,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['ids', 'names'], kwargs)
         _fixup_list_type_params(['ids', 'names', 'sort'], kwargs)
         return self._call_api('PodsApi', 'api21_pods_space_get_with_http_info', kwargs)
@@ -4687,7 +4696,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['names'], kwargs)
         _fixup_list_type_params(['names'], kwargs)
         return self._call_api('ProtectionGroupSnapshotsApi', 'api21_protection_group_snapshots_delete_with_http_info', kwargs)
@@ -4820,7 +4829,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['names'], kwargs)
         _process_references(sources, ['source_names'], kwargs)
         _fixup_list_type_params(['names', 'sort', 'source_names'], kwargs)
@@ -4890,7 +4899,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['names'], kwargs)
         _fixup_list_type_params(['names'], kwargs)
         return self._call_api('ProtectionGroupSnapshotsApi', 'api21_protection_group_snapshots_patch_with_http_info', kwargs)
@@ -4963,7 +4972,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(sources, ['source_names'], kwargs)
         _fixup_list_type_params(['source_names'], kwargs)
         return self._call_api('ProtectionGroupSnapshotsApi', 'api21_protection_group_snapshots_post_with_http_info', kwargs)
@@ -5087,7 +5096,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['names'], kwargs)
         _process_references(sources, ['source_names'], kwargs)
         _fixup_list_type_params(['names', 'sort', 'source_names'], kwargs)
@@ -5153,7 +5162,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['names'], kwargs)
         _fixup_list_type_params(['names'], kwargs)
         return self._call_api('ProtectionGroupsApi', 'api21_protection_groups_delete_with_http_info', kwargs)
@@ -5278,7 +5287,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['names'], kwargs)
         _fixup_list_type_params(['names', 'sort'], kwargs)
         return self._call_api('ProtectionGroupsApi', 'api21_protection_groups_get_with_http_info', kwargs)
@@ -5353,7 +5362,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(groups, ['group_names'], kwargs)
         _process_references(members, ['member_names'], kwargs)
         _fixup_list_type_params(['group_names', 'member_names'], kwargs)
@@ -5476,7 +5485,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(groups, ['group_names'], kwargs)
         _process_references(members, ['member_names'], kwargs)
         _fixup_list_type_params(['group_names', 'member_names', 'sort'], kwargs)
@@ -5552,7 +5561,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(groups, ['group_names'], kwargs)
         _process_references(members, ['member_names'], kwargs)
         _fixup_list_type_params(['group_names', 'member_names'], kwargs)
@@ -5628,7 +5637,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(groups, ['group_names'], kwargs)
         _process_references(members, ['member_names'], kwargs)
         _fixup_list_type_params(['group_names', 'member_names'], kwargs)
@@ -5751,7 +5760,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(groups, ['group_names'], kwargs)
         _process_references(members, ['member_names'], kwargs)
         _fixup_list_type_params(['group_names', 'member_names', 'sort'], kwargs)
@@ -5827,7 +5836,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(groups, ['group_names'], kwargs)
         _process_references(members, ['member_names'], kwargs)
         _fixup_list_type_params(['group_names', 'member_names'], kwargs)
@@ -5897,7 +5906,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['names'], kwargs)
         _fixup_list_type_params(['names'], kwargs)
         return self._call_api('ProtectionGroupsApi', 'api21_protection_groups_patch_with_http_info', kwargs)
@@ -6054,7 +6063,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['names'], kwargs)
         _fixup_list_type_params(['names', 'sort'], kwargs)
         return self._call_api('ProtectionGroupsApi', 'api21_protection_groups_performance_replication_by_array_get_with_http_info', kwargs)
@@ -6211,7 +6220,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['names'], kwargs)
         _fixup_list_type_params(['names', 'sort'], kwargs)
         return self._call_api('ProtectionGroupsApi', 'api21_protection_groups_performance_replication_get_with_http_info', kwargs)
@@ -6297,7 +6306,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['names'], kwargs)
         _process_references(sources, ['source_names'], kwargs)
         _fixup_list_type_params(['names', 'source_names'], kwargs)
@@ -6407,7 +6416,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['names'], kwargs)
         _fixup_list_type_params(['names', 'sort'], kwargs)
         return self._call_api('ProtectionGroupsApi', 'api21_protection_groups_space_get_with_http_info', kwargs)
@@ -6482,7 +6491,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(groups, ['group_names'], kwargs)
         _process_references(members, ['member_names'], kwargs)
         _fixup_list_type_params(['group_names', 'member_names'], kwargs)
@@ -6605,7 +6614,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(groups, ['group_names'], kwargs)
         _process_references(members, ['member_names'], kwargs)
         _fixup_list_type_params(['group_names', 'member_names', 'sort'], kwargs)
@@ -6685,7 +6694,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(groups, ['group_names'], kwargs)
         _process_references(members, ['member_names'], kwargs)
         _fixup_list_type_params(['group_names', 'member_names'], kwargs)
@@ -6761,7 +6770,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(groups, ['group_names'], kwargs)
         _process_references(members, ['member_names'], kwargs)
         _fixup_list_type_params(['group_names', 'member_names'], kwargs)
@@ -6837,7 +6846,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(groups, ['group_names'], kwargs)
         _process_references(members, ['member_names'], kwargs)
         _fixup_list_type_params(['group_names', 'member_names'], kwargs)
@@ -6960,7 +6969,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(groups, ['group_names'], kwargs)
         _process_references(members, ['member_names'], kwargs)
         _fixup_list_type_params(['group_names', 'member_names', 'sort'], kwargs)
@@ -7036,7 +7045,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(groups, ['group_names'], kwargs)
         _process_references(members, ['member_names'], kwargs)
         _fixup_list_type_params(['group_names', 'member_names'], kwargs)
@@ -7151,7 +7160,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['ids', 'names'], kwargs)
         _fixup_list_type_params(['ids', 'names', 'on', 'sort'], kwargs)
         return self._call_api('RemotePodsApi', 'api21_remote_pods_get_with_http_info', kwargs)
@@ -7221,7 +7230,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['names'], kwargs)
         _fixup_list_type_params(['names'], kwargs)
         return self._call_api('RemoteProtectionGroupSnapshotsApi', 'api21_remote_protection_group_snapshots_delete_with_http_info', kwargs)
@@ -7343,7 +7352,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['names'], kwargs)
         _process_references(sources, ['source_names'], kwargs)
         _fixup_list_type_params(['names', 'on', 'sort', 'source_names'], kwargs)
@@ -7418,7 +7427,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['names'], kwargs)
         _fixup_list_type_params(['names'], kwargs)
         return self._call_api('RemoteProtectionGroupSnapshotsApi', 'api21_remote_protection_group_snapshots_patch_with_http_info', kwargs)
@@ -7547,7 +7556,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['names'], kwargs)
         _process_references(sources, ['source_names'], kwargs)
         _fixup_list_type_params(['names', 'on', 'sort', 'source_names'], kwargs)
@@ -7624,7 +7633,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['ids', 'names'], kwargs)
         _fixup_list_type_params(['ids', 'names'], kwargs)
         return self._call_api('RemoteProtectionGroupsApi', 'api21_remote_protection_groups_delete_with_http_info', kwargs)
@@ -7744,7 +7753,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['ids', 'names'], kwargs)
         _fixup_list_type_params(['ids', 'names', 'on', 'sort'], kwargs)
         return self._call_api('RemoteProtectionGroupsApi', 'api21_remote_protection_groups_get_with_http_info', kwargs)
@@ -7824,7 +7833,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['ids', 'names'], kwargs)
         _fixup_list_type_params(['ids', 'names'], kwargs)
         return self._call_api('RemoteProtectionGroupsApi', 'api21_remote_protection_groups_patch_with_http_info', kwargs)
@@ -7957,7 +7966,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['ids', 'names'], kwargs)
         _process_references(sources, ['source_ids', 'source_names'], kwargs)
         _fixup_list_type_params(['ids', 'names', 'on', 'sort', 'source_ids', 'source_names'], kwargs)
@@ -8098,7 +8107,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['ids', 'names'], kwargs)
         _process_references(sources, ['source_ids', 'source_names'], kwargs)
         _fixup_list_type_params(['ids', 'names', 'on', 'sort', 'source_ids', 'source_names'], kwargs)
@@ -8170,7 +8179,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['ids', 'names'], kwargs)
         _fixup_list_type_params(['ids', 'names'], kwargs)
         return self._call_api('VolumeGroupsApi', 'api21_volume_groups_delete_with_http_info', kwargs)
@@ -8301,7 +8310,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['ids', 'names'], kwargs)
         _fixup_list_type_params(['ids', 'names', 'sort'], kwargs)
         return self._call_api('VolumeGroupsApi', 'api21_volume_groups_get_with_http_info', kwargs)
@@ -8376,7 +8385,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['ids', 'names'], kwargs)
         _fixup_list_type_params(['ids', 'names'], kwargs)
         return self._call_api('VolumeGroupsApi', 'api21_volume_groups_patch_with_http_info', kwargs)
@@ -8546,7 +8555,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['ids', 'names'], kwargs)
         _fixup_list_type_params(['ids', 'names', 'sort'], kwargs)
         return self._call_api('VolumeGroupsApi', 'api21_volume_groups_performance_get_with_http_info', kwargs)
@@ -8615,7 +8624,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['names'], kwargs)
         _fixup_list_type_params(['names'], kwargs)
         return self._call_api('VolumeGroupsApi', 'api21_volume_groups_post_with_http_info', kwargs)
@@ -8785,7 +8794,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['ids', 'names'], kwargs)
         _fixup_list_type_params(['ids', 'names', 'sort'], kwargs)
         return self._call_api('VolumeGroupsApi', 'api21_volume_groups_space_get_with_http_info', kwargs)
@@ -8917,7 +8926,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(groups, ['group_ids', 'group_names'], kwargs)
         _process_references(members, ['member_ids', 'member_names'], kwargs)
         _fixup_list_type_params(['group_ids', 'group_names', 'member_ids', 'member_names', 'sort'], kwargs)
@@ -8989,7 +8998,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['ids', 'names'], kwargs)
         _fixup_list_type_params(['ids', 'names'], kwargs)
         return self._call_api('VolumeSnapshotsApi', 'api21_volume_snapshots_delete_with_http_info', kwargs)
@@ -9133,7 +9142,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['ids', 'names'], kwargs)
         _process_references(sources, ['source_ids', 'source_names'], kwargs)
         _fixup_list_type_params(['ids', 'names', 'sort', 'source_ids', 'source_names'], kwargs)
@@ -9209,7 +9218,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['ids', 'names'], kwargs)
         _fixup_list_type_params(['ids', 'names'], kwargs)
         return self._call_api('VolumeSnapshotsApi', 'api21_volume_snapshots_patch_with_http_info', kwargs)
@@ -9288,7 +9297,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(sources, ['source_ids', 'source_names'], kwargs)
         _fixup_list_type_params(['source_ids', 'source_names'], kwargs)
         return self._call_api('VolumeSnapshotsApi', 'api21_volume_snapshots_post_with_http_info', kwargs)
@@ -9423,7 +9432,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['ids', 'names'], kwargs)
         _process_references(sources, ['source_ids', 'source_names'], kwargs)
         _fixup_list_type_params(['ids', 'names', 'sort', 'source_ids', 'source_names'], kwargs)
@@ -9495,7 +9504,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['ids', 'names'], kwargs)
         _fixup_list_type_params(['ids', 'names'], kwargs)
         return self._call_api('VolumesApi', 'api21_volumes_delete_with_http_info', kwargs)
@@ -9626,7 +9635,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['ids', 'names'], kwargs)
         _fixup_list_type_params(['ids', 'names', 'sort'], kwargs)
         return self._call_api('VolumesApi', 'api21_volumes_get_with_http_info', kwargs)
@@ -9713,7 +9722,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['ids', 'names'], kwargs)
         _fixup_list_type_params(['ids', 'names'], kwargs)
         return self._call_api('VolumesApi', 'api21_volumes_patch_with_http_info', kwargs)
@@ -9883,7 +9892,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['ids', 'names'], kwargs)
         _fixup_list_type_params(['ids', 'names', 'sort'], kwargs)
         return self._call_api('VolumesApi', 'api21_volumes_performance_by_array_get_with_http_info', kwargs)
@@ -10053,7 +10062,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['ids', 'names'], kwargs)
         _fixup_list_type_params(['ids', 'names', 'sort'], kwargs)
         return self._call_api('VolumesApi', 'api21_volumes_performance_get_with_http_info', kwargs)
@@ -10129,7 +10138,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['names'], kwargs)
         _fixup_list_type_params(['names'], kwargs)
         return self._call_api('VolumesApi', 'api21_volumes_post_with_http_info', kwargs)
@@ -10204,7 +10213,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(groups, ['group_names'], kwargs)
         _process_references(members, ['member_names'], kwargs)
         _fixup_list_type_params(['group_names', 'member_names'], kwargs)
@@ -10327,7 +10336,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(groups, ['group_names'], kwargs)
         _process_references(members, ['member_names'], kwargs)
         _fixup_list_type_params(['group_names', 'member_names', 'sort'], kwargs)
@@ -10403,7 +10412,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(groups, ['group_names'], kwargs)
         _process_references(members, ['member_names'], kwargs)
         _fixup_list_type_params(['group_names', 'member_names'], kwargs)
@@ -10574,7 +10583,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(references, ['ids', 'names'], kwargs)
         _fixup_list_type_params(['ids', 'names', 'sort'], kwargs)
         return self._call_api('VolumesApi', 'api21_volumes_space_get_with_http_info', kwargs)
@@ -10706,7 +10715,7 @@ class Client(object):
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
         )
-        kwargs = {k: v for k, v in kwargs.items() if v is not None or k == 'x_request_id'}
+        kwargs = {k: v for k, v in kwargs.items() if v is not None or k in [Parameters.x_request_id, Parameters.limit]}
         _process_references(groups, ['group_ids', 'group_names'], kwargs)
         _process_references(members, ['member_ids', 'member_names'], kwargs)
         _fixup_list_type_params(['group_ids', 'group_names', 'member_ids', 'member_names', 'sort'], kwargs)
@@ -10752,8 +10761,13 @@ class Client(object):
             TypeError: If invalid or missing parameters are used.
         """
         kwargs['_request_timeout'] = self._timeout
-        if 'x_request_id' in kwargs and not kwargs['x_request_id']:
-            kwargs['x_request_id'] = str(uuid.uuid4())
+        if Parameters.x_request_id in kwargs and not kwargs[Parameters.x_request_id]:
+            kwargs[Parameters.x_request_id] = str(uuid.uuid4())
+
+        _iterator_stop_on_limit = True
+        if Parameters.limit in kwargs and not kwargs[Parameters.limit] and self.__auto_pagination_limit:
+            kwargs[Parameters.limit] = self.__auto_pagination_limit
+            _iterator_stop_on_limit = False
 
         if kwargs.get('authorization') is not None:
             warnings.warn("authorization parameter is deprecated, and will be removed soon.", DeprecationWarning)
@@ -10763,7 +10777,7 @@ class Client(object):
             try:
                 response = api_function(**kwargs)
                 # Call was successful (200)
-                return self._create_valid_response(response, api_function, kwargs)
+                return self._create_valid_response(response, api_function, _iterator_stop_on_limit, kwargs)
             except ApiException as error:
                 # If no chance for retries, return the error
                 if retries == 0:
@@ -10807,7 +10821,7 @@ class Client(object):
             self.__apis_instances[api_class] = getattr(api, api_class)(self._api_client)
         return self.__apis_instances[api_class]
 
-    def _create_valid_response(self, response: ApiResponse, endpoint, kwargs):
+    def _create_valid_response(self, response: ApiResponse, endpoint, iterator_stop_on_limit: bool, kwargs):
         """
         Create a ValidResponse from a Swagger response.
 
@@ -10831,11 +10845,12 @@ class Client(object):
         errors = getattr(body, "errors", None)
         items = None
         if body is not None:
-            items = iter(ItemIterator(self, endpoint, kwargs,
+            items = iter(ItemIterator(endpoint, kwargs,
                                       continuation_token, total_item_count,
                                       body.items,
                                       headers.get(Headers.x_request_id, None),
-                                      more_items_remaining or False))
+                                      more_items_remaining or False,
+                                      iterator_stop_on_limit))
         return ValidResponse(response.status_code, continuation_token, total_item_count,
                              items, headers, total, more_items_remaining, errors=errors)
 
