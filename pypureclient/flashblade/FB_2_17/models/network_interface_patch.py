@@ -32,9 +32,9 @@ class NetworkInterfacePatch(BaseModel):
     NetworkInterfacePatch
     """
     address: Optional[StrictStr] = Field(default=None, description="The IPv4 or IPv6 address to be associated with the specified network interface.")
-    server: Optional[Reference] = Field(default=None, description="The server that is using this interface for data ingress. Will be null if `services` does not include `data`. Defaults to _array_server when `services` does include `data`.")
+    attached_servers: Optional[conlist(Reference)] = Field(default=None, description="List of servers to be associated with the specified network interface for data ingress. At most one server can be specified for each interface. To attach the network interface to a server, name or id the desired server must be provided. To detach a network interface from all servers, an empty list [] should be passed to the attached_servers field. If services include 'data' and attached_servers was [] then attached_servers defaults to [_array_server].")
     services: Optional[conlist(StrictStr)] = Field(default=None, description="Services and protocols that are enabled on the interface.")
-    __properties = ["address", "server", "services"]
+    __properties = ["address", "attached_servers", "services"]
 
     class Config:
         """Pydantic configuration"""
@@ -65,9 +65,13 @@ class NetworkInterfacePatch(BaseModel):
                 none_fields.add(_field)
 
         _dict = self.dict(by_alias=True, exclude=excluded_fields, exclude_none=True)
-        # override the default output from pydantic by calling `to_dict()` of server
-        if _include_in_dict('server', include_readonly, excluded_fields, none_fields):
-            _dict['server'] = self.server.to_dict(include_readonly=include_readonly)
+        # override the default output from pydantic by calling `to_dict()` of each item in attached_servers (list)
+        if _include_in_dict('attached_servers', include_readonly, excluded_fields, none_fields):
+            _items = []
+            for _item in self.attached_servers:
+                if _item:
+                    _items.append(_item.to_dict(include_readonly=include_readonly))
+            _dict['attached_servers'] = _items
         return _dict
 
     def __getitem__(self, key):
@@ -107,7 +111,7 @@ class NetworkInterfacePatch(BaseModel):
 
         _obj = NetworkInterfacePatch.construct(_fields_set=None, **{
             "address": obj.get("address"),
-            "server": Reference.from_dict(obj.get("server")) if obj.get("server") is not None else None,
+            "attached_servers": [Reference.from_dict(_item) for _item in obj.get("attached_servers")] if obj.get("attached_servers") is not None else None,
             "services": obj.get("services")
         })
         return _obj

@@ -34,16 +34,16 @@ class NetworkInterface(BaseModel):
     id: Optional[StrictStr] = Field(default=None, description="A non-modifiable, globally unique ID chosen by the system.")
     name: Optional[StrictStr] = Field(default=None, description="Name of the object (e.g., a file system or snapshot).")
     address: Optional[StrictStr] = Field(default=None, description="The IPv4 or IPv6 address to be associated with the specified network interface.")
+    attached_servers: Optional[conlist(Reference)] = Field(default=None, description="List of servers that are using this interface for data ingress. When services include 'data' defaults to [_array_server], otherwise to [].")
     enabled: Optional[StrictBool] = Field(default=None, description="Indicates if the specified network interface is enabled (`true`) or disabled (`false`). If not specified, defaults to `true`.")
     gateway: Optional[StrictStr] = Field(default=None, description="Derived from `subnet.gateway`.")
     mtu: Optional[StrictInt] = Field(default=None, description="Derived from `subnet.mtu`.")
     netmask: Optional[StrictStr] = Field(default=None, description="Derived from `subnet.prefix`.")
-    server: Optional[Reference] = Field(default=None, description="The server that is using this interface for data ingress. Will be null if `services` does not include `data`. Defaults to _array_server when `services` does include `data`.")
     services: Optional[conlist(StrictStr)] = Field(default=None, description="Services and protocols that are enabled on the interface.")
     subnet: Optional[Dict[str, Any]] = None
     type: Optional[StrictStr] = Field(default=None, description="The only valid value is `vip`.")
     vlan: Optional[StrictInt] = Field(default=None, description="Derived from `subnet.vlan`.")
-    __properties = ["id", "name", "address", "enabled", "gateway", "mtu", "netmask", "server", "services", "subnet", "type", "vlan"]
+    __properties = ["id", "name", "address", "attached_servers", "enabled", "gateway", "mtu", "netmask", "services", "subnet", "type", "vlan"]
 
     class Config:
         """Pydantic configuration"""
@@ -81,9 +81,13 @@ class NetworkInterface(BaseModel):
                 none_fields.add(_field)
 
         _dict = self.dict(by_alias=True, exclude=excluded_fields, exclude_none=True)
-        # override the default output from pydantic by calling `to_dict()` of server
-        if _include_in_dict('server', include_readonly, excluded_fields, none_fields):
-            _dict['server'] = self.server.to_dict(include_readonly=include_readonly)
+        # override the default output from pydantic by calling `to_dict()` of each item in attached_servers (list)
+        if _include_in_dict('attached_servers', include_readonly, excluded_fields, none_fields):
+            _items = []
+            for _item in self.attached_servers:
+                if _item:
+                    _items.append(_item.to_dict(include_readonly=include_readonly))
+            _dict['attached_servers'] = _items
         return _dict
 
     def __getitem__(self, key):
@@ -125,11 +129,11 @@ class NetworkInterface(BaseModel):
             "id": obj.get("id"),
             "name": obj.get("name"),
             "address": obj.get("address"),
+            "attached_servers": [Reference.from_dict(_item) for _item in obj.get("attached_servers")] if obj.get("attached_servers") is not None else None,
             "enabled": obj.get("enabled"),
             "gateway": obj.get("gateway"),
             "mtu": obj.get("mtu"),
             "netmask": obj.get("netmask"),
-            "server": Reference.from_dict(obj.get("server")) if obj.get("server") is not None else None,
             "services": obj.get("services"),
             "subnet": obj.get("subnet"),
             "type": obj.get("type"),
