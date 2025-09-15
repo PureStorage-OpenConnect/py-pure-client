@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quick Start &mdash; py-pure-client 1.74.0 documentation</title>
+  <title>Quick Start &mdash; py-pure-client 1.75.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/autodoc_pydantic.css" type="text/css" />
@@ -33,7 +33,7 @@
             <a href="index.html" class="icon icon-home"> py-pure-client
           </a>
               <div class="version">
-                1.74
+                1.75
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -186,6 +186,12 @@ $<span class="w"> </span><span class="nb">export</span><span class="w"> </span><
 </pre></div>
 </div>
 <p>Alternatively, the authentication information can be passed directly into the client.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pypureclient</span><span class="w"> </span><span class="kn">import</span> <span class="n">pure1</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">pure1</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">private_key_file</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">],</span>
+                      <span class="n">private_key_password</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">],</span>
+                      <span class="n">app_id</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">])</span>
+</pre></div>
+</div>
 <p>If directly using a pre-generated ID token is preferred, it can be used in the
 same way. Note that using a pre-generated ID token will cause the client to fail
 when the ID token expires.</p>
@@ -254,12 +260,12 @@ the server returns a maximum of 1000 items per call; the iterator may make
 subsequent API calls to get more items if there are more than 1000 items in the
 collection.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_volumes</span><span class="p">()</span>
-<span class="nb">print</span> <span class="n">response</span><span class="o">.</span><span class="n">total_item_count</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">total_item_count</span><span class="p">)</span>
 <span class="n">num_volumes</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">for</span> <span class="n">volume</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">items</span><span class="p">:</span>
     <span class="n">num_volumes</span> <span class="o">+=</span> <span class="mi">1</span>
-    <span class="nb">print</span> <span class="n">volume</span>
-<span class="nb">print</span> <span class="n">num_volumes</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">volume</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">num_volumes</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>It is also possible to get all of the items in a list without explicitly
@@ -270,18 +276,18 @@ iterating. It will exhaust the iterator and put the items in a list.</p>
 </div>
 <p>A custom X-Request-ID header can also be provided to any request.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_pods</span><span class="p">(</span><span class="n">x_request_id</span><span class="o">=</span><span class="s1">&#39;readthedocs-test&#39;</span><span class="p">)</span>
-<span class="nb">print</span> <span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">x_request_id</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">x_request_id</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>An example of querying sustainability information.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_assessment_sustainability_arrays</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">assessment</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">items</span><span class="p">:</span>
-    <span class="nb">print</span> <span class="n">assessment</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">assessment</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_assessment_sustainability_insights_arrays</span><span class="p">()</span>
 <span class="k">for</span> <span class="n">insight</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">items</span><span class="p">:</span>
-    <span class="nb">print</span> <span class="n">insight</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">insight</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
