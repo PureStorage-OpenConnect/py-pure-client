@@ -33,11 +33,11 @@ class ServerContext(BaseModel):
     """
     id: Optional[StrictStr] = Field(default=None, description="A non-modifiable, globally unique ID chosen by the system.")
     name: Optional[StrictStr] = Field(default=None, description="A name chosen by the user. Can be changed. Must be locally unique.")
-    directory_services: Optional[conlist(Reference, max_items=1)] = Field(default=None, description="The directory service config to be used by this server.")
     dns: Optional[conlist(Reference, max_items=1)] = Field(default=None, description="The DNS config to be used by this server.")
     created: Optional[StrictInt] = Field(default=None, description="Creation timestamp of the server.")
+    directory_services: Optional[conlist(Reference, max_items=1)] = Field(default=None, description="The directory service config to be used by this server.")
     context: Optional[Reference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
-    __properties = ["id", "name", "directory_services", "dns", "created", "context"]
+    __properties = ["id", "name", "dns", "created", "directory_services", "context"]
 
     class Config:
         """Pydantic configuration"""
@@ -63,6 +63,7 @@ class ServerContext(BaseModel):
             excluded_fields.update([
                 "id",
                 "created",
+                "directory_services",
                 "context",
             ])
         none_fields: Set[str] = set()
@@ -71,13 +72,6 @@ class ServerContext(BaseModel):
                 none_fields.add(_field)
 
         _dict = self.dict(by_alias=True, exclude=excluded_fields, exclude_none=True)
-        # override the default output from pydantic by calling `to_dict()` of each item in directory_services (list)
-        if _include_in_dict('directory_services', include_readonly, excluded_fields, none_fields):
-            _items = []
-            for _item in self.directory_services:
-                if _item:
-                    _items.append(_item.to_dict(include_readonly=include_readonly))
-            _dict['directory_services'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in dns (list)
         if _include_in_dict('dns', include_readonly, excluded_fields, none_fields):
             _items = []
@@ -85,6 +79,13 @@ class ServerContext(BaseModel):
                 if _item:
                     _items.append(_item.to_dict(include_readonly=include_readonly))
             _dict['dns'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in directory_services (list)
+        if _include_in_dict('directory_services', include_readonly, excluded_fields, none_fields):
+            _items = []
+            for _item in self.directory_services:
+                if _item:
+                    _items.append(_item.to_dict(include_readonly=include_readonly))
+            _dict['directory_services'] = _items
         # override the default output from pydantic by calling `to_dict()` of context
         if _include_in_dict('context', include_readonly, excluded_fields, none_fields):
             _dict['context'] = self.context.to_dict(include_readonly=include_readonly)
@@ -128,9 +129,9 @@ class ServerContext(BaseModel):
         _obj = ServerContext.construct(_fields_set=None, **{
             "id": obj.get("id"),
             "name": obj.get("name"),
-            "directory_services": [Reference.from_dict(_item) for _item in obj.get("directory_services")] if obj.get("directory_services") is not None else None,
             "dns": [Reference.from_dict(_item) for _item in obj.get("dns")] if obj.get("dns") is not None else None,
             "created": obj.get("created"),
+            "directory_services": [Reference.from_dict(_item) for _item in obj.get("directory_services")] if obj.get("directory_services") is not None else None,
             "context": Reference.from_dict(obj.get("context")) if obj.get("context") is not None else None
         })
         return _obj

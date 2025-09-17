@@ -1,0 +1,21 @@
+description: Challenge-Handshake Authentication Protocol (CHAP).
+type: object
+properties:
+  host_password:
+    description: >-
+      The host password for CHAP authentication.
+      The password must be between 12 and 255 characters (inclusive)
+      and cannot be the same as the target password.
+    type: string
+  host_user:
+    description: The host username for CHAP authentication.
+    type: string
+  target_password:
+    description: >-
+      The target password for CHAP authentication.
+      The password must be between 12 and 255 characters (inclusive)
+      and cannot be the same as the host password.
+    type: string
+  target_user:
+    description: The target username for CHAP authentication.
+    type: string

@@ -31,9 +31,8 @@ class ServerPost(BaseModel):
     """
     ServerPost
     """
-    directory_services: Optional[conlist(Reference, max_items=1)] = Field(default=None, description="The directory service config to be used by this server.")
     dns: Optional[conlist(Reference, max_items=1)] = Field(default=None, description="The DNS config to be used by this server.")
-    __properties = ["directory_services", "dns"]
+    __properties = ["dns"]
 
     class Config:
         """Pydantic configuration"""
@@ -64,13 +63,6 @@ class ServerPost(BaseModel):
                 none_fields.add(_field)
 
         _dict = self.dict(by_alias=True, exclude=excluded_fields, exclude_none=True)
-        # override the default output from pydantic by calling `to_dict()` of each item in directory_services (list)
-        if _include_in_dict('directory_services', include_readonly, excluded_fields, none_fields):
-            _items = []
-            for _item in self.directory_services:
-                if _item:
-                    _items.append(_item.to_dict(include_readonly=include_readonly))
-            _dict['directory_services'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in dns (list)
         if _include_in_dict('dns', include_readonly, excluded_fields, none_fields):
             _items = []
@@ -116,7 +108,6 @@ class ServerPost(BaseModel):
             return ServerPost.parse_obj(obj)
 
         _obj = ServerPost.construct(_fields_set=None, **{
-            "directory_services": [Reference.from_dict(_item) for _item in obj.get("directory_services")] if obj.get("directory_services") is not None else None,
             "dns": [Reference.from_dict(_item) for _item in obj.get("dns")] if obj.get("dns") is not None else None
         })
         return _obj
