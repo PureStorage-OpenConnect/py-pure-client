@@ -25,7 +25,7 @@ try:
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr, conlist
 from pypureclient.flashblade.FB_2_20.models.fixed_reference import FixedReference
-from pypureclient.flashblade.FB_2_20.models.reference_with_fixed_type import ReferenceWithFixedType
+from pypureclient.flashblade.FB_2_20.models.reference import Reference
 
 
 class NetworkInterface(BaseModel):
@@ -35,7 +35,7 @@ class NetworkInterface(BaseModel):
     id: Optional[StrictStr] = Field(default=None, description="A non-modifiable, globally unique ID chosen by the system.")
     name: Optional[StrictStr] = Field(default=None, description="Name of the object (e.g., a file system or snapshot).")
     address: Optional[StrictStr] = Field(default=None, description="The IPv4 or IPv6 address to be associated with the specified network interface.")
-    attached_servers: Optional[conlist(ReferenceWithFixedType)] = Field(default=None, description="List of servers that are using this interface for data ingress. When services include 'data' defaults to [_array_server], otherwise to [].")
+    attached_servers: Optional[conlist(Reference)] = Field(default=None, description="List of servers that are using this interface for data ingress. When services include 'data' defaults to [_array_server], otherwise to [].")
     enabled: Optional[StrictBool] = Field(default=None, description="Indicates if the specified network interface is enabled (`true`) or disabled (`false`). If not specified, defaults to `true`.")
     gateway: Optional[StrictStr] = Field(default=None, description="Derived from `subnet.gateway`.")
     mtu: Optional[StrictInt] = Field(default=None, description="Derived from `subnet.mtu`.")
@@ -139,7 +139,7 @@ class NetworkInterface(BaseModel):
             "id": obj.get("id"),
             "name": obj.get("name"),
             "address": obj.get("address"),
-            "attached_servers": [ReferenceWithFixedType.from_dict(_item) for _item in obj.get("attached_servers")] if obj.get("attached_servers") is not None else None,
+            "attached_servers": [Reference.from_dict(_item) for _item in obj.get("attached_servers")] if obj.get("attached_servers") is not None else None,
             "enabled": obj.get("enabled"),
             "gateway": obj.get("gateway"),
             "mtu": obj.get("mtu"),

@@ -25,7 +25,7 @@ try:
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictInt, StrictStr, conlist
 from pypureclient.flashblade.FB_2_20.models.error_context_response_errors import ErrorContextResponseErrors
-from pypureclient.flashblade.FB_2_20.models.policy_member_base import PolicyMemberBase
+from pypureclient.flashblade.FB_2_20.models.policy_member_context import PolicyMemberContext
 
 
 class AuditObjectStorePoliciesMembersGetResponse(BaseModel):
@@ -34,7 +34,7 @@ class AuditObjectStorePoliciesMembersGetResponse(BaseModel):
     """
     continuation_token: Optional[StrictStr] = Field(default=None, description="Continuation token that can be provided in the `continuation_token` query param to get the next page of data. If you use the `continuation_token` to page through data you are guaranteed to get all items exactly once regardless of how items are modified. If an item is added or deleted during the pagination then it may or may not be returned. The `continuation_token` is generated if the `limit` is less than the remaining number of items, and the default sort is used (no sort is specified).")
     total_item_count: Optional[StrictInt] = Field(default=None, description="Total number of items after applying `filter` params.")
-    items: Optional[conlist(PolicyMemberBase)] = Field(default=None, description="A list of members for audit object policies.")
+    items: Optional[conlist(PolicyMemberContext)] = Field(default=None, description="A list of members for audit object policies.")
     errors: Optional[conlist(ErrorContextResponseErrors)] = Field(default=None, description="The list of errors encountered when attempting to perform an operation.")
     __properties = ["continuation_token", "total_item_count", "items", "errors"]
 
@@ -122,7 +122,7 @@ class AuditObjectStorePoliciesMembersGetResponse(BaseModel):
         _obj = AuditObjectStorePoliciesMembersGetResponse.construct(_fields_set=None, **{
             "continuation_token": obj.get("continuation_token"),
             "total_item_count": obj.get("total_item_count"),
-            "items": [PolicyMemberBase.from_dict(_item) for _item in obj.get("items")] if obj.get("items") is not None else None,
+            "items": [PolicyMemberContext.from_dict(_item) for _item in obj.get("items")] if obj.get("items") is not None else None,
             "errors": [ErrorContextResponseErrors.from_dict(_item) for _item in obj.get("errors")] if obj.get("errors") is not None else None
         })
         return _obj

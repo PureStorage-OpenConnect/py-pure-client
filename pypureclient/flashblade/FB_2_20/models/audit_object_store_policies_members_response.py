@@ -24,14 +24,14 @@ try:
     from pydantic.v1 import BaseModel, Field, conlist
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, conlist
-from pypureclient.flashblade.FB_2_20.models.policy_member_base import PolicyMemberBase
+from pypureclient.flashblade.FB_2_20.models.policy_member_context import PolicyMemberContext
 
 
 class AuditObjectStorePoliciesMembersResponse(BaseModel):
     """
     AuditObjectStorePoliciesMembersResponse
     """
-    items: Optional[conlist(PolicyMemberBase)] = Field(default=None, description="A list of members for audit object policies.")
+    items: Optional[conlist(PolicyMemberContext)] = Field(default=None, description="A list of members for audit object policies.")
     __properties = ["items"]
 
     class Config:
@@ -108,7 +108,7 @@ class AuditObjectStorePoliciesMembersResponse(BaseModel):
             return AuditObjectStorePoliciesMembersResponse.parse_obj(obj)
 
         _obj = AuditObjectStorePoliciesMembersResponse.construct(_fields_set=None, **{
-            "items": [PolicyMemberBase.from_dict(_item) for _item in obj.get("items")] if obj.get("items") is not None else None
+            "items": [PolicyMemberContext.from_dict(_item) for _item in obj.get("items")] if obj.get("items") is not None else None
         })
         return _obj
 

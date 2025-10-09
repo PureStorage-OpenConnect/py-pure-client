@@ -24,7 +24,7 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictBool
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool
-from pypureclient.flashblade.FB_2_20.models.reference_with_fixed_type import ReferenceWithFixedType
+from pypureclient.flashblade.FB_2_20.models.reference import Reference
 
 
 class ObjectStoreAccountExportPost(BaseModel):
@@ -32,7 +32,7 @@ class ObjectStoreAccountExportPost(BaseModel):
     ObjectStoreAccountExportPost
     """
     export_enabled: Optional[StrictBool] = Field(default=None, description="If set to `true`, the account export is enabled. If not specified, defaults to `true`.")
-    server: ReferenceWithFixedType = Field(default=..., description="Reference to the server the export will be visible on.")
+    server: Reference = Field(default=..., description="Reference to the server the export will be visible on.")
     __properties = ["export_enabled", "server"]
 
     class Config:
@@ -106,7 +106,7 @@ class ObjectStoreAccountExportPost(BaseModel):
 
         _obj = ObjectStoreAccountExportPost.construct(_fields_set=None, **{
             "export_enabled": obj.get("export_enabled"),
-            "server": ReferenceWithFixedType.from_dict(obj.get("server")) if obj.get("server") is not None else None
+            "server": Reference.from_dict(obj.get("server")) if obj.get("server") is not None else None
         })
         return _obj
 

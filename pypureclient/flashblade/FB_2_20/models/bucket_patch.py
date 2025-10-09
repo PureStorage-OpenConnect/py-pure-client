@@ -27,7 +27,7 @@ except ModuleNotFoundError:
 from pypureclient.flashblade.FB_2_20.models.bucket_eradication_config import BucketEradicationConfig
 from pypureclient.flashblade.FB_2_20.models.object_lock_config_request_body import ObjectLockConfigRequestBody
 from pypureclient.flashblade.FB_2_20.models.public_access_config import PublicAccessConfig
-from pypureclient.flashblade.FB_2_20.models.reference import Reference
+from pypureclient.flashblade.FB_2_20.models.reference_writable import ReferenceWritable
 from pypureclient.flashblade.FB_2_20.models.storage_class_info import StorageClassInfo
 
 
@@ -40,7 +40,7 @@ class BucketPatch(BaseModel):
     hard_limit_enabled: Optional[StrictBool] = Field(default=None, description="If set to `true`, the bucket's size, as defined by `quota_limit`, is used as a hard limit quota. If set to `false`, a hard limit quota will not be applied to the bucket, but soft quota alerts will still be sent if the bucket has a value set for `quota_limit`.")
     object_lock_config: Optional[ObjectLockConfigRequestBody] = None
     public_access_config: Optional[PublicAccessConfig] = None
-    qos_policy: Optional[Reference] = Field(default=None, description="The QoS policy for the bucket defines the performance controls that can be applied to the aggregate performance of all the clients accessing the bucket. If no policy is set here, no explicit performance controls are applied to the bucket beyond the system's default fairness.")
+    qos_policy: Optional[ReferenceWritable] = Field(default=None, description="The QoS policy for the bucket defines the performance controls that can be applied to the aggregate performance of all the clients accessing the bucket. If no policy is set here, no explicit performance controls are applied to the bucket beyond the system's default fairness.")
     quota_limit: Optional[StrictStr] = Field(default=None, description="The effective quota limit applied against the size of the bucket, displayed in bytes. If set to an empty string (`\"\"`), the bucket is unlimited in size.")
     retention_lock: Optional[StrictStr] = Field(default=None, description="If set to `ratcheted`, then `object_lock_config.default_retention_mode` cannot be changed if set to `compliance`. In this case, the value of `object_lock_config.default_retention` can only be increased and `object_lock_config.default_retention_mode` cannot be changed once set to `compliance`. Valid values are `unlocked` and `ratcheted`. Contact Pure Technical Services to change `ratcheted` to `unlocked`.")
     storage_class: Optional[StorageClassInfo] = None
@@ -134,7 +134,7 @@ class BucketPatch(BaseModel):
             "hard_limit_enabled": obj.get("hard_limit_enabled"),
             "object_lock_config": ObjectLockConfigRequestBody.from_dict(obj.get("object_lock_config")) if obj.get("object_lock_config") is not None else None,
             "public_access_config": PublicAccessConfig.from_dict(obj.get("public_access_config")) if obj.get("public_access_config") is not None else None,
-            "qos_policy": Reference.from_dict(obj.get("qos_policy")) if obj.get("qos_policy") is not None else None,
+            "qos_policy": ReferenceWritable.from_dict(obj.get("qos_policy")) if obj.get("qos_policy") is not None else None,
             "quota_limit": obj.get("quota_limit"),
             "retention_lock": obj.get("retention_lock"),
             "storage_class": StorageClassInfo.from_dict(obj.get("storage_class")) if obj.get("storage_class") is not None else None,
