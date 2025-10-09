@@ -5670,18 +5670,6 @@ PolicyMember
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
-PolicyMemberBase
-~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade::PolicyMemberBase
-   :model-show-json: False
-   :model-show-field-summary: False
-   :model-show-config-summary: False
-   :model-show-validator-summary: True
-   :model-show-validator-members: True
-   :undoc-members: True
-   :model-hide-paramlist: False
-   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
-
 PolicyMemberContext
 ~~~~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flashblade::PolicyMemberContext
@@ -6237,18 +6225,6 @@ Reference
 ReferenceNameOnly
 ~~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flashblade::ReferenceNameOnly
-   :model-show-json: False
-   :model-show-field-summary: False
-   :model-show-config-summary: False
-   :model-show-validator-summary: True
-   :model-show-validator-members: True
-   :undoc-members: True
-   :model-hide-paramlist: False
-   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
-
-ReferenceWithFixedType
-~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade::ReferenceWithFixedType
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -8448,7 +8424,7 @@ patch_api_clients
 post_api_clients
 ''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.19/post_api_clients.py
+.. literalinclude:: source/examples/FB2.0/post_api_clients.py
     :language: python
 
 Activedirectoryap
@@ -8542,7 +8518,7 @@ patch_admins
 post_admins
 '''''''''''
 
-.. literalinclude:: source/examples/FB2.19/post_admins.py
+.. literalinclude:: source/examples/FB2.15/post_admins.py
     :language: python
 
 get_admins_settings
@@ -8786,58 +8762,10 @@ Auditlogtargetforfilesystemsap
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
-delete_log_targets_file_systems
-'''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.20/delete_log_targets_file_systems.py
-    :language: python
-
-get_log_targets_file_systems
-''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.20/get_log_targets_file_systems.py
-    :language: python
-
-patch_log_targets_file_systems
-''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.20/patch_log_targets_file_systems.py
-    :language: python
-
-post_log_targets_file_systems
-'''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.20/post_log_targets_file_systems.py
-    :language: python
-
 Auditlogtargetforobjectstoreap
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
-
-delete_log_targets_object_store
-'''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.20/delete_log_targets_object_store.py
-    :language: python
-
-get_log_targets_object_store
-''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.20/get_log_targets_object_store.py
-    :language: python
-
-patch_log_targets_object_store
-''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.20/patch_log_targets_object_store.py
-    :language: python
-
-post_log_targets_object_store
-'''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.20/post_log_targets_object_store.py
-    :language: python
 
 Auditsap
 ~~~~~~~~
@@ -8899,36 +8827,6 @@ Bucketsap
 ~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
-
-get_bucket_audit_filter_actions
-'''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.20/get_bucket_audit_filter_actions.py
-    :language: python
-
-delete_buckets_audit_filters
-''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.20/delete_buckets_audit_filters.py
-    :language: python
-
-get_buckets_audit_filters
-'''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.20/get_buckets_audit_filters.py
-    :language: python
-
-patch_buckets_audit_filters
-'''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.20/patch_buckets_audit_filters.py
-    :language: python
-
-post_buckets_audit_filters
-''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.20/post_buckets_audit_filters.py
-    :language: python
 
 delete_buckets_bucket_access_policies
 '''''''''''''''''''''''''''''''''''''
@@ -9017,7 +8915,7 @@ get_buckets
 patch_buckets
 '''''''''''''
 
-.. literalinclude:: source/examples/FB2.19/patch_buckets.py
+.. literalinclude:: source/examples/FB2.17/patch_buckets.py
     :language: python
 
 get_buckets_performance
@@ -9108,12 +9006,6 @@ post_certificates_certificate_groups
 .. literalinclude:: source/examples/FB2.0/post_certificates_certificate_groups.py
     :language: python
 
-post_certificates_certificate_signing_requests
-''''''''''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.20/post_certificates_certificate_signing_requests.py
-    :language: python
-
 delete_certificates
 '''''''''''''''''''
 
@@ -9129,7 +9021,7 @@ get_certificates
 patch_certificates
 ''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.20/patch_certificates.py
+.. literalinclude:: source/examples/FB2.0/patch_certificates.py
     :language: python
 
 post_certificates
@@ -9228,7 +9120,7 @@ patch_directory_services_roles
 post_directory_services_roles
 '''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.19/post_directory_services_roles.py
+.. literalinclude:: source/examples/FB2.14/post_directory_services_roles.py
     :language: python
 
 get_directory_services_test
@@ -9622,13 +9514,13 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 get_hardware_connectors
 '''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.20/get_hardware_connectors.py
+.. literalinclude:: source/examples/FB2.0/get_hardware_connectors.py
     :language: python
 
 patch_hardware_connectors
 '''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.20/patch_hardware_connectors.py
+.. literalinclude:: source/examples/FB2.0/patch_hardware_connectors.py
     :language: python
 
 get_hardware_connectors_performance
@@ -9905,12 +9797,6 @@ get_network_interfaces
 .. literalinclude:: source/examples/FB2.0/get_network_interfaces.py
     :language: python
 
-get_network_interfaces_neighbors
-''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.20/get_network_interfaces_neighbors.py
-    :language: python
-
 get_network_interfaces_network_connection_statistics
 ''''''''''''''''''''''''''''''''''''''''''''''''''''
 
@@ -10080,30 +9966,6 @@ Objectstoreaccountexportsap
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
-delete_object_store_account_exports
-'''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.20/delete_object_store_account_exports.py
-    :language: python
-
-get_object_store_account_exports
-''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.20/get_object_store_account_exports.py
-    :language: python
-
-patch_object_store_account_exports
-''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.20/patch_object_store_account_exports.py
-    :language: python
-
-post_object_store_account_exports
-'''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.20/post_object_store_account_exports.py
-    :language: python
-
 Objectstoreaccountsap
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -10112,25 +9974,25 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 delete_object_store_accounts
 ''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.20/delete_object_store_accounts.py
+.. literalinclude:: source/examples/FB2.17/delete_object_store_accounts.py
     :language: python
 
 get_object_store_accounts
 '''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.20/get_object_store_accounts.py
+.. literalinclude:: source/examples/FB2.17/get_object_store_accounts.py
     :language: python
 
 patch_object_store_accounts
 '''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.20/patch_object_store_accounts.py
+.. literalinclude:: source/examples/FB2.17/patch_object_store_accounts.py
     :language: python
 
 post_object_store_accounts
 ''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.20/post_object_store_accounts.py
+.. literalinclude:: source/examples/FB2.17/post_object_store_accounts.py
     :language: python
 
 Objectstoreremotecredentialsap
@@ -10300,25 +10162,19 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 delete_object_store_virtual_hosts
 '''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.20/delete_object_store_virtual_hosts.py
+.. literalinclude:: source/examples/FB2.17/delete_object_store_virtual_hosts.py
     :language: python
 
 get_object_store_virtual_hosts
 ''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.20/get_object_store_virtual_hosts.py
-    :language: python
-
-patch_object_store_virtual_hosts
-''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.20/patch_object_store_virtual_hosts.py
+.. literalinclude:: source/examples/FB2.17/get_object_store_virtual_hosts.py
     :language: python
 
 post_object_store_virtual_hosts
 '''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.20/post_object_store_virtual_hosts.py
+.. literalinclude:: source/examples/FB2.17/post_object_store_virtual_hosts.py
     :language: python
 
 Policiesallap
@@ -10396,154 +10252,10 @@ Policiesauditforobjectstoreap
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
-delete_audit_object_store_policies
-''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.20/delete_audit_object_store_policies.py
-    :language: python
-
-get_audit_object_store_policies
-'''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.20/get_audit_object_store_policies.py
-    :language: python
-
-delete_audit_object_store_policies_members
-''''''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.20/delete_audit_object_store_policies_members.py
-    :language: python
-
-get_audit_object_store_policies_members
-'''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.20/get_audit_object_store_policies_members.py
-    :language: python
-
-post_audit_object_store_policies_members
-''''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.20/post_audit_object_store_policies_members.py
-    :language: python
-
-patch_audit_object_store_policies
-'''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.20/patch_audit_object_store_policies.py
-    :language: python
-
-post_audit_object_store_policies
-''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.20/post_audit_object_store_policies.py
-    :language: python
-
 Policiesmanagementaccessap
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
-
-delete_admins_management_access_policies
-''''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.19/delete_admins_management_access_policies.py
-    :language: python
-
-get_admins_management_access_policies
-'''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.19/get_admins_management_access_policies.py
-    :language: python
-
-post_admins_management_access_policies
-''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.19/post_admins_management_access_policies.py
-    :language: python
-
-delete_directory_services_roles_management_access_policies
-''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.19/delete_directory_services_roles_management_access_policies.py
-    :language: python
-
-get_directory_services_roles_management_access_policies
-'''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.19/get_directory_services_roles_management_access_policies.py
-    :language: python
-
-post_directory_services_roles_management_access_policies
-''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.19/post_directory_services_roles_management_access_policies.py
-    :language: python
-
-delete_management_access_policies_admins
-''''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.19/delete_management_access_policies_admins.py
-    :language: python
-
-get_management_access_policies_admins
-'''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.19/get_management_access_policies_admins.py
-    :language: python
-
-post_management_access_policies_admins
-''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.19/post_management_access_policies_admins.py
-    :language: python
-
-delete_management_access_policies
-'''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.19/delete_management_access_policies.py
-    :language: python
-
-delete_management_access_policies_directory_services_roles
-''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.19/delete_management_access_policies_directory_services_roles.py
-    :language: python
-
-get_management_access_policies_directory_services_roles
-'''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.19/get_management_access_policies_directory_services_roles.py
-    :language: python
-
-post_management_access_policies_directory_services_roles
-''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.19/post_management_access_policies_directory_services_roles.py
-    :language: python
-
-get_management_access_policies
-''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.19/get_management_access_policies.py
-    :language: python
-
-get_management_access_policies_members
-''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.19/get_management_access_policies_members.py
-    :language: python
-
-patch_management_access_policies
-''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.19/patch_management_access_policies.py
-    :language: python
-
-post_management_access_policies
-'''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.19/post_management_access_policies.py
-    :language: python
 
 Policiesnfsap
 ~~~~~~~~~~~~~
@@ -10762,12 +10474,6 @@ Policiesqosap
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
-get_qos_policies_buckets
-''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.19/get_qos_policies_buckets.py
-    :language: python
-
 delete_qos_policies
 '''''''''''''''''''
 
@@ -10777,7 +10483,7 @@ delete_qos_policies
 get_qos_policies_file_systems
 '''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.20/get_qos_policies_file_systems.py
+.. literalinclude:: source/examples/FB2.17/get_qos_policies_file_systems.py
     :language: python
 
 get_qos_policies
@@ -10786,22 +10492,10 @@ get_qos_policies
 .. literalinclude:: source/examples/FB2.17/get_qos_policies.py
     :language: python
 
-delete_qos_policies_members
-'''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.20/delete_qos_policies_members.py
-    :language: python
-
 get_qos_policies_members
 ''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.20/get_qos_policies_members.py
-    :language: python
-
-post_qos_policies_members
-'''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.20/post_qos_policies_members.py
+.. literalinclude:: source/examples/FB2.17/get_qos_policies_members.py
     :language: python
 
 patch_qos_policies
@@ -10820,48 +10514,6 @@ Policiess3exportap
 ~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
-
-delete_s3_export_policies
-'''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.20/delete_s3_export_policies.py
-    :language: python
-
-get_s3_export_policies
-''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.20/get_s3_export_policies.py
-    :language: python
-
-post_s3_export_policies
-'''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.20/post_s3_export_policies.py
-    :language: python
-
-delete_s3_export_policies_rules
-'''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.20/delete_s3_export_policies_rules.py
-    :language: python
-
-get_s3_export_policies_rules
-''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.20/get_s3_export_policies_rules.py
-    :language: python
-
-patch_s3_export_policies_rules
-''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.20/patch_s3_export_policies_rules.py
-    :language: python
-
-post_s3_export_policies_rules
-'''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.20/post_s3_export_policies_rules.py
-    :language: python
 
 Policiessmbclientap
 ~~~~~~~~~~~~~~~~~~~
@@ -11428,48 +11080,6 @@ Realmsap
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
-get_realms_defaults
-'''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.20/get_realms_defaults.py
-    :language: python
-
-delete_realms
-'''''''''''''
-
-.. literalinclude:: source/examples/FB2.19/delete_realms.py
-    :language: python
-
-get_realms
-''''''''''
-
-.. literalinclude:: source/examples/FB2.19/get_realms.py
-    :language: python
-
-patch_realms
-''''''''''''
-
-.. literalinclude:: source/examples/FB2.19/patch_realms.py
-    :language: python
-
-post_realms
-'''''''''''
-
-.. literalinclude:: source/examples/FB2.19/post_realms.py
-    :language: python
-
-get_realms_space
-''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.19/get_realms_space.py
-    :language: python
-
-get_realms_space_storage_classes
-''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.19/get_realms_space_storage_classes.py
-    :language: python
-
 Remotearraysap
 ~~~~~~~~~~~~~~
 
@@ -11485,24 +11095,6 @@ Resourceaccessesap
 ~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
-
-post_resource_accesses_batch
-''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.19/post_resource_accesses_batch.py
-    :language: python
-
-delete_resource_accesses
-''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.19/delete_resource_accesses.py
-    :language: python
-
-get_resource_accesses
-'''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.19/get_resource_accesses.py
-    :language: python
 
 Rolesap
 ~~~~~~~
@@ -11783,13 +11375,13 @@ get_syslog_servers
 patch_syslog_servers
 ''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.20/patch_syslog_servers.py
+.. literalinclude:: source/examples/FB2.17/patch_syslog_servers.py
     :language: python
 
 post_syslog_servers
 '''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.20/post_syslog_servers.py
+.. literalinclude:: source/examples/FB2.17/post_syslog_servers.py
     :language: python
 
 get_syslog_servers_settings
