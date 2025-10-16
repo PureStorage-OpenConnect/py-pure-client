@@ -21,10 +21,10 @@ Importable as
 .. module:: pypureclient.flasharray.client
 .. autofunction:: pypureclient.flasharray.client::Client
 
-FlashArray REST 2.48 Client
+FlashArray REST 2.47 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. module:: pypureclient.flasharray.FA_2_48.client
-.. autoclass:: pypureclient.flasharray.FA_2_48.client::Client
+.. module:: pypureclient.flasharray.FA_2_47.client
+.. autoclass:: pypureclient.flasharray.FA_2_47.client::Client
    :members:
 
 Models
@@ -6642,18 +6642,6 @@ RemotePod
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
-RemotePodTagGetResponse
-~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flasharray::RemotePodTagGetResponse
-   :model-show-json: False
-   :model-show-field-summary: False
-   :model-show-config-summary: False
-   :model-show-validator-summary: True
-   :model-show-validator-members: True
-   :undoc-members: True
-   :model-hide-paramlist: False
-   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
-
 RemotePodsResponse
 ~~~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flasharray::RemotePodsResponse
@@ -8109,18 +8097,6 @@ SpaceNoDeprecatedPhysicalOrEffective
 StartEndTime
 ~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flasharray::StartEndTime
-   :model-show-json: False
-   :model-show-field-summary: False
-   :model-show-config-summary: False
-   :model-show-validator-summary: True
-   :model-show-validator-members: True
-   :undoc-members: True
-   :model-hide-paramlist: False
-   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
-
-StretchedTag
-~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flasharray::StretchedTag
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False

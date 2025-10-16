@@ -21,10 +21,10 @@ Importable as
 .. module:: pypureclient.flashblade.client
 .. autofunction:: pypureclient.flashblade.client::Client
 
-FlashBlade REST 2.20 Client
+FlashBlade REST 2.21 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. module:: pypureclient.flashblade.FB_2_20.client
-.. autoclass:: pypureclient.flashblade.FB_2_20.client::Client
+.. module:: pypureclient.flashblade.FB_2_21.client
+.. autoclass:: pypureclient.flashblade.FB_2_21.client::Client
    :members:
 
 Models
@@ -1518,6 +1518,18 @@ BucketPerformanceGetResponse
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
+BucketPerformanceItems
+~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::BucketPerformanceItems
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
 BucketPost
 ~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flashblade::BucketPost
@@ -2097,6 +2109,78 @@ CrossOriginResourceSharingPolicyRuleResponse
 CrossOriginResourceSharingPolicyRuleWithContext
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flashblade::CrossOriginResourceSharingPolicyRuleWithContext
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+DataEvictionPoliciesGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::DataEvictionPoliciesGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+DataEvictionPoliciesMembersGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::DataEvictionPoliciesMembersGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+DataEvictionPoliciesMembersResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::DataEvictionPoliciesMembersResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+DataEvictionPoliciesResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::DataEvictionPoliciesResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+DataEvictionPolicy
+~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::DataEvictionPolicy
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+DataEvictionPolicyPost
+~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::DataEvictionPolicyPost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5670,18 +5754,6 @@ PolicyMember
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
-PolicyMemberBase
-~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade::PolicyMemberBase
-   :model-show-json: False
-   :model-show-field-summary: False
-   :model-show-config-summary: False
-   :model-show-validator-summary: True
-   :model-show-validator-members: True
-   :undoc-members: True
-   :model-hide-paramlist: False
-   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
-
 PolicyMemberContext
 ~~~~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flashblade::PolicyMemberContext
@@ -6237,18 +6309,6 @@ Reference
 ReferenceNameOnly
 ~~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flashblade::ReferenceNameOnly
-   :model-show-json: False
-   :model-show-field-summary: False
-   :model-show-config-summary: False
-   :model-show-validator-summary: True
-   :model-show-validator-members: True
-   :undoc-members: True
-   :model-hide-paramlist: False
-   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
-
-ReferenceWithFixedType
-~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade::ReferenceWithFixedType
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -9135,7 +9195,7 @@ patch_certificates
 post_certificates
 '''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.15/post_certificates.py
+.. literalinclude:: source/examples/FB2.20/post_certificates.py
     :language: python
 
 get_certificates_uses
@@ -9410,6 +9470,24 @@ post_file_systems_audit_policies
 ''''''''''''''''''''''''''''''''
 
 .. literalinclude:: source/examples/FB2.17/post_file_systems_audit_policies.py
+    :language: python
+
+delete_file_systems_data_eviction_policies
+''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.21/delete_file_systems_data_eviction_policies.py
+    :language: python
+
+get_file_systems_data_eviction_policies
+'''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.21/get_file_systems_data_eviction_policies.py
+    :language: python
+
+post_file_systems_data_eviction_policies
+''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.21/post_file_systems_data_eviction_policies.py
     :language: python
 
 delete_file_systems
@@ -10438,6 +10516,59 @@ post_audit_object_store_policies
 .. literalinclude:: source/examples/FB2.20/post_audit_object_store_policies.py
     :language: python
 
+Policiesdataevictionap
+~~~~~~~~~~~~~~~~~~~~~~
+
+The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+delete_data_eviction_policies
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.21/delete_data_eviction_policies.py
+    :language: python
+
+delete_data_eviction_policies_file_systems
+''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.21/delete_data_eviction_policies_file_systems.py
+    :language: python
+
+get_data_eviction_policies_file_systems
+'''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.21/get_data_eviction_policies_file_systems.py
+    :language: python
+
+post_data_eviction_policies_file_systems
+''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.21/post_data_eviction_policies_file_systems.py
+    :language: python
+
+get_data_eviction_policies
+''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.21/get_data_eviction_policies.py
+    :language: python
+
+get_data_eviction_policies_members
+''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.21/get_data_eviction_policies_members.py
+    :language: python
+
+patch_data_eviction_policies
+''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.21/patch_data_eviction_policies.py
+    :language: python
+
+post_data_eviction_policies
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.21/post_data_eviction_policies.py
+    :language: python
+
 Policiesmanagementaccessap
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -10831,6 +10962,12 @@ get_s3_export_policies
 ''''''''''''''''''''''
 
 .. literalinclude:: source/examples/FB2.20/get_s3_export_policies.py
+    :language: python
+
+patch_s3_export_policies
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/patch_s3_export_policies.py
     :language: python
 
 post_s3_export_policies
@@ -11432,6 +11569,12 @@ get_realms_defaults
 '''''''''''''''''''
 
 .. literalinclude:: source/examples/FB2.20/get_realms_defaults.py
+    :language: python
+
+patch_realms_defaults
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/patch_realms_defaults.py
     :language: python
 
 delete_realms
