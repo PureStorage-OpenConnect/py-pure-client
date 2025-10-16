@@ -25,7 +25,7 @@ try:
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictStr, conlist
 from pypureclient.flashblade.FB_2_20.models.fixed_reference import FixedReference
-from pypureclient.flashblade.FB_2_20.models.reference_with_fixed_type import ReferenceWithFixedType
+from pypureclient.flashblade.FB_2_20.models.reference import Reference
 from pypureclient.flashblade.FB_2_20.models.reference_writable import ReferenceWritable
 
 
@@ -41,8 +41,8 @@ class AuditObjectStorePoliciesPatch(BaseModel):
     policy_type: Optional[StrictStr] = Field(default=None, description="Type of the policy. Valid values include `alert`, `audit`, `bucket-access`, `cross-origin-resource-sharing`, `network-access`, `nfs`, `object-access`, `s3-export`, smb-client`, `smb-share`, `snapshot`, `ssh-certificate-authority`, and `worm-data`.")
     realms: Optional[conlist(FixedReference)] = Field(default=None, description="The realms containing this policy.")
     log_targets: Optional[conlist(ReferenceWritable)] = Field(default=None, description="List of targets which will be utilized for audit log storage. These may either be bucket targets or remote syslog server targets.")
-    add_log_targets: Optional[conlist(ReferenceWithFixedType)] = Field(default=None, description="The log targets which will be added to the existing `log_targets` list for the audit policy. These new log targets will be appended to the end of the existing list. The `add_log_targets` field cannot be used with the `log_targets` field.")
-    remove_log_targets: Optional[conlist(ReferenceWithFixedType)] = Field(default=None, description="The log targets which will be removed from the existing `log_targets` list for the audit policy. The `remove_log_targets` field cannot be used with the `log_targets` field.")
+    add_log_targets: Optional[conlist(Reference)] = Field(default=None, description="The log targets which will be added to the existing `log_targets` list for the audit policy. These new log targets will be appended to the end of the existing list. The `add_log_targets` field cannot be used with the `log_targets` field.")
+    remove_log_targets: Optional[conlist(Reference)] = Field(default=None, description="The log targets which will be removed from the existing `log_targets` list for the audit policy. The `remove_log_targets` field cannot be used with the `log_targets` field.")
     __properties = ["id", "name", "enabled", "is_local", "location", "policy_type", "realms", "log_targets", "add_log_targets", "remove_log_targets"]
 
     class Config:
@@ -155,8 +155,8 @@ class AuditObjectStorePoliciesPatch(BaseModel):
             "policy_type": obj.get("policy_type"),
             "realms": [FixedReference.from_dict(_item) for _item in obj.get("realms")] if obj.get("realms") is not None else None,
             "log_targets": [ReferenceWritable.from_dict(_item) for _item in obj.get("log_targets")] if obj.get("log_targets") is not None else None,
-            "add_log_targets": [ReferenceWithFixedType.from_dict(_item) for _item in obj.get("add_log_targets")] if obj.get("add_log_targets") is not None else None,
-            "remove_log_targets": [ReferenceWithFixedType.from_dict(_item) for _item in obj.get("remove_log_targets")] if obj.get("remove_log_targets") is not None else None
+            "add_log_targets": [Reference.from_dict(_item) for _item in obj.get("add_log_targets")] if obj.get("add_log_targets") is not None else None,
+            "remove_log_targets": [Reference.from_dict(_item) for _item in obj.get("remove_log_targets")] if obj.get("remove_log_targets") is not None else None
         })
         return _obj
 
