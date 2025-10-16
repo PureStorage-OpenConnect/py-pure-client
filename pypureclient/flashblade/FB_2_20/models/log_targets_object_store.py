@@ -26,7 +26,7 @@ except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictStr
 from pypureclient.flashblade.FB_2_20.models.audit_log_name_prefix import AuditLogNamePrefix
 from pypureclient.flashblade.FB_2_20.models.audit_log_rotate import AuditLogRotate
-from pypureclient.flashblade.FB_2_20.models.reference_with_fixed_type import ReferenceWithFixedType
+from pypureclient.flashblade.FB_2_20.models.reference import Reference
 
 
 class LogTargetsObjectStore(BaseModel):
@@ -35,7 +35,7 @@ class LogTargetsObjectStore(BaseModel):
     """
     id: Optional[StrictStr] = Field(default=None, description="A non-modifiable, globally unique ID chosen by the system.")
     name: Optional[StrictStr] = Field(default=None, description="A name chosen by the user. Can be changed. Must be locally unique.")
-    bucket: Optional[ReferenceWithFixedType] = Field(default=None, description="Reference to the bucket where audit logs will be stored.")
+    bucket: Optional[Reference] = Field(default=None, description="Reference to the bucket where audit logs will be stored.")
     log_name_prefix: Optional[AuditLogNamePrefix] = Field(default=None, description="The prefix of the audit log object.")
     log_rotate: Optional[AuditLogRotate] = Field(default=None, description="The threshold after which the audit log object will be rotated.")
     __properties = ["id", "name", "bucket", "log_name_prefix", "log_rotate"]
@@ -119,7 +119,7 @@ class LogTargetsObjectStore(BaseModel):
         _obj = LogTargetsObjectStore.construct(_fields_set=None, **{
             "id": obj.get("id"),
             "name": obj.get("name"),
-            "bucket": ReferenceWithFixedType.from_dict(obj.get("bucket")) if obj.get("bucket") is not None else None,
+            "bucket": Reference.from_dict(obj.get("bucket")) if obj.get("bucket") is not None else None,
             "log_name_prefix": AuditLogNamePrefix.from_dict(obj.get("log_name_prefix")) if obj.get("log_name_prefix") is not None else None,
             "log_rotate": AuditLogRotate.from_dict(obj.get("log_rotate")) if obj.get("log_rotate") is not None else None
         })
