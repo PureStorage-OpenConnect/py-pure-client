@@ -6,6 +6,7 @@ A log of changes by version and date.
 ======= ========== =====
 Version Date       Notes
 ======= ========== =====
+1.77.1  10/29/2025 Added FlashBlade 2.21 client
 1.77.0  10/16/2025 Added FlashBlade 2.21 client
 1.76.0  10/09/2025 Added FlashArray 2.48 client
 1.75.0  09/15/2025 Added FlashBlade 2.20 client
