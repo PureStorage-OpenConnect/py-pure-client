@@ -24,14 +24,14 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictStr
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictStr
-from pypureclient.flashblade.FB_2_21.models.reference import Reference
+from pypureclient.flashblade.FB_2_21.models.fixed_reference import FixedReference
 
 
 class BucketAuditFilterActionWithContext(BaseModel):
     """
     BucketAuditFilterActionWithContext
     """
-    context: Optional[Reference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     name: Optional[StrictStr] = Field(default=None, description="Name of the object (e.g., a file system or snapshot).")
     description: Optional[StrictStr] = Field(default=None, description="A description of the action.")
     __properties = ["context", "name", "description"]
@@ -109,7 +109,7 @@ class BucketAuditFilterActionWithContext(BaseModel):
             return BucketAuditFilterActionWithContext.parse_obj(obj)
 
         _obj = BucketAuditFilterActionWithContext.construct(_fields_set=None, **{
-            "context": Reference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
+            "context": FixedReference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
             "name": obj.get("name"),
             "description": obj.get("description")
         })

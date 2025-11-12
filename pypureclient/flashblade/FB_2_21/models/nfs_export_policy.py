@@ -26,7 +26,6 @@ except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictStr, conlist
 from pypureclient.flashblade.FB_2_21.models.fixed_reference import FixedReference
 from pypureclient.flashblade.FB_2_21.models.nfs_export_policy_rule_in_policy import NfsExportPolicyRuleInPolicy
-from pypureclient.flashblade.FB_2_21.models.reference import Reference
 
 
 class NfsExportPolicy(BaseModel):
@@ -41,7 +40,7 @@ class NfsExportPolicy(BaseModel):
     policy_type: Optional[StrictStr] = Field(default=None, description="Type of the policy. Valid values include `alert`, `audit`, `bucket-access`, `cross-origin-resource-sharing`, `network-access`, `nfs`, `object-access`, `s3-export`, smb-client`, `smb-share`, `snapshot`, `ssh-certificate-authority`, and `worm-data`.")
     realms: Optional[conlist(FixedReference)] = Field(default=None, description="The realms containing this policy.")
     version: Optional[StrictStr] = Field(default=None, description="A hash of the other properties of this resource. This can be used when updating the resource to ensure there aren't any updates since the resource was read.")
-    context: Optional[Reference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     rules: Optional[conlist(NfsExportPolicyRuleInPolicy, max_items=200)] = Field(default=None, description="All of the rules that are part of this policy. The order is the evaluation order.")
     __properties = ["id", "name", "enabled", "is_local", "location", "policy_type", "realms", "version", "context", "rules"]
 
@@ -146,7 +145,7 @@ class NfsExportPolicy(BaseModel):
             "policy_type": obj.get("policy_type"),
             "realms": [FixedReference.from_dict(_item) for _item in obj.get("realms")] if obj.get("realms") is not None else None,
             "version": obj.get("version"),
-            "context": Reference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
+            "context": FixedReference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
             "rules": [NfsExportPolicyRuleInPolicy.from_dict(_item) for _item in obj.get("rules")] if obj.get("rules") is not None else None
         })
         return _obj

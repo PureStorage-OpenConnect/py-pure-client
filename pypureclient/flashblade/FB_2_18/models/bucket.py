@@ -28,7 +28,6 @@ from pypureclient.flashblade.FB_2_18.models.bucket_eradication_config import Buc
 from pypureclient.flashblade.FB_2_18.models.fixed_reference import FixedReference
 from pypureclient.flashblade.FB_2_18.models.object_lock_config_response import ObjectLockConfigResponse
 from pypureclient.flashblade.FB_2_18.models.public_access_config import PublicAccessConfig
-from pypureclient.flashblade.FB_2_18.models.reference import Reference
 from pypureclient.flashblade.FB_2_18.models.space import Space
 
 
@@ -38,7 +37,7 @@ class Bucket(BaseModel):
     """
     id: Optional[StrictStr] = Field(default=None, description="A non-modifiable, globally unique ID chosen by the system.")
     name: Optional[StrictStr] = Field(default=None, description="Name of the object (e.g., a file system or snapshot).")
-    context: Optional[Reference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     account: Optional[FixedReference] = None
     bucket_type: Optional[StrictStr] = Field(default=None, description="The bucket type for the bucket.")
     created: Optional[StrictInt] = Field(default=None, description="Creation timestamp of the object.")
@@ -153,7 +152,7 @@ class Bucket(BaseModel):
         _obj = Bucket.construct(_fields_set=None, **{
             "id": obj.get("id"),
             "name": obj.get("name"),
-            "context": Reference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
+            "context": FixedReference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
             "account": FixedReference.from_dict(obj.get("account")) if obj.get("account") is not None else None,
             "bucket_type": obj.get("bucket_type"),
             "created": obj.get("created"),

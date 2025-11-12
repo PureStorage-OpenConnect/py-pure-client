@@ -30,7 +30,6 @@ from pypureclient.flashblade.FB_2_18.models.http import Http
 from pypureclient.flashblade.FB_2_18.models.location_reference import LocationReference
 from pypureclient.flashblade.FB_2_18.models.multi_protocol import MultiProtocol
 from pypureclient.flashblade.FB_2_18.models.nfs import Nfs
-from pypureclient.flashblade.FB_2_18.models.reference import Reference
 from pypureclient.flashblade.FB_2_18.models.smb import Smb
 from pypureclient.flashblade.FB_2_18.models.space import Space
 from pypureclient.flashblade.FB_2_18.models.storage_class_info import StorageClassInfo
@@ -42,7 +41,7 @@ class FileSystem(BaseModel):
     """
     id: Optional[StrictStr] = Field(default=None, description="A non-modifiable, globally unique ID chosen by the system.")
     name: Optional[StrictStr] = Field(default=None, description="Name of the object (e.g., a file system or snapshot).")
-    context: Optional[Reference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     created: Optional[StrictInt] = Field(default=None, description="Creation timestamp of the file system.")
     default_group_quota: Optional[StrictInt] = Field(default=None, description="The default space quota for a group writing to this file system.")
     default_user_quota: Optional[StrictInt] = Field(default=None, description="The default space quota for a user writing to this file system.")
@@ -176,7 +175,7 @@ class FileSystem(BaseModel):
         _obj = FileSystem.construct(_fields_set=None, **{
             "id": obj.get("id"),
             "name": obj.get("name"),
-            "context": Reference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
+            "context": FixedReference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
             "created": obj.get("created"),
             "default_group_quota": obj.get("default_group_quota"),
             "default_user_quota": obj.get("default_user_quota"),

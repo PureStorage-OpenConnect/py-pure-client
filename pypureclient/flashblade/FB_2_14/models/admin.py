@@ -25,7 +25,7 @@ try:
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr
 from pypureclient.flashblade.FB_2_14.models.api_token import ApiToken
-from pypureclient.flashblade.FB_2_14.models.reference import Reference
+from pypureclient.flashblade.FB_2_14.models.fixed_reference import FixedReference
 
 
 class Admin(BaseModel):
@@ -39,7 +39,7 @@ class Admin(BaseModel):
     locked: Optional[StrictBool] = Field(default=None, description="Returns a value of `true` if the user is currently locked out, otherwise `false`. Can be patched to false to unlock a user. This field is only visible to `array_admin` roles. For all other users, the value is always `null`.")
     lockout_remaining: Optional[StrictInt] = Field(default=None, description="The remaining lockout period, in milliseconds, if the user is locked out. This field is only visible to `array_admin` roles. For all other users, the value is always `null`.")
     public_key: Optional[StrictStr] = Field(default=None, description="Public key for SSH access. Supported key types are `Ed25519` and `RSA`.")
-    role: Optional[Reference] = Field(default=None, description="A reference to this administrator's management role.")
+    role: Optional[FixedReference] = Field(default=None, description="A reference to this administrator's management role.")
     __properties = ["id", "name", "api_token", "is_local", "locked", "lockout_remaining", "public_key", "role"]
 
     class Config:
@@ -126,7 +126,7 @@ class Admin(BaseModel):
             "locked": obj.get("locked"),
             "lockout_remaining": obj.get("lockout_remaining"),
             "public_key": obj.get("public_key"),
-            "role": Reference.from_dict(obj.get("role")) if obj.get("role") is not None else None
+            "role": FixedReference.from_dict(obj.get("role")) if obj.get("role") is not None else None
         })
         return _obj
 

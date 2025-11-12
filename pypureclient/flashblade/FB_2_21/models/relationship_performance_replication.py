@@ -25,7 +25,7 @@ try:
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictInt, StrictStr
 from pypureclient.flashblade.FB_2_21.models.continuous_replication_performance import ContinuousReplicationPerformance
-from pypureclient.flashblade.FB_2_21.models.reference import Reference
+from pypureclient.flashblade.FB_2_21.models.fixed_reference import FixedReference
 from pypureclient.flashblade.FB_2_21.models.replication_performance import ReplicationPerformance
 
 
@@ -34,7 +34,7 @@ class RelationshipPerformanceReplication(BaseModel):
     RelationshipPerformanceReplication
     """
     id: Optional[StrictStr] = Field(default=None, description="A non-modifiable, globally unique ID chosen by the system.")
-    context: Optional[Reference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     aggregate: Optional[ReplicationPerformance] = Field(default=None, description="Total bytes transmitted or received per second for all types of replication.")
     continuous: Optional[ContinuousReplicationPerformance] = Field(default=None, description="Object backlog information and total bytes transmitted or received per second for continuous replication. Continuous replication includes object replication.")
     periodic: Optional[ReplicationPerformance] = Field(default=None, description="Total bytes transmitted or received per second for periodic replication. Periodic replication includes file system replication, which is snapshot based.")
@@ -124,7 +124,7 @@ class RelationshipPerformanceReplication(BaseModel):
 
         _obj = RelationshipPerformanceReplication.construct(_fields_set=None, **{
             "id": obj.get("id"),
-            "context": Reference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
+            "context": FixedReference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
             "aggregate": ReplicationPerformance.from_dict(obj.get("aggregate")) if obj.get("aggregate") is not None else None,
             "continuous": ContinuousReplicationPerformance.from_dict(obj.get("continuous")) if obj.get("continuous") is not None else None,
             "periodic": ReplicationPerformance.from_dict(obj.get("periodic")) if obj.get("periodic") is not None else None,

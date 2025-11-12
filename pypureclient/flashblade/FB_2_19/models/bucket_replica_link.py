@@ -27,7 +27,6 @@ except ModuleNotFoundError:
 from pypureclient.flashblade.FB_2_19.models.fixed_reference import FixedReference
 from pypureclient.flashblade.FB_2_19.models.fixed_reference_name_only import FixedReferenceNameOnly
 from pypureclient.flashblade.FB_2_19.models.object_backlog import ObjectBacklog
-from pypureclient.flashblade.FB_2_19.models.reference import Reference
 from pypureclient.flashblade.FB_2_19.models.reference_writable import ReferenceWritable
 
 
@@ -39,7 +38,7 @@ class BucketReplicaLink(BaseModel):
     direction: Optional[StrictStr] = Field(default=None, description="The direction of replication. Valid values are `inbound` and `outbound`.")
     lag: Optional[StrictInt] = Field(default=None, description="Duration in milliseconds that represents how far behind the replication target is from the source. This is the time difference between current time and `recovery_point`.")
     status_details: Optional[StrictStr] = Field(default=None, description="Detailed information about the status of the replica link when it is unhealthy.")
-    context: Optional[Reference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     cascading_enabled: Optional[StrictBool] = Field(default=None, description="If set to `true`, objects replicated to this bucket via a replica link from another array will also be replicated by this link to the remote bucket. Defaults to `false`.")
     local_bucket: Optional[FixedReference] = Field(default=None, description="Reference to a local bucket.")
     object_backlog: Optional[ObjectBacklog] = Field(default=None, description="The number of pending operations and their size that are currently in the backlog.")
@@ -148,7 +147,7 @@ class BucketReplicaLink(BaseModel):
             "direction": obj.get("direction"),
             "lag": obj.get("lag"),
             "status_details": obj.get("status_details"),
-            "context": Reference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
+            "context": FixedReference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
             "cascading_enabled": obj.get("cascading_enabled"),
             "local_bucket": FixedReference.from_dict(obj.get("local_bucket")) if obj.get("local_bucket") is not None else None,
             "object_backlog": ObjectBacklog.from_dict(obj.get("object_backlog")) if obj.get("object_backlog") is not None else None,

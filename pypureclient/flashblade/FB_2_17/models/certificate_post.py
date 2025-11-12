@@ -47,8 +47,8 @@ class CertificatePost(BaseModel):
     private_key: Optional[StrictStr] = Field(default=None, description="The private key used to sign the certificate.")
     state: Optional[StrictStr] = Field(default=None, description="The state/province field listed in the certificate.")
     status: Optional[StrictStr] = Field(default=None, description="The type of certificate. Valid values are `self-signed` and `imported`.")
-    valid_from: Optional[StrictStr] = Field(default=None, description="The start date of when this certificate is valid.")
-    valid_to: Optional[StrictStr] = Field(default=None, description="The end date of when this certificate is valid.")
+    valid_from: Optional[StrictInt] = Field(default=None, description="The date when the certificate starts being valid.")
+    valid_to: Optional[StrictInt] = Field(default=None, description="The date of when the certificate stops being valid.")
     __properties = ["name", "certificate", "certificate_type", "common_name", "country", "email", "intermediate_certificate", "issued_by", "issued_to", "key_size", "locality", "organization", "organizational_unit", "passphrase", "private_key", "state", "status", "valid_from", "valid_to"]
 
     class Config:

@@ -25,7 +25,6 @@ try:
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr, conlist
 from pypureclient.flashblade.FB_2_19.models.fixed_reference import FixedReference
-from pypureclient.flashblade.FB_2_19.models.reference import Reference
 
 
 class WormDataPolicy(BaseModel):
@@ -44,7 +43,7 @@ class WormDataPolicy(BaseModel):
     min_retention: Optional[StrictInt] = Field(default=None, description="Minimum retention period, in milliseconds.")
     mode: Optional[StrictStr] = Field(default=None, description="The type of the retention lock. Valid values is `compliance`.")
     retention_lock: Optional[StrictStr] = Field(default=None, description="If set to `locked`, then the value of retention attributes or policy attributes are not allowed to change. If set to `unlocked`, then the value of the retention attributes and policy attributes are allowed to change. Valid values are `unlocked` and `locked`. It is always allowed to change from `unlocked` to `locked`. Contact Pure Technical Services to change from `locked` to `unlocked`.")
-    context: Optional[Reference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     __properties = ["id", "name", "enabled", "is_local", "location", "policy_type", "realms", "default_retention", "max_retention", "min_retention", "mode", "retention_lock", "context"]
 
     class Config:
@@ -144,7 +143,7 @@ class WormDataPolicy(BaseModel):
             "min_retention": obj.get("min_retention"),
             "mode": obj.get("mode"),
             "retention_lock": obj.get("retention_lock"),
-            "context": Reference.from_dict(obj.get("context")) if obj.get("context") is not None else None
+            "context": FixedReference.from_dict(obj.get("context")) if obj.get("context") is not None else None
         })
         return _obj
 

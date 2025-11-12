@@ -24,14 +24,14 @@ try:
     from pydantic.v1 import BaseModel, Field
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field
-from pypureclient.flashblade.FB_2_19.models.reference import Reference
+from pypureclient.flashblade.FB_2_19.models.fixed_reference import FixedReference
 
 
 class Context(BaseModel):
     """
     Context
     """
-    context: Optional[Reference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     __properties = ["context"]
 
     class Config:
@@ -105,7 +105,7 @@ class Context(BaseModel):
             return Context.parse_obj(obj)
 
         _obj = Context.construct(_fields_set=None, **{
-            "context": Reference.from_dict(obj.get("context")) if obj.get("context") is not None else None
+            "context": FixedReference.from_dict(obj.get("context")) if obj.get("context") is not None else None
         })
         return _obj
 

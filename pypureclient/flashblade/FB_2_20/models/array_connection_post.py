@@ -25,7 +25,6 @@ try:
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictStr, conlist
 from pypureclient.flashblade.FB_2_20.models.fixed_reference import FixedReference
-from pypureclient.flashblade.FB_2_20.models.reference import Reference
 from pypureclient.flashblade.FB_2_20.models.throttle import Throttle
 
 
@@ -34,7 +33,7 @@ class ArrayConnectionPost(BaseModel):
     ArrayConnectionPost
     """
     id: Optional[StrictStr] = Field(default=None, description="A non-modifiable, globally unique ID chosen by the system.")
-    context: Optional[Reference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     ca_certificate_group: Optional[FixedReference] = Field(default=None, description="The group of CA certificates that can be used, in addition to well-known Certificate Authority certificates, in order to establish a secure connection to the target array. Defaults to a reference to the `_default_replication_certs` group if `secure_connection` is `true`, or `null` otherwise.")
     encrypted: Optional[StrictBool] = Field(default=None, description="If this is set to `true`, then all customer data replicated over the connection will be sent over an encrypted connection using TLS, or will not be sent if a secure connection cannot be established. If this is set to `false`, then all customer data replicated over the connection will be sent over an unencrypted connection. Defaults to `false`.")
     management_address: Optional[StrictStr] = Field(default=None, description="Management address of the target array. Settable on POST only.")
@@ -134,7 +133,7 @@ class ArrayConnectionPost(BaseModel):
 
         _obj = ArrayConnectionPost.construct(_fields_set=None, **{
             "id": obj.get("id"),
-            "context": Reference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
+            "context": FixedReference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
             "ca_certificate_group": FixedReference.from_dict(obj.get("ca_certificate_group")) if obj.get("ca_certificate_group") is not None else None,
             "encrypted": obj.get("encrypted"),
             "management_address": obj.get("management_address"),

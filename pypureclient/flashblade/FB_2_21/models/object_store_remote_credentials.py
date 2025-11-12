@@ -25,7 +25,6 @@ try:
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictStr, conlist
 from pypureclient.flashblade.FB_2_21.models.fixed_reference import FixedReference
-from pypureclient.flashblade.FB_2_21.models.reference import Reference
 
 
 class ObjectStoreRemoteCredentials(BaseModel):
@@ -34,7 +33,7 @@ class ObjectStoreRemoteCredentials(BaseModel):
     """
     id: Optional[StrictStr] = Field(default=None, description="A non-modifiable, globally unique ID chosen by the system.")
     name: Optional[StrictStr] = Field(default=None, description="A name chosen by the user. Can be changed. Must be locally unique.")
-    context: Optional[Reference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     access_key_id: Optional[StrictStr] = Field(default=None, description="Access Key ID to be used when connecting to a remote object store.")
     realms: Optional[conlist(FixedReference)] = Field(default=None, description="The realms containing this credentials for remote.")
     remote: Optional[FixedReference] = Field(default=None, description="Reference to the associated remote, which can either be a `target` or remote `array`. If it is an `array`, then the `resource-type` field will not be populated.")
@@ -126,7 +125,7 @@ class ObjectStoreRemoteCredentials(BaseModel):
         _obj = ObjectStoreRemoteCredentials.construct(_fields_set=None, **{
             "id": obj.get("id"),
             "name": obj.get("name"),
-            "context": Reference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
+            "context": FixedReference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
             "access_key_id": obj.get("access_key_id"),
             "realms": [FixedReference.from_dict(_item) for _item in obj.get("realms")] if obj.get("realms") is not None else None,
             "remote": FixedReference.from_dict(obj.get("remote")) if obj.get("remote") is not None else None,

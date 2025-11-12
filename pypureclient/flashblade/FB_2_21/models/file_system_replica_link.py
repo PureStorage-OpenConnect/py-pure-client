@@ -27,7 +27,6 @@ except ModuleNotFoundError:
 from pypureclient.flashblade.FB_2_21.models.fixed_reference import FixedReference
 from pypureclient.flashblade.FB_2_21.models.fixed_reference_no_resource_type import FixedReferenceNoResourceType
 from pypureclient.flashblade.FB_2_21.models.location_reference import LocationReference
-from pypureclient.flashblade.FB_2_21.models.reference import Reference
 
 
 class FileSystemReplicaLink(BaseModel):
@@ -38,7 +37,7 @@ class FileSystemReplicaLink(BaseModel):
     direction: Optional[StrictStr] = Field(default=None, description="The direction of replication. Valid values are `inbound` and `outbound`.")
     lag: Optional[StrictInt] = Field(default=None, description="Duration in milliseconds that represents how far behind the replication target is from the source. This is the time difference between current time and `recovery_point`.")
     status_details: Optional[StrictStr] = Field(default=None, description="Detailed information about the status of the replica link when it is unhealthy.")
-    context: Optional[Reference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     link_type: Optional[StrictStr] = Field(default=None, description="Type of the replica link. Values include `full-replica`, and `partial-replica`.")
     local_file_system: Optional[FixedReference] = Field(default=None, description="Reference to a local file system.")
     policies: Optional[conlist(LocationReference)] = None
@@ -145,7 +144,7 @@ class FileSystemReplicaLink(BaseModel):
             "direction": obj.get("direction"),
             "lag": obj.get("lag"),
             "status_details": obj.get("status_details"),
-            "context": Reference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
+            "context": FixedReference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
             "link_type": obj.get("link_type"),
             "local_file_system": FixedReference.from_dict(obj.get("local_file_system")) if obj.get("local_file_system") is not None else None,
             "policies": [LocationReference.from_dict(_item) for _item in obj.get("policies")] if obj.get("policies") is not None else None,

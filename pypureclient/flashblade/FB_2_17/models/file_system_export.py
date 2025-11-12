@@ -34,7 +34,7 @@ class FileSystemExport(BaseModel):
     """
     id: Optional[StrictStr] = Field(default=None, description="A non-modifiable, globally unique ID chosen by the system.")
     name: Optional[StrictStr] = Field(default=None, description="Name of the object (e.g., a file system or snapshot).")
-    context: Optional[Reference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     enabled: Optional[StrictBool] = Field(default=None, description="Returns a value of `true` if and only if the export policy that manages this export is enabled AND the protocol is enabled on the file system.")
     export_name: Optional[StrictStr] = Field(default=None, description="The name of the export used by clients to mount the file system. Export names must be unique within the same protocol/server combination.")
     member: Optional[FixedReference] = Field(default=None, description="Reference to the file system the policy is applied to.")
@@ -135,7 +135,7 @@ class FileSystemExport(BaseModel):
         _obj = FileSystemExport.construct(_fields_set=None, **{
             "id": obj.get("id"),
             "name": obj.get("name"),
-            "context": Reference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
+            "context": FixedReference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
             "enabled": obj.get("enabled"),
             "export_name": obj.get("export_name"),
             "member": FixedReference.from_dict(obj.get("member")) if obj.get("member") is not None else None,
