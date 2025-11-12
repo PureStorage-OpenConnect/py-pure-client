@@ -3630,18 +3630,6 @@ MemberNoIdAllResponse
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
-MemberNoIdGroup
-~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flasharray::MemberNoIdGroup
-   :model-show-json: False
-   :model-show-field-summary: False
-   :model-show-config-summary: False
-   :model-show-validator-summary: True
-   :model-show-validator-members: True
-   :undoc-members: True
-   :model-hide-paramlist: False
-   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
-
 MemberNoIdMember
 ~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flasharray::MemberNoIdMember
@@ -4398,18 +4386,6 @@ PodArrayStatus
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
-PodEradicationConfig
-~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flasharray::PodEradicationConfig
-   :model-show-json: False
-   :model-show-field-summary: False
-   :model-show-config-summary: False
-   :model-show-validator-summary: True
-   :model-show-validator-members: True
-   :undoc-members: True
-   :model-hide-paramlist: False
-   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
-
 PodGetResponse
 ~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flasharray::PodGetResponse
@@ -4881,18 +4857,6 @@ PolicyGetResponse
 PolicyManagementAccess
 ~~~~~~~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flasharray::PolicyManagementAccess
-   :model-show-json: False
-   :model-show-field-summary: False
-   :model-show-config-summary: False
-   :model-show-validator-summary: True
-   :model-show-validator-members: True
-   :undoc-members: True
-   :model-hide-paramlist: False
-   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
-
-PolicyManagementAccessEffective
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flasharray::PolicyManagementAccessEffective
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6345,18 +6309,6 @@ ProtectionGroupSnapshotTransferGetResponse
 ProtectionGroupSnapshotTransferResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flasharray::ProtectionGroupSnapshotTransferResponse
-   :model-show-json: False
-   :model-show-field-summary: False
-   :model-show-config-summary: False
-   :model-show-validator-summary: True
-   :model-show-validator-members: True
-   :undoc-members: True
-   :model-hide-paramlist: False
-   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
-
-ProtectionGroupTarget
-~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flasharray::ProtectionGroupTarget
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -9282,18 +9234,6 @@ VolumeGroupPatch
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
-VolumeGroupPerformance
-~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flasharray::VolumeGroupPerformance
-   :model-show-json: False
-   :model-show-field-summary: False
-   :model-show-config-summary: False
-   :model-show-validator-summary: True
-   :model-show-validator-members: True
-   :undoc-members: True
-   :model-hide-paramlist: False
-   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
-
 VolumeGroupPost
 ~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flasharray::VolumeGroupPost
@@ -9321,18 +9261,6 @@ VolumeGroupResponse
 VolumePatch
 ~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flasharray::VolumePatch
-   :model-show-json: False
-   :model-show-field-summary: False
-   :model-show-config-summary: False
-   :model-show-validator-summary: True
-   :model-show-validator-members: True
-   :undoc-members: True
-   :model-hide-paramlist: False
-   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
-
-VolumePerformance
-~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flasharray::VolumePerformance
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
