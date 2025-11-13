@@ -25,7 +25,6 @@ try:
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictStr, conlist
 from pypureclient.flashblade.FB_2_21.models.fixed_reference import FixedReference
-from pypureclient.flashblade.FB_2_21.models.reference import Reference
 
 
 class ObjectStoreAccountExport(BaseModel):
@@ -34,7 +33,7 @@ class ObjectStoreAccountExport(BaseModel):
     """
     id: Optional[StrictStr] = Field(default=None, description="A non-modifiable, globally unique ID chosen by the system.")
     name: Optional[StrictStr] = Field(default=None, description="Name of the object (e.g., a file system or snapshot).")
-    context: Optional[Reference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     enabled: Optional[StrictBool] = Field(default=None, description="Returns a value of `true` if the account export is enabled. If not specified, defauts to `true`.")
     member: Optional[FixedReference] = Field(default=None, description="References the account which will be exported.")
     policy: Optional[FixedReference] = Field(default=None, description="References the s3 export policy that is used for the export.")
@@ -134,7 +133,7 @@ class ObjectStoreAccountExport(BaseModel):
         _obj = ObjectStoreAccountExport.construct(_fields_set=None, **{
             "id": obj.get("id"),
             "name": obj.get("name"),
-            "context": Reference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
+            "context": FixedReference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
             "enabled": obj.get("enabled"),
             "member": FixedReference.from_dict(obj.get("member")) if obj.get("member") is not None else None,
             "policy": FixedReference.from_dict(obj.get("policy")) if obj.get("policy") is not None else None,

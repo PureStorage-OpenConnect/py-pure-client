@@ -25,7 +25,6 @@ try:
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictInt, StrictStr
 from pypureclient.flashblade.FB_2_20.models.fixed_reference import FixedReference
-from pypureclient.flashblade.FB_2_20.models.reference import Reference
 from pypureclient.flashblade.FB_2_20.models.user import User
 
 
@@ -34,7 +33,7 @@ class UserQuota(BaseModel):
     UserQuota
     """
     name: Optional[StrictStr] = Field(default=None, description="Name of the object (e.g., a file system or snapshot).")
-    context: Optional[Reference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     file_system: Optional[FixedReference] = None
     file_system_default_quota: Optional[StrictInt] = Field(default=None, description="File system's default user quota (in bytes). If it is `0`, it means there is no default quota. This will be the effective user quota if the user doesn't have an individual quota. This default quota is set through the `file-systems` endpoint.")
     quota: Optional[StrictInt] = Field(default=None, description="The limit of the quota (in bytes) for the specified user, cannot be `0`. If specified, this value will override the file system's default user quota.")
@@ -123,7 +122,7 @@ class UserQuota(BaseModel):
 
         _obj = UserQuota.construct(_fields_set=None, **{
             "name": obj.get("name"),
-            "context": Reference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
+            "context": FixedReference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
             "file_system": FixedReference.from_dict(obj.get("file_system")) if obj.get("file_system") is not None else None,
             "file_system_default_quota": obj.get("file_system_default_quota"),
             "quota": obj.get("quota"),

@@ -25,7 +25,6 @@ try:
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictInt, StrictStr, conlist
 from pypureclient.flashblade.FB_2_19.models.fixed_reference import FixedReference
-from pypureclient.flashblade.FB_2_19.models.reference import Reference
 from pypureclient.flashblade.FB_2_19.models.reference_writable import ReferenceWritable
 from pypureclient.flashblade.FB_2_19.models.trust_policy_rule_condition import TrustPolicyRuleCondition
 
@@ -41,7 +40,7 @@ class TrustPolicyRuleWithContext(BaseModel):
     effect: Optional[StrictStr] = Field(default=None, description="Effect of this rule. When `allow`, the rule allows the given actions to be performed on the given resources, subject to the given conditions. Valid values include `allow`.")
     policy: Optional[FixedReference] = Field(default=None, description="The policy to which this rule belongs.")
     principals: Optional[conlist(ReferenceWritable)] = Field(default=None, description="List of Identity Providers")
-    context: Optional[Reference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     __properties = ["name", "index", "actions", "conditions", "effect", "policy", "principals", "context"]
 
     class Config:
@@ -142,7 +141,7 @@ class TrustPolicyRuleWithContext(BaseModel):
             "effect": obj.get("effect"),
             "policy": FixedReference.from_dict(obj.get("policy")) if obj.get("policy") is not None else None,
             "principals": [ReferenceWritable.from_dict(_item) for _item in obj.get("principals")] if obj.get("principals") is not None else None,
-            "context": Reference.from_dict(obj.get("context")) if obj.get("context") is not None else None
+            "context": FixedReference.from_dict(obj.get("context")) if obj.get("context") is not None else None
         })
         return _obj
 

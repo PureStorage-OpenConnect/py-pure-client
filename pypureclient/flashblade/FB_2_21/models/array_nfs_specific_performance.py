@@ -24,7 +24,7 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictInt, StrictStr, confloat, conint
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictInt, StrictStr, confloat, conint
-from pypureclient.flashblade.FB_2_21.models.reference import Reference
+from pypureclient.flashblade.FB_2_21.models.fixed_reference import FixedReference
 
 
 class ArrayNfsSpecificPerformance(BaseModel):
@@ -33,7 +33,7 @@ class ArrayNfsSpecificPerformance(BaseModel):
     """
     id: Optional[StrictStr] = Field(default=None, description="A non-modifiable, globally unique ID chosen by the system.")
     name: Optional[StrictStr] = Field(default=None, description="Name of the object (e.g., a file system or snapshot).")
-    context: Optional[Reference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     accesses_per_sec: Optional[Union[confloat(ge=0, strict=True), conint(ge=0, strict=True)]] = Field(default=None, description="ACCESS requests processed per second.")
     aggregate_file_metadata_creates_per_sec: Optional[Union[confloat(ge=0, strict=True), conint(ge=0, strict=True)]] = Field(default=None, description="Sum of file-level or directory-level create-like metadata requests per second. Includes CREATE, LINK, MKDIR, and SYMLINK.")
     aggregate_file_metadata_modifies_per_sec: Optional[Union[confloat(ge=0, strict=True), conint(ge=0, strict=True)]] = Field(default=None, description="Sum of file-level or directory-level modify-like and delete-like metadata requests per second. Includes REMOVE, RENAME, RMDIR, and SETATTR.")
@@ -160,7 +160,7 @@ class ArrayNfsSpecificPerformance(BaseModel):
         _obj = ArrayNfsSpecificPerformance.construct(_fields_set=None, **{
             "id": obj.get("id"),
             "name": obj.get("name"),
-            "context": Reference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
+            "context": FixedReference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
             "accesses_per_sec": obj.get("accesses_per_sec"),
             "aggregate_file_metadata_creates_per_sec": obj.get("aggregate_file_metadata_creates_per_sec"),
             "aggregate_file_metadata_modifies_per_sec": obj.get("aggregate_file_metadata_modifies_per_sec"),

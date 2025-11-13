@@ -50,8 +50,8 @@ class Certificate(BaseModel):
     state: Optional[StrictStr] = Field(default=None, description="The state/province field listed in the certificate.")
     status: Optional[StrictStr] = Field(default=None, description="The type of certificate. Valid values are `self-signed` and `imported`.")
     subject_alternative_names: Optional[conlist(StrictStr)] = Field(default=None, description="The alternative names that are secured by this certificate. Alternative names may be IP addresses, DNS names, or URIs.")
-    valid_from: Optional[StrictStr] = Field(default=None, description="The start date of when this certificate is valid.")
-    valid_to: Optional[StrictStr] = Field(default=None, description="The end date of when this certificate is valid.")
+    valid_from: Optional[StrictInt] = Field(default=None, description="The date when the certificate starts being valid.")
+    valid_to: Optional[StrictInt] = Field(default=None, description="The date of when the certificate stops being valid.")
     __properties = ["id", "name", "certificate", "certificate_type", "common_name", "country", "email", "intermediate_certificate", "issued_by", "issued_to", "key_algorithm", "key_size", "locality", "organization", "organizational_unit", "realms", "state", "status", "subject_alternative_names", "valid_from", "valid_to"]
 
     class Config:

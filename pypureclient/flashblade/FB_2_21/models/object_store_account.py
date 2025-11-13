@@ -27,7 +27,6 @@ except ModuleNotFoundError:
 from pypureclient.flashblade.FB_2_21.models.bucket_defaults_readonly import BucketDefaultsReadonly
 from pypureclient.flashblade.FB_2_21.models.fixed_reference import FixedReference
 from pypureclient.flashblade.FB_2_21.models.public_access_config import PublicAccessConfig
-from pypureclient.flashblade.FB_2_21.models.reference import Reference
 from pypureclient.flashblade.FB_2_21.models.space import Space
 
 
@@ -37,7 +36,7 @@ class ObjectStoreAccount(BaseModel):
     """
     id: Optional[StrictStr] = Field(default=None, description="A non-modifiable, globally unique ID chosen by the system.")
     name: Optional[StrictStr] = Field(default=None, description="Name of the object (e.g., a file system or snapshot).")
-    context: Optional[Reference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     bucket_defaults: Optional[BucketDefaultsReadonly] = Field(default=None, description="Default settings to be applied to newly created buckets associated with this account. Values here will be used in bucket creation requests which do not specify their own values for corresponding fields.")
     created: Optional[StrictInt] = Field(default=None, description="Creation timestamp of the object.")
     hard_limit_enabled: Optional[StrictBool] = Field(default=None, description="If set to `true`, the account's size, as defined by `quota_limit`, is used as a hard limit quota. If set to `false`, a hard limit quota will not be applied to the account, but soft quota alerts will still be sent if the account has a value set for `quota_limit`.")
@@ -142,7 +141,7 @@ class ObjectStoreAccount(BaseModel):
         _obj = ObjectStoreAccount.construct(_fields_set=None, **{
             "id": obj.get("id"),
             "name": obj.get("name"),
-            "context": Reference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
+            "context": FixedReference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
             "bucket_defaults": BucketDefaultsReadonly.from_dict(obj.get("bucket_defaults")) if obj.get("bucket_defaults") is not None else None,
             "created": obj.get("created"),
             "hard_limit_enabled": obj.get("hard_limit_enabled"),

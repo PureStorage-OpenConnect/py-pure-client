@@ -24,7 +24,7 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictInt, StrictStr, confloat, conint
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictInt, StrictStr, confloat, conint
-from pypureclient.flashblade.FB_2_21.models.reference import Reference
+from pypureclient.flashblade.FB_2_21.models.fixed_reference import FixedReference
 
 
 class ArrayS3SpecificPerformance(BaseModel):
@@ -33,7 +33,7 @@ class ArrayS3SpecificPerformance(BaseModel):
     """
     id: Optional[StrictStr] = Field(default=None, description="A non-modifiable, globally unique ID chosen by the system.")
     name: Optional[StrictStr] = Field(default=None, description="Name of the object (e.g., a file system or snapshot).")
-    context: Optional[Reference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     others_per_sec: Optional[Union[confloat(ge=0, strict=True), conint(ge=0, strict=True)]] = Field(default=None, description="Other operations processed per second.")
     read_buckets_per_sec: Optional[Union[confloat(ge=0, strict=True), conint(ge=0, strict=True)]] = Field(default=None, description="Read buckets requests processed per second.")
     read_objects_per_sec: Optional[Union[confloat(ge=0, strict=True), conint(ge=0, strict=True)]] = Field(default=None, description="Read object requests processed per second.")
@@ -122,7 +122,7 @@ class ArrayS3SpecificPerformance(BaseModel):
         _obj = ArrayS3SpecificPerformance.construct(_fields_set=None, **{
             "id": obj.get("id"),
             "name": obj.get("name"),
-            "context": Reference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
+            "context": FixedReference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
             "others_per_sec": obj.get("others_per_sec"),
             "read_buckets_per_sec": obj.get("read_buckets_per_sec"),
             "read_objects_per_sec": obj.get("read_objects_per_sec"),

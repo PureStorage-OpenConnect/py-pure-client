@@ -25,7 +25,6 @@ try:
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field
 from pypureclient.flashblade.FB_2_21.models.fixed_reference import FixedReference
-from pypureclient.flashblade.FB_2_21.models.reference import Reference
 
 
 class PolicyMemberContext(BaseModel):
@@ -34,7 +33,7 @@ class PolicyMemberContext(BaseModel):
     """
     member: Optional[FixedReference] = Field(default=None, description="Reference to the resource the policy is applied to.")
     policy: Optional[FixedReference] = Field(default=None, description="Reference to the policy.")
-    context: Optional[Reference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     __properties = ["member", "policy", "context"]
 
     class Config:
@@ -116,7 +115,7 @@ class PolicyMemberContext(BaseModel):
         _obj = PolicyMemberContext.construct(_fields_set=None, **{
             "member": FixedReference.from_dict(obj.get("member")) if obj.get("member") is not None else None,
             "policy": FixedReference.from_dict(obj.get("policy")) if obj.get("policy") is not None else None,
-            "context": Reference.from_dict(obj.get("context")) if obj.get("context") is not None else None
+            "context": FixedReference.from_dict(obj.get("context")) if obj.get("context") is not None else None
         })
         return _obj
 

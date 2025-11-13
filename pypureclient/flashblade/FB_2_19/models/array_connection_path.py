@@ -25,7 +25,6 @@ try:
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictStr
 from pypureclient.flashblade.FB_2_19.models.fixed_reference import FixedReference
-from pypureclient.flashblade.FB_2_19.models.reference import Reference
 
 
 class ArrayConnectionPath(BaseModel):
@@ -33,7 +32,7 @@ class ArrayConnectionPath(BaseModel):
     ArrayConnectionPath
     """
     id: Optional[StrictStr] = Field(default=None, description="A non-modifiable, globally unique ID chosen by the system.")
-    context: Optional[Reference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     destination: Optional[StrictStr] = Field(default=None, description="IP address with the port of the target array.")
     remote: Optional[FixedReference] = Field(default=None, description="The remote array.")
     source: Optional[StrictStr] = Field(default=None, description="IP address of the source array.")
@@ -122,7 +121,7 @@ class ArrayConnectionPath(BaseModel):
 
         _obj = ArrayConnectionPath.construct(_fields_set=None, **{
             "id": obj.get("id"),
-            "context": Reference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
+            "context": FixedReference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
             "destination": obj.get("destination"),
             "remote": FixedReference.from_dict(obj.get("remote")) if obj.get("remote") is not None else None,
             "source": obj.get("source"),

@@ -26,6 +26,7 @@ except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictStr
 from pypureclient.flashblade.FB_2_21.models.audit_log_name_prefix import AuditLogNamePrefix
 from pypureclient.flashblade.FB_2_21.models.audit_log_rotate import AuditLogRotate
+from pypureclient.flashblade.FB_2_21.models.fixed_reference import FixedReference
 from pypureclient.flashblade.FB_2_21.models.reference import Reference
 
 
@@ -38,7 +39,7 @@ class LogTargetsObjectStoreWithContext(BaseModel):
     bucket: Optional[Reference] = Field(default=None, description="Reference to the bucket where audit logs will be stored.")
     log_name_prefix: Optional[AuditLogNamePrefix] = Field(default=None, description="The prefix of the audit log object.")
     log_rotate: Optional[AuditLogRotate] = Field(default=None, description="The threshold after which the audit log object will be rotated.")
-    context: Optional[Reference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     __properties = ["id", "name", "bucket", "log_name_prefix", "log_rotate", "context"]
 
     class Config:
@@ -127,7 +128,7 @@ class LogTargetsObjectStoreWithContext(BaseModel):
             "bucket": Reference.from_dict(obj.get("bucket")) if obj.get("bucket") is not None else None,
             "log_name_prefix": AuditLogNamePrefix.from_dict(obj.get("log_name_prefix")) if obj.get("log_name_prefix") is not None else None,
             "log_rotate": AuditLogRotate.from_dict(obj.get("log_rotate")) if obj.get("log_rotate") is not None else None,
-            "context": Reference.from_dict(obj.get("context")) if obj.get("context") is not None else None
+            "context": FixedReference.from_dict(obj.get("context")) if obj.get("context") is not None else None
         })
         return _obj
 

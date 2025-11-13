@@ -25,7 +25,7 @@ try:
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictStr
 from pypureclient.flashblade.FB_2_2.models.api_token import ApiToken
-from pypureclient.flashblade.FB_2_2.models.reference import Reference
+from pypureclient.flashblade.FB_2_2.models.fixed_reference import FixedReference
 
 
 class Admin(BaseModel):
@@ -37,7 +37,7 @@ class Admin(BaseModel):
     api_token: Optional[ApiToken] = None
     is_local: Optional[StrictBool] = Field(default=None, description="Returns a value of `true` if the user is local to the machine, otherwise `false`.")
     public_key: Optional[StrictStr] = Field(default=None, description="Public key for SSH access. Supported key types are `Ed25519` and `RSA`.")
-    role: Optional[Reference] = Field(default=None, description="A reference to this administrator's management role.")
+    role: Optional[FixedReference] = Field(default=None, description="A reference to this administrator's management role.")
     __properties = ["id", "name", "api_token", "is_local", "public_key", "role"]
 
     class Config:
@@ -121,7 +121,7 @@ class Admin(BaseModel):
             "api_token": ApiToken.from_dict(obj.get("api_token")) if obj.get("api_token") is not None else None,
             "is_local": obj.get("is_local"),
             "public_key": obj.get("public_key"),
-            "role": Reference.from_dict(obj.get("role")) if obj.get("role") is not None else None
+            "role": FixedReference.from_dict(obj.get("role")) if obj.get("role") is not None else None
         })
         return _obj
 

@@ -24,7 +24,7 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictInt, StrictStr, confloat, conint
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictInt, StrictStr, confloat, conint
-from pypureclient.flashblade.FB_2_20.models.reference import Reference
+from pypureclient.flashblade.FB_2_20.models.fixed_reference import FixedReference
 
 
 class ArrayPerformance(BaseModel):
@@ -33,7 +33,7 @@ class ArrayPerformance(BaseModel):
     """
     id: Optional[StrictStr] = Field(default=None, description="A non-modifiable, globally unique ID chosen by the system.")
     name: Optional[StrictStr] = Field(default=None, description="Name of the object (e.g., a file system or snapshot).")
-    context: Optional[Reference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     bytes_per_op: Optional[Union[confloat(ge=0, strict=True), conint(ge=0, strict=True)]] = Field(default=None, description="Average operation size (read bytes+write bytes/read ops+write ops).")
     bytes_per_read: Optional[Union[confloat(ge=0, strict=True), conint(ge=0, strict=True)]] = Field(default=None, description="Average read size in bytes per read operation.")
     bytes_per_write: Optional[Union[confloat(ge=0, strict=True), conint(ge=0, strict=True)]] = Field(default=None, description="Average write size in bytes per write operation.")
@@ -135,7 +135,7 @@ class ArrayPerformance(BaseModel):
         _obj = ArrayPerformance.construct(_fields_set=None, **{
             "id": obj.get("id"),
             "name": obj.get("name"),
-            "context": Reference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
+            "context": FixedReference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
             "bytes_per_op": obj.get("bytes_per_op"),
             "bytes_per_read": obj.get("bytes_per_read"),
             "bytes_per_write": obj.get("bytes_per_write"),

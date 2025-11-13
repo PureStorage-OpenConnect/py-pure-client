@@ -26,7 +26,6 @@ except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictStr, conlist
 from pypureclient.flashblade.FB_2_19.models.fixed_reference import FixedReference
 from pypureclient.flashblade.FB_2_19.models.policy_rule_object_access_condition import PolicyRuleObjectAccessCondition
-from pypureclient.flashblade.FB_2_19.models.reference import Reference
 
 
 class PolicyRuleObjectAccess(BaseModel):
@@ -34,7 +33,7 @@ class PolicyRuleObjectAccess(BaseModel):
     PolicyRuleObjectAccess
     """
     name: Optional[StrictStr] = Field(default=None, description="Name of the object (e.g., a file system or snapshot).")
-    context: Optional[Reference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     actions: Optional[conlist(StrictStr)] = Field(default=None, description="The list of actions granted by this rule. Each included action may restrict other properties of the rule. Supported actions are returned by the `/object-store-access-policy-actions` endpoint.")
     conditions: Optional[PolicyRuleObjectAccessCondition] = Field(default=None, description="Conditions used to limit the scope which this rule applies to.")
     effect: Optional[StrictStr] = Field(default=None, description="Effect of this rule. When `allow`, the rule allows the given actions to be performed on the given resources, subject to the given conditions. When `deny`, the rule disallows performing the given actions on the given resources, subject to the given condition. This takes precedence over any matching `allow` rules. Valid values include `allow` and `deny`.")
@@ -122,7 +121,7 @@ class PolicyRuleObjectAccess(BaseModel):
 
         _obj = PolicyRuleObjectAccess.construct(_fields_set=None, **{
             "name": obj.get("name"),
-            "context": Reference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
+            "context": FixedReference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
             "actions": obj.get("actions"),
             "conditions": PolicyRuleObjectAccessCondition.from_dict(obj.get("conditions")) if obj.get("conditions") is not None else None,
             "effect": obj.get("effect"),

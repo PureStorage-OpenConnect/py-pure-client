@@ -24,7 +24,7 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictStr
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictStr
-from pypureclient.flashblade.FB_2_18.models.fixed_reference_with_type import FixedReferenceWithType
+from pypureclient.flashblade.FB_2_18.models.fixed_reference import FixedReference
 
 
 class ErrorContextResponseErrors(BaseModel):
@@ -32,7 +32,7 @@ class ErrorContextResponseErrors(BaseModel):
     ErrorContextResponseErrors
     """
     context: Optional[StrictStr] = Field(default=None, description="Contains information relating to the cause of this error, or the name of the object that was being processed when the error was encountered. This may be `null` for more general errors.")
-    location_context: Optional[FixedReferenceWithType] = Field(default=None, description="Contains information relating to the context in which the request was executing when the error occurred. For example, this may be the name of an array in the same fleet. This may be `null` for more general errors, or if no explicit `context` parameter was provided with the request.")
+    location_context: Optional[FixedReference] = Field(default=None, description="Contains information relating to the context in which the request was executing when the error occurred. For example, this may be the name of an array in the same fleet. This may be `null` for more general errors, or if no explicit `context` parameter was provided with the request.")
     message: Optional[StrictStr] = Field(default=None, description="A description of the error which occurred.")
     __properties = ["context", "location_context", "message"]
 
@@ -107,7 +107,7 @@ class ErrorContextResponseErrors(BaseModel):
 
         _obj = ErrorContextResponseErrors.construct(_fields_set=None, **{
             "context": obj.get("context"),
-            "location_context": FixedReferenceWithType.from_dict(obj.get("location_context")) if obj.get("location_context") is not None else None,
+            "location_context": FixedReference.from_dict(obj.get("location_context")) if obj.get("location_context") is not None else None,
             "message": obj.get("message")
         })
         return _obj

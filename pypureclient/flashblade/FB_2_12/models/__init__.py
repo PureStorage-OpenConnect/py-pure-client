@@ -386,7 +386,6 @@ __class_model_dict = {
     'SnmpManagerGetResponse': __LazyModelLoader('.snmp_manager_get_response', 'SnmpManagerGetResponse'),
     'SnmpManagerPost': __LazyModelLoader('.snmp_manager_post', 'SnmpManagerPost'),
     'SnmpManagerResponse': __LazyModelLoader('.snmp_manager_response', 'SnmpManagerResponse'),
-    'SnmpManagerTest': __LazyModelLoader('.snmp_manager_test', 'SnmpManagerTest'),
     'SnmpV2c': __LazyModelLoader('.snmp_v2c', 'SnmpV2c'),
     'SnmpV3': __LazyModelLoader('.snmp_v3', 'SnmpV3'),
     'SnmpV3Post': __LazyModelLoader('.snmp_v3_post', 'SnmpV3Post'),

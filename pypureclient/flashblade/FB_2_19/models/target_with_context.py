@@ -25,7 +25,6 @@ try:
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictStr
 from pypureclient.flashblade.FB_2_19.models.fixed_reference import FixedReference
-from pypureclient.flashblade.FB_2_19.models.reference import Reference
 
 
 class TargetWithContext(BaseModel):
@@ -38,7 +37,7 @@ class TargetWithContext(BaseModel):
     ca_certificate_group: Optional[FixedReference] = Field(default=None, description="The group of CA certificates that can be used, in addition to well-known Certificate Authority certificates, in order to establish a secure connection to the target system. Defaults to a reference to the `_default_replication_certs` group.")
     status: Optional[StrictStr] = Field(default=None, description="Status of the connection. Valid values are `connected` and `connecting`. `connected` - The connection is OK. `connecting` - No connection exists and the array is trying to reconnect to the target.")
     status_details: Optional[StrictStr] = Field(default=None, description="Additional information describing any issues encountered when connecting, or `null` if the `status` is `connected`.")
-    context: Optional[Reference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     __properties = ["id", "name", "address", "ca_certificate_group", "status", "status_details", "context"]
 
     class Config:
@@ -124,7 +123,7 @@ class TargetWithContext(BaseModel):
             "ca_certificate_group": FixedReference.from_dict(obj.get("ca_certificate_group")) if obj.get("ca_certificate_group") is not None else None,
             "status": obj.get("status"),
             "status_details": obj.get("status_details"),
-            "context": Reference.from_dict(obj.get("context")) if obj.get("context") is not None else None
+            "context": FixedReference.from_dict(obj.get("context")) if obj.get("context") is not None else None
         })
         return _obj
 

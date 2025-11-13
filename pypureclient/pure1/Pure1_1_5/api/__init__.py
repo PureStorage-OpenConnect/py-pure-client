@@ -46,6 +46,7 @@ __class_apis_dict = {
     'PodsApi': __LazyApiLoader('pods_api', 'PodsApi'),
     'PoliciesApi': __LazyApiLoader('policies_api', 'PoliciesApi'),
     'PortsApi': __LazyApiLoader('ports_api', 'PortsApi'),
+    'ProtectionGroupSnapshotsApi': __LazyApiLoader('protection_group_snapshots_api', 'ProtectionGroupSnapshotsApi'),
     'SubscriptionsApi': __LazyApiLoader('subscriptions_api', 'SubscriptionsApi'),
     'SustainabilityApi': __LazyApiLoader('sustainability_api', 'SustainabilityApi'),
     'TargetsApi': __LazyApiLoader('targets_api', 'TargetsApi'),

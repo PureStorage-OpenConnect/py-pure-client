@@ -25,7 +25,6 @@ try:
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr
 from pypureclient.flashblade.FB_2_21.models.fixed_reference import FixedReference
-from pypureclient.flashblade.FB_2_21.models.reference import Reference
 
 
 class ObjectStoreAccessKey(BaseModel):
@@ -33,7 +32,7 @@ class ObjectStoreAccessKey(BaseModel):
     ObjectStoreAccessKey
     """
     name: Optional[StrictStr] = Field(default=None, description="Name of the object (e.g., a file system or snapshot).")
-    context: Optional[Reference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     access_key_id: Optional[StrictStr] = Field(default=None, description="The access key ID which can be used directly to authorize S3 operations.")
     created: Optional[StrictInt] = Field(default=None, description="Creation timestamp of the object.")
     enabled: Optional[StrictBool] = Field(default=None, description="Is the access key enabled? If not specified, defaults to `false`.")
@@ -121,7 +120,7 @@ class ObjectStoreAccessKey(BaseModel):
 
         _obj = ObjectStoreAccessKey.construct(_fields_set=None, **{
             "name": obj.get("name"),
-            "context": Reference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
+            "context": FixedReference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
             "access_key_id": obj.get("access_key_id"),
             "created": obj.get("created"),
             "enabled": obj.get("enabled"),

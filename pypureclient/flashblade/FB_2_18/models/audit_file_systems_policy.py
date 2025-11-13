@@ -42,7 +42,7 @@ class AuditFileSystemsPolicy(BaseModel):
     control_type: Optional[StrictStr] = Field(default=None, description="Specifies the evaluation mode for auditing in this policy. Valid values are \"policy\", \"sacl\". If not specified, the default value is \"sacl\".")
     log_targets: Optional[conlist(Reference)] = Field(default=None, description="List of targets which will be utilized for audit log storage. These may either be file system targets or remote syslog server targets.")
     rules: Optional[conlist(AuditFileSystemsPolicyRuleInPolicy, max_items=2)] = Field(default=None, description="All of the rules that are part of this policy.")
-    context: Optional[Reference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     __properties = ["id", "name", "enabled", "is_local", "location", "policy_type", "control_type", "log_targets", "rules", "context"]
 
     class Config:
@@ -145,7 +145,7 @@ class AuditFileSystemsPolicy(BaseModel):
             "control_type": obj.get("control_type"),
             "log_targets": [Reference.from_dict(_item) for _item in obj.get("log_targets")] if obj.get("log_targets") is not None else None,
             "rules": [AuditFileSystemsPolicyRuleInPolicy.from_dict(_item) for _item in obj.get("rules")] if obj.get("rules") is not None else None,
-            "context": Reference.from_dict(obj.get("context")) if obj.get("context") is not None else None
+            "context": FixedReference.from_dict(obj.get("context")) if obj.get("context") is not None else None
         })
         return _obj
 

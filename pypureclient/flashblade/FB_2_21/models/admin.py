@@ -26,7 +26,6 @@ except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr, conlist
 from pypureclient.flashblade.FB_2_21.models.api_token import ApiToken
 from pypureclient.flashblade.FB_2_21.models.fixed_reference import FixedReference
-from pypureclient.flashblade.FB_2_21.models.reference import Reference
 
 
 class Admin(BaseModel):
@@ -41,7 +40,7 @@ class Admin(BaseModel):
     lockout_remaining: Optional[StrictInt] = Field(default=None, description="The remaining lockout period, in milliseconds, if the user is locked out. This field is only visible to `array_admin` roles. For all other users, the value is always `null`.")
     management_access_policies: Optional[conlist(FixedReference)] = Field(default=None, description="List of management access policies associated with the administrator.")
     public_key: Optional[StrictStr] = Field(default=None, description="Public key for SSH access. Supported key types are `Ed25519` and `RSA`.")
-    role: Optional[Reference] = Field(default=None, description="Deprecated. `role` is deprecated in favor of `management_access_policies`, but remains for backwards compatibility. If an administrator has exactly one access policy which corresponds to a valid legacy role of the same name, `role` will be a reference to that role. Otherwise, it will be `null`.")
+    role: Optional[FixedReference] = Field(default=None, description="Deprecated. `role` is deprecated in favor of `management_access_policies`, but remains for backwards compatibility. If an administrator has exactly one access policy which corresponds to a valid legacy role of the same name, `role` will be a reference to that role. Otherwise, it will be `null`.")
     __properties = ["id", "name", "api_token", "is_local", "locked", "lockout_remaining", "management_access_policies", "public_key", "role"]
 
     class Config:
@@ -137,7 +136,7 @@ class Admin(BaseModel):
             "lockout_remaining": obj.get("lockout_remaining"),
             "management_access_policies": [FixedReference.from_dict(_item) for _item in obj.get("management_access_policies")] if obj.get("management_access_policies") is not None else None,
             "public_key": obj.get("public_key"),
-            "role": Reference.from_dict(obj.get("role")) if obj.get("role") is not None else None
+            "role": FixedReference.from_dict(obj.get("role")) if obj.get("role") is not None else None
         })
         return _obj
 

@@ -34,7 +34,7 @@ class ObjectStoreVirtualHost(BaseModel):
     """
     id: Optional[StrictStr] = Field(default=None, description="A non-modifiable, globally unique ID chosen by the system.")
     name: Optional[StrictStr] = Field(default=None, description="Name of the object (e.g., a file system or snapshot).")
-    context: Optional[Reference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     attached_servers: Optional[conlist(Reference)] = Field(default=None, description="A list of servers which are allowed to use this virtual host. If it is `null` or not specified and a default object store server is configured, it will be automatically attached. If set to `[]`, no servers are attached.")
     hostname: Optional[StrictStr] = Field(default=None, description="A hostname by which the array can be addressed for virtual hosted-style S3 requests. A hostname cannot exceed 255 characters in length, it cannot be an IP address, and supersets or subsets of existing hostnames with the same root are not allowed.")
     realms: Optional[conlist(FixedReference)] = Field(default=None, description="A list of realms containing this virtual host.")
@@ -130,7 +130,7 @@ class ObjectStoreVirtualHost(BaseModel):
         _obj = ObjectStoreVirtualHost.construct(_fields_set=None, **{
             "id": obj.get("id"),
             "name": obj.get("name"),
-            "context": Reference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
+            "context": FixedReference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
             "attached_servers": [Reference.from_dict(_item) for _item in obj.get("attached_servers")] if obj.get("attached_servers") is not None else None,
             "hostname": obj.get("hostname"),
             "realms": [FixedReference.from_dict(_item) for _item in obj.get("realms")] if obj.get("realms") is not None else None

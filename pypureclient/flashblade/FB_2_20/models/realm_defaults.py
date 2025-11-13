@@ -26,14 +26,13 @@ except ModuleNotFoundError:
     from pydantic import BaseModel, Field, conlist
 from pypureclient.flashblade.FB_2_20.models.fixed_reference import FixedReference
 from pypureclient.flashblade.FB_2_20.models.object_store_default import ObjectStoreDefault
-from pypureclient.flashblade.FB_2_20.models.reference import Reference
 
 
 class RealmDefaults(BaseModel):
     """
     RealmDefaults
     """
-    context: Optional[Reference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     object_store: Optional[conlist(ObjectStoreDefault)] = Field(default=None, description="Default configurations for object store.")
     realm: Optional[FixedReference] = Field(default=None, description="Realm for the defaults.")
     __properties = ["context", "object_store", "realm"]
@@ -120,7 +119,7 @@ class RealmDefaults(BaseModel):
             return RealmDefaults.parse_obj(obj)
 
         _obj = RealmDefaults.construct(_fields_set=None, **{
-            "context": Reference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
+            "context": FixedReference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
             "object_store": [ObjectStoreDefault.from_dict(_item) for _item in obj.get("object_store")] if obj.get("object_store") is not None else None,
             "realm": FixedReference.from_dict(obj.get("realm")) if obj.get("realm") is not None else None
         })

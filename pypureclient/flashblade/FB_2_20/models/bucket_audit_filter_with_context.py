@@ -25,14 +25,13 @@ try:
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictStr, conlist
 from pypureclient.flashblade.FB_2_20.models.fixed_reference import FixedReference
-from pypureclient.flashblade.FB_2_20.models.reference import Reference
 
 
 class BucketAuditFilterWithContext(BaseModel):
     """
     BucketAuditFilterWithContext
     """
-    context: Optional[Reference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     name: Optional[StrictStr] = Field(default=None, description="Name of the object (e.g., a file system or snapshot).")
     actions: Optional[conlist(StrictStr)] = Field(default=None, description="The list of ops to be audited by this filter.")
     s3_prefixes: Optional[conlist(StrictStr)] = Field(default=None, description="The list of object name prefixes. The corresponding ops present in this filter will be audited for the objects having these prefixes.")
@@ -114,7 +113,7 @@ class BucketAuditFilterWithContext(BaseModel):
             return BucketAuditFilterWithContext.parse_obj(obj)
 
         _obj = BucketAuditFilterWithContext.construct(_fields_set=None, **{
-            "context": Reference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
+            "context": FixedReference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
             "name": obj.get("name"),
             "actions": obj.get("actions"),
             "s3_prefixes": obj.get("s3_prefixes"),
