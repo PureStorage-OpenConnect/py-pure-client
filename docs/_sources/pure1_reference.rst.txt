@@ -1290,6 +1290,78 @@ PortResponse
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
+ProtectionGroupSnapshot
+~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::ProtectionGroupSnapshot
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+ProtectionGroupSnapshotGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::ProtectionGroupSnapshotGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+ProtectionGroupSnapshotResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::ProtectionGroupSnapshotResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+ProtectionGroupSnapshotTransfer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::ProtectionGroupSnapshotTransfer
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+ProtectionGroupSnapshotTransferGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::ProtectionGroupSnapshotTransferGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+ProtectionGroupSnapshotTransferResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::ProtectionGroupSnapshotTransferResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
 ReplicaLink
 ~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.pure1::ReplicaLink
