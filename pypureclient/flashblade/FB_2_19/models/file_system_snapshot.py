@@ -26,7 +26,6 @@ except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr, conlist
 from pypureclient.flashblade.FB_2_19.models.fixed_location_reference import FixedLocationReference
 from pypureclient.flashblade.FB_2_19.models.fixed_reference import FixedReference
-from pypureclient.flashblade.FB_2_19.models.reference import Reference
 
 
 class FileSystemSnapshot(BaseModel):
@@ -35,7 +34,7 @@ class FileSystemSnapshot(BaseModel):
     """
     id: Optional[StrictStr] = Field(default=None, description="A non-modifiable, globally unique ID chosen by the system.")
     name: Optional[StrictStr] = Field(default=None, description="A name chosen by the user. Can be changed. Must be locally unique.")
-    context: Optional[Reference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     created: Optional[StrictInt] = Field(default=None, description="Creation timestamp of the object.")
     destroyed: Optional[StrictBool] = Field(default=None, description="Is the file system snapshot destroyed? If not specified, defaults to `false`.")
     owner: Optional[FixedReference] = Field(default=None, description="A reference to the file system that owns this snapshot. If the owner is destroyed, this will be destroyed.")
@@ -142,7 +141,7 @@ class FileSystemSnapshot(BaseModel):
         _obj = FileSystemSnapshot.construct(_fields_set=None, **{
             "id": obj.get("id"),
             "name": obj.get("name"),
-            "context": Reference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
+            "context": FixedReference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
             "created": obj.get("created"),
             "destroyed": obj.get("destroyed"),
             "owner": FixedReference.from_dict(obj.get("owner")) if obj.get("owner") is not None else None,

@@ -25,7 +25,6 @@ try:
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictStr
 from pypureclient.flashblade.FB_2_21.models.fixed_reference import FixedReference
-from pypureclient.flashblade.FB_2_21.models.reference import Reference
 
 
 class SmbSharePolicyRuleWithContext(BaseModel):
@@ -39,7 +38,7 @@ class SmbSharePolicyRuleWithContext(BaseModel):
     policy: Optional[FixedReference] = Field(default=None, description="The policy to which this rule belongs.")
     principal: Optional[StrictStr] = Field(default=None, description="The user or group who is the subject of this rule, and their domain. If modifying this value, providing the domain is optional. If no domain is provided, it will be derived if possible. For example, `PURESTORAGE\\Administrator`, `samplegroup@PureStorage`, or `sampleuser`.")
     read: Optional[StrictStr] = Field(default=None, description="The state of the principal's Read access permission. Valid values are `allow` and `deny`. When allowed, users can view file names, read the data in those files, and run some programs. When denied, these operations are explicitly blocked. If set to `allow`, implicitly clears the Full Control and Change permissions if they are currently `deny`. This is incompatible with explicitly setting any permission to `deny`. If set to `deny`, implicitly clears the Full Control and Change permissions if they are currently `allow`. This is incompatible with explicitly setting any permission to `allow`.")
-    context: Optional[Reference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     __properties = ["id", "name", "change", "full_control", "policy", "principal", "read", "context"]
 
     class Config:
@@ -125,7 +124,7 @@ class SmbSharePolicyRuleWithContext(BaseModel):
             "policy": FixedReference.from_dict(obj.get("policy")) if obj.get("policy") is not None else None,
             "principal": obj.get("principal"),
             "read": obj.get("read"),
-            "context": Reference.from_dict(obj.get("context")) if obj.get("context") is not None else None
+            "context": FixedReference.from_dict(obj.get("context")) if obj.get("context") is not None else None
         })
         return _obj
 

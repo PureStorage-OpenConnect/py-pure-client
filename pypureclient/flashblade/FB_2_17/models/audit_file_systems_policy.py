@@ -39,7 +39,7 @@ class AuditFileSystemsPolicy(BaseModel):
     location: Optional[FixedReference] = Field(default=None, description="Reference to the array where the policy is defined.")
     policy_type: Optional[StrictStr] = Field(default=None, description="Type of the policy. Valid values include `alert`, `audit`, `bucket-access`, `cross-origin-resource-sharing`, `network-access`, `nfs`, `object-access`, `smb-client`, `smb-share`, `snapshot`, `ssh-certificate-authority`, and `worm-data`.")
     log_targets: Optional[conlist(Reference)] = Field(default=None, description="List of targets which will be utilized for audit log storage. These may either be file system targets or remote syslog server targets.")
-    context: Optional[Reference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     __properties = ["id", "name", "enabled", "is_local", "location", "policy_type", "log_targets", "context"]
 
     class Config:
@@ -133,7 +133,7 @@ class AuditFileSystemsPolicy(BaseModel):
             "location": FixedReference.from_dict(obj.get("location")) if obj.get("location") is not None else None,
             "policy_type": obj.get("policy_type"),
             "log_targets": [Reference.from_dict(_item) for _item in obj.get("log_targets")] if obj.get("log_targets") is not None else None,
-            "context": Reference.from_dict(obj.get("context")) if obj.get("context") is not None else None
+            "context": FixedReference.from_dict(obj.get("context")) if obj.get("context") is not None else None
         })
         return _obj
 

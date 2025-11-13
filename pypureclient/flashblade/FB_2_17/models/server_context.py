@@ -24,6 +24,7 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictInt, StrictStr, conlist
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictInt, StrictStr, conlist
+from pypureclient.flashblade.FB_2_17.models.fixed_reference import FixedReference
 from pypureclient.flashblade.FB_2_17.models.reference import Reference
 
 
@@ -36,7 +37,7 @@ class ServerContext(BaseModel):
     dns: Optional[conlist(Reference, max_items=1)] = Field(default=None, description="The DNS config to be used by this server.")
     created: Optional[StrictInt] = Field(default=None, description="Creation timestamp of the server.")
     directory_services: Optional[conlist(Reference, max_items=1)] = Field(default=None, description="The directory service config to be used by this server.")
-    context: Optional[Reference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     __properties = ["id", "name", "dns", "created", "directory_services", "context"]
 
     class Config:
@@ -132,7 +133,7 @@ class ServerContext(BaseModel):
             "dns": [Reference.from_dict(_item) for _item in obj.get("dns")] if obj.get("dns") is not None else None,
             "created": obj.get("created"),
             "directory_services": [Reference.from_dict(_item) for _item in obj.get("directory_services")] if obj.get("directory_services") is not None else None,
-            "context": Reference.from_dict(obj.get("context")) if obj.get("context") is not None else None
+            "context": FixedReference.from_dict(obj.get("context")) if obj.get("context") is not None else None
         })
         return _obj
 

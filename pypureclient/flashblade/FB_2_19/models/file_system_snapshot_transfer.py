@@ -24,8 +24,8 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictInt, StrictStr, confloat, conint
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictInt, StrictStr, confloat, conint
+from pypureclient.flashblade.FB_2_19.models.fixed_reference import FixedReference
 from pypureclient.flashblade.FB_2_19.models.fixed_reference_no_resource_type import FixedReferenceNoResourceType
-from pypureclient.flashblade.FB_2_19.models.reference import Reference
 
 
 class FileSystemSnapshotTransfer(BaseModel):
@@ -34,7 +34,7 @@ class FileSystemSnapshotTransfer(BaseModel):
     """
     id: Optional[StrictStr] = Field(default=None, description="A non-modifiable, globally unique ID chosen by the system.")
     name: Optional[StrictStr] = Field(default=None, description="Name of the object (e.g., a file system or snapshot).")
-    context: Optional[Reference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     completed: Optional[StrictInt] = Field(default=None, description="A timestamp at which the replication of the snapshot completed.")
     data_transferred: Optional[StrictInt] = Field(default=None, description="The amount of data transferred to the target, in bytes.")
     direction: Optional[StrictStr] = Field(default=None, description="The direction of replication. Valid values are `inbound` and `outbound`.")
@@ -136,7 +136,7 @@ class FileSystemSnapshotTransfer(BaseModel):
         _obj = FileSystemSnapshotTransfer.construct(_fields_set=None, **{
             "id": obj.get("id"),
             "name": obj.get("name"),
-            "context": Reference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
+            "context": FixedReference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
             "completed": obj.get("completed"),
             "data_transferred": obj.get("data_transferred"),
             "direction": obj.get("direction"),

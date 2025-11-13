@@ -25,7 +25,6 @@ try:
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr, conlist
 from pypureclient.flashblade.FB_2_18.models.fixed_reference import FixedReference
-from pypureclient.flashblade.FB_2_18.models.reference import Reference
 
 
 class NfsExportPolicyRule(BaseModel):
@@ -47,7 +46,7 @@ class NfsExportPolicyRule(BaseModel):
     secure: Optional[StrictBool] = Field(default=None, description="If `true`, prevents NFS access to client connections coming from non-reserved ports. Applies to NFSv3, NFSv4.1, and auxiliary protocols MOUNT and NLM. If `false`, allows NFS access to client connections coming from non-reserved ports. Applies to NFSv3, NFSv4.1, and auxiliary protocols MOUNT and NLM. The default is `false` if not specified.")
     security: Optional[conlist(StrictStr)] = Field(default=None, description="The security flavors to use for accessing files on this mount point.  If the server does not support the requested flavor, the mount operation fails. If `sys`, trusts the client to specify user's identity. If `krb5`, provides cryptographic proof of a user's identity in each RPC request. This provides  strong verification of the identity of users accessing data on the server. Note that additional configuration besides adding this mount option is required in order to enable Kerberos security. If `krb5i`, adds integrity checking to krb5, to ensure the data has not been tampered with. If `krb5p`, adds integrity checking and encryption to krb5. This is the most secure setting, but it also involves the most performance overhead. The default is `sys` if not specified.")
     index: Optional[StrictInt] = Field(default=None, description="The index within the policy. The `index` indicates the order the rules are evaluated. NOTE: It is recommended to use the query param `before_rule_id` to do reordering to avoid concurrency issues, but changing `index` is also supported. `index` can not be changed if `before_rule_id` or `before_rule_name` are specified.")
-    context: Optional[Reference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     __properties = ["id", "name", "access", "anongid", "anonuid", "atime", "client", "fileid_32bit", "permission", "policy", "policy_version", "required_transport_security", "secure", "security", "index", "context"]
 
     class Config:
@@ -142,7 +141,7 @@ class NfsExportPolicyRule(BaseModel):
             "secure": obj.get("secure"),
             "security": obj.get("security"),
             "index": obj.get("index"),
-            "context": Reference.from_dict(obj.get("context")) if obj.get("context") is not None else None
+            "context": FixedReference.from_dict(obj.get("context")) if obj.get("context") is not None else None
         })
         return _obj
 

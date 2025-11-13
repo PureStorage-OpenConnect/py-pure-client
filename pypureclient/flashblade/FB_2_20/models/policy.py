@@ -26,7 +26,6 @@ except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictStr, conlist
 from pypureclient.flashblade.FB_2_20.models.fixed_reference import FixedReference
 from pypureclient.flashblade.FB_2_20.models.policy_rule import PolicyRule
-from pypureclient.flashblade.FB_2_20.models.reference import Reference
 
 
 class Policy(BaseModel):
@@ -40,7 +39,7 @@ class Policy(BaseModel):
     location: Optional[FixedReference] = Field(default=None, description="Reference to the array where the policy is defined.")
     policy_type: Optional[StrictStr] = Field(default=None, description="Type of the policy. Valid values include `alert`, `audit`, `bucket-access`, `cross-origin-resource-sharing`, `network-access`, `nfs`, `object-access`, `s3-export`, smb-client`, `smb-share`, `snapshot`, `ssh-certificate-authority`, and `worm-data`.")
     realms: Optional[conlist(FixedReference)] = Field(default=None, description="The realms containing this policy.")
-    context: Optional[Reference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     retention_lock: Optional[StrictStr] = Field(default=None, description="If retention lock is locked, then the the policy can not be removed from the associated file systems and the rules may not be changed. Valid values are `locked` and `unlocked`. Contact Pure Technical Services to change `locked` to `unlocked`.")
     rules: Optional[conlist(PolicyRule)] = None
     __properties = ["id", "name", "enabled", "is_local", "location", "policy_type", "realms", "context", "retention_lock", "rules"]
@@ -145,7 +144,7 @@ class Policy(BaseModel):
             "location": FixedReference.from_dict(obj.get("location")) if obj.get("location") is not None else None,
             "policy_type": obj.get("policy_type"),
             "realms": [FixedReference.from_dict(_item) for _item in obj.get("realms")] if obj.get("realms") is not None else None,
-            "context": Reference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
+            "context": FixedReference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
             "retention_lock": obj.get("retention_lock"),
             "rules": [PolicyRule.from_dict(_item) for _item in obj.get("rules")] if obj.get("rules") is not None else None
         })

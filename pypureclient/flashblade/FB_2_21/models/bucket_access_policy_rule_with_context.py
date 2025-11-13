@@ -26,7 +26,6 @@ except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictStr, conlist
 from pypureclient.flashblade.FB_2_21.models.bucket_access_policy_rule_principal import BucketAccessPolicyRulePrincipal
 from pypureclient.flashblade.FB_2_21.models.fixed_reference import FixedReference
-from pypureclient.flashblade.FB_2_21.models.reference import Reference
 
 
 class BucketAccessPolicyRuleWithContext(BaseModel):
@@ -39,7 +38,7 @@ class BucketAccessPolicyRuleWithContext(BaseModel):
     principals: Optional[BucketAccessPolicyRulePrincipal] = Field(default=None, description="The principals to which this rule applies. Currently, only all principals are supported.")
     resources: Optional[conlist(StrictStr)] = Field(default=None, description="The list of resources which this rule applies to. The only currently supported resource is all objects in a bucket to which the parent policy belongs.")
     policy: Optional[FixedReference] = Field(default=None, description="The policy to which this rule belongs.")
-    context: Optional[Reference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     __properties = ["name", "actions", "effect", "principals", "resources", "policy", "context"]
 
     class Config:
@@ -127,7 +126,7 @@ class BucketAccessPolicyRuleWithContext(BaseModel):
             "principals": BucketAccessPolicyRulePrincipal.from_dict(obj.get("principals")) if obj.get("principals") is not None else None,
             "resources": obj.get("resources"),
             "policy": FixedReference.from_dict(obj.get("policy")) if obj.get("policy") is not None else None,
-            "context": Reference.from_dict(obj.get("context")) if obj.get("context") is not None else None
+            "context": FixedReference.from_dict(obj.get("context")) if obj.get("context") is not None else None
         })
         return _obj
 

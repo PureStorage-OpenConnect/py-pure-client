@@ -25,7 +25,6 @@ try:
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictStr, conlist
 from pypureclient.flashblade.FB_2_19.models.fixed_reference import FixedReference
-from pypureclient.flashblade.FB_2_19.models.reference import Reference
 
 
 class CrossOriginResourceSharingPolicyRuleWithContext(BaseModel):
@@ -36,7 +35,7 @@ class CrossOriginResourceSharingPolicyRuleWithContext(BaseModel):
     allowed_headers: Optional[conlist(StrictStr)] = Field(default=None, description="A list of headers that are permitted to be included in cross-origin requests to access a bucket. The only currently supported allowed header is `*`.")
     allowed_methods: Optional[conlist(StrictStr)] = Field(default=None, description="A list of HTTP methods that are permitted for cross-origin requests to access a bucket. The only currently supported combination of allowed methods is all methods `[\"GET\", \"PUT\", \"HEAD\", \"POST\", \"DELETE\"]`.")
     allowed_origins: Optional[conlist(StrictStr)] = Field(default=None, description="A list of origins (domains) that are permitted to make cross-origin requests to access a bucket. The only currently supported allowed origin is `*`.")
-    context: Optional[Reference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReference] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     policy: Optional[FixedReference] = Field(default=None, description="The policy to which this rule belongs.")
     __properties = ["name", "allowed_headers", "allowed_methods", "allowed_origins", "context", "policy"]
 
@@ -119,7 +118,7 @@ class CrossOriginResourceSharingPolicyRuleWithContext(BaseModel):
             "allowed_headers": obj.get("allowed_headers"),
             "allowed_methods": obj.get("allowed_methods"),
             "allowed_origins": obj.get("allowed_origins"),
-            "context": Reference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
+            "context": FixedReference.from_dict(obj.get("context")) if obj.get("context") is not None else None,
             "policy": FixedReference.from_dict(obj.get("policy")) if obj.get("policy") is not None else None
         })
         return _obj
