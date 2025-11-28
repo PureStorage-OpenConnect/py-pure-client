@@ -6,6 +6,7 @@ Documentation for previous releases could be found below
 .. toctree::
    :maxdepth: 1
 
+    1.78.0 <archive/1.78.0/index.rst>
     1.77.1 <archive/1.77.1/index.rst>
     1.77.0 <archive/1.77.0/index.rst>
     1.76.0 <archive/1.76.0/index.rst>
