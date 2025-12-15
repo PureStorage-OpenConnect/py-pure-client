@@ -21,6 +21,241 @@ Importable as
 .. module:: pypureclient.flasharray.client
 .. autofunction:: pypureclient.flasharray.client::Client
 
+FlashArray REST 2.0 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_0.client
+.. autoclass:: pypureclient.flasharray.FA_2_0.client::Client
+
+FlashArray REST 2.1 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_1.client
+.. autoclass:: pypureclient.flasharray.FA_2_1.client::Client
+
+FlashArray REST 2.2 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_2.client
+.. autoclass:: pypureclient.flasharray.FA_2_2.client::Client
+
+FlashArray REST 2.3 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_3.client
+.. autoclass:: pypureclient.flasharray.FA_2_3.client::Client
+
+FlashArray REST 2.4 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_4.client
+.. autoclass:: pypureclient.flasharray.FA_2_4.client::Client
+
+FlashArray REST 2.5 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_5.client
+.. autoclass:: pypureclient.flasharray.FA_2_5.client::Client
+
+FlashArray REST 2.6 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_6.client
+.. autoclass:: pypureclient.flasharray.FA_2_6.client::Client
+
+FlashArray REST 2.7 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_7.client
+.. autoclass:: pypureclient.flasharray.FA_2_7.client::Client
+
+FlashArray REST 2.8 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_8.client
+.. autoclass:: pypureclient.flasharray.FA_2_8.client::Client
+
+FlashArray REST 2.9 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_9.client
+.. autoclass:: pypureclient.flasharray.FA_2_9.client::Client
+
+FlashArray REST 2.10 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_10.client
+.. autoclass:: pypureclient.flasharray.FA_2_10.client::Client
+
+FlashArray REST 2.11 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_11.client
+.. autoclass:: pypureclient.flasharray.FA_2_11.client::Client
+
+FlashArray REST 2.13 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_13.client
+.. autoclass:: pypureclient.flasharray.FA_2_13.client::Client
+
+FlashArray REST 2.14 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_14.client
+.. autoclass:: pypureclient.flasharray.FA_2_14.client::Client
+
+FlashArray REST 2.15 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_15.client
+.. autoclass:: pypureclient.flasharray.FA_2_15.client::Client
+
+FlashArray REST 2.16 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_16.client
+.. autoclass:: pypureclient.flasharray.FA_2_16.client::Client
+
+FlashArray REST 2.17 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_17.client
+.. autoclass:: pypureclient.flasharray.FA_2_17.client::Client
+
+FlashArray REST 2.19 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_19.client
+.. autoclass:: pypureclient.flasharray.FA_2_19.client::Client
+
+FlashArray REST 2.20 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_20.client
+.. autoclass:: pypureclient.flasharray.FA_2_20.client::Client
+
+FlashArray REST 2.21 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_21.client
+.. autoclass:: pypureclient.flasharray.FA_2_21.client::Client
+
+FlashArray REST 2.22 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_22.client
+.. autoclass:: pypureclient.flasharray.FA_2_22.client::Client
+
+FlashArray REST 2.23 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_23.client
+.. autoclass:: pypureclient.flasharray.FA_2_23.client::Client
+
+FlashArray REST 2.24 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_24.client
+.. autoclass:: pypureclient.flasharray.FA_2_24.client::Client
+
+FlashArray REST 2.25 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_25.client
+.. autoclass:: pypureclient.flasharray.FA_2_25.client::Client
+
+FlashArray REST 2.26 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_26.client
+.. autoclass:: pypureclient.flasharray.FA_2_26.client::Client
+
+FlashArray REST 2.27 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_27.client
+.. autoclass:: pypureclient.flasharray.FA_2_27.client::Client
+
+FlashArray REST 2.28 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_28.client
+.. autoclass:: pypureclient.flasharray.FA_2_28.client::Client
+
+FlashArray REST 2.29 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_29.client
+.. autoclass:: pypureclient.flasharray.FA_2_29.client::Client
+
+FlashArray REST 2.30 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_30.client
+.. autoclass:: pypureclient.flasharray.FA_2_30.client::Client
+
+FlashArray REST 2.31 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_31.client
+.. autoclass:: pypureclient.flasharray.FA_2_31.client::Client
+
+FlashArray REST 2.32 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_32.client
+.. autoclass:: pypureclient.flasharray.FA_2_32.client::Client
+
+FlashArray REST 2.33 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_33.client
+.. autoclass:: pypureclient.flasharray.FA_2_33.client::Client
+
+FlashArray REST 2.34 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_34.client
+.. autoclass:: pypureclient.flasharray.FA_2_34.client::Client
+
+FlashArray REST 2.35 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_35.client
+.. autoclass:: pypureclient.flasharray.FA_2_35.client::Client
+
+FlashArray REST 2.36 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_36.client
+.. autoclass:: pypureclient.flasharray.FA_2_36.client::Client
+
+FlashArray REST 2.37 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_37.client
+.. autoclass:: pypureclient.flasharray.FA_2_37.client::Client
+
+FlashArray REST 2.38 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_38.client
+.. autoclass:: pypureclient.flasharray.FA_2_38.client::Client
+
+FlashArray REST 2.39 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_39.client
+.. autoclass:: pypureclient.flasharray.FA_2_39.client::Client
+
+FlashArray REST 2.40 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_40.client
+.. autoclass:: pypureclient.flasharray.FA_2_40.client::Client
+
+FlashArray REST 2.41 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_41.client
+.. autoclass:: pypureclient.flasharray.FA_2_41.client::Client
+
+FlashArray REST 2.42 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_42.client
+.. autoclass:: pypureclient.flasharray.FA_2_42.client::Client
+
+FlashArray REST 2.43 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_43.client
+.. autoclass:: pypureclient.flasharray.FA_2_43.client::Client
+
+FlashArray REST 2.44 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_44.client
+.. autoclass:: pypureclient.flasharray.FA_2_44.client::Client
+
+FlashArray REST 2.45 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_45.client
+.. autoclass:: pypureclient.flasharray.FA_2_45.client::Client
+
+FlashArray REST 2.46 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_46.client
+.. autoclass:: pypureclient.flasharray.FA_2_46.client::Client
+
+FlashArray REST 2.47 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_47.client
+.. autoclass:: pypureclient.flasharray.FA_2_47.client::Client
+
+FlashArray REST 2.48 Client
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.flasharray.FA_2_48.client
+.. autoclass:: pypureclient.flasharray.FA_2_48.client::Client
+
 FlashArray REST 2.49 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. module:: pypureclient.flasharray.FA_2_49.client

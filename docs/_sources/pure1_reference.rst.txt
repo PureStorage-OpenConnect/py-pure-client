@@ -21,6 +21,31 @@ Importable as
 .. module:: pypureclient.pure1.client
 .. autofunction:: pypureclient.pure1.client::Client
 
+Pure1 REST 1.0 Client
+~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.pure1.Pure1_1_0.client
+.. autoclass:: pypureclient.pure1.Pure1_1_0.client::Client
+
+Pure1 REST 1.1 Client
+~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.pure1.Pure1_1_1.client
+.. autoclass:: pypureclient.pure1.Pure1_1_1.client::Client
+
+Pure1 REST 1.2 Client
+~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.pure1.Pure1_1_2.client
+.. autoclass:: pypureclient.pure1.Pure1_1_2.client::Client
+
+Pure1 REST 1.3 Client
+~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.pure1.Pure1_1_3.client
+.. autoclass:: pypureclient.pure1.Pure1_1_3.client::Client
+
+Pure1 REST 1.4 Client
+~~~~~~~~~~~~~~~~~~~~~
+.. module:: pypureclient.pure1.Pure1_1_4.client
+.. autoclass:: pypureclient.pure1.Pure1_1_4.client::Client
+
 Pure1 REST 1.5 Client
 ~~~~~~~~~~~~~~~~~~~~~
 .. module:: pypureclient.pure1.Pure1_1_5.client
