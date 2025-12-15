@@ -32,9 +32,9 @@ from pypureclient.flashblade.FB_2_21.models.oidc_sso_patch import OidcSsoPatch
 from pypureclient.flashblade.FB_2_21.models.oidc_sso_post import OidcSsoPost
 from pypureclient.flashblade.FB_2_21.models.oidc_sso_response import OidcSsoResponse
 from typing import Optional
-from pypureclient._transport.api_client import ApiClient as _TransportApiClient
-from pypureclient._transport.api_response import ApiResponse
-from pypureclient._transport.exceptions import (  # noqa: F401
+from pypureclient.flashblade.FB_2_21.api_client import ApiClient as _TransportApiClient
+from pypureclient.flashblade.FB_2_21.api_response import ApiResponse
+from pypureclient.flashblade.FB_2_21.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

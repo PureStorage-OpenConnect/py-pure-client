@@ -1,18 +1,13 @@
 import jwt
+import requests
 import time
 import uuid
-import json
-
 from io import StringIO
 from paramiko import RSAKey
 
 from .exceptions import PureError
 from .keywords import Headers
-
-from ._helpers import create_api_client
-
-from ._transport.rest import ApiException
-from ._transport.configuration import Configuration
+from ._version import __default_user_agent__
 
 class TokenManager(object):
     """
@@ -26,16 +21,8 @@ class TokenManager(object):
     ALGORITHM = 'RS256'
     EXP_TIME_IN_SECONDS = 315360000  # 10 years
 
-    def __init__(self,
-                 configuration: Configuration,
-                 token_endpoint: str = '/oauth2/1.0/token',
-                 id_token = None,
-                 private_key_file = None,
-                 private_key_password=None,
-                 payload=None,
-                 headers=None,
-                 timeout=None,
-                 user_agent=None):
+    def __init__(self, token_endpoint, id_token=None, private_key_file=None,
+                 private_key_password=None, payload=None, headers=None, verify_ssl=True, timeout=None):
         """
         Initialize a TokenManager. Should be treated as a static object.
 
@@ -59,13 +46,12 @@ class TokenManager(object):
                 retrieving an access token.
         """
         # Verify we can either create an ID token or use a given one
-        self._configuration = configuration
         self._token_endpoint = token_endpoint
         self._access_token_file = ('{}.access_token'
                                    .format(self._token_endpoint.replace('/', '')))
         self._access_token = None
+        self._verify_ssl = verify_ssl
         self._timeout = timeout
-        self._user_agent = user_agent
         # If we already have an ID token, just use that
         if id_token is not None:
             self._id_token = id_token
@@ -75,19 +61,15 @@ class TokenManager(object):
         self.get_access_token(refresh=True)
 
     def _generate_id_token(self, headers, payload, private_key):
-        _payload_to_encode = dict(payload) if payload else {}
-        _now = int(time.time())
-        _payload_to_encode['iat'] = _now
-        _payload_to_encode['exp'] = _now + self.EXP_TIME_IN_SECONDS
-        new_jwt = jwt.encode(_payload_to_encode, private_key, algorithm=self.ALGORITHM, headers=headers)
+        payload['iat'] = int(time.time())
+        payload['exp'] = int(time.time()) + self.EXP_TIME_IN_SECONDS
+        new_jwt = jwt.encode(payload, private_key, algorithm=self.ALGORITHM, headers=headers)
         return new_jwt if isinstance(new_jwt, str) else new_jwt.decode()
 
     def _get_private_key(self, private_key_file, private_key_password):
         try:
             rsa_key = RSAKey.from_private_key_file(private_key_file, private_key_password)
         except:
-            # todo: https://github.com/PureStorage-OpenConnect/py-pure-client/issues/124
-            #  py-pure-client shouldn't swallow original error here to provide better understanding what is wrong
             raise PureError('Could not read private key file')
         with StringIO() as buf:
             rsa_key.write_private_key(buf)
@@ -182,29 +164,16 @@ class TokenManager(object):
                      'subject_token_type': 'urn:ietf:params:oauth:token-type:jwt',
                      'subject_token': self._id_token}
         headers = {
-            Headers.x_request_id: str(uuid.uuid4()),
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'accept': 'application/json',
+            Headers.user_agent: __default_user_agent__,
+            Headers.x_request_id: str(uuid.uuid4())
         }
-        try:
-            with create_api_client(self._configuration, self._user_agent) as api_client:
-                response_data = api_client.call_api(
-                                    resource_path=self._token_endpoint,
-                                    method="POST",
-                                    header_params=headers,
-                                    post_params=post_data,
-                                    response_types_map = {'200': "bytearray"},
-                                    _return_http_data_only=True,
-                                    _request_timeout=self._timeout
-                                )
-                response = json.loads(response_data.decode("utf-8"))
-                if 'access_token' in response:
-                    return response['access_token']
-                elif 'items' in response:
-                    return response['items'][0]['access_token']
-                else:
-                    raise PureError('Unable to parse response. {}'.format(response_data))
-        except ApiException:
+        response = requests.post(self._token_endpoint, data=post_data, verify=self._verify_ssl, headers=headers, timeout=self._timeout)
+        if response:
+            try:
+                return str(response.json()['access_token'])
+            except Exception:
+                return str(response.json()['items'][0]['access_token'])
+        else:
             raise PureError('Could not retrieve a new access token')
 
     def _is_token_expired(self):

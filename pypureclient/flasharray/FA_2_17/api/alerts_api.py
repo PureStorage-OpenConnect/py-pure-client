@@ -32,9 +32,9 @@ from pypureclient.flasharray.FA_2_17.models.alert_event_get_response import Aler
 from pypureclient.flasharray.FA_2_17.models.alert_get_response import AlertGetResponse
 from pypureclient.flasharray.FA_2_17.models.alert_response import AlertResponse
 from typing import Optional
-from pypureclient._transport.api_client import ApiClient as _TransportApiClient
-from pypureclient._transport.api_response import ApiResponse
-from pypureclient._transport.exceptions import (  # noqa: F401
+from pypureclient.flasharray.FA_2_17.api_client import ApiClient as _TransportApiClient
+from pypureclient.flasharray.FA_2_17.api_response import ApiResponse
+from pypureclient.flasharray.FA_2_17.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

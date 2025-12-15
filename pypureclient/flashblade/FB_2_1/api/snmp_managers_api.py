@@ -33,9 +33,9 @@ from pypureclient.flashblade.FB_2_1.models.snmp_manager_post import SnmpManagerP
 from pypureclient.flashblade.FB_2_1.models.snmp_manager_response import SnmpManagerResponse
 from pypureclient.flashblade.FB_2_1.models.test_result_get_response import TestResultGetResponse
 from typing import Optional
-from pypureclient._transport.api_client import ApiClient as _TransportApiClient
-from pypureclient._transport.api_response import ApiResponse
-from pypureclient._transport.exceptions import (  # noqa: F401
+from pypureclient.flashblade.FB_2_1.api_client import ApiClient as _TransportApiClient
+from pypureclient.flashblade.FB_2_1.api_response import ApiResponse
+from pypureclient.flashblade.FB_2_1.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

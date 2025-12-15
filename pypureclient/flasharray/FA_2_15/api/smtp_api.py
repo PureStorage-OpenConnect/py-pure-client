@@ -31,9 +31,9 @@ from pypureclient.flasharray.FA_2_15.models.smtp_server import SmtpServer
 from pypureclient.flasharray.FA_2_15.models.smtp_server_get_response import SmtpServerGetResponse
 from pypureclient.flasharray.FA_2_15.models.smtp_server_response import SmtpServerResponse
 from typing import Optional
-from pypureclient._transport.api_client import ApiClient as _TransportApiClient
-from pypureclient._transport.api_response import ApiResponse
-from pypureclient._transport.exceptions import (  # noqa: F401
+from pypureclient.flasharray.FA_2_15.api_client import ApiClient as _TransportApiClient
+from pypureclient.flasharray.FA_2_15.api_response import ApiResponse
+from pypureclient.flasharray.FA_2_15.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

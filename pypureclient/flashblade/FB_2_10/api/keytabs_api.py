@@ -31,9 +31,9 @@ from pypureclient.flashblade.FB_2_10.models.keytab_get_response import KeytabGet
 from pypureclient.flashblade.FB_2_10.models.keytab_post import KeytabPost
 from pypureclient.flashblade.FB_2_10.models.keytab_response import KeytabResponse
 from typing import Optional
-from pypureclient._transport.api_client import ApiClient as _TransportApiClient
-from pypureclient._transport.api_response import ApiResponse
-from pypureclient._transport.exceptions import (  # noqa: F401
+from pypureclient.flashblade.FB_2_10.api_client import ApiClient as _TransportApiClient
+from pypureclient.flashblade.FB_2_10.api_response import ApiResponse
+from pypureclient.flashblade.FB_2_10.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

@@ -39,9 +39,9 @@ from pypureclient.flasharray.FA_2_49.models.volume_group_post import VolumeGroup
 from pypureclient.flasharray.FA_2_49.models.volume_group_qos_get_response import VolumeGroupQosGetResponse
 from pypureclient.flasharray.FA_2_49.models.volume_group_response import VolumeGroupResponse
 from typing import Optional
-from pypureclient._transport.api_client import ApiClient as _TransportApiClient
-from pypureclient._transport.api_response import ApiResponse
-from pypureclient._transport.exceptions import (  # noqa: F401
+from pypureclient.flasharray.FA_2_49.api_client import ApiClient as _TransportApiClient
+from pypureclient.flasharray.FA_2_49.api_response import ApiResponse
+from pypureclient.flasharray.FA_2_49.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

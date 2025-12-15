@@ -59,9 +59,9 @@ from pypureclient.flasharray.FA_2_28.models.policy_smb_patch import PolicySmbPat
 from pypureclient.flasharray.FA_2_28.models.policy_smb_post import PolicySmbPost
 from pypureclient.flasharray.FA_2_28.models.policy_smb_response import PolicySmbResponse
 from typing import Optional
-from pypureclient._transport.api_client import ApiClient as _TransportApiClient
-from pypureclient._transport.api_response import ApiResponse
-from pypureclient._transport.exceptions import (  # noqa: F401
+from pypureclient.flasharray.FA_2_28.api_client import ApiClient as _TransportApiClient
+from pypureclient.flasharray.FA_2_28.api_response import ApiResponse
+from pypureclient.flasharray.FA_2_28.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

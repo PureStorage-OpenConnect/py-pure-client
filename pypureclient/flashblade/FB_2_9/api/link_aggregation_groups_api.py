@@ -32,9 +32,9 @@ from pypureclient.flashblade.FB_2_9.models.link_aggregation_group_get_response i
 from pypureclient.flashblade.FB_2_9.models.link_aggregation_group_patch import LinkAggregationGroupPatch
 from pypureclient.flashblade.FB_2_9.models.link_aggregation_group_response import LinkAggregationGroupResponse
 from typing import Optional
-from pypureclient._transport.api_client import ApiClient as _TransportApiClient
-from pypureclient._transport.api_response import ApiResponse
-from pypureclient._transport.exceptions import (  # noqa: F401
+from pypureclient.flashblade.FB_2_9.api_client import ApiClient as _TransportApiClient
+from pypureclient.flashblade.FB_2_9.api_response import ApiResponse
+from pypureclient.flashblade.FB_2_9.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

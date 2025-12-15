@@ -1,14 +1,9 @@
 import uuid
 import atexit
+import requests
 
 from .exceptions import PureError
 from .keywords import Headers
-
-from ._helpers import create_api_client
-from ._transport.api_response import ApiResponse
-from ._transport.rest import ApiException
-from ._transport.configuration import Configuration
-
 
 class APITokenManager(object):
     """
@@ -17,7 +12,7 @@ class APITokenManager(object):
     A valid session token is stored in memory.
     """
 
-    def __init__(self, api_token, configuration: Configuration, version: str = None, user_agent: str = None, timeout=None):
+    def __init__(self, token_endpoint, api_token, verify_ssl=True, token_dispose_endpoint=None, user_agent=None, timeout=None):
         """
         Initialize a APITokenManager. Should be treated as a static object.
 
@@ -29,19 +24,16 @@ class APITokenManager(object):
         Raises:
             PureError: If there was any issue retrieving an session token.
         """
-        _base_url = '/api'
-        if version:
-            _base_url = f'{_base_url}/{version}'
-        self._token_endpoint = f'{_base_url}/login'
-        self._token_dispose_endpoint = f'{_base_url}/logout'
+        self._token_endpoint = token_endpoint
+        self._token_dispose_endpoint = token_dispose_endpoint
         self._api_token = api_token
-        self._configuration = configuration
-        self._user_agent = user_agent
+        self._verify_ssl = verify_ssl
         self._session_token = None
+        self._user_agent = user_agent
         self._timeout = timeout
         self.get_session_token(refresh=True)
         # Register a function to close the session when the program exits
-        atexit.register(self.__close_session_on_exit)
+        atexit.register(self.close_session)
 
     def get_session_token(self, refresh=False):
         """
@@ -72,11 +64,16 @@ class APITokenManager(object):
         Raises:
             PureError: If there was an error retrieving an session token.
         """
-        try:
-            response = self.__call_endpoint(self._token_endpoint, {Headers.api_token: self._api_token})
+        post_headers = {
+            Headers.api_token: self._api_token,
+            Headers.user_agent: self._user_agent,
+            Headers.x_request_id: str(uuid.uuid4())
+        }
+        response = requests.post(self._token_endpoint, headers=post_headers, verify=self._verify_ssl, timeout=self._timeout)
+        if response.status_code == requests.codes.ok:
             return str(response.headers[Headers.x_auth_token])
-        except ApiException as e:
-            raise PureError("Failed to retrieve session token with error: {body} ({status})".format(body=e.body, status=e.status))
+        else:
+            raise PureError("Failed to retrieve session token with error: " + response.text)
 
     def close_session(self):
         """
@@ -85,35 +82,24 @@ class APITokenManager(object):
         if not (self._token_dispose_endpoint and self._session_token):
             return
         try:
-            self.__call_endpoint(self._token_dispose_endpoint, {Headers.x_auth_token: self._session_token})
-        except ApiException:
-            pass
-        finally:
+            delete_headers = {
+                Headers.x_auth_token: self._session_token,
+                Headers.user_agent: self._user_agent,
+                Headers.x_request_id: str(uuid.uuid4())
+            }
+            requests.post(self._token_dispose_endpoint, headers=delete_headers, verify=self._verify_ssl, timeout=self._timeout)
             self._session_token = None
-
-    def __call_endpoint(self, endpoint: str, headers: dict) -> ApiResponse:
-        _result = None
-        with create_api_client(self._configuration, self._user_agent) as api_client:
-            _result = api_client.call_api(
-                        endpoint,
-                        "POST",
-                        header_params={**headers, **{Headers.x_request_id: str(uuid.uuid4())}},
-                        response_types_map={'200': "bytearray"},
-                        _request_timeout=self._timeout)
-        return _result
-
-    def __close_session_on_exit(self):
-        try:
-            self.close_session()
         except:
-            # ignore all exceptions on exit
             pass
 
     def __del__(self):
+        # Ignore any exceptions when deleting
         # As some of the resources might be inaccessable when the program exits
         # For details please ref to:
         # https://docs.python.org/3/reference/datamodel.html#object.__del__
-        self.__close_session_on_exit()
-        if atexit:
+        try:
+            self.close_session()
             # Avoid calling close_session() again when the program exits for this object
-            atexit.unregister(self.__close_session_on_exit)
+            atexit.unregister(self.close_session)
+        except:
+            pass

@@ -29,9 +29,9 @@ from typing import Optional
 
 from pypureclient.pure1.Pure1_1_3.models.drive_get_response import DriveGetResponse
 from typing import Optional
-from pypureclient._transport.api_client import ApiClient as _TransportApiClient
-from pypureclient._transport.api_response import ApiResponse
-from pypureclient._transport.exceptions import (  # noqa: F401
+from pypureclient.pure1.Pure1_1_3.api_client import ApiClient as _TransportApiClient
+from pypureclient.pure1.Pure1_1_3.api_response import ApiResponse
+from pypureclient.pure1.Pure1_1_3.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

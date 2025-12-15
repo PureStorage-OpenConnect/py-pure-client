@@ -33,9 +33,9 @@ from pypureclient.flasharray.FA_2_30.models.pod_replica_link_patch import PodRep
 from pypureclient.flasharray.FA_2_30.models.pod_replica_link_performance_replication_get_response import PodReplicaLinkPerformanceReplicationGetResponse
 from pypureclient.flasharray.FA_2_30.models.pod_replica_link_response import PodReplicaLinkResponse
 from typing import Optional
-from pypureclient._transport.api_client import ApiClient as _TransportApiClient
-from pypureclient._transport.api_response import ApiResponse
-from pypureclient._transport.exceptions import (  # noqa: F401
+from pypureclient.flasharray.FA_2_30.api_client import ApiClient as _TransportApiClient
+from pypureclient.flasharray.FA_2_30.api_response import ApiResponse
+from pypureclient.flasharray.FA_2_30.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

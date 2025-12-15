@@ -31,9 +31,9 @@ from pypureclient.flashblade.FB_2_3.models.smtp_server import SmtpServer
 from pypureclient.flashblade.FB_2_3.models.smtp_server_get_response import SmtpServerGetResponse
 from pypureclient.flashblade.FB_2_3.models.smtp_server_response import SmtpServerResponse
 from typing import Optional
-from pypureclient._transport.api_client import ApiClient as _TransportApiClient
-from pypureclient._transport.api_response import ApiResponse
-from pypureclient._transport.exceptions import (  # noqa: F401
+from pypureclient.flashblade.FB_2_3.api_client import ApiClient as _TransportApiClient
+from pypureclient.flashblade.FB_2_3.api_response import ApiResponse
+from pypureclient.flashblade.FB_2_3.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )
