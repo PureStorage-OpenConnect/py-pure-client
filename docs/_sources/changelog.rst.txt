@@ -6,6 +6,7 @@ A log of changes by version and date.
 ======= ========== =====
 Version Date       Notes
 ======= ========== =====
+1.80.0  12/16/2025 Added FlashBlade 2.22 client
 1.79.0  11/28/2025 Added FlashArray 2.49 client
 1.78.0  11/13/2025 	Add /protection-group-snapshots and /protection-group-snapshots/transfer endpoints
 1.77.1  10/29/2025 Added FlashBlade 2.21 client
