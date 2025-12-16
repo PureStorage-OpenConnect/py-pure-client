@@ -31,9 +31,9 @@ from pypureclient.flasharray.FA_2_2.models.offload_get_response import OffloadGe
 from pypureclient.flasharray.FA_2_2.models.offload_post import OffloadPost
 from pypureclient.flasharray.FA_2_2.models.offload_response import OffloadResponse
 from typing import Optional
-from pypureclient._transport.api_client import ApiClient as _TransportApiClient
-from pypureclient._transport.api_response import ApiResponse
-from pypureclient._transport.exceptions import (  # noqa: F401
+from pypureclient.flasharray.FA_2_2.api_client import ApiClient as _TransportApiClient
+from pypureclient.flasharray.FA_2_2.api_response import ApiResponse
+from pypureclient.flasharray.FA_2_2.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

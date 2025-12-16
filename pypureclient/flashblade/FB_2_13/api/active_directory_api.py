@@ -33,9 +33,9 @@ from pypureclient.flashblade.FB_2_13.models.active_directory_post import ActiveD
 from pypureclient.flashblade.FB_2_13.models.active_directory_response import ActiveDirectoryResponse
 from pypureclient.flashblade.FB_2_13.models.test_result_get_response import TestResultGetResponse
 from typing import Optional
-from pypureclient._transport.api_client import ApiClient as _TransportApiClient
-from pypureclient._transport.api_response import ApiResponse
-from pypureclient._transport.exceptions import (  # noqa: F401
+from pypureclient.flashblade.FB_2_13.api_client import ApiClient as _TransportApiClient
+from pypureclient.flashblade.FB_2_13.api_response import ApiResponse
+from pypureclient.flashblade.FB_2_13.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

@@ -32,9 +32,9 @@ from pypureclient.flasharray.FA_2_16.models.remote_volume_snapshot_get_response 
 from pypureclient.flasharray.FA_2_16.models.remote_volume_snapshot_response import RemoteVolumeSnapshotResponse
 from pypureclient.flasharray.FA_2_16.models.remote_volume_snapshot_transfer_get_response import RemoteVolumeSnapshotTransferGetResponse
 from typing import Optional
-from pypureclient._transport.api_client import ApiClient as _TransportApiClient
-from pypureclient._transport.api_response import ApiResponse
-from pypureclient._transport.exceptions import (  # noqa: F401
+from pypureclient.flasharray.FA_2_16.api_client import ApiClient as _TransportApiClient
+from pypureclient.flasharray.FA_2_16.api_response import ApiResponse
+from pypureclient.flasharray.FA_2_16.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

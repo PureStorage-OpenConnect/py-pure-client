@@ -31,9 +31,9 @@ from pypureclient.flasharray.FA_2_32.models.virtual_machine_get_response import 
 from pypureclient.flasharray.FA_2_32.models.virtual_machine_post import VirtualMachinePost
 from pypureclient.flasharray.FA_2_32.models.virtual_machine_response import VirtualMachineResponse
 from typing import Optional
-from pypureclient._transport.api_client import ApiClient as _TransportApiClient
-from pypureclient._transport.api_response import ApiResponse
-from pypureclient._transport.exceptions import (  # noqa: F401
+from pypureclient.flasharray.FA_2_32.api_client import ApiClient as _TransportApiClient
+from pypureclient.flasharray.FA_2_32.api_response import ApiResponse
+from pypureclient.flasharray.FA_2_32.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

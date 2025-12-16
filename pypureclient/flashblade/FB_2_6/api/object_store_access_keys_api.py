@@ -32,9 +32,9 @@ from pypureclient.flashblade.FB_2_6.models.object_store_access_key_get_response 
 from pypureclient.flashblade.FB_2_6.models.object_store_access_key_post import ObjectStoreAccessKeyPost
 from pypureclient.flashblade.FB_2_6.models.object_store_access_key_response import ObjectStoreAccessKeyResponse
 from typing import Optional
-from pypureclient._transport.api_client import ApiClient as _TransportApiClient
-from pypureclient._transport.api_response import ApiResponse
-from pypureclient._transport.exceptions import (  # noqa: F401
+from pypureclient.flashblade.FB_2_6.api_client import ApiClient as _TransportApiClient
+from pypureclient.flashblade.FB_2_6.api_response import ApiResponse
+from pypureclient.flashblade.FB_2_6.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

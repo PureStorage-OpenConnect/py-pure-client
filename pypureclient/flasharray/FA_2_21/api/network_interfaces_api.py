@@ -34,9 +34,9 @@ from pypureclient.flasharray.FA_2_21.models.network_interface_post import Networ
 from pypureclient.flasharray.FA_2_21.models.network_interface_response import NetworkInterfaceResponse
 from pypureclient.flasharray.FA_2_21.models.network_interfaces_port_details_get_response import NetworkInterfacesPortDetailsGetResponse
 from typing import Optional
-from pypureclient._transport.api_client import ApiClient as _TransportApiClient
-from pypureclient._transport.api_response import ApiResponse
-from pypureclient._transport.exceptions import (  # noqa: F401
+from pypureclient.flasharray.FA_2_21.api_client import ApiClient as _TransportApiClient
+from pypureclient.flasharray.FA_2_21.api_response import ApiResponse
+from pypureclient.flasharray.FA_2_21.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

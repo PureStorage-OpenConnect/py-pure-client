@@ -31,9 +31,9 @@ from pypureclient.flashblade.FB_2_17.models.subnet import Subnet
 from pypureclient.flashblade.FB_2_17.models.subnet_get_response import SubnetGetResponse
 from pypureclient.flashblade.FB_2_17.models.subnet_response import SubnetResponse
 from typing import Optional
-from pypureclient._transport.api_client import ApiClient as _TransportApiClient
-from pypureclient._transport.api_response import ApiResponse
-from pypureclient._transport.exceptions import (  # noqa: F401
+from pypureclient.flashblade.FB_2_17.api_client import ApiClient as _TransportApiClient
+from pypureclient.flashblade.FB_2_17.api_response import ApiResponse
+from pypureclient.flashblade.FB_2_17.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

@@ -34,9 +34,9 @@ from pypureclient.flasharray.FA_2_4.models.array_connection_post import ArrayCon
 from pypureclient.flasharray.FA_2_4.models.array_connection_response import ArrayConnectionResponse
 from pypureclient.flasharray.FA_2_4.models.throttle import Throttle
 from typing import Optional
-from pypureclient._transport.api_client import ApiClient as _TransportApiClient
-from pypureclient._transport.api_response import ApiResponse
-from pypureclient._transport.exceptions import (  # noqa: F401
+from pypureclient.flasharray.FA_2_4.api_client import ApiClient as _TransportApiClient
+from pypureclient.flasharray.FA_2_4.api_response import ApiResponse
+from pypureclient.flasharray.FA_2_4.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

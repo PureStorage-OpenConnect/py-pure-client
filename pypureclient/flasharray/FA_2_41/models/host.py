@@ -24,7 +24,7 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictBool, StrictInt, StrictStr, conlist
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr, conlist
-from pypureclient.flasharray.common.models.chap_v1 import Chap
+from pypureclient.flasharray.FA_2_41.models.chap import Chap
 from pypureclient.flasharray.FA_2_41.models.fixed_reference import FixedReference
 from pypureclient.flasharray.FA_2_41.models.host_port_connectivity import HostPortConnectivity
 from pypureclient.flasharray.FA_2_41.models.reference import Reference

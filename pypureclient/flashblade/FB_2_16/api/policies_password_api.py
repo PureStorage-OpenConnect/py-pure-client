@@ -31,9 +31,9 @@ from pypureclient.flashblade.FB_2_16.models.password_policies_get_response impor
 from pypureclient.flashblade.FB_2_16.models.password_policies_response import PasswordPoliciesResponse
 from pypureclient.flashblade.FB_2_16.models.password_policy import PasswordPolicy
 from typing import Optional
-from pypureclient._transport.api_client import ApiClient as _TransportApiClient
-from pypureclient._transport.api_response import ApiResponse
-from pypureclient._transport.exceptions import (  # noqa: F401
+from pypureclient.flashblade.FB_2_16.api_client import ApiClient as _TransportApiClient
+from pypureclient.flashblade.FB_2_16.api_response import ApiResponse
+from pypureclient.flashblade.FB_2_16.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

@@ -36,9 +36,9 @@ from pypureclient.flashblade.FB_2_20.models.fleet_member_response import FleetMe
 from pypureclient.flashblade.FB_2_20.models.fleet_patch import FleetPatch
 from pypureclient.flashblade.FB_2_20.models.fleet_response import FleetResponse
 from typing import Optional
-from pypureclient._transport.api_client import ApiClient as _TransportApiClient
-from pypureclient._transport.api_response import ApiResponse
-from pypureclient._transport.exceptions import (  # noqa: F401
+from pypureclient.flashblade.FB_2_20.api_client import ApiClient as _TransportApiClient
+from pypureclient.flashblade.FB_2_20.api_response import ApiResponse
+from pypureclient.flashblade.FB_2_20.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

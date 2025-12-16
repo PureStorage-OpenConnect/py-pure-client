@@ -32,9 +32,9 @@ from pypureclient.flasharray.FA_2_37.models.certificate_group_certificate_respon
 from pypureclient.flasharray.FA_2_37.models.certificate_group_get_response import CertificateGroupGetResponse
 from pypureclient.flasharray.FA_2_37.models.certificate_group_response import CertificateGroupResponse
 from typing import Optional
-from pypureclient._transport.api_client import ApiClient as _TransportApiClient
-from pypureclient._transport.api_response import ApiResponse
-from pypureclient._transport.exceptions import (  # noqa: F401
+from pypureclient.flasharray.FA_2_37.api_client import ApiClient as _TransportApiClient
+from pypureclient.flasharray.FA_2_37.api_response import ApiResponse
+from pypureclient.flasharray.FA_2_37.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )

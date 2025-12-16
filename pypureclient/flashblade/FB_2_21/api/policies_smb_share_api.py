@@ -36,9 +36,9 @@ from pypureclient.flashblade.FB_2_21.models.smb_share_policy_rule_get_response i
 from pypureclient.flashblade.FB_2_21.models.smb_share_policy_rule_post import SmbSharePolicyRulePost
 from pypureclient.flashblade.FB_2_21.models.smb_share_policy_rule_response import SmbSharePolicyRuleResponse
 from typing import Optional
-from pypureclient._transport.api_client import ApiClient as _TransportApiClient
-from pypureclient._transport.api_response import ApiResponse
-from pypureclient._transport.exceptions import (  # noqa: F401
+from pypureclient.flashblade.FB_2_21.api_client import ApiClient as _TransportApiClient
+from pypureclient.flashblade.FB_2_21.api_response import ApiResponse
+from pypureclient.flashblade.FB_2_21.exceptions import (  # noqa: F401
     ApiTypeError,
     ApiValueError
 )
