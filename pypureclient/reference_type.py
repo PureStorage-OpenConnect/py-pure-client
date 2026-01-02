@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 try:
     from pydantic.v1 import BaseModel, Field, StrictStr
 except ModuleNotFoundError:
