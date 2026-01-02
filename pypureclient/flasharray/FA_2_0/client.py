@@ -187,7 +187,6 @@ class Client(object):
         host_group_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the host group specified. Enter multiple names in comma-separated format. A request cannot include a mix of multiple objects with multiple names. For example, a request cannot include a mix of multiple host group names and volume names; instead, at least one of the objects (e.g., `host_group_names`) must be set to only one name (e.g., `hgroup01`).")] = None,
         host_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the hosts specified. Enter multiple names in comma-separated format. For example, `host01,host02`. A request cannot include a mix of multiple objects with multiple names. For example, a request cannot include a mix of multiple host names and volume names; instead, at least one of the objects (e.g., `host_names`) must be set to only one name (e.g., `host01`).")] = None,
         volume_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the volume specified. Enter multiple names in comma-separated format. For example, `vol01,vol02`. A request cannot include a mix of multiple objects with multiple names. For example, a request cannot include a mix of multiple volume names and host names; instead, at least one of the objects (e.g., `volume_names`) must be set to only one name (e.g., `vol01`).")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -227,9 +226,6 @@ class Client(object):
                             one of the objects (e.g., `volume_names`) must be set to only one name
                             (e.g., `vol01`).
         :type volume_names: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -260,7 +256,6 @@ class Client(object):
             host_group_names=host_group_names,
             host_names=host_names,
             volume_names=volume_names,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -289,7 +284,6 @@ class Client(object):
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Returns the response objects in the order specified. Set `sort` to the name in the response by which to sort. Sorting can be performed on any of the names in the response, and the objects can be sorted in ascending or descending order. By default, the response objects are sorted in ascending order. To sort in descending order, append the minus sign (`-`) to the name. A single request can be sorted on multiple objects. For example, you can sort all volumes from largest to smallest volume size, and then sort volumes of the same size in ascending order by volume name. To sort on multiple names, list the names as comma-separated values.")] = None,
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         volume_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the volume specified. Enter multiple names in comma-separated format. For example, `vol01,vol02`. A request cannot include a mix of multiple objects with multiple names. For example, a request cannot include a mix of multiple volume names and host names; instead, at least one of the objects (e.g., `volume_names`) must be set to only one name (e.g., `vol01`).")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -366,9 +360,6 @@ class Client(object):
                             one of the objects (e.g., `volume_names`) must be set to only one name
                             (e.g., `vol01`).
         :type volume_names: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -405,7 +396,6 @@ class Client(object):
             sort=sort,
             total_item_count=total_item_count,
             volume_names=volume_names,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -429,7 +419,6 @@ class Client(object):
         host_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the hosts specified. Enter multiple names in comma-separated format. For example, `host01,host02`. A request cannot include a mix of multiple objects with multiple names. For example, a request cannot include a mix of multiple host names and volume names; instead, at least one of the objects (e.g., `host_names`) must be set to only one name (e.g., `host01`).")] = None,
         volume_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the volume specified. Enter multiple names in comma-separated format. For example, `vol01,vol02`. A request cannot include a mix of multiple objects with multiple names. For example, a request cannot include a mix of multiple volume names and host names; instead, at least one of the objects (e.g., `volume_names`) must be set to only one name (e.g., `vol01`).")] = None,
         connection: Optional['models.ConnectionPost'] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -471,9 +460,6 @@ class Client(object):
         :type volume_names: List[str]
         :param connection:
         :type connection: ConnectionPost
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -505,7 +491,6 @@ class Client(object):
             host_names=host_names,
             volume_names=volume_names,
             connection=connection,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -523,7 +508,6 @@ class Client(object):
         authorization: Annotated[Optional[StrictStr], Field(description="Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)")] = None,
         x_request_id: Annotated[Optional[StrictStr], Field(description="Supplied by client during request or generated by server.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -541,9 +525,6 @@ class Client(object):
         :param names: Performs the operation on the unique name specified. Enter multiple names in
                     comma-separated format. For example, `name01,name02`.
         :type names: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -572,7 +553,6 @@ class Client(object):
             authorization=authorization,
             x_request_id=x_request_id,
             names=names,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -593,7 +573,6 @@ class Client(object):
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The starting position based on the results of the query in relation to the full set of response objects returned.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Returns the response objects in the order specified. Set `sort` to the name in the response by which to sort. Sorting can be performed on any of the names in the response, and the objects can be sorted in ascending or descending order. By default, the response objects are sorted in ascending order. To sort in descending order, append the minus sign (`-`) to the name. A single request can be sorted on multiple objects. For example, you can sort all volumes from largest to smallest volume size, and then sort volumes of the same size in ascending order by volume name. To sort on multiple names, list the names as comma-separated values.")] = None,
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -639,9 +618,6 @@ class Client(object):
                                 where the `total_item_count` is large. If not specified, defaults to
                                 `false`.
         :type total_item_count: bool
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -675,7 +651,6 @@ class Client(object):
             offset=offset,
             sort=sort,
             total_item_count=total_item_count,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -698,7 +673,6 @@ class Client(object):
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The starting position based on the results of the query in relation to the full set of response objects returned.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Returns the response objects in the order specified. Set `sort` to the name in the response by which to sort. Sorting can be performed on any of the names in the response, and the objects can be sorted in ascending or descending order. By default, the response objects are sorted in ascending order. To sort in descending order, append the minus sign (`-`) to the name. A single request can be sorted on multiple objects. For example, you can sort all volumes from largest to smallest volume size, and then sort volumes of the same size in ascending order by volume name. To sort on multiple names, list the names as comma-separated values.")] = None,
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -751,9 +725,6 @@ class Client(object):
                                 where the `total_item_count` is large. If not specified, defaults to
                                 `false`.
         :type total_item_count: bool
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -788,7 +759,6 @@ class Client(object):
             offset=offset,
             sort=sort,
             total_item_count=total_item_count,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -806,7 +776,6 @@ class Client(object):
         authorization: Annotated[Optional[StrictStr], Field(description="Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)")] = None,
         x_request_id: Annotated[Optional[StrictStr], Field(description="Supplied by client during request or generated by server.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -826,9 +795,6 @@ class Client(object):
         :param names: Performs the operation on the unique name specified. Enter multiple names in
                     comma-separated format. For example, `name01,name02`.
         :type names: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -858,7 +824,6 @@ class Client(object):
             authorization=authorization,
             x_request_id=x_request_id,
             names=names,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -880,7 +845,6 @@ class Client(object):
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Returns the response objects in the order specified. Set `sort` to the name in the response by which to sort. Sorting can be performed on any of the names in the response, and the objects can be sorted in ascending or descending order. By default, the response objects are sorted in ascending order. To sort in descending order, append the minus sign (`-`) to the name. A single request can be sorted on multiple objects. For example, you can sort all volumes from largest to smallest volume size, and then sort volumes of the same size in ascending order by volume name. To sort on multiple names, list the names as comma-separated values.")] = None,
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -931,9 +895,6 @@ class Client(object):
                         values are displayed for each name where meaningful. If `total_only=true`,
                         the `items` list will be empty.
         :type total_only: bool
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -968,7 +929,6 @@ class Client(object):
             sort=sort,
             total_item_count=total_item_count,
             total_only=total_only,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -990,7 +950,6 @@ class Client(object):
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Returns the response objects in the order specified. Set `sort` to the name in the response by which to sort. Sorting can be performed on any of the names in the response, and the objects can be sorted in ascending or descending order. By default, the response objects are sorted in ascending order. To sort in descending order, append the minus sign (`-`) to the name. A single request can be sorted on multiple objects. For example, you can sort all volumes from largest to smallest volume size, and then sort volumes of the same size in ascending order by volume name. To sort on multiple names, list the names as comma-separated values.")] = None,
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -1041,9 +1000,6 @@ class Client(object):
                         values are displayed for each name where meaningful. If `total_only=true`,
                         the `items` list will be empty.
         :type total_only: bool
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -1078,7 +1034,6 @@ class Client(object):
             sort=sort,
             total_item_count=total_item_count,
             total_only=total_only,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -1094,7 +1049,6 @@ class Client(object):
         authorization: Annotated[Optional[StrictStr], Field(description="Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)")] = None,
         x_request_id: Annotated[Optional[StrictStr], Field(description="Supplied by client during request or generated by server.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -1112,9 +1066,6 @@ class Client(object):
         :param names: Performs the operation on the unique name specified. Enter multiple names in
                     comma-separated format. For example, `name01,name02`.
         :type names: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -1143,7 +1094,6 @@ class Client(object):
             authorization=authorization,
             x_request_id=x_request_id,
             names=names,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -1159,7 +1109,6 @@ class Client(object):
         authorization: Annotated[Optional[StrictStr], Field(description="Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)")] = None,
         x_request_id: Annotated[Optional[StrictStr], Field(description="Supplied by client during request or generated by server.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -1177,9 +1126,6 @@ class Client(object):
         :param names: Performs the operation on the unique name specified. Enter multiple names in
                     comma-separated format. For example, `name01,name02`.
         :type names: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -1208,7 +1154,6 @@ class Client(object):
             authorization=authorization,
             x_request_id=x_request_id,
             names=names,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -1229,7 +1174,6 @@ class Client(object):
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The starting position based on the results of the query in relation to the full set of response objects returned.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Returns the response objects in the order specified. Set `sort` to the name in the response by which to sort. Sorting can be performed on any of the names in the response, and the objects can be sorted in ascending or descending order. By default, the response objects are sorted in ascending order. To sort in descending order, append the minus sign (`-`) to the name. A single request can be sorted on multiple objects. For example, you can sort all volumes from largest to smallest volume size, and then sort volumes of the same size in ascending order by volume name. To sort on multiple names, list the names as comma-separated values.")] = None,
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -1275,9 +1219,6 @@ class Client(object):
                                 where the `total_item_count` is large. If not specified, defaults to
                                 `false`.
         :type total_item_count: bool
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -1311,7 +1252,6 @@ class Client(object):
             offset=offset,
             sort=sort,
             total_item_count=total_item_count,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -1334,7 +1274,6 @@ class Client(object):
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The starting position based on the results of the query in relation to the full set of response objects returned.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Returns the response objects in the order specified. Set `sort` to the name in the response by which to sort. Sorting can be performed on any of the names in the response, and the objects can be sorted in ascending or descending order. By default, the response objects are sorted in ascending order. To sort in descending order, append the minus sign (`-`) to the name. A single request can be sorted on multiple objects. For example, you can sort all volumes from largest to smallest volume size, and then sort volumes of the same size in ascending order by volume name. To sort on multiple names, list the names as comma-separated values.")] = None,
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -1387,9 +1326,6 @@ class Client(object):
                                 where the `total_item_count` is large. If not specified, defaults to
                                 `false`.
         :type total_item_count: bool
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -1424,7 +1360,6 @@ class Client(object):
             offset=offset,
             sort=sort,
             total_item_count=total_item_count,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -1442,7 +1377,6 @@ class Client(object):
         authorization: Annotated[Optional[StrictStr], Field(description="Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)")] = None,
         x_request_id: Annotated[Optional[StrictStr], Field(description="Supplied by client during request or generated by server.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -1462,9 +1396,6 @@ class Client(object):
         :param names: Performs the operation on the unique name specified. Enter multiple names in
                     comma-separated format. For example, `name01,name02`.
         :type names: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -1494,7 +1425,6 @@ class Client(object):
             authorization=authorization,
             x_request_id=x_request_id,
             names=names,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -1516,7 +1446,6 @@ class Client(object):
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Returns the response objects in the order specified. Set `sort` to the name in the response by which to sort. Sorting can be performed on any of the names in the response, and the objects can be sorted in ascending or descending order. By default, the response objects are sorted in ascending order. To sort in descending order, append the minus sign (`-`) to the name. A single request can be sorted on multiple objects. For example, you can sort all volumes from largest to smallest volume size, and then sort volumes of the same size in ascending order by volume name. To sort on multiple names, list the names as comma-separated values.")] = None,
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -1567,9 +1496,6 @@ class Client(object):
                         values are displayed for each name where meaningful. If `total_only=true`,
                         the `items` list will be empty.
         :type total_only: bool
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -1604,7 +1530,6 @@ class Client(object):
             sort=sort,
             total_item_count=total_item_count,
             total_only=total_only,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -1626,7 +1551,6 @@ class Client(object):
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Returns the response objects in the order specified. Set `sort` to the name in the response by which to sort. Sorting can be performed on any of the names in the response, and the objects can be sorted in ascending or descending order. By default, the response objects are sorted in ascending order. To sort in descending order, append the minus sign (`-`) to the name. A single request can be sorted on multiple objects. For example, you can sort all volumes from largest to smallest volume size, and then sort volumes of the same size in ascending order by volume name. To sort on multiple names, list the names as comma-separated values.")] = None,
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -1677,9 +1601,6 @@ class Client(object):
                         values are displayed for each name where meaningful. If `total_only=true`,
                         the `items` list will be empty.
         :type total_only: bool
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -1714,7 +1635,6 @@ class Client(object):
             sort=sort,
             total_item_count=total_item_count,
             total_only=total_only,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -1731,7 +1651,6 @@ class Client(object):
         authorization: Annotated[Optional[StrictStr], Field(description="Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)")] = None,
         x_request_id: Annotated[Optional[StrictStr], Field(description="Supplied by client during request or generated by server.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -1751,9 +1670,6 @@ class Client(object):
         :param names: Performs the operation on the unique name specified. Enter multiple names in
                     comma-separated format. For example, `name01,name02`.
         :type names: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -1783,7 +1699,6 @@ class Client(object):
             authorization=authorization,
             x_request_id=x_request_id,
             names=names,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -1800,7 +1715,6 @@ class Client(object):
         x_request_id: Annotated[Optional[StrictStr], Field(description="Supplied by client during request or generated by server.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` or `names` parameter is required, but they cannot be set together.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -1822,9 +1736,6 @@ class Client(object):
         :param names: Performs the operation on the unique name specified. Enter multiple names in
                     comma-separated format. For example, `name01,name02`.
         :type names: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -1854,7 +1765,6 @@ class Client(object):
             x_request_id=x_request_id,
             ids=ids,
             names=names,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -1881,7 +1791,6 @@ class Client(object):
         source_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the source name specified. Enter multiple source names in comma-separated format. For example, `name01,name02`.")] = None,
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -1948,9 +1857,6 @@ class Client(object):
                         values are displayed for each name where meaningful. If `total_only=true`,
                         the `items` list will be empty.
         :type total_only: bool
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -1989,7 +1895,6 @@ class Client(object):
             source_names=source_names,
             total_item_count=total_item_count,
             total_only=total_only,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -2008,7 +1913,6 @@ class Client(object):
         x_request_id: Annotated[Optional[StrictStr], Field(description="Supplied by client during request or generated by server.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` or `names` parameter is required, but they cannot be set together.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -2032,9 +1936,6 @@ class Client(object):
         :param names: Performs the operation on the unique name specified. Enter multiple names in
                     comma-separated format. For example, `name01,name02`.
         :type names: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -2065,7 +1966,6 @@ class Client(object):
             x_request_id=x_request_id,
             ids=ids,
             names=names,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -2084,7 +1984,6 @@ class Client(object):
         on: Annotated[Optional[StrictStr], Field(description="Performs the operation on the target name specified. For example, `targetName01`.")] = None,
         source_ids: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the source ID specified. Enter multiple source IDs in comma-separated format.")] = None,
         source_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the source name specified. Enter multiple source names in comma-separated format. For example, `name01,name02`.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -2110,9 +2009,6 @@ class Client(object):
         :param source_names: Performs the operation on the source name specified. Enter multiple source names
                             in comma-separated format. For example, `name01,name02`.
         :type source_names: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -2144,7 +2040,6 @@ class Client(object):
             on=on,
             source_ids=source_ids,
             source_names=source_names,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -2171,7 +2066,6 @@ class Client(object):
         source_names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the source name specified. Enter multiple source names in comma-separated format. For example, `name01,name02`.")] = None,
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -2238,9 +2132,6 @@ class Client(object):
                         values are displayed for each name where meaningful. If `total_only=true`,
                         the `items` list will be empty.
         :type total_only: bool
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -2279,7 +2170,6 @@ class Client(object):
             source_names=source_names,
             total_item_count=total_item_count,
             total_only=total_only,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -2297,7 +2187,6 @@ class Client(object):
         x_request_id: Annotated[Optional[StrictStr], Field(description="Supplied by client during request or generated by server.")] = None,
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` or `names` parameter is required, but they cannot be set together.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -2319,9 +2208,6 @@ class Client(object):
         :param names: Performs the operation on the unique name specified. Enter multiple names in
                     comma-separated format. For example, `name01,name02`.
         :type names: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -2351,7 +2237,6 @@ class Client(object):
             x_request_id=x_request_id,
             ids=ids,
             names=names,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -2375,7 +2260,6 @@ class Client(object):
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Returns the response objects in the order specified. Set `sort` to the name in the response by which to sort. Sorting can be performed on any of the names in the response, and the objects can be sorted in ascending or descending order. By default, the response objects are sorted in ascending order. To sort in descending order, append the minus sign (`-`) to the name. A single request can be sorted on multiple objects. For example, you can sort all volumes from largest to smallest volume size, and then sort volumes of the same size in ascending order by volume name. To sort on multiple names, list the names as comma-separated values.")] = None,
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -2434,9 +2318,6 @@ class Client(object):
                         values are displayed for each name where meaningful. If `total_only=true`,
                         the `items` list will be empty.
         :type total_only: bool
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -2473,7 +2354,6 @@ class Client(object):
             sort=sort,
             total_item_count=total_item_count,
             total_only=total_only,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -2492,7 +2372,6 @@ class Client(object):
         ids: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique resource IDs specified. Enter multiple resource IDs in comma-separated format. The `ids` or `names` parameter is required, but they cannot be set together.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         truncate: Annotated[Optional[StrictBool], Field(description="If set to `true`, reduces the size of a volume during a volume resize operation. When a volume is truncated, Purity automatically takes an undo snapshot, providing a 24-hour window during which the previous contents can be retrieved. After truncating a volume, its provisioned size can be subsequently increased, but the data in truncated sectors cannot be retrieved. If set to `false` or not set at all and the volume is being reduced in size, the volume copy operation fails. Required if the `provisioned` parameter is set to a volume size that is smaller than the original size.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -2526,9 +2405,6 @@ class Client(object):
                         `provisioned` parameter is set to a volume size that is smaller than the
                         original size.
         :type truncate: bool
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -2560,7 +2436,6 @@ class Client(object):
             ids=ids,
             names=names,
             truncate=truncate,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -2587,7 +2462,6 @@ class Client(object):
         start_time: Annotated[Optional[StrictInt], Field(description="Displays historical performance data for the specified time window, where `start_time` is the beginning of the time window, and `end_time` is the end of the time window. The `start_time` and `end_time` parameters are specified in milliseconds since the UNIX epoch. If `start_time` is not specified, the start time will default to one resolution before the end time, meaning that the most recent sample of performance data will be displayed. If `end_time`is not specified, the end time will default to the current time. Include the `resolution` parameter to display the performance data at the specified resolution. If not specified, `resolution` defaults to the lowest valid resolution.")] = None,
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -2688,9 +2562,6 @@ class Client(object):
                         values are displayed for each name where meaningful. If `total_only=true`,
                         the `items` list will be empty.
         :type total_only: bool
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -2730,7 +2601,6 @@ class Client(object):
             start_time=start_time,
             total_item_count=total_item_count,
             total_only=total_only,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -2757,7 +2627,6 @@ class Client(object):
         start_time: Annotated[Optional[StrictInt], Field(description="Displays historical performance data for the specified time window, where `start_time` is the beginning of the time window, and `end_time` is the end of the time window. The `start_time` and `end_time` parameters are specified in milliseconds since the UNIX epoch. If `start_time` is not specified, the start time will default to one resolution before the end time, meaning that the most recent sample of performance data will be displayed. If `end_time`is not specified, the end time will default to the current time. Include the `resolution` parameter to display the performance data at the specified resolution. If not specified, `resolution` defaults to the lowest valid resolution.")] = None,
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -2858,9 +2727,6 @@ class Client(object):
                         values are displayed for each name where meaningful. If `total_only=true`,
                         the `items` list will be empty.
         :type total_only: bool
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -2900,7 +2766,6 @@ class Client(object):
             start_time=start_time,
             total_item_count=total_item_count,
             total_only=total_only,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -2918,7 +2783,6 @@ class Client(object):
         x_request_id: Annotated[Optional[StrictStr], Field(description="Supplied by client during request or generated by server.")] = None,
         names: Annotated[Optional[conlist(StrictStr)], Field(description="Performs the operation on the unique name specified. Enter multiple names in comma-separated format. For example, `name01,name02`.")] = None,
         overwrite: Annotated[Optional[StrictBool], Field(description="If set to `true`, overwrites an existing object during an object copy operation. If set to `false` or not set at all and the target name is an existing object, the copy operation fails. Required if the `source` body parameter is set and the source overwrites an existing object during the copy operation.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -2943,9 +2807,6 @@ class Client(object):
                         object, the copy operation fails. Required if the `source` body parameter is
                         set and the source overwrites an existing object during the copy operation.
         :type overwrite: bool
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -2976,7 +2837,6 @@ class Client(object):
             x_request_id=x_request_id,
             names=names,
             overwrite=overwrite,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -3003,7 +2863,6 @@ class Client(object):
         start_time: Annotated[Optional[StrictInt], Field(description="Displays historical performance data for the specified time window, where `start_time` is the beginning of the time window, and `end_time` is the end of the time window. The `start_time` and `end_time` parameters are specified in milliseconds since the UNIX epoch. If `start_time` is not specified, the start time will default to one resolution before the end time, meaning that the most recent sample of performance data will be displayed. If `end_time`is not specified, the end time will default to the current time. Include the `resolution` parameter to display the performance data at the specified resolution. If not specified, `resolution` defaults to the lowest valid resolution.")] = None,
         total_item_count: Annotated[Optional[StrictBool], Field(description="If set to `true`, the `total_item_count` matching the specified query parameters is calculated and returned in the response. If set to `false`, the `total_item_count` is `null` in the response. This may speed up queries where the `total_item_count` is large. If not specified, defaults to `false`.")] = None,
         total_only: Annotated[Optional[StrictBool], Field(description="If set to `true`, returns the aggregate value of all items after filtering. Where it makes more sense, the average value is displayed instead. The values are displayed for each name where meaningful. If `total_only=true`, the `items` list will be empty.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -3104,9 +2963,6 @@ class Client(object):
                         values are displayed for each name where meaningful. If `total_only=true`,
                         the `items` list will be empty.
         :type total_only: bool
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -3146,7 +3002,6 @@ class Client(object):
             start_time=start_time,
             total_item_count=total_item_count,
             total_only=total_only,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
