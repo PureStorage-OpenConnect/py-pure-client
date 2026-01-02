@@ -21,10 +21,10 @@ Importable as
 .. module:: pypureclient.flasharray.client
 .. autofunction:: pypureclient.flasharray.client::Client
 
-FlashArray REST 2.49 Client
+FlashArray REST 2.50 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. module:: pypureclient.flasharray.FA_2_49.client
-.. autoclass:: pypureclient.flasharray.FA_2_49.client::Client
+.. module:: pypureclient.flasharray.FA_2_50.client
+.. autoclass:: pypureclient.flasharray.FA_2_50.client::Client
    :members:
 
 Models
@@ -2946,6 +2946,18 @@ HostGroupPost
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
+HostGroupQosGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::HostGroupQosGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
 HostGroupResponse
 ~~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flasharray::HostGroupResponse
@@ -3009,6 +3021,18 @@ HostPortConnectivity
 HostPost
 ~~~~~~~~
 .. autopydantic_model:: pypureclient.flasharray::HostPost
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+HostQosGetResponse
+~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::HostQosGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4242,6 +4266,18 @@ OffloadAzure
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
+OffloadAzurePatch
+~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::OffloadAzurePatch
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
 OffloadGetResponse
 ~~~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flasharray::OffloadGetResponse
@@ -4269,6 +4305,18 @@ OffloadGoogleCloud
 OffloadNfs
 ~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flasharray::OffloadNfs
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+OffloadPatch
+~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::OffloadPatch
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4557,6 +4605,18 @@ PodPerformanceReplicationResponse
 PodPost
 ~~~~~~~
 .. autopydantic_model:: pypureclient.flasharray::PodPost
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PodRemoteArrayStatus
+~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::PodRemoteArrayStatus
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6546,6 +6606,114 @@ Realm
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
+RealmConnection
+~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::RealmConnection
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+RealmConnectionKey
+~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::RealmConnectionKey
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+RealmConnectionKeyGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::RealmConnectionKeyGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+RealmConnectionKeyPost
+~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::RealmConnectionKeyPost
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+RealmConnectionKeyPostResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::RealmConnectionKeyPostResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+RealmConnectionKeyResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::RealmConnectionKeyResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+RealmConnectionWithKey
+~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::RealmConnectionWithKey
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+RealmConnectionsGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::RealmConnectionsGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+RealmConnectionsResponse
+~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::RealmConnectionsResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
 RealmGetResponse
 ~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flasharray::RealmGetResponse
@@ -6873,6 +7041,42 @@ RemoteProtectionGroupSnapshotTransferGetResponse
 RemoteProtectionGroupSnapshotTransferResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flasharray::RemoteProtectionGroupSnapshotTransferResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+RemoteRealm
+~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::RemoteRealm
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+RemoteRealmTagGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::RemoteRealmTagGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+RemoteRealmsResponse
+~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::RemoteRealmsResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -8214,9 +8418,33 @@ StartEndTime
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
-StretchedTag
-~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flasharray::StretchedTag
+StretchedTagPod
+~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::StretchedTagPod
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+StretchedTagRealm
+~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::StretchedTagRealm
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+StretchedTagRemoteArrayStatus
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::StretchedTagRemoteArrayStatus
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -9477,6 +9705,30 @@ VolumeResponse
 VolumeSnapshot
 ~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flasharray::VolumeSnapshot
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+VolumeSnapshotBatchPost
+~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::VolumeSnapshotBatchPost
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+VolumeSnapshotBatchResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::VolumeSnapshotBatchResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
