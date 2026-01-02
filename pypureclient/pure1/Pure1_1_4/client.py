@@ -137,7 +137,6 @@ class Client(object):
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each `name` element, an error is returned. Single quotes are required around all strings.")] = None,
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The offset of the first resource to return from a collection.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -181,9 +180,6 @@ class Client(object):
                     appended to the field name). If you provide a sort you will not get a
                     continuation token in the response.
         :type sort: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -218,7 +214,6 @@ class Client(object):
             names=names,
             offset=offset,
             sort=sort,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -241,7 +236,6 @@ class Client(object):
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each `name` element, an error is returned. Single quotes are required around all strings.")] = None,
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The offset of the first resource to return from a collection.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -289,9 +283,6 @@ class Client(object):
                     appended to the field name). If you provide a sort you will not get a
                     continuation token in the response.
         :type sort: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -327,7 +318,6 @@ class Client(object):
             names=names,
             offset=offset,
             sort=sort,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -350,7 +340,6 @@ class Client(object):
         resource_ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If there is not at least one resource that matches each `resource_id` element, an error is returned. Single quotes are required around all strings.")] = None,
         resource_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each `resource_name` element, an error is returned. Single quotes are required around all strings.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -398,9 +387,6 @@ class Client(object):
                     appended to the field name). If you provide a sort you will not get a
                     continuation token in the response.
         :type sort: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -436,7 +422,6 @@ class Client(object):
             resource_ids=resource_ids,
             resource_names=resource_names,
             sort=sort,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -455,7 +440,6 @@ class Client(object):
         namespaces: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of namespaces. Single quotes are required around all strings.")] = None,
         resource_ids: Annotated[Optional[conlist(StrictStr)], Field(description="REQUIRED: either `resource_ids` or `resource_names`. A comma-separated list of resource IDs. If there is not at least one resource that matches each `resource_id` element, an error is returned. Single quotes are required around all strings.")] = None,
         resource_names: Annotated[Optional[conlist(StrictStr)], Field(description="REQUIRED: either `resource_ids` or `resource_names`. A comma-separated list of resource names. If there is not at least one resource that matches each `resource_name` element, an error is returned. Single quotes are required around all strings.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -485,9 +469,6 @@ class Client(object):
                                         `resource_name` element, an error is returned. Single quotes are
                                         required around all strings.
         :type resource_names: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -519,7 +500,6 @@ class Client(object):
             namespaces=namespaces,
             resource_ids=resource_ids,
             resource_names=resource_names,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -538,7 +518,6 @@ class Client(object):
         namespaces: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of namespaces. Single quotes are required around all strings.")] = None,
         resource_ids: Annotated[Optional[conlist(StrictStr)], Field(description="REQUIRED: either `resource_ids` or `resource_names`. A comma-separated list of resource IDs. If there is not at least one resource that matches each `resource_id` element, an error is returned. Single quotes are required around all strings.")] = None,
         resource_names: Annotated[Optional[conlist(StrictStr)], Field(description="REQUIRED: either `resource_ids` or `resource_names`. A comma-separated list of resource names. If there is not at least one resource that matches each `resource_name` element, an error is returned. Single quotes are required around all strings.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -569,9 +548,6 @@ class Client(object):
                                         `resource_name` element, an error is returned. Single quotes are
                                         required around all strings.
         :type resource_names: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -603,7 +579,6 @@ class Client(object):
             namespaces=namespaces,
             resource_ids=resource_ids,
             resource_names=resource_names,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -626,7 +601,6 @@ class Client(object):
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The offset of the first resource to return from a collection.")] = None,
         resource_ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource IDs. If there is not at least one resource that matches each `resource_id` element, an error is returned. Single quotes are required around all strings.")] = None,
         resource_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each `resource_name` element, an error is returned. Single quotes are required around all strings.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -672,9 +646,6 @@ class Client(object):
                             that matches each `resource_name` element, an error is returned. Single
                             quotes are required around all strings.
         :type resource_names: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -710,7 +681,6 @@ class Client(object):
             offset=offset,
             resource_ids=resource_ids,
             resource_names=resource_names,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -732,7 +702,6 @@ class Client(object):
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each `name` element, an error is returned. Single quotes are required around all strings.")] = None,
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The offset of the first resource to return from a collection.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -776,9 +745,6 @@ class Client(object):
                     appended to the field name). If you provide a sort you will not get a
                     continuation token in the response.
         :type sort: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -813,7 +779,6 @@ class Client(object):
             names=names,
             offset=offset,
             sort=sort,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -835,7 +800,6 @@ class Client(object):
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each `name` element, an error is returned. Single quotes are required around all strings.")] = None,
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The offset of the first resource to return from a collection.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -879,9 +843,6 @@ class Client(object):
                     appended to the field name). If you provide a sort you will not get a
                     continuation token in the response.
         :type sort: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -916,7 +877,6 @@ class Client(object):
             names=names,
             offset=offset,
             sort=sort,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -946,7 +906,6 @@ class Client(object):
         source_names: Annotated[Optional[conlist(StrictStr)], Field(description="A list of source names. Source names separated by a `+` indicate that both sources must be present in each element. Source names separated by a `,` indicate that at least one source must be present in each element. If there is not at least one resource that matches each `source_name` element, an error is returned. Single quotes are required around all strings. When using Try it Out in Swagger, a list of source names separated by a `+` must be entered in the same item cell.")] = None,
         target_ids: Annotated[Optional[conlist(StrictStr)], Field(description="A list of target IDs. Target IDs separated by a `+` indicate that both targets must be present in each element. Target IDs separated by a `,` indicate that at least one target must be present in each element. If there is not at least one resource that matches each `target_id` element, an error is returned. Single quotes are required around all strings. When using Try it Out in Swagger, a list of target IDs separated by a `+` must be entered in the same item cell.")] = None,
         target_names: Annotated[Optional[conlist(StrictStr)], Field(description="A list of target names. Target names separated by a `+` indicate that both targets must be present in each element. Target names separated by a `,` indicate that at least one target must be present in each element. If there is not at least one resource that matches each `target_name` element, an error is returned. Single quotes are required around all strings. When using Try it Out in Swagger, a list of target names separated by a `+` must be entered in the same item cell.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -1040,9 +999,6 @@ class Client(object):
                             using Try it Out in Swagger, a list of target names separated by a `+` must
                             be entered in the same item cell.
         :type target_names: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -1082,7 +1038,6 @@ class Client(object):
             source_names=source_names,
             target_ids=target_ids,
             target_names=target_names,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -1107,7 +1062,6 @@ class Client(object):
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each `name` element, an error is returned. Single quotes are required around all strings.")] = None,
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The offset of the first resource to return from a collection.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -1151,9 +1105,6 @@ class Client(object):
                     appended to the field name). If you provide a sort you will not get a
                     continuation token in the response.
         :type sort: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -1188,7 +1139,6 @@ class Client(object):
             names=names,
             offset=offset,
             sort=sort,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -1210,7 +1160,6 @@ class Client(object):
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each `name` element, an error is returned. Single quotes are required around all strings.")] = None,
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The offset of the first resource to return from a collection.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -1254,9 +1203,6 @@ class Client(object):
                     appended to the field name). If you provide a sort you will not get a
                     continuation token in the response.
         :type sort: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -1291,7 +1237,6 @@ class Client(object):
             names=names,
             offset=offset,
             sort=sort,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -1316,7 +1261,6 @@ class Client(object):
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each `name` element, an error is returned. Single quotes are required around all strings.")] = None,
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The offset of the first resource to return from a collection.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -1373,9 +1317,6 @@ class Client(object):
                     appended to the field name). If you provide a sort you will not get a
                     continuation token in the response.
         :type sort: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -1412,7 +1353,6 @@ class Client(object):
             names=names,
             offset=offset,
             sort=sort,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -1435,7 +1375,6 @@ class Client(object):
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each `name` element, an error is returned. Single quotes are required around all strings.")] = None,
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The offset of the first resource to return from a collection.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -1479,9 +1418,6 @@ class Client(object):
                     appended to the field name). If you provide a sort you will not get a
                     continuation token in the response.
         :type sort: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -1516,7 +1452,6 @@ class Client(object):
             names=names,
             offset=offset,
             sort=sort,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -1546,7 +1481,6 @@ class Client(object):
         source_names: Annotated[Optional[conlist(StrictStr)], Field(description="A list of source names. Source names separated by a `+` indicate that both sources must be present in each element. Source names separated by a `,` indicate that at least one source must be present in each element. If there is not at least one resource that matches each `source_name` element, an error is returned. Single quotes are required around all strings. When using Try it Out in Swagger, a list of source names separated by a `+` must be entered in the same item cell.")] = None,
         target_ids: Annotated[Optional[conlist(StrictStr)], Field(description="A list of target IDs. Target IDs separated by a `+` indicate that both targets must be present in each element. Target IDs separated by a `,` indicate that at least one target must be present in each element. If there is not at least one resource that matches each `target_id` element, an error is returned. Single quotes are required around all strings. When using Try it Out in Swagger, a list of target IDs separated by a `+` must be entered in the same item cell.")] = None,
         target_names: Annotated[Optional[conlist(StrictStr)], Field(description="A list of target names. Target names separated by a `+` indicate that both targets must be present in each element. Target names separated by a `,` indicate that at least one target must be present in each element. If there is not at least one resource that matches each `target_name` element, an error is returned. Single quotes are required around all strings. When using Try it Out in Swagger, a list of target names separated by a `+` must be entered in the same item cell.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -1640,9 +1574,6 @@ class Client(object):
                             using Try it Out in Swagger, a list of target names separated by a `+` must
                             be entered in the same item cell.
         :type target_names: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -1682,7 +1613,6 @@ class Client(object):
             source_names=source_names,
             target_ids=target_ids,
             target_names=target_names,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -1710,7 +1640,6 @@ class Client(object):
         policy_ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of policy IDs. If there is not at least one resource that matches each `policy_id` element, an error is returned. Single quotes are required around all strings.")] = None,
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of policy names. If there is not at least one resource that matches each `policy_name` element, an error is returned. Single quotes are required around all strings.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -1764,9 +1693,6 @@ class Client(object):
                     appended to the field name). If you provide a sort you will not get a
                     continuation token in the response.
         :type sort: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -1803,7 +1729,6 @@ class Client(object):
             policy_ids=policy_ids,
             policy_names=policy_names,
             sort=sort,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -1829,7 +1754,6 @@ class Client(object):
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
         source_ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of ids for the source of the object. If there is not at least one resource that matches each `source_id` element, an error is returned. Single quotes are required around all strings.")] = None,
         source_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of names for the source of the object. If there is not at least one resource that matches each `source_name` element, an error is returned. Single quotes are required around all strings.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -1883,9 +1807,6 @@ class Client(object):
                             least one resource that matches each `source_name` element, an error is
                             returned. Single quotes are required around all strings.
         :type source_names: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -1922,7 +1843,6 @@ class Client(object):
             sort=sort,
             source_ids=source_ids,
             source_names=source_names,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -1948,7 +1868,6 @@ class Client(object):
         policy_ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of policy IDs. If there is not at least one resource that matches each `policy_id` element, an error is returned. Single quotes are required around all strings.")] = None,
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of policy names. If there is not at least one resource that matches each `policy_name` element, an error is returned. Single quotes are required around all strings.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -2002,9 +1921,6 @@ class Client(object):
                     appended to the field name). If you provide a sort you will not get a
                     continuation token in the response.
         :type sort: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -2041,7 +1957,6 @@ class Client(object):
             policy_ids=policy_ids,
             policy_names=policy_names,
             sort=sort,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -2064,7 +1979,6 @@ class Client(object):
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each `name` element, an error is returned. Single quotes are required around all strings.")] = None,
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The offset of the first resource to return from a collection.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -2108,9 +2022,6 @@ class Client(object):
                     appended to the field name). If you provide a sort you will not get a
                     continuation token in the response.
         :type sort: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -2145,7 +2056,6 @@ class Client(object):
             names=names,
             offset=offset,
             sort=sort,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -2170,7 +2080,6 @@ class Client(object):
         policy_ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of policy IDs. If there is not at least one resource that matches each `policy_id` element, an error is returned. Single quotes are required around all strings.")] = None,
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of policy names. If there is not at least one resource that matches each `policy_name` element, an error is returned. Single quotes are required around all strings.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -2224,9 +2133,6 @@ class Client(object):
                     appended to the field name). If you provide a sort you will not get a
                     continuation token in the response.
         :type sort: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -2263,7 +2169,6 @@ class Client(object):
             policy_ids=policy_ids,
             policy_names=policy_names,
             sort=sort,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -2286,7 +2191,6 @@ class Client(object):
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each `name` element, an error is returned. Single quotes are required around all strings.")] = None,
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The offset of the first resource to return from a collection.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -2330,9 +2234,6 @@ class Client(object):
                     appended to the field name). If you provide a sort you will not get a
                     continuation token in the response.
         :type sort: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -2367,7 +2268,6 @@ class Client(object):
             names=names,
             offset=offset,
             sort=sort,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -2389,7 +2289,6 @@ class Client(object):
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each `name` element, an error is returned. Single quotes are required around all strings.")] = None,
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The offset of the first resource to return from a collection.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -2433,9 +2332,6 @@ class Client(object):
                     appended to the field name). If you provide a sort you will not get a
                     continuation token in the response.
         :type sort: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -2470,7 +2366,6 @@ class Client(object):
             names=names,
             offset=offset,
             sort=sort,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -2495,7 +2390,6 @@ class Client(object):
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
         subscription_ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of subscription IDs. If there is not at least one resource that matches each `subscription.id` element, an error is returned. Single quotes are required around all strings.")] = None,
         subscription_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of subscription names. If there is not at least one resource that matches each `subscription.name` element, an error is returned. Single quotes are required around all strings.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -2549,9 +2443,6 @@ class Client(object):
                                 resource that matches each `subscription.name` element, an error is
                                 returned. Single quotes are required around all strings.
         :type subscription_names: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -2588,7 +2479,6 @@ class Client(object):
             sort=sort,
             subscription_ids=subscription_ids,
             subscription_names=subscription_names,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -2612,7 +2502,6 @@ class Client(object):
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The offset of the first resource to return from a collection.")] = None,
         resource_types: Annotated[Optional[conlist(StrictStr)], Field(description="The resource types to list the available metrics. Valid values are `arrays`, `buckets`, `directories`, `file-systems`, `pods`, `subscription-licenses` and `volumes`. A metric can belong to a combination of resources, e.g., write-iops from array to pod. In that case, query by ['arrays', 'pods']. Single quotes are required around all strings.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -2662,9 +2551,6 @@ class Client(object):
                     appended to the field name). If you provide a sort you will not get a
                     continuation token in the response.
         :type sort: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -2700,7 +2586,6 @@ class Client(object):
             offset=offset,
             resource_types=resource_types,
             sort=sort,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -2724,7 +2609,6 @@ class Client(object):
         names: Annotated[Optional[conlist(StrictStr)], Field(description="REQUIRED: either `names` or `ids`. A comma-separated list of resource names. If there is not at least one resource that matches each `name` element, an error is returned. Single quotes are required around all strings.")] = None,
         resource_ids: Annotated[Optional[conlist(StrictStr)], Field(description="REQUIRED: either `resource_ids` or `resource_names`. A comma-separated list of resource IDs. If there is not at least one resource that matches each `resource_id` element, an error is returned. Single quotes are required around all strings.")] = None,
         resource_names: Annotated[Optional[conlist(StrictStr)], Field(description="REQUIRED: either `resource_ids` or `resource_names`. A comma-separated list of resource names. If there is not at least one resource that matches each `resource_name` element, an error is returned. Single quotes are required around all strings.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -2771,9 +2655,6 @@ class Client(object):
                                         `resource_name` element, an error is returned. Single quotes are
                                         required around all strings.
         :type resource_names: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -2809,7 +2690,6 @@ class Client(object):
             names=names,
             resource_ids=resource_ids,
             resource_names=resource_names,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -2832,7 +2712,6 @@ class Client(object):
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each `name` element, an error is returned. Single quotes are required around all strings.")] = None,
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The offset of the first resource to return from a collection.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -2876,9 +2755,6 @@ class Client(object):
                     appended to the field name). If you provide a sort you will not get a
                     continuation token in the response.
         :type sort: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -2913,7 +2789,6 @@ class Client(object):
             names=names,
             offset=offset,
             sort=sort,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -2935,7 +2810,6 @@ class Client(object):
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each `name` element, an error is returned. Single quotes are required around all strings.")] = None,
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The offset of the first resource to return from a collection.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -2979,9 +2853,6 @@ class Client(object):
                     appended to the field name). If you provide a sort you will not get a
                     continuation token in the response.
         :type sort: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -3016,7 +2887,6 @@ class Client(object):
             names=names,
             offset=offset,
             sort=sort,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -3046,7 +2916,6 @@ class Client(object):
         source_names: Annotated[Optional[conlist(StrictStr)], Field(description="A list of source names. Source names separated by a `+` indicate that both sources must be present in each element. Source names separated by a `,` indicate that at least one source must be present in each element. If there is not at least one resource that matches each `source_name` element, an error is returned. Single quotes are required around all strings. When using Try it Out in Swagger, a list of source names separated by a `+` must be entered in the same item cell.")] = None,
         target_ids: Annotated[Optional[conlist(StrictStr)], Field(description="A list of target IDs. Target IDs separated by a `+` indicate that both targets must be present in each element. Target IDs separated by a `,` indicate that at least one target must be present in each element. If there is not at least one resource that matches each `target_id` element, an error is returned. Single quotes are required around all strings. When using Try it Out in Swagger, a list of target IDs separated by a `+` must be entered in the same item cell.")] = None,
         target_names: Annotated[Optional[conlist(StrictStr)], Field(description="A list of target names. Target names separated by a `+` indicate that both targets must be present in each element. Target names separated by a `,` indicate that at least one target must be present in each element. If there is not at least one resource that matches each `target_name` element, an error is returned. Single quotes are required around all strings. When using Try it Out in Swagger, a list of target names separated by a `+` must be entered in the same item cell.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -3140,9 +3009,6 @@ class Client(object):
                             using Try it Out in Swagger, a list of target names separated by a `+` must
                             be entered in the same item cell.
         :type target_names: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -3182,7 +3048,6 @@ class Client(object):
             source_names=source_names,
             target_ids=target_ids,
             target_names=target_names,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -3207,7 +3072,6 @@ class Client(object):
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each `name` element, an error is returned. Single quotes are required around all strings.")] = None,
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The offset of the first resource to return from a collection.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -3251,9 +3115,6 @@ class Client(object):
                     appended to the field name). If you provide a sort you will not get a
                     continuation token in the response.
         :type sort: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -3288,7 +3149,6 @@ class Client(object):
             names=names,
             offset=offset,
             sort=sort,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -3313,7 +3173,6 @@ class Client(object):
         policy_ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of policy IDs. If there is not at least one resource that matches each `policy_id` element, an error is returned. Single quotes are required around all strings.")] = None,
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of policy names. If there is not at least one resource that matches each `policy_name` element, an error is returned. Single quotes are required around all strings.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -3367,9 +3226,6 @@ class Client(object):
                     appended to the field name). If you provide a sort you will not get a
                     continuation token in the response.
         :type sort: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -3406,7 +3262,6 @@ class Client(object):
             policy_ids=policy_ids,
             policy_names=policy_names,
             sort=sort,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -3432,7 +3287,6 @@ class Client(object):
         policy_ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of policy IDs. If there is not at least one resource that matches each `policy_id` element, an error is returned. Single quotes are required around all strings.")] = None,
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of policy names. If there is not at least one resource that matches each `policy_name` element, an error is returned. Single quotes are required around all strings.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -3486,9 +3340,6 @@ class Client(object):
                     appended to the field name). If you provide a sort you will not get a
                     continuation token in the response.
         :type sort: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -3525,7 +3376,6 @@ class Client(object):
             policy_ids=policy_ids,
             policy_names=policy_names,
             sort=sort,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -3551,7 +3401,6 @@ class Client(object):
         policy_ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of policy IDs. If there is not at least one resource that matches each `policy_id` element, an error is returned. Single quotes are required around all strings.")] = None,
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of policy names. If there is not at least one resource that matches each `policy_name` element, an error is returned. Single quotes are required around all strings.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -3605,9 +3454,6 @@ class Client(object):
                     appended to the field name). If you provide a sort you will not get a
                     continuation token in the response.
         :type sort: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -3644,7 +3490,6 @@ class Client(object):
             policy_ids=policy_ids,
             policy_names=policy_names,
             sort=sort,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -3667,7 +3512,6 @@ class Client(object):
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each `name` element, an error is returned. Single quotes are required around all strings.")] = None,
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The offset of the first resource to return from a collection.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -3711,9 +3555,6 @@ class Client(object):
                     appended to the field name). If you provide a sort you will not get a
                     continuation token in the response.
         :type sort: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -3748,7 +3589,6 @@ class Client(object):
             names=names,
             offset=offset,
             sort=sort,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -3773,7 +3613,6 @@ class Client(object):
         policy_ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of policy IDs. If there is not at least one resource that matches each `policy_id` element, an error is returned. Single quotes are required around all strings.")] = None,
         policy_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of policy names. If there is not at least one resource that matches each `policy_name` element, an error is returned. Single quotes are required around all strings.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -3827,9 +3666,6 @@ class Client(object):
                     appended to the field name). If you provide a sort you will not get a
                     continuation token in the response.
         :type sort: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -3866,7 +3702,6 @@ class Client(object):
             policy_ids=policy_ids,
             policy_names=policy_names,
             sort=sort,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -3889,7 +3724,6 @@ class Client(object):
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each `name` element, an error is returned. Single quotes are required around all strings.")] = None,
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The offset of the first resource to return from a collection.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -3933,9 +3767,6 @@ class Client(object):
                     appended to the field name). If you provide a sort you will not get a
                     continuation token in the response.
         :type sort: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -3970,7 +3801,6 @@ class Client(object):
             names=names,
             offset=offset,
             sort=sort,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -3999,7 +3829,6 @@ class Client(object):
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
         subscription_ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of subscription IDs. If there is not at least one resource that matches each `subscription.id` element, an error is returned. Single quotes are required around all strings.")] = None,
         subscription_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of subscription names. If there is not at least one resource that matches each `subscription.name` element, an error is returned. Single quotes are required around all strings.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -4066,9 +3895,6 @@ class Client(object):
                                 resource that matches each `subscription.name` element, an error is
                                 returned. Single quotes are required around all strings.
         :type subscription_names: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -4108,7 +3934,6 @@ class Client(object):
             sort=sort,
             subscription_ids=subscription_ids,
             subscription_names=subscription_names,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -4137,7 +3962,6 @@ class Client(object):
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
         subscription_ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of subscription IDs. If there is not at least one resource that matches each `subscription.id` element, an error is returned. Single quotes are required around all strings.")] = None,
         subscription_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of subscription names. If there is not at least one resource that matches each `subscription.name` element, an error is returned. Single quotes are required around all strings.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -4198,9 +4022,6 @@ class Client(object):
                                 resource that matches each `subscription.name` element, an error is
                                 returned. Single quotes are required around all strings.
         :type subscription_names: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -4238,7 +4059,6 @@ class Client(object):
             sort=sort,
             subscription_ids=subscription_ids,
             subscription_names=subscription_names,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -4262,7 +4082,6 @@ class Client(object):
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each `name` element, an error is returned. Single quotes are required around all strings.")] = None,
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The offset of the first resource to return from a collection.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -4306,9 +4125,6 @@ class Client(object):
                     appended to the field name). If you provide a sort you will not get a
                     continuation token in the response.
         :type sort: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -4343,7 +4159,6 @@ class Client(object):
             names=names,
             offset=offset,
             sort=sort,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -4366,7 +4181,6 @@ class Client(object):
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each `name` element, an error is returned. Single quotes are required around all strings.")] = None,
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The offset of the first resource to return from a collection.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -4414,9 +4228,6 @@ class Client(object):
                     appended to the field name). If you provide a sort you will not get a
                     continuation token in the response.
         :type sort: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -4452,7 +4263,6 @@ class Client(object):
             names=names,
             offset=offset,
             sort=sort,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -4471,7 +4281,6 @@ class Client(object):
         limit: Annotated[Optional[StrictInt], Field(description="Limit the size of the response to the specified number of resources. A limit of 0 can be used to get the number of resources without getting all of the resources. It will be returned in the total_item_count field. If a client asks for a page size larger than the maximum number, the request is still valid. In that case the server just returns the maximum number of items, disregarding the client's page size request. If not specified, defaults to 1000.")] = None,
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The offset of the first resource to return from a collection.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -4505,9 +4314,6 @@ class Client(object):
                     appended to the field name). If you provide a sort you will not get a
                     continuation token in the response.
         :type sort: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -4540,7 +4346,6 @@ class Client(object):
             limit=limit,
             offset=offset,
             sort=sort,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -4561,7 +4366,6 @@ class Client(object):
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each `name` element, an error is returned. Single quotes are required around all strings.")] = None,
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The offset of the first resource to return from a collection.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -4605,9 +4409,6 @@ class Client(object):
                     appended to the field name). If you provide a sort you will not get a
                     continuation token in the response.
         :type sort: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -4642,7 +4443,6 @@ class Client(object):
             names=names,
             offset=offset,
             sort=sort,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -4667,7 +4467,6 @@ class Client(object):
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
         source_ids: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of ids for the source of the object. If there is not at least one resource that matches each `source_id` element, an error is returned. Single quotes are required around all strings.")] = None,
         source_names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of names for the source of the object. If there is not at least one resource that matches each `source_name` element, an error is returned. Single quotes are required around all strings.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -4721,9 +4520,6 @@ class Client(object):
                             least one resource that matches each `source_name` element, an error is
                             returned. Single quotes are required around all strings.
         :type source_names: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -4760,7 +4556,6 @@ class Client(object):
             sort=sort,
             source_ids=source_ids,
             source_names=source_names,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,
@@ -4783,7 +4578,6 @@ class Client(object):
         names: Annotated[Optional[conlist(StrictStr)], Field(description="A comma-separated list of resource names. If there is not at least one resource that matches each `name` element, an error is returned. Single quotes are required around all strings.")] = None,
         offset: Annotated[Optional[conint(strict=True, ge=0)], Field(description="The offset of the first resource to return from a collection.")] = None,
         sort: Annotated[Optional[conlist(constr(strict=True))], Field(description="Sort the response by the specified fields (in descending order if '-' is appended to the field name). If you provide a sort you will not get a continuation token in the response.")] = None,
-        async_req: Optional[bool] = None,
         _preload_content: bool = True,
         _return_http_data_only: Optional[bool] = None,
         _request_timeout: Optional[Union[float, Tuple[float, float]]] = None
@@ -4827,9 +4621,6 @@ class Client(object):
                     appended to the field name). If you provide a sort you will not get a
                     continuation token in the response.
         :type sort: List[str]
-        :param async_req: Whether to execute the request asynchronously.
-        :type async_req: bool, optional
-        :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                  be set to none and raw_data will store the
@@ -4864,7 +4655,6 @@ class Client(object):
             names=names,
             offset=offset,
             sort=sort,
-            async_req=async_req,
             _preload_content=_preload_content,
             _return_http_data_only=_return_http_data_only,
             _request_timeout=_request_timeout,

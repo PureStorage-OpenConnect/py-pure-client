@@ -83,7 +83,6 @@ class WorkloadPlacementRecommendationTargetCapacityUsedProjections(BaseModel):
         if _value is None and name in self.__fields__.keys() and _should_raise_on_none():
             raise AttributeError
         return _value
-
     def __str__(self) -> str:
         return self.to_str()
 

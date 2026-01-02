@@ -33,4 +33,7 @@ def __getattr__(name, default=None):
                 setattr(_model_class, _field_name, Property(_field_info.alias if _field_info.alias else _field_name))
         return _model_class
     else:
-        return getattr(__package__, name, default)
+        _value = getattr(__package__, name, default)
+        if _value is None:
+            raise ImportError(f'module {__package__} has no attribute {name}')
+        return _value

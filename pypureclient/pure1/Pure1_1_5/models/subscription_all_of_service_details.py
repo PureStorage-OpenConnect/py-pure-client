@@ -19,18 +19,14 @@ import pprint
 import re  # noqa: F401
 
 from typing import Any, Dict, List, Optional
-try:
-    from pydantic.v1 import BaseModel, Field, StrictStr, ValidationError, validator
-except ModuleNotFoundError:
-    from pydantic import BaseModel, Field, StrictStr, ValidationError, validator
-
-from pypureclient.pure1.Pure1_1_5.models.evergreen_forever_and_foundation_details import EvergreenForeverAndFoundationDetails
 from typing import Union, Any, List, TYPE_CHECKING
 try:
+    from pydantic.v1 import BaseModel, Field, StrictStr, ValidationError, validator
     from pydantic.v1 import StrictStr, Field
 except ModuleNotFoundError:
+    from pydantic import BaseModel, Field, StrictStr, ValidationError, validator
     from pydantic import StrictStr, Field
-
+from pypureclient.pure1.Pure1_1_5.models.evergreen_forever_and_foundation_details import EvergreenForeverAndFoundationDetails
 
 SUBSCRIPTIONALLOFSERVICEDETAILS_ONE_OF_SCHEMAS = ["EvergreenForeverAndFoundationDetails", "object"]
 
@@ -86,6 +82,10 @@ class SubscriptionAllOfServiceDetails(BaseModel):
         else:
             return v
 
+    @property
+    def value(self):
+        return self.actual_instance
+
     @classmethod
     def from_dict(cls, obj: dict) -> SubscriptionAllOfServiceDetails:
         return cls.from_json(json.dumps(obj))
@@ -93,34 +93,9 @@ class SubscriptionAllOfServiceDetails(BaseModel):
     @classmethod
     def from_json(cls, json_str: str) -> SubscriptionAllOfServiceDetails:
         """Returns the object represented by the json string"""
-        instance = SubscriptionAllOfServiceDetails.construct()
-        error_messages = []
-        match = 0
-
-        # deserialize data into EvergreenForeverAndFoundationDetails
-        try:
-            instance.actual_instance = EvergreenForeverAndFoundationDetails.from_json(json_str)
-            match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
-        # deserialize data into object
-        try:
-            # validation
-            instance.oneof_schema_2_validator = json.loads(json_str)
-            # assign value to actual_instance
-            instance.actual_instance = instance.oneof_schema_2_validator
-            match += 1
-        except (ValidationError, ValueError) as e:
-            error_messages.append(str(e))
-
-        if match > 1:
-            # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into SubscriptionAllOfServiceDetails with oneOf schemas: EvergreenForeverAndFoundationDetails, object. Details: " + ", ".join(error_messages))
-        elif match == 0:
-            # no match
-            raise ValueError("No match found when deserializing the JSON string into SubscriptionAllOfServiceDetails with oneOf schemas: EvergreenForeverAndFoundationDetails, object. Details: " + ", ".join(error_messages))
-        else:
-            return instance
+        return SubscriptionAllOfServiceDetails.construct(_fields_set=None, **{
+            "actual_instance": json.loads(json_str)
+        })
 
     def to_json(self) -> str:
         """Returns the JSON representation of the actual instance"""
@@ -133,14 +108,14 @@ class SubscriptionAllOfServiceDetails(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> dict:
+    def to_dict(self, include_readonly: bool = True) -> dict:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None
 
         to_dict = getattr(self.actual_instance, "to_dict", None)
         if callable(to_dict):
-            return self.actual_instance.to_dict()
+            return self.actual_instance.to_dict(include_readonly=include_readonly)
         else:
             # primitive type
             return self.actual_instance

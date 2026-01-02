@@ -178,5 +178,5 @@ def __getattr__(name, default=None):
     if '_models_list' == name:
         return __class_model_dict.keys()
     if name not in __class_model_dict:
-        raise AttributeError(f'module {__name__} has no attribute {name}')
+        raise ImportError(f'module {__name__} has no attribute {name}')
     return __class_model_dict[name].load()
