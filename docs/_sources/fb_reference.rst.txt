@@ -21,10 +21,10 @@ Importable as
 .. module:: pypureclient.flashblade.client
 .. autofunction:: pypureclient.flashblade.client::Client
 
-FlashBlade REST 2.21 Client
+FlashBlade REST 2.23 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. module:: pypureclient.flashblade.FB_2_21.client
-.. autoclass:: pypureclient.flashblade.FB_2_21.client::Client
+.. module:: pypureclient.flashblade.FB_2_23.client
+.. autoclass:: pypureclient.flashblade.FB_2_23.client::Client
    :members:
 
 Models
@@ -2190,6 +2190,18 @@ DataEvictionPolicyPost
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
+DestroyedPatchPost
+~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::DestroyedPatchPost
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
 DirectoryService
 ~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flashblade::DirectoryService
@@ -2634,9 +2646,33 @@ FileSystemExport
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
+FileSystemExportBase
+~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::FileSystemExportBase
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
 FileSystemExportGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flashblade::FileSystemExportGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+FileSystemExportPatch
+~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::FileSystemExportPatch
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -3057,6 +3093,18 @@ FixedReferenceWithIsLocal
 FixedReferenceWithRemote
 ~~~~~~~~~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flashblade::FixedReferenceWithRemote
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+FixedReferenceWithoutType
+~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::FixedReferenceWithoutType
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4002,6 +4050,66 @@ ManagementAccessPolicyRuleInPolicy
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
+ManagementAuthenticationPoliciesGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::ManagementAuthenticationPoliciesGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+ManagementAuthenticationPoliciesResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::ManagementAuthenticationPoliciesResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+ManagementAuthenticationPolicy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::ManagementAuthenticationPolicy
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+ManagementAuthenticationPolicyConfig
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::ManagementAuthenticationPolicyConfig
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+ManagementAuthenticationPolicyPost
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::ManagementAuthenticationPolicyPost
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
 Member
 ~~~~~~
 .. autopydantic_model:: pypureclient.flashblade::Member
@@ -4041,6 +4149,18 @@ MultiProtocol
 MultiProtocolPost
 ~~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flashblade::MultiProtocolPost
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+NamingPattern
+~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::NamingPattern
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4554,6 +4674,18 @@ NetworkInterfacesConnectorsSettingsGetResponse
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
+NewName
+~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::NewName
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
 Nfs
 ~~~
 .. autopydantic_model:: pypureclient.flashblade::Nfs
@@ -4581,6 +4713,30 @@ NfsExportPolicy
 NfsExportPolicyGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flashblade::NfsExportPolicyGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+NfsExportPolicyPatch
+~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::NfsExportPolicyPatch
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+NfsExportPolicyPatchRuleInPolicy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::NfsExportPolicyPatchRuleInPolicy
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -4638,6 +4794,18 @@ NfsExportPolicyRuleBase
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
+NfsExportPolicyRuleBasePatchRequest
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::NfsExportPolicyRuleBasePatchRequest
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
 NfsExportPolicyRuleGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flashblade::NfsExportPolicyRuleGetResponse
@@ -4653,6 +4821,18 @@ NfsExportPolicyRuleGetResponse
 NfsExportPolicyRuleInPolicy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flashblade::NfsExportPolicyRuleInPolicy
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+NfsExportPolicyRulePatch
+~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::NfsExportPolicyRulePatch
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5826,9 +6006,9 @@ PolicyMemberWithRemoteResponse
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
-PolicyPatch
-~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flashblade::PolicyPatch
+PolicyPost
+~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PolicyPost
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5937,6 +6117,510 @@ PolicyRuleObjectAccessCondition
 PolicyRuleObjectAccessPost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flashblade::PolicyRuleObjectAccessPost
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkload
+~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkload
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadBase
+~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadBase
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadConstraints
+~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadConstraints
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadConstraintsBoolean
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadConstraintsBoolean
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadConstraintsInteger
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadConstraintsInteger
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadConstraintsResourceReference
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadConstraintsResourceReference
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadConstraintsResourceReferenceAllowedValues
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadConstraintsResourceReferenceAllowedValues
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadConstraintsString
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadConstraintsString
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadDirectoryConfiguration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadDirectoryConfiguration
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadDirectoryConfigurationExportConfigurations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadDirectoryConfigurationExportConfigurations
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadDirectoryConfigurationExports
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadDirectoryConfigurationExports
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadDirectoryConfigurationMultiProtocol
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadDirectoryConfigurationMultiProtocol
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadDirectoryConfigurationName
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadDirectoryConfigurationName
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadDirectoryConfigurationParent
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadDirectoryConfigurationParent
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadDirectoryConfigurationPath
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadDirectoryConfigurationPath
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadDirectoryConfigurationSpecialDirectories
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadDirectoryConfigurationSpecialDirectories
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadExportConfigurationNfs
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadExportConfigurationNfs
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadExportConfigurationNfsPolicy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadExportConfigurationNfsPolicy
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadExportConfigurationNfsRule
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadExportConfigurationNfsRule
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadExportConfigurationSmb
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadExportConfigurationSmb
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadExportConfigurationSmbPolicy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadExportConfigurationSmbPolicy
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadExportConfigurationSmbRule
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadExportConfigurationSmbRule
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadExportConfigurationSmbShare
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadExportConfigurationSmbShare
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadExportConfigurationSmbSharePolicy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadExportConfigurationSmbSharePolicy
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadExportConfigurationSmbShareRule
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadExportConfigurationSmbShareRule
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadExportConfigurations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadExportConfigurations
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadMetadata
+~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadMetadata
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadParameter
+~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadParameter
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadPatch
+~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadPatch
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadPeriodicReplicationConfiguration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadPeriodicReplicationConfiguration
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadPlacementConfiguration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadPlacementConfiguration
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadPolicyAction
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadPolicyAction
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadPost
+~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadPost
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadQosConfiguration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadQosConfiguration
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadQuotaConfiguration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadQuotaConfiguration
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadQuotaRule
+~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadQuotaRule
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadResponse
+~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadSnapshotConfiguration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadSnapshotConfiguration
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadSnapshotRule
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadSnapshotRule
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadVolumeConfiguration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadVolumeConfiguration
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PresetWorkloadWorkloadTag
+~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::PresetWorkloadWorkloadTag
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6270,6 +6954,18 @@ RealmSpaceStorageClassGetResponse
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
+RealmsReference
+~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::RealmsReference
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
 Reference
 ~~~~~~~~~
 .. autopydantic_model:: pypureclient.flashblade::Reference
@@ -6297,6 +6993,18 @@ ReferenceNameOnly
 ReferenceWithoutType
 ~~~~~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flashblade::ReferenceWithoutType
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+ReferenceWithoutTypeWithIsLocal
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::ReferenceWithoutTypeWithIsLocal
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6378,6 +7086,66 @@ ReplicationPerformance
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
+ResiliencyGroup
+~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::ResiliencyGroup
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+ResiliencyGroupGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::ResiliencyGroupGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+ResiliencyGroupMemberGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::ResiliencyGroupMemberGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+ResiliencyGroupMemberResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::ResiliencyGroupMemberResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+ResiliencyGroupResponse
+~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::ResiliencyGroupResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
 Resource
 ~~~~~~~~
 .. autopydantic_model:: pypureclient.flashblade::Resource
@@ -6429,6 +7197,18 @@ ResourceAccessesGetResponse
 ResourceAccessesResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flashblade::ResourceAccessesResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+ResourceFixed
+~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::ResourceFixed
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6870,6 +7650,18 @@ SmbClientPolicyGetResponse
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
+SmbClientPolicyPatch
+~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::SmbClientPolicyPatch
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
 SmbClientPolicyPost
 ~~~~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flashblade::SmbClientPolicyPost
@@ -7026,6 +7818,18 @@ SmbSharePolicyGetResponse
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
+SmbSharePolicyPatch
+~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::SmbSharePolicyPatch
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
 SmbSharePolicyPost
 ~~~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flashblade::SmbSharePolicyPost
@@ -7137,6 +7941,30 @@ SmtpServerGetResponse
 SmtpServerResponse
 ~~~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flashblade::SmtpServerResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+SnapshotPolicyPatch
+~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::SnapshotPolicyPatch
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+SnapshotWormDataPolicyBase
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::SnapshotWormDataPolicyBase
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -7794,6 +8622,54 @@ SyslogServerSettingsResponse
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
+Tag
+~~~
+.. autopydantic_model:: pypureclient.flashblade::Tag
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+TagBatch
+~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::TagBatch
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+TagGetResponse
+~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::TagGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+TagResponse
+~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::TagResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
 Target
 ~~~~~~
 .. autopydantic_model:: pypureclient.flashblade::Target
@@ -7890,9 +8766,45 @@ TestResultGetResponse
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
+TestResultRemoteExecution
+~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::TestResultRemoteExecution
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+TestResultRemoteExecutionGet
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::TestResultRemoteExecutionGet
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
 TestResultResponse
 ~~~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flashblade::TestResultResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+TestResultWithContext
+~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::TestResultWithContext
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -8193,6 +9105,354 @@ VerificationKeyResponse
 Version
 ~~~~~~~
 .. autopydantic_model:: pypureclient.flashblade::Version
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+Workload
+~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::Workload
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+WorkloadConfigurationFixedReference
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::WorkloadConfigurationFixedReference
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+WorkloadConfigurationReference
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::WorkloadConfigurationReference
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+WorkloadConfigurationReferencePatch
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::WorkloadConfigurationReferencePatch
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+WorkloadConfigurationReferencePost
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::WorkloadConfigurationReferencePost
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+WorkloadGetResponse
+~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::WorkloadGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+WorkloadParameter
+~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::WorkloadParameter
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+WorkloadParameterValue
+~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::WorkloadParameterValue
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+WorkloadParameterValueResourceReference
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::WorkloadParameterValueResourceReference
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+WorkloadPatch
+~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::WorkloadPatch
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+WorkloadPlacementRecommendation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::WorkloadPlacementRecommendation
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+WorkloadPlacementRecommendationAdditionalConstraints
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::WorkloadPlacementRecommendationAdditionalConstraints
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+WorkloadPlacementRecommendationGenericTarget
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::WorkloadPlacementRecommendationGenericTarget
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+WorkloadPlacementRecommendationGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::WorkloadPlacementRecommendationGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+WorkloadPlacementRecommendationParameter
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::WorkloadPlacementRecommendationParameter
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+WorkloadPlacementRecommendationParameterConstraints
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::WorkloadPlacementRecommendationParameterConstraints
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+WorkloadPlacementRecommendationParameterResourceReference
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::WorkloadPlacementRecommendationParameterResourceReference
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+WorkloadPlacementRecommendationPlacement
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::WorkloadPlacementRecommendationPlacement
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+WorkloadPlacementRecommendationProjection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::WorkloadPlacementRecommendationProjection
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+WorkloadPlacementRecommendationResourceReference
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::WorkloadPlacementRecommendationResourceReference
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+WorkloadPlacementRecommendationResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::WorkloadPlacementRecommendationResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+WorkloadPlacementRecommendationResult
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::WorkloadPlacementRecommendationResult
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+WorkloadPlacementRecommendationTarget
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::WorkloadPlacementRecommendationTarget
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+WorkloadPlacementRecommendationTargetCapacityUsedProjections
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::WorkloadPlacementRecommendationTargetCapacityUsedProjections
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+WorkloadPlacementRecommendationTargetLoadProjections
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::WorkloadPlacementRecommendationTargetLoadProjections
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+WorkloadPlacementRecommendationWarning
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::WorkloadPlacementRecommendationWarning
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+WorkloadPost
+~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::WorkloadPost
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+WorkloadPreset
+~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::WorkloadPreset
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+WorkloadResponse
+~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::WorkloadResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -8507,7 +9767,7 @@ post_active_directory
 get_active_directory_test
 '''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.0/get_active_directory_test.py
+.. literalinclude:: source/examples/FB2.23/get_active_directory_test.py
     :language: python
 
 Administratorsap
@@ -8554,7 +9814,7 @@ delete_admins
 get_admins
 ''''''''''
 
-.. literalinclude:: source/examples/FB2.0/get_admins.py
+.. literalinclude:: source/examples/FB2.22/get_admins.py
     :language: python
 
 patch_admins
@@ -8748,7 +10008,7 @@ post_arrays_factory_reset_token
 get_arrays
 ''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_arrays.py
+.. literalinclude:: source/examples/FB2.22/get_arrays.py
     :language: python
 
 get_arrays_http_specific_performance
@@ -9258,13 +10518,13 @@ post_directory_services_roles
 get_directory_services_test
 '''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.0/get_directory_services_test.py
+.. literalinclude:: source/examples/FB2.23/get_directory_services_test.py
     :language: python
 
 patch_directory_services_test
 '''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.0/patch_directory_services_test.py
+.. literalinclude:: source/examples/FB2.23/patch_directory_services_test.py
     :language: python
 
 Drivesap
@@ -9292,7 +10552,7 @@ delete_file_system_exports
 get_file_system_exports
 '''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_file_system_exports.py
+.. literalinclude:: source/examples/FB2.23/get_file_system_exports.py
     :language: python
 
 patch_file_system_exports
@@ -9463,7 +10723,7 @@ delete_file_systems
 get_file_systems
 ''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_file_systems.py
+.. literalinclude:: source/examples/FB2.23/get_file_systems.py
     :language: python
 
 get_file_systems_groups_performance
@@ -9475,25 +10735,25 @@ get_file_systems_groups_performance
 get_file_systems_locks_clients
 ''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.8/get_file_systems_locks_clients.py
+.. literalinclude:: source/examples/FB2.22/get_file_systems_locks_clients.py
     :language: python
 
 delete_file_systems_locks
 '''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.10/delete_file_systems_locks.py
+.. literalinclude:: source/examples/FB2.22/delete_file_systems_locks.py
     :language: python
 
 get_file_systems_locks
 ''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.8/get_file_systems_locks.py
+.. literalinclude:: source/examples/FB2.22/get_file_systems_locks.py
     :language: python
 
 post_file_systems_locks_nlm_reclamations
 ''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.8/post_file_systems_locks_nlm_reclamations.py
+.. literalinclude:: source/examples/FB2.22/post_file_systems_locks_nlm_reclamations.py
     :language: python
 
 delete_file_systems_open_files
@@ -9511,7 +10771,7 @@ get_file_systems_open_files
 patch_file_systems
 ''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.18/patch_file_systems.py
+.. literalinclude:: source/examples/FB2.23/patch_file_systems.py
     :language: python
 
 get_file_systems_performance
@@ -9547,19 +10807,19 @@ post_file_systems_policies
 post_file_systems
 '''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.18/post_file_systems.py
+.. literalinclude:: source/examples/FB2.23/post_file_systems.py
     :language: python
 
 delete_file_systems_sessions
 ''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.10/delete_file_systems_sessions.py
+.. literalinclude:: source/examples/FB2.22/delete_file_systems_sessions.py
     :language: python
 
 get_file_systems_sessions
 '''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.10/get_file_systems_sessions.py
+.. literalinclude:: source/examples/FB2.22/get_file_systems_sessions.py
     :language: python
 
 get_file_systems_space_storage_classes
@@ -10044,7 +11304,7 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 post_nodes_batch
 ''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.18/post_nodes_batch.py
+.. literalinclude:: source/examples/FB2.23/post_nodes_batch.py
     :language: python
 
 get_nodes
@@ -10640,6 +11900,89 @@ post_management_access_policies
 .. literalinclude:: source/examples/FB2.19/post_management_access_policies.py
     :language: python
 
+Policiesmanagementauthenticationap
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+delete_admins_management_authentication_policies
+''''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.22/delete_admins_management_authentication_policies.py
+    :language: python
+
+get_admins_management_authentication_policies
+'''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.22/get_admins_management_authentication_policies.py
+    :language: python
+
+post_admins_management_authentication_policies
+''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.22/post_admins_management_authentication_policies.py
+    :language: python
+
+delete_arrays_management_authentication_policies
+''''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.22/delete_arrays_management_authentication_policies.py
+    :language: python
+
+get_arrays_management_authentication_policies
+'''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.22/get_arrays_management_authentication_policies.py
+    :language: python
+
+post_arrays_management_authentication_policies
+''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.22/post_arrays_management_authentication_policies.py
+    :language: python
+
+delete_management_authentication_policies
+'''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.22/delete_management_authentication_policies.py
+    :language: python
+
+get_management_authentication_policies
+''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.22/get_management_authentication_policies.py
+    :language: python
+
+delete_management_authentication_policies_members
+'''''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.22/delete_management_authentication_policies_members.py
+    :language: python
+
+get_management_authentication_policies_members
+''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.22/get_management_authentication_policies_members.py
+    :language: python
+
+post_management_authentication_policies_members
+'''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.22/post_management_authentication_policies_members.py
+    :language: python
+
+patch_management_authentication_policies
+''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.22/patch_management_authentication_policies.py
+    :language: python
+
+post_management_authentication_policies
+'''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.22/post_management_authentication_policies.py
+    :language: python
+
 Policiesnfsap
 ~~~~~~~~~~~~~
 
@@ -10654,7 +11997,7 @@ delete_nfs_export_policies
 get_nfs_export_policies
 '''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_nfs_export_policies.py
+.. literalinclude:: source/examples/FB2.23/get_nfs_export_policies.py
     :language: python
 
 patch_nfs_export_policies
@@ -10860,55 +12203,55 @@ The following examples assume that ``client`` is an instantiated ``flashblade.Cl
 get_qos_policies_buckets
 ''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.19/get_qos_policies_buckets.py
+.. literalinclude:: source/examples/FB2.23/get_qos_policies_buckets.py
     :language: python
 
 delete_qos_policies
 '''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/delete_qos_policies.py
+.. literalinclude:: source/examples/FB2.23/delete_qos_policies.py
     :language: python
 
 get_qos_policies_file_systems
 '''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.20/get_qos_policies_file_systems.py
+.. literalinclude:: source/examples/FB2.23/get_qos_policies_file_systems.py
     :language: python
 
 get_qos_policies
 ''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_qos_policies.py
+.. literalinclude:: source/examples/FB2.23/get_qos_policies.py
     :language: python
 
 delete_qos_policies_members
 '''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.20/delete_qos_policies_members.py
+.. literalinclude:: source/examples/FB2.23/delete_qos_policies_members.py
     :language: python
 
 get_qos_policies_members
 ''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.20/get_qos_policies_members.py
+.. literalinclude:: source/examples/FB2.23/get_qos_policies_members.py
     :language: python
 
 post_qos_policies_members
 '''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.20/post_qos_policies_members.py
+.. literalinclude:: source/examples/FB2.23/post_qos_policies_members.py
     :language: python
 
 patch_qos_policies
 ''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/patch_qos_policies.py
+.. literalinclude:: source/examples/FB2.23/patch_qos_policies.py
     :language: python
 
 post_qos_policies
 '''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_qos_policies.py
+.. literalinclude:: source/examples/FB2.23/post_qos_policies.py
     :language: python
 
 Policiess3exportap
@@ -10978,7 +12321,7 @@ delete_smb_client_policies
 get_smb_client_policies
 '''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_smb_client_policies.py
+.. literalinclude:: source/examples/FB2.23/get_smb_client_policies.py
     :language: python
 
 patch_smb_client_policies
@@ -11031,7 +12374,7 @@ delete_smb_share_policies
 get_smb_share_policies
 ''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_smb_share_policies.py
+.. literalinclude:: source/examples/FB2.23/get_smb_share_policies.py
     :language: python
 
 patch_smb_share_policies
@@ -11239,7 +12582,7 @@ post_policies_file_systems
 get_policies
 ''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/get_policies.py
+.. literalinclude:: source/examples/FB2.23/get_policies.py
     :language: python
 
 get_policies_members
@@ -11399,6 +12742,41 @@ post_worm_data_policies
 '''''''''''''''''''''''
 
 .. literalinclude:: source/examples/FB2.17/post_worm_data_policies.py
+    :language: python
+
+Presetsap
+~~~~~~~~~
+
+The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+delete_presets_workload
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.23/delete_presets_workload.py
+    :language: python
+
+get_presets_workload
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.23/get_presets_workload.py
+    :language: python
+
+patch_presets_workload
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.23/patch_presets_workload.py
+    :language: python
+
+post_presets_workload
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.23/post_presets_workload.py
+    :language: python
+
+put_presets_workload
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.23/put_presets_workload.py
     :language: python
 
 Publickeysap
@@ -11586,6 +12964,23 @@ get_remote_arrays
 '''''''''''''''''
 
 .. literalinclude:: source/examples/FB2.17/get_remote_arrays.py
+    :language: python
+
+Resiliencygroupsap
+~~~~~~~~~~~~~~~~~~
+
+The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+get_resiliency_groups
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.23/get_resiliency_groups.py
+    :language: python
+
+get_resiliency_groups_members
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.23/get_resiliency_groups_members.py
     :language: python
 
 Resourceaccessesap
@@ -11984,4 +13379,63 @@ patch_support_verification_keys
 '''''''''''''''''''''''''''''''
 
 .. literalinclude:: source/examples/FB2.7/patch_support_verification_keys.py
+    :language: python
+
+Workloadsap
+~~~~~~~~~~~
+
+The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+delete_workloads
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.23/delete_workloads.py
+    :language: python
+
+get_workloads
+'''''''''''''
+
+.. literalinclude:: source/examples/FB2.23/get_workloads.py
+    :language: python
+
+patch_workloads
+'''''''''''''''
+
+.. literalinclude:: source/examples/FB2.23/patch_workloads.py
+    :language: python
+
+get_workloads_placement_recommendations
+'''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.23/get_workloads_placement_recommendations.py
+    :language: python
+
+post_workloads_placement_recommendations
+''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.23/post_workloads_placement_recommendations.py
+    :language: python
+
+post_workloads
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.23/post_workloads.py
+    :language: python
+
+put_workloads_tags_batch
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.23/put_workloads_tags_batch.py
+    :language: python
+
+delete_workloads_tags
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.23/delete_workloads_tags.py
+    :language: python
+
+get_workloads_tags
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.23/get_workloads_tags.py
     :language: python

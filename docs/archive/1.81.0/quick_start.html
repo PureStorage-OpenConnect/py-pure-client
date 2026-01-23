@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quick Start &mdash; py-pure-client 1.81.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/autodoc_pydantic.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="FlashArray Reference" href="fa_reference.html" />
+    <link rel="prev" title="Installation" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> py-pure-client
+          </a>
+              <div class="version">
+                1.81
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#authentication">Authentication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#flasharray-client">FlashArray Client</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#flashblade-client">FlashBlade Client</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pure1-client">Pure1 client</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#client-examples">Client Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#filtering">Filtering</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="fa_reference.html">FlashArray Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fb_reference.html">FlashBlade Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pure1_reference.html">Pure1 Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="shared_reference.html">Shared References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="archive.html">Archive</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">py-pure-client</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Quick Start</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="quick-start">
+<h1>Quick Start<a class="headerlink" href="#quick-start" title="Permalink to this heading"></a></h1>
+<section id="authentication">
+<h2>Authentication<a class="headerlink" href="#authentication" title="Permalink to this heading"></a></h2>
+<p>This section documents the instantiation of valid, working Pure1, FlashArray, and FlashBlade
+clients required to subsequently call other client methods.</p>
+<section id="flasharray-client">
+<h3>FlashArray Client<a class="headerlink" href="#flasharray-client" title="Permalink to this heading"></a></h3>
+<p>Start by importing the <code class="docutils literal notranslate"><span class="pre">flasharray</span></code> submodule in <code class="docutils literal notranslate"><span class="pre">pypureclient</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pypureclient</span><span class="w"> </span><span class="kn">import</span> <span class="n">flasharray</span>
+</pre></div>
+</div>
+<p>Instantiation of a FlashArray client requires authentication. More information
+is available in the <a class="reference external" href="https://support.purestorage.com/FlashArray/PurityFA/Purity_FA_REST_API/Reference/REST_API_2.0_Authentication_Guide">REST API 2.0 Authentication Guide</a></p>
+<p>After creating a client using <code class="docutils literal notranslate"><span class="pre">pureapiclient</span></code> on the FlashArray array you wish
+to target, you can pass the various parameters into the <code class="docutils literal notranslate"><span class="pre">Client</span></code> constructor:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pypureclient</span><span class="w"> </span><span class="kn">import</span> <span class="n">flasharray</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">flasharray</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="s1">&#39;flasharray.example.com&#39;</span><span class="p">,</span>
+                           <span class="n">private_key_file</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">],</span>
+                           <span class="n">private_key_password</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">],</span>
+                           <span class="n">username</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">],</span>
+                           <span class="n">client_id</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">],</span>
+                           <span class="n">key_id</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">],</span>
+                           <span class="n">issuer</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>If directly using a pre-generated ID token is preferred, it can be used in the
+same way. Note that using a pre-generated ID token will cause the client to fail
+when the ID token expires.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pypureclient</span><span class="w"> </span><span class="kn">import</span> <span class="n">flasharray</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">flasharray</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="s1">&#39;flasharray.example.com&#39;</span><span class="p">,</span>
+                           <span class="n">id_token</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+<section id="flashblade-client">
+<h3>FlashBlade Client<a class="headerlink" href="#flashblade-client" title="Permalink to this heading"></a></h3>
+<p>Start by importing the <code class="docutils literal notranslate"><span class="pre">flashblade</span></code> submodule in <code class="docutils literal notranslate"><span class="pre">pypureclient</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pypureclient</span><span class="w"> </span><span class="kn">import</span> <span class="n">flashblade</span>
+</pre></div>
+</div>
+<p>Instantiation of a FlashBlade client requires authentication. More information
+is available in the <a class="reference external" href="https://support.purestorage.com/FlashBlade/Purity_FB/PurityFB_REST_API/Management_REST_API/FlashBlade_REST_API_FAQ">FlashBlade REST API FAQ</a></p>
+<p>After creating and enabling a client using <code class="docutils literal notranslate"><span class="pre">pureapiclient</span></code> on the FlashBlade array you wish
+to target, you can pass the various parameters into the <code class="docutils literal notranslate"><span class="pre">Client</span></code> constructor:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pypureclient</span><span class="w"> </span><span class="kn">import</span> <span class="n">flashblade</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">flashblade</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="s1">&#39;flashblade.example.com&#39;</span><span class="p">,</span>
+                           <span class="n">private_key_file</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">],</span>
+                           <span class="n">private_key_password</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">],</span>
+                           <span class="n">username</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">],</span>
+                           <span class="n">client_id</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">],</span>
+                           <span class="n">key_id</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">],</span>
+                           <span class="n">issuer</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>If directly using a pre-generated ID token is preferred, it can be used in the
+same way. Note that using a pre-generated ID token will cause the client to fail
+when the ID token expires.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pypureclient</span><span class="w"> </span><span class="kn">import</span> <span class="n">flashblade</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">flashblade</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="s1">&#39;flashblade.example.com&#39;</span><span class="p">,</span>
+                           <span class="n">id_token</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>You can also use an API token created by using <code class="docutils literal notranslate"><span class="pre">pureadmin</span></code> on the FlashBlade array
+if that is preferred.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pypureclient</span><span class="w"> </span><span class="kn">import</span> <span class="n">flashblade</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">flashblade</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="s1">&#39;flashblade.example.com&#39;</span><span class="p">,</span>
+                           <span class="n">api_token</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>If you are writing an API integration for FlashBlade for distribution to your customers
+and partners, we ask that you ensure that your API integration “self-identifies” when
+connecting to FlashBlade.</p>
+<p>To do this, choose a unique, human-readable string that identifies your FlashBlade API
+integration by name and version, and specify it as the <code class="docutils literal notranslate"><span class="pre">user_agent</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pypureclient</span><span class="w"> </span><span class="kn">import</span> <span class="n">flashblade</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">flashblade</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="s1">&#39;flashblade.example.com&#39;</span><span class="p">,</span>
+                           <span class="n">api_token</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">],</span>
+                           <span class="n">user_agent</span><span class="o">=</span><span class="s1">&#39;YourCompanyName_YourProductIntegrationName/YourIntegrationVersion&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="pure1-client">
+<h3>Pure1 client<a class="headerlink" href="#pure1-client" title="Permalink to this heading"></a></h3>
+<p>Start by importing the <code class="docutils literal notranslate"><span class="pre">pure1</span></code> submodule in <code class="docutils literal notranslate"><span class="pre">pypureclient</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pypureclient</span><span class="w"> </span><span class="kn">import</span> <span class="n">pure1</span>
+</pre></div>
+</div>
+<p>Instantiation of a Pure1 client requires authentication to use the Pure1 Manage
+public API. If not already configured, instructions for getting access to and
+using the Pure1 Manage public API can be found at the <a class="reference external" href="https://support.purestorage.com/Pure1/Pure1_Manage/Pure1_Manage_-_REST_API/Pure1_Manage_-_REST_API__Reference">API reference page</a>.</p>
+<p>For Pure1 client instantiation you can use environment variables. It is
+recommended to use environment variables for the Pure1 client.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">PURE1_PRIVATE_KEY_FILE</span><span class="o">=[</span>...<span class="o">]</span>
+$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">PURE1_PRIVATE_KEY_PASSWORD</span><span class="o">=[</span>...<span class="o">]</span>
+$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">PURE1_APP_ID</span><span class="o">=[</span>...<span class="o">]</span>
+</pre></div>
+</div>
+<p>Alternatively, the authentication information can be passed directly into the client.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pypureclient</span><span class="w"> </span><span class="kn">import</span> <span class="n">pure1</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">pure1</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">private_key_file</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">],</span>
+                      <span class="n">private_key_password</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">],</span>
+                      <span class="n">app_id</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>If directly using a pre-generated ID token is preferred, it can be used in the
+same way. Note that using a pre-generated ID token will cause the client to fail
+when the ID token expires.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">export</span><span class="w"> </span><span class="nv">PURE1_ID_TOKEN</span><span class="o">=[</span>...<span class="o">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">client</span> <span class="o">=</span> <span class="n">pure1</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">id_token</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="client-examples">
+<h2>Client Examples<a class="headerlink" href="#client-examples" title="Permalink to this heading"></a></h2>
+<p>These examples assume the client has already been set up using the instructions
+in the Authentication section above.</p>
+<p>The client has functions that model the endpoints of the API you are accessing
+(FlashArray, FlashBlade, or Pure1) and accept the query parameters as arguments.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_volumes</span><span class="p">(</span><span class="n">sort</span><span class="o">=</span><span class="n">pure1</span><span class="o">.</span><span class="n">Volume</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">ascending</span><span class="p">(),</span> <span class="n">limit</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">volumes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">items</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_volumes</span><span class="p">(</span><span class="n">names</span><span class="o">=</span><span class="s1">&#39;volume1&#39;</span><span class="p">)</span>
+<span class="n">volume</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">items</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_volumes</span><span class="p">(</span><span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;volume1&#39;</span><span class="p">,</span> <span class="s1">&#39;volume2&#39;</span><span class="p">])</span>
+<span class="n">volumes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">items</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_volumes</span><span class="p">(</span><span class="n">ids</span><span class="o">=</span><span class="s1">&#39;f0510daa-cec8-4544-8015-206d819b3&#39;</span><span class="p">)</span>
+<span class="n">volume</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">items</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>A response is either a <code class="docutils literal notranslate"><span class="pre">ValidResponse</span></code> or <code class="docutils literal notranslate"><span class="pre">ErrorResponse</span></code> object that models
+the API call response and includes the data.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_volumes</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">total_item_count</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">continuation_token</span><span class="p">)</span>
+<span class="n">volumes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">items</span><span class="p">)</span>
+<span class="n">volume1</span> <span class="o">=</span> <span class="n">volumes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_volumes</span><span class="p">(</span><span class="n">sort</span><span class="o">=</span><span class="s1">&#39;invalid&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">errors</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>One enhancement over the plain REST API is that the client also accepts models
+as function arguments.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_volumes</span><span class="p">()</span>
+<span class="n">volume1</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">items</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># This works on the Pure1 client only</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_arrays</span><span class="p">(</span><span class="n">volume1</span><span class="o">.</span><span class="n">arrays</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_arrays</span><span class="p">(</span><span class="n">ids</span><span class="o">=</span><span class="p">[</span><span class="n">array</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">array</span> <span class="ow">in</span> <span class="n">volume1</span><span class="o">.</span><span class="n">arrays</span><span class="p">])</span>
+<span class="c1"># both make the same request</span>
+</pre></div>
+</div>
+<p>The response items are stored in an iterator. The iterator will exhaust the list
+of items in the collection, up to the limit specified in the request. If there
+is no limit specified, the iterator will return all items. Note that for Pure1,
+the server returns a maximum of 1000 items per call; the iterator may make
+subsequent API calls to get more items if there are more than 1000 items in the
+collection.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_volumes</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">total_item_count</span><span class="p">)</span>
+<span class="n">num_volumes</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">volume</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">items</span><span class="p">:</span>
+    <span class="n">num_volumes</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">volume</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">num_volumes</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>It is also possible to get all of the items in a list without explicitly
+iterating. It will exhaust the iterator and put the items in a list.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_volumes</span><span class="p">()</span>
+<span class="n">all_volumes</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">items</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>A custom X-Request-ID header can also be provided to any request.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_pods</span><span class="p">(</span><span class="n">x_request_id</span><span class="o">=</span><span class="s1">&#39;readthedocs-test&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">x_request_id</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>An example of querying sustainability information.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_assessment_sustainability_arrays</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">assessment</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">items</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">assessment</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_assessment_sustainability_insights_arrays</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">insight</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">items</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">insight</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="filtering">
+<h2>Filtering<a class="headerlink" href="#filtering" title="Permalink to this heading"></a></h2>
+<p>Filters are defined by the public API specifications and are interpreted as a
+query parameter in an API call. Filters can also be combined with other
+parameters as well. The client allows for easier composition of filters,
+especially when taking advantage of intellisense or editor auto-completion.
+Filter objects are not required to be used if strings are preferred.</p>
+<p>These examples are for the <code class="docutils literal notranslate"><span class="pre">pure1</span></code> client, but are applicable to all of the
+clients (for example, the same <code class="docutils literal notranslate"><span class="pre">Filter</span></code> module is exposed inside the
+<code class="docutils literal notranslate"><span class="pre">flasharray</span></code> and <code class="docutils literal notranslate"><span class="pre">flashblade</span></code> modules).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_arrays</span><span class="p">(</span><span class="nb">filter</span><span class="o">=</span><span class="s1">&#39;os=</span><span class="se">\&#39;</span><span class="s1">Purity//FB</span><span class="se">\&#39;</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="n">pure1</span><span class="o">.</span><span class="n">Array</span><span class="o">.</span><span class="n">as_of</span><span class="o">.</span><span class="n">descending</span><span class="p">(),</span> <span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_arrays</span><span class="p">(</span><span class="nb">filter</span><span class="o">=</span><span class="n">pure1</span><span class="o">.</span><span class="n">Filter</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">pure1</span><span class="o">.</span><span class="n">Array</span><span class="o">.</span><span class="n">os</span><span class="p">,</span> <span class="s1">&#39;Purity//FB&#39;</span><span class="p">),</span> <span class="n">sort</span><span class="o">=</span><span class="n">pure1</span><span class="o">.</span><span class="n">Array</span><span class="o">.</span><span class="n">as_of</span><span class="o">.</span><span class="n">descending</span><span class="p">(),</span> <span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">get_arrays</span><span class="p">(</span><span class="nb">filter</span><span class="o">=</span><span class="n">pure1</span><span class="o">.</span><span class="n">Array</span><span class="o">.</span><span class="n">os</span> <span class="o">==</span> <span class="s1">&#39;Purity//FB&#39;</span><span class="p">,</span> <span class="n">sort</span><span class="o">=</span><span class="n">pure1</span><span class="o">.</span><span class="n">Array</span><span class="o">.</span><span class="n">as_of</span><span class="o">.</span><span class="n">descending</span><span class="p">(),</span> <span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="c1"># all three get five arrays where their operating system is Purity//FB (FlashBlades), sorted by _as_of</span>
+</pre></div>
+</div>
+<p>Filters can be created by calling static Filter functions with Property objects, by using overridden operators on Property objects, or by calling certain Propery functions.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pure1</span><span class="o">.</span><span class="n">Filter</span><span class="o">.</span><span class="n">eq</span><span class="p">(</span><span class="n">pure1</span><span class="o">.</span><span class="n">Array</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s1">&#39;array&#39;</span><span class="p">)</span>
+<span class="n">pure1</span><span class="o">.</span><span class="n">Array</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;array&#39;</span>
+<span class="c1"># both resolve to &quot;name=&#39;array&#39;&quot;</span>
+
+<span class="n">pure1</span><span class="o">.</span><span class="n">Filter</span><span class="o">.</span><span class="n">ne</span><span class="p">(</span><span class="n">pure1</span><span class="o">.</span><span class="n">Array</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s1">&#39;notarray&#39;</span><span class="p">)</span>
+<span class="n">pure1</span><span class="o">.</span><span class="n">Array</span><span class="o">.</span><span class="n">name</span> <span class="o">!=</span> <span class="s1">&#39;notarray&#39;</span>
+<span class="c1"># both resolve to &quot;name!=&#39;notarray&#39;&quot;</span>
+
+<span class="n">pure1</span><span class="o">.</span><span class="n">Filter</span><span class="o">.</span><span class="n">gt</span><span class="p">(</span><span class="n">pure1</span><span class="o">.</span><span class="n">Array</span><span class="o">.</span><span class="n">as_of</span><span class="p">,</span> <span class="mi">154000000000</span><span class="p">)</span>
+<span class="n">pure1</span><span class="o">.</span><span class="n">Array</span><span class="o">.</span><span class="n">as_of</span> <span class="o">&gt;</span> <span class="mi">154000000000</span>
+<span class="c1"># both resolve to &quot;_as_of&gt;154000000000&quot;</span>
+
+<span class="n">pure1</span><span class="o">.</span><span class="n">Filter</span><span class="o">.</span><span class="n">ge</span><span class="p">(</span><span class="n">pure1</span><span class="o">.</span><span class="n">Array</span><span class="o">.</span><span class="n">as_of</span><span class="p">,</span> <span class="mi">154000000000</span><span class="p">)</span>
+<span class="n">pure1</span><span class="o">.</span><span class="n">Array</span><span class="o">.</span><span class="n">as_of</span> <span class="o">&gt;=</span> <span class="mi">154000000000</span>
+<span class="c1"># both resolve to &quot;_as_of&gt;=154000000000&quot;</span>
+
+<span class="n">pure1</span><span class="o">.</span><span class="n">Filter</span><span class="o">.</span><span class="n">lt</span><span class="p">(</span><span class="n">pure1</span><span class="o">.</span><span class="n">Array</span><span class="o">.</span><span class="n">as_of</span><span class="p">,</span> <span class="mi">154000000000</span><span class="p">)</span>
+<span class="n">pure1</span><span class="o">.</span><span class="n">Array</span><span class="o">.</span><span class="n">as_of</span> <span class="o">&lt;</span> <span class="mi">154000000000</span>
+<span class="c1"># both resolve to &quot;_as_of&lt;154000000000&quot;</span>
+
+<span class="n">pure1</span><span class="o">.</span><span class="n">Filter</span><span class="o">.</span><span class="n">le</span><span class="p">(</span><span class="n">pure1</span><span class="o">.</span><span class="n">Array</span><span class="o">.</span><span class="n">as_of</span><span class="p">,</span> <span class="mi">154000000000</span><span class="p">)</span>
+<span class="n">pure1</span><span class="o">.</span><span class="n">Array</span><span class="o">.</span><span class="n">as_of</span> <span class="o">&lt;=</span> <span class="mi">154000000000</span>
+<span class="c1"># both resolve to &quot;_as_of&lt;=154000000000&quot;</span>
+
+<span class="n">pure1</span><span class="o">.</span><span class="n">Filter</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">pure1</span><span class="o">.</span><span class="n">Volume</span><span class="o">.</span><span class="n">source</span><span class="p">)</span>
+<span class="n">pure1</span><span class="o">.</span><span class="n">Volume</span><span class="o">.</span><span class="n">source</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
+<span class="c1"># both resolve to &quot;source&quot;</span>
+
+<span class="n">pure1</span><span class="o">.</span><span class="n">Filter</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="n">pure1</span><span class="o">.</span><span class="n">Volume</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;vol&quot;</span><span class="p">)</span>
+<span class="c1"># resolves to &quot;contains(name, &#39;vol&#39;)&quot;</span>
+
+<span class="n">pure1</span><span class="o">.</span><span class="n">Filter</span><span class="o">.</span><span class="n">in_</span><span class="p">(</span><span class="n">pure1</span><span class="o">.</span><span class="n">Volume</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;vol1&#39;</span><span class="p">,</span> <span class="s1">&#39;vol2&#39;</span><span class="p">,</span> <span class="s1">&#39;vol3&#39;</span><span class="p">])</span>
+<span class="c1"># resolves to &quot;name=(&#39;vol1&#39;,&#39;vol2&#39;,&#39;vol3&#39;)&quot;</span>
+
+<span class="n">pure1</span><span class="o">.</span><span class="n">Filter</span><span class="o">.</span><span class="n">tags</span><span class="p">(</span><span class="s1">&#39;key&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">)</span>
+<span class="c1"># resolves to &quot;tags(&#39;key&#39;, &#39;value&#39;)&quot;</span>
+</pre></div>
+</div>
+<p>A model’s Property may be a list of items (e.g. a Volume’s “arrays” is a list), and another Property may be created on a specific index of that list: “all”, or “any”. A list index Property can be created by calling specific functions on a Property or by using overridden operators. These Properties can then be used in Filters.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pure1</span><span class="o">.</span><span class="n">Volume</span><span class="o">.</span><span class="n">arrays</span><span class="o">.</span><span class="n">any</span><span class="p">()</span>
+<span class="n">pure1</span><span class="o">.</span><span class="n">Volume</span><span class="o">.</span><span class="n">arrays</span><span class="p">[</span><span class="s1">&#39;any&#39;</span><span class="p">]</span>
+<span class="c1"># both resolve to &quot;arrays[any]&quot;</span>
+
+<span class="n">pure1</span><span class="o">.</span><span class="n">Volume</span><span class="o">.</span><span class="n">arrays</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<span class="n">pure1</span><span class="o">.</span><span class="n">Volume</span><span class="o">.</span><span class="n">arrays</span><span class="p">[</span><span class="s1">&#39;all&#39;</span><span class="p">]</span>
+<span class="c1"># both resolve to &quot;arrays[all]&quot;</span>
+</pre></div>
+</div>
+<p>A nested Property is that of an item that is another model’s property (e.g. Array.id where an Array is a Pod’s “source”). A nested Property can be created by calling a specific function on a property or by using overridden operators.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pure1</span><span class="o">.</span><span class="n">Pod</span><span class="o">.</span><span class="n">source</span><span class="o">.</span><span class="n">subproperty</span><span class="p">(</span><span class="n">pure1</span><span class="o">.</span><span class="n">Array</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+<span class="n">pure1</span><span class="o">.</span><span class="n">Pod</span><span class="o">.</span><span class="n">source</span> <span class="o">+</span> <span class="n">pure1</span><span class="o">.</span><span class="n">Array</span><span class="o">.</span><span class="n">id</span>
+<span class="c1"># both resolve to &quot;source.id&quot;</span>
+
+<span class="n">pure1</span><span class="o">.</span><span class="n">Pod</span><span class="o">.</span><span class="n">arrays</span><span class="o">.</span><span class="n">any</span><span class="p">()</span><span class="o">.</span><span class="n">subproperty</span><span class="p">(</span><span class="n">pure1</span><span class="o">.</span><span class="n">PodArrayStatus</span><span class="o">.</span><span class="n">mediator_status</span><span class="p">)</span>
+<span class="n">pure1</span><span class="o">.</span><span class="n">Pod</span><span class="o">.</span><span class="n">arrays</span><span class="o">.</span><span class="n">any</span><span class="p">()</span> <span class="o">+</span> <span class="n">pure1</span><span class="o">.</span><span class="n">PodArrayStatus</span><span class="o">.</span><span class="n">mediator_status</span>
+<span class="c1"># both resolve to &quot;arrays[any].mediator_status&quot;</span>
+</pre></div>
+</div>
+<p>Filters can also be compounded. When compounding multiple operators, parentheses are required by Python to denote order of operations. Compound Filters can be created by calling specific Filter functions or by using overridden operators.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pure1</span><span class="o">.</span><span class="n">Filter</span><span class="o">.</span><span class="n">and_</span><span class="p">(</span><span class="n">pure1</span><span class="o">.</span><span class="n">Array</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;array&#39;</span><span class="p">,</span> <span class="n">pure1</span><span class="o">.</span><span class="n">Array</span><span class="o">.</span><span class="n">os</span><span class="o">.</span><span class="n">exists</span><span class="p">())</span>
+<span class="p">(</span><span class="n">pure1</span><span class="o">.</span><span class="n">Array</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;array&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">pure1</span><span class="o">.</span><span class="n">Array</span><span class="o">.</span><span class="n">os</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
+<span class="c1"># both resolve to &quot;name==&#39;array&#39; and os&quot;</span>
+
+<span class="n">pure1</span><span class="o">.</span><span class="n">Filter</span><span class="o">.</span><span class="n">or_</span><span class="p">(</span><span class="n">pure1</span><span class="o">.</span><span class="n">Array</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;array&#39;</span><span class="p">,</span> <span class="n">pure1</span><span class="o">.</span><span class="n">Array</span><span class="o">.</span><span class="n">os</span><span class="o">.</span><span class="n">exists</span><span class="p">())</span>
+<span class="p">(</span><span class="n">pure1</span><span class="o">.</span><span class="n">Array</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;array&#39;</span><span class="p">)</span> <span class="o">|</span> <span class="n">pure1</span><span class="o">.</span><span class="n">Array</span><span class="o">.</span><span class="n">os</span><span class="o">.</span><span class="n">exists</span><span class="p">()</span>
+<span class="c1"># both resolve to &quot;name==&#39;array&#39; or os&quot;</span>
+
+<span class="n">pure1</span><span class="o">.</span><span class="n">Filter</span><span class="o">.</span><span class="n">not_</span><span class="p">(</span><span class="n">pure1</span><span class="o">.</span><span class="n">Filter</span><span class="o">.</span><span class="n">tags</span><span class="p">(</span><span class="s1">&#39;key&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">))</span>
+<span class="o">~</span> <span class="n">pure1</span><span class="o">.</span><span class="n">Filter</span><span class="o">.</span><span class="n">tags</span><span class="p">(</span><span class="s1">&#39;key&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">)</span>
+<span class="c1"># both resolve to &quot;not(tags(&#39;key&#39;, &#39;value&#39;))&quot;</span>
+
+<span class="n">pure1</span><span class="o">.</span><span class="n">Filter</span><span class="o">.</span><span class="n">and_</span><span class="p">(</span><span class="n">pure1</span><span class="o">.</span><span class="n">Filter</span><span class="o">.</span><span class="n">or_</span><span class="p">(</span><span class="n">pure1</span><span class="o">.</span><span class="n">Array</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;array&#39;</span><span class="p">,</span> <span class="n">pure1</span><span class="o">.</span><span class="n">Array</span><span class="o">.</span><span class="n">os</span><span class="o">.</span><span class="n">exists</span><span class="p">()),</span> <span class="n">pure1</span><span class="o">.</span><span class="n">Filter</span><span class="o">.</span><span class="n">not_</span><span class="p">(</span><span class="n">pure1</span><span class="o">.</span><span class="n">Filter</span><span class="o">.</span><span class="n">tags</span><span class="p">(</span><span class="s1">&#39;key&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">)))</span>
+<span class="p">((</span><span class="n">pure1</span><span class="o">.</span><span class="n">Array</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;array&#39;</span><span class="p">)</span> <span class="o">|</span> <span class="n">pure1</span><span class="o">.</span><span class="n">Array</span><span class="o">.</span><span class="n">os</span><span class="o">.</span><span class="n">exists</span><span class="p">())</span> <span class="o">&amp;</span> <span class="p">(</span><span class="o">~</span> <span class="n">pure1</span><span class="o">.</span><span class="n">Filter</span><span class="o">.</span><span class="n">tags</span><span class="p">(</span><span class="s1">&#39;key&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">))</span>
+<span class="c1"># both resolve to &quot;name=&#39;array&#39; or os and not(tags(&#39;key&#39;, &#39;value&#39;))&quot;</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="fa_reference.html" class="btn btn-neutral float-right" title="FlashArray Reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Pure Storage, Inc..</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
