@@ -3714,6 +3714,18 @@ MemberWithType
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
+NamingPattern
+~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::NamingPattern
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
 NetworkInterface
 ~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flasharray::NetworkInterface
