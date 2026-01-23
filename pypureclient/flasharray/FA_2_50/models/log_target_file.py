@@ -33,7 +33,7 @@ class LogTargetFile(BaseModel):
     LogTargetFile
     """
     name: Optional[StrictStr] = Field(default=None, description="A user-specified name. The name must be locally unique and cannot be changed.")
-    context: Optional[FixedReferenceWithType] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReferenceWithType] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet or to the fleet itself. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     target_type: Optional[StrictStr] = Field(default=None, description="The type of log target. Valid values include `file`, and `syslog`.")
     directory: Optional[ReferenceWithType] = Field(default=None, description="Directory name to be used as log target.")
     keep_for: Optional[conint(strict=True, ge=86400000)] = Field(default=None, description="Specifies the period that audit logs are retained before they are deleted, in milliseconds. Default value is `null` which means size based retention does not apply. Use 0 to reset the value to `null`. At least one of the `keep_for` or `keep_size` parameters is required, and they can be set together.")

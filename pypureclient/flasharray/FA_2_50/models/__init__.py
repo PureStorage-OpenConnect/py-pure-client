@@ -334,6 +334,7 @@ __class_model_dict = {
     'MemberNoIdMemberResponse': __LazyModelLoader('.member_no_id_member_response', 'MemberNoIdMemberResponse'),
     'MemberResponse': __LazyModelLoader('.member_response', 'MemberResponse'),
     'MemberWithType': __LazyModelLoader('.member_with_type', 'MemberWithType'),
+    'NamingPattern': __LazyModelLoader('.naming_pattern', 'NamingPattern'),
     'NetworkInterface': __LazyModelLoader('.network_interface', 'NetworkInterface'),
     'NetworkInterfaceEth': __LazyModelLoader('.network_interface_eth', 'NetworkInterfaceEth'),
     'NetworkInterfaceFc': __LazyModelLoader('.network_interface_fc', 'NetworkInterfaceFc'),
@@ -879,5 +880,5 @@ def __getattr__(name, default=None):
     if '_models_list' == name:
         return __class_model_dict.keys()
     if name not in __class_model_dict:
-        raise ImportError(f'module {__name__} has no attribute {name}')
+        return None
     return __class_model_dict[name].load()

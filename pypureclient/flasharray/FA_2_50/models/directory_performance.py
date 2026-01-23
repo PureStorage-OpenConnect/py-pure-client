@@ -33,7 +33,7 @@ class DirectoryPerformance(BaseModel):
     """
     id: Optional[StrictStr] = Field(default=None, description="A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.")
     name: Optional[StrictStr] = Field(default=None, description="A user-specified name. The name must be locally unique and can be changed.")
-    context: Optional[FixedReferenceWithType] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReferenceWithType] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet or to the fleet itself. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     bytes_per_op: Optional[conint(strict=True, ge=0)] = Field(default=None, description="The average I/O size for both read and write (all) operations.")
     bytes_per_read: Optional[conint(strict=True, ge=0)] = Field(default=None, description="The average I/O size per read, measured in bytes.")
     bytes_per_write: Optional[conint(strict=True, ge=0)] = Field(default=None, description="The average I/O size per write, measured in bytes.")

@@ -34,7 +34,7 @@ from . import models
 
 class Client(object):
 
-    __REST_API_VERSON = '2.19'
+    __REST_API_VERSION = '2.19'
 
     def __init__(self,
                  configuration: Configuration,
@@ -112,7 +112,7 @@ class Client(object):
         elif api_token:
             self._token_man = APITokenManager(
                 api_token=api_token,
-                version=Client.__REST_API_VERSON,
+                version=Client.__REST_API_VERSION,
                 user_agent=user_agent,
                 timeout=timeout,
                 configuration=configuration,
@@ -159,7 +159,7 @@ class Client(object):
             str
 
         """
-        return Client.__REST_API_VERSON
+        return Client.__REST_API_VERSION
 
     def get_access_token(self, refresh=False):
         """

@@ -31,7 +31,7 @@ class PolicyRuleSmbClient(BaseModel):
     """
     PolicyRuleSmbClient
     """
-    context: Optional[FixedReferenceWithType] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReferenceWithType] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet or to the fleet itself. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     anonymous_access_allowed: Optional[StrictBool] = Field(default=None, description="Specifies whether access to information is allowed for anonymous users. Returns a value of `false` if not specified.")
     client: Optional[StrictStr] = Field(default=None, description="Specifies which clients are given access to the export. Accepted notation includes IP, IP mask, or hostname. The default is `*` if not specified.")
     destroyed: Optional[StrictBool] = Field(default=None, description="Returns a value of `true` if the pod containing the SMB policy rule has been destroyed and is pending eradication. The `time_remaining` value displays the amount of time left until the destroyed policy is permanently eradicated. Once the `time_remaining` period has elapsed, the SMB policy rule is permanently eradicated and can no longer be recovered.")

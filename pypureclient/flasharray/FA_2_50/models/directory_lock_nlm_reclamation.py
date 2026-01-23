@@ -31,7 +31,7 @@ class DirectoryLockNlmReclamation(BaseModel):
     """
     DirectoryLockNlmReclamation
     """
-    context: Optional[FixedReferenceWithType] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReferenceWithType] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet or to the fleet itself. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     end: Optional[StrictInt] = Field(default=None, description="End time of the NLM reclamation in milliseconds since the UNIX epoch.")
     start: Optional[StrictInt] = Field(default=None, description="Start time of the NLM reclamation in milliseconds since the UNIX epoch.")
     __properties = ["context", "end", "start"]

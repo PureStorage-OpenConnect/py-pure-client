@@ -34,7 +34,7 @@ class HostPerformanceBalance(BaseModel):
     HostPerformanceBalance
     """
     name: Optional[StrictStr] = Field(default=None, description="A user-specified name. The name must be locally unique and can be changed.")
-    context: Optional[FixedReferenceWithType] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReferenceWithType] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet or to the fleet itself. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     fraction_relative_to_max: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The path with the highest number of operation counts is displayed with a fraction_relative_to_max of 1.0. The fraction values of all other paths in the host are then calculated relative to the path with the highest number of operation counts.")
     initiator: Optional[PortCommon] = None
     op_count: Optional[StrictInt] = Field(default=None, description="Count of I/O operations for the host path, over the specified resolution.")

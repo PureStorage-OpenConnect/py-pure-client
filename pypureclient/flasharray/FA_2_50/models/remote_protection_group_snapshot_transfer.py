@@ -40,7 +40,7 @@ class RemoteProtectionGroupSnapshotTransfer(BaseModel):
     physical_bytes_written: Optional[StrictInt] = Field(default=None, description="The amount of physical/logical data written to the target due to replication. Measured in bytes.")
     progress: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The percentage progress of the snapshot transfer from the source array to the target. Displayed in decimal format.")
     started: Optional[StrictInt] = Field(default=None, description="The timestamp of when the snapshot replication process started. Measured in milliseconds since the UNIX epoch.")
-    context: Optional[FixedReferenceWithType] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReferenceWithType] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet or to the fleet itself. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     source: Optional[Reference] = Field(default=None, description="The original protection group from which this snapshot was taken.")
     __properties = ["id", "name", "completed", "data_transferred", "destroyed", "physical_bytes_written", "progress", "started", "context", "source"]
 

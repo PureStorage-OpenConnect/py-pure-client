@@ -33,7 +33,7 @@ class TargetProtectionGroup(BaseModel):
     """
     TargetProtectionGroup
     """
-    context: Optional[FixedReferenceWithType] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReferenceWithType] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet or to the fleet itself. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     allowed: Optional[StrictBool] = Field(default=None, description="If set to `true`, the target array or pod allows the source array to replicate protection group data to the target. If set to `false`, the target array or pod does not allow the source array to replicate protection group data to the target.")
     group: Optional[Reference] = None
     member: Optional[ReferenceWithType] = None

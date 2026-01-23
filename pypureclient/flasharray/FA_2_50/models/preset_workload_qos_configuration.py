@@ -18,12 +18,13 @@ import re  # noqa: F401
 import json
 from typing import Set, Dict, Any
 
-from typing import Optional
+from typing import List, Optional
 
 try:
-    from pydantic.v1 import BaseModel, Field, StrictStr
+    from pydantic.v1 import BaseModel, Field, StrictStr, conlist
 except ModuleNotFoundError:
-    from pydantic import BaseModel, Field, StrictStr
+    from pydantic import BaseModel, Field, StrictStr, conlist
+from pypureclient.flasharray.FA_2_50.models.naming_pattern import NamingPattern
 
 
 class PresetWorkloadQosConfiguration(BaseModel):
@@ -33,7 +34,8 @@ class PresetWorkloadQosConfiguration(BaseModel):
     bandwidth_limit: Optional[StrictStr] = Field(default=None, description="The QoS IOPs limit shared across all volumes in the placement. Between 100 and 100000000, inclusive. Supports parameterization.")
     iops_limit: Optional[StrictStr] = Field(default=None, description="The maximum QoS bandwidth limit shared across all volumes in the placement. Whenever throughput exceeds the bandwidth limit, throttling occurs. Measured in bytes per second. Between 1MB/s and 512 GB/s, inclusive. Supports parameterization.")
     name: StrictStr = Field(default=..., description="The name of the QoS configuration, by which other configuration objects in the preset can reference it. Name must be unique across all configuration objects in the preset.")
-    __properties = ["bandwidth_limit", "iops_limit", "name"]
+    naming_patterns: Optional[conlist(NamingPattern, max_items=1, min_items=1)] = Field(default=None, description="The naming patterns that are applied to the storage resources that are provisioned by the workload for this configuration.")
+    __properties = ["bandwidth_limit", "iops_limit", "name", "naming_patterns"]
 
     class Config:
         """Pydantic configuration"""
@@ -64,6 +66,13 @@ class PresetWorkloadQosConfiguration(BaseModel):
                 none_fields.add(_field)
 
         _dict = self.dict(by_alias=True, exclude=excluded_fields, exclude_none=True)
+        # override the default output from pydantic by calling `to_dict()` of each item in naming_patterns (list)
+        if _include_in_dict('naming_patterns', include_readonly, excluded_fields, none_fields):
+            _items = []
+            for _item in self.naming_patterns:
+                if _item:
+                    _items.append(_item.to_dict(include_readonly=include_readonly))
+            _dict['naming_patterns'] = _items
         return _dict
 
     def __getitem__(self, key):
@@ -103,7 +112,8 @@ class PresetWorkloadQosConfiguration(BaseModel):
         _obj = PresetWorkloadQosConfiguration.construct(_fields_set=None, **{
             "bandwidth_limit": obj.get("bandwidth_limit"),
             "iops_limit": obj.get("iops_limit"),
-            "name": obj.get("name")
+            "name": obj.get("name"),
+            "naming_patterns": [NamingPattern.from_dict(_item) for _item in obj.get("naming_patterns")] if obj.get("naming_patterns") is not None else None
         })
         return _obj
 

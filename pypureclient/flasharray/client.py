@@ -9,6 +9,7 @@ fa_modules = {}
 
 MW_DEV_VERSION = '2.DEV'
 CLIENT_DEV_VERSION = '2.X'
+CLIENT_STAGING_VERSION_PREFIX = '2.s-'
 
 DEFAULT_RETRIES = 5
 
@@ -137,7 +138,7 @@ def __validate_version(array_versions, version):
     return version
 
 def __choose_version(array_versions):
-    client_versions = list(fa_modules_dict.keys())
+    client_versions = [v for v in fa_modules_dict.keys() if not v.startswith(CLIENT_STAGING_VERSION_PREFIX)]
     for version in array_versions[::-1]:
         if version.upper() == MW_DEV_VERSION:
             version = CLIENT_DEV_VERSION

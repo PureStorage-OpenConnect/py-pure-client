@@ -24,6 +24,7 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictStr, conlist
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictStr, conlist
+from pypureclient.flasharray.FA_2_50.models.naming_pattern import NamingPattern
 
 
 class PresetWorkloadVolumeConfiguration(BaseModel):
@@ -32,11 +33,12 @@ class PresetWorkloadVolumeConfiguration(BaseModel):
     """
     count: StrictStr = Field(default=..., description="The number of volumes to provision. Supports parameterization.")
     name: StrictStr = Field(default=..., description="The name of the volume configuration, by which other configuration objects in the preset can reference it. Name must be unique across all configuration objects in the preset.")
+    naming_patterns: Optional[conlist(NamingPattern, max_items=1, min_items=1)] = Field(default=None, description="The naming patterns that are applied to the storage resources that are provisioned by the workload for this configuration.")
     periodic_replication_configurations: Optional[conlist(StrictStr)] = Field(default=None, description="The names of the periodic replication configurations to apply to the volumes.")
     placement_configurations: conlist(StrictStr, max_items=1, min_items=1) = Field(default=..., description="The names of the placement configurations with which to associate the volumes.")
     provisioned_size: StrictStr = Field(default=..., description="The virtual size of each volume. Measured in bytes and must be a multiple of 512. The maximum size is 4503599627370496 (4PB). Supports parameterization.")
     snapshot_configurations: Optional[conlist(StrictStr)] = Field(default=None, description="The names of the snapshot configurations to apply to the volumes.")
-    __properties = ["count", "name", "periodic_replication_configurations", "placement_configurations", "provisioned_size", "snapshot_configurations"]
+    __properties = ["count", "name", "naming_patterns", "periodic_replication_configurations", "placement_configurations", "provisioned_size", "snapshot_configurations"]
 
     class Config:
         """Pydantic configuration"""
@@ -67,6 +69,13 @@ class PresetWorkloadVolumeConfiguration(BaseModel):
                 none_fields.add(_field)
 
         _dict = self.dict(by_alias=True, exclude=excluded_fields, exclude_none=True)
+        # override the default output from pydantic by calling `to_dict()` of each item in naming_patterns (list)
+        if _include_in_dict('naming_patterns', include_readonly, excluded_fields, none_fields):
+            _items = []
+            for _item in self.naming_patterns:
+                if _item:
+                    _items.append(_item.to_dict(include_readonly=include_readonly))
+            _dict['naming_patterns'] = _items
         return _dict
 
     def __getitem__(self, key):
@@ -106,6 +115,7 @@ class PresetWorkloadVolumeConfiguration(BaseModel):
         _obj = PresetWorkloadVolumeConfiguration.construct(_fields_set=None, **{
             "count": obj.get("count"),
             "name": obj.get("name"),
+            "naming_patterns": [NamingPattern.from_dict(_item) for _item in obj.get("naming_patterns")] if obj.get("naming_patterns") is not None else None,
             "periodic_replication_configurations": obj.get("periodic_replication_configurations"),
             "placement_configurations": obj.get("placement_configurations"),
             "provisioned_size": obj.get("provisioned_size"),

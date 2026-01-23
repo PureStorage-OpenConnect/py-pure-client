@@ -11,7 +11,6 @@ from multiprocessing.pool import ThreadPool
 import os
 import re
 import tempfile
-from aenum import Enum
 
 from urllib.parse import quote
 try:
@@ -260,7 +259,7 @@ class ApiClient:
 
         If obj is None, return None.
         If obj is SecretStr, return obj.get_secret_value()
-        If obj is str, int, long, float, bool, Enum return directly.
+        If obj is str, int, long, float, bool, return directly.
         If obj is datetime.datetime, datetime.date
             convert to string in iso8601 format.
         If obj is list, sanitize each element in the list.
@@ -284,8 +283,6 @@ class ApiClient:
                          for sub_obj in obj)
         elif isinstance(obj, (datetime.datetime, datetime.date)):
             return obj.isoformat()
-        elif isinstance(obj, Enum):
-            return obj.value
 
         if isinstance(obj, dict):
             obj_dict = obj

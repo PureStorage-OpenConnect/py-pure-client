@@ -33,7 +33,7 @@ class StretchedTagPod(BaseModel):
     """
     StretchedTagPod
     """
-    context: Optional[FixedReferenceWithType] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReferenceWithType] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet or to the fleet itself. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     copyable: Optional[StrictBool] = Field(default=None, description="Specifies whether or not to include the tag when copying the parent resource. If set to `true`, the tag is included in resource copying. If set to `false`, the tag is not included. If not specified, defaults to `true`.")
     key: Optional[StrictStr] = Field(default=None, description="Key of the tag. Supports up to 64 Unicode characters.")
     namespace: Optional[StrictStr] = Field(default=None, description="Optional namespace of the tag. Namespace identifies the category of the tag. Omitting the namespace defaults to the namespace `default`. The `pure&#42;` namespaces are reserved for plugins and integration partners. It is recommended that customers avoid using reserved namespaces.")

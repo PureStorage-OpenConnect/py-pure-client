@@ -31,7 +31,7 @@ class AlertRules(BaseModel):
     """
     AlertRules
     """
-    context: Optional[FixedReferenceWithType] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReferenceWithType] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet or to the fleet itself. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     code: Optional[StrictInt] = Field(default=None, description="The alert code that the rule applies to. Available alert codes for customization can be found in the alert rules catalog.")
     parameter: Optional[StrictStr] = Field(default=None, description="The parameter of the custom alert rule to modify. Values include `info` and `warning`. Available parameter values can be found in the alert rules catalog.")
     value: Optional[StrictStr] = Field(default=None, description="The value to use for the custom alert rule. Valid values for an alert code and parameter combination can be found in the alert rules catalog.")

@@ -33,7 +33,7 @@ class DirectoryGroupQuota(BaseModel):
     """
     DirectoryGroupQuota
     """
-    context: Optional[FixedReferenceWithType] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReferenceWithType] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet or to the fleet itself. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     directory: Optional[FixedReferenceWithType] = Field(default=None, description="The directory with the user-group-quota policy attached.")
     group: Optional[UserGroup] = Field(default=None, description="The group for which the user-group-quota policy rules apply.")
     group_email: Optional[StrictStr] = Field(default=None, description="The email address of the group.")

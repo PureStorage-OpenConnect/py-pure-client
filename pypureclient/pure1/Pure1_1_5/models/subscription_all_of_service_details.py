@@ -82,10 +82,6 @@ class SubscriptionAllOfServiceDetails(BaseModel):
         else:
             return v
 
-    @property
-    def value(self):
-        return self.actual_instance
-
     @classmethod
     def from_dict(cls, obj: dict) -> SubscriptionAllOfServiceDetails:
         return cls.from_json(json.dumps(obj))
@@ -96,6 +92,9 @@ class SubscriptionAllOfServiceDetails(BaseModel):
         return SubscriptionAllOfServiceDetails.construct(_fields_set=None, **{
             "actual_instance": json.loads(json_str)
         })
+
+    def as_request_dict(self) -> Dict[str, Any]:
+        return self.to_dict(include_readonly=False)
 
     def to_json(self) -> str:
         """Returns the JSON representation of the actual instance"""

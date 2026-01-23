@@ -33,7 +33,7 @@ class DirectoryServiceRole(BaseModel):
     DirectoryServiceRole
     """
     name: Optional[StrictStr] = Field(default=None, description="A user-specified name. The name must be locally unique and cannot be changed.")
-    context: Optional[FixedReferenceWithType] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReferenceWithType] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet or to the fleet itself. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     group: Optional[StrictStr] = Field(default=None, description="Group name that contains users with the abilities granted by the associated policies.")
     group_base: Optional[StrictStr] = Field(default=None, description="Specifies where the configured group is located in the directory tree.")
     management_access_policies: Optional[conlist(FixedReferenceWithType)] = Field(default=None, description="List of management access policies associated with the group.")

@@ -32,7 +32,7 @@ class RealmConnectionKey(BaseModel):
     """
     RealmConnectionKey
     """
-    context: Optional[FixedReferenceWithType] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReferenceWithType] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet or to the fleet itself. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     connection_key: Optional[StrictStr] = Field(default=None, description="Specifies the unique string token used to create or update a realm connection. The key is only visible when created. The response of the POST operation and any subsequent GET requests hide the key as ****.")
     created: Optional[StrictInt] = Field(default=None, description="The creation time in milliseconds since the UNIX epoch.")
     expires: Optional[StrictInt] = Field(default=None, description="The expiration time in milliseconds since the UNIX epoch.")
