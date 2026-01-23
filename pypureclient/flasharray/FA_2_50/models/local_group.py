@@ -31,7 +31,7 @@ class LocalGroup(BaseModel):
     """
     LocalGroup
     """
-    context: Optional[FixedReferenceWithType] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReferenceWithType] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet or to the fleet itself. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     local_directory_service: Optional[FixedReferenceWithType] = Field(default=None, description="Reference to the local directory service the object belongs to.")
     server: Optional[FixedReferenceWithType] = Field(default=None, description="Reference to the server the object belongs to. When the value is empty or set to `null` it means the object lives outside of a server scope.")
     built_in: Optional[StrictBool] = Field(default=None, description="Returns a value of `true` if the local group is built in. Returns a value of `false` if the group has been created manually.")

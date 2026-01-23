@@ -9,7 +9,7 @@ import sys
 from setuptools import setup, find_packages  # noqa: H301
 
 NAME = 'py-pure-client'
-VERSION = '1.81.0'
+VERSION = '1.82.0'
 
 REQUIRES = [
     'certifi >= 2024.07.04',
@@ -18,8 +18,7 @@ REQUIRES = [
     'urllib3 >= 1.26.17',
     'paramiko >= 3.4.0',
     'pyjwt >=2.0.0',
-    'pydantic >= 1.10.14',
-    'aenum >= 3.1.15'
+    'pydantic >= 1.10.14'
 ]
 
 readme = open('README.md', 'r')
@@ -33,7 +32,7 @@ setup(
     author='Pure Storage',
     author_email='openconnect@purestorage.com',
     url='https://github.com/PureStorage-OpenConnect/py-pure-client',
-    download_url='https://github.com/PureStorage-OpenConnect/py-pure-client/archive/1.81.0.tar.gz',
+    download_url='https://github.com/PureStorage-OpenConnect/py-pure-client/archive/1.82.0.tar.gz',
     keywords=['Swagger', 'Pure Storage', 'Python', 'clients', 'REST', 'API', 'FlashArray', 'FlashBlade', 'Pure1'],
     license='BSD 2-Clause',
     license_files = ('LICENSE.txt',),

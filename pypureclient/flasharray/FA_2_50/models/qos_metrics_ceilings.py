@@ -35,7 +35,7 @@ class QosMetricsCeilings(BaseModel):
     name: Optional[StrictStr] = Field(default=None, description="A locally unique, system-generated name. The name cannot be modified.")
     bandwidth_limit: Optional[conint(strict=True, le=549755813888, ge=1048576)] = Field(default=None, description="The maximum QoS bandwidth limit for the container. Whenever throughput exceeds the bandwidth limit, throttling occurs. Measured in bytes per second. Maximum limit is 512 GB/s.")
     iops_limit: Optional[conint(strict=True, le=100000000, ge=100)] = Field(default=None, description="The QoS IOPs limit for the container.")
-    context: Optional[FixedReferenceWithType] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReferenceWithType] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet or to the fleet itself. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     time: Optional[StrictInt] = Field(default=None, description="The timestamp of when the data was taken, measured in milliseconds since the UNIX epoch.")
     __properties = ["id", "name", "bandwidth_limit", "iops_limit", "context", "time"]
 

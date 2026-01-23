@@ -33,7 +33,7 @@ class PodPerformanceReplication(BaseModel):
     """
     PodPerformanceReplication
     """
-    context: Optional[FixedReferenceWithType] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReferenceWithType] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet or to the fleet itself. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     continuous_bytes_per_sec: Optional[ReplicationPerformanceWithTotal] = Field(default=None, description="Total bytes transmitted or received per second for continuous replication. The continuous replication feature is used for disaster recovery on FlashArray and provides a recovery point objective (RPO) of significantly less than 30s.")
     periodic_bytes_per_sec: Optional[ReplicationPerformanceWithTotal] = Field(default=None, description="Total bytes transmitted or received per second for periodic replication.")
     pod: Optional[FixedReference] = Field(default=None, description="Reference to the pod that the performance data is associated with.")

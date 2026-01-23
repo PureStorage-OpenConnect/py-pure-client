@@ -38,7 +38,7 @@ class Host(BaseModel):
     Host
     """
     name: Optional[StrictStr] = Field(default=None, description="A user-specified name. The name must be locally unique and can be changed.")
-    context: Optional[FixedReferenceWithType] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReferenceWithType] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet or to the fleet itself. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     chap: Optional[Chap] = None
     connection_count: Optional[StrictInt] = Field(default=None, description="The number of volumes connected to the specified host.")
     destroyed: Optional[StrictBool] = Field(default=None, description="Returns a value of `true` if the host has been destroyed with its container realm and is pending eradication. The `time_remaining` value displays the amount of time left until the destroyed host is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed host will be recovered if its container realm is recovered. Once the `time_remaining` period has elapsed, the host is permanently eradicated and can no longer be recovered.")

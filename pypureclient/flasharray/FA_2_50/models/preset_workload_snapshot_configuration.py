@@ -18,12 +18,13 @@ import re  # noqa: F401
 import json
 from typing import Set, Dict, Any
 
-from typing import List
+from typing import List, Optional
 
 try:
     from pydantic.v1 import BaseModel, Field, StrictStr, conlist
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictStr, conlist
+from pypureclient.flasharray.FA_2_50.models.naming_pattern import NamingPattern
 from pypureclient.flasharray.FA_2_50.models.preset_workload_snapshot_rule import PresetWorkloadSnapshotRule
 
 
@@ -32,8 +33,9 @@ class PresetWorkloadSnapshotConfiguration(BaseModel):
     PresetWorkloadSnapshotConfiguration
     """
     name: StrictStr = Field(default=..., description="The name of the snapshot configuration, by which other configuration objects in the preset can reference it. Name must be unique across all configuration objects in the preset.")
+    naming_patterns: Optional[conlist(NamingPattern, max_items=1, min_items=1)] = Field(default=None, description="The naming patterns that are applied to the storage resources that are provisioned by the workload for this configuration.")
     rules: conlist(PresetWorkloadSnapshotRule, max_items=2, min_items=1) = Field(default=..., description="Rules describe the frequency and retention of snapshots taken by the configuration.")
-    __properties = ["name", "rules"]
+    __properties = ["name", "naming_patterns", "rules"]
 
     class Config:
         """Pydantic configuration"""
@@ -64,6 +66,13 @@ class PresetWorkloadSnapshotConfiguration(BaseModel):
                 none_fields.add(_field)
 
         _dict = self.dict(by_alias=True, exclude=excluded_fields, exclude_none=True)
+        # override the default output from pydantic by calling `to_dict()` of each item in naming_patterns (list)
+        if _include_in_dict('naming_patterns', include_readonly, excluded_fields, none_fields):
+            _items = []
+            for _item in self.naming_patterns:
+                if _item:
+                    _items.append(_item.to_dict(include_readonly=include_readonly))
+            _dict['naming_patterns'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in rules (list)
         if _include_in_dict('rules', include_readonly, excluded_fields, none_fields):
             _items = []
@@ -109,6 +118,7 @@ class PresetWorkloadSnapshotConfiguration(BaseModel):
 
         _obj = PresetWorkloadSnapshotConfiguration.construct(_fields_set=None, **{
             "name": obj.get("name"),
+            "naming_patterns": [NamingPattern.from_dict(_item) for _item in obj.get("naming_patterns")] if obj.get("naming_patterns") is not None else None,
             "rules": [PresetWorkloadSnapshotRule.from_dict(_item) for _item in obj.get("rules")] if obj.get("rules") is not None else None
         })
         return _obj

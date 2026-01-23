@@ -31,7 +31,7 @@ class PolicyMemberExport(BaseModel):
     """
     PolicyMemberExport
     """
-    context: Optional[FixedReferenceWithType] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReferenceWithType] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet or to the fleet itself. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     destroyed: Optional[StrictBool] = Field(default=None, description="Returns a value of `true` if the member is destroyed.")
     enabled: Optional[StrictBool] = Field(default=None, description="Returns a value of `true` if and only if the export policy that manages this export is enabled AND this export is enabled.")
     member: Optional[FixedReferenceWithType] = Field(default=None, description="Reference to the resource that the policy is applied to.")

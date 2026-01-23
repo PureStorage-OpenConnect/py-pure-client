@@ -8,6 +8,7 @@ from ..configuration import Configuration
 fb_modules = {}
 
 MW_DEV_VERSION = '2.latest'
+CLIENT_STAGING_VERSION_PREFIX = '2.s-'
 
 DEFAULT_RETRIES = 5
 
@@ -124,7 +125,7 @@ def __validate_version(array_versions, version):
 
 
 def __choose_version(array_versions):
-    client_versions = list(fb_modules_dict.keys())
+    client_versions = [v for v in fb_modules_dict.keys() if not v.startswith(CLIENT_STAGING_VERSION_PREFIX)]
     for version in array_versions[::-1]:
         if version in client_versions:
             return version

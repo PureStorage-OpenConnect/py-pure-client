@@ -34,7 +34,7 @@ class MappingPolicy(BaseModel):
     MappingPolicy
     """
     id: Optional[StrictStr] = Field(default=None, description="A non-modifiable, globally unique ID chosen by the system.")
-    context: Optional[FixedReferenceWithType] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReferenceWithType] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet or to the fleet itself. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     direction: Optional[StrictStr] = Field(default=None, description="The direction of replication. Valid values include `inbound` and `outbound`.")
     local_policy: Optional[ReferenceWithType] = Field(default=None, description="Reference to a local policy.")
     mapping: Optional[StrictStr] = Field(default=None, description="The mapping for this policy mapping. Valid values are `connected` and `disconnected`.")

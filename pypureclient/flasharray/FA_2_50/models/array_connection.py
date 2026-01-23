@@ -35,7 +35,7 @@ class ArrayConnection(BaseModel):
     """
     id: Optional[StrictStr] = Field(default=None, description="A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.")
     name: Optional[StrictStr] = Field(default=None, description="A locally unique, system-generated name. The name cannot be modified.")
-    context: Optional[FixedReferenceWithType] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet. If the array is not a member of a fleet, `context` will always implicitly be set to the array that received the request. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
+    context: Optional[FixedReferenceWithType] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet or to the fleet itself. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     encryption: Optional[StrictStr] = Field(default=None, description="If `encrypted`, all traffic over this array connection will be encrypted. If `unencrypted`, all traffic over this array connection will be unencrypted.")
     encryption_mode: Optional[StrictStr] = Field(default=None, description="Cryptographic protocol, trust model, and encryption algorithm information. Will be `null` if `encrypted` is `false`.")
     management_address: Optional[StrictStr] = Field(default=None, description="Management IP address or FQDN of the target array.")
