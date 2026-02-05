@@ -12,11 +12,15 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.certificate_group_certificate_get_response_v_36 import CertificateGroupCertificateGetResponse
+from pypureclient.flasharray.common.models.certificate_group_certificate_response_v_36 import CertificateGroupCertificateResponse
+from pypureclient.flasharray.common.models.certificate_group_get_response_v_36 import CertificateGroupGetResponse
+from pypureclient.flasharray.common.models.certificate_group_response_v_36 import CertificateGroupResponse
+from pypureclient.flasharray.common.models.certificate_group_use_get_response_v_41 import CertificateGroupUseGetResponse
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,14 +28,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_41.models.certificate_group_certificate_get_response import CertificateGroupCertificateGetResponse
-from pypureclient.flasharray.FA_2_41.models.certificate_group_certificate_response import CertificateGroupCertificateResponse
-from pypureclient.flasharray.FA_2_41.models.certificate_group_get_response import CertificateGroupGetResponse
-from pypureclient.flasharray.FA_2_41.models.certificate_group_response import CertificateGroupResponse
-from pypureclient.flasharray.FA_2_41.models.certificate_group_use_get_response import CertificateGroupUseGetResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

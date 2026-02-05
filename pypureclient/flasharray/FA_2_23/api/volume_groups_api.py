@@ -12,11 +12,17 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.member_get_response_v_1 import MemberGetResponse
+from pypureclient.flasharray.common.models.resource_performance_get_response_v_4 import ResourcePerformanceGetResponse
+from pypureclient.flasharray.common.models.resource_space_get_response_v_23 import ResourceSpaceGetResponse
+from pypureclient.flasharray.common.models.volume_group_get_response_v_23 import VolumeGroupGetResponse
+from pypureclient.flasharray.common.models.volume_group_patch_v_23 import VolumeGroupPatch
+from pypureclient.flasharray.common.models.volume_group_post_v_23 import VolumeGroupPost
+from pypureclient.flasharray.common.models.volume_group_response_v_23 import VolumeGroupResponse
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,16 +30,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictInt, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_23.models.member_get_response import MemberGetResponse
-from pypureclient.flasharray.FA_2_23.models.resource_performance_get_response import ResourcePerformanceGetResponse
-from pypureclient.flasharray.FA_2_23.models.resource_space_get_response import ResourceSpaceGetResponse
-from pypureclient.flasharray.FA_2_23.models.volume_group_get_response import VolumeGroupGetResponse
-from pypureclient.flasharray.FA_2_23.models.volume_group_patch import VolumeGroupPatch
-from pypureclient.flasharray.FA_2_23.models.volume_group_post import VolumeGroupPost
-from pypureclient.flasharray.FA_2_23.models.volume_group_response import VolumeGroupResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

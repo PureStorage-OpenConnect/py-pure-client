@@ -12,11 +12,12 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.remote_realm_tag_get_response_v_50 import RemoteRealmTagGetResponse
+from pypureclient.flasharray.common.models.remote_realms_response_v_50 import RemoteRealmsResponse
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,11 +25,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_50.models.remote_realm_tag_get_response import RemoteRealmTagGetResponse
-from pypureclient.flasharray.FA_2_50.models.remote_realms_response import RemoteRealmsResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

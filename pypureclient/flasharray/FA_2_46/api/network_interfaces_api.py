@@ -12,11 +12,17 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.network_interface_get_response_v_44 import NetworkInterfaceGetResponse
+from pypureclient.flasharray.common.models.network_interface_neighbor_get_response_v_22 import NetworkInterfaceNeighborGetResponse
+from pypureclient.flasharray.common.models.network_interface_patch_v_44 import NetworkInterfacePatch
+from pypureclient.flasharray.common.models.network_interface_performance_get_response_v_36 import NetworkInterfacePerformanceGetResponse
+from pypureclient.flasharray.common.models.network_interface_post_v_44 import NetworkInterfacePost
+from pypureclient.flasharray.common.models.network_interface_response_v_44 import NetworkInterfaceResponse
+from pypureclient.flasharray.common.models.network_interfaces_port_details_get_response_v_16 import NetworkInterfacesPortDetailsGetResponse
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,16 +30,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictInt, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_46.models.network_interface_get_response import NetworkInterfaceGetResponse
-from pypureclient.flasharray.FA_2_46.models.network_interface_neighbor_get_response import NetworkInterfaceNeighborGetResponse
-from pypureclient.flasharray.FA_2_46.models.network_interface_patch import NetworkInterfacePatch
-from pypureclient.flasharray.FA_2_46.models.network_interface_performance_get_response import NetworkInterfacePerformanceGetResponse
-from pypureclient.flasharray.FA_2_46.models.network_interface_post import NetworkInterfacePost
-from pypureclient.flasharray.FA_2_46.models.network_interface_response import NetworkInterfaceResponse
-from pypureclient.flasharray.FA_2_46.models.network_interfaces_port_details_get_response import NetworkInterfacesPortDetailsGetResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

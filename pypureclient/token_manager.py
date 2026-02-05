@@ -75,7 +75,7 @@ class TokenManager(object):
         self.get_access_token(refresh=True)
 
     def _generate_id_token(self, headers, payload, private_key):
-        _payload_to_encode = dict(payload) if payload else {}
+        _payload_to_encode = dict({k: v for k, v in payload.items() if v is not None}) if payload else {}
         _now = int(time.time())
         _payload_to_encode['iat'] = _now
         _payload_to_encode['exp'] = _now + self.EXP_TIME_IN_SECONDS

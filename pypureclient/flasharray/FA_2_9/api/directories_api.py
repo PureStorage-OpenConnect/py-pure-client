@@ -12,11 +12,22 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.directory_get_response_v_7 import DirectoryGetResponse
+from pypureclient.flasharray.common.models.directory_patch_v_9 import DirectoryPatch
+from pypureclient.flasharray.common.models.directory_performance_get_response_v_3 import DirectoryPerformanceGetResponse
+from pypureclient.flasharray.common.models.directory_policy_export_post_v_3 import DirectoryPolicyExportPost
+from pypureclient.flasharray.common.models.directory_policy_post_v_3 import DirectoryPolicyPost
+from pypureclient.flasharray.common.models.directory_post_v_3 import DirectoryPost
+from pypureclient.flasharray.common.models.directory_response_v_7 import DirectoryResponse
+from pypureclient.flasharray.common.models.policy_member_export_get_response_v_3 import PolicyMemberExportGetResponse
+from pypureclient.flasharray.common.models.policy_member_export_response_v_3 import PolicyMemberExportResponse
+from pypureclient.flasharray.common.models.policy_member_get_response_v_3 import PolicyMemberGetResponse
+from pypureclient.flasharray.common.models.policy_member_response_v_3 import PolicyMemberResponse
+from pypureclient.flasharray.common.models.resource_space_get_response_v_1 import ResourceSpaceGetResponse
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,21 +35,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictInt, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_9.models.directory_get_response import DirectoryGetResponse
-from pypureclient.flasharray.FA_2_9.models.directory_patch import DirectoryPatch
-from pypureclient.flasharray.FA_2_9.models.directory_performance_get_response import DirectoryPerformanceGetResponse
-from pypureclient.flasharray.FA_2_9.models.directory_policy_export_post import DirectoryPolicyExportPost
-from pypureclient.flasharray.FA_2_9.models.directory_policy_post import DirectoryPolicyPost
-from pypureclient.flasharray.FA_2_9.models.directory_post import DirectoryPost
-from pypureclient.flasharray.FA_2_9.models.directory_response import DirectoryResponse
-from pypureclient.flasharray.FA_2_9.models.policy_member_export_get_response import PolicyMemberExportGetResponse
-from pypureclient.flasharray.FA_2_9.models.policy_member_export_response import PolicyMemberExportResponse
-from pypureclient.flasharray.FA_2_9.models.policy_member_get_response import PolicyMemberGetResponse
-from pypureclient.flasharray.FA_2_9.models.policy_member_response import PolicyMemberResponse
-from pypureclient.flasharray.FA_2_9.models.resource_space_get_response import ResourceSpaceGetResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

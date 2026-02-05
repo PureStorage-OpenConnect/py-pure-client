@@ -12,11 +12,16 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.network_interface_get_response_v_4 import NetworkInterfaceGetResponse
+from pypureclient.flasharray.common.models.network_interface_patch_v_7 import NetworkInterfacePatch
+from pypureclient.flasharray.common.models.network_interface_performance_get_response_v_4 import NetworkInterfacePerformanceGetResponse
+from pypureclient.flasharray.common.models.network_interface_post_v_7 import NetworkInterfacePost
+from pypureclient.flasharray.common.models.network_interface_response_v_4 import NetworkInterfaceResponse
+from pypureclient.flasharray.common.models.network_interfaces_port_details_get_response_v_16 import NetworkInterfacesPortDetailsGetResponse
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,15 +29,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictInt, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_17.models.network_interface_get_response import NetworkInterfaceGetResponse
-from pypureclient.flasharray.FA_2_17.models.network_interface_patch import NetworkInterfacePatch
-from pypureclient.flasharray.FA_2_17.models.network_interface_performance_get_response import NetworkInterfacePerformanceGetResponse
-from pypureclient.flasharray.FA_2_17.models.network_interface_post import NetworkInterfacePost
-from pypureclient.flasharray.FA_2_17.models.network_interface_response import NetworkInterfaceResponse
-from pypureclient.flasharray.FA_2_17.models.network_interfaces_port_details_get_response import NetworkInterfacesPortDetailsGetResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

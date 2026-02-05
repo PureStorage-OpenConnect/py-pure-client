@@ -1,1 +1,1 @@
-# Common models for FA versions
+_attribute_error_on_none = True

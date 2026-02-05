@@ -12,11 +12,18 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.tag_get_response_v_2 import TagGetResponse
+from pypureclient.flasharray.common.models.tag_response_v_2 import TagResponse
+from pypureclient.flasharray.common.models.tag_v_2 import Tag
+from pypureclient.flasharray.common.models.volume_snapshot_get_response_v_23 import VolumeSnapshotGetResponse
+from pypureclient.flasharray.common.models.volume_snapshot_patch_v_0 import VolumeSnapshotPatch
+from pypureclient.flasharray.common.models.volume_snapshot_post_v_0 import VolumeSnapshotPost
+from pypureclient.flasharray.common.models.volume_snapshot_response_v_23 import VolumeSnapshotResponse
+from pypureclient.flasharray.common.models.volume_snapshot_transfer_get_response_v_1 import VolumeSnapshotTransferGetResponse
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,17 +31,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_23.models.tag import Tag
-from pypureclient.flasharray.FA_2_23.models.tag_get_response import TagGetResponse
-from pypureclient.flasharray.FA_2_23.models.tag_response import TagResponse
-from pypureclient.flasharray.FA_2_23.models.volume_snapshot_get_response import VolumeSnapshotGetResponse
-from pypureclient.flasharray.FA_2_23.models.volume_snapshot_patch import VolumeSnapshotPatch
-from pypureclient.flasharray.FA_2_23.models.volume_snapshot_post import VolumeSnapshotPost
-from pypureclient.flasharray.FA_2_23.models.volume_snapshot_response import VolumeSnapshotResponse
-from pypureclient.flasharray.FA_2_23.models.volume_snapshot_transfer_get_response import VolumeSnapshotTransferGetResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

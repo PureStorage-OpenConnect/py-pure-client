@@ -12,11 +12,29 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.directory_service_get_response_v_2 import DirectoryServiceGetResponse
+from pypureclient.flasharray.common.models.directory_service_response_v_2 import DirectoryServiceResponse
+from pypureclient.flasharray.common.models.directory_service_role_get_response_v_2 import DirectoryServiceRoleGetResponse
+from pypureclient.flasharray.common.models.directory_service_role_response_v_2 import DirectoryServiceRoleResponse
+from pypureclient.flasharray.common.models.directory_service_role_v_2 import DirectoryServiceRole
+from pypureclient.flasharray.common.models.directory_service_v_2 import DirectoryService
+from pypureclient.flasharray.common.models.local_group_get_response_v_21 import LocalGroupGetResponse
+from pypureclient.flasharray.common.models.local_group_membership_post_v_21 import LocalGroupMembershipPost
+from pypureclient.flasharray.common.models.local_group_post_v_21 import LocalGroupPost
+from pypureclient.flasharray.common.models.local_group_response_v_21 import LocalGroupResponse
+from pypureclient.flasharray.common.models.local_group_v_21 import LocalGroup
+from pypureclient.flasharray.common.models.local_membership_get_response_v_21 import LocalMembershipGetResponse
+from pypureclient.flasharray.common.models.local_membership_response_v_21 import LocalMembershipResponse
+from pypureclient.flasharray.common.models.local_user_get_response_v_21 import LocalUserGetResponse
+from pypureclient.flasharray.common.models.local_user_membership_post_v_21 import LocalUserMembershipPost
+from pypureclient.flasharray.common.models.local_user_patch_v_21 import LocalUserPatch
+from pypureclient.flasharray.common.models.local_user_post_v_21 import LocalUserPost
+from pypureclient.flasharray.common.models.local_user_response_v_21 import LocalUserResponse
+from pypureclient.flasharray.common.models.test_result_with_resource_response_v_2 import TestResultWithResourceResponse
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,28 +42,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictInt, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_23.models.directory_service import DirectoryService
-from pypureclient.flasharray.FA_2_23.models.directory_service_get_response import DirectoryServiceGetResponse
-from pypureclient.flasharray.FA_2_23.models.directory_service_response import DirectoryServiceResponse
-from pypureclient.flasharray.FA_2_23.models.directory_service_role import DirectoryServiceRole
-from pypureclient.flasharray.FA_2_23.models.directory_service_role_get_response import DirectoryServiceRoleGetResponse
-from pypureclient.flasharray.FA_2_23.models.directory_service_role_response import DirectoryServiceRoleResponse
-from pypureclient.flasharray.FA_2_23.models.local_group import LocalGroup
-from pypureclient.flasharray.FA_2_23.models.local_group_get_response import LocalGroupGetResponse
-from pypureclient.flasharray.FA_2_23.models.local_group_membership_post import LocalGroupMembershipPost
-from pypureclient.flasharray.FA_2_23.models.local_group_post import LocalGroupPost
-from pypureclient.flasharray.FA_2_23.models.local_group_response import LocalGroupResponse
-from pypureclient.flasharray.FA_2_23.models.local_membership_get_response import LocalMembershipGetResponse
-from pypureclient.flasharray.FA_2_23.models.local_membership_response import LocalMembershipResponse
-from pypureclient.flasharray.FA_2_23.models.local_user_get_response import LocalUserGetResponse
-from pypureclient.flasharray.FA_2_23.models.local_user_membership_post import LocalUserMembershipPost
-from pypureclient.flasharray.FA_2_23.models.local_user_patch import LocalUserPatch
-from pypureclient.flasharray.FA_2_23.models.local_user_post import LocalUserPost
-from pypureclient.flasharray.FA_2_23.models.local_user_response import LocalUserResponse
-from pypureclient.flasharray.FA_2_23.models.test_result_with_resource_response import TestResultWithResourceResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

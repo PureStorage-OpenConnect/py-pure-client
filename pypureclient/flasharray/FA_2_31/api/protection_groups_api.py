@@ -12,11 +12,23 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.member_no_id_member_get_response_v_26 import MemberNoIdMemberGetResponse
+from pypureclient.flasharray.common.models.member_no_id_member_response_v_26 import MemberNoIdMemberResponse
+from pypureclient.flasharray.common.models.protection_group_get_response_v_26 import ProtectionGroupGetResponse
+from pypureclient.flasharray.common.models.protection_group_performance_array_response_v_26 import ProtectionGroupPerformanceArrayResponse
+from pypureclient.flasharray.common.models.protection_group_performance_response_v_26 import ProtectionGroupPerformanceResponse
+from pypureclient.flasharray.common.models.protection_group_response_v_26 import ProtectionGroupResponse
+from pypureclient.flasharray.common.models.protection_group_target_get_response_v_26 import ProtectionGroupTargetGetResponse
+from pypureclient.flasharray.common.models.protection_group_target_response_v_26 import ProtectionGroupTargetResponse
+from pypureclient.flasharray.common.models.protection_group_v_26 import ProtectionGroup
+from pypureclient.flasharray.common.models.protection_groups_volumes_get_response_v_26 import ProtectionGroupsVolumesGetResponse
+from pypureclient.flasharray.common.models.protection_groups_volumes_response_v_26 import ProtectionGroupsVolumesResponse
+from pypureclient.flasharray.common.models.resource_space_get_response_v_26 import ResourceSpaceGetResponse
+from pypureclient.flasharray.common.models.target_protection_group_post_patch_v_26 import TargetProtectionGroupPostPatch
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,22 +36,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictInt, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_31.models.member_no_id_member_get_response import MemberNoIdMemberGetResponse
-from pypureclient.flasharray.FA_2_31.models.member_no_id_member_response import MemberNoIdMemberResponse
-from pypureclient.flasharray.FA_2_31.models.protection_group import ProtectionGroup
-from pypureclient.flasharray.FA_2_31.models.protection_group_get_response import ProtectionGroupGetResponse
-from pypureclient.flasharray.FA_2_31.models.protection_group_performance_array_response import ProtectionGroupPerformanceArrayResponse
-from pypureclient.flasharray.FA_2_31.models.protection_group_performance_response import ProtectionGroupPerformanceResponse
-from pypureclient.flasharray.FA_2_31.models.protection_group_response import ProtectionGroupResponse
-from pypureclient.flasharray.FA_2_31.models.protection_group_target_get_response import ProtectionGroupTargetGetResponse
-from pypureclient.flasharray.FA_2_31.models.protection_group_target_response import ProtectionGroupTargetResponse
-from pypureclient.flasharray.FA_2_31.models.protection_groups_volumes_get_response import ProtectionGroupsVolumesGetResponse
-from pypureclient.flasharray.FA_2_31.models.protection_groups_volumes_response import ProtectionGroupsVolumesResponse
-from pypureclient.flasharray.FA_2_31.models.resource_space_get_response import ResourceSpaceGetResponse
-from pypureclient.flasharray.FA_2_31.models.target_protection_group_post_patch import TargetProtectionGroupPostPatch
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

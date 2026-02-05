@@ -12,11 +12,14 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.virtual_machine_get_response_v_14 import VirtualMachineGetResponse
+from pypureclient.flasharray.common.models.virtual_machine_post_v_14 import VirtualMachinePost
+from pypureclient.flasharray.common.models.virtual_machine_response_v_14 import VirtualMachineResponse
+from pypureclient.flasharray.common.models.virtual_machine_volume_snapshot_response_v_35 import VirtualMachineVolumeSnapshotResponse
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,13 +27,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_46.models.virtual_machine_get_response import VirtualMachineGetResponse
-from pypureclient.flasharray.FA_2_46.models.virtual_machine_post import VirtualMachinePost
-from pypureclient.flasharray.FA_2_46.models.virtual_machine_response import VirtualMachineResponse
-from pypureclient.flasharray.FA_2_46.models.virtual_machine_volume_snapshot_response import VirtualMachineVolumeSnapshotResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

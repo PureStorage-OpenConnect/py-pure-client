@@ -12,11 +12,17 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.host_get_response_v_0 import HostGetResponse
+from pypureclient.flasharray.common.models.host_patch_v_0 import HostPatch
+from pypureclient.flasharray.common.models.host_post_v_0 import HostPost
+from pypureclient.flasharray.common.models.host_response_v_0 import HostResponse
+from pypureclient.flasharray.common.models.member_no_id_all_get_response_v_0 import MemberNoIdAllGetResponse
+from pypureclient.flasharray.common.models.resource_performance_no_id_by_array_get_response_v_0 import ResourcePerformanceNoIdByArrayGetResponse
+from pypureclient.flasharray.common.models.resource_performance_no_id_get_response_v_0 import ResourcePerformanceNoIdGetResponse
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,16 +30,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_0.models.host_get_response import HostGetResponse
-from pypureclient.flasharray.FA_2_0.models.host_patch import HostPatch
-from pypureclient.flasharray.FA_2_0.models.host_post import HostPost
-from pypureclient.flasharray.FA_2_0.models.host_response import HostResponse
-from pypureclient.flasharray.FA_2_0.models.member_no_id_all_get_response import MemberNoIdAllGetResponse
-from pypureclient.flasharray.FA_2_0.models.resource_performance_no_id_by_array_get_response import ResourcePerformanceNoIdByArrayGetResponse
-from pypureclient.flasharray.FA_2_0.models.resource_performance_no_id_get_response import ResourcePerformanceNoIdGetResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

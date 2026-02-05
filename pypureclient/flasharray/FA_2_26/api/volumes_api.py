@@ -12,11 +12,24 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.member_get_response_v_1 import MemberGetResponse
+from pypureclient.flasharray.common.models.protection_groups_volumes_get_response_v_26 import ProtectionGroupsVolumesGetResponse
+from pypureclient.flasharray.common.models.protection_groups_volumes_response_v_26 import ProtectionGroupsVolumesResponse
+from pypureclient.flasharray.common.models.resource_performance_by_array_get_response_v_4 import ResourcePerformanceByArrayGetResponse
+from pypureclient.flasharray.common.models.resource_performance_get_response_v_4 import ResourcePerformanceGetResponse
+from pypureclient.flasharray.common.models.tag_get_response_v_2 import TagGetResponse
+from pypureclient.flasharray.common.models.tag_response_v_2 import TagResponse
+from pypureclient.flasharray.common.models.tag_v_2 import Tag
+from pypureclient.flasharray.common.models.volume_get_response_v_26 import VolumeGetResponse
+from pypureclient.flasharray.common.models.volume_patch_v_10 import VolumePatch
+from pypureclient.flasharray.common.models.volume_post_v_10 import VolumePost
+from pypureclient.flasharray.common.models.volume_response_v_26 import VolumeResponse
+from pypureclient.flasharray.common.models.volume_space_get_response_v_26 import VolumeSpaceGetResponse
+from pypureclient.flasharray.common.models.volumes_diff_get_response_v_9 import VolumesDiffGetResponse
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,23 +37,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictInt, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_26.models.member_get_response import MemberGetResponse
-from pypureclient.flasharray.FA_2_26.models.protection_groups_volumes_get_response import ProtectionGroupsVolumesGetResponse
-from pypureclient.flasharray.FA_2_26.models.protection_groups_volumes_response import ProtectionGroupsVolumesResponse
-from pypureclient.flasharray.FA_2_26.models.resource_performance_by_array_get_response import ResourcePerformanceByArrayGetResponse
-from pypureclient.flasharray.FA_2_26.models.resource_performance_get_response import ResourcePerformanceGetResponse
-from pypureclient.flasharray.FA_2_26.models.tag import Tag
-from pypureclient.flasharray.FA_2_26.models.tag_get_response import TagGetResponse
-from pypureclient.flasharray.FA_2_26.models.tag_response import TagResponse
-from pypureclient.flasharray.FA_2_26.models.volume_get_response import VolumeGetResponse
-from pypureclient.flasharray.FA_2_26.models.volume_patch import VolumePatch
-from pypureclient.flasharray.FA_2_26.models.volume_post import VolumePost
-from pypureclient.flasharray.FA_2_26.models.volume_response import VolumeResponse
-from pypureclient.flasharray.FA_2_26.models.volume_space_get_response import VolumeSpaceGetResponse
-from pypureclient.flasharray.FA_2_26.models.volumes_diff_get_response import VolumesDiffGetResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

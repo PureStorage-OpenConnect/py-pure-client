@@ -12,11 +12,18 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.mapping_policy_patch_v_32 import MappingPolicyPatch
+from pypureclient.flasharray.common.models.pod_replica_link_get_response_v_38 import PodReplicaLinkGetResponse
+from pypureclient.flasharray.common.models.pod_replica_link_lag_get_response_v_38 import PodReplicaLinkLagGetResponse
+from pypureclient.flasharray.common.models.pod_replica_link_mapping_policy_get_response_v_38 import PodReplicaLinkMappingPolicyGetResponse
+from pypureclient.flasharray.common.models.pod_replica_link_mapping_policy_response_v_38 import PodReplicaLinkMappingPolicyResponse
+from pypureclient.flasharray.common.models.pod_replica_link_patch_v_2 import PodReplicaLinkPatch
+from pypureclient.flasharray.common.models.pod_replica_link_performance_replication_get_response_v_38 import PodReplicaLinkPerformanceReplicationGetResponse
+from pypureclient.flasharray.common.models.pod_replica_link_response_v_38 import PodReplicaLinkResponse
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,17 +31,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictInt, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_46.models.mapping_policy_patch import MappingPolicyPatch
-from pypureclient.flasharray.FA_2_46.models.pod_replica_link_get_response import PodReplicaLinkGetResponse
-from pypureclient.flasharray.FA_2_46.models.pod_replica_link_lag_get_response import PodReplicaLinkLagGetResponse
-from pypureclient.flasharray.FA_2_46.models.pod_replica_link_mapping_policy_get_response import PodReplicaLinkMappingPolicyGetResponse
-from pypureclient.flasharray.FA_2_46.models.pod_replica_link_mapping_policy_response import PodReplicaLinkMappingPolicyResponse
-from pypureclient.flasharray.FA_2_46.models.pod_replica_link_patch import PodReplicaLinkPatch
-from pypureclient.flasharray.FA_2_46.models.pod_replica_link_performance_replication_get_response import PodReplicaLinkPerformanceReplicationGetResponse
-from pypureclient.flasharray.FA_2_46.models.pod_replica_link_response import PodReplicaLinkResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse
@@ -1363,7 +1361,6 @@ class PodReplicaLinksApi:
         **kwargs
     ) -> ApiResponse:  # noqa: E501
         """api246_pod_replica_links_performance_replication_get
-
 
         :param authorization: Access token (in JWT format) required to use any API endpoint (except `/oauth2`, `/login`, and `/logout`)
         :type authorization: str

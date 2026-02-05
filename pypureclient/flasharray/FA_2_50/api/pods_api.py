@@ -12,11 +12,27 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.container_performance_get_response_v_50 import ContainerPerformanceGetResponse
+from pypureclient.flasharray.common.models.member_get_response_v_50 import MemberGetResponse
+from pypureclient.flasharray.common.models.member_response_v_50 import MemberResponse
+from pypureclient.flasharray.common.models.pod_get_response_v_50 import PodGetResponse
+from pypureclient.flasharray.common.models.pod_member_get_response_v_50 import PodMemberGetResponse
+from pypureclient.flasharray.common.models.pod_member_response_v_50 import PodMemberResponse
+from pypureclient.flasharray.common.models.pod_patch_v_49 import PodPatch
+from pypureclient.flasharray.common.models.pod_performance_by_array_get_response_v_50 import PodPerformanceByArrayGetResponse
+from pypureclient.flasharray.common.models.pod_performance_replication_by_array_get_response_v_50 import PodPerformanceReplicationByArrayGetResponse
+from pypureclient.flasharray.common.models.pod_performance_replication_get_response_v_50 import PodPerformanceReplicationGetResponse
+from pypureclient.flasharray.common.models.pod_post_v_50 import PodPost
+from pypureclient.flasharray.common.models.pod_response_v_50 import PodResponse
+from pypureclient.flasharray.common.models.resource_pod_space_get_response_v_50 import ResourcePodSpaceGetResponse
+from pypureclient.flasharray.common.models.tag_get_response_v_50 import TagGetResponse
+from pypureclient.flasharray.common.models.tag_response_v_50 import TagResponse
+from pypureclient.flasharray.common.models.tag_v_50 import Tag
+from pypureclient.flasharray.common.models.test_result_with_resource_with_id_post_response_v_50 import TestResultWithResourceWithIdPostResponse
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,26 +40,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictInt, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_50.models.container_performance_get_response import ContainerPerformanceGetResponse
-from pypureclient.flasharray.FA_2_50.models.member_get_response import MemberGetResponse
-from pypureclient.flasharray.FA_2_50.models.member_response import MemberResponse
-from pypureclient.flasharray.FA_2_50.models.pod_get_response import PodGetResponse
-from pypureclient.flasharray.FA_2_50.models.pod_member_get_response import PodMemberGetResponse
-from pypureclient.flasharray.FA_2_50.models.pod_member_response import PodMemberResponse
-from pypureclient.flasharray.FA_2_50.models.pod_patch import PodPatch
-from pypureclient.flasharray.FA_2_50.models.pod_performance_by_array_get_response import PodPerformanceByArrayGetResponse
-from pypureclient.flasharray.FA_2_50.models.pod_performance_replication_by_array_get_response import PodPerformanceReplicationByArrayGetResponse
-from pypureclient.flasharray.FA_2_50.models.pod_performance_replication_get_response import PodPerformanceReplicationGetResponse
-from pypureclient.flasharray.FA_2_50.models.pod_post import PodPost
-from pypureclient.flasharray.FA_2_50.models.pod_response import PodResponse
-from pypureclient.flasharray.FA_2_50.models.resource_pod_space_get_response import ResourcePodSpaceGetResponse
-from pypureclient.flasharray.FA_2_50.models.tag import Tag
-from pypureclient.flasharray.FA_2_50.models.tag_get_response import TagGetResponse
-from pypureclient.flasharray.FA_2_50.models.tag_response import TagResponse
-from pypureclient.flasharray.FA_2_50.models.test_result_with_resource_with_id_post_response import TestResultWithResourceWithIdPostResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

@@ -12,11 +12,25 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.directories_groups_get_response_v_47 import DirectoriesGroupsGetResponse
+from pypureclient.flasharray.common.models.directories_users_get_response_v_47 import DirectoriesUsersGetResponse
+from pypureclient.flasharray.common.models.directory_get_response_v_47 import DirectoryGetResponse
+from pypureclient.flasharray.common.models.directory_lock_nlm_reclamation_response_v_47 import DirectoryLockNlmReclamationResponse
+from pypureclient.flasharray.common.models.directory_patch_v_9 import DirectoryPatch
+from pypureclient.flasharray.common.models.directory_performance_get_response_v_47 import DirectoryPerformanceGetResponse
+from pypureclient.flasharray.common.models.directory_policy_export_post_v_44 import DirectoryPolicyExportPost
+from pypureclient.flasharray.common.models.directory_policy_post_v_3 import DirectoryPolicyPost
+from pypureclient.flasharray.common.models.directory_post_v_3 import DirectoryPost
+from pypureclient.flasharray.common.models.directory_response_v_47 import DirectoryResponse
+from pypureclient.flasharray.common.models.policy_member_export_get_response_v_47 import PolicyMemberExportGetResponse
+from pypureclient.flasharray.common.models.policy_member_export_response_v_47 import PolicyMemberExportResponse
+from pypureclient.flasharray.common.models.policy_member_get_response_v_47 import PolicyMemberGetResponse
+from pypureclient.flasharray.common.models.policy_member_response_v_47 import PolicyMemberResponse
+from pypureclient.flasharray.common.models.resource_directory_space_get_response_v_47 import ResourceDirectorySpaceGetResponse
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,24 +38,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictInt, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_47.models.directories_groups_get_response import DirectoriesGroupsGetResponse
-from pypureclient.flasharray.FA_2_47.models.directories_users_get_response import DirectoriesUsersGetResponse
-from pypureclient.flasharray.FA_2_47.models.directory_get_response import DirectoryGetResponse
-from pypureclient.flasharray.FA_2_47.models.directory_lock_nlm_reclamation_response import DirectoryLockNlmReclamationResponse
-from pypureclient.flasharray.FA_2_47.models.directory_patch import DirectoryPatch
-from pypureclient.flasharray.FA_2_47.models.directory_performance_get_response import DirectoryPerformanceGetResponse
-from pypureclient.flasharray.FA_2_47.models.directory_policy_export_post import DirectoryPolicyExportPost
-from pypureclient.flasharray.FA_2_47.models.directory_policy_post import DirectoryPolicyPost
-from pypureclient.flasharray.FA_2_47.models.directory_post import DirectoryPost
-from pypureclient.flasharray.FA_2_47.models.directory_response import DirectoryResponse
-from pypureclient.flasharray.FA_2_47.models.policy_member_export_get_response import PolicyMemberExportGetResponse
-from pypureclient.flasharray.FA_2_47.models.policy_member_export_response import PolicyMemberExportResponse
-from pypureclient.flasharray.FA_2_47.models.policy_member_get_response import PolicyMemberGetResponse
-from pypureclient.flasharray.FA_2_47.models.policy_member_response import PolicyMemberResponse
-from pypureclient.flasharray.FA_2_47.models.resource_directory_space_get_response import ResourceDirectorySpaceGetResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

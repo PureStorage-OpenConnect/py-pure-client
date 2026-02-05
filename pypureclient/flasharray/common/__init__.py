@@ -1,1 +1,1 @@
-# Common models for FA versions
+# Package: pypureclient.flasharray.common

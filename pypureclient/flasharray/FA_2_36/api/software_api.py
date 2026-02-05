@@ -12,11 +12,26 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.software_bundle_get_response_v_5 import SoftwareBundleGetResponse
+from pypureclient.flasharray.common.models.software_bundle_post_v_5 import SoftwareBundlePost
+from pypureclient.flasharray.common.models.software_bundle_response_v_5 import SoftwareBundleResponse
+from pypureclient.flasharray.common.models.software_checks_get_response_v_9 import SoftwareChecksGetResponse
+from pypureclient.flasharray.common.models.software_checks_response_v_9 import SoftwareChecksResponse
+from pypureclient.flasharray.common.models.software_get_response_v_9 import SoftwareGetResponse
+from pypureclient.flasharray.common.models.software_installation_patch_v_4 import SoftwareInstallationPatch
+from pypureclient.flasharray.common.models.software_installation_post_v_9 import SoftwareInstallationPost
+from pypureclient.flasharray.common.models.software_installation_steps_get_response_v_2 import SoftwareInstallationStepsGetResponse
+from pypureclient.flasharray.common.models.software_installations_get_response_v_9 import SoftwareInstallationsGetResponse
+from pypureclient.flasharray.common.models.software_installations_response_v_9 import SoftwareInstallationsResponse
+from pypureclient.flasharray.common.models.software_patches_get_response_v_29 import SoftwarePatchesGetResponse
+from pypureclient.flasharray.common.models.software_patches_response_v_29 import SoftwarePatchesResponse
+from pypureclient.flasharray.common.models.software_post_v_9 import SoftwarePost
+from pypureclient.flasharray.common.models.software_response_v_9 import SoftwareResponse
+from pypureclient.flasharray.common.models.software_versions_get_response_v_9 import SoftwareVersionsGetResponse
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,25 +39,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_36.models.software_bundle_get_response import SoftwareBundleGetResponse
-from pypureclient.flasharray.FA_2_36.models.software_bundle_post import SoftwareBundlePost
-from pypureclient.flasharray.FA_2_36.models.software_bundle_response import SoftwareBundleResponse
-from pypureclient.flasharray.FA_2_36.models.software_checks_get_response import SoftwareChecksGetResponse
-from pypureclient.flasharray.FA_2_36.models.software_checks_response import SoftwareChecksResponse
-from pypureclient.flasharray.FA_2_36.models.software_get_response import SoftwareGetResponse
-from pypureclient.flasharray.FA_2_36.models.software_installation_patch import SoftwareInstallationPatch
-from pypureclient.flasharray.FA_2_36.models.software_installation_post import SoftwareInstallationPost
-from pypureclient.flasharray.FA_2_36.models.software_installation_steps_get_response import SoftwareInstallationStepsGetResponse
-from pypureclient.flasharray.FA_2_36.models.software_installations_get_response import SoftwareInstallationsGetResponse
-from pypureclient.flasharray.FA_2_36.models.software_installations_response import SoftwareInstallationsResponse
-from pypureclient.flasharray.FA_2_36.models.software_patches_get_response import SoftwarePatchesGetResponse
-from pypureclient.flasharray.FA_2_36.models.software_patches_response import SoftwarePatchesResponse
-from pypureclient.flasharray.FA_2_36.models.software_post import SoftwarePost
-from pypureclient.flasharray.FA_2_36.models.software_response import SoftwareResponse
-from pypureclient.flasharray.FA_2_36.models.software_versions_get_response import SoftwareVersionsGetResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

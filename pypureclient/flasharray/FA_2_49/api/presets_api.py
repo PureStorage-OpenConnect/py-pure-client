@@ -12,11 +12,15 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.preset_workload_get_response_v_49 import PresetWorkloadGetResponse
+from pypureclient.flasharray.common.models.preset_workload_patch_v_40 import PresetWorkloadPatch
+from pypureclient.flasharray.common.models.preset_workload_post_v_49 import PresetWorkloadPost
+from pypureclient.flasharray.common.models.preset_workload_response_v_49 import PresetWorkloadResponse
+from pypureclient.flasharray.common.models.preset_workload_v_49 import PresetWorkload
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,14 +28,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictStr, conlist
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_49.models.preset_workload import PresetWorkload
-from pypureclient.flasharray.FA_2_49.models.preset_workload_get_response import PresetWorkloadGetResponse
-from pypureclient.flasharray.FA_2_49.models.preset_workload_patch import PresetWorkloadPatch
-from pypureclient.flasharray.FA_2_49.models.preset_workload_post import PresetWorkloadPost
-from pypureclient.flasharray.FA_2_49.models.preset_workload_response import PresetWorkloadResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

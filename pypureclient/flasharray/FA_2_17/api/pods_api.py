@@ -12,11 +12,21 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.member_get_response_v_1 import MemberGetResponse
+from pypureclient.flasharray.common.models.member_response_v_1 import MemberResponse
+from pypureclient.flasharray.common.models.pod_get_response_v_13 import PodGetResponse
+from pypureclient.flasharray.common.models.pod_patch_v_2 import PodPatch
+from pypureclient.flasharray.common.models.pod_performance_by_array_get_response_v_13 import PodPerformanceByArrayGetResponse
+from pypureclient.flasharray.common.models.pod_performance_get_response_v_13 import PodPerformanceGetResponse
+from pypureclient.flasharray.common.models.pod_performance_replication_by_array_get_response_v_4 import PodPerformanceReplicationByArrayGetResponse
+from pypureclient.flasharray.common.models.pod_performance_replication_get_response_v_4 import PodPerformanceReplicationGetResponse
+from pypureclient.flasharray.common.models.pod_post_v_1 import PodPost
+from pypureclient.flasharray.common.models.pod_response_v_13 import PodResponse
+from pypureclient.flasharray.common.models.resource_pod_space_get_response_v_2 import ResourcePodSpaceGetResponse
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,20 +34,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictInt, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_17.models.member_get_response import MemberGetResponse
-from pypureclient.flasharray.FA_2_17.models.member_response import MemberResponse
-from pypureclient.flasharray.FA_2_17.models.pod_get_response import PodGetResponse
-from pypureclient.flasharray.FA_2_17.models.pod_patch import PodPatch
-from pypureclient.flasharray.FA_2_17.models.pod_performance_by_array_get_response import PodPerformanceByArrayGetResponse
-from pypureclient.flasharray.FA_2_17.models.pod_performance_get_response import PodPerformanceGetResponse
-from pypureclient.flasharray.FA_2_17.models.pod_performance_replication_by_array_get_response import PodPerformanceReplicationByArrayGetResponse
-from pypureclient.flasharray.FA_2_17.models.pod_performance_replication_get_response import PodPerformanceReplicationGetResponse
-from pypureclient.flasharray.FA_2_17.models.pod_post import PodPost
-from pypureclient.flasharray.FA_2_17.models.pod_response import PodResponse
-from pypureclient.flasharray.FA_2_17.models.resource_pod_space_get_response import ResourcePodSpaceGetResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

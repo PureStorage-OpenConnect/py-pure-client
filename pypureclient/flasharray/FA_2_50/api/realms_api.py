@@ -12,11 +12,20 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.container_performance_get_response_v_50 import ContainerPerformanceGetResponse
+from pypureclient.flasharray.common.models.non_copyable_tag_v_49 import NonCopyableTag
+from pypureclient.flasharray.common.models.realm_get_response_v_50 import RealmGetResponse
+from pypureclient.flasharray.common.models.realm_patch_v_47 import RealmPatch
+from pypureclient.flasharray.common.models.realm_post_v_49 import RealmPost
+from pypureclient.flasharray.common.models.realm_qos_get_response_v_50 import RealmQosGetResponse
+from pypureclient.flasharray.common.models.realm_response_v_50 import RealmResponse
+from pypureclient.flasharray.common.models.realm_space_get_response_v_50 import RealmSpaceGetResponse
+from pypureclient.flasharray.common.models.tag_get_response_v_50 import TagGetResponse
+from pypureclient.flasharray.common.models.tag_response_v_50 import TagResponse
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,19 +33,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictInt, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_50.models.container_performance_get_response import ContainerPerformanceGetResponse
-from pypureclient.flasharray.FA_2_50.models.non_copyable_tag import NonCopyableTag
-from pypureclient.flasharray.FA_2_50.models.realm_get_response import RealmGetResponse
-from pypureclient.flasharray.FA_2_50.models.realm_patch import RealmPatch
-from pypureclient.flasharray.FA_2_50.models.realm_post import RealmPost
-from pypureclient.flasharray.FA_2_50.models.realm_qos_get_response import RealmQosGetResponse
-from pypureclient.flasharray.FA_2_50.models.realm_response import RealmResponse
-from pypureclient.flasharray.FA_2_50.models.realm_space_get_response import RealmSpaceGetResponse
-from pypureclient.flasharray.FA_2_50.models.tag_get_response import TagGetResponse
-from pypureclient.flasharray.FA_2_50.models.tag_response import TagResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

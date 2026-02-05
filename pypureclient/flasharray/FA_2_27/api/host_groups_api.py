@@ -12,11 +12,20 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.host_group_get_response_v_26 import HostGroupGetResponse
+from pypureclient.flasharray.common.models.host_group_patch_v_0 import HostGroupPatch
+from pypureclient.flasharray.common.models.host_group_response_v_26 import HostGroupResponse
+from pypureclient.flasharray.common.models.member_no_id_all_get_response_v_1 import MemberNoIdAllGetResponse
+from pypureclient.flasharray.common.models.member_no_id_all_response_v_0 import MemberNoIdAllResponse
+from pypureclient.flasharray.common.models.member_no_id_member_get_response_v_26 import MemberNoIdMemberGetResponse
+from pypureclient.flasharray.common.models.member_no_id_member_response_v_26 import MemberNoIdMemberResponse
+from pypureclient.flasharray.common.models.resource_performance_no_id_by_array_get_response_v_4 import ResourcePerformanceNoIdByArrayGetResponse
+from pypureclient.flasharray.common.models.resource_performance_no_id_get_response_v_4 import ResourcePerformanceNoIdGetResponse
+from pypureclient.flasharray.common.models.resource_space_no_id_get_response_v_26 import ResourceSpaceNoIdGetResponse
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,19 +33,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictInt, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_27.models.host_group_get_response import HostGroupGetResponse
-from pypureclient.flasharray.FA_2_27.models.host_group_patch import HostGroupPatch
-from pypureclient.flasharray.FA_2_27.models.host_group_response import HostGroupResponse
-from pypureclient.flasharray.FA_2_27.models.member_no_id_all_get_response import MemberNoIdAllGetResponse
-from pypureclient.flasharray.FA_2_27.models.member_no_id_all_response import MemberNoIdAllResponse
-from pypureclient.flasharray.FA_2_27.models.member_no_id_member_get_response import MemberNoIdMemberGetResponse
-from pypureclient.flasharray.FA_2_27.models.member_no_id_member_response import MemberNoIdMemberResponse
-from pypureclient.flasharray.FA_2_27.models.resource_performance_no_id_by_array_get_response import ResourcePerformanceNoIdByArrayGetResponse
-from pypureclient.flasharray.FA_2_27.models.resource_performance_no_id_get_response import ResourcePerformanceNoIdGetResponse
-from pypureclient.flasharray.FA_2_27.models.resource_space_no_id_get_response import ResourceSpaceNoIdGetResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

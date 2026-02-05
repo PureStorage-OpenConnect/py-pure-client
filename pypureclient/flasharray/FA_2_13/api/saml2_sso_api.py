@@ -12,11 +12,16 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.saml2_sso_get_response_v_11 import Saml2SsoGetResponse
+from pypureclient.flasharray.common.models.saml2_sso_patch_v_11 import Saml2SsoPatch
+from pypureclient.flasharray.common.models.saml2_sso_post_v_11 import Saml2SsoPost
+from pypureclient.flasharray.common.models.saml2_sso_response_v_11 import Saml2SsoResponse
+from pypureclient.flasharray.common.models.test_result_with_resource_patch_response_v_11 import TestResultWithResourcePatchResponse
+from pypureclient.flasharray.common.models.test_result_with_resource_response_v_2 import TestResultWithResourceResponse
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,15 +29,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_13.models.saml2_sso_get_response import Saml2SsoGetResponse
-from pypureclient.flasharray.FA_2_13.models.saml2_sso_patch import Saml2SsoPatch
-from pypureclient.flasharray.FA_2_13.models.saml2_sso_post import Saml2SsoPost
-from pypureclient.flasharray.FA_2_13.models.saml2_sso_response import Saml2SsoResponse
-from pypureclient.flasharray.FA_2_13.models.test_result_with_resource_patch_response import TestResultWithResourcePatchResponse
-from pypureclient.flasharray.FA_2_13.models.test_result_with_resource_response import TestResultWithResourceResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse
