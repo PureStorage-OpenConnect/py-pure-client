@@ -12,11 +12,13 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.hardware_get_response_v_2 import HardwareGetResponse
+from pypureclient.flasharray.common.models.hardware_patch_v_2 import HardwarePatch
+from pypureclient.flasharray.common.models.hardware_response_v_2 import HardwareResponse
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,12 +26,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_11.models.hardware_get_response import HardwareGetResponse
-from pypureclient.flasharray.FA_2_11.models.hardware_patch import HardwarePatch
-from pypureclient.flasharray.FA_2_11.models.hardware_response import HardwareResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

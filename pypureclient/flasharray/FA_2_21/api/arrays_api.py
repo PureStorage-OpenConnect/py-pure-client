@@ -12,11 +12,25 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.array_factory_reset_token_get_response_v_4 import ArrayFactoryResetTokenGetResponse
+from pypureclient.flasharray.common.models.array_factory_reset_token_response_v_4 import ArrayFactoryResetTokenResponse
+from pypureclient.flasharray.common.models.array_get_response_v_10 import ArrayGetResponse
+from pypureclient.flasharray.common.models.array_performance_by_link_get_response_v_19 import ArrayPerformanceByLinkGetResponse
+from pypureclient.flasharray.common.models.array_performance_get_response_v_4 import ArrayPerformanceGetResponse
+from pypureclient.flasharray.common.models.array_response_v_10 import ArrayResponse
+from pypureclient.flasharray.common.models.array_space_get_response_v_9 import ArraySpaceGetResponse
+from pypureclient.flasharray.common.models.arrays_v_10 import Arrays
+from pypureclient.flasharray.common.models.cloud_provider_tag_get_response_v_6 import CloudProviderTagGetResponse
+from pypureclient.flasharray.common.models.cloud_provider_tag_response_v_6 import CloudProviderTagResponse
+from pypureclient.flasharray.common.models.cloud_provider_tag_v_6 import CloudProviderTag
+from pypureclient.flasharray.common.models.eula_get_response_v_2 import EulaGetResponse
+from pypureclient.flasharray.common.models.eula_response_v_2 import EulaResponse
+from pypureclient.flasharray.common.models.eula_v_2 import Eula
+from pypureclient.flasharray.common.models.test_result_get_response_v_2 import TestResultGetResponse
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,24 +38,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictInt, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_21.models.array_factory_reset_token_get_response import ArrayFactoryResetTokenGetResponse
-from pypureclient.flasharray.FA_2_21.models.array_factory_reset_token_response import ArrayFactoryResetTokenResponse
-from pypureclient.flasharray.FA_2_21.models.array_get_response import ArrayGetResponse
-from pypureclient.flasharray.FA_2_21.models.array_performance_by_link_get_response import ArrayPerformanceByLinkGetResponse
-from pypureclient.flasharray.FA_2_21.models.array_performance_get_response import ArrayPerformanceGetResponse
-from pypureclient.flasharray.FA_2_21.models.array_response import ArrayResponse
-from pypureclient.flasharray.FA_2_21.models.array_space_get_response import ArraySpaceGetResponse
-from pypureclient.flasharray.FA_2_21.models.arrays import Arrays
-from pypureclient.flasharray.FA_2_21.models.cloud_provider_tag import CloudProviderTag
-from pypureclient.flasharray.FA_2_21.models.cloud_provider_tag_get_response import CloudProviderTagGetResponse
-from pypureclient.flasharray.FA_2_21.models.cloud_provider_tag_response import CloudProviderTagResponse
-from pypureclient.flasharray.FA_2_21.models.eula import Eula
-from pypureclient.flasharray.FA_2_21.models.eula_get_response import EulaGetResponse
-from pypureclient.flasharray.FA_2_21.models.eula_response import EulaResponse
-from pypureclient.flasharray.FA_2_21.models.test_result_get_response import TestResultGetResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

@@ -31,8 +31,8 @@ class PresetWorkloadQosConfiguration(BaseModel):
     """
     PresetWorkloadQosConfiguration
     """
-    bandwidth_limit: Optional[StrictStr] = Field(default=None, description="The QoS IOPs limit shared across all volumes in the placement. Between 100 and 100000000, inclusive. Supports parameterization.")
-    iops_limit: Optional[StrictStr] = Field(default=None, description="The maximum QoS bandwidth limit shared across all volumes in the placement. Whenever throughput exceeds the bandwidth limit, throttling occurs. Measured in bytes per second. Between 1MB/s and 512 GB/s, inclusive. Supports parameterization.")
+    bandwidth_limit: Optional[StrictStr] = Field(default=None, description="The maximum QoS bandwidth limit shared across all volumes in the placement. Whenever throughput exceeds the bandwidth limit, throttling occurs. Measured in bytes per second. Between 1MB/s and 512 GB/s, inclusive. Supports parameterization.")
+    iops_limit: Optional[StrictStr] = Field(default=None, description="The QoS IOPs limit shared across all volumes in the placement. Between 100 and 100000000, inclusive. Supports parameterization.")
     name: StrictStr = Field(default=..., description="The name of the configuration object, by which other configuration objects in the preset can reference it. Name must be unique across all configuration objects in the preset.")
     naming_patterns: Optional[conlist(NamingPattern, max_items=1, min_items=1)] = Field(default=None, description="The naming patterns that are applied to the storage resources that are provisioned by the workload for this configuration.")
     __properties = ["bandwidth_limit", "iops_limit", "name", "naming_patterns"]

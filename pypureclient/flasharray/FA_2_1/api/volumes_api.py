@@ -12,11 +12,20 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.member_get_response_v_1 import MemberGetResponse
+from pypureclient.flasharray.common.models.member_no_id_all_get_response_v_1 import MemberNoIdAllGetResponse
+from pypureclient.flasharray.common.models.member_no_id_all_response_v_0 import MemberNoIdAllResponse
+from pypureclient.flasharray.common.models.resource_performance_by_array_get_response_v_1 import ResourcePerformanceByArrayGetResponse
+from pypureclient.flasharray.common.models.resource_performance_get_response_v_1 import ResourcePerformanceGetResponse
+from pypureclient.flasharray.common.models.resource_space_get_response_v_1 import ResourceSpaceGetResponse
+from pypureclient.flasharray.common.models.volume_get_response_v_1 import VolumeGetResponse
+from pypureclient.flasharray.common.models.volume_patch_v_0 import VolumePatch
+from pypureclient.flasharray.common.models.volume_post_v_0 import VolumePost
+from pypureclient.flasharray.common.models.volume_response_v_0 import VolumeResponse
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,19 +33,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictInt, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_1.models.member_get_response import MemberGetResponse
-from pypureclient.flasharray.FA_2_1.models.member_no_id_all_get_response import MemberNoIdAllGetResponse
-from pypureclient.flasharray.FA_2_1.models.member_no_id_all_response import MemberNoIdAllResponse
-from pypureclient.flasharray.FA_2_1.models.resource_performance_by_array_get_response import ResourcePerformanceByArrayGetResponse
-from pypureclient.flasharray.FA_2_1.models.resource_performance_get_response import ResourcePerformanceGetResponse
-from pypureclient.flasharray.FA_2_1.models.resource_space_get_response import ResourceSpaceGetResponse
-from pypureclient.flasharray.FA_2_1.models.volume_get_response import VolumeGetResponse
-from pypureclient.flasharray.FA_2_1.models.volume_patch import VolumePatch
-from pypureclient.flasharray.FA_2_1.models.volume_post import VolumePost
-from pypureclient.flasharray.FA_2_1.models.volume_response import VolumeResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

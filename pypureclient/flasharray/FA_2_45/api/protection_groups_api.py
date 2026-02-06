@@ -12,11 +12,27 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.member_no_id_member_get_response_v_38 import MemberNoIdMemberGetResponse
+from pypureclient.flasharray.common.models.member_no_id_member_response_v_38 import MemberNoIdMemberResponse
+from pypureclient.flasharray.common.models.protection_group_get_response_v_40 import ProtectionGroupGetResponse
+from pypureclient.flasharray.common.models.protection_group_performance_array_response_v_38 import ProtectionGroupPerformanceArrayResponse
+from pypureclient.flasharray.common.models.protection_group_performance_response_v_38 import ProtectionGroupPerformanceResponse
+from pypureclient.flasharray.common.models.protection_group_post_v_39 import ProtectionGroupPost
+from pypureclient.flasharray.common.models.protection_group_response_v_40 import ProtectionGroupResponse
+from pypureclient.flasharray.common.models.protection_group_target_get_response_v_38 import ProtectionGroupTargetGetResponse
+from pypureclient.flasharray.common.models.protection_group_target_response_v_38 import ProtectionGroupTargetResponse
+from pypureclient.flasharray.common.models.protection_group_v_40 import ProtectionGroup
+from pypureclient.flasharray.common.models.protection_groups_volumes_get_response_v_38 import ProtectionGroupsVolumesGetResponse
+from pypureclient.flasharray.common.models.protection_groups_volumes_response_v_38 import ProtectionGroupsVolumesResponse
+from pypureclient.flasharray.common.models.resource_space_get_response_v_38 import ResourceSpaceGetResponse
+from pypureclient.flasharray.common.models.tag_batch_v_39 import TagBatch
+from pypureclient.flasharray.common.models.tag_get_response_v_38 import TagGetResponse
+from pypureclient.flasharray.common.models.tag_response_v_38 import TagResponse
+from pypureclient.flasharray.common.models.target_protection_group_post_patch_v_26 import TargetProtectionGroupPostPatch
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,26 +40,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictInt, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_45.models.member_no_id_member_get_response import MemberNoIdMemberGetResponse
-from pypureclient.flasharray.FA_2_45.models.member_no_id_member_response import MemberNoIdMemberResponse
-from pypureclient.flasharray.FA_2_45.models.protection_group import ProtectionGroup
-from pypureclient.flasharray.FA_2_45.models.protection_group_get_response import ProtectionGroupGetResponse
-from pypureclient.flasharray.FA_2_45.models.protection_group_performance_array_response import ProtectionGroupPerformanceArrayResponse
-from pypureclient.flasharray.FA_2_45.models.protection_group_performance_response import ProtectionGroupPerformanceResponse
-from pypureclient.flasharray.FA_2_45.models.protection_group_post import ProtectionGroupPost
-from pypureclient.flasharray.FA_2_45.models.protection_group_response import ProtectionGroupResponse
-from pypureclient.flasharray.FA_2_45.models.protection_group_target_get_response import ProtectionGroupTargetGetResponse
-from pypureclient.flasharray.FA_2_45.models.protection_group_target_response import ProtectionGroupTargetResponse
-from pypureclient.flasharray.FA_2_45.models.protection_groups_volumes_get_response import ProtectionGroupsVolumesGetResponse
-from pypureclient.flasharray.FA_2_45.models.protection_groups_volumes_response import ProtectionGroupsVolumesResponse
-from pypureclient.flasharray.FA_2_45.models.resource_space_get_response import ResourceSpaceGetResponse
-from pypureclient.flasharray.FA_2_45.models.tag_batch import TagBatch
-from pypureclient.flasharray.FA_2_45.models.tag_get_response import TagGetResponse
-from pypureclient.flasharray.FA_2_45.models.tag_response import TagResponse
-from pypureclient.flasharray.FA_2_45.models.target_protection_group_post_patch import TargetProtectionGroupPostPatch
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

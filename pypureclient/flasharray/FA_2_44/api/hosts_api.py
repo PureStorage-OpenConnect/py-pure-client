@@ -12,11 +12,25 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.host_get_response_v_38 import HostGetResponse
+from pypureclient.flasharray.common.models.host_patch_v_16 import HostPatch
+from pypureclient.flasharray.common.models.host_performance_balance_get_response_v_38 import HostPerformanceBalanceGetResponse
+from pypureclient.flasharray.common.models.host_post_v_39 import HostPost
+from pypureclient.flasharray.common.models.host_response_v_38 import HostResponse
+from pypureclient.flasharray.common.models.member_no_id_all_get_response_v_38 import MemberNoIdAllGetResponse
+from pypureclient.flasharray.common.models.member_no_id_all_response_v_38 import MemberNoIdAllResponse
+from pypureclient.flasharray.common.models.member_no_id_member_get_response_v_38 import MemberNoIdMemberGetResponse
+from pypureclient.flasharray.common.models.member_no_id_member_response_v_38 import MemberNoIdMemberResponse
+from pypureclient.flasharray.common.models.non_copyable_tag_batch_v_43 import NonCopyableTagBatch
+from pypureclient.flasharray.common.models.resource_performance_no_id_by_array_get_response_v_38 import ResourcePerformanceNoIdByArrayGetResponse
+from pypureclient.flasharray.common.models.resource_performance_no_id_get_response_v_38 import ResourcePerformanceNoIdGetResponse
+from pypureclient.flasharray.common.models.resource_space_no_id_get_response_v_38 import ResourceSpaceNoIdGetResponse
+from pypureclient.flasharray.common.models.tag_get_response_v_38 import TagGetResponse
+from pypureclient.flasharray.common.models.tag_response_v_38 import TagResponse
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,24 +38,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictInt, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_44.models.host_get_response import HostGetResponse
-from pypureclient.flasharray.FA_2_44.models.host_patch import HostPatch
-from pypureclient.flasharray.FA_2_44.models.host_performance_balance_get_response import HostPerformanceBalanceGetResponse
-from pypureclient.flasharray.FA_2_44.models.host_post import HostPost
-from pypureclient.flasharray.FA_2_44.models.host_response import HostResponse
-from pypureclient.flasharray.FA_2_44.models.member_no_id_all_get_response import MemberNoIdAllGetResponse
-from pypureclient.flasharray.FA_2_44.models.member_no_id_all_response import MemberNoIdAllResponse
-from pypureclient.flasharray.FA_2_44.models.member_no_id_member_get_response import MemberNoIdMemberGetResponse
-from pypureclient.flasharray.FA_2_44.models.member_no_id_member_response import MemberNoIdMemberResponse
-from pypureclient.flasharray.FA_2_44.models.non_copyable_tag_batch import NonCopyableTagBatch
-from pypureclient.flasharray.FA_2_44.models.resource_performance_no_id_by_array_get_response import ResourcePerformanceNoIdByArrayGetResponse
-from pypureclient.flasharray.FA_2_44.models.resource_performance_no_id_get_response import ResourcePerformanceNoIdGetResponse
-from pypureclient.flasharray.FA_2_44.models.resource_space_no_id_get_response import ResourceSpaceNoIdGetResponse
-from pypureclient.flasharray.FA_2_44.models.tag_get_response import TagGetResponse
-from pypureclient.flasharray.FA_2_44.models.tag_response import TagResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

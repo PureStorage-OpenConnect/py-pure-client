@@ -12,11 +12,16 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.realm_connection_key_get_response_v_50 import RealmConnectionKeyGetResponse
+from pypureclient.flasharray.common.models.realm_connection_key_post_response_v_50 import RealmConnectionKeyPostResponse
+from pypureclient.flasharray.common.models.realm_connection_key_post_v_50 import RealmConnectionKeyPost
+from pypureclient.flasharray.common.models.realm_connection_with_key_v_50 import RealmConnectionWithKey
+from pypureclient.flasharray.common.models.realm_connections_get_response_v_50 import RealmConnectionsGetResponse
+from pypureclient.flasharray.common.models.realm_connections_response_v_50 import RealmConnectionsResponse
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,15 +29,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_50.models.realm_connection_key_get_response import RealmConnectionKeyGetResponse
-from pypureclient.flasharray.FA_2_50.models.realm_connection_key_post import RealmConnectionKeyPost
-from pypureclient.flasharray.FA_2_50.models.realm_connection_key_post_response import RealmConnectionKeyPostResponse
-from pypureclient.flasharray.FA_2_50.models.realm_connection_with_key import RealmConnectionWithKey
-from pypureclient.flasharray.FA_2_50.models.realm_connections_get_response import RealmConnectionsGetResponse
-from pypureclient.flasharray.FA_2_50.models.realm_connections_response import RealmConnectionsResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

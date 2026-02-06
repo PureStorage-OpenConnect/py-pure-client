@@ -12,11 +12,17 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.syslog_server_get_response_v_38 import SyslogServerGetResponse
+from pypureclient.flasharray.common.models.syslog_server_response_v_38 import SyslogServerResponse
+from pypureclient.flasharray.common.models.syslog_server_settings_get_response_v_38 import SyslogServerSettingsGetResponse
+from pypureclient.flasharray.common.models.syslog_server_settings_response_v_38 import SyslogServerSettingsResponse
+from pypureclient.flasharray.common.models.syslog_server_settings_v_38 import SyslogServerSettings
+from pypureclient.flasharray.common.models.syslog_server_v_38 import SyslogServer
+from pypureclient.flasharray.common.models.test_result_with_resource_get_response_v_38 import TestResultWithResourceGetResponse
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,16 +30,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_39.models.syslog_server import SyslogServer
-from pypureclient.flasharray.FA_2_39.models.syslog_server_get_response import SyslogServerGetResponse
-from pypureclient.flasharray.FA_2_39.models.syslog_server_response import SyslogServerResponse
-from pypureclient.flasharray.FA_2_39.models.syslog_server_settings import SyslogServerSettings
-from pypureclient.flasharray.FA_2_39.models.syslog_server_settings_get_response import SyslogServerSettingsGetResponse
-from pypureclient.flasharray.FA_2_39.models.syslog_server_settings_response import SyslogServerSettingsResponse
-from pypureclient.flasharray.FA_2_39.models.test_result_with_resource_get_response import TestResultWithResourceGetResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

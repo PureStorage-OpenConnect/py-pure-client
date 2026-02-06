@@ -12,11 +12,28 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.member_get_response_v_49 import MemberGetResponse
+from pypureclient.flasharray.common.models.protection_groups_volumes_get_response_v_49 import ProtectionGroupsVolumesGetResponse
+from pypureclient.flasharray.common.models.protection_groups_volumes_response_v_49 import ProtectionGroupsVolumesResponse
+from pypureclient.flasharray.common.models.resource_performance_by_array_get_response_v_49 import ResourcePerformanceByArrayGetResponse
+from pypureclient.flasharray.common.models.resource_performance_get_response_v_49 import ResourcePerformanceGetResponse
+from pypureclient.flasharray.common.models.tag_batch_v_49 import TagBatch
+from pypureclient.flasharray.common.models.tag_get_response_v_49 import TagGetResponse
+from pypureclient.flasharray.common.models.tag_response_v_49 import TagResponse
+from pypureclient.flasharray.common.models.test_result_with_resource_with_id_post_response_v_49 import TestResultWithResourceWithIdPostResponse
+from pypureclient.flasharray.common.models.volume_batch_post_v_49 import VolumeBatchPost
+from pypureclient.flasharray.common.models.volume_get_response_v_49 import VolumeGetResponse
+from pypureclient.flasharray.common.models.volume_patch_v_49 import VolumePatch
+from pypureclient.flasharray.common.models.volume_post_v_49 import VolumePost
+from pypureclient.flasharray.common.models.volume_qos_get_response_v_49 import VolumeQosGetResponse
+from pypureclient.flasharray.common.models.volume_response_v_49 import VolumeResponse
+from pypureclient.flasharray.common.models.volume_space_get_response_v_49 import VolumeSpaceGetResponse
+from pypureclient.flasharray.common.models.volumes_batch_response_v_49 import VolumesBatchResponse
+from pypureclient.flasharray.common.models.volumes_diff_get_response_v_49 import VolumesDiffGetResponse
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,27 +41,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictInt, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_49.models.member_get_response import MemberGetResponse
-from pypureclient.flasharray.FA_2_49.models.protection_groups_volumes_get_response import ProtectionGroupsVolumesGetResponse
-from pypureclient.flasharray.FA_2_49.models.protection_groups_volumes_response import ProtectionGroupsVolumesResponse
-from pypureclient.flasharray.FA_2_49.models.resource_performance_by_array_get_response import ResourcePerformanceByArrayGetResponse
-from pypureclient.flasharray.FA_2_49.models.resource_performance_get_response import ResourcePerformanceGetResponse
-from pypureclient.flasharray.FA_2_49.models.tag_batch import TagBatch
-from pypureclient.flasharray.FA_2_49.models.tag_get_response import TagGetResponse
-from pypureclient.flasharray.FA_2_49.models.tag_response import TagResponse
-from pypureclient.flasharray.FA_2_49.models.test_result_with_resource_with_id_post_response import TestResultWithResourceWithIdPostResponse
-from pypureclient.flasharray.FA_2_49.models.volume_batch_post import VolumeBatchPost
-from pypureclient.flasharray.FA_2_49.models.volume_get_response import VolumeGetResponse
-from pypureclient.flasharray.FA_2_49.models.volume_patch import VolumePatch
-from pypureclient.flasharray.FA_2_49.models.volume_post import VolumePost
-from pypureclient.flasharray.FA_2_49.models.volume_qos_get_response import VolumeQosGetResponse
-from pypureclient.flasharray.FA_2_49.models.volume_response import VolumeResponse
-from pypureclient.flasharray.FA_2_49.models.volume_space_get_response import VolumeSpaceGetResponse
-from pypureclient.flasharray.FA_2_49.models.volumes_batch_response import VolumesBatchResponse
-from pypureclient.flasharray.FA_2_49.models.volumes_diff_get_response import VolumesDiffGetResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

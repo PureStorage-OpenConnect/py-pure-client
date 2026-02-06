@@ -12,11 +12,15 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.snmp_manager_get_response_v_4 import SnmpManagerGetResponse
+from pypureclient.flasharray.common.models.snmp_manager_patch_v_4 import SnmpManagerPatch
+from pypureclient.flasharray.common.models.snmp_manager_post_v_4 import SnmpManagerPost
+from pypureclient.flasharray.common.models.snmp_manager_response_v_4 import SnmpManagerResponse
+from pypureclient.flasharray.common.models.test_result_with_resource_get_response_v_4 import TestResultWithResourceGetResponse
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,14 +28,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_20.models.snmp_manager_get_response import SnmpManagerGetResponse
-from pypureclient.flasharray.FA_2_20.models.snmp_manager_patch import SnmpManagerPatch
-from pypureclient.flasharray.FA_2_20.models.snmp_manager_post import SnmpManagerPost
-from pypureclient.flasharray.FA_2_20.models.snmp_manager_response import SnmpManagerResponse
-from pypureclient.flasharray.FA_2_20.models.test_result_with_resource_get_response import TestResultWithResourceGetResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

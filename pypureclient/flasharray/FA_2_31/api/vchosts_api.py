@@ -12,11 +12,22 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.vchost_certificate_get_response_v_26 import VchostCertificateGetResponse
+from pypureclient.flasharray.common.models.vchost_certificate_patch_v_26 import VchostCertificatePatch
+from pypureclient.flasharray.common.models.vchost_certificate_post_v_26 import VchostCertificatePost
+from pypureclient.flasharray.common.models.vchost_certificate_response_v_26 import VchostCertificateResponse
+from pypureclient.flasharray.common.models.vchost_endpoint_get_response_v_26 import VchostEndpointGetResponse
+from pypureclient.flasharray.common.models.vchost_endpoint_patch_v_26 import VchostEndpointPatch
+from pypureclient.flasharray.common.models.vchost_endpoint_post_v_26 import VchostEndpointPost
+from pypureclient.flasharray.common.models.vchost_endpoint_response_v_26 import VchostEndpointResponse
+from pypureclient.flasharray.common.models.vchost_get_response_v_26 import VchostGetResponse
+from pypureclient.flasharray.common.models.vchost_patch_v_26 import VchostPatch
+from pypureclient.flasharray.common.models.vchost_post_v_26 import VchostPost
+from pypureclient.flasharray.common.models.vchost_response_v_26 import VchostResponse
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,21 +35,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_31.models.vchost_certificate_get_response import VchostCertificateGetResponse
-from pypureclient.flasharray.FA_2_31.models.vchost_certificate_patch import VchostCertificatePatch
-from pypureclient.flasharray.FA_2_31.models.vchost_certificate_post import VchostCertificatePost
-from pypureclient.flasharray.FA_2_31.models.vchost_certificate_response import VchostCertificateResponse
-from pypureclient.flasharray.FA_2_31.models.vchost_endpoint_get_response import VchostEndpointGetResponse
-from pypureclient.flasharray.FA_2_31.models.vchost_endpoint_patch import VchostEndpointPatch
-from pypureclient.flasharray.FA_2_31.models.vchost_endpoint_post import VchostEndpointPost
-from pypureclient.flasharray.FA_2_31.models.vchost_endpoint_response import VchostEndpointResponse
-from pypureclient.flasharray.FA_2_31.models.vchost_get_response import VchostGetResponse
-from pypureclient.flasharray.FA_2_31.models.vchost_patch import VchostPatch
-from pypureclient.flasharray.FA_2_31.models.vchost_post import VchostPost
-from pypureclient.flasharray.FA_2_31.models.vchost_response import VchostResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

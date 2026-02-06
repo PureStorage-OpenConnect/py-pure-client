@@ -12,11 +12,20 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.tag_batch_v_39 import TagBatch
+from pypureclient.flasharray.common.models.tag_get_response_v_38 import TagGetResponse
+from pypureclient.flasharray.common.models.tag_response_v_38 import TagResponse
+from pypureclient.flasharray.common.models.workload_get_response_v_40 import WorkloadGetResponse
+from pypureclient.flasharray.common.models.workload_patch_v_40 import WorkloadPatch
+from pypureclient.flasharray.common.models.workload_placement_recommendation_get_response_v_40 import WorkloadPlacementRecommendationGetResponse
+from pypureclient.flasharray.common.models.workload_placement_recommendation_response_v_40 import WorkloadPlacementRecommendationResponse
+from pypureclient.flasharray.common.models.workload_placement_recommendation_v_40 import WorkloadPlacementRecommendation
+from pypureclient.flasharray.common.models.workload_post_v_40 import WorkloadPost
+from pypureclient.flasharray.common.models.workload_response_v_40 import WorkloadResponse
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,19 +33,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictStr, conint, conlist
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_40.models.tag_batch import TagBatch
-from pypureclient.flasharray.FA_2_40.models.tag_get_response import TagGetResponse
-from pypureclient.flasharray.FA_2_40.models.tag_response import TagResponse
-from pypureclient.flasharray.FA_2_40.models.workload_get_response import WorkloadGetResponse
-from pypureclient.flasharray.FA_2_40.models.workload_patch import WorkloadPatch
-from pypureclient.flasharray.FA_2_40.models.workload_placement_recommendation import WorkloadPlacementRecommendation
-from pypureclient.flasharray.FA_2_40.models.workload_placement_recommendation_get_response import WorkloadPlacementRecommendationGetResponse
-from pypureclient.flasharray.FA_2_40.models.workload_placement_recommendation_response import WorkloadPlacementRecommendationResponse
-from pypureclient.flasharray.FA_2_40.models.workload_post import WorkloadPost
-from pypureclient.flasharray.FA_2_40.models.workload_response import WorkloadResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

@@ -12,11 +12,21 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.admin_api_token_get_response_v_2 import AdminApiTokenGetResponse
+from pypureclient.flasharray.common.models.admin_api_token_response_v_2 import AdminApiTokenResponse
+from pypureclient.flasharray.common.models.admin_cache_get_response_v_2 import AdminCacheGetResponse
+from pypureclient.flasharray.common.models.admin_cache_response_v_2 import AdminCacheResponse
+from pypureclient.flasharray.common.models.admin_get_response_v_2 import AdminGetResponse
+from pypureclient.flasharray.common.models.admin_patch_v_2 import AdminPatch
+from pypureclient.flasharray.common.models.admin_post_v_2 import AdminPost
+from pypureclient.flasharray.common.models.admin_response_v_2 import AdminResponse
+from pypureclient.flasharray.common.models.admin_settings_get_response_v_2 import AdminSettingsGetResponse
+from pypureclient.flasharray.common.models.admin_settings_response_v_2 import AdminSettingsResponse
+from pypureclient.flasharray.common.models.admin_settings_v_2 import AdminSettings
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,20 +34,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictInt, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_22.models.admin_api_token_get_response import AdminApiTokenGetResponse
-from pypureclient.flasharray.FA_2_22.models.admin_api_token_response import AdminApiTokenResponse
-from pypureclient.flasharray.FA_2_22.models.admin_cache_get_response import AdminCacheGetResponse
-from pypureclient.flasharray.FA_2_22.models.admin_cache_response import AdminCacheResponse
-from pypureclient.flasharray.FA_2_22.models.admin_get_response import AdminGetResponse
-from pypureclient.flasharray.FA_2_22.models.admin_patch import AdminPatch
-from pypureclient.flasharray.FA_2_22.models.admin_post import AdminPost
-from pypureclient.flasharray.FA_2_22.models.admin_response import AdminResponse
-from pypureclient.flasharray.FA_2_22.models.admin_settings import AdminSettings
-from pypureclient.flasharray.FA_2_22.models.admin_settings_get_response import AdminSettingsGetResponse
-from pypureclient.flasharray.FA_2_22.models.admin_settings_response import AdminSettingsResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

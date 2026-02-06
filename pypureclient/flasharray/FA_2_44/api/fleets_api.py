@@ -12,11 +12,18 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.fleet_get_response_v_36 import FleetGetResponse
+from pypureclient.flasharray.common.models.fleet_key_get_response_v_36 import FleetKeyGetResponse
+from pypureclient.flasharray.common.models.fleet_key_response_v_36 import FleetKeyResponse
+from pypureclient.flasharray.common.models.fleet_member_get_response_v_44 import FleetMemberGetResponse
+from pypureclient.flasharray.common.models.fleet_member_post_v_36 import FleetMemberPost
+from pypureclient.flasharray.common.models.fleet_member_response_v_44 import FleetMemberResponse
+from pypureclient.flasharray.common.models.fleet_patch_v_38 import FleetPatch
+from pypureclient.flasharray.common.models.fleet_response_v_36 import FleetResponse
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,17 +31,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_44.models.fleet_get_response import FleetGetResponse
-from pypureclient.flasharray.FA_2_44.models.fleet_key_get_response import FleetKeyGetResponse
-from pypureclient.flasharray.FA_2_44.models.fleet_key_response import FleetKeyResponse
-from pypureclient.flasharray.FA_2_44.models.fleet_member_get_response import FleetMemberGetResponse
-from pypureclient.flasharray.FA_2_44.models.fleet_member_post import FleetMemberPost
-from pypureclient.flasharray.FA_2_44.models.fleet_member_response import FleetMemberResponse
-from pypureclient.flasharray.FA_2_44.models.fleet_patch import FleetPatch
-from pypureclient.flasharray.FA_2_44.models.fleet_response import FleetResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

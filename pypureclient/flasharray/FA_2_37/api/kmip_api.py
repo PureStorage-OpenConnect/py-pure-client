@@ -12,11 +12,15 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.kmip_get_response_v_24 import KmipGetResponse
+from pypureclient.flasharray.common.models.kmip_patch_v_2 import KmipPatch
+from pypureclient.flasharray.common.models.kmip_post_v_2 import KmipPost
+from pypureclient.flasharray.common.models.kmip_response_v_24 import KmipResponse
+from pypureclient.flasharray.common.models.kmip_test_result_get_response_v_2 import KmipTestResultGetResponse
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,14 +28,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_37.models.kmip_get_response import KmipGetResponse
-from pypureclient.flasharray.FA_2_37.models.kmip_patch import KmipPatch
-from pypureclient.flasharray.FA_2_37.models.kmip_post import KmipPost
-from pypureclient.flasharray.FA_2_37.models.kmip_response import KmipResponse
-from pypureclient.flasharray.FA_2_37.models.kmip_test_result_get_response import KmipTestResultGetResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

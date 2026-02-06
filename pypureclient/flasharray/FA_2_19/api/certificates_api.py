@@ -12,11 +12,15 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.certificate_get_response_v_4 import CertificateGetResponse
+from pypureclient.flasharray.common.models.certificate_post_v_4 import CertificatePost
+from pypureclient.flasharray.common.models.certificate_response_v_4 import CertificateResponse
+from pypureclient.flasharray.common.models.certificate_signing_request_post_v_4 import CertificateSigningRequestPost
+from pypureclient.flasharray.common.models.certificate_signing_request_response_v_4 import CertificateSigningRequestResponse
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,14 +28,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_19.models.certificate_get_response import CertificateGetResponse
-from pypureclient.flasharray.FA_2_19.models.certificate_post import CertificatePost
-from pypureclient.flasharray.FA_2_19.models.certificate_response import CertificateResponse
-from pypureclient.flasharray.FA_2_19.models.certificate_signing_request_post import CertificateSigningRequestPost
-from pypureclient.flasharray.FA_2_19.models.certificate_signing_request_response import CertificateSigningRequestResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

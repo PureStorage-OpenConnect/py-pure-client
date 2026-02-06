@@ -12,11 +12,15 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.destroyed_patch_post_v_0 import DestroyedPatchPost
+from pypureclient.flasharray.common.models.remote_volume_snapshot_get_response_v_1 import RemoteVolumeSnapshotGetResponse
+from pypureclient.flasharray.common.models.remote_volume_snapshot_post_v_28 import RemoteVolumeSnapshotPost
+from pypureclient.flasharray.common.models.remote_volume_snapshot_response_v_1 import RemoteVolumeSnapshotResponse
+from pypureclient.flasharray.common.models.remote_volume_snapshot_transfer_get_response_v_1 import RemoteVolumeSnapshotTransferGetResponse
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,14 +28,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_31.models.destroyed_patch_post import DestroyedPatchPost
-from pypureclient.flasharray.FA_2_31.models.remote_volume_snapshot_get_response import RemoteVolumeSnapshotGetResponse
-from pypureclient.flasharray.FA_2_31.models.remote_volume_snapshot_post import RemoteVolumeSnapshotPost
-from pypureclient.flasharray.FA_2_31.models.remote_volume_snapshot_response import RemoteVolumeSnapshotResponse
-from pypureclient.flasharray.FA_2_31.models.remote_volume_snapshot_transfer_get_response import RemoteVolumeSnapshotTransferGetResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

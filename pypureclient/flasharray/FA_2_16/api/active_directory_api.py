@@ -12,11 +12,14 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.active_directory_get_response_v_15 import ActiveDirectoryGetResponse
+from pypureclient.flasharray.common.models.active_directory_patch_v_15 import ActiveDirectoryPatch
+from pypureclient.flasharray.common.models.active_directory_post_v_15 import ActiveDirectoryPost
+from pypureclient.flasharray.common.models.active_directory_response_v_15 import ActiveDirectoryResponse
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,13 +27,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_16.models.active_directory_get_response import ActiveDirectoryGetResponse
-from pypureclient.flasharray.FA_2_16.models.active_directory_patch import ActiveDirectoryPatch
-from pypureclient.flasharray.FA_2_16.models.active_directory_post import ActiveDirectoryPost
-from pypureclient.flasharray.FA_2_16.models.active_directory_response import ActiveDirectoryResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

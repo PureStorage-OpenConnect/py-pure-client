@@ -12,11 +12,20 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.member_get_response_v_47 import MemberGetResponse
+from pypureclient.flasharray.common.models.resource_performance_get_response_v_47 import ResourcePerformanceGetResponse
+from pypureclient.flasharray.common.models.resource_space_get_response_v_47 import ResourceSpaceGetResponse
+from pypureclient.flasharray.common.models.tag_batch_v_39 import TagBatch
+from pypureclient.flasharray.common.models.tag_get_response_v_47 import TagGetResponse
+from pypureclient.flasharray.common.models.tag_response_v_47 import TagResponse
+from pypureclient.flasharray.common.models.volume_group_get_response_v_47 import VolumeGroupGetResponse
+from pypureclient.flasharray.common.models.volume_group_patch_v_34 import VolumeGroupPatch
+from pypureclient.flasharray.common.models.volume_group_post_v_47 import VolumeGroupPost
+from pypureclient.flasharray.common.models.volume_group_response_v_47 import VolumeGroupResponse
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,19 +33,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictInt, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_48.models.member_get_response import MemberGetResponse
-from pypureclient.flasharray.FA_2_48.models.resource_performance_get_response import ResourcePerformanceGetResponse
-from pypureclient.flasharray.FA_2_48.models.resource_space_get_response import ResourceSpaceGetResponse
-from pypureclient.flasharray.FA_2_48.models.tag_batch import TagBatch
-from pypureclient.flasharray.FA_2_48.models.tag_get_response import TagGetResponse
-from pypureclient.flasharray.FA_2_48.models.tag_response import TagResponse
-from pypureclient.flasharray.FA_2_48.models.volume_group_get_response import VolumeGroupGetResponse
-from pypureclient.flasharray.FA_2_48.models.volume_group_patch import VolumeGroupPatch
-from pypureclient.flasharray.FA_2_48.models.volume_group_post import VolumeGroupPost
-from pypureclient.flasharray.FA_2_48.models.volume_group_response import VolumeGroupResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

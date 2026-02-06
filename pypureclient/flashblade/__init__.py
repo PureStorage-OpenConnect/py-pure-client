@@ -26,6 +26,8 @@ from pypureclient.responses import ValidResponse, ErrorResponse, ApiError, Respo
 
 def __getattr__(name, default=None):
     import pypureclient.flashblade.FB_2_23.models as _target_models_package
+    if name == '_modname':
+        return 'pypureclient.flashblade.FB_2_23'
     _model_class = getattr(_target_models_package, name, default)
     if _model_class:
         if os.environ.get('DOCS_GENERATION') is None:

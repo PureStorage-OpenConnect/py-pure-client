@@ -12,11 +12,38 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.directory_service_get_response_v_44 import DirectoryServiceGetResponse
+from pypureclient.flasharray.common.models.directory_service_patch_v_44 import DirectoryServicePatch
+from pypureclient.flasharray.common.models.directory_service_post_v_44 import DirectoryServicePost
+from pypureclient.flasharray.common.models.directory_service_response_v_44 import DirectoryServiceResponse
+from pypureclient.flasharray.common.models.directory_service_role_get_response_v_42 import DirectoryServiceRoleGetResponse
+from pypureclient.flasharray.common.models.directory_service_role_post_v_36 import DirectoryServiceRolePost
+from pypureclient.flasharray.common.models.directory_service_role_response_v_42 import DirectoryServiceRoleResponse
+from pypureclient.flasharray.common.models.directory_service_role_v_42 import DirectoryServiceRole
+from pypureclient.flasharray.common.models.local_directory_service_get_response_v_44 import LocalDirectoryServiceGetResponse
+from pypureclient.flasharray.common.models.local_directory_service_post_v_44 import LocalDirectoryServicePost
+from pypureclient.flasharray.common.models.local_directory_service_response_v_44 import LocalDirectoryServiceResponse
+from pypureclient.flasharray.common.models.local_directory_service_v_44 import LocalDirectoryService
+from pypureclient.flasharray.common.models.local_group_get_response_v_44 import LocalGroupGetResponse
+from pypureclient.flasharray.common.models.local_group_membership_post_v_21 import LocalGroupMembershipPost
+from pypureclient.flasharray.common.models.local_group_patch_v_44 import LocalGroupPatch
+from pypureclient.flasharray.common.models.local_group_post_v_21 import LocalGroupPost
+from pypureclient.flasharray.common.models.local_group_response_v_44 import LocalGroupResponse
+from pypureclient.flasharray.common.models.local_membership_get_response_v_44 import LocalMembershipGetResponse
+from pypureclient.flasharray.common.models.local_membership_response_v_44 import LocalMembershipResponse
+from pypureclient.flasharray.common.models.local_user_get_response_v_44 import LocalUserGetResponse
+from pypureclient.flasharray.common.models.local_user_membership_post_v_21 import LocalUserMembershipPost
+from pypureclient.flasharray.common.models.local_user_patch_v_21 import LocalUserPatch
+from pypureclient.flasharray.common.models.local_user_post_v_21 import LocalUserPost
+from pypureclient.flasharray.common.models.local_user_response_v_44 import LocalUserResponse
+from pypureclient.flasharray.common.models.policy_assignment_post_v_36 import PolicyAssignmentPost
+from pypureclient.flasharray.common.models.policy_member_clean_get_response_v_38 import PolicyMemberCleanGetResponse
+from pypureclient.flasharray.common.models.policy_member_clean_response_v_38 import PolicyMemberCleanResponse
+from pypureclient.flasharray.common.models.test_result_with_resource_response_v_38 import TestResultWithResourceResponse
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,37 +51,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictInt, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_45.models.directory_service_get_response import DirectoryServiceGetResponse
-from pypureclient.flasharray.FA_2_45.models.directory_service_patch import DirectoryServicePatch
-from pypureclient.flasharray.FA_2_45.models.directory_service_post import DirectoryServicePost
-from pypureclient.flasharray.FA_2_45.models.directory_service_response import DirectoryServiceResponse
-from pypureclient.flasharray.FA_2_45.models.directory_service_role import DirectoryServiceRole
-from pypureclient.flasharray.FA_2_45.models.directory_service_role_get_response import DirectoryServiceRoleGetResponse
-from pypureclient.flasharray.FA_2_45.models.directory_service_role_post import DirectoryServiceRolePost
-from pypureclient.flasharray.FA_2_45.models.directory_service_role_response import DirectoryServiceRoleResponse
-from pypureclient.flasharray.FA_2_45.models.local_directory_service import LocalDirectoryService
-from pypureclient.flasharray.FA_2_45.models.local_directory_service_get_response import LocalDirectoryServiceGetResponse
-from pypureclient.flasharray.FA_2_45.models.local_directory_service_post import LocalDirectoryServicePost
-from pypureclient.flasharray.FA_2_45.models.local_directory_service_response import LocalDirectoryServiceResponse
-from pypureclient.flasharray.FA_2_45.models.local_group_get_response import LocalGroupGetResponse
-from pypureclient.flasharray.FA_2_45.models.local_group_membership_post import LocalGroupMembershipPost
-from pypureclient.flasharray.FA_2_45.models.local_group_patch import LocalGroupPatch
-from pypureclient.flasharray.FA_2_45.models.local_group_post import LocalGroupPost
-from pypureclient.flasharray.FA_2_45.models.local_group_response import LocalGroupResponse
-from pypureclient.flasharray.FA_2_45.models.local_membership_get_response import LocalMembershipGetResponse
-from pypureclient.flasharray.FA_2_45.models.local_membership_response import LocalMembershipResponse
-from pypureclient.flasharray.FA_2_45.models.local_user_get_response import LocalUserGetResponse
-from pypureclient.flasharray.FA_2_45.models.local_user_membership_post import LocalUserMembershipPost
-from pypureclient.flasharray.FA_2_45.models.local_user_patch import LocalUserPatch
-from pypureclient.flasharray.FA_2_45.models.local_user_post import LocalUserPost
-from pypureclient.flasharray.FA_2_45.models.local_user_response import LocalUserResponse
-from pypureclient.flasharray.FA_2_45.models.policy_assignment_post import PolicyAssignmentPost
-from pypureclient.flasharray.FA_2_45.models.policy_member_clean_get_response import PolicyMemberCleanGetResponse
-from pypureclient.flasharray.FA_2_45.models.policy_member_clean_response import PolicyMemberCleanResponse
-from pypureclient.flasharray.FA_2_45.models.test_result_with_resource_response import TestResultWithResourceResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

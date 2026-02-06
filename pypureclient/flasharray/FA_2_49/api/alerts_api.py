@@ -12,11 +12,18 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.alert_event_get_response_v_49 import AlertEventGetResponse
+from pypureclient.flasharray.common.models.alert_get_response_v_49 import AlertGetResponse
+from pypureclient.flasharray.common.models.alert_response_v_49 import AlertResponse
+from pypureclient.flasharray.common.models.alert_rules_catalog_get_response_v_49 import AlertRulesCatalogGetResponse
+from pypureclient.flasharray.common.models.alert_rules_get_response_v_49 import AlertRulesGetResponse
+from pypureclient.flasharray.common.models.alert_rules_response_v_49 import AlertRulesResponse
+from pypureclient.flasharray.common.models.alert_rules_v_49 import AlertRules
+from pypureclient.flasharray.common.models.alert_v_49 import Alert
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,17 +31,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictInt, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_49.models.alert import Alert
-from pypureclient.flasharray.FA_2_49.models.alert_event_get_response import AlertEventGetResponse
-from pypureclient.flasharray.FA_2_49.models.alert_get_response import AlertGetResponse
-from pypureclient.flasharray.FA_2_49.models.alert_response import AlertResponse
-from pypureclient.flasharray.FA_2_49.models.alert_rules import AlertRules
-from pypureclient.flasharray.FA_2_49.models.alert_rules_catalog_get_response import AlertRulesCatalogGetResponse
-from pypureclient.flasharray.FA_2_49.models.alert_rules_get_response import AlertRulesGetResponse
-from pypureclient.flasharray.FA_2_49.models.alert_rules_response import AlertRulesResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

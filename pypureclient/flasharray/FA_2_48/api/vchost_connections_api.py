@@ -12,11 +12,12 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.vchost_connection_get_response_v_33 import VchostConnectionGetResponse
+from pypureclient.flasharray.common.models.vchost_connection_response_v_33 import VchostConnectionResponse
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,11 +25,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_48.models.vchost_connection_get_response import VchostConnectionGetResponse
-from pypureclient.flasharray.FA_2_48.models.vchost_connection_response import VchostConnectionResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

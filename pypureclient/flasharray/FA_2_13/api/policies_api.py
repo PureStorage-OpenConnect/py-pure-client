@@ -12,11 +12,36 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.policy_get_response_v_13 import PolicyGetResponse
+from pypureclient.flasharray.common.models.policy_member_export_get_response_v_3 import PolicyMemberExportGetResponse
+from pypureclient.flasharray.common.models.policy_member_export_post_v_3 import PolicyMemberExportPost
+from pypureclient.flasharray.common.models.policy_member_export_response_v_3 import PolicyMemberExportResponse
+from pypureclient.flasharray.common.models.policy_member_get_response_v_3 import PolicyMemberGetResponse
+from pypureclient.flasharray.common.models.policy_member_post_v_3 import PolicyMemberPost
+from pypureclient.flasharray.common.models.policy_member_response_v_3 import PolicyMemberResponse
+from pypureclient.flasharray.common.models.policy_patch_v_3 import PolicyPatch
+from pypureclient.flasharray.common.models.policy_post_v_3 import PolicyPost
+from pypureclient.flasharray.common.models.policy_response_v_13 import PolicyResponse
+from pypureclient.flasharray.common.models.policy_rule_nfs_client_get_response_v_3 import PolicyRuleNfsClientGetResponse
+from pypureclient.flasharray.common.models.policy_rule_nfs_client_post_v_3 import PolicyRuleNfsClientPost
+from pypureclient.flasharray.common.models.policy_rule_nfs_client_response_v_3 import PolicyRuleNfsClientResponse
+from pypureclient.flasharray.common.models.policy_rule_quota_get_response_v_7 import PolicyRuleQuotaGetResponse
+from pypureclient.flasharray.common.models.policy_rule_quota_post_v_7 import PolicyRuleQuotaPost
+from pypureclient.flasharray.common.models.policy_rule_quota_response_v_7 import PolicyRuleQuotaResponse
+from pypureclient.flasharray.common.models.policy_rule_smb_client_get_response_v_3 import PolicyRuleSmbClientGetResponse
+from pypureclient.flasharray.common.models.policy_rule_smb_client_post_v_3 import PolicyRuleSmbClientPost
+from pypureclient.flasharray.common.models.policy_rule_smb_client_response_v_3 import PolicyRuleSmbClientResponse
+from pypureclient.flasharray.common.models.policy_rule_snapshot_get_response_v_9 import PolicyRuleSnapshotGetResponse
+from pypureclient.flasharray.common.models.policy_rule_snapshot_post_v_9 import PolicyRuleSnapshotPost
+from pypureclient.flasharray.common.models.policy_rule_snapshot_response_v_9 import PolicyRuleSnapshotResponse
+from pypureclient.flasharray.common.models.policy_smb_get_response_v_13 import PolicySmbGetResponse
+from pypureclient.flasharray.common.models.policy_smb_patch_v_4 import PolicySmbPatch
+from pypureclient.flasharray.common.models.policy_smb_post_v_4 import PolicySmbPost
+from pypureclient.flasharray.common.models.policy_smb_response_v_13 import PolicySmbResponse
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,35 +49,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_13.models.policy_get_response import PolicyGetResponse
-from pypureclient.flasharray.FA_2_13.models.policy_member_export_get_response import PolicyMemberExportGetResponse
-from pypureclient.flasharray.FA_2_13.models.policy_member_export_post import PolicyMemberExportPost
-from pypureclient.flasharray.FA_2_13.models.policy_member_export_response import PolicyMemberExportResponse
-from pypureclient.flasharray.FA_2_13.models.policy_member_get_response import PolicyMemberGetResponse
-from pypureclient.flasharray.FA_2_13.models.policy_member_post import PolicyMemberPost
-from pypureclient.flasharray.FA_2_13.models.policy_member_response import PolicyMemberResponse
-from pypureclient.flasharray.FA_2_13.models.policy_patch import PolicyPatch
-from pypureclient.flasharray.FA_2_13.models.policy_post import PolicyPost
-from pypureclient.flasharray.FA_2_13.models.policy_response import PolicyResponse
-from pypureclient.flasharray.FA_2_13.models.policy_rule_nfs_client_get_response import PolicyRuleNfsClientGetResponse
-from pypureclient.flasharray.FA_2_13.models.policy_rule_nfs_client_post import PolicyRuleNfsClientPost
-from pypureclient.flasharray.FA_2_13.models.policy_rule_nfs_client_response import PolicyRuleNfsClientResponse
-from pypureclient.flasharray.FA_2_13.models.policy_rule_quota_get_response import PolicyRuleQuotaGetResponse
-from pypureclient.flasharray.FA_2_13.models.policy_rule_quota_post import PolicyRuleQuotaPost
-from pypureclient.flasharray.FA_2_13.models.policy_rule_quota_response import PolicyRuleQuotaResponse
-from pypureclient.flasharray.FA_2_13.models.policy_rule_smb_client_get_response import PolicyRuleSmbClientGetResponse
-from pypureclient.flasharray.FA_2_13.models.policy_rule_smb_client_post import PolicyRuleSmbClientPost
-from pypureclient.flasharray.FA_2_13.models.policy_rule_smb_client_response import PolicyRuleSmbClientResponse
-from pypureclient.flasharray.FA_2_13.models.policy_rule_snapshot_get_response import PolicyRuleSnapshotGetResponse
-from pypureclient.flasharray.FA_2_13.models.policy_rule_snapshot_post import PolicyRuleSnapshotPost
-from pypureclient.flasharray.FA_2_13.models.policy_rule_snapshot_response import PolicyRuleSnapshotResponse
-from pypureclient.flasharray.FA_2_13.models.policy_smb_get_response import PolicySmbGetResponse
-from pypureclient.flasharray.FA_2_13.models.policy_smb_patch import PolicySmbPatch
-from pypureclient.flasharray.FA_2_13.models.policy_smb_post import PolicySmbPost
-from pypureclient.flasharray.FA_2_13.models.policy_smb_response import PolicySmbResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

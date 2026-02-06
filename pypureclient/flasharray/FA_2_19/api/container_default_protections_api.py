@@ -12,11 +12,13 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.container_default_protection_get_response_v_16 import ContainerDefaultProtectionGetResponse
+from pypureclient.flasharray.common.models.container_default_protection_response_v_16 import ContainerDefaultProtectionResponse
+from pypureclient.flasharray.common.models.container_default_protection_v_16 import ContainerDefaultProtection
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,12 +26,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_19.models.container_default_protection import ContainerDefaultProtection
-from pypureclient.flasharray.FA_2_19.models.container_default_protection_get_response import ContainerDefaultProtectionGetResponse
-from pypureclient.flasharray.FA_2_19.models.container_default_protection_response import ContainerDefaultProtectionResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

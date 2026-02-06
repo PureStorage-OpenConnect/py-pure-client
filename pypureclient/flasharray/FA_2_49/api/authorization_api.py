@@ -12,11 +12,16 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.api_version_response_v_0 import ApiVersionResponse
+from pypureclient.flasharray.common.models.login_post_v_47 import LoginPost
+from pypureclient.flasharray.common.models.oauth210_token_post400_response_v_0 import Oauth210TokenPost400Response
+from pypureclient.flasharray.common.models.oauth210_token_post401_response_v_0 import Oauth210TokenPost401Response
+from pypureclient.flasharray.common.models.oauth_token_response_v_0 import OauthTokenResponse
+from pypureclient.flasharray.common.models.username_response_v_0 import UsernameResponse
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,13 +29,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictStr
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_49.models.api_version_response import ApiVersionResponse
-from pypureclient.flasharray.FA_2_49.models.login_post import LoginPost
-from pypureclient.flasharray.FA_2_49.models.oauth_token_response import OauthTokenResponse
-from pypureclient.flasharray.FA_2_49.models.username_response import UsernameResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse

@@ -47,5 +47,6 @@ __modules_dict = {
     "2.47": "pypureclient.flasharray.FA_2_47",
     "2.48": "pypureclient.flasharray.FA_2_48",
     "2.49": "pypureclient.flasharray.FA_2_49",
-    "2.50": "pypureclient.flasharray.FA_2_50"
+    "2.50": "pypureclient.flasharray.FA_2_50",
+    "2.51": "pypureclient.flasharray.FA_2_51"
 }

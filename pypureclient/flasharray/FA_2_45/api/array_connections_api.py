@@ -12,11 +12,16 @@
     Do not edit the class manually.
 """  # noqa: E501
 
+from pypureclient.flasharray.common.models.array_connection_get_response_v_40 import ArrayConnectionGetResponse
+from pypureclient.flasharray.common.models.array_connection_key_get_response_v_4 import ArrayConnectionKeyGetResponse
+from pypureclient.flasharray.common.models.array_connection_patch_v_44 import ArrayConnectionPatch
+from pypureclient.flasharray.common.models.array_connection_path_get_response_v_40 import ArrayConnectionPathGetResponse
+from pypureclient.flasharray.common.models.array_connection_post_v_33 import ArrayConnectionPost
+from pypureclient.flasharray.common.models.array_connection_response_v_40 import ArrayConnectionResponse
 
 import re  # noqa: F401
 import io
 import warnings
-
 
 from typing_extensions import Annotated
 try:
@@ -24,15 +29,8 @@ try:
 except ModuleNotFoundError:
     from pydantic import Field, StrictBool, StrictStr, conint, conlist, constr, validator
 
-
 from typing import Optional
 
-from pypureclient.flasharray.FA_2_45.models.array_connection_get_response import ArrayConnectionGetResponse
-from pypureclient.flasharray.FA_2_45.models.array_connection_key_get_response import ArrayConnectionKeyGetResponse
-from pypureclient.flasharray.FA_2_45.models.array_connection_patch import ArrayConnectionPatch
-from pypureclient.flasharray.FA_2_45.models.array_connection_path_get_response import ArrayConnectionPathGetResponse
-from pypureclient.flasharray.FA_2_45.models.array_connection_post import ArrayConnectionPost
-from pypureclient.flasharray.FA_2_45.models.array_connection_response import ArrayConnectionResponse
 from typing import Optional
 from pypureclient._transport.api_client import ApiClient as _TransportApiClient
 from pypureclient._transport.api_response import ApiResponse
