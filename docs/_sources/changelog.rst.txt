@@ -6,6 +6,7 @@ A log of changes by version and date.
 ======= ========== =====
 Version Date       Notes
 ======= ========== =====
+1.83.1  02/09/2026 Fix setuptools deprecation and removal of pkg_resources
 1.83.0  02/03/2026 Added FlashArray 2.51 client
 1.82.0  01/21/2026 Added FlashBlade 2.23 client
 1.81.0  01/02/2026 Added FlashArray 2.50 client
