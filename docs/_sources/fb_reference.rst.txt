@@ -21,10 +21,10 @@ Importable as
 .. module:: pypureclient.flashblade.client
 .. autofunction:: pypureclient.flashblade.client::Client
 
-FlashBlade REST 2.23 Client
+FlashBlade REST 2.24 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. module:: pypureclient.flashblade.FB_2_23.client
-.. autoclass:: pypureclient.flashblade.FB_2_23.client::Client
+.. module:: pypureclient.flashblade.FB_2_24.client
+.. autoclass:: pypureclient.flashblade.FB_2_24.client::Client
    :members:
 
 Models
@@ -2202,6 +2202,18 @@ DestroyedPatchPost
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
+DestroyedReadonly
+~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::DestroyedReadonly
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
 DirectoryService
 ~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flashblade::DirectoryService
@@ -3741,6 +3753,270 @@ LinkAggregationGroupPatch
 LinkAggregationGroupResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flashblade::LinkAggregationGroupResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+LocalDirectoryService
+~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::LocalDirectoryService
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+LocalDirectoryServiceGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::LocalDirectoryServiceGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+LocalDirectoryServicePost
+~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::LocalDirectoryServicePost
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+LocalDirectoryServiceReference
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::LocalDirectoryServiceReference
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+LocalDirectoryServiceResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::LocalDirectoryServiceResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+LocalGroup
+~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::LocalGroup
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+LocalGroupGetResponse
+~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::LocalGroupGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+LocalGroupMembershipPost
+~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::LocalGroupMembershipPost
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+LocalGroupMembershipPostMembers
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::LocalGroupMembershipPostMembers
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+LocalGroupPatch
+~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::LocalGroupPatch
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+LocalGroupPost
+~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::LocalGroupPost
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+LocalGroupResponse
+~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::LocalGroupResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+LocalMember
+~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::LocalMember
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+LocalMembershipGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::LocalMembershipGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+LocalMembershipResponse
+~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::LocalMembershipResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+LocalUser
+~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::LocalUser
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+LocalUserGetResponse
+~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::LocalUserGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+LocalUserMembershipPost
+~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::LocalUserMembershipPost
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+LocalUserMembershipPostGroups
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::LocalUserMembershipPostGroups
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+LocalUserPatch
+~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::LocalUserPatch
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+LocalUserPost
+~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::LocalUserPost
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+LocalUserResponse
+~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::LocalUserResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -7458,6 +7734,18 @@ Saml2SsoIdp
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
+Saml2SsoManagement
+~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::Saml2SsoManagement
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
 Saml2SsoPost
 ~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flashblade::Saml2SsoPost
@@ -7554,9 +7842,33 @@ ServerGetResponse
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
+ServerPatch
+~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::ServerPatch
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
 ServerPost
 ~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flashblade::ServerPost
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+ServerReference
+~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::ServerReference
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -8118,6 +8430,54 @@ SnmpV3Post
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
+SoftwareBundle
+~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::SoftwareBundle
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+SoftwareBundleGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::SoftwareBundleGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+SoftwareBundlePost
+~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::SoftwareBundlePost
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+SoftwareBundleResponse
+~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::SoftwareBundleResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
 SoftwareCheck
 ~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flashblade::SoftwareCheck
@@ -8157,6 +8517,42 @@ SoftwareChecksGetResponse
 SoftwareChecksResponse
 ~~~~~~~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flashblade::SoftwareChecksResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+SoftwarePatch
+~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::SoftwarePatch
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+SoftwarePatchesGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::SoftwarePatchesGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+SoftwarePatchesResponse
+~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::SoftwarePatchesResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -8433,6 +8829,42 @@ SupportDiagnosticsGetResponse
 SupportDiagnosticsResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flashblade::SupportDiagnosticsResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+SupportDiagnosticsSettings
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::SupportDiagnosticsSettings
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+SupportDiagnosticsSettingsGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::SupportDiagnosticsSettingsGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+SupportDiagnosticsSettingsResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flashblade::SupportDiagnosticsSettingsResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -9706,8 +10138,8 @@ in the errors field of the response. If set to *false*, the operation will fail 
     if type(res) == pypureclient.responses.ValidResponse:
         print(list(res.items))
 
-Apiclientsap
-~~~~~~~~~~~~
+APIClientsApi
+~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -9735,8 +10167,8 @@ post_api_clients
 .. literalinclude:: source/examples/FB2.19/post_api_clients.py
     :language: python
 
-Activedirectoryap
-~~~~~~~~~~~~~~~~~
+ActiveDirectoryApi
+~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -9770,45 +10202,45 @@ get_active_directory_test
 .. literalinclude:: source/examples/FB2.23/get_active_directory_test.py
     :language: python
 
-Administratorsap
-~~~~~~~~~~~~~~~~
+AdministratorsApi
+~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
 delete_admins_api_tokens
 ''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.0/delete_admins_api_tokens.py
+.. literalinclude:: source/examples/FB2.24/delete_admins_api_tokens.py
     :language: python
 
 get_admins_api_tokens
 '''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.0/get_admins_api_tokens.py
+.. literalinclude:: source/examples/FB2.24/get_admins_api_tokens.py
     :language: python
 
 post_admins_api_tokens
 ''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.0/post_admins_api_tokens.py
+.. literalinclude:: source/examples/FB2.24/post_admins_api_tokens.py
     :language: python
 
 delete_admins_cache
 '''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.0/delete_admins_cache.py
+.. literalinclude:: source/examples/FB2.24/delete_admins_cache.py
     :language: python
 
 get_admins_cache
 ''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.0/get_admins_cache.py
+.. literalinclude:: source/examples/FB2.24/get_admins_cache.py
     :language: python
 
 delete_admins
 '''''''''''''
 
-.. literalinclude:: source/examples/FB2.15/delete_admins.py
+.. literalinclude:: source/examples/FB2.24/delete_admins.py
     :language: python
 
 get_admins
@@ -9820,13 +10252,13 @@ get_admins
 patch_admins
 ''''''''''''
 
-.. literalinclude:: source/examples/FB2.0/patch_admins.py
+.. literalinclude:: source/examples/FB2.24/patch_admins.py
     :language: python
 
 post_admins
 '''''''''''
 
-.. literalinclude:: source/examples/FB2.19/post_admins.py
+.. literalinclude:: source/examples/FB2.24/post_admins.py
     :language: python
 
 get_admins_settings
@@ -9841,8 +10273,8 @@ patch_admins_settings
 .. literalinclude:: source/examples/FB2.3/patch_admins_settings.py
     :language: python
 
-Alertwatchersap
-~~~~~~~~~~~~~~~
+AlertWatchersApi
+~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -9876,8 +10308,8 @@ get_alert_watchers_test
 .. literalinclude:: source/examples/FB2.0/get_alert_watchers_test.py
     :language: python
 
-Alertsap
-~~~~~~~~
+AlertsApi
+~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -9893,8 +10325,8 @@ patch_alerts
 .. literalinclude:: source/examples/FB2.0/patch_alerts.py
     :language: python
 
-Arrayconnectionsap
-~~~~~~~~~~~~~~~~~~
+ArrayConnectionsApi
+~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -9946,8 +10378,8 @@ post_array_connections
 .. literalinclude:: source/examples/FB2.17/post_array_connections.py
     :language: python
 
-Arraysap
-~~~~~~~~
+ArraysApi
+~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -10065,8 +10497,8 @@ get_arrays_supported_time_zones
 .. literalinclude:: source/examples/FB2.0/get_arrays_supported_time_zones.py
     :language: python
 
-Auditlogtargetforfilesystemsap
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+AuditLogTargetForFileSystemsApi
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -10094,8 +10526,8 @@ post_log_targets_file_systems
 .. literalinclude:: source/examples/FB2.20/post_log_targets_file_systems.py
     :language: python
 
-Auditlogtargetforobjectstoreap
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+AuditLogTargetForObjectStoreApi
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -10123,8 +10555,8 @@ post_log_targets_object_store
 .. literalinclude:: source/examples/FB2.20/post_log_targets_object_store.py
     :language: python
 
-Auditsap
-~~~~~~~~
+AuditsApi
+~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -10134,13 +10566,13 @@ get_audits
 .. literalinclude:: source/examples/FB2.0/get_audits.py
     :language: python
 
-Authorizationap
-~~~~~~~~~~~~~~~
+AuthorizationApi
+~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
-Bladesap
-~~~~~~~~
+BladesApi
+~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -10150,8 +10582,8 @@ get_blades
 .. literalinclude:: source/examples/FB2.0/get_blades.py
     :language: python
 
-Bucketreplicalinksap
-~~~~~~~~~~~~~~~~~~~~
+BucketReplicaLinksApi
+~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -10179,8 +10611,8 @@ post_bucket_replica_links
 .. literalinclude:: source/examples/FB2.17/post_bucket_replica_links.py
     :language: python
 
-Bucketsap
-~~~~~~~~~
+BucketsApi
+~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -10322,8 +10754,8 @@ get_buckets_s3_specific_performance
 .. literalinclude:: source/examples/FB2.0/get_buckets_s3_specific_performance.py
     :language: python
 
-Certificategroupsap
-~~~~~~~~~~~~~~~~~~~
+CertificateGroupsApi
+~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -10369,8 +10801,8 @@ get_certificate_groups_uses
 .. literalinclude:: source/examples/FB2.0/get_certificate_groups_uses.py
     :language: python
 
-Certificatesap
-~~~~~~~~~~~~~~
+CertificatesApi
+~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -10428,8 +10860,8 @@ get_certificates_uses
 .. literalinclude:: source/examples/FB2.0/get_certificates_uses.py
     :language: python
 
-Clientsap
-~~~~~~~~~
+ClientsApi
+~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -10445,8 +10877,8 @@ get_arrays_clients_s3_specific_performance
 .. literalinclude:: source/examples/FB2.18/get_arrays_clients_s3_specific_performance.py
     :language: python
 
-Dnsap
-~~~~~
+DNSApi
+~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -10474,8 +10906,8 @@ post_dns
 .. literalinclude:: source/examples/FB2.16/post_dns.py
     :language: python
 
-Directoryservicesap
-~~~~~~~~~~~~~~~~~~~
+DirectoryServicesApi
+~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -10483,6 +10915,114 @@ get_directory_services
 ''''''''''''''''''''''
 
 .. literalinclude:: source/examples/FB2.0/get_directory_services.py
+    :language: python
+
+delete_directory_services_local_directory_services
+''''''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.24/delete_directory_services_local_directory_services.py
+    :language: python
+
+get_directory_services_local_directory_services
+'''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.24/get_directory_services_local_directory_services.py
+    :language: python
+
+patch_directory_services_local_directory_services
+'''''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.24/patch_directory_services_local_directory_services.py
+    :language: python
+
+post_directory_services_local_directory_services
+''''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.24/post_directory_services_local_directory_services.py
+    :language: python
+
+delete_directory_services_local_groups
+''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.24/delete_directory_services_local_groups.py
+    :language: python
+
+get_directory_services_local_groups
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.24/get_directory_services_local_groups.py
+    :language: python
+
+delete_directory_services_local_groups_members
+''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.24/delete_directory_services_local_groups_members.py
+    :language: python
+
+get_directory_services_local_groups_members
+'''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.24/get_directory_services_local_groups_members.py
+    :language: python
+
+post_directory_services_local_groups_members
+''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.24/post_directory_services_local_groups_members.py
+    :language: python
+
+patch_directory_services_local_groups
+'''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.24/patch_directory_services_local_groups.py
+    :language: python
+
+post_directory_services_local_groups
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.24/post_directory_services_local_groups.py
+    :language: python
+
+delete_directory_services_local_users
+'''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.24/delete_directory_services_local_users.py
+    :language: python
+
+get_directory_services_local_users
+''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.24/get_directory_services_local_users.py
+    :language: python
+
+delete_directory_services_local_users_members
+'''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.24/delete_directory_services_local_users_members.py
+    :language: python
+
+get_directory_services_local_users_members
+''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.24/get_directory_services_local_users_members.py
+    :language: python
+
+post_directory_services_local_users_members
+'''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.24/post_directory_services_local_users_members.py
+    :language: python
+
+patch_directory_services_local_users
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.24/patch_directory_services_local_users.py
+    :language: python
+
+post_directory_services_local_users
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.24/post_directory_services_local_users.py
     :language: python
 
 patch_directory_services
@@ -10527,8 +11067,8 @@ patch_directory_services_test
 .. literalinclude:: source/examples/FB2.23/patch_directory_services_test.py
     :language: python
 
-Drivesap
-~~~~~~~~
+DrivesApi
+~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -10538,8 +11078,8 @@ get_drives
 .. literalinclude:: source/examples/FB2.4/get_drives.py
     :language: python
 
-Filesystemexportsap
-~~~~~~~~~~~~~~~~~~~
+FileSystemExportsApi
+~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -10567,8 +11107,8 @@ post_file_system_exports
 .. literalinclude:: source/examples/FB2.17/post_file_system_exports.py
     :language: python
 
-Filesystemreplicalinksap
-~~~~~~~~~~~~~~~~~~~~~~~~
+FileSystemReplicaLinksApi
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -10620,8 +11160,8 @@ get_file_system_replica_links_transfer
 .. literalinclude:: source/examples/FB2.17/get_file_system_replica_links_transfer.py
     :language: python
 
-Filesystemsnapshotsap
-~~~~~~~~~~~~~~~~~~~~~
+FileSystemSnapshotsApi
+~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -10673,8 +11213,8 @@ get_file_system_snapshots_transfer
 .. literalinclude:: source/examples/FB2.17/get_file_system_snapshots_transfer.py
     :language: python
 
-Filesystemsap
-~~~~~~~~~~~~~
+FileSystemsApi
+~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -10840,8 +11380,8 @@ get_file_systems_worm_data_policies
 .. literalinclude:: source/examples/FB2.17/get_file_systems_worm_data_policies.py
     :language: python
 
-Fleetsap
-~~~~~~~~
+FleetsApi
+~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -10899,8 +11439,8 @@ post_fleets
 .. literalinclude:: source/examples/FB2.17/post_fleets.py
     :language: python
 
-Hardwareap
-~~~~~~~~~~
+HardwareApi
+~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -10916,8 +11456,8 @@ patch_hardware
 .. literalinclude:: source/examples/FB2.0/patch_hardware.py
     :language: python
 
-Hardwareconnectorsap
-~~~~~~~~~~~~~~~~~~~~
+HardwareConnectorsApi
+~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -10939,8 +11479,8 @@ get_hardware_connectors_performance
 .. literalinclude:: source/examples/FB2.3/get_hardware_connectors_performance.py
     :language: python
 
-Kmipap
-~~~~~~
+KMIPApi
+~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -10974,8 +11514,8 @@ get_kmip_test
 .. literalinclude:: source/examples/FB2.1/get_kmip_test.py
     :language: python
 
-Keytabsap
-~~~~~~~~~
+KeytabsApi
+~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -11009,8 +11549,8 @@ post_keytabs_upload
 .. literalinclude:: source/examples/FB2.0/post_keytabs_upload.py
     :language: python
 
-Legalholdsap
-~~~~~~~~~~~~
+LegalHoldsApi
+~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -11056,8 +11596,8 @@ post_legal_holds
 .. literalinclude:: source/examples/FB2.17/post_legal_holds.py
     :language: python
 
-Lifecyclerulesap
-~~~~~~~~~~~~~~~~
+LifecycleRulesApi
+~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -11085,8 +11625,8 @@ post_lifecycle_rules
 .. literalinclude:: source/examples/FB2.17/post_lifecycle_rules.py
     :language: python
 
-Linkaggregationgroupsap
-~~~~~~~~~~~~~~~~~~~~~~~
+LinkAggregationGroupsApi
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -11114,8 +11654,8 @@ post_link_aggregation_groups
 .. literalinclude:: source/examples/FB2.0/post_link_aggregation_groups.py
     :language: python
 
-Logsap
-~~~~~~
+LogsApi
+~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -11143,8 +11683,8 @@ get_logs
 .. literalinclude:: source/examples/FB2.0/get_logs.py
     :language: python
 
-Maintenancewindowsap
-~~~~~~~~~~~~~~~~~~~~
+MaintenanceWindowsApi
+~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -11166,8 +11706,8 @@ post_maintenance_windows
 .. literalinclude:: source/examples/FB2.16/post_maintenance_windows.py
     :language: python
 
-Networkinterfacesap
-~~~~~~~~~~~~~~~~~~~
+NetworkInterfacesApi
+~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -11243,8 +11783,8 @@ get_network_interfaces_trace
 .. literalinclude:: source/examples/FB2.6/get_network_interfaces_trace.py
     :language: python
 
-Nodegroupsap
-~~~~~~~~~~~~
+NodeGroupsApi
+~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -11296,8 +11836,8 @@ get_node_groups_uses
 .. literalinclude:: source/examples/FB2.18/get_node_groups_uses.py
     :language: python
 
-Nodesap
-~~~~~~~
+NodesApi
+~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -11319,8 +11859,8 @@ patch_nodes
 .. literalinclude:: source/examples/FB2.18/patch_nodes.py
     :language: python
 
-Oidcssoap
-~~~~~~~~~
+OIDCSSOApi
+~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -11348,8 +11888,8 @@ post_sso_oidc_idps
 .. literalinclude:: source/examples/FB2.17/post_sso_oidc_idps.py
     :language: python
 
-Objectstoreaccesskeysap
-~~~~~~~~~~~~~~~~~~~~~~~
+ObjectStoreAccessKeysApi
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -11377,8 +11917,8 @@ post_object_store_access_keys
 .. literalinclude:: source/examples/FB2.17/post_object_store_access_keys.py
     :language: python
 
-Objectstoreaccountexportsap
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ObjectStoreAccountExportsApi
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -11406,8 +11946,8 @@ post_object_store_account_exports
 .. literalinclude:: source/examples/FB2.20/post_object_store_account_exports.py
     :language: python
 
-Objectstoreaccountsap
-~~~~~~~~~~~~~~~~~~~~~
+ObjectStoreAccountsApi
+~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -11435,8 +11975,8 @@ post_object_store_accounts
 .. literalinclude:: source/examples/FB2.20/post_object_store_accounts.py
     :language: python
 
-Objectstoreremotecredentialsap
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ObjectStoreRemoteCredentialsApi
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -11464,8 +12004,8 @@ post_object_store_remote_credentials
 .. literalinclude:: source/examples/FB2.17/post_object_store_remote_credentials.py
     :language: python
 
-Objectstorerolesap
-~~~~~~~~~~~~~~~~~~
+ObjectStoreRolesApi
+~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -11553,8 +12093,8 @@ post_object_store_roles
 .. literalinclude:: source/examples/FB2.17/post_object_store_roles.py
     :language: python
 
-Objectstoreusersap
-~~~~~~~~~~~~~~~~~~
+ObjectStoreUsersApi
+~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -11594,8 +12134,8 @@ post_object_store_users
 .. literalinclude:: source/examples/FB2.17/post_object_store_users.py
     :language: python
 
-Objectstorevirtualhostsap
-~~~~~~~~~~~~~~~~~~~~~~~~~
+ObjectStoreVirtualHostsApi
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -11623,8 +12163,8 @@ post_object_store_virtual_hosts
 .. literalinclude:: source/examples/FB2.20/post_object_store_virtual_hosts.py
     :language: python
 
-Policiesallap
-~~~~~~~~~~~~~
+PoliciesAllApi
+~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -11640,8 +12180,8 @@ get_policies_all_members
 .. literalinclude:: source/examples/FB2.17/get_policies_all_members.py
     :language: python
 
-Policiesauditforfilesystemsap
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+PoliciesAuditForFileSystemsApi
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -11693,8 +12233,8 @@ get_audit_file_systems_policy_operations
 .. literalinclude:: source/examples/FB2.18/get_audit_file_systems_policy_operations.py
     :language: python
 
-Policiesauditforobjectstoreap
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+PoliciesAuditForObjectStoreApi
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -11740,8 +12280,8 @@ post_audit_object_store_policies
 .. literalinclude:: source/examples/FB2.20/post_audit_object_store_policies.py
     :language: python
 
-Policiesdataevictionap
-~~~~~~~~~~~~~~~~~~~~~~
+PoliciesDataEvictionApi
+~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -11793,27 +12333,27 @@ post_data_eviction_policies
 .. literalinclude:: source/examples/FB2.21/post_data_eviction_policies.py
     :language: python
 
-Policiesmanagementaccessap
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+PoliciesManagementAccessApi
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
 delete_admins_management_access_policies
 ''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.19/delete_admins_management_access_policies.py
+.. literalinclude:: source/examples/FB2.24/delete_admins_management_access_policies.py
     :language: python
 
 get_admins_management_access_policies
 '''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.19/get_admins_management_access_policies.py
+.. literalinclude:: source/examples/FB2.24/get_admins_management_access_policies.py
     :language: python
 
 post_admins_management_access_policies
 ''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.19/post_admins_management_access_policies.py
+.. literalinclude:: source/examples/FB2.24/post_admins_management_access_policies.py
     :language: python
 
 delete_directory_services_roles_management_access_policies
@@ -11837,19 +12377,19 @@ post_directory_services_roles_management_access_policies
 delete_management_access_policies_admins
 ''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.19/delete_management_access_policies_admins.py
+.. literalinclude:: source/examples/FB2.24/delete_management_access_policies_admins.py
     :language: python
 
 get_management_access_policies_admins
 '''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.19/get_management_access_policies_admins.py
+.. literalinclude:: source/examples/FB2.24/get_management_access_policies_admins.py
     :language: python
 
 post_management_access_policies_admins
 ''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.19/post_management_access_policies_admins.py
+.. literalinclude:: source/examples/FB2.24/post_management_access_policies_admins.py
     :language: python
 
 delete_management_access_policies
@@ -11879,13 +12419,13 @@ post_management_access_policies_directory_services_roles
 get_management_access_policies
 ''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.19/get_management_access_policies.py
+.. literalinclude:: source/examples/FB2.24/get_management_access_policies.py
     :language: python
 
 get_management_access_policies_members
 ''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.19/get_management_access_policies_members.py
+.. literalinclude:: source/examples/FB2.24/get_management_access_policies_members.py
     :language: python
 
 patch_management_access_policies
@@ -11900,8 +12440,8 @@ post_management_access_policies
 .. literalinclude:: source/examples/FB2.19/post_management_access_policies.py
     :language: python
 
-Policiesmanagementauthenticationap
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+PoliciesManagementAuthenticationApi
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -11983,8 +12523,8 @@ post_management_authentication_policies
 .. literalinclude:: source/examples/FB2.22/post_management_authentication_policies.py
     :language: python
 
-Policiesnfsap
-~~~~~~~~~~~~~
+PoliciesNFSApi
+~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -12036,8 +12576,8 @@ post_nfs_export_policies_rules
 .. literalinclude:: source/examples/FB2.17/post_nfs_export_policies_rules.py
     :language: python
 
-Policiesnetworkaccessap
-~~~~~~~~~~~~~~~~~~~~~~~
+PoliciesNetworkAccessApi
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -12083,8 +12623,8 @@ post_network_access_policies_rules
 .. literalinclude:: source/examples/FB2.13/post_network_access_policies_rules.py
     :language: python
 
-Policiesobjectstoreaccessap
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+PoliciesObjectStoreAccessApi
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -12178,8 +12718,8 @@ get_object_store_access_policy_actions
 .. literalinclude:: source/examples/FB2.17/get_object_store_access_policy_actions.py
     :language: python
 
-Policiespasswordap
-~~~~~~~~~~~~~~~~~~
+PoliciesPasswordApi
+~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -12195,8 +12735,8 @@ patch_password_policies
 .. literalinclude:: source/examples/FB2.16/patch_password_policies.py
     :language: python
 
-Policiesqosap
-~~~~~~~~~~~~~
+PoliciesQoSApi
+~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -12254,8 +12794,8 @@ post_qos_policies
 .. literalinclude:: source/examples/FB2.23/post_qos_policies.py
     :language: python
 
-Policiess3exportap
-~~~~~~~~~~~~~~~~~~
+PoliciesS3ExportApi
+~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -12307,8 +12847,8 @@ post_s3_export_policies_rules
 .. literalinclude:: source/examples/FB2.20/post_s3_export_policies_rules.py
     :language: python
 
-Policiessmbclientap
-~~~~~~~~~~~~~~~~~~~
+PoliciesSMBClientApi
+~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -12360,8 +12900,8 @@ post_smb_client_policies_rules
 .. literalinclude:: source/examples/FB2.17/post_smb_client_policies_rules.py
     :language: python
 
-Policiessmbshareap
-~~~~~~~~~~~~~~~~~~
+PoliciesSMBShareApi
+~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -12413,81 +12953,81 @@ post_smb_share_policies_rules
 .. literalinclude:: source/examples/FB2.17/post_smb_share_policies_rules.py
     :language: python
 
-Policiessshcertificateauthorityap
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+PoliciesSSHCertificateAuthorityApi
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
 delete_admins_ssh_certificate_authority_policies
 ''''''''''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.14/delete_admins_ssh_certificate_authority_policies.py
+.. literalinclude:: source/examples/FB2.24/delete_admins_ssh_certificate_authority_policies.py
     :language: python
 
 get_admins_ssh_certificate_authority_policies
 '''''''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.14/get_admins_ssh_certificate_authority_policies.py
+.. literalinclude:: source/examples/FB2.24/get_admins_ssh_certificate_authority_policies.py
     :language: python
 
 post_admins_ssh_certificate_authority_policies
 ''''''''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.14/post_admins_ssh_certificate_authority_policies.py
+.. literalinclude:: source/examples/FB2.24/post_admins_ssh_certificate_authority_policies.py
     :language: python
 
 delete_arrays_ssh_certificate_authority_policies
 ''''''''''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.14/delete_arrays_ssh_certificate_authority_policies.py
+.. literalinclude:: source/examples/FB2.24/delete_arrays_ssh_certificate_authority_policies.py
     :language: python
 
 get_arrays_ssh_certificate_authority_policies
 '''''''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.14/get_arrays_ssh_certificate_authority_policies.py
+.. literalinclude:: source/examples/FB2.24/get_arrays_ssh_certificate_authority_policies.py
     :language: python
 
 post_arrays_ssh_certificate_authority_policies
 ''''''''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.14/post_arrays_ssh_certificate_authority_policies.py
+.. literalinclude:: source/examples/FB2.24/post_arrays_ssh_certificate_authority_policies.py
     :language: python
 
 delete_ssh_certificate_authority_policies_admins
 ''''''''''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.14/delete_ssh_certificate_authority_policies_admins.py
+.. literalinclude:: source/examples/FB2.24/delete_ssh_certificate_authority_policies_admins.py
     :language: python
 
 get_ssh_certificate_authority_policies_admins
 '''''''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.14/get_ssh_certificate_authority_policies_admins.py
+.. literalinclude:: source/examples/FB2.24/get_ssh_certificate_authority_policies_admins.py
     :language: python
 
 post_ssh_certificate_authority_policies_admins
 ''''''''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.14/post_ssh_certificate_authority_policies_admins.py
+.. literalinclude:: source/examples/FB2.24/post_ssh_certificate_authority_policies_admins.py
     :language: python
 
 delete_ssh_certificate_authority_policies_arrays
 ''''''''''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.14/delete_ssh_certificate_authority_policies_arrays.py
+.. literalinclude:: source/examples/FB2.24/delete_ssh_certificate_authority_policies_arrays.py
     :language: python
 
 get_ssh_certificate_authority_policies_arrays
 '''''''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.14/get_ssh_certificate_authority_policies_arrays.py
+.. literalinclude:: source/examples/FB2.24/get_ssh_certificate_authority_policies_arrays.py
     :language: python
 
 post_ssh_certificate_authority_policies_arrays
 ''''''''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.14/post_ssh_certificate_authority_policies_arrays.py
+.. literalinclude:: source/examples/FB2.24/post_ssh_certificate_authority_policies_arrays.py
     :language: python
 
 delete_ssh_certificate_authority_policies
@@ -12499,13 +13039,13 @@ delete_ssh_certificate_authority_policies
 get_ssh_certificate_authority_policies
 ''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.14/get_ssh_certificate_authority_policies.py
+.. literalinclude:: source/examples/FB2.24/get_ssh_certificate_authority_policies.py
     :language: python
 
 get_ssh_certificate_authority_policies_members
 ''''''''''''''''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.14/get_ssh_certificate_authority_policies_members.py
+.. literalinclude:: source/examples/FB2.24/get_ssh_certificate_authority_policies_members.py
     :language: python
 
 patch_ssh_certificate_authority_policies
@@ -12520,8 +13060,8 @@ post_ssh_certificate_authority_policies
 .. literalinclude:: source/examples/FB2.14/post_ssh_certificate_authority_policies.py
     :language: python
 
-Policiessnapshotap
-~~~~~~~~~~~~~~~~~~
+PoliciesSnapshotApi
+~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -12603,8 +13143,8 @@ post_policies
 .. literalinclude:: source/examples/FB2.17/post_policies.py
     :language: python
 
-Policiesstorageclasstieringap
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+PoliciesStorageClassTieringApi
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -12638,8 +13178,8 @@ post_storage_class_tiering_policies
 .. literalinclude:: source/examples/FB2.18/post_storage_class_tiering_policies.py
     :language: python
 
-Policiestlsap
-~~~~~~~~~~~~~
+PoliciesTLSApi
+~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -12709,8 +13249,8 @@ post_tls_policies
 .. literalinclude:: source/examples/FB2.17/post_tls_policies.py
     :language: python
 
-Policieswormdataap
-~~~~~~~~~~~~~~~~~~
+PoliciesWORMDataApi
+~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -12744,8 +13284,8 @@ post_worm_data_policies
 .. literalinclude:: source/examples/FB2.17/post_worm_data_policies.py
     :language: python
 
-Presetsap
-~~~~~~~~~
+PresetsApi
+~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -12779,8 +13319,8 @@ put_presets_workload
 .. literalinclude:: source/examples/FB2.23/put_presets_workload.py
     :language: python
 
-Publickeysap
-~~~~~~~~~~~~
+PublicKeysApi
+~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -12808,8 +13348,8 @@ get_public_keys_uses
 .. literalinclude:: source/examples/FB2.14/get_public_keys_uses.py
     :language: python
 
-Quotasap
-~~~~~~~~
+QuotasApi
+~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -12873,8 +13413,8 @@ post_quotas_users
 .. literalinclude:: source/examples/FB2.17/post_quotas_users.py
     :language: python
 
-Rdlap
-~~~~~
+RDLApi
+~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -12902,8 +13442,8 @@ get_rapid_data_locking_test
 .. literalinclude:: source/examples/FB2.1/get_rapid_data_locking_test.py
     :language: python
 
-Realmsap
-~~~~~~~~
+RealmsApi
+~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -12928,7 +13468,7 @@ delete_realms
 get_realms
 ''''''''''
 
-.. literalinclude:: source/examples/FB2.19/get_realms.py
+.. literalinclude:: source/examples/FB2.24/get_realms.py
     :language: python
 
 patch_realms
@@ -12955,8 +13495,8 @@ get_realms_space_storage_classes
 .. literalinclude:: source/examples/FB2.19/get_realms_space_storage_classes.py
     :language: python
 
-Remotearraysap
-~~~~~~~~~~~~~~
+RemoteArraysApi
+~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -12966,8 +13506,8 @@ get_remote_arrays
 .. literalinclude:: source/examples/FB2.17/get_remote_arrays.py
     :language: python
 
-Resiliencygroupsap
-~~~~~~~~~~~~~~~~~~
+ResiliencyGroupsApi
+~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -12983,8 +13523,8 @@ get_resiliency_groups_members
 .. literalinclude:: source/examples/FB2.23/get_resiliency_groups_members.py
     :language: python
 
-Resourceaccessesap
-~~~~~~~~~~~~~~~~~~
+ResourceAccessesApi
+~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -13006,8 +13546,8 @@ get_resource_accesses
 .. literalinclude:: source/examples/FB2.19/get_resource_accesses.py
     :language: python
 
-Rolesap
-~~~~~~~
+RolesApi
+~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -13017,8 +13557,8 @@ get_roles
 .. literalinclude:: source/examples/FB2.0/get_roles.py
     :language: python
 
-Saml2ssoap
-~~~~~~~~~~
+SAML2SSOApi
+~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -13037,13 +13577,13 @@ get_sso_saml2_idps
 patch_sso_saml2_idps
 ''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/patch_sso_saml2_idps.py
+.. literalinclude:: source/examples/FB2.24/patch_sso_saml2_idps.py
     :language: python
 
 post_sso_saml2_idps
 '''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.17/post_sso_saml2_idps.py
+.. literalinclude:: source/examples/FB2.24/post_sso_saml2_idps.py
     :language: python
 
 get_sso_saml2_idps_test
@@ -13058,8 +13598,8 @@ patch_sso_saml2_idps_test
 .. literalinclude:: source/examples/FB2.16/patch_sso_saml2_idps_test.py
     :language: python
 
-Smtpap
-~~~~~~
+SMTPApi
+~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -13075,8 +13615,8 @@ patch_smtp_servers
 .. literalinclude:: source/examples/FB2.15/patch_smtp_servers.py
     :language: python
 
-Snmpagentsap
-~~~~~~~~~~~~
+SNMPAgentsApi
+~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -13098,8 +13638,8 @@ patch_snmp_agents
 .. literalinclude:: source/examples/FB2.0/patch_snmp_agents.py
     :language: python
 
-Snmpmanagersap
-~~~~~~~~~~~~~~
+SNMPManagersApi
+~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -13133,8 +13673,8 @@ get_snmp_managers_test
 .. literalinclude:: source/examples/FB2.0/get_snmp_managers_test.py
     :language: python
 
-Serversap
-~~~~~~~~~
+ServersApi
+~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -13159,11 +13699,11 @@ patch_servers
 post_servers
 ''''''''''''
 
-.. literalinclude:: source/examples/FB2.16/post_servers.py
+.. literalinclude:: source/examples/FB2.24/post_servers.py
     :language: python
 
-Sessionsap
-~~~~~~~~~~
+SessionsApi
+~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -13173,10 +13713,22 @@ get_sessions
 .. literalinclude:: source/examples/FB2.3/get_sessions.py
     :language: python
 
-Softwareap
-~~~~~~~~~~
+SoftwareApi
+~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+get_software_bundle
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.24/get_software_bundle.py
+    :language: python
+
+post_software_bundle
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.24/post_software_bundle.py
+    :language: python
 
 get_software_check
 ''''''''''''''''''
@@ -13190,8 +13742,20 @@ post_software_check
 .. literalinclude:: source/examples/FB2.16/post_software_check.py
     :language: python
 
-Subnetsap
-~~~~~~~~~
+get_software_patches
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.24/get_software_patches.py
+    :language: python
+
+post_software_patches
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.24/post_software_patches.py
+    :language: python
+
+SubnetsApi
+~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -13219,8 +13783,8 @@ post_subnets
 .. literalinclude:: source/examples/FB2.0/post_subnets.py
     :language: python
 
-Supportap
-~~~~~~~~~
+SupportApi
+~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -13242,8 +13806,8 @@ get_support_test
 .. literalinclude:: source/examples/FB2.0/get_support_test.py
     :language: python
 
-Supportdiagnosticsap
-~~~~~~~~~~~~~~~~~~~~
+SupportDiagnosticsApi
+~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -13265,8 +13829,20 @@ post_support_diagnostics
 .. literalinclude:: source/examples/FB2.16/post_support_diagnostics.py
     :language: python
 
-Syslogap
-~~~~~~~~
+get_support_diagnostics_settings
+''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.24/get_support_diagnostics_settings.py
+    :language: python
+
+patch_support_diagnostics_settings
+''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.24/patch_support_diagnostics_settings.py
+    :language: python
+
+SyslogApi
+~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -13312,8 +13888,8 @@ get_syslog_servers_test
 .. literalinclude:: source/examples/FB2.0/get_syslog_servers_test.py
     :language: python
 
-Targetsap
-~~~~~~~~~
+TargetsApi
+~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -13347,8 +13923,8 @@ post_targets
 .. literalinclude:: source/examples/FB2.0/post_targets.py
     :language: python
 
-Usageap
-~~~~~~~
+UsageApi
+~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -13364,8 +13940,8 @@ get_usage_users
 .. literalinclude:: source/examples/FB2.17/get_usage_users.py
     :language: python
 
-Verificationkeysap
-~~~~~~~~~~~~~~~~~~
+VerificationKeysApi
+~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
@@ -13381,8 +13957,8 @@ patch_support_verification_keys
 .. literalinclude:: source/examples/FB2.7/patch_support_verification_keys.py
     :language: python
 
-Workloadsap
-~~~~~~~~~~~
+WorkloadsApi
+~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
 
