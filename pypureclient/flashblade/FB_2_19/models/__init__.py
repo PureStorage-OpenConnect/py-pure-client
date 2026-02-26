@@ -181,6 +181,7 @@ __class_model_dict = {
     'DirectoryServiceNfs': __LazyModelLoader('.directory_service_nfs', 'DirectoryServiceNfs'),
     'DirectoryServiceResponse': __LazyModelLoader('.directory_service_response', 'DirectoryServiceResponse'),
     'DirectoryServiceRole': __LazyModelLoader('.directory_service_role', 'DirectoryServiceRole'),
+    'DirectoryServiceRolePost': __LazyModelLoader('.directory_service_role_post', 'DirectoryServiceRolePost'),
     'DirectoryServiceRolesGetResponse': __LazyModelLoader('.directory_service_roles_get_response', 'DirectoryServiceRolesGetResponse'),
     'DirectoryServiceRolesResponse': __LazyModelLoader('.directory_service_roles_response', 'DirectoryServiceRolesResponse'),
     'DirectoryServiceSmb': __LazyModelLoader('.directory_service_smb', 'DirectoryServiceSmb'),
