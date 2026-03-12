@@ -6,6 +6,7 @@ A log of changes by version and date.
 ======= ========== =====
 Version Date       Notes
 ======= ========== =====
+1.84.1  03/12/2026 Fixed total of ArraySpaceStorageClassGetResponse and RealmSpaceStorageClassGetResponse to be list instead of object
 1.84.0  02/19/2026 Added FlashBlade 2.24 client
 1.83.1  02/09/2026 Fix setuptools deprecation and removal of pkg_resources
 1.83.0  02/03/2026 Added FlashArray 2.51 client
