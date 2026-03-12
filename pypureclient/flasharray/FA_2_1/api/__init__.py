@@ -21,22 +21,22 @@ class __LazyApiLoader:
         return cls
 
 __class_apis_dict = {
-    'APIClientsApi': __LazyApiLoader('pypureclient.flasharray.common.apis.api_clients_api_v_1', 'APIClientsApi', '2.1'),
-    'AuthorizationApi': __LazyApiLoader('pypureclient.flasharray.common.apis.authorization_api_v_0', 'AuthorizationApi', '2.1'),
-    'ConnectionsApi': __LazyApiLoader('pypureclient.flasharray.common.apis.connections_api_v_1', 'ConnectionsApi', '2.1'),
-    'HostGroupsApi': __LazyApiLoader('pypureclient.flasharray.common.apis.host_groups_api_v_1', 'HostGroupsApi', '2.1'),
-    'HostsApi': __LazyApiLoader('pypureclient.flasharray.common.apis.hosts_api_v_1', 'HostsApi', '2.1'),
-    'OffloadsApi': __LazyApiLoader('pypureclient.flasharray.common.apis.offloads_api_v_1', 'OffloadsApi', '2.1'),
-    'PodsApi': __LazyApiLoader('pypureclient.flasharray.common.apis.pods_api_v_1', 'PodsApi', '2.1'),
-    'ProtectionGroupSnapshotsApi': __LazyApiLoader('pypureclient.flasharray.common.apis.protection_group_snapshots_api_v_1', 'ProtectionGroupSnapshotsApi', '2.1'),
-    'ProtectionGroupsApi': __LazyApiLoader('pypureclient.flasharray.common.apis.protection_groups_api_v_1', 'ProtectionGroupsApi', '2.1'),
-    'RemotePodsApi': __LazyApiLoader('pypureclient.flasharray.common.apis.remote_pods_api_v_1', 'RemotePodsApi', '2.1'),
-    'RemoteProtectionGroupSnapshotsApi': __LazyApiLoader('pypureclient.flasharray.common.apis.remote_protection_group_snapshots_api_v_1', 'RemoteProtectionGroupSnapshotsApi', '2.1'),
-    'RemoteProtectionGroupsApi': __LazyApiLoader('pypureclient.flasharray.common.apis.remote_protection_groups_api_v_1', 'RemoteProtectionGroupsApi', '2.1'),
-    'RemoteVolumeSnapshotsApi': __LazyApiLoader('pypureclient.flasharray.common.apis.remote_volume_snapshots_api_v_1', 'RemoteVolumeSnapshotsApi', '2.1'),
-    'VolumeGroupsApi': __LazyApiLoader('pypureclient.flasharray.common.apis.volume_groups_api_v_1', 'VolumeGroupsApi', '2.1'),
-    'VolumeSnapshotsApi': __LazyApiLoader('pypureclient.flasharray.common.apis.volume_snapshots_api_v_1', 'VolumeSnapshotsApi', '2.1'),
-    'VolumesApi': __LazyApiLoader('pypureclient.flasharray.common.apis.volumes_api_v_1', 'VolumesApi', '2.1'),
+    'APIClientsApi': __LazyApiLoader('pypureclient.flasharray._common.apis.api_clients_api_v_2_1', 'APIClientsApi', '2.1'),
+    'AuthorizationApi': __LazyApiLoader('pypureclient.flasharray._common.apis.authorization_api_v_2_0', 'AuthorizationApi', '2.1'),
+    'ConnectionsApi': __LazyApiLoader('pypureclient.flasharray._common.apis.connections_api_v_2_1', 'ConnectionsApi', '2.1'),
+    'HostGroupsApi': __LazyApiLoader('pypureclient.flasharray._common.apis.host_groups_api_v_2_1', 'HostGroupsApi', '2.1'),
+    'HostsApi': __LazyApiLoader('pypureclient.flasharray._common.apis.hosts_api_v_2_1', 'HostsApi', '2.1'),
+    'OffloadsApi': __LazyApiLoader('pypureclient.flasharray._common.apis.offloads_api_v_2_1', 'OffloadsApi', '2.1'),
+    'PodsApi': __LazyApiLoader('pypureclient.flasharray._common.apis.pods_api_v_2_1', 'PodsApi', '2.1'),
+    'ProtectionGroupSnapshotsApi': __LazyApiLoader('pypureclient.flasharray._common.apis.protection_group_snapshots_api_v_2_1', 'ProtectionGroupSnapshotsApi', '2.1'),
+    'ProtectionGroupsApi': __LazyApiLoader('pypureclient.flasharray._common.apis.protection_groups_api_v_2_1', 'ProtectionGroupsApi', '2.1'),
+    'RemotePodsApi': __LazyApiLoader('pypureclient.flasharray._common.apis.remote_pods_api_v_2_1', 'RemotePodsApi', '2.1'),
+    'RemoteProtectionGroupSnapshotsApi': __LazyApiLoader('pypureclient.flasharray._common.apis.remote_protection_group_snapshots_api_v_2_1', 'RemoteProtectionGroupSnapshotsApi', '2.1'),
+    'RemoteProtectionGroupsApi': __LazyApiLoader('pypureclient.flasharray._common.apis.remote_protection_groups_api_v_2_1', 'RemoteProtectionGroupsApi', '2.1'),
+    'RemoteVolumeSnapshotsApi': __LazyApiLoader('pypureclient.flasharray._common.apis.remote_volume_snapshots_api_v_2_1', 'RemoteVolumeSnapshotsApi', '2.1'),
+    'VolumeGroupsApi': __LazyApiLoader('pypureclient.flasharray._common.apis.volume_groups_api_v_2_1', 'VolumeGroupsApi', '2.1'),
+    'VolumeSnapshotsApi': __LazyApiLoader('pypureclient.flasharray._common.apis.volume_snapshots_api_v_2_1', 'VolumeSnapshotsApi', '2.1'),
+    'VolumesApi': __LazyApiLoader('pypureclient.flasharray._common.apis.volumes_api_v_2_1', 'VolumesApi', '2.1'),
 }
 
 __all__ = list(__class_apis_dict.keys())
