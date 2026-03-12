@@ -34,7 +34,7 @@ class ArraySpaceStorageClassGetResponse(BaseModel):
     continuation_token: Optional[StrictStr] = Field(default=None, description="Continuation token that can be provided in the `continuation_token` query param to get the next page of data. If you use the `continuation_token` to page through data you are guaranteed to get all items exactly once regardless of how items are modified. If an item is added or deleted during the pagination then it may or may not be returned. The `continuation_token` is generated if the `limit` is less than the remaining number of items, and the default sort is used (no sort is specified).")
     total_item_count: Optional[StrictInt] = Field(default=None, description="Total number of items after applying `filter` params.")
     items: Optional[conlist(StorageClassSpace)] = Field(default=None, description="A list of array space metrics objects for each storage class.")
-    total: Optional[StorageClassSpace] = None
+    total: Optional[conlist(StorageClassSpace)] = Field(default=None, description="Total of all records after filtering. If `total_only` query param is `true`, then no items will be returned.")
     __properties = ["continuation_token", "total_item_count", "items", "total"]
 
     class Config:
@@ -73,9 +73,13 @@ class ArraySpaceStorageClassGetResponse(BaseModel):
                 if _item:
                     _items.append(_item.to_dict(include_readonly=include_readonly))
             _dict['items'] = _items
-        # override the default output from pydantic by calling `to_dict()` of total
+        # override the default output from pydantic by calling `to_dict()` of each item in total (list)
         if _include_in_dict('total', include_readonly, excluded_fields, none_fields):
-            _dict['total'] = self.total.to_dict(include_readonly=include_readonly)
+            _items = []
+            for _item in self.total:
+                if _item:
+                    _items.append(_item.to_dict(include_readonly=include_readonly))
+            _dict['total'] = _items
         return _dict
 
     def __getitem__(self, key):
@@ -116,7 +120,7 @@ class ArraySpaceStorageClassGetResponse(BaseModel):
             "continuation_token": obj.get("continuation_token"),
             "total_item_count": obj.get("total_item_count"),
             "items": [StorageClassSpace.from_dict(_item) for _item in obj.get("items")] if obj.get("items") is not None else None,
-            "total": StorageClassSpace.from_dict(obj.get("total")) if obj.get("total") is not None else None
+            "total": [StorageClassSpace.from_dict(_item) for _item in obj.get("total")] if obj.get("total") is not None else None
         })
         return _obj
 
