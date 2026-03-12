@@ -10308,10 +10308,430 @@ get_alert_watchers_test
 .. literalinclude:: source/examples/FB2.0/get_alert_watchers_test.py
     :language: python
 
+delete_alert_watchers
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_alert_watchers.py
+    :language: python
+
+get_alert_watchers
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_alert_watchers.py
+    :language: python
+
+patch_alert_watchers
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_alert_watchers.py
+    :language: python
+
+post_alert_watchers
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_alert_watchers.py
+    :language: python
+
+get_alert_watchers_test
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_alert_watchers_test.py
+    :language: python
+
+delete_alert_watchers
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_alert_watchers.py
+    :language: python
+
+get_alert_watchers
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_alert_watchers.py
+    :language: python
+
+patch_alert_watchers
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_alert_watchers.py
+    :language: python
+
+post_alert_watchers
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_alert_watchers.py
+    :language: python
+
+get_alert_watchers_test
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_alert_watchers_test.py
+    :language: python
+
+delete_alert_watchers
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_alert_watchers.py
+    :language: python
+
+get_alert_watchers
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_alert_watchers.py
+    :language: python
+
+patch_alert_watchers
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_alert_watchers.py
+    :language: python
+
+post_alert_watchers
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_alert_watchers.py
+    :language: python
+
+get_alert_watchers_test
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_alert_watchers_test.py
+    :language: python
+
+delete_alert_watchers
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_alert_watchers.py
+    :language: python
+
+get_alert_watchers
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_alert_watchers.py
+    :language: python
+
+patch_alert_watchers
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_alert_watchers.py
+    :language: python
+
+post_alert_watchers
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_alert_watchers.py
+    :language: python
+
+get_alert_watchers_test
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_alert_watchers_test.py
+    :language: python
+
+delete_alert_watchers
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_alert_watchers.py
+    :language: python
+
+get_alert_watchers
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_alert_watchers.py
+    :language: python
+
+patch_alert_watchers
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_alert_watchers.py
+    :language: python
+
+post_alert_watchers
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_alert_watchers.py
+    :language: python
+
+get_alert_watchers_test
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_alert_watchers_test.py
+    :language: python
+
+delete_alert_watchers
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_alert_watchers.py
+    :language: python
+
+get_alert_watchers
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_alert_watchers.py
+    :language: python
+
+patch_alert_watchers
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_alert_watchers.py
+    :language: python
+
+post_alert_watchers
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_alert_watchers.py
+    :language: python
+
+get_alert_watchers_test
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_alert_watchers_test.py
+    :language: python
+
+delete_alert_watchers
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_alert_watchers.py
+    :language: python
+
+get_alert_watchers
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_alert_watchers.py
+    :language: python
+
+patch_alert_watchers
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_alert_watchers.py
+    :language: python
+
+post_alert_watchers
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_alert_watchers.py
+    :language: python
+
+get_alert_watchers_test
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_alert_watchers_test.py
+    :language: python
+
+delete_alert_watchers
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_alert_watchers.py
+    :language: python
+
+get_alert_watchers
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_alert_watchers.py
+    :language: python
+
+patch_alert_watchers
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_alert_watchers.py
+    :language: python
+
+post_alert_watchers
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_alert_watchers.py
+    :language: python
+
+get_alert_watchers_test
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_alert_watchers_test.py
+    :language: python
+
+delete_alert_watchers
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_alert_watchers.py
+    :language: python
+
+get_alert_watchers
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_alert_watchers.py
+    :language: python
+
+patch_alert_watchers
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_alert_watchers.py
+    :language: python
+
+post_alert_watchers
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_alert_watchers.py
+    :language: python
+
+get_alert_watchers_test
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_alert_watchers_test.py
+    :language: python
+
+delete_alert_watchers
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_alert_watchers.py
+    :language: python
+
+get_alert_watchers
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_alert_watchers.py
+    :language: python
+
+patch_alert_watchers
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_alert_watchers.py
+    :language: python
+
+post_alert_watchers
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_alert_watchers.py
+    :language: python
+
+get_alert_watchers_test
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_alert_watchers_test.py
+    :language: python
+
 AlertsApi
 ~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+get_alerts
+''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_alerts.py
+    :language: python
+
+patch_alerts
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_alerts.py
+    :language: python
+
+get_alerts
+''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_alerts.py
+    :language: python
+
+patch_alerts
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_alerts.py
+    :language: python
+
+get_alerts
+''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_alerts.py
+    :language: python
+
+patch_alerts
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_alerts.py
+    :language: python
+
+get_alerts
+''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_alerts.py
+    :language: python
+
+patch_alerts
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_alerts.py
+    :language: python
+
+get_alerts
+''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_alerts.py
+    :language: python
+
+patch_alerts
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_alerts.py
+    :language: python
+
+get_alerts
+''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_alerts.py
+    :language: python
+
+patch_alerts
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_alerts.py
+    :language: python
+
+get_alerts
+''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_alerts.py
+    :language: python
+
+patch_alerts
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_alerts.py
+    :language: python
+
+get_alerts
+''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_alerts.py
+    :language: python
+
+patch_alerts
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_alerts.py
+    :language: python
+
+get_alerts
+''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_alerts.py
+    :language: python
+
+patch_alerts
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_alerts.py
+    :language: python
+
+get_alerts
+''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_alerts.py
+    :language: python
+
+patch_alerts
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_alerts.py
+    :language: python
 
 get_alerts
 ''''''''''
@@ -10526,6 +10946,102 @@ post_log_targets_file_systems
 .. literalinclude:: source/examples/FB2.20/post_log_targets_file_systems.py
     :language: python
 
+delete_log_targets_file_systems
+'''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/delete_log_targets_file_systems.py
+    :language: python
+
+get_log_targets_file_systems
+''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/get_log_targets_file_systems.py
+    :language: python
+
+patch_log_targets_file_systems
+''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/patch_log_targets_file_systems.py
+    :language: python
+
+post_log_targets_file_systems
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/post_log_targets_file_systems.py
+    :language: python
+
+delete_log_targets_file_systems
+'''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/delete_log_targets_file_systems.py
+    :language: python
+
+get_log_targets_file_systems
+''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/get_log_targets_file_systems.py
+    :language: python
+
+patch_log_targets_file_systems
+''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/patch_log_targets_file_systems.py
+    :language: python
+
+post_log_targets_file_systems
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/post_log_targets_file_systems.py
+    :language: python
+
+delete_log_targets_file_systems
+'''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/delete_log_targets_file_systems.py
+    :language: python
+
+get_log_targets_file_systems
+''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/get_log_targets_file_systems.py
+    :language: python
+
+patch_log_targets_file_systems
+''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/patch_log_targets_file_systems.py
+    :language: python
+
+post_log_targets_file_systems
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/post_log_targets_file_systems.py
+    :language: python
+
+delete_log_targets_file_systems
+'''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/delete_log_targets_file_systems.py
+    :language: python
+
+get_log_targets_file_systems
+''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/get_log_targets_file_systems.py
+    :language: python
+
+patch_log_targets_file_systems
+''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/patch_log_targets_file_systems.py
+    :language: python
+
+post_log_targets_file_systems
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/post_log_targets_file_systems.py
+    :language: python
+
 AuditLogTargetForObjectStoreApi
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -10566,6 +11082,66 @@ get_audits
 .. literalinclude:: source/examples/FB2.0/get_audits.py
     :language: python
 
+get_audits
+''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_audits.py
+    :language: python
+
+get_audits
+''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_audits.py
+    :language: python
+
+get_audits
+''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_audits.py
+    :language: python
+
+get_audits
+''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_audits.py
+    :language: python
+
+get_audits
+''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_audits.py
+    :language: python
+
+get_audits
+''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_audits.py
+    :language: python
+
+get_audits
+''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_audits.py
+    :language: python
+
+get_audits
+''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_audits.py
+    :language: python
+
+get_audits
+''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_audits.py
+    :language: python
+
+get_audits
+''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_audits.py
+    :language: python
+
 AuthorizationApi
 ~~~~~~~~~~~~~~~~
 
@@ -10575,6 +11151,66 @@ BladesApi
 ~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+get_blades
+''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_blades.py
+    :language: python
+
+get_blades
+''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_blades.py
+    :language: python
+
+get_blades
+''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_blades.py
+    :language: python
+
+get_blades
+''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_blades.py
+    :language: python
+
+get_blades
+''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_blades.py
+    :language: python
+
+get_blades
+''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_blades.py
+    :language: python
+
+get_blades
+''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_blades.py
+    :language: python
+
+get_blades
+''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_blades.py
+    :language: python
+
+get_blades
+''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_blades.py
+    :language: python
+
+get_blades
+''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_blades.py
+    :language: python
 
 get_blades
 ''''''''''
@@ -10801,10 +11437,646 @@ get_certificate_groups_uses
 .. literalinclude:: source/examples/FB2.0/get_certificate_groups_uses.py
     :language: python
 
+delete_certificate_groups_certificates
+''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_certificate_groups_certificates.py
+    :language: python
+
+get_certificate_groups_certificates
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificate_groups_certificates.py
+    :language: python
+
+post_certificate_groups_certificates
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_certificate_groups_certificates.py
+    :language: python
+
+delete_certificate_groups
+'''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_certificate_groups.py
+    :language: python
+
+get_certificate_groups
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificate_groups.py
+    :language: python
+
+post_certificate_groups
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_certificate_groups.py
+    :language: python
+
+get_certificate_groups_uses
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificate_groups_uses.py
+    :language: python
+
+delete_certificate_groups_certificates
+''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_certificate_groups_certificates.py
+    :language: python
+
+get_certificate_groups_certificates
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificate_groups_certificates.py
+    :language: python
+
+post_certificate_groups_certificates
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_certificate_groups_certificates.py
+    :language: python
+
+delete_certificate_groups
+'''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_certificate_groups.py
+    :language: python
+
+get_certificate_groups
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificate_groups.py
+    :language: python
+
+post_certificate_groups
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_certificate_groups.py
+    :language: python
+
+get_certificate_groups_uses
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificate_groups_uses.py
+    :language: python
+
+delete_certificate_groups_certificates
+''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_certificate_groups_certificates.py
+    :language: python
+
+get_certificate_groups_certificates
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificate_groups_certificates.py
+    :language: python
+
+post_certificate_groups_certificates
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_certificate_groups_certificates.py
+    :language: python
+
+delete_certificate_groups
+'''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_certificate_groups.py
+    :language: python
+
+get_certificate_groups
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificate_groups.py
+    :language: python
+
+post_certificate_groups
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_certificate_groups.py
+    :language: python
+
+get_certificate_groups_uses
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificate_groups_uses.py
+    :language: python
+
+delete_certificate_groups_certificates
+''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_certificate_groups_certificates.py
+    :language: python
+
+get_certificate_groups_certificates
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificate_groups_certificates.py
+    :language: python
+
+post_certificate_groups_certificates
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_certificate_groups_certificates.py
+    :language: python
+
+delete_certificate_groups
+'''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_certificate_groups.py
+    :language: python
+
+get_certificate_groups
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificate_groups.py
+    :language: python
+
+post_certificate_groups
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_certificate_groups.py
+    :language: python
+
+get_certificate_groups_uses
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificate_groups_uses.py
+    :language: python
+
+delete_certificate_groups_certificates
+''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_certificate_groups_certificates.py
+    :language: python
+
+get_certificate_groups_certificates
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificate_groups_certificates.py
+    :language: python
+
+post_certificate_groups_certificates
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_certificate_groups_certificates.py
+    :language: python
+
+delete_certificate_groups
+'''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_certificate_groups.py
+    :language: python
+
+get_certificate_groups
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificate_groups.py
+    :language: python
+
+post_certificate_groups
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_certificate_groups.py
+    :language: python
+
+get_certificate_groups_uses
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificate_groups_uses.py
+    :language: python
+
+delete_certificate_groups_certificates
+''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_certificate_groups_certificates.py
+    :language: python
+
+get_certificate_groups_certificates
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificate_groups_certificates.py
+    :language: python
+
+post_certificate_groups_certificates
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_certificate_groups_certificates.py
+    :language: python
+
+delete_certificate_groups
+'''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_certificate_groups.py
+    :language: python
+
+get_certificate_groups
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificate_groups.py
+    :language: python
+
+post_certificate_groups
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_certificate_groups.py
+    :language: python
+
+get_certificate_groups_uses
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificate_groups_uses.py
+    :language: python
+
+delete_certificate_groups_certificates
+''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_certificate_groups_certificates.py
+    :language: python
+
+get_certificate_groups_certificates
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificate_groups_certificates.py
+    :language: python
+
+post_certificate_groups_certificates
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_certificate_groups_certificates.py
+    :language: python
+
+delete_certificate_groups
+'''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_certificate_groups.py
+    :language: python
+
+get_certificate_groups
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificate_groups.py
+    :language: python
+
+post_certificate_groups
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_certificate_groups.py
+    :language: python
+
+get_certificate_groups_uses
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificate_groups_uses.py
+    :language: python
+
+delete_certificate_groups_certificates
+''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_certificate_groups_certificates.py
+    :language: python
+
+get_certificate_groups_certificates
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificate_groups_certificates.py
+    :language: python
+
+post_certificate_groups_certificates
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_certificate_groups_certificates.py
+    :language: python
+
+delete_certificate_groups
+'''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_certificate_groups.py
+    :language: python
+
+get_certificate_groups
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificate_groups.py
+    :language: python
+
+post_certificate_groups
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_certificate_groups.py
+    :language: python
+
+get_certificate_groups_uses
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificate_groups_uses.py
+    :language: python
+
+delete_certificate_groups_certificates
+''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_certificate_groups_certificates.py
+    :language: python
+
+get_certificate_groups_certificates
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificate_groups_certificates.py
+    :language: python
+
+post_certificate_groups_certificates
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_certificate_groups_certificates.py
+    :language: python
+
+delete_certificate_groups
+'''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_certificate_groups.py
+    :language: python
+
+get_certificate_groups
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificate_groups.py
+    :language: python
+
+post_certificate_groups
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_certificate_groups.py
+    :language: python
+
+get_certificate_groups_uses
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificate_groups_uses.py
+    :language: python
+
+delete_certificate_groups_certificates
+''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_certificate_groups_certificates.py
+    :language: python
+
+get_certificate_groups_certificates
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificate_groups_certificates.py
+    :language: python
+
+post_certificate_groups_certificates
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_certificate_groups_certificates.py
+    :language: python
+
+delete_certificate_groups
+'''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_certificate_groups.py
+    :language: python
+
+get_certificate_groups
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificate_groups.py
+    :language: python
+
+post_certificate_groups
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_certificate_groups.py
+    :language: python
+
+get_certificate_groups_uses
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificate_groups_uses.py
+    :language: python
+
 CertificatesApi
 ~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+delete_certificates_certificate_groups
+''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_certificates_certificate_groups.py
+    :language: python
+
+get_certificates_certificate_groups
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificates_certificate_groups.py
+    :language: python
+
+post_certificates_certificate_groups
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_certificates_certificate_groups.py
+    :language: python
+
+post_certificates_certificate_signing_requests
+''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/post_certificates_certificate_signing_requests.py
+    :language: python
+
+delete_certificates
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_certificates.py
+    :language: python
+
+get_certificates
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificates.py
+    :language: python
+
+patch_certificates
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/patch_certificates.py
+    :language: python
+
+post_certificates
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/post_certificates.py
+    :language: python
+
+get_certificates_uses
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificates_uses.py
+    :language: python
+
+delete_certificates_certificate_groups
+''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_certificates_certificate_groups.py
+    :language: python
+
+get_certificates_certificate_groups
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificates_certificate_groups.py
+    :language: python
+
+post_certificates_certificate_groups
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_certificates_certificate_groups.py
+    :language: python
+
+post_certificates_certificate_signing_requests
+''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/post_certificates_certificate_signing_requests.py
+    :language: python
+
+delete_certificates
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_certificates.py
+    :language: python
+
+get_certificates
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificates.py
+    :language: python
+
+patch_certificates
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/patch_certificates.py
+    :language: python
+
+post_certificates
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/post_certificates.py
+    :language: python
+
+get_certificates_uses
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificates_uses.py
+    :language: python
+
+delete_certificates_certificate_groups
+''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_certificates_certificate_groups.py
+    :language: python
+
+get_certificates_certificate_groups
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificates_certificate_groups.py
+    :language: python
+
+post_certificates_certificate_groups
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_certificates_certificate_groups.py
+    :language: python
+
+post_certificates_certificate_signing_requests
+''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/post_certificates_certificate_signing_requests.py
+    :language: python
+
+delete_certificates
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_certificates.py
+    :language: python
+
+get_certificates
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificates.py
+    :language: python
+
+patch_certificates
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/patch_certificates.py
+    :language: python
+
+post_certificates
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/post_certificates.py
+    :language: python
+
+get_certificates_uses
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificates_uses.py
+    :language: python
+
+delete_certificates_certificate_groups
+''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_certificates_certificate_groups.py
+    :language: python
+
+get_certificates_certificate_groups
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificates_certificate_groups.py
+    :language: python
+
+post_certificates_certificate_groups
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_certificates_certificate_groups.py
+    :language: python
+
+post_certificates_certificate_signing_requests
+''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/post_certificates_certificate_signing_requests.py
+    :language: python
+
+delete_certificates
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_certificates.py
+    :language: python
+
+get_certificates
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificates.py
+    :language: python
+
+patch_certificates
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/patch_certificates.py
+    :language: python
+
+post_certificates
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/post_certificates.py
+    :language: python
+
+get_certificates_uses
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_certificates_uses.py
+    :language: python
 
 delete_certificates_certificate_groups
 ''''''''''''''''''''''''''''''''''''''
@@ -10881,6 +12153,198 @@ DNSApi
 ~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+delete_dns
+''''''''''
+
+.. literalinclude:: source/examples/FB2.16/delete_dns.py
+    :language: python
+
+get_dns
+'''''''
+
+.. literalinclude:: source/examples/FB2.0/get_dns.py
+    :language: python
+
+patch_dns
+'''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_dns.py
+    :language: python
+
+post_dns
+''''''''
+
+.. literalinclude:: source/examples/FB2.16/post_dns.py
+    :language: python
+
+delete_dns
+''''''''''
+
+.. literalinclude:: source/examples/FB2.16/delete_dns.py
+    :language: python
+
+get_dns
+'''''''
+
+.. literalinclude:: source/examples/FB2.0/get_dns.py
+    :language: python
+
+patch_dns
+'''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_dns.py
+    :language: python
+
+post_dns
+''''''''
+
+.. literalinclude:: source/examples/FB2.16/post_dns.py
+    :language: python
+
+delete_dns
+''''''''''
+
+.. literalinclude:: source/examples/FB2.16/delete_dns.py
+    :language: python
+
+get_dns
+'''''''
+
+.. literalinclude:: source/examples/FB2.0/get_dns.py
+    :language: python
+
+patch_dns
+'''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_dns.py
+    :language: python
+
+post_dns
+''''''''
+
+.. literalinclude:: source/examples/FB2.16/post_dns.py
+    :language: python
+
+delete_dns
+''''''''''
+
+.. literalinclude:: source/examples/FB2.16/delete_dns.py
+    :language: python
+
+get_dns
+'''''''
+
+.. literalinclude:: source/examples/FB2.0/get_dns.py
+    :language: python
+
+patch_dns
+'''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_dns.py
+    :language: python
+
+post_dns
+''''''''
+
+.. literalinclude:: source/examples/FB2.16/post_dns.py
+    :language: python
+
+delete_dns
+''''''''''
+
+.. literalinclude:: source/examples/FB2.16/delete_dns.py
+    :language: python
+
+get_dns
+'''''''
+
+.. literalinclude:: source/examples/FB2.0/get_dns.py
+    :language: python
+
+patch_dns
+'''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_dns.py
+    :language: python
+
+post_dns
+''''''''
+
+.. literalinclude:: source/examples/FB2.16/post_dns.py
+    :language: python
+
+delete_dns
+''''''''''
+
+.. literalinclude:: source/examples/FB2.16/delete_dns.py
+    :language: python
+
+get_dns
+'''''''
+
+.. literalinclude:: source/examples/FB2.0/get_dns.py
+    :language: python
+
+patch_dns
+'''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_dns.py
+    :language: python
+
+post_dns
+''''''''
+
+.. literalinclude:: source/examples/FB2.16/post_dns.py
+    :language: python
+
+delete_dns
+''''''''''
+
+.. literalinclude:: source/examples/FB2.16/delete_dns.py
+    :language: python
+
+get_dns
+'''''''
+
+.. literalinclude:: source/examples/FB2.0/get_dns.py
+    :language: python
+
+patch_dns
+'''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_dns.py
+    :language: python
+
+post_dns
+''''''''
+
+.. literalinclude:: source/examples/FB2.16/post_dns.py
+    :language: python
+
+delete_dns
+''''''''''
+
+.. literalinclude:: source/examples/FB2.16/delete_dns.py
+    :language: python
+
+get_dns
+'''''''
+
+.. literalinclude:: source/examples/FB2.0/get_dns.py
+    :language: python
+
+patch_dns
+'''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_dns.py
+    :language: python
+
+post_dns
+''''''''
+
+.. literalinclude:: source/examples/FB2.16/post_dns.py
+    :language: python
 
 delete_dns
 ''''''''''
@@ -11071,6 +12535,66 @@ DrivesApi
 ~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+get_drives
+''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_drives.py
+    :language: python
+
+get_drives
+''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_drives.py
+    :language: python
+
+get_drives
+''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_drives.py
+    :language: python
+
+get_drives
+''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_drives.py
+    :language: python
+
+get_drives
+''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_drives.py
+    :language: python
+
+get_drives
+''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_drives.py
+    :language: python
+
+get_drives
+''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_drives.py
+    :language: python
+
+get_drives
+''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_drives.py
+    :language: python
+
+get_drives
+''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_drives.py
+    :language: python
+
+get_drives
+''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_drives.py
+    :language: python
 
 get_drives
 ''''''''''
@@ -11456,6 +12980,102 @@ patch_hardware
 .. literalinclude:: source/examples/FB2.0/patch_hardware.py
     :language: python
 
+get_hardware
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_hardware.py
+    :language: python
+
+patch_hardware
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_hardware.py
+    :language: python
+
+get_hardware
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_hardware.py
+    :language: python
+
+patch_hardware
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_hardware.py
+    :language: python
+
+get_hardware
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_hardware.py
+    :language: python
+
+patch_hardware
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_hardware.py
+    :language: python
+
+get_hardware
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_hardware.py
+    :language: python
+
+patch_hardware
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_hardware.py
+    :language: python
+
+get_hardware
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_hardware.py
+    :language: python
+
+patch_hardware
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_hardware.py
+    :language: python
+
+get_hardware
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_hardware.py
+    :language: python
+
+patch_hardware
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_hardware.py
+    :language: python
+
+get_hardware
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_hardware.py
+    :language: python
+
+patch_hardware
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_hardware.py
+    :language: python
+
+get_hardware
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_hardware.py
+    :language: python
+
+patch_hardware
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_hardware.py
+    :language: python
+
 HardwareConnectorsApi
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -11479,10 +13099,490 @@ get_hardware_connectors_performance
 .. literalinclude:: source/examples/FB2.3/get_hardware_connectors_performance.py
     :language: python
 
+get_hardware_connectors
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/get_hardware_connectors.py
+    :language: python
+
+patch_hardware_connectors
+'''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/patch_hardware_connectors.py
+    :language: python
+
+get_hardware_connectors_performance
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.3/get_hardware_connectors_performance.py
+    :language: python
+
+get_hardware_connectors
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/get_hardware_connectors.py
+    :language: python
+
+patch_hardware_connectors
+'''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/patch_hardware_connectors.py
+    :language: python
+
+get_hardware_connectors_performance
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.3/get_hardware_connectors_performance.py
+    :language: python
+
+get_hardware_connectors
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/get_hardware_connectors.py
+    :language: python
+
+patch_hardware_connectors
+'''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/patch_hardware_connectors.py
+    :language: python
+
+get_hardware_connectors_performance
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.3/get_hardware_connectors_performance.py
+    :language: python
+
+get_hardware_connectors
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/get_hardware_connectors.py
+    :language: python
+
+patch_hardware_connectors
+'''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/patch_hardware_connectors.py
+    :language: python
+
+get_hardware_connectors_performance
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.3/get_hardware_connectors_performance.py
+    :language: python
+
+get_hardware_connectors
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/get_hardware_connectors.py
+    :language: python
+
+patch_hardware_connectors
+'''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/patch_hardware_connectors.py
+    :language: python
+
+get_hardware_connectors_performance
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.3/get_hardware_connectors_performance.py
+    :language: python
+
+get_hardware_connectors
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/get_hardware_connectors.py
+    :language: python
+
+patch_hardware_connectors
+'''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/patch_hardware_connectors.py
+    :language: python
+
+get_hardware_connectors_performance
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.3/get_hardware_connectors_performance.py
+    :language: python
+
+get_hardware_connectors
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/get_hardware_connectors.py
+    :language: python
+
+patch_hardware_connectors
+'''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/patch_hardware_connectors.py
+    :language: python
+
+get_hardware_connectors_performance
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.3/get_hardware_connectors_performance.py
+    :language: python
+
+get_hardware_connectors
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/get_hardware_connectors.py
+    :language: python
+
+patch_hardware_connectors
+'''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/patch_hardware_connectors.py
+    :language: python
+
+get_hardware_connectors_performance
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.3/get_hardware_connectors_performance.py
+    :language: python
+
+get_hardware_connectors
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/get_hardware_connectors.py
+    :language: python
+
+patch_hardware_connectors
+'''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/patch_hardware_connectors.py
+    :language: python
+
+get_hardware_connectors_performance
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.3/get_hardware_connectors_performance.py
+    :language: python
+
+get_hardware_connectors
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/get_hardware_connectors.py
+    :language: python
+
+patch_hardware_connectors
+'''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/patch_hardware_connectors.py
+    :language: python
+
+get_hardware_connectors_performance
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.3/get_hardware_connectors_performance.py
+    :language: python
+
 KMIPApi
 ~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+delete_kmip
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.1/delete_kmip.py
+    :language: python
+
+get_kmip
+''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_kmip.py
+    :language: python
+
+patch_kmip
+''''''''''
+
+.. literalinclude:: source/examples/FB2.1/patch_kmip.py
+    :language: python
+
+post_kmip
+'''''''''
+
+.. literalinclude:: source/examples/FB2.1/post_kmip.py
+    :language: python
+
+get_kmip_test
+'''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_kmip_test.py
+    :language: python
+
+delete_kmip
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.1/delete_kmip.py
+    :language: python
+
+get_kmip
+''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_kmip.py
+    :language: python
+
+patch_kmip
+''''''''''
+
+.. literalinclude:: source/examples/FB2.1/patch_kmip.py
+    :language: python
+
+post_kmip
+'''''''''
+
+.. literalinclude:: source/examples/FB2.1/post_kmip.py
+    :language: python
+
+get_kmip_test
+'''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_kmip_test.py
+    :language: python
+
+delete_kmip
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.1/delete_kmip.py
+    :language: python
+
+get_kmip
+''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_kmip.py
+    :language: python
+
+patch_kmip
+''''''''''
+
+.. literalinclude:: source/examples/FB2.1/patch_kmip.py
+    :language: python
+
+post_kmip
+'''''''''
+
+.. literalinclude:: source/examples/FB2.1/post_kmip.py
+    :language: python
+
+get_kmip_test
+'''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_kmip_test.py
+    :language: python
+
+delete_kmip
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.1/delete_kmip.py
+    :language: python
+
+get_kmip
+''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_kmip.py
+    :language: python
+
+patch_kmip
+''''''''''
+
+.. literalinclude:: source/examples/FB2.1/patch_kmip.py
+    :language: python
+
+post_kmip
+'''''''''
+
+.. literalinclude:: source/examples/FB2.1/post_kmip.py
+    :language: python
+
+get_kmip_test
+'''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_kmip_test.py
+    :language: python
+
+delete_kmip
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.1/delete_kmip.py
+    :language: python
+
+get_kmip
+''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_kmip.py
+    :language: python
+
+patch_kmip
+''''''''''
+
+.. literalinclude:: source/examples/FB2.1/patch_kmip.py
+    :language: python
+
+post_kmip
+'''''''''
+
+.. literalinclude:: source/examples/FB2.1/post_kmip.py
+    :language: python
+
+get_kmip_test
+'''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_kmip_test.py
+    :language: python
+
+delete_kmip
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.1/delete_kmip.py
+    :language: python
+
+get_kmip
+''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_kmip.py
+    :language: python
+
+patch_kmip
+''''''''''
+
+.. literalinclude:: source/examples/FB2.1/patch_kmip.py
+    :language: python
+
+post_kmip
+'''''''''
+
+.. literalinclude:: source/examples/FB2.1/post_kmip.py
+    :language: python
+
+get_kmip_test
+'''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_kmip_test.py
+    :language: python
+
+delete_kmip
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.1/delete_kmip.py
+    :language: python
+
+get_kmip
+''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_kmip.py
+    :language: python
+
+patch_kmip
+''''''''''
+
+.. literalinclude:: source/examples/FB2.1/patch_kmip.py
+    :language: python
+
+post_kmip
+'''''''''
+
+.. literalinclude:: source/examples/FB2.1/post_kmip.py
+    :language: python
+
+get_kmip_test
+'''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_kmip_test.py
+    :language: python
+
+delete_kmip
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.1/delete_kmip.py
+    :language: python
+
+get_kmip
+''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_kmip.py
+    :language: python
+
+patch_kmip
+''''''''''
+
+.. literalinclude:: source/examples/FB2.1/patch_kmip.py
+    :language: python
+
+post_kmip
+'''''''''
+
+.. literalinclude:: source/examples/FB2.1/post_kmip.py
+    :language: python
+
+get_kmip_test
+'''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_kmip_test.py
+    :language: python
+
+delete_kmip
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.1/delete_kmip.py
+    :language: python
+
+get_kmip
+''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_kmip.py
+    :language: python
+
+patch_kmip
+''''''''''
+
+.. literalinclude:: source/examples/FB2.1/patch_kmip.py
+    :language: python
+
+post_kmip
+'''''''''
+
+.. literalinclude:: source/examples/FB2.1/post_kmip.py
+    :language: python
+
+get_kmip_test
+'''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_kmip_test.py
+    :language: python
+
+delete_kmip
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.1/delete_kmip.py
+    :language: python
+
+get_kmip
+''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_kmip.py
+    :language: python
+
+patch_kmip
+''''''''''
+
+.. literalinclude:: source/examples/FB2.1/patch_kmip.py
+    :language: python
+
+post_kmip
+'''''''''
+
+.. literalinclude:: source/examples/FB2.1/post_kmip.py
+    :language: python
+
+get_kmip_test
+'''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_kmip_test.py
+    :language: python
 
 delete_kmip
 '''''''''''
@@ -11549,10 +13649,604 @@ post_keytabs_upload
 .. literalinclude:: source/examples/FB2.0/post_keytabs_upload.py
     :language: python
 
+delete_keytabs
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_keytabs.py
+    :language: python
+
+get_keytabs_download
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_keytabs_download.py
+    :language: python
+
+get_keytabs
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_keytabs.py
+    :language: python
+
+post_keytabs
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_keytabs.py
+    :language: python
+
+post_keytabs_upload
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_keytabs_upload.py
+    :language: python
+
+delete_keytabs
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_keytabs.py
+    :language: python
+
+get_keytabs_download
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_keytabs_download.py
+    :language: python
+
+get_keytabs
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_keytabs.py
+    :language: python
+
+post_keytabs
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_keytabs.py
+    :language: python
+
+post_keytabs_upload
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_keytabs_upload.py
+    :language: python
+
+delete_keytabs
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_keytabs.py
+    :language: python
+
+get_keytabs_download
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_keytabs_download.py
+    :language: python
+
+get_keytabs
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_keytabs.py
+    :language: python
+
+post_keytabs
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_keytabs.py
+    :language: python
+
+post_keytabs_upload
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_keytabs_upload.py
+    :language: python
+
+delete_keytabs
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_keytabs.py
+    :language: python
+
+get_keytabs_download
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_keytabs_download.py
+    :language: python
+
+get_keytabs
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_keytabs.py
+    :language: python
+
+post_keytabs
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_keytabs.py
+    :language: python
+
+post_keytabs_upload
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_keytabs_upload.py
+    :language: python
+
+delete_keytabs
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_keytabs.py
+    :language: python
+
+get_keytabs_download
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_keytabs_download.py
+    :language: python
+
+get_keytabs
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_keytabs.py
+    :language: python
+
+post_keytabs
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_keytabs.py
+    :language: python
+
+post_keytabs_upload
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_keytabs_upload.py
+    :language: python
+
+delete_keytabs
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_keytabs.py
+    :language: python
+
+get_keytabs_download
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_keytabs_download.py
+    :language: python
+
+get_keytabs
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_keytabs.py
+    :language: python
+
+post_keytabs
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_keytabs.py
+    :language: python
+
+post_keytabs_upload
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_keytabs_upload.py
+    :language: python
+
+delete_keytabs
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_keytabs.py
+    :language: python
+
+get_keytabs_download
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_keytabs_download.py
+    :language: python
+
+get_keytabs
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_keytabs.py
+    :language: python
+
+post_keytabs
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_keytabs.py
+    :language: python
+
+post_keytabs_upload
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_keytabs_upload.py
+    :language: python
+
+delete_keytabs
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_keytabs.py
+    :language: python
+
+get_keytabs_download
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_keytabs_download.py
+    :language: python
+
+get_keytabs
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_keytabs.py
+    :language: python
+
+post_keytabs
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_keytabs.py
+    :language: python
+
+post_keytabs_upload
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_keytabs_upload.py
+    :language: python
+
+delete_keytabs
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_keytabs.py
+    :language: python
+
+get_keytabs_download
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_keytabs_download.py
+    :language: python
+
+get_keytabs
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_keytabs.py
+    :language: python
+
+post_keytabs
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_keytabs.py
+    :language: python
+
+post_keytabs_upload
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_keytabs_upload.py
+    :language: python
+
+delete_keytabs
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_keytabs.py
+    :language: python
+
+get_keytabs_download
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_keytabs_download.py
+    :language: python
+
+get_keytabs
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_keytabs.py
+    :language: python
+
+post_keytabs
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_keytabs.py
+    :language: python
+
+post_keytabs_upload
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_keytabs_upload.py
+    :language: python
+
 LegalHoldsApi
 ~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+delete_legal_holds
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/delete_legal_holds.py
+    :language: python
+
+get_legal_holds
+'''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_legal_holds.py
+    :language: python
+
+get_legal_holds_held_entities
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_legal_holds_held_entities.py
+    :language: python
+
+patch_legal_holds_held_entities
+'''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/patch_legal_holds_held_entities.py
+    :language: python
+
+post_legal_holds_held_entities
+''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_legal_holds_held_entities.py
+    :language: python
+
+patch_legal_holds
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/patch_legal_holds.py
+    :language: python
+
+post_legal_holds
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_legal_holds.py
+    :language: python
+
+delete_legal_holds
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/delete_legal_holds.py
+    :language: python
+
+get_legal_holds
+'''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_legal_holds.py
+    :language: python
+
+get_legal_holds_held_entities
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_legal_holds_held_entities.py
+    :language: python
+
+patch_legal_holds_held_entities
+'''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/patch_legal_holds_held_entities.py
+    :language: python
+
+post_legal_holds_held_entities
+''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_legal_holds_held_entities.py
+    :language: python
+
+patch_legal_holds
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/patch_legal_holds.py
+    :language: python
+
+post_legal_holds
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_legal_holds.py
+    :language: python
+
+delete_legal_holds
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/delete_legal_holds.py
+    :language: python
+
+get_legal_holds
+'''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_legal_holds.py
+    :language: python
+
+get_legal_holds_held_entities
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_legal_holds_held_entities.py
+    :language: python
+
+patch_legal_holds_held_entities
+'''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/patch_legal_holds_held_entities.py
+    :language: python
+
+post_legal_holds_held_entities
+''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_legal_holds_held_entities.py
+    :language: python
+
+patch_legal_holds
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/patch_legal_holds.py
+    :language: python
+
+post_legal_holds
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_legal_holds.py
+    :language: python
+
+delete_legal_holds
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/delete_legal_holds.py
+    :language: python
+
+get_legal_holds
+'''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_legal_holds.py
+    :language: python
+
+get_legal_holds_held_entities
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_legal_holds_held_entities.py
+    :language: python
+
+patch_legal_holds_held_entities
+'''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/patch_legal_holds_held_entities.py
+    :language: python
+
+post_legal_holds_held_entities
+''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_legal_holds_held_entities.py
+    :language: python
+
+patch_legal_holds
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/patch_legal_holds.py
+    :language: python
+
+post_legal_holds
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_legal_holds.py
+    :language: python
+
+delete_legal_holds
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/delete_legal_holds.py
+    :language: python
+
+get_legal_holds
+'''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_legal_holds.py
+    :language: python
+
+get_legal_holds_held_entities
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_legal_holds_held_entities.py
+    :language: python
+
+patch_legal_holds_held_entities
+'''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/patch_legal_holds_held_entities.py
+    :language: python
+
+post_legal_holds_held_entities
+''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_legal_holds_held_entities.py
+    :language: python
+
+patch_legal_holds
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/patch_legal_holds.py
+    :language: python
+
+post_legal_holds
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_legal_holds.py
+    :language: python
+
+delete_legal_holds
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/delete_legal_holds.py
+    :language: python
+
+get_legal_holds
+'''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_legal_holds.py
+    :language: python
+
+get_legal_holds_held_entities
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_legal_holds_held_entities.py
+    :language: python
+
+patch_legal_holds_held_entities
+'''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/patch_legal_holds_held_entities.py
+    :language: python
+
+post_legal_holds_held_entities
+''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_legal_holds_held_entities.py
+    :language: python
+
+patch_legal_holds
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/patch_legal_holds.py
+    :language: python
+
+post_legal_holds
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_legal_holds.py
+    :language: python
+
+delete_legal_holds
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/delete_legal_holds.py
+    :language: python
+
+get_legal_holds
+'''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_legal_holds.py
+    :language: python
+
+get_legal_holds_held_entities
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_legal_holds_held_entities.py
+    :language: python
+
+patch_legal_holds_held_entities
+'''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/patch_legal_holds_held_entities.py
+    :language: python
+
+post_legal_holds_held_entities
+''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_legal_holds_held_entities.py
+    :language: python
+
+patch_legal_holds
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/patch_legal_holds.py
+    :language: python
+
+post_legal_holds
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_legal_holds.py
+    :language: python
 
 delete_legal_holds
 ''''''''''''''''''
@@ -11654,10 +14348,370 @@ post_link_aggregation_groups
 .. literalinclude:: source/examples/FB2.0/post_link_aggregation_groups.py
     :language: python
 
+delete_link_aggregation_groups
+''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_link_aggregation_groups.py
+    :language: python
+
+get_link_aggregation_groups
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_link_aggregation_groups.py
+    :language: python
+
+patch_link_aggregation_groups
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_link_aggregation_groups.py
+    :language: python
+
+post_link_aggregation_groups
+''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_link_aggregation_groups.py
+    :language: python
+
+delete_link_aggregation_groups
+''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_link_aggregation_groups.py
+    :language: python
+
+get_link_aggregation_groups
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_link_aggregation_groups.py
+    :language: python
+
+patch_link_aggregation_groups
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_link_aggregation_groups.py
+    :language: python
+
+post_link_aggregation_groups
+''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_link_aggregation_groups.py
+    :language: python
+
+delete_link_aggregation_groups
+''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_link_aggregation_groups.py
+    :language: python
+
+get_link_aggregation_groups
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_link_aggregation_groups.py
+    :language: python
+
+patch_link_aggregation_groups
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_link_aggregation_groups.py
+    :language: python
+
+post_link_aggregation_groups
+''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_link_aggregation_groups.py
+    :language: python
+
+delete_link_aggregation_groups
+''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_link_aggregation_groups.py
+    :language: python
+
+get_link_aggregation_groups
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_link_aggregation_groups.py
+    :language: python
+
+patch_link_aggregation_groups
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_link_aggregation_groups.py
+    :language: python
+
+post_link_aggregation_groups
+''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_link_aggregation_groups.py
+    :language: python
+
+delete_link_aggregation_groups
+''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_link_aggregation_groups.py
+    :language: python
+
+get_link_aggregation_groups
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_link_aggregation_groups.py
+    :language: python
+
+patch_link_aggregation_groups
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_link_aggregation_groups.py
+    :language: python
+
+post_link_aggregation_groups
+''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_link_aggregation_groups.py
+    :language: python
+
 LogsApi
 ~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+get_logs_async_download
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_logs_async_download.py
+    :language: python
+
+get_logs_async
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_logs_async.py
+    :language: python
+
+patch_logs_async
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/patch_logs_async.py
+    :language: python
+
+get_logs
+''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_logs.py
+    :language: python
+
+get_logs_async_download
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_logs_async_download.py
+    :language: python
+
+get_logs_async
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_logs_async.py
+    :language: python
+
+patch_logs_async
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/patch_logs_async.py
+    :language: python
+
+get_logs
+''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_logs.py
+    :language: python
+
+get_logs_async_download
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_logs_async_download.py
+    :language: python
+
+get_logs_async
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_logs_async.py
+    :language: python
+
+patch_logs_async
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/patch_logs_async.py
+    :language: python
+
+get_logs
+''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_logs.py
+    :language: python
+
+get_logs_async_download
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_logs_async_download.py
+    :language: python
+
+get_logs_async
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_logs_async.py
+    :language: python
+
+patch_logs_async
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/patch_logs_async.py
+    :language: python
+
+get_logs
+''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_logs.py
+    :language: python
+
+get_logs_async_download
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_logs_async_download.py
+    :language: python
+
+get_logs_async
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_logs_async.py
+    :language: python
+
+patch_logs_async
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/patch_logs_async.py
+    :language: python
+
+get_logs
+''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_logs.py
+    :language: python
+
+get_logs_async_download
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_logs_async_download.py
+    :language: python
+
+get_logs_async
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_logs_async.py
+    :language: python
+
+patch_logs_async
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/patch_logs_async.py
+    :language: python
+
+get_logs
+''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_logs.py
+    :language: python
+
+get_logs_async_download
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_logs_async_download.py
+    :language: python
+
+get_logs_async
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_logs_async.py
+    :language: python
+
+patch_logs_async
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/patch_logs_async.py
+    :language: python
+
+get_logs
+''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_logs.py
+    :language: python
+
+get_logs_async_download
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_logs_async_download.py
+    :language: python
+
+get_logs_async
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_logs_async.py
+    :language: python
+
+patch_logs_async
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/patch_logs_async.py
+    :language: python
+
+get_logs
+''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_logs.py
+    :language: python
+
+get_logs_async_download
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_logs_async_download.py
+    :language: python
+
+get_logs_async
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_logs_async.py
+    :language: python
+
+patch_logs_async
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/patch_logs_async.py
+    :language: python
+
+get_logs
+''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_logs.py
+    :language: python
+
+get_logs_async_download
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_logs_async_download.py
+    :language: python
+
+get_logs_async
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/get_logs_async.py
+    :language: python
+
+patch_logs_async
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.4/patch_logs_async.py
+    :language: python
+
+get_logs
+''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_logs.py
+    :language: python
 
 get_logs_async_download
 '''''''''''''''''''''''
@@ -11706,10 +14760,442 @@ post_maintenance_windows
 .. literalinclude:: source/examples/FB2.16/post_maintenance_windows.py
     :language: python
 
+delete_maintenance_windows
+''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/delete_maintenance_windows.py
+    :language: python
+
+get_maintenance_windows
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/get_maintenance_windows.py
+    :language: python
+
+post_maintenance_windows
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/post_maintenance_windows.py
+    :language: python
+
+delete_maintenance_windows
+''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/delete_maintenance_windows.py
+    :language: python
+
+get_maintenance_windows
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/get_maintenance_windows.py
+    :language: python
+
+post_maintenance_windows
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/post_maintenance_windows.py
+    :language: python
+
+delete_maintenance_windows
+''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/delete_maintenance_windows.py
+    :language: python
+
+get_maintenance_windows
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/get_maintenance_windows.py
+    :language: python
+
+post_maintenance_windows
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/post_maintenance_windows.py
+    :language: python
+
+delete_maintenance_windows
+''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/delete_maintenance_windows.py
+    :language: python
+
+get_maintenance_windows
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/get_maintenance_windows.py
+    :language: python
+
+post_maintenance_windows
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/post_maintenance_windows.py
+    :language: python
+
+delete_maintenance_windows
+''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/delete_maintenance_windows.py
+    :language: python
+
+get_maintenance_windows
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/get_maintenance_windows.py
+    :language: python
+
+post_maintenance_windows
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/post_maintenance_windows.py
+    :language: python
+
+delete_maintenance_windows
+''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/delete_maintenance_windows.py
+    :language: python
+
+get_maintenance_windows
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/get_maintenance_windows.py
+    :language: python
+
+post_maintenance_windows
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/post_maintenance_windows.py
+    :language: python
+
+delete_maintenance_windows
+''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/delete_maintenance_windows.py
+    :language: python
+
+get_maintenance_windows
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/get_maintenance_windows.py
+    :language: python
+
+post_maintenance_windows
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/post_maintenance_windows.py
+    :language: python
+
+delete_maintenance_windows
+''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/delete_maintenance_windows.py
+    :language: python
+
+get_maintenance_windows
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/get_maintenance_windows.py
+    :language: python
+
+post_maintenance_windows
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/post_maintenance_windows.py
+    :language: python
+
 NetworkInterfacesApi
 ~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+get_network_interfaces_connectors
+'''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_network_interfaces_connectors.py
+    :language: python
+
+patch_network_interfaces_connectors
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/patch_network_interfaces_connectors.py
+    :language: python
+
+get_network_interfaces_connectors_performance
+'''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_network_interfaces_connectors_performance.py
+    :language: python
+
+get_network_interfaces_connectors_settings
+''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_network_interfaces_connectors_settings.py
+    :language: python
+
+delete_network_interfaces
+'''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_network_interfaces.py
+    :language: python
+
+get_network_interfaces
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_network_interfaces.py
+    :language: python
+
+get_network_interfaces_neighbors
+''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/get_network_interfaces_neighbors.py
+    :language: python
+
+get_network_interfaces_network_connection_statistics
+''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/get_network_interfaces_network_connection_statistics.py
+    :language: python
+
+patch_network_interfaces
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/patch_network_interfaces.py
+    :language: python
+
+get_network_interfaces_ping
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.6/get_network_interfaces_ping.py
+    :language: python
+
+post_network_interfaces
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/post_network_interfaces.py
+    :language: python
+
+get_network_interfaces_trace
+''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.6/get_network_interfaces_trace.py
+    :language: python
+
+get_network_interfaces_connectors
+'''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_network_interfaces_connectors.py
+    :language: python
+
+patch_network_interfaces_connectors
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/patch_network_interfaces_connectors.py
+    :language: python
+
+get_network_interfaces_connectors_performance
+'''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_network_interfaces_connectors_performance.py
+    :language: python
+
+get_network_interfaces_connectors_settings
+''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_network_interfaces_connectors_settings.py
+    :language: python
+
+delete_network_interfaces
+'''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_network_interfaces.py
+    :language: python
+
+get_network_interfaces
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_network_interfaces.py
+    :language: python
+
+get_network_interfaces_neighbors
+''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/get_network_interfaces_neighbors.py
+    :language: python
+
+get_network_interfaces_network_connection_statistics
+''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/get_network_interfaces_network_connection_statistics.py
+    :language: python
+
+patch_network_interfaces
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/patch_network_interfaces.py
+    :language: python
+
+get_network_interfaces_ping
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.6/get_network_interfaces_ping.py
+    :language: python
+
+post_network_interfaces
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/post_network_interfaces.py
+    :language: python
+
+get_network_interfaces_trace
+''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.6/get_network_interfaces_trace.py
+    :language: python
+
+get_network_interfaces_connectors
+'''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_network_interfaces_connectors.py
+    :language: python
+
+patch_network_interfaces_connectors
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/patch_network_interfaces_connectors.py
+    :language: python
+
+get_network_interfaces_connectors_performance
+'''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_network_interfaces_connectors_performance.py
+    :language: python
+
+get_network_interfaces_connectors_settings
+''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_network_interfaces_connectors_settings.py
+    :language: python
+
+delete_network_interfaces
+'''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_network_interfaces.py
+    :language: python
+
+get_network_interfaces
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_network_interfaces.py
+    :language: python
+
+get_network_interfaces_neighbors
+''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/get_network_interfaces_neighbors.py
+    :language: python
+
+get_network_interfaces_network_connection_statistics
+''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/get_network_interfaces_network_connection_statistics.py
+    :language: python
+
+patch_network_interfaces
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/patch_network_interfaces.py
+    :language: python
+
+get_network_interfaces_ping
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.6/get_network_interfaces_ping.py
+    :language: python
+
+post_network_interfaces
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/post_network_interfaces.py
+    :language: python
+
+get_network_interfaces_trace
+''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.6/get_network_interfaces_trace.py
+    :language: python
+
+get_network_interfaces_connectors
+'''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_network_interfaces_connectors.py
+    :language: python
+
+patch_network_interfaces_connectors
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/patch_network_interfaces_connectors.py
+    :language: python
+
+get_network_interfaces_connectors_performance
+'''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_network_interfaces_connectors_performance.py
+    :language: python
+
+get_network_interfaces_connectors_settings
+''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_network_interfaces_connectors_settings.py
+    :language: python
+
+delete_network_interfaces
+'''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_network_interfaces.py
+    :language: python
+
+get_network_interfaces
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_network_interfaces.py
+    :language: python
+
+get_network_interfaces_neighbors
+''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.20/get_network_interfaces_neighbors.py
+    :language: python
+
+get_network_interfaces_network_connection_statistics
+''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/get_network_interfaces_network_connection_statistics.py
+    :language: python
+
+patch_network_interfaces
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/patch_network_interfaces.py
+    :language: python
+
+get_network_interfaces_ping
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.6/get_network_interfaces_ping.py
+    :language: python
+
+post_network_interfaces
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/post_network_interfaces.py
+    :language: python
+
+get_network_interfaces_trace
+''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.6/get_network_interfaces_trace.py
+    :language: python
 
 get_network_interfaces_connectors
 '''''''''''''''''''''''''''''''''
@@ -11836,6 +15322,294 @@ get_node_groups_uses
 .. literalinclude:: source/examples/FB2.18/get_node_groups_uses.py
     :language: python
 
+delete_node_groups
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/delete_node_groups.py
+    :language: python
+
+get_node_groups
+'''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/get_node_groups.py
+    :language: python
+
+delete_node_groups_nodes
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/delete_node_groups_nodes.py
+    :language: python
+
+get_node_groups_nodes
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/get_node_groups_nodes.py
+    :language: python
+
+post_node_groups_nodes
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/post_node_groups_nodes.py
+    :language: python
+
+patch_node_groups
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/patch_node_groups.py
+    :language: python
+
+post_node_groups
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/post_node_groups.py
+    :language: python
+
+get_node_groups_uses
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/get_node_groups_uses.py
+    :language: python
+
+delete_node_groups
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/delete_node_groups.py
+    :language: python
+
+get_node_groups
+'''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/get_node_groups.py
+    :language: python
+
+delete_node_groups_nodes
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/delete_node_groups_nodes.py
+    :language: python
+
+get_node_groups_nodes
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/get_node_groups_nodes.py
+    :language: python
+
+post_node_groups_nodes
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/post_node_groups_nodes.py
+    :language: python
+
+patch_node_groups
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/patch_node_groups.py
+    :language: python
+
+post_node_groups
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/post_node_groups.py
+    :language: python
+
+get_node_groups_uses
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/get_node_groups_uses.py
+    :language: python
+
+delete_node_groups
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/delete_node_groups.py
+    :language: python
+
+get_node_groups
+'''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/get_node_groups.py
+    :language: python
+
+delete_node_groups_nodes
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/delete_node_groups_nodes.py
+    :language: python
+
+get_node_groups_nodes
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/get_node_groups_nodes.py
+    :language: python
+
+post_node_groups_nodes
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/post_node_groups_nodes.py
+    :language: python
+
+patch_node_groups
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/patch_node_groups.py
+    :language: python
+
+post_node_groups
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/post_node_groups.py
+    :language: python
+
+get_node_groups_uses
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/get_node_groups_uses.py
+    :language: python
+
+delete_node_groups
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/delete_node_groups.py
+    :language: python
+
+get_node_groups
+'''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/get_node_groups.py
+    :language: python
+
+delete_node_groups_nodes
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/delete_node_groups_nodes.py
+    :language: python
+
+get_node_groups_nodes
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/get_node_groups_nodes.py
+    :language: python
+
+post_node_groups_nodes
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/post_node_groups_nodes.py
+    :language: python
+
+patch_node_groups
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/patch_node_groups.py
+    :language: python
+
+post_node_groups
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/post_node_groups.py
+    :language: python
+
+get_node_groups_uses
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/get_node_groups_uses.py
+    :language: python
+
+delete_node_groups
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/delete_node_groups.py
+    :language: python
+
+get_node_groups
+'''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/get_node_groups.py
+    :language: python
+
+delete_node_groups_nodes
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/delete_node_groups_nodes.py
+    :language: python
+
+get_node_groups_nodes
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/get_node_groups_nodes.py
+    :language: python
+
+post_node_groups_nodes
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/post_node_groups_nodes.py
+    :language: python
+
+patch_node_groups
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/patch_node_groups.py
+    :language: python
+
+post_node_groups
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/post_node_groups.py
+    :language: python
+
+get_node_groups_uses
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/get_node_groups_uses.py
+    :language: python
+
+delete_node_groups
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/delete_node_groups.py
+    :language: python
+
+get_node_groups
+'''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/get_node_groups.py
+    :language: python
+
+delete_node_groups_nodes
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/delete_node_groups_nodes.py
+    :language: python
+
+get_node_groups_nodes
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/get_node_groups_nodes.py
+    :language: python
+
+post_node_groups_nodes
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/post_node_groups_nodes.py
+    :language: python
+
+patch_node_groups
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/patch_node_groups.py
+    :language: python
+
+post_node_groups
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/post_node_groups.py
+    :language: python
+
+get_node_groups_uses
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.18/get_node_groups_uses.py
+    :language: python
+
 NodesApi
 ~~~~~~~~
 
@@ -11859,10 +15633,196 @@ patch_nodes
 .. literalinclude:: source/examples/FB2.18/patch_nodes.py
     :language: python
 
+post_nodes_batch
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.23/post_nodes_batch.py
+    :language: python
+
+get_nodes
+'''''''''
+
+.. literalinclude:: source/examples/FB2.18/get_nodes.py
+    :language: python
+
+patch_nodes
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.18/patch_nodes.py
+    :language: python
+
 OIDCSSOApi
 ~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+delete_sso_oidc_idps
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/delete_sso_oidc_idps.py
+    :language: python
+
+get_sso_oidc_idps
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_sso_oidc_idps.py
+    :language: python
+
+patch_sso_oidc_idps
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/patch_sso_oidc_idps.py
+    :language: python
+
+post_sso_oidc_idps
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_sso_oidc_idps.py
+    :language: python
+
+delete_sso_oidc_idps
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/delete_sso_oidc_idps.py
+    :language: python
+
+get_sso_oidc_idps
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_sso_oidc_idps.py
+    :language: python
+
+patch_sso_oidc_idps
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/patch_sso_oidc_idps.py
+    :language: python
+
+post_sso_oidc_idps
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_sso_oidc_idps.py
+    :language: python
+
+delete_sso_oidc_idps
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/delete_sso_oidc_idps.py
+    :language: python
+
+get_sso_oidc_idps
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_sso_oidc_idps.py
+    :language: python
+
+patch_sso_oidc_idps
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/patch_sso_oidc_idps.py
+    :language: python
+
+post_sso_oidc_idps
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_sso_oidc_idps.py
+    :language: python
+
+delete_sso_oidc_idps
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/delete_sso_oidc_idps.py
+    :language: python
+
+get_sso_oidc_idps
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_sso_oidc_idps.py
+    :language: python
+
+patch_sso_oidc_idps
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/patch_sso_oidc_idps.py
+    :language: python
+
+post_sso_oidc_idps
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_sso_oidc_idps.py
+    :language: python
+
+delete_sso_oidc_idps
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/delete_sso_oidc_idps.py
+    :language: python
+
+get_sso_oidc_idps
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_sso_oidc_idps.py
+    :language: python
+
+patch_sso_oidc_idps
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/patch_sso_oidc_idps.py
+    :language: python
+
+post_sso_oidc_idps
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_sso_oidc_idps.py
+    :language: python
+
+delete_sso_oidc_idps
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/delete_sso_oidc_idps.py
+    :language: python
+
+get_sso_oidc_idps
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_sso_oidc_idps.py
+    :language: python
+
+patch_sso_oidc_idps
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/patch_sso_oidc_idps.py
+    :language: python
+
+post_sso_oidc_idps
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_sso_oidc_idps.py
+    :language: python
+
+delete_sso_oidc_idps
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/delete_sso_oidc_idps.py
+    :language: python
+
+get_sso_oidc_idps
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_sso_oidc_idps.py
+    :language: python
+
+patch_sso_oidc_idps
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/patch_sso_oidc_idps.py
+    :language: python
+
+post_sso_oidc_idps
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_sso_oidc_idps.py
+    :language: python
 
 delete_sso_oidc_idps
 ''''''''''''''''''''
@@ -12523,6 +16483,162 @@ post_management_authentication_policies
 .. literalinclude:: source/examples/FB2.22/post_management_authentication_policies.py
     :language: python
 
+delete_admins_management_authentication_policies
+''''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.22/delete_admins_management_authentication_policies.py
+    :language: python
+
+get_admins_management_authentication_policies
+'''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.22/get_admins_management_authentication_policies.py
+    :language: python
+
+post_admins_management_authentication_policies
+''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.22/post_admins_management_authentication_policies.py
+    :language: python
+
+delete_arrays_management_authentication_policies
+''''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.22/delete_arrays_management_authentication_policies.py
+    :language: python
+
+get_arrays_management_authentication_policies
+'''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.22/get_arrays_management_authentication_policies.py
+    :language: python
+
+post_arrays_management_authentication_policies
+''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.22/post_arrays_management_authentication_policies.py
+    :language: python
+
+delete_management_authentication_policies
+'''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.22/delete_management_authentication_policies.py
+    :language: python
+
+get_management_authentication_policies
+''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.22/get_management_authentication_policies.py
+    :language: python
+
+delete_management_authentication_policies_members
+'''''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.22/delete_management_authentication_policies_members.py
+    :language: python
+
+get_management_authentication_policies_members
+''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.22/get_management_authentication_policies_members.py
+    :language: python
+
+post_management_authentication_policies_members
+'''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.22/post_management_authentication_policies_members.py
+    :language: python
+
+patch_management_authentication_policies
+''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.22/patch_management_authentication_policies.py
+    :language: python
+
+post_management_authentication_policies
+'''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.22/post_management_authentication_policies.py
+    :language: python
+
+delete_admins_management_authentication_policies
+''''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.22/delete_admins_management_authentication_policies.py
+    :language: python
+
+get_admins_management_authentication_policies
+'''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.22/get_admins_management_authentication_policies.py
+    :language: python
+
+post_admins_management_authentication_policies
+''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.22/post_admins_management_authentication_policies.py
+    :language: python
+
+delete_arrays_management_authentication_policies
+''''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.22/delete_arrays_management_authentication_policies.py
+    :language: python
+
+get_arrays_management_authentication_policies
+'''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.22/get_arrays_management_authentication_policies.py
+    :language: python
+
+post_arrays_management_authentication_policies
+''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.22/post_arrays_management_authentication_policies.py
+    :language: python
+
+delete_management_authentication_policies
+'''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.22/delete_management_authentication_policies.py
+    :language: python
+
+get_management_authentication_policies
+''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.22/get_management_authentication_policies.py
+    :language: python
+
+delete_management_authentication_policies_members
+'''''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.22/delete_management_authentication_policies_members.py
+    :language: python
+
+get_management_authentication_policies_members
+''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.22/get_management_authentication_policies_members.py
+    :language: python
+
+post_management_authentication_policies_members
+'''''''''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.22/post_management_authentication_policies_members.py
+    :language: python
+
+patch_management_authentication_policies
+''''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.22/patch_management_authentication_policies.py
+    :language: python
+
+post_management_authentication_policies
+'''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.22/post_management_authentication_policies.py
+    :language: python
+
 PoliciesNFSApi
 ~~~~~~~~~~~~~~
 
@@ -12580,6 +16696,426 @@ PoliciesNetworkAccessApi
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+get_network_access_policies
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/get_network_access_policies.py
+    :language: python
+
+get_network_access_policies_members
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/get_network_access_policies_members.py
+    :language: python
+
+patch_network_access_policies
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/patch_network_access_policies.py
+    :language: python
+
+delete_network_access_policies_rules
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/delete_network_access_policies_rules.py
+    :language: python
+
+get_network_access_policies_rules
+'''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/get_network_access_policies_rules.py
+    :language: python
+
+patch_network_access_policies_rules
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/patch_network_access_policies_rules.py
+    :language: python
+
+post_network_access_policies_rules
+''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/post_network_access_policies_rules.py
+    :language: python
+
+get_network_access_policies
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/get_network_access_policies.py
+    :language: python
+
+get_network_access_policies_members
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/get_network_access_policies_members.py
+    :language: python
+
+patch_network_access_policies
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/patch_network_access_policies.py
+    :language: python
+
+delete_network_access_policies_rules
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/delete_network_access_policies_rules.py
+    :language: python
+
+get_network_access_policies_rules
+'''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/get_network_access_policies_rules.py
+    :language: python
+
+patch_network_access_policies_rules
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/patch_network_access_policies_rules.py
+    :language: python
+
+post_network_access_policies_rules
+''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/post_network_access_policies_rules.py
+    :language: python
+
+get_network_access_policies
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/get_network_access_policies.py
+    :language: python
+
+get_network_access_policies_members
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/get_network_access_policies_members.py
+    :language: python
+
+patch_network_access_policies
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/patch_network_access_policies.py
+    :language: python
+
+delete_network_access_policies_rules
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/delete_network_access_policies_rules.py
+    :language: python
+
+get_network_access_policies_rules
+'''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/get_network_access_policies_rules.py
+    :language: python
+
+patch_network_access_policies_rules
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/patch_network_access_policies_rules.py
+    :language: python
+
+post_network_access_policies_rules
+''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/post_network_access_policies_rules.py
+    :language: python
+
+get_network_access_policies
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/get_network_access_policies.py
+    :language: python
+
+get_network_access_policies_members
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/get_network_access_policies_members.py
+    :language: python
+
+patch_network_access_policies
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/patch_network_access_policies.py
+    :language: python
+
+delete_network_access_policies_rules
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/delete_network_access_policies_rules.py
+    :language: python
+
+get_network_access_policies_rules
+'''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/get_network_access_policies_rules.py
+    :language: python
+
+patch_network_access_policies_rules
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/patch_network_access_policies_rules.py
+    :language: python
+
+post_network_access_policies_rules
+''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/post_network_access_policies_rules.py
+    :language: python
+
+get_network_access_policies
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/get_network_access_policies.py
+    :language: python
+
+get_network_access_policies_members
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/get_network_access_policies_members.py
+    :language: python
+
+patch_network_access_policies
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/patch_network_access_policies.py
+    :language: python
+
+delete_network_access_policies_rules
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/delete_network_access_policies_rules.py
+    :language: python
+
+get_network_access_policies_rules
+'''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/get_network_access_policies_rules.py
+    :language: python
+
+patch_network_access_policies_rules
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/patch_network_access_policies_rules.py
+    :language: python
+
+post_network_access_policies_rules
+''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/post_network_access_policies_rules.py
+    :language: python
+
+get_network_access_policies
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/get_network_access_policies.py
+    :language: python
+
+get_network_access_policies_members
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/get_network_access_policies_members.py
+    :language: python
+
+patch_network_access_policies
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/patch_network_access_policies.py
+    :language: python
+
+delete_network_access_policies_rules
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/delete_network_access_policies_rules.py
+    :language: python
+
+get_network_access_policies_rules
+'''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/get_network_access_policies_rules.py
+    :language: python
+
+patch_network_access_policies_rules
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/patch_network_access_policies_rules.py
+    :language: python
+
+post_network_access_policies_rules
+''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/post_network_access_policies_rules.py
+    :language: python
+
+get_network_access_policies
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/get_network_access_policies.py
+    :language: python
+
+get_network_access_policies_members
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/get_network_access_policies_members.py
+    :language: python
+
+patch_network_access_policies
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/patch_network_access_policies.py
+    :language: python
+
+delete_network_access_policies_rules
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/delete_network_access_policies_rules.py
+    :language: python
+
+get_network_access_policies_rules
+'''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/get_network_access_policies_rules.py
+    :language: python
+
+patch_network_access_policies_rules
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/patch_network_access_policies_rules.py
+    :language: python
+
+post_network_access_policies_rules
+''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/post_network_access_policies_rules.py
+    :language: python
+
+get_network_access_policies
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/get_network_access_policies.py
+    :language: python
+
+get_network_access_policies_members
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/get_network_access_policies_members.py
+    :language: python
+
+patch_network_access_policies
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/patch_network_access_policies.py
+    :language: python
+
+delete_network_access_policies_rules
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/delete_network_access_policies_rules.py
+    :language: python
+
+get_network_access_policies_rules
+'''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/get_network_access_policies_rules.py
+    :language: python
+
+patch_network_access_policies_rules
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/patch_network_access_policies_rules.py
+    :language: python
+
+post_network_access_policies_rules
+''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/post_network_access_policies_rules.py
+    :language: python
+
+get_network_access_policies
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/get_network_access_policies.py
+    :language: python
+
+get_network_access_policies_members
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/get_network_access_policies_members.py
+    :language: python
+
+patch_network_access_policies
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/patch_network_access_policies.py
+    :language: python
+
+delete_network_access_policies_rules
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/delete_network_access_policies_rules.py
+    :language: python
+
+get_network_access_policies_rules
+'''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/get_network_access_policies_rules.py
+    :language: python
+
+patch_network_access_policies_rules
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/patch_network_access_policies_rules.py
+    :language: python
+
+post_network_access_policies_rules
+''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/post_network_access_policies_rules.py
+    :language: python
+
+get_network_access_policies
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/get_network_access_policies.py
+    :language: python
+
+get_network_access_policies_members
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/get_network_access_policies_members.py
+    :language: python
+
+patch_network_access_policies
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/patch_network_access_policies.py
+    :language: python
+
+delete_network_access_policies_rules
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/delete_network_access_policies_rules.py
+    :language: python
+
+get_network_access_policies_rules
+'''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/get_network_access_policies_rules.py
+    :language: python
+
+patch_network_access_policies_rules
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/patch_network_access_policies_rules.py
+    :language: python
+
+post_network_access_policies_rules
+''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.13/post_network_access_policies_rules.py
+    :language: python
 
 get_network_access_policies
 '''''''''''''''''''''''''''
@@ -12722,6 +17258,102 @@ PoliciesPasswordApi
 ~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+get_password_policies
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/get_password_policies.py
+    :language: python
+
+patch_password_policies
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/patch_password_policies.py
+    :language: python
+
+get_password_policies
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/get_password_policies.py
+    :language: python
+
+patch_password_policies
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/patch_password_policies.py
+    :language: python
+
+get_password_policies
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/get_password_policies.py
+    :language: python
+
+patch_password_policies
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/patch_password_policies.py
+    :language: python
+
+get_password_policies
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/get_password_policies.py
+    :language: python
+
+patch_password_policies
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/patch_password_policies.py
+    :language: python
+
+get_password_policies
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/get_password_policies.py
+    :language: python
+
+patch_password_policies
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/patch_password_policies.py
+    :language: python
+
+get_password_policies
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/get_password_policies.py
+    :language: python
+
+patch_password_policies
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/patch_password_policies.py
+    :language: python
+
+get_password_policies
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/get_password_policies.py
+    :language: python
+
+patch_password_policies
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/patch_password_policies.py
+    :language: python
+
+get_password_policies
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/get_password_policies.py
+    :language: python
+
+patch_password_policies
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/patch_password_policies.py
+    :language: python
 
 get_password_policies
 '''''''''''''''''''''
@@ -13249,6 +17881,468 @@ post_tls_policies
 .. literalinclude:: source/examples/FB2.17/post_tls_policies.py
     :language: python
 
+delete_network_interfaces_tls_policies
+''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/delete_network_interfaces_tls_policies.py
+    :language: python
+
+get_network_interfaces_tls_policies
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_network_interfaces_tls_policies.py
+    :language: python
+
+post_network_interfaces_tls_policies
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_network_interfaces_tls_policies.py
+    :language: python
+
+delete_tls_policies
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/delete_tls_policies.py
+    :language: python
+
+get_tls_policies
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_tls_policies.py
+    :language: python
+
+get_tls_policies_members
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_tls_policies_members.py
+    :language: python
+
+delete_tls_policies_network_interfaces
+''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/delete_tls_policies_network_interfaces.py
+    :language: python
+
+get_tls_policies_network_interfaces
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_tls_policies_network_interfaces.py
+    :language: python
+
+post_tls_policies_network_interfaces
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_tls_policies_network_interfaces.py
+    :language: python
+
+patch_tls_policies
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/patch_tls_policies.py
+    :language: python
+
+post_tls_policies
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_tls_policies.py
+    :language: python
+
+delete_network_interfaces_tls_policies
+''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/delete_network_interfaces_tls_policies.py
+    :language: python
+
+get_network_interfaces_tls_policies
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_network_interfaces_tls_policies.py
+    :language: python
+
+post_network_interfaces_tls_policies
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_network_interfaces_tls_policies.py
+    :language: python
+
+delete_tls_policies
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/delete_tls_policies.py
+    :language: python
+
+get_tls_policies
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_tls_policies.py
+    :language: python
+
+get_tls_policies_members
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_tls_policies_members.py
+    :language: python
+
+delete_tls_policies_network_interfaces
+''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/delete_tls_policies_network_interfaces.py
+    :language: python
+
+get_tls_policies_network_interfaces
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_tls_policies_network_interfaces.py
+    :language: python
+
+post_tls_policies_network_interfaces
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_tls_policies_network_interfaces.py
+    :language: python
+
+patch_tls_policies
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/patch_tls_policies.py
+    :language: python
+
+post_tls_policies
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_tls_policies.py
+    :language: python
+
+delete_network_interfaces_tls_policies
+''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/delete_network_interfaces_tls_policies.py
+    :language: python
+
+get_network_interfaces_tls_policies
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_network_interfaces_tls_policies.py
+    :language: python
+
+post_network_interfaces_tls_policies
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_network_interfaces_tls_policies.py
+    :language: python
+
+delete_tls_policies
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/delete_tls_policies.py
+    :language: python
+
+get_tls_policies
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_tls_policies.py
+    :language: python
+
+get_tls_policies_members
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_tls_policies_members.py
+    :language: python
+
+delete_tls_policies_network_interfaces
+''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/delete_tls_policies_network_interfaces.py
+    :language: python
+
+get_tls_policies_network_interfaces
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_tls_policies_network_interfaces.py
+    :language: python
+
+post_tls_policies_network_interfaces
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_tls_policies_network_interfaces.py
+    :language: python
+
+patch_tls_policies
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/patch_tls_policies.py
+    :language: python
+
+post_tls_policies
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_tls_policies.py
+    :language: python
+
+delete_network_interfaces_tls_policies
+''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/delete_network_interfaces_tls_policies.py
+    :language: python
+
+get_network_interfaces_tls_policies
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_network_interfaces_tls_policies.py
+    :language: python
+
+post_network_interfaces_tls_policies
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_network_interfaces_tls_policies.py
+    :language: python
+
+delete_tls_policies
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/delete_tls_policies.py
+    :language: python
+
+get_tls_policies
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_tls_policies.py
+    :language: python
+
+get_tls_policies_members
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_tls_policies_members.py
+    :language: python
+
+delete_tls_policies_network_interfaces
+''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/delete_tls_policies_network_interfaces.py
+    :language: python
+
+get_tls_policies_network_interfaces
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_tls_policies_network_interfaces.py
+    :language: python
+
+post_tls_policies_network_interfaces
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_tls_policies_network_interfaces.py
+    :language: python
+
+patch_tls_policies
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/patch_tls_policies.py
+    :language: python
+
+post_tls_policies
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_tls_policies.py
+    :language: python
+
+delete_network_interfaces_tls_policies
+''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/delete_network_interfaces_tls_policies.py
+    :language: python
+
+get_network_interfaces_tls_policies
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_network_interfaces_tls_policies.py
+    :language: python
+
+post_network_interfaces_tls_policies
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_network_interfaces_tls_policies.py
+    :language: python
+
+delete_tls_policies
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/delete_tls_policies.py
+    :language: python
+
+get_tls_policies
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_tls_policies.py
+    :language: python
+
+get_tls_policies_members
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_tls_policies_members.py
+    :language: python
+
+delete_tls_policies_network_interfaces
+''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/delete_tls_policies_network_interfaces.py
+    :language: python
+
+get_tls_policies_network_interfaces
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_tls_policies_network_interfaces.py
+    :language: python
+
+post_tls_policies_network_interfaces
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_tls_policies_network_interfaces.py
+    :language: python
+
+patch_tls_policies
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/patch_tls_policies.py
+    :language: python
+
+post_tls_policies
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_tls_policies.py
+    :language: python
+
+delete_network_interfaces_tls_policies
+''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/delete_network_interfaces_tls_policies.py
+    :language: python
+
+get_network_interfaces_tls_policies
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_network_interfaces_tls_policies.py
+    :language: python
+
+post_network_interfaces_tls_policies
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_network_interfaces_tls_policies.py
+    :language: python
+
+delete_tls_policies
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/delete_tls_policies.py
+    :language: python
+
+get_tls_policies
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_tls_policies.py
+    :language: python
+
+get_tls_policies_members
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_tls_policies_members.py
+    :language: python
+
+delete_tls_policies_network_interfaces
+''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/delete_tls_policies_network_interfaces.py
+    :language: python
+
+get_tls_policies_network_interfaces
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_tls_policies_network_interfaces.py
+    :language: python
+
+post_tls_policies_network_interfaces
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_tls_policies_network_interfaces.py
+    :language: python
+
+patch_tls_policies
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/patch_tls_policies.py
+    :language: python
+
+post_tls_policies
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_tls_policies.py
+    :language: python
+
+delete_network_interfaces_tls_policies
+''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/delete_network_interfaces_tls_policies.py
+    :language: python
+
+get_network_interfaces_tls_policies
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_network_interfaces_tls_policies.py
+    :language: python
+
+post_network_interfaces_tls_policies
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_network_interfaces_tls_policies.py
+    :language: python
+
+delete_tls_policies
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/delete_tls_policies.py
+    :language: python
+
+get_tls_policies
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_tls_policies.py
+    :language: python
+
+get_tls_policies_members
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_tls_policies_members.py
+    :language: python
+
+delete_tls_policies_network_interfaces
+''''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/delete_tls_policies_network_interfaces.py
+    :language: python
+
+get_tls_policies_network_interfaces
+'''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/get_tls_policies_network_interfaces.py
+    :language: python
+
+post_tls_policies_network_interfaces
+''''''''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_tls_policies_network_interfaces.py
+    :language: python
+
+patch_tls_policies
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/patch_tls_policies.py
+    :language: python
+
+post_tls_policies
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.17/post_tls_policies.py
+    :language: python
+
 PoliciesWORMDataApi
 ~~~~~~~~~~~~~~~~~~~
 
@@ -13319,10 +18413,280 @@ put_presets_workload
 .. literalinclude:: source/examples/FB2.23/put_presets_workload.py
     :language: python
 
+delete_presets_workload
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.23/delete_presets_workload.py
+    :language: python
+
+get_presets_workload
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.23/get_presets_workload.py
+    :language: python
+
+patch_presets_workload
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.23/patch_presets_workload.py
+    :language: python
+
+post_presets_workload
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.23/post_presets_workload.py
+    :language: python
+
+put_presets_workload
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.23/put_presets_workload.py
+    :language: python
+
 PublicKeysApi
 ~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+delete_public_keys
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/delete_public_keys.py
+    :language: python
+
+get_public_keys
+'''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/get_public_keys.py
+    :language: python
+
+post_public_keys
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/post_public_keys.py
+    :language: python
+
+get_public_keys_uses
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/get_public_keys_uses.py
+    :language: python
+
+delete_public_keys
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/delete_public_keys.py
+    :language: python
+
+get_public_keys
+'''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/get_public_keys.py
+    :language: python
+
+post_public_keys
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/post_public_keys.py
+    :language: python
+
+get_public_keys_uses
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/get_public_keys_uses.py
+    :language: python
+
+delete_public_keys
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/delete_public_keys.py
+    :language: python
+
+get_public_keys
+'''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/get_public_keys.py
+    :language: python
+
+post_public_keys
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/post_public_keys.py
+    :language: python
+
+get_public_keys_uses
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/get_public_keys_uses.py
+    :language: python
+
+delete_public_keys
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/delete_public_keys.py
+    :language: python
+
+get_public_keys
+'''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/get_public_keys.py
+    :language: python
+
+post_public_keys
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/post_public_keys.py
+    :language: python
+
+get_public_keys_uses
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/get_public_keys_uses.py
+    :language: python
+
+delete_public_keys
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/delete_public_keys.py
+    :language: python
+
+get_public_keys
+'''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/get_public_keys.py
+    :language: python
+
+post_public_keys
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/post_public_keys.py
+    :language: python
+
+get_public_keys_uses
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/get_public_keys_uses.py
+    :language: python
+
+delete_public_keys
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/delete_public_keys.py
+    :language: python
+
+get_public_keys
+'''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/get_public_keys.py
+    :language: python
+
+post_public_keys
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/post_public_keys.py
+    :language: python
+
+get_public_keys_uses
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/get_public_keys_uses.py
+    :language: python
+
+delete_public_keys
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/delete_public_keys.py
+    :language: python
+
+get_public_keys
+'''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/get_public_keys.py
+    :language: python
+
+post_public_keys
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/post_public_keys.py
+    :language: python
+
+get_public_keys_uses
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/get_public_keys_uses.py
+    :language: python
+
+delete_public_keys
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/delete_public_keys.py
+    :language: python
+
+get_public_keys
+'''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/get_public_keys.py
+    :language: python
+
+post_public_keys
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/post_public_keys.py
+    :language: python
+
+get_public_keys_uses
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/get_public_keys_uses.py
+    :language: python
+
+delete_public_keys
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/delete_public_keys.py
+    :language: python
+
+get_public_keys
+'''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/get_public_keys.py
+    :language: python
+
+post_public_keys
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/post_public_keys.py
+    :language: python
+
+get_public_keys_uses
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/get_public_keys_uses.py
+    :language: python
+
+delete_public_keys
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/delete_public_keys.py
+    :language: python
+
+get_public_keys
+'''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/get_public_keys.py
+    :language: python
+
+post_public_keys
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/post_public_keys.py
+    :language: python
+
+get_public_keys_uses
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/get_public_keys_uses.py
+    :language: python
 
 delete_public_keys
 ''''''''''''''''''
@@ -13442,6 +18806,246 @@ get_rapid_data_locking_test
 .. literalinclude:: source/examples/FB2.1/get_rapid_data_locking_test.py
     :language: python
 
+get_rapid_data_locking
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_rapid_data_locking.py
+    :language: python
+
+patch_rapid_data_locking
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/patch_rapid_data_locking.py
+    :language: python
+
+post_rapid_data_locking_rotate
+''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/post_rapid_data_locking_rotate.py
+    :language: python
+
+get_rapid_data_locking_test
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_rapid_data_locking_test.py
+    :language: python
+
+get_rapid_data_locking
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_rapid_data_locking.py
+    :language: python
+
+patch_rapid_data_locking
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/patch_rapid_data_locking.py
+    :language: python
+
+post_rapid_data_locking_rotate
+''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/post_rapid_data_locking_rotate.py
+    :language: python
+
+get_rapid_data_locking_test
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_rapid_data_locking_test.py
+    :language: python
+
+get_rapid_data_locking
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_rapid_data_locking.py
+    :language: python
+
+patch_rapid_data_locking
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/patch_rapid_data_locking.py
+    :language: python
+
+post_rapid_data_locking_rotate
+''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/post_rapid_data_locking_rotate.py
+    :language: python
+
+get_rapid_data_locking_test
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_rapid_data_locking_test.py
+    :language: python
+
+get_rapid_data_locking
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_rapid_data_locking.py
+    :language: python
+
+patch_rapid_data_locking
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/patch_rapid_data_locking.py
+    :language: python
+
+post_rapid_data_locking_rotate
+''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/post_rapid_data_locking_rotate.py
+    :language: python
+
+get_rapid_data_locking_test
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_rapid_data_locking_test.py
+    :language: python
+
+get_rapid_data_locking
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_rapid_data_locking.py
+    :language: python
+
+patch_rapid_data_locking
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/patch_rapid_data_locking.py
+    :language: python
+
+post_rapid_data_locking_rotate
+''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/post_rapid_data_locking_rotate.py
+    :language: python
+
+get_rapid_data_locking_test
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_rapid_data_locking_test.py
+    :language: python
+
+get_rapid_data_locking
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_rapid_data_locking.py
+    :language: python
+
+patch_rapid_data_locking
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/patch_rapid_data_locking.py
+    :language: python
+
+post_rapid_data_locking_rotate
+''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/post_rapid_data_locking_rotate.py
+    :language: python
+
+get_rapid_data_locking_test
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_rapid_data_locking_test.py
+    :language: python
+
+get_rapid_data_locking
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_rapid_data_locking.py
+    :language: python
+
+patch_rapid_data_locking
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/patch_rapid_data_locking.py
+    :language: python
+
+post_rapid_data_locking_rotate
+''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/post_rapid_data_locking_rotate.py
+    :language: python
+
+get_rapid_data_locking_test
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_rapid_data_locking_test.py
+    :language: python
+
+get_rapid_data_locking
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_rapid_data_locking.py
+    :language: python
+
+patch_rapid_data_locking
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/patch_rapid_data_locking.py
+    :language: python
+
+post_rapid_data_locking_rotate
+''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/post_rapid_data_locking_rotate.py
+    :language: python
+
+get_rapid_data_locking_test
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_rapid_data_locking_test.py
+    :language: python
+
+get_rapid_data_locking
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_rapid_data_locking.py
+    :language: python
+
+patch_rapid_data_locking
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/patch_rapid_data_locking.py
+    :language: python
+
+post_rapid_data_locking_rotate
+''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/post_rapid_data_locking_rotate.py
+    :language: python
+
+get_rapid_data_locking_test
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_rapid_data_locking_test.py
+    :language: python
+
+get_rapid_data_locking
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_rapid_data_locking.py
+    :language: python
+
+patch_rapid_data_locking
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/patch_rapid_data_locking.py
+    :language: python
+
+post_rapid_data_locking_rotate
+''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/post_rapid_data_locking_rotate.py
+    :language: python
+
+get_rapid_data_locking_test
+'''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.1/get_rapid_data_locking_test.py
+    :language: python
+
 RealmsApi
 ~~~~~~~~~
 
@@ -13523,10 +19127,112 @@ get_resiliency_groups_members
 .. literalinclude:: source/examples/FB2.23/get_resiliency_groups_members.py
     :language: python
 
+get_resiliency_groups
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.23/get_resiliency_groups.py
+    :language: python
+
+get_resiliency_groups_members
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.23/get_resiliency_groups_members.py
+    :language: python
+
 ResourceAccessesApi
 ~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+post_resource_accesses_batch
+''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.19/post_resource_accesses_batch.py
+    :language: python
+
+delete_resource_accesses
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.19/delete_resource_accesses.py
+    :language: python
+
+get_resource_accesses
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.19/get_resource_accesses.py
+    :language: python
+
+post_resource_accesses_batch
+''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.19/post_resource_accesses_batch.py
+    :language: python
+
+delete_resource_accesses
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.19/delete_resource_accesses.py
+    :language: python
+
+get_resource_accesses
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.19/get_resource_accesses.py
+    :language: python
+
+post_resource_accesses_batch
+''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.19/post_resource_accesses_batch.py
+    :language: python
+
+delete_resource_accesses
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.19/delete_resource_accesses.py
+    :language: python
+
+get_resource_accesses
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.19/get_resource_accesses.py
+    :language: python
+
+post_resource_accesses_batch
+''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.19/post_resource_accesses_batch.py
+    :language: python
+
+delete_resource_accesses
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.19/delete_resource_accesses.py
+    :language: python
+
+get_resource_accesses
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.19/get_resource_accesses.py
+    :language: python
+
+post_resource_accesses_batch
+''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.19/post_resource_accesses_batch.py
+    :language: python
+
+delete_resource_accesses
+''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.19/delete_resource_accesses.py
+    :language: python
+
+get_resource_accesses
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.19/get_resource_accesses.py
+    :language: python
 
 post_resource_accesses_batch
 ''''''''''''''''''''''''''''
@@ -13557,10 +19263,358 @@ get_roles
 .. literalinclude:: source/examples/FB2.0/get_roles.py
     :language: python
 
+get_roles
+'''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_roles.py
+    :language: python
+
+get_roles
+'''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_roles.py
+    :language: python
+
+get_roles
+'''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_roles.py
+    :language: python
+
+get_roles
+'''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_roles.py
+    :language: python
+
+get_roles
+'''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_roles.py
+    :language: python
+
+get_roles
+'''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_roles.py
+    :language: python
+
+get_roles
+'''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_roles.py
+    :language: python
+
+get_roles
+'''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_roles.py
+    :language: python
+
+get_roles
+'''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_roles.py
+    :language: python
+
+get_roles
+'''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_roles.py
+    :language: python
+
 SAML2SSOApi
 ~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+delete_sso_saml2_idps
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.15/delete_sso_saml2_idps.py
+    :language: python
+
+get_sso_saml2_idps
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.15/get_sso_saml2_idps.py
+    :language: python
+
+patch_sso_saml2_idps
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.24/patch_sso_saml2_idps.py
+    :language: python
+
+post_sso_saml2_idps
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.24/post_sso_saml2_idps.py
+    :language: python
+
+get_sso_saml2_idps_test
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/get_sso_saml2_idps_test.py
+    :language: python
+
+patch_sso_saml2_idps_test
+'''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/patch_sso_saml2_idps_test.py
+    :language: python
+
+delete_sso_saml2_idps
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.15/delete_sso_saml2_idps.py
+    :language: python
+
+get_sso_saml2_idps
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.15/get_sso_saml2_idps.py
+    :language: python
+
+patch_sso_saml2_idps
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.24/patch_sso_saml2_idps.py
+    :language: python
+
+post_sso_saml2_idps
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.24/post_sso_saml2_idps.py
+    :language: python
+
+get_sso_saml2_idps_test
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/get_sso_saml2_idps_test.py
+    :language: python
+
+patch_sso_saml2_idps_test
+'''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/patch_sso_saml2_idps_test.py
+    :language: python
+
+delete_sso_saml2_idps
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.15/delete_sso_saml2_idps.py
+    :language: python
+
+get_sso_saml2_idps
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.15/get_sso_saml2_idps.py
+    :language: python
+
+patch_sso_saml2_idps
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.24/patch_sso_saml2_idps.py
+    :language: python
+
+post_sso_saml2_idps
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.24/post_sso_saml2_idps.py
+    :language: python
+
+get_sso_saml2_idps_test
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/get_sso_saml2_idps_test.py
+    :language: python
+
+patch_sso_saml2_idps_test
+'''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/patch_sso_saml2_idps_test.py
+    :language: python
+
+delete_sso_saml2_idps
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.15/delete_sso_saml2_idps.py
+    :language: python
+
+get_sso_saml2_idps
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.15/get_sso_saml2_idps.py
+    :language: python
+
+patch_sso_saml2_idps
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.24/patch_sso_saml2_idps.py
+    :language: python
+
+post_sso_saml2_idps
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.24/post_sso_saml2_idps.py
+    :language: python
+
+get_sso_saml2_idps_test
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/get_sso_saml2_idps_test.py
+    :language: python
+
+patch_sso_saml2_idps_test
+'''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/patch_sso_saml2_idps_test.py
+    :language: python
+
+delete_sso_saml2_idps
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.15/delete_sso_saml2_idps.py
+    :language: python
+
+get_sso_saml2_idps
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.15/get_sso_saml2_idps.py
+    :language: python
+
+patch_sso_saml2_idps
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.24/patch_sso_saml2_idps.py
+    :language: python
+
+post_sso_saml2_idps
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.24/post_sso_saml2_idps.py
+    :language: python
+
+get_sso_saml2_idps_test
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/get_sso_saml2_idps_test.py
+    :language: python
+
+patch_sso_saml2_idps_test
+'''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/patch_sso_saml2_idps_test.py
+    :language: python
+
+delete_sso_saml2_idps
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.15/delete_sso_saml2_idps.py
+    :language: python
+
+get_sso_saml2_idps
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.15/get_sso_saml2_idps.py
+    :language: python
+
+patch_sso_saml2_idps
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.24/patch_sso_saml2_idps.py
+    :language: python
+
+post_sso_saml2_idps
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.24/post_sso_saml2_idps.py
+    :language: python
+
+get_sso_saml2_idps_test
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/get_sso_saml2_idps_test.py
+    :language: python
+
+patch_sso_saml2_idps_test
+'''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/patch_sso_saml2_idps_test.py
+    :language: python
+
+delete_sso_saml2_idps
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.15/delete_sso_saml2_idps.py
+    :language: python
+
+get_sso_saml2_idps
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.15/get_sso_saml2_idps.py
+    :language: python
+
+patch_sso_saml2_idps
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.24/patch_sso_saml2_idps.py
+    :language: python
+
+post_sso_saml2_idps
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.24/post_sso_saml2_idps.py
+    :language: python
+
+get_sso_saml2_idps_test
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/get_sso_saml2_idps_test.py
+    :language: python
+
+patch_sso_saml2_idps_test
+'''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/patch_sso_saml2_idps_test.py
+    :language: python
+
+delete_sso_saml2_idps
+'''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.15/delete_sso_saml2_idps.py
+    :language: python
+
+get_sso_saml2_idps
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.15/get_sso_saml2_idps.py
+    :language: python
+
+patch_sso_saml2_idps
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.24/patch_sso_saml2_idps.py
+    :language: python
+
+post_sso_saml2_idps
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.24/post_sso_saml2_idps.py
+    :language: python
+
+get_sso_saml2_idps_test
+'''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/get_sso_saml2_idps_test.py
+    :language: python
+
+patch_sso_saml2_idps_test
+'''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.16/patch_sso_saml2_idps_test.py
+    :language: python
 
 delete_sso_saml2_idps
 '''''''''''''''''''''
@@ -13615,6 +19669,126 @@ patch_smtp_servers
 .. literalinclude:: source/examples/FB2.15/patch_smtp_servers.py
     :language: python
 
+get_smtp_servers
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_smtp_servers.py
+    :language: python
+
+patch_smtp_servers
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.15/patch_smtp_servers.py
+    :language: python
+
+get_smtp_servers
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_smtp_servers.py
+    :language: python
+
+patch_smtp_servers
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.15/patch_smtp_servers.py
+    :language: python
+
+get_smtp_servers
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_smtp_servers.py
+    :language: python
+
+patch_smtp_servers
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.15/patch_smtp_servers.py
+    :language: python
+
+get_smtp_servers
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_smtp_servers.py
+    :language: python
+
+patch_smtp_servers
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.15/patch_smtp_servers.py
+    :language: python
+
+get_smtp_servers
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_smtp_servers.py
+    :language: python
+
+patch_smtp_servers
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.15/patch_smtp_servers.py
+    :language: python
+
+get_smtp_servers
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_smtp_servers.py
+    :language: python
+
+patch_smtp_servers
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.15/patch_smtp_servers.py
+    :language: python
+
+get_smtp_servers
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_smtp_servers.py
+    :language: python
+
+patch_smtp_servers
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.15/patch_smtp_servers.py
+    :language: python
+
+get_smtp_servers
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_smtp_servers.py
+    :language: python
+
+patch_smtp_servers
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.15/patch_smtp_servers.py
+    :language: python
+
+get_smtp_servers
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_smtp_servers.py
+    :language: python
+
+patch_smtp_servers
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.15/patch_smtp_servers.py
+    :language: python
+
+get_smtp_servers
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_smtp_servers.py
+    :language: python
+
+patch_smtp_servers
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.15/patch_smtp_servers.py
+    :language: python
+
 SNMPAgentsApi
 ~~~~~~~~~~~~~
 
@@ -13638,10 +19812,490 @@ patch_snmp_agents
 .. literalinclude:: source/examples/FB2.0/patch_snmp_agents.py
     :language: python
 
+get_snmp_agents
+'''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_snmp_agents.py
+    :language: python
+
+get_snmp_agents_mib
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_snmp_agents_mib.py
+    :language: python
+
+patch_snmp_agents
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_snmp_agents.py
+    :language: python
+
+get_snmp_agents
+'''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_snmp_agents.py
+    :language: python
+
+get_snmp_agents_mib
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_snmp_agents_mib.py
+    :language: python
+
+patch_snmp_agents
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_snmp_agents.py
+    :language: python
+
+get_snmp_agents
+'''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_snmp_agents.py
+    :language: python
+
+get_snmp_agents_mib
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_snmp_agents_mib.py
+    :language: python
+
+patch_snmp_agents
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_snmp_agents.py
+    :language: python
+
+get_snmp_agents
+'''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_snmp_agents.py
+    :language: python
+
+get_snmp_agents_mib
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_snmp_agents_mib.py
+    :language: python
+
+patch_snmp_agents
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_snmp_agents.py
+    :language: python
+
+get_snmp_agents
+'''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_snmp_agents.py
+    :language: python
+
+get_snmp_agents_mib
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_snmp_agents_mib.py
+    :language: python
+
+patch_snmp_agents
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_snmp_agents.py
+    :language: python
+
+get_snmp_agents
+'''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_snmp_agents.py
+    :language: python
+
+get_snmp_agents_mib
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_snmp_agents_mib.py
+    :language: python
+
+patch_snmp_agents
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_snmp_agents.py
+    :language: python
+
+get_snmp_agents
+'''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_snmp_agents.py
+    :language: python
+
+get_snmp_agents_mib
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_snmp_agents_mib.py
+    :language: python
+
+patch_snmp_agents
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_snmp_agents.py
+    :language: python
+
+get_snmp_agents
+'''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_snmp_agents.py
+    :language: python
+
+get_snmp_agents_mib
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_snmp_agents_mib.py
+    :language: python
+
+patch_snmp_agents
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_snmp_agents.py
+    :language: python
+
+get_snmp_agents
+'''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_snmp_agents.py
+    :language: python
+
+get_snmp_agents_mib
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_snmp_agents_mib.py
+    :language: python
+
+patch_snmp_agents
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_snmp_agents.py
+    :language: python
+
+get_snmp_agents
+'''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_snmp_agents.py
+    :language: python
+
+get_snmp_agents_mib
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_snmp_agents_mib.py
+    :language: python
+
+patch_snmp_agents
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_snmp_agents.py
+    :language: python
+
 SNMPManagersApi
 ~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+delete_snmp_managers
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_snmp_managers.py
+    :language: python
+
+get_snmp_managers
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_snmp_managers.py
+    :language: python
+
+patch_snmp_managers
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_snmp_managers.py
+    :language: python
+
+post_snmp_managers
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_snmp_managers.py
+    :language: python
+
+get_snmp_managers_test
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_snmp_managers_test.py
+    :language: python
+
+delete_snmp_managers
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_snmp_managers.py
+    :language: python
+
+get_snmp_managers
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_snmp_managers.py
+    :language: python
+
+patch_snmp_managers
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_snmp_managers.py
+    :language: python
+
+post_snmp_managers
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_snmp_managers.py
+    :language: python
+
+get_snmp_managers_test
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_snmp_managers_test.py
+    :language: python
+
+delete_snmp_managers
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_snmp_managers.py
+    :language: python
+
+get_snmp_managers
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_snmp_managers.py
+    :language: python
+
+patch_snmp_managers
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_snmp_managers.py
+    :language: python
+
+post_snmp_managers
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_snmp_managers.py
+    :language: python
+
+get_snmp_managers_test
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_snmp_managers_test.py
+    :language: python
+
+delete_snmp_managers
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_snmp_managers.py
+    :language: python
+
+get_snmp_managers
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_snmp_managers.py
+    :language: python
+
+patch_snmp_managers
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_snmp_managers.py
+    :language: python
+
+post_snmp_managers
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_snmp_managers.py
+    :language: python
+
+get_snmp_managers_test
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_snmp_managers_test.py
+    :language: python
+
+delete_snmp_managers
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_snmp_managers.py
+    :language: python
+
+get_snmp_managers
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_snmp_managers.py
+    :language: python
+
+patch_snmp_managers
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_snmp_managers.py
+    :language: python
+
+post_snmp_managers
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_snmp_managers.py
+    :language: python
+
+get_snmp_managers_test
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_snmp_managers_test.py
+    :language: python
+
+delete_snmp_managers
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_snmp_managers.py
+    :language: python
+
+get_snmp_managers
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_snmp_managers.py
+    :language: python
+
+patch_snmp_managers
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_snmp_managers.py
+    :language: python
+
+post_snmp_managers
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_snmp_managers.py
+    :language: python
+
+get_snmp_managers_test
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_snmp_managers_test.py
+    :language: python
+
+delete_snmp_managers
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_snmp_managers.py
+    :language: python
+
+get_snmp_managers
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_snmp_managers.py
+    :language: python
+
+patch_snmp_managers
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_snmp_managers.py
+    :language: python
+
+post_snmp_managers
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_snmp_managers.py
+    :language: python
+
+get_snmp_managers_test
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_snmp_managers_test.py
+    :language: python
+
+delete_snmp_managers
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_snmp_managers.py
+    :language: python
+
+get_snmp_managers
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_snmp_managers.py
+    :language: python
+
+patch_snmp_managers
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_snmp_managers.py
+    :language: python
+
+post_snmp_managers
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_snmp_managers.py
+    :language: python
+
+get_snmp_managers_test
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_snmp_managers_test.py
+    :language: python
+
+delete_snmp_managers
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_snmp_managers.py
+    :language: python
+
+get_snmp_managers
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_snmp_managers.py
+    :language: python
+
+patch_snmp_managers
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_snmp_managers.py
+    :language: python
+
+post_snmp_managers
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_snmp_managers.py
+    :language: python
+
+get_snmp_managers_test
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_snmp_managers_test.py
+    :language: python
+
+delete_snmp_managers
+''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_snmp_managers.py
+    :language: python
+
+get_snmp_managers
+'''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_snmp_managers.py
+    :language: python
+
+patch_snmp_managers
+'''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_snmp_managers.py
+    :language: python
+
+post_snmp_managers
+''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_snmp_managers.py
+    :language: python
+
+get_snmp_managers_test
+''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_snmp_managers_test.py
+    :language: python
 
 delete_snmp_managers
 ''''''''''''''''''''
@@ -13706,6 +20360,66 @@ SessionsApi
 ~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+get_sessions
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.3/get_sessions.py
+    :language: python
+
+get_sessions
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.3/get_sessions.py
+    :language: python
+
+get_sessions
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.3/get_sessions.py
+    :language: python
+
+get_sessions
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.3/get_sessions.py
+    :language: python
+
+get_sessions
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.3/get_sessions.py
+    :language: python
+
+get_sessions
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.3/get_sessions.py
+    :language: python
+
+get_sessions
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.3/get_sessions.py
+    :language: python
+
+get_sessions
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.3/get_sessions.py
+    :language: python
+
+get_sessions
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.3/get_sessions.py
+    :language: python
+
+get_sessions
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.3/get_sessions.py
+    :language: python
 
 get_sessions
 ''''''''''''
@@ -13783,10 +20497,430 @@ post_subnets
 .. literalinclude:: source/examples/FB2.0/post_subnets.py
     :language: python
 
+delete_subnets
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_subnets.py
+    :language: python
+
+get_subnets
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_subnets.py
+    :language: python
+
+patch_subnets
+'''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_subnets.py
+    :language: python
+
+post_subnets
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_subnets.py
+    :language: python
+
+delete_subnets
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_subnets.py
+    :language: python
+
+get_subnets
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_subnets.py
+    :language: python
+
+patch_subnets
+'''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_subnets.py
+    :language: python
+
+post_subnets
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_subnets.py
+    :language: python
+
+delete_subnets
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_subnets.py
+    :language: python
+
+get_subnets
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_subnets.py
+    :language: python
+
+patch_subnets
+'''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_subnets.py
+    :language: python
+
+post_subnets
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_subnets.py
+    :language: python
+
+delete_subnets
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_subnets.py
+    :language: python
+
+get_subnets
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_subnets.py
+    :language: python
+
+patch_subnets
+'''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_subnets.py
+    :language: python
+
+post_subnets
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_subnets.py
+    :language: python
+
+delete_subnets
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_subnets.py
+    :language: python
+
+get_subnets
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_subnets.py
+    :language: python
+
+patch_subnets
+'''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_subnets.py
+    :language: python
+
+post_subnets
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_subnets.py
+    :language: python
+
+delete_subnets
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_subnets.py
+    :language: python
+
+get_subnets
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_subnets.py
+    :language: python
+
+patch_subnets
+'''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_subnets.py
+    :language: python
+
+post_subnets
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_subnets.py
+    :language: python
+
+delete_subnets
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_subnets.py
+    :language: python
+
+get_subnets
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_subnets.py
+    :language: python
+
+patch_subnets
+'''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_subnets.py
+    :language: python
+
+post_subnets
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_subnets.py
+    :language: python
+
+delete_subnets
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_subnets.py
+    :language: python
+
+get_subnets
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_subnets.py
+    :language: python
+
+patch_subnets
+'''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_subnets.py
+    :language: python
+
+post_subnets
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_subnets.py
+    :language: python
+
+delete_subnets
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_subnets.py
+    :language: python
+
+get_subnets
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_subnets.py
+    :language: python
+
+patch_subnets
+'''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_subnets.py
+    :language: python
+
+post_subnets
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_subnets.py
+    :language: python
+
+delete_subnets
+''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/delete_subnets.py
+    :language: python
+
+get_subnets
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_subnets.py
+    :language: python
+
+patch_subnets
+'''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/patch_subnets.py
+    :language: python
+
+post_subnets
+''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/post_subnets.py
+    :language: python
+
 SupportApi
 ~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+get_support
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_support.py
+    :language: python
+
+patch_support
+'''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/patch_support.py
+    :language: python
+
+get_support_test
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_support_test.py
+    :language: python
+
+get_support
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_support.py
+    :language: python
+
+patch_support
+'''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/patch_support.py
+    :language: python
+
+get_support_test
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_support_test.py
+    :language: python
+
+get_support
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_support.py
+    :language: python
+
+patch_support
+'''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/patch_support.py
+    :language: python
+
+get_support_test
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_support_test.py
+    :language: python
+
+get_support
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_support.py
+    :language: python
+
+patch_support
+'''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/patch_support.py
+    :language: python
+
+get_support_test
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_support_test.py
+    :language: python
+
+get_support
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_support.py
+    :language: python
+
+patch_support
+'''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/patch_support.py
+    :language: python
+
+get_support_test
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_support_test.py
+    :language: python
+
+get_support
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_support.py
+    :language: python
+
+patch_support
+'''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/patch_support.py
+    :language: python
+
+get_support_test
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_support_test.py
+    :language: python
+
+get_support
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_support.py
+    :language: python
+
+patch_support
+'''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/patch_support.py
+    :language: python
+
+get_support_test
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_support_test.py
+    :language: python
+
+get_support
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_support.py
+    :language: python
+
+patch_support
+'''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/patch_support.py
+    :language: python
+
+get_support_test
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_support_test.py
+    :language: python
+
+get_support
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_support.py
+    :language: python
+
+patch_support
+'''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/patch_support.py
+    :language: python
+
+get_support_test
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_support_test.py
+    :language: python
+
+get_support
+'''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_support.py
+    :language: python
+
+patch_support
+'''''''''''''
+
+.. literalinclude:: source/examples/FB2.14/patch_support.py
+    :language: python
+
+get_support_test
+''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.0/get_support_test.py
+    :language: python
 
 get_support
 '''''''''''
@@ -13944,6 +21078,126 @@ VerificationKeysApi
 ~~~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
+
+get_support_verification_keys
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.7/get_support_verification_keys.py
+    :language: python
+
+patch_support_verification_keys
+'''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.7/patch_support_verification_keys.py
+    :language: python
+
+get_support_verification_keys
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.7/get_support_verification_keys.py
+    :language: python
+
+patch_support_verification_keys
+'''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.7/patch_support_verification_keys.py
+    :language: python
+
+get_support_verification_keys
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.7/get_support_verification_keys.py
+    :language: python
+
+patch_support_verification_keys
+'''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.7/patch_support_verification_keys.py
+    :language: python
+
+get_support_verification_keys
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.7/get_support_verification_keys.py
+    :language: python
+
+patch_support_verification_keys
+'''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.7/patch_support_verification_keys.py
+    :language: python
+
+get_support_verification_keys
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.7/get_support_verification_keys.py
+    :language: python
+
+patch_support_verification_keys
+'''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.7/patch_support_verification_keys.py
+    :language: python
+
+get_support_verification_keys
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.7/get_support_verification_keys.py
+    :language: python
+
+patch_support_verification_keys
+'''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.7/patch_support_verification_keys.py
+    :language: python
+
+get_support_verification_keys
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.7/get_support_verification_keys.py
+    :language: python
+
+patch_support_verification_keys
+'''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.7/patch_support_verification_keys.py
+    :language: python
+
+get_support_verification_keys
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.7/get_support_verification_keys.py
+    :language: python
+
+patch_support_verification_keys
+'''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.7/patch_support_verification_keys.py
+    :language: python
+
+get_support_verification_keys
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.7/get_support_verification_keys.py
+    :language: python
+
+patch_support_verification_keys
+'''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.7/patch_support_verification_keys.py
+    :language: python
+
+get_support_verification_keys
+'''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.7/get_support_verification_keys.py
+    :language: python
+
+patch_support_verification_keys
+'''''''''''''''''''''''''''''''
+
+.. literalinclude:: source/examples/FB2.7/patch_support_verification_keys.py
+    :language: python
 
 get_support_verification_keys
 '''''''''''''''''''''''''''''
