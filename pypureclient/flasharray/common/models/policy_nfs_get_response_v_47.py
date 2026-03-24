@@ -13,14 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.policy_v_47 import Policy
-from pypureclient.flasharray.common.models.policy_nfs_policy_mapping_v_32 import PolicyNfsPolicyMapping
-from pypureclient.flasharray.common.models.context_v_47 import Context
-from pypureclient.flasharray.common.models.fixed_reference_v_0 import FixedReference
-from pypureclient.flasharray.common.models.fixed_reference_with_type_v_3 import FixedReferenceWithType
-from pypureclient.flasharray.common.models.reference_v_0 import Reference
-from pypureclient.flasharray.common.models.resource_v_0 import Resource
-
 import pprint
 import re  # noqa: F401
 import json

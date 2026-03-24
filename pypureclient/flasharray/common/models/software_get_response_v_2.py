@@ -13,8 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.resource_fixed_non_unique_name_v_2 import ResourceFixedNonUniqueName
-
 import pprint
 import re  # noqa: F401
 import json

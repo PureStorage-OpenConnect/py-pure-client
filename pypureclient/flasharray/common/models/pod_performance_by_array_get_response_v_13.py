@@ -13,10 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.pod_performance_v_13 import PodPerformance
-from pypureclient.flasharray.common.models.performance_v_4 import Performance
-from pypureclient.flasharray.common.models.resource_v_0 import Resource
-
 import pprint
 import re  # noqa: F401
 import json

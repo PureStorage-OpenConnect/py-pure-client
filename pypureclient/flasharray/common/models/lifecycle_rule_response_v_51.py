@@ -13,13 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.built_in_v_0 import BuiltIn
-from pypureclient.flasharray.common.models.context_v_50 import Context
-from pypureclient.flasharray.common.models.fixed_reference_v_49 import FixedReference
-from pypureclient.flasharray.common.models.fixed_reference_with_type_v_49 import FixedReferenceWithType
-from pypureclient.flasharray.common.models.lifecycle_rule_base_v_51 import LifecycleRuleBase
-from pypureclient.flasharray.common.models.lifecycle_rule_config_base_v_51 import LifecycleRuleConfigBase
-
 import pprint
 import re  # noqa: F401
 import json

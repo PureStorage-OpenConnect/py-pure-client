@@ -13,11 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.log_target_v_35 import LogTarget
-from pypureclient.flasharray.common.models.fixed_name_resource_no_id_v_2 import FixedNameResourceNoId
-from pypureclient.flasharray.common.models.reference_v_0 import Reference
-from pypureclient.flasharray.common.models.reference_with_type_v_3 import ReferenceWithType
-
 import pprint
 import re  # noqa: F401
 import json

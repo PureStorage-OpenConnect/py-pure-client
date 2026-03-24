@@ -13,10 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.subnet_post_v_2 import SubnetPost
-from pypureclient.flasharray.common.models.fixed_reference_no_id_v_0 import FixedReferenceNoId
-from pypureclient.flasharray.common.models.resource_no_id_v_0 import ResourceNoId
-
 import pprint
 import re  # noqa: F401
 import json

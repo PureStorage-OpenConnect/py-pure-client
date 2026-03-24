@@ -13,8 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.eula_signature_v_2 import EulaSignature
-
 import pprint
 import re  # noqa: F401
 import json

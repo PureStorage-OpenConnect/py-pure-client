@@ -13,8 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.new_name_v_0 import NewName
-
 import pprint
 import re  # noqa: F401
 import json

@@ -13,9 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.built_in_v_0 import BuiltIn
-from pypureclient.flasharray.common.models.certificate_base_v_49 import CertificateBase
-
 import pprint
 import re  # noqa: F401
 import json

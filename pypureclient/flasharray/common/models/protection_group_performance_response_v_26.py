@@ -13,9 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.aggregate_replication_performance_v_1 import AggregateReplicationPerformance
-from pypureclient.flasharray.common.models.built_in_v_0 import BuiltIn
-
 import pprint
 import re  # noqa: F401
 import json

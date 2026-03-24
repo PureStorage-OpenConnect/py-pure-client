@@ -13,15 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.context_v_50 import Context
-from pypureclient.flasharray.common.models.fixed_reference_v_49 import FixedReference
-from pypureclient.flasharray.common.models.fixed_reference_with_type_v_49 import FixedReferenceWithType
-from pypureclient.flasharray.common.models.limited_by_v_49 import LimitedBy
-from pypureclient.flasharray.common.models.reference_with_fixed_type_v_40 import ReferenceWithFixedType
-from pypureclient.flasharray.common.models.resource_v_49 import Resource
-from pypureclient.flasharray.common.models.space_v_50 import Space
-from pypureclient.flasharray.common.models.workload_configuration_reference_v_51 import WorkloadConfigurationReference
-
 import pprint
 import re  # noqa: F401
 import json

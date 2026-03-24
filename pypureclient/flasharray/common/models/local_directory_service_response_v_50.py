@@ -13,12 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.local_directory_service_post_v_44 import LocalDirectoryServicePost
-from pypureclient.flasharray.common.models.fixed_reference_v_49 import FixedReference
-from pypureclient.flasharray.common.models.fixed_reference_with_type_v_49 import FixedReferenceWithType
-from pypureclient.flasharray.common.models.resource_v_49 import Resource
-from pypureclient.flasharray.common.models.server_reference_v_50 import ServerReference
-
 import pprint
 import re  # noqa: F401
 import json

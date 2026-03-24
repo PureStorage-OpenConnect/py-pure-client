@@ -13,8 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.admin_settings_required_authentication_methods_v_32 import AdminSettingsRequiredAuthenticationMethods
-
 import pprint
 import re  # noqa: F401
 import json

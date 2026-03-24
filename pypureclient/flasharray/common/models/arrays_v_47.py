@@ -13,9 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.arrayencryption_data_at_rest_v_6 import ArrayencryptionDataAtRest
-from pypureclient.flasharray.common.models.fixed_reference_v_0 import FixedReference
-
 import pprint
 import re  # noqa: F401
 import json

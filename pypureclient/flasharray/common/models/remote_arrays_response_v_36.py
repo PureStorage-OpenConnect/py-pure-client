@@ -13,10 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.fleet_v_36 import Fleet
-from pypureclient.flasharray.common.models.remote_array_fleet_v_36 import RemoteArrayFleet
-from pypureclient.flasharray.common.models.resource_v_0 import Resource
-
 import pprint
 import re  # noqa: F401
 import json

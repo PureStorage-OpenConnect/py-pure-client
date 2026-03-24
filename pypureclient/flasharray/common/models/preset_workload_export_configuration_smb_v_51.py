@@ -13,8 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.preset_workload_export_configuration_smb_rule_v_51 import PresetWorkloadExportConfigurationSmbRule
-
 import pprint
 import re  # noqa: F401
 import json

@@ -13,9 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.policy_v_3 import Policy
-from pypureclient.flasharray.common.models.resource_v_0 import Resource
-
 import pprint
 import re  # noqa: F401
 import json

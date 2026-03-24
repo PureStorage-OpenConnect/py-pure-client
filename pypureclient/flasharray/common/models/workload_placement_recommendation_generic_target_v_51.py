@@ -13,9 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.reference_v_49 import Reference
-from pypureclient.flasharray.common.models.workload_placement_recommendation_projection_v_40 import WorkloadPlacementRecommendationProjection
-
 import pprint
 import re  # noqa: F401
 import json

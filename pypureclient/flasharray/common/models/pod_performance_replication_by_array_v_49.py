@@ -13,8 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.context_v_49 import Context
-
 import pprint
 import re  # noqa: F401
 import json

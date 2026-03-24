@@ -13,11 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.context_v_38 import Context
-from pypureclient.flasharray.common.models.destroyed_patch_post_v_0 import DestroyedPatchPost
-from pypureclient.flasharray.common.models.fixed_reference_v_0 import FixedReference
-from pypureclient.flasharray.common.models.reference_with_fixed_type_v_40 import ReferenceWithFixedType
-
 import pprint
 import re  # noqa: F401
 import json

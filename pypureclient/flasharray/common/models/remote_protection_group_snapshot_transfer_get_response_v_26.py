@@ -13,10 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.reference_v_0 import Reference
-from pypureclient.flasharray.common.models.resource_v_0 import Resource
-from pypureclient.flasharray.common.models.transfer_v_1 import Transfer
-
 import pprint
 import re  # noqa: F401
 import json

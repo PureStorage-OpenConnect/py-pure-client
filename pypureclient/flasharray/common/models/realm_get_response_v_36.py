@@ -13,11 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.container_eradication_config_v_36 import ContainerEradicationConfig
-from pypureclient.flasharray.common.models.container_qos_v_36 import ContainerQos
-from pypureclient.flasharray.common.models.resource_v_0 import Resource
-from pypureclient.flasharray.common.models.space_no_deprecated_physical_or_effective_v_36 import SpaceNoDeprecatedPhysicalOrEffective
-
 import pprint
 import re  # noqa: F401
 import json

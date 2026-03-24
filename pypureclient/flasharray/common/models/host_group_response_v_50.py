@@ -13,13 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.container_qos_ceilings_v_47 import ContainerQosCeilings
-from pypureclient.flasharray.common.models.context_v_50 import Context
-from pypureclient.flasharray.common.models.fixed_reference_v_49 import FixedReference
-from pypureclient.flasharray.common.models.fixed_reference_with_type_v_49 import FixedReferenceWithType
-from pypureclient.flasharray.common.models.resource_no_id_v_0 import ResourceNoId
-from pypureclient.flasharray.common.models.space_v_50 import Space
-
 import pprint
 import re  # noqa: F401
 import json

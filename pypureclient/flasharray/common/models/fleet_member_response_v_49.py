@@ -13,12 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.fixed_reference_v_49 import FixedReference
-from pypureclient.flasharray.common.models.fixed_reference_with_type_v_49 import FixedReferenceWithType
-from pypureclient.flasharray.common.models.fixed_reference_with_type_and_location_v_49 import FixedReferenceWithTypeAndLocation
-from pypureclient.flasharray.common.models.reference_v_49 import Reference
-from pypureclient.flasharray.common.models.reference_without_type_with_is_local_v_49 import ReferenceWithoutTypeWithIsLocal
-
 import pprint
 import re  # noqa: F401
 import json

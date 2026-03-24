@@ -13,9 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.built_in_v_0 import BuiltIn
-from pypureclient.flasharray.common.models.cache_space_v_51 import CacheSpace
-
 import pprint
 import re  # noqa: F401
 import json

@@ -13,10 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.resource_no_id_v_0 import ResourceNoId
-from pypureclient.flasharray.common.models.snmp_v2c_v_4 import SnmpV2c
-from pypureclient.flasharray.common.models.snmp_v3_v_4 import SnmpV3
-
 import pprint
 import re  # noqa: F401
 import json

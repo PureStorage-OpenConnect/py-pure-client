@@ -13,9 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.kmip_certificate_v_24 import KmipCertificate
-from pypureclient.flasharray.common.models.kmip_object_v_24 import KmipObject
-
 import pprint
 import re  # noqa: F401
 import json

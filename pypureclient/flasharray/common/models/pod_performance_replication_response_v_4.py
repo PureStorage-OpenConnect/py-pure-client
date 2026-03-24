@@ -13,9 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.fixed_reference_v_0 import FixedReference
-from pypureclient.flasharray.common.models.replication_performance_with_total_v_2 import ReplicationPerformanceWithTotal
-
 import pprint
 import re  # noqa: F401
 import json

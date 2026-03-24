@@ -13,10 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.network_interface_performance_eth_v_4 import NetworkInterfacePerformanceEth
-from pypureclient.flasharray.common.models.network_interface_performance_fc_v_4 import NetworkInterfacePerformanceFc
-from pypureclient.flasharray.common.models.resource_no_id_v_0 import ResourceNoId
-
 import pprint
 import re  # noqa: F401
 import json

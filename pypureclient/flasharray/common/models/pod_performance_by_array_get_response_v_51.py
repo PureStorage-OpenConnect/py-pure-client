@@ -13,13 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.pod_performance_v_51 import PodPerformance
-from pypureclient.flasharray.common.models.context_v_50 import Context
-from pypureclient.flasharray.common.models.fixed_reference_v_49 import FixedReference
-from pypureclient.flasharray.common.models.fixed_reference_with_type_v_49 import FixedReferenceWithType
-from pypureclient.flasharray.common.models.performance_v_51 import Performance
-from pypureclient.flasharray.common.models.resource_v_49 import Resource
-
 import pprint
 import re  # noqa: F401
 import json

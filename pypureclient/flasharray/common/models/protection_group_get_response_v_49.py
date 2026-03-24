@@ -13,19 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.protection_group_eradication_config_v_13 import ProtectionGroupEradicationConfig
-from pypureclient.flasharray.common.models.context_v_49 import Context
-from pypureclient.flasharray.common.models.fixed_reference_v_49 import FixedReference
-from pypureclient.flasharray.common.models.fixed_reference_with_type_v_49 import FixedReferenceWithType
-from pypureclient.flasharray.common.models.replication_schedule_v_1 import ReplicationSchedule
-from pypureclient.flasharray.common.models.resource_v_49 import Resource
-from pypureclient.flasharray.common.models.retention_policy_v_47 import RetentionPolicy
-from pypureclient.flasharray.common.models.snapshot_schedule_v_1 import SnapshotSchedule
-from pypureclient.flasharray.common.models.space_v_34 import Space
-from pypureclient.flasharray.common.models.time_window_v_1 import TimeWindow
-from pypureclient.flasharray.common.models.workload_configuration_fixed_reference_v_49 import WorkloadConfigurationFixedReference
-from pypureclient.flasharray.common.models.workload_configuration_fixed_reference_workload_v_49 import WorkloadConfigurationFixedReferenceWorkload
-
 import pprint
 import re  # noqa: F401
 import json

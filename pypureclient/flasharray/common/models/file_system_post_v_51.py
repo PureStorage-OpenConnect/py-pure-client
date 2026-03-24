@@ -13,8 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.reference_with_fixed_type_v_40 import ReferenceWithFixedType
-
 import pprint
 import re  # noqa: F401
 import json

@@ -13,14 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.built_in_relationship_v_2 import BuiltInRelationship
-from pypureclient.flasharray.common.models.context_v_49 import Context
-from pypureclient.flasharray.common.models.fixed_reference_v_49 import FixedReference
-from pypureclient.flasharray.common.models.fixed_reference_with_type_v_49 import FixedReferenceWithType
-from pypureclient.flasharray.common.models.pod_replica_link_reference_v_49 import PodReplicaLinkReference
-from pypureclient.flasharray.common.models.reference_v_49 import Reference
-from pypureclient.flasharray.common.models.reference_with_type_v_49 import ReferenceWithType
-
 import pprint
 import re  # noqa: F401
 import json

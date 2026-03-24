@@ -13,12 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.fixed_reference_v_0 import FixedReference
-from pypureclient.flasharray.common.models.resource_v_0 import Resource
-from pypureclient.flasharray.common.models.snapshot_v_0 import Snapshot
-from pypureclient.flasharray.common.models.snapshot_space_v_9 import SnapshotSpace
-from pypureclient.flasharray.common.models.space_v_0 import Space
-
 import pprint
 import re  # noqa: F401
 import json

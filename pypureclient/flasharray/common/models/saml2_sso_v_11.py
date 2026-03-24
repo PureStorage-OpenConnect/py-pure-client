@@ -13,9 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.reference_no_id_v_0 import ReferenceNoId
-from pypureclient.flasharray.common.models.saml2_sso_sp_credential_v_11 import Saml2SsoSpCredential
-
 import pprint
 import re  # noqa: F401
 import json

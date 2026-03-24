@@ -13,10 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.dns_post_v_15 import DnsPost
-from pypureclient.flasharray.common.models.reference_no_id_v_0 import ReferenceNoId
-from pypureclient.flasharray.common.models.resource_no_id_v_0 import ResourceNoId
-
 import pprint
 import re  # noqa: F401
 import json

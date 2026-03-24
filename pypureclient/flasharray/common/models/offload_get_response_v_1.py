@@ -13,13 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.offload_post_v_1 import OffloadPost
-from pypureclient.flasharray.common.models.offload_azure_v_1 import OffloadAzure
-from pypureclient.flasharray.common.models.offload_nfs_v_1 import OffloadNfs
-from pypureclient.flasharray.common.models.offload_s3_v_1 import OffloadS3
-from pypureclient.flasharray.common.models.resource_no_id_v_0 import ResourceNoId
-from pypureclient.flasharray.common.models.space_v_0 import Space
-
 import pprint
 import re  # noqa: F401
 import json

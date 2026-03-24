@@ -13,9 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.reference_v_0 import Reference
-from pypureclient.flasharray.common.models.time_window_v_1 import TimeWindow
-
 import pprint
 import re  # noqa: F401
 import json

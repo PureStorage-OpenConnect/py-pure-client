@@ -13,9 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.test_result_v_2 import TestResult
-from pypureclient.flasharray.common.models.fixed_reference_no_id_v_0 import FixedReferenceNoId
-
 import pprint
 import re  # noqa: F401
 import json

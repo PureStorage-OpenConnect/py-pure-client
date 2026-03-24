@@ -13,11 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.resource_performance_no_id_v_0 import ResourcePerformanceNoId
-from pypureclient.flasharray.common.models.performance_v_0 import Performance
-from pypureclient.flasharray.common.models.resource_v_0 import Resource
-from pypureclient.flasharray.common.models.resource_no_id_v_0 import ResourceNoId
-
 import pprint
 import re  # noqa: F401
 import json

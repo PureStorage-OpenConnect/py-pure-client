@@ -13,13 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.chap_v_0 import Chap
-from pypureclient.flasharray.common.models.host_port_connectivity_v_0 import HostPortConnectivity
-from pypureclient.flasharray.common.models.reference_v_0 import Reference
-from pypureclient.flasharray.common.models.reference_no_id_v_0 import ReferenceNoId
-from pypureclient.flasharray.common.models.resource_no_id_v_0 import ResourceNoId
-from pypureclient.flasharray.common.models.space_v_0 import Space
-
 import pprint
 import re  # noqa: F401
 import json

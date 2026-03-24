@@ -13,8 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.support_remote_assist_sessions_paths_v_41 import SupportRemoteAssistSessionsPaths
-
 import pprint
 import re  # noqa: F401
 import json

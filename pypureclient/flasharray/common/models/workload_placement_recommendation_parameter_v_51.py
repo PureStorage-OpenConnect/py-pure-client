@@ -13,10 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.reference_v_49 import Reference
-from pypureclient.flasharray.common.models.workload_parameter_value_resource_reference_v_40 import WorkloadParameterValueResourceReference
-from pypureclient.flasharray.common.models.workload_placement_recommendation_parameter_resource_reference_v_51 import WorkloadPlacementRecommendationParameterResourceReference
-
 import pprint
 import re  # noqa: F401
 import json

@@ -13,14 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.user_group_v_44 import UserGroup
-from pypureclient.flasharray.common.models.user_group_quota_limited_by_v_44 import UserGroupQuotaLimitedBy
-from pypureclient.flasharray.common.models.user_group_space_v_44 import UserGroupSpace
-from pypureclient.flasharray.common.models.context_v_47 import Context
-from pypureclient.flasharray.common.models.fixed_reference_v_0 import FixedReference
-from pypureclient.flasharray.common.models.fixed_reference_with_type_v_3 import FixedReferenceWithType
-from pypureclient.flasharray.common.models.resource_v_0 import Resource
-
 import pprint
 import re  # noqa: F401
 import json

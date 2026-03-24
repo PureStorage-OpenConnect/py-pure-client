@@ -13,9 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.support_patch_v_47 import SupportPatch
-from pypureclient.flasharray.common.models.support_remote_assist_paths_v_2 import SupportRemoteAssistPaths
-
 import pprint
 import re  # noqa: F401
 import json

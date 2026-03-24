@@ -13,8 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.cloud_config_model_v_40 import CloudConfigModel
-
 import pprint
 import re  # noqa: F401
 import json

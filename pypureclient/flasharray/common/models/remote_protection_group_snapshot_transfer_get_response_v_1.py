@@ -13,9 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.resource_no_id_v_0 import ResourceNoId
-from pypureclient.flasharray.common.models.transfer_v_1 import Transfer
-
 import pprint
 import re  # noqa: F401
 import json

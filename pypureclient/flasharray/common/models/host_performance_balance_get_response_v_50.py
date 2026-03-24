@@ -13,15 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.port_initiator_target_v_38 import PortInitiatorTarget
-from pypureclient.flasharray.common.models.base_port_v_38 import BasePort
-from pypureclient.flasharray.common.models.built_in_resource_no_id_v_1 import BuiltInResourceNoId
-from pypureclient.flasharray.common.models.context_v_50 import Context
-from pypureclient.flasharray.common.models.fixed_reference_v_49 import FixedReference
-from pypureclient.flasharray.common.models.fixed_reference_with_type_v_49 import FixedReferenceWithType
-from pypureclient.flasharray.common.models.port_common_v_2 import PortCommon
-from pypureclient.flasharray.common.models.resource_no_id_v_0 import ResourceNoId
-
 import pprint
 import re  # noqa: F401
 import json

@@ -13,9 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.built_in_resource_no_id_v_1 import BuiltInResourceNoId
-from pypureclient.flasharray.common.models.space_v_0 import Space
-
 import pprint
 import re  # noqa: F401
 import json

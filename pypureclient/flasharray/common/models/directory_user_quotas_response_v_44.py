@@ -13,13 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.directory_user_quota_rule_v_44 import DirectoryUserQuotaRule
-from pypureclient.flasharray.common.models.policy_rule_user_group_quota_subject_v_44 import PolicyRuleUserGroupQuotaSubject
-from pypureclient.flasharray.common.models.user_group_v_44 import UserGroup
-from pypureclient.flasharray.common.models.context_v_38 import Context
-from pypureclient.flasharray.common.models.fixed_reference_v_0 import FixedReference
-from pypureclient.flasharray.common.models.fixed_reference_with_type_v_3 import FixedReferenceWithType
-
 import pprint
 import re  # noqa: F401
 import json

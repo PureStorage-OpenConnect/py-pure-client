@@ -13,9 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.built_in_v_0 import BuiltIn
-from pypureclient.flasharray.common.models.space_no_deprecated_physical_or_effective_v_36 import SpaceNoDeprecatedPhysicalOrEffective
-
 import pprint
 import re  # noqa: F401
 import json

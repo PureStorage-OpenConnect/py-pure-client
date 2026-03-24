@@ -13,9 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.policy_rule_user_group_quota_subject_v_44 import PolicyRuleUserGroupQuotaSubject
-from pypureclient.flasharray.common.models.fixed_reference_v_0 import FixedReference
-
 import pprint
 import re  # noqa: F401
 import json

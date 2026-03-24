@@ -13,10 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.network_interface_neighbor_capability_v_22 import NetworkInterfaceNeighborCapability
-from pypureclient.flasharray.common.models.network_interface_neighbor_neighbor_chassis_id_v_22 import NetworkInterfaceNeighborNeighborChassisId
-from pypureclient.flasharray.common.models.network_interface_neighbor_neighbor_port_id_v_22 import NetworkInterfaceNeighborNeighborPortId
-
 import pprint
 import re  # noqa: F401
 import json

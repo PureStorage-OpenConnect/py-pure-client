@@ -13,15 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.built_in_resource_no_id_v_1 import BuiltInResourceNoId
-from pypureclient.flasharray.common.models.context_v_49 import Context
-from pypureclient.flasharray.common.models.fixed_reference_v_49 import FixedReference
-from pypureclient.flasharray.common.models.fixed_reference_no_id_v_0 import FixedReferenceNoId
-from pypureclient.flasharray.common.models.fixed_reference_with_type_v_49 import FixedReferenceWithType
-from pypureclient.flasharray.common.models.network_interface_eth_v_4 import NetworkInterfaceEth
-from pypureclient.flasharray.common.models.network_interface_fc_v_4 import NetworkInterfaceFc
-from pypureclient.flasharray.common.models.reference_no_id_v_0 import ReferenceNoId
-
 import pprint
 import re  # noqa: F401
 import json

@@ -13,12 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.context_v_38 import Context
-from pypureclient.flasharray.common.models.fixed_reference_v_0 import FixedReference
-from pypureclient.flasharray.common.models.fixed_reference_with_type_v_3 import FixedReferenceWithType
-from pypureclient.flasharray.common.models.protection_groups_volumes_member_v_9 import ProtectionGroupsVolumesMember
-from pypureclient.flasharray.common.models.reference_v_0 import Reference
-
 import pprint
 import re  # noqa: F401
 import json

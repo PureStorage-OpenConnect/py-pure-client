@@ -13,8 +13,6 @@
 
 
 from __future__ import annotations
-from pypureclient.flasharray.common.models.container_qos_ceilings_v_47 import ContainerQosCeilings
-
 import pprint
 import re  # noqa: F401
 import json
