@@ -10,12 +10,12 @@
 """  # noqa: E501
 
 import os
-try:
-    from pydantic.v1 import BaseModel
-except ModuleNotFoundError:
+import sys
+
+if sys.version_info >= (3, 14):
     from pydantic import BaseModel
-
-
+else:
+    from pydantic.v1 import BaseModel
 
 from .client import Client
 
