@@ -24,7 +24,7 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictStr
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictStr
-from pypureclient.flasharray._common.models.container_qos_ceilings_v_2_47 import ContainerQosCeilings
+from pypureclient.flasharray._common.models.container_qos_ceilings_patch_v_2_47 import ContainerQosCeilingsPatch
 
 
 class HostGroupPatch(BaseModel):
@@ -32,7 +32,7 @@ class HostGroupPatch(BaseModel):
     HostGroupPatch
     """
     name: Optional[StrictStr] = Field(default=None, description="The new name for the resource.")
-    qos: Optional[ContainerQosCeilings] = Field(default=None, description="Sets QoS limits.")
+    qos: Optional[ContainerQosCeilingsPatch] = Field(default=None, description="Sets QoS limits.")
     __properties = ["name", "qos"]
 
     class Config:
@@ -105,7 +105,7 @@ class HostGroupPatch(BaseModel):
 
         _obj = HostGroupPatch.construct(_fields_set=None, **{
             "name": obj.get("name"),
-            "qos": ContainerQosCeilings.from_dict(obj.get("qos")) if obj.get("qos") is not None else None
+            "qos": ContainerQosCeilingsPatch.from_dict(obj.get("qos")) if obj.get("qos") is not None else None
         })
         return _obj
 

@@ -25,7 +25,7 @@ try:
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictStr
 from pypureclient.flasharray._common.models.priority_adjustment_v_2_10 import PriorityAdjustment
-from pypureclient.flasharray._common.models.qos_v_2_0 import Qos
+from pypureclient.flasharray._common.models.qos_patch_v_2_0 import QosPatch
 from pypureclient.flasharray._common.models.space_v_2_0 import Space
 
 
@@ -37,7 +37,7 @@ class VolumeGroupPatch(BaseModel):
     name: Optional[StrictStr] = Field(default=None, description="A user-specified name. The name must be locally unique and can be changed.")
     destroyed: Optional[StrictBool] = Field(default=None, description="Displays a value of `true` if the volume group has been destroyed and is pending eradication. Before the `time_remaining` period has elapsed, the destroyed volume group can be recovered by setting `destroyed=false`. After the `time_remaining` period has elapsed, the volume group is permanently eradicated and cannot be recovered.")
     priority_adjustment: Optional[PriorityAdjustment] = None
-    qos: Optional[Qos] = None
+    qos: Optional[QosPatch] = None
     space: Optional[Space] = None
     __properties = ["id", "name", "destroyed", "priority_adjustment", "qos", "space"]
 
@@ -121,7 +121,7 @@ class VolumeGroupPatch(BaseModel):
             "name": obj.get("name"),
             "destroyed": obj.get("destroyed"),
             "priority_adjustment": PriorityAdjustment.from_dict(obj.get("priority_adjustment")) if obj.get("priority_adjustment") is not None else None,
-            "qos": Qos.from_dict(obj.get("qos")) if obj.get("qos") is not None else None,
+            "qos": QosPatch.from_dict(obj.get("qos")) if obj.get("qos") is not None else None,
             "space": Space.from_dict(obj.get("space")) if obj.get("space") is not None else None
         })
         return _obj

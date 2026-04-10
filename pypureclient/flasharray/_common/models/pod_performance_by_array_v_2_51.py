@@ -24,8 +24,8 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictInt, StrictStr, confloat, conint
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictInt, StrictStr, confloat, conint
-from pypureclient.flasharray._common.models.fixed_reference_with_type_v_2_51 import FixedReferenceWithType
-from pypureclient.flasharray._common.models.resource_v_2_51 import Resource
+from pypureclient.flasharray._common.models.fixed_reference_with_type_v_2_49 import FixedReferenceWithType
+from pypureclient.flasharray._common.models.resource_v_2_49 import Resource
 
 
 class PodPerformanceByArray(BaseModel):

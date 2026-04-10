@@ -26,7 +26,7 @@ except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictStr, conlist
 from pypureclient.flasharray._common.models.naming_pattern_v_2_51 import NamingPattern
 from pypureclient.flasharray._common.models.preset_workload_snapshot_rule_v_2_51 import PresetWorkloadSnapshotRule
-from pypureclient.flasharray._common.models.reference_with_type_v_2_51 import ReferenceWithType
+from pypureclient.flasharray._common.models.reference_with_type_v_2_49 import ReferenceWithType
 
 
 class PresetWorkloadPeriodicReplicationConfiguration(BaseModel):

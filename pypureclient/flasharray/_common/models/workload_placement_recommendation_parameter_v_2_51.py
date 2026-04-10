@@ -24,7 +24,7 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictStr
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictStr
-from pypureclient.flasharray._common.models.workload_parameter_value_v_2_51 import WorkloadParameterValue
+from pypureclient.flasharray._common.models.workload_parameter_value_v_2_40 import WorkloadParameterValue
 from pypureclient.flasharray._common.models.workload_placement_recommendation_parameter_constraints_v_2_51 import WorkloadPlacementRecommendationParameterConstraints
 
 

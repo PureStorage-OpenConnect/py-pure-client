@@ -24,9 +24,9 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictBool, StrictInt, StrictStr, conlist
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr, conlist
-from pypureclient.flasharray._common.models.fixed_reference_with_type_v_2_51 import FixedReferenceWithType
-from pypureclient.flasharray._common.models.reference_v_2_51 import Reference
-from pypureclient.flasharray._common.models.reference_no_id_with_type_v_2_51 import ReferenceNoIdWithType
+from pypureclient.flasharray._common.models.fixed_reference_with_type_v_2_49 import FixedReferenceWithType
+from pypureclient.flasharray._common.models.reference_v_2_49 import Reference
+from pypureclient.flasharray._common.models.reference_no_id_with_type_v_2_26 import ReferenceNoIdWithType
 
 
 class PolicyAuditFile(BaseModel):

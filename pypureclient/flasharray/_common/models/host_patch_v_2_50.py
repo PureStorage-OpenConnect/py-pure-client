@@ -25,7 +25,7 @@ try:
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictStr, conlist
 from pypureclient.flasharray._common.models.chap_v_2_0 import Chap
-from pypureclient.flasharray._common.models.container_qos_ceilings_v_2_47 import ContainerQosCeilings
+from pypureclient.flasharray._common.models.container_qos_ceilings_patch_v_2_47 import ContainerQosCeilingsPatch
 from pypureclient.flasharray._common.models.reference_v_2_49 import Reference
 from pypureclient.flasharray._common.models.reference_no_id_v_2_0 import ReferenceNoId
 
@@ -44,7 +44,7 @@ class HostPatch(BaseModel):
     nqns: Optional[conlist(StrictStr)] = Field(default=None, description="The NVMe Qualified Name (NQN) associated with the host.")
     personality: Optional[StrictStr] = Field(default=None, description="Determines how the system tunes the array to ensure that it works optimally with the host. Set `personality` to the name of the host operating system or virtual memory system. Valid values are `aix`, `esxi`, `hitachi-vsp`, `hpux`, `oracle-vm-server`, `solaris`, `vms`, `nutanix-mgmt` and `nutanix-cluster`. If your system is not listed as one of the valid host personalities, do not set the option. By default, the personality is not set.")
     preferred_arrays: Optional[conlist(Reference)] = Field(default=None, description="For synchronous replication configurations, sets a host's preferred array to specify which array exposes active/optimized paths to that host. Enter multiple preferred arrays in comma-separated format. If a preferred array is set for a host, then the other arrays in the same pod will expose active/non-optimized paths to that host. If the host is in a host group, `preferred_arrays` cannot be set because host groups have their own preferred arrays. On a preferred array of a certain host, all the paths on all the ports (for both the primary and secondary controllers) are set up as A/O (active/optimized) paths, while on a non-preferred array, all the paths are A/N (Active/Non-optimized) paths.")
-    qos: Optional[ContainerQosCeilings] = Field(default=None, description="Sets QoS limits.")
+    qos: Optional[ContainerQosCeilingsPatch] = Field(default=None, description="Sets QoS limits.")
     remove_iqns: Optional[conlist(StrictStr)] = Field(default=None, description="Disassociates the specified iSCSI Qualified Names (IQNs) from the specified host.")
     remove_nqns: Optional[conlist(StrictStr)] = Field(default=None, description="Disassociates the specified NVMe Qualified Names (NQNs) from the specified host.")
     remove_wwns: Optional[conlist(StrictStr)] = Field(default=None, description="Disassociates the specified Fibre Channel World Wide Names (WWNs) from the specified host.")
@@ -144,7 +144,7 @@ class HostPatch(BaseModel):
             "nqns": obj.get("nqns"),
             "personality": obj.get("personality"),
             "preferred_arrays": [Reference.from_dict(_item) for _item in obj.get("preferred_arrays")] if obj.get("preferred_arrays") is not None else None,
-            "qos": ContainerQosCeilings.from_dict(obj.get("qos")) if obj.get("qos") is not None else None,
+            "qos": ContainerQosCeilingsPatch.from_dict(obj.get("qos")) if obj.get("qos") is not None else None,
             "remove_iqns": obj.get("remove_iqns"),
             "remove_nqns": obj.get("remove_nqns"),
             "remove_wwns": obj.get("remove_wwns"),

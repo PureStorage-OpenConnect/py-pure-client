@@ -1521,3 +1521,12 @@ class CertificatesApi:
     api251_certificates_patch_with_http_info = certificates_patch_with_http_info
     api251_certificates_post_with_http_info = certificates_post_with_http_info
     api251_certificates_uses_get_with_http_info = certificates_uses_get_with_http_info
+    api252_certificates_certificate_groups_delete_with_http_info = certificates_certificate_groups_delete_with_http_info
+    api252_certificates_certificate_groups_get_with_http_info = certificates_certificate_groups_get_with_http_info
+    api252_certificates_certificate_groups_post_with_http_info = certificates_certificate_groups_post_with_http_info
+    api252_certificates_certificate_signing_requests_post_with_http_info = certificates_certificate_signing_requests_post_with_http_info
+    api252_certificates_delete_with_http_info = certificates_delete_with_http_info
+    api252_certificates_get_with_http_info = certificates_get_with_http_info
+    api252_certificates_patch_with_http_info = certificates_patch_with_http_info
+    api252_certificates_post_with_http_info = certificates_post_with_http_info
+    api252_certificates_uses_get_with_http_info = certificates_uses_get_with_http_info

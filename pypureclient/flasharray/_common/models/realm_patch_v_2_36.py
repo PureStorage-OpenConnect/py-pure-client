@@ -21,10 +21,11 @@ from typing import Set, Dict, Any
 from typing import Optional
 
 try:
-    from pydantic.v1 import BaseModel, Field, StrictBool, StrictStr, conint
+    from pydantic.v1 import BaseModel, Field, StrictBool, StrictStr
 except ModuleNotFoundError:
-    from pydantic import BaseModel, Field, StrictBool, StrictStr, conint
-from pypureclient.flasharray._common.models.container_qos_v_2_36 import ContainerQos
+    from pydantic import BaseModel, Field, StrictBool, StrictStr
+from pypureclient.flasharray._common.models.container_qos_patch_v_2_36 import ContainerQosPatch
+from pypureclient.flasharray._common.models.quota_limit_patch_v_2_23 import QuotaLimitPatch
 
 
 class RealmPatch(BaseModel):
@@ -32,10 +33,10 @@ class RealmPatch(BaseModel):
     RealmPatch
     """
     name: Optional[StrictStr] = Field(default=None, description="The new name for the resource.")
+    quota_limit: Optional[QuotaLimitPatch] = None
     destroyed: Optional[StrictBool] = Field(default=None, description="If set to `true`, the realm will be destroyed and pending eradication. The `time_remaining` value displays the amount of time left until the destroyed realm is permanently eradicated. A realm can only be destroyed if it is empty or destroy_contents is set to true. Before the `time_remaining` period has elapsed, the destroyed realm can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the realm is permanently eradicated and can no longer be recovered.")
-    qos: Optional[ContainerQos] = Field(default=None, description="Sets QoS limits.")
-    quota_limit: Optional[conint(strict=True, le=4503599627370496, ge=1048576)] = Field(default=None, description="The logical quota limit of the realm, measured in bytes.")
-    __properties = ["name", "destroyed", "qos", "quota_limit"]
+    qos: Optional[ContainerQosPatch] = Field(default=None, description="Sets QoS limits.")
+    __properties = ["name", "quota_limit", "destroyed", "qos"]
 
     class Config:
         """Pydantic configuration"""
@@ -66,6 +67,9 @@ class RealmPatch(BaseModel):
                 none_fields.add(_field)
 
         _dict = self.dict(by_alias=True, exclude=excluded_fields, exclude_none=True)
+        # override the default output from pydantic by calling `to_dict()` of quota_limit
+        if _include_in_dict('quota_limit', include_readonly, excluded_fields, none_fields):
+            _dict['quota_limit'] = self.quota_limit.to_dict(include_readonly=include_readonly)
         # override the default output from pydantic by calling `to_dict()` of qos
         if _include_in_dict('qos', include_readonly, excluded_fields, none_fields):
             _dict['qos'] = self.qos.to_dict(include_readonly=include_readonly)
@@ -107,9 +111,9 @@ class RealmPatch(BaseModel):
 
         _obj = RealmPatch.construct(_fields_set=None, **{
             "name": obj.get("name"),
+            "quota_limit": QuotaLimitPatch.from_dict(obj.get("quota_limit")) if obj.get("quota_limit") is not None else None,
             "destroyed": obj.get("destroyed"),
-            "qos": ContainerQos.from_dict(obj.get("qos")) if obj.get("qos") is not None else None,
-            "quota_limit": obj.get("quota_limit")
+            "qos": ContainerQosPatch.from_dict(obj.get("qos")) if obj.get("qos") is not None else None
         })
         return _obj
 

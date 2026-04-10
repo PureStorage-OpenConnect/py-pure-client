@@ -469,3 +469,7 @@ class RemoteRealmsApi:
     # Method Aliases
     api250_remote_realms_get_with_http_info = remote_realms_get_with_http_info
     api250_remote_realms_tags_get_with_http_info = remote_realms_tags_get_with_http_info
+    api251_remote_realms_get_with_http_info = remote_realms_get_with_http_info
+    api251_remote_realms_tags_get_with_http_info = remote_realms_tags_get_with_http_info
+    api252_remote_realms_get_with_http_info = remote_realms_get_with_http_info
+    api252_remote_realms_tags_get_with_http_info = remote_realms_tags_get_with_http_info

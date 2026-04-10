@@ -24,13 +24,13 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictBool, StrictInt, StrictStr
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr
-from pypureclient.flasharray._common.models.fixed_reference_v_2_51 import FixedReference
-from pypureclient.flasharray._common.models.fixed_reference_with_type_v_2_51 import FixedReferenceWithType
-from pypureclient.flasharray._common.models.protection_group_eradication_config_v_2_51 import ProtectionGroupEradicationConfig
-from pypureclient.flasharray._common.models.replication_schedule_v_2_51 import ReplicationSchedule
-from pypureclient.flasharray._common.models.retention_policy_v_2_51 import RetentionPolicy
-from pypureclient.flasharray._common.models.snapshot_schedule_v_2_51 import SnapshotSchedule
-from pypureclient.flasharray._common.models.space_v_2_51 import Space
+from pypureclient.flasharray._common.models.fixed_reference_v_2_49 import FixedReference
+from pypureclient.flasharray._common.models.fixed_reference_with_type_v_2_49 import FixedReferenceWithType
+from pypureclient.flasharray._common.models.protection_group_eradication_config_v_2_13 import ProtectionGroupEradicationConfig
+from pypureclient.flasharray._common.models.replication_schedule_v_2_1 import ReplicationSchedule
+from pypureclient.flasharray._common.models.retention_policy_v_2_47 import RetentionPolicy
+from pypureclient.flasharray._common.models.snapshot_schedule_v_2_1 import SnapshotSchedule
+from pypureclient.flasharray._common.models.space_v_2_50 import Space
 from pypureclient.flasharray._common.models.workload_configuration_fixed_reference_v_2_51 import WorkloadConfigurationFixedReference
 
 

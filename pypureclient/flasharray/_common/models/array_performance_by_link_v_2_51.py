@@ -24,7 +24,7 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictInt, StrictStr, confloat, conint, conlist
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictInt, StrictStr, confloat, conint, conlist
-from pypureclient.flasharray._common.models.resource_v_2_51 import Resource
+from pypureclient.flasharray._common.models.resource_v_2_49 import Resource
 
 
 class ArrayPerformanceByLink(BaseModel):

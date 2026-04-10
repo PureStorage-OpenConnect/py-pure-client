@@ -1028,3 +1028,15 @@ class ArrayConnectionsApi:
     api250_array_connections_patch_with_http_info = array_connections_patch_with_http_info
     api250_array_connections_path_get_with_http_info = array_connections_path_get_with_http_info
     api250_array_connections_post_with_http_info = array_connections_post_with_http_info
+    api251_array_connections_connection_key_get_with_http_info = array_connections_connection_key_get_with_http_info
+    api251_array_connections_delete_with_http_info = array_connections_delete_with_http_info
+    api251_array_connections_get_with_http_info = array_connections_get_with_http_info
+    api251_array_connections_patch_with_http_info = array_connections_patch_with_http_info
+    api251_array_connections_path_get_with_http_info = array_connections_path_get_with_http_info
+    api251_array_connections_post_with_http_info = array_connections_post_with_http_info
+    api252_array_connections_connection_key_get_with_http_info = array_connections_connection_key_get_with_http_info
+    api252_array_connections_delete_with_http_info = array_connections_delete_with_http_info
+    api252_array_connections_get_with_http_info = array_connections_get_with_http_info
+    api252_array_connections_patch_with_http_info = array_connections_patch_with_http_info
+    api252_array_connections_path_get_with_http_info = array_connections_path_get_with_http_info
+    api252_array_connections_post_with_http_info = array_connections_post_with_http_info

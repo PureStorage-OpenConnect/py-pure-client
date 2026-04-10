@@ -25,7 +25,7 @@ try:
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr, conlist
 from pypureclient.flasharray._common.models.audit_v_2_51 import Audit
-from pypureclient.flasharray._common.models.errorcontextresponse_errors_v_2_51 import ErrorcontextresponseErrors
+from pypureclient.flasharray._common.models.errorcontextresponse_errors_v_2_49 import ErrorcontextresponseErrors
 
 
 class AuditGetResponse(BaseModel):

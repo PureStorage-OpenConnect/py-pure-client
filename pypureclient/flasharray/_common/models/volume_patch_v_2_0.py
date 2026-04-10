@@ -24,7 +24,7 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictBool, StrictStr, conint
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictStr, conint
-from pypureclient.flasharray._common.models.qos_v_2_0 import Qos
+from pypureclient.flasharray._common.models.qos_patch_v_2_0 import QosPatch
 from pypureclient.flasharray._common.models.reference_v_2_0 import Reference
 
 
@@ -36,7 +36,7 @@ class VolumePatch(BaseModel):
     name: Optional[StrictStr] = Field(default=None, description="The new name for the resource.")
     pod: Optional[Reference] = Field(default=None, description="Moves the volume into the specified pod.")
     provisioned: Optional[conint(strict=True, le=4503599627370496)] = Field(default=None, description="Updates the virtual size of the volume. Measured in bytes.")
-    qos: Optional[Qos] = Field(default=None, description="Sets QoS limits.")
+    qos: Optional[QosPatch] = Field(default=None, description="Sets QoS limits.")
     volume_group: Optional[Reference] = Field(default=None, description="Adds the volume to the specified volume group.")
     __properties = ["destroyed", "name", "pod", "provisioned", "qos", "volume_group"]
 
@@ -119,7 +119,7 @@ class VolumePatch(BaseModel):
             "name": obj.get("name"),
             "pod": Reference.from_dict(obj.get("pod")) if obj.get("pod") is not None else None,
             "provisioned": obj.get("provisioned"),
-            "qos": Qos.from_dict(obj.get("qos")) if obj.get("qos") is not None else None,
+            "qos": QosPatch.from_dict(obj.get("qos")) if obj.get("qos") is not None else None,
             "volume_group": Reference.from_dict(obj.get("volume_group")) if obj.get("volume_group") is not None else None
         })
         return _obj

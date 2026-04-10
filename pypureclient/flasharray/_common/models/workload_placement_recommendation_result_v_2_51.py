@@ -24,9 +24,9 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictStr, conlist
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictStr, conlist
-from pypureclient.flasharray._common.models.workload_parameter_v_2_51 import WorkloadParameter
+from pypureclient.flasharray._common.models.workload_parameter_v_2_40 import WorkloadParameter
 from pypureclient.flasharray._common.models.workload_placement_recommendation_generic_target_v_2_51 import WorkloadPlacementRecommendationGenericTarget
-from pypureclient.flasharray._common.models.workload_placement_recommendation_placement_v_2_51 import WorkloadPlacementRecommendationPlacement
+from pypureclient.flasharray._common.models.workload_placement_recommendation_placement_v_2_49 import WorkloadPlacementRecommendationPlacement
 
 
 class WorkloadPlacementRecommendationResult(BaseModel):

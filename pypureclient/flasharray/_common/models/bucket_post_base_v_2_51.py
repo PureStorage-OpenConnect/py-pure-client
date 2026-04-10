@@ -24,7 +24,7 @@ try:
     from pydantic.v1 import BaseModel, Field
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field
-from pypureclient.flasharray._common.models.reference_with_type_v_2_51 import ReferenceWithType
+from pypureclient.flasharray._common.models.reference_with_type_v_2_49 import ReferenceWithType
 
 
 class BucketPostBase(BaseModel):
