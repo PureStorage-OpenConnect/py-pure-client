@@ -24,7 +24,7 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictBool, StrictStr, conlist
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictStr, conlist
-from pypureclient.flasharray._common.models.remote_array_fleet_v_2_51 import RemoteArrayFleet
+from pypureclient.flasharray._common.models.remote_array_fleet_v_2_49 import RemoteArrayFleet
 
 
 class RemoteArray(BaseModel):

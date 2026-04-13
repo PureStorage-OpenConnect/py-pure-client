@@ -24,7 +24,7 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictBool, StrictStr
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictStr
-from pypureclient.flasharray._common.models.reference_v_2_51 import Reference
+from pypureclient.flasharray._common.models.reference_v_2_49 import Reference
 from pypureclient.flasharray._common.models.workload_configuration_reference_patch_v_2_51 import WorkloadConfigurationReferencePatch
 
 

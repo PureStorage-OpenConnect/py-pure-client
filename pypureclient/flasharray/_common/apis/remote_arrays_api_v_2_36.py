@@ -242,3 +242,5 @@ class RemoteArraysApi:
     api248_remote_arrays_get_with_http_info = remote_arrays_get_with_http_info
     api249_remote_arrays_get_with_http_info = remote_arrays_get_with_http_info
     api250_remote_arrays_get_with_http_info = remote_arrays_get_with_http_info
+    api251_remote_arrays_get_with_http_info = remote_arrays_get_with_http_info
+    api252_remote_arrays_get_with_http_info = remote_arrays_get_with_http_info

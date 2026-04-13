@@ -469,3 +469,7 @@ class RemotePodsApi:
     # Method Aliases
     api250_remote_pods_get_with_http_info = remote_pods_get_with_http_info
     api250_remote_pods_tags_get_with_http_info = remote_pods_tags_get_with_http_info
+    api251_remote_pods_get_with_http_info = remote_pods_get_with_http_info
+    api251_remote_pods_tags_get_with_http_info = remote_pods_tags_get_with_http_info
+    api252_remote_pods_get_with_http_info = remote_pods_get_with_http_info
+    api252_remote_pods_tags_get_with_http_info = remote_pods_tags_get_with_http_info

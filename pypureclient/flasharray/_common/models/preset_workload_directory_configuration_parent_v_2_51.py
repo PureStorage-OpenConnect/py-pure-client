@@ -25,7 +25,7 @@ try:
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field
 from pypureclient.flasharray._common.models.preset_workload_directory_configuration_name_v_2_51 import PresetWorkloadDirectoryConfigurationName
-from pypureclient.flasharray._common.models.reference_v_2_51 import Reference
+from pypureclient.flasharray._common.models.reference_v_2_49 import Reference
 
 
 class PresetWorkloadDirectoryConfigurationParent(BaseModel):

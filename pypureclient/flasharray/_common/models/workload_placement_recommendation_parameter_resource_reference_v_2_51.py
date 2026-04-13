@@ -24,7 +24,7 @@ try:
     from pydantic.v1 import BaseModel, Field, conlist
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, conlist
-from pypureclient.flasharray._common.models.reference_v_2_51 import Reference
+from pypureclient.flasharray._common.models.reference_v_2_49 import Reference
 
 
 class WorkloadPlacementRecommendationParameterResourceReference(BaseModel):

@@ -24,11 +24,11 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictBool, StrictInt, StrictStr
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr
-from pypureclient.flasharray._common.models.fixed_reference_with_type_v_2_51 import FixedReferenceWithType
-from pypureclient.flasharray._common.models.priority_adjustment_v_2_51 import PriorityAdjustment
-from pypureclient.flasharray._common.models.qos_v_2_51 import Qos
-from pypureclient.flasharray._common.models.reference_v_2_51 import Reference
-from pypureclient.flasharray._common.models.space_v_2_51 import Space
+from pypureclient.flasharray._common.models.fixed_reference_with_type_v_2_49 import FixedReferenceWithType
+from pypureclient.flasharray._common.models.priority_adjustment_v_2_10 import PriorityAdjustment
+from pypureclient.flasharray._common.models.qos_v_2_0 import Qos
+from pypureclient.flasharray._common.models.reference_v_2_49 import Reference
+from pypureclient.flasharray._common.models.space_v_2_50 import Space
 from pypureclient.flasharray._common.models.workload_configuration_fixed_reference_v_2_51 import WorkloadConfigurationFixedReference
 
 

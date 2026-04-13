@@ -33,8 +33,8 @@ from pypureclient._transport.exceptions import (  # noqa: F401
 )
 from pypureclient.reference_type import quote_string_parameter
 from pypureclient.flasharray._common.models.directory_export_get_response_v_2_51 import DirectoryExportGetResponse
-from pypureclient.flasharray._common.models.directory_export_patch_v_2_51 import DirectoryExportPatch
-from pypureclient.flasharray._common.models.directory_export_post_v_2_51 import DirectoryExportPost
+from pypureclient.flasharray._common.models.directory_export_patch_v_2_32 import DirectoryExportPatch
+from pypureclient.flasharray._common.models.directory_export_post_v_2_49 import DirectoryExportPost
 from pypureclient.flasharray._common.models.directory_export_response_v_2_51 import DirectoryExportResponse
 
 class DirectoryExportsApi:
@@ -857,3 +857,7 @@ class DirectoryExportsApi:
     api251_directory_exports_get_with_http_info = directory_exports_get_with_http_info
     api251_directory_exports_patch_with_http_info = directory_exports_patch_with_http_info
     api251_directory_exports_post_with_http_info = directory_exports_post_with_http_info
+    api252_directory_exports_delete_with_http_info = directory_exports_delete_with_http_info
+    api252_directory_exports_get_with_http_info = directory_exports_get_with_http_info
+    api252_directory_exports_patch_with_http_info = directory_exports_patch_with_http_info
+    api252_directory_exports_post_with_http_info = directory_exports_post_with_http_info

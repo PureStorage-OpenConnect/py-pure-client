@@ -24,7 +24,7 @@ try:
     from pydantic.v1 import BaseModel, Field, conlist
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, conlist
-from pypureclient.flasharray._common.models.policyrulequotapatch_rules_v_2_21 import PolicyrulequotapatchRules
+from pypureclient.flasharray._common.models.policyrulequotapatch_rules_v_2_15 import PolicyrulequotapatchRules
 
 
 class PolicyRuleQuotaPatch(BaseModel):

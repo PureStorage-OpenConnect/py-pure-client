@@ -25,7 +25,7 @@ try:
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictStr
 from pypureclient.flasharray._common.models.preset_workload_constraints_v_2_51 import PresetWorkloadConstraints
-from pypureclient.flasharray._common.models.preset_workload_metadata_v_2_51 import PresetWorkloadMetadata
+from pypureclient.flasharray._common.models.preset_workload_metadata_v_2_40 import PresetWorkloadMetadata
 
 
 class PresetWorkloadParameter(BaseModel):

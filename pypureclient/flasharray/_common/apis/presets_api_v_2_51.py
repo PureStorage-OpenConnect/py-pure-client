@@ -792,3 +792,8 @@ class PresetsApi:
     api251_presets_workload_patch_with_http_info = presets_workload_patch_with_http_info
     api251_presets_workload_post_with_http_info = presets_workload_post_with_http_info
     api251_presets_workload_put_with_http_info = presets_workload_put_with_http_info
+    api252_presets_workload_delete_with_http_info = presets_workload_delete_with_http_info
+    api252_presets_workload_get_with_http_info = presets_workload_get_with_http_info
+    api252_presets_workload_patch_with_http_info = presets_workload_patch_with_http_info
+    api252_presets_workload_post_with_http_info = presets_workload_post_with_http_info
+    api252_presets_workload_put_with_http_info = presets_workload_put_with_http_info

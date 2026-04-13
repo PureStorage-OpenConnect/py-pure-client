@@ -21,19 +21,20 @@ from typing import Set, Dict, Any
 from typing import List, Optional
 
 try:
-    from pydantic.v1 import BaseModel, Field, StrictBool, StrictInt, StrictStr, conlist
+    from pydantic.v1 import BaseModel, Field, StrictBool, StrictStr, conlist
 except ModuleNotFoundError:
-    from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr, conlist
+    from pydantic import BaseModel, Field, StrictBool, StrictStr, conlist
+from pypureclient.flasharray._common.models.policy_rule_user_group_quota_limit_patch_v_2_15 import PolicyRuleUserGroupQuotaLimitPatch
 
 
 class PolicyruleusergroupquotapatchRules(BaseModel):
     """
     PolicyruleusergroupquotapatchRules
     """
+    quota_limit: Optional[PolicyRuleUserGroupQuotaLimitPatch] = None
     enforced: Optional[StrictBool] = Field(default=None, description="If set to `true`, the quota is enforced and an out-of-space warning is issued if logical space usage exceeds the specified limit. If set to `false`, the quota is not enforced and alerts and/or notifications are issued when logical space usage exceeds the limit value. If not specified, defaults to `false`.")
     notifications: Optional[conlist(StrictStr)] = Field(default=None, description="Targets to notify when usage approaches or exceeds the quota limit. Valid non-empty values are `account` or `none`. The `account` value specifies that the user or group owning the usage will be notified, `none` specifies that notifications are not sent. If not specified, we assume `none`.")
-    quota_limit: Optional[StrictInt] = Field(default=None, description="Logical space limit of the quota (in bytes) assigned by the rule. This value cannot be negative.")
-    __properties = ["enforced", "notifications", "quota_limit"]
+    __properties = ["quota_limit", "enforced", "notifications"]
 
     class Config:
         """Pydantic configuration"""
@@ -64,6 +65,9 @@ class PolicyruleusergroupquotapatchRules(BaseModel):
                 none_fields.add(_field)
 
         _dict = self.dict(by_alias=True, exclude=excluded_fields, exclude_none=True)
+        # override the default output from pydantic by calling `to_dict()` of quota_limit
+        if _include_in_dict('quota_limit', include_readonly, excluded_fields, none_fields):
+            _dict['quota_limit'] = self.quota_limit.to_dict(include_readonly=include_readonly)
         return _dict
 
     def __getitem__(self, key):
@@ -101,9 +105,9 @@ class PolicyruleusergroupquotapatchRules(BaseModel):
             return PolicyruleusergroupquotapatchRules.parse_obj(obj)
 
         _obj = PolicyruleusergroupquotapatchRules.construct(_fields_set=None, **{
+            "quota_limit": PolicyRuleUserGroupQuotaLimitPatch.from_dict(obj.get("quota_limit")) if obj.get("quota_limit") is not None else None,
             "enforced": obj.get("enforced"),
-            "notifications": obj.get("notifications"),
-            "quota_limit": obj.get("quota_limit")
+            "notifications": obj.get("notifications")
         })
         return _obj
 

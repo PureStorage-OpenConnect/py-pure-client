@@ -24,7 +24,7 @@ try:
     from pydantic.v1 import BaseModel, Field
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field
-from pypureclient.flasharray._common.models.reference_with_fixed_type_v_2_51 import ReferenceWithFixedType
+from pypureclient.flasharray._common.models.reference_with_fixed_type_v_2_40 import ReferenceWithFixedType
 
 
 class ObjectStoreAccessKeyPostBase(BaseModel):

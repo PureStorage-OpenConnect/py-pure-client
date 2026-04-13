@@ -803,6 +803,10 @@ class APIClientsApi:
     api251_api_clients_get_with_http_info = api_clients_get_with_http_info
     api251_api_clients_patch_with_http_info = api_clients_patch_with_http_info
     api251_api_clients_post_with_http_info = api_clients_post_with_http_info
+    api252_api_clients_delete_with_http_info = api_clients_delete_with_http_info
+    api252_api_clients_get_with_http_info = api_clients_get_with_http_info
+    api252_api_clients_patch_with_http_info = api_clients_patch_with_http_info
+    api252_api_clients_post_with_http_info = api_clients_post_with_http_info
     api26_api_clients_delete_with_http_info = api_clients_delete_with_http_info
     api26_api_clients_get_with_http_info = api_clients_get_with_http_info
     api26_api_clients_patch_with_http_info = api_clients_patch_with_http_info

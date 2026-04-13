@@ -24,7 +24,7 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictBool, StrictInt, StrictStr, conlist
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr, conlist
-from pypureclient.flasharray._common.models.errorcontextresponse_errors_v_2_51 import ErrorcontextresponseErrors
+from pypureclient.flasharray._common.models.errorcontextresponse_errors_v_2_49 import ErrorcontextresponseErrors
 from pypureclient.flasharray._common.models.policy_smb_v_2_51 import PolicySmb
 
 

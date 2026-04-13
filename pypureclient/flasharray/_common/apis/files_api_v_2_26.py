@@ -226,3 +226,4 @@ class FilesApi:
     api249_files_post_with_http_info = files_post_with_http_info
     api250_files_post_with_http_info = files_post_with_http_info
     api251_files_post_with_http_info = files_post_with_http_info
+    api252_files_post_with_http_info = files_post_with_http_info

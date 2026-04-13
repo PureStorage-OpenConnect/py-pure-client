@@ -26,7 +26,7 @@ except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictStr, conint
 from pypureclient.flasharray._common.models.priority_adjustment_v_2_10 import PriorityAdjustment
 from pypureclient.flasharray._common.models.protocol_endpoint_v_2_33 import ProtocolEndpoint
-from pypureclient.flasharray._common.models.qos_v_2_0 import Qos
+from pypureclient.flasharray._common.models.qos_patch_v_2_0 import QosPatch
 from pypureclient.flasharray._common.models.reference_v_2_0 import Reference
 from pypureclient.flasharray._common.models.reference_with_fixed_type_v_2_40 import ReferenceWithFixedType
 
@@ -41,7 +41,7 @@ class VolumePatch(BaseModel):
     priority_adjustment: Optional[PriorityAdjustment] = Field(default=None, description="Adjusts volume priority.")
     protocol_endpoint: Optional[ProtocolEndpoint] = Field(default=None, description="Sets the properties that are specific to protocol endpoints. This can only be used in conjunction to `subtype=protocol_endpoint`.")
     provisioned: Optional[conint(strict=True, le=4503599627370496)] = Field(default=None, description="Updates the virtual size of the volume, measured in bytes.")
-    qos: Optional[Qos] = Field(default=None, description="Sets QoS limits.")
+    qos: Optional[QosPatch] = Field(default=None, description="Sets QoS limits.")
     requested_promotion_state: Optional[StrictStr] = Field(default=None, description="Valid values are `promoted` and `demoted`. Patch `requested_promotion_state` to `demoted` to demote the volume so that the volume stops accepting write requests. Patch `requested_promotion_state` to `promoted` to promote the volume so that the volume starts accepting write requests.")
     volume_group: Optional[Reference] = Field(default=None, description="Adds the volume to the specified volume group.")
     workload: Optional[ReferenceWithFixedType] = Field(default=None, description="Set the `id` or `name` of the workload to an empty string to remove the volume from the workload.")
@@ -137,7 +137,7 @@ class VolumePatch(BaseModel):
             "priority_adjustment": PriorityAdjustment.from_dict(obj.get("priority_adjustment")) if obj.get("priority_adjustment") is not None else None,
             "protocol_endpoint": ProtocolEndpoint.from_dict(obj.get("protocol_endpoint")) if obj.get("protocol_endpoint") is not None else None,
             "provisioned": obj.get("provisioned"),
-            "qos": Qos.from_dict(obj.get("qos")) if obj.get("qos") is not None else None,
+            "qos": QosPatch.from_dict(obj.get("qos")) if obj.get("qos") is not None else None,
             "requested_promotion_state": obj.get("requested_promotion_state"),
             "volume_group": Reference.from_dict(obj.get("volume_group")) if obj.get("volume_group") is not None else None,
             "workload": ReferenceWithFixedType.from_dict(obj.get("workload")) if obj.get("workload") is not None else None

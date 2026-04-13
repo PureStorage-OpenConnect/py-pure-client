@@ -25,7 +25,7 @@ try:
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, conlist
 from pypureclient.flasharray._common.models.preset_workload_constraints_resource_reference_allowed_values_v_2_51 import PresetWorkloadConstraintsResourceReferenceAllowedValues
-from pypureclient.flasharray._common.models.reference_with_type_v_2_51 import ReferenceWithType
+from pypureclient.flasharray._common.models.reference_with_type_v_2_49 import ReferenceWithType
 
 
 class PresetWorkloadConstraintsResourceReference(BaseModel):

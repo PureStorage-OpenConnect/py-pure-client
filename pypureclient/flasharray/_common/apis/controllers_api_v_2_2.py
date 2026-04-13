@@ -256,6 +256,7 @@ class ControllersApi:
     api25_controllers_get_with_http_info = controllers_get_with_http_info
     api250_controllers_get_with_http_info = controllers_get_with_http_info
     api251_controllers_get_with_http_info = controllers_get_with_http_info
+    api252_controllers_get_with_http_info = controllers_get_with_http_info
     api26_controllers_get_with_http_info = controllers_get_with_http_info
     api27_controllers_get_with_http_info = controllers_get_with_http_info
     api28_controllers_get_with_http_info = controllers_get_with_http_info

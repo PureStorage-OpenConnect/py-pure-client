@@ -24,8 +24,8 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictBool, StrictInt, StrictStr
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr
-from pypureclient.flasharray._common.models.fixed_reference_v_2_51 import FixedReference
-from pypureclient.flasharray._common.models.fixed_reference_with_type_v_2_51 import FixedReferenceWithType
+from pypureclient.flasharray._common.models.fixed_reference_v_2_49 import FixedReference
+from pypureclient.flasharray._common.models.fixed_reference_with_type_v_2_49 import FixedReferenceWithType
 
 
 class Audit(BaseModel):

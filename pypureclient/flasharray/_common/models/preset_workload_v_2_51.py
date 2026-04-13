@@ -24,7 +24,7 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictInt, StrictStr, conlist
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictInt, StrictStr, conlist
-from pypureclient.flasharray._common.models.fixed_reference_with_type_v_2_51 import FixedReferenceWithType
+from pypureclient.flasharray._common.models.fixed_reference_with_type_v_2_49 import FixedReferenceWithType
 from pypureclient.flasharray._common.models.preset_workload_directory_configuration_v_2_51 import PresetWorkloadDirectoryConfiguration
 from pypureclient.flasharray._common.models.preset_workload_export_configurations_v_2_51 import PresetWorkloadExportConfigurations
 from pypureclient.flasharray._common.models.preset_workload_parameter_v_2_51 import PresetWorkloadParameter
@@ -34,7 +34,7 @@ from pypureclient.flasharray._common.models.preset_workload_qos_configuration_v_
 from pypureclient.flasharray._common.models.preset_workload_quota_configuration_v_2_51 import PresetWorkloadQuotaConfiguration
 from pypureclient.flasharray._common.models.preset_workload_snapshot_configuration_v_2_51 import PresetWorkloadSnapshotConfiguration
 from pypureclient.flasharray._common.models.preset_workload_volume_configuration_v_2_51 import PresetWorkloadVolumeConfiguration
-from pypureclient.flasharray._common.models.preset_workload_workload_tag_v_2_51 import PresetWorkloadWorkloadTag
+from pypureclient.flasharray._common.models.preset_workload_workload_tag_v_2_40 import PresetWorkloadWorkloadTag
 
 
 class PresetWorkload(BaseModel):
