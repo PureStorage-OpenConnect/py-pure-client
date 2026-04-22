@@ -24,8 +24,8 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictInt, StrictStr, conlist
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictInt, StrictStr, conlist
-from pypureclient.flashblade._common.models.error_context_response_errors_v_2_26 import ErrorContextResponseErrors
-from pypureclient.flashblade._common.models.fixed_reference_v_2_26 import FixedReference
+from pypureclient.flashblade._common.models.error_context_response_errors_v_2_22 import ErrorContextResponseErrors
+from pypureclient.flashblade._common.models.fixed_reference_v_2_22 import FixedReference
 from pypureclient.flashblade._common.models.realm_v_2_26 import Realm
 
 

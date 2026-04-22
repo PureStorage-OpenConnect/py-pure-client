@@ -658,7 +658,3 @@ class DNSApi:
     api251_dns_get_with_http_info = dns_get_with_http_info
     api251_dns_patch_with_http_info = dns_patch_with_http_info
     api251_dns_post_with_http_info = dns_post_with_http_info
-    api252_dns_delete_with_http_info = dns_delete_with_http_info
-    api252_dns_get_with_http_info = dns_get_with_http_info
-    api252_dns_patch_with_http_info = dns_patch_with_http_info
-    api252_dns_post_with_http_info = dns_post_with_http_info

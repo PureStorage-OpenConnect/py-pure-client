@@ -24,8 +24,8 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictStr, conlist
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictStr, conlist
-from pypureclient.flasharray._common.models.fixed_reference_with_type_v_2_49 import FixedReferenceWithType
-from pypureclient.flasharray._common.models.policy_rule_object_store_access_nested_v_2_51 import PolicyRuleObjectStoreAccessNested
+from pypureclient.flasharray._common.models.fixed_reference_with_type_v_2_52 import FixedReferenceWithType
+from pypureclient.flasharray._common.models.policy_rule_object_store_access_nested_v_2_52 import PolicyRuleObjectStoreAccessNested
 
 
 class ObjectStoreAccessPolicy(BaseModel):

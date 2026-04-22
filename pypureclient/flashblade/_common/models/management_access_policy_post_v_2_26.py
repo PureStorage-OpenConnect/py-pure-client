@@ -24,7 +24,7 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictBool, StrictStr, conlist
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictStr, conlist
-from pypureclient.flashblade._common.models.fixed_reference_v_2_26 import FixedReference
+from pypureclient.flashblade._common.models.fixed_reference_v_2_22 import FixedReference
 from pypureclient.flashblade._common.models.management_access_policy_rule_in_policy_v_2_26 import ManagementAccessPolicyRuleInPolicy
 
 

@@ -24,9 +24,9 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictStr, conlist
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictStr, conlist
-from pypureclient.flashblade._common.models.fixed_reference_v_2_26 import FixedReference
+from pypureclient.flashblade._common.models.fixed_reference_v_2_22 import FixedReference
 from pypureclient.flashblade._common.models.reference_writable_v_2_26 import ReferenceWritable
-from pypureclient.flashblade._common.models.trust_policy_rule_condition_v_2_26 import TrustPolicyRuleCondition
+from pypureclient.flashblade._common.models.trust_policy_rule_condition_v_2_17 import TrustPolicyRuleCondition
 
 
 class TrustPolicyRulePost(BaseModel):

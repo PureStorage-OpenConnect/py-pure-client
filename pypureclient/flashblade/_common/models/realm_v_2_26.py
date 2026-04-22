@@ -25,7 +25,7 @@ try:
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr
 from pypureclient.flashblade._common.models.reference_writable_v_2_26 import ReferenceWritable
-from pypureclient.flashblade._common.models.space_v_2_26 import Space
+from pypureclient.flashblade._common.models.space_v_2_16 import Space
 
 
 class Realm(BaseModel):

@@ -25,7 +25,7 @@ try:
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr, conlist
 from pypureclient.flashblade._common.models.api_token_v_2_18 import ApiToken
-from pypureclient.flashblade._common.models.fixed_reference_v_2_26 import FixedReference
+from pypureclient.flashblade._common.models.fixed_reference_v_2_22 import FixedReference
 
 
 class Admin(BaseModel):

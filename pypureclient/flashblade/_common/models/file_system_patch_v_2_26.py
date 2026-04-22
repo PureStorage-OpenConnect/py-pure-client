@@ -24,14 +24,14 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictBool, StrictInt, StrictStr
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr
-from pypureclient.flashblade._common.models.fixed_location_reference_v_2_26 import FixedLocationReference
+from pypureclient.flashblade._common.models.fixed_location_reference_v_2_22 import FixedLocationReference
 from pypureclient.flashblade._common.models.http_v_2_0 import Http
-from pypureclient.flashblade._common.models.multi_protocol_v_2_26 import MultiProtocol
+from pypureclient.flashblade._common.models.multi_protocol_v_2_0 import MultiProtocol
 from pypureclient.flashblade._common.models.nfs_patch_v_2_26 import NfsPatch
-from pypureclient.flashblade._common.models.reference_v_2_26 import Reference
+from pypureclient.flashblade._common.models.reference_v_2_22 import Reference
 from pypureclient.flashblade._common.models.smb_v_2_26 import Smb
-from pypureclient.flashblade._common.models.storage_class_info_v_2_26 import StorageClassInfo
-from pypureclient.flashblade._common.models.workload_configuration_reference_patch_v_2_26 import WorkloadConfigurationReferencePatch
+from pypureclient.flashblade._common.models.storage_class_info_v_2_22 import StorageClassInfo
+from pypureclient.flashblade._common.models.workload_configuration_reference_patch_v_2_23 import WorkloadConfigurationReferencePatch
 
 
 class FileSystemPatch(BaseModel):

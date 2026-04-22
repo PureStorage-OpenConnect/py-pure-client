@@ -24,7 +24,7 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictStr
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictStr
-from pypureclient.flasharray._common.models.reference_with_type_v_2_49 import ReferenceWithType
+from pypureclient.flasharray._common.models.reference_with_type_v_2_52 import ReferenceWithType
 
 
 class PodArrayAndMember(BaseModel):

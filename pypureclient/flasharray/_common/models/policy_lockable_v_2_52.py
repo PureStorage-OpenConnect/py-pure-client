@@ -24,10 +24,10 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictBool, StrictInt, StrictStr
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr
-from pypureclient.flasharray._common.models.fixed_reference_with_type_v_2_49 import FixedReferenceWithType
-from pypureclient.flasharray._common.models.policy_lockable_eradication_config_v_2_49 import PolicyLockableEradicationConfig
-from pypureclient.flasharray._common.models.reference_v_2_49 import Reference
-from pypureclient.flasharray._common.models.workload_configuration_fixed_reference_v_2_51 import WorkloadConfigurationFixedReference
+from pypureclient.flasharray._common.models.fixed_reference_with_type_v_2_52 import FixedReferenceWithType
+from pypureclient.flasharray._common.models.policy_lockable_eradication_config_v_2_52 import PolicyLockableEradicationConfig
+from pypureclient.flasharray._common.models.reference_v_2_52 import Reference
+from pypureclient.flasharray._common.models.workload_configuration_fixed_reference_v_2_52 import WorkloadConfigurationFixedReference
 
 
 class PolicyLockable(BaseModel):

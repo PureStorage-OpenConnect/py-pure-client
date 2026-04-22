@@ -24,11 +24,11 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictBool, StrictStr, conint
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictStr, conint
-from pypureclient.flasharray._common.models.priority_adjustment_v_2_10 import PriorityAdjustment
-from pypureclient.flasharray._common.models.protocol_endpoint_v_2_33 import ProtocolEndpoint
+from pypureclient.flasharray._common.models.priority_adjustment_v_2_52 import PriorityAdjustment
+from pypureclient.flasharray._common.models.protocol_endpoint_v_2_52 import ProtocolEndpoint
 from pypureclient.flasharray._common.models.qos_patch_v_2_52 import QosPatch
-from pypureclient.flasharray._common.models.reference_v_2_49 import Reference
-from pypureclient.flasharray._common.models.workload_configuration_reference_patch_v_2_51 import WorkloadConfigurationReferencePatch
+from pypureclient.flasharray._common.models.reference_v_2_52 import Reference
+from pypureclient.flasharray._common.models.workload_configuration_reference_patch_v_2_52 import WorkloadConfigurationReferencePatch
 
 
 class VolumePatch(BaseModel):

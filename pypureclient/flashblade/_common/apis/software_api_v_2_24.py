@@ -928,3 +928,9 @@ class SoftwareApi:
     api225_software_check_post_with_http_info = software_check_post_with_http_info
     api225_software_patches_get_with_http_info = software_patches_get_with_http_info
     api225_software_patches_post_with_http_info = software_patches_post_with_http_info
+    api226_software_bundle_get_with_http_info = software_bundle_get_with_http_info
+    api226_software_bundle_post_with_http_info = software_bundle_post_with_http_info
+    api226_software_check_get_with_http_info = software_check_get_with_http_info
+    api226_software_check_post_with_http_info = software_check_post_with_http_info
+    api226_software_patches_get_with_http_info = software_patches_get_with_http_info
+    api226_software_patches_post_with_http_info = software_patches_post_with_http_info

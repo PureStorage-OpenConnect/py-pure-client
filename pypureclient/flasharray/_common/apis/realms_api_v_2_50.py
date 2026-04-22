@@ -1883,13 +1883,3 @@ class RealmsApi:
     api251_realms_tags_batch_put_with_http_info = realms_tags_batch_put_with_http_info
     api251_realms_tags_delete_with_http_info = realms_tags_delete_with_http_info
     api251_realms_tags_get_with_http_info = realms_tags_get_with_http_info
-    api252_realms_delete_with_http_info = realms_delete_with_http_info
-    api252_realms_get_with_http_info = realms_get_with_http_info
-    api252_realms_patch_with_http_info = realms_patch_with_http_info
-    api252_realms_performance_get_with_http_info = realms_performance_get_with_http_info
-    api252_realms_post_with_http_info = realms_post_with_http_info
-    api252_realms_qos_get_with_http_info = realms_qos_get_with_http_info
-    api252_realms_space_get_with_http_info = realms_space_get_with_http_info
-    api252_realms_tags_batch_put_with_http_info = realms_tags_batch_put_with_http_info
-    api252_realms_tags_delete_with_http_info = realms_tags_delete_with_http_info
-    api252_realms_tags_get_with_http_info = realms_tags_get_with_http_info

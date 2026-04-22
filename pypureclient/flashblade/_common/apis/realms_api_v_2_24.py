@@ -1343,3 +1343,11 @@ class RealmsApi:
     api225_realms_post_with_http_info = realms_post_with_http_info
     api225_realms_space_get_with_http_info = realms_space_get_with_http_info
     api225_realms_space_storage_classes_get_with_http_info = realms_space_storage_classes_get_with_http_info
+    api226_realms_defaults_get_with_http_info = realms_defaults_get_with_http_info
+    api226_realms_defaults_patch_with_http_info = realms_defaults_patch_with_http_info
+    api226_realms_delete_with_http_info = realms_delete_with_http_info
+    api226_realms_get_with_http_info = realms_get_with_http_info
+    api226_realms_patch_with_http_info = realms_patch_with_http_info
+    api226_realms_post_with_http_info = realms_post_with_http_info
+    api226_realms_space_get_with_http_info = realms_space_get_with_http_info
+    api226_realms_space_storage_classes_get_with_http_info = realms_space_storage_classes_get_with_http_info

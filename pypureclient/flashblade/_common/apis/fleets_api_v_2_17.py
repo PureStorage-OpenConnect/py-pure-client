@@ -1378,3 +1378,12 @@ class FleetsApi:
     api225_fleets_members_post_with_http_info = fleets_members_post_with_http_info
     api225_fleets_patch_with_http_info = fleets_patch_with_http_info
     api225_fleets_post_with_http_info = fleets_post_with_http_info
+    api226_fleets_delete_with_http_info = fleets_delete_with_http_info
+    api226_fleets_fleet_key_get_with_http_info = fleets_fleet_key_get_with_http_info
+    api226_fleets_fleet_key_post_with_http_info = fleets_fleet_key_post_with_http_info
+    api226_fleets_get_with_http_info = fleets_get_with_http_info
+    api226_fleets_members_delete_with_http_info = fleets_members_delete_with_http_info
+    api226_fleets_members_get_with_http_info = fleets_members_get_with_http_info
+    api226_fleets_members_post_with_http_info = fleets_members_post_with_http_info
+    api226_fleets_patch_with_http_info = fleets_patch_with_http_info
+    api226_fleets_post_with_http_info = fleets_post_with_http_info

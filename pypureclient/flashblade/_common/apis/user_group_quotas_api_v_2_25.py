@@ -441,3 +441,5 @@ class UserGroupQuotasApi:
     # Method Aliases
     api225_file_system_group_quotas_get_with_http_info = file_system_group_quotas_get_with_http_info
     api225_file_system_user_quotas_get_with_http_info = file_system_user_quotas_get_with_http_info
+    api226_file_system_group_quotas_get_with_http_info = file_system_group_quotas_get_with_http_info
+    api226_file_system_user_quotas_get_with_http_info = file_system_user_quotas_get_with_http_info

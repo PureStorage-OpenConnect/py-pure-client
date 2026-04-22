@@ -25,7 +25,7 @@ try:
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictStr, conlist
 from pypureclient.flashblade._common.models.saml2_sso_idp_v_2_26 import Saml2SsoIdp
-from pypureclient.flashblade._common.models.saml2_sso_management_v_2_26 import Saml2SsoManagement
+from pypureclient.flashblade._common.models.saml2_sso_management_v_2_24 import Saml2SsoManagement
 from pypureclient.flashblade._common.models.saml2_sso_sp_v_2_26 import Saml2SsoSp
 
 

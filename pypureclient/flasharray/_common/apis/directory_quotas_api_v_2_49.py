@@ -255,4 +255,3 @@ class DirectoryQuotasApi:
     api249_directory_quotas_get_with_http_info = directory_quotas_get_with_http_info
     api250_directory_quotas_get_with_http_info = directory_quotas_get_with_http_info
     api251_directory_quotas_get_with_http_info = directory_quotas_get_with_http_info
-    api252_directory_quotas_get_with_http_info = directory_quotas_get_with_http_info

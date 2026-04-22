@@ -857,7 +857,3 @@ class DirectoryExportsApi:
     api251_directory_exports_get_with_http_info = directory_exports_get_with_http_info
     api251_directory_exports_patch_with_http_info = directory_exports_patch_with_http_info
     api251_directory_exports_post_with_http_info = directory_exports_post_with_http_info
-    api252_directory_exports_delete_with_http_info = directory_exports_delete_with_http_info
-    api252_directory_exports_get_with_http_info = directory_exports_get_with_http_info
-    api252_directory_exports_patch_with_http_info = directory_exports_patch_with_http_info
-    api252_directory_exports_post_with_http_info = directory_exports_post_with_http_info

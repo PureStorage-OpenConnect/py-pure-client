@@ -1553,3 +1553,12 @@ class PoliciesQoSApi:
     api225_qos_policies_members_post_with_http_info = qos_policies_members_post_with_http_info
     api225_qos_policies_patch_with_http_info = qos_policies_patch_with_http_info
     api225_qos_policies_post_with_http_info = qos_policies_post_with_http_info
+    api226_qos_policies_buckets_get_with_http_info = qos_policies_buckets_get_with_http_info
+    api226_qos_policies_delete_with_http_info = qos_policies_delete_with_http_info
+    api226_qos_policies_file_systems_get_with_http_info = qos_policies_file_systems_get_with_http_info
+    api226_qos_policies_get_with_http_info = qos_policies_get_with_http_info
+    api226_qos_policies_members_delete_with_http_info = qos_policies_members_delete_with_http_info
+    api226_qos_policies_members_get_with_http_info = qos_policies_members_get_with_http_info
+    api226_qos_policies_members_post_with_http_info = qos_policies_members_post_with_http_info
+    api226_qos_policies_patch_with_http_info = qos_policies_patch_with_http_info
+    api226_qos_policies_post_with_http_info = qos_policies_post_with_http_info

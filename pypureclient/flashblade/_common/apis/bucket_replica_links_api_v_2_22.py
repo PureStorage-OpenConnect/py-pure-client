@@ -786,3 +786,7 @@ class BucketReplicaLinksApi:
     api225_bucket_replica_links_get_with_http_info = bucket_replica_links_get_with_http_info
     api225_bucket_replica_links_patch_with_http_info = bucket_replica_links_patch_with_http_info
     api225_bucket_replica_links_post_with_http_info = bucket_replica_links_post_with_http_info
+    api226_bucket_replica_links_delete_with_http_info = bucket_replica_links_delete_with_http_info
+    api226_bucket_replica_links_get_with_http_info = bucket_replica_links_get_with_http_info
+    api226_bucket_replica_links_patch_with_http_info = bucket_replica_links_patch_with_http_info
+    api226_bucket_replica_links_post_with_http_info = bucket_replica_links_post_with_http_info

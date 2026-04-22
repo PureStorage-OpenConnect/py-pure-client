@@ -24,7 +24,7 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictStr, conlist
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictStr, conlist
-from pypureclient.flashblade._common.models.workload_parameter_v_2_26 import WorkloadParameter
+from pypureclient.flashblade._common.models.workload_parameter_v_2_23 import WorkloadParameter
 from pypureclient.flashblade._common.models.workload_placement_recommendation_generic_target_v_2_26 import WorkloadPlacementRecommendationGenericTarget
 from pypureclient.flashblade._common.models.workload_placement_recommendation_placement_v_2_26 import WorkloadPlacementRecommendationPlacement
 

@@ -25,7 +25,7 @@ try:
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictStr
 from pypureclient.flashblade._common.models.preset_workload_constraints_v_2_26 import PresetWorkloadConstraints
-from pypureclient.flashblade._common.models.preset_workload_metadata_v_2_26 import PresetWorkloadMetadata
+from pypureclient.flashblade._common.models.preset_workload_metadata_v_2_23 import PresetWorkloadMetadata
 
 
 class PresetWorkloadParameter(BaseModel):

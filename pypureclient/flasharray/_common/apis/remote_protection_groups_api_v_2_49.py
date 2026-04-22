@@ -562,6 +562,3 @@ class RemoteProtectionGroupsApi:
     api251_remote_protection_groups_delete_with_http_info = remote_protection_groups_delete_with_http_info
     api251_remote_protection_groups_get_with_http_info = remote_protection_groups_get_with_http_info
     api251_remote_protection_groups_patch_with_http_info = remote_protection_groups_patch_with_http_info
-    api252_remote_protection_groups_delete_with_http_info = remote_protection_groups_delete_with_http_info
-    api252_remote_protection_groups_get_with_http_info = remote_protection_groups_get_with_http_info
-    api252_remote_protection_groups_patch_with_http_info = remote_protection_groups_patch_with_http_info

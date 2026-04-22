@@ -24,13 +24,13 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictBool, StrictInt, StrictStr
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr
-from pypureclient.flashblade._common.models.file_system_eradication_config_v_2_26 import FileSystemEradicationConfig
+from pypureclient.flashblade._common.models.file_system_eradication_config_v_2_15 import FileSystemEradicationConfig
 from pypureclient.flashblade._common.models.http_v_2_0 import Http
-from pypureclient.flashblade._common.models.multi_protocol_post_v_2_26 import MultiProtocolPost
+from pypureclient.flashblade._common.models.multi_protocol_post_v_2_0 import MultiProtocolPost
 from pypureclient.flashblade._common.models.nfs_v_2_26 import Nfs
-from pypureclient.flashblade._common.models.reference_v_2_26 import Reference
+from pypureclient.flashblade._common.models.reference_v_2_22 import Reference
 from pypureclient.flashblade._common.models.smb_post_v_2_26 import SmbPost
-from pypureclient.flashblade._common.models.workload_configuration_reference_post_v_2_26 import WorkloadConfigurationReferencePost
+from pypureclient.flashblade._common.models.workload_configuration_reference_post_v_2_23 import WorkloadConfigurationReferencePost
 
 
 class FileSystemPost(BaseModel):

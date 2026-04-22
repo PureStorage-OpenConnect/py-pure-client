@@ -675,7 +675,3 @@ class OffloadsApi:
     api251_offloads_get_with_http_info = offloads_get_with_http_info
     api251_offloads_patch_with_http_info = offloads_patch_with_http_info
     api251_offloads_post_with_http_info = offloads_post_with_http_info
-    api252_offloads_delete_with_http_info = offloads_delete_with_http_info
-    api252_offloads_get_with_http_info = offloads_get_with_http_info
-    api252_offloads_patch_with_http_info = offloads_patch_with_http_info
-    api252_offloads_post_with_http_info = offloads_post_with_http_info

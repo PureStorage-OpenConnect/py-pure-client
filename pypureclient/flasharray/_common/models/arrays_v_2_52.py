@@ -24,11 +24,11 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictBool, StrictFloat, StrictInt, StrictStr, conlist
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictFloat, StrictInt, StrictStr, conlist
-from pypureclient.flasharray._common.models.array_encryption_v_2_6 import ArrayEncryption
-from pypureclient.flasharray._common.models.eradication_config_v_2_26 import EradicationConfig
-from pypureclient.flasharray._common.models.fixed_reference_with_type_v_2_49 import FixedReferenceWithType
-from pypureclient.flasharray._common.models.reference_with_type_v_2_49 import ReferenceWithType
-from pypureclient.flasharray._common.models.space_v_2_50 import Space
+from pypureclient.flasharray._common.models.array_encryption_v_2_52 import ArrayEncryption
+from pypureclient.flasharray._common.models.eradication_config_v_2_52 import EradicationConfig
+from pypureclient.flasharray._common.models.fixed_reference_with_type_v_2_52 import FixedReferenceWithType
+from pypureclient.flasharray._common.models.reference_with_type_v_2_52 import ReferenceWithType
+from pypureclient.flasharray._common.models.space_v_2_52 import Space
 
 
 class Arrays(BaseModel):
