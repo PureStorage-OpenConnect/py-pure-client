@@ -6246,6 +6246,18 @@ PolicyRuleObjectStoreAccessBase
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
+PolicyRuleObjectStoreAccessNested
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::PolicyRuleObjectStoreAccessNested
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
 PolicyRuleQuota
 ~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flasharray::PolicyRuleQuota
