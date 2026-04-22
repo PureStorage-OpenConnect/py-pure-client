@@ -389,3 +389,5 @@ class ResiliencyGroupsApi:
     api224_resiliency_groups_members_get_with_http_info = resiliency_groups_members_get_with_http_info
     api225_resiliency_groups_get_with_http_info = resiliency_groups_get_with_http_info
     api225_resiliency_groups_members_get_with_http_info = resiliency_groups_members_get_with_http_info
+    api226_resiliency_groups_get_with_http_info = resiliency_groups_get_with_http_info
+    api226_resiliency_groups_members_get_with_http_info = resiliency_groups_members_get_with_http_info

@@ -475,3 +475,6 @@ class SNMPAgentsApi:
     api225_snmp_agents_get_with_http_info = snmp_agents_get_with_http_info
     api225_snmp_agents_mib_get_with_http_info = snmp_agents_mib_get_with_http_info
     api225_snmp_agents_patch_with_http_info = snmp_agents_patch_with_http_info
+    api226_snmp_agents_get_with_http_info = snmp_agents_get_with_http_info
+    api226_snmp_agents_mib_get_with_http_info = snmp_agents_mib_get_with_http_info
+    api226_snmp_agents_patch_with_http_info = snmp_agents_patch_with_http_info

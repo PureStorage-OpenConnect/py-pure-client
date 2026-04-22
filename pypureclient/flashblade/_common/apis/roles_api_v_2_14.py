@@ -218,3 +218,4 @@ class RolesApi:
     api223_roles_get_with_http_info = roles_get_with_http_info
     api224_roles_get_with_http_info = roles_get_with_http_info
     api225_roles_get_with_http_info = roles_get_with_http_info
+    api226_roles_get_with_http_info = roles_get_with_http_info

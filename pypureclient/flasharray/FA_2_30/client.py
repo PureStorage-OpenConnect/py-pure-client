@@ -36517,6 +36517,7 @@ class Client(object):
         if kwargs.get('authorization') is not None:
             warnings.warn("authorization parameter is deprecated, and will be removed soon.", DeprecationWarning)
         retries = self._retries
+        original_auth_error = None
         api_function = getattr(self.__get_api_instance(api_class_name), api_function_name)
         while True:
             try:
@@ -36526,12 +36527,14 @@ class Client(object):
             except ApiException as error:
                 # If no chance for retries, return the error
                 if retries == 0:
+                    return self._create_error_response(original_auth_error or error)
+                # If bad request, forbidden, or not found, return the error (it will never work)
+                elif error.status in [400, 403, 404]:
                     return self._create_error_response(error)
-                # If bad request or not found, return the error (it will never work)
-                elif error.status in [400, 404]:
-                    return self._create_error_response(error)
-                # If authentication error, reset access token and retry
-                elif error.status in [401, 403]:
+                # If authentication error, reset access token and retry once
+                elif error.status == 401:
+                    original_auth_error = error
+                    retries = 1
                     self._set_auth_header(refresh=True)
                 # If rate limit error, wait the proper time and try again
                 elif error.status == 429:

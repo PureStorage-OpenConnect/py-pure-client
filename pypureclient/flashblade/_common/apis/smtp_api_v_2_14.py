@@ -354,3 +354,5 @@ class SMTPApi:
     api224_smtp_servers_patch_with_http_info = smtp_servers_patch_with_http_info
     api225_smtp_servers_get_with_http_info = smtp_servers_get_with_http_info
     api225_smtp_servers_patch_with_http_info = smtp_servers_patch_with_http_info
+    api226_smtp_servers_get_with_http_info = smtp_servers_get_with_http_info
+    api226_smtp_servers_patch_with_http_info = smtp_servers_patch_with_http_info

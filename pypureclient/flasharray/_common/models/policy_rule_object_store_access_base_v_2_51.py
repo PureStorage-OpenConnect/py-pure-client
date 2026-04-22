@@ -29,14 +29,13 @@ from pypureclient.flasharray._common.models.fixed_reference_with_type_v_2_49 imp
 
 class PolicyRuleObjectStoreAccessBase(BaseModel):
     """
-    PolicyRuleObjectStoreAccessBase
+    The object store access policy rule defining the actions that can be performed on specific resources. The rule is part of a policy that grants permissions to an object store user.
     """
-    context: Optional[FixedReferenceWithType] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet or to the fleet itself. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     actions: Optional[conlist(StrictStr)] = Field(default=None, description="The list of actions granted by this rule. Each included action may restrict other properties of the rule.")
     effect: Optional[StrictStr] = Field(default=None, description="Effect of this rule. When `allow`, the rule allows the given actions to be performed on the given resources, subject to the given conditions. When `deny`, the rule disallows performing the given actions on the given resources, subject to the given condition. This takes precedence over any matching `allow` rules. Valid values include `allow` and `deny`.")
     policy: Optional[FixedReferenceWithType] = Field(default=None, description="The policy to which this rule belongs.")
     resources: Optional[conlist(StrictStr)] = Field(default=None, description="The list of resources which this rule applies to. Each resource can include a bucket component, optionally followed by an object component. The choice of which components a resource can include is dictated by which actions are included in the rule. For further details, see the Object Store Access Policy Actions section of the User Guide.")
-    __properties = ["context", "actions", "effect", "policy", "resources"]
+    __properties = ["actions", "effect", "policy", "resources"]
 
     class Config:
         """Pydantic configuration"""
@@ -60,7 +59,6 @@ class PolicyRuleObjectStoreAccessBase(BaseModel):
         excluded_fields: Set[str] = set()
         if not include_readonly:
             excluded_fields.update([
-                "context",
                 "effect",
             ])
         none_fields: Set[str] = set()
@@ -69,9 +67,6 @@ class PolicyRuleObjectStoreAccessBase(BaseModel):
                 none_fields.add(_field)
 
         _dict = self.dict(by_alias=True, exclude=excluded_fields, exclude_none=True)
-        # override the default output from pydantic by calling `to_dict()` of context
-        if _include_in_dict('context', include_readonly, excluded_fields, none_fields):
-            _dict['context'] = self.context.to_dict(include_readonly=include_readonly)
         # override the default output from pydantic by calling `to_dict()` of policy
         if _include_in_dict('policy', include_readonly, excluded_fields, none_fields):
             _dict['policy'] = self.policy.to_dict(include_readonly=include_readonly)
@@ -112,7 +107,6 @@ class PolicyRuleObjectStoreAccessBase(BaseModel):
             return PolicyRuleObjectStoreAccessBase.parse_obj(obj)
 
         _obj = PolicyRuleObjectStoreAccessBase.construct(_fields_set=None, **{
-            "context": FixedReferenceWithType.from_dict(obj.get("context")) if obj.get("context") is not None else None,
             "actions": obj.get("actions"),
             "effect": obj.get("effect"),
             "policy": FixedReferenceWithType.from_dict(obj.get("policy")) if obj.get("policy") is not None else None,
