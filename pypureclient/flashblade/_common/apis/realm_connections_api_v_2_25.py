@@ -930,3 +930,9 @@ class RealmConnectionsApi:
     api225_realm_connections_delete_with_http_info = realm_connections_delete_with_http_info
     api225_realm_connections_get_with_http_info = realm_connections_get_with_http_info
     api225_realm_connections_post_with_http_info = realm_connections_post_with_http_info
+    api226_realm_connections_connection_key_delete_with_http_info = realm_connections_connection_key_delete_with_http_info
+    api226_realm_connections_connection_key_get_with_http_info = realm_connections_connection_key_get_with_http_info
+    api226_realm_connections_connection_key_post_with_http_info = realm_connections_connection_key_post_with_http_info
+    api226_realm_connections_delete_with_http_info = realm_connections_delete_with_http_info
+    api226_realm_connections_get_with_http_info = realm_connections_get_with_http_info
+    api226_realm_connections_post_with_http_info = realm_connections_post_with_http_info

@@ -486,3 +486,6 @@ class MaintenanceWindowsApi:
     api225_maintenance_windows_delete_with_http_info = maintenance_windows_delete_with_http_info
     api225_maintenance_windows_get_with_http_info = maintenance_windows_get_with_http_info
     api225_maintenance_windows_post_with_http_info = maintenance_windows_post_with_http_info
+    api226_maintenance_windows_delete_with_http_info = maintenance_windows_delete_with_http_info
+    api226_maintenance_windows_get_with_http_info = maintenance_windows_get_with_http_info
+    api226_maintenance_windows_post_with_http_info = maintenance_windows_post_with_http_info

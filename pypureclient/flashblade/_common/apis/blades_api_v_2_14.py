@@ -225,3 +225,4 @@ class BladesApi:
     api223_blades_get_with_http_info = blades_get_with_http_info
     api224_blades_get_with_http_info = blades_get_with_http_info
     api225_blades_get_with_http_info = blades_get_with_http_info
+    api226_blades_get_with_http_info = blades_get_with_http_info

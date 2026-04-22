@@ -1138,3 +1138,10 @@ class LegalHoldsApi:
     api225_legal_holds_held_entities_post_with_http_info = legal_holds_held_entities_post_with_http_info
     api225_legal_holds_patch_with_http_info = legal_holds_patch_with_http_info
     api225_legal_holds_post_with_http_info = legal_holds_post_with_http_info
+    api226_legal_holds_delete_with_http_info = legal_holds_delete_with_http_info
+    api226_legal_holds_get_with_http_info = legal_holds_get_with_http_info
+    api226_legal_holds_held_entities_get_with_http_info = legal_holds_held_entities_get_with_http_info
+    api226_legal_holds_held_entities_patch_with_http_info = legal_holds_held_entities_patch_with_http_info
+    api226_legal_holds_held_entities_post_with_http_info = legal_holds_held_entities_post_with_http_info
+    api226_legal_holds_patch_with_http_info = legal_holds_patch_with_http_info
+    api226_legal_holds_post_with_http_info = legal_holds_post_with_http_info

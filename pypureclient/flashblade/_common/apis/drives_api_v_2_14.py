@@ -225,3 +225,4 @@ class DrivesApi:
     api223_drives_get_with_http_info = drives_get_with_http_info
     api224_drives_get_with_http_info = drives_get_with_http_info
     api225_drives_get_with_http_info = drives_get_with_http_info
+    api226_drives_get_with_http_info = drives_get_with_http_info
