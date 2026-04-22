@@ -24,8 +24,8 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictStr, conlist
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictStr, conlist
-from pypureclient.flashblade._common.models.naming_pattern_v_2_26 import NamingPattern
-from pypureclient.flashblade._common.models.preset_workload_snapshot_rule_v_2_26 import PresetWorkloadSnapshotRule
+from pypureclient.flashblade._common.models.naming_pattern_v_2_23 import NamingPattern
+from pypureclient.flashblade._common.models.preset_workload_snapshot_rule_v_2_23 import PresetWorkloadSnapshotRule
 from pypureclient.flashblade._common.models.reference_writable_v_2_26 import ReferenceWritable
 
 

@@ -479,3 +479,5 @@ class PoliciesAllApi:
     api224_policies_all_members_get_with_http_info = policies_all_members_get_with_http_info
     api225_policies_all_get_with_http_info = policies_all_get_with_http_info
     api225_policies_all_members_get_with_http_info = policies_all_members_get_with_http_info
+    api226_policies_all_get_with_http_info = policies_all_get_with_http_info
+    api226_policies_all_members_get_with_http_info = policies_all_members_get_with_http_info

@@ -24,8 +24,8 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictBool, StrictStr
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictStr
-from pypureclient.flashblade._common.models.bucket_eradication_config_v_2_26 import BucketEradicationConfig
-from pypureclient.flashblade._common.models.object_lock_config_request_body_v_2_26 import ObjectLockConfigRequestBody
+from pypureclient.flashblade._common.models.bucket_eradication_config_v_2_13 import BucketEradicationConfig
+from pypureclient.flashblade._common.models.object_lock_config_request_body_v_2_8 import ObjectLockConfigRequestBody
 from pypureclient.flashblade._common.models.reference_writable_v_2_26 import ReferenceWritable
 
 

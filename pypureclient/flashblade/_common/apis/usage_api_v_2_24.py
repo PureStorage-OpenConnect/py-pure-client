@@ -435,3 +435,5 @@ class UsageApi:
     api224_usage_users_get_with_http_info = usage_users_get_with_http_info
     api225_usage_groups_get_with_http_info = usage_groups_get_with_http_info
     api225_usage_users_get_with_http_info = usage_users_get_with_http_info
+    api226_usage_groups_get_with_http_info = usage_groups_get_with_http_info
+    api226_usage_users_get_with_http_info = usage_users_get_with_http_info

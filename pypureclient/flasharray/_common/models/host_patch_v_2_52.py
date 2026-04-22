@@ -24,10 +24,10 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictStr, conlist
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictStr, conlist
-from pypureclient.flasharray._common.models.chap_v_2_0 import Chap
+from pypureclient.flasharray._common.models.chap_v_2_52 import Chap
 from pypureclient.flasharray._common.models.container_qos_ceilings_patch_v_2_52 import ContainerQosCeilingsPatch
-from pypureclient.flasharray._common.models.reference_v_2_49 import Reference
-from pypureclient.flasharray._common.models.reference_no_id_v_2_0 import ReferenceNoId
+from pypureclient.flasharray._common.models.reference_v_2_52 import Reference
+from pypureclient.flasharray._common.models.reference_no_id_v_2_52 import ReferenceNoId
 
 
 class HostPatch(BaseModel):

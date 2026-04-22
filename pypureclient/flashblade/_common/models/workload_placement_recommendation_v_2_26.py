@@ -24,10 +24,10 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictBool, StrictFloat, StrictInt, StrictStr, conlist
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictFloat, StrictInt, StrictStr, conlist
-from pypureclient.flashblade._common.models.fixed_reference_v_2_26 import FixedReference
-from pypureclient.flashblade._common.models.fixed_reference_without_type_v_2_26 import FixedReferenceWithoutType
+from pypureclient.flashblade._common.models.fixed_reference_v_2_22 import FixedReference
+from pypureclient.flashblade._common.models.fixed_reference_without_type_v_2_22 import FixedReferenceWithoutType
 from pypureclient.flashblade._common.models.workload_placement_recommendation_additional_constraints_v_2_26 import WorkloadPlacementRecommendationAdditionalConstraints
-from pypureclient.flashblade._common.models.workload_placement_recommendation_parameter_v_2_26 import WorkloadPlacementRecommendationParameter
+from pypureclient.flashblade._common.models.workload_placement_recommendation_parameter_v_2_23 import WorkloadPlacementRecommendationParameter
 from pypureclient.flashblade._common.models.workload_placement_recommendation_result_v_2_26 import WorkloadPlacementRecommendationResult
 
 

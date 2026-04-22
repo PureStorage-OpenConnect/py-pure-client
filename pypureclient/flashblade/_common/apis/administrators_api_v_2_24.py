@@ -1693,3 +1693,14 @@ class AdministratorsApi:
     api225_admins_post_with_http_info = admins_post_with_http_info
     api225_admins_settings_get_with_http_info = admins_settings_get_with_http_info
     api225_admins_settings_patch_with_http_info = admins_settings_patch_with_http_info
+    api226_admins_api_tokens_delete_with_http_info = admins_api_tokens_delete_with_http_info
+    api226_admins_api_tokens_get_with_http_info = admins_api_tokens_get_with_http_info
+    api226_admins_api_tokens_post_with_http_info = admins_api_tokens_post_with_http_info
+    api226_admins_cache_delete_with_http_info = admins_cache_delete_with_http_info
+    api226_admins_cache_get_with_http_info = admins_cache_get_with_http_info
+    api226_admins_delete_with_http_info = admins_delete_with_http_info
+    api226_admins_get_with_http_info = admins_get_with_http_info
+    api226_admins_patch_with_http_info = admins_patch_with_http_info
+    api226_admins_post_with_http_info = admins_post_with_http_info
+    api226_admins_settings_get_with_http_info = admins_settings_get_with_http_info
+    api226_admins_settings_patch_with_http_info = admins_settings_patch_with_http_info

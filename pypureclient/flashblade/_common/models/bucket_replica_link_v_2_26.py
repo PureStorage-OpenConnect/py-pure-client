@@ -24,9 +24,9 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictBool, StrictInt, StrictStr
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr
-from pypureclient.flashblade._common.models.fixed_reference_v_2_26 import FixedReference
+from pypureclient.flashblade._common.models.fixed_reference_v_2_22 import FixedReference
 from pypureclient.flashblade._common.models.fixed_reference_name_only_v_2_0 import FixedReferenceNameOnly
-from pypureclient.flashblade._common.models.object_backlog_v_2_26 import ObjectBacklog
+from pypureclient.flashblade._common.models.object_backlog_v_2_2 import ObjectBacklog
 from pypureclient.flashblade._common.models.reference_writable_v_2_26 import ReferenceWritable
 
 

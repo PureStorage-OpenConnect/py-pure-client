@@ -24,13 +24,13 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictBool, StrictInt, StrictStr, conlist
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr, conlist
-from pypureclient.flasharray._common.models.chap_v_2_0 import Chap
-from pypureclient.flasharray._common.models.container_qos_ceilings_v_2_47 import ContainerQosCeilings
-from pypureclient.flasharray._common.models.fixed_reference_with_type_v_2_49 import FixedReferenceWithType
-from pypureclient.flasharray._common.models.host_port_connectivity_v_2_0 import HostPortConnectivity
-from pypureclient.flasharray._common.models.reference_v_2_49 import Reference
-from pypureclient.flasharray._common.models.reference_no_id_v_2_0 import ReferenceNoId
-from pypureclient.flasharray._common.models.space_v_2_50 import Space
+from pypureclient.flasharray._common.models.chap_v_2_52 import Chap
+from pypureclient.flasharray._common.models.container_qos_ceilings_v_2_52 import ContainerQosCeilings
+from pypureclient.flasharray._common.models.fixed_reference_with_type_v_2_52 import FixedReferenceWithType
+from pypureclient.flasharray._common.models.host_port_connectivity_v_2_52 import HostPortConnectivity
+from pypureclient.flasharray._common.models.reference_v_2_52 import Reference
+from pypureclient.flasharray._common.models.reference_no_id_v_2_52 import ReferenceNoId
+from pypureclient.flasharray._common.models.space_v_2_52 import Space
 
 
 class Host(BaseModel):

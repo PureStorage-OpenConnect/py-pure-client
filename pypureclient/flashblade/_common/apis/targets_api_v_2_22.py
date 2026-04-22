@@ -820,3 +820,8 @@ class TargetsApi:
     api225_targets_patch_with_http_info = targets_patch_with_http_info
     api225_targets_performance_replication_get_with_http_info = targets_performance_replication_get_with_http_info
     api225_targets_post_with_http_info = targets_post_with_http_info
+    api226_targets_delete_with_http_info = targets_delete_with_http_info
+    api226_targets_get_with_http_info = targets_get_with_http_info
+    api226_targets_patch_with_http_info = targets_patch_with_http_info
+    api226_targets_performance_replication_get_with_http_info = targets_performance_replication_get_with_http_info
+    api226_targets_post_with_http_info = targets_post_with_http_info

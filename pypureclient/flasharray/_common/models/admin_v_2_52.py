@@ -24,9 +24,9 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictBool, StrictInt, StrictStr, conlist
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr, conlist
-from pypureclient.flasharray._common.models.admin_role_v_2_36 import AdminRole
+from pypureclient.flasharray._common.models.admin_role_v_2_52 import AdminRole
 from pypureclient.flasharray._common.models.api_token_v_2_2 import ApiToken
-from pypureclient.flasharray._common.models.reference_with_type_v_2_49 import ReferenceWithType
+from pypureclient.flasharray._common.models.reference_with_type_v_2_52 import ReferenceWithType
 
 
 class Admin(BaseModel):

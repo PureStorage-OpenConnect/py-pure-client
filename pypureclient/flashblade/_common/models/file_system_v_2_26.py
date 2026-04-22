@@ -24,16 +24,16 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictBool, StrictInt, StrictStr, conlist
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr, conlist
-from pypureclient.flashblade._common.models.file_system_eradication_config_v_2_26 import FileSystemEradicationConfig
-from pypureclient.flashblade._common.models.fixed_reference_v_2_26 import FixedReference
+from pypureclient.flashblade._common.models.file_system_eradication_config_v_2_15 import FileSystemEradicationConfig
+from pypureclient.flashblade._common.models.fixed_reference_v_2_22 import FixedReference
 from pypureclient.flashblade._common.models.http_v_2_0 import Http
-from pypureclient.flashblade._common.models.location_reference_v_2_26 import LocationReference
-from pypureclient.flashblade._common.models.multi_protocol_v_2_26 import MultiProtocol
+from pypureclient.flashblade._common.models.location_reference_v_2_22 import LocationReference
+from pypureclient.flashblade._common.models.multi_protocol_v_2_0 import MultiProtocol
 from pypureclient.flashblade._common.models.nfs_v_2_26 import Nfs
 from pypureclient.flashblade._common.models.smb_v_2_26 import Smb
-from pypureclient.flashblade._common.models.space_v_2_26 import Space
-from pypureclient.flashblade._common.models.storage_class_info_v_2_26 import StorageClassInfo
-from pypureclient.flashblade._common.models.workload_configuration_reference_v_2_26 import WorkloadConfigurationReference
+from pypureclient.flashblade._common.models.space_v_2_16 import Space
+from pypureclient.flashblade._common.models.storage_class_info_v_2_22 import StorageClassInfo
+from pypureclient.flashblade._common.models.workload_configuration_reference_v_2_23 import WorkloadConfigurationReference
 
 
 class FileSystem(BaseModel):

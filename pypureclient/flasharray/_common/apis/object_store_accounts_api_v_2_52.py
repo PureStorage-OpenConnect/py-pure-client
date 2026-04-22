@@ -32,8 +32,8 @@ from pypureclient._transport.exceptions import (  # noqa: F401
     ApiValueError
 )
 from pypureclient.reference_type import quote_string_parameter
-from pypureclient.flasharray._common.models.object_store_account_get_response_v_2_51 import ObjectStoreAccountGetResponse
-from pypureclient.flasharray._common.models.object_store_account_response_v_2_51 import ObjectStoreAccountResponse
+from pypureclient.flasharray._common.models.object_store_account_get_response_v_2_52 import ObjectStoreAccountGetResponse
+from pypureclient.flasharray._common.models.object_store_account_response_v_2_52 import ObjectStoreAccountResponse
 from pypureclient.flasharray._common.models.resource_object_store_account_space_get_response_v_2_52 import ResourceObjectStoreAccountSpaceGetResponse
 
 class ObjectStoreAccountsApi:

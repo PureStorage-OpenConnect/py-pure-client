@@ -25,7 +25,7 @@ try:
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictInt, StrictStr, conlist
 from pypureclient.flashblade._common.models.audit_file_systems_policy_v_2_26 import AuditFileSystemsPolicy
-from pypureclient.flashblade._common.models.error_context_response_errors_v_2_26 import ErrorContextResponseErrors
+from pypureclient.flashblade._common.models.error_context_response_errors_v_2_22 import ErrorContextResponseErrors
 
 
 class AuditFileSystemsPoliciesGetResponse(BaseModel):

@@ -24,9 +24,9 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictInt, StrictStr, conlist
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictInt, StrictStr, conlist
-from pypureclient.flashblade._common.models.array_encryption_v_2_26 import ArrayEncryption
-from pypureclient.flashblade._common.models.array_eradication_config_v_2_26 import ArrayEradicationConfig
-from pypureclient.flashblade._common.models.fixed_reference_v_2_26 import FixedReference
+from pypureclient.flashblade._common.models.array_encryption_v_2_8 import ArrayEncryption
+from pypureclient.flashblade._common.models.array_eradication_config_v_2_5 import ArrayEradicationConfig
+from pypureclient.flashblade._common.models.fixed_reference_v_2_22 import FixedReference
 from pypureclient.flashblade._common.models.reference_writable_v_2_26 import ReferenceWritable
 
 

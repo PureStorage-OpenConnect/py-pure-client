@@ -934,8 +934,3 @@ class VirtualMachinesApi:
     api251_virtual_machines_get_with_http_info = virtual_machines_get_with_http_info
     api251_virtual_machines_patch_with_http_info = virtual_machines_patch_with_http_info
     api251_virtual_machines_post_with_http_info = virtual_machines_post_with_http_info
-    api252_virtual_machine_snapshots_get_with_http_info = virtual_machine_snapshots_get_with_http_info
-    api252_virtual_machine_volume_snapshots_get_with_http_info = virtual_machine_volume_snapshots_get_with_http_info
-    api252_virtual_machines_get_with_http_info = virtual_machines_get_with_http_info
-    api252_virtual_machines_patch_with_http_info = virtual_machines_patch_with_http_info
-    api252_virtual_machines_post_with_http_info = virtual_machines_post_with_http_info
