@@ -263,6 +263,8 @@ class SessionsApi:
     api250_sessions_get_with_http_info = sessions_get_with_http_info
     api251_sessions_get_with_http_info = sessions_get_with_http_info
     api252_sessions_get_with_http_info = sessions_get_with_http_info
+    api253_sessions_get_with_http_info = sessions_get_with_http_info
+    api254_sessions_get_with_http_info = sessions_get_with_http_info
     api26_sessions_get_with_http_info = sessions_get_with_http_info
     api27_sessions_get_with_http_info = sessions_get_with_http_info
     api28_sessions_get_with_http_info = sessions_get_with_http_info

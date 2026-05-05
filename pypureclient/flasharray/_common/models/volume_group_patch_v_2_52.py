@@ -24,9 +24,9 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictBool, StrictStr
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictStr
-from pypureclient.flasharray._common.models.priority_adjustment_v_2_52 import PriorityAdjustment
+from pypureclient.flasharray._common.models.priority_adjustment_v_2_10 import PriorityAdjustment
 from pypureclient.flasharray._common.models.qos_patch_v_2_52 import QosPatch
-from pypureclient.flasharray._common.models.space_v_2_52 import Space
+from pypureclient.flasharray._common.models.space_v_2_50 import Space
 
 
 class VolumeGroupPatch(BaseModel):

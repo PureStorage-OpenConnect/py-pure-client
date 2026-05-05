@@ -25,7 +25,7 @@ try:
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictStr, conlist
 from pypureclient.flasharray._common.models.quota_limit_patch_v_2_52 import QuotaLimitPatch
-from pypureclient.flasharray._common.models.reference_v_2_52 import Reference
+from pypureclient.flasharray._common.models.reference_v_2_49 import Reference
 
 
 class PodPatch(BaseModel):

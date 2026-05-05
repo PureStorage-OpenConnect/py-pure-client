@@ -700,3 +700,15 @@ class LifecycleRulesApi:
     api251_lifecycle_rules_get_with_http_info = lifecycle_rules_get_with_http_info
     api251_lifecycle_rules_patch_with_http_info = lifecycle_rules_patch_with_http_info
     api251_lifecycle_rules_post_with_http_info = lifecycle_rules_post_with_http_info
+    api252_lifecycle_rules_delete_with_http_info = lifecycle_rules_delete_with_http_info
+    api252_lifecycle_rules_get_with_http_info = lifecycle_rules_get_with_http_info
+    api252_lifecycle_rules_patch_with_http_info = lifecycle_rules_patch_with_http_info
+    api252_lifecycle_rules_post_with_http_info = lifecycle_rules_post_with_http_info
+    api253_lifecycle_rules_delete_with_http_info = lifecycle_rules_delete_with_http_info
+    api253_lifecycle_rules_get_with_http_info = lifecycle_rules_get_with_http_info
+    api253_lifecycle_rules_patch_with_http_info = lifecycle_rules_patch_with_http_info
+    api253_lifecycle_rules_post_with_http_info = lifecycle_rules_post_with_http_info
+    api254_lifecycle_rules_delete_with_http_info = lifecycle_rules_delete_with_http_info
+    api254_lifecycle_rules_get_with_http_info = lifecycle_rules_get_with_http_info
+    api254_lifecycle_rules_patch_with_http_info = lifecycle_rules_patch_with_http_info
+    api254_lifecycle_rules_post_with_http_info = lifecycle_rules_post_with_http_info
