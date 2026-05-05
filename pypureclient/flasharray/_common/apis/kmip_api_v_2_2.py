@@ -955,6 +955,16 @@ class KMIPApi:
     api252_kmip_patch_with_http_info = kmip_patch_with_http_info
     api252_kmip_post_with_http_info = kmip_post_with_http_info
     api252_kmip_test_get_with_http_info = kmip_test_get_with_http_info
+    api253_kmip_delete_with_http_info = kmip_delete_with_http_info
+    api253_kmip_get_with_http_info = kmip_get_with_http_info
+    api253_kmip_patch_with_http_info = kmip_patch_with_http_info
+    api253_kmip_post_with_http_info = kmip_post_with_http_info
+    api253_kmip_test_get_with_http_info = kmip_test_get_with_http_info
+    api254_kmip_delete_with_http_info = kmip_delete_with_http_info
+    api254_kmip_get_with_http_info = kmip_get_with_http_info
+    api254_kmip_patch_with_http_info = kmip_patch_with_http_info
+    api254_kmip_post_with_http_info = kmip_post_with_http_info
+    api254_kmip_test_get_with_http_info = kmip_test_get_with_http_info
     api26_kmip_delete_with_http_info = kmip_delete_with_http_info
     api26_kmip_get_with_http_info = kmip_get_with_http_info
     api26_kmip_patch_with_http_info = kmip_patch_with_http_info

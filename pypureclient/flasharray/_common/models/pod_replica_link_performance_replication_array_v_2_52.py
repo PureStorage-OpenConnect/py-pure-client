@@ -24,8 +24,8 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictInt, StrictStr, conint
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictInt, StrictStr, conint
-from pypureclient.flasharray._common.models.fixed_reference_v_2_52 import FixedReference
-from pypureclient.flasharray._common.models.fixed_reference_with_type_v_2_52 import FixedReferenceWithType
+from pypureclient.flasharray._common.models.fixed_reference_v_2_49 import FixedReference
+from pypureclient.flasharray._common.models.fixed_reference_with_type_v_2_49 import FixedReferenceWithType
 from pypureclient.flasharray._common.models.pod_array_and_member_v_2_52 import PodArrayAndMember
 
 

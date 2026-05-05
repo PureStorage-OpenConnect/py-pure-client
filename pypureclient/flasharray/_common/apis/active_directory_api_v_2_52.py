@@ -32,10 +32,10 @@ from pypureclient._transport.exceptions import (  # noqa: F401
     ApiValueError
 )
 from pypureclient.reference_type import quote_string_parameter
-from pypureclient.flasharray._common.models.active_directory_get_response_v_2_52 import ActiveDirectoryGetResponse
-from pypureclient.flasharray._common.models.active_directory_patch_v_2_52 import ActiveDirectoryPatch
-from pypureclient.flasharray._common.models.active_directory_post_v_2_52 import ActiveDirectoryPost
-from pypureclient.flasharray._common.models.active_directory_response_v_2_52 import ActiveDirectoryResponse
+from pypureclient.flasharray._common.models.active_directory_get_response_v_2_50 import ActiveDirectoryGetResponse
+from pypureclient.flasharray._common.models.active_directory_patch_v_2_49 import ActiveDirectoryPatch
+from pypureclient.flasharray._common.models.active_directory_post_v_2_49 import ActiveDirectoryPost
+from pypureclient.flasharray._common.models.active_directory_response_v_2_50 import ActiveDirectoryResponse
 from pypureclient.flasharray._common.models.test_result_with_resource_and_error_context_partial_resource_response_v_2_52 import TestResultWithResourceAndErrorContextPartialResourceResponse
 
 class ActiveDirectoryApi:
@@ -816,3 +816,13 @@ class ActiveDirectoryApi:
     api252_active_directory_patch_with_http_info = active_directory_patch_with_http_info
     api252_active_directory_post_with_http_info = active_directory_post_with_http_info
     api252_active_directory_test_get_with_http_info = active_directory_test_get_with_http_info
+    api253_active_directory_delete_with_http_info = active_directory_delete_with_http_info
+    api253_active_directory_get_with_http_info = active_directory_get_with_http_info
+    api253_active_directory_patch_with_http_info = active_directory_patch_with_http_info
+    api253_active_directory_post_with_http_info = active_directory_post_with_http_info
+    api253_active_directory_test_get_with_http_info = active_directory_test_get_with_http_info
+    api254_active_directory_delete_with_http_info = active_directory_delete_with_http_info
+    api254_active_directory_get_with_http_info = active_directory_get_with_http_info
+    api254_active_directory_patch_with_http_info = active_directory_patch_with_http_info
+    api254_active_directory_post_with_http_info = active_directory_post_with_http_info
+    api254_active_directory_test_get_with_http_info = active_directory_test_get_with_http_info

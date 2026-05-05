@@ -653,6 +653,12 @@ class AppsApi:
     api252_apps_get_with_http_info = apps_get_with_http_info
     api252_apps_nodes_get_with_http_info = apps_nodes_get_with_http_info
     api252_apps_patch_with_http_info = apps_patch_with_http_info
+    api253_apps_get_with_http_info = apps_get_with_http_info
+    api253_apps_nodes_get_with_http_info = apps_nodes_get_with_http_info
+    api253_apps_patch_with_http_info = apps_patch_with_http_info
+    api254_apps_get_with_http_info = apps_get_with_http_info
+    api254_apps_nodes_get_with_http_info = apps_nodes_get_with_http_info
+    api254_apps_patch_with_http_info = apps_patch_with_http_info
     api26_apps_get_with_http_info = apps_get_with_http_info
     api26_apps_nodes_get_with_http_info = apps_nodes_get_with_http_info
     api26_apps_patch_with_http_info = apps_patch_with_http_info

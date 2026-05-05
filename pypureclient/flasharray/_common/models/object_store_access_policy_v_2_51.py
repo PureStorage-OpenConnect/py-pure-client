@@ -25,7 +25,7 @@ try:
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictStr, conlist
 from pypureclient.flasharray._common.models.fixed_reference_with_type_v_2_49 import FixedReferenceWithType
-from pypureclient.flasharray._common.models.policy_rule_object_store_access_nested_v_2_51 import PolicyRuleObjectStoreAccessNested
+from pypureclient.flasharray._common.models.policy_rule_object_store_access_v_2_51 import PolicyRuleObjectStoreAccess
 
 
 class ObjectStoreAccessPolicy(BaseModel):
@@ -37,7 +37,7 @@ class ObjectStoreAccessPolicy(BaseModel):
     context: Optional[FixedReferenceWithType] = Field(default=None, description="The context in which the operation was performed. Valid values include a reference to any array which is a member of the same fleet or to the fleet itself. Other parameters provided with the request, such as names of volumes or snapshots, are resolved relative to the provided `context`.")
     policy_type: Optional[StrictStr] = Field(default=None, description="The type of policy. Values include `autodir`, `nfs`, `smb`, `snapshot`, `quota`, and `object-store-access`.")
     description: Optional[StrictStr] = Field(default=None, description="The description of the policy, optionally specified when the policy is created. The description cannot be modified for an existing policy.")
-    rules: Optional[conlist(PolicyRuleObjectStoreAccessNested)] = None
+    rules: Optional[conlist(PolicyRuleObjectStoreAccess)] = None
     __properties = ["id", "name", "context", "policy_type", "description", "rules"]
 
     class Config:
@@ -125,7 +125,7 @@ class ObjectStoreAccessPolicy(BaseModel):
             "context": FixedReferenceWithType.from_dict(obj.get("context")) if obj.get("context") is not None else None,
             "policy_type": obj.get("policy_type"),
             "description": obj.get("description"),
-            "rules": [PolicyRuleObjectStoreAccessNested.from_dict(_item) for _item in obj.get("rules")] if obj.get("rules") is not None else None
+            "rules": [PolicyRuleObjectStoreAccess.from_dict(_item) for _item in obj.get("rules")] if obj.get("rules") is not None else None
         })
         return _obj
 

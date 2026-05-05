@@ -32,11 +32,11 @@ from pypureclient._transport.exceptions import (  # noqa: F401
     ApiValueError
 )
 from pypureclient.reference_type import quote_string_parameter
-from pypureclient.flasharray._common.models.bucket_get_response_v_2_52 import BucketGetResponse
-from pypureclient.flasharray._common.models.bucket_patch_base_v_2_52 import BucketPatchBase
+from pypureclient.flasharray._common.models.bucket_get_response_v_2_51 import BucketGetResponse
+from pypureclient.flasharray._common.models.bucket_patch_base_v_2_51 import BucketPatchBase
 from pypureclient.flasharray._common.models.bucket_performance_get_response_v_2_52 import BucketPerformanceGetResponse
-from pypureclient.flasharray._common.models.bucket_post_base_v_2_52 import BucketPostBase
-from pypureclient.flasharray._common.models.bucket_response_v_2_52 import BucketResponse
+from pypureclient.flasharray._common.models.bucket_post_base_v_2_51 import BucketPostBase
+from pypureclient.flasharray._common.models.bucket_response_v_2_51 import BucketResponse
 from pypureclient.flasharray._common.models.resource_bucket_space_get_response_v_2_52 import ResourceBucketSpaceGetResponse
 
 class BucketsApi:
@@ -1091,3 +1091,15 @@ class BucketsApi:
     api252_buckets_performance_get_with_http_info = buckets_performance_get_with_http_info
     api252_buckets_post_with_http_info = buckets_post_with_http_info
     api252_buckets_space_get_with_http_info = buckets_space_get_with_http_info
+    api253_buckets_delete_with_http_info = buckets_delete_with_http_info
+    api253_buckets_get_with_http_info = buckets_get_with_http_info
+    api253_buckets_patch_with_http_info = buckets_patch_with_http_info
+    api253_buckets_performance_get_with_http_info = buckets_performance_get_with_http_info
+    api253_buckets_post_with_http_info = buckets_post_with_http_info
+    api253_buckets_space_get_with_http_info = buckets_space_get_with_http_info
+    api254_buckets_delete_with_http_info = buckets_delete_with_http_info
+    api254_buckets_get_with_http_info = buckets_get_with_http_info
+    api254_buckets_patch_with_http_info = buckets_patch_with_http_info
+    api254_buckets_performance_get_with_http_info = buckets_performance_get_with_http_info
+    api254_buckets_post_with_http_info = buckets_post_with_http_info
+    api254_buckets_space_get_with_http_info = buckets_space_get_with_http_info

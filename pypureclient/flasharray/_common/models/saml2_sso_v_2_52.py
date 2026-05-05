@@ -24,7 +24,7 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictBool, StrictStr, conlist
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictStr, conlist
-from pypureclient.flasharray._common.models.saml2_sso_idp_v_2_52 import Saml2SsoIdp
+from pypureclient.flasharray._common.models.saml2_sso_idp_v_2_11 import Saml2SsoIdp
 from pypureclient.flasharray._common.models.saml2_sso_management_v_2_52 import Saml2SsoManagement
 from pypureclient.flasharray._common.models.saml2_sso_sp_v_2_52 import Saml2SsoSp
 

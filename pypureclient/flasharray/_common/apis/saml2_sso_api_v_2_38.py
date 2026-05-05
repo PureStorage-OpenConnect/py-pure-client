@@ -1064,3 +1064,15 @@ class SAML2SSOApi:
     api252_sso_saml2_idps_post_with_http_info = sso_saml2_idps_post_with_http_info
     api252_sso_saml2_idps_test_get_with_http_info = sso_saml2_idps_test_get_with_http_info
     api252_sso_saml2_idps_test_patch_with_http_info = sso_saml2_idps_test_patch_with_http_info
+    api253_sso_saml2_idps_delete_with_http_info = sso_saml2_idps_delete_with_http_info
+    api253_sso_saml2_idps_get_with_http_info = sso_saml2_idps_get_with_http_info
+    api253_sso_saml2_idps_patch_with_http_info = sso_saml2_idps_patch_with_http_info
+    api253_sso_saml2_idps_post_with_http_info = sso_saml2_idps_post_with_http_info
+    api253_sso_saml2_idps_test_get_with_http_info = sso_saml2_idps_test_get_with_http_info
+    api253_sso_saml2_idps_test_patch_with_http_info = sso_saml2_idps_test_patch_with_http_info
+    api254_sso_saml2_idps_delete_with_http_info = sso_saml2_idps_delete_with_http_info
+    api254_sso_saml2_idps_get_with_http_info = sso_saml2_idps_get_with_http_info
+    api254_sso_saml2_idps_patch_with_http_info = sso_saml2_idps_patch_with_http_info
+    api254_sso_saml2_idps_post_with_http_info = sso_saml2_idps_post_with_http_info
+    api254_sso_saml2_idps_test_get_with_http_info = sso_saml2_idps_test_get_with_http_info
+    api254_sso_saml2_idps_test_patch_with_http_info = sso_saml2_idps_test_patch_with_http_info

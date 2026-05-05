@@ -471,3 +471,9 @@ class RemotePodsApi:
     api250_remote_pods_tags_get_with_http_info = remote_pods_tags_get_with_http_info
     api251_remote_pods_get_with_http_info = remote_pods_get_with_http_info
     api251_remote_pods_tags_get_with_http_info = remote_pods_tags_get_with_http_info
+    api252_remote_pods_get_with_http_info = remote_pods_get_with_http_info
+    api252_remote_pods_tags_get_with_http_info = remote_pods_tags_get_with_http_info
+    api253_remote_pods_get_with_http_info = remote_pods_get_with_http_info
+    api253_remote_pods_tags_get_with_http_info = remote_pods_tags_get_with_http_info
+    api254_remote_pods_get_with_http_info = remote_pods_get_with_http_info
+    api254_remote_pods_tags_get_with_http_info = remote_pods_tags_get_with_http_info

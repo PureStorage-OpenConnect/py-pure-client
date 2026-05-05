@@ -418,6 +418,10 @@ class SMISApi:
     api251_smi_s_patch_with_http_info = smi_s_patch_with_http_info
     api252_smi_s_get_with_http_info = smi_s_get_with_http_info
     api252_smi_s_patch_with_http_info = smi_s_patch_with_http_info
+    api253_smi_s_get_with_http_info = smi_s_get_with_http_info
+    api253_smi_s_patch_with_http_info = smi_s_patch_with_http_info
+    api254_smi_s_get_with_http_info = smi_s_get_with_http_info
+    api254_smi_s_patch_with_http_info = smi_s_patch_with_http_info
     api26_smi_s_get_with_http_info = smi_s_get_with_http_info
     api26_smi_s_patch_with_http_info = smi_s_patch_with_http_info
     api27_smi_s_get_with_http_info = smi_s_get_with_http_info

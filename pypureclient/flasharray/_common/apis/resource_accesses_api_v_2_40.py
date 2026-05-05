@@ -671,3 +671,11 @@ class ResourceAccessesApi:
     api252_resource_accesses_delete_with_http_info = resource_accesses_delete_with_http_info
     api252_resource_accesses_get_with_http_info = resource_accesses_get_with_http_info
     api252_resource_accesses_status_get_with_http_info = resource_accesses_status_get_with_http_info
+    api253_resource_accesses_batch_post_with_http_info = resource_accesses_batch_post_with_http_info
+    api253_resource_accesses_delete_with_http_info = resource_accesses_delete_with_http_info
+    api253_resource_accesses_get_with_http_info = resource_accesses_get_with_http_info
+    api253_resource_accesses_status_get_with_http_info = resource_accesses_status_get_with_http_info
+    api254_resource_accesses_batch_post_with_http_info = resource_accesses_batch_post_with_http_info
+    api254_resource_accesses_delete_with_http_info = resource_accesses_delete_with_http_info
+    api254_resource_accesses_get_with_http_info = resource_accesses_get_with_http_info
+    api254_resource_accesses_status_get_with_http_info = resource_accesses_status_get_with_http_info
