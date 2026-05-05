@@ -21,10 +21,10 @@ Importable as
 .. module:: pypureclient.flasharray.client
 .. autofunction:: pypureclient.flasharray.client::Client
 
-FlashArray REST 2.52 Client
+FlashArray REST 2.54 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. module:: pypureclient.flasharray.FA_2_52.client
-.. autoclass:: pypureclient.flasharray.FA_2_52.client::Client
+.. module:: pypureclient.flasharray.FA_2_54.client
+.. autoclass:: pypureclient.flasharray.FA_2_54.client::Client
    :members:
 
 Models
@@ -1878,6 +1878,18 @@ ContainerQosCeilingsPatch
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
+ContainerQosFileCeilings
+~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::ContainerQosFileCeilings
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
 ContainerQosIopsLimitPatch
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flasharray::ContainerQosIopsLimitPatch
@@ -2229,6 +2241,18 @@ DirectoryPolicyPost
 DirectoryPost
 ~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flasharray::DirectoryPost
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+DirectoryQosGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::DirectoryQosGetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -5982,6 +6006,66 @@ PolicyPost
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
+PolicyQos
+~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::PolicyQos
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PolicyQosGetResponse
+~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::PolicyQosGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PolicyQosPatch
+~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::PolicyQosPatch
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PolicyQosPost
+~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::PolicyQosPost
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PolicyQosResponse
+~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::PolicyQosResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
 PolicyQuota
 ~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flasharray::PolicyQuota
@@ -6237,18 +6321,6 @@ PolicyRuleObjectStoreAccess
 PolicyRuleObjectStoreAccessBase
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flasharray::PolicyRuleObjectStoreAccessBase
-   :model-show-json: False
-   :model-show-field-summary: False
-   :model-show-config-summary: False
-   :model-show-validator-summary: True
-   :model-show-validator-members: True
-   :undoc-members: True
-   :model-hide-paramlist: False
-   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
-
-PolicyRuleObjectStoreAccessNested
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. autopydantic_model:: pypureclient.flasharray::PolicyRuleObjectStoreAccessNested
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -6570,6 +6642,78 @@ PolicySmbResponse
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
+PolicyTls
+~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::PolicyTls
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PolicyTlsBase
+~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::PolicyTlsBase
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PolicyTlsGetResponse
+~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::PolicyTlsGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PolicyTlsPatch
+~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::PolicyTlsPatch
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PolicyTlsPost
+~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::PolicyTlsPost
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PolicyTlsResponse
+~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::PolicyTlsResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
 PolicymemberexportpostMembers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flasharray::PolicymemberexportpostMembers
@@ -6597,6 +6741,18 @@ PolicymemberpostMembers
 PolicynfspostPolicyMapping
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flasharray::PolicynfspostPolicyMapping
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PolicyqosRatelimit
+~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::PolicyqosRatelimit
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -7758,6 +7914,18 @@ QosMetricsCeilings
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
+QosMetricsFileCeilings
+~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::QosMetricsFileCeilings
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
 QosPatch
 ~~~~~~~~
 .. autopydantic_model:: pypureclient.flasharray::QosPatch
@@ -8073,6 +8241,18 @@ RemoteArray
 RemoteArrayFleet
 ~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flasharray::RemoteArrayFleet
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+RemoteArrayResponse
+~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::RemoteArrayResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -10437,6 +10617,114 @@ TestResultWithResourceWithId
 TestResultWithResourceWithIdPostResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flasharray::TestResultWithResourceWithIdPostResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+Tgroup
+~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::Tgroup
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+TgroupGetResponse
+~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::TgroupGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+TgroupMember
+~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::TgroupMember
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+TgroupMemberGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::TgroupMemberGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+TgroupMemberResponse
+~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::TgroupMemberResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+TgroupMembersPost
+~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::TgroupMembersPost
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+TgroupMembersPostMember
+~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::TgroupMembersPostMember
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+TgroupPatch
+~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::TgroupPatch
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+TgroupResponse
+~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::TgroupResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False

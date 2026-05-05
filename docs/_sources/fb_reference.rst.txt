@@ -22942,7 +22942,7 @@ post_management_access_policies_admins
 delete_management_access_policies
 '''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.26/delete_management_access_policies.py
+.. literalinclude:: source/examples/FB2.19/delete_management_access_policies.py
     :language: python
 
 delete_management_access_policies_directory_services_roles
@@ -22978,85 +22978,13 @@ get_management_access_policies_members
 patch_management_access_policies
 ''''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.26/patch_management_access_policies.py
+.. literalinclude:: source/examples/FB2.19/patch_management_access_policies.py
     :language: python
 
 post_management_access_policies
 '''''''''''''''''''''''''''''''
 
-.. literalinclude:: source/examples/FB2.26/post_management_access_policies.py
-    :language: python
-
-delete_management_access_policies_roles
-'''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.26/delete_management_access_policies_roles.py
-    :language: python
-
-get_management_access_policies_roles
-''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.26/get_management_access_policies_roles.py
-    :language: python
-
-delete_management_access_policies_roles_permissions
-'''''''''''''''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.26/delete_management_access_policies_roles_permissions.py
-    :language: python
-
-get_management_access_policies_roles_permissions
-''''''''''''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.26/get_management_access_policies_roles_permissions.py
-    :language: python
-
-patch_management_access_policies_roles_permissions
-''''''''''''''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.26/patch_management_access_policies_roles_permissions.py
-    :language: python
-
-post_management_access_policies_roles_permissions
-'''''''''''''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.26/post_management_access_policies_roles_permissions.py
-    :language: python
-
-get_management_access_policies_roles_permissions_supported_resources
-''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.26/get_management_access_policies_roles_permissions_supported_resources.py
-    :language: python
-
-post_management_access_policies_roles
-'''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.26/post_management_access_policies_roles.py
-    :language: python
-
-delete_management_access_policies_rules
-'''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.26/delete_management_access_policies_rules.py
-    :language: python
-
-get_management_access_policies_rules
-''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.26/get_management_access_policies_rules.py
-    :language: python
-
-patch_management_access_policies_rules
-''''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.26/patch_management_access_policies_rules.py
-    :language: python
-
-post_management_access_policies_rules
-'''''''''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.26/post_management_access_policies_rules.py
+.. literalinclude:: source/examples/FB2.19/post_management_access_policies.py
     :language: python
 
 PoliciesManagementAuthenticationApi
@@ -26039,7 +25967,7 @@ get_policies_members
 patch_policies
 ''''''''''''''
 
-.. literalinclude:: source/examples/FB2.22/patch_policies.py
+.. literalinclude:: source/examples/FB2.17/patch_policies.py
     :language: python
 
 post_policies
@@ -26117,7 +26045,7 @@ get_policies_members
 patch_policies
 ''''''''''''''
 
-.. literalinclude:: source/examples/FB2.22/patch_policies.py
+.. literalinclude:: source/examples/FB2.17/patch_policies.py
     :language: python
 
 post_policies
@@ -26195,7 +26123,7 @@ get_policies_members
 patch_policies
 ''''''''''''''
 
-.. literalinclude:: source/examples/FB2.22/patch_policies.py
+.. literalinclude:: source/examples/FB2.17/patch_policies.py
     :language: python
 
 post_policies
@@ -26273,7 +26201,7 @@ get_policies_members
 patch_policies
 ''''''''''''''
 
-.. literalinclude:: source/examples/FB2.22/patch_policies.py
+.. literalinclude:: source/examples/FB2.17/patch_policies.py
     :language: python
 
 post_policies
@@ -28587,12 +28515,6 @@ get_remote_arrays
 .. literalinclude:: source/examples/FB2.17/get_remote_arrays.py
     :language: python
 
-patch_remote_arrays
-'''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.26/patch_remote_arrays.py
-    :language: python
-
 RemoteRealmsApi
 ~~~~~~~~~~~~~~~
 
@@ -30698,12 +30620,6 @@ patch_support
 .. literalinclude:: source/examples/FB2.14/patch_support.py
     :language: python
 
-get_support_system_manifest
-'''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.26/get_support_system_manifest.py
-    :language: python
-
 get_support_test
 ''''''''''''''''
 
@@ -31179,54 +31095,6 @@ TopologyGroupsApi
 ~~~~~~~~~~~~~~~~~
 
 The following examples assume that ``client`` is an instantiated ``flashblade.Client`` object as shown in :ref:`Instantiating a Client`.
-
-get_topology_groups_arrays
-''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.26/get_topology_groups_arrays.py
-    :language: python
-
-delete_topology_groups
-''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.26/delete_topology_groups.py
-    :language: python
-
-get_topology_groups
-'''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.26/get_topology_groups.py
-    :language: python
-
-delete_topology_groups_members
-''''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.26/delete_topology_groups_members.py
-    :language: python
-
-get_topology_groups_members
-'''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.26/get_topology_groups_members.py
-    :language: python
-
-post_topology_groups_members
-''''''''''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.26/post_topology_groups_members.py
-    :language: python
-
-patch_topology_groups
-'''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.26/patch_topology_groups.py
-    :language: python
-
-post_topology_groups
-''''''''''''''''''''
-
-.. literalinclude:: source/examples/FB2.26/post_topology_groups.py
-    :language: python
 
 UsageApi
 ~~~~~~~~
