@@ -1,0 +1,91 @@
+name: "Release Automation"
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - master
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  github-release:
+    if: >-
+      github.event.pull_request.merged == true &&
+      startsWith(github.event.pull_request.title, 'Release') &&
+      github.event.pull_request.user.login == 'fa-ui-bot' &&
+      github.event.pull_request.head.repo.owner.login == 'fa-ui-bot'
+    runs-on: ubuntu-24.04 # default python 3.12
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+
+      - name: Extract Version from PR Title
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: |
+          set -euo pipefail
+          VERSION=$(echo "$PR_TITLE" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+' | head -1)
+          if [ -z "$VERSION" ]; then
+            echo "::error::No semver version found in PR title"
+            exit 1
+          fi
+          echo "VERSION=$VERSION" >> "$GITHUB_ENV"
+
+      - name: Validate Version
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          python3 -c "
+          import json, subprocess, sys, tomllib
+
+          version = '$VERSION'
+          parse = lambda v: tuple(int(p) for p in v.split('.')) if len(v.split('.')) == 3 and all(p.isdigit() for p in v.split('.')) else None
+
+          current = parse(version)
+          if not current:
+              print(f'::error::Invalid version format: {version}'); sys.exit(1)
+
+          with open('pyproject.toml', 'rb') as f:
+              source = tomllib.load(f)['project']['version']
+          if source != version:
+              print(f'::error::PR title version ({version}) does not match pyproject.toml version ({source})'); sys.exit(1)
+
+          tags = json.loads(subprocess.run(['gh', 'release', 'list', '--limit', '10', '--json', 'tagName'], capture_output=True, text=True, check=True).stdout)
+          versions = [(p, r['tagName']) for r in tags if (p := parse(r['tagName']))]
+          if versions:
+              highest, tag = max(versions)
+              if current <= highest:
+                  print(f'::error::Version {version} is not higher than latest release {tag}'); sys.exit(1)
+              print(f'Version {version} validated against pyproject.toml and previous release {tag}.')
+          else:
+              print(f'Version {version} validated against pyproject.toml. No previous releases found.')
+          "
+
+      - name: Extract Release Notes
+        run: |
+          set -euo pipefail
+
+          if [ ! -f "RELEASE_NOTES.md" ]; then
+            echo "::warning::RELEASE_NOTES.md not found. Proceeding with placeholder."
+            echo "No release notes entry for version $VERSION." > release_notes.md
+          else
+            cp RELEASE_NOTES.md release_notes.md
+          fi
+
+          echo "Extracted Release Notes:"
+          cat release_notes.md
+
+      - name: Create Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "$VERSION" \
+            --title "$VERSION" \
+            --notes-file release_notes.md
