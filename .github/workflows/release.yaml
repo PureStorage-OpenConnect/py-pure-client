@@ -1,0 +1,68 @@
+
+name: "Release Automation"
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - master
+
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  github-release:
+    if: >-
+      github.event.pull_request.merged == true &&
+      startsWith(github.event.pull_request.title, 'Release') &&
+      github.event.pull_request.user.login == 'fa-ui-bot' &&
+      github.event.pull_request.head.repo.owner.login == 'fa-ui-bot'
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+
+      - name: Extract Version from PR Title
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        run: |
+          set -euo pipefail
+          VERSION=$(echo "$PR_TITLE" | grep -oE '[0-9]+\.[0-9]+\.[0-9]+' | head -1)
+          if [ -z "$VERSION" ]; then
+            echo "::error::No semver version found in PR title"
+            exit 1
+          fi
+          echo "VERSION=$VERSION" >> "$GITHUB_ENV"
+
+      - name: Validate Version
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          python3 .github/scripts/validate_version.py
+
+      - name: Extract Release Notes
+        run: |
+          set -euo pipefail
+
+          if [ ! -f "RELEASE_NOTES.md" ]; then
+            echo "::warning::RELEASE_NOTES.md not found. Proceeding with placeholder."
+            echo "No release notes entry for version $VERSION." > release_notes.md
+          else
+            cp RELEASE_NOTES.md release_notes.md
+          fi
+
+          echo "Extracted Release Notes:"
+          cat release_notes.md
+
+      - name: Create Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "$VERSION" \
+            --title "$VERSION" \
+            --notes-file release_notes.md
