@@ -1,4 +1,4 @@
-# Pure Storage Unified Python SDK
+# Everpure Unified Python SDK
 
 ## Overview
 
@@ -21,10 +21,11 @@ $ pip3 install py-pure-client
 
 ### Manual Installation
 ```
+$ pip3 install build
 $ git clone https://github.com/PureStorage-OpenConnect/py-pure-client.git
 $ cd py-pure-client
-$ pip install -r requirements.txt
-$ python setup.py install
+$ python3 -m build
+$ pip3 install dist/py_pure_client-*-py3-none-any.whl
 ```
 
 ## Documentation
