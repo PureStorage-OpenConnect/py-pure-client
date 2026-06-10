@@ -1,0 +1,151 @@
+name: "Build RPM Package"
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      attach_to_release:
+        description: 'Attach the created .rpm file to the release'
+        type: boolean
+        default: false
+
+
+jobs:
+  build-rpm:
+    runs-on: ubuntu-24.04
+    name: build rpm
+    timeout-minutes: 10
+    container:
+      image: almalinux:10
+      options: --user root
+
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+
+      - name: Install build tools
+        run: |
+          dnf install -y epel-release
+          dnf config-manager --set-enabled crb epel
+          dnf install -y python3-devel rpm-build rpmdevtools rpmlint pyproject-rpm-macros python3-wheel \
+            python3-tomli python3-dateutil python3-paramiko python3-urllib3 python3-jwt python3-pydantic \
+            python3-hatchling
+
+      - name: Render RPM spec from pyproject.toml
+        env:
+          BUILD_NUM: ${{ github.run_number }}
+        run: |
+          python3 .github/scripts/render_rpm_files.py .
+          cat packaging/specs/py-pure-client.spec
+
+      - name: Build sdist
+        run: |
+          curl -LsSf https://astral.sh/uv/install.sh | sh
+          source $HOME/.local/bin/env
+          uv build --sdist --out-dir dist/
+
+      - name: Build RPM
+        id: generate_rpm
+        shell: bash
+        run: |
+          rpmdev-setuptree
+          cp dist/py_pure_client-*.tar.gz ~/rpmbuild/SOURCES/
+          cp packaging/specs/py-pure-client.spec ~/rpmbuild/SPECS/
+
+          rpmbuild -ba ~/rpmbuild/SPECS/py-pure-client.spec
+
+          RPM_FILE=$(find ~/rpmbuild/RPMS -name "*.rpm" | head -1)
+          if [ -z "$RPM_FILE" ]; then
+            echo "Error: No .rpm file produced"
+            exit 1
+          fi
+          echo "RPM_FILE=$RPM_FILE" >> "$GITHUB_ENV"
+
+      - name: Run rpmlint
+        shell: bash
+        run: |
+          find ./rpm_dist -name "*.rpm" -exec rpmlint --config .github/.templates/rpm/rpmlint-rules.toml {} + || true
+
+      - name: Upload .rpm Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rpm-package
+          overwrite: true
+          retention-days: 5
+          path: ${{ env.RPM_FILE }}
+
+  test-rpm:
+    runs-on: ubuntu-24.04
+    needs: build-rpm
+    strategy:
+      fail-fast: false
+      matrix:
+        image: ['almalinux:10']
+    container:
+      image: ${{ matrix.image }}
+      options: --user root
+
+    name: test rpm on ${{ matrix.image }}
+    timeout-minutes: 5
+
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: rpm-package
+          path: rpm-package
+
+      - name: Test RPM installation and import
+        shell: bash
+        run: |
+          dnf install -y epel-release
+          dnf config-manager --set-enabled epel
+          dnf install -y python3-dateutil python3-paramiko python3-urllib3 python3-jwt python3-pydantic
+          RPM_FILE=$(find ./rpm-package -name "*.rpm" | head -1)
+          dnf install -y "$RPM_FILE"
+          python3 -c "import pypureclient; print('Success! py-pure-client version:', pypureclient.__version__)"
+
+  upload-to-release:
+    name: Upload RPM to Release
+    runs-on: ubuntu-24.04
+    needs: [build-rpm, test-rpm]
+    if: |
+      github.event_name == 'release' ||
+      (github.event_name == 'workflow_dispatch' && inputs.attach_to_release == true)
+
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+
+      - name: Get version and validate release
+        id: get_version
+        run: |
+          VERSION=$(PYTHONPATH=. python3 -c "from pypureclient._version import __version__; print(__version__)")
+          if [ -z "$VERSION" ]; then
+            echo "ERROR: VERSION is empty or could not be determined" >&2
+            exit 1
+          fi
+          if [ "${{ github.event_name }}" = "release" ] && [ "${{ github.event.release.tag_name }}" != "$VERSION" ]; then
+            echo "::error::Version mismatch! GitHub tag is '${{ github.event.release.tag_name }}', but package version is '$VERSION'."
+            exit 1
+          fi
+          echo "VERSION: $VERSION"
+          echo "VERSION=$VERSION" >> "$GITHUB_ENV"
+
+      - name: Download RPM Artifact
+        uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
+        with:
+          name: rpm-package
+          path: rpm-package
+
+      - name: Upload to GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          RPM_PATH=$(find ./rpm-package -name "*.rpm" | head -1)
+          if [ ! -f "$RPM_PATH" ]; then
+            echo "Error: .rpm file not found in ./rpm-package"
+            exit 1
+          fi
+          gh release upload "$VERSION" "$RPM_PATH"
