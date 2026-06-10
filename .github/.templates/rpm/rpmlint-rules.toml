@@ -1,0 +1,6 @@
+Filters = [
+    # Ignore the 'Everpure' spelling error
+    "spelling-error.*Everpure",
+    # Ignore the non-standard 2755 directory permissions
+    "non-standard-dir-perm",
+]

@@ -19,47 +19,51 @@ jobs:
     timeout-minutes: 5
 
     steps:
-      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       - name: Install system packaging tools
         env:
           DEBIAN_FRONTEND: noninteractive
           TZ: Etc/UTC
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -qqy build-essential debhelper dh-python dpkg-dev fakeroot lintian python3-all python3-dateutil python3-jwt python3-paramiko python3-pip python3-pydantic python3-setuptools python3-urllib3 
+          apt-get update -qq
+          apt-get install -qqy \
+            build-essential \
+            debhelper \
+            devscripts \
+            dh-python \
+            dpkg-dev \
+            fakeroot \
+            lintian
 
-      - name: Install stdeb
+      - name: Install python system packaging
+        env:
+          DEBIAN_FRONTEND: noninteractive
+          TZ: Etc/UTC
         run: |
-          sudo pip3 install -q stdeb==0.10.0 setuptools==68.2.2 --break-system-packages
+          apt-get update -qq
+          apt-get install -qqy \
+            pybuild-plugin-pyproject \
+            python3-all \
+            python3-dateutil \
+            python3-hatchling \
+            python3-jwt \
+            python3-paramiko \
+            python3-pydantic \
+            python3-urllib3
 
-      - name: Patch stdeb
+      - name: Render debian metadata from pyproject.toml
+        shell: bash
         run: |
-          STDEB_DIR=$(python3 -c "import stdeb; import os; print(os.path.dirname(stdeb.__file__))")
-          # Fix the SafeConfigParser and readfp removals (Python 3.12+ on Ubuntu 24.04)
-          sudo find "$STDEB_DIR" -name "*.py" -exec sed -i 's/SafeConfigParser/ConfigParser/g' {} +
-          sudo find "$STDEB_DIR" -name "*.py" -exec sed -i 's/\.readfp(/.read_file(/g' {} +
-
-      - name: Concatenate license to copyright
-        run: |
-          mkdir -p debian
-          cat LICENSE.txt >> debian/copyright
+          python3 .github/scripts/render_debian_files.py .
 
       - name: Generate .deb package
         id: generate_deb
         shell: bash
         run: |
-          DEPENDENCIES="python3-pydantic, python3-paramiko, python3-urllib3, python3-dateutil, python3-jwt"
-
-          cat <<EOF > stdeb.cfg
-          [DEFAULT]
-          Maintainer = Everpure <openconnect@everpuredata.com>
-          Depends3 = $DEPENDENCIES
-          Build-Depends = $DEPENDENCIES
-          Copyright-File = debian/copyright
-          EOF
-
-          DEB_BUILD_OPTIONS=nocheck python3 setup.py --quiet --command-packages=stdeb.command bdist_deb > bdist_deb.log 2>&1 || { cat bdist_deb.log; exit 1; }
+          DEB_BUILD_OPTIONS=nocheck dpkg-buildpackage -us -uc -b > bdist_deb.log 2>&1 || { cat bdist_deb.log; exit 1; }
+          mkdir -p deb_dist
+          mv ../*.deb deb_dist/
 
           DEB_FILE=$(find ./deb_dist -name "*.deb" | head -1)
           if [ -z "$DEB_FILE" ]; then
@@ -129,7 +133,7 @@ jobs:
       contents: write # Required to upload assets to a release
 
     steps:
-      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
 
       - name: Get version and validate release
         id: get_version

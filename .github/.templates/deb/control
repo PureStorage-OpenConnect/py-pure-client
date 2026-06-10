@@ -1,0 +1,24 @@
+Source: ${NAME}
+Section: python
+Priority: optional
+Maintainer: ${MAINTAINER}
+Build-Depends:
+ debhelper-compat (= 13),
+ dh-python,
+ pybuild-plugin-pyproject,
+ python3-all,
+ python3-hatchling
+Standards-Version: 4.6.2
+Homepage: ${HOMEPAGE}
+
+Package: python3-${NAME}
+Architecture: all
+Depends:
+ $${python3:Depends},
+ $${misc:Depends},
+ ${DEPENDS}
+Description: ${DESCRIPTION}
+ Bundles auto-generated Python SDKs for the Pure Storage REST APIs of
+ FlashArray, FlashBlade, and Pure1. Provides high-level clients,
+ typed request/response models, and convenience helpers for interacting
+ with each product's REST endpoints.
