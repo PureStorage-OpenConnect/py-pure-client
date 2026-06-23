@@ -46,9 +46,9 @@ The library requires Python 3.8 or higher. Third-party libraries are also requir
 Community
 ---------
 
-To learn what other Pure Storage customers are doing with the client, to share
-an implementation or contribute code, or to interact with Pure Storage,
-visit the `Pure Storage Community <http://community.purestorage.com/>`_.
+To learn what other Everpure customers are doing with the client, to share
+an implementation or contribute code, or to interact with Everpure,
+visit the `Everpure Community <https://community.purestorage.com/>`_.
 
 
 Changes
