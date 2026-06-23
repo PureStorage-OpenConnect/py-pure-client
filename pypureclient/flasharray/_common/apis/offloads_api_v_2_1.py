@@ -563,12 +563,6 @@ class OffloadsApi:
     api235_offloads_delete_with_http_info = offloads_delete_with_http_info
     api235_offloads_get_with_http_info = offloads_get_with_http_info
     api235_offloads_post_with_http_info = offloads_post_with_http_info
-    api236_offloads_delete_with_http_info = offloads_delete_with_http_info
-    api236_offloads_get_with_http_info = offloads_get_with_http_info
-    api236_offloads_post_with_http_info = offloads_post_with_http_info
-    api237_offloads_delete_with_http_info = offloads_delete_with_http_info
-    api237_offloads_get_with_http_info = offloads_get_with_http_info
-    api237_offloads_post_with_http_info = offloads_post_with_http_info
     api24_offloads_delete_with_http_info = offloads_delete_with_http_info
     api24_offloads_get_with_http_info = offloads_get_with_http_info
     api24_offloads_post_with_http_info = offloads_post_with_http_info

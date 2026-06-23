@@ -1367,17 +1367,3 @@ class VolumeGroupsApi:
     api235_volume_groups_post_with_http_info = volume_groups_post_with_http_info
     api235_volume_groups_space_get_with_http_info = volume_groups_space_get_with_http_info
     api235_volume_groups_volumes_get_with_http_info = volume_groups_volumes_get_with_http_info
-    api236_volume_groups_delete_with_http_info = volume_groups_delete_with_http_info
-    api236_volume_groups_get_with_http_info = volume_groups_get_with_http_info
-    api236_volume_groups_patch_with_http_info = volume_groups_patch_with_http_info
-    api236_volume_groups_performance_get_with_http_info = volume_groups_performance_get_with_http_info
-    api236_volume_groups_post_with_http_info = volume_groups_post_with_http_info
-    api236_volume_groups_space_get_with_http_info = volume_groups_space_get_with_http_info
-    api236_volume_groups_volumes_get_with_http_info = volume_groups_volumes_get_with_http_info
-    api237_volume_groups_delete_with_http_info = volume_groups_delete_with_http_info
-    api237_volume_groups_get_with_http_info = volume_groups_get_with_http_info
-    api237_volume_groups_patch_with_http_info = volume_groups_patch_with_http_info
-    api237_volume_groups_performance_get_with_http_info = volume_groups_performance_get_with_http_info
-    api237_volume_groups_post_with_http_info = volume_groups_post_with_http_info
-    api237_volume_groups_space_get_with_http_info = volume_groups_space_get_with_http_info
-    api237_volume_groups_volumes_get_with_http_info = volume_groups_volumes_get_with_http_info

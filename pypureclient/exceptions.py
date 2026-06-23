@@ -1,6 +1,6 @@
 class PureError(Exception):
     """
-    Exception type raised by Pure Storage code.
+    Exception type raised by Everpure code.
     """
 
     def __init__(self, reason=None):

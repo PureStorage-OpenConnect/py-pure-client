@@ -260,12 +260,6 @@ class DirectoryQuotasApi:
     api233_directory_quotas_get_with_http_info = directory_quotas_get_with_http_info
     api234_directory_quotas_get_with_http_info = directory_quotas_get_with_http_info
     api235_directory_quotas_get_with_http_info = directory_quotas_get_with_http_info
-    api236_directory_quotas_get_with_http_info = directory_quotas_get_with_http_info
-    api237_directory_quotas_get_with_http_info = directory_quotas_get_with_http_info
-    api238_directory_quotas_get_with_http_info = directory_quotas_get_with_http_info
-    api239_directory_quotas_get_with_http_info = directory_quotas_get_with_http_info
-    api240_directory_quotas_get_with_http_info = directory_quotas_get_with_http_info
-    api241_directory_quotas_get_with_http_info = directory_quotas_get_with_http_info
     api27_directory_quotas_get_with_http_info = directory_quotas_get_with_http_info
     api28_directory_quotas_get_with_http_info = directory_quotas_get_with_http_info
     api29_directory_quotas_get_with_http_info = directory_quotas_get_with_http_info

@@ -25,5 +25,6 @@ __modules_dict = {
     "2.23": "pypureclient.flashblade.FB_2_23",
     "2.24": "pypureclient.flashblade.FB_2_24",
     "2.25": "pypureclient.flashblade.FB_2_25",
-    "2.26": "pypureclient.flashblade.FB_2_26"
+    "2.26": "pypureclient.flashblade.FB_2_26",
+    "2.27": "pypureclient.flashblade.FB_2_27"
 }
