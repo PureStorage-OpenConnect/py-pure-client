@@ -25,7 +25,7 @@ try:
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field
 from pypureclient.flasharray._common.models.cloud_config_automatic_capacity_upgrade_patch_v_2_44 import CloudConfigAutomaticCapacityUpgradePatch
-from pypureclient.flasharray._common.models.cloud_config_model_patch_v_2_44 import CloudConfigModelPatch
+from pypureclient.flasharray._common.models.cloud_config_model_patch_v_2_40 import CloudConfigModelPatch
 
 
 class CloudConfigPatch(BaseModel):

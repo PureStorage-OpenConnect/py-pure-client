@@ -154,7 +154,7 @@ __class_model_dict = {
     'CloudConfigAutomaticCapacityUpgradePatch': __LazyModelLoader('..._common.models.cloud_config_automatic_capacity_upgrade_patch_v_2_44', 'CloudConfigAutomaticCapacityUpgradePatch'),
     'CloudConfigGetResponse': __LazyModelLoader('..._common.models.cloud_config_get_response_v_2_44', 'CloudConfigGetResponse'),
     'CloudConfigModel': __LazyModelLoader('..._common.models.cloud_config_model_v_2_40', 'CloudConfigModel'),
-    'CloudConfigModelPatch': __LazyModelLoader('..._common.models.cloud_config_model_patch_v_2_44', 'CloudConfigModelPatch'),
+    'CloudConfigModelPatch': __LazyModelLoader('..._common.models.cloud_config_model_patch_v_2_40', 'CloudConfigModelPatch'),
     'CloudConfigPatch': __LazyModelLoader('..._common.models.cloud_config_patch_v_2_44', 'CloudConfigPatch'),
     'CloudConfigPatchResponse': __LazyModelLoader('..._common.models.cloud_config_patch_response_v_2_44', 'CloudConfigPatchResponse'),
     'CloudConfigSupported': __LazyModelLoader('..._common.models.cloud_config_supported_v_2_40', 'CloudConfigSupported'),

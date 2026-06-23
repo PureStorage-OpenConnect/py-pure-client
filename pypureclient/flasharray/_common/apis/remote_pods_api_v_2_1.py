@@ -248,8 +248,6 @@ class RemotePodsApi:
     api233_remote_pods_get_with_http_info = remote_pods_get_with_http_info
     api234_remote_pods_get_with_http_info = remote_pods_get_with_http_info
     api235_remote_pods_get_with_http_info = remote_pods_get_with_http_info
-    api236_remote_pods_get_with_http_info = remote_pods_get_with_http_info
-    api237_remote_pods_get_with_http_info = remote_pods_get_with_http_info
     api24_remote_pods_get_with_http_info = remote_pods_get_with_http_info
     api25_remote_pods_get_with_http_info = remote_pods_get_with_http_info
     api26_remote_pods_get_with_http_info = remote_pods_get_with_http_info

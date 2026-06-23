@@ -246,8 +246,6 @@ class AuditsApi:
     api233_audits_get_with_http_info = audits_get_with_http_info
     api234_audits_get_with_http_info = audits_get_with_http_info
     api235_audits_get_with_http_info = audits_get_with_http_info
-    api236_audits_get_with_http_info = audits_get_with_http_info
-    api237_audits_get_with_http_info = audits_get_with_http_info
     api24_audits_get_with_http_info = audits_get_with_http_info
     api25_audits_get_with_http_info = audits_get_with_http_info
     api26_audits_get_with_http_info = audits_get_with_http_info
