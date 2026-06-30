@@ -24,7 +24,7 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictStr
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictStr
-from pypureclient.flashblade._common.models.object_store_access_key_post_user_v_2_27 import ObjectStoreAccessKeyPostUser
+from pypureclient.flashblade._common.models.object_store_access_key_post_user_v_2_26 import ObjectStoreAccessKeyPostUser
 
 
 class ObjectStoreAccessKeyPost(BaseModel):

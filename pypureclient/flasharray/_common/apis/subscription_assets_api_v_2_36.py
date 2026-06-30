@@ -239,3 +239,5 @@ class SubscriptionAssetsApi:
     api252_subscription_assets_get_with_http_info = subscription_assets_get_with_http_info
     api253_subscription_assets_get_with_http_info = subscription_assets_get_with_http_info
     api254_subscription_assets_get_with_http_info = subscription_assets_get_with_http_info
+    api255_subscription_assets_get_with_http_info = subscription_assets_get_with_http_info
+    api256_subscription_assets_get_with_http_info = subscription_assets_get_with_http_info

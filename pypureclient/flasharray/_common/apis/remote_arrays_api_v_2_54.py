@@ -377,3 +377,7 @@ class RemoteArraysApi:
     # Method Aliases
     api254_remote_arrays_get_with_http_info = remote_arrays_get_with_http_info
     api254_remote_arrays_patch_with_http_info = remote_arrays_patch_with_http_info
+    api255_remote_arrays_get_with_http_info = remote_arrays_get_with_http_info
+    api255_remote_arrays_patch_with_http_info = remote_arrays_patch_with_http_info
+    api256_remote_arrays_get_with_http_info = remote_arrays_get_with_http_info
+    api256_remote_arrays_patch_with_http_info = remote_arrays_patch_with_http_info

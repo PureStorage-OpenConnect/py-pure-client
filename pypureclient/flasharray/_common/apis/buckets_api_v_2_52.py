@@ -1103,3 +1103,15 @@ class BucketsApi:
     api254_buckets_performance_get_with_http_info = buckets_performance_get_with_http_info
     api254_buckets_post_with_http_info = buckets_post_with_http_info
     api254_buckets_space_get_with_http_info = buckets_space_get_with_http_info
+    api255_buckets_delete_with_http_info = buckets_delete_with_http_info
+    api255_buckets_get_with_http_info = buckets_get_with_http_info
+    api255_buckets_patch_with_http_info = buckets_patch_with_http_info
+    api255_buckets_performance_get_with_http_info = buckets_performance_get_with_http_info
+    api255_buckets_post_with_http_info = buckets_post_with_http_info
+    api255_buckets_space_get_with_http_info = buckets_space_get_with_http_info
+    api256_buckets_delete_with_http_info = buckets_delete_with_http_info
+    api256_buckets_get_with_http_info = buckets_get_with_http_info
+    api256_buckets_patch_with_http_info = buckets_patch_with_http_info
+    api256_buckets_performance_get_with_http_info = buckets_performance_get_with_http_info
+    api256_buckets_post_with_http_info = buckets_post_with_http_info
+    api256_buckets_space_get_with_http_info = buckets_space_get_with_http_info

@@ -24,7 +24,7 @@ try:
     from pydantic.v1 import BaseModel, Field, StrictInt, StrictStr, conlist
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictInt, StrictStr, conlist
-from pypureclient.flashblade._common.models.remote_realm1_v_2_27 import RemoteRealm1
+from pypureclient.flashblade._common.models.remote_realm1_v_2_26 import RemoteRealm1
 
 
 class RemoteRealmsResponse(BaseModel):
