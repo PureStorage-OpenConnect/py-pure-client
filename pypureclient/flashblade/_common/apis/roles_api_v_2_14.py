@@ -209,14 +209,3 @@ class RolesApi:
     api214_roles_get_with_http_info = roles_get_with_http_info
     api215_roles_get_with_http_info = roles_get_with_http_info
     api216_roles_get_with_http_info = roles_get_with_http_info
-    api217_roles_get_with_http_info = roles_get_with_http_info
-    api218_roles_get_with_http_info = roles_get_with_http_info
-    api219_roles_get_with_http_info = roles_get_with_http_info
-    api220_roles_get_with_http_info = roles_get_with_http_info
-    api221_roles_get_with_http_info = roles_get_with_http_info
-    api222_roles_get_with_http_info = roles_get_with_http_info
-    api223_roles_get_with_http_info = roles_get_with_http_info
-    api224_roles_get_with_http_info = roles_get_with_http_info
-    api225_roles_get_with_http_info = roles_get_with_http_info
-    api226_roles_get_with_http_info = roles_get_with_http_info
-    api227_roles_get_with_http_info = roles_get_with_http_info

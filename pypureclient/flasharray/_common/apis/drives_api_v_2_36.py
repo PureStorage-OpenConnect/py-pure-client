@@ -373,3 +373,7 @@ class DrivesApi:
     api253_drives_patch_with_http_info = drives_patch_with_http_info
     api254_drives_get_with_http_info = drives_get_with_http_info
     api254_drives_patch_with_http_info = drives_patch_with_http_info
+    api255_drives_get_with_http_info = drives_get_with_http_info
+    api255_drives_patch_with_http_info = drives_patch_with_http_info
+    api256_drives_get_with_http_info = drives_get_with_http_info
+    api256_drives_patch_with_http_info = drives_patch_with_http_info

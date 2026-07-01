@@ -348,23 +348,3 @@ class HardwareApi:
     # Method Aliases
     api216_hardware_get_with_http_info = hardware_get_with_http_info
     api216_hardware_patch_with_http_info = hardware_patch_with_http_info
-    api217_hardware_get_with_http_info = hardware_get_with_http_info
-    api217_hardware_patch_with_http_info = hardware_patch_with_http_info
-    api218_hardware_get_with_http_info = hardware_get_with_http_info
-    api218_hardware_patch_with_http_info = hardware_patch_with_http_info
-    api219_hardware_get_with_http_info = hardware_get_with_http_info
-    api219_hardware_patch_with_http_info = hardware_patch_with_http_info
-    api220_hardware_get_with_http_info = hardware_get_with_http_info
-    api220_hardware_patch_with_http_info = hardware_patch_with_http_info
-    api221_hardware_get_with_http_info = hardware_get_with_http_info
-    api221_hardware_patch_with_http_info = hardware_patch_with_http_info
-    api222_hardware_get_with_http_info = hardware_get_with_http_info
-    api222_hardware_patch_with_http_info = hardware_patch_with_http_info
-    api223_hardware_get_with_http_info = hardware_get_with_http_info
-    api223_hardware_patch_with_http_info = hardware_patch_with_http_info
-    api224_hardware_get_with_http_info = hardware_get_with_http_info
-    api224_hardware_patch_with_http_info = hardware_patch_with_http_info
-    api225_hardware_get_with_http_info = hardware_get_with_http_info
-    api225_hardware_patch_with_http_info = hardware_patch_with_http_info
-    api226_hardware_get_with_http_info = hardware_get_with_http_info
-    api226_hardware_patch_with_http_info = hardware_patch_with_http_info

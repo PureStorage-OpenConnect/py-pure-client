@@ -209,13 +209,3 @@ class SessionsApi:
     api214_sessions_get_with_http_info = sessions_get_with_http_info
     api215_sessions_get_with_http_info = sessions_get_with_http_info
     api216_sessions_get_with_http_info = sessions_get_with_http_info
-    api217_sessions_get_with_http_info = sessions_get_with_http_info
-    api218_sessions_get_with_http_info = sessions_get_with_http_info
-    api219_sessions_get_with_http_info = sessions_get_with_http_info
-    api220_sessions_get_with_http_info = sessions_get_with_http_info
-    api221_sessions_get_with_http_info = sessions_get_with_http_info
-    api222_sessions_get_with_http_info = sessions_get_with_http_info
-    api223_sessions_get_with_http_info = sessions_get_with_http_info
-    api224_sessions_get_with_http_info = sessions_get_with_http_info
-    api225_sessions_get_with_http_info = sessions_get_with_http_info
-    api226_sessions_get_with_http_info = sessions_get_with_http_info

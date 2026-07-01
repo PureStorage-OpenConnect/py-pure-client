@@ -687,3 +687,11 @@ class OffloadsApi:
     api254_offloads_get_with_http_info = offloads_get_with_http_info
     api254_offloads_patch_with_http_info = offloads_patch_with_http_info
     api254_offloads_post_with_http_info = offloads_post_with_http_info
+    api255_offloads_delete_with_http_info = offloads_delete_with_http_info
+    api255_offloads_get_with_http_info = offloads_get_with_http_info
+    api255_offloads_patch_with_http_info = offloads_patch_with_http_info
+    api255_offloads_post_with_http_info = offloads_post_with_http_info
+    api256_offloads_delete_with_http_info = offloads_delete_with_http_info
+    api256_offloads_get_with_http_info = offloads_get_with_http_info
+    api256_offloads_patch_with_http_info = offloads_patch_with_http_info
+    api256_offloads_post_with_http_info = offloads_post_with_http_info

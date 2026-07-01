@@ -216,13 +216,3 @@ class DrivesApi:
     api214_drives_get_with_http_info = drives_get_with_http_info
     api215_drives_get_with_http_info = drives_get_with_http_info
     api216_drives_get_with_http_info = drives_get_with_http_info
-    api217_drives_get_with_http_info = drives_get_with_http_info
-    api218_drives_get_with_http_info = drives_get_with_http_info
-    api219_drives_get_with_http_info = drives_get_with_http_info
-    api220_drives_get_with_http_info = drives_get_with_http_info
-    api221_drives_get_with_http_info = drives_get_with_http_info
-    api222_drives_get_with_http_info = drives_get_with_http_info
-    api223_drives_get_with_http_info = drives_get_with_http_info
-    api224_drives_get_with_http_info = drives_get_with_http_info
-    api225_drives_get_with_http_info = drives_get_with_http_info
-    api226_drives_get_with_http_info = drives_get_with_http_info

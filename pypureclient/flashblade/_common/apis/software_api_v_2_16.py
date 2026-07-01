@@ -343,17 +343,3 @@ class SoftwareApi:
     # Method Aliases
     api216_software_check_get_with_http_info = software_check_get_with_http_info
     api216_software_check_post_with_http_info = software_check_post_with_http_info
-    api217_software_check_get_with_http_info = software_check_get_with_http_info
-    api217_software_check_post_with_http_info = software_check_post_with_http_info
-    api218_software_check_get_with_http_info = software_check_get_with_http_info
-    api218_software_check_post_with_http_info = software_check_post_with_http_info
-    api219_software_check_get_with_http_info = software_check_get_with_http_info
-    api219_software_check_post_with_http_info = software_check_post_with_http_info
-    api220_software_check_get_with_http_info = software_check_get_with_http_info
-    api220_software_check_post_with_http_info = software_check_post_with_http_info
-    api221_software_check_get_with_http_info = software_check_get_with_http_info
-    api221_software_check_post_with_http_info = software_check_post_with_http_info
-    api222_software_check_get_with_http_info = software_check_get_with_http_info
-    api222_software_check_post_with_http_info = software_check_post_with_http_info
-    api223_software_check_get_with_http_info = software_check_get_with_http_info
-    api223_software_check_post_with_http_info = software_check_post_with_http_info

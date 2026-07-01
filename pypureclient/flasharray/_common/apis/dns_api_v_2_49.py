@@ -670,3 +670,11 @@ class DNSApi:
     api254_dns_get_with_http_info = dns_get_with_http_info
     api254_dns_patch_with_http_info = dns_patch_with_http_info
     api254_dns_post_with_http_info = dns_post_with_http_info
+    api255_dns_delete_with_http_info = dns_delete_with_http_info
+    api255_dns_get_with_http_info = dns_get_with_http_info
+    api255_dns_patch_with_http_info = dns_patch_with_http_info
+    api255_dns_post_with_http_info = dns_post_with_http_info
+    api256_dns_delete_with_http_info = dns_delete_with_http_info
+    api256_dns_get_with_http_info = dns_get_with_http_info
+    api256_dns_patch_with_http_info = dns_patch_with_http_info
+    api256_dns_post_with_http_info = dns_post_with_http_info

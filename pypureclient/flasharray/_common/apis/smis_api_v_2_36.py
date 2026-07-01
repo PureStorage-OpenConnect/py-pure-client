@@ -366,3 +366,7 @@ class SMISApi:
     api253_smi_s_patch_with_http_info = smi_s_patch_with_http_info
     api254_smi_s_get_with_http_info = smi_s_get_with_http_info
     api254_smi_s_patch_with_http_info = smi_s_patch_with_http_info
+    api255_smi_s_get_with_http_info = smi_s_get_with_http_info
+    api255_smi_s_patch_with_http_info = smi_s_patch_with_http_info
+    api256_smi_s_get_with_http_info = smi_s_get_with_http_info
+    api256_smi_s_patch_with_http_info = smi_s_patch_with_http_info

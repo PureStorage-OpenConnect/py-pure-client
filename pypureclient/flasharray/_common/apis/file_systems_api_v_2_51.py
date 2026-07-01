@@ -732,3 +732,11 @@ class FileSystemsApi:
     api254_file_systems_get_with_http_info = file_systems_get_with_http_info
     api254_file_systems_patch_with_http_info = file_systems_patch_with_http_info
     api254_file_systems_post_with_http_info = file_systems_post_with_http_info
+    api255_file_systems_delete_with_http_info = file_systems_delete_with_http_info
+    api255_file_systems_get_with_http_info = file_systems_get_with_http_info
+    api255_file_systems_patch_with_http_info = file_systems_patch_with_http_info
+    api255_file_systems_post_with_http_info = file_systems_post_with_http_info
+    api256_file_systems_delete_with_http_info = file_systems_delete_with_http_info
+    api256_file_systems_get_with_http_info = file_systems_get_with_http_info
+    api256_file_systems_patch_with_http_info = file_systems_patch_with_http_info
+    api256_file_systems_post_with_http_info = file_systems_post_with_http_info

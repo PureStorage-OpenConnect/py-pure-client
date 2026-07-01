@@ -216,13 +216,3 @@ class BladesApi:
     api214_blades_get_with_http_info = blades_get_with_http_info
     api215_blades_get_with_http_info = blades_get_with_http_info
     api216_blades_get_with_http_info = blades_get_with_http_info
-    api217_blades_get_with_http_info = blades_get_with_http_info
-    api218_blades_get_with_http_info = blades_get_with_http_info
-    api219_blades_get_with_http_info = blades_get_with_http_info
-    api220_blades_get_with_http_info = blades_get_with_http_info
-    api221_blades_get_with_http_info = blades_get_with_http_info
-    api222_blades_get_with_http_info = blades_get_with_http_info
-    api223_blades_get_with_http_info = blades_get_with_http_info
-    api224_blades_get_with_http_info = blades_get_with_http_info
-    api225_blades_get_with_http_info = blades_get_with_http_info
-    api226_blades_get_with_http_info = blades_get_with_http_info
