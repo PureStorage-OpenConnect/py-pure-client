@@ -97,7 +97,7 @@ __class_apis_dict = {
     'RemoteRealmsApi': __LazyApiLoader('pypureclient.flashblade._common.apis.remote_realms_api_v_2_27', 'RemoteRealmsApi', '2.27'),
     'ResiliencyGroupsApi': __LazyApiLoader('pypureclient.flashblade._common.apis.resiliency_groups_api_v_2_27', 'ResiliencyGroupsApi', '2.27'),
     'ResourceAccessesApi': __LazyApiLoader('pypureclient.flashblade._common.apis.resource_accesses_api_v_2_27', 'ResourceAccessesApi', '2.27'),
-    'RolesApi': __LazyApiLoader('pypureclient.flashblade._common.apis.roles_api_v_2_14', 'RolesApi', '2.27'),
+    'RolesApi': __LazyApiLoader('pypureclient.flashblade._common.apis.roles_api_v_2_17', 'RolesApi', '2.27'),
     'SAML2SSOApi': __LazyApiLoader('pypureclient.flashblade._common.apis.saml2_sso_api_v_2_27', 'SAML2SSOApi', '2.27'),
     'SMTPApi': __LazyApiLoader('pypureclient.flashblade._common.apis.smtp_api_v_2_27', 'SMTPApi', '2.27'),
     'SNMPAgentsApi': __LazyApiLoader('pypureclient.flashblade._common.apis.snmp_agents_api_v_2_27', 'SNMPAgentsApi', '2.27'),

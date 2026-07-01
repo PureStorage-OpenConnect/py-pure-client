@@ -610,3 +610,9 @@ class VchostConnectionsApi:
     api254_vchost_connections_delete_with_http_info = vchost_connections_delete_with_http_info
     api254_vchost_connections_get_with_http_info = vchost_connections_get_with_http_info
     api254_vchost_connections_post_with_http_info = vchost_connections_post_with_http_info
+    api255_vchost_connections_delete_with_http_info = vchost_connections_delete_with_http_info
+    api255_vchost_connections_get_with_http_info = vchost_connections_get_with_http_info
+    api255_vchost_connections_post_with_http_info = vchost_connections_post_with_http_info
+    api256_vchost_connections_delete_with_http_info = vchost_connections_delete_with_http_info
+    api256_vchost_connections_get_with_http_info = vchost_connections_get_with_http_info
+    api256_vchost_connections_post_with_http_info = vchost_connections_post_with_http_info

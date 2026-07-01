@@ -699,3 +699,11 @@ class APIClientsApi:
     api254_api_clients_get_with_http_info = api_clients_get_with_http_info
     api254_api_clients_patch_with_http_info = api_clients_patch_with_http_info
     api254_api_clients_post_with_http_info = api_clients_post_with_http_info
+    api255_api_clients_delete_with_http_info = api_clients_delete_with_http_info
+    api255_api_clients_get_with_http_info = api_clients_get_with_http_info
+    api255_api_clients_patch_with_http_info = api_clients_patch_with_http_info
+    api255_api_clients_post_with_http_info = api_clients_post_with_http_info
+    api256_api_clients_delete_with_http_info = api_clients_delete_with_http_info
+    api256_api_clients_get_with_http_info = api_clients_get_with_http_info
+    api256_api_clients_patch_with_http_info = api_clients_patch_with_http_info
+    api256_api_clients_post_with_http_info = api_clients_post_with_http_info

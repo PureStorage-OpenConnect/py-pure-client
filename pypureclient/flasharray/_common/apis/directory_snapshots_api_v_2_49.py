@@ -732,3 +732,11 @@ class DirectorySnapshotsApi:
     api254_directory_snapshots_get_with_http_info = directory_snapshots_get_with_http_info
     api254_directory_snapshots_patch_with_http_info = directory_snapshots_patch_with_http_info
     api254_directory_snapshots_post_with_http_info = directory_snapshots_post_with_http_info
+    api255_directory_snapshots_delete_with_http_info = directory_snapshots_delete_with_http_info
+    api255_directory_snapshots_get_with_http_info = directory_snapshots_get_with_http_info
+    api255_directory_snapshots_patch_with_http_info = directory_snapshots_patch_with_http_info
+    api255_directory_snapshots_post_with_http_info = directory_snapshots_post_with_http_info
+    api256_directory_snapshots_delete_with_http_info = directory_snapshots_delete_with_http_info
+    api256_directory_snapshots_get_with_http_info = directory_snapshots_get_with_http_info
+    api256_directory_snapshots_patch_with_http_info = directory_snapshots_patch_with_http_info
+    api256_directory_snapshots_post_with_http_info = directory_snapshots_post_with_http_info

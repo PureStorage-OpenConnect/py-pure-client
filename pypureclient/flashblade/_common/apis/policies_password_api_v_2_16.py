@@ -348,23 +348,3 @@ class PoliciesPasswordApi:
     # Method Aliases
     api216_password_policies_get_with_http_info = password_policies_get_with_http_info
     api216_password_policies_patch_with_http_info = password_policies_patch_with_http_info
-    api217_password_policies_get_with_http_info = password_policies_get_with_http_info
-    api217_password_policies_patch_with_http_info = password_policies_patch_with_http_info
-    api218_password_policies_get_with_http_info = password_policies_get_with_http_info
-    api218_password_policies_patch_with_http_info = password_policies_patch_with_http_info
-    api219_password_policies_get_with_http_info = password_policies_get_with_http_info
-    api219_password_policies_patch_with_http_info = password_policies_patch_with_http_info
-    api220_password_policies_get_with_http_info = password_policies_get_with_http_info
-    api220_password_policies_patch_with_http_info = password_policies_patch_with_http_info
-    api221_password_policies_get_with_http_info = password_policies_get_with_http_info
-    api221_password_policies_patch_with_http_info = password_policies_patch_with_http_info
-    api222_password_policies_get_with_http_info = password_policies_get_with_http_info
-    api222_password_policies_patch_with_http_info = password_policies_patch_with_http_info
-    api223_password_policies_get_with_http_info = password_policies_get_with_http_info
-    api223_password_policies_patch_with_http_info = password_policies_patch_with_http_info
-    api224_password_policies_get_with_http_info = password_policies_get_with_http_info
-    api224_password_policies_patch_with_http_info = password_policies_patch_with_http_info
-    api225_password_policies_get_with_http_info = password_policies_get_with_http_info
-    api225_password_policies_patch_with_http_info = password_policies_patch_with_http_info
-    api226_password_policies_get_with_http_info = password_policies_get_with_http_info
-    api226_password_policies_patch_with_http_info = password_policies_patch_with_http_info

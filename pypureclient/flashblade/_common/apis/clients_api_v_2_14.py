@@ -194,4 +194,3 @@ class ClientsApi:
     api214_arrays_clients_performance_get_with_http_info = arrays_clients_performance_get_with_http_info
     api215_arrays_clients_performance_get_with_http_info = arrays_clients_performance_get_with_http_info
     api216_arrays_clients_performance_get_with_http_info = arrays_clients_performance_get_with_http_info
-    api217_arrays_clients_performance_get_with_http_info = arrays_clients_performance_get_with_http_info

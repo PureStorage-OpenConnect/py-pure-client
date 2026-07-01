@@ -819,3 +819,13 @@ class SNMPManagersApi:
     api254_snmp_managers_patch_with_http_info = snmp_managers_patch_with_http_info
     api254_snmp_managers_post_with_http_info = snmp_managers_post_with_http_info
     api254_snmp_managers_test_get_with_http_info = snmp_managers_test_get_with_http_info
+    api255_snmp_managers_delete_with_http_info = snmp_managers_delete_with_http_info
+    api255_snmp_managers_get_with_http_info = snmp_managers_get_with_http_info
+    api255_snmp_managers_patch_with_http_info = snmp_managers_patch_with_http_info
+    api255_snmp_managers_post_with_http_info = snmp_managers_post_with_http_info
+    api255_snmp_managers_test_get_with_http_info = snmp_managers_test_get_with_http_info
+    api256_snmp_managers_delete_with_http_info = snmp_managers_delete_with_http_info
+    api256_snmp_managers_get_with_http_info = snmp_managers_get_with_http_info
+    api256_snmp_managers_patch_with_http_info = snmp_managers_patch_with_http_info
+    api256_snmp_managers_post_with_http_info = snmp_managers_post_with_http_info
+    api256_snmp_managers_test_get_with_http_info = snmp_managers_test_get_with_http_info

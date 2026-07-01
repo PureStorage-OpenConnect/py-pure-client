@@ -519,3 +519,7 @@ class UserGroupQuotasApi:
     api253_directory_user_quotas_get_with_http_info = directory_user_quotas_get_with_http_info
     api254_directory_group_quotas_get_with_http_info = directory_group_quotas_get_with_http_info
     api254_directory_user_quotas_get_with_http_info = directory_user_quotas_get_with_http_info
+    api255_directory_group_quotas_get_with_http_info = directory_group_quotas_get_with_http_info
+    api255_directory_user_quotas_get_with_http_info = directory_user_quotas_get_with_http_info
+    api256_directory_group_quotas_get_with_http_info = directory_group_quotas_get_with_http_info
+    api256_directory_user_quotas_get_with_http_info = directory_user_quotas_get_with_http_info

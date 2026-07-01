@@ -819,3 +819,13 @@ class AlertWatchersApi:
     api254_alert_watchers_patch_with_http_info = alert_watchers_patch_with_http_info
     api254_alert_watchers_post_with_http_info = alert_watchers_post_with_http_info
     api254_alert_watchers_test_get_with_http_info = alert_watchers_test_get_with_http_info
+    api255_alert_watchers_delete_with_http_info = alert_watchers_delete_with_http_info
+    api255_alert_watchers_get_with_http_info = alert_watchers_get_with_http_info
+    api255_alert_watchers_patch_with_http_info = alert_watchers_patch_with_http_info
+    api255_alert_watchers_post_with_http_info = alert_watchers_post_with_http_info
+    api255_alert_watchers_test_get_with_http_info = alert_watchers_test_get_with_http_info
+    api256_alert_watchers_delete_with_http_info = alert_watchers_delete_with_http_info
+    api256_alert_watchers_get_with_http_info = alert_watchers_get_with_http_info
+    api256_alert_watchers_patch_with_http_info = alert_watchers_patch_with_http_info
+    api256_alert_watchers_post_with_http_info = alert_watchers_post_with_http_info
+    api256_alert_watchers_test_get_with_http_info = alert_watchers_test_get_with_http_info
