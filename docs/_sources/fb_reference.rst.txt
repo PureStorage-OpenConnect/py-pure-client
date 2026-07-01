@@ -14891,24 +14891,6 @@ get_roles
 .. literalinclude:: source/examples/FB2.0/get_roles.py
     :language: python
 
-get_roles
-'''''''''
-
-.. literalinclude:: source/examples/FB2.0/get_roles.py
-    :language: python
-
-get_roles
-'''''''''
-
-.. literalinclude:: source/examples/FB2.0/get_roles.py
-    :language: python
-
-get_roles
-'''''''''
-
-.. literalinclude:: source/examples/FB2.0/get_roles.py
-    :language: python
-
 SAML2SSOApi
 ~~~~~~~~~~~
 
