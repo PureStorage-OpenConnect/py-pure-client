@@ -1676,13 +1676,3 @@ class QuotasApi:
     api227_quotas_users_get_with_http_info = quotas_users_get_with_http_info
     api227_quotas_users_patch_with_http_info = quotas_users_patch_with_http_info
     api227_quotas_users_post_with_http_info = quotas_users_post_with_http_info
-    api228_quotas_groups_delete_with_http_info = quotas_groups_delete_with_http_info
-    api228_quotas_groups_get_with_http_info = quotas_groups_get_with_http_info
-    api228_quotas_groups_patch_with_http_info = quotas_groups_patch_with_http_info
-    api228_quotas_groups_post_with_http_info = quotas_groups_post_with_http_info
-    api228_quotas_settings_get_with_http_info = quotas_settings_get_with_http_info
-    api228_quotas_settings_patch_with_http_info = quotas_settings_patch_with_http_info
-    api228_quotas_users_delete_with_http_info = quotas_users_delete_with_http_info
-    api228_quotas_users_get_with_http_info = quotas_users_get_with_http_info
-    api228_quotas_users_patch_with_http_info = quotas_users_patch_with_http_info
-    api228_quotas_users_post_with_http_info = quotas_users_post_with_http_info

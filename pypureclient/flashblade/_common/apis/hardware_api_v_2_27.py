@@ -348,5 +348,3 @@ class HardwareApi:
     # Method Aliases
     api227_hardware_get_with_http_info = hardware_get_with_http_info
     api227_hardware_patch_with_http_info = hardware_patch_with_http_info
-    api228_hardware_get_with_http_info = hardware_get_with_http_info
-    api228_hardware_patch_with_http_info = hardware_patch_with_http_info

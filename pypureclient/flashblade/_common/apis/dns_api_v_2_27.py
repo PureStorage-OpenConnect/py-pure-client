@@ -639,7 +639,3 @@ class DNSApi:
     api227_dns_get_with_http_info = dns_get_with_http_info
     api227_dns_patch_with_http_info = dns_patch_with_http_info
     api227_dns_post_with_http_info = dns_post_with_http_info
-    api228_dns_delete_with_http_info = dns_delete_with_http_info
-    api228_dns_get_with_http_info = dns_get_with_http_info
-    api228_dns_patch_with_http_info = dns_patch_with_http_info
-    api228_dns_post_with_http_info = dns_post_with_http_info

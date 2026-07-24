@@ -207,4 +207,3 @@ class SessionsApi:
 
     # Method Aliases
     api227_sessions_get_with_http_info = sessions_get_with_http_info
-    api228_sessions_get_with_http_info = sessions_get_with_http_info

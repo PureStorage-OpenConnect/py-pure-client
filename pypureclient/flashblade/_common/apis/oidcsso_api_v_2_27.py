@@ -599,7 +599,3 @@ class OIDCSSOApi:
     api227_sso_oidc_idps_get_with_http_info = sso_oidc_idps_get_with_http_info
     api227_sso_oidc_idps_patch_with_http_info = sso_oidc_idps_patch_with_http_info
     api227_sso_oidc_idps_post_with_http_info = sso_oidc_idps_post_with_http_info
-    api228_sso_oidc_idps_delete_with_http_info = sso_oidc_idps_delete_with_http_info
-    api228_sso_oidc_idps_get_with_http_info = sso_oidc_idps_get_with_http_info
-    api228_sso_oidc_idps_patch_with_http_info = sso_oidc_idps_patch_with_http_info
-    api228_sso_oidc_idps_post_with_http_info = sso_oidc_idps_post_with_http_info

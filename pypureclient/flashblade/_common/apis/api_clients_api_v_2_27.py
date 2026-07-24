@@ -598,7 +598,3 @@ class APIClientsApi:
     api227_api_clients_get_with_http_info = api_clients_get_with_http_info
     api227_api_clients_patch_with_http_info = api_clients_patch_with_http_info
     api227_api_clients_post_with_http_info = api_clients_post_with_http_info
-    api228_api_clients_delete_with_http_info = api_clients_delete_with_http_info
-    api228_api_clients_get_with_http_info = api_clients_get_with_http_info
-    api228_api_clients_patch_with_http_info = api_clients_patch_with_http_info
-    api228_api_clients_post_with_http_info = api_clients_post_with_http_info

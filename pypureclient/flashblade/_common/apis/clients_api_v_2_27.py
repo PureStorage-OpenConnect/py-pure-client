@@ -347,5 +347,3 @@ class ClientsApi:
     # Method Aliases
     api227_arrays_clients_performance_get_with_http_info = arrays_clients_performance_get_with_http_info
     api227_arrays_clients_s3_specific_performance_get_with_http_info = arrays_clients_s3_specific_performance_get_with_http_info
-    api228_arrays_clients_performance_get_with_http_info = arrays_clients_performance_get_with_http_info
-    api228_arrays_clients_s3_specific_performance_get_with_http_info = arrays_clients_s3_specific_performance_get_with_http_info

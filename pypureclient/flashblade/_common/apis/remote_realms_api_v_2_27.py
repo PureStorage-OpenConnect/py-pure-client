@@ -230,4 +230,3 @@ class RemoteRealmsApi:
 
     # Method Aliases
     api227_remote_realms_get_with_http_info = remote_realms_get_with_http_info
-    api228_remote_realms_get_with_http_info = remote_realms_get_with_http_info

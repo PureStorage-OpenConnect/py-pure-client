@@ -348,5 +348,3 @@ class PoliciesPasswordApi:
     # Method Aliases
     api227_password_policies_get_with_http_info = password_policies_get_with_http_info
     api227_password_policies_patch_with_http_info = password_policies_patch_with_http_info
-    api228_password_policies_get_with_http_info = password_policies_get_with_http_info
-    api228_password_policies_patch_with_http_info = password_policies_patch_with_http_info

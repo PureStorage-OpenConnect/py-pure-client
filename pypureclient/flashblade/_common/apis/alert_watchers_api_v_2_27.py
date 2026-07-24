@@ -740,8 +740,3 @@ class AlertWatchersApi:
     api227_alert_watchers_patch_with_http_info = alert_watchers_patch_with_http_info
     api227_alert_watchers_post_with_http_info = alert_watchers_post_with_http_info
     api227_alert_watchers_test_get_with_http_info = alert_watchers_test_get_with_http_info
-    api228_alert_watchers_delete_with_http_info = alert_watchers_delete_with_http_info
-    api228_alert_watchers_get_with_http_info = alert_watchers_get_with_http_info
-    api228_alert_watchers_patch_with_http_info = alert_watchers_patch_with_http_info
-    api228_alert_watchers_post_with_http_info = alert_watchers_post_with_http_info
-    api228_alert_watchers_test_get_with_http_info = alert_watchers_test_get_with_http_info

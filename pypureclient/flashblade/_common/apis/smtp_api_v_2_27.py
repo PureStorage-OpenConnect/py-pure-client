@@ -332,5 +332,3 @@ class SMTPApi:
     # Method Aliases
     api227_smtp_servers_get_with_http_info = smtp_servers_get_with_http_info
     api227_smtp_servers_patch_with_http_info = smtp_servers_patch_with_http_info
-    api228_smtp_servers_get_with_http_info = smtp_servers_get_with_http_info
-    api228_smtp_servers_patch_with_http_info = smtp_servers_patch_with_http_info

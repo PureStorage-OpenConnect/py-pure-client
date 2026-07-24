@@ -433,5 +433,3 @@ class UsageApi:
     # Method Aliases
     api227_usage_groups_get_with_http_info = usage_groups_get_with_http_info
     api227_usage_users_get_with_http_info = usage_users_get_with_http_info
-    api228_usage_groups_get_with_http_info = usage_groups_get_with_http_info
-    api228_usage_users_get_with_http_info = usage_users_get_with_http_info

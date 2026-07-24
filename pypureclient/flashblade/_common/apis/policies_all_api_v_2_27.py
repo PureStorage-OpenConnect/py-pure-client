@@ -473,5 +473,3 @@ class PoliciesAllApi:
     # Method Aliases
     api227_policies_all_get_with_http_info = policies_all_get_with_http_info
     api227_policies_all_members_get_with_http_info = policies_all_members_get_with_http_info
-    api228_policies_all_get_with_http_info = policies_all_get_with_http_info
-    api228_policies_all_members_get_with_http_info = policies_all_members_get_with_http_info

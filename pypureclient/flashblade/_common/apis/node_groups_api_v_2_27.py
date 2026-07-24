@@ -1201,11 +1201,3 @@ class NodeGroupsApi:
     api227_node_groups_patch_with_http_info = node_groups_patch_with_http_info
     api227_node_groups_post_with_http_info = node_groups_post_with_http_info
     api227_node_groups_uses_get_with_http_info = node_groups_uses_get_with_http_info
-    api228_node_groups_delete_with_http_info = node_groups_delete_with_http_info
-    api228_node_groups_get_with_http_info = node_groups_get_with_http_info
-    api228_node_groups_nodes_delete_with_http_info = node_groups_nodes_delete_with_http_info
-    api228_node_groups_nodes_get_with_http_info = node_groups_nodes_get_with_http_info
-    api228_node_groups_nodes_post_with_http_info = node_groups_nodes_post_with_http_info
-    api228_node_groups_patch_with_http_info = node_groups_patch_with_http_info
-    api228_node_groups_post_with_http_info = node_groups_post_with_http_info
-    api228_node_groups_uses_get_with_http_info = node_groups_uses_get_with_http_info

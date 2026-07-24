@@ -316,5 +316,3 @@ class VerificationKeysApi:
     # Method Aliases
     api227_support_verification_keys_get_with_http_info = support_verification_keys_get_with_http_info
     api227_support_verification_keys_patch_with_http_info = support_verification_keys_patch_with_http_info
-    api228_support_verification_keys_get_with_http_info = support_verification_keys_get_with_http_info
-    api228_support_verification_keys_patch_with_http_info = support_verification_keys_patch_with_http_info

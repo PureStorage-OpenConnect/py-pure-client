@@ -2310,16 +2310,3 @@ class PoliciesSnapshotApi:
     api227_policies_members_get_with_http_info = policies_members_get_with_http_info
     api227_policies_patch_with_http_info = policies_patch_with_http_info
     api227_policies_post_with_http_info = policies_post_with_http_info
-    api228_policies_delete_with_http_info = policies_delete_with_http_info
-    api228_policies_file_system_replica_links_delete_with_http_info = policies_file_system_replica_links_delete_with_http_info
-    api228_policies_file_system_replica_links_get_with_http_info = policies_file_system_replica_links_get_with_http_info
-    api228_policies_file_system_replica_links_post_with_http_info = policies_file_system_replica_links_post_with_http_info
-    api228_policies_file_system_snapshots_delete_with_http_info = policies_file_system_snapshots_delete_with_http_info
-    api228_policies_file_system_snapshots_get_with_http_info = policies_file_system_snapshots_get_with_http_info
-    api228_policies_file_systems_delete_with_http_info = policies_file_systems_delete_with_http_info
-    api228_policies_file_systems_get_with_http_info = policies_file_systems_get_with_http_info
-    api228_policies_file_systems_post_with_http_info = policies_file_systems_post_with_http_info
-    api228_policies_get_with_http_info = policies_get_with_http_info
-    api228_policies_members_get_with_http_info = policies_members_get_with_http_info
-    api228_policies_patch_with_http_info = policies_patch_with_http_info
-    api228_policies_post_with_http_info = policies_post_with_http_info

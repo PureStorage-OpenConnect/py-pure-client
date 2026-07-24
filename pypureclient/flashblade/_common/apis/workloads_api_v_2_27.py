@@ -1395,12 +1395,3 @@ class WorkloadsApi:
     api227_workloads_tags_batch_put_with_http_info = workloads_tags_batch_put_with_http_info
     api227_workloads_tags_delete_with_http_info = workloads_tags_delete_with_http_info
     api227_workloads_tags_get_with_http_info = workloads_tags_get_with_http_info
-    api228_workloads_delete_with_http_info = workloads_delete_with_http_info
-    api228_workloads_get_with_http_info = workloads_get_with_http_info
-    api228_workloads_patch_with_http_info = workloads_patch_with_http_info
-    api228_workloads_placement_recommendations_get_with_http_info = workloads_placement_recommendations_get_with_http_info
-    api228_workloads_placement_recommendations_post_with_http_info = workloads_placement_recommendations_post_with_http_info
-    api228_workloads_post_with_http_info = workloads_post_with_http_info
-    api228_workloads_tags_batch_put_with_http_info = workloads_tags_batch_put_with_http_info
-    api228_workloads_tags_delete_with_http_info = workloads_tags_delete_with_http_info
-    api228_workloads_tags_get_with_http_info = workloads_tags_get_with_http_info

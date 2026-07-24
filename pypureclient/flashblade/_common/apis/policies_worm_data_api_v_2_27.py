@@ -832,8 +832,3 @@ class PoliciesWORMDataApi:
     api227_worm_data_policies_members_get_with_http_info = worm_data_policies_members_get_with_http_info
     api227_worm_data_policies_patch_with_http_info = worm_data_policies_patch_with_http_info
     api227_worm_data_policies_post_with_http_info = worm_data_policies_post_with_http_info
-    api228_worm_data_policies_delete_with_http_info = worm_data_policies_delete_with_http_info
-    api228_worm_data_policies_get_with_http_info = worm_data_policies_get_with_http_info
-    api228_worm_data_policies_members_get_with_http_info = worm_data_policies_members_get_with_http_info
-    api228_worm_data_policies_patch_with_http_info = worm_data_policies_patch_with_http_info
-    api228_worm_data_policies_post_with_http_info = worm_data_policies_post_with_http_info

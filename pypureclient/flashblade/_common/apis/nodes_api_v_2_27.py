@@ -486,6 +486,3 @@ class NodesApi:
     api227_nodes_batch_post_with_http_info = nodes_batch_post_with_http_info
     api227_nodes_get_with_http_info = nodes_get_with_http_info
     api227_nodes_patch_with_http_info = nodes_patch_with_http_info
-    api228_nodes_batch_post_with_http_info = nodes_batch_post_with_http_info
-    api228_nodes_get_with_http_info = nodes_get_with_http_info
-    api228_nodes_patch_with_http_info = nodes_patch_with_http_info

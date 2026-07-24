@@ -572,7 +572,3 @@ class LogsApi:
     api227_logs_async_get_with_http_info = logs_async_get_with_http_info
     api227_logs_async_patch_with_http_info = logs_async_patch_with_http_info
     api227_logs_get_with_http_info = logs_get_with_http_info
-    api228_logs_async_download_get_with_http_info = logs_async_download_get_with_http_info
-    api228_logs_async_get_with_http_info = logs_async_get_with_http_info
-    api228_logs_async_patch_with_http_info = logs_async_patch_with_http_info
-    api228_logs_get_with_http_info = logs_get_with_http_info

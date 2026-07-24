@@ -597,7 +597,3 @@ class SupportApi:
     api227_support_patch_with_http_info = support_patch_with_http_info
     api227_support_system_manifest_get_with_http_info = support_system_manifest_get_with_http_info
     api227_support_test_get_with_http_info = support_test_get_with_http_info
-    api228_support_get_with_http_info = support_get_with_http_info
-    api228_support_patch_with_http_info = support_patch_with_http_info
-    api228_support_system_manifest_get_with_http_info = support_system_manifest_get_with_http_info
-    api228_support_test_get_with_http_info = support_test_get_with_http_info

@@ -637,7 +637,3 @@ class ServersApi:
     api227_servers_get_with_http_info = servers_get_with_http_info
     api227_servers_patch_with_http_info = servers_patch_with_http_info
     api227_servers_post_with_http_info = servers_post_with_http_info
-    api228_servers_delete_with_http_info = servers_delete_with_http_info
-    api228_servers_get_with_http_info = servers_get_with_http_info
-    api228_servers_patch_with_http_info = servers_patch_with_http_info
-    api228_servers_post_with_http_info = servers_post_with_http_info

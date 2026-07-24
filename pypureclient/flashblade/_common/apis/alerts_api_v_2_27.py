@@ -348,5 +348,3 @@ class AlertsApi:
     # Method Aliases
     api227_alerts_get_with_http_info = alerts_get_with_http_info
     api227_alerts_patch_with_http_info = alerts_patch_with_http_info
-    api228_alerts_get_with_http_info = alerts_get_with_http_info
-    api228_alerts_patch_with_http_info = alerts_patch_with_http_info

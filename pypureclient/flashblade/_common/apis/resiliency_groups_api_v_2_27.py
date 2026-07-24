@@ -385,5 +385,3 @@ class ResiliencyGroupsApi:
     # Method Aliases
     api227_resiliency_groups_get_with_http_info = resiliency_groups_get_with_http_info
     api227_resiliency_groups_members_get_with_http_info = resiliency_groups_members_get_with_http_info
-    api228_resiliency_groups_get_with_http_info = resiliency_groups_get_with_http_info
-    api228_resiliency_groups_members_get_with_http_info = resiliency_groups_members_get_with_http_info

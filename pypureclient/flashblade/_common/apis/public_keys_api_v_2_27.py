@@ -621,7 +621,3 @@ class PublicKeysApi:
     api227_public_keys_get_with_http_info = public_keys_get_with_http_info
     api227_public_keys_post_with_http_info = public_keys_post_with_http_info
     api227_public_keys_uses_get_with_http_info = public_keys_uses_get_with_http_info
-    api228_public_keys_delete_with_http_info = public_keys_delete_with_http_info
-    api228_public_keys_get_with_http_info = public_keys_get_with_http_info
-    api228_public_keys_post_with_http_info = public_keys_post_with_http_info
-    api228_public_keys_uses_get_with_http_info = public_keys_uses_get_with_http_info

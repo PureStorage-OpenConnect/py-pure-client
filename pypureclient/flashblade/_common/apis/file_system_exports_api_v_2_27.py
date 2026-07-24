@@ -679,7 +679,3 @@ class FileSystemExportsApi:
     api227_file_system_exports_get_with_http_info = file_system_exports_get_with_http_info
     api227_file_system_exports_patch_with_http_info = file_system_exports_patch_with_http_info
     api227_file_system_exports_post_with_http_info = file_system_exports_post_with_http_info
-    api228_file_system_exports_delete_with_http_info = file_system_exports_delete_with_http_info
-    api228_file_system_exports_get_with_http_info = file_system_exports_get_with_http_info
-    api228_file_system_exports_patch_with_http_info = file_system_exports_patch_with_http_info
-    api228_file_system_exports_post_with_http_info = file_system_exports_post_with_http_info
