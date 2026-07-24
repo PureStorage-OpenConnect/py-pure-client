@@ -21,10 +21,10 @@ Importable as
 .. module:: pypureclient.pure1.client
 .. autofunction:: pypureclient.pure1.client::Client
 
-Pure1 REST 1.5 Client
+Pure1 REST 1.6 Client
 ~~~~~~~~~~~~~~~~~~~~~
-.. module:: pypureclient.pure1.Pure1_1_5.client
-.. autoclass:: pypureclient.pure1.Pure1_1_5.client::Client
+.. module:: pypureclient.pure1.Pure1_1_6.client
+.. autoclass:: pypureclient.pure1.Pure1_1_6.client::Client
    :members:
 
 Models
@@ -861,6 +861,42 @@ FixedReference
 FixedReferenceFqdn
 ~~~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.pure1::FixedReferenceFqdn
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+Fleet
+~~~~~
+.. autopydantic_model:: pypureclient.pure1::Fleet
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+FleetGetResponse
+~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::FleetGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+FleetResponse
+~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::FleetResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
