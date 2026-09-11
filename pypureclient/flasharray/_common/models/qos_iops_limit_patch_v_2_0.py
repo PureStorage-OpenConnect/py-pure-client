@@ -46,6 +46,48 @@ class QosIopsLimitPatch(BaseModel):
     class Config:
         validate_assignment = True
 
+    @classmethod
+    def validate(cls, value):
+        """Backwards compatibility: accept a raw value and wrap it as actual_instance.
+
+        Pydantic calls this hook whenever QosIopsLimitPatch is used as a field type
+        on another model (and again on assignment, via Config.validate_assignment).
+        Older client code assigned the raw oneOf member value instead of the
+        wrapper, e.g.:
+
+            model.field = "raw-string-value"        # raw primitive member
+            model.field = MemberModel(name="x")     # raw member model instance
+
+        instead of the strict form:
+
+            model.field = QosIopsLimitPatch("raw-string-value")
+
+        This hook coerces all of those into a QosIopsLimitPatch so the
+        `actual_instance` oneOf validator still runs against the wrapped value.
+        """
+        # Already a QosIopsLimitPatch: pass through untouched.
+        if isinstance(value, cls):
+            return value
+        # A different oneOf wrapper holding a compatible payload — a sibling
+        # wrapper class, or the same wrapper from another API-version module.
+        # Stock pydantic v1 accepts these via its `cls(**dict(value))` fallback,
+        # so clients released without this hook allow them; unwrap and re-wrap
+        # to preserve that (the payload still runs the oneOf validator).
+        # NOTE: this is only safe while coerce targets have primitive-only
+        # oneOf members; a member that is itself a wrapper model would be
+        # incorrectly unwrapped here.
+        if isinstance(value, BaseModel) and hasattr(value, "actual_instance"):
+            return cls(value.actual_instance)
+        # A serialized wrapper dict (wrapper.dict() -> {"actual_instance": ...}):
+        # rebuild the wrapper from its fields. Any other dict falls through to
+        # cls(value) and fails the oneOf validation loudly — stock pydantic
+        # would instead build a wrapper with actual_instance=None and silently
+        # serialize the field as null.
+        if isinstance(value, dict) and "actual_instance" in value:
+            return cls(**value)
+        # Anything else is a raw member value (str, int, member model instance, ...):
+        # wrap it so the oneOf validator can match it against the allowed schemas.
+        return cls(value)
 
 
     def __init__(self, *args, **kwargs) -> None:

@@ -45,6 +45,17 @@ class ContainerQosPatch(BaseModel):
         allow_population_by_field_name = True
         validate_assignment = True
 
+    @classmethod
+    def validate(cls, value):
+        """Backwards compatibility: coerce a legacy model instance into ContainerQosPatch."""
+        if isinstance(value, BaseModel) and not isinstance(value, cls):
+            import warnings
+            warnings.warn(
+                "Passing {} here is deprecated; use ContainerQosPatch instead.".format(type(value).__name__),
+                DeprecationWarning, stacklevel=3)
+            return cls(**value.to_dict())
+        return super().validate(value)
+
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
         return pprint.pformat(self.to_dict(include_readonly=True))

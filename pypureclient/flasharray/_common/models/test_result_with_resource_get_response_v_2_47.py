@@ -21,9 +21,9 @@ from typing import Set, Dict, Any
 from typing import List, Optional
 
 try:
-    from pydantic.v1 import BaseModel, Field, StrictInt, conlist
+    from pydantic.v1 import BaseModel, Field, StrictBool, StrictInt, StrictStr, conlist
 except ModuleNotFoundError:
-    from pydantic import BaseModel, Field, StrictInt, conlist
+    from pydantic import BaseModel, Field, StrictBool, StrictInt, StrictStr, conlist
 from pypureclient.flasharray._common.models.errorcontextresponse_errors_v_2_38 import ErrorcontextresponseErrors
 from pypureclient.flasharray._common.models.test_result_with_resource_v_2_47 import TestResultWithResource
 
@@ -32,10 +32,12 @@ class TestResultWithResourceGetResponse(BaseModel):
     """
     TestResultWithResourceGetResponse
     """
+    continuation_token: Optional[StrictStr] = Field(default=None, description="Continuation token that can be provided in the `continuation_token` query param to get the next page of data. If you use the continuation token to page through data you are guaranteed to get all items exactly once regardless of how items are modified. If an item is added or deleted during the pagination then it may or may not be returned. The continuation token is generated if the limit is less than the remaining number of items, and the default sort is used (no sort is specified).")
+    more_items_remaining: Optional[StrictBool] = Field(default=None, description="Returns a value of `true` if subsequent items can be retrieved.")
     total_item_count: Optional[StrictInt] = Field(default=None, description="The total number of records after applying all filter query parameters. The `total_item_count` will be calculated if and only if the corresponding query parameter `total_item_count` is set to `true`. If this query parameter is not set or set to `false`, a value of `null` will be returned.")
     errors: Optional[conlist(ErrorcontextresponseErrors)] = Field(default=None, description="The list of errors encountered when attempting to perform an operation.")
     items: Optional[conlist(TestResultWithResource)] = None
-    __properties = ["total_item_count", "errors", "items"]
+    __properties = ["continuation_token", "more_items_remaining", "total_item_count", "errors", "items"]
 
     class Config:
         """Pydantic configuration"""
@@ -118,6 +120,8 @@ class TestResultWithResourceGetResponse(BaseModel):
             return TestResultWithResourceGetResponse.parse_obj(obj)
 
         _obj = TestResultWithResourceGetResponse.construct(_fields_set=None, **{
+            "continuation_token": obj.get("continuation_token"),
+            "more_items_remaining": obj.get("more_items_remaining"),
             "total_item_count": obj.get("total_item_count"),
             "errors": [ErrorcontextresponseErrors.from_dict(_item) for _item in obj.get("errors")] if obj.get("errors") is not None else None,
             "items": [TestResultWithResource.from_dict(_item) for _item in obj.get("items")] if obj.get("items") is not None else None

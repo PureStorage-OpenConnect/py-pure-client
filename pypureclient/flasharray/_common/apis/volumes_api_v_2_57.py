@@ -43,7 +43,7 @@ from pypureclient.flasharray._common.models.tag_response_v_2_50 import TagRespon
 from pypureclient.flasharray._common.models.test_result_with_resource_with_id_post_response_v_2_50 import TestResultWithResourceWithIdPostResponse
 from pypureclient.flasharray._common.models.volume_batch_post_v_2_50 import VolumeBatchPost
 from pypureclient.flasharray._common.models.volume_get_response_v_2_55 import VolumeGetResponse
-from pypureclient.flasharray._common.models.volume_patch_v_2_57 import VolumePatch
+from pypureclient.flasharray._common.models.volume_patch_v_2_55 import VolumePatch
 from pypureclient.flasharray._common.models.volume_post_v_2_55 import VolumePost
 from pypureclient.flasharray._common.models.volume_qos_get_response_v_2_50 import VolumeQosGetResponse
 from pypureclient.flasharray._common.models.volume_response_v_2_55 import VolumeResponse
