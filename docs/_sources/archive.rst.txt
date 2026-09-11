@@ -6,6 +6,7 @@ Documentation for previous releases could be found below
 .. toctree::
    :maxdepth: 1
 
+    1.94.0 <archive/1.94.0/index>
     1.93.0 <archive/1.93.0/index>
     1.92.0 <archive/1.92.0/index>
     1.91.0 <archive/1.91.0/index>
@@ -20,4 +21,3 @@ Documentation for previous releases could be found below
     1.83.1 <archive/1.83.1/index>
     1.83.0 <archive/1.83.0/index>
     1.82.0 <archive/1.82.0/index>
-    1.81.0 <archive/1.81.0/index>

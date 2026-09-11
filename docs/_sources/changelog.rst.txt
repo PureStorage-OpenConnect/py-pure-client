@@ -6,6 +6,7 @@ A log of changes by version and date.
 ======= ========== =====
 Version Date       Notes
 ======= ========== =====
+1.94.1  09/10/2026 Backward compatibility for QoS types
 1.94.0  09/08/2026 Added FlashArray 2.57 client
 1.93.0  07/28/2026 Added Pure1  client
 1.92.0  07/24/2026 Added FlashBlade 2.28 client
