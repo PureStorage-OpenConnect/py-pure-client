@@ -64,7 +64,7 @@ jobs:
       - name: Run rpmlint
         shell: bash
         run: |
-          find ./rpm_dist -name "*.rpm" -exec rpmlint --config .github/.templates/rpm/rpmlint-rules.toml {} + || true
+          rpmlint --config .github/.templates/rpm/rpmlint-rules.toml "$RPM_FILE" || true
 
       - name: Upload .rpm Artifact
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
