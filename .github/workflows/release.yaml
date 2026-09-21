@@ -21,6 +21,7 @@ jobs:
     runs-on: ubuntu-24.04
     permissions:
       contents: write
+      actions: write # needed for `gh workflow run`
 
     steps:
       - name: Checkout Code
@@ -72,3 +73,12 @@ jobs:
           gh release create "$VERSION" \
             --title "$VERSION" \
             --notes-file release_notes.md
+
+      - name: Trigger RPM and DEB packaging
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          for wf in rpm-package.yaml debian-package.yaml; do
+            gh workflow run "$wf" --ref "$VERSION" -f attach_to_release=true
+          done

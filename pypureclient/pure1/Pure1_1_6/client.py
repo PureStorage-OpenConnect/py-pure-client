@@ -5307,12 +5307,14 @@ class Client(object):
                 # Call was successful (200)
                 return self._create_valid_response(response, api_function, kwargs)
             except ApiException as error:
-                # If no chance for retries, return the error
-                if retries == 0:
-                    return self._create_error_response(original_auth_error or error)
-                # If bad request or not found, return the error (it will never work)
-                elif error.status in [400, 404]:
+                # If bad request or not found, return the error (it will never work).
+                # Checked before the retry budget so that the retry after a re-auth reports
+                # its own error instead of the original auth error (PURE-501039)
+                if error.status in [400, 404]:
                     return self._create_error_response(error)
+                # If no chance for retries, return the error
+                elif retries == 0:
+                    return self._create_error_response(original_auth_error or error)
                 # If authentication error, reset access token and retry once
                 elif error.status == 403:
                     original_auth_error = error
