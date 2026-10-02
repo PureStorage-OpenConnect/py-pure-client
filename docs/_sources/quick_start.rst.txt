@@ -261,6 +261,35 @@ An example of querying sustainability information.
         print(insight)
 
 
+Rate limiting and busy servers
+------------------------------
+
+Arrays and Pure1 rate limit the REST API and answer HTTP 429 (Too Many
+Requests) when a client sends too much. An overloaded array answers HTTP 503
+(Service Unavailable) or HTTP 500 with the error message ``Server is busy``.
+The client handles all three for you: it waits for the time the server asks
+for in the ``Retry-After`` header (or ``RateLimit-Reset`` when absent, or a
+short exponential backoff when neither is sent), adds up to half a second of
+random jitter, and sends the request again, up to ``retries`` times
+(default is 5). This also covers login and the calls the item iterator makes
+to fetch more pages. Other HTTP 500 errors are not retried.
+
+``retries`` caps how many times the client retries and ``timeout`` caps each
+HTTP round trip. Neither caps the wait between retries: that is whatever the
+server asks for.
+
+.. code-block:: python
+
+    client = flasharray.Client(target, api_token=api_token, retries=3)
+
+Responses carry the server's rate limit state in
+``response.headers.ratelimit_limit`` (for example ``100;w=1;burst=40``),
+``response.headers.ratelimit_remaining`` and ``response.headers.ratelimit_reset``.
+Use them to slow down before the server answers 429. The older
+``x_ratelimit_*`` attributes are deprecated and will be removed in the next
+major release.
+
+
 Filtering
 ---------
 

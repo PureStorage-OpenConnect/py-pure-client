@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shared References &mdash; py-pure-client 1.94.2 documentation</title>
+  <title>Shared References &mdash; py-pure-client 1.95.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/autodoc_pydantic.css" type="text/css" />
@@ -33,7 +33,7 @@
             <a href="index.html" class="icon icon-home"> py-pure-client
           </a>
               <div class="version">
-                1.94
+                1.95
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -881,25 +881,27 @@ binary. Defaults to None.</p></li>
 <h3>ResponseHeaders<a class="headerlink" href="#responseheaders" title="Permalink to this heading"></a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="pypureclient.responses.ResponseHeaders">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypureclient.responses.</span></span><span class="sig-name descname"><span class="pre">ResponseHeaders</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_request_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_ratelimit_limit_second</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_ratelimit_limit_minute</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_ratelimit_remaining_second</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_ratelimit_remaining_minute</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypureclient.responses.ResponseHeaders" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypureclient.responses.</span></span><span class="sig-name descname"><span class="pre">ResponseHeaders</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_request_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_ratelimit_limit_second</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_ratelimit_limit_minute</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_ratelimit_remaining_second</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_ratelimit_remaining_minute</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ratelimit_limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ratelimit_remaining</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ratelimit_reset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypureclient.responses.ResponseHeaders" title="Permalink to this definition"></a></dt>
 <dd><p>An object that includes headers from the server response.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pypureclient.responses.ResponseHeaders.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_request_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_ratelimit_limit_second</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_ratelimit_limit_minute</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_ratelimit_remaining_second</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_ratelimit_remaining_minute</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypureclient.responses.ResponseHeaders.__init__" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_request_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_ratelimit_limit_second</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_ratelimit_limit_minute</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_ratelimit_remaining_second</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_ratelimit_remaining_minute</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ratelimit_limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ratelimit_remaining</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ratelimit_reset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypureclient.responses.ResponseHeaders.__init__" title="Permalink to this definition"></a></dt>
 <dd><p>Initialize a ResponseHeaders.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>x_request_id</strong> (<em>str</em>) – The X-Request-ID from the client or generated
 by the server.</p></li>
-<li><p><strong>x_ratelimit_limit_second</strong> (<em>int</em>) – The number of requests available
-per second.</p></li>
-<li><p><strong>x_ratelimit_limit_minute</strong> (<em>int</em>) – The number of requests available
-per minute.</p></li>
-<li><p><strong>x_ratelimit_remaining_second</strong> (<em>int</em>) – The number of requests remaining
-in that second.</p></li>
-<li><p><strong>x_ratelimit_remaining_minute</strong> (<em>int</em>) – The number of requests remaining
-in that minute.</p></li>
+<li><p><strong>x_ratelimit_limit_second</strong> (<em>str</em>) – Deprecated, use <code class="docutils literal notranslate"><span class="pre">ratelimit_limit</span></code>.</p></li>
+<li><p><strong>x_ratelimit_limit_minute</strong> (<em>str</em>) – Deprecated, use <code class="docutils literal notranslate"><span class="pre">ratelimit_limit</span></code>.</p></li>
+<li><p><strong>x_ratelimit_remaining_second</strong> (<em>str</em>) – Deprecated, use <code class="docutils literal notranslate"><span class="pre">ratelimit_remaining</span></code>.</p></li>
+<li><p><strong>x_ratelimit_remaining_minute</strong> (<em>str</em>) – Deprecated, use <code class="docutils literal notranslate"><span class="pre">ratelimit_remaining</span></code>.</p></li>
+<li><p><strong>ratelimit_limit</strong> (<em>str</em>) – The rate limit policy of the endpoint, for
+example <code class="docutils literal notranslate"><span class="pre">100;w=1;burst=40</span></code>: 100 requests per 1 second window,
+up to 40 requests at once.</p></li>
+<li><p><strong>ratelimit_remaining</strong> (<em>str</em>) – Requests left in the burst budget after
+this request.</p></li>
+<li><p><strong>ratelimit_reset</strong> (<em>str</em>) – Seconds until the burst budget is full again.</p></li>
 </ul>
 </dd>
 </dl>
