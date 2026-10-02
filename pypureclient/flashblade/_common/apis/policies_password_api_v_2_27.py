@@ -350,3 +350,5 @@ class PoliciesPasswordApi:
     api227_password_policies_patch_with_http_info = password_policies_patch_with_http_info
     api228_password_policies_get_with_http_info = password_policies_get_with_http_info
     api228_password_policies_patch_with_http_info = password_policies_patch_with_http_info
+    api229_password_policies_get_with_http_info = password_policies_get_with_http_info
+    api229_password_policies_patch_with_http_info = password_policies_patch_with_http_info

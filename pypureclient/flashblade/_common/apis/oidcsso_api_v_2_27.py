@@ -603,3 +603,7 @@ class OIDCSSOApi:
     api228_sso_oidc_idps_get_with_http_info = sso_oidc_idps_get_with_http_info
     api228_sso_oidc_idps_patch_with_http_info = sso_oidc_idps_patch_with_http_info
     api228_sso_oidc_idps_post_with_http_info = sso_oidc_idps_post_with_http_info
+    api229_sso_oidc_idps_delete_with_http_info = sso_oidc_idps_delete_with_http_info
+    api229_sso_oidc_idps_get_with_http_info = sso_oidc_idps_get_with_http_info
+    api229_sso_oidc_idps_patch_with_http_info = sso_oidc_idps_patch_with_http_info
+    api229_sso_oidc_idps_post_with_http_info = sso_oidc_idps_post_with_http_info

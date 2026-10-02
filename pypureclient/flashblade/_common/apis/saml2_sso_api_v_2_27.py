@@ -892,3 +892,9 @@ class SAML2SSOApi:
     api228_sso_saml2_idps_post_with_http_info = sso_saml2_idps_post_with_http_info
     api228_sso_saml2_idps_test_get_with_http_info = sso_saml2_idps_test_get_with_http_info
     api228_sso_saml2_idps_test_patch_with_http_info = sso_saml2_idps_test_patch_with_http_info
+    api229_sso_saml2_idps_delete_with_http_info = sso_saml2_idps_delete_with_http_info
+    api229_sso_saml2_idps_get_with_http_info = sso_saml2_idps_get_with_http_info
+    api229_sso_saml2_idps_patch_with_http_info = sso_saml2_idps_patch_with_http_info
+    api229_sso_saml2_idps_post_with_http_info = sso_saml2_idps_post_with_http_info
+    api229_sso_saml2_idps_test_get_with_http_info = sso_saml2_idps_test_get_with_http_info
+    api229_sso_saml2_idps_test_patch_with_http_info = sso_saml2_idps_test_patch_with_http_info

@@ -438,3 +438,6 @@ class ResourceAccessesApi:
     api228_resource_accesses_batch_post_with_http_info = resource_accesses_batch_post_with_http_info
     api228_resource_accesses_delete_with_http_info = resource_accesses_delete_with_http_info
     api228_resource_accesses_get_with_http_info = resource_accesses_get_with_http_info
+    api229_resource_accesses_batch_post_with_http_info = resource_accesses_batch_post_with_http_info
+    api229_resource_accesses_delete_with_http_info = resource_accesses_delete_with_http_info
+    api229_resource_accesses_get_with_http_info = resource_accesses_get_with_http_info

@@ -718,3 +718,8 @@ class KeytabsApi:
     api228_keytabs_get_with_http_info = keytabs_get_with_http_info
     api228_keytabs_post_with_http_info = keytabs_post_with_http_info
     api228_keytabs_upload_post_with_http_info = keytabs_upload_post_with_http_info
+    api229_keytabs_delete_with_http_info = keytabs_delete_with_http_info
+    api229_keytabs_download_get_with_http_info = keytabs_download_get_with_http_info
+    api229_keytabs_get_with_http_info = keytabs_get_with_http_info
+    api229_keytabs_post_with_http_info = keytabs_post_with_http_info
+    api229_keytabs_upload_post_with_http_info = keytabs_upload_post_with_http_info

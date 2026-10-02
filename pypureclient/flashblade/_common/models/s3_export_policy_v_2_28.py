@@ -25,7 +25,7 @@ try:
 except ModuleNotFoundError:
     from pydantic import BaseModel, Field, StrictBool, StrictStr, conlist
 from pypureclient.flashblade._common.models.fixed_reference_v_2_22 import FixedReference
-from pypureclient.flashblade._common.models.s3_export_policy_all_of_rules_v_2_28 import S3ExportPolicyAllOfRules
+from pypureclient.flashblade._common.models.s3_export_policy_all_of_rules_v_2_29 import S3ExportPolicyAllOfRules
 
 
 class S3ExportPolicy(BaseModel):

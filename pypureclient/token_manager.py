@@ -8,6 +8,7 @@ from cryptography.hazmat.primitives.asymmetric import rsa
 from cryptography.hazmat.primitives.serialization import load_pem_private_key, load_ssh_private_key
 
 from ._helpers import create_api_client
+from ._rate_limit import call_with_rate_limit_retries
 from ._transport.configuration import Configuration
 from ._transport.rest import ApiException
 from .exceptions import PureError
@@ -225,7 +226,7 @@ class TokenManager:
         }
         try:
             with create_api_client(self._configuration, self._user_agent) as api_client:
-                response_data = api_client.call_api(
+                response_data = call_with_rate_limit_retries(lambda: api_client.call_api(
                     resource_path=self._token_endpoint,
                     method="POST",
                     header_params=headers,
@@ -233,7 +234,7 @@ class TokenManager:
                     response_types_map={"200": "bytearray"},
                     _return_http_data_only=True,
                     _request_timeout=self._timeout,
-                )
+                ))
                 response = json.loads(response_data.decode("utf-8"))
                 if "access_token" in response:
                     return response["access_token"]
