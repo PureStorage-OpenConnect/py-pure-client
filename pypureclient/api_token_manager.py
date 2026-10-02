@@ -5,6 +5,7 @@ from .exceptions import PureError
 from .keywords import Headers
 
 from ._helpers import create_api_client
+from ._rate_limit import call_with_rate_limit_retries
 from ._transport.api_response import ApiResponse
 from ._transport.rest import ApiException
 from ._transport.configuration import Configuration
@@ -73,7 +74,8 @@ class APITokenManager(object):
             PureError: If there was an error retrieving an session token.
         """
         try:
-            response = self.__call_endpoint(self._token_endpoint, {Headers.api_token: self._api_token})
+            response = call_with_rate_limit_retries(
+                lambda: self.__call_endpoint(self._token_endpoint, {Headers.api_token: self._api_token}))
             return str(response.headers[Headers.x_auth_token])
         except ApiException as e:
             raise PureError("Failed to retrieve session token with error: {body} ({status})".format(body=e.body, status=e.status))

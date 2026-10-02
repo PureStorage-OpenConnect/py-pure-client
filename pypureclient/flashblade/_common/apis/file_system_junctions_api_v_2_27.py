@@ -549,3 +549,6 @@ class FileSystemJunctionsApi:
     api228_file_system_junctions_delete_with_http_info = file_system_junctions_delete_with_http_info
     api228_file_system_junctions_get_with_http_info = file_system_junctions_get_with_http_info
     api228_file_system_junctions_post_with_http_info = file_system_junctions_post_with_http_info
+    api229_file_system_junctions_delete_with_http_info = file_system_junctions_delete_with_http_info
+    api229_file_system_junctions_get_with_http_info = file_system_junctions_get_with_http_info
+    api229_file_system_junctions_post_with_http_info = file_system_junctions_post_with_http_info

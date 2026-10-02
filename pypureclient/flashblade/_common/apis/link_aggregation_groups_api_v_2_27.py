@@ -603,3 +603,7 @@ class LinkAggregationGroupsApi:
     api228_link_aggregation_groups_get_with_http_info = link_aggregation_groups_get_with_http_info
     api228_link_aggregation_groups_patch_with_http_info = link_aggregation_groups_patch_with_http_info
     api228_link_aggregation_groups_post_with_http_info = link_aggregation_groups_post_with_http_info
+    api229_link_aggregation_groups_delete_with_http_info = link_aggregation_groups_delete_with_http_info
+    api229_link_aggregation_groups_get_with_http_info = link_aggregation_groups_get_with_http_info
+    api229_link_aggregation_groups_patch_with_http_info = link_aggregation_groups_patch_with_http_info
+    api229_link_aggregation_groups_post_with_http_info = link_aggregation_groups_post_with_http_info

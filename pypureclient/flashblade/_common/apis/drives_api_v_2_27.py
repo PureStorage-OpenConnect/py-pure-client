@@ -215,3 +215,4 @@ class DrivesApi:
     # Method Aliases
     api227_drives_get_with_http_info = drives_get_with_http_info
     api228_drives_get_with_http_info = drives_get_with_http_info
+    api229_drives_get_with_http_info = drives_get_with_http_info

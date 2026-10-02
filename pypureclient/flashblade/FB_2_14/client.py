@@ -1,3 +1,4 @@
+import functools
 import json
 import ssl
 import time
@@ -24,6 +25,7 @@ from pypureclient.keywords import Headers, Responses, Parameters
 from pypureclient.properties import Property, Filter
 from pypureclient.responses import ValidResponse, ErrorResponse, ApiError, ItemIterator, ResponseHeaders
 from pypureclient.token_manager import TokenManager
+from pypureclient._rate_limit import is_overloaded, rate_limit_wait
 
 from pypureclient._helpers import create_api_client
 
@@ -26097,31 +26099,58 @@ class Client(object):
         if kwargs.get('authorization') is not None:
             warnings.warn("authorization parameter is deprecated, and will be removed soon.", DeprecationWarning)
 
+        api_function = getattr(self.__get_api_instance(api_class_name), api_function_name)
+        # The item iterator fetches later pages through the same retry logic
+        endpoint = functools.partial(self._call_with_retries, api_function)
+        try:
+            response = endpoint(**kwargs)
+        except ApiException as error:
+            return self._create_error_response(error)
+        # Call was successful (200)
+        if response_creator:
+            return response_creator(response, endpoint, kwargs)
+        else:
+            return self._create_valid_response(response, endpoint, kwargs)
+
+    def _call_with_retries(self, api_function, **kwargs):
+        """
+        Call the Swagger-generated function. Retry on errors that may not
+        persist: 401 and API-token 403 (re-authenticate once), 429, 503 and
+        500 "Server is busy" (wait as long as the server asks, or back off)
+        and HTTP status codes above 500.
+
+        Args:
+            api_function (function): Swagger-generated function to call.
+            kwargs: kwargs to pass to the function.
+
+        Returns:
+            ApiResponse: The raw response of a successful call.
+
+        Raises:
+            ApiException: The last error once retries are exhausted, or an
+                error that is not worth retrying.
+            PureError: If the Swagger client itself failed.
+        """
         retries = self._retries
         original_auth_error = None
-        api_function = getattr(self.__get_api_instance(api_class_name), api_function_name)
+        overload_hits = 0
         while True:
             try:
-                response = api_function(**kwargs)
-                # Call was successful (200)
-                if response_creator:
-                    return response_creator(response, api_function, kwargs)
-                else:
-                    return self._create_valid_response(response, api_function, kwargs)
+                return api_function(**kwargs)
             except ApiException as error:
-                # If bad request or not found, return the error
+                # If bad request or not found, raise the error
                 # Checked before the retry budget so that the retry after a re-auth reports
-                # its own error instead of the original auth error 
+                # its own error instead of the original auth error
                 if error.status in [400, 404]:
-                    return self._create_error_response(error)
-                # If no chance for retries, return the error
+                    raise
+                # If no chance for retries, raise the error
                 elif retries == 0:
-                    return self._create_error_response(original_auth_error or error)
+                    raise original_auth_error or error
                 # FlashBlade returns 403 for both expired API-token sessions and permission failures.
-                # Refresh an API-token session once; a second 403 returns the original error.
+                # Refresh an API-token session once; a second 403 raises the original error.
                 elif error.status == 403:
                     if not isinstance(self._token_man, APITokenManager):
-                        return self._create_error_response(error)
+                        raise
                     original_auth_error = error
                     retries = 1
                     self._set_auth_header(refresh=True)
@@ -26130,17 +26159,14 @@ class Client(object):
                     original_auth_error = error
                     retries = 1
                     self._set_auth_header(refresh=True)
-                # If rate limit error, wait the proper time and try again
-                elif error.status == 429:
-                    # If the the minute limit hit, wait that long
-                    if (int(error.headers.get(Headers.x_ratelimit_remaining_min))
-                            == int(error.headers.get(Headers.x_ratelimit_min))):
-                        time.sleep(60)
-                    # Otherwise it was the second limit and only wait a second
-                    time.sleep(1)
-                # If some internal server error we know nothing about, return
+                # If the server is overloaded (429, 503, 500 "Server is busy"),
+                # wait the proper time and try again
+                elif is_overloaded(error):
+                    time.sleep(rate_limit_wait(error.headers, overload_hits))
+                    overload_hits += 1
+                # If some internal server error we know nothing about, raise
                 elif error.status == 500:
-                    return self._create_error_response(error)
+                    raise
                 # If internal server errors that has to do with timeouts, try again
                 elif error.status > 500:
                     pass

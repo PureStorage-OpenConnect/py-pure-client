@@ -23,6 +23,9 @@ class Headers(object):
     x_ratelimit_min = 'X-RateLimit-Limit-minute'
     x_ratelimit_remaining_sec = 'X-RateLimit-Remaining-second'
     x_ratelimit_remaining_min = 'X-RateLimit-Remaining-minute'
+    ratelimit_limit = 'RateLimit-Limit'
+    ratelimit_remaining = 'RateLimit-Remaining'
+    ratelimit_reset = 'RateLimit-Reset'
 
 
 class Responses(object):

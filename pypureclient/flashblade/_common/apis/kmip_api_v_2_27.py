@@ -728,3 +728,8 @@ class KMIPApi:
     api228_kmip_patch_with_http_info = kmip_patch_with_http_info
     api228_kmip_post_with_http_info = kmip_post_with_http_info
     api228_kmip_test_get_with_http_info = kmip_test_get_with_http_info
+    api229_kmip_delete_with_http_info = kmip_delete_with_http_info
+    api229_kmip_get_with_http_info = kmip_get_with_http_info
+    api229_kmip_patch_with_http_info = kmip_patch_with_http_info
+    api229_kmip_post_with_http_info = kmip_post_with_http_info
+    api229_kmip_test_get_with_http_info = kmip_test_get_with_http_info

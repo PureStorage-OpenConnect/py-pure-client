@@ -657,3 +657,7 @@ class ObjectStoreAccountsApi:
     api228_object_store_accounts_get_with_http_info = object_store_accounts_get_with_http_info
     api228_object_store_accounts_patch_with_http_info = object_store_accounts_patch_with_http_info
     api228_object_store_accounts_post_with_http_info = object_store_accounts_post_with_http_info
+    api229_object_store_accounts_delete_with_http_info = object_store_accounts_delete_with_http_info
+    api229_object_store_accounts_get_with_http_info = object_store_accounts_get_with_http_info
+    api229_object_store_accounts_patch_with_http_info = object_store_accounts_patch_with_http_info
+    api229_object_store_accounts_post_with_http_info = object_store_accounts_post_with_http_info

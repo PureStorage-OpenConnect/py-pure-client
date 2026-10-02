@@ -9,27 +9,33 @@ class ResponseHeaders(object):
     """
 
     def __init__(self, x_request_id, x_ratelimit_limit_second, x_ratelimit_limit_minute,
-                 x_ratelimit_remaining_second, x_ratelimit_remaining_minute):
+                 x_ratelimit_remaining_second, x_ratelimit_remaining_minute,
+                 ratelimit_limit=None, ratelimit_remaining=None, ratelimit_reset=None):
         """
         Initialize a ResponseHeaders.
 
         Args:
             x_request_id (str): The X-Request-ID from the client or generated
                 by the server.
-            x_ratelimit_limit_second (int): The number of requests available
-                per second.
-            x_ratelimit_limit_minute (int): The number of requests available
-                per minute.
-            x_ratelimit_remaining_second (int): The number of requests remaining
-                in that second.
-            x_ratelimit_remaining_minute (int): The number of requests remaining
-                in that minute.
+            x_ratelimit_limit_second (str): Deprecated, use ``ratelimit_limit``.
+            x_ratelimit_limit_minute (str): Deprecated, use ``ratelimit_limit``.
+            x_ratelimit_remaining_second (str): Deprecated, use ``ratelimit_remaining``.
+            x_ratelimit_remaining_minute (str): Deprecated, use ``ratelimit_remaining``.
+            ratelimit_limit (str): The rate limit policy of the endpoint, for
+                example ``100;w=1;burst=40``: 100 requests per 1 second window,
+                up to 40 requests at once.
+            ratelimit_remaining (str): Requests left in the burst budget after
+                this request.
+            ratelimit_reset (str): Seconds until the burst budget is full again.
         """
         self.x_request_id = x_request_id
         self.x_ratelimit_limit_second = x_ratelimit_limit_second
         self.x_ratelimit_limit_minute = x_ratelimit_limit_minute
         self.x_ratelimit_remaining_second = x_ratelimit_remaining_second
         self.x_ratelimit_remaining_minute = x_ratelimit_remaining_minute
+        self.ratelimit_limit = ratelimit_limit
+        self.ratelimit_remaining = ratelimit_remaining
+        self.ratelimit_reset = ratelimit_reset
 
     def to_dict(self):
         """
@@ -57,7 +63,10 @@ def _create_response_headers(headers):
                                            headers.get(Headers.x_ratelimit_sec, None),
                                            headers.get(Headers.x_ratelimit_min, None),
                                            headers.get(Headers.x_ratelimit_remaining_sec, None),
-                                           headers.get(Headers.x_ratelimit_remaining_min, None))
+                                           headers.get(Headers.x_ratelimit_remaining_min, None),
+                                           headers.get(Headers.ratelimit_limit, None),
+                                           headers.get(Headers.ratelimit_remaining, None),
+                                           headers.get(Headers.ratelimit_reset, None))
     return response_headers
 
 

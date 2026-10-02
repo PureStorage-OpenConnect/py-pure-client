@@ -215,3 +215,4 @@ class BladesApi:
     # Method Aliases
     api227_blades_get_with_http_info = blades_get_with_http_info
     api228_blades_get_with_http_info = blades_get_with_http_info
+    api229_blades_get_with_http_info = blades_get_with_http_info
