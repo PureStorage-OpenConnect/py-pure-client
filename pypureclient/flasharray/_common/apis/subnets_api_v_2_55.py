@@ -658,3 +658,7 @@ class SubnetsApi:
     api257_subnets_get_with_http_info = subnets_get_with_http_info
     api257_subnets_patch_with_http_info = subnets_patch_with_http_info
     api257_subnets_post_with_http_info = subnets_post_with_http_info
+    api258_subnets_delete_with_http_info = subnets_delete_with_http_info
+    api258_subnets_get_with_http_info = subnets_get_with_http_info
+    api258_subnets_patch_with_http_info = subnets_patch_with_http_info
+    api258_subnets_post_with_http_info = subnets_post_with_http_info

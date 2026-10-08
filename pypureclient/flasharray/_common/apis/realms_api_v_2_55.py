@@ -2421,3 +2421,16 @@ class RealmsApi:
     api257_realms_tags_batch_put_with_http_info = realms_tags_batch_put_with_http_info
     api257_realms_tags_delete_with_http_info = realms_tags_delete_with_http_info
     api257_realms_tags_get_with_http_info = realms_tags_get_with_http_info
+    api258_realms_delete_with_http_info = realms_delete_with_http_info
+    api258_realms_get_with_http_info = realms_get_with_http_info
+    api258_realms_members_delete_with_http_info = realms_members_delete_with_http_info
+    api258_realms_members_get_with_http_info = realms_members_get_with_http_info
+    api258_realms_members_post_with_http_info = realms_members_post_with_http_info
+    api258_realms_patch_with_http_info = realms_patch_with_http_info
+    api258_realms_performance_get_with_http_info = realms_performance_get_with_http_info
+    api258_realms_post_with_http_info = realms_post_with_http_info
+    api258_realms_qos_get_with_http_info = realms_qos_get_with_http_info
+    api258_realms_space_get_with_http_info = realms_space_get_with_http_info
+    api258_realms_tags_batch_put_with_http_info = realms_tags_batch_put_with_http_info
+    api258_realms_tags_delete_with_http_info = realms_tags_delete_with_http_info
+    api258_realms_tags_get_with_http_info = realms_tags_get_with_http_info

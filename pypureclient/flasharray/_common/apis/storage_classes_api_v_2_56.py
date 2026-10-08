@@ -230,3 +230,4 @@ class StorageClassesApi:
     # Method Aliases
     api256_storage_classes_members_get_with_http_info = storage_classes_members_get_with_http_info
     api257_storage_classes_members_get_with_http_info = storage_classes_members_get_with_http_info
+    api258_storage_classes_members_get_with_http_info = storage_classes_members_get_with_http_info

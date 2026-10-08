@@ -1868,3 +1868,13 @@ class VolumeSnapshotsApi:
     api257_volume_snapshots_tags_get_with_http_info = volume_snapshots_tags_get_with_http_info
     api257_volume_snapshots_test_post_with_http_info = volume_snapshots_test_post_with_http_info
     api257_volume_snapshots_transfer_get_with_http_info = volume_snapshots_transfer_get_with_http_info
+    api258_volume_snapshots_batch_post_with_http_info = volume_snapshots_batch_post_with_http_info
+    api258_volume_snapshots_delete_with_http_info = volume_snapshots_delete_with_http_info
+    api258_volume_snapshots_get_with_http_info = volume_snapshots_get_with_http_info
+    api258_volume_snapshots_patch_with_http_info = volume_snapshots_patch_with_http_info
+    api258_volume_snapshots_post_with_http_info = volume_snapshots_post_with_http_info
+    api258_volume_snapshots_tags_batch_put_with_http_info = volume_snapshots_tags_batch_put_with_http_info
+    api258_volume_snapshots_tags_delete_with_http_info = volume_snapshots_tags_delete_with_http_info
+    api258_volume_snapshots_tags_get_with_http_info = volume_snapshots_tags_get_with_http_info
+    api258_volume_snapshots_test_post_with_http_info = volume_snapshots_test_post_with_http_info
+    api258_volume_snapshots_transfer_get_with_http_info = volume_snapshots_transfer_get_with_http_info
