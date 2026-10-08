@@ -6,6 +6,7 @@ A log of changes by version and date.
 ======= ========== =====
 Version Date       Notes
 ======= ========== =====
+1.96.0  10/08/2026 Added FlashArray 2.58 client
 1.95.0  10/01/2026 Added FlashBlade 2.29 client
 1.94.2  09/21/2026 returns the original 4xx error from the re-authenticated retry
 1.94.1  09/10/2026 Backward compatibility for QoS types
