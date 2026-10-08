@@ -1197,3 +1197,10 @@ class SyslogApi:
     api257_syslog_servers_settings_get_with_http_info = syslog_servers_settings_get_with_http_info
     api257_syslog_servers_settings_patch_with_http_info = syslog_servers_settings_patch_with_http_info
     api257_syslog_servers_test_get_with_http_info = syslog_servers_test_get_with_http_info
+    api258_syslog_servers_delete_with_http_info = syslog_servers_delete_with_http_info
+    api258_syslog_servers_get_with_http_info = syslog_servers_get_with_http_info
+    api258_syslog_servers_patch_with_http_info = syslog_servers_patch_with_http_info
+    api258_syslog_servers_post_with_http_info = syslog_servers_post_with_http_info
+    api258_syslog_servers_settings_get_with_http_info = syslog_servers_settings_get_with_http_info
+    api258_syslog_servers_settings_patch_with_http_info = syslog_servers_settings_patch_with_http_info
+    api258_syslog_servers_test_get_with_http_info = syslog_servers_test_get_with_http_info

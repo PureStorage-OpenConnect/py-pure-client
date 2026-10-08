@@ -1049,3 +1049,9 @@ class DataSealingKeysApi:
     api257_data_sealing_keys_revoke_post_with_http_info = data_sealing_keys_revoke_post_with_http_info
     api257_data_sealing_keys_rotate_post_with_http_info = data_sealing_keys_rotate_post_with_http_info
     api257_data_sealing_keys_test_get_with_http_info = data_sealing_keys_test_get_with_http_info
+    api258_data_sealing_keys_get_with_http_info = data_sealing_keys_get_with_http_info
+    api258_data_sealing_keys_patch_with_http_info = data_sealing_keys_patch_with_http_info
+    api258_data_sealing_keys_post_with_http_info = data_sealing_keys_post_with_http_info
+    api258_data_sealing_keys_revoke_post_with_http_info = data_sealing_keys_revoke_post_with_http_info
+    api258_data_sealing_keys_rotate_post_with_http_info = data_sealing_keys_rotate_post_with_http_info
+    api258_data_sealing_keys_test_get_with_http_info = data_sealing_keys_test_get_with_http_info

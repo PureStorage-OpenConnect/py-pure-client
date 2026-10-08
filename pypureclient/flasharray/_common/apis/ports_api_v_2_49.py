@@ -429,3 +429,5 @@ class PortsApi:
     api256_ports_initiators_get_with_http_info = ports_initiators_get_with_http_info
     api257_ports_get_with_http_info = ports_get_with_http_info
     api257_ports_initiators_get_with_http_info = ports_initiators_get_with_http_info
+    api258_ports_get_with_http_info = ports_get_with_http_info
+    api258_ports_initiators_get_with_http_info = ports_initiators_get_with_http_info

@@ -744,3 +744,7 @@ class FileSystemsApi:
     api257_file_systems_get_with_http_info = file_systems_get_with_http_info
     api257_file_systems_patch_with_http_info = file_systems_patch_with_http_info
     api257_file_systems_post_with_http_info = file_systems_post_with_http_info
+    api258_file_systems_delete_with_http_info = file_systems_delete_with_http_info
+    api258_file_systems_get_with_http_info = file_systems_get_with_http_info
+    api258_file_systems_patch_with_http_info = file_systems_patch_with_http_info
+    api258_file_systems_post_with_http_info = file_systems_post_with_http_info

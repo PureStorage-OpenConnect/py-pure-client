@@ -1,109 +1,127 @@
-# API Changelog 2.28 vs. 2.29
+# API Changelog 2.57 vs. 2.58
 
-## GET /arrays/defaults
+## GET /antivirus/targets
 -  endpoint added
 
 
-## PATCH /arrays/defaults
+## DELETE /antivirus/targets/icap
 -  endpoint added
 
 
-## GET /arrays/ssh-certificate-authority-policies
--  added the success response with the status '207'
-
-
-## GET /arrays/telemetry-metrics-policies
+## GET /antivirus/targets/icap
 -  endpoint added
 
 
-## GET /bucket-replica-links
--  added the optional property 'items/version_deletes_enabled' to the response with the '200' status
--  added the optional property 'items/version_deletes_enabled' to the response with the '207' status
--  added the optional property 'total/version_deletes_enabled' to the response with the '200' status
--  added the optional property 'total/version_deletes_enabled' to the response with the '207' status
+## PATCH /antivirus/targets/icap
+-  endpoint added
 
 
-## PATCH /bucket-replica-links
--  added the new optional request property 'version_deletes_enabled'
--  added the optional property 'items/version_deletes_enabled' to the response with the '200' status
--  added the optional property 'total/version_deletes_enabled' to the response with the '200' status
+## POST /antivirus/targets/icap
+-  endpoint added
 
 
-## POST /bucket-replica-links
--  added the new optional request property 'version_deletes_enabled'
--  added the optional property 'items/version_deletes_enabled' to the response with the '200' status
--  added the optional property 'total/version_deletes_enabled' to the response with the '200' status
+## DELETE /antivirus/targets/icap/scanners
+-  endpoint added
+
+
+## GET /antivirus/targets/icap/scanners
+-  endpoint added
+
+
+## PATCH /antivirus/targets/icap/scanners
+-  endpoint added
+
+
+## POST /antivirus/targets/icap/scanners
+-  endpoint added
+
+
+## POST /array-connections/connection-keys
+-  endpoint added
 
 
 ## GET /buckets
--  added the optional property 'items/node_group' to the response with the '200' status
--  added the optional property 'items/node_group' to the response with the '207' status
+-  added the new optional 'query' request parameter 'workload_ids'
+-  added the new optional 'query' request parameter 'workload_names'
 -  added the optional property 'items/workload' to the response with the '200' status
 -  added the optional property 'items/workload' to the response with the '207' status
--  added the optional property 'total/node_group' to the response with the '200' status
--  added the optional property 'total/node_group' to the response with the '207' status
 -  added the optional property 'total/workload' to the response with the '200' status
 -  added the optional property 'total/workload' to the response with the '207' status
 
 
 ## PATCH /buckets
 -  added the new optional request property 'workload'
--  added the optional property 'items/node_group' to the response with the '200' status
 -  added the optional property 'items/workload' to the response with the '200' status
 
 
 ## POST /buckets
--  added the new optional request property 'node_group'
 -  added the new optional request property 'workload'
 -  the 'query' request parameter 'names' became optional
--  added the optional property 'items/node_group' to the response with the '200' status
 -  added the optional property 'items/workload' to the response with the '200' status
 
 
-## GET /buckets/lifecycle-policies
+## DELETE /directories/policies/antivirus
 -  endpoint added
 
 
-## PATCH /buckets/lifecycle-policies
+## GET /directories/policies/antivirus
 -  endpoint added
 
 
-## DELETE /buckets/lifecycle-policies/rules
+## POST /directories/policies/antivirus
 -  endpoint added
 
 
-## GET /buckets/lifecycle-policies/rules
+## GET /files/antivirus
 -  endpoint added
 
 
-## PATCH /buckets/lifecycle-policies/rules
+## PATCH /files/antivirus
 -  endpoint added
 
 
-## POST /buckets/lifecycle-policies/rules
+## DELETE /policies/antivirus
 -  endpoint added
 
 
-## GET /lifecycle-rules
--  added the optional property 'items/keep_previous_versions_count' to the response with the '200' status
--  added the optional property 'items/keep_previous_versions_count' to the response with the '207' status
--  added the optional property 'items/tags' to the response with the '200' status
--  added the optional property 'items/tags' to the response with the '207' status
+## GET /policies/antivirus
+-  endpoint added
 
 
-## PATCH /lifecycle-rules
--  added the optional property 'items/keep_previous_versions_count' to the response with the '200' status
--  added the optional property 'items/tags' to the response with the '200' status
+## PATCH /policies/antivirus
+-  endpoint added
 
 
-## POST /lifecycle-rules
--  added the optional property 'items/keep_previous_versions_count' to the response with the '200' status
--  added the optional property 'items/tags' to the response with the '200' status
+## POST /policies/antivirus
+-  endpoint added
 
 
-## GET /network-interfaces/network-connection-statistics
--  added the new optional 'query' request parameter 'local_address'
--  added the new optional 'query' request parameter 'remote_address'
+## DELETE /policies/antivirus/members
+-  endpoint added
+
+
+## GET /policies/antivirus/members
+-  endpoint added
+
+
+## POST /policies/antivirus/members
+-  endpoint added
+
+
+## DELETE /policies/antivirus/rules
+-  endpoint added
+
+
+## GET /policies/antivirus/rules
+-  endpoint added
+
+
+## PATCH /policies/antivirus/rules
+-  endpoint added
+
+
+## POST /policies/antivirus/rules
+-  endpoint added
 
 
 ## GET /presets/workload
@@ -128,102 +146,5 @@
 -  added the new optional request property 'lifecycle_configurations'
 -  added the optional property 'items/bucket_configurations' to the response with the '200' status
 -  added the optional property 'items/lifecycle_configurations' to the response with the '200' status
-
-
-## POST /software-patches
--  added the new optional 'query' request parameter 'local'
-
-
-## GET /telemetry-metrics
--  endpoint added
-
-
-## GET /telemetry-metrics-collections
--  endpoint added
-
-
-## GET /telemetry-metrics-collections/metrics
--  endpoint added
-
-
-## DELETE /telemetry-metrics-policies
--  endpoint added
-
-
-## GET /telemetry-metrics-policies
--  endpoint added
-
-
-## PATCH /telemetry-metrics-policies
--  endpoint added
-
-
-## POST /telemetry-metrics-policies
--  endpoint added
-
-
-## GET /telemetry-metrics-policies/arrays
--  endpoint added
-
-
-## GET /telemetry-metrics-policies/members
--  endpoint added
-
-
-## DELETE /telemetry-metrics-policies/rules
--  endpoint added
-
-
-## GET /telemetry-metrics-policies/rules
--  endpoint added
-
-
-## PATCH /telemetry-metrics-policies/rules
--  endpoint added
-
-
-## POST /telemetry-metrics-policies/rules
--  endpoint added
-
-
-## DELETE /telemetry-targets
--  endpoint added
-
-
-## GET /telemetry-targets
--  endpoint added
-
-
-## PATCH /telemetry-targets
--  endpoint added
-
-
-## POST /telemetry-targets
--  endpoint added
-
-
-## GET /telemetry-targets/test
--  endpoint added
-
-
-## GET /worm-data-policies
--  added the optional property 'items/autocommit_config' to the response with the '200' status
--  added the optional property 'items/autocommit_config' to the response with the '207' status
--  added the optional property 'items/commit_mode' to the response with the '200' status
--  added the optional property 'items/commit_mode' to the response with the '207' status
-
-
-## PATCH /worm-data-policies
--  added the new optional request property 'autocommit_config'
--  added the new optional request property 'commit_mode'
--  added the optional property 'items/autocommit_config' to the response with the '200' status
--  added the optional property 'items/commit_mode' to the response with the '200' status
-
-
-## POST /worm-data-policies
--  added the new optional request property 'autocommit_config'
--  added the new optional request property 'commit_mode'
--  added the optional property 'items/autocommit_config' to the response with the '200' status
--  added the optional property 'items/commit_mode' to the response with the '200' status
 
 

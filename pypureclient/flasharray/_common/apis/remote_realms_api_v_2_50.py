@@ -483,3 +483,5 @@ class RemoteRealmsApi:
     api256_remote_realms_tags_get_with_http_info = remote_realms_tags_get_with_http_info
     api257_remote_realms_get_with_http_info = remote_realms_get_with_http_info
     api257_remote_realms_tags_get_with_http_info = remote_realms_tags_get_with_http_info
+    api258_remote_realms_get_with_http_info = remote_realms_get_with_http_info
+    api258_remote_realms_tags_get_with_http_info = remote_realms_tags_get_with_http_info
