@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Shared References &mdash; py-pure-client 1.96.0 documentation</title>
+  <title>Shared References &mdash; py-pure-client 1.97.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/autodoc_pydantic.css" type="text/css" />
@@ -33,7 +33,7 @@
             <a href="index.html" class="icon icon-home"> py-pure-client
           </a>
               <div class="version">
-                1.96
+                1.97
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -991,7 +991,7 @@ previously iterated, they will be missed.</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="pypureclient.responses.ApiError">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pypureclient.responses.</span></span><span class="sig-name descname"><span class="pre">ApiError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location_context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypureclient.responses.ApiError" title="Permalink to this definition"></a></dt>
-<dd><p>An object that models the error response from the server.</p>
+<dd><p>An object that models one error from the server error response.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="pypureclient.responses.ApiError.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">location_context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypureclient.responses.ApiError.__init__" title="Permalink to this definition"></a></dt>
@@ -1001,7 +1001,9 @@ previously iterated, they will be missed.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>context</strong> (<em>str</em>) – The context in which the error occurred.</p></li>
 <li><p><strong>message</strong> (<em>str</em>) – The error message.</p></li>
-<li><p><strong>location_context</strong> (<em>str</em>) – The execution context where the error occurred.</p></li>
+<li><p><strong>location_context</strong> (<em>dict</em>) – Reference (<code class="docutils literal notranslate"><span class="pre">id</span></code>, <code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">resource_type</span></code>)
+to the array or fleet member the request was executing on when the
+error occurred. None when the server did not return it.</p></li>
 </ul>
 </dd>
 </dl>
@@ -1014,6 +1016,21 @@ previously iterated, they will be missed.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pypureclient.responses.ApiError.from_dict">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pypureclient.responses.ApiError.from_dict" title="Permalink to this definition"></a></dt>
+<dd><p>Create an ApiError from one entry of the <code class="docutils literal notranslate"><span class="pre">errors</span></code> list of a server
+error body. Missing keys default to None, unknown keys are ignored.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>error</strong> (<em>dict</em>) – One decoded error entry.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ApiError</p>
 </dd>
 </dl>
 </dd></dl>
