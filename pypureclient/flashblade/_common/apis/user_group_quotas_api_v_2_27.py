@@ -445,3 +445,5 @@ class UserGroupQuotasApi:
     api228_file_system_user_quotas_get_with_http_info = file_system_user_quotas_get_with_http_info
     api229_file_system_group_quotas_get_with_http_info = file_system_group_quotas_get_with_http_info
     api229_file_system_user_quotas_get_with_http_info = file_system_user_quotas_get_with_http_info
+    api230_file_system_group_quotas_get_with_http_info = file_system_group_quotas_get_with_http_info
+    api230_file_system_user_quotas_get_with_http_info = file_system_user_quotas_get_with_http_info

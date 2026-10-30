@@ -1,6 +1,6 @@
 import pprint
 
-from .keywords import Headers, Parameters
+from .keywords import Headers, Parameters, Responses
 from .exceptions import PureError
 
 class ResponseHeaders(object):
@@ -199,7 +199,7 @@ class ErrorResponse(Response):
 
 class ApiError(object):
     """
-    An object that models the error response from the server.
+    An object that models one error from the server error response.
     """
 
     def __init__(self, context, message, location_context=None):
@@ -209,12 +209,29 @@ class ApiError(object):
         Args:
             context (str): The context in which the error occurred.
             message (str): The error message.
-            location_context(str): The execution context where the error occurred.
+            location_context (dict): Reference (``id``, ``name``, ``resource_type``)
+                to the array or fleet member the request was executing on when the
+                error occurred. None when the server did not return it.
         """
         self.context = context
         self.message = message
-        if location_context != None:
-            self.location_context = location_context
+        self.location_context = location_context
+
+    @classmethod
+    def from_dict(cls, error):
+        """
+        Create an ApiError from one entry of the ``errors`` list of a server
+        error body. Missing keys default to None, unknown keys are ignored.
+
+        Args:
+            error (dict): One decoded error entry.
+
+        Returns:
+            ApiError
+        """
+        return cls(error.get(Responses.context),
+                   error.get(Responses.message),
+                   error.get(Responses.location_context))
 
     def to_dict(self):
         """

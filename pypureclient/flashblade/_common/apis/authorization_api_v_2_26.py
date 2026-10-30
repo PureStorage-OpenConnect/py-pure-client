@@ -657,3 +657,8 @@ class AuthorizationApi:
     api229_api_login_post_with_http_info = api_login_post_with_http_info
     api229_api_logout_post_with_http_info = api_logout_post_with_http_info
     api229_oauth210_token_post_with_http_info = oauth210_token_post_with_http_info
+    api230_api_api_version_get_with_http_info = api_api_version_get_with_http_info
+    api230_api_login_banner_get_with_http_info = api_login_banner_get_with_http_info
+    api230_api_login_post_with_http_info = api_login_post_with_http_info
+    api230_api_logout_post_with_http_info = api_logout_post_with_http_info
+    api230_oauth210_token_post_with_http_info = oauth210_token_post_with_http_info

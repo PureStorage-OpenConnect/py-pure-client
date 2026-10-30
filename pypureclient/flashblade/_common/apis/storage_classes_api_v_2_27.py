@@ -217,3 +217,4 @@ class StorageClassesApi:
     api227_storage_classes_members_get_with_http_info = storage_classes_members_get_with_http_info
     api228_storage_classes_members_get_with_http_info = storage_classes_members_get_with_http_info
     api229_storage_classes_members_get_with_http_info = storage_classes_members_get_with_http_info
+    api230_storage_classes_members_get_with_http_info = storage_classes_members_get_with_http_info

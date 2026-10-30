@@ -55945,9 +55945,7 @@ class Client(object):
             # Parse differently if the error message came from kong
             errors = [ApiError(None, body.get(Responses.message, None))]
         else:
-            errors = [ApiError(err.get(Responses.context, None),
-                               err.get(Responses.message, None))
-                      for err in body.get(Responses.errors, [])]
+            errors = [ApiError.from_dict(err) for err in body.get(Responses.errors, [])]
         return ErrorResponse(status, errors, headers=error.headers)
 
 

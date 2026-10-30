@@ -30562,12 +30562,9 @@ class Client(object):
 
         if status in [403, 429]:
             # Parse differently if the error message came from kong
-            errors = [ApiError(None, body.get(Responses.message, None), None)]
+            errors = [ApiError(None, body.get(Responses.message, None))]
         else:
-            errors = [ApiError(err.get(Responses.context, None),
-                               err.get(Responses.message, None),
-                               err.get(Responses.location_context, None))
-                      for err in body.get(Responses.errors, [])]
+            errors = [ApiError.from_dict(err) for err in body.get(Responses.errors, [])]
         return ErrorResponse(status, errors, headers=error.headers)
 
 

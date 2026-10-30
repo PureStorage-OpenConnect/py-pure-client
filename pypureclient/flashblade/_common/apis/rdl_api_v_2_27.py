@@ -500,3 +500,7 @@ class RDLApi:
     api229_rapid_data_locking_patch_with_http_info = rapid_data_locking_patch_with_http_info
     api229_rapid_data_locking_rotate_post_with_http_info = rapid_data_locking_rotate_post_with_http_info
     api229_rapid_data_locking_test_get_with_http_info = rapid_data_locking_test_get_with_http_info
+    api230_rapid_data_locking_get_with_http_info = rapid_data_locking_get_with_http_info
+    api230_rapid_data_locking_patch_with_http_info = rapid_data_locking_patch_with_http_info
+    api230_rapid_data_locking_rotate_post_with_http_info = rapid_data_locking_rotate_post_with_http_info
+    api230_rapid_data_locking_test_get_with_http_info = rapid_data_locking_test_get_with_http_info

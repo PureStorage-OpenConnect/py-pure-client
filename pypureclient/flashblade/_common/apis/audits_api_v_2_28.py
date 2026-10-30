@@ -224,3 +224,4 @@ class AuditsApi:
     # Method Aliases
     api228_audits_get_with_http_info = audits_get_with_http_info
     api229_audits_get_with_http_info = audits_get_with_http_info
+    api230_audits_get_with_http_info = audits_get_with_http_info

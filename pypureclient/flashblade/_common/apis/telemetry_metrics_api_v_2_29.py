@@ -207,3 +207,4 @@ class TelemetryMetricsApi:
 
     # Method Aliases
     api229_telemetry_metrics_get_with_http_info = telemetry_metrics_get_with_http_info
+    api230_telemetry_metrics_get_with_http_info = telemetry_metrics_get_with_http_info

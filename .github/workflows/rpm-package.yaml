@@ -31,6 +31,24 @@ jobs:
             python3-tomli python3-dateutil python3-bcrypt python3-cryptography python3-urllib3 python3-jwt \
             python3-pydantic python3-hatchling
 
+      # Pinned uv release from GitHub, verified against the upstream SHA-256
+      # before anything is executed. To bump: change UV_VERSION and take the
+      # x86_64-unknown-linux-gnu hash from
+      # https://github.com/astral-sh/uv/releases/download/<version>/sha256.sum
+      - name: Install uv
+        env:
+          UV_VERSION: "0.12.8"
+          UV_SHA256: "2e2b37e9811e17675a9e70bed5e1a58fc8c0388be63d751d72cc735188c149ff"
+        run: |
+          set -euo pipefail
+          target="uv-x86_64-unknown-linux-gnu"
+          curl -fsSL --retry 3 -o "/tmp/${target}.tar.gz" \
+            "https://github.com/astral-sh/uv/releases/download/${UV_VERSION}/${target}.tar.gz"
+          echo "${UV_SHA256}  /tmp/${target}.tar.gz" | sha256sum -c -
+          tar -xzf "/tmp/${target}.tar.gz" -C /tmp
+          install -m 0755 "/tmp/${target}/uv" /usr/local/bin/uv
+          uv --version
+
       - name: Render RPM spec from pyproject.toml
         env:
           BUILD_NUM: ${{ github.run_number }}
@@ -39,10 +57,7 @@ jobs:
           cat packaging/specs/py-pure-client.spec
 
       - name: Build sdist
-        run: |
-          curl -LsSf https://astral.sh/uv/0.12.8/install.sh | sh
-          source $HOME/.local/bin/env
-          uv build --sdist --out-dir dist/
+        run: uv build --sdist --out-dir dist/
 
       - name: Build RPM
         id: generate_rpm
