@@ -1,150 +1,141 @@
-# API Changelog 2.57 vs. 2.58
+# API Changelog 2.29 vs. 2.30
 
-## GET /antivirus/targets
--  endpoint added
-
-
-## DELETE /antivirus/targets/icap
--  endpoint added
-
-
-## GET /antivirus/targets/icap
--  endpoint added
+## GET /array-connections/connection-key
+-  added the new optional 'query' request parameter 'allow_errors'
+-  added the new optional 'query' request parameter 'context_names'
+-  added the optional property 'errors' to the response with the '200' status
+-  added the optional property 'items/context' to the response with the '200' status
+-  added the success response with the status '207'
 
 
-## PATCH /antivirus/targets/icap
--  endpoint added
+## POST /array-connections/connection-key
+-  added the new optional 'query' request parameter 'context_names'
+-  added the optional property 'items/context' to the response with the '200' status
 
 
-## POST /antivirus/targets/icap
--  endpoint added
+## GET /array-connections/performance/replication
+-  added the new optional 'query' request parameter 'allow_errors'
+-  added the new optional 'query' request parameter 'context_names'
+-  added the optional property 'errors' to the response with the '200' status
+-  added the optional property 'items/context' to the response with the '200' status
+-  added the optional property 'total/context' to the response with the '200' status
+-  added the success response with the status '207'
 
 
-## DELETE /antivirus/targets/icap/scanners
--  endpoint added
+## PATCH /arrays
+-  added the new optional 'query' request parameter 'context_names'
 
 
-## GET /antivirus/targets/icap/scanners
--  endpoint added
-
-
-## PATCH /antivirus/targets/icap/scanners
--  endpoint added
-
-
-## POST /antivirus/targets/icap/scanners
--  endpoint added
-
-
-## POST /array-connections/connection-keys
--  endpoint added
+## GET /audit-file-systems-policy-operations
+-  added the optional property 'errors' to the response with the '200' status
+-  added the optional property 'items/context' to the response with the '200' status
+-  added the success response with the status '207'
 
 
 ## GET /buckets
 -  added the new optional 'query' request parameter 'workload_ids'
 -  added the new optional 'query' request parameter 'workload_names'
--  added the optional property 'items/workload' to the response with the '200' status
--  added the optional property 'items/workload' to the response with the '207' status
--  added the optional property 'total/workload' to the response with the '200' status
--  added the optional property 'total/workload' to the response with the '207' status
 
 
-## PATCH /buckets
--  added the new optional request property 'workload'
--  added the optional property 'items/workload' to the response with the '200' status
+## GET /log-targets/file-systems
+-  added the optional property 'errors' to the response with the '200' status
+-  added the optional property 'items/context' to the response with the '200' status
+-  added the success response with the status '207'
 
 
-## POST /buckets
--  added the new optional request property 'workload'
--  the 'query' request parameter 'names' became optional
--  added the optional property 'items/workload' to the response with the '200' status
+## PATCH /log-targets/file-systems
+-  added the optional property 'items/context' to the response with the '200' status
 
 
-## DELETE /directories/policies/antivirus
+## POST /log-targets/file-systems
+-  added the optional property 'items/context' to the response with the '200' status
+
+
+## DELETE /software
 -  endpoint added
 
 
-## GET /directories/policies/antivirus
+## GET /software
 -  endpoint added
 
 
-## POST /directories/policies/antivirus
+## POST /software
 -  endpoint added
 
 
-## GET /files/antivirus
+## GET /software-bundle
+-  added the optional property 'items/bytes_downloaded' to the response with the '200' status
+-  added the optional property 'items/bytes_total' to the response with the '200' status
+-  added the optional property 'items/software_name' to the response with the '200' status
+-  added the optional property 'items/software_version' to the response with the '200' status
+
+
+## POST /software-bundle
+-  added the optional property 'items/bytes_downloaded' to the response with the '200' status
+-  added the optional property 'items/bytes_total' to the response with the '200' status
+-  added the optional property 'items/software_name' to the response with the '200' status
+-  added the optional property 'items/software_version' to the response with the '200' status
+
+
+## POST /software-check
+-  added the new optional 'query' request parameter 'local'
+
+
+## GET /software-installation-steps
 -  endpoint added
 
 
-## PATCH /files/antivirus
+## GET /software-installations
 -  endpoint added
 
 
-## DELETE /policies/antivirus
+## PATCH /software-installations
 -  endpoint added
 
 
-## GET /policies/antivirus
+## POST /software-installations
 -  endpoint added
 
 
-## PATCH /policies/antivirus
+## GET /software-versions
 -  endpoint added
 
 
-## POST /policies/antivirus
+## DELETE /ssh-certificate-authority-policies
+-  added the new optional 'query' request parameter 'context_names'
+
+
+## PATCH /ssh-certificate-authority-policies
+-  added the new optional 'query' request parameter 'context_names'
+
+
+## POST /ssh-certificate-authority-policies
+-  added the new optional 'query' request parameter 'context_names'
+
+
+## GET /storage-class-tiering-policies/members
+-  added the optional property 'items/context' to the response with the '200' status
+-  added the optional property 'items/context' to the response with the '207' status
+
+
+## GET /workloads
+-  added the optional property 'items/space' to the response with the '200' status
+-  added the optional property 'items/space' to the response with the '207' status
+
+
+## PATCH /workloads
+-  added the optional property 'items/space' to the response with the '200' status
+
+
+## POST /workloads
+-  added the optional property 'items/space' to the response with the '200' status
+
+
+## GET /workloads/performance
 -  endpoint added
 
 
-## DELETE /policies/antivirus/members
+## GET /workloads/space
 -  endpoint added
-
-
-## GET /policies/antivirus/members
--  endpoint added
-
-
-## POST /policies/antivirus/members
--  endpoint added
-
-
-## DELETE /policies/antivirus/rules
--  endpoint added
-
-
-## GET /policies/antivirus/rules
--  endpoint added
-
-
-## PATCH /policies/antivirus/rules
--  endpoint added
-
-
-## POST /policies/antivirus/rules
--  endpoint added
-
-
-## GET /presets/workload
--  added the optional property 'items/bucket_configurations' to the response with the '200' status
--  added the optional property 'items/lifecycle_configurations' to the response with the '200' status
-
-
-## PATCH /presets/workload
--  added the optional property 'items/bucket_configurations' to the response with the '200' status
--  added the optional property 'items/lifecycle_configurations' to the response with the '200' status
-
-
-## POST /presets/workload
--  added the new optional request property 'bucket_configurations'
--  added the new optional request property 'lifecycle_configurations'
--  added the optional property 'items/bucket_configurations' to the response with the '200' status
--  added the optional property 'items/lifecycle_configurations' to the response with the '200' status
-
-
-## PUT /presets/workload
--  added the new optional request property 'bucket_configurations'
--  added the new optional request property 'lifecycle_configurations'
--  added the optional property 'items/bucket_configurations' to the response with the '200' status
--  added the optional property 'items/lifecycle_configurations' to the response with the '200' status
 
 

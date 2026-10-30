@@ -537,3 +537,6 @@ class HardwareConnectorsApi:
     api229_hardware_connectors_get_with_http_info = hardware_connectors_get_with_http_info
     api229_hardware_connectors_patch_with_http_info = hardware_connectors_patch_with_http_info
     api229_hardware_connectors_performance_get_with_http_info = hardware_connectors_performance_get_with_http_info
+    api230_hardware_connectors_get_with_http_info = hardware_connectors_get_with_http_info
+    api230_hardware_connectors_patch_with_http_info = hardware_connectors_patch_with_http_info
+    api230_hardware_connectors_performance_get_with_http_info = hardware_connectors_performance_get_with_http_info

@@ -232,3 +232,4 @@ class RemoteRealmsApi:
     api227_remote_realms_get_with_http_info = remote_realms_get_with_http_info
     api228_remote_realms_get_with_http_info = remote_realms_get_with_http_info
     api229_remote_realms_get_with_http_info = remote_realms_get_with_http_info
+    api230_remote_realms_get_with_http_info = remote_realms_get_with_http_info

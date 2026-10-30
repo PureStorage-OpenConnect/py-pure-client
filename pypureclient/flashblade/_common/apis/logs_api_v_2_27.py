@@ -580,3 +580,7 @@ class LogsApi:
     api229_logs_async_get_with_http_info = logs_async_get_with_http_info
     api229_logs_async_patch_with_http_info = logs_async_patch_with_http_info
     api229_logs_get_with_http_info = logs_get_with_http_info
+    api230_logs_async_download_get_with_http_info = logs_async_download_get_with_http_info
+    api230_logs_async_get_with_http_info = logs_async_get_with_http_info
+    api230_logs_async_patch_with_http_info = logs_async_patch_with_http_info
+    api230_logs_get_with_http_info = logs_get_with_http_info

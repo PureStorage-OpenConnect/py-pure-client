@@ -320,3 +320,5 @@ class VerificationKeysApi:
     api228_support_verification_keys_patch_with_http_info = support_verification_keys_patch_with_http_info
     api229_support_verification_keys_get_with_http_info = support_verification_keys_get_with_http_info
     api229_support_verification_keys_patch_with_http_info = support_verification_keys_patch_with_http_info
+    api230_support_verification_keys_get_with_http_info = support_verification_keys_get_with_http_info
+    api230_support_verification_keys_patch_with_http_info = support_verification_keys_patch_with_http_info

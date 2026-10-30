@@ -367,3 +367,5 @@ class RemoteArraysApi:
     api228_remote_arrays_patch_with_http_info = remote_arrays_patch_with_http_info
     api229_remote_arrays_get_with_http_info = remote_arrays_get_with_http_info
     api229_remote_arrays_patch_with_http_info = remote_arrays_patch_with_http_info
+    api230_remote_arrays_get_with_http_info = remote_arrays_get_with_http_info
+    api230_remote_arrays_patch_with_http_info = remote_arrays_patch_with_http_info

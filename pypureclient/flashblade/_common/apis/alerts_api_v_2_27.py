@@ -352,3 +352,5 @@ class AlertsApi:
     api228_alerts_patch_with_http_info = alerts_patch_with_http_info
     api229_alerts_get_with_http_info = alerts_get_with_http_info
     api229_alerts_patch_with_http_info = alerts_patch_with_http_info
+    api230_alerts_get_with_http_info = alerts_get_with_http_info
+    api230_alerts_patch_with_http_info = alerts_patch_with_http_info
