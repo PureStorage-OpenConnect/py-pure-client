@@ -1009,3 +1009,9 @@ class ActiveDirectoryApi:
     api258_active_directory_post_with_http_info = active_directory_post_with_http_info
     api258_active_directory_test_get_with_http_info = active_directory_test_get_with_http_info
     api258_active_directory_test_patch_with_http_info = active_directory_test_patch_with_http_info
+    api259_active_directory_delete_with_http_info = active_directory_delete_with_http_info
+    api259_active_directory_get_with_http_info = active_directory_get_with_http_info
+    api259_active_directory_patch_with_http_info = active_directory_patch_with_http_info
+    api259_active_directory_post_with_http_info = active_directory_post_with_http_info
+    api259_active_directory_test_get_with_http_info = active_directory_test_get_with_http_info
+    api259_active_directory_test_patch_with_http_info = active_directory_test_patch_with_http_info

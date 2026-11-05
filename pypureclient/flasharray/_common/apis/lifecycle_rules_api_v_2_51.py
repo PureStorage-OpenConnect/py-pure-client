@@ -728,3 +728,7 @@ class LifecycleRulesApi:
     api258_lifecycle_rules_get_with_http_info = lifecycle_rules_get_with_http_info
     api258_lifecycle_rules_patch_with_http_info = lifecycle_rules_patch_with_http_info
     api258_lifecycle_rules_post_with_http_info = lifecycle_rules_post_with_http_info
+    api259_lifecycle_rules_delete_with_http_info = lifecycle_rules_delete_with_http_info
+    api259_lifecycle_rules_get_with_http_info = lifecycle_rules_get_with_http_info
+    api259_lifecycle_rules_patch_with_http_info = lifecycle_rules_patch_with_http_info
+    api259_lifecycle_rules_post_with_http_info = lifecycle_rules_post_with_http_info

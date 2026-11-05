@@ -1,4 +1,5 @@
 import importlib
+import inspect
 from typing import Union, Tuple, Optional
 
 from .__modules_dict import __modules_dict as fa_modules_dict
@@ -32,7 +33,8 @@ def Client(
     verify_ssl: bool = None,
     configuration: Configuration = None,
     model_attribute_error_on_none: bool = True,
-    auto_pagination_limit: Optional[int] = None):
+    auto_pagination_limit: Optional[int] = None,
+    password: str = None):
     """
     Initialize a FlashArray Client.
 
@@ -54,8 +56,8 @@ def Client(
     :param private_key_password: The password of the private key. Defaults to None.
     :type private_key_password: str, optional
 
-    :param username: Username of the user the token should be issued for. This must
-        be a valid user in the system.
+    :param username: Username of the user the token should be issued for, or the user
+        to log in with password. This must be a valid user in the system.
     :type username: str, optional
 
     :param client_id: ID of API client that issued the identity token.
@@ -107,6 +109,11 @@ def Client(
         Ignored if None, or `limit` parameter is used.
     :type auto_pagination_limit: int, optional
 
+    :param password: Password of the user to log in. Used together with username as an
+        alternative to api_token. Requires REST API 2.47 or later.
+        Prefer using it only to retrieve an api_token.
+    :type password: str, optional
+
     :raises PureError: If it could not create an ID or access token
     """
     _transport_cfg = create_transport_config(target=target, configuration=configuration, ssl_cert=ssl_cert, verify_ssl=verify_ssl)
@@ -119,10 +126,15 @@ def Client(
 
     fa_module = __version_to_module(version)
     setattr(fa_module, '_attribute_error_on_none', model_attribute_error_on_none)
+    client_kwargs = {}
+    if password is not None:
+        if 'password' not in inspect.signature(fa_module.Client).parameters:
+            raise ValueError(f"Username and password login is not supported by REST API version {version}.")
+        client_kwargs['password'] = password
     client = fa_module.Client(configuration=_transport_cfg, id_token=id_token, private_key_file=private_key_file,
                               private_key_password=private_key_password, username=username, client_id=client_id,
                               key_id=key_id, issuer=issuer, api_token=api_token, retries=retries, timeout=timeout,
-                              user_agent=user_agent, auto_pagination_limit=auto_pagination_limit)
+                              user_agent=user_agent, auto_pagination_limit=auto_pagination_limit, **client_kwargs)
     return client
 
 

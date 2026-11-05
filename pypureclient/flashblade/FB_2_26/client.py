@@ -52,11 +52,14 @@ class Client(object):
                  api_token: str = None,
                  retries: int = None,
                  timeout: Union[int, Tuple[float, float]] = None,
-                 user_agent = None):
+                 user_agent = None,
+                 password: str = None,
+                 ):
         """
         Initialize a FlashBlade Client. id_token is generated based on app ID and private
         key info. Either id_token or api_token could be used for authentication. Only one
         authentication option is allowed.
+        Username and password could be used instead of api_token.
 
         :param configuration: configuration object
         :type configuration: Configuration
@@ -74,6 +77,7 @@ class Client(object):
 
         :param username: Username of the user the token should be issued for. This must
             be a valid user in the system.
+            When used with password, the user to log in.
         :type username: str, optional
 
         :param client_id: ID of API client that issued the identity token.
@@ -99,6 +103,10 @@ class Client(object):
         :param user_agent: User-Agent request header to use.
         :type user_agent: str, optional
 
+        :param password: Password of the user to log in. Used together with username as an
+            alternative to api_token.
+        :type password: str, optional
+
         :raises PureError: If it could not create an ID or access token
         """
 
@@ -107,6 +115,17 @@ class Client(object):
         elif private_key_file and private_key_password and username and \
                 key_id and client_id and issuer and api_token:
             raise PureError("id_token is generated based on app ID and private key info. Please use either id_token or api_token and try again!")
+        elif password and (id_token or api_token or private_key_file):
+            raise PureError("Only one authentication option is allowed. Please use either id_token, api_token, or username and password and try again!")
+        elif password:
+            self._token_man = APITokenManager(
+                api_token=None,
+                username=username,
+                password=password,
+                user_agent=user_agent,
+                timeout=timeout,
+                configuration=configuration,
+            )
         elif api_token:
             self._token_man = APITokenManager(
                 api_token=api_token,

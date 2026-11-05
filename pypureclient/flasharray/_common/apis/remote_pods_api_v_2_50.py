@@ -485,3 +485,5 @@ class RemotePodsApi:
     api257_remote_pods_tags_get_with_http_info = remote_pods_tags_get_with_http_info
     api258_remote_pods_get_with_http_info = remote_pods_get_with_http_info
     api258_remote_pods_tags_get_with_http_info = remote_pods_tags_get_with_http_info
+    api259_remote_pods_get_with_http_info = remote_pods_get_with_http_info
+    api259_remote_pods_tags_get_with_http_info = remote_pods_tags_get_with_http_info

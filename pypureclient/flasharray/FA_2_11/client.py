@@ -51,7 +51,8 @@ class Client(object):
                  retries: int = None,
                  timeout: Union[int, Tuple[float, float]] = None,
                  user_agent: str = None,
-                 auto_pagination_limit: int = None):
+                 auto_pagination_limit: int = None,
+                 ):
         """
         Initialize a FlashArray Client. id_token is generated based on app ID and private
         key info. Either id_token or api_token could be used for authentication. Only one

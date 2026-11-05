@@ -1231,3 +1231,10 @@ class ServersApi:
     api258_servers_policies_tls_get_with_http_info = servers_policies_tls_get_with_http_info
     api258_servers_policies_tls_post_with_http_info = servers_policies_tls_post_with_http_info
     api258_servers_post_with_http_info = servers_post_with_http_info
+    api259_servers_delete_with_http_info = servers_delete_with_http_info
+    api259_servers_get_with_http_info = servers_get_with_http_info
+    api259_servers_patch_with_http_info = servers_patch_with_http_info
+    api259_servers_policies_tls_delete_with_http_info = servers_policies_tls_delete_with_http_info
+    api259_servers_policies_tls_get_with_http_info = servers_policies_tls_get_with_http_info
+    api259_servers_policies_tls_post_with_http_info = servers_policies_tls_post_with_http_info
+    api259_servers_post_with_http_info = servers_post_with_http_info

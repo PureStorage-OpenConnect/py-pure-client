@@ -1434,3 +1434,11 @@ class TopologyGroupsApi:
     api258_topology_groups_members_post_with_http_info = topology_groups_members_post_with_http_info
     api258_topology_groups_patch_with_http_info = topology_groups_patch_with_http_info
     api258_topology_groups_post_with_http_info = topology_groups_post_with_http_info
+    api259_topology_groups_arrays_get_with_http_info = topology_groups_arrays_get_with_http_info
+    api259_topology_groups_delete_with_http_info = topology_groups_delete_with_http_info
+    api259_topology_groups_get_with_http_info = topology_groups_get_with_http_info
+    api259_topology_groups_members_delete_with_http_info = topology_groups_members_delete_with_http_info
+    api259_topology_groups_members_get_with_http_info = topology_groups_members_get_with_http_info
+    api259_topology_groups_members_post_with_http_info = topology_groups_members_post_with_http_info
+    api259_topology_groups_patch_with_http_info = topology_groups_patch_with_http_info
+    api259_topology_groups_post_with_http_info = topology_groups_post_with_http_info

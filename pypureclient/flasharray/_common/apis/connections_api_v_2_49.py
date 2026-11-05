@@ -618,3 +618,6 @@ class ConnectionsApi:
     api258_connections_delete_with_http_info = connections_delete_with_http_info
     api258_connections_get_with_http_info = connections_get_with_http_info
     api258_connections_post_with_http_info = connections_post_with_http_info
+    api259_connections_delete_with_http_info = connections_delete_with_http_info
+    api259_connections_get_with_http_info = connections_get_with_http_info
+    api259_connections_post_with_http_info = connections_post_with_http_info
