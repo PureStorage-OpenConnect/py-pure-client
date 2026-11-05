@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quick Start &mdash; py-pure-client 1.97.0 documentation</title>
+  <title>Quick Start &mdash; py-pure-client 1.98.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/autodoc_pydantic.css" type="text/css" />
@@ -33,7 +33,7 @@
             <a href="index.html" class="icon icon-home"> py-pure-client
           </a>
               <div class="version">
-                1.97
+                1.98
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -122,6 +122,15 @@ when the ID token expires.</p>
                            <span class="n">id_token</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">])</span>
 </pre></div>
 </div>
+<p>You can also log in with a username and password. Storing passwords client-side is
+not recommended: use this only as necessary to retrieve an API token, and use the
+API token for all subsequent logins. This requires FlashArray REST API 2.47 or later.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pypureclient</span><span class="w"> </span><span class="kn">import</span> <span class="n">flasharray</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">flasharray</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="s1">&#39;flasharray.example.com&#39;</span><span class="p">,</span>
+                           <span class="n">username</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">],</span>
+                           <span class="n">password</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">])</span>
+</pre></div>
+</div>
 </section>
 <section id="flashblade-client">
 <h3>FlashBlade Client<a class="headerlink" href="#flashblade-client" title="Permalink to this heading"></a></h3>
@@ -156,6 +165,15 @@ if that is preferred.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pypureclient</span><span class="w"> </span><span class="kn">import</span> <span class="n">flashblade</span>
 <span class="n">client</span> <span class="o">=</span> <span class="n">flashblade</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="s1">&#39;flashblade.example.com&#39;</span><span class="p">,</span>
                            <span class="n">api_token</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>You can also log in with a username and password. Storing passwords client-side is
+not recommended: use this only as necessary to retrieve an API token, and use the
+API token for all subsequent logins. This requires FlashBlade REST API 2.26 or later.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pypureclient</span><span class="w"> </span><span class="kn">import</span> <span class="n">flashblade</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">flashblade</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="s1">&#39;flashblade.example.com&#39;</span><span class="p">,</span>
+                           <span class="n">username</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">],</span>
+                           <span class="n">password</span><span class="o">=</span><span class="p">[</span><span class="o">...</span><span class="p">])</span>
 </pre></div>
 </div>
 <p>If you are writing an API integration for FlashBlade for distribution to your customers

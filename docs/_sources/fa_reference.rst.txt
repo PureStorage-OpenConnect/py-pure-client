@@ -21,10 +21,10 @@ Importable as
 .. module:: pypureclient.flasharray.client
 .. autofunction:: pypureclient.flasharray.client::Client
 
-FlashArray REST 2.58 Client
+FlashArray REST 2.59 Client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. module:: pypureclient.flasharray.FA_2_58.client
-.. autoclass:: pypureclient.flasharray.FA_2_58.client::Client
+.. module:: pypureclient.flasharray.FA_2_59.client
+.. autoclass:: pypureclient.flasharray.FA_2_59.client::Client
    :members:
 
 Models
@@ -2238,6 +2238,30 @@ ContainerQosFileCeilings
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
+ContainerQosFloors
+~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::ContainerQosFloors
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+ContainerQosFloorsPatch
+~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::ContainerQosFloorsPatch
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
 ContainerQosIopsLimitPatch
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flasharray::ContainerQosIopsLimitPatch
@@ -2253,6 +2277,18 @@ ContainerQosIopsLimitPatch
 ContainerQosPatch
 ~~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flasharray::ContainerQosPatch
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+ContainerQosPriorityReadonly
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::ContainerQosPriorityReadonly
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -8274,6 +8310,42 @@ PriorityAdjustment
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
+PriorityAdjustmentPatch
+~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::PriorityAdjustmentPatch
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PriorityAdjustmentValue
+~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::PriorityAdjustmentValue
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PriorityAdjustmentValuePatch
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::PriorityAdjustmentValuePatch
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
 ProtectionGroup
 ~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flasharray::ProtectionGroup
@@ -8637,6 +8709,18 @@ QosMetrics
 QosMetricsCeilings
 ~~~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.flasharray::QosMetricsCeilings
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+QosMetricsCeilingsAndFloors
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.flasharray::QosMetricsCeilingsAndFloors
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
