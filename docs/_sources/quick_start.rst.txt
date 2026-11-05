@@ -44,6 +44,17 @@ when the ID token expires.
    client = flasharray.Client('flasharray.example.com',
                               id_token=[...])
 
+You can also log in with a username and password. Storing passwords client-side is
+not recommended: use this only as necessary to retrieve an API token, and use the
+API token for all subsequent logins. This requires FlashArray REST API 2.47 or later.
+
+.. code-block:: python
+
+   from pypureclient import flasharray
+   client = flasharray.Client('flasharray.example.com',
+                              username=[...],
+                              password=[...])
+
 
 FlashBlade Client
 ~~~~~~~~~~~~~~~~~
@@ -90,6 +101,17 @@ if that is preferred.
    from pypureclient import flashblade
    client = flashblade.Client('flashblade.example.com',
                               api_token=[...])
+
+You can also log in with a username and password. Storing passwords client-side is
+not recommended: use this only as necessary to retrieve an API token, and use the
+API token for all subsequent logins. This requires FlashBlade REST API 2.26 or later.
+
+.. code-block:: python
+
+   from pypureclient import flashblade
+   client = flashblade.Client('flashblade.example.com',
+                              username=[...],
+                              password=[...])
 
 If you are writing an API integration for FlashBlade for distribution to your customers
 and partners, we ask that you ensure that your API integration "self-identifies" when

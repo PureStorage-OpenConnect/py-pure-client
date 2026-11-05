@@ -1,2 +1,2 @@
-py-pure-client 1.84.1
+py-pure-client 1.97.0
 ---------------------
