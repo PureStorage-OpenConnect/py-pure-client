@@ -13,12 +13,13 @@ from ._transport.configuration import Configuration
 
 class APITokenManager(object):
     """
-    A APITokenManager is to handle api token-based authentication for REST 2.X API
-    calls internally.
+    A APITokenManager is to handle session-based authentication for REST 2.X API
+    calls internally, logging in with either an api token or a username and password.
     A valid session token is stored in memory.
     """
 
-    def __init__(self, api_token, configuration: Configuration, version: str = None, user_agent: str = None, timeout=None):
+    def __init__(self, api_token, configuration: Configuration, version: str = None, user_agent: str = None, timeout=None,
+                 username: str = None, password: str = None):
         """
         Initialize a APITokenManager. Should be treated as a static object.
 
@@ -26,16 +27,28 @@ class APITokenManager(object):
             token_endpoint (str): URL to POST to for exchanging an API token for
                 a session token.
             api_token (str): API token for the user.
+            username (str): User to log in. Used together with password as an
+                alternative to api_token.
+            password (str): Password of the user.
 
         Raises:
             PureError: If there was any issue retrieving an session token.
         """
+        if api_token and password:
+            raise PureError("Only one authentication option is allowed. Please use either api_token or username and password and try again!")
+        if not api_token and not (username and password):
+            raise PureError("Both username and password are required to log in without an api_token.")
         _base_url = '/api'
         if version:
             _base_url = f'{_base_url}/{version}'
         self._token_endpoint = f'{_base_url}/login'
         self._token_dispose_endpoint = f'{_base_url}/logout'
-        self._api_token = api_token
+        if api_token:
+            self._login_headers = {Headers.api_token: api_token}
+            self._login_body = None
+        else:
+            self._login_headers = {Headers.content_type: 'application/json'}
+            self._login_body = {'username': username, 'password': password}
         self._configuration = configuration
         self._user_agent = user_agent
         self._session_token = None
@@ -75,7 +88,7 @@ class APITokenManager(object):
         """
         try:
             response = call_with_rate_limit_retries(
-                lambda: self.__call_endpoint(self._token_endpoint, {Headers.api_token: self._api_token}))
+                lambda: self.__call_endpoint(self._token_endpoint, self._login_headers, self._login_body))
             return str(response.headers[Headers.x_auth_token])
         except ApiException as e:
             raise PureError("Failed to retrieve session token with error: {body} ({status})".format(body=e.body, status=e.status))
@@ -93,13 +106,14 @@ class APITokenManager(object):
         finally:
             self._session_token = None
 
-    def __call_endpoint(self, endpoint: str, headers: dict) -> ApiResponse:
+    def __call_endpoint(self, endpoint: str, headers: dict, body: dict = None) -> ApiResponse:
         _result = None
         with create_api_client(self._configuration, self._user_agent) as api_client:
             _result = api_client.call_api(
                         endpoint,
                         "POST",
                         header_params={**headers, **{Headers.x_request_id: str(uuid.uuid4())}},
+                        body=body,
                         response_types_map={'200': "bytearray"},
                         _request_timeout=self._timeout)
         return _result

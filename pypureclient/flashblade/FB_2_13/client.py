@@ -52,7 +52,8 @@ class Client(object):
                  api_token: str = None,
                  retries: int = None,
                  timeout: Union[int, Tuple[float, float]] = None,
-                 user_agent = None):
+                 user_agent = None,
+                 ):
         """
         Initialize a FlashBlade Client. id_token is generated based on app ID and private
         key info. Either id_token or api_token could be used for authentication. Only one

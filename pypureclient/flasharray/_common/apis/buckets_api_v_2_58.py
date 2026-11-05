@@ -1107,3 +1107,9 @@ class BucketsApi:
     api258_buckets_performance_get_with_http_info = buckets_performance_get_with_http_info
     api258_buckets_post_with_http_info = buckets_post_with_http_info
     api258_buckets_space_get_with_http_info = buckets_space_get_with_http_info
+    api259_buckets_delete_with_http_info = buckets_delete_with_http_info
+    api259_buckets_get_with_http_info = buckets_get_with_http_info
+    api259_buckets_patch_with_http_info = buckets_patch_with_http_info
+    api259_buckets_performance_get_with_http_info = buckets_performance_get_with_http_info
+    api259_buckets_post_with_http_info = buckets_post_with_http_info
+    api259_buckets_space_get_with_http_info = buckets_space_get_with_http_info

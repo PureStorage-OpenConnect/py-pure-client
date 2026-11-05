@@ -569,3 +569,6 @@ class FilesApi:
     api258_files_antivirus_get_with_http_info = files_antivirus_get_with_http_info
     api258_files_antivirus_patch_with_http_info = files_antivirus_patch_with_http_info
     api258_files_post_with_http_info = files_post_with_http_info
+    api259_files_antivirus_get_with_http_info = files_antivirus_get_with_http_info
+    api259_files_antivirus_patch_with_http_info = files_antivirus_patch_with_http_info
+    api259_files_post_with_http_info = files_post_with_http_info

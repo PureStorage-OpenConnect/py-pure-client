@@ -1534,3 +1534,13 @@ class FleetsApi:
     api258_fleets_members_post_with_http_info = fleets_members_post_with_http_info
     api258_fleets_patch_with_http_info = fleets_patch_with_http_info
     api258_fleets_post_with_http_info = fleets_post_with_http_info
+    api259_fleets_delete_with_http_info = fleets_delete_with_http_info
+    api259_fleets_fleet_key_get_with_http_info = fleets_fleet_key_get_with_http_info
+    api259_fleets_fleet_key_post_with_http_info = fleets_fleet_key_post_with_http_info
+    api259_fleets_get_with_http_info = fleets_get_with_http_info
+    api259_fleets_members_batch_post_with_http_info = fleets_members_batch_post_with_http_info
+    api259_fleets_members_delete_with_http_info = fleets_members_delete_with_http_info
+    api259_fleets_members_get_with_http_info = fleets_members_get_with_http_info
+    api259_fleets_members_post_with_http_info = fleets_members_post_with_http_info
+    api259_fleets_patch_with_http_info = fleets_patch_with_http_info
+    api259_fleets_post_with_http_info = fleets_post_with_http_info

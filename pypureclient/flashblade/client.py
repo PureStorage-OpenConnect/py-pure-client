@@ -1,4 +1,5 @@
 import importlib
+import inspect
 from typing import Union, Tuple
 
 from .__modules_dict import __modules_dict as fb_modules_dict
@@ -29,7 +30,8 @@ def Client(
     ssl_cert: str = None,
     user_agent: str = None,
     verify_ssl: bool = None,
-    configuration: Configuration = None):
+    configuration: Configuration = None,
+    password: str = None):
     """
     Initialize a FlashBlade Client.
 
@@ -51,8 +53,8 @@ def Client(
     :param private_key_password: The password of the private key. Defaults to None.
     :type private_key_password: str, optional
 
-    :param username: Username of the user the token should be issued for. This must
-        be a valid user in the system.
+    :param username: Username of the user the token should be issued for, or the user
+        to log in with password. This must be a valid user in the system.
     :type username: str, optional
 
     :param client_id: ID of API client that issued the identity token.
@@ -94,6 +96,11 @@ def Client(
     :param configuration: configuration object to use.
     :type configuration: Configuration, optional
 
+    :param password: Password of the user to log in. Used together with username as an
+        alternative to api_token. Requires REST API 2.26 or later.
+        Prefer using it only to retrieve an api_token.
+    :type password: str, optional
+
     :raises PureError: If it could not create an ID or access token
     """
 
@@ -105,11 +112,16 @@ def Client(
     else:
         version = __choose_version(array_versions)
     fb_module = __version_to_module(version)
+    client_kwargs = {}
+    if password is not None:
+        if 'password' not in inspect.signature(fb_module.Client).parameters:
+            raise ValueError(f"Username and password login is not supported by REST API version {version}.")
+        client_kwargs['password'] = password
     client = fb_module.Client(configuration=_transport_cfg,
                                 id_token=id_token, private_key_file=private_key_file,
                                 private_key_password=private_key_password, username=username, client_id=client_id,
                                 key_id=key_id, issuer=issuer, api_token=api_token, retries=retries, timeout=timeout,
-                                user_agent=user_agent)
+                                user_agent=user_agent, **client_kwargs)
     return client
 
 
