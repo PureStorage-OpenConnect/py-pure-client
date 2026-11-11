@@ -28,7 +28,7 @@ except ModuleNotFoundError:
 
 class AnomalyAdditionalDataCommands(BaseModel):
     """
-    Additional data for `admin_activities` anomalies.
+    Additional data for the `admin_activities` and `mass_deletion` metrics.
     """
     commands: conlist(StrictStr) = Field(default=..., description="List of Purity CLI commands involved in the anomaly.")
     __properties = ["commands"]

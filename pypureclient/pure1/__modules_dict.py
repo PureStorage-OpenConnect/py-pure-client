@@ -5,5 +5,6 @@ __modules_dict = {
     "1.3": "pypureclient.pure1.Pure1_1_3",
     "1.4": "pypureclient.pure1.Pure1_1_4",
     "1.5": "pypureclient.pure1.Pure1_1_5",
-    "1.6": "pypureclient.pure1.Pure1_1_6"
+    "1.6": "pypureclient.pure1.Pure1_1_6",
+    "1.7": "pypureclient.pure1.Pure1_1_7"
 }
