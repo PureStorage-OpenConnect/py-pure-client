@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Index &mdash; py-pure-client 1.98.0 documentation</title>
+  <title>Index &mdash; py-pure-client 1.99.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/autodoc_pydantic.css" type="text/css" />
@@ -30,7 +30,7 @@
             <a href="index.html" class="icon icon-home"> py-pure-client
           </a>
               <div class="version">
-                1.98
+                1.99
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -131,7 +131,7 @@
 </li>
         <li><a href="shared_reference.html#pypureclient.properties.Property.__init__">(pypureclient.properties.Property method)</a>
 </li>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.__init__">(pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.__init__">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
         <li><a href="shared_reference.html#pypureclient.responses.ApiError.__init__">(pypureclient.responses.ApiError method)</a>
 </li>
@@ -367,6 +367,10 @@
 </li>
         <li><a href="fb_reference.html#pypureclient.flashblade.Permission.action">(pypureclient.flashblade.Permission attribute)</a>
 </li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.PlanningSimulationActiveclusterFailoverStep.action">(pypureclient.pure1.PlanningSimulationActiveclusterFailoverStep attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.PlanningSimulationVolumeMoveStep.action">(pypureclient.pure1.PlanningSimulationVolumeMoveStep attribute)</a>
+</li>
       </ul></li>
       <li><a href="pure1_reference.html#pypureclient.pure1.AssetUpgradeDetails.action_needed">action_needed (pypureclient.pure1.AssetUpgradeDetails attribute)</a>
 </li>
@@ -463,11 +467,17 @@
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.AnomalyMetricReferenceAdditionalData.actual_instance">(pypureclient.pure1.AnomalyMetricReferenceAdditionalData attribute)</a>
 </li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.PlanningSimulationStep.actual_instance">(pypureclient.pure1.PlanningSimulationStep attribute)</a>
+</li>
         <li><a href="pure1_reference.html#pypureclient.pure1.SubscriptionAllOfServiceDetails.actual_instance">(pypureclient.pure1.SubscriptionAllOfServiceDetails attribute)</a>
 </li>
       </ul></li>
       <li><a href="pure1_reference.html#pypureclient.pure1.AnomalyMetricReferenceAdditionalData.actual_instance_must_validate_anyof">actual_instance_must_validate_anyof() (pypureclient.pure1.AnomalyMetricReferenceAdditionalData class method)</a>
+
+      <ul>
+        <li><a href="pure1_reference.html#pypureclient.pure1.PlanningSimulationStep.actual_instance_must_validate_anyof">(pypureclient.pure1.PlanningSimulationStep class method)</a>
 </li>
+      </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.ContainerQosBandwidthLimitPatch.actual_instance_must_validate_oneof">actual_instance_must_validate_oneof() (pypureclient.flasharray.ContainerQosBandwidthLimitPatch class method)</a>
 
       <ul>
@@ -627,7 +637,13 @@
       <li><a href="fb_reference.html#pypureclient.flashblade.ArrayNfsSpecificPerformance.aggregate_usec_per_share_metadata_read_op">aggregate_usec_per_share_metadata_read_op (pypureclient.flashblade.ArrayNfsSpecificPerformance attribute)</a>
 </li>
       <li><a href="pure1_reference.html#pypureclient.pure1.MetricHistory.aggregation">aggregation (pypureclient.pure1.MetricHistory attribute)</a>
+
+      <ul>
+        <li><a href="pure1_reference.html#pypureclient.pure1.PlanningSimulationMetric.aggregation">(pypureclient.pure1.PlanningSimulationMetric attribute)</a>
 </li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.PlanningSimulationMetricRequest.aggregation">(pypureclient.pure1.PlanningSimulationMetricRequest attribute)</a>
+</li>
+      </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.PolicyManagementAccess.aggregation_strategy">aggregation_strategy (pypureclient.flasharray.PolicyManagementAccess attribute)</a>
 
       <ul>
@@ -732,8 +748,6 @@
         <li><a href="fb_reference.html#pypureclient.flashblade.ManagementAuthenticationPolicyConfig.allowed_methods">(pypureclient.flashblade.ManagementAuthenticationPolicyConfig attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="fb_reference.html#pypureclient.flashblade.CrossOriginResourceSharingPolicyRule.allowed_origins">allowed_origins (pypureclient.flashblade.CrossOriginResourceSharingPolicyRule attribute)</a>
 
       <ul>
@@ -744,6 +758,8 @@
         <li><a href="fb_reference.html#pypureclient.flashblade.CrossOriginResourceSharingPolicyRuleWithContext.allowed_origins">(pypureclient.flashblade.CrossOriginResourceSharingPolicyRuleWithContext attribute)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="fa_reference.html#pypureclient.flasharray.AlertRulesCatalog.allowed_values">allowed_values (pypureclient.flasharray.AlertRulesCatalog attribute)</a>
 
       <ul>
@@ -841,11 +857,23 @@
       <li><a href="shared_reference.html#pypureclient.properties.Property.any">any() (pypureclient.properties.Property method)</a>
 </li>
       <li><a href="pure1_reference.html#pypureclient.pure1.AnomalyMetricReferenceAdditionalData.any_of_schemas">any_of_schemas (pypureclient.pure1.AnomalyMetricReferenceAdditionalData attribute)</a>
+
+      <ul>
+        <li><a href="pure1_reference.html#pypureclient.pure1.PlanningSimulationStep.any_of_schemas">(pypureclient.pure1.PlanningSimulationStep attribute)</a>
 </li>
+      </ul></li>
       <li><a href="pure1_reference.html#pypureclient.pure1.AnomalyMetricReferenceAdditionalData.anyof_schema_1_validator">anyof_schema_1_validator (pypureclient.pure1.AnomalyMetricReferenceAdditionalData attribute)</a>
+
+      <ul>
+        <li><a href="pure1_reference.html#pypureclient.pure1.PlanningSimulationStep.anyof_schema_1_validator">(pypureclient.pure1.PlanningSimulationStep attribute)</a>
 </li>
+      </ul></li>
       <li><a href="pure1_reference.html#pypureclient.pure1.AnomalyMetricReferenceAdditionalData.anyof_schema_2_validator">anyof_schema_2_validator (pypureclient.pure1.AnomalyMetricReferenceAdditionalData attribute)</a>
+
+      <ul>
+        <li><a href="pure1_reference.html#pypureclient.pure1.PlanningSimulationStep.anyof_schema_2_validator">(pypureclient.pure1.PlanningSimulationStep attribute)</a>
 </li>
+      </ul></li>
       <li><a href="pure1_reference.html#pypureclient.pure1.AnomalyMetricReferenceAdditionalData.anyof_schema_3_validator">anyof_schema_3_validator (pypureclient.pure1.AnomalyMetricReferenceAdditionalData attribute)</a>
 </li>
       <li><a href="pure1_reference.html#pypureclient.pure1.AnomalyMetricReferenceAdditionalData.anyof_schema_4_validator">anyof_schema_4_validator (pypureclient.pure1.AnomalyMetricReferenceAdditionalData attribute)</a>
@@ -1001,6 +1029,8 @@
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.ObjectStoreAccount.arrays">(pypureclient.pure1.ObjectStoreAccount attribute)</a>
 </li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.PlanningSimulationActiveclusterFailoverDetails.arrays">(pypureclient.pure1.PlanningSimulationActiveclusterFailoverDetails attribute)</a>
+</li>
         <li><a href="pure1_reference.html#pypureclient.pure1.Pod.arrays">(pypureclient.pure1.Pod attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.Policy.arrays">(pypureclient.pure1.Policy attribute)</a>
@@ -1057,11 +1087,17 @@
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.FileSystemSnapshot.as_of">(pypureclient.pure1.FileSystemSnapshot attribute)</a>
 </li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.FlasharrayHardwareUpgradeRecommendation.as_of">(pypureclient.pure1.FlasharrayHardwareUpgradeRecommendation attribute)</a>
+</li>
         <li><a href="pure1_reference.html#pypureclient.pure1.Fleet.as_of">(pypureclient.pure1.Fleet attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.FleetMember.as_of">(pypureclient.pure1.FleetMember attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.Hardware.as_of">(pypureclient.pure1.Hardware attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.HardwareConnector.as_of">(pypureclient.pure1.HardwareConnector attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.LicenseUpgradeRecommendation.as_of">(pypureclient.pure1.LicenseUpgradeRecommendation attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.Metric.as_of">(pypureclient.pure1.Metric attribute)</a>
 </li>
@@ -1070,6 +1106,8 @@
         <li><a href="pure1_reference.html#pypureclient.pure1.NetworkInterface.as_of">(pypureclient.pure1.NetworkInterface attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.ObjectStoreAccount.as_of">(pypureclient.pure1.ObjectStoreAccount attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.PlanningSimulationMetric.as_of">(pypureclient.pure1.PlanningSimulationMetric attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.Pod.as_of">(pypureclient.pure1.Pod attribute)</a>
 </li>
@@ -1085,6 +1123,10 @@
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.ProtectionGroupSnapshotTransfer.as_of">(pypureclient.pure1.ProtectionGroupSnapshotTransfer attribute)</a>
 </li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Recommendation.as_of">(pypureclient.pure1.Recommendation attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.RecommendationBase.as_of">(pypureclient.pure1.RecommendationBase attribute)</a>
+</li>
         <li><a href="pure1_reference.html#pypureclient.pure1.ReplicaLink.as_of">(pypureclient.pure1.ReplicaLink attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.Resource.as_of">(pypureclient.pure1.Resource attribute)</a>
@@ -1099,6 +1141,8 @@
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.SubscriptionLicense.as_of">(pypureclient.pure1.SubscriptionLicense attribute)</a>
 </li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.SupportContractRenewalRecommendation.as_of">(pypureclient.pure1.SupportContractRenewalRecommendation attribute)</a>
+</li>
         <li><a href="pure1_reference.html#pypureclient.pure1.SustainabilityArray.as_of">(pypureclient.pure1.SustainabilityArray attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.SustainabilityAssessment.as_of">(pypureclient.pure1.SustainabilityAssessment attribute)</a>
@@ -1108,6 +1152,10 @@
         <li><a href="pure1_reference.html#pypureclient.pure1.Target.as_of">(pypureclient.pure1.Target attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.TimeAware.as_of">(pypureclient.pure1.TimeAware attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.TopologyGroup.as_of">(pypureclient.pure1.TopologyGroup attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.TopologyGroupMember.as_of">(pypureclient.pure1.TopologyGroupMember attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.Volume.as_of">(pypureclient.pure1.Volume attribute)</a>
 </li>
@@ -2109,7 +2157,7 @@
       <ul>
         <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client">(class in pypureclient.flashblade.FB_2_30.client)</a>
 </li>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client">(class in pypureclient.pure1.Pure1_1_6.client)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client">(class in pypureclient.pure1.Pure1_1_7.client)</a>
 </li>
       </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.PolicyRuleNetworkAccess.client">client (pypureclient.flasharray.PolicyRuleNetworkAccess attribute)</a>
@@ -2323,6 +2371,16 @@
       <ul>
         <li><a href="fb_reference.html#pypureclient.flashblade.EulaSignature.company">(pypureclient.flashblade.EulaSignature attribute)</a>
 </li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.FlasharrayHardwareUpgradeRecommendation.company">(pypureclient.pure1.FlasharrayHardwareUpgradeRecommendation attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.LicenseUpgradeRecommendation.company">(pypureclient.pure1.LicenseUpgradeRecommendation attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Recommendation.company">(pypureclient.pure1.Recommendation attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.RecommendationBase.company">(pypureclient.pure1.RecommendationBase attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.SupportContractRenewalRecommendation.company">(pypureclient.pure1.SupportContractRenewalRecommendation attribute)</a>
+</li>
       </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.ProtectionGroupSnapshotTransfer.completed">completed (pypureclient.flasharray.ProtectionGroupSnapshotTransfer attribute)</a>
 
@@ -2398,6 +2456,8 @@
         <li><a href="fb_reference.html#pypureclient.flashblade.Alert.component_type">(pypureclient.flashblade.Alert attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.Alert.component_type">(pypureclient.pure1.Alert attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.EolComponent.component_type">(pypureclient.pure1.EolComponent attribute)</a>
 </li>
       </ul></li>
       <li><a href="pure1_reference.html#pypureclient.pure1.InvoiceLine.components">components (pypureclient.pure1.InvoiceLine attribute)</a>
@@ -4025,13 +4085,19 @@
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.FileSystemSnapshotGetResponse.continuation_token">(pypureclient.pure1.FileSystemSnapshotGetResponse attribute)</a>
 </li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.FlasharrayHardwareUpgradeRecommendationGetResponse.continuation_token">(pypureclient.pure1.FlasharrayHardwareUpgradeRecommendationGetResponse attribute)</a>
+</li>
         <li><a href="pure1_reference.html#pypureclient.pure1.FleetGetResponse.continuation_token">(pypureclient.pure1.FleetGetResponse attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.FleetMemberGetResponse.continuation_token">(pypureclient.pure1.FleetMemberGetResponse attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.HardwareConnectorGetResponse.continuation_token">(pypureclient.pure1.HardwareConnectorGetResponse attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.HardwareGetResponse.continuation_token">(pypureclient.pure1.HardwareGetResponse attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.InvoiceGetResponse.continuation_token">(pypureclient.pure1.InvoiceGetResponse attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.LicenseUpgradeRecommendationGetResponse.continuation_token">(pypureclient.pure1.LicenseUpgradeRecommendationGetResponse attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.MetricGetResponse.continuation_token">(pypureclient.pure1.MetricGetResponse attribute)</a>
 </li>
@@ -4057,6 +4123,8 @@
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.ProtectionGroupSnapshotTransferGetResponse.continuation_token">(pypureclient.pure1.ProtectionGroupSnapshotTransferGetResponse attribute)</a>
 </li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.RecommendationGetResponse.continuation_token">(pypureclient.pure1.RecommendationGetResponse attribute)</a>
+</li>
         <li><a href="pure1_reference.html#pypureclient.pure1.SecurityInsightArrayGetResponse.continuation_token">(pypureclient.pure1.SecurityInsightArrayGetResponse attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.SubscriptionAssetGetResponse.continuation_token">(pypureclient.pure1.SubscriptionAssetGetResponse attribute)</a>
@@ -4067,6 +4135,8 @@
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.SupportContractGetResponse.continuation_token">(pypureclient.pure1.SupportContractGetResponse attribute)</a>
 </li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.SupportContractRenewalRecommendationGetResponse.continuation_token">(pypureclient.pure1.SupportContractRenewalRecommendationGetResponse attribute)</a>
+</li>
         <li><a href="pure1_reference.html#pypureclient.pure1.SustainabilityArrayGetResponse.continuation_token">(pypureclient.pure1.SustainabilityArrayGetResponse attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.SustainabilityInsightArrayGetResponse.continuation_token">(pypureclient.pure1.SustainabilityInsightArrayGetResponse attribute)</a>
@@ -4074,6 +4144,10 @@
         <li><a href="pure1_reference.html#pypureclient.pure1.TagGetResponse.continuation_token">(pypureclient.pure1.TagGetResponse attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.TargetGetResponse.continuation_token">(pypureclient.pure1.TargetGetResponse attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.TopologyGroupGetResponse.continuation_token">(pypureclient.pure1.TopologyGroupGetResponse attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.TopologyGroupMemberGetResponse.continuation_token">(pypureclient.pure1.TopologyGroupMemberGetResponse attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.VolumeGetResponse.continuation_token">(pypureclient.pure1.VolumeGetResponse attribute)</a>
 </li>
@@ -4130,6 +4204,8 @@
 
       <ul>
         <li><a href="fb_reference.html#pypureclient.flashblade.FleetMember.coordinator_of">(pypureclient.flashblade.FleetMember attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.FleetMember.coordinator_of">(pypureclient.pure1.FleetMember attribute)</a>
 </li>
       </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.PresetWorkloadWorkloadTag.copyable">copyable (pypureclient.flasharray.PresetWorkloadWorkloadTag attribute)</a>
@@ -4331,6 +4407,16 @@
 </li>
         <li><a href="fb_reference.html#pypureclient.flashblade.FileLock.created_at">(pypureclient.flashblade.FileLock attribute)</a>
 </li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.FlasharrayHardwareUpgradeRecommendation.created_at">(pypureclient.pure1.FlasharrayHardwareUpgradeRecommendation attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.LicenseUpgradeRecommendation.created_at">(pypureclient.pure1.LicenseUpgradeRecommendation attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Recommendation.created_at">(pypureclient.pure1.Recommendation attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.RecommendationBase.created_at">(pypureclient.pure1.RecommendationBase attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.SupportContractRenewalRecommendation.created_at">(pypureclient.pure1.SupportContractRenewalRecommendation attribute)</a>
+</li>
       </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.ResourceAccessStatus.created_by">created_by (pypureclient.flasharray.ResourceAccessStatus attribute)</a>
 </li>
@@ -4342,7 +4428,21 @@
 </li>
       <li><a href="fa_reference.html#pypureclient.flasharray.CloudConfigModel.current">current (pypureclient.flasharray.CloudConfigModel attribute)</a>
 </li>
+      <li><a href="pure1_reference.html#pypureclient.pure1.LicenseUpgradeRecommendation.current_bandwidth_sla_bytes_per_sec">current_bandwidth_sla_bytes_per_sec (pypureclient.pure1.LicenseUpgradeRecommendation attribute)</a>
+</li>
       <li><a href="fa_reference.html#pypureclient.flasharray.CloudCapacityStatus.current_capacity">current_capacity (pypureclient.flasharray.CloudCapacityStatus attribute)</a>
+</li>
+      <li><a href="pure1_reference.html#pypureclient.pure1.FlasharrayHardwareUpgradeRecommendation.current_installed_capacity">current_installed_capacity (pypureclient.pure1.FlasharrayHardwareUpgradeRecommendation attribute)</a>
+</li>
+      <li><a href="pure1_reference.html#pypureclient.pure1.LicenseUpgradeRecommendation.current_iops_sla">current_iops_sla (pypureclient.pure1.LicenseUpgradeRecommendation attribute)</a>
+</li>
+      <li><a href="pure1_reference.html#pypureclient.pure1.FlasharrayHardwareUpgradeRecommendation.current_model">current_model (pypureclient.pure1.FlasharrayHardwareUpgradeRecommendation attribute)</a>
+</li>
+      <li><a href="pure1_reference.html#pypureclient.pure1.LicenseUpgradeRecommendation.current_reserve_exceeded_in_days">current_reserve_exceeded_in_days (pypureclient.pure1.LicenseUpgradeRecommendation attribute)</a>
+</li>
+      <li><a href="pure1_reference.html#pypureclient.pure1.LicenseUpgradeRecommendation.current_reserved_amount">current_reserved_amount (pypureclient.pure1.LicenseUpgradeRecommendation attribute)</a>
+</li>
+      <li><a href="pure1_reference.html#pypureclient.pure1.LicenseUpgradeRecommendation.current_service_tier">current_service_tier (pypureclient.pure1.LicenseUpgradeRecommendation attribute)</a>
 </li>
       <li><a href="fb_reference.html#pypureclient.flashblade.NetworkConnectionStatistics.current_state">current_state (pypureclient.flashblade.NetworkConnectionStatistics attribute)</a>
 </li>
@@ -4352,6 +4452,8 @@
         <li><a href="fb_reference.html#pypureclient.flashblade.SoftwareInstallation.current_step_id">(pypureclient.flashblade.SoftwareInstallation attribute)</a>
 </li>
       </ul></li>
+      <li><a href="pure1_reference.html#pypureclient.pure1.FlasharrayHardwareUpgradeRecommendation.current_usable_capacity">current_usable_capacity (pypureclient.pure1.FlasharrayHardwareUpgradeRecommendation attribute)</a>
+</li>
       <li><a href="pure1_reference.html#pypureclient.pure1.Subscription.customer_name">customer_name (pypureclient.pure1.Subscription attribute)</a>
 
       <ul>
@@ -4372,6 +4474,8 @@
         <li><a href="pure1_reference.html#pypureclient.pure1.CurrentMetric.data">(pypureclient.pure1.CurrentMetric attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.MetricHistory.data">(pypureclient.pure1.MetricHistory attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.PlanningSimulationMetric.data">(pypureclient.pure1.PlanningSimulationMetric attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.SubscriptionLicensePreRatio.data">(pypureclient.pure1.SubscriptionLicensePreRatio attribute)</a>
 </li>
@@ -4639,7 +4743,7 @@
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.delete_arrays_tags">delete_arrays_tags() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
 
       <ul>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.delete_arrays_tags">(pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.delete_arrays_tags">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       </ul></li>
       <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.delete_audit_file_systems_policies">delete_audit_file_systems_policies() (pypureclient.flashblade.FB_2_30.client.Client method)</a>
@@ -5126,8 +5230,6 @@
         <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.delete_snmp_managers">(pypureclient.flashblade.FB_2_30.client.Client method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.delete_software">delete_software() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
 
       <ul>
@@ -5136,6 +5238,8 @@
       </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.delete_software_check">delete_software_check() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.delete_ssh_certificate_authority_policies">delete_ssh_certificate_authority_policies() (pypureclient.flashblade.FB_2_30.client.Client method)</a>
 </li>
       <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.delete_ssh_certificate_authority_policies_admins">delete_ssh_certificate_authority_policies_admins() (pypureclient.flashblade.FB_2_30.client.Client method)</a>
@@ -5321,11 +5425,21 @@
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.Cve.description">(pypureclient.pure1.Cve attribute)</a>
 </li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.FlasharrayHardwareUpgradeRecommendation.description">(pypureclient.pure1.FlasharrayHardwareUpgradeRecommendation attribute)</a>
+</li>
         <li><a href="pure1_reference.html#pypureclient.pure1.InvoiceLine.description">(pypureclient.pure1.InvoiceLine attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.InvoiceLineComponent.description">(pypureclient.pure1.InvoiceLineComponent attribute)</a>
 </li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.LicenseUpgradeRecommendation.description">(pypureclient.pure1.LicenseUpgradeRecommendation attribute)</a>
+</li>
         <li><a href="pure1_reference.html#pypureclient.pure1.Metric.description">(pypureclient.pure1.Metric attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Recommendation.description">(pypureclient.pure1.Recommendation attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.RecommendationBase.description">(pypureclient.pure1.RecommendationBase attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.SupportContractRenewalRecommendation.description">(pypureclient.pure1.SupportContractRenewalRecommendation attribute)</a>
 </li>
       </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.KmipTestResult.destination">destination (pypureclient.flasharray.KmipTestResult attribute)</a>
@@ -5612,6 +5726,10 @@
         <li><a href="pure1_reference.html#pypureclient.pure1.Drive.details">(pypureclient.pure1.Drive attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.Hardware.details">(pypureclient.pure1.Hardware attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.PlanningSimulationActiveclusterFailoverStep.details">(pypureclient.pure1.PlanningSimulationActiveclusterFailoverStep attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.PlanningSimulationVolumeMoveStep.details">(pypureclient.pure1.PlanningSimulationVolumeMoveStep attribute)</a>
 </li>
       </ul></li>
       <li><a href="pure1_reference.html#pypureclient.pure1.Cve.detected_at">detected_at (pypureclient.pure1.Cve attribute)</a>
@@ -6422,6 +6540,10 @@
         <li><a href="pure1_reference.html#pypureclient.pure1.SupportContract.end_date">(pypureclient.pure1.SupportContract attribute)</a>
 </li>
       </ul></li>
+      <li><a href="pure1_reference.html#pypureclient.pure1.EolComponent.end_of_life">end_of_life (pypureclient.pure1.EolComponent attribute)</a>
+</li>
+      <li><a href="pure1_reference.html#pypureclient.pure1.FlasharrayHardwareUpgradeRecommendation.end_of_life_components">end_of_life_components (pypureclient.pure1.FlasharrayHardwareUpgradeRecommendation attribute)</a>
+</li>
       <li><a href="pure1_reference.html#pypureclient.pure1.SubscriptionAsset.end_of_life_date">end_of_life_date (pypureclient.pure1.SubscriptionAsset attribute)</a>
 </li>
       <li><a href="fa_reference.html#pypureclient.flasharray.Session.end_time">end_time (pypureclient.flasharray.Session attribute)</a>
@@ -7287,6 +7409,8 @@
 </li>
         <li><a href="fb_reference.html#pypureclient.flashblade.WorkloadPlacementRecommendation.expires">(pypureclient.flashblade.WorkloadPlacementRecommendation attribute)</a>
 </li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.SupportContractDetails.expires">(pypureclient.pure1.SupportContractDetails attribute)</a>
+</li>
       </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.ApiToken.expires_at">expires_at (pypureclient.flasharray.ApiToken attribute)</a>
 
@@ -7520,8 +7644,6 @@
         <li><a href="fb_reference.html#pypureclient.flashblade.Alert.flagged">(pypureclient.flashblade.Alert attribute)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="fa_reference.html#pypureclient.flasharray.FleetMember.fleet">fleet (pypureclient.flasharray.FleetMember attribute)</a>
 
       <ul>
@@ -7533,7 +7655,15 @@
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.Array.fleet">(pypureclient.pure1.Array attribute)</a>
 </li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.FleetMember.fleet">(pypureclient.pure1.FleetMember attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.TopologyGroup.fleet">(pypureclient.pure1.TopologyGroup attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.TopologyGroupMember.fleet">(pypureclient.pure1.TopologyGroupMember attribute)</a>
+</li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="fa_reference.html#pypureclient.flasharray.FleetKey.fleet_key">fleet_key (pypureclient.flasharray.FleetKey attribute)</a>
 
       <ul>
@@ -7711,7 +7841,7 @@
       <ul>
         <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_access_token">(pypureclient.flashblade.FB_2_30.client.Client method)</a>
 </li>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_access_token">(pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_access_token">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.get_active_directory">get_active_directory() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
@@ -7775,7 +7905,7 @@
       <ul>
         <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_alerts">(pypureclient.flashblade.FB_2_30.client.Client method)</a>
 </li>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_alerts">(pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_alerts">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.get_alerts_events">get_alerts_events() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
@@ -7825,7 +7955,7 @@
       <ul>
         <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_arrays">(pypureclient.flashblade.FB_2_30.client.Client method)</a>
 </li>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_arrays">(pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_arrays">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.get_arrays_cache">get_arrays_cache() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
@@ -7894,27 +8024,27 @@
 </li>
       <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_arrays_ssh_certificate_authority_policies">get_arrays_ssh_certificate_authority_policies() (pypureclient.flashblade.FB_2_30.client.Client method)</a>
 </li>
-      <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_arrays_support_contracts">get_arrays_support_contracts() (pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+      <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_arrays_support_contracts">get_arrays_support_contracts() (pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_arrays_supported_time_zones">get_arrays_supported_time_zones() (pypureclient.flashblade.FB_2_30.client.Client method)</a>
 </li>
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.get_arrays_tags">get_arrays_tags() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
 
       <ul>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_arrays_tags">(pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_arrays_tags">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       </ul></li>
       <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_arrays_telemetry_metrics_policies">get_arrays_telemetry_metrics_policies() (pypureclient.flashblade.FB_2_30.client.Client method)</a>
 </li>
-      <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_assessment_security_anomalies">get_assessment_security_anomalies() (pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+      <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_assessment_security_anomalies">get_assessment_security_anomalies() (pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
-      <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_assessment_security_cves">get_assessment_security_cves() (pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+      <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_assessment_security_cves">get_assessment_security_cves() (pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
-      <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_assessment_security_insights_arrays">get_assessment_security_insights_arrays() (pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+      <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_assessment_security_insights_arrays">get_assessment_security_insights_arrays() (pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
-      <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_assessment_sustainability_arrays">get_assessment_sustainability_arrays() (pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+      <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_assessment_sustainability_arrays">get_assessment_sustainability_arrays() (pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
-      <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_assessment_sustainability_insights_arrays">get_assessment_sustainability_insights_arrays() (pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+      <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_assessment_sustainability_insights_arrays">get_assessment_sustainability_insights_arrays() (pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_audit_file_systems_policies">get_audit_file_systems_policies() (pypureclient.flashblade.FB_2_30.client.Client method)</a>
 </li>
@@ -7931,13 +8061,13 @@
       <ul>
         <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_audits">(pypureclient.flashblade.FB_2_30.client.Client method)</a>
 </li>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_audits">(pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_audits">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       </ul></li>
       <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_blades">get_blades() (pypureclient.flashblade.FB_2_30.client.Client method)</a>
 
       <ul>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_blades">(pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_blades">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       </ul></li>
       <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_bucket_audit_filter_actions">get_bucket_audit_filter_actions() (pypureclient.flashblade.FB_2_30.client.Client method)</a>
@@ -7945,7 +8075,7 @@
       <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_bucket_replica_links">get_bucket_replica_links() (pypureclient.flashblade.FB_2_30.client.Client method)</a>
 
       <ul>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_bucket_replica_links">(pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_bucket_replica_links">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.get_buckets">get_buckets() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
@@ -7953,7 +8083,7 @@
       <ul>
         <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_buckets">(pypureclient.flashblade.FB_2_30.client.Client method)</a>
 </li>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_buckets">(pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_buckets">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       </ul></li>
       <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_buckets_audit_filters">get_buckets_audit_filters() (pypureclient.flashblade.FB_2_30.client.Client method)</a>
@@ -8023,7 +8153,7 @@
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.get_controllers">get_controllers() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
 
       <ul>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_controllers">(pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_controllers">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       </ul></li>
       <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_data_eviction_policies">get_data_eviction_policies() (pypureclient.flashblade.FB_2_30.client.Client method)</a>
@@ -8039,7 +8169,7 @@
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.get_directories">get_directories() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
 
       <ul>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_directories">(pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_directories">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.get_directories_groups">get_directories_groups() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
@@ -8147,7 +8277,7 @@
       <ul>
         <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_drives">(pypureclient.flashblade.FB_2_30.client.Client method)</a>
 </li>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_drives">(pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_drives">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       </ul></li>
       <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_file_system_exports">get_file_system_exports() (pypureclient.flashblade.FB_2_30.client.Client method)</a>
@@ -8159,13 +8289,13 @@
       <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_file_system_replica_links">get_file_system_replica_links() (pypureclient.flashblade.FB_2_30.client.Client method)</a>
 
       <ul>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_file_system_replica_links">(pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_file_system_replica_links">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       </ul></li>
       <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_file_system_replica_links_policies">get_file_system_replica_links_policies() (pypureclient.flashblade.FB_2_30.client.Client method)</a>
 
       <ul>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_file_system_replica_links_policies">(pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_file_system_replica_links_policies">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       </ul></li>
       <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_file_system_replica_links_transfer">get_file_system_replica_links_transfer() (pypureclient.flashblade.FB_2_30.client.Client method)</a>
@@ -8173,13 +8303,13 @@
       <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_file_system_snapshots">get_file_system_snapshots() (pypureclient.flashblade.FB_2_30.client.Client method)</a>
 
       <ul>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_file_system_snapshots">(pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_file_system_snapshots">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       </ul></li>
       <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_file_system_snapshots_policies">get_file_system_snapshots_policies() (pypureclient.flashblade.FB_2_30.client.Client method)</a>
 
       <ul>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_file_system_snapshots_policies">(pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_file_system_snapshots_policies">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       </ul></li>
       <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_file_system_snapshots_transfer">get_file_system_snapshots_transfer() (pypureclient.flashblade.FB_2_30.client.Client method)</a>
@@ -8191,7 +8321,7 @@
       <ul>
         <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_file_systems">(pypureclient.flashblade.FB_2_30.client.Client method)</a>
 </li>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_file_systems">(pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_file_systems">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       </ul></li>
       <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_file_systems_audit_policies">get_file_systems_audit_policies() (pypureclient.flashblade.FB_2_30.client.Client method)</a>
@@ -8213,7 +8343,7 @@
       <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_file_systems_policies">get_file_systems_policies() (pypureclient.flashblade.FB_2_30.client.Client method)</a>
 
       <ul>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_file_systems_policies">(pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_file_systems_policies">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       </ul></li>
       <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_file_systems_policies_all">get_file_systems_policies_all() (pypureclient.flashblade.FB_2_30.client.Client method)</a>
@@ -8237,7 +8367,7 @@
       <ul>
         <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_fleets">(pypureclient.flashblade.FB_2_30.client.Client method)</a>
 </li>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_fleets">(pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_fleets">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.get_fleets_fleet_key">get_fleets_fleet_key() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
@@ -8251,19 +8381,21 @@
       <ul>
         <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_fleets_members">(pypureclient.flashblade.FB_2_30.client.Client method)</a>
 </li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_fleets_members">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
+</li>
       </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.get_hardware">get_hardware() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
 
       <ul>
         <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_hardware">(pypureclient.flashblade.FB_2_30.client.Client method)</a>
 </li>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_hardware">(pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_hardware">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       </ul></li>
       <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_hardware_connectors">get_hardware_connectors() (pypureclient.flashblade.FB_2_30.client.Client method)</a>
 
       <ul>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_hardware_connectors">(pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_hardware_connectors">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       </ul></li>
       <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_hardware_connectors_performance">get_hardware_connectors_performance() (pypureclient.flashblade.FB_2_30.client.Client method)</a>
@@ -8302,7 +8434,7 @@
 </li>
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.get_hosts_tags">get_hosts_tags() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
 </li>
-      <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_invoices">get_invoices() (pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+      <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_invoices">get_invoices() (pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_keytabs">get_keytabs() (pypureclient.flashblade.FB_2_30.client.Client method)</a>
 </li>
@@ -8378,9 +8510,9 @@
 </li>
       <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_management_authentication_policies_members">get_management_authentication_policies_members() (pypureclient.flashblade.FB_2_30.client.Client method)</a>
 </li>
-      <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_metrics">get_metrics() (pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+      <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_metrics">get_metrics() (pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
-      <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_metrics_history">get_metrics_history() (pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+      <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_metrics_history">get_metrics_history() (pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_network_access_policies">get_network_access_policies() (pypureclient.flashblade.FB_2_30.client.Client method)</a>
 </li>
@@ -8393,7 +8525,7 @@
       <ul>
         <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_network_interfaces">(pypureclient.flashblade.FB_2_30.client.Client method)</a>
 </li>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_network_interfaces">(pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_network_interfaces">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       </ul></li>
       <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_network_interfaces_connectors">get_network_interfaces_connectors() (pypureclient.flashblade.FB_2_30.client.Client method)</a>
@@ -8455,7 +8587,7 @@
       <ul>
         <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_object_store_accounts">(pypureclient.flashblade.FB_2_30.client.Client method)</a>
 </li>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_object_store_accounts">(pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_object_store_accounts">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.get_object_store_accounts_space">get_object_store_accounts_space() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
@@ -8478,8 +8610,6 @@
         <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_object_store_users">(pypureclient.flashblade.FB_2_30.client.Client method)</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_object_store_users_object_store_access_policies">get_object_store_users_object_store_access_policies() (pypureclient.flashblade.FB_2_30.client.Client method)</a>
 </li>
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.get_object_store_users_policies_object_store_access">get_object_store_users_policies_object_store_access() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
@@ -8490,6 +8620,8 @@
         <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_object_store_virtual_hosts">(pypureclient.flashblade.FB_2_30.client.Client method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.get_offloads">get_offloads() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
 </li>
       <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_password_policies">get_password_policies() (pypureclient.flashblade.FB_2_30.client.Client method)</a>
@@ -8497,7 +8629,7 @@
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.get_pod_replica_links">get_pod_replica_links() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
 
       <ul>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_pod_replica_links">(pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_pod_replica_links">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.get_pod_replica_links_lag">get_pod_replica_links_lag() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
@@ -8511,7 +8643,7 @@
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.get_pods">get_pods() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
 
       <ul>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_pods">(pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_pods">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.get_pods_arrays">get_pods_arrays() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
@@ -8535,7 +8667,7 @@
       <ul>
         <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_policies">(pypureclient.flashblade.FB_2_30.client.Client method)</a>
 </li>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_policies">(pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_policies">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.get_policies_alert_watcher">get_policies_alert_watcher() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
@@ -8567,19 +8699,19 @@
       <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_policies_file_system_replica_links">get_policies_file_system_replica_links() (pypureclient.flashblade.FB_2_30.client.Client method)</a>
 
       <ul>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_policies_file_system_replica_links">(pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_policies_file_system_replica_links">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       </ul></li>
       <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_policies_file_system_snapshots">get_policies_file_system_snapshots() (pypureclient.flashblade.FB_2_30.client.Client method)</a>
 
       <ul>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_policies_file_system_snapshots">(pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_policies_file_system_snapshots">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       </ul></li>
       <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_policies_file_systems">get_policies_file_systems() (pypureclient.flashblade.FB_2_30.client.Client method)</a>
 
       <ul>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_policies_file_systems">(pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_policies_file_systems">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.get_policies_management_access">get_policies_management_access() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
@@ -8591,7 +8723,7 @@
       <ul>
         <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_policies_members">(pypureclient.flashblade.FB_2_30.client.Client method)</a>
 </li>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_policies_members">(pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_policies_members">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.get_policies_network_access">get_policies_network_access() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
@@ -8649,7 +8781,7 @@
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.get_ports">get_ports() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
 
       <ul>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_ports">(pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_ports">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.get_ports_initiators">get_ports_initiators() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
@@ -8663,7 +8795,7 @@
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.get_protection_group_snapshots">get_protection_group_snapshots() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
 
       <ul>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_protection_group_snapshots">(pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_protection_group_snapshots">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.get_protection_group_snapshots_tags">get_protection_group_snapshots_tags() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
@@ -8671,7 +8803,7 @@
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.get_protection_group_snapshots_transfer">get_protection_group_snapshots_transfer() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
 
       <ul>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_protection_group_snapshots_transfer">(pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_protection_group_snapshots_transfer">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.get_protection_groups">get_protection_groups() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
@@ -8747,6 +8879,14 @@
       <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_realms_space_storage_classes">get_realms_space_storage_classes() (pypureclient.flashblade.FB_2_30.client.Client method)</a>
 </li>
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.get_realms_tags">get_realms_tags() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
+</li>
+      <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_recommendations">get_recommendations() (pypureclient.pure1.Pure1_1_7.client.Client method)</a>
+</li>
+      <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_recommendations_flasharray_hardware_upgrade">get_recommendations_flasharray_hardware_upgrade() (pypureclient.pure1.Pure1_1_7.client.Client method)</a>
+</li>
+      <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_recommendations_license_upgrade">get_recommendations_license_upgrade() (pypureclient.pure1.Pure1_1_7.client.Client method)</a>
+</li>
+      <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_recommendations_support_contract_renewal">get_recommendations_support_contract_renewal() (pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.get_remote_arrays">get_remote_arrays() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
 
@@ -8935,15 +9075,15 @@
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.get_subscription_assets">get_subscription_assets() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
 
       <ul>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_subscription_assets">(pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_subscription_assets">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       </ul></li>
-      <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_subscription_licenses">get_subscription_licenses() (pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+      <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_subscription_licenses">get_subscription_licenses() (pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.get_subscriptions">get_subscriptions() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
 
       <ul>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_subscriptions">(pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_subscriptions">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.get_support">get_support() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
@@ -9005,7 +9145,7 @@
       <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_targets">get_targets() (pypureclient.flashblade.FB_2_30.client.Client method)</a>
 
       <ul>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_targets">(pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_targets">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       </ul></li>
       <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_targets_performance_replication">get_targets_performance_replication() (pypureclient.flashblade.FB_2_30.client.Client method)</a>
@@ -9039,17 +9179,23 @@
       <ul>
         <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_topology_groups">(pypureclient.flashblade.FB_2_30.client.Client method)</a>
 </li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_topology_groups">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
+</li>
       </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.get_topology_groups_arrays">get_topology_groups_arrays() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
 
       <ul>
         <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_topology_groups_arrays">(pypureclient.flashblade.FB_2_30.client.Client method)</a>
 </li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_topology_groups_arrays">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
+</li>
       </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.get_topology_groups_members">get_topology_groups_members() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
 
       <ul>
         <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_topology_groups_members">(pypureclient.flashblade.FB_2_30.client.Client method)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_topology_groups_members">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       </ul></li>
       <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.get_usage_groups">get_usage_groups() (pypureclient.flashblade.FB_2_30.client.Client method)</a>
@@ -9095,7 +9241,7 @@
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.get_volume_snapshots">get_volume_snapshots() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
 
       <ul>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_volume_snapshots">(pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_volume_snapshots">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.get_volume_snapshots_tags">get_volume_snapshots_tags() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
@@ -9105,7 +9251,7 @@
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.get_volumes">get_volumes() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
 
       <ul>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.get_volumes">(pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.get_volumes">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.get_volumes_diff">get_volumes_diff() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
@@ -10269,6 +10415,8 @@
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.FixedReferenceFqdn.id">(pypureclient.pure1.FixedReferenceFqdn attribute)</a>
 </li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.FlasharrayHardwareUpgradeRecommendation.id">(pypureclient.pure1.FlasharrayHardwareUpgradeRecommendation attribute)</a>
+</li>
         <li><a href="pure1_reference.html#pypureclient.pure1.Fleet.id">(pypureclient.pure1.Fleet attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.Hardware.id">(pypureclient.pure1.Hardware attribute)</a>
@@ -10279,6 +10427,8 @@
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.LicenseResourceReference.id">(pypureclient.pure1.LicenseResourceReference attribute)</a>
 </li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.LicenseUpgradeRecommendation.id">(pypureclient.pure1.LicenseUpgradeRecommendation attribute)</a>
+</li>
         <li><a href="pure1_reference.html#pypureclient.pure1.Metric.id">(pypureclient.pure1.Metric attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.MetricHistory.id">(pypureclient.pure1.MetricHistory attribute)</a>
@@ -10286,6 +10436,12 @@
         <li><a href="pure1_reference.html#pypureclient.pure1.NetworkInterface.id">(pypureclient.pure1.NetworkInterface attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.ObjectStoreAccount.id">(pypureclient.pure1.ObjectStoreAccount attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.PlanningSimulationArrayReference.id">(pypureclient.pure1.PlanningSimulationArrayReference attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.PlanningSimulationMetric.id">(pypureclient.pure1.PlanningSimulationMetric attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.PlanningSimulationVolumeReference.id">(pypureclient.pure1.PlanningSimulationVolumeReference attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.Pod.id">(pypureclient.pure1.Pod attribute)</a>
 </li>
@@ -10298,6 +10454,12 @@
         <li><a href="pure1_reference.html#pypureclient.pure1.ProtectionGroupSnapshot.id">(pypureclient.pure1.ProtectionGroupSnapshot attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.ProtectionGroupSnapshotTransfer.id">(pypureclient.pure1.ProtectionGroupSnapshotTransfer attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Recommendation.id">(pypureclient.pure1.Recommendation attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.RecommendationBase.id">(pypureclient.pure1.RecommendationBase attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.ReferenceWithoutType.id">(pypureclient.pure1.ReferenceWithoutType attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.ReplicaLink.id">(pypureclient.pure1.ReplicaLink attribute)</a>
 </li>
@@ -10315,9 +10477,13 @@
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.SubscriptionLicense.id">(pypureclient.pure1.SubscriptionLicense attribute)</a>
 </li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.SupportContractRenewalRecommendation.id">(pypureclient.pure1.SupportContractRenewalRecommendation attribute)</a>
+</li>
         <li><a href="pure1_reference.html#pypureclient.pure1.SustainabilityArray.id">(pypureclient.pure1.SustainabilityArray attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.Target.id">(pypureclient.pure1.Target attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.TopologyGroup.id">(pypureclient.pure1.TopologyGroup attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.Volume.id">(pypureclient.pure1.Volume attribute)</a>
 </li>
@@ -12505,7 +12671,15 @@
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.FileSystemSnapshotResponse.items">(pypureclient.pure1.FileSystemSnapshotResponse attribute)</a>
 </li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.FlasharrayHardwareUpgradeRecommendationGetResponse.items">(pypureclient.pure1.FlasharrayHardwareUpgradeRecommendationGetResponse attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.FlasharrayHardwareUpgradeRecommendationResponse.items">(pypureclient.pure1.FlasharrayHardwareUpgradeRecommendationResponse attribute)</a>
+</li>
         <li><a href="pure1_reference.html#pypureclient.pure1.FleetGetResponse.items">(pypureclient.pure1.FleetGetResponse attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.FleetMemberGetResponse.items">(pypureclient.pure1.FleetMemberGetResponse attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.FleetMemberResponse.items">(pypureclient.pure1.FleetMemberResponse attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.FleetResponse.items">(pypureclient.pure1.FleetResponse attribute)</a>
 </li>
@@ -12520,6 +12694,10 @@
         <li><a href="pure1_reference.html#pypureclient.pure1.InvoiceGetResponse.items">(pypureclient.pure1.InvoiceGetResponse attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.InvoiceResponse.items">(pypureclient.pure1.InvoiceResponse attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.LicenseUpgradeRecommendationGetResponse.items">(pypureclient.pure1.LicenseUpgradeRecommendationGetResponse attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.LicenseUpgradeRecommendationResponse.items">(pypureclient.pure1.LicenseUpgradeRecommendationResponse attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.MetricGetResponse.items">(pypureclient.pure1.MetricGetResponse attribute)</a>
 </li>
@@ -12536,6 +12714,8 @@
         <li><a href="pure1_reference.html#pypureclient.pure1.ObjectStoreAccountGetResponse.items">(pypureclient.pure1.ObjectStoreAccountGetResponse attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.ObjectStoreAccountResponse.items">(pypureclient.pure1.ObjectStoreAccountResponse attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.PlanningSimulationResponse.items">(pypureclient.pure1.PlanningSimulationResponse attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.PodGetResponse.items">(pypureclient.pure1.PodGetResponse attribute)</a>
 </li>
@@ -12565,6 +12745,10 @@
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.ProtectionGroupSnapshotTransferResponse.items">(pypureclient.pure1.ProtectionGroupSnapshotTransferResponse attribute)</a>
 </li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.RecommendationGetResponse.items">(pypureclient.pure1.RecommendationGetResponse attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.RecommendationResponse.items">(pypureclient.pure1.RecommendationResponse attribute)</a>
+</li>
         <li><a href="pure1_reference.html#pypureclient.pure1.SecurityInsightArrayGetResponse.items">(pypureclient.pure1.SecurityInsightArrayGetResponse attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.SecurityInsightArrayResponse.items">(pypureclient.pure1.SecurityInsightArrayResponse attribute)</a>
@@ -12583,6 +12767,10 @@
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.SupportContractGetResponse.items">(pypureclient.pure1.SupportContractGetResponse attribute)</a>
 </li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.SupportContractRenewalRecommendationGetResponse.items">(pypureclient.pure1.SupportContractRenewalRecommendationGetResponse attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.SupportContractRenewalRecommendationResponse.items">(pypureclient.pure1.SupportContractRenewalRecommendationResponse attribute)</a>
+</li>
         <li><a href="pure1_reference.html#pypureclient.pure1.SupportContractResponse.items">(pypureclient.pure1.SupportContractResponse attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.SustainabilityArrayGetResponse.items">(pypureclient.pure1.SustainabilityArrayGetResponse attribute)</a>
@@ -12600,6 +12788,14 @@
         <li><a href="pure1_reference.html#pypureclient.pure1.TargetGetResponse.items">(pypureclient.pure1.TargetGetResponse attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.TargetResponse.items">(pypureclient.pure1.TargetResponse attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.TopologyGroupGetResponse.items">(pypureclient.pure1.TopologyGroupGetResponse attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.TopologyGroupMemberGetResponse.items">(pypureclient.pure1.TopologyGroupMemberGetResponse attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.TopologyGroupMemberResponse.items">(pypureclient.pure1.TopologyGroupMemberResponse attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.TopologyGroupResponse.items">(pypureclient.pure1.TopologyGroupResponse attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.VolumeGetResponse.items">(pypureclient.pure1.VolumeGetResponse attribute)</a>
 </li>
@@ -13789,7 +13985,11 @@
 </li>
         <li><a href="fb_reference.html#pypureclient.flashblade.UserGroupQuotaLimitedBy.member">(pypureclient.flashblade.UserGroupQuotaLimitedBy attribute)</a>
 </li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.FleetMember.member">(pypureclient.pure1.FleetMember attribute)</a>
+</li>
         <li><a href="pure1_reference.html#pypureclient.pure1.PolicyMember.member">(pypureclient.pure1.PolicyMember attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.TopologyGroupMember.member">(pypureclient.pure1.TopologyGroupMember attribute)</a>
 </li>
       </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.LocalgroupmembershippostMembers.member_id">member_id (pypureclient.flasharray.LocalgroupmembershippostMembers attribute)</a>
@@ -13887,7 +14087,11 @@
 </li>
       </ul></li>
       <li><a href="pure1_reference.html#pypureclient.pure1.AnomalyResource.metrics">metrics (pypureclient.pure1.AnomalyResource attribute)</a>
+
+      <ul>
+        <li><a href="pure1_reference.html#pypureclient.pure1.PlanningSimulationPost.metrics">(pypureclient.pure1.PlanningSimulationPost attribute)</a>
 </li>
+      </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.SnmpAgentMib.mib">mib (pypureclient.flasharray.SnmpAgentMib attribute)</a>
 
       <ul>
@@ -14114,7 +14318,7 @@
 </li>
         <li><a href="pure1_reference.html#module-pypureclient.pure1.client">pypureclient.pure1.client</a>
 </li>
-        <li><a href="pure1_reference.html#module-pypureclient.pure1.Pure1_1_6.client">pypureclient.pure1.Pure1_1_6.client</a>
+        <li><a href="pure1_reference.html#module-pypureclient.pure1.Pure1_1_7.client">pypureclient.pure1.Pure1_1_7.client</a>
 </li>
       </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.ArrayEncryption.module_version">module_version (pypureclient.flasharray.ArrayEncryption attribute)</a>
@@ -15816,6 +16020,8 @@
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.BuiltInAsOf.name">(pypureclient.pure1.BuiltInAsOf attribute)</a>
 </li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Company.name">(pypureclient.pure1.Company attribute)</a>
+</li>
         <li><a href="pure1_reference.html#pypureclient.pure1.Controller.name">(pypureclient.pure1.Controller attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.CvePatch.name">(pypureclient.pure1.CvePatch attribute)</a>
@@ -15836,6 +16042,8 @@
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.FixedReferenceFqdn.name">(pypureclient.pure1.FixedReferenceFqdn attribute)</a>
 </li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.FlasharrayHardwareUpgradeRecommendation.name">(pypureclient.pure1.FlasharrayHardwareUpgradeRecommendation attribute)</a>
+</li>
         <li><a href="pure1_reference.html#pypureclient.pure1.Fleet.name">(pypureclient.pure1.Fleet attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.Hardware.name">(pypureclient.pure1.Hardware attribute)</a>
@@ -15843,6 +16051,8 @@
         <li><a href="pure1_reference.html#pypureclient.pure1.HardwareConnector.name">(pypureclient.pure1.HardwareConnector attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.LicenseResourceReference.name">(pypureclient.pure1.LicenseResourceReference attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.LicenseUpgradeRecommendation.name">(pypureclient.pure1.LicenseUpgradeRecommendation attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.MarketplacePartner.name">(pypureclient.pure1.MarketplacePartner attribute)</a>
 </li>
@@ -15854,6 +16064,14 @@
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.ObjectStoreAccount.name">(pypureclient.pure1.ObjectStoreAccount attribute)</a>
 </li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.PlanningSimulationArrayReference.name">(pypureclient.pure1.PlanningSimulationArrayReference attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.PlanningSimulationMetric.name">(pypureclient.pure1.PlanningSimulationMetric attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.PlanningSimulationMetricRequest.name">(pypureclient.pure1.PlanningSimulationMetricRequest attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.PlanningSimulationVolumeReference.name">(pypureclient.pure1.PlanningSimulationVolumeReference attribute)</a>
+</li>
         <li><a href="pure1_reference.html#pypureclient.pure1.Pod.name">(pypureclient.pure1.Pod attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.Policy.name">(pypureclient.pure1.Policy attribute)</a>
@@ -15863,6 +16081,14 @@
         <li><a href="pure1_reference.html#pypureclient.pure1.ProtectionGroupSnapshot.name">(pypureclient.pure1.ProtectionGroupSnapshot attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.ProtectionGroupSnapshotTransfer.name">(pypureclient.pure1.ProtectionGroupSnapshotTransfer attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Recommendation.name">(pypureclient.pure1.Recommendation attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.RecommendationBase.name">(pypureclient.pure1.RecommendationBase attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.RecommendationTrigger.name">(pypureclient.pure1.RecommendationTrigger attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.ReferenceWithoutType.name">(pypureclient.pure1.ReferenceWithoutType attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.Resource.name">(pypureclient.pure1.Resource attribute)</a>
 </li>
@@ -15878,9 +16104,13 @@
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.SubscriptionLicenseAddOnSla.name">(pypureclient.pure1.SubscriptionLicenseAddOnSla attribute)</a>
 </li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.SupportContractRenewalRecommendation.name">(pypureclient.pure1.SupportContractRenewalRecommendation attribute)</a>
+</li>
         <li><a href="pure1_reference.html#pypureclient.pure1.SustainabilityArray.name">(pypureclient.pure1.SustainabilityArray attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.Target.name">(pypureclient.pure1.Target attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.TopologyGroup.name">(pypureclient.pure1.TopologyGroup attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.Volume.name">(pypureclient.pure1.Volume attribute)</a>
 </li>
@@ -16630,6 +16860,8 @@
       <ul>
         <li><a href="fb_reference.html#pypureclient.flashblade.Tgroup.parent_topology_group">(pypureclient.flashblade.Tgroup attribute)</a>
 </li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.TopologyGroup.parent_topology_group">(pypureclient.pure1.TopologyGroup attribute)</a>
+</li>
       </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.Arrays.parity">parity (pypureclient.flasharray.Arrays attribute)</a>
 
@@ -16646,7 +16878,11 @@
       <li><a href="fb_reference.html#pypureclient.flashblade.Hardware.part_number">part_number (pypureclient.flashblade.Hardware attribute)</a>
 </li>
       <li><a href="pure1_reference.html#pypureclient.pure1.Subscription.partner_name">partner_name (pypureclient.pure1.Subscription attribute)</a>
+
+      <ul>
+        <li><a href="pure1_reference.html#pypureclient.pure1.SupportContractRenewalRecommendation.partner_name">(pypureclient.pure1.SupportContractRenewalRecommendation attribute)</a>
 </li>
+      </ul></li>
       <li><a href="pure1_reference.html#pypureclient.pure1.Invoice.partner_purchase_order">partner_purchase_order (pypureclient.pure1.Invoice attribute)</a>
 </li>
       <li><a href="fa_reference.html#pypureclient.flasharray.CertificatePost.passphrase">passphrase (pypureclient.flasharray.CertificatePost attribute)</a>
@@ -18049,6 +18285,8 @@
       </ul></li>
       <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.post_arrays_management_authentication_policies">post_arrays_management_authentication_policies() (pypureclient.flashblade.FB_2_30.client.Client method)</a>
 </li>
+      <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.post_arrays_simulations">post_arrays_simulations() (pypureclient.pure1.Pure1_1_7.client.Client method)</a>
+</li>
       <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.post_arrays_ssh_certificate_authority_policies">post_arrays_ssh_certificate_authority_policies() (pypureclient.flashblade.FB_2_30.client.Client method)</a>
 </li>
       <li><a href="fb_reference.html#pypureclient.flashblade.FB_2_30.client.Client.post_audit_file_systems_policies">post_audit_file_systems_policies() (pypureclient.flashblade.FB_2_30.client.Client method)</a>
@@ -19003,12 +19241,16 @@
         <li><a href="fb_reference.html#pypureclient.flashblade.WorkloadPlacementRecommendationTargetLoadProjections.projection_blended_max">(pypureclient.flashblade.WorkloadPlacementRecommendationTargetLoadProjections attribute)</a>
 </li>
       </ul></li>
+      <li><a href="pure1_reference.html#pypureclient.pure1.PlanningSimulationPost.projection_end_time">projection_end_time (pypureclient.pure1.PlanningSimulationPost attribute)</a>
+</li>
       <li><a href="fa_reference.html#pypureclient.flasharray.WorkloadPlacementRecommendation.projection_months">projection_months (pypureclient.flasharray.WorkloadPlacementRecommendation attribute)</a>
 
       <ul>
         <li><a href="fb_reference.html#pypureclient.flashblade.WorkloadPlacementRecommendation.projection_months">(pypureclient.flashblade.WorkloadPlacementRecommendation attribute)</a>
 </li>
       </ul></li>
+      <li><a href="pure1_reference.html#pypureclient.pure1.PlanningSimulationPost.projection_start_time">projection_start_time (pypureclient.pure1.PlanningSimulationPost attribute)</a>
+</li>
       <li><a href="fa_reference.html#pypureclient.flasharray.Pod.promotion_status">promotion_status (pypureclient.flasharray.Pod attribute)</a>
 
       <ul>
@@ -19033,6 +19275,8 @@
         <li><a href="fb_reference.html#pypureclient.flashblade.FileSession.protocol">(pypureclient.flashblade.FileSession attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.Drive.protocol">(pypureclient.pure1.Drive attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.EolComponent.protocol">(pypureclient.pure1.EolComponent attribute)</a>
 </li>
       </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.Connection.protocol_endpoint">protocol_endpoint (pypureclient.flasharray.Connection attribute)</a>
@@ -19160,7 +19404,7 @@
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.put_arrays_tags">put_arrays_tags() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
 
       <ul>
-        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_6.client.Client.put_arrays_tags">(pypureclient.pure1.Pure1_1_6.client.Client method)</a>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Pure1_1_7.client.Client.put_arrays_tags">(pypureclient.pure1.Pure1_1_7.client.Client method)</a>
 </li>
       </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.FA_2_59.client.Client.put_host_groups_tags_batch">put_host_groups_tags_batch() (pypureclient.flasharray.FA_2_59.client.Client method)</a>
@@ -19231,10 +19475,10 @@
 </li>
       </ul></li>
       <li>
-    pypureclient.pure1.Pure1_1_6.client
+    pypureclient.pure1.Pure1_1_7.client
 
       <ul>
-        <li><a href="pure1_reference.html#module-pypureclient.pure1.Pure1_1_6.client">module</a>
+        <li><a href="pure1_reference.html#module-pypureclient.pure1.Pure1_1_7.client">module</a>
 </li>
       </ul></li>
   </ul></td>
@@ -20121,6 +20365,44 @@
         <li><a href="fb_reference.html#pypureclient.flashblade.WorkloadPlacementRecommendation.recommendation_engine">(pypureclient.flashblade.WorkloadPlacementRecommendation attribute)</a>
 </li>
       </ul></li>
+      <li><a href="pure1_reference.html#pypureclient.pure1.FlasharrayHardwareUpgradeRecommendation.recommendation_type">recommendation_type (pypureclient.pure1.FlasharrayHardwareUpgradeRecommendation attribute)</a>
+
+      <ul>
+        <li><a href="pure1_reference.html#pypureclient.pure1.LicenseUpgradeRecommendation.recommendation_type">(pypureclient.pure1.LicenseUpgradeRecommendation attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Recommendation.recommendation_type">(pypureclient.pure1.Recommendation attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.RecommendationBase.recommendation_type">(pypureclient.pure1.RecommendationBase attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.SupportContractRenewalRecommendation.recommendation_type">(pypureclient.pure1.SupportContractRenewalRecommendation attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="pure1_reference.html#pypureclient.pure1.FlasharrayHardwareUpgradeRecommendation.recommendation_type_validate_enum">recommendation_type_validate_enum() (pypureclient.pure1.FlasharrayHardwareUpgradeRecommendation class method)</a>
+
+      <ul>
+        <li><a href="pure1_reference.html#pypureclient.pure1.LicenseUpgradeRecommendation.recommendation_type_validate_enum">(pypureclient.pure1.LicenseUpgradeRecommendation class method)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.SupportContractRenewalRecommendation.recommendation_type_validate_enum">(pypureclient.pure1.SupportContractRenewalRecommendation class method)</a>
+</li>
+      </ul></li>
+      <li><a href="pure1_reference.html#pypureclient.pure1.LicenseUpgradeRecommendation.recommended_bandwidth_sla_bytes_per_sec">recommended_bandwidth_sla_bytes_per_sec (pypureclient.pure1.LicenseUpgradeRecommendation attribute)</a>
+</li>
+      <li><a href="pure1_reference.html#pypureclient.pure1.FlasharrayHardwareUpgradeRecommendation.recommended_full_sku">recommended_full_sku (pypureclient.pure1.FlasharrayHardwareUpgradeRecommendation attribute)</a>
+</li>
+      <li><a href="pure1_reference.html#pypureclient.pure1.FlasharrayHardwareUpgradeRecommendation.recommended_installed_capacity">recommended_installed_capacity (pypureclient.pure1.FlasharrayHardwareUpgradeRecommendation attribute)</a>
+</li>
+      <li><a href="pure1_reference.html#pypureclient.pure1.LicenseUpgradeRecommendation.recommended_iops_sla">recommended_iops_sla (pypureclient.pure1.LicenseUpgradeRecommendation attribute)</a>
+</li>
+      <li><a href="pure1_reference.html#pypureclient.pure1.FlasharrayHardwareUpgradeRecommendation.recommended_model">recommended_model (pypureclient.pure1.FlasharrayHardwareUpgradeRecommendation attribute)</a>
+</li>
+      <li><a href="pure1_reference.html#pypureclient.pure1.LicenseUpgradeRecommendation.recommended_reserved_amount">recommended_reserved_amount (pypureclient.pure1.LicenseUpgradeRecommendation attribute)</a>
+</li>
+      <li><a href="pure1_reference.html#pypureclient.pure1.LicenseUpgradeRecommendation.recommended_service_tier">recommended_service_tier (pypureclient.pure1.LicenseUpgradeRecommendation attribute)</a>
+</li>
+      <li><a href="pure1_reference.html#pypureclient.pure1.FlasharrayHardwareUpgradeRecommendation.recommended_upgrade_sku">recommended_upgrade_sku (pypureclient.pure1.FlasharrayHardwareUpgradeRecommendation attribute)</a>
+</li>
+      <li><a href="pure1_reference.html#pypureclient.pure1.FlasharrayHardwareUpgradeRecommendation.recommended_usable_capacity">recommended_usable_capacity (pypureclient.pure1.FlasharrayHardwareUpgradeRecommendation attribute)</a>
+</li>
       <li><a href="fa_reference.html#pypureclient.flasharray.VirtualMachine.recover_context">recover_context (pypureclient.flasharray.VirtualMachine attribute)</a>
 
       <ul>
@@ -20339,6 +20621,8 @@
       </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.HostPatch.remove_nqns">remove_nqns (pypureclient.flasharray.HostPatch attribute)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="fb_reference.html#pypureclient.flashblade.LinkAggregationGroupPatch.remove_ports">remove_ports (pypureclient.flashblade.LinkAggregationGroupPatch attribute)</a>
 </li>
       <li><a href="fb_reference.html#pypureclient.flashblade.NfsPatch.remove_rules">remove_rules (pypureclient.flashblade.NfsPatch attribute)</a>
@@ -20353,8 +20637,6 @@
 </li>
       <li><a href="fb_reference.html#pypureclient.flashblade.ArrayNfsSpecificPerformance.removes_per_sec">removes_per_sec (pypureclient.flashblade.ArrayNfsSpecificPerformance attribute)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="fb_reference.html#pypureclient.flashblade.ArrayNfsSpecificPerformance.renames_per_sec">renames_per_sec (pypureclient.flashblade.ArrayNfsSpecificPerformance attribute)</a>
 </li>
       <li><a href="fa_reference.html#pypureclient.flasharray.NetworkInterfaceNeighborNeighborChassis.repeater">repeater (pypureclient.flasharray.NetworkInterfaceNeighborNeighborChassis attribute)</a>
@@ -20459,6 +20741,8 @@
       </ul></li>
       <li><a href="pure1_reference.html#pypureclient.pure1.SubscriptionLicense.reservation">reservation (pypureclient.pure1.SubscriptionLicense attribute)</a>
 </li>
+      <li><a href="pure1_reference.html#pypureclient.pure1.LicenseUpgradeRecommendation.reserved_unit">reserved_unit (pypureclient.pure1.LicenseUpgradeRecommendation attribute)</a>
+</li>
       <li><a href="fb_reference.html#pypureclient.flashblade.TelemetryMetricsPolicyPatchRuleInPolicy.resolution">resolution (pypureclient.flashblade.TelemetryMetricsPolicyPatchRuleInPolicy attribute)</a>
 
       <ul>
@@ -20473,6 +20757,10 @@
         <li><a href="pure1_reference.html#pypureclient.pure1.MetricAvailability.resolution">(pypureclient.pure1.MetricAvailability attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.MetricHistory.resolution">(pypureclient.pure1.MetricHistory attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.PlanningSimulationMetric.resolution">(pypureclient.pure1.PlanningSimulationMetric attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.PlanningSimulationPost.resolution">(pypureclient.pure1.PlanningSimulationPost attribute)</a>
 </li>
       </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.NonCopyableTag.resource">resource (pypureclient.flasharray.NonCopyableTag attribute)</a>
@@ -20687,6 +20975,10 @@
         <li><a href="pure1_reference.html#pypureclient.pure1.Anomaly.resources">(pypureclient.pure1.Anomaly attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.MetricHistory.resources">(pypureclient.pure1.MetricHistory attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.PlanningSimulationMetric.resources">(pypureclient.pure1.PlanningSimulationMetric attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.PlanningSimulationPost.resources">(pypureclient.pure1.PlanningSimulationPost attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.SubscriptionLicense.resources">(pypureclient.pure1.SubscriptionLicense attribute)</a>
 </li>
@@ -21954,6 +22246,8 @@
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.FileSystemSnapshot.source">(pypureclient.pure1.FileSystemSnapshot attribute)</a>
 </li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.PlanningSimulationVolumeMoveDetails.source">(pypureclient.pure1.PlanningSimulationVolumeMoveDetails attribute)</a>
+</li>
         <li><a href="pure1_reference.html#pypureclient.pure1.Pod.source">(pypureclient.pure1.Pod attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.ProtectionGroupSnapshot.source">(pypureclient.pure1.ProtectionGroupSnapshot attribute)</a>
@@ -22476,6 +22770,8 @@
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.FileSystemReplicaLink.status">(pypureclient.pure1.FileSystemReplicaLink attribute)</a>
 </li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.FleetMember.status">(pypureclient.pure1.FleetMember attribute)</a>
+</li>
         <li><a href="pure1_reference.html#pypureclient.pure1.Hardware.status">(pypureclient.pure1.Hardware attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.Invoice.status">(pypureclient.pure1.Invoice attribute)</a>
@@ -22487,6 +22783,8 @@
         <li><a href="pure1_reference.html#pypureclient.pure1.Subscription.status">(pypureclient.pure1.Subscription attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.Target.status">(pypureclient.pure1.Target attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.TopologyGroupMember.status">(pypureclient.pure1.TopologyGroupMember attribute)</a>
 </li>
       </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.ArrayConnectionPath.status_details">status_details (pypureclient.flasharray.ArrayConnectionPath attribute)</a>
@@ -22528,12 +22826,18 @@
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.FileSystemReplicaLink.status_details">(pypureclient.pure1.FileSystemReplicaLink attribute)</a>
 </li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.FleetMember.status_details">(pypureclient.pure1.FleetMember attribute)</a>
+</li>
         <li><a href="pure1_reference.html#pypureclient.pure1.Target.status_details">(pypureclient.pure1.Target attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.TopologyGroupMember.status_details">(pypureclient.pure1.TopologyGroupMember attribute)</a>
 </li>
       </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.CloudConfigModel.step">step (pypureclient.flasharray.CloudConfigModel attribute)</a>
 </li>
       <li><a href="fa_reference.html#pypureclient.flasharray.SoftwareUpgradePlan.step_name">step_name (pypureclient.flasharray.SoftwareUpgradePlan attribute)</a>
+</li>
+      <li><a href="pure1_reference.html#pypureclient.pure1.PlanningSimulationPost.steps">steps (pypureclient.pure1.PlanningSimulationPost attribute)</a>
 </li>
       <li><a href="fa_reference.html#pypureclient.flasharray.PresetWorkloadPlacementConfiguration.storage_class">storage_class (pypureclient.flasharray.PresetWorkloadPlacementConfiguration attribute)</a>
 
@@ -22657,7 +22961,23 @@
         <li><a href="pure1_reference.html#pypureclient.pure1.SubscriptionLicense.subscription">(pypureclient.pure1.SubscriptionLicense attribute)</a>
 </li>
       </ul></li>
+      <li><a href="pure1_reference.html#pypureclient.pure1.SupportContractDetails.subscription_evergreen_tier">subscription_evergreen_tier (pypureclient.pure1.SupportContractDetails attribute)</a>
+</li>
+      <li><a href="pure1_reference.html#pypureclient.pure1.FlasharrayHardwareUpgradeRecommendation.subscription_license">subscription_license (pypureclient.pure1.FlasharrayHardwareUpgradeRecommendation attribute)</a>
+
+      <ul>
+        <li><a href="pure1_reference.html#pypureclient.pure1.LicenseUpgradeRecommendation.subscription_license">(pypureclient.pure1.LicenseUpgradeRecommendation attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Recommendation.subscription_license">(pypureclient.pure1.Recommendation attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.RecommendationBase.subscription_license">(pypureclient.pure1.RecommendationBase attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.SupportContractRenewalRecommendation.subscription_license">(pypureclient.pure1.SupportContractRenewalRecommendation attribute)</a>
+</li>
+      </ul></li>
       <li><a href="pure1_reference.html#pypureclient.pure1.Subscription.subscription_term">subscription_term (pypureclient.pure1.Subscription attribute)</a>
+</li>
+      <li><a href="pure1_reference.html#pypureclient.pure1.SupportContractRenewalRecommendation.subscription_term_months">subscription_term_months (pypureclient.pure1.SupportContractRenewalRecommendation attribute)</a>
 </li>
       <li><a href="fa_reference.html#pypureclient.flasharray.NetworkInterfaceEth.subtype">subtype (pypureclient.flasharray.NetworkInterfaceEth attribute)</a>
 
@@ -22753,6 +23073,8 @@
         <li><a href="pure1_reference.html#pypureclient.pure1.Alert.summary">(pypureclient.pure1.Alert attribute)</a>
 </li>
       </ul></li>
+      <li><a href="pure1_reference.html#pypureclient.pure1.SupportContractRenewalRecommendation.support_contracts">support_contracts (pypureclient.pure1.SupportContractRenewalRecommendation attribute)</a>
+</li>
       <li><a href="fa_reference.html#pypureclient.flasharray.NetworkInterfaceNeighborCapability.supported">supported (pypureclient.flasharray.NetworkInterfaceNeighborCapability attribute)</a>
 
       <ul>
@@ -22866,10 +23188,26 @@
 </li>
         <li><a href="fb_reference.html#pypureclient.flashblade.Blade.target">(pypureclient.flashblade.Blade attribute)</a>
 </li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.FlasharrayHardwareUpgradeRecommendation.target">(pypureclient.pure1.FlasharrayHardwareUpgradeRecommendation attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.LicenseUpgradeRecommendation.target">(pypureclient.pure1.LicenseUpgradeRecommendation attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.PlanningSimulationVolumeMoveDetails.target">(pypureclient.pure1.PlanningSimulationVolumeMoveDetails attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Recommendation.target">(pypureclient.pure1.Recommendation attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.RecommendationBase.target">(pypureclient.pure1.RecommendationBase attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.SupportContractDetails.target">(pypureclient.pure1.SupportContractDetails attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.SupportContractRenewalRecommendation.target">(pypureclient.pure1.SupportContractRenewalRecommendation attribute)</a>
+</li>
       </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.ProtectionGroup.target_count">target_count (pypureclient.flasharray.ProtectionGroup attribute)</a>
 </li>
       <li><a href="fa_reference.html#pypureclient.flasharray.Offload.target_id">target_id (pypureclient.flasharray.Offload attribute)</a>
+</li>
+      <li><a href="pure1_reference.html#pypureclient.pure1.SupportContractDetails.target_model">target_model (pypureclient.pure1.SupportContractDetails attribute)</a>
 </li>
       <li><a href="fa_reference.html#pypureclient.flasharray.Chap.target_password">target_password (pypureclient.flasharray.Chap attribute)</a>
 </li>
@@ -23379,6 +23717,10 @@
         <li><a href="fb_reference.html#pypureclient.flashblade.TgroupMember.topology_group">(pypureclient.flashblade.TgroupMember attribute)</a>
 </li>
         <li><a href="fb_reference.html#pypureclient.flashblade.TgroupPatch.topology_group">(pypureclient.flashblade.TgroupPatch attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Array.topology_group">(pypureclient.pure1.Array attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.TopologyGroupMember.topology_group">(pypureclient.pure1.TopologyGroupMember attribute)</a>
 </li>
       </ul></li>
       <li><a href="fa_reference.html#pypureclient.flasharray.BucketGetResponse.total">total (pypureclient.flasharray.BucketGetResponse attribute)</a>
@@ -24442,13 +24784,19 @@
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.FileSystemSnapshotGetResponse.total_item_count">(pypureclient.pure1.FileSystemSnapshotGetResponse attribute)</a>
 </li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.FlasharrayHardwareUpgradeRecommendationGetResponse.total_item_count">(pypureclient.pure1.FlasharrayHardwareUpgradeRecommendationGetResponse attribute)</a>
+</li>
         <li><a href="pure1_reference.html#pypureclient.pure1.FleetGetResponse.total_item_count">(pypureclient.pure1.FleetGetResponse attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.FleetMemberGetResponse.total_item_count">(pypureclient.pure1.FleetMemberGetResponse attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.HardwareConnectorGetResponse.total_item_count">(pypureclient.pure1.HardwareConnectorGetResponse attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.HardwareGetResponse.total_item_count">(pypureclient.pure1.HardwareGetResponse attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.InvoiceGetResponse.total_item_count">(pypureclient.pure1.InvoiceGetResponse attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.LicenseUpgradeRecommendationGetResponse.total_item_count">(pypureclient.pure1.LicenseUpgradeRecommendationGetResponse attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.MetricGetResponse.total_item_count">(pypureclient.pure1.MetricGetResponse attribute)</a>
 </li>
@@ -24459,6 +24807,8 @@
         <li><a href="pure1_reference.html#pypureclient.pure1.ObjectStoreAccountGetResponse.total_item_count">(pypureclient.pure1.ObjectStoreAccountGetResponse attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.PageInfo.total_item_count">(pypureclient.pure1.PageInfo attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.PlanningSimulationResponse.total_item_count">(pypureclient.pure1.PlanningSimulationResponse attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.PodGetResponse.total_item_count">(pypureclient.pure1.PodGetResponse attribute)</a>
 </li>
@@ -24474,6 +24824,8 @@
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.ProtectionGroupSnapshotTransferGetResponse.total_item_count">(pypureclient.pure1.ProtectionGroupSnapshotTransferGetResponse attribute)</a>
 </li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.RecommendationGetResponse.total_item_count">(pypureclient.pure1.RecommendationGetResponse attribute)</a>
+</li>
         <li><a href="pure1_reference.html#pypureclient.pure1.SecurityInsightArrayGetResponse.total_item_count">(pypureclient.pure1.SecurityInsightArrayGetResponse attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.SubscriptionAssetGetResponse.total_item_count">(pypureclient.pure1.SubscriptionAssetGetResponse attribute)</a>
@@ -24484,6 +24836,8 @@
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.SupportContractGetResponse.total_item_count">(pypureclient.pure1.SupportContractGetResponse attribute)</a>
 </li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.SupportContractRenewalRecommendationGetResponse.total_item_count">(pypureclient.pure1.SupportContractRenewalRecommendationGetResponse attribute)</a>
+</li>
         <li><a href="pure1_reference.html#pypureclient.pure1.SustainabilityArrayGetResponse.total_item_count">(pypureclient.pure1.SustainabilityArrayGetResponse attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.SustainabilityInsightArrayGetResponse.total_item_count">(pypureclient.pure1.SustainabilityInsightArrayGetResponse attribute)</a>
@@ -24491,6 +24845,10 @@
         <li><a href="pure1_reference.html#pypureclient.pure1.TagGetResponse.total_item_count">(pypureclient.pure1.TagGetResponse attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.TargetGetResponse.total_item_count">(pypureclient.pure1.TargetGetResponse attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.TopologyGroupGetResponse.total_item_count">(pypureclient.pure1.TopologyGroupGetResponse attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.TopologyGroupMemberGetResponse.total_item_count">(pypureclient.pure1.TopologyGroupMemberGetResponse attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.VolumeGetResponse.total_item_count">(pypureclient.pure1.VolumeGetResponse attribute)</a>
 </li>
@@ -24571,6 +24929,10 @@
       </ul></li>
       <li><a href="pure1_reference.html#pypureclient.pure1.AssetSpace.total_used_ratio">total_used_ratio (pypureclient.pure1.AssetSpace attribute)</a>
 </li>
+      <li><a href="pure1_reference.html#pypureclient.pure1.PlanningSimulationPost.training_end_time">training_end_time (pypureclient.pure1.PlanningSimulationPost attribute)</a>
+</li>
+      <li><a href="pure1_reference.html#pypureclient.pure1.PlanningSimulationPost.training_start_time">training_start_time (pypureclient.pure1.PlanningSimulationPost attribute)</a>
+</li>
       <li><a href="fb_reference.html#pypureclient.flashblade.HardwareConnector.transceiver_type">transceiver_type (pypureclient.flashblade.HardwareConnector attribute)</a>
 
       <ul>
@@ -24629,6 +24991,18 @@
         <li><a href="fb_reference.html#pypureclient.flashblade.TelemetryTargetPatch.transport">(pypureclient.flashblade.TelemetryTargetPatch attribute)</a>
 </li>
         <li><a href="fb_reference.html#pypureclient.flashblade.TelemetryTargetPost.transport">(pypureclient.flashblade.TelemetryTargetPost attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="pure1_reference.html#pypureclient.pure1.FlasharrayHardwareUpgradeRecommendation.trigger">trigger (pypureclient.pure1.FlasharrayHardwareUpgradeRecommendation attribute)</a>
+
+      <ul>
+        <li><a href="pure1_reference.html#pypureclient.pure1.LicenseUpgradeRecommendation.trigger">(pypureclient.pure1.LicenseUpgradeRecommendation attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.Recommendation.trigger">(pypureclient.pure1.Recommendation attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.RecommendationBase.trigger">(pypureclient.pure1.RecommendationBase attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.SupportContractRenewalRecommendation.trigger">(pypureclient.pure1.SupportContractRenewalRecommendation attribute)</a>
 </li>
       </ul></li>
       <li><a href="fb_reference.html#pypureclient.flashblade.NetworkInterfacesConnectorsSettingRoce.trust_mode">trust_mode (pypureclient.flashblade.NetworkInterfacesConnectorsSettingRoce attribute)</a>
@@ -24799,6 +25173,8 @@
         <li><a href="pure1_reference.html#pypureclient.pure1.Metric.unit">(pypureclient.pure1.Metric attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.MetricHistory.unit">(pypureclient.pure1.MetricHistory attribute)</a>
+</li>
+        <li><a href="pure1_reference.html#pypureclient.pure1.PlanningSimulationMetric.unit">(pypureclient.pure1.PlanningSimulationMetric attribute)</a>
 </li>
         <li><a href="pure1_reference.html#pypureclient.pure1.SubscriptionLicensePreRatio.unit">(pypureclient.pure1.SubscriptionLicensePreRatio attribute)</a>
 </li>
@@ -25799,6 +26175,8 @@
         <li><a href="fa_reference.html#pypureclient.flasharray.VolumeSnapshot.volume_group">(pypureclient.flasharray.VolumeSnapshot attribute)</a>
 </li>
       </ul></li>
+      <li><a href="pure1_reference.html#pypureclient.pure1.PlanningSimulationVolumeMoveDetails.volumes">volumes (pypureclient.pure1.PlanningSimulationVolumeMoveDetails attribute)</a>
+</li>
       <li><a href="fa_reference.html#pypureclient.flasharray.VirtualMachineVolumeSnapshot.vvol_name">vvol_name (pypureclient.flasharray.VirtualMachineVolumeSnapshot attribute)</a>
 </li>
       <li><a href="fa_reference.html#pypureclient.flasharray.VirtualMachineVolumeSnapshot.vvol_type">vvol_type (pypureclient.flasharray.VirtualMachineVolumeSnapshot attribute)</a>

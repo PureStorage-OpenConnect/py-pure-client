@@ -21,10 +21,10 @@ Importable as
 .. module:: pypureclient.pure1.client
 .. autofunction:: pypureclient.pure1.client::Client
 
-Pure1 REST 1.6 Client
+Pure1 REST 1.7 Client
 ~~~~~~~~~~~~~~~~~~~~~
-.. module:: pypureclient.pure1.Pure1_1_6.client
-.. autoclass:: pypureclient.pure1.Pure1_1_6.client::Client
+.. module:: pypureclient.pure1.Pure1_1_7.client
+.. autoclass:: pypureclient.pure1.Pure1_1_7.client::Client
    :members:
 
 Models
@@ -486,6 +486,18 @@ BuiltInAsOf
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
+Company
+~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::Company
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
 Controller
 ~~~~~~~~~~
 .. autopydantic_model:: pypureclient.pure1::Controller
@@ -690,6 +702,18 @@ DriveResponse
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
+EolComponent
+~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::EolComponent
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
 Error
 ~~~~~
 .. autopydantic_model:: pypureclient.pure1::Error
@@ -870,6 +894,42 @@ FixedReferenceFqdn
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
+FlasharrayHardwareUpgradeRecommendation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::FlasharrayHardwareUpgradeRecommendation
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+FlasharrayHardwareUpgradeRecommendationGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::FlasharrayHardwareUpgradeRecommendationGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+FlasharrayHardwareUpgradeRecommendationResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::FlasharrayHardwareUpgradeRecommendationResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
 Fleet
 ~~~~~
 .. autopydantic_model:: pypureclient.pure1::Fleet
@@ -885,6 +945,42 @@ Fleet
 FleetGetResponse
 ~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.pure1::FleetGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+FleetMember
+~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::FleetMember
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+FleetMemberGetResponse
+~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::FleetMemberGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+FleetMemberResponse
+~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::FleetMemberResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1077,6 +1173,42 @@ InvoiceResponse
 LicenseResourceReference
 ~~~~~~~~~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.pure1::LicenseResourceReference
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+LicenseUpgradeRecommendation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::LicenseUpgradeRecommendation
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+LicenseUpgradeRecommendationGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::LicenseUpgradeRecommendationGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+LicenseUpgradeRecommendationResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::LicenseUpgradeRecommendationResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1305,6 +1437,138 @@ ObjectStoreAccountResponse
 PageInfo
 ~~~~~~~~
 .. autopydantic_model:: pypureclient.pure1::PageInfo
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PlanningSimulationActiveclusterFailoverDetails
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::PlanningSimulationActiveclusterFailoverDetails
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PlanningSimulationActiveclusterFailoverStep
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::PlanningSimulationActiveclusterFailoverStep
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PlanningSimulationArrayReference
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::PlanningSimulationArrayReference
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PlanningSimulationMetric
+~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::PlanningSimulationMetric
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PlanningSimulationMetricRequest
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::PlanningSimulationMetricRequest
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PlanningSimulationPost
+~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::PlanningSimulationPost
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PlanningSimulationResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::PlanningSimulationResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PlanningSimulationStep
+~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::PlanningSimulationStep
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PlanningSimulationVolumeMoveDetails
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::PlanningSimulationVolumeMoveDetails
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PlanningSimulationVolumeMoveStep
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::PlanningSimulationVolumeMoveStep
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+PlanningSimulationVolumeReference
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::PlanningSimulationVolumeReference
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1569,6 +1833,78 @@ ProtectionGroupSnapshotTransferGetResponse
 ProtectionGroupSnapshotTransferResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.pure1::ProtectionGroupSnapshotTransferResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+Recommendation
+~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::Recommendation
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+RecommendationBase
+~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::RecommendationBase
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+RecommendationGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::RecommendationGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+RecommendationResponse
+~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::RecommendationResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+RecommendationTrigger
+~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::RecommendationTrigger
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+ReferenceWithoutType
+~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::ReferenceWithoutType
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -1866,9 +2202,57 @@ SupportContract
    :model-hide-paramlist: False
    :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
 
+SupportContractDetails
+~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::SupportContractDetails
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
 SupportContractGetResponse
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.pure1::SupportContractGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+SupportContractRenewalRecommendation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::SupportContractRenewalRecommendation
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+SupportContractRenewalRecommendationGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::SupportContractRenewalRecommendationGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+SupportContractRenewalRecommendationResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::SupportContractRenewalRecommendationResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
@@ -2085,6 +2469,78 @@ TimeAware
 TimeInterval
 ~~~~~~~~~~~~
 .. autopydantic_model:: pypureclient.pure1::TimeInterval
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+TopologyGroup
+~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::TopologyGroup
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+TopologyGroupGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::TopologyGroupGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+TopologyGroupMember
+~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::TopologyGroupMember
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+TopologyGroupMemberGetResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::TopologyGroupMemberGetResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+TopologyGroupMemberResponse
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::TopologyGroupMemberResponse
+   :model-show-json: False
+   :model-show-field-summary: False
+   :model-show-config-summary: False
+   :model-show-validator-summary: True
+   :model-show-validator-members: True
+   :undoc-members: True
+   :model-hide-paramlist: False
+   :exclude-members: to_str, to_json, to_dict, from_json, from_dict, as_request_dict
+
+TopologyGroupResponse
+~~~~~~~~~~~~~~~~~~~~~
+.. autopydantic_model:: pypureclient.pure1::TopologyGroupResponse
    :model-show-json: False
    :model-show-field-summary: False
    :model-show-config-summary: False
