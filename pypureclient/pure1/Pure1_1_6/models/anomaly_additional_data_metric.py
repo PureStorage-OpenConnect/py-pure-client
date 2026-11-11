@@ -28,7 +28,7 @@ except ModuleNotFoundError:
 
 class AnomalyAdditionalDataMetric(BaseModel):
     """
-    Additional data for `drr`, `capacity`, `latency` (and direction variants), `iops` (and direction variants), `bandwidth` (and direction variants), `volume_count`, and `snapshot_count` anomalies.
+    Additional data for the `drr`, `capacity`, `total_latency`, `iops`, `bandwidth`, `volume_count`, and `volume_snapshot_count` metrics.
     """
     value_change_percentage: Union[confloat(le=1, ge=0, strict=True), conint(le=1, ge=0, strict=True)] = Field(default=..., description="Fractional change in the metric value that triggered the anomaly.")
     __properties = ["value_change_percentage"]

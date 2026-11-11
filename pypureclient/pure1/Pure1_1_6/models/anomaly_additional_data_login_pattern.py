@@ -28,7 +28,7 @@ except ModuleNotFoundError:
 
 class AnomalyAdditionalDataLoginPattern(BaseModel):
     """
-    Additional data for `login_pattern` anomalies.
+    Additional data for the `login_pattern` metric.
     """
     unusual_patterns: conlist(StrictStr) = Field(default=..., description="List of unusual login pattern signals detected. Valid values are `unusual_time`, `unusual_high_number`, `unusual_interface`, and `unusual_ip`.")
     __properties = ["unusual_patterns"]

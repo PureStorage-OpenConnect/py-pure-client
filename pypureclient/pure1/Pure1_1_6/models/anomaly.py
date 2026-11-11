@@ -38,7 +38,7 @@ class Anomaly(BaseModel):
     resources: Optional[conlist(AnomalyResource)] = Field(default=None, description="The storage resources associated with this anomaly. For single-dimension anomalies this contains one object; for multi-dimensional or fleet anomalies there may be multiple objects across one or more arrays.")
     start_time: Optional[StrictInt] = Field(default=None, description="Start time of the anomaly, in milliseconds since UNIX epoch.")
     status: Optional[StrictStr] = Field(default=None, description="Current status of the anomaly. Valid values are `open` and `closed`. An anomaly is `open` if its `end_time` is less than one week old.")
-    type: Optional[StrictStr] = Field(default=None, description="The category of the anomaly. Valid values are `drr`, `read_latency`, `write_latency`, `read_iops`, `write_iops`, `other_iops`, `read_bandwidth`, `write_bandwidth`, `capacity`, `volume_count`, `snapshot_count`, `admin_activities`, `multi_d_system`, `failed_login`, and `login_pattern`.")
+    type: Optional[StrictStr] = Field(default=None, description="The category of the anomaly. Valid values are `drr`, `total_latency`, `iops`, `bandwidth`, `capacity`, `volume_count`, `volume_snapshot_count`, `multi_dimensional_admin_activity`, `multi_dimensional_system_metrics`, and `failed_and_unusual_logins`.")
     __properties = ["_as_of", "description", "end_time", "id", "resources", "start_time", "status", "type"]
 
     class Config:
